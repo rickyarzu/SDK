@@ -1,0 +1,116 @@
+package JanuaVCLControls;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Vcl Controls XE10.23'}
+{$LIBSUFFIX '260'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  JanuaCore,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  PngComponentsD,
+  dac260,
+  crcontrols260,
+  jcl,
+  unidac260,
+  QRWRunDXE10_3_w64,
+  officeXPrt,
+  JvDB,
+  JvStdCtrls,
+  JvSystem,
+  JvCore,
+  gtDocEngD26,
+  gteDocSharedD26,
+  gtQRExpD26,
+  vclwinx,
+  dmvcframeworkRT,
+  loggerproRT,
+  dsnap,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter;
+
+contains
+  JanuaPromo in '..\src\JanuaLegacy\JanuaPromo.pas',
+  JvxLabel in '..\src\JanuaLegacy\JvxLabel.pas',
+  AcroPDFLib_TLB in '..\src\JanuaLegacy\AcroPDFLib_TLB.pas',
+  Janua.Legacy.SplashDialog in '..\src\JanuaLegacy\Janua.Legacy.SplashDialog.pas',
+  ufrmAttesa in '..\src\JanuaLegacy\ufrmAttesa.pas' {frmAttesa},
+  Janua.Legacy.Printers in '..\src\JanuaLegacy\Janua.Legacy.Printers.pas',
+  Janua.Legacy.Logger in '..\src\JanuaLegacy\Janua.Legacy.Logger.pas',
+  Janua.Legacy.Qranglbl in '..\src\JanuaLegacy\Janua.Legacy.Qranglbl.pas',
+  Janua.Legacy.QuickReport in '..\src\JanuaLegacy\Janua.Legacy.QuickReport.pas',
+  Janua.Legacy.Application in '..\src\janualegacy\Janua.Legacy.Application.pas',
+  Janua.VCLControls.Impl in '..\src\VCL\Janua.VCLControls.Impl.pas',
+  Janua.VCL.Printers in '..\src\VCL\Commons\Janua.VCL.Printers.pas',
+  Janua.VCL.OS in '..\src\VCL\System\Janua.VCL.OS.pas',
+  udmJanuaVCLSystem in '..\src\VCL\System\udmJanuaVCLSystem.pas' {dmJanuaSystem: TDataModule},
+  Janua.VCL.Anagraph in '..\src\VCL\Controls\Janua.VCL.Anagraph.pas',
+  Janua.VCL.Backup in '..\src\VCL\Backup\Janua.VCL.Backup.pas',
+  Janua.VCL.Cloud in '..\src\VCL\Cloud\Janua.VCL.Cloud.pas',
+  Janua.VCL.EnhDBGrid in '..\src\VCL\Controls\Janua.VCL.EnhDBGrid.pas',
+  udlgWaitModel in '..\src\VCL\Commons\udlgWaitModel.pas' {JanuadlgWaitModel},
+  Janua.VCL.Health in '..\src\VCL\Health\Janua.VCL.Health.pas',
+  Janua.VCL.System in '..\src\VCL\System\Janua.VCL.System.pas',
+  Janua.VCL.TestDebug in '..\src\VCL\Commons\Janua.VCL.TestDebug.pas',
+  Janua.VCL.DirectoryBackup in '..\src\VCL\Backup\Janua.VCL.DirectoryBackup.pas',
+  Janua.VCL.FootballControllers in '..\src\VCL\Football\Janua.VCL.FootballControllers.pas',
+  Janua.VCL.Register in '..\src\VCL\Janua.VCL.Register.pas',
+  Janua.VCL.SMS in '..\src\VCL\Cloud\Janua.VCL.SMS.pas',
+  Janua.VCL.Functions in '..\src\VCL\Commons\Janua.VCL.Functions.pas',
+  Janua.VCL.Mail in '..\src\VCL\Mail\Janua.VCL.Mail.pas',
+  Janua.VCL.Controllers in '..\src\VCL\Commons\Janua.VCL.Controllers.pas',
+  Janua.VCL.Statistics.MainFormController in '..\src\VCL\Statistics\Janua.VCL.Statistics.MainFormController.pas',
+  Janua.VCL.Grids in '..\src\VCL\Controls\Janua.VCL.Grids.pas',
+  Janua.VCL.RESTAuthenticatorOAuth in '..\src\VCL\Cloud\Janua.VCL.RESTAuthenticatorOAuth.pas' {frmJanuaOAuthWebForm},
+  Janua.Win.libeay32 in '..\src\Win\Janua.Win.libeay32.pas',
+  Janua.Win.CryptoUtils in '..\src\Win\Janua.Win.CryptoUtils.pas',
+  Janua.VCL.WebBrowser in '..\src\VCL\Controls\Janua.VCL.WebBrowser.pas',
+  Janua.VCL.Cloud.Images in '..\src\VCL\Cloud\Janua.VCL.Cloud.Images.pas',
+  Janua.VCL.Cloud.Files in '..\src\VCL\Cloud\Janua.VCL.Cloud.Files.pas',
+  Janua.VCL.EnhCRDBGrid in '..\src\VCL\Controls\Janua.VCL.EnhCRDBGrid.pas',
+  Janua.Win.CFCrypt in '..\src\Win\Janua.Win.CFCrypt.pas',
+  Janua.Win.Export in '..\src\Win\Janua.Win.Export.pas',
+  Janua.VCL.AppController in '..\src\VCL\System\Janua.VCL.AppController.pas',
+  JvxSpeedButton in '..\src\JanuaLegacy\JvxSpeedButton.pas',
+  uVCLGnosticeReportEngine in '..\src\VCL\Forms\uVCLGnosticeReportEngine.pas' {DataModule1: TDataModule},
+  Janua.VCL.Error in '..\src\VCL\Commons\Janua.VCL.Error.pas';
+end.

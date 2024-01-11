@@ -1,0 +1,54 @@
+package TMSVCLUIPackPkgWiz;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS VCL UI Pack Wizards'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  xmlrtl,
+  vclactnband,
+  TMSVCLUIPackPkg,
+  TMSVCLUIPackPkgEx,
+  vclx;
+
+contains
+  atbwizardreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\atbwizardreg.pas',
+  ATBWizard in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard.pas',
+  ATBWizard2010Reg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2010Reg.pas',
+  ATBWizard2010 in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2010.pas',
+  AdvMetroWizard in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\AdvMetroWizard.pas',
+  AdvMetroWizardReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\AdvMetroWizardReg.pas',
+  ATBWizard2016 in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2016.pas',
+  ATBWizard2016Reg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2016Reg.pas',
+  ATBWizard2019 in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2019.pas',
+  ATBWizard2019Reg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\ATBWizard2019Reg.pas';
+
+end.

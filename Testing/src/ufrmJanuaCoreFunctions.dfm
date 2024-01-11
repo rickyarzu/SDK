@@ -1,0 +1,548 @@
+object frmJanuaCoreFunctions: TfrmJanuaCoreFunctions
+  Left = 0
+  Top = 0
+  Caption = 'Test Janua.Core.Functions'
+  ClientHeight = 504
+  ClientWidth = 760
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Visible = True
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 760
+    Height = 504
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'String Manipulation Functions'
+      object edInputString: TLabeledEdit
+        Left = 16
+        Top = 24
+        Width = 705
+        Height = 21
+        EditLabel.Width = 57
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Input String'
+        TabOrder = 0
+        Text = 'Hello World'
+        TextHint = 'write here text to modify'
+      end
+      object GroupBox1: TGroupBox
+        Left = 3
+        Top = 51
+        Width = 733
+        Height = 134
+        Caption = 'Padding'
+        TabOrder = 1
+        object btnTestPadding: TSpeedButton
+          Left = 480
+          Top = 38
+          Width = 238
+          Height = 27
+          Caption = 'Test'
+          OnClick = btnTestPaddingClick
+        end
+        object Label1: TLabel
+          Left = 343
+          Top = 19
+          Width = 38
+          Height = 13
+          Caption = 'Padding'
+        end
+        object Label2: TLabel
+          Left = 416
+          Top = 19
+          Width = 44
+          Height = 13
+          Caption = 'Pad Char'
+        end
+        object rgOperation: TRadioGroup
+          Left = 16
+          Top = 24
+          Width = 233
+          Height = 49
+          Caption = 'Operation'
+          Columns = 4
+          ItemIndex = 0
+          Items.Strings = (
+            'Lpad'
+            'Rpad'
+            'NLpad'
+            'RLPad')
+          TabOrder = 0
+        end
+        object ckbIsNumber: TCheckBox
+          Left = 264
+          Top = 40
+          Width = 73
+          Height = 17
+          Caption = 'IsNumber'
+          TabOrder = 1
+        end
+        object edStringPadding: TLabeledEdit
+          Left = 16
+          Top = 104
+          Width = 705
+          Height = 21
+          EditLabel.Width = 61
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Result String'
+          TabOrder = 2
+        end
+        object spinPadding: TSpinEdit
+          Left = 343
+          Top = 38
+          Width = 58
+          Height = 22
+          MaxValue = 0
+          MinValue = 0
+          TabOrder = 3
+          Value = 4
+        end
+        object edPadChar: TEdit
+          Left = 416
+          Top = 38
+          Width = 41
+          Height = 21
+          MaxLength = 1
+          TabOrder = 4
+          Text = ' '
+        end
+      end
+      object grpJsonStringToFloat: TGroupBox
+        Left = 3
+        Top = 191
+        Width = 733
+        Height = 66
+        Caption = 'Json String To Float'
+        TabOrder = 2
+        object lbJs1: TLabel
+          Left = 218
+          Top = 28
+          Width = 24
+          Height = 13
+          Caption = 'lbJs1'
+        end
+        object lbJs2: TLabel
+          Left = 264
+          Top = 28
+          Width = 24
+          Height = 13
+          Caption = 'lbJs2'
+        end
+        object lbJs3: TLabel
+          Left = 306
+          Top = 28
+          Width = 24
+          Height = 13
+          Caption = 'lbJs3'
+        end
+        object SpeedButton3: TSpeedButton
+          Left = 358
+          Top = 24
+          Width = 91
+          Height = 22
+          Caption = 'Float To String'
+          OnClick = SpeedButton3Click
+        end
+        object SpeedButton4: TSpeedButton
+          Left = 455
+          Top = 24
+          Width = 90
+          Height = 22
+          Caption = 'String To Float'
+        end
+        object CalcEdit1: TJvCalcEdit
+          Left = 16
+          Top = 24
+          Width = 57
+          Height = 21
+          TabOrder = 0
+          Value = 12.340000000000000000
+          DecimalPlacesAlwaysShown = False
+        end
+        object CalcEdit2: TJvCalcEdit
+          Left = 79
+          Top = 24
+          Width = 57
+          Height = 21
+          TabOrder = 1
+          Value = 0.320000000000000000
+          DecimalPlacesAlwaysShown = False
+        end
+        object CalcEdit3: TJvCalcEdit
+          Left = 142
+          Top = 24
+          Width = 51
+          Height = 21
+          TabOrder = 2
+          Value = 13.000000000000000000
+          DecimalPlacesAlwaysShown = False
+        end
+      end
+    end
+    object tabDatasetFunctions: TTabSheet
+      Caption = 'DB Functions'
+      ImageIndex = 1
+      object PageControl2: TPageControl
+        Left = 0
+        Top = 0
+        Width = 752
+        Height = 476
+        ActivePage = TabSheet2
+        Align = alClient
+        TabOrder = 0
+        object TabSheet2: TTabSheet
+          Caption = 'Virtual Table'
+          object DBGrid1: TDBGrid
+            Left = 0
+            Top = 0
+            Width = 297
+            Height = 448
+            Align = alLeft
+            TabOrder = 0
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -11
+            TitleFont.Name = 'Tahoma'
+            TitleFont.Style = []
+          end
+          object Panel1: TPanel
+            Left = 297
+            Top = 0
+            Width = 224
+            Height = 448
+            Align = alLeft
+            TabOrder = 1
+            object SpeedButton1: TSpeedButton
+              Left = 1
+              Top = 35
+              Width = 222
+              Height = 34
+              Align = alTop
+              Caption = 'Copy To Dataset'
+              Glyph.Data = {
+                36040000424D3604000000000000360000002800000010000000100000000100
+                2000000000000004000000000000000000000000000000000000FF00FF00FF00
+                FF00FF00FF00FF00FF00FF00FF00B48E88008D5E5D008D5E5D008D5E5D008D5E
+                5D008D5E5D008D5E5D008D5E5D008D5E5D008D5E5D00FF00FF00FF00FF00FF00
+                FF00FF00FF00FF00FF00FF00FF00B48E8800FFFAEB00F9F1E200F9F0DF00F7EE
+                DC00F7EEDB00F7EDDA00F8EFDB00F2E5D1008E5F5E00FF00FF00FF00FF00FF00
+                FF00FF00FF00FF00FF00FF00FF00B48E8800F9F1E400F5E2CD00F5E0CA00F4DF
+                C900F3DEC500F2DDC300F2E2CD00EBDBC9008E5F5E00FF00FF00FF00FF00FF00
+                FF00FF00FF00FF00FF00FF00FF00B48E8800FBF3E600FDD2A700FDD2A700FDD2
+                A700FDD2A700FDD2A700FDD2A700EADCCB008E5F5E00FF00FF00FF00FF00B48E
+                88008D5E5D008D5E5D008D5E5D00B48E8800FDF7ED00F8E2C900F9E0C600F8DE
+                C500F8DEC300F7DCBF00F4E4D000ECDDCE00996D6700FF00FF00FF00FF00B48E
+                8800FFFAEB00F9F1E200F9F0DF00B48E8800FEF8F000FAE3CB00FAE2C800FAE1
+                C700F9DFC600F9DEC300F6E6D400EDE0D200996D6800FF00FF00FF00FF00B48E
+                8800F9F1E400F5E2CD00F5E0CA00B48E8800FEFBF500FDD2A700FDD2A700FDD2
+                A700FDD2A700FDD2A700FDD2A700F0E5DA00A57A7500FF00FF00FF00FF00B48E
+                8800FBF3E600FDD2A700FDD2A700B48E8800FFFDFB00FDEAD800FCE7D400FBE6
+                D300FAE6D100FDE9D300FDF4E600E8E0D900A5797400FF00FF00FF00FF00B48E
+                8800FDF7ED00F8E2C900F9E0C600B48E8800FFFFFF00FEFFFF00FCFCFC00FBFA
+                F900FBFBF800EBDFDB00D3C2C000BAA9AA00B2817500FF00FF00FF00FF00B48E
+                8800FEF8F000FAE3CB00FAE2C800B48E8800FFFFFF00FFFFFF00FFFEFE00FFFD
+                FA00FFFEFB00B48E8800B48E8800B48E8800B48E8800FF00FF00FF00FF00B48E
+                8800FEFBF500FDD2A700FDD2A700B48E8800FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00B48E8800EBB56F00C68C7800FF00FF00FF00FF00FF00FF00B48E
+                8800FFFDFB00FDEAD800FCE7D400B48E8800B48E8800B48E8800B48E8800B48E
+                8800B48E8800B48E8800BC878200FF00FF00FF00FF00FF00FF00FF00FF00B48E
+                8800FFFFFF00FEFFFF00FCFCFC00FBFAF900FBFBF800EBDFDB00D3C2C000BAA9
+                AA00B2817500FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00B48E
+                8800FFFFFF00FFFFFF00FFFEFE00FFFDFA00FFFEFB00B48E8800B48E8800B48E
+                8800B48E8800FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00B48E
+                8800FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00B48E8800EBB56F00C68C
+                7800FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00B48E
+                8800B48E8800B48E8800B48E8800B48E8800B48E8800B48E8800BC878200FF00
+                FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+              ExplicitLeft = 6
+              ExplicitTop = 8
+              ExplicitWidth = 203
+            end
+            object SpeedButton2: TSpeedButton
+              Left = 1
+              Top = 1
+              Width = 222
+              Height = 34
+              Align = alTop
+              Caption = 'Copy To XML'
+              Glyph.Data = {
+                36030000424D3603000000000000360000002800000010000000100000000100
+                18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+                FF00FFFF00FFFF00FF00009A00009A00009A00009A00009A00009A00009A0000
+                9A00009A00009A00009AAA7F7AB88384B88384B88384B8838400009AFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00009AAD827BFCEBCE
+                F7DFBFF4DAB3F3D6AB00009AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFF00009AB1857CFDEDD5F5DFC5F4DBBBF2D7B200009AFFFFFFFF
+                FFFFFFFFFF00009A00009AFFFFFFFFFFFFFFFFFF00009A00009AB6897EFEF2DE
+                F7E5CEF5E0C5F4DCBC00009AFFFFFF00009A00009AFFFFFFFFFFFF00009AFFFF
+                FF00009AFFFFFF00009ABA8D80FFF7E8F8E8D6F6E4CDF5E0C400009A00009AFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFF00009AFFFFFFFFFFFF00009ABF9183FFFCF2
+                F9EDDFF7E8D6F6E4CD00009AFFFFFF00009A00009AFFFFFFFFFFFF00009AFFFF
+                FF00009AFFFFFF00009AC49685FFFFFCFAF1E8F9ECDEF8E8D500009AFFFFFFFF
+                FFFFFFFFFF00009A00009AFFFFFFFFFFFFFFFFFF00009A00009AC99B87FFFFFF
+                FDF7F2FBF1E8FAEEDF00009AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFF00009ACD9E8AFFFFFFFFFCFBFEF7F1FBF2E700009AFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00009AD1A38BFFFFFF
+                FFFFFFFFFDFBFDF7F100009A00009A00009A00009A00009A00009A00009A0000
+                9A00009A00009A00009AD6A78DFFFFFFFFFFFFFFFFFFFFFDFBFDF7F1FBF1E6FA
+                EDDEFDF0DDEADDCAC7BFB0B88384FF00FFFF00FFFF00FFFF00FFD9AA8FFFFFFF
+                FFFFFFFFFFFFFFFFFFFEFDFBFDF8F0FBF3E7B88384B88384B88384B88384FF00
+                FFFF00FFFF00FFFF00FFDDAC91FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDF7
+                F0ECB88384E9B676F3AE52CA8A6AFF00FFFF00FFFF00FFFF00FFDFAF92FFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFAFEB88384EBB87AD09877FF00FFFF00
+                FFFF00FFFF00FFFF00FFDBA685DBA685DBA685DBA685DBA685DBA685DBA685DB
+                A685B88384CA9784FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+              ExplicitLeft = 6
+              ExplicitTop = 8
+              ExplicitWidth = 203
+            end
+            object edtEntry: TEdit
+              Left = 1
+              Top = 69
+              Width = 222
+              Height = 21
+              Align = alTop
+              TabOrder = 0
+              Text = 'edtEntry'
+            end
+            object CRDBGrid1: TCRDBGrid
+              Left = 1
+              Top = 93
+              Width = 222
+              Height = 354
+              Align = alBottom
+              TabOrder = 1
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -11
+              TitleFont.Name = 'Tahoma'
+              TitleFont.Style = []
+            end
+          end
+          object AdvMemo1: TAdvMemo
+            Left = 521
+            Top = 0
+            Width = 223
+            Height = 448
+            Cursor = crIBeam
+            ActiveLineSettings.ShowActiveLine = False
+            ActiveLineSettings.ShowActiveLineIndicator = False
+            Align = alClient
+            AutoCompletion.Font.Charset = DEFAULT_CHARSET
+            AutoCompletion.Font.Color = clWindowText
+            AutoCompletion.Font.Height = -11
+            AutoCompletion.Font.Name = 'Tahoma'
+            AutoCompletion.Font.Style = []
+            AutoCompletion.StartToken = '(.'
+            AutoCorrect.Active = True
+            AutoHintParameterPosition = hpBelowCode
+            BookmarkGlyph.Data = {
+              36050000424D3605000000000000360400002800000010000000100000000100
+              0800000000000001000000000000000000000001000000000000000000000000
+              80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+              A6000020400000206000002080000020A0000020C0000020E000004000000040
+              20000040400000406000004080000040A0000040C0000040E000006000000060
+              20000060400000606000006080000060A0000060C0000060E000008000000080
+              20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+              200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+              200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+              200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+              20004000400040006000400080004000A0004000C0004000E000402000004020
+              20004020400040206000402080004020A0004020C0004020E000404000004040
+              20004040400040406000404080004040A0004040C0004040E000406000004060
+              20004060400040606000406080004060A0004060C0004060E000408000004080
+              20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+              200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+              200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+              200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+              20008000400080006000800080008000A0008000C0008000E000802000008020
+              20008020400080206000802080008020A0008020C0008020E000804000008040
+              20008040400080406000804080008040A0008040C0008040E000806000008060
+              20008060400080606000806080008060A0008060C0008060E000808000008080
+              20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+              200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+              200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+              200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+              2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+              2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+              2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+              2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+              2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+              2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+              2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+              2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+              2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+              B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+              B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+              BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+              BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+              BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+              25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+            BorderStyle = bsSingle
+            ClipboardFormats = [cfText]
+            CodeFolding.Enabled = False
+            CodeFolding.LineColor = clGray
+            Ctl3D = False
+            DelErase = True
+            EnhancedHomeKey = False
+            Gutter.Font.Charset = DEFAULT_CHARSET
+            Gutter.Font.Color = clWindowText
+            Gutter.Font.Height = -13
+            Gutter.Font.Name = 'Courier New'
+            Gutter.Font.Style = []
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'COURIER NEW'
+            Font.Style = []
+            HiddenCaret = False
+            Lines.Strings = (
+              '')
+            MarkerList.UseDefaultMarkerImageIndex = False
+            MarkerList.DefaultMarkerImageIndex = -1
+            MarkerList.ImageTransparentColor = 33554432
+            OleDropTarget = []
+            PrintOptions.MarginLeft = 0
+            PrintOptions.MarginRight = 0
+            PrintOptions.MarginTop = 0
+            PrintOptions.MarginBottom = 0
+            PrintOptions.PageNr = False
+            PrintOptions.PrintLineNumbers = False
+            RightMarginColor = 14869218
+            ScrollHint = False
+            SelColor = clWhite
+            SelBkColor = clNavy
+            ShowRightMargin = True
+            SmartTabs = False
+            TabOrder = 2
+            TabStop = True
+            TrimTrailingSpaces = False
+            UILanguage.ScrollHint = 'Row'
+            UILanguage.Undo = 'Undo'
+            UILanguage.Redo = 'Redo'
+            UILanguage.Copy = 'Copy'
+            UILanguage.Cut = 'Cut'
+            UILanguage.Paste = 'Paste'
+            UILanguage.Delete = 'Delete'
+            UILanguage.SelectAll = 'Select All'
+            UrlStyle.TextColor = clBlue
+            UrlStyle.BkColor = clWhite
+            UrlStyle.Style = [fsUnderline]
+            UseStyler = True
+            Version = '3.5.1.3'
+            WordWrap = wwNone
+          end
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'TabSheet3'
+      ImageIndex = 2
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'TabSheet4'
+      ImageIndex = 3
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Automatic Testing'
+      ImageIndex = 4
+    end
+  end
+  object VirtualTable1: TVirtualTable
+    Left = 96
+    Top = 328
+    Data = {03000000000000000000}
+  end
+  object DataSource1: TDataSource
+    DataSet = VirtualTable1
+    Left = 96
+    Top = 384
+  end
+  object PgTable1: TUniTable
+    TableName = 'ads.banners'
+    Connection = PgConnection1
+    Active = True
+    Left = 168
+    Top = 360
+    object PgTable1number: TSmallintField
+      FieldName = 'number'
+      Required = True
+    end
+    object PgTable1image_url: TStringField
+      FieldName = 'image_url'
+      Size = 2048
+    end
+    object PgTable1target_url: TStringField
+      FieldName = 'target_url'
+      Size = 2040
+    end
+    object PgTable1visions: TLargeintField
+      FieldName = 'visions'
+    end
+    object PgTable1clicks: TLargeintField
+      FieldName = 'clicks'
+    end
+    object PgTable1customer_id: TIntegerField
+      FieldName = 'customer_id'
+    end
+    object PgTable1ads_domain_id: TIntegerField
+      FieldName = 'ads_domain_id'
+    end
+  end
+  object PgDataSource1: TUniDataSource
+    DataSet = PgTable1
+    Left = 168
+    Top = 304
+  end
+  object PgConnection1: TJanuaUniConnection
+    Username = 'ergo'
+    Server = '172.16.99.1'
+    ConnectDialog = PgConnectDialog1
+    Database = 'ergo'
+    Schema = 'ads'
+    Connected = True
+    Left = 232
+    Top = 328
+    EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
+  end
+  object PgConnectDialog1: TUniConnectDialog
+    Caption = 'Connessione'
+    ConnectButton = 'Ok'
+    CancelButton = 'Elimina'
+    Server.Caption = 'Stringa Conn.Host'
+    Server.Visible = True
+    Server.Order = 0
+    UserName.Caption = 'Nome Utente'
+    UserName.Visible = True
+    UserName.Order = 2
+    Password.Caption = 'Parola d'#39'ordine'
+    Password.Visible = True
+    Password.Order = 3
+    Database.Caption = 'Base di dati'
+    Database.Visible = True
+    Database.Order = 4
+    Port.Caption = 'Orificio'
+    Port.Visible = True
+    Port.Order = 1
+    Schema.Caption = 'Schema'
+    Schema.Visible = False
+    Schema.Order = 5
+    LabelSet = lsItalian
+    Left = 232
+    Top = 384
+  end
+end

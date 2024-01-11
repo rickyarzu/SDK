@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="pepox1khj8anl6y8n_v">
+    <property name="$description" value="This diagrams Show Fields and Grid record Definitions for Records and DBDataset Definitions" />
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Field Grid Defs" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="100,80,229,237" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FFieldGUID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FMappedField" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FGridFieldDef" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.GetMappedField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.SetMappedField(Janua.Orm.Types.TField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.SetFieldGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.GetGridFieldDef()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.SetGridFieldDef(Janua.Orm.Types.TJanuaGridFieldDef)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.MappedField" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.GridFieldDef" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.GridFieldDef">
+        <property name="sourceAnchor" value="329,230" />
+        <property name="targetAnchor" value="440,230" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FGridFieldDef">
+        <property name="sourceAnchor" value="329,238" />
+        <property name="targetAnchor" value="440,238" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="440,160,235,327" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridExport" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridPos" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridVisible" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridFontColor" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridFontColor()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridFontColor(Janua.Orm.Types.TColor)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridPos(.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridVisible(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridExport()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridExport(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridPos()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridVisible()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridExport" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridPos" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridVisible" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridFontColor" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaParams">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="760,60,231,215" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AddParam(System.@unitclass.string,Janua.Core.Types.TJanuaPropertyType,System.Rtti.TValue)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.Assign(Janua.Orm.Intf.TParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AssignValues(Janua.Orm.Intf.TParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.DelParam(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetItem(.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.ParamByName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.SetAsJsonObject(Janua.Orm.Intf.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.SetAsMetaData(Janua.Orm.Intf.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.SetAsMetaDataOnly(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetItems()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.SetItems(Spring.Collections.IDictionary`2)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.Items" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetOrderedList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.OrderedList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetAsMetaData()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AsMetaData" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AddParam(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.ParamCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.ContentEquals(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.Assign(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AssignValues(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetAsMetaDataOnly()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AsMetaDataOnly" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.getAsString()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.AsString" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.ClearParams()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.Params[System.Integer]" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.GetParamsList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.ParamsList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.Text" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaParams.FilterText()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1080,180,248,291" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetDataSource()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetDataSource(Janua.Orm.Intf.TDataSource)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.DataSource" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.getParams()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.setParams(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Params" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddParam(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddParam(System.@unitclass.string,Janua.Core.Types.TJanuaPropertyType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.ParamByName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.FindParam(System.@unitclass.string,out@Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.getFilters()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.setFilters(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Filters" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddFilter(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddFilter(System.@unitclass.string,Janua.Core.Types.TJanuaPropertyType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.FilterByName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.FindFilter(System.@unitclass.string,out@Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Open()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.OpenThreaded(System.SysUtils.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Close()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.RecordCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetDataset(Janua.Orm.Intf.TDataSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Dataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.First()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Next()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Prior()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Last()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.EOF()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.BOF()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddEntity(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddEntity(Janua.Orm.Types.TJanuaEntity)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddEntities(Janua.Orm.Types.TJanuaEntity[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.AddEntityNames(System.@unitclass.string[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetEntities()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetEntities(Janua.Orm.Types.TJanuaEntity[])" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Entities" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetEntityNames()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetActive(.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Active" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.EntityNames" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.getPage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.setPage(.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Page" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetOnScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetOnScroll(Janua.Orm.Intf.TJanuaDatasetEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.OnScroll" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.BeginScroll(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.EndScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetGUID()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GUID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetGUIDString()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GUIDString" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.LocateGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetGUIDField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetGUIDField(Janua.Orm.Intf.TField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GUIDField" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.ClearDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetState()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.State" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.GetFieldDefs()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.SetFieldDefs(Janua.Orm.Intf.TFieldDefs)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.FieldDefs" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.CreateFields(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Params">
+        <property name="sourceAnchor" value="1080,227" />
+        <property name="targetAnchor" value="991,227" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset.Filters">
+        <property name="sourceAnchor" value="1080,219" />
+        <property name="targetAnchor" value="991,219" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

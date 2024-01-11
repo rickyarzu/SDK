@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="kgxboab0bkn_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="MVVM Core Classes" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,60,288,400" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FJanuaCoreOS" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetAppName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetHasErrors(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetLog(System.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetJanuaCoreOS(Janua.Core.Classes.TJanuaCoreOS)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FAppName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsPublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetLoginRecord(Janua.Core.Classes.TJanuaLoginRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetUserProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.isPublic" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.AppName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.HasErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.ErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.JanuaCoreOS" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LogOut()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord">
+        <property name="sourceAnchor" value="400,170" />
+        <property name="targetAnchor" value="330,170" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord">
+        <property name="sourceAnchor" value="400,178" />
+        <property name="targetAnchor" value="330,178" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="780,60,330,132" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel.SetJanuaRESTClient(Janua.Core.Classes.TJanuaCustomRESTClient)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel.FJanuaRESTClient" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel.JanuaRESTClient" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel.FJanuaRESTClient">
+        <property name="sourceAnchor" value="780,126" />
+        <property name="targetAnchor" value="688,126" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTModel.JanuaRESTClient">
+        <property name="sourceAnchor" value="780,118" />
+        <property name="targetAnchor" value="688,118" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,60,250,237" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.Session" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.UserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetIsPublicSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.IsPublicSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.AsJsonObject" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomViewModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="780,280,320,120" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomViewModel.RESTModel" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomViewModel.RESTModel">
+        <property name="sourceAnchor" value="960,280" />
+        <property name="targetAnchor" value="960,192" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

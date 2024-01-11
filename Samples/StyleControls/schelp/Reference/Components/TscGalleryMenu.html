@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGalleryMenu</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGalleryMenu</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scControls.pas</p>
+<p><span style="font-weight: bold;">TscGalleryMenu
+= class(TComponent)</span></p>
+<span style="font-weight: bold;"><br></span>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p></p>
+<p>Menu with icons grid</p>
+<p>&nbsp;</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Items</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGalleryMenuItems
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscGalleryMenuItem </td>
+</tr>
+<tr><td style="width: 185px;" bgcolor="#efefef" height="1">ItemIndex</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of active item</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">Images</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">HeaderStyle</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscMenuHeaderStyle</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Style for headers<br><br>TscMenuHeaderStyle = (scmhsDefault, scmhsBottomLine);</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">HeaderHeight</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of header</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">BackgroundStyle</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGalleryMenuBGStyle</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Style for menu background...<br>TscGalleryMenuBGStyle = (scgmPanel, scgmToolBar, scgmFormBackground);</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">HeaderFont</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for headers</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">ItemFont</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for items</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">ColumnsCount</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Count of columns for items</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">ShowSelectedItem</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show selected item in menu</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">ShowHints</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item hints</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">ButtonLeftAlignment</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If True then item text and image with button style has a left alignment (center alignment by default).</td></tr></tbody>
+</table>
+<p>&nbsp;</p><h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Popup</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">procedure Popup(X, Y: Integer);<br>Show menu from (X, Y) position </td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">PopupExt</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">procedure PopupExt(X, Y: Integer; AFromTop, AFromRight: Boolean);<br>Show menu from top or [and] from right relatively X, Y coordinates </td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">PopupFromRect</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">procedure PopupFromRect(R: TRect);<br><br>Show
+menu from rect position (Top of menu will be R.Bottom, but if menu will
+be out of screen work area then position will be R.Top - Height of
+popup window automatically) </td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">PopupFromRectExt</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">PopupFromRectExt(R: TRect; AFromTop, AFromRight: Boolean);<br><br>Show menu from top or [and] from right relatively rectangle.</td></tr></tbody></table><h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnItemClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item click</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnChange</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item index changed</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnMenuPopup</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event before call menu popup </td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnMenuClose</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event after menu close</td></tr></tbody></table>
+<h1 class="bigH"><br></h1><h1 class="bigH"><small>TscGalleryItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for item </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption for item if it header or button<br></td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Button</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item is button. Item drawing in full width of menu in this case.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Header</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item is header</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">Hint</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item hint</td></tr></tbody></table><p>&nbsp;</p><h1><small><font face="Helvetica, Arial">Events</font></small></h1>
+<p>&nbsp;</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event on menu item click</td></tr></tbody></table></body></html>

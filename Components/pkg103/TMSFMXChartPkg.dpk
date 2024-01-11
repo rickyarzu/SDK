@@ -1,0 +1,47 @@
+﻿package TMSFMXChartPkg;
+
+
+{$R '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChart.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FMX UI Pack'}
+{$LIBSUFFIX '260'}
+{$IMPLICITBUILD OFF}
+
+requires
+  fmx;
+
+contains
+  FMX.TMSChart in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChart.pas',
+  FMX.TMSChartEditor in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChartEditor.pas' {TMSFMXChartSeriesEditorForm},
+  FMX.TMSChartReg in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChartReg.pas',
+  FMX.TMSChartJSONReader in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChartJSONReader.pas',
+  FMX.TMSChartJSONWriter in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChartJSONWriter.pas',
+  FMX.TMSChartPersistence in '..\..\..\tmssoftware\TMS FMX Chart\FMX.TMSChartPersistence.pas';
+
+end.
+
+
+

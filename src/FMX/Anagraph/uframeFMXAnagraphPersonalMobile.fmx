@@ -1,0 +1,169 @@
+object frameFMXAnagraphPersonalMobile: TframeFMXAnagraphPersonalMobile
+  Size.Width = 332.000000000000000000
+  Size.Height = 467.000000000000000000
+  Size.PlatformDefault = False
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 332.000000000000000000
+    Size.Height = 467.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    Viewport.Width = 332.000000000000000000
+    Viewport.Height = 467.000000000000000000
+    object Layout1: TLayout
+      Align = Client
+      Size.Width = 332.000000000000000000
+      Size.Height = 467.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      object btnSave2: TButton
+        Align = Top
+        Position.Y = 324.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Registra dati personali'
+        OnClick = btnSave1Click
+      end
+      object btnUndo: TButton
+        Align = Top
+        StyledSettings = [Family, Size, Style]
+        Position.Y = 275.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Annulla Inserimento Dati'
+        TextSettings.FontColor = claRed
+        OnClick = btnUndoClick
+      end
+      object edAddress: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 2
+        Position.Y = 60.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Scrivi qui il tuo indirizzo completo'
+        OnChange = edAddressChange
+      end
+      object edFirstName: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        Position.Y = 30.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Nome'
+        OnChange = edFirstNameChange
+      end
+      object edFiscalCode: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 4
+        Position.Y = 90.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Codice fiscale Italiano'
+        CharCase = ecUpperCase
+        OnChange = edFiscalCodeChange
+      end
+      object edLastName: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 5
+        Size.Width = 332.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Cognome'
+        OnChange = edLastNameChange
+      end
+      object edLuogoNascita: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 6
+        Position.Y = 245.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Indica qui il tuo comune o stato estero di nascita'
+      end
+      object lbBirthDate: TLabel
+        Align = Top
+        Position.Y = 120.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.HorzAlign = Center
+        Text = 'Data di nascita'
+        TabOrder = 7
+      end
+      object Panel2: TPanel
+        Align = Top
+        Position.Y = 142.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object rgGender: TTMSFMXRadioGroup
+          Align = Center
+          DisableFocusEffect = False
+          TabOrder = 23
+          OnClick = rgGenderClick
+          Size.Width = 193.000000000000000000
+          Size.Height = 58.000000000000000000
+          Size.PlatformDefault = False
+          Columns = 2
+          Items = <
+            item
+              Text = 'Maschio'
+              Value = 'M'
+            end
+            item
+              Text = 'Femmina'
+              Value = 'F'
+            end>
+          Text = ' sesso'
+          Version = '1.0.2.6'
+        end
+      end
+      object Panel4: TPanel
+        Align = Top
+        Position.Y = 206.000000000000000000
+        Size.Width = 332.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        object edBirthDate: TDateEdit
+          Date = 32874.000000000000000000
+          OnChange = edBirthDateChange
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 312.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 22
+          TextSettings.HorzAlign = Center
+        end
+      end
+      object lbError: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, Style]
+        Size.Width = 332.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claRed
+        TextSettings.HorzAlign = Center
+        Text = '<tutto ok>'
+        Visible = False
+        TabOrder = 10
+      end
+    end
+  end
+end

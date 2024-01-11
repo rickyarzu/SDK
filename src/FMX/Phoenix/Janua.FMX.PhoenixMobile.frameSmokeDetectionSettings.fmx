@@ -1,0 +1,618 @@
+object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetting
+  Size.Width = 382.000000000000000000
+  Size.Height = 632.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 57.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbStatoAtt: TLabel
+      Align = MostLeft
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Stato Attrezzatura'
+      TabOrder = 0
+    end
+    object cboequipmentState: TComboBox
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 239.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object rctMatr: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbControl: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 119.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'Controllo'
+        TabOrder = 4
+      end
+      object lbControlDone: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 123.000000000000000000
+        Size.Width = 46.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'ESEG.'
+        TabOrder = 3
+      end
+      object lbSpace: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 171.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object lbControlNotDone: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 193.000000000000000000
+        Size.Width = 64.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'NON ESEG.'
+        TabOrder = 2
+      end
+      object Label1: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 259.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+    end
+    object Layout3: TLayout
+      Align = Client
+      Size.Width = 379.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object txtControlType: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 119.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'Ordinario'
+        TabOrder = 4
+      end
+      object cbkControlDone: TCheckBox
+        Align = Left
+        Margins.Left = 10.000000000000000000
+        Position.X = 131.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+      end
+      object ckbControlNotDone: TCheckBox
+        Align = Left
+        Margins.Left = 20.000000000000000000
+        Position.X = 211.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+      end
+      object TMSFMXSpeedButton1: TTMSFMXSpeedButton
+        Align = Left
+        CanFocus = True
+        GroupName = ''
+        Position.X = 279.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+        BitmapName = 'checklist'
+        ShowImage = True
+        Version = '1.6.0.0'
+        TabOrder = 3
+      end
+    end
+  end
+  object Layout4: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object Rectangle1: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbBrandStation: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'MARCA CENTRALE'
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label6: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+    end
+    object ComboBox1: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 375.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object Layout5: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 161.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object Rectangle2: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbKindStation: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'TIPO CENTRALE'
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label5: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+    end
+    object ComboBox2: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 375.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object Layout6: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 222.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Rectangle3: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbDetectorTypes: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'TIPO RILEVATORI'
+        TabOrder = 3
+      end
+      object Label7: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label8: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+      object lbNumberDetectors: TLabel
+        Align = Right
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 304.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'NR. '
+        TabOrder = 2
+      end
+    end
+    object ComboBox3: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 296.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object TMSFNCSpinEdit1: TTMSFNCSpinEdit
+      Align = Right
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 302.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 75.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
+      EditFieldKeyboardType = Default
+    end
+  end
+  object Layout7: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 283.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Rectangle4: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbBarrierTypes: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'TIPO BARRIERE'
+        TabOrder = 3
+      end
+      object Label9: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label10: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+      object Label11: TLabel
+        Align = Right
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 304.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'NR. '
+        TabOrder = 2
+      end
+    end
+    object ComboBox4: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 296.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object TMSFNCSpinEdit2: TTMSFNCSpinEdit
+      Align = Right
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 302.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 75.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
+      EditFieldKeyboardType = Default
+    end
+  end
+  object Layout9: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object Rectangle6: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lbBarrierBrand: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'MARCA BARRIERA'
+        TabOrder = 2
+      end
+      object Label15: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label16: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+    end
+    object ComboBox6: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 375.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object Layout8: TLayout
+    Align = Top
+    Margins.Left = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 405.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 61.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Rectangle5: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Size.Width = 379.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object Label2: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 247.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'TIPO BATTERIE'
+        TabOrder = 3
+      end
+      object Label12: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 251.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 1
+      end
+      object Label13: TLabel
+        Align = Left
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 273.000000000000000000
+        Size.Width = 20.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+      object Label14: TLabel
+        Align = Right
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 2.000000000000000000
+        Position.X = 304.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'NR. '
+        TabOrder = 2
+      end
+    end
+    object ComboBox5: TComboBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 296.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object TMSFNCSpinEdit3: TTMSFNCSpinEdit
+      Align = Right
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 302.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 75.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
+      EditFieldKeyboardType = Default
+    end
+  end
+end

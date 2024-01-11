@@ -1,0 +1,180 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{266477C7-9EA4-4160-AC05-726A5DDC3D05}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkDT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaUniUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Samples\System\prjTestSystemCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\eDocEngine VCL\Source\QR\gtQRExpD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dmvcframeworkRT">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkRT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Clean">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Make">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcframeworkDT">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkDT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkDT:Clean">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkDT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkDT:Make">
+        <MSBuild Projects="..\..\lib\delphimvcframework\packages\d103\dmvcframeworkDT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaUniUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaUniUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaUniUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjTestSystemCore">
+        <MSBuild Projects="..\Samples\System\prjTestSystemCore.dproj"/>
+    </Target>
+    <Target Name="prjTestSystemCore:Clean">
+        <MSBuild Projects="..\Samples\System\prjTestSystemCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjTestSystemCore:Make">
+        <MSBuild Projects="..\Samples\System\prjTestSystemCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtQRExpD26">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\gtQRExpD26.dproj"/>
+    </Target>
+    <Target Name="gtQRExpD26:Clean">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\gtQRExpD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtQRExpD26:Make">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\gtQRExpD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26:Clean">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26:Make">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dmvcframeworkRT;dmvcframeworkDT;JanuaCore;JanuaCoreUnitTesting;JanuaUnidac;JanuaFMXControls;JanuaVCLControls;JanuaTmsControls;JanuaUniUnitTesting;JanuaFMXControlsUnitTesting;prjTestSystemCore;gtQRExpD26;DCLgtQRExpD26"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dmvcframeworkRT:Clean;dmvcframeworkDT:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidac:Clean;JanuaFMXControls:Clean;JanuaVCLControls:Clean;JanuaTmsControls:Clean;JanuaUniUnitTesting:Clean;JanuaFMXControlsUnitTesting:Clean;prjTestSystemCore:Clean;gtQRExpD26:Clean;DCLgtQRExpD26:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dmvcframeworkRT:Make;dmvcframeworkDT:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaUnidac:Make;JanuaFMXControls:Make;JanuaVCLControls:Make;JanuaTmsControls:Make;JanuaUniUnitTesting:Make;JanuaFMXControlsUnitTesting:Make;prjTestSystemCore:Make;gtQRExpD26:Make;DCLgtQRExpD26:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,111 @@
+inherited frmTestFMXComponents_Windows: TfrmTestFMXComponents_Windows
+  ClientHeight = 382
+  ClientWidth = 847
+  DesignerMasterStyle = 0
+  inherited TabControl1: TTabControl
+    Size.Width = 847.000000000000000000
+    Size.Height = 382.000000000000000000
+    Sizes = (
+      847s
+      333s
+      847s
+      333s
+      847s
+      333s
+      847s
+      333s)
+    inherited TabItem1: TTabItem
+      Size.Width = 211.000000000000000000
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControl2: TTabControl
+        Size.Width = 847.000000000000000000
+        Size.Height = 333.000000000000000000
+        Sizes = (
+          847s
+          333s
+          847s
+          333s)
+        inherited TabItem5: TTabItem
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited ToolBar1: TToolBar
+            Size.Width = 847.000000000000000000
+            inherited lblTitle1: TLabel
+              Size.Width = 847.000000000000000000
+            end
+            inherited btnNext: TSpeedButton
+              Position.X = 782.000000000000000000
+            end
+          end
+        end
+        inherited TabItem6: TTabItem
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited ToolBar2: TToolBar
+            Size.Width = 847.000000000000000000
+            inherited lblTitle2: TLabel
+              Size.Width = 847.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 211.000000000000000000
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar3: TToolBar
+        Size.Width = 847.000000000000000000
+        inherited lblTitle3: TLabel
+          Size.Width = 847.000000000000000000
+        end
+      end
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 211.000000000000000000
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar4: TToolBar
+        Size.Width = 847.000000000000000000
+        inherited lblTitle4: TLabel
+          Size.Width = 847.000000000000000000
+        end
+      end
+    end
+    inherited TabItem4: TTabItem
+      Size.Width = 212.000000000000000000
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar5: TToolBar
+        Size.Width = 847.000000000000000000
+        inherited lblTitle5: TLabel
+          Size.Width = 847.000000000000000000
+        end
+      end
+    end
+  end
+  inherited GestureManager1: TGestureManager
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl2
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end

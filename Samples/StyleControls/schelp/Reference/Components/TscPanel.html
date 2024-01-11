@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscPanel</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel
+control with a lot of style and border kinds, wallpapers, transparency
+and many more</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p></p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Picture for wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of picture for
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image for additional
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StyleKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscPanelStyleKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style of panel:<br>
+<br>
+TscPanelStyleKind = (scpsPanel, scpsToolBar, scpsHeader,
+scpsFormBackground,<br>
+&nbsp;&nbsp;&nbsp; scpsTransparent, scpsEmpty, scpsEdit);<br>
+<br>
+scpsPanel - use color for backhround<br>
+scpsToolBar - use toolbar theme and style<br>
+scpsHeader - use header theme and style<br>
+scpsFormBackground - form client&nbsp; theme and style<br>
+scpsTransparent - control is transparent<br>
+scpsEmpty - nothing to draw - you can use this if control is parent for
+some controls and client part of it not visible<br>
+scpsEdit - use edit frame<br>
+scpsTabSheet - tabsheet background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BorderStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscPanelBorderStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style for
+border:&nbsp; <br>
+(scpbsNone, scpbsFlat, scpbsRaised, scpbsLowered, scpbsLoweredBevel,<br>
+&nbsp;&nbsp;&nbsp; scpbsRaisedBevel,<br>
+&nbsp;&nbsp;&nbsp; scpbsTopBevel, scpbsBottomBevel,<br>
+&nbsp;&nbsp;&nbsp; scpbsTopLightLine, scpbsBottomLightLine,<br>
+&nbsp;&nbsp;&nbsp; scpbsTopShadowLine,
+scpbsBottomShadowLine,<br>
+&nbsp;&nbsp;&nbsp; scpbsLeftBevel, scpbsRightBevel,<br>
+&nbsp;&nbsp;&nbsp; scpbsLeftLightLine, scpbsRightLightLine,<br>
+&nbsp;&nbsp;&nbsp; scpbsLeftShadowLine,
+scpbsRightShadowLine,<br>
+&nbsp;&nbsp;&nbsp; scpbsHorzCenterBevel,
+scpbsVertCenterBevel);<br>
+<br>
+You can use panel as divider also and this property really helps you
+with that. </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Text on control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show text on panel</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionGlowEffect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGlowEffect.html">TscGlowEffect</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Adjust glow effect for
+caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Alignment</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TAlignment</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alignment for caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of panel for
+scsPanel style</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">WordWrap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then caption will be with word wrap</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">StorePaintBuffer</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then transparent child controls from StyleControls VCL will use
+special paint buffer to get parent image. This solution really increase
+performance!</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">FluentUIOpacity</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Set it to True to get
+opacity area of the form with Fluent UI (see <a href="TscStyledForm.html">TscStyledForm</a> component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

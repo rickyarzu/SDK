@@ -1,0 +1,473 @@
+object frameFMXMobileHealthBooking: TframeFMXMobileHealthBooking
+  Size.Width = 492.000000000000000000
+  Size.Height = 762.000000000000000000
+  Size.PlatformDefault = False
+  object tabControlBooking: TTabControl
+    Align = Client
+    Size.Width = 492.000000000000000000
+    Size.Height = 762.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 2
+    TabPosition = None
+    Sizes = (
+      492s
+      762s
+      492s
+      762s
+      492s
+      762s)
+    object tab01SearchServices: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tab01SearchServices'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ListViewPrestazioni: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 492.000000000000000000
+        Size.Height = 640.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnItemClick = ListViewPrestazioniItemClick
+      end
+      object pnlSearch: TPanel
+        Align = Top
+        Size.Width = 492.000000000000000000
+        Size.Height = 122.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object edSearch: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'searcheditbox'
+          TabOrder = 0
+          KeyboardType = Alphabet
+          Position.Y = 33.000000000000000000
+          Size.Width = 492.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Prestazione o Patologia'
+          OnTyping = edSearchTyping
+          object ClearEditButton2: TClearEditButton
+            CanFocus = False
+            Cursor = crArrow
+            Size.Width = 22.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+        end
+        object edLocation: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'searcheditbox'
+          TabOrder = 1
+          Position.Y = 77.000000000000000000
+          Size.Width = 492.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Posizione Attuale'
+          OnTyping = edLocationTyping
+          object ClearEditButton1: TClearEditButton
+            CanFocus = False
+            Cursor = crArrow
+            Size.Width = 22.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+        end
+        object Text1: TText
+          Align = Top
+          Size.Width = 492.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          Text = 
+            'Cerca una prestazione, una patologia o un medico poi selezionala' +
+            ' e Dico 33 trover'#224' le strutture pi'#249' vicine a te'
+          TextSettings.Font.Size = 11.000000000000000000
+        end
+      end
+      object ListBox1: TListBox
+        Position.X = 37.000000000000000000
+        Position.Y = 133.000000000000000000
+        Size.Width = 396.000000000000000000
+        Size.Height = 268.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxstyle'
+        TabOrder = 3
+        DisableFocusEffect = True
+        ItemIndex = 1
+        Items.Strings = (
+          '1'
+          '2'
+          '3'
+          '4'
+          '5'
+          '6'
+          '7'
+          '8'
+          '9')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        OnItemClick = ListBox1ItemClick
+        Viewport.Width = 392.000000000000000000
+        Viewport.Height = 264.000000000000000000
+      end
+    end
+    object tab02SearchInstitutes: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tab02SearchInstitutes'
+      ExplicitSize.cx = 134.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    object tab04Finalisation: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tab04Finalisation'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inline frameFMXMobileFinalization1: TframeFMXMobileFinalization
+        Align = Client
+        Size.Width = 492.000000000000000000
+        Size.Height = 762.000000000000000000
+        Size.PlatformDefault = False
+        inherited TabControlFinalization: TTabControl
+          Size.Width = 492.000000000000000000
+          Size.Height = 762.000000000000000000
+          Sizes = (
+            492s
+            762s
+            492s
+            762s
+            492s
+            762s
+            492s
+            762s)
+          inherited Tab11Notes: TTabItem
+            ExplicitSize.cx = 104.000000000000000000
+            ExplicitSize.cy = 49.000000000000000000
+            inherited Text2: TText
+              Size.Width = 492.000000000000000000
+            end
+            inherited pnlBookingNotes: TPanel
+              Size.Width = 492.000000000000000000
+              inherited lbBookingNotes: TLabel
+                Size.Width = 492.000000000000000000
+              end
+              inherited memBookingNotes: TMemo
+                Size.Width = 492.000000000000000000
+                Viewport.Width = 492.000000000000000000
+                Viewport.Height = 88.000000000000000000
+              end
+              inherited pnlBookingUntil: TPanel
+                Size.Width = 492.000000000000000000
+              end
+              inherited pnlBookingSince: TPanel
+                Size.Width = 492.000000000000000000
+              end
+            end
+            inherited btnFinalPrescription: TButton
+              Size.Width = 492.000000000000000000
+            end
+            inherited btnFinalPerson: TButton
+              Size.Width = 492.000000000000000000
+            end
+            inherited btnFinalBooking: TButton
+              Size.Width = 492.000000000000000000
+            end
+            inherited btnFinalUndoBooking: TButton
+              Size.Width = 492.000000000000000000
+            end
+          end
+          inherited Tab12Prescription: TTabItem
+            ExplicitSize.cx = 104.000000000000000000
+            ExplicitSize.cy = 49.000000000000000000
+            inherited frameFMXMobilePrescription1: TframeFMXMobilePrescription
+              Size.Width = 492.000000000000000000
+              Size.Height = 762.000000000000000000
+              inherited btnSavePrescription: TButton
+                Size.Width = 492.000000000000000000
+                OnClick = frameFMXMobilePrescription1btnSavePrescriptionClick
+              end
+              inherited VertScrollBoxPrescription: TVertScrollBox
+                Size.Width = 492.000000000000000000
+                Size.Height = 721.000000000000000000
+                Viewport.Width = 492.000000000000000000
+                Viewport.Height = 721.000000000000000000
+                inherited edFirstBarcode: TEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited edFirstName: TEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited edFiscalCode: TEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited edLastBarcode: TEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited edLastName: TEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited Label1: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Label4: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited Label7: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited Label8: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited lbFirstName: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited lbLastName: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited lbPrescriptionExemption: TLabel
+                  Size.Width = 488.000000000000000000
+                end
+                inherited pnlExemption: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited ckbExemption: TSwitch
+                    Position.X = 435.000000000000000000
+                  end
+                  inherited lbExemption: TLabel
+                    Size.Width = 431.000000000000000000
+                  end
+                end
+                inherited pnlExemptionCode: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited lbExemptionCode: TLabel
+                    Size.Width = 403.000000000000000000
+                  end
+                  inherited edExemptionCode: TEdit
+                    Position.X = 407.000000000000000000
+                  end
+                end
+                inherited pnlIncomeExemption: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited ckbIncomeExemption: TSwitch
+                    Position.X = 435.000000000000000000
+                  end
+                  inherited lbIncomeExemption: TLabel
+                    Size.Width = 431.000000000000000000
+                  end
+                end
+                inherited pnlPriority: TPanel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edPrescriptionDate: TDateEdit
+                  Size.Width = 488.000000000000000000
+                end
+                inherited Label2: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Panel1: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited Label3: TLabel
+                    Size.Width = 403.000000000000000000
+                  end
+                  inherited Edit1: TEdit
+                    Position.X = 407.000000000000000000
+                  end
+                end
+                inherited Panel2: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited Label6: TLabel
+                    Size.Width = 403.000000000000000000
+                  end
+                  inherited edProvince: TEdit
+                    Position.X = 407.000000000000000000
+                  end
+                end
+              end
+            end
+          end
+          inherited Tab13Person: TTabItem
+            ExplicitSize.cx = 104.000000000000000000
+            ExplicitSize.cy = 49.000000000000000000
+            inherited frameFMXAnagraphPersonalMobile1: TframeFMXAnagraphPersonalMobile
+              Size.Width = 492.000000000000000000
+              Size.Height = 712.000000000000000000
+              inherited btnSave1: TButton
+                Size.Width = 492.000000000000000000
+                OnClick = frameFMXAnagraphPersonalMobile1btnSave1Click
+              end
+              inherited VertScrollBox1: TVertScrollBox
+                Size.Width = 492.000000000000000000
+                Size.Height = 663.000000000000000000
+                Viewport.Width = 492.000000000000000000
+                Viewport.Height = 663.000000000000000000
+                inherited btnUndo: TButton
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edLuogoNascita: TEdit
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Label10: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Panel4: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited edBirthDate: TDateEdit
+                    Size.Width = 472.000000000000000000
+                  end
+                end
+                inherited lbBirthDate: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edAddress: TEdit
+                  Size.Width = 492.000000000000000000
+                end
+                inherited lbAddress: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edFiscalCode: TEdit
+                  Size.Width = 492.000000000000000000
+                end
+                inherited lbFiscalCode: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edFirstName: TEdit
+                  Size.Width = 492.000000000000000000
+                end
+                inherited lbFirstName: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited edLastName: TEdit
+                  Size.Width = 492.000000000000000000
+                end
+                inherited lbLastName: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Panel2: TPanel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited btnSave2: TButton
+                  Size.Width = 492.000000000000000000
+                end
+              end
+            end
+            inherited Text3: TText
+              Size.Width = 492.000000000000000000
+            end
+          end
+          inherited Tab14End: TTabItem
+            ExplicitSize.cx = 105.000000000000000000
+            ExplicitSize.cy = 49.000000000000000000
+            inherited btnFinalize: TButton
+              Position.Y = 522.000000000000000000
+              Size.Width = 492.000000000000000000
+              OnClick = frameFMXMobileFinalization1btnFinalizeClick
+            end
+            inherited btnUndo: TButton
+              Position.Y = 566.000000000000000000
+              Size.Width = 492.000000000000000000
+              OnClick = frameFMXMobileFinalization1btnUndoClick
+            end
+            inherited frameFMXMobileSummary1: TframeFMXMobileSummary
+              Size.Width = 492.000000000000000000
+              inherited VertScrollBox1: TVertScrollBox
+                Size.Width = 492.000000000000000000
+                Viewport.Width = 492.000000000000000000
+                Viewport.Height = 522.000000000000000000
+                inherited Label11: TLabel
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Panel7: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited lbBooking: TLabel
+                    Size.Width = 492.000000000000000000
+                  end
+                  inherited txtPrestazione: TText
+                    Size.Width = 492.000000000000000000
+                  end
+                  inherited Label10: TLabel
+                    Size.Width = 492.000000000000000000
+                  end
+                  inherited txtFirstName: TLabel
+                    Size.Width = 492.000000000000000000
+                  end
+                end
+                inherited Panel8: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited SwitchHasPrescription: TSwitch
+                    Position.X = 410.000000000000000000
+                  end
+                end
+                inherited Panel9: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited txtNotes: TText
+                    Size.Width = 492.000000000000000000
+                  end
+                  inherited Label13: TLabel
+                    Size.Width = 492.000000000000000000
+                  end
+                end
+                inherited ListViewInstitutes: TListView
+                  Size.Width = 492.000000000000000000
+                end
+                inherited Panel1: TPanel
+                  Size.Width = 492.000000000000000000
+                  inherited SwitchRelative: TSwitch
+                    Position.X = 414.000000000000000000
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  object JanuaFMXHealthServicesSearch1: TJanuaFMXHealthServicesSearch
+    LogToFile = False
+    JanuaLogger = ClientModuleHealthREST.JanuaCoreLogger1
+    ApplicationType = jatClientTablet
+    Language = jlaItalian
+    TestMode = False
+    JanuaOS = ClientModuleHealthREST.JanuaCoreOS1
+    ListView = ListViewPrestazioni
+    SearchDataset = JanuaFMXHealthServicesSearch1.vtSearchServices
+    Left = 192
+    Top = 440
+  end
+  object LocationSensor1: TLocationSensor
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 272
+    Top = 328
+  end
+end

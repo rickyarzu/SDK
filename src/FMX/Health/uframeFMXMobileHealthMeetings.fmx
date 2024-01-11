@@ -1,0 +1,100 @@
+object frameFMXMobileHealthMeetings: TframeFMXMobileHealthMeetings
+  Size.Width = 360.000000000000000000
+  Size.Height = 723.000000000000000000
+  Size.PlatformDefault = False
+  object TabControlMeetings: TTabControl
+    Align = Client
+    Size.Width = 360.000000000000000000
+    Size.Height = 723.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      360s
+      723s
+      360s
+      723s)
+    object TabItem1Meetings: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1Meetings'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListViewMeetings: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 360.000000000000000000
+        Size.Height = 646.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnItemClick = ListViewMeetingsItemClick
+      end
+      object txtMeetings: TText
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 77.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Non si sono Notifiche'
+      end
+    end
+    object TabItem2BookingRow: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2BookingRow'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object TMSFMXWebGMaps1: TTMSFMXWebGMaps
+        Align = Top
+        Visible = False
+        Version = '2.9.1.1'
+        Size.Width = 360.000000000000000000
+        Size.Height = 169.000000000000000000
+        Size.PlatformDefault = False
+        APIKey = 'AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c'
+        Clusters = <>
+        Markers = <>
+        Polylines = <>
+        Polygons = <>
+        Directions = <>
+        MapOptions.ZoomMap = 13
+        MapOptions.MapType = mtTerrain
+        MapOptions.DefaultLatitude = 45.464326700000000000
+        MapOptions.DefaultLongitude = 9.191936999999999000
+        MapOptions.DisablePOI = True
+        Routing.PolylineOptions.Icons = <>
+        StreetViewOptions.DefaultLatitude = 45.000000000000000000
+        StreetViewOptions.DefaultLongitude = 9.000000000000000000
+        ControlsOptions.PanControl.Visible = False
+        ControlsOptions.MapTypeControl.Visible = False
+        ControlsOptions.StreetViewControl.Visible = False
+        ControlsOptions.OverviewMapControl.Visible = False
+        PolygonLabel.Font.Family = 'Arial'
+        TabOrder = 0
+      end
+      object TextInstitute: TText
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 184.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

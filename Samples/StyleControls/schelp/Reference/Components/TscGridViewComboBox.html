@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGridViewComboBox</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGridViewComboBox</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scAdvancedControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>ComboBox
+control with different styles, which use <a href="TscGridView.html">TscGridView</a>
+as popup control</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">
+TscAdvancedSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1"> Style of selection...<br>
+<br>
+TscAdvancedSelectionStyle = (scastStyled, scastColor, scastGlow);<br>
+<br>
+scastStyled - bitmap selection from theme or style<br>
+scastColor - color selection from theme or style<br>
+scastGlow - glow effect for selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionGlow</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscGlowEffect.html">TscGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for
+selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowFocusRect<br>
+</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show focus rect</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Style</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscAdvancedComboStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Style of control...<br>
+<br>
+TscAdvancedComboStyle = (sccbCombo, sccbPushButton, sccbToolButton,<br>
+&nbsp;&nbsp;&nbsp; sccbPushButtonTransparent,
+sccbToolButtonTransparent, sccbTransparent,<br>
+&nbsp;&nbsp;&nbsp; sccbTransparentBottomLine);<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HideSelection</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If True then not draw
+selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BottomLineColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Color of line with
+sccbTransparentBottomLine style</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Items</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGridViewItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+<a href="TscGridView.html">TscGridViewItem</a></td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1"> ItemIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of active item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowItemTitle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item's title </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowItemText</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item's text </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowItemImage</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item's image </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Color for sccbCombo
+state </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item's text </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewWallpapers</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewWallpaperIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of picture for
+GridView's
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewHeaderUseStyleColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewHeaderStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscHeaderStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewWidth</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Width of GridView</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of GridView</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewSelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscAdvancedSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscGridView.html">TscGridViewItem </a>properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewItemHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewItemWidth</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">GridViewHeaderHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HeaderFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See&nbsp;<a href="TscGridView.html">TscGridViewItem</a> properies</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom selection color
+for control (value must be &lt;&gt; clNone)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionTextColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of text for custom
+selection color </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">GridViewBalloonHint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TBalloonHint</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Component for hints if
+text of item is cut off</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnDrawItem</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscImageCollectionItems
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TscDrawAdvancedListItemEvent
+= procedure(Cnvs: TCanvas; Index: Integer;<br>
+&nbsp;&nbsp;&nbsp; TextRct: TRect) of object; </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnChange</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on change item
+index</td>
+</tr>
+</tbody>
+</table>
+<p></p><h1>Methods</h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BeginUpdateItems</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method before update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">EndUpdateItems</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method after update items</td>
+</tr>
+
+
+<tr><td style="width: 185px;" bgcolor="#efefef" height="1">IndexOf</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">IndexOf(const S: string): Integer;<br><br>Find item index with Captoin = S</td></tr></tbody>
+</table><br><br>
+<p>&nbsp;</p>
+<small><span style="font-weight: bold;"><big>Note:</big></span></small>
+<span style="color: red;">&nbsp;&nbsp; <br>
+&nbsp;&nbsp; <span style="color: black;">Use
+TControl.StyleElements property to
+adjust custom colors for client and font in all controls when VCL Style
+is enabled!</span></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

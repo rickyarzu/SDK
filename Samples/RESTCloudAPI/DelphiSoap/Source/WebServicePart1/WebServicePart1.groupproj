@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{089954BE-2FD7-4B68-AD28-E04A0E388E67}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="WebServiceServer\WebServiceServerGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebServiceClient\WebServiceClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WebServiceServerGUI">
+        <MSBuild Projects="WebServiceServer\WebServiceServerGUI.dproj"/>
+    </Target>
+    <Target Name="WebServiceServerGUI:Clean">
+        <MSBuild Projects="WebServiceServer\WebServiceServerGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebServiceServerGUI:Make">
+        <MSBuild Projects="WebServiceServer\WebServiceServerGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebServiceClient">
+        <MSBuild Projects="WebServiceClient\WebServiceClient.dproj"/>
+    </Target>
+    <Target Name="WebServiceClient:Clean">
+        <MSBuild Projects="WebServiceClient\WebServiceClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebServiceClient:Make">
+        <MSBuild Projects="WebServiceClient\WebServiceClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WebServiceServerGUI;WebServiceClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WebServiceServerGUI:Clean;WebServiceClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WebServiceServerGUI:Make;WebServiceClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

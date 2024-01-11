@@ -1,0 +1,5 @@
+object frameFMXCarServiceDriverConfirmation: TframeFMXCarServiceDriverConfirmation
+  Size.Width = 283.000000000000000000
+  Size.Height = 451.000000000000000000
+  Size.PlatformDefault = False
+end

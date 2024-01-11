@@ -1,0 +1,53 @@
+package dcltmsbcl;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Business Core Library - Design-Time Package'}
+{$LIBSUFFIX '260'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  vcl,
+  vclimg,
+  tmsbcl;
+
+contains
+  TMS.ServerWizard.Application in '..\..\..\tmssoftware\TMS Business Core Library\Source\design\TMS.ServerWizard.Application.pas',
+  TMS.ServerWizard.Configuration in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Configuration.pas',
+  TMS.ServerWizard.Creation in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Creation.pas',
+  TMS.ServerWizard.Creation.Module in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Creation.Module.pas',
+  TMS.ServerWizard.Creation.Project in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Creation.Project.pas',
+  TMS.ServerWizard.Files in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Files.pas',
+  TMS.ServerWizard.GeneralWizardForm in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.GeneralWizardForm.pas' {TMSGeneralWizardForm},
+  TMS.ServerWizard.PlatformFonts in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.PlatformFonts.pas',
+  TMS.ServerWizard.ToolsAPI.Utils in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.ToolsAPI.Utils.pas',
+  TMS.ServerWizard.Types in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.Types.pas',
+  TMS.ServerWizard.WizardAbstract in '..\..\..\tmssoftware\TMS Business Core Library\source\design\TMS.ServerWizard.WizardAbstract.pas';
+
+end.

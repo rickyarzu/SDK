@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<title>Overview</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="Doc-O-Matic">
+    <link rel="STYLESHEET" href="default.css" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript1.2" SRC="scripts.js"></SCRIPT>
+</head>
+<body class="Element57" onload="loadFrameSetOrTitle('frames.html', 'topic', 'Image_Processing_Overview.html', 'title', '_Image_Processing_Overview_title.html');">
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+ImageKit has three classes that support image processing:<p class="Element10">
+<ul class="Element146"><li class="Element147"><a href="TIKFilter.html" target="topic">TIKFilter</a> is a mutable object that represents an effect. A filter object has at least one input parameter and produces an output image.<p class="Element10">
+<li class="Element147"><a href="TIKImage.html" target="topic">TIKImage</a> is an immutable object that represents an image. You can synthesize image data or provide it from a file or the output of another <a href="TIKFilter.html" target="topic">TIKFilter</a> object.<p class="Element10">
+<li class="Element147">TIKContext is an object through which ImageKit draws the results produced by a filter.</ul>
+<p class="Element10">
+The remainder of this chapter provides all the details you need to use ImageKit filters and the <a href="TIKFilter.html" target="topic">TIKFilter</a>, <a href="TIKImage.html" target="topic">TIKImage</a>, and TIKContext classes.<div class="Element15">
+The basics of applying a filter to an image</div>
+<p class="Element10">
+<div class="Element13">
+<div class="Element12">
+<pre class="Element12">Img := <a href="TIKImage_CreateWithFile@string.html" target="topic">TIKImage.CreateWithFile</a>('myfile.jpg')
+Filter := <a href="TIKFilter_CreateWithName@string.html" target="topic">TIKFilter.CreateWithName</a>('GaussianBlur');
+Filter.SetValue('InputImage', Img);
+Filter.SetValue('InputRadius', 10);
+Image1.Picture.Assign(Filter.OutputImage);</pre></div>
+</div>
+<p class="Element10">
+Here’s what the code does:<p class="Element10">
+<ol class="Element146"><li class="Element147">Create a TIKmage object. You can create a <a href="TIKImage.html" target="topic">TIKImage</a> from a variety of sources, such as a file, TBitmap object, TGPBitmap object or raw bitmap data.<p class="Element10">
+<li class="Element147">Create the filter and set values for its input parameters. There are more compact ways to set values than shown here.<p class="Element10">
+<li class="Element147">Get the output image and assign to VCL TImage.Picture object. You can assign <a href="TIKImage.html" target="topic">TIKImage</a> or draw it using TIKContext object.</ol>
+<div class="Element15">
+The Built-in Filters</div>
+ImageKit comes with bunch of built-in filters ready to support image processing in your app. The list of built-in filters can change, so for that reason,Imagekit provides methods that let you query the system for the available filters as part of <a href="TIKFilter.html" target="topic">TIKFilter</a> class - <a href="TIKFilter_FilterNames.html" target="topic">TIKFilter.FilterNames</a>, <a href="TIKFilter_FilterCategories.html" target="topic">TIKFilter.FilterCategories</a>, <a href="TIKFilter_FilterNamesInCategory@string.html" target="topic">TIKFilter.FilterNamesInCategory</a>.<p class="Element10">
+Most filters have one or more input parameters that let you control how processing is done. You can change input parameters using SetValue method.<div class="Element15">
+Chaining Filters</div>
+You can create amazing effects by chaining filters—that is, using the output image from one filter as input to another filter. Let's show how it works on built-in <a href="Glow.html" target="topic">Glow</a> filter:<p class="Element10">
+<div class="Element13">
+<div class="Element12">
+<pre class="Element12">function TIKGlowFilter.GetOutputImage: <a href="TIKImage.html" target="topic">TIKImage</a>;
+begin
+  FBlur.InputImage := InputImage;
+  FBlur.InputRadius := InputRadius;
+
+  FCrop.InputImage := InputImage;
+  FCrop.InputRect := FBlur.OutputImage.Extent;
+
+  FMonochrome.InputImage := FBlur.OutputImage;
+  FMonochrome.InputColor := FInputColor;
+  FMonochrome.InputIntensity := FInputIntensity;
+
+  FBlend.InputImage := FCrop.OutputImage;
+  FBlend.InputBackgroundImage := FMonochrome.OutputImage;
+
+  Result := FBlend.OutputImage;
+end;
+</pre></div>
+</div>
+<p class="Element10">
+Here’s what the code does:<p class="Element10">
+<ol class="Element146"><li class="Element147">Start from GaussianBlur filter to get blured image<p class="Element10">
+<li class="Element147">Adds <a href="Crop.html" target="topic">Crop</a> filter to make InputImage extent the same as blured<p class="Element10">
+<li class="Element147">Adds Monochrome filter to make glow image monochrome<p class="Element10">
+<li class="Element147">Adds SourceOverCompositing filter to compose two images<p class="Element10">
+<li class="Element147">Return reuslt of latest filter</ol>
+</div>
+</div>
+<div class="Element62">
+<hr></div>
+</div><div class="Element93">
+<table class="Element93" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr><td class="Element93" valign="middle" align="center" width="100%">
+<div class="Element3">
+</div>
+</td></tr><tr><td class="Element93" valign="middle" align="center" width="100%">
+<div class="Element4">
+<a href="content.html" target="tocidx">Content</a> | <a href="idx.html" target="tocidx">Index</a></div>
+</td></tr></table></div>
+</body></html>

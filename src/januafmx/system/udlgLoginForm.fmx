@@ -1,0 +1,80 @@
+object dlgLoginForm: TdlgLoginForm
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Login'
+  ClientHeight = 178
+  ClientWidth = 509
+  Position = poScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object edUserName: TEdit
+    Touch.InteractiveGestures = [igLongTap, igDoubleTap]
+    TabOrder = 0
+    Position.X = 200.000000000000000000
+    Position.Y = 40.000000000000000000
+    Width = 249.000000000000000000
+    Height = 22.000000000000000000
+    TextPrompt = 'Nome Utente'
+    KillFocusByReturn = False
+  end
+  object Label1: TLabel
+    Height = 17.000000000000000000
+    Position.X = 56.000000000000000000
+    Position.Y = 40.000000000000000000
+    Text = 'Nome Utente'
+    Width = 120.000000000000000000
+  end
+  object Label2: TLabel
+    Height = 17.000000000000000000
+    Position.X = 56.000000000000000000
+    Position.Y = 88.000000000000000000
+    Text = 'Password'
+    Width = 120.000000000000000000
+  end
+  object edPassword: TEdit
+    Touch.InteractiveGestures = [igLongTap, igDoubleTap]
+    TabOrder = 3
+    Password = True
+    Position.X = 200.000000000000000000
+    Position.Y = 88.000000000000000000
+    Width = 249.000000000000000000
+    Height = 22.000000000000000000
+    TextPrompt = 'Password'
+    KillFocusByReturn = False
+  end
+  object CornerButton1: TCornerButton
+    Anchors = [akRight, akBottom]
+    Height = 22.000000000000000000
+    ModalResult = 1
+    Position.X = 393.000000000000000000
+    Position.Y = 144.000000000000000000
+    Sides = [sdTop, sdLeft, sdBottom, sdRight]
+    TabOrder = 4
+    Text = 'OK'
+    Width = 80.000000000000000000
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+  end
+  object CornerButton2: TCornerButton
+    Anchors = [akRight, akBottom]
+    Height = 22.000000000000000000
+    ModalResult = 1
+    Position.X = 305.000000000000000000
+    Position.Y = 144.000000000000000000
+    Sides = [sdTop, sdLeft, sdBottom, sdRight]
+    TabOrder = 5
+    Text = 'Annulla'
+    Width = 80.000000000000000000
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+  end
+end

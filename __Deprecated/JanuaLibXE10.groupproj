@@ -1,0 +1,242 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{07E3EBBE-22D1-4802-B493-A6D5DC929D8F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaOracleSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaVCLControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaFMXControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Januaproject\lib\spring4d\Packages\Delphi10Tokyo\Spring.Base.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\ergom\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\RTL\HttpDownload\HttpDownloadDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\ViewHtml.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\ActionsBindings.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestComponents.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE10">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Make">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10">
+        <MSBuild Projects="prj\JanuaOracleSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Clean">
+        <MSBuild Projects="prj\JanuaOracleSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Make">
+        <MSBuild Projects="prj\JanuaOracleSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Clean">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Make">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Clean">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Make">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10">
+        <MSBuild Projects="..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10:Clean">
+        <MSBuild Projects="..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10:Make">
+        <MSBuild Projects="..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Base">
+        <MSBuild Projects="C:\Januaproject\lib\spring4d\Packages\Delphi10Tokyo\Spring.Base.dproj"/>
+    </Target>
+    <Target Name="Spring_Base:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\spring4d\Packages\Delphi10Tokyo\Spring.Base.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Base:Make">
+        <MSBuild Projects="C:\Januaproject\lib\spring4d\Packages\Delphi10Tokyo\Spring.Base.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HttpDownloadDemo">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\RTL\HttpDownload\HttpDownloadDemo.dproj"/>
+    </Target>
+    <Target Name="HttpDownloadDemo:Clean">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\RTL\HttpDownload\HttpDownloadDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HttpDownloadDemo:Make">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\RTL\HttpDownload\HttpDownloadDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ViewHtml">
+        <MSBuild Projects="Samples\ViewHtml.dproj"/>
+    </Target>
+    <Target Name="ViewHtml:Clean">
+        <MSBuild Projects="Samples\ViewHtml.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ViewHtml:Make">
+        <MSBuild Projects="Samples\ViewHtml.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ActionsBindings">
+        <MSBuild Projects="Samples\ActionsBindings.dproj"/>
+    </Target>
+    <Target Name="ActionsBindings:Clean">
+        <MSBuild Projects="Samples\ActionsBindings.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ActionsBindings:Make">
+        <MSBuild Projects="Samples\ActionsBindings.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestComponents">
+        <MSBuild Projects="Testing\prj\TestComponents.dproj"/>
+    </Target>
+    <Target Name="TestComponents:Clean">
+        <MSBuild Projects="Testing\prj\TestComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestComponents:Make">
+        <MSBuild Projects="Testing\prj\TestComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE10;JanuaCoreXE10;JanuaPostgresSystemXE10;JanuaOracleSystemXE10;JanuaVCLControlsXE10;JanuaFMXControlsXE10;JanuaLegacyVCLXE10;Spring_Base;HttpDownloadDemo;ViewHtml;ActionsBindings;TestComponents"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE10:Clean;JanuaCoreXE10:Clean;JanuaPostgresSystemXE10:Clean;JanuaOracleSystemXE10:Clean;JanuaVCLControlsXE10:Clean;JanuaFMXControlsXE10:Clean;JanuaLegacyVCLXE10:Clean;Spring_Base:Clean;HttpDownloadDemo:Clean;ViewHtml:Clean;ActionsBindings:Clean;TestComponents:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE10:Make;JanuaCoreXE10:Make;JanuaPostgresSystemXE10:Make;JanuaOracleSystemXE10:Make;JanuaVCLControlsXE10:Make;JanuaFMXControlsXE10:Make;JanuaLegacyVCLXE10:Make;Spring_Base:Make;HttpDownloadDemo:Make;ViewHtml:Make;ActionsBindings:Make;TestComponents:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Al Libs'">
+        <BuildGroupProject Include="prj\JanuaOracleSystemXE10.dproj">
+            <ProjectGuid>{6224EAC5-308C-409E-8599-D0180FE0AEB3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <ProjectGuid>{628C40DA-DBD2-41B9-A239-974F4E093267}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj">
+            <ProjectGuid>{F198479F-E898-445B-BF07-C23827988900}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="C:\Januaproject\lib\spring4d\Packages\Delphi10Tokyo\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="C:\Users\ergom\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\RTL\HttpDownload\HttpDownloadDemo.dproj">
+            <ProjectGuid>{C012BE5A-E320-4F64-B4B8-09CA88732176}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Samples\ViewHtml.dproj">
+            <ProjectGuid>{4636EB9A-8A54-4455-A1BE-49C02550CB45}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Samples\ActionsBindings.dproj">
+            <ProjectGuid>{993FBE34-CA9E-4EE6-9127-01AB7E9E8E0D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\prj\TestComponents.dproj">
+            <ProjectGuid>{752001EA-2623-4AAE-A45B-FBB76B996A73}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="prj\JanuaVCLControlsXE10.dproj">
+            <ProjectGuid>{457762A9-FA54-42BD-B042-367A9DF74C64}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="prj\JanuaCoreXE10.dproj">
+            <ProjectGuid>{2C9FEE1F-7088-4CB3-A385-A796500EC8B4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="prj\JanuaFMXControlsXE10.dproj">
+            <ProjectGuid>{8A26FB63-0650-4FEF-A4D8-3CC05B0A2E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="prj\JanuaPostgresSystemXE10.dproj">
+            <ProjectGuid>{C86FE0C6-CADF-4BE4-9999-DA60ED89BE30}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

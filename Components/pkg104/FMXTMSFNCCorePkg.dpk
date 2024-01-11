@@ -1,0 +1,75 @@
+﻿package FMXTMSFNCCorePkg;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Core for VCL'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  fmx;
+
+contains
+  FMX.TMSFNCBitmapContainer in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCBitmapContainer.pas',
+  FMX.TMSFNCBitmapContainerReg in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCBitmapContainerReg.pas',
+  FMX.TMSFNCCustomComponent in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCCustomComponent.pas',
+  FMX.TMSFNCCustomControl in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCCustomControl.pas',
+  FMX.TMSFNCCustomScrollControl in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCCustomScrollControl.pas',
+  FMX.TMSFNCHTMLEngine in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCHTMLEngine.pas',
+  FMX.TMSFNCHint in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCHint.pas',
+  FMX.TMSFNCHintReg in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCHintReg.pas',
+  FMX.TMSFNCPopup in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCPopup.pas',
+  FMX.TMSFNCPopupReg in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCPopupReg.pas',
+  FMX.TMSFNCScrollBar in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCScrollBar.pas',
+  FMX.TMSFNCScrollBarReg in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCScrollBarReg.pas',
+  FMX.TMSFNCStyles in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCStyles.pas',
+  FMX.TMSFNCTypes in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCTypes.pas',
+  FMX.TMSFNCURLBitmapContainer in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCURLBitmapContainer.pas',
+  FMX.TMSFNCUtils in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCUtils.pas',
+  FMX.TMSFNCGDIPlusApi in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGDIPlusApi.pas',
+  FMX.TMSFNCGDIPlusClasses in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGDIPlusClasses.pas',
+  FMX.TMSFNCGraphics.Android in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.Android.pas',
+  FMX.TMSFNCGraphics.General in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.General.pas',
+  FMX.TMSFNCGraphics.iOS in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.iOS.pas',
+  FMX.TMSFNCGraphics.Mac in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.Mac.pas',
+  FMX.TMSFNCGraphics in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.pas',
+  FMX.TMSFNCGraphics.Win in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphics.Win.pas',
+  FMX.TMSFNCGraphicsTypes in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCGraphicsTypes.pas',
+  FMX.TMSFNCUndo in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCUndo.pas',
+  FMX.TMSFNCJSONReader in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCJSONReader.pas',
+  FMX.TMSFNCJSONWriter in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCJSONWriter.pas',
+  FMX.TMSFNCPersistence in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCPersistence.pas',
+  FMX.TMSFNCWebBrowser.Android in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.Android.pas',
+  FMX.TMSFNCWebBrowser.iOS in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.iOS.pas',
+  FMX.TMSFNCWebBrowser.Mac in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.Mac.pas',
+  FMX.TMSFNCWebBrowser in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.pas',
+  FMX.TMSFNCWebBrowser.Unix in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.Unix.pas',
+  FMX.TMSFNCWebBrowser.Win in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowser.Win.pas',
+  FMX.TMSFNCWebBrowserReg in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebBrowserReg.pas',
+  FMX.TMSFNCWebCoreClientBrowser in '..\..\..\tmssoftware\TMS FNC Core\FMX.TMSFNCWebCoreClientBrowser.pas';
+
+end.

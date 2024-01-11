@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="ksx1h4qvb0f7jgi1j_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="La Variabile Globale FGlobalServerConf&#xD;&#xA;di Tipo TJanuaServerRecordConf è &#xD;&#xA;condivisa da Custom Server e Server Conf.&#xD;&#xA;&#xD;&#xA;Attraverso l'iscrizione alla lista &#xD;&#xA;FServerInstances - TList&lt;TJanuaCustomServer&gt;&#xD;&#xA;i diversi Custom Server sono 'avvisati' delle&#xD;&#xA; modifiche apportate a FGlobalServerConf&#xD;&#xA;&#xD;&#xA;Secondo il pattern 'Observer'." />
+    <link uin="8vz6d04e10i6o3vdh_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="design:node:::ksx1h4qvb0f7jgi1j_n" role="Supplier" />
+    </link>
+    <link uin="s06dq246hjkt10re_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="design:node:::ksx1h4qvb0f7jgi1j_n" role="Supplier" />
+    </link>
+    <link uin="gsp0aar16klu9u93f_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link3" />
+      <participant referencedUin="design:link:::gsp0aar16klu9u93f_l:ksx1h4qvb0f7jgi1j_n" role="Client" />
+      <participant referencedUin="design:node:::ksx1h4qvb0f7jgi1j_n" role="Supplier" />
+    </link>
+    <link uin="ca822nj0k8cnpnb3k_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link4" />
+      <participant referencedUin="design:node:::ksx1h4qvb0f7jgi1j_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="u4yajp891zdflz64k_n">
+    <property name="$metaclass" value="Use Case" />
+    <property name="$name" value="Google Search" />
+  </node>
+  <node uin="apj00bll0zg80zdur_n">
+    <property name="$metaclass" value="System Boundary" />
+    <property name="$name" value="Dico33 Server" />
+    <node uin="0h77ihqx40g_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Query For Place" />
+      <link uin="nkt8guakbpzgwe0s_l">
+        <property name="$metaclass" value="Generalization Link" />
+        <property name="$name" value="Generalization Link1" />
+        <participant referencedUin="design:node:::0h77ihqx40g_n:apj00bll0zg80zdur_n" role="Client" />
+        <participant referencedUin="design:node:::u4yajp891zdflz64k_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="ywsasdb1qcj_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Query for Service" />
+    </node>
+    <node uin="pcur4o5j6tg_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Departement Choice" />
+      <link uin="5bgknu0ddur_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link1" />
+        <participant referencedUin="design:node:::pcur4o5j6tg_n:apj00bll0zg80zdur_n" role="Client" />
+        <participant referencedUin="design:node:::uscc2yg045m_n:apj00bll0zg80zdur_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="i8e80wg8oi079k76f_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Meetings List" />
+    </node>
+    <node uin="6t29937475ju4yu3l_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Meeting Choice" />
+      <link uin="0rkerhe8wuokmeqqj_l">
+        <property name="$metaclass" value="Association Link" />
+        <property name="$name" value="Association Link1" />
+        <property name="@stereotype" value="communicate" />
+        <participant referencedUin="design:node:::6t29937475ju4yu3l_n:apj00bll0zg80zdur_n" role="Client" />
+      </link>
+    </node>
+    <node uin="uscc2yg045m_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="Finalisation" />
+    </node>
+  </node>
+  <node uin="6i0pw9dl3xq_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note2" />
+    <property name="$note_text" value="Query on Postgres &#xD;&#xA;or Local Data &#xD;&#xA;Memory Search" />
+  </node>
+  <node uin="1ndrb0l840gubfcaj_n">
+    <property name="$metaclass" value="Actor" />
+    <property name="$name" value="Utente" />
+    <link uin="qxiajwjwyjhhwdlyf_l">
+      <property name="$metaclass" value="Association Link" />
+      <property name="$name" value="Association Link1" />
+      <property name="@stereotype" value="communicate" />
+      <participant referencedUin="design:node:::1ndrb0l840gubfcaj_n" role="Client" />
+      <participant referencedUin="design:node:::i8e80wg8oi079k76f_n:apj00bll0zg80zdur_n" role="Supplier" />
+    </link>
+    <link uin="emt410dco6oz9gkdq_l">
+      <property name="$metaclass" value="Association Link" />
+      <property name="$name" value="Association Link2" />
+      <property name="@stereotype" value="communicate" />
+      <participant referencedUin="design:node:::1ndrb0l840gubfcaj_n" role="Client" />
+      <participant referencedUin="design:node:::6t29937475ju4yu3l_n:apj00bll0zg80zdur_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="xelefwad1vpqgcepj_n">
+    <property name="$metaclass" value="Actor" />
+    <property name="$name" value="Accettazione" />
+  </node>
+  <node uin="6m1djg5fh9k_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note3" />
+    <property name="$note_text" value="" />
+  </node>
+</nodeSet>

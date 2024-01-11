@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="qj8gucynoip_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaISOCountries">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,40,130,143" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicItaly" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicNone" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicPortugal" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicSpain" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicFrance" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountries.jicEngland" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnagraphHealth">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-100,800,180,63" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaLib2007:januaanagraph.TJanuaAnagraphHealth:januaanagraph.TJanuaAnagraph">
+        <property name="sourceAnchor" value="80,831" />
+        <property name="targetAnchor" value="105,831" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnIdentity">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="159,83,111,63" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.@unitclass.Register()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaVatCode">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,600,198,309" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FError" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.VerifyVat()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FVatCode" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.SetVatCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.SetisoCountry(januaanagraph.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FisoCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaVatCode.isoCountry" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FisOK" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaVatCode.Specification" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FSpecification" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.SetSpecification(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaVatCode.VatCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaVatCode.isOK" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.SetisOK(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaVatCode.SetError(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaVatCode.Error" />
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaVatCode.isoCountry">
+        <property name="sourceAnchor" value="425,600" />
+        <property name="targetAnchor" value="425,183" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaVatCode.FisoCountry">
+        <property name="sourceAnchor" value="417,600" />
+        <property name="targetAnchor" value="417,183" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnagGroups">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="159,165,125,63" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaISOCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="125,247,198,234" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.GetCountry3Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.GetCountry2Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.SetCountry3Code(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.Country3Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.FCountry3Code" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.SetCountry2Code(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.Country2Code" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.isoCountry" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.SetisoCountry(januaanagraph.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.FisoCountry" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.FCountry2Code" />
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.isoCountry">
+        <property name="sourceAnchor" value="316,247" />
+        <property name="targetAnchor" value="367,183" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaISOCountry.FisoCountry">
+        <property name="sourceAnchor" value="309,247" />
+        <property name="targetAnchor" value="360,182" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAddress">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-80,240,184,294" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAddress.FIsoCountry" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAddress.SetCity(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAddress.FPostalCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAddress.FNumber" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAddress.Number" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAddress.Address" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAddress.FAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAddress.FCity" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAddress.IsoCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAddress.City" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAddress.SetAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAddress.SetIsoCountry(januaanagraph.TJanuaISOCountry)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAddress.SetNumber(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAddress.PostalCode" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAddress.SetPostalCode(System.string)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAddress.IsoCountry">
+        <property name="sourceAnchor" value="104,364" />
+        <property name="targetAnchor" value="125,364" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAddress.FIsoCountry">
+        <property name="sourceAnchor" value="104,356" />
+        <property name="targetAnchor" value="125,356" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnagraph">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="105,500,229,1479" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Cellular" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetFiscalCode(januaanagraph.TJanuaFiscalCode)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Sex" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetNotes()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FBirthdate" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FPrivacy" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetNotes2()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetEmail()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetFirstName()" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Fax" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetTitle(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FLastName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetCellular(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetNotes3(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Notes2" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.VatCode" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetNotes2(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FFirstName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetDistance(System.Double)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Privacy" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FSecondName" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.BanckAccount" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.LastName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetLastName(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FFiscalCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FisoAnCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Title" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FiscalCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FDistance" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FBanckAccount" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetContact()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetBanckAccount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetBanckAccount(januaanagraph.TJanuaBankAccount)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetDistance()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetFirstName(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FOffice" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetMainAddress(januaanagraph.TJanuaAddress)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Distance" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FFax" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetSecondName()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FVatCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Web" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FirstName" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FTitle" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Documents" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FSex" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Notes" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetOffice()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetPhone()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FEmail" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetPrivacy(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetNotes3()" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.isoAnCountry" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetContact(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetBirthdate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetisoAnCountry(januaanagraph.TJanuaISOCountry)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetEmail(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Office" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FDocuments" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetWeb(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FPhone" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetPrivacy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetNotes(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetTitle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetLastName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetCellular()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetVatCode(januaanagraph.TJanuaVatCode)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetPhone(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetProperty1(januaanagraph.TJanuaBankAccount)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetDocuments(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetSex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Create(Classes.TComponent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.MainAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FMainAddress" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetFax(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Phone" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Notes3" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetDocuments()" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Contact" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Email" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.Birthdate" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SecondName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetWeb()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FNotes2" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FCellular" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetSecondName(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FWeb" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FNotes3" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.GetFax()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetOffice(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FNotes" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetBirthdate(System.TDateTime)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FContact" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.SetSex(System.string)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.VatCode">
+        <property name="sourceAnchor" value="334,754" />
+        <property name="targetAnchor" value="360,754" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.isoAnCountry">
+        <property name="sourceAnchor" value="223,500" />
+        <property name="targetAnchor" value="223,481" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FMainAddress">
+        <property name="sourceAnchor" value="105,517" />
+        <property name="targetAnchor" value="104,517" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FBanckAccount">
+        <property name="sourceAnchor" value="334,577" />
+        <property name="targetAnchor" value="680,577" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FFiscalCode">
+        <property name="sourceAnchor" value="334,814" />
+        <property name="targetAnchor" value="620,814" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FiscalCode">
+        <property name="sourceAnchor" value="334,806" />
+        <property name="targetAnchor" value="620,806" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FVatCode">
+        <property name="sourceAnchor" value="334,746" />
+        <property name="targetAnchor" value="360,746" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.BanckAccount">
+        <property name="sourceAnchor" value="334,569" />
+        <property name="targetAnchor" value="680,569" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.MainAddress">
+        <property name="sourceAnchor" value="105,509" />
+        <property name="targetAnchor" value="104,509" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaAnagraph.FisoAnCountry">
+        <property name="sourceAnchor" value="215,500" />
+        <property name="targetAnchor" value="215,481" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,660,168,309" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FiscalCodeSurname" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FBirthDate" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.TownName" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FTownName" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FTownCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FiscalCodeName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.SetFiscalCodeSurname(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.VerifyVat()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.SetFiscalCodeName(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FFiscalCodeName" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.SetBirthDate(System.TDateTime)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.TownCode" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.SetTownCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.SetTownName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.BirthDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode.FFiscalCodeSurname" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaLib2007:januaanagraph.TJanuaFiscalCode:januaanagraph.TJanuaVatCode">
+        <property name="sourceAnchor" value="620,784" />
+        <property name="targetAnchor" value="558,784" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaBankAccount">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="680,360,203,294" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.Bank_Country" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.AccountNumber" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.SetBank_Code(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FAccountNumber" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.SetAccount_IBAN(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.Bank_Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FBank_Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FBank_office_code" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.Account_IBAN" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.Bank_office_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.SetAccountNumber(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FBank_Country" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.SetBank_Country(januaanagraph.TJanuaISOCountry)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FAccount_IBAN" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.SetBank_office_code(System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.FBank_Country">
+        <property name="sourceAnchor" value="680,420" />
+        <property name="targetAnchor" value="323,420" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaLib2007:januaanagraph.TJanuaBankAccount.Bank_Country">
+        <property name="sourceAnchor" value="680,412" />
+        <property name="targetAnchor" value="323,412" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnagraphLawyer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-100,700,180,63" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaLib2007:januaanagraph.TJanuaAnagraphLawyer:januaanagraph.TJanuaAnagraph">
+        <property name="sourceAnchor" value="80,731" />
+        <property name="targetAnchor" value="105,731" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:januaanagraph.TJanuaAnagraphCarSharing">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-100,600,174,63" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaLib2007:januaanagraph.TJanuaAnagraphCarSharing:januaanagraph.TJanuaAnagraph">
+        <property name="sourceAnchor" value="74,631" />
+        <property name="targetAnchor" value="105,631" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

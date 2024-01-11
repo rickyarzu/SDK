@@ -1,0 +1,137 @@
+object frameFMXMobileInstitutesSearch: TframeFMXMobileInstitutesSearch
+  Size.Width = 522.000000000000000000
+  Size.Height = 735.000000000000000000
+  Size.PlatformDefault = False
+  object pnlMap: TPanel
+    Align = Top
+    Size.Width = 522.000000000000000000
+    Size.Height = 173.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object txtMap: TText
+      Align = Client
+      Size.Width = 492.000000000000000000
+      Size.Height = 173.000000000000000000
+      Size.PlatformDefault = False
+      Text = 
+        'Seleziona gli istituti dalla lista sottostante e conferma la pre' +
+        'notazione per quelli che sceglierai. Una volta selezionati fino ' +
+        'a 3 Istituti potrai inviare la tua prenotazioe a Dico33. '
+      Visible = False
+    end
+    object TextConfirmation: TText
+      Align = Client
+      Size.Width = 492.000000000000000000
+      Size.Height = 173.000000000000000000
+      Size.PlatformDefault = False
+      Text = 
+        'Confermando la prenotazione Dico33 trover'#224' entro 24 ore i miglio' +
+        'ri posti disponibili nelle strutture indicate. Riceverere una ma' +
+        'il o un avviso di conferma e potrete selezionare l'#39'appuntamento ' +
+        'che preferite. Dopo questo passaggio potrete inserire una ricett' +
+        'a, indicare eventuali annotazioni o prenotare una visita per un'#39 +
+        'altra persona o per un parente.'
+      Visible = False
+    end
+    object TMSFMXWebGMaps1: TTMSFMXWebGMaps
+      Align = Client
+      Version = '2.8.0.2'
+      Size.Width = 522.000000000000000000
+      Size.Height = 173.000000000000000000
+      Size.PlatformDefault = False
+      APIKey = 'AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c'
+      Clusters = <>
+      Markers = <>
+      Polylines = <>
+      Polygons = <>
+      Directions = <>
+      MapOptions.DefaultLatitude = 48.859040000000000000
+      MapOptions.DefaultLongitude = 2.294297000000000000
+      Routing.PolylineOptions.Icons = <>
+      StreetViewOptions.DefaultLatitude = 48.859040000000000000
+      StreetViewOptions.DefaultLongitude = 2.294297000000000000
+      PolygonLabel.Font.Family = 'Arial'
+      TabOrder = 1
+    end
+  end
+  object btnBooking: TButton
+    Tag = 1
+    Align = Top
+    StyledSettings = [Family, Size, Style]
+    Position.Y = 173.000000000000000000
+    Size.Width = 522.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Prenota Automaticamente 3 Istituti'
+    TextSettings.FontColor = claRed
+    OnClick = btnBookingClick
+  end
+  object btnUndo: TButton
+    Align = Bottom
+    StyledSettings = [Family, Size, Style]
+    Position.Y = 692.000000000000000000
+    Size.Width = 522.000000000000000000
+    Size.Height = 43.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Annulla la Prenotazione'
+    TextSettings.FontColor = claRed
+  end
+  object btnFinalization: TButton
+    Align = Bottom
+    Position.Y = 649.000000000000000000
+    Size.Width = 522.000000000000000000
+    Size.Height = 43.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Prosegui con la prenotazione'
+    OnClick = btnFinalizationClick
+  end
+  object ListViewInstitutes: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 522.000000000000000000
+    Size.Height = 432.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ItemAppearance.ItemHeight = 66
+    ItemAppearance.HeaderHeight = 1
+    ItemAppearance.FooterHeight = 1
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Height = 24.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text2'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 407.000000000000000000
+        Appearance.Height = 43.000000000000000000
+        Appearance.VertAlign = Trailing
+        Appearance.PlaceOffset.Y = -1.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Accessory3'
+        AppearanceClassName = 'TAccessoryObjectAppearance'
+        Appearance.AccessoryType = Checkmark
+        Appearance.Width = 20.000000000000000000
+        Appearance.Height = 42.000000000000000000
+        Appearance.Align = Trailing
+        Appearance.VertAlign = Trailing
+        Appearance.Visible = False
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    StyleLookup = 'listviewstyle'
+    OnItemClick = ListViewInstitutesItemClick
+    SelectionCrossfade = True
+  end
+end

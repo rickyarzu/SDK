@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="nzuihea7ob93cx6fj_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::yyrafufxen9yetn9l_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgMailService.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgMailService.TdmPgMailService" />
+    </reference>
+    <reference referencedUin="design:view:::pbx4flrjvk9hh2sho_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgSystemCommand.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgSystemCommand.TdmPgSystemCommand" />
+    </reference>
+    <reference referencedUin="design:view:::czje385hhl9pp7x6t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAnagraphPharmacies.TdmPgAnagraphPharmacies" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAnagraphPharmacies.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::to0sny2qao9o0b06q_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgForms.TdmPgForms" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgForms.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::7b7htme51d90i6hkm_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPostgresCloud.TdmPostgresCloud" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPostgresCloud.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0ciky47pv0h_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgMail.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgMail.TdmMail" />
+    </reference>
+    <reference referencedUin="design:view:::tnexf9i9sr9iwh8uk_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmJanuaPostgresModel.TdmJanuaPostgresModel" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmJanuaPostgresModel.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::mlokuayyas9bxuj7q_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgCms.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgCms.TdmPgCms" />
+    </reference>
+    <reference referencedUin="design:view:::96b9nfs9kn9zupv6g_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAdsServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAdsServer.TdmPgAdsServer" />
+    </reference>
+    <reference referencedUin="design:view:::ct0xpomdcd9x5a1nf_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAnagraph.TdmPgAnagraph" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgAnagraph.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::k7iaqgvrnl955lqbn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgFootballServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgFootballServer.TdmPgFootballServer" />
+    </reference>
+    <reference referencedUin="design:view:::om0df0hace9wul76i_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::gmz35p0nge94ccd8k_v" />
+      <reference referencedUin="design:view:::4c549au4mh9gpn0cl_v" />
+    </reference>
+    <reference referencedUin="design:view:::cj9zxnvunk9mxdrrg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:uJanuaPostgresServerController.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:uJanuaPostgresServerController.TJanuaPostgresServerController" />
+    </reference>
+    <reference referencedUin="design:view:::45diddejoo96eoalh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmFootballPostgres.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmFootballPostgres.TdmFootballPostgres" />
+    </reference>
+    <reference referencedUin="design:view:::1s4jngmgyn9i0oq0q_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmSocial.TdmSocial" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmSocial.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::z4toh9f50e94tt0ep_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgbooksUniversity.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgbooksUniversity.TdmPgBooks3" />
+    </reference>
+    <reference referencedUin="design:view:::l47pekzlbk9o0cgah_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgBooks.TdmPgBooks" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgBooks.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::sm9a39ockm9gp0xxh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgHealth.TdmPgHealth" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgHealth.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::mgonbq01fc9hc1nvo_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPublic.TdmPublic" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPublic.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::1nxp4m22zb9n834ji_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgUniversity.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:udmPgUniversity.TdmPgUniversity" />
+    </reference>
+    <reference referencedUin="design:view:::ocx004091tr_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

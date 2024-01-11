@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="yndbukqldqmrlj3im_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="900,20,334,413" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FJanuaServerSystem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FRecordServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FBookingID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesGMapsRowTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesHtmlHeadTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesHtmlGMaps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesGMapsHeadTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesHtmlRowTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FInstitutesHtmlList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FSearchAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FSearchItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FTableInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FCoordinates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Fservice" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Fselect2" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Fselect3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Fselect1" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FHtmlServices" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetJanuaServerSystem(Janua.Core.System.TJanuaCustomServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetRecordServices(Janua.Core.Health.TJanuaServices)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetBookingID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutes(Janua.Core.Health.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesGMapsHeadTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesGMapsRowTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesHtmlGMaps(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesHtmlHeadTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesHtmlList(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetInstitutesHtmlRowTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetSearchAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetSearchItemID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetTableInstitutes(Janua.Core.Health.TVirtualTable)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetCoordinates(Janua.Core.Classes.TJanuaCoordinates)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.getLatitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.getLongitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.setLatitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.setLongitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Setselect1(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Setselect2(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Setselect3(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Setservice(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetHtmlServices(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SetUserProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.FUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InternalBookingInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InternalSearchInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InternalAssignSessionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InternalDoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.DoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.PrepareHtmlInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.getHtmlBookingInstitutes(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SearchInstitutes(System.Integer,System.Integer,System.string,Janua.Core.Classes.TJanuaCoordinates)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.RecordServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Institutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.Coordinates" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.AssignSessionBooking(System.Int64)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.service" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.select1" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.select2" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.select3" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.latitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.longitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.HtmlServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.JanuaServerSystem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.BookingID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SearchItemID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.SearchAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesHtmlList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesHtmlGMaps" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesHtmlHeadTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesHtmlRowTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesGMapsHeadTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.InstitutesGMapsRowTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking.TableInstitutes" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="560,720,259,67" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth:Janua.Core.Http.TJanuaTemplateRepository">
+        <property name="sourceAnchor" value="560,753" />
+        <property name="targetAnchor" value="383,753" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="460,60,367,129" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FHtmlInsitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FJanuaServerHealthBooking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FBookingID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FTemplateHealth" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.SetBookingID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.SetHtmlInsitutes(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.SetJanuaServerHealthBooking(Janua.Core.Health.TJanuaCustomServerHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.SetTemplateHealth(Janua.Core.Health.TJanuaTemplateHealth)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.getHtmlInsitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.GetSessionRequest(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.Messages()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.AssignSessionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.DoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.PrepareHtmlInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.SetCookies(System.Integer,ref@Web.HTTPApp.TWebResponse)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.WriteMessages(ref@Web.HTTPApp.TWebResponse)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.JanuaServerHealthBooking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.BookingID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.HtmlInsitutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.TemplateHealth" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FJanuaServerHealthBooking">
+        <property name="sourceAnchor" value="827,124" />
+        <property name="targetAnchor" value="900,124" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.FTemplateHealth">
+        <property name="sourceAnchor" value="689,189" />
+        <property name="targetAnchor" value="689,720" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.JanuaServerHealthBooking">
+        <property name="sourceAnchor" value="827,116" />
+        <property name="targetAnchor" value="900,116" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth.TemplateHealth">
+        <property name="sourceAnchor" value="681,189" />
+        <property name="targetAnchor" value="681,720" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaWebSessionHealth:Janua.Core.Http.TJanuaWebSession">
+        <property name="sourceAnchor" value="460,119" />
+        <property name="targetAnchor" value="303,119" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,20,283,158" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.LValid" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.Valid" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FSessionUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetRoot(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetSessionUrl(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FRoot" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.Root" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SessionUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.Messages()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetIsPublic()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FJanuaController" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FAppUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FJanuaSystem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.FJanuaApplicationProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetAppUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetJanuaSystem(Janua.Core.System.TJanuaCustomServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetJanuaApplicationProfile(Janua.Core.Classes.TJanuaApplicationProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.InternalCreateController()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.InternalDestroyController()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetupController()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.Create(Janua.Core.Http.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.GetSessionRequest(Janua.Core.Http.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.SetCookies(System.Integer,ref@Janua.Core.Http.TWebResponse)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.WritePage(ref@Janua.Core.Http.TWebResponse)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.JanuaSystem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.AppUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaWebSession.JanuaApplicationProfile" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="100,580,283,263" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageBegin" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageHead" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageScripts" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageBody" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageHeader" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageFooter" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FTemplateCss" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FPageTitle" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetNameSpace(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetTemplateName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageTitle(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FTemplateName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FNameSpace" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PrepareHomeTemplate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PrepareTemplate(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PrepareTemplate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.AddTemplate(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.AddTemplate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.TemplatesDir()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.ShowLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.ShowProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageHead" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.NameSpace" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageBegin" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.Template" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageHeader" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageFooter" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageScripts" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.TemplateName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageBody" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.TemplateCss" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PageTitle" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageStyle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageHead()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageBegin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageHeader()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageFooter()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.PreparePageScripts()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.FJanuaApplicationProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageBegin(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageBody(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageFooter(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageHead(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageHeader(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetPageScripts(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetTemplate(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetTemplateCss(Janua.Core.Http.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.SetJanuaApplicationProfile(Janua.Core.Classes.TJanuaApplicationProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.Create(Janua.Core.Http.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaTemplateRepository.JanuaApplicationProfile" />
+    </reference>
+  </view>
+</nodeSet>

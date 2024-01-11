@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E99B4B37-BDD7-457C-A691-3289A18BDF0E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Janua.Ethea.VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Janua_Ethea_VCLThemeSelector">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="Janua_Ethea_VCLThemeSelector:Clean">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Ethea_VCLThemeSelector:Make">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Janua_Ethea_VCLThemeSelector"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Janua_Ethea_VCLThemeSelector:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Janua_Ethea_VCLThemeSelector:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

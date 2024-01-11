@@ -1,0 +1,116 @@
+object FrameFMXFootballRanking: TFrameFMXFootballRanking
+  Size.Width = 304.000000000000000000
+  Size.Height = 491.000000000000000000
+  Size.PlatformDefault = False
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 304.000000000000000000
+    Size.Height = 491.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 304.000000000000000000
+    Viewport.Height = 491.000000000000000000
+    object grdFootballRanking: TTMSFMXGrid
+      Align = Top
+      DisableFocusEffect = False
+      TabOrder = 0
+      Size.Width = 304.000000000000000000
+      Size.Height = 417.000000000000000000
+      Size.PlatformDefault = False
+      OnResize = grdFootballRankingResize
+      ColumnCount = 8
+      Options.Editing.CalcFormat = '%g'
+      Options.Grouping.CalcFormat = '%g'
+      Options.Grouping.GroupCountFormat = '(%d)'
+      Options.IO.XMLEncoding = 'ISO-8859-1'
+      Options.Mouse.TouchScrollingSensitivity = 0.100000001490116100
+      Options.Printing.PageNumberFormat = '%g'
+      Version = '2.3.0.3'
+      Fill.Kind = Solid
+      Stroke.Kind = Solid
+      TopRow = 1
+      LeftCol = 1
+      Columns = <
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 140.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end
+        item
+          Color = claNull
+          Editor = etEdit
+          Fixed = False
+          FixedFont.StyleExt = {00070000000000000004000000}
+          FixedFontColor = claBlack
+          FontColor = claBlack
+          ID = ''
+          Width = 30.000000000000000000
+        end>
+    end
+  end
+end

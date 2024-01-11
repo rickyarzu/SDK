@@ -1,0 +1,733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscStyledForm</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscStyledForm</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scStyledForm.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Component to adjust and improve behaviour of styled form
+(owner&nbsp;of this component).</p>
+<p>Use this component in all forms of SDI and MDI applications. </p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClientWidth, ClientHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Stored
+values for client size of the form. When you change styles with
+different sizes of form border, this component automatically adjust
+client size to these values. It is actual for forms with fixed sizes.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowStylesMenu</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then component
+automatically added styles menu to the system menu of the form.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StylesMenuCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption of menu item for
+styles menu </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowIcon</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / hide icon</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Buttons</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCButtonItems</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Buttons item collection</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Tabs</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCTabItems</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tabs item collection</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ButtonFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for buttons</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ButtonImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Images for buttons</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Images for tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowButtons</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / hide buttons</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowTabs</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / hide tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of the active tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabsPosition</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCTabsPosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCTabsPosition =
+(sctpLeft, sctpRight);<br>
+Left or right tabs position</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowInactiveTab</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If False then normal and
+disabled states of the tab will be transparent</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for caption text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionAlignment</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TAlignment</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alignment of caption text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowHints</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show hints from buttons
+and tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DropDownForm</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then form will
+be with drop down style.<br>
+<br>
+1. You can put any controls on TCustomForm and use it as dropdown form!<br>
+2. TscStyledForm must be placed on all forms for interaction.<br>
+3. Set TscStyledForm.DropDownForm = True on form, which will be <br>
+dropdown.<br>
+4. Use TscStyledForm.OnDropDown, TscStyledForm.OnCloseUp events to<br>
+work with controls!<br>
+5. Use TscStyledForm.DropDown methods to show dropdown from <br>
+control, position or object in nc area of the parent form.<br>
+6. You can use&nbsp; TscButton.CustomDropDown = True, <br>
+TscButton.OnDropDown and TscButton.OnCloseUp events <br>
+for interaction.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DropDownAnimation</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled alphablend
+animation for dropdown form</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DropDownBorderColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Border color for dropdown form</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">InActiveClientColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for inactive
+effect for form client. This color merge with blurred client image.<br>
+See&nbsp;ShowClientInActiveEffect and HideClientInActiveEffect
+methods below.<br>
+Default values is clWindow (if VCL Style is avtive then control
+uses&nbsp;clWindow color from style)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">InActiveClientColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for
+InActiveClientColor value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">InActiveClientBlurAmount</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">0..20</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Blur amount for inactive
+client effect</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DWMClientShadow</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then component
+adds system DWM shadow for form with BorderStyle = bsNone<br>
+(see CustomGPForm demo)</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DWMClientShadowHiTest</span></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable hit test for shadow and you can resize form with it</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionWallpapers</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscCustomImageCollection</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Images for caption wallpaper. You can use additional images to show holiday event, for example</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionWallpaperIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of caption wallpaper</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionWallpaperInAcitveIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of caption wallpaper if form not active</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionWallpaperLeftMargin,<br>CaptionWallpaperRightMargin,<br>CaptionWallpaperTopMargin,<br>CaptionWallpaperBottomMargin</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margins for captoin wallpaper</td></tr><tr><td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FluentUIBackground</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscFluentUIBackground</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscFluentUIBackground = (scfuibNone, scfuibBlur, scfuibAcrylic);<br><br>scfuibNone - default form background<br>scfuibBlur - transparent form with bluring background<br>scfuibAcrylic -  transparent form with bluring background and merged acrylic color<br><br><span style="font-weight: bold;"> (for Rad Studio XE3+ versions)</span><br></td></tr><tr><td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FluentUIAcrylicColor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Acrylic color value &nbsp;<br>For example, If you set clBtnFace (clWindow and etc...) then color comes from theme or VCL Style in this case.</td></tr><tr><td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FluentUIAcrylicColorAlpha</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha / Opacity of the acrylic color</td></tr><tr><td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FluentUIBorder</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled / Disable system border for form with bluring background</td></tr><tr><td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FluentUIInactiveAcrylicColorOpaque</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then acrylic color has alpha value 255 automatically for inactive form</td></tr></tbody>
+</table>
+<h1><br></h1><h1>Adjusting Fluent UI on the form and controls</h1><br>* Steps to add Fluent UI background on the form *<br><br>1. Put TscStyledForm component on the form.<br>2. Set TscStyledForm.DWMClientShadow to True<br>3. Set TscStyledForm.DWMClientShadow if you need to resize form with shadow.<br>4. Set TscStyledForm.FluentBackground to scfuibBlur or scfuibAcrylic (we recommend to use scfuibAcrylic).<br>5. Set TscStyledForm.FluentUIAcrylicColor (acrylic color which merged with bluring background)<br>6. Set TscStyledForm.FluentUIAcrylicColorAlpha (opacity of acrylic color which merged with bluring background)<br>7. Set TscStyledForm.FluentUIBorder = True <br><br>Run application and you get a empty transparent form with bluring background effect.<br><br>* Steps to adjust controls in application *<br><br>1. Use only TscGP... (controls with GDI+ graphics) controls with <span style="font-weight: bold;">DrawTextMode = scdtmGDIPlus</span> on transparent background.<br>If you set TscGPPanel.FillColor = clBlack and TscGPPanel.FillColorAlpha = 255 then this area will be transparent.&nbsp; <br><br>2. Note, that default GDI drawing (fill rects, lines, text) will be transparent in form as result.<br>This mean that controls, like TEdit, TListView and other with GDI text will looks incorrent on this background.<br>To get opacity area for these and any third-party controls you can use TscPanel or TscGPPanel with FluentUIOpacity = True.<br>Put controls on it.<br>Also some other controls from StyleControls VCL has a FluentUIOpacity property (TscEdit, TscGPEdit, ...). <br><br>* Steps to adjust Application to use on Windows 10 and other Windows versions *<br><br>1. Use TscStyledForm.IsFluentUIAvailable method to detect Fluent UI in the system.<br>You can adjust TscGP.. controls using this method on OnCreate event of the main form.<br><br>2. Use scControls.SC_SetDrawTextModeInControl(AControl: TControl; ADrawTextMode: TscDrawTextMode) method<br>to quickly adjust DrawTextMode in TscGP... controls on the control or form.<br>You can disable GDI+ text drawing if Fluent UI is not available.<br><br>procedure TForm1.FormCreate(Sender: TObject);<br>begin<br>&nbsp; if not scStyledForm1.IsFluentUIAvailable or (scStyledForm1.FluentUIBackground = scfuibNone) then<br>&nbsp; begin<br>&nbsp;&nbsp;&nbsp; scControls.SC_SetDrawTextModeInControl(Self, scdtmGDI);<br>&nbsp;&nbsp;&nbsp; BorderPanel.FrameWidth := 1;<br>&nbsp;&nbsp;&nbsp; BorderPanel.FillColor := clBtnFace;<br>&nbsp;&nbsp;&nbsp; scGPPanel1.TransparentBackground := False;<br>&nbsp;&nbsp;&nbsp; ...<br>&nbsp; end;<br>end;<br><br>3. Set FluentUIOpaque property to True / False in controls if you on / off Fluent UI under Windows 10.<br><br><br>See our FluentUI_... demo pack, which shows how to adjust application and controls!<br><h1></h1><h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnStyleChanged</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to adjust
+components on the form after style changed.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnTabChanged</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to get
+activated tab (see TabIndex property)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnBeforeChangeScale</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event if you
+need some actions before form scaling</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnChangeScale</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscOnChangeScaleEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscOnChangeScaleEvent =
+procedure(AScaleFactor: Double) of object;<br>
+Event
+when form scaled for other DPI. use AScaleFactor parameter to get real
+scale factor for form and adjust some controls with it.<br>
+("Enable&nbsp;HighDPI" option available since 10 Seattle).<br>
+<br>
+For exampe:<br>
+<br>
+&nbsp;if AScaleFactor &gt;= 4 then&nbsp; // 400% +<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scButton1.Images := ImageList5<br>
+&nbsp;else<br>
+&nbsp;if AScale &gt;=3 then // 300 % +<br>
+&nbsp; scButton1.Images :=&nbsp;ImageList4<br>
+&nbsp;else<br>
+&nbsp;if AScale &gt;= 2 then // 200% +<br>
+&nbsp;if scButton1.Images :=&nbsp;ImageList3<br>
+&nbsp;else<br>
+&nbsp;if AScale &gt;= 1.5 then // 150 % + <br>
+&nbsp;if scButton1.Images :=&nbsp;ImageList2<br>
+&nbsp;else<br>
+&nbsp; scButton1.Images := ImageList1; // 100 % or 125%</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnDropDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscOnFormDropDownEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscOnFormDropDownEvent =
+procedure(ADropDownForm: TCustomForm; ADropDownControl: TControl) of
+object;<br>
+<br>
+Use
+this event with DropDownForm = True property. This event helps you to
+initialize some controls on the form before form showing.<br>
+<br>
+Example:<br>
+<br>
+procedure TPopupForm.scStyledForm1DropDown(ADropDownForm: TCustomForm;<br>
+&nbsp; ADropDownControl: TControl);<br>
+var<br>
+&nbsp; S: String;<br>
+begin<br>
+&nbsp; S := '';<br>
+&nbsp; if ADropDownControl &lt;&gt; nil then<br>
+&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp; if ADropDownControl is TscButton then<br>
+&nbsp;&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S :=
+TscButton(ADropDownControl).Caption;<br>
+&nbsp;&nbsp;&nbsp; end<br>
+&nbsp;&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp; if ADropDownControl is TscCustomEdit then<br>
+&nbsp;&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S :=
+TscCustomEdit(ADropDownControl).Text;<br>
+&nbsp;&nbsp;&nbsp; end;<br>
+&nbsp; end;<br>
+&nbsp; if S &lt;&gt; '' then<br>
+&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp; scListView1.Selected :=
+scListView1.FindCaption(0, S, False, True, False);<br>
+&nbsp;&nbsp;&nbsp; if scListView1.Selected &lt;&gt;
+nil then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scListView1.ItemIndex := scListView1.Selected.Index;<br>
+&nbsp; end;<br>
+end;<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnCloseUp</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscOnFormCloseUpEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscOnFormCloseUpEvent =
+procedure(ADropDownForm: TCustomForm; ADropDownControl: TControl;
+AAcceptChanges: Boolean) of object;<br>
+<br>
+Use this event with DropDownForm = True property.<br>
+Use this event for interaction with dropdown controls after hiding of
+dropdown form.<br>
+<br>
+Example:<br>
+<br>
+procedure TPopupForm.scStyledForm1CloseUp(ADropDownForm: TCustomForm;<br>
+&nbsp; ADropDownControl: TControl; AAcceptChanges: Boolean);<br>
+begin<br>
+&nbsp; if ADropDownControl &lt;&gt; nil then<br>
+&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp; if ADropDownControl is TscButton then<br>
+&nbsp;&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TscButton(ADropDownControl).CloseUp(AAcceptChanges);<br>
+&nbsp;&nbsp;&nbsp; end<br>
+&nbsp;&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp; if ADropDownControl is TscCustomEdit then<br>
+&nbsp;&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
+(scListView1.Selected &lt;&gt; nil) and AAcceptChanges then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TscCustomEdit(ADropDownControl).Text := scListView1.Selected.Caption;<br>
+&nbsp;&nbsp;&nbsp; end;<br>
+&nbsp; end;<br>
+end;<br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<h1 class="bigH"><br>
+</h1>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DropDown</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">&nbsp;procedure DropDown(ADropDownForm: TCustomForm; X, Y: Integer); overload;<br>&nbsp;procedure DropDown(ADropDownControl: TControl; X, Y: Integer); overload;<br>&nbsp;procedure DropDown(ADropDownControl: TControl; AFromRight: Boolean = False; AIsRightToLeft: Boolean = False); overload;<br>&nbsp;procedure
+DropDown(ADropDownForm: TCustomForm; ANCButton: TscNCButtonItem; X, Y:
+Integer; AIsRightToLeft: Boolean = False); overload;<br><br>
+&nbsp;ADropDownForm - parent form for dropdown form&nbsp;(main
+form of the application, for example)<br>
+&nbsp;X, Y - coordinates for dropdown form<br>
+&nbsp;ADropDownControl - control, which show dropdown form<br>
+&nbsp;ANCButton - button in caption area of the form. &nbsp; <br>&nbsp;AIsRightToLeft - RTL mode<br>
+<br>
+You must use TscStyledForm component on dropdown form to call this form
+(scButton1 on main form):<br>
+<br>
+MyDropDownForm.scStyledForm1.DropDown(scButton1);<br>
+<br>
+Call dropdown form with button in NC area of the form
+(TscStyledForm.Buttons property):<br>
+<br>
+procedure TForm1.scStyledForm1Buttons0DropDown(AIndex, X, Y: Integer);<br>
+begin<br>
+&nbsp; MenuPopupForm.scStyledForm1.DropDown(Self,
+scStyledForm1.Buttons[0], X, Y);<br>
+end;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CloseUp</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure
+CloseUp(AAcceptChanges: Boolean);<br>
+&nbsp; <br>
+&nbsp; AAcceptChanges - use this parameter for dropdown control.<br>
+<br>
+Use this method to hide dropdown form. Use ONLY this method in code!<br>
+<br>
+Example:<br>
+<br>
+procedure TPopupForm.FormKeyDown(Sender: TObject; var Key: Word;<br>
+&nbsp; Shift: TShiftState);<br>
+begin<br>
+&nbsp;if Key = VK_ESCAPE then<br>
+&nbsp;&nbsp;&nbsp; scStyledForm1.CloseUp(False);<br>
+end;<br>
+<br>
+procedure TPopupForm.scListView1DblClick(Sender: TObject);<br>
+begin<br>
+&nbsp; if scListView1.Selected &lt;&gt; nil then<br>
+&nbsp;&nbsp; scStyledForm1.CloseUp(True);<br>
+end;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowClientInActiveEffect,<br>
+HideClientInActiveEffect</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use these methods to
+show and hide blurred glass effect for form client:<br>
+<br>
+Example: <br>
+<br>
+&nbsp;&nbsp;scStyledForm1.ShowClientInActiveEffect; // show
+effect before calling of modal dialog<br>
+&nbsp; scSelectPathDialog1.Execute;<br>
+&nbsp; scStyledForm1.HideClientInActiveEffect; // hide effect <br>
+</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">DWMClientMaximize<br>DWMClientRestore;<br>IsDWMClientMaximized: Boolean;</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use these methods to maximize and restore when DWMClientShadow is enabled (see CustomGP... demos)</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">DWMClientStartDrag;<br>DWMClientDrag;<br>DWMClientEndDrag;<br>IsDWMClientDragging: Boolean;<br></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use these methods to process dragging of the form when DWMClientShadow is enabled (see CustomGP... demos)</td></tr></tbody>
+</table>
+<h1 class="bigH"></h1>
+<h1 class="bigH"><small>TscNcButtonItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex, HotImageIndex, PressedImagesIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+specific state</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Button enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Visible</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Button visibility</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">PopupMenu</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TPopupMenu</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Dropdown menu</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Button caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SplitButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Split button when
+PopupMenu &lt;&gt; nil</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Style</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCButtonStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style for button
+(scncPushButton, scncToolButton,<br>
+&nbsp;&nbsp;&nbsp; scncPushButtonTransparent,
+scncToolButtonTransparent, scncTransparent,<br>
+&nbsp;&nbsp;&nbsp; scncLink);</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Width</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of button. if
+values is 0 then size will be automatical</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Height</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of button. if
+values is 0 then size will be automatical</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MarginLeft, MarginTop,<br>
+MarginRight, MarginBottom</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margins for button in
+form caption area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Position</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCButtonPosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Position for button in
+form caption area (scbpLeft, scbpRight)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Spacing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between text and
+image in button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Margin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin for text and
+image in button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ContentMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Additional margin from
+left and right in button. Use this value to increase width of the
+button automatically (Width = 0)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">GroupIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of button's group</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AllowAllUp</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">All buttons in group can
+has up state&nbsp; </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Down</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Down state when
+GroupIndex &gt; 0</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Hint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Hint for button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CutomDropDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button will
+work with dropdown form.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><small><font face="Helvetica, Arial">Events</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnPaint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">&nbsp;TscPaintNCButtonEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscPaintNCButtonEvent =
+procedure (AIndex: Integer;<br>
+&nbsp;&nbsp;&nbsp; ACanvas: TCanvas; ARect: TRect;
+AMouseIn, ADown, ADroppedDown: Boolean) of object;<br>
+<br>
+Use this event to fully redraw button. You can use custom images from
+TscImageCollection. </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnGetPaintParams</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscPaintParamsNCButtonEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">&nbsp;
+TscPaintParamsNCButtonEvent = procedure (AIndex: Integer;<br>
+&nbsp;&nbsp;&nbsp; ACanvas: TCanvas; ARect: TRect;
+AMouseIn, ADown, ADroppedDown: Boolean; var AHandled: Boolean) of
+object;<br>
+<br>
+Use this event to set specific font color, size for button or
+to&nbsp;draw your<br>
+content in button (AHandled = True)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Click event</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnMouseMove, OnMouseUp, <br>
+OnMouseDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCMouseXYEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCMouseXYEvent =
+procedure(AIndex: Integer; X, Y: Integer) of object;<br>
+<br>
+AIndex - index of button; <br>
+X, Y - mouse position</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnMouseEnter, OnMouseLeave </td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCMouseEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCMouseEvent =
+procedure(AIndex: Integer) of object;<br>
+AIndex - index of button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnDropDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCButtonDropDownEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCButtonDropDownEvent
+= procedure(AIndex: Integer; X, Y: Integer) of object;<br>
+<br>
+AIndex - index of button; <br>
+X, Y - ready to use coordinates for dropdown form&nbsp;<br>
+<br>
+Use this event to show dropdown form.<br>
+Example:<br>
+<br>
+MenuPopupForm.scStyledForm1.DropDown(Self, scStyledForm1.Buttons[0], X,
+Y);<br>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnCloseUp</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCButtonCloseUpEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCButtonCloseUpEvent
+= procedure(AIndex: Integer; AAcceptChanges: Boolean) of object;<br>
+<br>
+Use this event to apply some data after dropdown was closed.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscNCTabItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tab enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Visible</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tab visibility</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tab caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Width</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of tab. if values
+is 0 then size will be automatical</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Height</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of tab. if values
+is 0 then size will be automatical</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MarginTop<br>
+</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Top margin for tab in
+form caption area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Spacing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between text and
+image in tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ContentMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Additional margin from
+left and right in tab. Use this value to increase width of the tab
+automatically (Width = 0)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Hint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Hint for tab</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><small><font face="Helvetica, Arial">Events</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnPaint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">&nbsp;TscPaintNCTabEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscPaintNCTabEvent =
+procedure (AIndex: Integer;<br>
+&nbsp;&nbsp;&nbsp; ACanvas: TCanvas; ARect: TRect;
+AMouseIn, AActive: Boolean) of object;<br>
+<br>
+<br>
+Use this event to fully redraw tab. You can use custom images from
+TscImageCollection. </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnGetPaintParams</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscPaintParamsNCTabEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">&nbsp;
+&nbsp;TscPaintParamsNCTabEvent = procedure (AIndex: Integer;<br>
+&nbsp;&nbsp;&nbsp; ACanvas: TCanvas; ARect: TRect;
+AMouseIn, AActive: Boolean; var AHandled: Boolean) of object;<br>
+<br>
+Use this event to set specific font color, size for tab or
+to&nbsp;draw your<br>
+content in button (AHandled = True)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnMouseMove, OnMouseUp, <br>
+OnMouseDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCMouseXYEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCMouseXYEvent =
+procedure(AIndex: Integer; X, Y: Integer) of object;<br>
+<br>
+AIndex - index of tab; <br>
+X, Y - mouse position</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnMouseEnter, OnMouseLeave </td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscNCMouseEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscNCMouseEvent =
+procedure(AIndex: Integer) of object;<br>
+AIndex - index of button</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<p>&nbsp;</p>
+</body></html>

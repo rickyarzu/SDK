@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4245BC85-1982-4665-A1F9-76D74B41D5C7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="prj\JanuaFMXControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestFMXMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestFMXCreationComponents.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaFMXControlsXE10">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Clean">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Make">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXMobile">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj"/>
+    </Target>
+    <Target Name="TestFMXMobile:Clean">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXMobile:Make">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ScrollableFormDemo">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj"/>
+    </Target>
+    <Target Name="ScrollableFormDemo:Clean">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ScrollableFormDemo:Make">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXCreationComponents">
+        <MSBuild Projects="Testing\prj\TestFMXCreationComponents.dproj"/>
+    </Target>
+    <Target Name="TestFMXCreationComponents:Clean">
+        <MSBuild Projects="Testing\prj\TestFMXCreationComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXCreationComponents:Make">
+        <MSBuild Projects="Testing\prj\TestFMXCreationComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaFMXControlsXE10;TestFMXMobile;ScrollableFormDemo;TestFMXCreationComponents"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaFMXControlsXE10:Clean;TestFMXMobile:Clean;ScrollableFormDemo:Clean;TestFMXCreationComponents:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaFMXControlsXE10:Make;TestFMXMobile:Make;ScrollableFormDemo:Make;TestFMXCreationComponents:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

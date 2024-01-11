@@ -1,0 +1,74 @@
+﻿package JanuaTmsForms;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclimg,
+  vcl,
+  xmlrtl,
+  vclactnband,
+  vclwinx,
+  soaprtl,
+  dbrtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  vcldb,
+  VclSmp,
+  RESTComponents,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  TMSVCLUIPackPkg,
+  JanuaVCLControls,
+  JanuaUnidac,
+  JanuaMVVM,
+  JanuaTmsControls,
+  JanuaVCLForms,
+  TMSWebGMapsPkg,
+  TMSCloudPkg,
+  PlanAddons;
+
+contains
+  udlgVCLPlannerActivities in '..\..\src\VCL\Planner\udlgVCLPlannerActivities.pas' {dlgVCLPlannerActivities},
+  udlgVCLPlannerEvent in '..\..\src\VCL\Planner\udlgVCLPlannerEvent.pas' {dlgVCLPlannerEvent},
+  udlgVCLPlannerAnagraph in '..\..\src\VCL\Planner\udlgVCLPlannerAnagraph.pas' {dlgVCLPlannerAnagraph},
+  ufrmMDIRibbonToolbar in '..\..\src\TMS\ufrmMDIRibbonToolbar.pas' {frmMDIRibbonToolbar},
+  udmTmsMainApplication in '..\..\src\TMS\udmTmsMainApplication.pas' {dmTmsMainApplication: TDataModule},
+  uToolPanelModel in '..\..\src\TMS\uToolPanelModel.pas' {Form1},
+  uFrameToolbarMenu in '..\..\src\TMS\uFrameToolbarMenu.pas' {frameTMSToolbarMenu: TFrame},
+  udmVCLPlannerController in '..\..\src\VCL\Planner\udmVCLPlannerController.pas' {dmVCLPlannerController: TDataModule},
+  ufrmVCLAnagraphPlanner in '..\..\src\VCL\Planner\ufrmVCLAnagraphPlanner.pas' {frmVCLAnagraphPlanner};
+
+end.
+

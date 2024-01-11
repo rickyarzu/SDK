@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscListGroupPanel</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscListGroupPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scExtControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel control, which looks as listbox group</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p></p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Text in header</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HeaderHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of the header area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HeaderAutoColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then color for
+&nbsp;header text will be calculated automatically from current
+theme and style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HeaderMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin for header text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HeaderFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for header text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">GroupColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the group
+(client) area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">GroupColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for group
+color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RowCount</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Count of virtual rows in
+group</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RowLineMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin for row line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TransparentBackground</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then header area
+will be transparent</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RowHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of the row. (if
+value = 0 then row height will be automatic)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AutoSize</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True and RowHeight
+&lt;&gt; 0 then height will be as RowHeight * RowCount +
+HeaderHeight</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">StorePaintBuffer</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then transparent
+child controls from StyleControls VCL will use special paint buffer to
+get parent image. This solution really increase performance!</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

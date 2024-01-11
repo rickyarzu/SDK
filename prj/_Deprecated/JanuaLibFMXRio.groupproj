@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{266477C7-9EA4-4160-AC05-726A5DDC3D05}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPgUnidacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOraUniDacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControlsXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FlexCel_Core">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Core:Make">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Clean">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Make">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12:Clean">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12:Make">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Clean">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Make">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Clean">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Make">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Clean">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Make">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio:Clean">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio:Make">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FlexCel_Core;FlexCel_XlsAdapter;TMSFMXWebGMapsPkgDXE12;JanuaCoreXE103Rio;JanuaPgUnidacXE103;JanuaOraUniDacXE103;JanuaFMXControlsXE103Rio"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean;TMSFMXWebGMapsPkgDXE12:Clean;JanuaCoreXE103Rio:Clean;JanuaPgUnidacXE103:Clean;JanuaOraUniDacXE103:Clean;JanuaFMXControlsXE103Rio:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FlexCel_Core:Make;FlexCel_XlsAdapter:Make;TMSFMXWebGMapsPkgDXE12:Make;JanuaCoreXE103Rio:Make;JanuaPgUnidacXE103:Make;JanuaOraUniDacXE103:Make;JanuaFMXControlsXE103Rio:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

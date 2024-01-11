@@ -1,0 +1,111 @@
+package ReportWorkshop;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView: Report Workshop for Delphi 10.3 Rio runtime (32-bit)'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg,
+  vcldb,
+  RVPkg,
+  RichViewActionsD;
+
+contains
+  RWALUTF8_BLR in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_BLR.pas',
+  RWALUTF8_Bul in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Bul.pas',
+  RWALUTF8_Cat in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Cat.pas',
+  RWALUTF8_ChineseBig5 in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_ChineseBig5.pas',
+  RWALUTF8_ChsZh in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_ChsZh.pas',
+  RWALUTF8_Czech in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Czech.pas',
+  RWALUTF8_Danish in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Danish.pas',
+  RWALUTF8_De in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_De.pas',
+  RWALUTF8_Dutch in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Dutch.pas',
+  RWALUTF8_EngUS in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_EngUS.pas',
+  RWALUTF8_Esp in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Esp.pas',
+  RWALUTF8_Farsi in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Farsi.pas',
+  RWALUTF8_Fin in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Fin.pas',
+  RWALUTF8_FR in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_FR.pas',
+  RWALUTF8_Hun in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Hun.pas',
+  RWALUTF8_Ita in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Ita.pas',
+  RWALUTF8_Kr in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Kr.pas',
+  RWALUTF8_Lith in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Lith.pas',
+  RWALUTF8_Malay in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Malay.pas',
+  RWALUTF8_NorBok in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_NorBok.pas',
+  RWALUTF8_Polish in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Polish.pas',
+  RWALUTF8_PtBr in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_PtBr.pas',
+  RWALUTF8_PtPt in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_PtPt.pas',
+  RWALUTF8_Rom in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Rom.pas',
+  RWALUTF8_Rus in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Rus.pas',
+  RWALUTF8_Slovak in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Slovak.pas',
+  RWALUTF8_Sv in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Sv.pas',
+  RWALUTF8_Thai in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Thai.pas',
+  RWALUTF8_Turkish in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Turkish.pas',
+  RWALUTF8_Ukr in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Ukr.pas',
+  RWALUTF8_Hindi in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Hindi.pas',
+  RWALUTF8_Arm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Arm.pas',
+  RWALUTF8_Japanese in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWALUTF8_Japanese.pas',
+  RVReportTypes in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportTypes.pas',
+  RVReportErrors in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportErrors.pas',
+  RVReportTable in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportTable.pas',
+  RVReportDataProvider in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportDataProvider.pas',
+  RVReportDBDataProvider in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportDBDataProvider.pas',
+  RVReportColorChanger in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportColorChanger.pas',
+  RVReportCrossTab in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportCrossTab.pas',
+  RVReportDateTimeQueryProcessor in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportDateTimeQueryProcessor.pas',
+  RVReportFieldInsert in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportFieldInsert.pas',
+  RVReportFunctions in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportFunctions.pas',
+  RVReportGenerator in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportGenerator.pas',
+  RVReportInfo in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportInfo.pas',
+  RVReportMedianCalculator in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportMedianCalculator.pas',
+  RVReportPlugins in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportPlugins.pas',
+  RVReportSampleFieldObjects in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportSampleFieldObjects.pas',
+  RVReportShapes in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapes.pas',
+  RVReportValueFormat in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportValueFormat.pas',
+  RVReportValueVisualizer in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportValueVisualizer.pas',
+  RVReportActions in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportActions.pas',
+  RVReportRowGenerationRulesFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportRowGenerationRulesFrm.pas' {frmRVRowGenerationRules},
+  RVReportDocObject in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportDocObject.pas',
+  RVReportCrossTabFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportCrossTabFrm.pas' {frmRVCrossTab},
+  RVReportDocPropertiesFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportDocPropertiesFrm.pas' {frmRVReportDocProperties},
+  RVReportColorChangerFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportColorChangerFrm.pas' {frmRVColorChanger},
+  RVReportValueVisualizerFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportValueVisualizerFrm.pas' {frmRVValueVisualizer},
+  RVReportCellFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportCellFrm.pas' {frmRVReportCell},
+  RVReportLocalize in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportLocalize.pas',
+  RVReportShapeComponent in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapeComponent.pas',
+  RVReportShapeItem in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapeItem.pas',
+  RVReportShapeAction in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapeAction.pas',
+  RWResourceLanguage in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RWResourceLanguage.pas',
+  RVReportActionsDM in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportActionsDM.pas' {dmReportActions: TDataModule},
+  RVReportShapeInsertFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapeInsertFrm.pas' {frmRVShapeInsert},
+  RVReportShapePropFrm in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportShapePropFrm.pas' {frmRVShapeProp},
+  RVReportMemDataProvider in '..\..\..\Libraries\TRichView\ReportWorkshop\Core\Source\RVReportMemDataProvider.pas';
+
+end.

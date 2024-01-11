@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPHVMeter</title>
+
+</head>
+<body>
+&nbsp;&nbsp; &nbsp;
+<font face="Helvetica, Arial"><a name="link89"></a></font>
+<h1 class="bigH">TscGPHVMeter</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPMeters.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Horizontal or vertical meter control with scale
+</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MinValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Min value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MaxValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Max value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Value</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Current value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FormatLabelValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Float format to display
+tick labels</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Fill color for control
+shape (clNone - fill is missing)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value of the fill
+color for control shape</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the frame
+(clNone -&nbsp;frame is invisible)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Arrow color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScaleSteps</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Count of the scale steps</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScaleSubSteps</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Count of the scale steps
+between big ticks (define small ticks)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScaleSections</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscScaleSections</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Collection of sections
+on scale arc. You can set color, alpha value, StartValue and EndValue
+for each section </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScaleDivider</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Divider value of tick
+numbers (If Value = 3000 and Divider = 1000 then you get tick with "3"
+label)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the scale ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+the scale ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the tick on
+scale</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksSmallWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width for small ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowScaleTicks</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+shows ticks on the scale</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowScaleLabels</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+shows labels on the scale</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScalePosition</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPHVMeterScalePosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPHVMeterScalePosition
+= (scgpspAfterTrack, scgpspBeforeTrack, scgpspBoth);<br>
+<br>
+Position of the scale</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SmoothTicks</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then ticks will
+be with antialliasing effect</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowProgress</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show progress line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowProgressFromValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show progress from some
+value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressFromValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Value from which
+progress line will be started</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowArrow</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Visibility of arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Vertical</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Vertical kind</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowShadow</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then arrow has
+shadow</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnGetArrowColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGetColorEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure(Sender:
+TObject; var AColor: TColor; var AColorAlpha) of object;<br>
+<br>
+Use this event to set custom arrow color depending on the value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnGetProgressColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGetColorEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to set
+progress color depending on the value</td>
+</tr>
+</tbody>
+</table>
+&nbsp;<br>
+<br>
+<p><br>
+</p>
+</body></html>

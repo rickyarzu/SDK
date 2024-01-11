@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="7x8guume26q_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Statististcs" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,60,317,447" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FSchema" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.InternalOpenQuery(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.SetSchema(Janua.Core.Classes.TJanuaSchema)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.OpenQuery(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.OpenQuery()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.OpenQuery(System.Byte,System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.OpenQuery(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.GetQuery(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.AddQuery(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.AddGroup()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.Schema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.Datasets" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.StatSchema">
+        <property name="bounds" value="255,37,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FStatSchema" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.SetStatSchema(Janua.Core.Statistics.TStatSchema)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FStatSchema">
+        <property name="sourceAnchor" value="377,185" />
+        <property name="targetAnchor" value="500,185" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.StatSchema">
+        <property name="sourceAnchor" value="377,177" />
+        <property name="targetAnchor" value="500,177" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FDatasets" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE10:Janua.Core.Statistics.TJanuaCustomStatisticsServer.SetDatasets(System.Generics.Collections.TDictionary&lt;System.Word,VirtualTable.TVirtualTable&gt;)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FTempQuery" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.InternalTestQuery(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.TestQuery(Janua.Core.Statistics.TStatQuery,ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.TestQuery(ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.UpdateQuery(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaCustomStatisticsServer.FTempQuery">
+        <property name="sourceAnchor" value="377,403" />
+        <property name="targetAnchor" value="820,403" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,60,218,173" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Groups" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Sort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.AsJsonObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Add(Janua.Core.Statistics.TJanuaStatGroup)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Add(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.SetFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.SetFromJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Groups">
+        <property name="sourceAnchor" value="718,166" />
+        <property name="targetAnchor" value="820,166" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.ItemIndex" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Deleted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Stored" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.SelectedGroup()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.DelCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Add(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Find(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Find(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.MaxID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.FindQuery(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.AsJsonPretty()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.DeleteGroup(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.DeleteGroup(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.DeleteGroup(Janua.Core.Statistics.TJanuaStatGroup)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.DeleteGroup()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatSchema.Deleted">
+        <property name="sourceAnchor" value="718,158" />
+        <property name="targetAnchor" value="820,158" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="820,300,206,218" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.SQL" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.UpdateSQL" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.DeleteSQL" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.params" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.ListQueries" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.ItemIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Create(System.Smallint,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Sort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.AsJsonObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.QueriesCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.MaxID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(Janua.Core.Statistics.TStatParam)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string,System.TDateTime)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string,System.Extended)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.SetFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.SetFromJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.ListQueries">
+        <property name="sourceAnchor" value="1026,832" />
+        <property name="targetAnchor" value="1018,840" />
+        <property name="bendpoints" value="1059,832,1059,873,1018,873" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.params">
+        <property name="sourceAnchor" value="820,409" />
+        <property name="targetAnchor" value="709,409" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.UID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.LookupQueries" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Create(System.Byte,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.AsJsonPretty()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.MaxQID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.Add(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.AddLookupParam(System.string,System.string,System.string,System.string)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatQuery.LookupQueries">
+        <property name="sourceAnchor" value="1026,510" />
+        <property name="targetAnchor" value="1018,518" />
+        <property name="bendpoints" value="1059,510,1059,551,1018,551" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,300,209,263" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.paramtype" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.IntegerValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.DateTimeValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.TextValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.RealValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.Lookup" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.LookupQueryID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.LookupQueryKeyField" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.LookupQueryDisplayFields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.Create(System.Smallint,System.string,Janua.Core.Statistics.TStatParamType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.AsJsonObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.SetFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.SetFromJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.Clear()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.paramtype">
+        <property name="sourceAnchor" value="604,563" />
+        <property name="targetAnchor" value="604,640" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParam.BooleanValue" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="820,100,242,143" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Queries" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Sort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.AsJsonObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.MaxID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Add(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Add(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Add(System.Smallint,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.SetFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.SetFromJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.AddNewQuery()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Queries">
+        <property name="sourceAnchor" value="923,243" />
+        <property name="targetAnchor" value="923,300" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.ItemIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.SelectedQuery()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.AsJsonPretty()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Insert()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Add(ref@System.Smallint,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Find(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.Find(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.DeleteQuery(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.DeleteQuery(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.DeleteQuery(Janua.Core.Statistics.TStatQuery)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TJanuaStatGroup.DeleteQuery()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,640,237,143" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptNone" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptDateTime" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptInteger" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptReal" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Statistics.TStatParamType.ptBoolean" />
+    </reference>
+  </view>
+</nodeSet>

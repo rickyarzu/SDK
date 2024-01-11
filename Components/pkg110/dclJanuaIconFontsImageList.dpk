@@ -1,0 +1,48 @@
+package dclJanuaIconFontsImageList;
+
+{$R *.res}
+{$R '..\..\..\Lib\IconFontsImageList\Packages\IconFontsImageListNew.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Ethea IconFontsImageList VCL components'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  DesignIDE,
+  JanuaIconFontsImageList,
+  VclSmp;
+
+contains
+  RegisterIconFontsImageList in '..\..\..\Lib\IconFontsImageList\Packages\RegisterIconFontsImageList.pas',
+  IconFontsImageListEditor in '..\..\..\Lib\IconFontsImageList\Packages\IconFontsImageListEditor.pas',
+  IconFontsCharMapUnit in '..\..\..\Lib\IconFontsImageList\Source\IconFontsCharMapUnit.pas',
+  IconFontsImageListEditorUnit in '..\..\..\Lib\IconFontsImageList\Packages\IconFontsImageListEditorUnit.pas',
+  MaterialFontConvert in '..\..\..\Lib\IconFontsImageList\Packages\MaterialFontConvert.pas',
+  Icons.Utils in '..\..\..\Lib\IconFontsImageList\Source\Fonts\Icons.Utils.pas',
+  Icons.MaterialDesign in '..\..\..\Lib\IconFontsImageList\Source\Fonts\Icons.MaterialDesign.pas';
+
+end.

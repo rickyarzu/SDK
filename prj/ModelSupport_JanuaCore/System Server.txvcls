@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="1nvx1sjeodt_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="System Server" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="520,200,306,158" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.GetUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.SetUser(JOrm.System.User.Intf.IUser)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.User" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.GetUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.SetUserProfile(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.UserProfile" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.UserProfile">
+        <property name="sourceAnchor" value="520,329" />
+        <property name="targetAnchor" value="453,329" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession.User">
+        <property name="sourceAnchor" value="520,240" />
+        <property name="targetAnchor" value="260,240" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IJanuaUserSession:JOrm.System.Session.Intf.ISession">
+        <property name="sourceAnchor" value="548,200" />
+        <property name="targetAnchor" value="548,118" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="200,300,253,78" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetDb_user_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetDb_user_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Db_user_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetCountry_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetCountry_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Country_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetRegion_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetRegion_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Region_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetDistrict_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetDistrict_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.District_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetTown_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetTown_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Town_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetFirst_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetFirst_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.First_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetLast_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetLast_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Last_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_street()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_street(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_street" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_number()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_number(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_number" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_postal_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_postal_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_postal_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetPhone()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetPhone(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Phone" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetCellular_phone()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetCellular_phone(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Cellular_phone" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetWork_phone()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetWork_phone(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Work_phone" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetFax_number()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetFax_number(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Fax_number" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetGender_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetGender_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Gender_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetBirth_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetBirth_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Birth_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetBirth_country_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetBirth_country_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Birth_country_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetBirth_region_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetBirth_region_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Birth_region_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetBirth_district_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetBirth_district_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Birth_district_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetBirth_town_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetBirth_town_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Birth_town_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetPublic_email()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetPublic_email(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Public_email" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetTitle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetTitle(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Title" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetSearch_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetSearch_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Search_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetReverse_search()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetReverse_search(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Reverse_search" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_full()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_full(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_full" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetLatitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetLatitude(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Latitude" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetLongitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetLongitude(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Longitude" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetFiscal_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetFiscal_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Fiscal_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetSmssent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetSmssent(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Smssent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetSmsconfirmed()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetSmsconfirmed(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Smsconfirmed" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetSmsdate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetSmsdate(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Smsdate" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetSmschecknumber()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetSmschecknumber(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Smschecknumber" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_town()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_town(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_town" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetFacebook_json()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetFacebook_json(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Facebook_json" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.GetAddress_state_province()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.SetAddress_state_province(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserProfile.Intf.IUserProfile.Address_state_province" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,180,260,100" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetActive(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Active" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetEmail()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetEmail(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Email" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetDb_user_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetDb_user_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Db_user_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetPassword(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Password" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetUsername()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetUsername(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Username" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetIsactive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetIsactive(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Isactive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetVerify_token()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetVerify_token(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Verify_token" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetVerified()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetVerified(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Verified" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetDefault_schema_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetDefault_schema_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Default_schema_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetIspublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetIspublic(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Ispublic" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetInternal_key()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetInternal_key(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Internal_key" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetDefault_role_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetDefault_role_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Default_role_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetSearch_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetSearch_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Search_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetReverse_search()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetReverse_search(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Reverse_search" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetInsert_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetInsert_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Insert_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetCountry_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetCountry_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Country_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetMain_profile_type_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetMain_profile_type_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Main_profile_type_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetMain_profile_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetMain_profile_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Main_profile_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetImage_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetImage_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Image_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetImage_url()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetImage_url(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Image_url" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetIso_language_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetIso_language_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Iso_language_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetIso_culture_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetIso_culture_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Iso_culture_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetUser_first_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetUser_first_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.User_first_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetUser_family_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetUser_family_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.User_family_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetEmailsent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetEmailsent(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Emailsent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetEmailconfirmed()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetEmailconfirmed(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Emailconfirmed" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetEmaildate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetEmaildate(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Emaildate" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetPayment()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetPayment(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Payment" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.GetPayment_expiration_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.SetPayment_expiration_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUser.Payment_expiration_date" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,40,216,78" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetDb_user_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetDb_user_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Db_user_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetDb_schema_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetDb_schema_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Db_schema_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetDb_session_key()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetDb_session_key(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Db_session_key" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetDb_session_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetDb_session_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Db_session_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetLanguage_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetLanguage_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Language_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetStart_time()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetStart_time(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Start_time" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetInsert_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetInsert_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Insert_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.GetIspublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.SetIspublic(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.Session.Intf.ISession.Ispublic" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,780,1140,220" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.user" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.user">
+        <property name="sourceAnchor" value="130,780" />
+        <property name="targetAnchor" value="130,280" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUser(JOrm.System.User.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUser()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.usersession" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.usersession">
+        <property name="sourceAnchor" value="681,780" />
+        <property name="targetAnchor" value="681,358" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUserSession(JOrm.System.UserSession.Intf.IJanuaUserSession)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUserSession()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.userprofile" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.userprofile">
+        <property name="sourceAnchor" value="326,780" />
+        <property name="targetAnchor" value="326,378" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUserProfile(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.UsersList" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.UsersList">
+        <property name="sourceAnchor" value="93,780" />
+        <property name="targetAnchor" value="93,558" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUsersList(JOrm.System.User.Intf.IUsers)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUsersList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.ServerCache" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetServerCache()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.IsLoggedIn">
+        <property name="bounds" value="215,84,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetIsLoggedIn(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Login()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Login(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.LoginByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.LoginByGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Username">
+        <property name="bounds" value="315,104,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUsername(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUsername()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Password">
+        <property name="bounds" value="255,124,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetServerCache(Janua.System.Server.Intf.IJanuaSystemCache)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IUserSessions">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="880,220,277,127" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IUserSessions.GetSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IUserSessions.SetSession(JOrm.System.Session.Intf.ISession)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IUserSessions.UserSession" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:JOrm.System.UserSession.Intf.IUserSessions.UserSession">
+        <property name="sourceAnchor" value="880,283" />
+        <property name="targetAnchor" value="826,283" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,480,186,78" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetActive(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Active" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetEmail()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetEmail(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Email" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetDb_user_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetDb_user_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Db_user_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetPassword(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Password" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetUsername()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetUsername(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Username" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetIsactive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetIsactive(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Isactive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetVerify_token()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetVerify_token(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Verify_token" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetVerified()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetVerified(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Verified" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetDefault_schema_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetDefault_schema_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Default_schema_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetIspublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetIspublic(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Ispublic" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetInternal_key()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetInternal_key(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Internal_key" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetDefault_role_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetDefault_role_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Default_role_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetSearch_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetSearch_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Search_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetReverse_search()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetReverse_search(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Reverse_search" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetInsert_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetInsert_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Insert_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetCountry_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetCountry_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Country_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetMain_profile_type_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetMain_profile_type_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Main_profile_type_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetMain_profile_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetMain_profile_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Main_profile_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetImage_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetImage_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Image_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetImage_url()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetImage_url(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Image_url" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetIso_language_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetIso_language_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Iso_language_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetIso_culture_code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetIso_culture_code(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Iso_culture_code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetUser_first_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetUser_first_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.User_first_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetUser_family_name()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetUser_family_name(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.User_family_name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetEmailsent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetEmailsent(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Emailsent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetEmailconfirmed()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetEmailconfirmed(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Emailconfirmed" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetEmaildate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetEmaildate(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Emaildate" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetPayment()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetPayment(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Payment" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetPayment_expiration_date()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetPayment_expiration_date(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.Payment_expiration_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.GetUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.SetUser(JOrm.System.User.Intf.IUser)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.User" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:JOrm.System.User.Intf.IUsers.User">
+        <property name="sourceAnchor" value="93,480" />
+        <property name="targetAnchor" value="93,280" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

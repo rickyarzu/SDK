@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscStyleManager</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscStyleManager</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scStyleManager.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Component to adjust styled menus, styled common dialogs (Seattle+ version) and scale options.&nbsp;</p><p style="color: red;">Styled menus works since XE2 version with this component!</p>
+
+<p>Also&nbsp;scStyleManager unit improves some system style hooks for common dialogs (drawing and scaling (High-DPI) support).</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuAlphaBlendValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">AlphaBlend value for
+menus. If value &lt; 255 then alphablend for menus is enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Images for wallpaper and
+backgrounds for menus</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuWallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+wallpaper of menu </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuBackgroundIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+custom background of menu</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuBackgroundOverContentIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image, which
+will draw over all items of menu</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuHeadersSupport</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can
+adjust headers for styled menus.<br>
+<br>
+To make some item as header to these steps:<br>
+1. Set first and last characters of TMenuItem.Caption = '-'<br>
+2. Set TMenuItem.Enabled = False</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">MenuHookEnabled</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled / Disable styles for menus (for XE2-XE5) versions<br>For XE6 - 10 Seattle use standard TStyleManager.SystemHooks property</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ScaleStyles</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then all controls will scale some style elements for hi-dpi
+systems.Main problem that VCL styles not include hi-res graphics.
+("Enable HighDPI" option available since 10 Seattle).</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ScaleThemes</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then all controls will scale some theme elements for hi-dpi
+systems.For example if you moved form to other monitor, with other dpi
+then checkboxes and radioboxes will be with size for current DPI. Main
+problem of VCL that it not properly supports change of monitors with
+different DPI.("Enable HighDPI" option available since 10 Seattle). </td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ScaleFormBorder</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then border of styled form will be scaled to any system scale
+factor (125%, 150%-200% and more). All VCL style elements will be
+scaled automatically + buttons and tabs in caption (see <a href="TscStyledForm.html">TscStyledForm</a> component).</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">StyleArrowType</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscStyleArrowType</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">&nbsp;TscStyleArrowType = (scsatDefault, scsatModern);<br><br>Defines
+what kind of arrows in some controls and menus will be used. VCL Styles
+have a different kind of arrows (triangles or arrows with lines
+(modern)).<br></td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">MenuSelectionStyle</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscMenuSelectionStyle<br></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscMenuSelectionStyle = (scmssStyled, scmssColor);<br><br>Defines
+what kind of selection will be used in menus (scmssStyled - use
+selection bitmap from style,&nbsp; scmssColor - use selection color
+from style). &nbsp;scmssColorn looks good with GP (GDI+) controls.&nbsp;</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">RTLMode</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable BidiMode = bdRightToLeft for dialog forms</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<span style="color: red;"><span style="color: black;"></span></span>
+</body></html>

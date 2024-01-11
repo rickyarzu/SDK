@@ -1,0 +1,94 @@
+unit Janua.FMX.frmSignatureCaptureMobile;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Colors, FMX.Objects, FMX.TMSSignatureCapture, FMX.Controls.Presentation;
+
+type
+  TfrmFMXSignatureCaptureMobile = class(TForm)
+    Panel1: TPanel;
+    ColorPanel1: TColorPanel;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    TMSFMXSignatureCapture1: TTMSFMXSignatureCapture;
+    ToolBar6: TToolBar;
+    Image6: TImage;
+    SpeedButton1: TSpeedButton;
+    Button1: TButton;
+    procedure ColorPanel1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+    root: string;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFMXSignatureCaptureMobile: TfrmFMXSignatureCaptureMobile;
+
+implementation
+
+{$R *.fmx}
+
+procedure TfrmFMXSignatureCaptureMobile.Button2Click(Sender: TObject);
+begin
+  TMSFMXSignatureCapture1.LoadFromFile(root + 'fmxtest.fmxsig');
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.Button3Click(Sender: TObject);
+begin
+  TMSFMXSignatureCapture1.SaveToFile(root + 'fmxtest.fmxsig');
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.Button4Click(Sender: TObject);
+begin
+  TMSFMXSignatureCapture1.Clear;
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.Button5Click(Sender: TObject);
+begin
+  if Button5.Text = 'Hide Options' then
+  begin
+    Button5.Text := 'Show Options';
+    Panel1.Visible := False;
+  end
+  else
+  begin
+    Button5.Text := 'Hide Options';
+    Panel1.Visible := True;
+  end;
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.ColorPanel1Change(Sender: TObject);
+begin
+  TMSFMXSignatureCapture1.Stroke.Color := ColorPanel1.Color;
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.FormCreate(Sender: TObject);
+begin
+  ReportMemoryLeaksOnShutdown := true;
+  ColorPanel1.Color := TMSFMXSignatureCapture1.Stroke.Color;
+  {$IFDEF ANDROID}
+  root := GetHomePath + '/';
+  {$ELSE}
+  root := ExtractFilePath(ParamStr(0));
+  {$ENDIF}
+end;
+
+procedure TfrmFMXSignatureCaptureMobile.SpeedButton1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{44DEADB3-55A8-430D-A582-401353450C7C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Samples\VCL\TMS\MoneyEditDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\TMS\ModernAppDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MoneyEditDemo">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\MoneyEditDemo.dproj"/>
+    </Target>
+    <Target Name="MoneyEditDemo:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\MoneyEditDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MoneyEditDemo:Make">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\MoneyEditDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ModernAppDemo">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\ModernAppDemo.dproj"/>
+    </Target>
+    <Target Name="ModernAppDemo:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\ModernAppDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ModernAppDemo:Make">
+        <MSBuild Projects="..\..\Samples\VCL\TMS\ModernAppDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TGooglePlacesTest">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Make">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MoneyEditDemo;ModernAppDemo;TGooglePlacesTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MoneyEditDemo:Clean;ModernAppDemo:Clean;TGooglePlacesTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MoneyEditDemo:Make;ModernAppDemo:Make;TGooglePlacesTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

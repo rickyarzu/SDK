@@ -1,0 +1,1562 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{502AB3DF-E9A4-445E-A7D8-D35463537909}</ProjectGuid>
+        <MainSource>uIndy27.dpk</MainSource>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>19.2</ProjectVersion>
+        <Base>True</Base>
+        <AppType>Package</AppType>
+        <FrameworkType>None</FrameworkType>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Base)'=='true') or '$(Base_iOSSimulator)'!=''">
+        <Base_iOSSimulator>true</Base_iOSSimulator>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
+        <Base_OSX64>true</Base_OSX64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="JanuaLibDXE13.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE13.optset')"/>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>uIndy27</SanitizedProjectName>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1055</VerInfo_Locale>
+        <VerInfo_Keys>FileVersion=1.0.0.0;InternalName=;LegalTrademarks=;OriginalFilename=;ProductVersion=0.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenPackage>true</GenPackage>
+        <DCC_Platform>x86</DCC_Platform>
+        <DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\7.0\Bpl\uIndy140.bpl</DCC_DependencyCheckOutputName>
+        <DCC_E>false</DCC_E>
+        <DCC_S>false</DCC_S>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <GenDll>true</GenDll>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>true</DCC_N>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <CfgDependentOn>JanuaLibDXE13.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimulator)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <Import Project="C:\Januaproject\GitHub\SDK\prj\DXE13\JanuaLibDXE13.optset" Condition="'$(Base)'!='' And Exists('C:\Januaproject\GitHub\SDK\prj\DXE13\JanuaLibDXE13.optset')"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAntiFreezeBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdBaseComponent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCTypes.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdComponent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdException.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGlobal.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdResourceStrings.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStack.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStackBSDBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStackConsts.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdWinsock2.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStackWindows.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdWship6.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSSPI.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAuthenticationSSPI.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStream.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStreamVCL.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStruct.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAssignedNumbers.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdBuffer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCmdTCPClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCmdTCPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCommandHandlers.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdContext.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCustomTCPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCustomTransparentProxy.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdExceptionCore.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGlobalCore.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIOHandler.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIOHandlerSocket.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIOHandlerStack.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIOHandlerStream.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPAddress.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPMCastBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPMCastClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPMCastServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIcmpClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIntercept.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdInterceptSimLog.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdInterceptThrottler.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLogBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLogDebug.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLogEvent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLogFile.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLogStream.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRawBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRawClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRawFunctions.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRawHeaders.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReply.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReplyRFC.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdResourceStringsCore.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdScheduler.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSchedulerOfThread.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSchedulerOfThreadDefault.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSchedulerOfThreadPool.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerIOHandler.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerIOHandlerSocket.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerIOHandlerStack.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSimpleServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSocketHandle.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSocks.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSync.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTCPClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTCPConnection.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTCPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTCPStream.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTask.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdThread.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdThreadComponent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdThreadSafe.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTraceRoute.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUDPBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUDPClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdYarn.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdASN1Util.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAllAuthentications.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAllFTPListParsers.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAttachment.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAttachmentFile.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAttachmentMemory.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAuthentication.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAuthenticationDigest.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAuthenticationManager.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAuthenticationNTLM.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdBlockCipherIntercept.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdChargenServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdChargenUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCharsets.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoder.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoder00E.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoder3to4.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderBinHex4.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderHeader.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderMIME.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderQuotedPrintable.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderUUE.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCoderXXE.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCompressionIntercept.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCompressorZLib.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdConnectThroughHttpProxy.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdContainers.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCookie.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCookieManager.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdCustomHTTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDICT.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDICTCommon.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDICTServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDNSCommon.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDNSResolver.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDNSServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDateTimeStamp.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDayTime.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDayTimeServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDayTimeUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDayTimeUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDiscardServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdDiscardUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIDN.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdEMailAddress.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdEcho.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdEchoServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdEchoUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdEchoUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdExplicitTLSClientServerBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFIPS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFSP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPBaseFileSystem.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPCommon.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPList.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListOutput.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseAS400.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseBullGCOS7.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseBullGCOS8.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseChameleonNewt.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseCiscoIOS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseDistinctTCPIP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseEPLF.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseHellSoft.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseIEFTPGateway.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseKA9Q.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseMPEiX.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseMVS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseMicrowareOS9.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseMusic.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseNCSAForDOS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseNCSAForMACOS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseNovellNetware.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseNovellNetwarePSU.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseOS2.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParsePCNFSD.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParsePCTCP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseStercomOS390Exp.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseStercomUnixEnt.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseStratusVOS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseSuperTCP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseTOPS20.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseTSXPlus.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseTandemGuardian.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseUnisysClearPath.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseUnix.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseVM.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseVMS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseVSE.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseVxWorks.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseWfFTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseWinQVTNET.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseWindowsNT.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListParseXecomMicroRTOS.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPListTypes.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFTPServerContextBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFinger.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdFingerServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGlobalProtocols.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGopher.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGopherConsts.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdGopherServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHMAC.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHMACMD5.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHMACSHA1.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHTTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHTTPHeaderInfo.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHTTPProxyServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHTTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHash.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHashCRC.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHashElf.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHashMessageDigest.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHashSHA.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHeaderList.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIMAP4.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIMAP4Server.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPAddrMon.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIPWatch.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIRC.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIdent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIdentServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdIrcServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdLPR.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMailBox.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMappedFTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMappedPOP3.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMappedPortTCP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMappedPortUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMappedTelnet.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessage.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageBuilder.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoder.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderBinHex4.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderMIME.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderQuotedPrintable.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderUUE.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderXXE.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCoderYenc.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageCollection.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageHelper.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMessageParts.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdMultipartFormData.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdNNTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdNNTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdNTLM.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdNetworkCalculator.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdOSFileName.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdOTPCalculator.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdPOP3.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdPOP3Server.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdQOTDUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdQOTDUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdQotd.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdQotdServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRSH.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRSHServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRemoteCMDClient.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRemoteCMDServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReplyFTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReplyIMAP4.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReplyPOP3.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdReplySMTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdResourceStringsProtocols.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdResourceStringsOpenSSL.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdResourceStringsSSPI.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRexec.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdRexecServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASL.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLAnonymous.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLCollection.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLDigest.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLExternal.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLLogin.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLOTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLPlain.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLSKey.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASLUserPass.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASL_CRAMBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASL_CRAM_MD5.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSASL_CRAM_SHA1.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSMTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSMTPBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSMTPRelay.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSMTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSNMP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSNPP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSNTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSSL.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSSLOpenSSL.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSSLOpenSSLHeaders.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerInterceptLogBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerInterceptLogEvent.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdServerInterceptLogFile.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSocksServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdStrings.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSysLog.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSysLogMessage.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSysLogServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSystat.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSystatServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSystatUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdSystatUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTelnet.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTelnetServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdText.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTime.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTimeServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTimeUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTimeUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTrivialFTP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTrivialFTPBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdTrivialFTPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdURI.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUnixTime.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUnixTimeServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUnixTimeUDP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUnixTimeUDPServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUriUtils.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUserAccounts.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdUserPassProvider.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdVCard.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdWebDAV.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdWhoIsServer.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdWhois.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdZLib.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdZLibCompressorBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdZLibConst.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdZLibHeaders.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdAllHeaderCoders.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHeaderCoder2022JP.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHeaderCoderBase.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHeaderCoderIndy.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy\uIdHeaderCoderPlain.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+            <DependentOn>JanuaLibDXE13.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">uIndy27.dpk</Source>
+                </Source>
+                <Parameters/>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1055</VersionInfo>
+                    <VersionInfo Name="CodePage">1254</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages/>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <Deployment Version="3">
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx64\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossim32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\uIndy27.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>uIndy27.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File"/>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024x768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668x2388">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x2732">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2224">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2388x1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2732x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768x1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1125">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1136x640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242x2688">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1334">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1792">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2208">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2436">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2688x1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch750">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch828">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

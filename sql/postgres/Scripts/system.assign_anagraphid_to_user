@@ -1,0 +1,15 @@
+CREATE FUNCTION system.assign_anagraphid_to_user(IN p_anagraph_id integer, IN p_db_user_id integer)
+    RETURNS boolean
+    LANGUAGE 'plpgsql'
+    
+AS $BODY$
+begin
+  update system.db_users_profiles
+    set anagraph_id = p_anagraph_id
+  where
+     db_user_id = p_db_user_id; 
+end; 
+$BODY$;
+
+ALTER FUNCTION system.assign_anagraphid_to_user(integer, integer)
+    OWNER TO ergo;

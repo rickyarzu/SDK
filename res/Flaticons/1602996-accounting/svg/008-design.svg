@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<rect x="224.5" y="61" style="fill:#47568C;" width="62.999" height="30"/>
+	<rect x="256" y="61" style="fill:#2C3B73;" width="31.5" height="30"/>
+	<rect x="464.506" y="61" style="fill:#2C3B73;" width="47.494" height="30"/>
+	<rect y="61" style="fill:#47568C;" width="47.494" height="30"/>
+	<path style="fill:#61729B;" d="M136,181C78.109,181,31,133.891,31,76V31h210v45C241,133.891,193.891,181,136,181z"/>
+	<path style="fill:#47568C;" d="M376,181c-57.891,0-105-47.109-105-105V31h210v45C481,133.891,433.891,181,376,181z"/>
+	<polygon style="fill:#FFDA2D;" points="512,211 512,361 0,361 0,211 61,211 76,271 91,211 121,211 136,241 151,211 181,211    196,271 211,211 241,211 256,241 271,211 301,211 316,271 331,211 361,211 376,241 391,211 421,211 436,271 451,211  "/>
+	<polygon style="fill:#FDBF00;" points="512,211 512,361 256,361 256,241 271,211 301,211 316,271 331,211 361,211 376,241 391,211    421,211 436,271 451,211  "/>
+	<polygon style="fill:#61729B;" points="121,436 91,481 31,481 31,391 91,391  "/>
+	<polygon style="fill:#47568C;" points="31,436 121,436 91,481 31,481  "/>
+	<polygon style="fill:#FDE4E4;" points="512,436 391,481 361,436 391,391  "/>
+	<rect x="91" y="391" style="fill:#25D9F8;" width="300" height="90"/>
+	<polygon style="fill:#FCCED3;" points="512,436 391,481 361,436  "/>
+	<rect x="91" y="436" style="fill:#00C0F1;" width="300" height="45"/>
+	<rect x="61" y="211" style="fill:#FDBF00;" width="30" height="90"/>
+	<rect x="121" y="211" style="fill:#FDBF00;" width="30" height="60"/>
+	<rect x="181" y="211" style="fill:#FDBF00;" width="30" height="90"/>
+	<rect x="241" y="211" style="fill:#FDBF00;" width="30" height="60"/>
+	<rect x="301" y="211" style="fill:#FF9100;" width="30" height="90"/>
+	<rect x="361" y="211" style="fill:#FF9100;" width="30" height="60"/>
+	<rect x="421" y="211" style="fill:#FF9100;" width="30" height="90"/>
+	<rect x="256" y="211" style="fill:#FF9100;" width="15" height="60"/>
+	<path style="fill:#FFF5F5;" d="M136,151c-41.353,0-75-33.647-75-75V61h150v15C211,117.353,177.353,151,136,151z"/>
+	<path style="fill:#EFE2DD;" d="M376,151c-41.353,0-75-33.647-75-75V61h150v15C451,117.353,417.353,151,376,151z"/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

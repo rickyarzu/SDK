@@ -1,0 +1,74 @@
+﻿package JanuaVirtual;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  JanuaCore,
+  JanuaMVVM,
+  JanuaCoreComponents,
+  IndyIPClient,
+  rtl,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  CustomIPTransport,
+  DbxCommonDriver,
+  RESTComponents,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  IndyIPCommon,
+  Spring.Base;
+
+contains
+  Janua.Virtual.Anagraph in '..\src\januacore\datamodule\Janua.Virtual.Anagraph.pas',
+  Janua.Virtual.Cloud in '..\src\januacore\datamodule\Janua.Virtual.Cloud.pas',
+  Janua.Virtual.Cms in '..\src\januacore\datamodule\Janua.Virtual.Cms.pas',
+  Janua.Virtual.Football in '..\src\januacore\datamodule\Janua.Virtual.Football.pas',
+  Janua.Virtual.Functions in '..\src\januacore\datamodule\Janua.Virtual.Functions.pas',
+  Janua.Virtual.System in '..\src\januacore\datamodule\Janua.Virtual.System.pas',
+  udmVirtualAnagraph in '..\src\januacore\datamodule\udmVirtualAnagraph.pas' {dmVirtualAnagraph: TDataModule},
+  udmVirtualCloudServer in '..\src\januacore\datamodule\udmVirtualCloudServer.pas' {dmVirtualCloudServer: TDataModule},
+  udmVirtualCmsServer in '..\src\januacore\datamodule\udmVirtualCmsServer.pas' {dmVirtualCmsServer: TDataModule},
+  udmVirtualServerModel in '..\src\januacore\datamodule\udmVirtualServerModel.pas' {dmVirtualServerModel: TDataModule},
+  udmVirtualSystemServer in '..\src\januacore\datamodule\udmVirtualSystemServer.pas' {dmVirtualSystemServer: TDataModule},
+  udmVirtualFootballServer in '..\src\januacore\datamodule\udmVirtualFootballServer.pas' {dmVirtualFootballServer: TDataModule},
+  udmVirtualFootballStorage in '..\src\januacore\datamodule\udmVirtualFootballStorage.pas' {dmVirtualFootballStorage: TDataModule},
+  Janua.Test.Football in '..\src\januacore\Test\Janua.Test.Football.pas',
+  Janua.Firedac.Framework in '..\src\januacore\datamodule\Janua.Firedac.Framework.pas',
+  Janua.Orm.Firedac in '..\src\januacore\Janua.Orm.Firedac.pas',
+  Janua.Test.FireDac.dmVirtual in '..\src\januacore\datamodule\Janua.Test.FireDac.dmVirtual.pas' {dmVirtualTest: TDataModule};
+
+end.

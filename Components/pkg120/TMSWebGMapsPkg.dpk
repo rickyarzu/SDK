@@ -1,0 +1,71 @@
+﻿package TMSWebGMapsPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS VCL WebGMaps'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclimg,
+  vcl,
+  vclx,
+  vclie,
+  xmlrtl,
+  inet,
+  IndyCore,
+  IndySystem,
+  IndyProtocols,
+  dsnap,
+  dbrtl,
+  DbxCommonDriver;
+
+contains
+  UWebGMaps in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMaps.pas',
+  UWebGMapsAutomation in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsAutomation.pas',
+  UWebGMapsBrowser in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsBrowser.pas',
+  UWebGMapsCommon in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsCommon.pas',
+  UWebGMapsConst in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsConst.pas',
+  UWebGMapsControls in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsControls.pas',
+  UWebGMapsGeocoding in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsGeocoding.pas',
+  UWebGMapsIdoc in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsIdoc.pas',
+  UWebGMapsMarkers in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsMarkers.pas',
+  UWebGMapsReg in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsReg.pas',
+  UWebGMapsCommonFunctions in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsCommonFunctions.pas',
+  UWebGMapsPolylines in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsPolylines.pas',
+  UWebGMapsDirections in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsDirections.pas',
+  UWebGMapsPolygons in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsPolygons.pas',
+  uwebgmapsdirectionlist in '..\..\..\tmssoftware\TMS WebGMaps\uwebgmapsdirectionlist.pas',
+  UWebGMapsLookupEdit in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsLookupEdit.pas',
+  UWebGMapsReverseGeocoding in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsReverseGeocoding.pas',
+  UWebGMapsClusters in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsClusters.pas',
+  UWebGMapsTimeZone in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsTimeZone.pas',
+  UWebGMapsDialogForm in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsDialogForm.pas' {WebGMapsDialogForm},
+  UWebGMapsExif in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsExif.pas';
+
+end.
+

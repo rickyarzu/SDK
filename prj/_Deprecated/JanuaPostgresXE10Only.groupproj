@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FA2EAB2F-21A0-4296-A899-7961C19709B3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaPgUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Clean">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Make">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreXE10;JanuaCoreXE10Design;JanuaPostgresSystemXE10;JanuaPgUnitTesting;JanuaVCLControlsUnitTestingDebug"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreXE10:Clean;JanuaCoreXE10Design:Clean;JanuaPostgresSystemXE10:Clean;JanuaPgUnitTesting:Clean;JanuaVCLControlsUnitTestingDebug:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreXE10:Make;JanuaCoreXE10Design:Make;JanuaPostgresSystemXE10:Make;JanuaPgUnitTesting:Make;JanuaVCLControlsUnitTestingDebug:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,591 @@
+object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
+  Left = 0
+  Top = 0
+  Caption = 'HeaderFooter'
+  ClientHeight = 728
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 384.000000000000000000
+    Size.Height = 728.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 2
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      384s
+      728s
+      384s
+      728s
+      384s
+      728s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #1'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListViewMain: TListView
+        ItemAppearanceClassName = 'TImageListItemAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 680.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        ItemAppearance.ItemHeight = 54
+        ItemAppearanceObjects.ItemObjects.Text.Font.Family = 'Arial'
+        ItemAppearanceObjects.ItemObjects.Text.Font.Size = 14.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Width = 265.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Height = 50.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 54.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.Y = 4.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Image.Width = 46.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Image.Height = 46.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Image.PlaceOffset.X = 2.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Image.PlaceOffset.Y = 2.000000000000000000
+        ControlType = Platform
+      end
+      object TopToolBar: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle1: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object btnNext: TSpeedButton
+            Action = NextTabAction1
+            Align = MostRight
+            Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+            ImageIndex = 19
+            Position.X = 336.000000000000000000
+            Size.Width = 48.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'nexttoolbutton'
+            TextSettings.Trimming = None
+          end
+          object Layout1: TLayout
+            Align = Client
+            Margins.Left = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 316.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lbUtente: TLabel
+              Action = TitleAction
+              Align = MostTop
+              StyledSettings = [Family, Size]
+              Size.Width = 316.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Utente Connesso:'
+              TabOrder = 3
+            end
+            object Label1: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 28.000000000000000000
+              Position.Y = 25.000000000000000000
+              Size.Width = 288.000000000000000000
+              Size.Height = 23.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Trailing
+              TextSettings.Trimming = None
+              Text = 'Riccardo Arduino'
+              TabOrder = 2
+            end
+          end
+        end
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ToolBar1: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle2: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout2: TLayout
+            Align = Client
+            Size.Width = 336.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbTitle: TLabel
+              Action = TitleAction
+              Align = MostTop
+              StyledSettings = [Family, Size]
+              Size.Width = 336.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Rapporti Ordinari'
+              TabOrder = 3
+            end
+            object lbDate: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 48.000000000000000000
+              Position.Y = 25.000000000000000000
+              Size.Width = 288.000000000000000000
+              Size.Height = 23.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Trailing
+              TextSettings.Trimming = None
+              Text = '03/06/2023'
+              TabOrder = 2
+            end
+          end
+          object SpeedButton1: TSpeedButton
+            Action = NextTabAction1
+            Align = MostRight
+            Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+            ImageIndex = 19
+            Position.X = 336.000000000000000000
+            Size.Width = 48.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'nexttoolbutton'
+            TextSettings.Trimming = None
+          end
+        end
+      end
+      object edLocation: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        StyleLookup = 'searcheditbox'
+        TabOrder = 1
+        Position.Y = 152.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Posizione Attuale'
+        object ClearEditButton1: TClearEditButton
+          Touch.InteractiveGestures = [LongTap]
+          CanFocus = False
+          Cursor = crArrow
+          TextSettings.Trimming = None
+          Position.Y = 1.000000000000000000
+          Size.Width = 32.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+      object Layout3: TLayout
+        Align = Top
+        Position.Y = 48.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 104.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object Rectangle3: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 104.000000000000000000
+          Size.PlatformDefault = False
+          object Layout4: TLayout
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 104.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object rgSelectSearch: TTMSFMXRadioGroup
+              Align = Client
+              DisableFocusEffect = False
+              Margins.Left = 1.000000000000000000
+              Margins.Right = 1.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              TabOrder = 2
+              Size.Width = 382.000000000000000000
+              Size.Height = 101.000000000000000000
+              Size.PlatformDefault = False
+              Columns = 2
+              Items = <
+                item
+                  Text = 'Tutti'
+                end
+                item
+                  Text = 'Programmati'
+                end
+                item
+                  Text = 'Oggi'
+                end
+                item
+                  Text = 'Per CAP'
+                end
+                item
+                  Text = 'Per Mese'
+                end
+                item
+                  Text = 'Da Sincronizzare'
+                end>
+              Font.StyleExt = {00070000000000000004000000}
+              FontColor = claWhite
+              ItemFont.StyleExt = {00070000000000000004000000}
+              ItemFontColor = claWhite
+              ItemIndex = 0
+              Version = '1.0.2.6'
+            end
+          end
+        end
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem3'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inline frameFMXPhoenixMobileReportHeader1: TframeFMXPhoenixMobileReportHeader
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 728.000000000000000000
+        Size.PlatformDefault = False
+        inherited lbScheduling: TLabel
+          Size.Width = 374.000000000000000000
+        end
+        inherited Layout1: TLayout
+          Size.Width = 384.000000000000000000
+          Size.Height = 130.000000000000000000
+          inherited Layout2: TLayout
+            Size.Width = 384.000000000000000000
+            Size.Height = 30.000000000000000000
+            inherited TMSFMXDateTimeEdit1: TTMSFMXDateTimeEdit
+              Position.X = 55.000000000000000000
+              Size.Height = 30.000000000000000000
+            end
+            inherited Switch1: TSwitch
+              Position.X = 340.000000000000000000
+              Position.Y = 2.000000000000000000
+              Size.Width = 44.000000000000000000
+              Size.Height = 26.000000000000000000
+            end
+          end
+          inherited Layout3: TLayout
+            Position.Y = 98.000000000000000000
+            Size.Width = 384.000000000000000000
+            inherited btnMessages: TButton
+              Position.X = 275.000000000000000000
+            end
+            inherited btnCellPhoneCall: TButton
+              Position.X = 347.000000000000000000
+            end
+            inherited btnGoogleMaps: TButton
+              Position.X = 311.000000000000000000
+            end
+            inherited lbDatiRapportino: TLabel
+              Size.Width = 265.000000000000000000
+            end
+          end
+          inherited lbInfoMeeting: TLabel
+            Position.Y = 33.000000000000000000
+            Size.Width = 374.000000000000000000
+          end
+          inherited memMeetingNotes: TMemo
+            Margins.Top = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 44.000000000000000000
+            TabOrder = 7
+            Viewport.Width = 370.000000000000000000
+            Viewport.Height = 36.000000000000000000
+          end
+        end
+        inherited rcReportSummary: TRectangle
+          Position.Y = 155.000000000000000000
+          Size.Width = 384.000000000000000000
+          inherited txtReportSummay: TTMSFMXHTMLText
+            Size.Width = 380.000000000000000000
+          end
+        end
+        inherited Layout4: TLayout
+          Position.Y = 255.000000000000000000
+          Size.Width = 380.000000000000000000
+          inherited Label1: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbInvoices: TLabel
+            Size.Width = 168.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Rectangle2: TRectangle
+          Position.Y = 297.000000000000000000
+          Size.Width = 384.000000000000000000
+          inherited TMSFMXHTMLText1: TTMSFMXHTMLText
+            Size.Width = 380.000000000000000000
+          end
+        end
+        inherited Rectangle3: TRectangle
+          Position.Y = 342.000000000000000000
+          Size.Width = 384.000000000000000000
+          inherited TMSFMXHTMLText2: TTMSFMXHTMLText
+            Size.Width = 380.000000000000000000
+          end
+        end
+        inherited lbControlliOrdinari: TLabel
+          Position.Y = 323.000000000000000000
+          Size.Width = 380.000000000000000000
+        end
+        inherited Layout5: TLayout
+          Position.Y = 400.000000000000000000
+          Size.Width = 384.000000000000000000
+          inherited Rectangle4: TRectangle
+            Size.Width = 384.000000000000000000
+            inherited TMSFMXHTMLText3: TTMSFMXHTMLText
+              Size.Width = 380.000000000000000000
+            end
+          end
+          inherited Layout6: TLayout
+            inherited Layout8: TLayout
+              inherited lbEstinguishers: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout9: TLayout
+              inherited lbPorte: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout10: TLayout
+              inherited lbIdranti: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout14: TLayout
+              inherited lbLuciEM: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+          inherited Layout7: TLayout
+            Size.Width = 223.000000000000000000
+            inherited Layout11: TLayout
+              Size.Width = 223.000000000000000000
+              inherited lbSprinklerN: TLabel
+                Position.X = 204.000000000000000000
+              end
+              inherited lbSprinkler: TLabel
+                Size.Width = 198.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout12: TLayout
+              Size.Width = 223.000000000000000000
+              inherited lbGruppiN: TLabel
+                Position.X = 204.000000000000000000
+              end
+              inherited lbGruppi: TLabel
+                Size.Width = 198.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout13: TLayout
+              Size.Width = 223.000000000000000000
+              inherited lbRilFumoN: TLabel
+                Position.X = 204.000000000000000000
+              end
+              inherited lbRilFumo: TLabel
+                Size.Width = 198.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout15: TLayout
+              Size.Width = 223.000000000000000000
+              inherited lbImpElettriciN: TLabel
+                Position.X = 204.000000000000000000
+              end
+              inherited lbImpElettrici: TLabel
+                Size.Width = 198.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+        inherited Layout16: TLayout
+          Position.Y = 531.000000000000000000
+          Size.Width = 380.000000000000000000
+        end
+        inherited Layout17: TLayout
+          Position.Y = 573.000000000000000000
+          Size.Width = 380.000000000000000000
+          inherited lbSend: TLabel
+            StyledSettings = [FontColor]
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbInsert: TLabel
+            StyledSettings = [FontColor]
+            Size.Width = 168.000000000000000000
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited btnTerminate: TButton
+          Position.Y = 615.000000000000000000
+          Size.Width = 380.000000000000000000
+          TabOrder = 10
+          inherited rctTerminate: TRectangle
+            Size.Width = 380.000000000000000000
+            inherited Label2: TLabel
+              Align = Fit
+              Size.Width = 357.882324218750000000
+              Size.Height = 36.000000000000000000
+            end
+          end
+        end
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 104
+    Top = 408
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+      OnUpdate = TitleActionUpdate
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      ShortCut = 137
+    end
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+  object jlvMenuController: TJanuaFMXListViewMenuController
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+    MenuItems = <
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Rapporti di Manutenziona Ordinaria'
+        ImageIndex = 17
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Rapporti Manutenzione straordinaria'
+        ImageIndex = 6
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Prevenitvi / Ordini'
+        ImageIndex = 13
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Stampa'
+        ImageIndex = 7
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Trasferisci Rapportino'
+        ImageIndex = 9
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Info / Impostazioni'
+        ImageIndex = 10
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        Title = 'Comunicazioni da Ufficio'
+        ImageIndex = 22
+      end>
+    ListView = ListViewMain
+    ImageIndex = 0
+    Left = 160
+    Top = 288
+  end
+  object JanuaFmxBadge1: TJanuaFmxBadge
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Badge = 11
+    ShowBadge = True
+    BadgeItem = btnNext
+    VertTextMargin = 2
+    Left = 160
+    Top = 232
+  end
+end

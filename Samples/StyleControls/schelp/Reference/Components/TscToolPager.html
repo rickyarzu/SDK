@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscToolPager</title></head>
+<body>
+&nbsp;&nbsp; &nbsp;
+<font face="Helvetica, Arial"><a name="link89"></a></font>
+<h1 class="bigH">TscToolPager</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scToolPager.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Page control with left, right offset for tabs and advanced features</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Tabs</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscToolPagerTabs</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscToolPagerTab
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabGlowEffect</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for Tab</td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Colleciton for wallpaper
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Colleciton for custom
+images for elements
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of wallpaper image
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomBackgroundImageIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of background
+image
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomBackgroundOverContentImageIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of background
+image, which will be draw over Tabs
+</td>
+</tr>
+
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of Tab </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for Tabs</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Font</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for Tabs</td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ActivePage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscToolPagerPage= class
+(<a href="TscScrollPanel.html">TscScrollPanel</a>) </td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Active page<br>
+</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of the tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabsLeftOffset</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset for tabs from left. Use&nbsp;this to put any control on left area before tabs</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabsRightOffset</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset for tabs from right. Use this to put any control on right area after tabs</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">BorderStyle</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscToolPagerBorderStyle </td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscToolPagerBorderStyle = (sctpbsFrame, sctpbsLine, sctpbsLine2, sctpbsNone);<br>Border
+style for page frame (sctpbsFrame - frame from theme or style,
+sctpbsLine - line in 1 pixel, sctpbsLine2 - line in 2 pixels)</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ScrollButtonWidth</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the scroll buttons</td></tr></tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnChangePage</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event when page changed </td>
+</tr>
+<tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnGetTabDrawParams</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGetToolTabDrawParamsEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TscGetToolTabDrawParamsEvent = procedure(ATabIndex: Integer; ATabState: TscsCtrlState;<br>&nbsp;&nbsp;&nbsp; ACanvas: TCanvas) of object;<br><br>Use this event to customize tab font (ACanvas.Font), for example.</td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscToolPagerTab</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tab&nbsp;enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption of Tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Visible</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Visibility of Tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Page</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscToolPagerPage= class
+(<a href="TscScrollPanel.html">TscScrollPanel</a>)</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Link to the page</td>
+</tr>
+
+</tbody>
+</table>
+<br><br><p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<span style="color: red;">&nbsp;&nbsp;&nbsp; <span style="color: black;">Use TControl.StyleElements property to
+adjust custom colors for client and font in all controls when VCL Style
+is enabled!</span></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

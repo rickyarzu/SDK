@@ -1,0 +1,57 @@
+package OmniThreadLibraryRuntime;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'OmniThreadLibrary runtime'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl;
+
+contains
+  GpLists in '..\..\..\lib\OmniThreadLibrary\src\GpLists.pas',
+  GpStuff in '..\..\..\lib\OmniThreadLibrary\src\GpStuff.pas',
+  GpStringHash in '..\..\..\lib\OmniThreadLibrary\src\GpStringHash.pas',
+  DetailedRTTI in '..\..\..\lib\OmniThreadLibrary\src\DetailedRTTI.pas',
+  OtlCommon in '..\src\OtlCommon.pas',
+  OtlContainers in '..\..\..\lib\OmniThreadLibrary\OtlContainers.pas',
+  OtlCommBufferTest in '..\..\..\lib\OmniThreadLibrary\OtlCommBufferTest.pas',
+  OtlComm in '..\..\..\lib\OmniThreadLibrary\OtlComm.pas',
+  OtlTask in '..\..\..\lib\OmniThreadLibrary\OtlTask.pas',
+  OtlTaskControl in '..\..\..\lib\OmniThreadLibrary\OtlTaskControl.pas',
+  OtlThreadPool in '..\..\..\lib\OmniThreadLibrary\OtlThreadPool.pas',
+  OtlEventMonitor in '..\..\..\lib\OmniThreadLibrary\OtlEventMonitor.pas',
+  DSiWin32 in '..\..\..\lib\OmniThreadLibrary\src\DSiWin32.pas',
+  OtlContainerObserver in '..\..\..\lib\OmniThreadLibrary\OtlContainerObserver.pas',
+  OtlSync in '..\..\..\lib\OmniThreadLibrary\OtlSync.pas',
+  OtlHooks in '..\..\..\lib\OmniThreadLibrary\OtlHooks.pas',
+  OtlCollections in '..\..\..\lib\OmniThreadLibrary\OtlCollections.pas',
+  OtlCommon.Utils in '..\..\..\lib\OmniThreadLibrary\OtlCommon.Utils.pas',
+  OtlDataManager in '..\..\..\lib\OmniThreadLibrary\OtlDataManager.pas',
+  OtlParallel in '..\..\..\lib\OmniThreadLibrary\OtlParallel.pas';
+
+end.

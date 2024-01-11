@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5F393906-C2F8-4AD6-BD73-287E8AB41588}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SampleTMSVCLApplication.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\JanuaCoreXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\JanuaVCLControlsXE103.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SampleTMSVCLApplication">
+        <MSBuild Projects="SampleTMSVCLApplication.dproj"/>
+    </Target>
+    <Target Name="SampleTMSVCLApplication:Clean">
+        <MSBuild Projects="SampleTMSVCLApplication.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleTMSVCLApplication:Make">
+        <MSBuild Projects="SampleTMSVCLApplication.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio">
+        <MSBuild Projects="..\..\prj\JanuaCoreXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Clean">
+        <MSBuild Projects="..\..\prj\JanuaCoreXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Make">
+        <MSBuild Projects="..\..\prj\JanuaCoreXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103">
+        <MSBuild Projects="..\..\prj\JanuaVCLControlsXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103:Clean">
+        <MSBuild Projects="..\..\prj\JanuaVCLControlsXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103:Make">
+        <MSBuild Projects="..\..\prj\JanuaVCLControlsXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SampleTMSVCLApplication;JanuaCoreXE103Rio;JanuaVCLControlsXE103"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SampleTMSVCLApplication:Clean;JanuaCoreXE103Rio:Clean;JanuaVCLControlsXE103:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SampleTMSVCLApplication:Make;JanuaCoreXE103Rio:Make;JanuaVCLControlsXE103:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

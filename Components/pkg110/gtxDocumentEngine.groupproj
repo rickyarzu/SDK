@@ -1,0 +1,332 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9F971537-3725-4ED1-B90C-D450213DC921}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Libraries\QR6-RAD-11\src\QRWRunDXE11_W64.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE11.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclgtxDocumentStudioCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtxDocumentEngines.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclgtxDocumentEngines.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vcldclgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtCompression.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtCrypt.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtFont.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtAdvGridExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtDocProd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtQRExp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QRWRunDXE11_W64">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWRunDXE11_W64.dproj"/>
+    </Target>
+    <Target Name="QRWRunDXE11_W64:Clean">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWRunDXE11_W64.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWRunDXE11_W64:Make">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWRunDXE11_W64.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRWDesignDXE11">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE11.dproj"/>
+    </Target>
+    <Target Name="QRWDesignDXE11:Clean">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE11.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWDesignDXE11:Make">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE11.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore">
+        <MSBuild Projects="vclgtxDocumentStudioCore.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore:Clean">
+        <MSBuild Projects="vclgtxDocumentStudioCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore:Make">
+        <MSBuild Projects="vclgtxDocumentStudioCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtxDocumentEngines">
+        <MSBuild Projects="gtxDocumentEngines.dproj"/>
+    </Target>
+    <Target Name="gtxDocumentEngines:Clean">
+        <MSBuild Projects="gtxDocumentEngines.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtxDocumentEngines:Make">
+        <MSBuild Projects="gtxDocumentEngines.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines">
+        <MSBuild Projects="vclgtxDocumentEngines.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines:Clean">
+        <MSBuild Projects="vclgtxDocumentEngines.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines:Make">
+        <MSBuild Projects="vclgtxDocumentEngines.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls">
+        <MSBuild Projects="vclgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="vclgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls:Make">
+        <MSBuild Projects="vclgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls">
+        <MSBuild Projects="vcldclgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="vcldclgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls:Make">
+        <MSBuild Projects="vcldclgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtRtl">
+        <MSBuild Projects="gtRtl.dproj"/>
+    </Target>
+    <Target Name="gtRtl:Clean">
+        <MSBuild Projects="gtRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtRtl:Make">
+        <MSBuild Projects="gtRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCompression">
+        <MSBuild Projects="gtCompression.dproj"/>
+    </Target>
+    <Target Name="gtCompression:Clean">
+        <MSBuild Projects="gtCompression.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCompression:Make">
+        <MSBuild Projects="gtCompression.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFilters">
+        <MSBuild Projects="gtFilters.dproj"/>
+    </Target>
+    <Target Name="gtFilters:Clean">
+        <MSBuild Projects="gtFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFilters:Make">
+        <MSBuild Projects="gtFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCrypt">
+        <MSBuild Projects="gtCrypt.dproj"/>
+    </Target>
+    <Target Name="gtCrypt:Clean">
+        <MSBuild Projects="gtCrypt.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCrypt:Make">
+        <MSBuild Projects="gtCrypt.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFont">
+        <MSBuild Projects="gtFont.dproj"/>
+    </Target>
+    <Target Name="gtFont:Clean">
+        <MSBuild Projects="gtFont.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFont:Make">
+        <MSBuild Projects="gtFont.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEng">
+        <MSBuild Projects="gtDocEng.dproj"/>
+    </Target>
+    <Target Name="gtDocEng:Clean">
+        <MSBuild Projects="gtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEng:Make">
+        <MSBuild Projects="gtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp">
+        <MSBuild Projects="DCLgtAdvGridExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Clean">
+        <MSBuild Projects="DCLgtAdvGridExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Make">
+        <MSBuild Projects="DCLgtAdvGridExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocEng">
+        <MSBuild Projects="DCLgtDocEng.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Clean">
+        <MSBuild Projects="DCLgtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Make">
+        <MSBuild Projects="DCLgtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocProd">
+        <MSBuild Projects="DCLgtDocProd.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Clean">
+        <MSBuild Projects="DCLgtDocProd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Make">
+        <MSBuild Projects="DCLgtDocProd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExp">
+        <MSBuild Projects="DCLgtQRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Clean">
+        <MSBuild Projects="DCLgtQRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Make">
+        <MSBuild Projects="DCLgtQRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QRWRunDXE11_W64;QRWDesignDXE11;vclgtxDocumentStudioCore;gtxDocumentEngines;vclgtxDocumentEngines;vclgtxDocumentStudioControls;vcldclgtxDocumentStudioControls;gtRtl;gtCompression;gtFilters;gtCrypt;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="QRWRunDXE11_W64:Clean;QRWDesignDXE11:Clean;vclgtxDocumentStudioCore:Clean;gtxDocumentEngines:Clean;vclgtxDocumentEngines:Clean;vclgtxDocumentStudioControls:Clean;vcldclgtxDocumentStudioControls:Clean;gtRtl:Clean;gtCompression:Clean;gtFilters:Clean;gtCrypt:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="QRWRunDXE11_W64:Make;QRWDesignDXE11:Make;vclgtxDocumentStudioCore:Make;gtxDocumentEngines:Make;vclgtxDocumentEngines:Make;vclgtxDocumentStudioControls:Make;vcldclgtxDocumentStudioControls:Make;gtRtl:Make;gtCompression:Make;gtFilters:Make;gtCrypt:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All'">
+        <BuildGroupProject Include="gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="vclgtxDocumentEngines.dproj">
+            <ProjectGuid>{418CC73A-B01B-4070-9996-B447B7A1263E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\QR6-RAD-11\src\QRWRunDXE11_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtxDocumentEngines.dproj">
+            <ProjectGuid>{59922A65-658B-4F1F-A8B0-9D92E30E8605}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="vclgtxDocumentStudioControls.dproj">
+            <ProjectGuid>{EC082D80-303B-4842-AB3A-48B7601B7AF2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="vclgtxDocumentStudioCore.dproj">
+            <ProjectGuid>{D4FB2059-EBC1-4037-82E7-89013E5E1758}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="vcldclgtxDocumentStudioControls.dproj">
+            <ProjectGuid>{F632F589-664B-42C6-8F0B-5690590EA860}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE11.dproj">
+            <ProjectGuid>{8AA4F139-3C83-4870-8F5F-E5339B7B82B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

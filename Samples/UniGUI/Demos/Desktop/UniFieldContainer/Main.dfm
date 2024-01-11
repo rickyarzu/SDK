@@ -1,0 +1,277 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  ClientHeight = 552
+  ClientWidth = 810
+  Caption = 'MainForm'
+  OldCreateOrder = False
+  MonitoredKeys.Keys = <>
+  AlignmentControl = uniAlignmentClient
+  Layout = 'fit'
+  PixelsPerInch = 96
+  TextHeight = 13
+  object UniFieldSet1: TUniFieldSet
+    Left = 8
+    Top = 8
+    Width = 769
+    Height = 497
+    Hint = ''
+    Title = 'UniFieldSet1'
+    TabOrder = 0
+    object UniEdit1: TUniEdit
+      Left = 88
+      Top = 24
+      Width = 121
+      Hint = ''
+      Text = 'UniEdit1'
+      TabOrder = 3
+      FieldLabel = 'UniEdit1'
+    end
+    object UniEdit2: TUniEdit
+      Left = 88
+      Top = 52
+      Width = 121
+      Hint = ''
+      Text = 'UniEdit2'
+      TabOrder = 4
+      FieldLabel = 'UniEdit2'
+    end
+    object UniFieldContainer1: TUniFieldContainer
+      Left = 88
+      Top = 80
+      Width = 465
+      Height = 73
+      Hint = ''
+      ParentColor = False
+      Color = clSilver
+      FieldLabel = 'FieldContainer1'
+      FieldLabelWidth = 100
+      FieldLabelFont.Color = 4227072
+      TabOrder = 1
+      Layout = 'form'
+      object UniEdit3: TUniEdit
+        Left = 40
+        Top = 8
+        Width = 121
+        Hint = ''
+        Text = 'UniEdit3'
+        TabOrder = 1
+        FieldLabel = 'UniEdit3'
+      end
+      object UniEdit4: TUniEdit
+        Left = 40
+        Top = 40
+        Width = 121
+        Hint = ''
+        Text = 'UniEdit4'
+        TabOrder = 2
+        FieldLabel = 'UniEdit4'
+      end
+    end
+    object UniFieldContainer2: TUniFieldContainer
+      Left = 40
+      Top = 159
+      Width = 697
+      Height = 335
+      Hint = ''
+      ParentColor = False
+      Color = 15263976
+      FieldLabel = 'FieldContainer2'
+      FieldLabelWidth = 100
+      FieldLabelFont.Color = clNavy
+      TabOrder = 2
+      Layout = 'form'
+      object UniEdit5: TUniEdit
+        Left = 24
+        Top = 8
+        Width = 121
+        Hint = ''
+        Text = 'UniEdit5'
+        TabOrder = 1
+        FieldLabel = 'UniEdit5'
+      end
+      object UniEdit6: TUniEdit
+        Left = 22
+        Top = 36
+        Width = 121
+        Hint = ''
+        Text = 'UniEdit6'
+        TabOrder = 2
+        FieldLabel = 'UniEdit6'
+      end
+      object UniFieldContainer3: TUniFieldContainer
+        Left = 24
+        Top = 72
+        Width = 609
+        Height = 260
+        Hint = ''
+        ParentColor = False
+        Color = 14869218
+        FieldLabel = 'FieldContainer3'
+        FieldLabelFont.Color = clMaroon
+        TabOrder = 3
+        Layout = 'table'
+        LayoutAttribs.Columns = 3
+        object UniEdit7: TUniEdit
+          Left = 16
+          Top = 16
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit7'
+          TabOrder = 1
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit8: TUniEdit
+          Left = 143
+          Top = 16
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit8'
+          TabOrder = 2
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit9: TUniEdit
+          Left = 16
+          Top = 44
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit9'
+          TabOrder = 3
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit10: TUniEdit
+          Left = 159
+          Top = 60
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit10'
+          TabOrder = 4
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit11: TUniEdit
+          Left = 32
+          Top = 88
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit11'
+          TabOrder = 5
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit12: TUniEdit
+          Left = 159
+          Top = 96
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit12'
+          TabOrder = 6
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit13: TUniEdit
+          Left = 24
+          Top = 128
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit13'
+          TabOrder = 7
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit14: TUniEdit
+          Left = 184
+          Top = 136
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit14'
+          TabOrder = 8
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit15: TUniEdit
+          Left = 312
+          Top = 16
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit15'
+          TabOrder = 9
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit16: TUniEdit
+          Left = 336
+          Top = 64
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit16'
+          TabOrder = 10
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit17: TUniEdit
+          Left = 392
+          Top = 96
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit17'
+          TabOrder = 11
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniEdit18: TUniEdit
+          Left = 424
+          Top = 128
+          Width = 121
+          Hint = ''
+          Text = 'UniEdit18'
+          TabOrder = 12
+          FieldLabel = 'Label'
+          FieldLabelWidth = 50
+          FieldLabelAlign = laTop
+        end
+        object UniButton1: TUniButton
+          Left = 32
+          Top = 176
+          Width = 75
+          Height = 25
+          Hint = ''
+          Caption = 'UniButton1'
+          TabOrder = 13
+        end
+        object UniButton2: TUniButton
+          Left = 192
+          Top = 168
+          Width = 75
+          Height = 25
+          Hint = ''
+          Caption = 'UniButton2'
+          TabOrder = 14
+        end
+        object UniButton3: TUniButton
+          Left = 320
+          Top = 176
+          Width = 75
+          Height = 25
+          Hint = ''
+          Caption = 'UniButton3'
+          TabOrder = 15
+        end
+      end
+    end
+  end
+end

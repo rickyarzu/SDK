@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="t8p1sz2893r_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="ViewModel" />
+  </view>
+</nodeSet>

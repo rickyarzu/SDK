@@ -1,0 +1,86 @@
+package UniFalcon;
+
+{$R *.res}
+{$R '..\..\..\libraries\UniFalcon\Packages\TUniFalcon.res'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FS - uniGUI - [https://store.falconsistemas.com.br]'}
+{$LIBSUFFIX '290'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  uniGUI29,
+  IndyCore,
+  IndySystem,
+  IndyProtocols;
+
+contains
+  FS.Pix in '..\..\..\libraries\UniFalcon\Sources\FS.Pix.pas',
+  FS.QrCode in '..\..\..\libraries\UniFalcon\Sources\FS.QrCode.pas',
+  UniFSBadgeText in '..\..\..\libraries\UniFalcon\Sources\UniFSBadgeText.pas',
+  UniFSButton in '..\..\..\libraries\UniFalcon\Sources\UniFSButton.pas',
+  UniFSCalcEdit in '..\..\..\libraries\UniFalcon\Sources\UniFSCalcEdit.pas',
+  UniFSCamera in '..\..\..\libraries\UniFalcon\Sources\UniFSCamera.pas',
+  UniFSCloud in '..\..\..\libraries\UniFalcon\Sources\UniFSCloud.pas',
+  UniFSColorPicker in '..\..\..\libraries\UniFalcon\Sources\UniFSColorPicker.pas',
+  UniFSComboBox in '..\..\..\libraries\UniFalcon\Sources\UniFSComboBox.pas',
+  UniFSCommon in '..\..\..\libraries\UniFalcon\Sources\UniFSCommon.pas',
+  UniFSConfirm in '..\..\..\libraries\UniFalcon\Sources\UniFSConfirm.pas',
+  UniFSDBMaskEdit in '..\..\..\libraries\UniFalcon\Sources\UniFSDBMaskEdit.pas',
+  UniFSEdit in '..\..\..\libraries\UniFalcon\Sources\UniFSEdit.pas',
+  UniFSGoogleChart in '..\..\..\libraries\UniFalcon\Sources\UniFSGoogleChart.pas',
+  UniFSGoogleSign in '..\..\..\libraries\UniFalcon\Sources\UniFSGoogleSign.pas',
+  UniFSHighCharts in '..\..\..\libraries\UniFalcon\Sources\UniFSHighCharts.pas',
+  UniFSiGrowl in '..\..\..\libraries\UniFalcon\Sources\UniFSiGrowl.pas',
+  UniFSKendoUI in '..\..\..\libraries\UniFalcon\Sources\UniFSKendoUI.pas',
+  UniFSKeys in '..\..\..\libraries\UniFalcon\Sources\UniFSKeys.pas',
+  UniFSMap in '..\..\..\libraries\UniFalcon\Sources\UniFSMap.pas',
+  UniFSMaskEdit in '..\..\..\libraries\UniFalcon\Sources\UniFSMaskEdit.pas',
+  UniFSMenuButton in '..\..\..\libraries\UniFalcon\Sources\UniFSMenuButton.pas',
+  UniFSMultiUpload in '..\..\..\libraries\UniFalcon\Sources\UniFSMultiUpload.pas',
+  UniFSPIX in '..\..\..\libraries\UniFalcon\Sources\UniFSPIX.pas',
+  UniFSPopup in '..\..\..\libraries\UniFalcon\Sources\UniFSPopup.pas',
+  UniFSQrCode in '..\..\..\libraries\UniFalcon\Sources\UniFSQrCode.pas',
+  UniFSQrCodeScanner in '..\..\..\libraries\UniFalcon\Sources\UniFSQrCodeScanner.pas',
+  UniFSSignature in '..\..\..\libraries\UniFalcon\Sources\UniFSSignature.pas',
+  UniFSTelephone in '..\..\..\libraries\UniFalcon\Sources\UniFSTelephone.pas',
+  UniFSTheme in '..\..\..\libraries\UniFalcon\Sources\UniFSTheme.pas',
+  UniFSToast in '..\..\..\libraries\UniFalcon\Sources\UniFSToast.pas',
+  UniFSToggle in '..\..\..\libraries\UniFalcon\Sources\UniFSToggle.pas',
+  UniJsonDataObjects in '..\..\..\libraries\UniFalcon\Sources\UniJsonDataObjects.pas',
+  UnimFSCamera in '..\..\..\libraries\UniFalcon\Sources\UnimFSCamera.pas',
+  UnimFSGoogleChart in '..\..\..\libraries\UniFalcon\Sources\UnimFSGoogleChart.pas',
+  UnimFSHighCharts in '..\..\..\libraries\UniFalcon\Sources\UnimFSHighCharts.pas',
+  UnimFSKendoUI in '..\..\..\libraries\UniFalcon\Sources\UnimFSKendoUI.pas',
+  UnimFSMap in '..\..\..\libraries\UniFalcon\Sources\UnimFSMap.pas',
+  UnimFSPIX in '..\..\..\libraries\UniFalcon\Sources\UnimFSPIX.pas',
+  UnimFSQrCode in '..\..\..\libraries\UniFalcon\Sources\UnimFSQrCode.pas',
+  UnimFSQrCodeScanner in '..\..\..\libraries\UniFalcon\Sources\UnimFSQrCodeScanner.pas',
+  UnimFSSelect in '..\..\..\libraries\UniFalcon\Sources\UnimFSSelect.pas',
+  UnimFSSignature in '..\..\..\libraries\UniFalcon\Sources\UnimFSSignature.pas',
+  UnimFSToggle in '..\..\..\libraries\UniFalcon\Sources\UnimFSToggle.pas';
+
+end.

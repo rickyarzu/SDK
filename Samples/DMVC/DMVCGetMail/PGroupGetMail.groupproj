@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3280C3A4-4FB6-4C7B-B859-482D23DC8564}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PrDMVGetMail.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GetMailModule.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PrDMVGetMail">
+        <MSBuild Projects="PrDMVGetMail.dproj"/>
+    </Target>
+    <Target Name="PrDMVGetMail:Clean">
+        <MSBuild Projects="PrDMVGetMail.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PrDMVGetMail:Make">
+        <MSBuild Projects="PrDMVGetMail.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GetMailModule">
+        <MSBuild Projects="GetMailModule.dproj"/>
+    </Target>
+    <Target Name="GetMailModule:Clean">
+        <MSBuild Projects="GetMailModule.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GetMailModule:Make">
+        <MSBuild Projects="GetMailModule.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PrDMVGetMail;GetMailModule"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PrDMVGetMail:Clean;GetMailModule:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PrDMVGetMail:Make;GetMailModule:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

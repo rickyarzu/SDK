@@ -1,0 +1,20 @@
+object FrmBack: TFrmBack
+  Left = 0
+  Top = 0
+  AlphaBlend = True
+  AlphaBlendValue = 200
+  BorderStyle = bsNone
+  ClientHeight = 322
+  ClientWidth = 551
+  Color = clSilver
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  StyleElements = []
+  PixelsPerInch = 96
+  TextHeight = 13
+end

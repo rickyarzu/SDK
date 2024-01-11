@@ -1,0 +1,98 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7EA87498-EF57-4B32-85E0-3D1074FF952A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE10">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Make">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Clean">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Make">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE10;JanuaCoreXE10;JanuaCoreUnitTesting;JanuaCoreXE10Design"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE10:Clean;JanuaCoreXE10:Clean;JanuaCoreUnitTesting:Clean;JanuaCoreXE10Design:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE10:Make;JanuaCoreXE10:Make;JanuaCoreUnitTesting:Make;JanuaCoreXE10Design:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Core'">
+        <BuildGroupProject Include="JanuaCoreXE10Design.dproj">
+            <ProjectGuid>{E7E2B888-F5F5-464E-B05C-657CAADB0F00}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreXE10.dproj">
+            <ProjectGuid>{2C9FEE1F-7088-4CB3-A385-A796500EC8B4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{246D5F4B-2546-4288-AA98-5AC828AD52B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <ProjectGuid>{628C40DA-DBD2-41B9-A239-974F4E093267}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

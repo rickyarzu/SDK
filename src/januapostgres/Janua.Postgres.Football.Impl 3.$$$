@@ -1,0 +1,379 @@
+unit Janua.Postgres.Football.Impl;
+
+interface
+
+uses Janua.Football.Server.Impl, Janua.Orm.Intf, Janua.Football.Intf, Janua.Football.Server.Intf,
+  Janua.Server.Intf, udmPgFootballStorage;
+
+type
+  TJanuaPgFootballStorage = class(TJanuaCustomFootballStorage, IJanuaStorage, IJanuaFootballStorage)
+  protected
+    FDM: udmPgFootballStorage.dmPgFootballStorage;
+    procedure InternalCreateDBDataSets; override;
+    procedure InternalCreateDataset; override;
+    procedure InternalDestroyDataset; override;
+  public
+    procedure RefreshData;
+    function OpenLastSeason: integer;
+    function OpenFirstLeague: integer;
+    procedure CheckSeasonID;
+    procedure CheckChampionshipID;
+    procedure CheckMatchDay;
+    { Private declarations }
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+  public
+    { Football Functions and Procedure }
+    procedure OpenChampionshipTeam; overload;
+    procedure OpenChampionshipTeam(aSeasonID, aLeagueID, aTeam: integer); overload;
+    procedure OpenSeasons;
+    procedure OpenChampionShips; overload;
+    procedure OpenChampionShips(aSeasonID: integer); overload;
+    procedure OpenMatchDetail; overload;
+    procedure OpenMatchDetail(aMatchID: Int64); overload;
+    procedure OpenMatchDetail(aSeasonID, aLeagueID, aMatchNumber: integer); overload;
+    procedure OpenChampionship;
+    procedure TestOpenChampionship;
+    procedure OpenChampionshipSummary;
+    procedure OpenGoalRanking; overload;
+    procedure OpenGolRanking(aSeasonID, aLeague, aDay: integer); overload;
+    procedure OpenMatches; overload;
+    procedure OpenMatches(aSeasonID, aLeagueID, aMatchNumber: integer); overload;
+    procedure OpenNextMatches;
+    procedure OpenMatchTeam(aMatchID: Int64; aTeamID: integer);
+    procedure OpenRanking; overload;
+    procedure OpenRanking(aSeasonID, aChampionshipID: integer); overload;
+    procedure OpenSeasonChampionship(aSeasonID, aChampionshipID: integer);
+    { Deprecated Functions and Procedure }
+    function GetChampionshipDayName: string;
+    function GetLastMatchDay: smallint;
+    procedure SetupSeason(aSeasonID: integer; aLeagueID: smallint);
+    procedure OpenDefaultSeason;
+    procedure OpenDefaultSeasonChampionship;
+    procedure SetNextMatchDay;
+    procedure OpenCalendar; overload;
+    procedure OpenCalendar(aSeasonID, aLeagueID: Word); overload;
+    procedure OpenLiveScore;
+    procedure OpenTeamPlayers(aTeamID, aSeasonID: Int16);
+    procedure OpenPlayerCareer; overload;
+    procedure OpenPlayerCareer(aID: integer); overload;
+  end;
+
+implementation
+
+uses Janua.Orm.Postgres, System.SysUtils, Janua.Core.Functions;
+
+{ TJanuaVirtualFootballStorage }
+
+procedure TJanuaPgFootballStorage.CheckChampionshipID;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.CheckMatchDay;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.CheckSeasonID;
+begin
+
+end;
+
+constructor TJanuaPgFootballStorage.Create;
+begin
+  inherited;
+  FDBFunctions := TPgDatasetFunctions.Create;
+end;
+
+destructor TJanuaPgFootballStorage.Destroy;
+begin
+  if Assigned(self.FDM) then
+    self.FDM.Free;
+  inherited;
+end;
+
+function TJanuaPgFootballStorage.GetChampionshipDayName: string;
+begin
+
+end;
+
+function TJanuaPgFootballStorage.GetLastMatchDay: smallint;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.InternalCreateDataset;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaPgFootballStorage.InternalCreateDBDataSets;
+begin
+  inherited;
+  // self.FjdsSeasons := TJanuaVtDataset.Create(FDM.vtSeasons);
+  self.FjdsMatches := TJanuaPgDataset.Create(FDM.qryMatches);
+  self.FjdsNextMatchDay := TJanuaPgDataset.Create(FDM.qryNextMatchDay);
+  self.jdsChampionship := TJanuaPgDataset.Create(FDM.qryChampionships);
+  self.jdsChampionships := TJanuaPgDataset.Create(FDM.qryChampionships);
+  self.jdsGolRanking := TJanuaPgDataset.Create(FDM.qryGolRanking);
+  self.jdsChampRanking := TJanuaPgDataset.Create(FDM.qryChampRanking);
+  self.jdsSeasons := TJanuaPgDataset.Create(FDM.qrySeasons);
+  self.jdsMatchDay := TJanuaPgDataset.Create(FDM.qryMatchDay);
+  self.jdsNextMatches := TJanuaPgDataset.Create(FDM.qryNextMatches);
+  self.jdsCalendarMatchDay := TJanuaPgDataset.Create(FDM.qryCalendarDay);
+  // le singole partite con match, formazioni ed eventi del match
+  FjdsMatchDetail := TJanuaPgDataset.Create(FDM.qryMatchDetail);
+  FjdsMatchDetailEvents := TJanuaPgDataset.Create(FDM.qryMatchDetailEvents);
+  FjdsMatchDetailHomePlayers := TJanuaPgDataset.Create(FDM.qryMatchHomePlayers);
+  FjdsMatchDetailVisitorPlayers := TJanuaPgDataset.Create(FDM.qryMatchVisitorsPlayers);
+end;
+
+procedure TJanuaPgFootballStorage.InternalDestroyDataset;
+begin
+  inherited;
+  if Assigned(self.FDM) and not self.KeepAlive then
+    self.FDM.Free;
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenCalendar(aSeasonID, aLeagueID: Word);
+begin
+  FFootballSettings.season_id := aSeasonID;
+  FFootballSettings.league_id := aLeagueID;
+end;
+
+procedure TJanuaPgFootballStorage.OpenCalendar;
+begin
+  self.OpenChampionship;
+
+  if (FDM.qryCalendarDay.ParamByName('season_id').AsInteger <> FFootballSettings.season_id) or
+    (FDM.qryCalendarDay.ParamByName('league_id').AsInteger <> FFootballSettings.league_id) or not FDM.qryCalendarDay.Active
+  then
+  begin
+    FDM.qryCalendarDay.Close;
+    FDM.qryCalendarDay.ParamByName('season_id').AsInteger := FFootballSettings.season_id;
+    FDM.qryCalendarDay.ParamByName('league_id').AsInteger := FFootballSettings.league_id;
+    self.FDBFunctions.OpenDataset(FDM.qryCalendarDay);
+  end;
+
+  FDM.qryCalendarMatches.Open;
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionship;
+begin
+  self.CheckSeasonID;
+  self.CheckChampionshipID;
+
+  TestOpenChampionship;
+
+  if FDM.qryChampionship.RecordCount = 0 then
+  begin
+    OpenLastSeason;
+    OpenFirstLeague;
+    TestOpenChampionship;
+  end;
+
+  // Al momento aprendo la lista dei campionati non apro in partenza il BillBoard della giornata di Default del primo
+  // Campionato in lista, semmai si demanda questa procedura ad una seconda chiamata ad esempio per la generazione
+  // della pagina web di 'benvenuto' sul sito web principale.
+  {
+    if league_id > 0 then
+    qryChampionships.Locate('league_id', league_id, [])
+    else
+    self.Setleague_id(self.qryChampionshipsleague_id.AsInteger);
+  }
+
+  self.CheckMatchDay;
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionShips;
+begin
+  if (GetParamByName('season_id', FDM.qryChampionships).AsInteger <> FFootballSettings.season_id) or not FDM.qryChampionships.Active
+  then
+  begin
+    FDM.qryChampionships.Close;
+    GetParamByName('season_id', FDM.qryChampionships).AsInteger := FFootballSettings.season_id;
+    FDBFunctions.OpenDataset(FDM.qryChampionships);
+    FDM.qryChampionships.First;
+    self.FChampionshipsCount := FDM.qryChampionships.RecordCount;
+  end;
+
+  // Al momento aprendo la lista dei campionati non apro in partenza il BillBoard della giornata di Default del primo
+  // Campionato in lista, semmai si demanda questa procedura ad una seconda chiamata ad esempio per la generazione
+  // della pagina web di 'benvenuto' sul sito web principale.
+
+  {
+    if league_id > 0 then
+    qryChampionships.Locate('league_id', league_id, [])
+    else
+    self.Setleague_id(self.qryChampionshipsleague_id.AsInteger);
+
+    if self.Fmatch_day = 0 then
+    self.Fmatch_day := GetLastMatchDay;
+
+    self.OpenRanking;
+    self.OpenGoalRanking;
+    self.OpenMatches;
+    self.OpenNextMatches;
+  }
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionShips(aSeasonID: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionshipSummary;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionshipTeam(aSeasonID, aLeagueID, aTeam: integer);
+begin
+  FFootballSettings.season_id := aSeasonID;
+  FFootballSettings.league_id := aLeagueID;
+  FFootballSettings.team_id := aTeam;
+  self.OpenChampionshipTeam;
+end;
+
+procedure TJanuaPgFootballStorage.OpenChampionshipTeam;
+begin
+  self.OpenChampionship;
+  self.OpenSeasonChampionship(FFootballSettings.season_id, FFootballSettings.league_id);
+  FDM.qryChampionshipTeam.ParamByName('team_id').AsInteger := FFootballSettings.team_id;
+  FDM.qryChampionshipTeam.ParamByName('season_id').AsInteger := FFootballSettings.season_id;
+  FDM.qryChampionshipTeam.ParamByName('league_id').AsInteger := FFootballSettings.league_id;
+  FDBFunctions.OpenDataset(FDM.qryChampionshipTeam);
+  FDBFunctions.OpenDataset(FDM.qryTeamPlayers);
+  FDBFunctions.OpenDataset(FDM.qryTeamMatches);
+end;
+
+procedure TJanuaPgFootballStorage.OpenDefaultSeason;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenDefaultSeasonChampionship;
+begin
+
+end;
+
+function TJanuaPgFootballStorage.OpenFirstLeague: integer;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenGoalRanking;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenGolRanking(aSeasonID, aLeague, aDay: integer);
+begin
+
+end;
+
+function TJanuaPgFootballStorage.OpenLastSeason: integer;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenLiveScore;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatchDetail(aSeasonID, aLeagueID, aMatchNumber: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatchDetail(aMatchID: Int64);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatchDetail;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatches(aSeasonID, aLeagueID, aMatchNumber: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatches;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenMatchTeam(aMatchID: Int64; aTeamID: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenNextMatches;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenPlayerCareer;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenPlayerCareer(aID: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenRanking;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenRanking(aSeasonID, aChampionshipID: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenSeasonChampionship(aSeasonID, aChampionshipID: integer);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenSeasons;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.OpenTeamPlayers(aTeamID, aSeasonID: Int16);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.RefreshData;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.SetNextMatchDay;
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.SetupSeason(aSeasonID: integer; aLeagueID: smallint);
+begin
+
+end;
+
+procedure TJanuaPgFootballStorage.TestOpenChampionship;
+begin
+
+end;
+
+end.

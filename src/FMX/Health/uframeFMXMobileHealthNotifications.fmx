@@ -1,0 +1,224 @@
+object frameFMXMobileHealthNotifications: TframeFMXMobileHealthNotifications
+  Size.Width = 416.000000000000000000
+  Size.Height = 654.000000000000000000
+  Size.PlatformDefault = False
+  object TabControlNotifications: TTabControl
+    Align = Client
+    Size.Width = 416.000000000000000000
+    Size.Height = 654.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      416s
+      654s
+      416s
+      654s
+      416s
+      654s)
+    object TabItem31Notifications: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Notifiche'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ListViewNotifications: TListView
+        ItemAppearanceClassName = 'TImageListItemAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 416.000000000000000000
+        Size.Height = 577.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        CanSwipeDelete = False
+        OnItemClick = ListViewNotificationsItemClick
+      end
+      object txtNotifications: TText
+        Align = Top
+        Size.Width = 416.000000000000000000
+        Size.Height = 77.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Non si sono Notifiche'
+      end
+    end
+    object TabItem32Booking: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem32Booking'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inline frameFMXMobileSummary1: TframeFMXMobileSummary
+        Align = Client
+        Size.Width = 416.000000000000000000
+        Size.Height = 654.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScrollBox1: TVertScrollBox
+          Size.Width = 416.000000000000000000
+          Size.Height = 654.000000000000000000
+          Viewport.Width = 416.000000000000000000
+          Viewport.Height = 654.000000000000000000
+          inherited Layout1: TLayout
+            inherited Label11: TLabel
+              Position.Y = 436.000000000000000000
+            end
+            inherited ListViewInstitutes: TListView
+              Align = Top
+              Position.Y = 217.000000000000000000
+              Size.Height = 219.000000000000000000
+              ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+                item
+                  AppearanceObjectName = 'Text1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.Font.Size = 11.000000000000000000
+                  Appearance.Width = 407.000000000000000000
+                  Appearance.Height = 24.000000000000000000
+                end
+                item
+                  AppearanceObjectName = 'Text2'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.Font.Size = 10.000000000000000000
+                  Appearance.Width = 407.000000000000000000
+                  Appearance.Height = 43.000000000000000000
+                  Appearance.VertAlign = Trailing
+                  Appearance.PlaceOffset.Y = -1.000000000000000000
+                end
+                item
+                  AppearanceObjectName = 'Accessory3'
+                  AppearanceClassName = 'TAccessoryObjectAppearance'
+                  Appearance.AccessoryType = Checkmark
+                  Appearance.Width = 20.000000000000000000
+                  Appearance.Height = 24.000000000000000000
+                  Appearance.Align = Trailing
+                end>
+            end
+            inherited Panel1: TPanel
+              Align = Top
+              Position.Y = 457.000000000000000000
+            end
+            inherited Panel8: TPanel
+              Align = Top
+              Position.Y = 497.000000000000000000
+            end
+            inherited Panel9: TPanel
+              Align = Top
+              Position.Y = 537.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    object TabItem33Choice: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem33Choice'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inline frameFMXMobileChoice1: TframeFMXMobileChoice
+        Align = Client
+        Size.Width = 416.000000000000000000
+        Size.Height = 654.000000000000000000
+        Size.PlatformDefault = False
+        inherited Text1: TText
+          Size.Width = 416.000000000000000000
+        end
+        inherited pnl1: TPanel
+          Size.Width = 416.000000000000000000
+          inherited lbInstitute1: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbAddress1: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbDateTime1: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited Panel2: TPanel
+            Size.Width = 416.000000000000000000
+            inherited Switch1: TSwitch
+              Position.X = 338.000000000000000000
+            end
+          end
+        end
+        inherited pnl3: TPanel
+          Size.Width = 416.000000000000000000
+          inherited lbInstitute3: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbAddress3: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbDateTime3: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited Panel4: TPanel
+            Size.Width = 416.000000000000000000
+            inherited Switch2: TSwitch
+              Position.X = 338.000000000000000000
+            end
+          end
+        end
+        inherited pnl2: TPanel
+          Size.Width = 416.000000000000000000
+          inherited lbInstitute2: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbAddress2: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited lbDateTime2: TLabel
+            Size.Width = 406.000000000000000000
+          end
+          inherited Panel6: TPanel
+            Size.Width = 416.000000000000000000
+            inherited Switch3: TSwitch
+              Position.X = 338.000000000000000000
+            end
+          end
+        end
+        inherited Button1: TButton
+          Size.Width = 416.000000000000000000
+          OnClick = frameFMXMobileChoice1Button1Click
+        end
+        inherited Button2: TButton
+          Size.Width = 416.000000000000000000
+        end
+        inherited Panel1: TPanel
+          Size.Width = 416.000000000000000000
+        end
+        inherited Panel3: TPanel
+          Size.Width = 416.000000000000000000
+          inherited Panel5: TPanel
+            Size.Width = 416.000000000000000000
+          end
+        end
+        inherited Panel7: TPanel
+          Size.Width = 416.000000000000000000
+        end
+      end
+    end
+  end
+end

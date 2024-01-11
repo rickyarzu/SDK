@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscAppPager</title></head>
+<body>
+&nbsp;&nbsp; &nbsp;
+<font face="Helvetica, Arial"><a name="link89"></a></font>
+<h1 class="bigH">TscAppPager</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scAppPager.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Page control as main control for main form of application.</p>
+<p>Items can be linked to page or to some event. </p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Items</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscAppPagerItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscAppPagerItem
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemGlowEffect</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for
+item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowCaption<br>
+</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show caption&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of the caption
+area</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionGlowEffect</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscGlowEffect.html">TscGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for
+caption</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont<br>
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for caption<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList<br>
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Image list for caption<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionImageIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer<br>
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Image index for caption<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CaptionLayout</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TButtonLayout<br>
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Position for image and
+text in caption<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">
+TscAppPagerSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1"> Style of selection...<br>
+TscAppPagerSelectionStyle = (scapsColor, scapsStyled, scsModern,
+scapsCustomImage,&nbsp;scapsCustomImageOverColor);<br>
+<br>
+scapsStyled - bitmap selection from theme or style<br>
+scapsColor - color selection from theme, style or custom<br>scsModern - style as Windows 10 UI<br>scapsCustomImage - custom image from TscImageCollection<br>
+scapsCustomImageOverColor custom image from TscImageCollection, which
+will be draw over color in item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Colleciton for wallpaper
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Colleciton for custom
+images for elements
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of wallpaper image
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomBackgroundImageIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of background image
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CustomBackgroundOverContentImageIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of background
+image, which will be draw over items
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemWidth</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Width of item's area. If value&nbsp; </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of item </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Font</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemBackgroundColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Backgorund color for
+items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemHotColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Item hot color</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemSelectionColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Item selection color</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemSelectionFocusedColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Item focused color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemFontHotColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item font hot color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemFontSelectionColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item font selection color
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemFontSelectionFocusedColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item font focused color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemHotImageIndex<br>
+ItemSelectionImageIndex<br>
+ItemSelectionFocusedImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for selection</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ActivePage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscAppPagerPage= class
+(<a href="TscScrollbox.html">TscScrollBox</a>) </td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Active page<br>
+</td>
+</tr>
+
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="color: red;">ChangePageWithItemSelection</span></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">This property define how you will change page with keyboard.<br>If this property is True then page will be changed if you select item.<br>If this property is False then you must press "Enter" or "Space" on selected item to open page</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionCursor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TCursor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Specific cursor for caption are</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CaptionCursorEnabled</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable / Disable cursor for caption</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ItemsTopOffset</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset for all item from top</td></tr></tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnChangePage</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event when page changed </td>
+</tr>
+
+
+
+</tbody>
+</table>
+<p></p><span style="color: red;"><span style="color: black;"></span></span>
+<p>&nbsp;</p><h1 class="bigH"><small>TscAppPagerItem</small></h1>
+<p><br></p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="height: 1px; width: 90%; background-color: rgb(153, 153, 153);" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Divider</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">If 
+True then item is divider</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Item 
+enabled</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">String</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Caption of item</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">Integer</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Image 
+index</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Visible</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Visibility of item</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Page</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">TscAppPagerPage= class (<a href="TscScrollbox.html">TscScrollBox</a>)</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Link 
+to the page</td></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Detail</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">String</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Detail text of item, which draw on the 
+bottom</td></tr></tbody></table><br>
+<h1><small><font face="Helvetica, Arial">Events</font></small></h1>
+<p>&nbsp;</p>
+<table style="height: 1px; width: 90%; background-color: rgb(153, 153, 153);" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th></tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClick</td>
+<td style="width: 227px; background-color: white;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="width: 696px; background-color: white;" bgcolor="#efefef" height="1">Event 
+on item click</td></tr></tbody></table><br>
+<p>&nbsp;</p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p><span style="color: red;">&nbsp;&nbsp;&nbsp; <span style="color: black;">Use TControl.StyleElements 
+property to adjust custom colors for client and font in all controls when VCL 
+Style is enabled!</span></span>
+<p>&nbsp;</p>
+</body></html>

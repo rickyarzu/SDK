@@ -1,0 +1,116 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{23E38E32-FA2D-4698-B906-A5C6A5F40068}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Janua.SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.dclSVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Janua_SVGIconPackage">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Clean">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Make">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Clean">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Make">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Clean">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Make">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Clean">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Make">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageListFMX">
+        <MSBuild Projects="Janua.dclSVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageListFMX:Clean">
+        <MSBuild Projects="Janua.dclSVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageListFMX:Make">
+        <MSBuild Projects="Janua.dclSVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Janua_SVGIconPackage;Janua_SVGIconImageList;Janua_dclSVGIconImageList;Janua_SVGIconImageListFMX;Janua_dclSVGIconImageListFMX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Janua_SVGIconPackage:Clean;Janua_SVGIconImageList:Clean;Janua_dclSVGIconImageList:Clean;Janua_SVGIconImageListFMX:Clean;Janua_dclSVGIconImageListFMX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Janua_SVGIconPackage:Make;Janua_SVGIconImageList:Make;Janua_dclSVGIconImageList:Make;Janua_SVGIconImageListFMX:Make;Janua_dclSVGIconImageListFMX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Ethea'">
+        <BuildGroupProject Include="Janua.SVGIconImageList.dproj">
+            <ProjectGuid>{67EDECA9-2CF8-4EB1-BCE1-910D4B3F08F1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.dclSVGIconImageList.dproj">
+            <ProjectGuid>{E2019DDD-8241-4D27-BDC9-9941252DAC1D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.dclSVGIconImageListFMX.dproj">
+            <ProjectGuid>{AC5E58B2-BDF0-4A77-9084-92441FBD9BC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.SVGIconImageListFMX.dproj">
+            <ProjectGuid>{2CD11B99-3805-4F90-B598-3652213872B2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.SVGIconPackage.dproj">
+            <ProjectGuid>{0355BC6D-FB35-489E-B658-2FBA6E4EFCCF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

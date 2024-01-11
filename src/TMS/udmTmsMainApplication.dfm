@@ -1,0 +1,2 @@
+inherited dmTmsMainApplication: TdmTmsMainApplication
+end

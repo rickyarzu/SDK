@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7A409932-64BC-4CA3-BFC2-42B681C4FB57}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\client\delphi\RestLibDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\client\delphi\Samples.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\mercado-libre\delphi\mercadolibre.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\..\prj\DXE14\JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RestLibDemo">
+        <MSBuild Projects="..\client\delphi\RestLibDemo.dproj"/>
+    </Target>
+    <Target Name="RestLibDemo:Clean">
+        <MSBuild Projects="..\client\delphi\RestLibDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestLibDemo:Make">
+        <MSBuild Projects="..\client\delphi\RestLibDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Samples">
+        <MSBuild Projects="..\client\delphi\Samples.dproj"/>
+    </Target>
+    <Target Name="Samples:Clean">
+        <MSBuild Projects="..\client\delphi\Samples.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Samples:Make">
+        <MSBuild Projects="..\client\delphi\Samples.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mercadolibre">
+        <MSBuild Projects="..\mercado-libre\delphi\mercadolibre.dproj"/>
+    </Target>
+    <Target Name="mercadolibre:Clean">
+        <MSBuild Projects="..\mercado-libre\delphi\mercadolibre.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mercadolibre:Make">
+        <MSBuild Projects="..\mercado-libre\delphi\mercadolibre.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="..\..\..\..\prj\DXE14\JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="..\..\..\..\prj\DXE14\JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="..\..\..\..\prj\DXE14\JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RestLibDemo;Samples;mercadolibre;JanuaCore"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RestLibDemo:Clean;Samples:Clean;mercadolibre:Clean;JanuaCore:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RestLibDemo:Make;Samples:Make;mercadolibre:Make;JanuaCore:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="sami5rnt2hg_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="200,40,273,370" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FForm" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FFrame" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FControl" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.GetParentObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.GetClientHeight()" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.SetFormEvents()" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FKBBounds" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FNeedOffset" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FVertScrollBox" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FMainLayout" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.RestorePosition()" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.UpdateKBBounds()" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.SetVertScrollBox(FMX.Layouts.TVertScrollBox)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.SetMainLayout(FMX.Layouts.TLayout)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.SetForm(FMX.Forms.TForm)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FormVirtualKeyboardHidden(System.TObject,System.Boolean,System.Types.TRect)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FormVirtualKeyboardShown(System.TObject,System.Boolean,System.Types.TRect)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.FormFocusChanged(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.CalcContentBoundsProc(System.TObject,ref@System.Types.TRectF)" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.VertScrollBox" />
+      <reference referencedUin="delphi:e_property:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.ParentObject" />
+      <reference referencedUin="delphi:e_property:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.ClientHeight" />
+      <reference referencedUin="delphi:e_property:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.MainLayout" />
+      <reference referencedUin="delphi:e_property:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaFMXFormManager.Form" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TFMXControlClassHelper">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="520,220,260,84" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TFMXControlClassHelper.SelectNext(FMX.Controls.TControl,System.Boolean)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaParentType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="520,60,233,98" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaParentType.Form" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaParentType.Frame" />
+      <reference referencedUin="delphi:e_field:src:JanuaFMXControlsXE1023:Janua.FMX.Forms.TJanuaParentType.Control" />
+    </reference>
+  </view>
+</nodeSet>

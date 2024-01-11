@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DD11B49E-5FA7-4E48-8C89-B7D412AC885A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VCL\OracleSwissKnifeXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniDAC\TestDB2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniDAC\TestSQLServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OracleSwissKnifeXE14">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE14.dproj"/>
+    </Target>
+    <Target Name="OracleSwissKnifeXE14:Clean">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OracleSwissKnifeXE14:Make">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestDB2">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestDB2.dproj"/>
+    </Target>
+    <Target Name="TestDB2:Clean">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestDB2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestDB2:Make">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestDB2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestSQLServer">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestSQLServer.dproj"/>
+    </Target>
+    <Target Name="TestSQLServer:Clean">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestSQLServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestSQLServer:Make">
+        <MSBuild Projects="..\..\Samples\UniDAC\TestSQLServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OracleSwissKnifeXE14;TestDB2;TestSQLServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OracleSwissKnifeXE14:Clean;TestDB2:Clean;TestSQLServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OracleSwissKnifeXE14:Make;TestDB2:Make;TestSQLServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

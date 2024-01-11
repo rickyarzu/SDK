@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B566B5D6-3732-46E2-9C65-CC73E75252B9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Projects\VCL\prj\LndCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\LNDWebBrokerVCLRESTServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\LNDWebBrokerConsoleRestServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\LNDWebBrokerRESTService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\LNDLiguriaApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LndCms">
+        <MSBuild Projects="..\..\..\Projects\VCL\prj\LndCms.dproj"/>
+    </Target>
+    <Target Name="LndCms:Clean">
+        <MSBuild Projects="..\..\..\Projects\VCL\prj\LndCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LndCms:Make">
+        <MSBuild Projects="..\..\..\Projects\VCL\prj\LndCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDWebBrokerVCLRESTServer">
+        <MSBuild Projects="WebREST\LNDWebBrokerVCLRESTServer.dproj"/>
+    </Target>
+    <Target Name="LNDWebBrokerVCLRESTServer:Clean">
+        <MSBuild Projects="WebREST\LNDWebBrokerVCLRESTServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDWebBrokerVCLRESTServer:Make">
+        <MSBuild Projects="WebREST\LNDWebBrokerVCLRESTServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDWebBrokerConsoleRestServer">
+        <MSBuild Projects="WebREST\LNDWebBrokerConsoleRestServer.dproj"/>
+    </Target>
+    <Target Name="LNDWebBrokerConsoleRestServer:Clean">
+        <MSBuild Projects="WebREST\LNDWebBrokerConsoleRestServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDWebBrokerConsoleRestServer:Make">
+        <MSBuild Projects="WebREST\LNDWebBrokerConsoleRestServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDWebBrokerRESTService">
+        <MSBuild Projects="WebREST\LNDWebBrokerRESTService.dproj"/>
+    </Target>
+    <Target Name="LNDWebBrokerRESTService:Clean">
+        <MSBuild Projects="WebREST\LNDWebBrokerRESTService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDWebBrokerRESTService:Make">
+        <MSBuild Projects="WebREST\LNDWebBrokerRESTService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDLiguriaApp">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj"/>
+    </Target>
+    <Target Name="LNDLiguriaApp:Clean">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDLiguriaApp:Make">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDLiguriaAppTest">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj"/>
+    </Target>
+    <Target Name="LNDLiguriaAppTest:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDLiguriaAppTest:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LndCms;LNDWebBrokerVCLRESTServer;LNDWebBrokerConsoleRestServer;LNDWebBrokerRESTService;LNDLiguriaApp;LNDLiguriaAppTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LndCms:Clean;LNDWebBrokerVCLRESTServer:Clean;LNDWebBrokerConsoleRestServer:Clean;LNDWebBrokerRESTService:Clean;LNDLiguriaApp:Clean;LNDLiguriaAppTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LndCms:Make;LNDWebBrokerVCLRESTServer:Make;LNDWebBrokerConsoleRestServer:Make;LNDWebBrokerRESTService:Make;LNDLiguriaApp:Make;LNDLiguriaAppTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

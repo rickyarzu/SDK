@@ -1,0 +1,35 @@
+unit Janua.Core.Classes.Intf;
+
+{$I JANUACORE.INC}
+
+interface
+
+{$IFDEF DELPHIXE}
+uses System.Bindings.Helper;
+{$ENDIF DELPHIXE}
+
+type
+  IJanuaBindable = interface
+    ['{E7EDFF21-C3E8-4700-ABE0-410B3ACA6052}']
+    /// <summary>
+    /// Janua Binding Framework. This procedure binds a Field from the record to a property of 'any' Object.
+    /// </summary>
+    procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
+      const AReadOnly: boolean = false; const ACreateOptions: TBindings.TCreateOptions = [coNotifyOutput,
+      coEvaluate]);
+    /// <summary> Clears all Bindings to all properties of the object </summary>
+    procedure ClearBindings;
+    procedure UnBind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string);
+    /// <summary> Read record logs and Builds a string separating logs with line breaks </summary>
+    function GetLogString: string;
+    /// <summary> Expose internal Log as String </summary>
+    property LogString: string read GetLogString;
+  end;
+
+type IJanuaInterfaceObj = interface(IJanuaBindable)
+  ['{EA63A46B-1500-4186-823D-23BAEA4306BE}']
+end;
+
+implementation
+
+end.

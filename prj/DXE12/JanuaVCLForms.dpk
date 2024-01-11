@@ -1,0 +1,115 @@
+﻿package JanuaVCLForms;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  dac260,
+  crcontrols260,
+  jcl,
+  unidac260,
+  pgprovider260,
+  tdsprovider260,
+  oraprovider260,
+  QRWRun,
+  officeXPrt,
+  JvStdCtrls,
+  JvDB,
+  JvSystem,
+  JvCore,
+  gtDocEng,
+  vclwinx,
+  dsnap,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter,
+  JanuaVCLControls,
+  JanuaVCLComponents,
+  JanuaTMSControls,
+  JanuaCore,
+  JanuaVCLMVVM,
+  JanuaMVVM,
+  Janua.Ethea.VCLThemeSelector,
+  Janua.SVGIconPackage,
+  Janua.SVGIconImageList,
+  EAN,
+  dxCoreRS26,
+  dxGDIPlusRS26;
+
+contains
+  uframeVCLLOgisticReceiptSingleRow in '..\..\src\VCL\Logistic\uframeVCLLOgisticReceiptSingleRow.pas' {frameVCLLogisticReceiptSingleRow: TFrame},
+  uframeVCLShippingAddress in '..\..\src\VCL\Anagraph\uframeVCLShippingAddress.pas' {frameVCLShippingAddress: TFrame},
+  uJanuaVCLMainForm in '..\..\src\VCL\Commons\
+uJanuaVCLMainForm.pas' {JanuaVCLMainForm},
+  uJanuaVCLframeMainToobar in '..\..\src\VCL\Commons\
+uJanuaVCLframeMainToobar.pas' {FrameVCLMainToolBar: TFrame},
+  ufrmVCLAnagraphNavigator in '..\..\src\VCL\Anagraph\ufrmVCLAnagraphNavigator.pas' {frmVCLAnagraphNavigator},
+  uframeAnagraphCompanyAddress in '..\..\src\VCL\Anagraph\uframeAnagraphCompanyAddress.pas' {FrameVCLCompanyAddress: TFrame},
+  uframeAnagraphCompanyPayments in '..\..\src\VCL\Anagraph\uframeAnagraphCompanyPayments.pas' {frameAnagraphCompanyPayments: TFrame},
+  uFrameVCLDBAnagraphLocations in '..\..\src\VCL\Anagraph\uFrameVCLDBAnagraphLocations.pas' {FrameVCLDBAnagraphLocations: TFrame},
+  uFrameVCLAnagraphPanel in '..\..\src\VCL\Anagraph\uFrameVCLAnagraphPanel.pas' {FrameVCLAnagraphPanel: TFrame},
+  uFrameVCLAnagraphLocations in '..\..\src\VCL\Anagraph\uFrameVCLAnagraphLocations.pas' {FrameVCLAnagraphLocations},
+  uframeVCLAnagraphMVVM in '..\..\src\VCL\Anagraph\uframeVCLAnagraphMVVM.pas' {frameVCLAnagraphMVVM: TFrame},
+  ufrmVCLViewModelNavigator in '..\..\src\VCL\Forms\ufrmVCLViewModelNavigator.pas' {frmVCLViewModelNavigator},
+  uframeVCLTest in '..\..\src\VCL\Commons\uframeVCLTest.pas' {frameVCLTest: TFrame},
+  ufrmVCLVMTestNavigator in '..\..\src\VCL\Test\ufrmVCLVMTestNavigator.pas' {frmVCLVMTestNavigator},
+  ufrmVCLVMAnagraphNavigator in '..\..\src\VCL\Anagraph\ufrmVCLVMAnagraphNavigator.pas' {frmVCLVMAnagraphNavigator},
+  Janua.Documents.frmVCLMVVMNavigator in '..\..\src\VCL\Documents\Janua.Documents.frmVCLMVVMNavigator.pas' {frmVCLMVVMDocumentsNavigator},
+  ufrmVCLLogistiReceiptsNavigator in '..\..\src\VCL\Logistic\ufrmVCLLogistiReceiptsNavigator.pas' {frmVCLLogistiReceiptsNavigator},
+  uframeVCLLogisticCustomDocuments in '..\..\src\VCL\Logistic\uframeVCLLogisticCustomDocuments.pas' {frameVCLLogisticCustomDocuments: TFrame},
+  ufrmVCLLogisticReceipt in '..\..\src\VCL\Logistic\ufrmVCLLogisticReceipt.pas' {frmVCLLogisticReceipt},
+  uframeVCLCompanyInformations in '..\..\src\VCL\Anagraph\uframeVCLCompanyInformations.pas' {frameVCLCompanyInformations},
+  uframeVCLLogisticReceipt in '..\..\src\VCL\Logistic\uframeVCLLogisticReceipt.pas' {frameVCLLogisticReceipt: TFrame},
+  ufrmVCLLogisticInventoryNavigator in '..\..\src\VCL\Logistic\ufrmVCLLogisticInventoryNavigator.pas' {frmVCLLogisticInventoryNavigator},
+  uqrpAirWayBill in '..\..\src\VCL\Logistic\uqrpAirWayBill.pas' {qrpAirWayBill},
+  uqrpInvoice in '..\..\src\VCL\Documents\uqrpInvoice.pas' {qrpInvoice},
+  ufrmAirWayBill in '..\..\src\VCL\Forms\ufrmAirWayBill.pas' {frmAirWayBill},
+  Janua.VCL.Logistic.frameWarehouseReceipt in '..\..\src\VCL\Logistic\Janua.VCL.Logistic.frameWarehouseReceipt.pas' {FrameVCLLogisticWarehouseReceipt: TFrame},
+  Janua.VCL.Logistic.frameWarehouseReceiptRow in '..\..\src\VCL\Logistic\Janua.VCL.Logistic.frameWarehouseReceiptRow.pas' {FrameVCLLogisticWarehouseReceiptRow: TFrame},
+  Janua.VCL.Logistic.dlgWarehouseReceipt in '..\..\src\VCL\Logistic\Janua.VCL.Logistic.dlgWarehouseReceipt.pas' {dlgVCLLogisticWarehouseReceipt},
+  Janua.VCL.Application in '..\..\src\VCL\Commons\Janua.VCL.Application.pas',
+  uframeJanuaVCLViewModelDetail in '..\..\src\VCL\Forms\uframeJanuaVCLViewModelDetail.pas' {frameJanuaVCLViewModelDetail: TFrame},
+  Janua.VCL.frmRepository in '..\..\src\VCL\System\Janua.VCL.frmRepository.pas' {frmVCLRepositoryMetadata};
+
+end.

@@ -1,0 +1,495 @@
+object frmVCLTestViewModel: TfrmVCLTestViewModel
+  Left = 0
+  Top = 0
+  Caption = 'Test View Model'
+  ClientHeight = 594
+  ClientWidth = 1198
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlCommands: TPanel
+    Left = 0
+    Top = 0
+    Width = 1198
+    Height = 44
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object DBNavigator1: TDBNavigator
+      Left = 0
+      Top = 0
+      Width = 200
+      Height = 44
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alLeft
+      TabOrder = 0
+    end
+    object ToolBar1: TToolBar
+      Left = 200
+      Top = 0
+      Width = 998
+      Height = 44
+      Align = alClient
+      ButtonHeight = 21
+      ButtonWidth = 31
+      Caption = 'ToolBar1'
+      ShowCaptions = True
+      TabOrder = 1
+    end
+  end
+  object pnlSearch: TPanel
+    Left = 0
+    Top = 44
+    Width = 1198
+    Height = 45
+    Align = alTop
+    TabOrder = 1
+    object btnAction1: TButton
+      AlignWithMargins = True
+      Left = 243
+      Top = 3
+      Width = 32
+      Height = 39
+      Margins.Left = 0
+      Margins.Top = 2
+      Margins.Right = 0
+      Margins.Bottom = 2
+      Action = Action1
+      Align = alLeft
+      HotImageIndex = 1
+      ImageIndex = 2
+      Images = SVGIconImageList1
+      SelectedImageIndex = 1
+      TabOrder = 0
+    end
+    object btnAction2: TButton
+      AlignWithMargins = True
+      Left = 275
+      Top = 3
+      Width = 32
+      Height = 39
+      Margins.Left = 0
+      Margins.Top = 2
+      Margins.Right = 0
+      Margins.Bottom = 2
+      Action = Action2
+      Align = alLeft
+      Images = SVGIconImageList1
+      SelectedImageIndex = 4
+      TabOrder = 1
+    end
+    object btnStartSearch: TButton
+      AlignWithMargins = True
+      Left = 626
+      Top = 3
+      Width = 32
+      Height = 39
+      Margins.Left = 0
+      Margins.Top = 2
+      Margins.Right = 0
+      Margins.Bottom = 2
+      Align = alLeft
+      ImageIndex = 5
+      Images = SVGIconImageList1
+      TabOrder = 2
+    end
+    object pnlSearchText: TPanel
+      Left = 460
+      Top = 1
+      Width = 166
+      Height = 43
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 3
+      object Label2: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 160
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Search Text'
+        ExplicitWidth = 56
+      end
+      object LUEdit1: TLUEdit
+        AlignWithMargins = True
+        Left = 3
+        Top = 19
+        Width = 160
+        Height = 23
+        Margins.Bottom = 1
+        Align = alClient
+        TabOrder = 0
+        AutoHistory = False
+        AutoHistoryLimit = 0
+        AutoHistoryDirection = ahdFirst
+        AutoSynchronize = False
+        ReturnIsTab = False
+        FileLookup = False
+        Persist.Enable = False
+        Persist.Storage = stInifile
+        Persist.Count = 0
+        Persist.MaxCount = False
+        MatchCase = False
+        ModifiedColor = clHighlight
+        ShowModified = False
+        Version = '2.3.1.6'
+        ExplicitHeight = 21
+      end
+    end
+    object pnlDateFrom: TPanel
+      Left = 1
+      Top = 1
+      Width = 121
+      Height = 43
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 4
+      object lbDateFrom: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 115
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Date From'
+        ExplicitWidth = 53
+      end
+      object edDateFrom: TDateTimePicker
+        AlignWithMargins = True
+        Left = 3
+        Top = 19
+        Width = 115
+        Height = 23
+        Align = alTop
+        Date = 44067.000000000000000000
+        Time = 0.702150740740762500
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+    object Panel4: TPanel
+      Left = 307
+      Top = 1
+      Width = 153
+      Height = 43
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 5
+      object Label4: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 147
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Search Index'
+        ExplicitWidth = 65
+      end
+      object ComboBox2: TComboBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 19
+        Width = 147
+        Height = 23
+        Align = alClient
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Text = 'ComboBox1'
+      end
+    end
+    object pnlDateTo: TPanel
+      Left = 122
+      Top = 1
+      Width = 121
+      Height = 43
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 6
+      object lbDateTo: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 115
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Date To'
+        ExplicitWidth = 38
+      end
+      object edDateTo: TDateTimePicker
+        AlignWithMargins = True
+        Left = 3
+        Top = 19
+        Width = 115
+        Height = 23
+        Align = alTop
+        Date = 44067.000000000000000000
+        Time = 0.702150740740762500
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+    object pnlSearchParams: TPanel
+      Left = 658
+      Top = 1
+      Width = 539
+      Height = 43
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 7
+    end
+  end
+  object grdMaster: TEnhCRDBGrid
+    Left = 0
+    Top = 89
+    Width = 1198
+    Height = 182
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    HighlightBGColor = clBlack
+    HighlightFont.Charset = DEFAULT_CHARSET
+    HighlightFont.Color = clWindowText
+    HighlightFont.Height = -11
+    HighlightFont.Name = 'Tahoma'
+    HighlightFont.Style = []
+  end
+  object pnlBottom: TPanel
+    Left = 0
+    Top = 456
+    Width = 1198
+    Height = 138
+    Align = alBottom
+    TabOrder = 3
+  end
+  object grdDetail: TEnhCRDBGrid
+    Left = 0
+    Top = 312
+    Width = 1198
+    Height = 144
+    Align = alBottom
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    HighlightBGColor = clBlack
+    HighlightFont.Charset = DEFAULT_CHARSET
+    HighlightFont.Color = clWindowText
+    HighlightFont.Height = -11
+    HighlightFont.Name = 'Tahoma'
+    HighlightFont.Style = []
+  end
+  object pnlDetail: TPanel
+    Left = 0
+    Top = 271
+    Width = 1198
+    Height = 41
+    Align = alBottom
+    TabOrder = 5
+    object DBNavigator2: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 200
+      Height = 39
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alLeft
+      TabOrder = 0
+    end
+  end
+  object JanuaActionViewController1: TJanuaActionViewController
+    Verbose = False
+    LogToFile = False
+    Language = jlaEnglish
+    TestMode = False
+    ToolBar = ToolBar1
+    ButtonSize = jbs24
+    DBNavigator = DBNavigator1
+    Left = 168
+    Top = 120
+  end
+  object JanuaVCLMVVMSearchParamsBuilder1: TJanuaVCLMVVMSearchParamsBuilder
+    Verbose = False
+    LogToFile = False
+    Language = jlaEnglish
+    TestMode = False
+    ActionViewController = JanuaActionViewController1
+    Left = 384
+    Top = 120
+  end
+  object JanuaVCLMVVMSearchTextBuilder1: TJanuaVCLMVVMSearchTextBuilder
+    Verbose = False
+    LogToFile = False
+    Language = jlaEnglish
+    TestMode = False
+    ActionViewController = JanuaActionViewController1
+    DateLabelFrom = lbDateFrom
+    DateLabelTo = lbDateTo
+    SearchInput = LUEdit1
+    SearchButton = btnStartSearch
+    SearchDateFrom = edDateFrom
+    SearchDateTo = edDateTo
+    Left = 264
+    Top = 144
+  end
+  object SVGIconImageList1: TSVGIconImageList
+    Size = 24
+    FixedColor = clSilver
+    Left = 680
+    Top = 112
+    Images = {
+      060000000A0000006500760065006E0074002D00320034007000780012010000
+      3C73766720786D6C6E733D22687474703A2F2F7777772E77332E6F72672F3230
+      30302F73766722206865696768743D223234222076696577426F783D22302030
+      203234203234222077696474683D223234223E3C7061746820643D224D302030
+      68323476323448307A222066696C6C3D226E6F6E65222F3E3C7061746820643D
+      224D3137203132682D3576356835762D357A4D31362031763248385631483676
+      324835632D312E313120302D312E39392E392D312E393920324C332031396330
+      20312E312E383920322032203268313463312E31203020322D2E3920322D3256
+      3563302D312E312D2E392D322D322D32682D315631682D327A6D332031384835
+      56386831347631317A222F3E3C2F7376673E1500000064006100740065005F00
+      720061006E00670065002D00770068006900740065002D003200340064007000
+      510100003C73766720786D6C6E733D22687474703A2F2F7777772E77332E6F72
+      672F323030302F737667222076696577426F783D223020302032342032342220
+      66696C6C3D227768697465222077696474683D22323470782220686569676874
+      3D2232347078223E3C7061746820643D224D302030683234763234483056307A
+      222066696C6C3D226E6F6E65222F3E3C7061746820643D224D37203131683276
+      324837762D327A6D31342D35763134633020312E312D2E3920322D3220324835
+      632D312E313120302D322D2E392D322D326C2E30312D313463302D312E312E38
+      382D3220312E39392D3268315632683276326838563268327632683163312E31
+      20302032202E39203220327A4D3520386831345636483576327A6D3134203132
+      56313048357631306831347A6D2D342D376832762D32682D3276327A6D2D3420
+      306832762D32682D3276327A222F3E3C2F7376673E19000000630061006C0065
+      006E006400610072005F0074006F006400610079002D00770068006900740065
+      002D0032003400640070001B0100003C73766720786D6C6E733D22687474703A
+      2F2F7777772E77332E6F72672F323030302F737667222076696577426F783D22
+      302030203234203234222066696C6C3D227768697465222077696474683D2232
+      34707822206865696768743D2232347078223E3C7061746820643D224D302030
+      683234763234483056307A222066696C6C3D226E6F6E65222F3E3C7061746820
+      643D224D32302033682D315631682D32763248375631483576324834632D312E
+      3120302D32202E392D322032763136633020312E312E39203220322032683136
+      63312E31203020322D2E3920322D32563563302D312E312D2E392D322D322D32
+      7A6D3020313848345631306831367631317A6D302D3133483456356831367633
+      7A222F3E3C2F7376673E1400000061006C00610072006D005F006F0066006600
+      2D00770068006900740065002D003200340064007000800200003C7376672078
+      6D6C6E733D22687474703A2F2F7777772E77332E6F72672F323030302F737667
+      222076696577426F783D22302030203234203234222066696C6C3D2277686974
+      65222077696474683D223234707822206865696768743D2232347078223E3C70
+      61746820643D224D302030683234763234483056307A222066696C6C3D226E6F
+      6E65222F3E3C7061746820643D224D31302E303420362E32394331302E363620
+      362E31312031312E33322036203132203663332E38362030203720332E313420
+      3720372030202E36382D2E313120312E33342D2E323920312E39366C312E3536
+      20312E3536632E34372D312E30382E37332D322E32372E37332D332E35322030
+      2D342E39372D342E30332D392D392D392D312E323520302D322E34342E32362D
+      332E35332E37326C312E353720312E35377A6D372E3239372D342E34386C342E
+      36303720332E3834352D312E323820312E3533352D342E36312D332E3834337A
+      4D332E303220322E314C312E363120332E35316C312E333720312E33372D2E39
+      322E373720312E323820312E353420312E30362D2E38382E382E3843332E3833
+      20382E363920332031302E37352033203133633020342E393720342E30332039
+      2039203920322E3235203020342E33312D2E383320352E38392D322E326C322E
+      3120322E3120312E34312D312E34314C332E303220322E317A4D313220323063
+      2D332E383620302D372D332E31342D372D3720302D312E372E36312D332E3236
+      20312E36322D342E34376C392E383520392E38354331352E32362031392E3339
+      2031332E372032302031322032307A4D372E343820332E37336C2E34362D2E33
+      382D312E32382D312E35342D2E362E357A222F3E3C2F7376673E100000006100
+      6C00610072006D002D00770068006900740065002D0032003400640070009301
+      00003C73766720786D6C6E733D22687474703A2F2F7777772E77332E6F72672F
+      323030302F737667222076696577426F783D2230203020323420323422206669
+      6C6C3D227768697465222077696474683D223234707822206865696768743D22
+      32347078223E3C7061746820643D224D302030683234763234483056307A2220
+      66696C6C3D226E6F6E65222F3E3C7061746820643D224D31322E352038483131
+      76366C342E373520322E38352E37352D312E32332D342D322E33377A6D342E38
+      33372D362E31396C342E36303720332E3834352D312E323820312E3533352D34
+      2E36312D332E3834337A6D2D31302E36373420306C312E32383220312E353336
+      4C332E33333720372E31396C2D312E32382D312E3533367A4D31322034632D34
+      2E393720302D3920342E30332D39203973342E303320392039203920392D342E
+      303320392D392D342E30332D392D392D397A6D30203136632D332E383620302D
+      372D332E31342D372D3773332E31342D3720372D37203720332E313420372037
+      2D332E313420372D3720377A222F3E3C2F7376673E1100000073006500610072
+      00630068002D00770068006900740065002D003200340064007000870100003C
+      73766720786D6C6E733D22687474703A2F2F7777772E77332E6F72672F323030
+      302F737667222076696577426F783D22302030203234203234222066696C6C3D
+      227768697465222077696474683D223234707822206865696768743D22323470
+      78223E3C7061746820643D224D302030683234763234483056307A222066696C
+      6C3D226E6F6E65222F3E3C7061746820643D224D31352E35203134682D2E3739
+      6C2D2E32382D2E32374331352E34312031322E35392031362031312E31312031
+      3620392E3520313620352E39312031332E3039203320392E352033533320352E
+      3931203320392E3520352E393120313620392E3520313663312E363120302033
+      2E30392D2E353920342E32332D312E35376C2E32372E3238762E37396C352034
+      2E39394C32302E34392031396C2D342E39392D357A6D2D36203043372E303120
+      313420352031312E3939203520392E3553372E3031203520392E352035203134
+      20372E303120313420392E352031312E393920313420392E352031347A222F3E
+      3C2F7376673E}
+  end
+  object ActionList1: TActionList
+    Images = SVGIconImageList1
+    Left = 568
+    Top = 136
+    object Action1: TAction
+      GroupIndex = 1
+      ImageIndex = 0
+      OnExecute = Action1Execute
+    end
+    object Action2: TAction
+      Checked = True
+      GroupIndex = 1
+      ImageIndex = 3
+      OnExecute = Action2Execute
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 592
+    Top = 304
+    object Est1: TMenuItem
+      Caption = 'TEst'
+      object estViewModel1: TMenuItem
+        Caption = 'Test ViewModel'
+        OnClick = estViewModel1Click
+      end
+      object estMenu1: TMenuItem
+        Caption = 'Test Menu'
+        OnClick = estMenu1Click
+      end
+      object estSearch1: TMenuItem
+        Caption = 'Test Search'
+        OnClick = estSearch1Click
+      end
+      object estGrid1: TMenuItem
+        Caption = 'Test Grid'
+        OnClick = estGrid1Click
+      end
+    end
+  end
+end

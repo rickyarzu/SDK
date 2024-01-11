@@ -1,0 +1,53 @@
+package RVMath;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView: Mathematic item for Delphi 10.3 Rio runtime (32-bit)'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg,
+  RVPkg,
+  RichViewActionsD;
+
+contains
+  RVMathItem in '..\..\..\Libraries\TRichView\Math\Source\RVMathItem.pas',
+  MathEquation in '..\..\..\Libraries\TRichView\Math\Source\MathEquation.pas',
+  MathTable in '..\..\..\Libraries\TRichView\Math\Source\MathTable.pas',
+  MathPresentation in '..\..\..\Libraries\TRichView\Math\Source\MathPresentation.pas',
+  MathBase in '..\..\..\Libraries\TRichView\Math\Source\MathBase.pas',
+  MathParser in '..\..\..\Libraries\TRichView\Math\Source\MathParser.pas',
+  MathManager in '..\..\..\Libraries\TRichView\Math\Source\MathManager.pas',
+  MathError in '..\..\..\Libraries\TRichView\Math\Source\MathError.pas',
+  RVMathEditorFrm in '..\..\..\Libraries\TRichView\Math\Source\RVMathEditorFrm.pas' {TfrmRVMathEditor},
+  RVMathActionDataModule in '..\..\..\Libraries\TRichView\Math\Source\RVMathActionDataModule.pas' {TdmMathActions: TDataModule},
+  RVMathActions in '..\..\..\Libraries\TRichView\Math\Source\RVMathActions.pas';
+
+end.

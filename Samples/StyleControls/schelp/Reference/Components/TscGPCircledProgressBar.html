@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGPCircledProgressBar</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPCircledProgressBar</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Circled progress bar control with&nbsp;with vector graphic
+</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MinValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Min value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MaxValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Max value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Value</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Current value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for percents</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption, which can be
+used as description of current process</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Font</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for Caption property</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameSize</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Size (width) of rouned
+frame line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of rounded frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for rounded
+frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of progress line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ProgressAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for rounded
+progress line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / Hide Caption </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowProgressText</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / Hide percents info<br>
+<br>
+<span style="font-weight: bold;">Use
+OnGetProgressText event to set your text for progress value!</span>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AnimationMode</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable animation mode in
+control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Active</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Activate animation in
+control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AnimationAcceleration</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled acceleration
+type of animation</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageCollection</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscCustomImageCollection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">Image collection</a>&nbsp;component</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image from <a href="TscGPImageCollection.html">image collection</a></td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowImage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / Hide image</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+</body></html>

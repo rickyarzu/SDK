@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DD69E2BC-9044-4B87-9FCF-706F4EB4C68B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="EanXE13Sidney.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="EanXE13Editors.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="EanXE13Sidney">
+        <MSBuild Projects="EanXE13Sidney.dproj"/>
+    </Target>
+    <Target Name="EanXE13Sidney:Clean">
+        <MSBuild Projects="EanXE13Sidney.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanXE13Sidney:Make">
+        <MSBuild Projects="EanXE13Sidney.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EanXE13Editors">
+        <MSBuild Projects="EanXE13Editors.dproj"/>
+    </Target>
+    <Target Name="EanXE13Editors:Clean">
+        <MSBuild Projects="EanXE13Editors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanXE13Editors:Make">
+        <MSBuild Projects="EanXE13Editors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="EanXE13Sidney;EanXE13Editors"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="EanXE13Sidney:Clean;EanXE13Editors:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="EanXE13Sidney:Make;EanXE13Editors:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

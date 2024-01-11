@@ -1,0 +1,76 @@
+inherited Form1_NmXhdpiPh: TForm1_NmXhdpiPh
+  ClientHeight = 615
+  ClientWidth = 400
+  DesignerMasterStyle = 3
+  inherited tabRadar: TTabControl
+    Size.Width = 400.000000000000000000
+    Size.Height = 615.000000000000000000
+    Sizes = (
+      400s
+      566s
+      400s
+      566s)
+    inherited TabItem1: TTabItem
+      Size.Width = 200.000000000000000000
+      ExplicitSize.cx = 145.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Label1: TLabel
+        Size.Width = 307.000000000000000000
+      end
+      inherited LabelMajor: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited LabelMinor: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited LabelUID: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Label2: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Button1: TButton
+        Align = Bottom
+        Position.Y = 522.000000000000000000
+        Size.Width = 400.000000000000000000
+      end
+      inherited lbDistance: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Button2: TButton
+        Size.Width = 214.000000000000000000
+      end
+      inherited ComboBox1: TComboBox
+        Size.Width = 315.000000000000000000
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 200.000000000000000000
+      Text = 'TBeaconDevice'
+      ExplicitSize.cx = 146.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Label4: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Label5: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Label6: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Label7: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited Label8: TLabel
+        Size.Width = 323.000000000000000000
+      end
+      inherited ComboBox2: TComboBox
+        Size.Width = 459.000000000000000000
+      end
+      inherited Label3: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        Size.Width = 451.000000000000000000
+      end
+    end
+  end
+end

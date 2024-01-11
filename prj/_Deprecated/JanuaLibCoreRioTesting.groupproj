@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{266477C7-9EA4-4160-AC05-726A5DDC3D05}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaThirdPartyXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPgUnidacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOraUniDacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreXE103RioUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE103">
+        <MSBuild Projects="JanuaThirdPartyXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE103:Clean">
+        <MSBuild Projects="JanuaThirdPartyXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE103:Make">
+        <MSBuild Projects="JanuaThirdPartyXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Clean">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Make">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Clean">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Make">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Clean">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Make">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE103RioUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreXE103RioUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE103RioUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreXE103RioUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE103RioUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreXE103RioUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE103;JanuaCoreXE103Rio;JanuaPgUnidacXE103;JanuaOraUniDacXE103;JanuaCoreXE103RioUnitTesting"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE103:Clean;JanuaCoreXE103Rio:Clean;JanuaPgUnidacXE103:Clean;JanuaOraUniDacXE103:Clean;JanuaCoreXE103RioUnitTesting:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE103:Make;JanuaCoreXE103Rio:Make;JanuaPgUnidacXE103:Make;JanuaOraUniDacXE103:Make;JanuaCoreXE103RioUnitTesting:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

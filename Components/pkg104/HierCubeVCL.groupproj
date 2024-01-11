@@ -1,0 +1,188 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EB303E61-E771-41B1-A179-662683C898FB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Libraries\HierCube VCL\D104Sydney\xhCntrlsRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhCntrlsDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhHierCubeRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhHierCubeDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhExportRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhExportDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhChartRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="xhChartDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="xhCntrlsRtl">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\D104Sydney\xhCntrlsRtl.dproj"/>
+    </Target>
+    <Target Name="xhCntrlsRtl:Clean">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\D104Sydney\xhCntrlsRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhCntrlsRtl:Make">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\D104Sydney\xhCntrlsRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn">
+        <MSBuild Projects="xhCntrlsDsgn.dproj"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn:Clean">
+        <MSBuild Projects="xhCntrlsDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn:Make">
+        <MSBuild Projects="xhCntrlsDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhHierCubeRtl">
+        <MSBuild Projects="xhHierCubeRtl.dproj"/>
+    </Target>
+    <Target Name="xhHierCubeRtl:Clean">
+        <MSBuild Projects="xhHierCubeRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhHierCubeRtl:Make">
+        <MSBuild Projects="xhHierCubeRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn">
+        <MSBuild Projects="xhHierCubeDsgn.dproj"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn:Clean">
+        <MSBuild Projects="xhHierCubeDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn:Make">
+        <MSBuild Projects="xhHierCubeDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhExportRtl">
+        <MSBuild Projects="xhExportRtl.dproj"/>
+    </Target>
+    <Target Name="xhExportRtl:Clean">
+        <MSBuild Projects="xhExportRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhExportRtl:Make">
+        <MSBuild Projects="xhExportRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhExportDsgn">
+        <MSBuild Projects="xhExportDsgn.dproj"/>
+    </Target>
+    <Target Name="xhExportDsgn:Clean">
+        <MSBuild Projects="xhExportDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhExportDsgn:Make">
+        <MSBuild Projects="xhExportDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhChartRtl">
+        <MSBuild Projects="xhChartRtl.dproj"/>
+    </Target>
+    <Target Name="xhChartRtl:Clean">
+        <MSBuild Projects="xhChartRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhChartRtl:Make">
+        <MSBuild Projects="xhChartRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhChartDsgn">
+        <MSBuild Projects="xhChartDsgn.dproj"/>
+    </Target>
+    <Target Name="xhChartDsgn:Clean">
+        <MSBuild Projects="xhChartDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhChartDsgn:Make">
+        <MSBuild Projects="xhChartDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="hcdemo">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj"/>
+    </Target>
+    <Target Name="hcdemo:Clean">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="hcdemo:Make">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="xhCntrlsRtl;xhCntrlsDsgn;xhHierCubeRtl;xhHierCubeDsgn;xhExportRtl;xhExportDsgn;xhChartRtl;xhChartDsgn;hcdemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="xhCntrlsRtl:Clean;xhCntrlsDsgn:Clean;xhHierCubeRtl:Clean;xhHierCubeDsgn:Clean;xhExportRtl:Clean;xhExportDsgn:Clean;xhChartRtl:Clean;xhChartDsgn:Clean;hcdemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="xhCntrlsRtl:Make;xhCntrlsDsgn:Make;xhHierCubeRtl:Make;xhHierCubeDsgn:Make;xhExportRtl:Make;xhExportDsgn:Make;xhChartRtl:Make;xhChartDsgn:Make;hcdemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libraries'">
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\D104Sydney\xhCntrlsRtl.dproj">
+            <ProjectGuid>{301FA968-79F6-4056-B45A-C2EC15F4DC3E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhChartDsgn.dproj">
+            <ProjectGuid>{42B2D841-AD41-4545-A30E-2B5F9568B531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhExportRtl.dproj">
+            <ProjectGuid>{5057E254-7BD7-405A-9F59-7D6EECF03613}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhCntrlsDsgn.dproj">
+            <ProjectGuid>{1A1A0BF0-7571-4DA0-8FDB-571C019E1A47}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhHierCubeRtl.dproj">
+            <ProjectGuid>{23B1A38C-2C48-4F38-AFAC-2B757C5E41D6}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhChartRtl.dproj">
+            <ProjectGuid>{EC8D311A-7412-49AC-8E2B-746400DC6F22}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhHierCubeDsgn.dproj">
+            <ProjectGuid>{F50D98E1-50D1-4182-A15D-373A2527772E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="xhExportDsgn.dproj">
+            <ProjectGuid>{DA647F9D-D135-47B9-B4C7-96FE0352E2F9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,8691 @@
+﻿unit Janua.Orm.Impl;
+
+interface
+
+uses
+  // System
+  System.Classes, System.Json, System.SysUtils, System.Rtti,
+  // Bindings
+  System.Bindings.Expression,
+  System.Bindings.Helper,
+  // DB, RTL, .....
+  Data.DB,
+  // OS specific
+  // Third Party Libs
+  Spring.Collections,
+  // Janua Framework
+  Janua.Core.Classes, Janua.Core.Types, Janua.Html.Intf, Janua.Orm.Intf, Janua.Orm.Types;
+
+type
+  TNotifyProcedure = reference to procedure(aPropertyName: string);
+
+type
+  TJanuaCustomField = class(TJanuaInterfacedBindableObject)
+  strict private
+    FKey: string;
+    FTitle: string;
+    FIsSet: boolean;
+    FIsNull: boolean;
+    FMaxLength: integer;
+    FPrecision: smallint;
+    FMinLength: smallint;
+    // FCheckMessage: string;
+    FMandatory: boolean;
+    FFieldType: TJanuaFieldType;
+    FDBField: string;
+    FCalculated: boolean;
+    FIsReadOnly: boolean;
+    FHtmlObject: IJanuaHtmlObject;
+    FFieldIndex: integer;
+  public
+    constructor Create; override;
+    constructor Create(aKey, aField: string; aFieldType: TJanuaFieldType;
+      aIsMonitored: boolean = false); overload;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); overload; virtual; abstract;
+  private
+    FIsMonitored: boolean;
+    function GetIsMonitored: boolean;
+    procedure SetIsMonitored(const aValue: boolean);
+  private
+    FLookupField: IJanuaField;
+    FLookupList: TJanuaLookupID;
+    FOnDataChange: TFieldChangeEvent;
+    FNotifyProcedure: TNotifyProcedure;
+    function GetLookupList: TJanuaLookupID;
+    function GetOnDataChange: TFieldChangeEvent;
+    procedure SetLookupList(const Value: TJanuaLookupID);
+    procedure SetOnDataChage(const aValue: TFieldChangeEvent);
+    procedure SetNotifyProcedure(const Value: TNotifyProcedure);
+  public
+    property NotifyProcedure: TNotifyProcedure read FNotifyProcedure write SetNotifyProcedure;
+  protected
+    function GetFieldIndex: integer;
+    procedure SetFieldIndex(const Value: integer);
+    function GetMaxLength: integer;
+    function GetMinLength: smallint;
+    function GetPrecision: smallint;
+    procedure SetAsJsonMetadata(const aValue: TJsonObject);
+    function GetAsJsonMetadata: TJsonObject;
+    procedure SetFieldType(const aValue: TJanuaFieldType);
+    procedure SetMaxLength(const aValue: integer);
+    procedure SetMinLength(const aValue: smallint);
+    procedure SetPrecision(const aValue: smallint);
+    function GetFieldType: TJanuaFieldType;
+    procedure SetKey(const aValue: string);
+    function GetKey: string;
+    function GetDBField: string;
+    procedure SetDBField(const aValue: string);
+    procedure WriteToDataset(const aDataset: TDataset);
+    procedure ReadFromDataset(const aDataset: TDataset);
+    // Read Only and Calculated Properties
+    function GetCalculated: boolean;
+    procedure SetCalculated(aValue: boolean);
+    function GeIsReadOnly: boolean;
+    procedure SetIsReadOnly(aValue: boolean);
+    function GetHtmlObject: IJanuaHtmlObject; Virtual;
+    procedure SetHtmlObject(const Value: IJanuaHtmlObject);
+    function GetJsonPair: TJsonPair;
+    function GetLookupField: IJanuaField;
+    procedure SetJsonPair(aValue: TJsonPair);
+    procedure SetLookupField(const Value: IJanuaField);
+    property LookupList: TJanuaLookupID read GetLookupList write SetLookupList;
+  strict protected
+    function GetTitle: string;
+    procedure SetTitle(const Value: string);
+    procedure CheckNotifications;
+    procedure SetIsNull(const Value: boolean);
+    function GetIsNull: boolean;
+    procedure SetAsVariant(const aValue: Variant); Virtual;
+  public
+    function Format(aFormat: string): string; virtual;
+    procedure WriteJsonValue(const aJsonObject: TJsonObject);
+    procedure ReadJsonValue(const aJsonObject: TJsonObject);
+    function HasLookupList: boolean;
+    procedure SetFromParam(const aParam: TParam);
+    procedure SetFromField(const aField: TField);
+  public
+    property Title: string read GetTitle write SetTitle;
+    // Data Type Management
+    property MinLength: smallint read GetMinLength write SetMinLength;
+    property MaxLength: integer read GetMaxLength write SetMaxLength;
+    property Precision: smallint read GetPrecision write SetPrecision;
+    property Key: string read GetKey write SetKey;
+    property FieldType: TJanuaFieldType read GetFieldType write SetFieldType;
+    property DBField: string read GetDBField write SetDBField;
+    // Calculate / Read Only
+    property Calculated: boolean read GetCalculated write SetCalculated;
+    property IsReadOnly: boolean read GeIsReadOnly write SetIsReadOnly;
+    property IsMonitored: boolean read GetIsMonitored write SetIsMonitored;
+    property OnDataChange: TFieldChangeEvent read GetOnDataChange write SetOnDataChage;
+    property HtmlObject: IJanuaHtmlObject read GetHtmlObject write SetHtmlObject;
+    property FieldIndex: integer read GetFieldIndex write SetFieldIndex;
+    property IsNull: boolean read GetIsNull write SetIsNull;
+    property LookupField: IJanuaField read GetLookupField write SetLookupField;
+  end;
+
+type
+  TJanuaFieldClass = class of TJanuaCustomField;
+
+type
+  TJanuaLargeIntField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: Int64;
+    FDefaultValue: Int64;
+    procedure SetFInternalValue(const aValue: Int64);
+  protected
+    property FInternalValue: Int64 read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: Int64;
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaSmallIntField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: smallint;
+    FDefaultValue: smallint;
+    procedure SetFInternalValue(const aValue: smallint);
+  protected
+    property FInternalValue: smallint read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: smallint;
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaIntegerField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: integer;
+    FDefaultValue: integer;
+    procedure SetFInternalValue(const aValue: integer);
+  protected
+    property FInternalValue: integer read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: integer;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaGUIDField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: TGUID;
+    FDefaultValue: TGUID;
+    procedure SetFInternalValue(const aValue: TGUID);
+  protected
+    property FInternalValue: TGUID read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: TGUID;
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaStringField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: string;
+    FDefaultValue: string;
+    procedure SetFInternalValue(const aValue: string);
+  protected
+    property FInternalValue: string read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: string;
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaBlobField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: TJanuaBlob;
+    procedure SetFInternalValue(const aValue: TJanuaBlob);
+  protected
+    property FInternalValue: TJanuaBlob read FFInternalValue write SetFInternalValue;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonValue: TJsonValue;
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+    function getValue: TValue;
+    // Default Stored and Modified Related Procedures .......................................................
+  private
+    FOldValue: TJanuaBlob;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    Destructor Destroy; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaMemoField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: TStrings;
+    FDefaultValue: string;
+    procedure SetFInternalValue(const aValue: TStrings);
+  private
+    FOldValue: TStrings;
+  protected
+    property FInternalValue: TStrings read FFInternalValue write SetFInternalValue;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+    function getValue: TValue;
+    // Default Stored and Modified Related Procedures .......................................................
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    Destructor Destroy; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property AsJsonValue: TJsonValue read GetJsonValue write SetJsonValue;
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaBooleanField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: boolean;
+    FDefaultValue: boolean;
+    procedure SetFInternalValue(const aValue: boolean);
+  protected
+    property FInternalValue: boolean read FFInternalValue write SetFInternalValue;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+    function getValue: TValue;
+    // Default Stored and Modified Related Procedures .......................................................
+  private
+    FOldValue: boolean;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property AsJsonValue: TJsonValue read GetJsonValue write SetJsonValue;
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaDateTimeField = class(TJanuaCustomField, IJanuaField)
+  public
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  strict private
+    FFInternalValue: TDateTime;
+    FDefaultValue: TDateTime;
+    procedure SetFInternalValue(const aValue: TDateTime);
+  protected
+    property FInternalValue: TDateTime read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: TDateTime;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+    // Default Value Management
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    function Format(aFormat: string): string; override;
+  public
+    Constructor Create; override;
+    Constructor Create(aKey, aField: string; aDefault: TDateTime; aIsMonitored: boolean = false); overload;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaDoubleField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: Double;
+    FDefaultValue: Double;
+    procedure SetFInternalValue(const aValue: Double);
+  protected
+    property FInternalValue: Double read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: Double;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    // Default Value Management
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaExtendedField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: Extended;
+    FDefaultValue: Extended;
+    procedure SetFInternalValue(const aValue: Extended);
+  protected
+    property FInternalValue: Extended read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: Extended;
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    // Default Value Management
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    Constructor Create(aKey, aFiedl: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property DefaultValue: TValue read GetDefault write SetDefault;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+type
+  TJanuaCurrencyField = class(TJanuaCustomField, IJanuaField)
+  strict private
+    FFInternalValue: Currency;
+    FDefaultValue: Currency;
+    procedure SetFInternalValue(const aValue: Currency);
+  protected
+    property FInternalValue: Currency read FFInternalValue write SetFInternalValue;
+  private
+    FOldValue: Currency;
+  public
+    function GetOldValue: TValue;
+    procedure SetValues(const aActualValue, aOldValue: TValue);
+  strict protected
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    function getValue: TValue;
+  public
+    procedure Default;
+    function DifferDefault: boolean;
+  private
+    // Field Related procedures ........................................................................................
+    function getAsBoolean: boolean;
+    function getAsDateTime: TDateTime;
+    function getAsFloat: Extended;
+    function getAsInteger: integer;
+    function getAsString: String;
+    function getAsLargeInt: Int64;
+    function getAsCurrency: Currency;
+    // setter ..........................................................................................................
+    procedure setAsBoolean(const aValue: boolean);
+    procedure setAsDateTime(const aValue: TDateTime);
+    procedure setAsFloat(const aValue: Extended);
+    procedure setAsInteger(const aValue: integer);
+    procedure setAsString(const aValue: String);
+    procedure setAsLargeInt(const aValue: Int64);
+    procedure setValue(const aValue: TValue);
+    procedure setAsCurrency(const aValue: Currency);
+    // json transformation procedures...........................................................................
+    function GetJsonValue: TJsonValue;
+    procedure SetJsonValue(aValue: TJsonValue);
+    function GetJsonDefault: TJsonValue;
+    procedure SetJsonDefault(aValue: TJsonValue);
+    function GetJson: string;
+    procedure SetJson(aValue: string);
+    function getAsUTF8Bytes: TBytes;
+    function GetDefault: TValue;
+    procedure SetDefault(aValue: TValue);
+  strict protected
+    procedure SetAsVariant(const aValue: Variant); override;
+    function GetAsVariant: Variant;
+  public
+    // Input/Output procedures
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromStream(aStream: TStream);
+  public
+    Constructor Create; override;
+    constructor Create(aKey, aField: string; aIsMonitored: boolean = false); override;
+    procedure Clear;
+    function Size: Int64;
+  public
+    // Json Data Management
+    property asJson: string read GetJson write SetJson;
+    property AsUTF8Bytes: TBytes read getAsUTF8Bytes;
+    // Value Management
+    property AsInteger: integer read getAsInteger write setAsInteger;
+    property AsString: String read getAsString write setAsString;
+    property AsDateTime: TDateTime read getAsDateTime write setAsDateTime;
+    property AsBoolean: boolean read getAsBoolean write setAsBoolean;
+    property AsFloat: Extended read getAsFloat write setAsFloat;
+    property AsLargeInt: Int64 read getAsLargeInt write setAsLargeInt;
+    property Value: TValue read getValue write setValue;
+    property AsVariant: Variant read GetAsVariant write SetAsVariant;
+  end;
+
+  TJanuaParams = class(TJanuaInterfacedBindableObject, IJanuaParams)
+  private
+    FItemIndex: integer;
+    FItems: IDictionary<string, IJanuaField>;
+    FParamsList: TStrings;
+    FMetaDataOnly: boolean;
+    FOrderedList: TArray<IJanuaField>;
+    function GetItemIndex: integer;
+    procedure SetItemIndex(const Value: integer);
+  strict protected
+    function GetOrderedList: TArray<IJanuaField>;
+    function GetItems: IDictionary<string, IJanuaField>;
+    procedure SetItems(const Value: IDictionary<string, IJanuaField>);
+    function GetAsJsonObject: TJsonObject;
+    procedure SetAsJsonObject(const Value: TJsonObject);
+    function GetAsMetaData: TJsonObject;
+    procedure SetAsMetaData(const Value: TJsonObject);
+    function GetAsMetaDataOnly: boolean;
+    procedure SetAsMetaDataOnly(const Value: boolean);
+    function getAsString: string;
+    function GetItem(const aIndex: integer): IJanuaField;
+    function GetParamsList: TStrings;
+    function GetText: string;
+  protected
+    /// <summary>  Is the selected Param Number in the Orderded List Array</summary>
+    property ItemIndex: integer read GetItemIndex write SetItemIndex;
+    /// <summary> Indexed property based on the internal Array </summary>
+    property Params[const aIndex: integer]: IJanuaField read GetItem; default;
+    /// <summary> ParamList can be Used to create a Combo or a Selection of Items in a View </summary>
+    property ParamsList: TStrings read GetParamsList;
+    /// <summary> Text is a List of Params by Title it is ParamsList.Text read only   property </summary>
+    property Text: string read GetText;
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+    constructor Create(const aObject: TJsonObject); overload;
+    constructor Create(const aParams: TParams); overload;
+    function AddParam(aParam: IJanuaField): IJanuaField; overload;
+    procedure DelParam(const aName: string);
+    function AddParam(aParam: TParam): IJanuaField; overload;
+    function AddParam(const aName: string; aType: TJanuaFieldType; aValue: TValue): IJanuaField; overload;
+    function ParamByName(const aName: string): IJanuaField;
+    function ParamCount: integer;
+    function ContentEquals(const aParams: IJanuaParams): boolean;
+    procedure Assign(const aParams: IJanuaParams); overload;
+    procedure Assign(const aParams: TParams); overload;
+    procedure AssignValues(const aParams: IJanuaParams); overload;
+    procedure AssignValues(const aParams: TParams); overload;
+    procedure ClearParams;
+  End;
+
+type
+  TJanuaRecord = class(TJanuaInterfacedBindableObject, IJanuaRecord)
+  strict private
+    // FHasCalcFields: boolean;
+    // FHasRefFields: boolean;
+    FCalcFields: IList<IJanuaField>;
+    FTriggerFields: IList<IJanuaField>;
+    FFields: IList<IJanuaField>;
+    FRecordSets: IList<IJanuaRecordSet>;
+    FRecordSetIndex: integer;
+    FRecords: IList<IJanuaRecord>;
+    FName: string;
+    FGUID, FMasterGUID: TGUID;
+    FNotifyEvent: TNotifyEvent;
+    FMasterRecord: IJanuaRecord;
+    // FOldRecord: IJanuaRecord;
+    FMasterFields: TMasterFields; // = TArray<TMasterField>;
+    // FModified: boolean; // se il record ? stato Modificato rispetto ad 'old-record' una cache update
+    FIsNewRecord: boolean;
+    // se il record ? un nuovo record e ad esempio i campi chiave non hanno valore
+    FIsLocalStored: boolean;
+    FIsRemoteStored: boolean;
+    FDeleted: boolean;
+    FEntity: TJanuaEntity;
+    FEntityName: string;
+  strict protected
+    FPrefix: string;
+    FItemIndex: integer;
+  private
+    procedure SetItemIndex(aValue: integer);
+    function GetItemIndex: integer;
+    function GetJanuaFields: TJanuaFields;
+    procedure SetJanuaFields(const aValue: TJanuaFields);
+    function GetName: string;
+    procedure SetName(const aValue: string);
+    function GetStoreDataset: IJanuaDBDataset;
+    procedure SetStoreDataset(const aValue: IJanuaDBDataset);
+    procedure SetDeleted(val: boolean);
+    function GetDeleted(): boolean;
+    // procedure AssignDatasets(aDatasets: TArray<TDataset>);
+    procedure AssignDatasets(aDatasets: TArray<TDataset>);
+    function AssignJanuaDatasets(const aDatasets: TJanuaDBDatasets; const aRaiseException: boolean): boolean;
+  protected
+    FHasMasterRecord: boolean;
+    FOnChangeActive: boolean;
+    procedure SetDefault; virtual;
+  public
+    procedure DoDataChange(const aField: IJanuaField);
+  public // spostare in protected nei tests ..............
+    procedure ReadData(aDataList: TValueList);
+    procedure WriteData(aDataList: TValueList);
+  public
+    Constructor Create; override;
+    Constructor Create(const aRecord: IJanuaRecord; aAssign: boolean = True); overload;
+    Constructor Create(const aObject: TJsonObject); overload;
+    Constructor Create(const aName: string; const aEntity: TJanuaEntity = None); overload; virtual;
+    /// <summary> This constructor Creates a Recordd and directly assigns it a Dataset </summary>
+    Constructor Create(const aName: string; const aDataset: IJanuaDBDataset); overload;
+    Constructor Create(const aName: string; aFields: TJanuaFields; aRecords: IList<IJanuaRecord>;
+      aRecordSets: IList<IJanuaRecordSet>; const aEntity: TJanuaEntity = None); overload;
+    procedure Clear;
+  private
+    FStoreDataset: IJanuaDBDataset;
+    FIsDeleted: boolean;
+    FKeyFields: IList<IJanuaField>;
+    FDBDataset: TDataset;
+    FLastMessage: string;
+    function CheckDataset(const aDataset: IJanuaDBDataset): boolean;
+  public
+    function FieldCount: integer;
+    function FieldByName(const aName: string): IJanuaField;
+    function TryFieldByName(const aName: string; out aField: IJanuaField): boolean;
+    function FindField(const aName: string): boolean;
+    function GetRecordCount: integer;
+    function AddField(const aField: IJanuaField): integer;
+    function AddCreateField(const aFieldType: TJanuaFieldType; const aFieldKey: string;
+      const aFieldName: string = ''; aFieldKind: TJanuaFieldKind = jfkData): IJanuaField;
+    function AddCalcField(const aField: IJanuaField): integer;
+    procedure SetRefField(const aField: IJanuaField);
+    procedure WriteToJson(const aJsonObject: TJsonObject);
+    procedure ReadFromJson(const aJsonObject: TJsonObject);
+    procedure LoadRecord;
+    procedure LoadFromDataset; overload;
+    procedure LoadFromDataset(const aMainDataset: IJanuaDBDataset); overload;
+    procedure SetupDataset(const aMainDataset: IJanuaDBDataset;
+      const aDatasets: TArray<IJanuaDBDataset>); overload;
+    procedure LoadFromDataset(const aMainDataset: IJanuaDBDataset;
+      const aDatasets: TArray<IJanuaDBDataset>); overload;
+    procedure AppendToDataset;
+    procedure UpdateToDataset;
+    function CheckInDataset: boolean;
+    procedure RefreshFromDataset;
+    procedure SaveToDataset(Force: boolean = false); overload;
+    procedure SaveToDataset(const aDataset: IJanuaDBDataset; Force: boolean = false); overload;
+    procedure SaveToDBDataset(const aDataset: TDataset; Force: boolean = false); overload;
+    /// <summary>
+    ///
+    // RecordSetIndex (Index of the Last Inserted Recordset)
+    function RecordSetIndex: integer;
+    // RecordSetCount Count of all Recordsets Last RecordSet Index + 1
+    function RecordSetCount(aRecursive: boolean = false): integer;
+    // 2018-0052 procedura per aggiornare i Master Fields (aggiunge nuovi master fields).
+    procedure AddMasterField(aMaster, aDetail: IJanuaField);
+  strict protected
+    procedure AddRecordDef(const aRecordDef: IJanuaRecord);
+    /// <summary>
+    /// Initialize può venire chiamata quando è necessario inizializzare o pulire un oggetto Record
+    /// </summary>
+    procedure Initialize; override;
+  public
+    procedure OnFieldsChange(Sender: TObject);
+    // Nested RecordSets ...................................................
+    function AddRecordSet(const aRecordSet: IJanuaRecordSet): integer;
+    // Notify Event To Calculate Fields
+    procedure DoCalcFields;
+  public
+    // Deserialize .....................................
+    procedure ReadRecord(aDataList: IRecSerialization);
+    // Serialize .......................................
+    procedure WriteRecord(aDataList: IRecSerialization);
+    // Generate New Record ..............................
+    function NewRecord: IRecSerialization;
+    // Current Record Serialization .....................
+    function RecordValue: IRecSerialization;
+    // Append Procedure
+    procedure Append;
+    procedure UndoUpdates;
+    procedure Assign(const aRecord: IJanuaRecord);
+    procedure ApplyRemoteUpdates;
+    // questa procedura deve pero attivare un 'evento' che viene passato allo Store.
+    procedure LoadFromLocalStorage;
+    // procedura che in parallelo carica i dati dal Remote Storage.
+    procedure LoadFromRemoteStorage;
+    // procedura che in parallelo carica i dati dal Remote Storage.
+    procedure ApplyLocalUpdates;
+    procedure AddKeyField(const aField: IJanuaField);
+    function CheckIsStored: boolean;
+    procedure DirectLoadFromDataset(const aDataset: TDataset); overload;
+    procedure DirectLoadFromDataset(const aDataset: IJanuaDBDataset); overload;
+    procedure DirectLoadFromDataset(const aDatasets: TArray<TDataset>); overload;
+    procedure DirectSaveToDataset(const aDataset: TDataset; Force: boolean = false); overload;
+    procedure DirectSaveToDataset(const aDatasets: TArray<TDataset>; Force: boolean = false); overload;
+    function PrefixGUIDField: string;
+    function ContentEquals(const aRecord: IJanuaRecord): boolean;
+  private // properties Setter Getter
+    procedure SetNotifyEvent(aValue: TNotifyEvent);
+    function GetNotifyEvent: TNotifyEvent;
+    // Cache Updates Modifications and so On .....................................................
+    function GetIsNewRecod: boolean;
+    procedure SetIsNewReoord(aValue: boolean);
+    property IsNewRecord: boolean read GetIsNewRecod write SetIsNewReoord;
+    function GetIsRemoteStored: boolean;
+    procedure SetIsRemoteStored(aValue: boolean);
+    function GetIsLocalStored: boolean;
+    procedure SetIsLocalStored(aValue: boolean);
+    function RecordModified: boolean;
+    function GetModified: boolean;
+    procedure SetModified(const aValue: boolean);
+    // GUID MANAGEMENT
+    procedure SetGUID(aValue: TGUID);
+    function GetGUID: TGUID;
+    // Mastere Record
+    function GetMasterRecord: IJanuaRecord;
+    procedure SetMasterRecord(aValue: IJanuaRecord);
+    function GetPrefix: string;
+    procedure SetPrefix(const aValue: string);
+    procedure SetKeyFields(val: IList<IJanuaField>);
+    function GetKeyFields(): IList<IJanuaField>;
+    function GetAsJsonObject: TJsonObject;
+    procedure SetAsJsonObject(const aValue: TJsonObject);
+    procedure SetOldRecord(aValue: IJanuaRecord);
+    procedure SetOldValue(const aValue: IJanuaField);
+    function GetIsDeleted: boolean;
+    procedure SetIsDeleted(const aValue: boolean);
+    function GetDataset: TDataset;
+    procedure SetDataset(const aValue: TDataset);
+    function GetAsMetaData: TJsonObject;
+    procedure SetAsMetaData(const Value: TJsonObject);
+    function GetLastMessage: string;
+    procedure SetLastMessage(const Value: string);
+  strict protected
+    procedure SetEntity(const Value: TJanuaEntity); stdcall;
+    procedure SetEntityName(const Value: string); stdcall;
+    function GetEntity: TJanuaEntity; stdcall;
+    function GetEntityName: string; stdcall;
+    function GetUpdatesPending: boolean;
+    procedure SetUpdatesPending(aValue: boolean);
+    // Nested Records ....................................................
+    function GetRecords: IList<IJanuaRecord>;
+    procedure SetRecords(const aValue: IList<IJanuaRecord>);
+  protected
+    function GetRecordSets: IList<IJanuaRecordSet>;
+    procedure SetRecordSets(const aValue: IList<IJanuaRecordSet>);
+  public
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetAsJsonObject;
+    property Records: IList<IJanuaRecord> read GetRecords write SetRecords;
+    property OnCalcFields: TNotifyEvent read GetNotifyEvent write SetNotifyEvent;
+    property RecordSets: IList<IJanuaRecordSet> read GetRecordSets write SetRecordSets;
+    property LastMessage: string read GetLastMessage write SetLastMessage;
+    property KeyFields: IList<IJanuaField> read GetKeyFields write SetKeyFields;
+    property Modified: boolean read GetModified write SetModified;
+    property UpdatesPending: boolean read GetUpdatesPending write SetUpdatesPending;
+    property IsLocalStored: boolean read GetIsLocalStored write SetIsLocalStored;
+    property IsRemoteStored: boolean read GetIsRemoteStored write SetIsRemoteStored;
+    property Fields: TJanuaFields read GetJanuaFields write SetJanuaFields;
+    property Name: string read GetName write SetName;
+    property GUID: TGUID read GetGUID write SetGUID;
+    // ItemIndex should be connected with GUID and is useful to locate a record insied an ILIst
+    property ItemIndex: integer read GetItemIndex write SetItemIndex;
+    property MasterRecord: IJanuaRecord read GetMasterRecord write SetMasterRecord;
+    property StoreDataset: IJanuaDBDataset read GetStoreDataset write SetStoreDataset;
+    property IsDeleted: boolean read GetIsDeleted write SetIsDeleted;
+    property Prefix: string read GetPrefix write SetPrefix;
+    property DBDataset: TDataset read GetDataset write SetDataset;
+    property AsMetadata: TJsonObject read GetAsMetaData write SetAsMetaData;
+    property RecordCount: integer read GetRecordCount;
+  end;
+
+type
+  TJanuaRecSerialization = class(TJanuaInterfacedBindableObject, IRecSerialization)
+  strict private
+    FValues: TValueList;
+    FOldValues: TValueList;
+    FRecords: TRecList;
+    FRecSets: TSetList;
+    FGUID: TGUID;
+    FIndex: integer;
+  public
+    constructor Create(const aRecord: IJanuaRecord);
+    procedure Clear;
+  private
+    // Values .....................................................................
+    function GetFieldValues: TValueList;
+    procedure SetFieldValues(const aValue: TValueList);
+  public
+    property FieldValues: TValueList read GetFieldValues Write SetFieldValues;
+  private
+    // OldValues .....................................................................
+    function GetOldValues: TValueList;
+    procedure SetOldValues(const aValue: TValueList);
+  public
+    property OldValues: TValueList read GetOldValues Write SetOldValues;
+    function GetIsModified: boolean;
+  private
+    // Records .....................................................................
+    function GetRecValues: TRecList;
+    procedure SetRecValues(const aValue: TRecList);
+  public
+    property RecValues: TRecList read GetRecValues Write SetRecValues;
+  private
+    // RecordSets ..................................................................
+    function GetRecSetList: TSetList;
+    procedure SetRecSetList(const aValue: TSetList);
+  public
+    property RecSetList: TSetList read GetRecSetList Write SetRecSetList;
+  private
+    // GUID ..................................................................
+    function GetGUID: TGUID;
+    procedure SetGUID(const aValue: TGUID);
+  public
+    property GUID: TGUID read GetGUID Write SetGUID;
+  private
+    function GetIndex: integer;
+    procedure SetIndex(const aValue: integer);
+  public
+    property ItemIndex: integer read GetIndex Write SetIndex;
+  end;
+
+type
+  TJanuaSetSerialization = class(TJanuaInterfacedBindableObject, ISetSerialization)
+  strict private
+    FRecords: TRecList;
+    FItemIndex: integer;
+  strict private
+    function GetRecList: TRecList;
+    procedure SetRecList(const aValue: TRecList);
+  public
+    property RecList: TRecList read GetRecList Write SetRecList;
+    procedure AddRecord(aSerialization: IRecSerialization);
+    function CurrentRecord: IRecSerialization;
+    procedure DelCurrenRecord;
+    function GetRecordCount: integer;
+  private
+    function GetItemIndex: integer;
+    procedure SetItemIndex(const aValue: integer);
+  public
+    property ItemIndex: integer read GetItemIndex write SetItemIndex;
+    property RecordCount: integer read GetRecordCount;
+  public
+    Constructor Create; override;
+    // Data Management
+    procedure Clear;
+  end;
+
+type
+  TJanuaRecordSet = class(TJanuaInterfacedBindableObject, IJanuaRecordSet)
+  strict private
+    FDataSet: ISetSerialization;
+    FName: string;
+    FEOF: boolean;
+    FGUIDIndex: IDictionary<TGUID, integer>;
+    FDelRecords: IList<IJanuaRecord>;
+    FLocalStorage: IJanuaRecordSetStorage;
+    FRemoteStorage: IJanuaRecordSetStorage;
+    FParams: TJanuaFields;
+    FOnScroll: TNotifyEvent;
+    FOnNewRecord: TProc<IJanuaRecord>;
+    FOnRecordChange: TProc<IJanuaRecord>;
+    FLazyLoading: boolean;
+    procedure SetJanuaFields(const aValue: TJanuaFields);
+    function GetName: string;
+    procedure SetName(const aValue: string);
+  protected
+    FRecord: IJanuaRecord;
+    FPrefix: string;
+  strict protected
+    procedure AddIndex;
+    procedure DelIndexes;
+    procedure Reindex;
+    function GetItemIndex: integer;
+    procedure SetItemIndex(const aValue: integer);
+    function IsSetLocalStorage: boolean;
+    function IsSetRemoteStorage: boolean;
+    function GetRecordCount: integer;
+  public
+    constructor Create; override;
+    Constructor Create(const aRecordSet: IJanuaRecordSet; aAssign: boolean = True); overload;
+    constructor Create(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage);
+      overload; virtual;
+    procedure SetRecord(const aRecord: IJanuaRecord);
+    constructor Create(const aObject: TJsonObject); overload;
+  public
+    procedure LoadFromDataset; overload;
+    procedure LoadFromDataset(aMainDataset: IJanuaDBDataset; aDatasets: TArray<IJanuaDBDataset>); overload;
+    procedure SaveToDataset; overload;
+    procedure SaveToDataset(const aDataset: IJanuaDBDataset); overload;
+    procedure SaveToDataset(const aDataset: IJanuaDBDataset; aDatasets: TJanuaDBDatasets); overload;
+    procedure WriteToJsonObject(const aJsonObject: TJsonObject);
+    procedure ReadFromJsonObject(const aJsonObject: TJsonObject; aFree: boolean = false);
+    procedure SetFromJsonObject(const aJsonObject: TJsonObject; aFree: boolean = false);
+    procedure ReadFromJson(aJson: string);
+    function ToJson: string;
+    function ToJsonPretty: string;
+    function FieldCount: integer;
+    function RecordCount: integer;
+    // Dataset Specific procedures and functions
+    procedure Append; overload;
+    procedure Append(const aObject: TJsonObject); overload;
+    procedure Append(const aRecord: IJanuaRecord); overload;
+    procedure Delete;
+    procedure Post;
+    function Bof: boolean;
+    function Eof: boolean;
+    procedure Next;
+    procedure Prev;
+    procedure First;
+    procedure Last;
+    procedure Clear;
+    function ContentEquals(const aRecord: IJanuaRecordSet): boolean;
+    procedure GoToBookmark(aBoomarkID: integer);
+    function SearchByGUID(aGUID: TGUID): boolean;
+    procedure DirectLoadFromDataset(const aDataset: TDataset); overload;
+    procedure DirectLoadFromDataset(const aDatasets: TArray<TDataset>); overload;
+    procedure DirectLoadFromDataset(const aDataset: IJanuaDBDataset); overload;
+    procedure DirectSaveToDataset(const aDataset: TDataset);
+  private
+    FFiltered: boolean;
+    procedure UpdateCurrentRecord;
+    // Modified
+    function GetModified: boolean;
+    procedure SetModified(aValue: boolean);
+    // Record
+    function GetCurrentRecord: IJanuaRecord;
+    procedure SetCurrentRecord(const aValue: IJanuaRecord);
+    // funzione As Json Object in entrata ed in uscita ....................
+    procedure SetAsJsonObject(const aValue: TJsonObject);
+    function GetAsJsonObject: TJsonObject;
+    // On Scroll Event (avviato anche da NewRecord ecc ecc ................
+    function GetOnScroll: TNotifyEvent;
+    procedure SetOnScroll(aValue: TNotifyEvent);
+    // GUID
+    function GetActualGUID: TGUID;
+    procedure SetActualGUID(const aValue: TGUID);
+    procedure UpdateIndexGUID(const aOld, aNew: TGUID);
+    // Store Dataset
+    function GetStoreDataset: IJanuaDBDataset;
+    procedure SetStoreDataset(const aValue: IJanuaDBDataset);
+    // Datase
+  public
+    // DataSet
+    function GetDataset: TDataset;
+    procedure SetDataset(const aValue: TDataset);
+  public
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord write SetCurrentRecord;
+  public
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetAsJsonObject;
+    property ItemIndex: integer read GetItemIndex write SetItemIndex;
+    property Name: string read GetName write SetName;
+    property Dataset: TDataset read GetDataset write SetDataset;
+    property ActualGUID: TGUID read GetActualGUID write SetActualGUID;
+  public // locate move bookmark ....
+    function Locate(const aField: IJanuaField; const aValue: integer): boolean; overload;
+    function Locate(const aField: IJanuaField; const aValue: string): boolean; overload;
+    function Locate(const aField: IJanuaField; const aValue: Variant): boolean; overload;
+    function Locate(const aField: IJanuaField; const aValue: TValue): boolean; overload;
+  public // serialization deserialization - Serializaiton Must Be Compatible ..........................................
+    procedure WriteToSerialization(aSerialization: ISetSerialization);
+    procedure ReadFromSerialization(aSerialization: ISetSerialization);
+    property OnScroll: TNotifyEvent read GetOnScroll write SetOnScroll;
+    property Modified: boolean read GetModified write SetModified;
+    property StoreDataset: IJanuaDBDataset read GetStoreDataset write SetStoreDataset;
+    // Storage Management .........................................................................................
+  private
+    function GetDelRecords: IList<IJanuaRecord>;
+    procedure SetDelRecords(const aValue: IList<IJanuaRecord>);
+    function GetParameters: TJanuaFields;
+    procedure SetParameters(const aValue: TJanuaFields);
+    procedure LoadRecordSet(const aRecordSet: IJanuaRecordSet);
+    procedure RefreshFromRecodrdSet(const aRecordSet: IJanuaRecordSet; bRemote: boolean);
+    procedure LoadFromStorage(aStorage: IJanuaRecordSetStorage);
+    procedure SetOnNewRecord(const Value: TProc<IJanuaRecord>);
+    procedure SetOnRecordChange(const Value: TProc<IJanuaRecord>);
+    function GetOnNewRecord: TProc<IJanuaRecord>;
+    function GetOnRecordChange: TProc<IJanuaRecord>;
+    function GetLazyLoading: boolean;
+    procedure SetLazyLoading(const Value: boolean);
+    function GetAsMetaData: TJsonObject;
+    procedure SetAsMetaData(const Value: TJsonObject);
+    function GetFiltered: boolean;
+    procedure SetFiltered(const Value: boolean);
+  public
+    function IsLocalUpdated: boolean;
+    function IsRemoteUpdated: boolean;
+    procedure Assign(const aRecordSet: IJanuaRecordSet);
+    /// <summary>
+    /// Questa procedura invia le modifiche allo store remoto per registrarle. Passa una procedura Callback allo Store
+    /// Quando lo store ha terminato l'update richiama la callback del Recordset per aggiornare i dati ritornati.
+    /// La procedura viene lanciata se sono presenti degli Updates e se
+    /// <summary>
+    procedure ApplyRemoteUpdates;
+    /// <summary>
+    /// procedura che in parallelo carica i dati dal Remote Storage. Al termine lancia un evento
+    /// <summary>
+    procedure LoadFromLocalStorage;
+    /// <summary>
+    /// procedura che in parallelo carica i dati dal Local Storage.
+    /// <summary>
+    procedure LoadFromRemoteStorage;
+    procedure ApplyLocalUpdates;
+    /// <summary>
+    /// se recordcount > 0 allora esegue la procedura TProc per ogni record contenuto nel set di record
+    /// <summary>
+    /// <param name="aProc">
+    /// questo parametro indica la procedura da eseguire ad ogni iterazione
+    /// </param>
+    procedure Iterate(aProc: TProc);
+    property Parameters: TJanuaFields read GetParameters write SetParameters;
+    property DelRecords: IList<IJanuaRecord> read GetDelRecords write SetDelRecords;
+    property OnNewRecord: TProc<IJanuaRecord> read GetOnNewRecord write SetOnNewRecord;
+    property OnRecordChange: TProc<IJanuaRecord> read GetOnRecordChange write SetOnRecordChange;
+    property LazyLoading: boolean read FLazyLoading write SetLazyLoading;
+    property AsMetadata: TJsonObject read GetAsMetaData write SetAsMetaData;
+    function AssignDatasets(const aDatasets: TJanuaDBDatasets; const aRaiseException: boolean): boolean;
+    property Filtered: boolean read GetFiltered write SetFiltered;
+  end;
+
+type
+  TRecordSetClass = class of TJanuaRecordSet;
+
+type
+  TJanuaDBDataset = class(TJanuaInterfacedBindableObject, IJanuaDBCustomDataset)
+  strict private
+    FOnInternalExec: TNotifyEvent;
+    FGUIDPrefix: string;
+    FLimit: integer;
+    FPage: integer;
+    FInternalDataset: TDataset;
+    FInternalDataSource: TDataSource;
+    FResult: IJanuaField;
+    FResultType: TJanuaFieldType;
+  private
+    FParams: IJanuaParams;
+    FEntityNames: TJanuaEntityNames;
+    FEntities: TJanuaEntities;
+    FScroll: boolean;
+    FOnScroll: TJanuaDatasetEvent;
+  strict protected
+    FSearchFilter: string;
+    procedure SetInternalDataset(const Value: TDataset);
+    property InternalDataset: TDataset read FInternalDataset write SetInternalDataset;
+  protected
+    function GetOnScroll: TJanuaDatasetEvent; stdcall;
+    procedure SetOnScroll(const Value: TJanuaDatasetEvent); stdcall;
+    function GetActive: boolean; stdcall;
+    procedure SetActive(const Value: boolean); stdcall;
+    function GetResult: IJanuaField;
+    function GetResultType: TJanuaFieldType;
+    procedure SetResultType(const Value: TJanuaFieldType);
+    function getLimit: integer;
+    procedure setLimit(const aValue: integer);
+    function getPage: integer;
+    procedure setPage(const aValue: integer);
+    function getGUIDPrefix: string;
+    procedure setGUIDPrefix(const aValue: string);
+    function getParams: IJanuaParams;
+    procedure setParams(const aValue: IJanuaParams);
+    procedure DefaultParams;
+    function GetDataSource: TDataSource;
+    procedure SetDataSource(const Value: TDataSource); Virtual;
+    function GetRecordCount: integer;
+  strict protected
+    function GetDataset: TDataset; virtual; abstract;
+    procedure SetDataset(const Value: TDataset); virtual; abstract;
+    function GetFiltered: boolean; virtual; abstract;
+    procedure SetFiltered(const Value: boolean); virtual; abstract;
+  public
+    procedure DatasetAfterScroll(Dataset: TDataset);
+    procedure DatasetAfterOpen(Dataset: TDataset);
+    procedure BeginScroll;
+    procedure EndScroll;
+    function AddParam(aParam: IJanuaField): IJanuaField; overload;
+    function AddParam(aParam: TParam): IJanuaField; overload;
+    // function GetFieldType: TJanuaFieldType;
+    function AddParam(const aName: string; aType: TJanuaFieldType): IJanuaField; overload;
+    function ParamByName(const aName: string): IJanuaField;
+    function GUIDField: string;
+    function FindParam(const aParamName: string; out aParam: IJanuaField): boolean;
+    procedure First;
+    procedure Next;
+    procedure Prior;
+    procedure Last;
+    function Eof: boolean;
+    function Bof: boolean;
+    procedure Open;
+    procedure OpenThreaded(aProc: TProc = nil); virtual;
+    procedure Close;
+    /// <remarks>
+    /// Added 2020-05-09 By AR
+    /// </remarks>
+    /// <example>
+    /// AddEntity('ads.banners');
+    /// </example>
+    procedure AddEntity(const aEntity: string); overload;
+    procedure AddEntity(const aEntity: TJanuaEntity); overload;
+    procedure AddEntities(const AEntities: TJanuaEntities);
+    procedure AddEntityNames(const AEntities: TJanuaEntityNames);
+    procedure SetSearchFilter(const aSQLFilter: string); virtual;
+    function FieldByName(const FieldName: string): TField; virtual;
+    procedure AddDetailDataset(const aDataset: IJanuaDBDataset);
+  private
+    procedure SetOnInternalExec(const Value: TNotifyEvent);
+    function GetEntities: TJanuaEntities;
+    function GetEntityNames: TJanuaEntityNames;
+  strict protected
+    procedure SetEntities(const AEntities: TJanuaEntities);
+    /// <summary> This event is used to internally drive function Results (Mockups or Delphi procedures)</summary>
+    property OnInternalExec: TNotifyEvent read FOnInternalExec write SetOnInternalExec;
+    procedure SetEntityNames(const AEntities: TJanuaEntityNames);
+  public
+    property Limit: integer read getLimit write setLimit;
+    property Page: integer read getPage write setPage;
+    property GUIDPrefix: string read getGUIDPrefix write setGUIDPrefix;
+    property Params: IJanuaParams read getParams write setParams;
+    property DataSource: TDataSource read GetDataSource write SetDataSource;
+    property Filtered: boolean read GetFiltered write SetFiltered;
+    property RecordCount: integer read GetRecordCount;
+    function GetDetailDatasets: IList<IJanuaDBDataset>;
+    property DetailDatasets: IList<IJanuaDBDataset> read GetDetailDatasets;
+
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+    constructor CreateWithEntities(const AEntities: TJanuaEntities); overload;
+    constructor CreateWithNames(const AEntities: TJanuaEntityNames); overload;
+  end;
+
+type
+  TJanuaOrmFactory = class
+  protected
+    class function CreateRecord: IJanuaRecord; overload;
+  public
+    class function CreateField(const aName: string; aType: TJanuaFieldType): IJanuaField; overload;
+    class function CreateField(const aObject: TJsonObject): IJanuaField; overload;
+    class function CreateField(const aField: TField): IJanuaField; overload;
+    class function CreateField(const aParam: TParam): IJanuaField; overload;
+    class function CreateBlobField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateExtentedField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateIntegerField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateSmallintField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateLargeIntField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateDoubleField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateCurrencyCField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateBoolField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateStringField(aKey, aField: string; aIsMonitored: boolean = false): IJanuaField;
+    class function CreateDateTimeField(aKey, aField: string; aDateTime: TDateTime = 0.0;
+      aIsMonitored: boolean = false): IJanuaField;
+    // TJanuaRecord = class(TJanuaInterfacedBindableObject, IJanuaRecord)
+    class function CreateRecord(const aName: string): IJanuaRecord; overload;
+    class function CreateRecordset(const aName: string; aRecord: IJanuaRecord): IJanuaRecordSet; overload;
+    // Create Serialization .....
+    class function CreateRecordSerialization(const aRecord: IJanuaRecord): IRecSerialization;
+  end;
+
+procedure SaveRecordToDataset(const aRecord: IJanuaRecord; aDataset: IJanuaDBDataset = nil);
+procedure SaveRecordToDBDataset(const aRecord: IJanuaRecord; aDataset: TDataset);
+function FieldsToJsonObject(const aFields: TJanuaFields): TJsonObject;
+function JsonObjectToFields(const aObject: TJsonObject): TJanuaFields;
+
+var
+  CheckFields: boolean;
+
+implementation
+
+uses
+  // System
+  System.Math, Spring, System.StrUtils, System.DateUtils, System.Types, System.Variants,
+  System.Generics.Collections,
+  // OS specific
+{$IFDEF MACOS} Macapi.CoreFoundation, {$ENDIF}
+  // Third Party Libs
+  Delphi.Mocks.Helpers, Janua.Core.AsyncTask,
+  // Janua Framework
+  Janua.Core.Json, Janua.Core.Functions, Janua.Html.Impl, Janua.Core.DB, Janua.Application.Framework;
+
+function FieldsToJsonObject(const aFields: TJanuaFields): TJsonObject;
+var
+  LObj: TJsonObject;
+  LArr: TJsonArray;
+  aField: IJanuaField;
+  I: integer;
+begin
+  Result := TJsonObject.Create;
+  LArr := TJsonArray.Create;
+  if Assigned(aFields) and (aFields.Count > 0) then
+    for I := 0 to Pred(aFields.Count) do
+      LArr.AddElement(aFields[I].AsJsonMetadata);
+  Janua.Core.Json.JsonPair(Result, 'fields', LArr);
+end;
+
+function JsonObjectToFields(const aObject: TJsonObject): TJanuaFields;
+var
+  LArr: TJsonArray;
+  aValue, LValue: TJsonValue;
+  aPair: TJsonPair;
+  LObject: TJsonObject;
+begin
+  // Creo una lista vuota di Campi
+  Result := Spring.Collections.TCollections.CreateList<IJanuaField>;
+  // Devo 'parsare' l'oggetto cercando l'array da Estrarre.
+  Janua.Core.Json.JsonValue(aObject, 'fields', LArr);
+  if Assigned(LArr) then
+    for aValue in LArr do
+    begin
+      LObject := (aValue as TJsonObject);
+      Result.Add(TJanuaOrmFactory.CreateField(LObject));
+      // Estraggo il valore del campo se presente.
+      JsonValue(LObject, 'value', LValue);
+      // Verifico che sia associato il campo e se s? sovrascrivo il Default con il valore ottenuto
+      if Assigned(LValue) then
+        Result.Items[Pred(Result.Count)].AsJsonValue := LValue;
+    end;
+end;
+
+procedure SaveRecordToDBDataset(const aRecord: IJanuaRecord; aDataset: TDataset);
+var
+  aField: TField;
+  I: integer;
+begin
+  Guard.CheckNotNull(aRecord, ' SaveRecordToDBDataset IJanuaRecord is null');
+  Guard.CheckNotNull(aDataset, ' SaveRecordToDBDataset aDataset is null');
+  aDataset.Edit;
+
+  if Janua.Core.Functions.GetFieldByName(aDataset, aRecord.PrefixGUIDField, aField) then
+    aField.AsString := aRecord.GUID.ToString;
+
+  if Janua.Core.Functions.GetFieldByName(aDataset, aRecord.Prefix + '_deleted', aField) then
+    aField.AsBoolean := aRecord.Deleted;
+
+  for I := 0 to Pred(aRecord.Fields.Count) do
+  begin
+    aRecord.Fields[I].WriteToDataset(aDataset);
+  end;
+end;
+
+procedure SaveRecordToDataset(const aRecord: IJanuaRecord; aDataset: IJanuaDBDataset = nil);
+var
+  tmp: string;
+begin
+  Guard.CheckNotNull(aRecord, ' SaveRecordToDatasetd IJanuaRecord is null');
+  try
+    if not Assigned(aDataset) then
+      aDataset := aRecord.StoreDataset;
+    aDataset.GUIDPrefix := aRecord.PrefixGUIDField;
+
+    SaveRecordToDBDataset(aRecord, aDataset.Dataset);
+  except
+    on e: Exception do
+      raise Exception.Create('SaveRecordToDataset(IJanuaDBDataset) ' + e.Message);
+  end;
+end;
+
+{ TJanuaOrmFactory }
+
+class function TJanuaOrmFactory.CreateBlobField(aKey, aField: string; aIsMonitored: boolean): IJanuaField;
+begin
+  Result := TJanuaBlobField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateBoolField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaBooleanField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateCurrencyCField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaCurrencyField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateDateTimeField(aKey, aField: string; aDateTime: TDateTime = 0.0;
+  aIsMonitored: boolean = false): IJanuaField;
+begin
+  Result := TJanuaDateTimeField.Create(aKey.ToLower, aField.ToLower, aDateTime, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateDoubleField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaDoubleField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateExtentedField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaExtendedField.Create(aKey.ToLower, aField.ToLower, aIsMonitored);
+end;
+
+class function TJanuaOrmFactory.CreateField(const aName: string; aType: TJanuaFieldType): IJanuaField;
+begin
+  case aType of
+    jptUnknown:
+      ;
+    jptCurrency:
+      Result := TJanuaOrmFactory.CreateCurrencyCField(aName, aName, false);
+    jptExtended:
+      Result := TJanuaOrmFactory.CreateExtentedField(aName, aName, false);
+    jptDate:
+      Result := TJanuaOrmFactory.CreateDateTimeField(aName, aName, 0.0, false);
+    jptDateTime:
+      Result := TJanuaOrmFactory.CreateDateTimeField(aName, aName, 0.0, false);
+    jptInteger:
+      Result := TJanuaOrmFactory.CreateIntegerField(aName, aName, false);
+    jptLargeInt:
+      Result := TJanuaOrmFactory.CreateLargeIntField(aName, aName, false);
+    jptFilename:
+      Result := TJanuaOrmFactory.CreateStringField(aName, aName, false);
+    jptString:
+      Result := TJanuaOrmFactory.CreateStringField(aName, aName, false);
+    jptFloat:
+      Result := TJanuaOrmFactory.CreateDoubleField(aName, aName, false);
+    jptHtmlText:
+      ;
+    jptRichText:
+      ;
+    jptBoolean:
+      Result := TJanuaOrmFactory.CreateBoolField(aName, aName, false);
+    jptText:
+      // Memo Field for text .....
+      ;
+    jptBytes:
+      ;
+    jptUrl:
+      ;
+    TJanuaFieldType.jpTBlob:
+      Result := TJanuaOrmFactory.CreateBlobField(aName, aName, false);
+  end;
+end;
+
+class function TJanuaOrmFactory.CreateField(const aObject: TJsonObject): IJanuaField;
+var
+  LSType: String;
+  LType: TJanuaFieldType;
+  LKey: String;
+begin
+  Result := nil;
+  JsonValue(aObject, 'key', LKey);
+  JsonValue(aObject, 'type', LSType);
+  if TEnumConvertor<TJanuaFieldType>.TryFromString(LSType, LType) then
+  begin
+    Result := self.CreateField(LKey, LType);
+    if Assigned(Result) then
+      Result.AsJsonMetadata := aObject;
+  end;
+
+  {
+    JsonPair(Result, 'key', self.FKey);
+    JsonPair(Result, 'dbfield', self.FDBField);
+    JsonPair(Result, 'type', TEnumConvertor<TJanuaFieldType>.ToString(self.FieldType));
+    JsonPair(Result, 'value', self.GetJsonValue);
+  }
+end;
+
+class function TJanuaOrmFactory.CreateIntegerField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaIntegerField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateLargeIntField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaLargeIntField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateRecord: IJanuaRecord;
+begin
+  // IJanuaRecord
+  // TJanuaRecord = class(TInterfacedObject, IJanuaRecord)
+  Result := TJanuaRecord.Create;
+end;
+
+class function TJanuaOrmFactory.CreateRecord(const aName: string): IJanuaRecord;
+begin
+  Result := self.CreateRecord;
+  Result.Name := aName
+end;
+
+class function TJanuaOrmFactory.CreateRecordSerialization(const aRecord: IJanuaRecord): IRecSerialization;
+begin
+  Result := TJanuaRecSerialization.Create(aRecord);
+end;
+
+class function TJanuaOrmFactory.CreateRecordset(const aName: string; aRecord: IJanuaRecord): IJanuaRecordSet;
+begin
+  Result := TJanuaRecordSet.Create(aName, nil, nil);
+  Result.SetRecord(aRecord);
+end;
+
+class function TJanuaOrmFactory.CreateSmallintField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaSmallIntField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateStringField(aKey, aField: string; aIsMonitored: boolean = false)
+  : IJanuaField;
+begin
+  Result := TJanuaStringField.Create(aKey.ToLower, aField.ToLower, aIsMonitored)
+end;
+
+class function TJanuaOrmFactory.CreateField(const aParam: TParam): IJanuaField;
+begin
+  if JanuaFieldToPropertyType[aParam.DataType] <> jptUnknown then
+    Result := CreateField(aParam.Name, JanuaFieldToPropertyType[aParam.DataType])
+  else
+    Result := nil;
+end;
+
+class function TJanuaOrmFactory.CreateField(const aField: TField): IJanuaField;
+begin
+  if JanuaFieldToPropertyType[aField.DataType] <> jptUnknown then
+    Result := CreateField(aField.FieldName, JanuaFieldToPropertyType[aField.DataType])
+  else
+    Result := nil;
+end;
+
+{ TJanuaIntegerField }
+
+constructor TJanuaIntegerField.Create;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaIntegerField.Clear;
+begin
+  self.FInternalValue := 0
+end;
+
+constructor TJanuaIntegerField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptInteger, aIsMonitored)
+end;
+
+procedure TJanuaIntegerField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal Value che Default Value ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaIntegerField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaIntegerField.getAsBoolean: boolean;
+begin
+  Result := not self.FInternalValue = 0
+end;
+
+function TJanuaIntegerField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaIntegerField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue.ToDouble
+end;
+
+function TJanuaIntegerField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue.ToExtended
+end;
+
+function TJanuaIntegerField.getAsInteger: integer;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaIntegerField.getAsLargeInt: Int64;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaIntegerField.getAsString: String;
+begin
+  Result := self.FInternalValue.ToString
+end;
+
+function TJanuaIntegerField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.FInternalValue.ToString);
+end;
+
+function TJanuaIntegerField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaIntegerField.GetDefault: TValue;
+begin
+  Result := TValue(self.FDefaultValue)
+end;
+
+function TJanuaIntegerField.GetJson: string;
+begin
+  Janua.Core.Json.JsonPair(self.Key, self.FInternalValue).ToJson
+end;
+
+function TJanuaIntegerField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaIntegerField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FInternalValue)
+end;
+
+function TJanuaIntegerField.GetModified: boolean;
+begin
+  Result := self.FFInternalValue <> self.FOldValue
+end;
+
+function TJanuaIntegerField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaIntegerField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaIntegerField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaIntegerField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaIntegerField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1, 0);
+end;
+
+procedure TJanuaIntegerField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := Round(aValue)
+end;
+
+procedure TJanuaIntegerField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := Trunc(aValue)
+end;
+
+procedure TJanuaIntegerField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := Round(aValue);
+end;
+
+procedure TJanuaIntegerField.setAsInteger(const aValue: integer);
+begin
+  FInternalValue := aValue;
+end;
+
+procedure TJanuaIntegerField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := IfThen(aValue <= High(integer), aValue, High(integer));
+end;
+
+procedure TJanuaIntegerField.setAsString(const aValue: String);
+begin
+  Guard.CheckTrue(Janua.Core.Functions.IsNumeric(aValue), 'TJanuaIntegerField error string is not numeric');
+  ExecProc(
+    procedure
+    begin
+      self.FInternalValue := System.SysUtils.StrToInt(aValue)
+    end, 'setAsString ' + aValue + ' ', self);
+end;
+
+procedure TJanuaIntegerField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaIntegerField.SetDefault(aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaIntegerField.SetFInternalValue(const aValue: integer);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    CheckNotifications;
+  end;
+end;
+
+procedure TJanuaIntegerField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaIntegerField.SetJsonDefault(aValue: TJsonValue);
+begin
+  if not TryStrToInt(aValue.Value, FDefaultValue) then
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaIntegerField.SetJsonValue(aValue: TJsonValue);
+var
+  tmp: integer;
+begin
+  if TryStrToInt(TJsonNumber(aValue).Value, tmp) then
+    self.FInternalValue := tmp;
+end;
+
+procedure TJanuaIntegerField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaIntegerField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaIntegerField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsInteger
+end;
+
+function TJanuaIntegerField.Size: Int64;
+begin
+  Result := IfThen(self.FInternalValue = 0, 0, SizeOf(integer));
+end;
+
+{ TJanuaLargeIntField }
+
+constructor TJanuaLargeIntField.Create;
+begin
+  inherited;
+  self.FDefaultValue := 0;
+  self.FInternalValue := 0;
+end;
+
+procedure TJanuaLargeIntField.Clear;
+begin
+  self.FInternalValue := 0
+end;
+
+constructor TJanuaLargeIntField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptInteger, aIsMonitored)
+end;
+
+procedure TJanuaLargeIntField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal Value che Default Value ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaLargeIntField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaLargeIntField.getAsBoolean: boolean;
+begin
+  Result := not self.FInternalValue = 0
+end;
+
+function TJanuaLargeIntField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaLargeIntField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue.ToDouble
+end;
+
+function TJanuaLargeIntField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue.ToExtended
+end;
+
+function TJanuaLargeIntField.getAsInteger: integer;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaLargeIntField.getAsLargeInt: Int64;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaLargeIntField.getAsString: String;
+begin
+  Result := self.FInternalValue.ToString
+end;
+
+function TJanuaLargeIntField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.FInternalValue.ToString);
+end;
+
+function TJanuaLargeIntField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaLargeIntField.GetDefault: TValue;
+begin
+  Result := TValue(self.FDefaultValue)
+end;
+
+function TJanuaLargeIntField.GetJson: string;
+begin
+  Janua.Core.Json.JsonPair(self.Key, self.FInternalValue).ToJson
+end;
+
+function TJanuaLargeIntField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaLargeIntField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FInternalValue)
+end;
+
+function TJanuaLargeIntField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaLargeIntField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaLargeIntField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaLargeIntField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaLargeIntField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaLargeIntField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1, 0);
+end;
+
+procedure TJanuaLargeIntField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := Round(aValue)
+end;
+
+procedure TJanuaLargeIntField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := Trunc(aValue)
+end;
+
+procedure TJanuaLargeIntField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := Round(aValue);
+end;
+
+procedure TJanuaLargeIntField.setAsInteger(const aValue: integer);
+begin
+  FInternalValue := aValue;
+end;
+
+procedure TJanuaLargeIntField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue;
+end;
+
+procedure TJanuaLargeIntField.setAsString(const aValue: String);
+var
+  tmp: Int64;
+begin
+  ExecProc(
+    procedure
+    begin
+      if aValue = '' then
+        FInternalValue := 0
+      else
+      begin
+        if TryStrToInt64(aValue, tmp) then
+          FInternalValue := tmp
+        else
+          FInternalValue := 0;
+      end;
+    end, 'setAsString ' + aValue + ' ', self);
+
+end;
+
+procedure TJanuaLargeIntField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaLargeIntField.SetDefault(aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaLargeIntField.SetFInternalValue(const aValue: Int64);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      OnDataChange(self as IJanuaField);
+    // Starts Binding Notifications
+    CheckNotifications
+  end;
+end;
+
+procedure TJanuaLargeIntField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaLargeIntField.SetJsonDefault(aValue: TJsonValue);
+begin
+  if not TryStrToInt64(aValue.Value, FDefaultValue) then
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaLargeIntField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.AsString := TJsonNumber(aValue).Value
+end;
+
+procedure TJanuaLargeIntField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaLargeIntField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaLargeIntField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsInt64
+end;
+
+function TJanuaLargeIntField.Size: Int64;
+begin
+  Result := IfThen(self.FInternalValue = 0, 0, SizeOf(Int64));
+end;
+
+{ TJanuaSmallintField }
+
+constructor TJanuaSmallIntField.Create;
+begin
+  inherited;
+  self.FInternalValue := 0;
+  self.FDefaultValue := 0;
+end;
+
+procedure TJanuaSmallIntField.Clear;
+begin
+  self.FInternalValue := 0
+end;
+
+constructor TJanuaSmallIntField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptInteger, aIsMonitored)
+end;
+
+procedure TJanuaSmallIntField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal Value che Default Value ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaSmallIntField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaSmallIntField.getAsBoolean: boolean;
+begin
+  Result := not self.FInternalValue = 0
+end;
+
+function TJanuaSmallIntField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaSmallIntField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue.ToDouble
+end;
+
+function TJanuaSmallIntField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue.ToExtended
+end;
+
+function TJanuaSmallIntField.getAsInteger: integer;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaSmallIntField.getAsLargeInt: Int64;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaSmallIntField.getAsString: String;
+begin
+  Result := self.FInternalValue.ToString
+end;
+
+function TJanuaSmallIntField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.FInternalValue.ToString);
+end;
+
+function TJanuaSmallIntField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaSmallIntField.GetDefault: TValue;
+begin
+  Result := TValue(self.FDefaultValue)
+end;
+
+function TJanuaSmallIntField.GetJson: string;
+begin
+  Janua.Core.Json.JsonPair(self.Key, self.FInternalValue).ToJson
+end;
+
+function TJanuaSmallIntField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaSmallIntField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FInternalValue)
+end;
+
+function TJanuaSmallIntField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaSmallIntField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaSmallIntField.getValue: TValue;
+begin
+  Result := TValue(FInternalValue)
+end;
+
+procedure TJanuaSmallIntField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaSmallIntField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaSmallIntField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1, 0);
+end;
+
+procedure TJanuaSmallIntField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := Round(aValue)
+end;
+
+procedure TJanuaSmallIntField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := Trunc(aValue)
+end;
+
+procedure TJanuaSmallIntField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := Round(aValue);
+end;
+
+procedure TJanuaSmallIntField.setAsInteger(const aValue: integer);
+begin
+  FInternalValue := aValue;
+end;
+
+procedure TJanuaSmallIntField.setAsLargeInt(const aValue: Int64);
+begin
+  ExecProc(
+    procedure
+    begin
+      self.FInternalValue := IfThen(aValue <= High(smallint), aValue, High(smallint));
+    end, 'setAsLargeInt ' + aValue.ToString + ' ', self);
+end;
+
+procedure TJanuaSmallIntField.setAsString(const aValue: String);
+begin
+  ExecProc(
+    procedure
+    var
+      tmp: integer;
+    begin
+      if aValue = '' then
+        FInternalValue := 0
+      else
+      begin
+        if TryStrToInt(aValue, tmp) then
+          FInternalValue := tmp
+        else
+          FInternalValue := 0;
+      end;
+    end, 'setAsString ' + aValue + ' ', self);
+  {
+    Guard.CheckTrue(Janua.Core.Functions.IsNumeric(aValue), 'TJanuaIntegerField error string is not numeric field: ' +
+    self.DBField + ' Value: ' + aValue);
+    self.FInternalValue := System.SysUtils.StrToInt(aValue)
+  }
+end;
+
+procedure TJanuaSmallIntField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaSmallIntField.SetDefault(aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaSmallIntField.SetFInternalValue(const aValue: smallint);
+begin
+  if FFInternalValue <> aValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    CheckNotifications
+  end;
+end;
+
+procedure TJanuaSmallIntField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaSmallIntField.SetJsonDefault(aValue: TJsonValue);
+var
+  tmp: integer;
+begin
+  if TryStrToInt(aValue.Value, tmp) then
+    FDefaultValue := tmp
+  else
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaSmallIntField.SetJsonValue(aValue: TJsonValue);
+var
+  tmp: integer;
+begin
+  if TryStrToInt(aValue.Value, tmp) then
+    FInternalValue := tmp
+  else
+    FInternalValue := 0;
+end;
+
+procedure TJanuaSmallIntField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaSmallIntField.setValue(const aValue: TValue);
+begin
+  FInternalValue := aValue.AsInteger
+end;
+
+procedure TJanuaSmallIntField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsInteger
+end;
+
+function TJanuaSmallIntField.Size: Int64;
+begin
+  Result := IfThen(self.FInternalValue = 0, 0, SizeOf(smallint));
+end;
+
+{ TJanuaCustomField }
+
+constructor TJanuaCustomField.Create;
+begin
+  inherited;
+  FIsSet := false; // boolean;
+  FIsNull := false; // when created the field is set as null
+  FMaxLength := 0; // integer;
+  FPrecision := 0; // smallint;
+  FMinLength := 0; // smallint;
+  FMandatory := false; // boolean;
+  FIsMonitored := false;
+  FLookupList := TJanuaLookupID.lklNone;
+  // By Default a Field is not monitored and does not trigger any Event
+end;
+
+procedure TJanuaCustomField.CheckNotifications;
+begin
+  Notify('AsString');
+  Notify('AsInteger');
+  Notify('AsLargeInt');
+  Notify('AsCurrency');
+  Notify('AsFloat');
+  Notify('AsExtended');
+  Notify('AsDateTime');
+  Notify('Value');
+end;
+
+constructor TJanuaCustomField.Create(aKey, aField: string; aFieldType: TJanuaFieldType;
+aIsMonitored: boolean = false);
+begin
+  self.Create;
+  self.SetKey(aKey);
+  self.SetTitle(IfThen(aKey > '', aKey, aField));
+  self.SetDBField(aField);
+  self.SetFieldType(aFieldType);
+  FIsMonitored := aIsMonitored;
+  // By Default a Field is not monitored and does not trigger any Event
+end;
+
+function TJanuaCustomField.Format(aFormat: string): string;
+begin
+  if aFormat = '' then
+    Result := '';
+end;
+
+function TJanuaCustomField.GeIsReadOnly: boolean;
+begin
+  Result := self.FIsReadOnly
+end;
+
+function TJanuaCustomField.GetAsJsonMetadata: TJsonObject;
+begin
+  try
+    Result := TJsonObject.Create;
+    JsonPair(Result, 'key', self.FKey);
+    JsonPair(Result, 'dbfield', self.FDBField);
+    JsonPair(Result, 'type', TEnumConvertor<TJanuaFieldType>.ToString(self.FieldType));
+    JsonPair(Result, 'value', (self as IJanuaField).GetJsonValue);
+    JsonPair(Result, 'default', (self as IJanuaField).GetJsonDefault);
+  except
+    on e: Exception do
+      raise Exception.Create(self.ClassName + '.GetAsJsonMetadata: ' + self.FKey + '.' +
+        TEnumConvertor<TJanuaFieldType>.ToString(self.FieldType));
+  end;
+end;
+
+function TJanuaCustomField.GetCalculated: boolean;
+begin
+  Result := self.FCalculated
+end;
+
+function TJanuaCustomField.GetDBField: string;
+begin
+  Result := self.FDBField
+end;
+
+function TJanuaCustomField.GetFieldIndex: integer;
+begin
+  Result := self.FFieldIndex
+end;
+
+function TJanuaCustomField.GetFieldType: TJanuaFieldType;
+begin
+  Result := self.FFieldType
+end;
+
+function TJanuaCustomField.GetHtmlObject: IJanuaHtmlObject;
+begin
+  if Assigned(self.FHtmlObject) then
+    Result := self.FHtmlObject
+  else
+    Result := TJanuaHtmlObject.Create(JanuaHtmlHelper, 'span', (self as IJanuaField).getAsString);
+end;
+
+function TJanuaCustomField.GetIsMonitored: boolean;
+begin
+  Result := self.FIsMonitored;
+end;
+
+function TJanuaCustomField.GetIsNull: boolean;
+begin
+  Result := self.FIsNull
+end;
+
+function TJanuaCustomField.GetJsonPair: TJsonPair;
+begin
+  Result := TJsonPair.Create(TJsonString.Create(Key), (self as IJanuaField).GetJsonValue);
+end;
+
+function TJanuaCustomField.GetKey: string;
+begin
+  Result := self.FKey
+end;
+
+function TJanuaCustomField.GetLookupField: IJanuaField;
+begin
+  Result := FLookupField;
+end;
+
+function TJanuaCustomField.GetLookupList: TJanuaLookupID;
+begin
+  Result := FLookupList;
+end;
+
+function TJanuaCustomField.GetMaxLength: integer;
+begin
+  Result := self.FMaxLength
+end;
+
+function TJanuaCustomField.GetMinLength: smallint;
+begin
+  Result := self.FMinLength
+end;
+
+function TJanuaCustomField.GetOnDataChange: TFieldChangeEvent;
+begin
+  Result := self.FOnDataChange
+end;
+
+function TJanuaCustomField.GetPrecision: smallint;
+begin
+  Result := self.FPrecision
+end;
+
+function TJanuaCustomField.GetTitle: string;
+begin
+  Result := FTitle
+end;
+
+function TJanuaCustomField.HasLookupList: boolean;
+begin
+  Result := self.FLookupList <> TJanuaLookupID.lklNone;
+end;
+
+procedure TJanuaCustomField.ReadFromDataset(const aDataset: TDataset);
+var
+  LField: TField;
+  aStream: TMemoryStream;
+  tmp: string;
+  // Test SqlTimeStamp
+  // LDtmp: TDateTime;
+begin
+  try
+    Guard.CheckNotNull(aDataset, 'aDataset is nil');
+    if not self.FCalculated then
+    begin
+      LField := GetFieldByName(aDataset, self.DBField, false);
+      if (LField <> nil) then
+      begin
+        if not VarIsNull(LField.Value) then
+          case LField.DataType of
+            ftUnknown:
+              (self as IJanuaField).SetAsVariant(LField.Value);
+            ftString:
+              (self as IJanuaField).setAsString(LField.AsString);
+            ftSmallint:
+              (self as IJanuaField).setAsInteger(LField.AsInteger);
+            ftInteger:
+              (self as IJanuaField).setAsInteger(LField.AsInteger);
+            ftWord:
+              (self as IJanuaField).setAsInteger(LField.AsInteger);
+            ftBoolean:
+              (self as IJanuaField).setAsBoolean(LField.AsBoolean);
+            ftFloat:
+              (self as IJanuaField).setAsFloat(LField.AsFloat);
+            ftCurrency:
+              (self as IJanuaField).setAsCurrency(LField.AsCurrency);
+            ftBCD:
+              (self as IJanuaField).setAsFloat(LField.AsFloat);
+            ftDateTime, ftTimeStamp, ftDate, ftTime, ftOraTimeStamp:
+              if not LField.IsNull then
+              begin
+                {
+                  // Test Code ....
+                  if self.FKey = 'match_time' then
+                  begin
+                  LDtmp := LField.AsDateTime;
+                  (self as IJanuaField).setAsDateTime(LField.AsDateTime);
+                  end
+                  else
+                }
+                (self as IJanuaField).setAsDateTime(LField.AsDateTime);
+              end;
+            ftBytes:
+              ;
+            ftVarBytes:
+              ;
+            ftAutoInc:
+              (self as IJanuaField).setAsLargeInt(LField.AsLargeInt);
+            fTBlob:
+              begin
+                aStream := TMemoryStream.Create;
+                try
+                  (LField as TBlobField).SaveToStream(aStream);
+                  aStream.Position := 0;
+                  (self as IJanuaField).LoadFromStream(aStream);
+                finally
+                  aStream.Free;
+                end;
+              end;
+            ftMemo:
+              (self as IJanuaField).setAsString(LField.AsString);
+            ftGraphic:
+              ;
+            ftFmtMemo:
+              (self as IJanuaField).setAsString(LField.AsWideString);
+            ftParadoxOle:
+              ;
+            ftDBaseOle:
+              ;
+            ftTypedBinary:
+              ;
+            ftCursor:
+              ;
+            ftFixedChar:
+              ;
+            ftWideString:
+              (self as IJanuaField).setAsString(LField.AsWideString);
+            ftLargeint:
+              (self as IJanuaField).setAsLargeInt(LField.AsLargeInt);
+            ftADT:
+              ;
+            ftArray:
+              ;
+            ftReference:
+              ;
+            ftDataSet:
+              ;
+            ftOraBlob:
+              ;
+            ftOraClob:
+              ;
+            ftVariant:
+              (self as IJanuaField).SetAsVariant(LField.AsVariant);
+            ftInterface:
+              ;
+            ftIDispatch:
+              ;
+            ftGuid:
+              ;
+            ftFMTBcd:
+              ;
+            ftFixedWideChar:
+              ;
+            ftWideMemo:
+              begin
+                tmp := (LField as TWideMemoField).AsWideString;
+                (self as IJanuaField).setAsString(tmp);
+              end;
+            ftOraInterval:
+              ;
+            ftLongWord:
+              (self as IJanuaField).setAsLargeInt(LField.AsLargeInt);
+            ftShortint:
+              (self as IJanuaField).setAsInteger(LField.AsInteger);
+            ftByte:
+              ;
+            ftExtended:
+              (self as IJanuaField).setAsFloat(LField.AsExtended);
+            ftConnection:
+              ;
+            FtParams:
+              ;
+            ftStream:
+              ;
+            ftTimeStampOffset:
+              ;
+            ftObject:
+              ;
+            ftSingle:
+              (self as IJanuaField).setAsFloat(LField.AsFloat);
+      end;
+    end;
+  end;
+except
+  on e: Exception do
+    raise Exception.Create('TJanuaCustomField.' + self.ClassName + IfThen(FKey = '', '', '.' + self.FKey) +
+      '.ReadFromDataset: ' + sl + e.Message);
+end;
+end;
+
+procedure TJanuaCustomField.ReadJsonValue(const aJsonObject: TJsonObject);
+var
+  temp: TJsonValue;
+begin
+  Janua.Core.Json.JsonValue(aJsonObject, self.Key, temp);
+  (self as IJanuaField).SetJsonValue(temp);
+end;
+
+procedure TJanuaCustomField.SetAsJsonMetadata(const aValue: TJsonObject);
+var
+  LValue: TJsonValue;
+begin
+  try
+    Janua.Core.Json.JsonValue(aValue, 'value', LValue);
+    (self as IJanuaField).SetJsonValue(LValue);
+    Janua.Core.Json.JsonValue(aValue, 'default', LValue);
+    (self as IJanuaField).SetJsonDefault(LValue);
+  except
+    on e: Exception do
+      raise Exception.Create(self.ClassName + '.SetAsJsonMetadata ' + self.FKey + '.' +
+        TEnumConvertor<TJanuaFieldType>.ToString(self.FieldType));
+  end;
+end;
+
+procedure TJanuaCustomField.SetAsVariant(const aValue: Variant);
+begin
+  // --------------------------------------------------------------------------------------------------------------//
+  // -- A Value (even if null) is now Set for IJanuaField. This is true if a values is set or if DB field is found
+  // --------------------------------------------------------------------------------------------------------------//
+  self.FIsSet := True;
+  FIsNull := VarIsClear(aValue) or VarIsNull(aValue);
+end;
+
+procedure TJanuaCustomField.SetCalculated(aValue: boolean);
+begin
+  self.FCalculated := aValue
+end;
+
+procedure TJanuaCustomField.SetDBField(const aValue: string);
+begin
+  self.FDBField := aValue
+end;
+
+procedure TJanuaCustomField.SetFieldIndex(const Value: integer);
+begin
+  FFieldIndex := Value;
+end;
+
+procedure TJanuaCustomField.SetFieldType(const aValue: TJanuaFieldType);
+begin
+  self.FFieldType := aValue;
+end;
+
+procedure TJanuaCustomField.SetFromField(const aField: TField);
+begin
+  if Assigned(aField) then
+    self.SetAsVariant(aField.Value);
+end;
+
+procedure TJanuaCustomField.SetFromParam(const aParam: TParam);
+begin
+  if Assigned(aParam) then
+    self.SetAsVariant(aParam.Value);
+end;
+
+procedure TJanuaCustomField.SetHtmlObject(const Value: IJanuaHtmlObject);
+begin
+  self.FHtmlObject := Value;
+end;
+
+procedure TJanuaCustomField.SetIsMonitored(const aValue: boolean);
+begin
+  FIsMonitored := aValue;
+end;
+
+procedure TJanuaCustomField.SetIsNull(const Value: boolean);
+begin
+  FIsNull := Value;
+end;
+
+procedure TJanuaCustomField.SetIsReadOnly(aValue: boolean);
+begin
+  self.FIsReadOnly := aValue
+end;
+
+procedure TJanuaCustomField.SetJsonPair(aValue: TJsonPair);
+begin
+  (self as IJanuaField).SetJsonValue(aValue.JsonValue);
+end;
+
+procedure TJanuaCustomField.SetKey(const aValue: string);
+begin
+  FKey := aValue.ToLower
+end;
+
+procedure TJanuaCustomField.SetLookupField(const Value: IJanuaField);
+begin
+  FLookupField := Value;
+end;
+
+procedure TJanuaCustomField.SetLookupList(const Value: TJanuaLookupID);
+begin
+  FLookupList := Value;
+end;
+
+procedure TJanuaCustomField.SetMaxLength(const aValue: integer);
+begin
+  self.FMaxLength := aValue;
+end;
+
+procedure TJanuaCustomField.SetMinLength(const aValue: smallint);
+begin
+  self.FMinLength := aValue;
+end;
+
+procedure TJanuaCustomField.SetNotifyProcedure(const Value: TNotifyProcedure);
+begin
+  FNotifyProcedure := Value;
+end;
+
+procedure TJanuaCustomField.SetOnDataChage(const aValue: TFieldChangeEvent);
+begin
+  self.FOnDataChange := aValue;
+end;
+
+procedure TJanuaCustomField.SetPrecision(const aValue: smallint);
+begin
+  self.FPrecision := aValue;
+end;
+
+procedure TJanuaCustomField.SetTitle(const Value: string);
+begin
+  FTitle := Value
+end;
+
+procedure TJanuaCustomField.WriteJsonValue(const aJsonObject: TJsonObject);
+begin
+  Janua.Core.Json.JsonPair(aJsonObject, self.Key, (self as IJanuaField).GetJsonValue)
+end;
+
+procedure TJanuaCustomField.WriteToDataset(const aDataset: TDataset);
+var
+  aField: TField;
+  aStream: TStream;
+begin
+  aField := nil;
+  // Calc and Read Only Fields are not written to dataset
+  if not(FCalculated or FIsReadOnly) then
+  begin
+    // At first check if Field Exists calling ExistFieldByName
+    if Janua.Core.Functions.ExistFieldByName(aDataset, DBField) then
+      aField := GetFieldByName(aDataset, self.DBField, false);
+    if aField <> nil then
+    begin
+      if (FieldType = TJanuaFieldType.jpTBlob) and (aField.DataType = TFieldType.fTBlob) then
+      begin
+        aStream := TMemoryStream.Create;
+        try
+          (self as IJanuaField).SaveToStream(aStream);
+          aStream.Position := 0;
+          (aField as TBlobField).LoadFromStream(aStream);
+        finally
+          aStream.Free;
+        end;
+      end
+      else if (FieldType = TJanuaFieldType.jptString) and (aField.DataType = TFieldType.ftWideMemo) then
+        (aField as TWideMemoField).Text := (self as IJanuaField).AsString
+      else
+        aField.Value := (self as IJanuaField).GetAsVariant
+    end;
+  end;
+end;
+
+{ TJanuaStringField }
+
+constructor TJanuaStringField.Create;
+begin
+  inherited;
+  self.FInternalValue := '';
+  self.FDefaultValue := '';
+end;
+
+procedure TJanuaStringField.Clear;
+begin
+  self.FInternalValue := ''
+end;
+
+constructor TJanuaStringField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptString, aIsMonitored)
+end;
+
+procedure TJanuaStringField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal Value che Default Value ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaStringField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaStringField.getAsBoolean: boolean;
+begin
+  if (FInternalValue = 'true') or (FInternalValue = '1') then
+    Result := True
+  else
+    Result := false;
+end;
+
+function TJanuaStringField.getAsCurrency: Currency;
+var
+  tmp: Currency;
+begin
+  tmp := 0.0;
+  if TryStrToCurr(self.FInternalValue, tmp) then
+    Result := tmp
+  else
+    Result := 0.0;
+end;
+
+function TJanuaStringField.getAsDateTime: TDateTime;
+begin
+  if Length(self.FInternalValue) > 0 then
+    Result := System.DateUtils.ISO8601ToDate(self.FInternalValue)
+  else
+    Result := 0.0;
+  // poi vedo come gestire il TDateTime .................................
+end;
+
+function TJanuaStringField.getAsFloat: Extended;
+var
+  tmp: Double;
+begin
+  tmp := 0.0;
+  if TryStrToFloat(self.FInternalValue, tmp) then
+    Result := tmp
+  else
+    Result := 0.0;
+end;
+
+function TJanuaStringField.getAsInteger: integer;
+var
+  tmp: integer;
+begin
+  tmp := 0;
+  if TryStrToInt(self.FInternalValue, tmp) then
+    Result := tmp
+  else
+    Result := 0;
+end;
+
+function TJanuaStringField.getAsLargeInt: Int64;
+var
+  tmp: Int64;
+begin
+  tmp := 0;
+  if TryStrToInt64(self.FInternalValue, tmp) then
+    Result := tmp
+  else
+    Result := 0;
+end;
+
+function TJanuaStringField.getAsString: String;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaStringField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.FInternalValue);
+end;
+
+function TJanuaStringField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue;
+end;
+
+function TJanuaStringField.GetDefault: TValue;
+begin
+  Result := self.FDefaultValue
+end;
+
+function TJanuaStringField.GetJson: string;
+begin
+  Result := self.GetJsonPair.ToJson
+end;
+
+function TJanuaStringField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonString.Create(self.FDefaultValue)
+end;
+
+function TJanuaStringField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonString.Create(self.FInternalValue);
+end;
+
+function TJanuaStringField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaStringField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaStringField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue);
+end;
+
+procedure TJanuaStringField.LoadFromStream(aStream: TStream);
+var
+  SS: TStringStream;
+begin
+  if aStream <> nil then
+  begin
+    SS := TStringStream.Create('');
+    try
+      SS.CopyFrom(aStream, 0); // No need to position at 0 nor provide size
+      self.FInternalValue := SS.DataString;
+    finally
+      SS.Free;
+    end;
+  end
+  else
+  begin
+    FInternalValue := '';
+  end;
+end;
+
+procedure TJanuaStringField.SaveToStream(aStream: TStream);
+var
+  SS: TStringStream;
+begin
+  SS := TStringStream.Create(FInternalValue);
+  try
+    aStream.CopyFrom(SS, 0); // No need to position at 0 nor provide size
+  finally
+    SS.Free;
+  end;
+end;
+
+procedure TJanuaStringField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 'true', 'false');
+end;
+
+procedure TJanuaStringField.setAsCurrency(const aValue: Currency);
+begin
+  FInternalValue := CurrToStr(aValue)
+end;
+
+procedure TJanuaStringField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := DateToISO8601(aValue)
+end;
+
+procedure TJanuaStringField.setAsFloat(const aValue: Extended);
+begin
+  FInternalValue := aValue.ToString
+end;
+
+procedure TJanuaStringField.setAsInteger(const aValue: integer);
+begin
+  FInternalValue := aValue.ToString
+end;
+
+procedure TJanuaStringField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue.ToString
+end;
+
+procedure TJanuaStringField.setAsString(const aValue: String);
+begin
+  FInternalValue := aValue
+end;
+
+procedure TJanuaStringField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaStringField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.ToString
+end;
+
+procedure TJanuaStringField.SetFInternalValue(const aValue: string);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    self.CheckNotifications
+  end;
+end;
+
+procedure TJanuaStringField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaStringField.SetJsonDefault(aValue: TJsonValue);
+begin
+  self.FInternalValue := TJsonString(aValue).Value
+end;
+
+procedure TJanuaStringField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.FInternalValue := TJsonString(aValue).Value;
+end;
+
+procedure TJanuaStringField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaStringField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := aValue.ToString
+end;
+
+procedure TJanuaStringField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsString
+end;
+
+function TJanuaStringField.Size: Int64;
+begin
+  Result := Length(self.FInternalValue)
+end;
+
+{ TJanuaBooleanField }
+
+constructor TJanuaBooleanField.Create;
+begin
+  inherited;
+  self.FInternalValue := false;
+  self.FDefaultValue := false;
+end;
+
+procedure TJanuaBooleanField.Clear;
+begin
+  self.FInternalValue := false;
+end;
+
+constructor TJanuaBooleanField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  self.Create(aKey, aField, TJanuaFieldType.jptBoolean, aIsMonitored)
+end;
+
+procedure TJanuaBooleanField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal aValue che Default aValue ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaBooleanField.DifferDefault: boolean;
+begin
+  Result := self.FInternalValue <> self.FDefaultValue
+end;
+
+function TJanuaBooleanField.getAsBoolean: boolean;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaBooleanField.getAsCurrency: Currency;
+begin
+  Result := IfThen(self.FInternalValue, 1.0, 0.0)
+end;
+
+function TJanuaBooleanField.getAsDateTime: TDateTime;
+begin
+  Result := IfThen(self.FInternalValue, 1.0, 0.0)
+end;
+
+function TJanuaBooleanField.getAsFloat: Extended;
+begin
+  Result := IfThen(self.FInternalValue, 1.0, 0.0)
+end;
+
+function TJanuaBooleanField.getAsInteger: integer;
+begin
+  Result := IfThen(self.FInternalValue, 1, 0)
+end;
+
+function TJanuaBooleanField.getAsLargeInt: Int64;
+begin
+  Result := IfThen(self.FInternalValue, 1, 0)
+end;
+
+function TJanuaBooleanField.getAsString: String;
+begin
+  Result := IfThen(self.FInternalValue, 'true', 'false')
+end;
+
+function TJanuaBooleanField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.FInternalValue.ToString(false));
+end;
+
+function TJanuaBooleanField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaBooleanField.GetDefault: TValue;
+begin
+  Result := TValue(FInternalValue)
+end;
+
+function TJanuaBooleanField.GetJson: string;
+begin
+
+end;
+
+function TJanuaBooleanField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonBool.Create(self.FDefaultValue)
+end;
+
+function TJanuaBooleanField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonBool.Create(self.FInternalValue)
+end;
+
+function TJanuaBooleanField.GetModified: boolean;
+begin
+  Result := self.FFInternalValue <> self.FOldValue
+end;
+
+function TJanuaBooleanField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaBooleanField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaBooleanField.LoadFromStream(aStream: TStream);
+begin
+  aStream.ReadBuffer(self.FFInternalValue, SizeOf(boolean));
+end;
+
+procedure TJanuaBooleanField.SaveToStream(aStream: TStream);
+begin
+  aStream.WriteBuffer(self.FFInternalValue, SizeOf(self.FInternalValue));
+end;
+
+procedure TJanuaBooleanField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaBooleanField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := not(aValue = 0.0)
+end;
+
+procedure TJanuaBooleanField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := not(aValue = 0.0)
+end;
+
+procedure TJanuaBooleanField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := not(aValue = 0.0)
+end;
+
+procedure TJanuaBooleanField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue := not(aValue = 0)
+end;
+
+procedure TJanuaBooleanField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := not(aValue = 0.0)
+end;
+
+procedure TJanuaBooleanField.setAsString(const aValue: String);
+begin
+  self.FInternalValue := (aValue = 'true') or (aValue = '1')
+end;
+
+procedure TJanuaBooleanField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaBooleanField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.AsBoolean
+end;
+
+procedure TJanuaBooleanField.SetFInternalValue(const aValue: boolean);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    self.CheckNotifications;
+  end;
+end;
+
+procedure TJanuaBooleanField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaBooleanField.SetJsonDefault(aValue: TJsonValue);
+begin
+  if not TryStrToBool(aValue.Value, FDefaultValue) then
+    FDefaultValue := false;
+end;
+
+procedure TJanuaBooleanField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.AsString := (aValue as TJsonBool).Value
+end;
+
+procedure TJanuaBooleanField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaBooleanField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := (aValue.AsBoolean)
+end;
+
+procedure TJanuaBooleanField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsBoolean
+end;
+
+function TJanuaBooleanField.Size: Int64;
+begin
+  Result := SizeOf(boolean);
+end;
+
+{ TJanuaDateTimeField }
+
+constructor TJanuaDateTimeField.Create;
+begin
+  inherited;
+  self.FInternalValue := 0.0;
+end;
+
+procedure TJanuaDateTimeField.Clear;
+begin
+  self.FInternalValue := 0.0
+end;
+
+constructor TJanuaDateTimeField.Create(aKey, aField: string; aDefault: TDateTime;
+aIsMonitored: boolean = false);
+begin
+  self.Create(aKey, aField, TJanuaFieldType.jptDateTime, aIsMonitored);
+  self.FDefaultValue := aDefault;
+end;
+
+procedure TJanuaDateTimeField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal aValue che Default aValue ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaDateTimeField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaDateTimeField.Format(aFormat: string): string;
+begin
+  if aFormat = '' then
+    Result := DateTimeToStr(self.FFInternalValue)
+  else
+    Result := FormatDateTime(aFormat, FFInternalValue);
+end;
+
+function TJanuaDateTimeField.getAsBoolean: boolean;
+begin
+  Result := self.FInternalValue <> 0.0;
+end;
+
+function TJanuaDateTimeField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDateTimeField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDateTimeField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDateTimeField.getAsInteger: integer;
+begin
+  Result := Trunc(self.FInternalValue)
+end;
+
+function TJanuaDateTimeField.getAsLargeInt: Int64;
+begin
+  Result := Trunc(self.FInternalValue)
+end;
+
+function TJanuaDateTimeField.getAsString: String;
+begin
+  Result := DateToISO8601(FInternalValue)
+end;
+
+function TJanuaDateTimeField.getAsUTF8Bytes: TBytes;
+begin
+
+end;
+
+function TJanuaDateTimeField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDateTimeField.GetDefault: TValue;
+begin
+  Result := TValue(self.FDefaultValue)
+end;
+
+function TJanuaDateTimeField.GetJson: string;
+begin
+
+end;
+
+function TJanuaDateTimeField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonString.Create(DateToISO8601(FDefaultValue))
+end;
+
+function TJanuaDateTimeField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonString.Create(DateToISO8601(FInternalValue))
+end;
+
+function TJanuaDateTimeField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaDateTimeField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaDateTimeField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaDateTimeField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaDateTimeField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaDateTimeField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1, 0)
+end;
+
+procedure TJanuaDateTimeField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDateTimeField.setAsDateTime(const aValue: TDateTime);
+begin
+  try
+    FInternalValue := aValue
+  except
+    on e: Exception do
+      raise Exception.Create(ClassName + '.setAsDateTime Error: ' + sl + e.Message);
+  end;
+end;
+
+procedure TJanuaDateTimeField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDateTimeField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDateTimeField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDateTimeField.setAsString(const aValue: String);
+begin
+  if Length(aValue) > 0 then
+    FInternalValue := System.DateUtils.ISO8601ToDate(aValue)
+  else
+    FInternalValue := 0.0;
+end;
+
+procedure TJanuaDateTimeField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDateTimeField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.AsDouble
+end;
+
+procedure TJanuaDateTimeField.SetFInternalValue(const aValue: TDateTime);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    CheckNotifications;
+  end;
+end;
+
+procedure TJanuaDateTimeField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaDateTimeField.SetJsonDefault(aValue: TJsonValue);
+var
+  tmp: string;
+begin
+  tmp := TJsonString(aValue).Value;
+  if Length(tmp) > 0 then
+    FDefaultValue := System.DateUtils.ISO8601ToDate(tmp)
+  else
+    FDefaultValue := 0.0;
+end;
+
+procedure TJanuaDateTimeField.SetJsonValue(aValue: TJsonValue);
+var
+  tmp: string;
+begin
+  tmp := TJsonString(aValue).Value;
+  if Length(tmp) > 0 then
+    FInternalValue := System.DateUtils.ISO8601ToDate(tmp)
+  else
+    FInternalValue := 0.0;
+end;
+
+procedure TJanuaDateTimeField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaDateTimeField.setValue(const aValue: TValue);
+begin
+  FInternalValue := aValue.AsDouble
+end;
+
+procedure TJanuaDateTimeField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsDouble
+end;
+
+function TJanuaDateTimeField.Size: Int64;
+begin
+  Result := SizeOf(TDateTime);
+end;
+
+{ TJanuaCurrencyField }
+
+constructor TJanuaCurrencyField.Create;
+begin
+  inherited;
+  self.FInternalValue := 0.0;
+  self.FDefaultValue := 0.0;
+end;
+
+procedure TJanuaCurrencyField.Clear;
+begin
+  self.FInternalValue := 0.0
+end;
+
+constructor TJanuaCurrencyField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptCurrency, aIsMonitored)
+end;
+
+procedure TJanuaCurrencyField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal aValue che Default aValue ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaCurrencyField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaCurrencyField.getAsBoolean: boolean;
+begin
+  Result := not(self.FInternalValue = 0.0)
+end;
+
+function TJanuaCurrencyField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaCurrencyField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaCurrencyField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaCurrencyField.getAsInteger: integer;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaCurrencyField.getAsLargeInt: Int64;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaCurrencyField.getAsString: String;
+begin
+  Result := self.ToString
+end;
+
+function TJanuaCurrencyField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.AsString);
+end;
+
+function TJanuaCurrencyField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaCurrencyField.GetDefault: TValue;
+begin
+  Result := FDefaultValue
+end;
+
+function TJanuaCurrencyField.GetJson: string;
+begin
+  Result := self.GetJsonPair.ToJson
+end;
+
+function TJanuaCurrencyField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaCurrencyField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FInternalValue)
+end;
+
+function TJanuaCurrencyField.GetModified: boolean;
+begin
+  Result := self.FInternalValue <> self.FOldValue
+end;
+
+function TJanuaCurrencyField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaCurrencyField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaCurrencyField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaCurrencyField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaCurrencyField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1, 0)
+end;
+
+procedure TJanuaCurrencyField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.setAsString(const aValue: String);
+begin
+  // if Janua.Core.Functions.IsNumeric(aValue) then
+  self.FInternalValue := StrToCurrDef(aValue, 0.0);
+  // StrToCurr(aValue);
+end;
+
+procedure TJanuaCurrencyField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaCurrencyField.SetDefault(aValue: TValue);
+begin
+  FDefaultValue := aValue.AsExtended
+end;
+
+procedure TJanuaCurrencyField.SetFInternalValue(const aValue: Currency);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    self.CheckNotifications
+  end;
+end;
+
+procedure TJanuaCurrencyField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaCurrencyField.SetJsonDefault(aValue: TJsonValue);
+var
+  tmp: Double;
+begin
+  if TryStrToFloat(aValue.Value, tmp) then
+    FDefaultValue := tmp
+  else
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaCurrencyField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.setAsString((aValue as TJsonNumber).Value)
+end;
+
+procedure TJanuaCurrencyField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaCurrencyField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := (aValue.AsCurrency)
+end;
+
+procedure TJanuaCurrencyField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsCurrency
+end;
+
+function TJanuaCurrencyField.Size: Int64;
+begin
+  Result := SizeOf(Currency);
+end;
+
+{ TJanuaDoubleField }
+
+constructor TJanuaDoubleField.Create;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaDoubleField.Clear;
+begin
+  self.FInternalValue := 0.0
+end;
+
+constructor TJanuaDoubleField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptFloat, aIsMonitored)
+end;
+
+procedure TJanuaDoubleField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal aValue che Default aValue ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaDoubleField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaDoubleField.getAsBoolean: boolean;
+begin
+  Result := not(self.FInternalValue = 0.0)
+end;
+
+function TJanuaDoubleField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDoubleField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDoubleField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDoubleField.getAsInteger: integer;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaDoubleField.getAsLargeInt: Int64;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaDoubleField.getAsString: String;
+begin
+  Result := self.FInternalValue.ToString
+end;
+
+function TJanuaDoubleField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.AsString);
+end;
+
+function TJanuaDoubleField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaDoubleField.GetDefault: TValue;
+begin
+  Result := TValue(self.FDefaultValue)
+end;
+
+function TJanuaDoubleField.GetJson: string;
+begin
+
+end;
+
+function TJanuaDoubleField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaDoubleField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FFInternalValue);
+end;
+
+function TJanuaDoubleField.GetModified: boolean;
+begin
+  Result := self.FInternalValue <> self.FDefaultValue;
+end;
+
+function TJanuaDoubleField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaDoubleField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue)
+end;
+
+procedure TJanuaDoubleField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaDoubleField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaDoubleField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1.0, 0.0);
+end;
+
+procedure TJanuaDoubleField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDoubleField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDoubleField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDoubleField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDoubleField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaDoubleField.setAsString(const aValue: String);
+begin
+  self.FInternalValue := StrToFloat(aValue);
+end;
+
+procedure TJanuaDoubleField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue;
+end;
+
+procedure TJanuaDoubleField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.AsDouble
+end;
+
+procedure TJanuaDoubleField.SetFInternalValue(const aValue: Double);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    self.CheckNotifications
+  end;
+end;
+
+procedure TJanuaDoubleField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaDoubleField.SetJsonDefault(aValue: TJsonValue);
+begin
+  if not TryStrToFloat(aValue.Value, FDefaultValue) then
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaDoubleField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.setAsString(TJsonNumber(aValue).Value);
+end;
+
+procedure TJanuaDoubleField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaDoubleField.setValue(const aValue: TValue);
+begin
+  FInternalValue := aValue.AsDouble
+end;
+
+procedure TJanuaDoubleField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsDouble
+end;
+
+function TJanuaDoubleField.Size: Int64;
+begin
+  Result := SizeOf(Double);
+end;
+
+{ TJanuaExtendedField }
+
+constructor TJanuaExtendedField.Create;
+begin
+  inherited;
+  self.FInternalValue := 0.0;
+  self.FDefaultValue := 0.0;
+end;
+
+procedure TJanuaExtendedField.Clear;
+begin
+  self.FInternalValue := 0.0
+end;
+
+constructor TJanuaExtendedField.Create(aKey, aFiedl: string; aIsMonitored: boolean = false);
+begin
+  inherited;
+  self.Create(aKey, aFiedl, TJanuaFieldType.jptExtended, aIsMonitored)
+end;
+
+procedure TJanuaExtendedField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal aValue che Default aValue ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> self.FDefaultValue;
+  if t then
+  begin
+    self.FInternalValue := self.FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  self.FOldValue := self.FInternalValue;
+end;
+
+function TJanuaExtendedField.DifferDefault: boolean;
+begin
+  Result := self.FDefaultValue <> self.FFInternalValue
+end;
+
+function TJanuaExtendedField.getAsBoolean: boolean;
+begin
+  Result := not(self.FInternalValue = 0.0)
+end;
+
+function TJanuaExtendedField.getAsCurrency: Currency;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaExtendedField.getAsDateTime: TDateTime;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaExtendedField.getAsFloat: Extended;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaExtendedField.getAsInteger: integer;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaExtendedField.getAsLargeInt: Int64;
+begin
+  Result := Round(self.FInternalValue)
+end;
+
+function TJanuaExtendedField.getAsString: String;
+begin
+  Result := self.FInternalValue.ToString
+end;
+
+function TJanuaExtendedField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.AsString);
+end;
+
+function TJanuaExtendedField.GetAsVariant: Variant;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaExtendedField.GetDefault: TValue;
+begin
+  Result := self.FInternalValue
+end;
+
+function TJanuaExtendedField.GetJson: string;
+begin
+
+end;
+
+function TJanuaExtendedField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FDefaultValue)
+end;
+
+function TJanuaExtendedField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonNumber.Create(self.FInternalValue);
+end;
+
+function TJanuaExtendedField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaExtendedField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue)
+end;
+
+function TJanuaExtendedField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue);
+end;
+
+procedure TJanuaExtendedField.LoadFromStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaExtendedField.SaveToStream(aStream: TStream);
+begin
+
+end;
+
+procedure TJanuaExtendedField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue := IfThen(aValue, 1.0, 0.0)
+end;
+
+procedure TJanuaExtendedField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.setAsString(const aValue: String);
+begin
+  Guard.CheckTrue(Janua.Core.Functions.IsNumeric(aValue), 'TJanuaIntegerField error string is not numeric');
+  self.FInternalValue := System.SysUtils.StrToFloat(aValue)
+
+end;
+
+procedure TJanuaExtendedField.SetAsVariant(const aValue: Variant);
+begin
+  self.FInternalValue := aValue
+end;
+
+procedure TJanuaExtendedField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.AsExtended
+end;
+
+procedure TJanuaExtendedField.SetFInternalValue(const aValue: Extended);
+begin
+  if aValue <> self.FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    CheckNotifications
+  end;
+end;
+
+procedure TJanuaExtendedField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaExtendedField.SetJsonDefault(aValue: TJsonValue);
+begin
+  if not TryStrToFloat(aValue.Value, FDefaultValue) then
+    FDefaultValue := 0;
+end;
+
+procedure TJanuaExtendedField.SetJsonValue(aValue: TJsonValue);
+begin
+  if Assigned(aValue) then
+    self.setAsString(TJsonNumber(aValue).Value);
+end;
+
+procedure TJanuaExtendedField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaExtendedField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := aValue.AsExtended
+end;
+
+procedure TJanuaExtendedField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.setValue(aActualValue);
+  self.FOldValue := aOldValue.AsExtended
+end;
+
+function TJanuaExtendedField.Size: Int64;
+begin
+  Result := SizeOf(Extended);
+end;
+
+{ TJanuaRecordSet }
+
+procedure TJanuaRecordSet.Append;
+var
+  LRecSer: IRecSerialization;
+begin
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Append', '__Start ', self);
+{$ENDIF}
+  LRecSer := FRecord.NewRecord;
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Append', '__FRecord.NewRecord; ', self);
+{$ENDIF}
+  FDataSet.AddRecord(LRecSer);
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Append', '___FDataSet.AddRecord(LRecSer) ', self);
+{$ENDIF}
+  self.FRecord.ItemIndex := self.FDataSet.ItemIndex;
+  self.FRecord.DoCalcFields;
+  self.AddIndex;
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Append', '__AddIndex End ', self);
+{$ENDIF}
+end;
+
+procedure TJanuaRecordSet.Append(const aObject: TJsonObject);
+begin
+  self.Append;
+  self.CurrentRecord.AsJsonObject := aObject;
+  self.Post;
+end;
+
+procedure TJanuaRecordSet.Append(const aRecord: IJanuaRecord);
+begin
+  self.Append;
+  FRecord.Assign(aRecord);
+  // aRecord.WriteRecord(self.FDataSet.CurrentRecord);
+  // self.FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+  self.Post;
+end;
+
+procedure TJanuaRecordSet.ApplyLocalUpdates;
+begin
+  if Assigned(self.FLocalStorage) then
+    if self.FLocalStorage.ApplyUpdates(self as IJanuaRecordSet) then
+      self.RefreshFromRecodrdSet(FLocalStorage.RecordSet, false);
+end;
+
+procedure TJanuaRecordSet.ApplyRemoteUpdates;
+begin
+  if not IsRemoteUpdated then
+    if Assigned(self.FRemoteStorage) then
+      if FLocalStorage.ApplyUpdates(self as IJanuaRecordSet) then
+        RefreshFromRecodrdSet(FLocalStorage.RecordSet, false);
+end;
+
+procedure TJanuaRecordSet.Assign(const aRecordSet: IJanuaRecordSet);
+begin
+  LoadRecordSet(aRecordSet);
+end;
+
+function TJanuaRecordSet.AssignDatasets(const aDatasets: TJanuaDBDatasets;
+const aRaiseException: boolean): boolean;
+begin
+  Result := false;
+  Assert(Length(aDatasets) > 0, self.ClassName + '.AssignDatasets empty Datasets Array passed');
+  try
+    Result := FRecord.AssignJanuaDatasets(aDatasets, aRaiseException);
+    Assert(not(aRaiseException) or Result, 'AssignDataset: ' + Name);
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('AssignDatasets', e, self, self.LogString);
+
+  end;
+end;
+
+function TJanuaRecordSet.Bof: boolean;
+begin
+  Result := self.FDataSet.ItemIndex <= 0; // self.FDataSet.RecordCount
+end;
+
+constructor TJanuaRecordSet.Create;
+begin
+  inherited Create;
+  FDataSet := TJanuaSetSerialization.Create;
+  FDelRecords := TCollections.CreateList<IJanuaRecord>;
+  self.FParams := TCollections.CreateList<IJanuaField>;
+  FGUIDIndex := Spring.Collections.TCollections.CreateDictionary<TGUID, integer>;
+  self.FEOF := True;
+end;
+
+procedure TJanuaRecordSet.Clear;
+begin
+  self.FDataSet.Clear;
+  self.FRecord.Clear;
+end;
+
+constructor TJanuaRecordSet.Create(const aRecordSet: IJanuaRecordSet; aAssign: boolean);
+begin
+  Guard.CheckNotNull(aRecordSet, self.ClassName + '.Create aRecordset  is nil');
+  self.Create(aRecordSet.Name, nil, nil);
+  if aAssign then
+    self.Assign(aRecordSet);
+
+end;
+
+constructor TJanuaRecordSet.Create(const aObject: TJsonObject);
+begin
+  Guard.CheckNotNull(aObject, self.ClassName + '.Create aObject  is nil');
+  self.Create;
+  self.SetAsMetaData(aObject);
+end;
+
+constructor TJanuaRecordSet.Create(const aName: string;
+const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage);
+begin
+  self.Create;
+  self.FName := aName;
+  self.FLocalStorage := aLocalStorage;
+  self.FRemoteStorage := aRemoteStorage;
+end;
+
+procedure TJanuaRecordSet.Delete;
+begin
+  self.FDataSet.DelCurrenRecord;
+  self.CurrentRecord.Clear;
+  self.FEOF := self.FDataSet.RecordCount = 0;
+  if not self.FEOF then
+    self.Prev;
+end;
+
+function TJanuaRecordSet.Eof: boolean;
+begin
+  Result := self.FEOF
+  // self.FDataSet.ItemIndex = Pred(FDataSet.RecordCount)
+end;
+
+function TJanuaRecordSet.ContentEquals(const aRecord: IJanuaRecordSet): boolean;
+begin
+  Result := True;
+
+  if (self.RecordCount <> aRecord.GetRecordCount) then
+    exit(false);
+
+  if self.RecordCount > 0 then
+  begin
+    self.First;
+    aRecord.First;
+    while not self.Eof do
+    begin
+      if not self.CurrentRecord.ContentEquals(aRecord.CurrentRecord) then
+      begin
+        WriteLocalLog('ContentEquals', 'Record[' + ItemIndex.ToString + ']: ' + CurrentRecord.LastMessage);
+        exit(false);
+      end;
+      self.Next;
+      aRecord.Next;
+    end;
+  end
+  else if not self.CurrentRecord.ContentEquals(aRecord.CurrentRecord) then
+    exit(false);
+end;
+
+function TJanuaRecordSet.FieldCount: integer;
+begin
+  Result := self.FDataSet.RecordCount
+end;
+
+procedure TJanuaRecordSet.First;
+begin
+  FEOF := (FDataSet.RecordCount = 0);
+  if not self.FEOF then
+  begin
+    FDataSet.ItemIndex := 0;
+    // self.FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+    self.UpdateCurrentRecord;
+  end;
+end;
+
+function TJanuaRecordSet.GetActualGUID: TGUID;
+begin
+  Result := self.FRecord.GUID
+end;
+
+function TJanuaRecordSet.GetAsJsonObject: TJsonObject;
+var
+  aArray: TJsonArray;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Json.JsonPair(Result, 'count', self.RecordCount);
+  aArray := TJsonArray.Create;
+  if self.RecordCount > 0 then
+  begin
+    self.First;
+    while not self.Eof do
+    begin
+      aArray.AddElement(self.FRecord.AsJsonObject);
+      self.Next
+    end;
+  end;
+  Janua.Core.Json.JsonPair(Result, 'items', aArray);
+end;
+
+function TJanuaRecordSet.GetAsMetaData: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Json.JsonPair(Result, 'name', self.FName);
+  Janua.Core.Json.JsonPair(Result, 'record', FRecord.AsMetadata);
+end;
+
+function TJanuaRecordSet.GetCurrentRecord: IJanuaRecord;
+begin
+  Result := self.FRecord
+end;
+
+function TJanuaRecordSet.GetDataset: TDataset;
+begin
+  Result := self.FRecord.DBDataset
+end;
+
+function TJanuaRecordSet.GetDelRecords: IList<IJanuaRecord>;
+begin
+  Result := self.FDelRecords
+end;
+
+function TJanuaRecordSet.GetItemIndex: integer;
+begin
+  Result := self.FDataSet.ItemIndex
+end;
+
+function TJanuaRecordSet.GetLazyLoading: boolean;
+begin
+  Result := self.FLazyLoading
+end;
+
+function TJanuaRecordSet.GetModified: boolean;
+begin
+  self.First;
+  Result := false;
+  while not self.Eof do
+  begin
+    if self.CurrentRecord.Modified then
+      exit(True);
+    self.Next;
+  end;
+
+end;
+
+function TJanuaRecordSet.GetName: string;
+begin
+  Result := self.FName
+end;
+
+function TJanuaRecordSet.GetOnNewRecord: TProc<IJanuaRecord>;
+begin
+  Result := self.FOnNewRecord
+end;
+
+function TJanuaRecordSet.GetOnRecordChange: TProc<IJanuaRecord>;
+begin
+  Result := self.FOnRecordChange
+end;
+
+function TJanuaRecordSet.GetOnScroll: TNotifyEvent;
+begin
+  Result := self.FOnScroll;
+end;
+
+function TJanuaRecordSet.GetParameters: TJanuaFields;
+begin
+  Result := self.FParams
+end;
+
+function TJanuaRecordSet.GetRecordCount: integer;
+begin
+  Result := self.FDataSet.RecordCount
+end;
+
+function TJanuaRecordSet.GetStoreDataset: IJanuaDBDataset;
+begin
+  Result := self.FRecord.StoreDataset
+end;
+
+procedure TJanuaRecordSet.GoToBookmark(aBoomarkID: integer);
+begin
+  Guard.CheckFalse(aBoomarkID > Pred(RecordCount), 'GoToBookmark Index out of Range');
+  self.FDataSet.ItemIndex := aBoomarkID;
+  self.UpdateCurrentRecord;
+end;
+
+function TJanuaRecordSet.IsLocalUpdated: boolean;
+begin
+  Result := false;
+  { TODO : Add Is Local Updated Management for Recordset }
+end;
+
+function TJanuaRecordSet.IsRemoteUpdated: boolean;
+begin
+  Result := false;
+  { TODO : Add IsRemoteUpdated Management for Recordset }
+end;
+
+function TJanuaRecordSet.IsSetLocalStorage: boolean;
+begin
+  Result := Assigned(self.FLocalStorage)
+end;
+
+function TJanuaRecordSet.IsSetRemoteStorage: boolean;
+begin
+  Result := Assigned(self.FRemoteStorage);
+end;
+
+procedure TJanuaRecordSet.Iterate(aProc: TProc);
+begin
+  if self.RecordCount > 0 then
+  begin
+    self.First;
+    while not self.Eof do
+    begin
+      aProc;
+      self.Next;
+    end;
+  end;
+end;
+
+procedure TJanuaRecordSet.Last;
+begin
+  self.FEOF := FDataSet.RecordCount = 0;
+  if not self.FEOF then
+  begin
+    FDataSet.ItemIndex := Pred(FDataSet.RecordCount);
+    self.FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+  end;
+end;
+
+procedure TJanuaRecordSet.LoadFromDataset;
+begin
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('LoadFromDataset', 'Start ', self);
+{$ENDIF}
+  Guard.CheckNotNull(FRecord, 'TJanuaRecordSet.LoadFromDataset FRecord is null');
+  Guard.CheckNotNull(FRecord.DBDataset, ClassName + '.(' + FName +
+    ')LoadFromDataset FRecord.DBDataset is null: ' + FRecord.EntityName);
+  try
+    if FRecord.DBDataset.Active and (FRecord.DBDataset.RecordCount > 0) then
+    begin
+      FRecord.DBDataset.First;
+{$IFDEF JANUA_TEST}
+      TJanuaLogger.LogRecord('LoadFromDataset', '_FRecord.DBDataset.First ', self);
+{$ENDIF}
+      while not FRecord.DBDataset.Eof do
+      begin
+        self.Append;
+{$IFDEF JANUA_TEST}
+        TJanuaLogger.LogRecord('LoadFromDataset', 'self.Append ', self);
+{$ENDIF}
+        // avendo gi? impostato il Record allora posso eseguire il carico.
+        FRecord.LoadFromDataset;
+{$IFDEF JANUA_TEST}
+        TJanuaLogger.LogRecord('LoadFromDataset', '_FRecord.LoadFromDataset ', self);
+{$ENDIF}
+        self.Post;
+{$IFDEF JANUA_TEST}
+        TJanuaLogger.LogRecord('LoadFromDataset', '_self.Post ', self);
+{$ENDIF}
+        FRecord.DBDataset.Next;
+{$IFDEF JANUA_TEST}
+        TJanuaLogger.LogRecord('LoadFromDataset', '_FRecord.DBDataset.Next ', self);
+{$ENDIF}
+      end;
+    end;
+    Guard.CheckTrue(self.RecordCount = FRecord.DBDataset.RecordCount, 'TJanuaRecordSet.' + ClassName +
+      '.LoadFromDataset[' + FName + '].RecordCount: ' + RecordCount.ToString + ' <> ' +
+      FRecord.DBDataset.RecordCount.ToString);
+
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadFromDataset', '_End ', self);
+{$ENDIF}
+  except
+    on e: Exception do
+      raise Exception.Create('TJanuaRecordSet.' + ClassName + '(' + FRecord.Name + ').LoadFromDataset[' +
+        FRecord.EntityName + ']: ' + sl + e.Message);
+  end;
+end;
+
+procedure TJanuaRecordSet.LoadFromDataset(aMainDataset: IJanuaDBDataset; aDatasets: TArray<IJanuaDBDataset>);
+begin
+  self.Clear;
+  FRecord.StoreDataset := aMainDataset;
+  FRecord.SetupDataset(aMainDataset, aDatasets);
+  self.LoadFromDataset;
+end;
+
+procedure TJanuaRecordSet.LoadFromLocalStorage;
+begin
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('LoadFromLocalStorage', 'Start ', self);
+{$ENDIF}
+  Guard.CheckNotNull(self.FLocalStorage, self.ClassName + ': ' + self.FName +
+    '.LoadFromLocalStorage  FLocalStorage is null');
+  LoadFromStorage(FLocalStorage);
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('LoadFromLocalStorage', 'End ', self);
+{$ENDIF}
+end;
+
+procedure TJanuaRecordSet.LoadFromRemoteStorage;
+begin
+  Guard.CheckNotNull(FRemoteStorage, 'TJanuaRecordSet.LoadFromRemoteStorage FRemoteStorage is null');
+  self.LoadFromStorage(self.FRemoteStorage);
+end;
+
+procedure TJanuaRecordSet.LoadFromStorage(aStorage: IJanuaRecordSetStorage);
+var
+  I, j, k, l: integer;
+begin
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('LoadFromStorage', 'Start aStorage', self);
+{$ENDIF}
+  Guard.CheckNotNull(aStorage, 'TJanuaRecordSet.LoadFromStorage aStorage is null ');
+  Guard.CheckNotNull(FParams, 'TJanuaRecordSet.LoadFromStorage FParams is null ');
+  try
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadFromStorage', 'Start Params: ' + FParams.Count.ToString, self);
+{$ENDIF}
+    if self.FParams.Count > 0 then
+      for I := 0 to Pred(FParams.Count) do
+        aStorage.ParamByName(FParams[I].DBField).Value := FParams[I].Value;
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadFromStorage', 'End Params: ' + FParams.Count.ToString, self);
+{$ENDIF}
+    Guard.CheckNotNull(aStorage.RecordSet, 'TJanuaRecordSet.LoadFromStorage FPaStorage.RecordSet is null');
+
+    if aStorage.LoadData then
+      LoadRecordSet(aStorage.RecordSet);
+
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadFromStorage', 'End aStorage', self);
+{$ENDIF}
+  except
+    on e: Exception do
+    begin
+      raise Exception.Create('TJanuaRecordSet.LoadFromStorage ' + e.Message);
+    end;
+  end;
+
+end;
+
+procedure TJanuaRecordSet.LoadRecordSet(const aRecordSet: IJanuaRecordSet);
+begin
+  Guard.CheckNotNull(aRecordSet, 'TJanuaRecordSet.LoadRecordSet aRecordSet is null ');
+  try
+    self.Clear;
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadRecordSet', '__Start Name:' + aRecordSet.Name, self);
+{$ENDIF}
+    if aRecordSet.GetRecordCount > 0 then
+    begin
+      aRecordSet.First;
+      while not aRecordSet.Eof do
+      begin
+        self.Append;
+        self.CurrentRecord.Assign(aRecordSet.CurrentRecord);
+        self.Post;
+        aRecordSet.Next;
+{$IFDEF JANUA_TEST}
+        TJanuaLogger.LogRecord('LoadRecordSet', '___Next ', self);
+{$ENDIF}
+      end;
+    end;
+{$IFDEF JANUA_TEST}
+    TJanuaLogger.LogRecord('LoadRecordSet.End', 'aRecordset.RecordCount = ' +
+      aRecordSet.RecordCount.ToString, self);
+{$ENDIF}
+  except
+    on e: Exception do
+      raise Exception.Create(self.ClassName + '.LoadRecordSet(' + aRecordSet.Name + '): ' + sLineBreak +
+        e.Message);
+  end;
+end;
+
+function TJanuaRecordSet.Locate(const aField: IJanuaField; const aValue: integer): boolean;
+begin
+  Result := false;
+  self.First;
+  while not self.Eof do
+  begin
+    if aField.AsInteger = aValue then
+      exit(True);
+    self.Next
+  end;
+end;
+
+function TJanuaRecordSet.Locate(const aField: IJanuaField; const aValue: string): boolean;
+begin
+  Result := false;
+  self.First;
+  while not self.Eof do
+  begin
+    if aField.AsString = aValue then
+      exit(True);
+    self.Next
+  end;
+end;
+
+function TJanuaRecordSet.Locate(const aField: IJanuaField; const aValue: Variant): boolean;
+begin
+  Result := false;
+  self.First;
+  while not self.Eof do
+  begin
+    if aField.AsVariant = aValue then
+      exit(True);
+    self.Next
+  end;
+end;
+
+function TJanuaRecordSet.Locate(const aField: IJanuaField; const aValue: TValue): boolean;
+begin
+  Result := false;
+  self.First;
+  while not self.Eof do
+  begin
+    if aField.Value.Equals(aValue) then
+      exit(True);
+    self.Next
+  end;
+end;
+
+procedure TJanuaRecordSet.Next;
+// var
+// tmp1, tmp2: string; // eliminare dopo il test di recordset Next
+begin
+  self.FEOF := (FDataSet.RecordCount = 0) or (FDataSet.ItemIndex = Pred(self.FDataSet.RecordCount));
+  if not self.Eof then
+  begin
+    // tmp1 :=  FRecord.GUID.ToString;
+    FDataSet.ItemIndex := FDataSet.ItemIndex + 1;
+    FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+    // tmp2 := FRecord.GUID.ToString;
+  end;
+end;
+
+procedure TJanuaRecordSet.Post;
+begin
+  Guard.CheckNotNull(self.FRecord, 'TJanuaRecordSet.Post Error FRecord is Null');
+  Guard.CheckTrue(self.FDataSet.RecordCount > 0, 'TJanuaRecordSet.Post Error FDataSet.RecordCount = 0');
+  Guard.CheckNotNull(self.FDataSet.CurrentRecord,
+    'TJanuaRecordSet.Post Error FDataSet.CurrentRecord is Null');
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Post', 'Start ', self);
+{$ENDIF}
+  FRecord.WriteRecord(self.FDataSet.CurrentRecord);
+  // self.FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Post', 'WriteRecord ', self);
+{$ENDIF}
+  if (FRecord.GUID <> System.Types.GUID_NULL) and (FRecord.ItemIndex > -1) then
+    self.FGUIDIndex.AddOrSetValue(FRecord.GUID, FRecord.ItemIndex);
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('Post', 'FGUIDIndex.AddOrSetValue ', self);
+{$ENDIF}
+  // Automatically Does a Post Action on all Sub-Records of the master Record
+end;
+
+procedure TJanuaRecordSet.Prev;
+begin
+  if (self.FDataSet.RecordCount > 0) and not self.Bof then
+    FDataSet.ItemIndex := FDataSet.ItemIndex - 1;
+  self.FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+end;
+
+procedure TJanuaRecordSet.ReadFromJson(aJson: string);
+begin
+  self.SetAsJsonObject(Janua.Core.Json.JsonParse(aJson));
+end;
+
+procedure TJanuaRecordSet.ReadFromJsonObject(const aJsonObject: TJsonObject; aFree: boolean = false);
+begin
+  self.SetAsJsonObject(Janua.Core.Json.JsonObject(self.FName.ToLower, aJsonObject));
+  if aFree then
+    aJsonObject.Free;
+end;
+
+procedure TJanuaRecordSet.ReadFromSerialization(aSerialization: ISetSerialization);
+var
+  I: integer;
+begin
+  Guard.CheckNotNull(aSerialization, 'TJanuaRecordSet.WriteToSerialization aSerialization is null');
+  self.Clear;
+  for I := 0 to Pred(aSerialization.RecordCount) do
+  begin
+    // FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+    self.Append;
+    // per ogni i mi limito a leggere il record della List
+    self.FRecord.ReadRecord(aSerialization.RecList[I]);
+    self.Post;
+  end;
+  self.First;
+end;
+
+function TJanuaRecordSet.RecordCount: integer;
+begin
+  Result := FDataSet.RecordCount
+end;
+
+procedure TJanuaRecordSet.RefreshFromRecodrdSet(const aRecordSet: IJanuaRecordSet; bRemote: boolean);
+var
+  I: integer;
+begin
+  // questa procedura ricevento un RecordSet in risposta ad un Salvataggio aggiorna tutti i record locali
+  // ed imposta il campo modified a False avendoli oramai registrati.
+  self.First;
+  while not self.Eof do
+  begin
+    if (self.CurrentRecord.Modified) or (not CurrentRecord.IsRemoteStored and bRemote) or
+      (not CurrentRecord.IsLocalStored) or CurrentRecord.IsNewRecord then
+    begin
+      if aRecordSet.SearchByGUID(self.CurrentRecord.GUID) then
+      begin
+        self.CurrentRecord.Assign(aRecordSet.CurrentRecord);
+        self.CurrentRecord.Modified := false;
+        if bRemote then
+          self.CurrentRecord.IsRemoteStored := True
+        else
+          self.CurrentRecord.IsLocalStored := True;
+      end;
+    end;
+    self.Next;
+  end;
+end;
+
+procedure TJanuaRecordSet.SaveToDataset(const aDataset: IJanuaDBDataset; aDatasets: TJanuaDBDatasets);
+var
+  vDataset: TDataset;
+begin
+  self.FRecord.SetupDataset(aDataset, aDatasets);
+  self.SaveToDataset;
+end;
+
+procedure TJanuaRecordSet.SaveToDataset(const aDataset: IJanuaDBDataset);
+begin
+  self.FRecord.SetupDataset(aDataset, []);
+  self.SaveToDataset;
+end;
+
+function TJanuaRecordSet.SearchByGUID(aGUID: TGUID): boolean;
+var
+  I: integer;
+begin
+  Result := self.CurrentRecord.GUID = aGUID;
+  if not Result then
+  begin
+    Result := FGUIDIndex.TryGetValue(aGUID, I);
+    if Result and (I <> FDataSet.ItemIndex) then
+    begin
+      FDataSet.ItemIndex := I;
+      // Aggiorno il valore del record all'attuale record selezionato nella serializzazione.........
+      FRecord.ReadRecord(self.FDataSet.CurrentRecord);
+      if Assigned(self.FOnScroll) then
+        FOnScroll(self);
+    end;
+  end;
+end;
+
+procedure TJanuaRecordSet.SetActualGUID(const aValue: TGUID);
+begin
+  if (self.FRecord.GUID <> aValue) and (aValue <> System.Types.GUID_NULL) and not SearchByGUID(aValue) then
+  begin
+    self.FRecord.GUID := aValue;
+  end;
+end;
+
+procedure TJanuaRecordSet.SetAsJsonObject(const aValue: TJsonObject);
+var
+  vValue: TJsonValue;
+  aPair: TJsonPair;
+  aObject: TJsonObject;
+  aTest: integer;
+begin
+  self.Clear;
+  Janua.Core.Json.JsonValue(aValue, 'count', aTest);
+  if aTest > 0 then
+  begin
+    aPair := aValue.Get('items');
+    if Assigned(aPair) then
+      for vValue in (aPair.JsonValue as TJsonArray) do
+      begin
+        aObject := (vValue as TJsonObject);
+        self.Append(aObject);
+      end;
+  end;
+
+end;
+
+procedure TJanuaRecordSet.SetAsMetaData(const Value: TJsonObject);
+var
+  tmp: string;
+  LObject: TJsonObject;
+begin
+  Guard.CheckNotNull(Value, ClassName + '.SetAsMetadata Value is nil');
+  try
+    Janua.Core.Json.JsonValue(Value, 'name', tmp);
+    self.FName := tmp;
+    // At first we set to nil the current record structure
+    FRecord := nil;
+    // e ricreo il nuovo record struttura in base all'oggetto TJsonObject
+    LObject := Janua.Core.Json.JsonObject('record', Value);
+    FRecord := TJanuaRecord.Create(LObject);
+    // la distruzione dell'oggetto ? compito della procedura chiamante qui non lo distruggo.
+  except
+    on e: Exception do
+      raise Exception.Create(self.ClassName + '.SetAsMetadata ' + self.FName + ' Error: ' + sLineBreak +
+        e.Message);
+  end;
+end;
+
+procedure TJanuaRecordSet.SetCurrentRecord(const aValue: IJanuaRecord);
+begin
+  self.FRecord.Assign(aValue)
+end;
+
+procedure TJanuaRecordSet.SetDataset(const aValue: TDataset);
+begin
+  CurrentRecord.DBDataset := aValue;
+end;
+
+procedure TJanuaRecordSet.SetDelRecords(const aValue: IList<IJanuaRecord>);
+begin
+  self.FDelRecords := aValue
+end;
+
+procedure TJanuaRecordSet.SetFromJsonObject(const aJsonObject: TJsonObject; aFree: boolean);
+begin
+  SetAsJsonObject(aJsonObject);
+  if aFree then
+    aJsonObject.Free;
+
+end;
+
+procedure TJanuaRecordSet.SetItemIndex(const aValue: integer);
+begin
+  if (self.FDataSet.RecordCount > 0) then
+    self.FDataSet.ItemIndex := aValue
+end;
+
+procedure TJanuaRecordSet.SetJanuaFields(const aValue: TJanuaFields);
+begin
+  self.FRecord.Fields := aValue
+end;
+
+procedure TJanuaRecordSet.SetLazyLoading(const Value: boolean);
+begin
+  FLazyLoading := Value;
+end;
+
+procedure TJanuaRecordSet.SetModified(aValue: boolean);
+begin
+  if not aValue and self.GetModified then
+  begin
+    self.First;
+    while not self.Eof do
+    begin
+      self.CurrentRecord.Modified := false;
+      self.Post;
+      self.Next;
+    end;
+  end;
+end;
+
+procedure TJanuaRecordSet.SetName(const aValue: string);
+begin
+  self.FName := aValue
+end;
+
+procedure TJanuaRecordSet.SetOnNewRecord(const Value: TProc<IJanuaRecord>);
+begin
+  FOnNewRecord := Value;
+end;
+
+procedure TJanuaRecordSet.SetOnRecordChange(const Value: TProc<IJanuaRecord>);
+begin
+  FOnRecordChange := Value;
+end;
+
+procedure TJanuaRecordSet.SetOnScroll(aValue: TNotifyEvent);
+begin
+  FOnScroll := aValue;
+end;
+
+procedure TJanuaRecordSet.SetParameters(const aValue: TJanuaFields);
+begin
+  self.FParams := aValue;
+end;
+
+procedure TJanuaRecordSet.SetRecord(const aRecord: IJanuaRecord);
+begin
+  self.FRecord := aRecord
+end;
+
+procedure TJanuaRecordSet.SetStoreDataset(const aValue: IJanuaDBDataset);
+begin
+  self.FRecord.StoreDataset := aValue;
+end;
+
+function TJanuaRecordSet.ToJson: string;
+var
+  tmp: TJsonObject;
+begin
+  tmp := self.AsJsonObject;
+  Result := tmp.ToJson
+end;
+
+function TJanuaRecordSet.ToJsonPretty: string;
+begin
+  Result := Janua.Core.Json.JsonPretty(self.AsJsonObject)
+end;
+
+procedure TJanuaRecordSet.UpdateCurrentRecord;
+begin
+  if self.FDataSet.ItemIndex > -1 then
+    FRecord.ReadRecord(self.FDataSet.CurrentRecord)
+  else
+    self.FRecord.Clear;
+end;
+
+procedure TJanuaRecordSet.UpdateIndexGUID(const aOld, aNew: TGUID);
+begin
+  FGUIDIndex.Remove(aOld);
+  FGUIDIndex.AddOrSetValue(aNew, self.ItemIndex);
+end;
+
+procedure TJanuaRecordSet.WriteToJsonObject(const aJsonObject: TJsonObject);
+begin
+  Janua.Core.Json.JsonPair(aJsonObject, self.FName.ToLower, self.AsJsonObject)
+end;
+
+procedure TJanuaRecordSet.WriteToSerialization(aSerialization: ISetSerialization);
+begin
+  Guard.CheckNotNull(aSerialization, 'TJanuaRecordSet.WriteToSerialization aSerialization is null');
+  aSerialization.Clear;
+  if (self.RecordCount > 0) then
+  begin
+    self.First;
+    while not self.Eof do
+    begin
+      // Serialization pu? essere incrementata del valore di un singolo Record con l'operazione di serializzazione
+      // dei singoli Record del dataset che deve essere serializzato .............................................
+      // nota: questo permette di 'annidare' la serializzazione e deserializzazione dei recordset contenuti nei record
+      aSerialization.AddRecord(self.FRecord.RecordValue);
+      self.Next
+    end;
+  end;
+end;
+
+procedure TJanuaRecordSet.SaveToDataset;
+begin
+  (*
+    if Assigned(FStoreDataset) then
+    begin
+    if self.FStoreDataset.SearchRecord(self.FGUID) then
+    self.UpdateToDataset
+    else
+    self.AppendToDataset;
+    end
+    else if Assigned(FDBDataset) then
+    begin
+    if Force or (FDBDataset.FieldByName(PrefixGUIDField).AsString = GUID.ToString) or
+    (FDBDataset.Locate(self.PrefixGUIDField, self.GUID.ToString, [])) then
+    self.UpdateToDataset
+    else
+    self.AppendToDataset;
+    end
+    else
+    raise exception.Create('TJanuaRecord.SaveToDataset FStoreDataset and FDBDataset are null');
+  *)
+  if self.RecordCount > 0 then
+    try
+      Guard.CheckTrue(Assigned(FRecord.StoreDataset) or Assigned(self.FRecord.DBDataset),
+        'TJanuaRecordSet.SaveToDataset StoreDataset/DBDataset both nil');
+      self.First;
+      while not self.Eof do
+      begin
+        // FREcord.SaveToDataset include tutti i parametri di salvataggio del record.
+        self.FRecord.SaveToDataset;
+        // FRecord.StoreDataset.Post;
+        self.Next;
+      end;
+    except
+      on e: Exception do
+        raise Exception.Create('TJanuaRecordSet.SaveToDataset: GUID=' + FRecord.GUID.ToString + ',Error= ' +
+          e.Message);
+    end;
+end;
+
+procedure TJanuaRecordSet.AddIndex;
+begin
+  FGUIDIndex.AddOrSetValue(self.FRecord.GUID, self.FRecord.ItemIndex);
+end;
+
+procedure TJanuaRecordSet.DelIndexes;
+begin
+  self.FGUIDIndex.Clear;
+end;
+
+procedure TJanuaRecordSet.DirectLoadFromDataset(const aDataset: TDataset);
+begin
+  if Assigned(aDataset) then
+  begin
+    self.FRecord.DBDataset := aDataset;
+    self.LoadFromDataset;
+  end;
+end;
+
+procedure TJanuaRecordSet.DirectLoadFromDataset(const aDatasets: TArray<TDataset>);
+begin
+  FRecord.AssignDatasets(aDatasets);
+  LoadFromDataset;
+end;
+
+procedure TJanuaRecordSet.DirectLoadFromDataset(const aDataset: IJanuaDBDataset);
+begin
+  if Assigned(aDataset) then
+  begin
+    DirectLoadFromDataset(aDataset.Dataset);
+  end;
+end;
+
+procedure TJanuaRecordSet.DirectSaveToDataset(const aDataset: TDataset);
+begin
+  if Assigned(aDataset) then
+  begin
+    self.FRecord.DBDataset := aDataset;
+    self.SaveToDataset;
+  end;
+end;
+
+function TJanuaRecordSet.GetFiltered: boolean;
+begin
+  Result := FFiltered;
+end;
+
+procedure TJanuaRecordSet.Reindex;
+begin
+  self.DelIndexes;
+  if self.RecordCount > 0 then
+  begin
+    self.First;
+    while not self.Eof do
+    begin
+      self.AddIndex;
+      self.Next;
+    end;
+  end;
+end;
+
+procedure TJanuaRecordSet.SetFiltered(const Value: boolean);
+begin
+  FFiltered := Value;
+end;
+
+{ TJanuaRecord }
+
+function TJanuaRecord.AddCalcField(const aField: IJanuaField): integer;
+begin
+  Result := self.AddField(aField);
+  self.FFields[Result].Calculated := True;
+  self.FCalcFields.Add(FFields[Result]);
+end;
+
+function TJanuaRecord.AddCreateField(const aFieldType: TJanuaFieldType;
+const aFieldKey, aFieldName: string; aFieldKind: TJanuaFieldKind): IJanuaField;
+begin
+  Result := nil;
+  case aFieldType of
+    jptCurrency:
+      Result := TJanuaCurrencyField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptExtended:
+      Result := TJanuaExtendedField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptDate:
+      Result := TJanuaDateTimeField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptDateTime:
+      Result := TJanuaDateTimeField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptSmallInt:
+      Result := TJanuaSmallIntField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptInteger:
+      Result := TJanuaIntegerField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptLargeInt:
+      Result := TJanuaLargeIntField.Create(aFieldKey, aFieldName, aFieldType,
+        not(aFieldKind = jfkCalculated));
+    jptFilename:
+      Result := TJanuaStringField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptString:
+      Result := TJanuaStringField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptFloat:
+      Result := TJanuaDoubleField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptHtmlText:
+      Result := TJanuaStringField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptRichText:
+      Result := TJanuaBlobField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptBoolean:
+      Result := TJanuaBooleanField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptText:
+      Result := TJanuaStringField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jpTBlob:
+      Result := TJanuaBlobField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptBytes:
+      Result := TJanuaBlobField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+    jptUrl:
+      Result := TJanuaStringField.Create(aFieldKey, aFieldName, aFieldType, not(aFieldKind = jfkCalculated));
+  end;
+
+  if Result <> nil then
+  begin
+    Result.Title := IfThen(aFieldName <> '', aFieldName, aFieldKey);
+    self.FItemIndex := self.AddField(Result);
+  end
+  else
+  begin
+    // aFieldType: TJanuaFieldType
+    raise Exception.Create(self.ClassName + '.AddField Type Not Managed ' +
+      TEnumConvertor<TJanuaFieldType>.ToString(aFieldType));
+  end;
+end;
+
+function TJanuaRecord.AddField(const aField: IJanuaField): integer;
+var
+  I: integer;
+begin
+  Guard.CheckNotNull(aField, 'TJanuaRecord.AddField aField is Null');
+  Guard.CheckNotNull(FFields, 'TJanuaRecord.AddField aField is Null');
+  for I := 0 to Pred(self.FFields.Count) do
+    if self.FFields[I].Key = aField.Key then
+      raise Exception.Create(ClassName + '.AddField Key already exists: ' + aField.Key);
+  self.FFields.Add(aField);
+  self.FFields[Pred(self.FFields.Count)].OnDataChange := self.DoDataChange;
+  // self.FOldRecord.AddField(aField);
+  // Guard.CheckTrue(self.FieldCount = self.FOldRecord.FieldCount,
+  // 'TJanuaRecord.AddField aField Old FCount not match');
+  Result := Pred(FFields.Count)
+end;
+
+procedure TJanuaRecord.AddKeyField(const aField: IJanuaField);
+begin
+  self.FKeyFields.Add(aField)
+end;
+
+procedure TJanuaRecord.AddMasterField(aMaster, aDetail: IJanuaField);
+begin
+  // 2018-0052  TMasterFields = TArray<TMasterField>;
+  Guard.CheckNotNull(aMaster, 'TJanuaRecord.AddMasterField aMaster is null');
+  Guard.CheckNotNull(aDetail, 'TJanuaRecord.AddMasterField aDetail is null');
+  SetLength(self.FMasterFields, Length(self.FMasterFields) + 1);
+  self.FMasterFields[Pred(Length(FMasterFields))] := TMasterField.Create(aMaster, aDetail);
+end;
+
+procedure TJanuaRecord.AddRecordDef(const aRecordDef: IJanuaRecord);
+begin
+  Guard.CheckNotNull(FRecords, self.ClassName + '(IJanuaRecord).AddRecordDef FRecords is Null');
+  Guard.CheckNotNull(aRecordDef, self.ClassName + '(IJanuaRecord).aRecordDef is Null');
+  try
+    if Assigned(aRecordDef) then
+      FRecords.Add(aRecordDef);
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('AddRecordDef', e, self, 'Adding a Record');
+  end;
+end;
+
+function TJanuaRecord.AddRecordSet(const aRecordSet: IJanuaRecordSet): integer;
+var
+  I: integer;
+begin
+  Guard.CheckNotNull(aRecordSet, self.ClassName + '(IJanuaRecord).AddRecordSet aRecordSet is Null');
+  Guard.CheckNotNull(FRecordSets, self.ClassName + '(IJanuaRecord).AddRecordSet aRecordSet is Null');
+  // Verifico che il Recordset non sia gi? presente o omonimo ...................
+  Result := -1; // if procedure Fails.
+  try
+    if FRecordSets.Count > 0 then
+      for I := 0 to Pred(self.FRecordSets.Count) do
+        if self.FRecordSets[I].Name = aRecordSet.Name then
+          raise Exception.Create('TJanuaRecord.AddRecordSet Name already exists: ' + aRecordSet.Name);
+    // Aggiungo il Recorset all'insieme quindi il Count ? incrementato di un elemento
+    self.FRecordSets.Add(aRecordSet);
+    // Rispondo quindi con RecordSetIndex = Pred(Count).
+    self.FRecordSetIndex := Pred(FRecordSets.Count);
+    Result := FRecordSetIndex;
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('AddRecordSet', e, self, 'Adding a RecordSet');
+  end;
+end;
+
+procedure TJanuaRecord.Append;
+var
+  I: integer;
+  aMasterField: TMasterField;
+begin
+  CreateGUID(FGUID);
+  // 2018-0052 Eredito anche MasterGUID.
+  if self.FHasMasterRecord then
+    FMasterGUID := self.FMasterRecord.GUID
+  else
+    FMasterGUID := System.Types.GUID_NULL;
+
+  Guard.CheckNotNull(self.FFields, 'TJanuaRecord.Append FFields is null');
+
+  if FFields.Count > 0 then
+    for I := 0 to Pred(FFields.Count) do
+      // if not(self.FFields[i].IsReadOnly or self.FFields[i].Calculated) then
+      self.FFields[I].Default;
+
+  for I := 0 to Pred(FRecords.Count) do
+    // if not(self.FFields[i].IsReadOnly or self.FFields[i].Calculated) then
+    self.FRecords[I].Append;
+
+  // se il record ha un 'master' per default 'eredito' i dati del master nel Dataset.
+  if self.FHasMasterRecord and (Length(FMasterFields) > 0) then
+    for aMasterField in FMasterFields do
+      aMasterField.Detail.Value := aMasterField.Master.Value;
+  self.DoCalcFields;
+end;
+
+procedure TJanuaRecord.AppendToDataset;
+begin
+  if Assigned(self.FStoreDataset) then
+    self.FStoreDataset.InsertRecord(self as IJanuaRecord)
+  else if Assigned(FDBDataset) then
+  begin
+    FDBDataset.Append;
+    SaveRecordToDBDataset(self as IJanuaRecord, FDBDataset);
+    if FDBDataset.State in [TDatasetState.dsEdit, TDatasetState.dsInsert] then
+      FDBDataset.Post;
+  end
+  else
+    raise Exception.Create('TJanuaRecord.AppendToDataset Dataset is null');
+end;
+
+procedure TJanuaRecord.ApplyLocalUpdates;
+begin
+
+end;
+
+procedure TJanuaRecord.ApplyRemoteUpdates;
+begin
+
+end;
+
+procedure TJanuaRecord.Assign(const aRecord: IJanuaRecord);
+var
+  I, j, k: integer;
+begin
+  self.Clear;
+  j := aRecord.FieldCount;
+  k := self.FieldCount;
+  try
+    if CheckFields then
+      Guard.CheckTrue(j = k, self.ClassName + '.Assign(aRecord=' + self.FName + ').Fields = ' + j.ToString +
+        ' self.Field: ' + k.ToString);
+    try
+      if j = k then
+        for I := 0 to Pred(self.FieldCount) do
+          self.FFields[I].Value := aRecord.Fields[I].Value
+      else
+        for I := 0 to Pred(self.FieldCount) do
+          if aRecord.FindField(FFields[I].Key) then
+            self.FFields[I].Value := aRecord.FieldByName(FFields[I].Key).Value
+    except
+      on e: Exception do
+        raise Exception.Create('TJanuaRecord.Assign FFields[' + I.ToString + ']=' + FFields[I].DBField + '.' +
+          sLineBreak + e.Message);
+    end;
+    Guard.CheckTrue(aRecord.RecordCount = self.RecordCount, 'RecordCount Error');
+
+    try
+      for I := 0 to Pred(self.RecordCount) do
+        self.FRecords[I].Assign(aRecord.Records[I]);
+    except
+      on e: Exception do
+        raise Exception.Create('TJanuaRecord.Assign FRecords[' + I.ToString + ']=' + FRecords[I].Name + '.' +
+          sLineBreak + e.Message);
+    end;
+
+    Guard.CheckTrue(aRecord.RecordSetCount = self.RecordSetCount);
+    for I := 0 to Pred(self.RecordSetCount) do
+      try
+        self.FRecordSets[I].Assign(aRecord.RecordSets[I]);
+      except
+        on e: Exception do
+          raise Exception.Create('TJanuaRecord.Assign FRecordSets[' + I.ToString + ']=' + RecordSets[I].Name +
+            '.' + RecordSets[I].CurrentRecord.Name + sLineBreak + e.Message);
+      end;
+  except
+    on e: Exception do
+      raise Exception.Create(ClassName + '.Assign(aRecord=' + self.FName + ')' + sLineBreak + e.Message);
+  end;
+end;
+
+function TJanuaRecord.CheckDataset(const aDataset: IJanuaDBDataset): boolean;
+var
+  LEntity: TJanuaEntity;
+  LsEntityName: string;
+begin
+  // cycles all entity definition(s) in a IJanuaDBDataset if a match is fount then it exits
+  for LEntity in aDataset.Entities do
+    if LEntity = self.FEntity then
+      exit(True);
+  // if not an entity match is found it cycles all Entity Namesin a IJanuaDBDataset exits True when found
+  for LsEntityName in aDataset.EntityNames do
+    if LsEntityName = FEntityName then
+      exit(True);
+
+  Result := false;
+
+end;
+
+function TJanuaRecord.CheckInDataset: boolean;
+begin
+  Result := false;
+  if Assigned(FStoreDataset) then
+    FStoreDataset.SearchRecord(self.GUID)
+  else // se nel dataset esiste il campo guid giusto ... agisco
+    Result := Assigned(FDBDataset) and ExistFieldByName(FDBDataset, PrefixGUIDField) and
+      FDBDataset.Locate(PrefixGUIDField, GUID.ToString, [])
+end;
+
+function TJanuaRecord.CheckIsStored: boolean;
+begin
+  Result := false;
+  { TODO : Add CheckIsStored Management for Recordset }
+end;
+
+procedure TJanuaRecord.Clear;
+var
+  I: integer;
+begin
+  I := -1;
+  try
+    self.Initialize;
+    // se sono presenti dei sub-records (nested records) allora dobbiamo a cascate eseguire un clear anche su di loro
+    if self.FRecords.Count > 0 then
+      for I := 0 to Pred(FRecords.Count) do
+        FRecords[I].Clear;
+    // lo stesso vale per gli eventuali 'nested recordsets' .........................................................
+    if self.FRecordSets.Count > 0 then
+      for I := 0 to Pred(FRecordSets.Count) do
+        FRecordSets[I].Clear;
+  except
+    on e: Exception do
+      raise Exception.Create('TJanuaRecord.Clear: i=' + I.ToString + ' error=' + e.Message);
+
+  end;
+end;
+
+constructor TJanuaRecord.Create(const aName: string; aFields: TJanuaFields; aRecords: IList<IJanuaRecord>;
+aRecordSets: IList<IJanuaRecordSet>; const aEntity: TJanuaEntity);
+var
+  I: integer;
+begin
+  try
+    Create(aName, aEntity);
+    Guard.CheckNotNull(aFields, self.ClassName + '.Create aFields  is nil');
+    if aFields.Count > 0 then
+      for I := 0 to Pred(aFields.Count) do
+        self.AddField(aFields[I]);
+
+    if Assigned(aRecords) and (aRecords.Count > 0) then
+      for I := 0 to Pred(aRecords.Count) do
+        self.AddRecordDef(aRecords[I]);
+
+    if Assigned(aRecordSets) and (aRecordSets.Count > 0) then
+      for I := 0 to Pred(aRecordSets.Count) do
+        self.AddRecordSet(aRecordSets[I]);
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('Create', e, self, 'aName := ' + aName);
+  end;
+
+end;
+
+constructor TJanuaRecord.Create(const aName: string; const aDataset: IJanuaDBDataset);
+begin
+  if Length(aDataset.Entities) > 0 then
+    Create(aName, aDataset.Entities[0])
+  else
+    Create(aName);
+  FDBDataset := aDataset.Dataset;
+end;
+
+constructor TJanuaRecord.Create(const aRecord: IJanuaRecord; aAssign: boolean = True);
+begin
+  Guard.CheckNotNull(aRecord, self.ClassName + '.Create aRecord is nil');
+  if aAssign then
+  begin
+    Create(aRecord.Name, aRecord.Entity);
+    Assign(aRecord)
+  end
+  else
+    Create(aRecord.Name, aRecord.Fields, aRecord.Records, aRecord.RecordSets);
+end;
+
+constructor TJanuaRecord.Create(const aObject: TJsonObject);
+var
+  tmp: string;
+begin
+  Guard.CheckNotNull(aObject, self.ClassName + '.Create TJsonObject is nil');
+  self.Create;
+  // poi ne importo la struttura .............................
+  self.SetAsMetaData(aObject);
+end;
+
+constructor TJanuaRecord.Create(const aName: string; const aEntity: TJanuaEntity = None);
+begin
+  Create;
+  if aEntity <> TJanuaEntity.None then
+    FEntity := aEntity;
+  FName := aName;
+end;
+
+procedure TJanuaRecord.DirectLoadFromDataset(const aDataset: TDataset);
+begin
+  Guard.CheckNotNull(aDataset, 'TJanuaRecord.DirectLoadFromDataset TDataset is nil');
+  FDBDataset := aDataset;
+  LoadFromDataset;
+end;
+
+procedure TJanuaRecord.DirectLoadFromDataset(const aDatasets: TArray<TDataset>);
+begin
+  {
+    FFootballStorage.CreateDataset;
+    Guard.CheckNotNull(FFootballStorage.jdsSeasonLeagues, ClassName + '.Create aStorage.jdsLookupMatchDays nil');
+    self.RecordSet.CurrentRecord.StoreDataset := FFootballStorage.jdsSeasonLeagues;
+  }
+  inherited;
+  AssignDatasets(aDatasets);
+  LoadFromDataset;
+end;
+
+procedure TJanuaRecord.DirectLoadFromDataset(const aDataset: IJanuaDBDataset);
+begin
+  Guard.CheckNotNull(aDataset, 'TJanuaRecord.DirectLoadFromDataset IJanuaDBDataset is nil');
+  DirectLoadFromDataset(aDataset.Dataset);
+  // LoadFromDataset;
+end;
+
+procedure TJanuaRecord.DirectSaveToDataset(const aDatasets: TArray<TDataset>; Force: boolean = false);
+begin
+  AssignDatasets(aDatasets);
+  SaveToDataset(Force);
+end;
+
+procedure TJanuaRecord.DirectSaveToDataset(const aDataset: TDataset; Force: boolean = false);
+begin
+  self.FDBDataset := aDataset;
+  self.SaveToDataset(Force);
+end;
+
+procedure TJanuaRecord.DoCalcFields;
+begin
+  if FOnChangeActive and Assigned(self.FNotifyEvent) then
+    self.FNotifyEvent(self);
+end;
+
+procedure TJanuaRecord.DoDataChange(const aField: IJanuaField);
+begin
+  if self.FOnChangeActive and aField.IsMonitored then
+    self.DoCalcFields
+end;
+
+function TJanuaRecord.ContentEquals(const aRecord: IJanuaRecord): boolean;
+var
+  I: integer;
+begin
+  Result := True;
+
+  if (self.FRecordSets.Count <> aRecord.RecordSets.Count) then
+  begin
+    self.FLastMessage := 'FRecordSets.Count <> aRecord.RecordSets.Count';
+    exit(false);
+  end;
+  if (self.FRecords.Count <> aRecord.Records.Count) then
+  begin
+    self.FLastMessage := 'FRecords.Count <> aRecord.Records.Count';
+    exit(false);
+  end;
+  if (self.FFields.Count <> aRecord.Fields.Count) then
+  begin
+    self.FLastMessage := 'FFields.Count <> aRecord.Fields.Count';
+    exit(false);
+  end;
+
+  if self.FFields.Count > 0 then
+    for I := 0 to Pred(FFields.Count) do
+      if not FFields[I].Calculated and not FFields[I].Value.Equals(aRecord.Fields[I].Value) then
+      begin
+        FLastMessage := 'FField[' + I.ToString + '](' + FFields[I].DBField + ' ) = ' + FFields[I].AsString +
+          ' <> ' + aRecord.Fields[I].AsString;
+        exit(false);
+      end;
+
+  if self.FRecords.Count > 0 then
+    for I := 0 to Pred(FRecords.Count) do
+      if not FRecords[I].ContentEquals(aRecord.Records[I]) then
+        exit(false);
+
+  if self.FRecordSets.Count > 0 then
+    for I := 0 to Pred(FRecordSets.Count) do
+      if not FRecordSets[I].ContentEquals(aRecord.RecordSets[I]) then
+        exit(false)
+end;
+
+constructor TJanuaRecord.Create;
+begin
+  inherited;
+  FEntity := TJanuaEntity.None;
+  FOnChangeActive := false;
+  FFields := TCollections.CreateList<IJanuaField>;
+  FRecordSets := TCollections.CreateList<IJanuaRecordSet>;
+  FRecords := TCollections.CreateList<IJanuaRecord>;
+  FCalcFields := TCollections.CreateList<IJanuaField>;
+  FTriggerFields := TCollections.CreateList<IJanuaField>;
+  // Initialize imposta a Default non solo i valori di GUID ed Index ma anche ogni singolo campo
+  Initialize;
+  GUID := GUID_NULL;
+  // FOldRecord := TJanuaRecord.Create;
+end;
+
+function TJanuaRecord.FieldByName(const aName: string): IJanuaField;
+var
+  I: integer;
+begin
+  Result := nil;
+  for I := 0 to Pred(FFields.Count) do
+    if self.FFields[I].Key = aName.ToLower then
+    begin
+      Result := self.FFields[I];
+      exit
+    end;
+  raise Exception.Create('TJanuaRecord.FieldByName Field ' + aName + ' not found');
+end;
+
+function TJanuaRecord.FieldCount: integer;
+begin
+  Result := self.FFields.Count
+end;
+
+function TJanuaRecord.FindField(const aName: string): boolean;
+var
+  I: integer;
+begin
+  Result := false;
+  for I := 0 to Pred(FFields.Count) do
+    if self.FFields[I].Key = aName.ToLower then
+    begin
+      Result := True;
+      exit
+    end;
+end;
+
+function TJanuaRecord.GetAsJsonObject: TJsonObject;
+var
+  I: integer;
+begin
+  Result := TJsonObject.Create;
+
+  Janua.Core.Json.JsonPair(Result, 'jguid', self.FGUID.ToString);
+
+  for I := 0 to Pred(self.FFields.Count) do
+    self.FFields[I].WriteJsonValue(Result);
+
+  for I := 0 to Pred(self.FRecords.Count) do
+    self.FRecords[I].WriteToJson(Result);
+
+  for I := 0 to Pred(self.FRecordSets.Count) do
+    self.FRecordSets[I].WriteToJsonObject(Result);
+end;
+
+function TJanuaRecord.GetAsMetaData: TJsonObject;
+var
+  FArr, RArr, RSArr: TJsonArray;
+  I: integer;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Json.JsonPair(Result, 'name', self.FName);
+  FArr := TJsonArray.Create;
+  if self.FFields.Count > 0 then
+    for I := 0 to Pred(FFields.Count) do
+      FArr.AddElement(self.FFields[I].AsJsonMetadata);
+  Janua.Core.Json.JsonPair(Result, 'fields', FArr);
+
+  RArr := TJsonArray.Create;
+  if self.FRecords.Count > 0 then
+    for I := 0 to Pred(FRecords.Count) do
+      RArr.AddElement(self.FRecords[I].AsMetadata);
+  Janua.Core.Json.JsonPair(Result, 'records', RArr);
+
+  RSArr := TJsonArray.Create;
+  if self.FRecordSets.Count > 0 then
+    for I := 0 to Pred(FRecordSets.Count) do
+      RSArr.AddElement(self.FRecordSets[I].AsMetadata);
+  Janua.Core.Json.JsonPair(Result, 'recordsets', RSArr);
+
+end;
+
+function TJanuaRecord.GetGUID: TGUID;
+begin
+  Result := self.FGUID
+end;
+
+function TJanuaRecord.GetIsLocalStored: boolean;
+begin
+  Result := self.FIsLocalStored
+end;
+
+function TJanuaRecord.GetIsNewRecod: boolean;
+begin
+  Result := self.FIsNewRecord
+end;
+
+function TJanuaRecord.GetIsRemoteStored: boolean;
+begin
+  if (FKeyFields.Count > 0) then
+    Result := FKeyFields[0].DifferDefault
+  else
+    Result := self.FIsRemoteStored
+end;
+
+function TJanuaRecord.GetItemIndex: integer;
+begin
+  Result := self.FItemIndex
+end;
+
+function TJanuaRecord.GetJanuaFields: TJanuaFields;
+begin
+  Result := self.FFields
+end;
+
+function TJanuaRecord.GetKeyFields: IList<IJanuaField>;
+begin
+  Result := self.FKeyFields
+end;
+
+function TJanuaRecord.GetLastMessage: string;
+begin
+  Result := self.FLastMessage
+end;
+
+function TJanuaRecord.GetMasterRecord: IJanuaRecord;
+begin
+  Result := self.FMasterRecord;
+end;
+
+function TJanuaRecord.GetModified: boolean;
+var
+  I: integer;
+begin
+  Result := false;
+  for I := 0 to Pred(self.FFields.Count) do
+    if FFields[I].Modified then
+      exit(True);
+  for I := 0 to Pred(self.FRecords.Count) do
+    if self.FRecords[I].Modified then
+      exit(True);
+  for I := 0 to Pred(self.FRecordSets.Count) do
+    if self.FRecordSets[I].Modified then
+      exit(True)
+end;
+
+function TJanuaRecord.GetName: string;
+begin
+  Result := self.FName
+end;
+
+function TJanuaRecord.GetNotifyEvent: TNotifyEvent;
+begin
+  Result := self.FNotifyEvent
+end;
+
+function TJanuaRecord.GetPrefix: string;
+begin
+  Result := self.FPrefix
+end;
+
+function TJanuaRecord.GetRecordCount: integer;
+begin
+  Result := FRecords.Count
+end;
+
+function TJanuaRecord.GetRecords: IList<IJanuaRecord>;
+begin
+  Result := self.FRecords
+end;
+
+function TJanuaRecord.GetRecordSets: IList<IJanuaRecordSet>;
+begin
+  Result := self.FRecordSets
+end;
+
+function TJanuaRecord.GetStoreDataset: IJanuaDBDataset;
+begin
+  Result := self.FStoreDataset
+end;
+
+function TJanuaRecord.GetUpdatesPending: boolean;
+begin
+  Result := self.FIsNewRecord or not self.FIsLocalStored or not self.FIsRemoteStored or self.RecordModified
+end;
+
+procedure TJanuaRecord.Initialize;
+var
+  I: integer;
+begin
+  inherited;
+  // FFields: IList<IJanuaField>;
+  for I := 0 to Pred(FFields.Count) do
+    FFields[I].Clear;
+  FGUID := System.Types.GUID_NULL;
+  self.FItemIndex := -1;
+end;
+
+procedure TJanuaRecord.LoadFromDataset(const aMainDataset: IJanuaDBDataset;
+const aDatasets: TArray<IJanuaDBDataset>);
+begin
+  SetupDataset(aMainDataset, aDatasets);
+  LoadFromDataset;
+end;
+
+procedure TJanuaRecord.LoadFromDataset(const aMainDataset: IJanuaDBDataset);
+begin
+  StoreDataset := aMainDataset;
+  LoadFromDataset;
+end;
+
+procedure TJanuaRecord.LoadFromDataset;
+var
+  aField: TField;
+  tmp: string;
+  I, j: integer;
+begin
+  I := -1;
+  try
+    j := self.ItemIndex;
+    self.Clear;
+    self.ItemIndex := j; // reimposto ItemIndex ma Eredito il differente GUID.
+    // nota il 'post' dovrebbe registrare il record sul DataSet in una posizione equivalente al sui GUID.
+    // quindi se il Dataset ha un numero di Record bisogna 'scorrerlo' fino all'ID
+    // mentre su un Append non ci sono problemi di sorta dopo un Delete ItemIndex dei Record Va rifatto .....
+    LoadRecord;
+    // Si occupa di caricare semplicemente questo Record (usato ad esempio x un refresh dati)
+    if FRecordSets.Count > 0 then
+      for I := 0 to Pred(FRecordSets.Count) do
+        if Assigned(FRecordSets[I].Dataset) and not(FRecordSets[I].LazyLoading) then
+          FRecordSets[I].LoadFromDataset;
+  except
+    on e: Exception do
+      raise Exception.Create('TJanuaRecord.' + ClassName + '.LoadFromDataset: ' + IfThen(I = -1, '',
+        'i = ' + I.ToString + ' ') + e.Message);
+  end;
+end;
+
+procedure TJanuaRecord.LoadFromLocalStorage;
+begin
+  // per ora effettua una verifica del Dataset prima di caricare dallo Storage locale .........
+  if Assigned(self.FDBDataset) then
+  begin
+    ExecProc(
+      procedure
+      begin
+        self.LoadRecord;
+      end, 'LoadFromLocalStorage  ', self);
+  end;
+end;
+
+procedure TJanuaRecord.LoadFromRemoteStorage;
+begin
+  raise Exception.Create('LoadFromRemoteStorage not implemented');
+end;
+
+procedure TJanuaRecord.LoadRecord;
+var
+  aField: TField;
+  tmp: string;
+  I: integer;
+begin
+  try
+    // 2020-05-16 if FStoreDataset is Assigned and FDBDataset is not stores FStoreDataset.Dataset to be Loaded
+    if not Assigned(FDBDataset) and Assigned(FStoreDataset) then
+      FDBDataset := FStoreDataset.Dataset;
+    Guard.CheckNotNull(FDBDataset, ClassName + '.LoadRecord FDBDataset is null');
+    if FDBDataset.Active and (FDBDataset.RecordCount > 0) then
+      try
+        if Janua.Core.Functions.GetFieldByName(FDBDataset, PrefixGUIDField, aField) then
+          // and aField.AsString <> '' -- do not check this on code. A null GUID from Database should always fail.
+          try
+            self.FGUID := System.SysUtils.StringToGUID(aField.AsString)
+          except
+            on e: Exception do
+              raise Exception.Create(self.Name + '.' + PrefixGUIDField + ' load error from Dataset: ' +
+                FDBDataset.Name + sLineBreak + e.Message);
+          end
+        else if Janua.Core.Functions.GetFieldByName(FDBDataset, 'jguid', aField) then
+          try
+            self.FGUID := System.SysUtils.StringToGUID(aField.AsString)
+          except
+            on e: Exception do
+              raise Exception.Create(self.Name + '.' + PrefixGUIDField + ' load error from Dataset: ' +
+                FDBDataset.Name + sLineBreak + e.Message);
+          end;
+
+        if Janua.Core.Functions.GetFieldByName(FDBDataset, FPrefix + '_deleted', aField) then
+          self.IsDeleted := aField.AsBoolean;
+        for I := 0 to Pred(FFields.Count) do
+        begin
+          Guard.CheckNotNull(FFields[I], 'FFields[' + I.ToString + '] is nil');
+          FFields[I].ReadFromDataset(FDBDataset);
+        end;
+        for I := 0 to Pred(FRecords.Count) do
+        begin
+          Guard.CheckNotNull(FRecords[I], 'FRecords[' + I.ToString + '] is nil');
+          self.FRecords[I].LoadRecord;
+        end;
+      except
+        on e: Exception do
+        begin
+          if Assigned(FDBDataset.Owner) then
+            tmp := FDBDataset.Owner.Name + '.' + FDBDataset.Name
+          else
+            tmp := FDBDataset.Name;
+
+          Janua.Core.Functions.RaiseException('LoadRecord from ' + tmp, e, self,
+            '(' + FName + ') i = ' + I.ToString);
+        end;
+      end;
+  except
+    on e: Exception do
+    begin
+      Janua.Core.Functions.RaiseException('.LoadRecord  (' + FName + ')', e, self, LogString);
+    end;
+  end;
+end;
+
+function TJanuaRecord.NewRecord: IRecSerialization;
+begin
+  SetDefault;
+  self.Append;
+  Result := TJanuaRecSerialization.Create(self);
+end;
+
+procedure TJanuaRecord.OnFieldsChange(Sender: TObject);
+begin
+  self.DoCalcFields
+end;
+
+function TJanuaRecord.PrefixGUIDField: string;
+begin
+  Result := self.Prefix + '_jguid';
+end;
+
+procedure TJanuaRecord.AssignDatasets(aDatasets: TArray<TDataset>);
+var
+  I: integer;
+  k: integer;
+  j: integer;
+begin
+  // if at least one Dataset is passed to the procedure it starts to assign datasets to recordsets
+  if Length(aDatasets) > 0 then
+    try
+      FDBDataset := aDatasets[0];
+      I := 0;
+      k := 0;
+      j := Length(aDatasets);
+      if (self.RecordSets.Count > 0) and (j > 1) then
+      begin
+        while ((k < RecordSets.Count) and (I < j)) do
+        begin
+          Inc(I);
+          if I < j then
+            self.RecordSets[k].Dataset := aDatasets[I];
+          Inc(k);
+        end;
+      end;
+    except
+      on e: Exception do
+        Janua.Core.Functions.CreateException('AssignDatasets', e.Message, self, LogString);
+    end
+  else
+    raise Exception.Create(self.ClassName + '.AssignDatasets no dataset passed to procedure');
+end;
+
+function TJanuaRecord.AssignJanuaDatasets(const aDatasets: TJanuaDBDatasets;
+const aRaiseException: boolean): boolean;
+var
+  aDataset: IJanuaDBDataset;
+  aRecord: IJanuaRecord;
+  aRecordSet: IJanuaRecordSet;
+  function DatasetsArrayNames: string;
+  var
+    j, k, l: integer;
+  begin
+    Result := '[';
+    for j := 0 to Length(aDatasets) - 1 do
+    begin
+      l := Length(aDatasets[j].GetEntities) - 1;
+      for k := 0 to l do
+        Result := Result + TRttiEnumerationType.GetName(aDatasets[j].GetEntities[k]) + ',';
+    end;
+    Result := Result + ']';
+  end;
+
+  function CheckDatasetsEntities: boolean;
+  var
+    j: integer;
+  begin
+    Result := false; // set result to false if array does not contain entity definitions
+    for j := 0 to Length(aDatasets) - 1 do
+      if Length(aDatasets[j].GetEntities) > 0 then
+        exit(True);
+  end;
+
+  function GetDatasetNames: string;
+  var
+    j, k, l: integer;
+  begin
+    Result := '[';
+    for j := 0 to Length(aDatasets) - 1 do
+    begin
+      Result := Result + aDatasets[j].Dataset.Name;
+      l := Length(aDatasets[j].GetEntities);
+      if l > 0 then
+      begin
+        Result := Result + '(';
+        for k := 0 to Pred(l) do
+          Result := Result + TRttiEnumerationType.GetName(aDatasets[j].GetEntities[k]) +
+            IfThen(k = Pred(l), '', ',');
+        Result := Result + ')';
+      end;
+      if j < Length(aDatasets) - 1 then
+        Result := Result + ',';
+    end;
+    Result := Result + ']';
+  end;
+
+begin
+  Result := false;
+  Assert((Length(aDatasets) > 0), ' No Datasets to process [] empty Array passed');
+  Assert(CheckDatasetsEntities, 'No Entity Specified for Datasets: ' + GetDatasetNames);
+  try
+
+    Assert(self.FEntity <> TJanuaEntity.None, ClassName + '.Entity not set, Datasets: ' + GetDatasetNames);
+    for aDataset in aDatasets do
+      if CheckDataset(aDataset) then
+      begin
+        SetStoreDataset(aDataset);
+        Result := True;
+      end;
+
+    Assert(not(aRaiseException) or Result, 'AssignDataset: ' + ClassName + ' CheckDataset not passed Entity: '
+      + TRttiEnumerationType.GetName(FEntity) + '.' + FEntityName + ' not in ' + DatasetsArrayNames + sl +
+      'Datasets: ' + GetDatasetNames);
+
+    for aRecord in self.FRecords do
+      Result := Result and aRecord.AssignJanuaDatasets(aDatasets, aRaiseException);
+    for aRecordSet in RecordSets do
+      Result := Result and aRecordSet.AssignDatasets(aDatasets, aRaiseException);
+  except
+    on e: Exception do
+      Janua.Core.Functions.CreateException('AssignJanuaDatasets', e.Message, self, self.LogString)
+  end;
+
+end;
+
+procedure TJanuaRecord.SaveToDataset(Force: boolean = false);
+var
+  I: integer;
+  tmp: string;
+begin
+  if Assigned(FStoreDataset) then
+  begin
+    if self.FStoreDataset.SearchRecord(self.FGUID) then
+      self.UpdateToDataset
+    else
+      self.AppendToDataset;
+  end
+  else if Assigned(FDBDataset) then
+  begin
+    tmp := GUID.ToString;
+    if Force or (FDBDataset.FieldByName(PrefixGUIDField).AsString = tmp) or
+      (FDBDataset.Locate(self.PrefixGUIDField, tmp, [])) then
+      self.UpdateToDataset
+    else
+      self.AppendToDataset;
+  end
+  else
+    raise Exception.Create('TJanuaRecord.SaveToDataset FStoreDataset and FDBDataset are null');
+
+  for I := 0 to Pred(FRecords.Count) do
+    self.FRecords[I].SaveToDataset(Force);
+
+  for I := 0 to Pred(self.FRecordSets.Count) do
+    self.FRecordSets[I].SaveToDataset;
+end;
+
+procedure TJanuaRecord.SaveToDataset(const aDataset: IJanuaDBDataset; Force: boolean = false);
+begin
+  SaveRecordToDataset(self as IJanuaRecord, aDataset);
+end;
+
+procedure TJanuaRecord.SaveToDBDataset(const aDataset: TDataset; Force: boolean = false);
+begin
+  SaveRecordToDBDataset(self as IJanuaRecord, aDataset);
+end;
+
+procedure TJanuaRecord.SetAsJsonObject(const aValue: TJsonObject);
+var
+  I: integer;
+  // tmp: string;
+begin
+  Guard.CheckNotNull(aValue, 'TJanuaRecord.SetAsJsonObject Null Value Json');
+  Janua.Core.Json.JsonValue(aValue, 'jguid', FGUID);
+
+  for I := 0 to Pred(self.FFields.Count) do
+    if not(self.FFields[I].Calculated) then
+      self.FFields[I].ReadJsonValue(aValue);
+
+  // testo la funzione Read From Json dei singoli Record che compongono il Record Principale.
+  if FRecords.Count > 0 then
+    for I := 0 to Pred(self.FRecords.Count) do
+      self.FRecords[I].ReadFromJson(aValue);
+
+  {
+    for i := 0 to Pred(self.FFields.Count) do
+    self.FFields[i].WriteJsonValue(Result);
+
+
+    for i := 0 to Pred(self.FRecordSets.Count) do
+    self.FRecordSets[i].WriteToJsonObject(Result);
+  }
+  if self.FRecordSets.Count > 0 then
+    for I := 0 to Pred(self.FRecordSets.Count) do
+      FRecordSets[I].ReadFromJsonObject(aValue);
+
+end;
+
+procedure TJanuaRecord.SetAsMetaData(const Value: TJsonObject);
+var
+  LFArr, LRarr, LRSArr: TJsonArray;
+  tmp: string;
+  aValue: TJsonValue;
+  LPair: TJsonPair;
+  LObject: TJsonObject;
+  aTest: integer;
+begin
+  // da implementare;
+  Janua.Core.Json.JsonValue(Value, 'name', tmp);
+  FName := tmp;
+
+  FRecordSets.Clear;
+  FFields.Clear;
+  FRecords.Clear;
+
+  Janua.Core.Json.JsonValue(Value, 'fields', LFArr);
+
+  if Assigned(LFArr) then
+    for aValue in LFArr do
+    begin
+      LObject := (aValue as TJsonObject);
+      self.AddField(TJanuaOrmFactory.CreateField(LObject));
+    end;
+
+  Janua.Core.Json.JsonValue(Value, 'records', LRarr);
+
+  if Assigned(LRarr) and (LRarr.Count > 0) then
+    for aValue in LRarr do
+    begin
+      LObject := (aValue as TJsonObject);
+      self.AddRecordDef(TJanuaRecord.Create(LObject));
+    end;
+
+  Janua.Core.Json.JsonValue(Value, 'recordsets', LRSArr);
+
+  if Assigned(LRSArr) and (LRSArr.Count > 0) then
+    for aValue in LRSArr do
+    begin
+      LObject := (aValue as TJsonObject);
+      AddRecordSet(TJanuaRecordSet.Create(LObject));
+    end;
+
+end;
+
+procedure TJanuaRecord.SetDataset(const aValue: TDataset);
+begin
+  FDBDataset := aValue;
+end;
+
+procedure TJanuaRecord.SetDefault;
+begin
+  // Da Implementare ..........................
+  // Result := TCollections.CreateList<TValue>;
+  FGUID := System.Types.GUID_NULL;
+end;
+
+procedure TJanuaRecord.SetGUID(aValue: TGUID);
+begin
+  self.FGUID := aValue;
+end;
+
+procedure TJanuaRecord.SetIsLocalStored(aValue: boolean);
+begin
+
+end;
+
+procedure TJanuaRecord.SetIsNewReoord(aValue: boolean);
+begin
+
+end;
+
+procedure TJanuaRecord.SetIsRemoteStored(aValue: boolean);
+begin
+
+end;
+
+procedure TJanuaRecord.SetItemIndex(aValue: integer);
+begin
+  self.FItemIndex := aValue;
+end;
+
+procedure TJanuaRecord.ReadData(aDataList: TValueList);
+begin
+  self.FGUID := StringToGUID(aDataList[0].ToString);
+end;
+
+procedure TJanuaRecord.ReadFromJson(const aJsonObject: TJsonObject);
+begin
+  SetAsJsonObject(Janua.Core.Json.JsonObject(self.FName, aJsonObject));
+end;
+
+procedure TJanuaRecord.ReadRecord(aDataList: IRecSerialization);
+var
+  I, t1: integer;
+begin
+  Guard.CheckNotNull(aDataList, 'TJanuaRecord.ReadRecord aDataList is null');
+  Guard.CheckNotNull(aDataList.FieldValues, 'ReadRecord.WriteRecord aDataList.FieldValues is null');
+
+  // At First I am setting the GUID reading the one stored in the DataList
+  self.FGUID := aDataList.GUID;
+
+  // if Record contains at least one Field then It loops the Datalist FieldValues stored.
+  // To make it more performant DataList should use TOmniValue to store and retrieve data
+  if FFields.Count > 0 then
+  begin
+    t1 := aDataList.FieldValues.Count;
+    Guard.CheckTrue(t1 = self.FFields.Count, 'TJanuaRecord.ReadRecord Datalist Items = ' +
+      aDataList.FieldValues.Count.ToString + ' while fields count = ' + FFields.Count.ToString);
+    // in LETTURA DALLA DATALIST NON E' NECESSARIO IMPOSTARE IL VALORE DEI CAMPI CALCOLATI CHE SARA' POI ATTIVATO DA DO
+    for I := 0 to Pred(t1) do
+      if not(FFields[I].Calculated) then
+        FFields[I].Value := aDataList.FieldValues[I];
+  end;
+
+  if FRecords.Count > 0 then
+  begin
+    t1 := aDataList.RecValues.Count;
+    Guard.CheckTrue(t1 = FRecords.Count, 'TJanuaRecord.ReadRecord aDataList.RecValues <> Records.Count');
+    for I := 0 to Pred(t1) do
+    begin
+      // risolvere crezione della serializzazione
+      if Assigned(aDataList.RecValues[I]) then
+        self.FRecords[I].ReadRecord(aDataList.RecValues[I]);
+    end;
+  end;
+
+  if self.FRecordSets.Count > 0 then
+  begin
+    t1 := aDataList.RecSetList.Count;
+    Guard.CheckTrue(t1 = FRecordSets.Count,
+      'TJanuaRecord.ReadRecord aDataList.RecSetList <> FRecordSets.Count');
+    for I := 0 to Pred(self.FRecordSets.Count) do
+    begin
+      // se la DataList (i) non ? ancora Assegnata (andrebbe creata immediatamente) ..............
+      if Assigned(aDataList.RecSetList[I]) then
+        self.FRecordSets[I].ReadFromSerialization(aDataList.RecSetList[I]);
+      // self.FRecordSets[i].WriteToSerialization(aDataList.RecSetList[i]);
+    end;
+  end;
+  self.DoCalcFields
+end;
+
+function TJanuaRecord.RecordModified: boolean;
+var
+  I: integer;
+begin
+  Result := false;
+  for I := 0 to Pred(self.FFields.Count) do
+    if FFields[I].Modified then
+      exit(True);
+end;
+
+function TJanuaRecord.RecordSetCount(aRecursive: boolean = false): integer;
+var
+  I: integer;
+begin
+  Result := self.FRecordSets.Count;
+  if aRecursive then
+    for I := 0 to Pred(FRecordSets.Count) do
+      Result := Result + FRecordSets[I].CurrentRecord.RecordSetCount(True);
+end;
+
+function TJanuaRecord.RecordSetIndex: integer;
+begin
+  Result := self.FRecordSetIndex
+end;
+
+function TJanuaRecord.RecordValue: IRecSerialization;
+begin
+  // Record aValue ha come risultato una Serializzazione di se stesso ..................................................
+  Result := TJanuaRecSerialization.Create(self);
+  // qui non riesco a ricordare perch? la chiamata a WriteRecord, di norma ? WriteRecord che dovrebbe chiamare ........
+  WriteRecord(Result);
+end;
+
+procedure TJanuaRecord.RefreshFromDataset;
+begin
+
+end;
+
+procedure TJanuaRecord.SetJanuaFields(const aValue: TJanuaFields);
+begin
+  self.FFields := aValue;
+  self.DoCalcFields
+end;
+
+procedure TJanuaRecord.SetKeyFields(val: IList<IJanuaField>);
+begin
+  self.FKeyFields := val
+end;
+
+procedure TJanuaRecord.SetLastMessage(const Value: string);
+begin
+  self.FLastMessage := Value
+end;
+
+procedure TJanuaRecord.SetMasterRecord(aValue: IJanuaRecord);
+begin
+  self.FMasterRecord := aValue;
+  self.FHasMasterRecord := Assigned(self.FMasterRecord);
+end;
+
+procedure TJanuaRecord.SetModified(const aValue: boolean);
+var
+  I: integer;
+begin
+  for I := 0 to Pred(FFields.Count) do
+    self.FFields[I].Modified := false;
+end;
+
+procedure TJanuaRecord.SetName(const aValue: string);
+begin
+  self.FName := aValue;
+  self.DoCalcFields
+end;
+
+procedure TJanuaRecord.SetNotifyEvent(aValue: TNotifyEvent);
+begin
+  self.FNotifyEvent := aValue;
+  self.DoCalcFields
+end;
+
+procedure TJanuaRecord.SetOldRecord(aValue: IJanuaRecord);
+begin
+
+end;
+
+procedure TJanuaRecord.SetOldValue(const aValue: IJanuaField);
+begin
+
+end;
+
+procedure TJanuaRecord.SetPrefix(const aValue: string);
+begin
+  self.FPrefix := aValue;
+end;
+
+procedure TJanuaRecord.SetRecords(const aValue: IList<IJanuaRecord>);
+begin
+  self.FRecords := aValue;
+  self.DoCalcFields
+end;
+
+procedure TJanuaRecord.SetRecordSets(const aValue: IList<IJanuaRecordSet>);
+begin
+  self.FRecordSets := aValue
+end;
+
+procedure TJanuaRecord.SetRefField(const aField: IJanuaField);
+begin
+  // This procedure Controls the reference Fields for Calc-Fields procedures from the ORM Dataset
+end;
+
+procedure TJanuaRecord.SetStoreDataset(const aValue: IJanuaDBDataset);
+begin
+  if (aValue = nil) and (FStoreDataset <> nil) then
+    FDBDataset := nil;
+  // Store Dataset ? alla base del sistema di registrazione dati sia locale che remota.
+  // a Livello 'locale' i dati potrebbero essere registrati su DB ma anche su semplici Files.
+  FStoreDataset := aValue;
+  // Imposto i puntatore a DBDataset che ? la base delle procedure Record-Dataset.
+  if Assigned(FStoreDataset) then
+    FDBDataset := FStoreDataset.Dataset
+end;
+
+procedure TJanuaRecord.SetupDataset(const aMainDataset: IJanuaDBDataset;
+const aDatasets: TArray<IJanuaDBDataset>);
+var
+  bDatasets, LDatasets { Local Copy of Dataset Pointers }
+    : TArray<IJanuaDBDataset>;
+  I, j: integer;
+begin
+  self.StoreDataset := aMainDataset;
+  LDatasets := [];
+  // imposto ad un insieme inizialmente vuoto l'elenco di Dataset.
+  j := 0;
+
+  if (Length(aDatasets) > 0) and (FRecords.Count > 0) then
+  begin
+    bDatasets := [];
+    // Tecnica efficace in caso di un albero avente pressoche sempre un sotto-livello ..........
+    if Length(aDatasets) > FRecords.Count then
+      bDatasets := Copy(aDatasets, Pred(FRecordSets.Count), Length(aDatasets) - FRecords.Count);
+
+    for I := Low(aDatasets) to min(High(aDatasets), Pred(FRecords.Count)) do
+    begin
+      { TODO : LoadFromDataset funziona solo se i dataset sono in perfetto "ordine" e non gestisce bene i sotto-livelli }
+      if I <= Pred(FRecords.Count) then
+      begin
+        Inc(j, 1 + FRecords[I].Records.Count);
+        FRecords[I].SetupDataset(aDatasets[I], bDatasets);
+        if (FRecords[I].Records.Count > 0) then
+          bDatasets := Copy(bDatasets, Pred(FRecords[I].Records.Count), High(bDatasets));
+      end;
+    end;
+
+    if j < High(aDatasets) then
+      LDatasets := Copy(aDatasets, j, High(aDatasets));
+  end
+  else
+  begin
+    LDatasets := Copy(aDatasets, 0, MaxInt);
+  end;
+
+  if (Length(LDatasets) > 0) and (self.FRecordSets.Count > 0) then
+  begin
+    bDatasets := [];
+    // Tecnica efficace in caso di un albero avente pressoche sempre un sotto-livello ..........
+    if Length(LDatasets) > FRecordSets.Count then
+      bDatasets := Copy(LDatasets, Pred(FRecordSets.Count), FRecordSets.Count - Length(LDatasets));
+
+    for I := Low(LDatasets) to High(LDatasets) do
+    begin
+      { TODO : LoadFromDataset funziona solo se i dataset sono in perfetto "ordine" e non gestisce bene i sotto-livelli }
+      if I <= Pred(self.FRecordSets.Count) then
+        FRecordSets[I].CurrentRecord.SetupDataset(LDatasets[I], bDatasets);
+      // FRecordSets[i].CurrentRecord.StoreDataset := LDatasets[i];
+      // self.FRecordSets[i].LoadFromDataset(LDatasets[i], bDatasets);
+    end;
+  end;
+
+end;
+
+procedure TJanuaRecord.SetUpdatesPending(aValue: boolean);
+begin
+
+end;
+
+function TJanuaRecord.TryFieldByName(const aName: string; out aField: IJanuaField): boolean;
+var
+  I: integer;
+begin
+  aField := nil;
+  Result := false;
+  for I := 0 to Pred(FFields.Count) do
+    if self.FFields[I].Key = aName.ToLower then
+    begin
+      aField := self.FFields[I];
+      Result := True;
+      exit
+    end;
+end;
+
+procedure TJanuaRecord.UndoUpdates;
+begin
+
+end;
+
+procedure TJanuaRecord.UpdateToDataset;
+begin
+  if Assigned(self.FStoreDataset) then
+    FStoreDataset.UpdateRecord(self)
+  else if Assigned(self.FDBDataset) then
+    SaveRecordToDBDataset(self as IJanuaRecord, FDBDataset)
+  else
+    raise Exception.Create('TJanuaRecord.UpdateToDataset FDBDataset and FStoreDataset both null ');
+end;
+
+procedure TJanuaRecord.WriteData(aDataList: TValueList);
+begin
+  aDataList[0] := self.FGUID.ToString;
+end;
+
+procedure TJanuaRecord.WriteRecord(aDataList: IRecSerialization);
+var
+  I, t1: integer;
+begin
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('WriteRecord', 'Start ', self);
+{$ENDIF}
+  // nella serializzazione registro comunque i valori anche dei readonly e dei campi calcolati
+  // in quanto la serializzazione ? un valore inteno al dataset stesso e definito dal record medesimo
+  Guard.CheckNotNull(aDataList, 'TJanuaRecord.WriteRecord aDataList is null');
+  Guard.CheckNotNull(aDataList.FieldValues, 'TJanuaRecord.WriteRecord aDataList.FieldValues is null');
+
+  // Se il Record ha GUID nulla imposta la GUID ad un valore unico. GUID ? un valore a 128 bit.
+  if IsEqualGUID(self.FGUID, System.Types.GUID_NULL) then
+    CreateGUID(FGUID);
+
+  // dopo la verifica della GUID la prima cosa che faccio ? scrivere nella serializzzione il dato.
+  // la DataList dovrebbe contenere due Dati per la Cached Updates sia il valore attuale che il valore
+  // passato dei Record.
+  aDataList.GUID := self.FGUID;
+
+  if FFields.Count > 0 then
+  begin
+    t1 := aDataList.FieldValues.Count;
+    Guard.CheckTrue(t1 = FFields.Count, 'TJanuaRecord.WriteRecord Datalist Items = ' + t1.ToString +
+      ' while fields count = ' + FFields.Count.ToString);
+    // NOTA IMPORTANTE NELLA DATALIST INTERNA REGISTRO ANCHE I CAMPI IN 'SOLA LETTURA' E I CAMPI CALCOLATI POI RICALCOLO
+    for I := 0 to Pred(t1) do
+    begin
+      aDataList.FieldValues[I] := FFields[I].Value;
+      aDataList.OldValues[I] := FFields[I].GetOldValue;
+    end;
+  end;
+
+  if FRecords.Count > 0 then
+    for I := 0 to Pred(self.FRecords.Count) do
+    begin
+      // risolvere crezione della serializzazione
+      if Assigned(aDataList.RecValues[I]) then
+        self.FRecords[I].WriteRecord(aDataList.RecValues[I]);
+    end;
+
+  if self.FRecordSets.Count > 0 then
+    for I := 0 to Pred(self.FRecordSets.Count) do
+    begin
+      // se la DataList (i) non ? ancora Assegnata (andrebbe creata immediatamente) ..............
+      if (aDataList.RecSetList.Count < Succ(I)) then
+        aDataList.RecSetList.Add(TJanuaSetSerialization.Create);
+      self.FRecordSets[I].WriteToSerialization(aDataList.RecSetList[I]);
+    end;
+  self.DoCalcFields;
+{$IFDEF JANUA_TEST}
+  TJanuaLogger.LogRecord('WriteRecord', 'End ', self);
+{$ENDIF}
+end;
+
+procedure TJanuaRecord.WriteToJson(const aJsonObject: TJsonObject);
+begin
+  Janua.Core.Json.JsonPair(aJsonObject, self.Name, self.AsJsonObject)
+end;
+
+procedure TJanuaRecord.SetDeleted(val: boolean);
+begin
+  self.FDeleted := val;
+end;
+
+procedure TJanuaRecord.SetEntity(const Value: TJanuaEntity);
+begin
+  FEntity := Value;
+  FEntityName := JanuaEntityNames[Value];
+end;
+
+procedure TJanuaRecord.SetEntityName(const Value: string);
+var
+  LEntity: TJanuaEntity;
+begin
+  FEntityName := Value;
+  if TEnumConvertor<TJanuaEntity>.TryFromString(Value, LEntity) then
+    FEntity := LEntity
+end;
+
+function TJanuaRecord.GetDataset: TDataset;
+begin
+  Result := self.FDBDataset;
+end;
+
+function TJanuaRecord.GetDeleted: boolean;
+begin
+  Result := self.FDeleted;
+end;
+
+function TJanuaRecord.GetEntity: TJanuaEntity;
+begin
+  Result := FEntity
+end;
+
+function TJanuaRecord.GetEntityName: string;
+begin
+  Result := FEntityName
+end;
+
+procedure TJanuaRecord.SetIsDeleted(const aValue: boolean);
+begin
+  FIsDeleted := aValue;
+end;
+
+function TJanuaRecord.GetIsDeleted: boolean;
+begin
+  Result := self.FIsDeleted
+end;
+
+{ TJanuaRecSerialization }
+
+procedure TJanuaRecSerialization.Clear;
+begin
+  self.FValues.Clear;
+  self.FRecords.Clear;
+  self.FRecSets.Clear;
+  self.FGUID := System.Types.GUID_NULL;
+end;
+
+constructor TJanuaRecSerialization.Create(const aRecord: IJanuaRecord);
+var
+  I: integer;
+begin
+  { TRecList = IList<IRecSerialization>;
+    TSetList = IList<ISetSerialization>; }
+  inherited Create;
+  Guard.CheckNotNull(aRecord, 'Errore aRecord non assegnato, TJanuaRecSerialization.Create');
+  FRecords := TCollections.CreateList<IRecSerialization>;
+  FRecSets := TCollections.CreateList<ISetSerialization>;
+  FValues := TCollections.CreateList<TValue>;
+  FOldValues := TCollections.CreateList<TValue>;
+  self.FGUID := aRecord.GUID;
+
+  for I := 0 to Pred(aRecord.FieldCount) do
+  begin
+    FValues.Add(aRecord.Fields[I].Value);
+    FOldValues.Add(aRecord.Fields[I].GetOldValue);
+  end;
+
+  if aRecord.Records.Count > 0 then
+    for I := 0 to Pred(aRecord.Records.Count) do
+      self.FRecords.Add(TJanuaRecSerialization.Create(aRecord.Records[I]));
+
+end;
+
+function TJanuaRecSerialization.GetFieldValues: TValueList;
+begin
+  Result := self.FValues
+end;
+
+function TJanuaRecSerialization.GetGUID: TGUID;
+begin
+  Result := self.FGUID
+end;
+
+function TJanuaRecSerialization.GetIndex: integer;
+begin
+  Result := self.FIndex
+end;
+
+function TJanuaRecSerialization.GetIsModified: boolean;
+var
+  I: integer;
+begin
+  Result := false;
+  for I := 0 to Pred(self.FValues.Count) do
+  begin
+    if FValues[I].Equals(FOldValues[I]) then
+      exit(True)
+  end;
+
+end;
+
+function TJanuaRecSerialization.GetOldValues: TValueList;
+begin
+  Result := self.FOldValues
+end;
+
+function TJanuaRecSerialization.GetRecSetList: TSetList;
+begin
+  Result := self.FRecSets
+end;
+
+function TJanuaRecSerialization.GetRecValues: TRecList;
+begin
+  Result := self.FRecords
+end;
+
+procedure TJanuaRecSerialization.SetFieldValues(const aValue: TValueList);
+begin
+  self.FValues := aValue
+end;
+
+procedure TJanuaRecSerialization.SetGUID(const aValue: TGUID);
+begin
+  self.FGUID := aValue
+end;
+
+procedure TJanuaRecSerialization.SetIndex(const aValue: integer);
+begin
+  self.FIndex := aValue
+end;
+
+procedure TJanuaRecSerialization.SetOldValues(const aValue: TValueList);
+begin
+  self.FOldValues := aValue
+end;
+
+procedure TJanuaRecSerialization.SetRecSetList(const aValue: TSetList);
+begin
+  self.FRecSets := aValue
+end;
+
+procedure TJanuaRecSerialization.SetRecValues(const aValue: TRecList);
+begin
+  self.FRecords := aValue
+end;
+
+{ TJanuaSetSerialization }
+
+procedure TJanuaSetSerialization.AddRecord(aSerialization: IRecSerialization);
+begin
+  // Aggiunge un record alla serializzazione ...............................
+  self.FRecords.Add(aSerialization);
+  self.FItemIndex := Pred(FRecords.Count);
+  self.FRecords[FItemIndex].ItemIndex := FItemIndex;
+end;
+
+procedure TJanuaSetSerialization.Clear;
+var
+  I: integer;
+begin
+  self.FItemIndex := -1;
+  for I := 0 to Pred(FRecords.Count) do
+    self.FRecords[I].Clear;
+  self.FRecords.Clear;
+end;
+
+constructor TJanuaSetSerialization.Create;
+begin
+  inherited Create;
+  self.FRecords := TCollections.CreateList<IRecSerialization>;
+  self.FItemIndex := -1;
+  // FDataRecords: IList<IRecSerialization>;
+end;
+
+function TJanuaSetSerialization.CurrentRecord: IRecSerialization;
+begin
+  Result := nil;
+  if (self.FRecords.Count > 0) and (FItemIndex > -1) then
+    Result := FRecords[FItemIndex]
+
+end;
+
+procedure TJanuaSetSerialization.DelCurrenRecord;
+{
+  if (self.FRecords.Count > 0) and (self.FItemIndex > -1) then
+  begin
+  FRecords.Delete(FItemIndex);
+  self.FItemIndex := Pred(self.FRecords.Count);
+  end;
+}
+
+var
+  I, j, k: integer;
+begin
+  if (self.FRecords.Count > 0) and (self.FItemIndex > -1) then
+  begin
+    j := FItemIndex;
+    FRecords.Delete(FItemIndex);
+    k := Pred(FRecords.Count);
+    // se ci sono dei record li reindicizzo
+    if k > -1 then
+      for I := 0 to k do
+        self.FRecords[I].ItemIndex := I;
+    // se ho cancellato l'ultimo record allora ItemIndex = .1
+    self.FItemIndex := min(j, k);
+  end;
+
+end;
+
+function TJanuaSetSerialization.GetItemIndex: integer;
+begin
+  Result := self.FItemIndex
+end;
+
+function TJanuaSetSerialization.GetRecList: TRecList;
+begin
+  Result := FRecords
+end;
+
+function TJanuaSetSerialization.GetRecordCount: integer;
+begin
+  Result := FRecords.Count
+end;
+
+procedure TJanuaSetSerialization.SetItemIndex(const aValue: integer);
+begin
+  if (self.FRecords.Count > 0) and (aValue < FRecords.Count) then
+    self.FItemIndex := aValue
+end;
+
+procedure TJanuaSetSerialization.SetRecList(const aValue: TRecList);
+begin
+  FRecords := aValue;
+end;
+
+{ TJanuaDBDataset }
+
+procedure TJanuaDBDataset.AddEntity(const aEntity: string);
+var
+  LEntity: TJanuaEntity;
+  procedure AddEntityName(const checkEntity: boolean);
+  begin
+    if not checkEntity or not IsEntityInSet(LEntity, FEntities) then
+    begin
+      SetLength(FEntityNames, Length(FEntityNames));
+      FEntityNames[Pred(Length(FEntityNames))] := aEntity;
+    end;
+  end;
+
+begin
+  try
+    Guard.CheckTrue(Pos('.', aEntity) > 0, 'Entity(' + aEntity + ') name must be in format <schema>.<name>');
+    // if entity string can be converted to entity enum stores and checks enum and strings
+    if TEnumConvertor<TJanuaEntity>.TryFromStringArray(aEntity, JanuaEntityNames, LEntity) then
+    begin
+      AddEntity(LEntity);
+      AddEntityName(True);
+    end
+    else
+      // else it just stores a new string in the array
+      AddEntityName(false);
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('AddEntity', e, self, LogString);
+  end;
+end;
+
+procedure TJanuaDBDataset.AddEntity(const aEntity: TJanuaEntity);
+begin
+  if not IsEntityInSet(aEntity, FEntities) then
+  begin
+    SetLength(FEntities, Succ(Length(FEntities)));
+    FEntities[Pred(Length(FEntities))] := aEntity;
+  end;
+
+end;
+
+procedure TJanuaDBDataset.AddEntityNames(const AEntities: TJanuaEntityNames);
+var
+  I: smallint;
+begin
+  for I := 0 to Pred(Length(AEntities)) do
+    AddEntity(AEntities[I]);
+end;
+
+function TJanuaDBDataset.AddParam(aParam: TParam): IJanuaField;
+begin
+
+end;
+
+function TJanuaDBDataset.AddParam(const aName: string; aType: TJanuaFieldType): IJanuaField;
+begin
+  Result := AddParam(TJanuaOrmFactory.CreateField(aName, aType));
+end;
+
+procedure TJanuaDBDataset.BeginScroll;
+begin
+  FScroll := True;
+end;
+
+function TJanuaDBDataset.Bof: boolean;
+begin
+  Result := InternalDataset.Bof
+end;
+
+procedure TJanuaDBDataset.Close;
+begin
+  self.GetDataset.Close;
+  Notify('RecordCount');
+end;
+
+constructor TJanuaDBDataset.CreateWithEntities(const AEntities: TJanuaEntities);
+begin
+  try
+    WriteLocalLog('Create(AEntities)', 'Create');
+    Create;
+    self.WriteLocalLog('Create(AEntities)', 'AddEntities(AEntities)');
+    AddEntities(AEntities);
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('Create(AEntities)', e, self, self.LogString);
+  end;
+  self.ClearLocalLog('Create(AEntities)');
+end;
+
+function TJanuaDBDataset.AddParam(aParam: IJanuaField): IJanuaField;
+begin
+  Result := FParams.AddParam(aParam)
+end;
+
+constructor TJanuaDBDataset.Create;
+begin
+  inherited;
+  FParams := TJanuaParams.Create;
+  FScroll := false;
+  FInternalDataSource := TDataSource.Create(nil);
+end;
+
+procedure TJanuaDBDataset.DatasetAfterOpen(Dataset: TDataset);
+begin
+  if Assigned(FOnScroll) then
+    FOnScroll(self as IJanuaDBCustomDataset);
+end;
+
+procedure TJanuaDBDataset.DatasetAfterScroll(Dataset: TDataset);
+begin
+  if Assigned(FOnScroll) then
+    FOnScroll(self as IJanuaDBCustomDataset);
+end;
+
+procedure TJanuaDBDataset.DefaultParams;
+var
+  LPair: TPair<string, IJanuaField>;
+begin
+  if FParams.ParamCount > 0 then
+    for LPair in FParams.Items do
+      if LPair.Value.DBField.ToLower = 'db_schema_id' then
+        LPair.Value.AsInteger := TJanuaApplication.DBSchemaID
+      else
+        LPair.Value.Default;
+end;
+
+destructor TJanuaDBDataset.Destroy;
+begin
+  if Assigned(FInternalDataSource) then
+    FInternalDataSource.Free;
+  inherited;
+end;
+
+procedure TJanuaDBDataset.EndScroll;
+begin
+  if self.FScroll then
+  begin
+    FScroll := false;
+    if Assigned(FOnScroll) then
+      FOnScroll(self as IJanuaDBCustomDataset);
+  end;
+end;
+
+function TJanuaDBDataset.Eof: boolean;
+begin
+  Result := InternalDataset.Eof
+end;
+
+function TJanuaDBDataset.FieldByName(const FieldName: string): TField;
+begin
+  Result := self.InternalDataset.FieldByName(FieldName);
+end;
+
+function TJanuaDBDataset.FindParam(const aParamName: string; out aParam: IJanuaField): boolean;
+var
+  LPair: TPair<string, IJanuaField>;
+begin
+  Result := false; // Param not found.
+  if FParams.ParamCount > 0 then
+    for LPair in FParams.Items do
+      if LPair.Value.DBField.ToLower = aParamName.ToLower then
+      begin
+        aParam := LPair.Value;
+        exit(True)
+      end;
+end;
+
+procedure TJanuaDBDataset.First;
+begin
+  InternalDataset.First;
+  Notify('RecordCount');
+end;
+
+function TJanuaDBDataset.GetActive: boolean;
+begin
+  Result := self.FInternalDataset.Active
+end;
+
+function TJanuaDBDataset.GetDataSource: TDataSource;
+begin
+  Result := self.FInternalDataSource
+end;
+
+function TJanuaDBDataset.GetEntities: TJanuaEntities;
+begin
+  Result := self.FEntities
+end;
+
+function TJanuaDBDataset.GetEntityNames: TJanuaEntityNames;
+begin
+  Result := FEntityNames;
+end;
+
+function TJanuaDBDataset.getGUIDPrefix: string;
+begin
+  Result := self.FGUIDPrefix
+end;
+
+function TJanuaDBDataset.getLimit: integer;
+begin
+  Result := self.FLimit
+end;
+
+function TJanuaDBDataset.GetOnScroll: TJanuaDatasetEvent;
+begin
+  Result := self.FOnScroll
+end;
+
+function TJanuaDBDataset.getPage: integer;
+begin
+  Result := self.FPage
+end;
+
+function TJanuaDBDataset.getParams: IJanuaParams;
+begin
+  Result := FParams
+end;
+
+function TJanuaDBDataset.GetRecordCount: integer;
+begin
+  Result := FInternalDataset.RecordCount
+end;
+
+function TJanuaDBDataset.GetResult: IJanuaField;
+begin
+  Result := FResult
+end;
+
+function TJanuaDBDataset.GetResultType: TJanuaFieldType;
+begin
+  Result := self.FResultType
+end;
+
+function TJanuaDBDataset.GUIDField: string;
+begin
+  Result := self.FGUIDPrefix.ToLower + '_jguid';
+end;
+
+procedure TJanuaDBDataset.Last;
+begin
+  InternalDataset.Last;
+  Notify('RecordCount');
+end;
+
+procedure TJanuaDBDataset.Next;
+begin
+  InternalDataset.Next
+end;
+
+procedure TJanuaDBDataset.Open;
+begin
+  GetDataset.Open;
+  Notify('RecordCount');
+end;
+
+procedure TJanuaDBDataset.OpenThreaded(aProc: TProc);
+begin
+  // if Assigned(aProc) then
+  if Assigned(aProc) then
+    OpenDBThreadedDataset(GetDataset, nil, True,
+      procedure
+      begin
+        Notify('RecordCount');
+        aProc;
+      end)
+  else
+    OpenDBThreadedDataset(GetDataset, nil, True,
+      procedure
+      begin
+        Notify('RecordCount');
+      end)
+end;
+
+function TJanuaDBDataset.ParamByName(const aName: string): IJanuaField;
+begin
+  if not FindParam(aName, Result) then
+    Result := nil;
+end;
+
+procedure TJanuaDBDataset.Prior;
+begin
+  InternalDataset.Prior
+end;
+
+procedure TJanuaDBDataset.SetActive(const Value: boolean);
+begin
+  FInternalDataset.Active := Value
+end;
+
+procedure TJanuaDBDataset.SetDataSource(const Value: TDataSource);
+begin
+  self.FInternalDataSource := Value;
+end;
+
+procedure TJanuaDBDataset.SetEntities(const AEntities: TJanuaEntities);
+var
+  I: integer;
+begin
+  if FEntities <> AEntities then
+  begin
+    SetLength(FEntities, Length(AEntities));
+    for I := 0 to High(AEntities) do
+      FEntities[I] := AEntities[I];
+  end;
+end;
+
+procedure TJanuaDBDataset.SetEntityNames(const AEntities: TJanuaEntityNames);
+var
+  I: integer;
+  LEntity: TJanuaEntity; // LEntity is used to convert Entity String to Entity Enum if found
+begin
+  if FEntityNames <> AEntities then
+  begin
+    // Set length of FEntityNames array to new dimensions according to AEntities
+    SetLength(FEntityNames, Length(AEntities));
+    for I := 0 to High(FEntityNames) do
+      FEntityNames[I] := AEntities[I];
+    // check if entity strings match Entity enum definitions
+    for I := 0 to High(FEntityNames) do
+      if TEnumConvertor<TJanuaEntity>.TryFromString(FEntityNames[I], LEntity) then
+        AddEntity(LEntity);
+  end;
+
+end;
+
+procedure TJanuaDBDataset.setGUIDPrefix(const aValue: string);
+begin
+  self.FGUIDPrefix := aValue
+end;
+
+procedure TJanuaDBDataset.SetInternalDataset(const Value: TDataset);
+begin
+  FInternalDataset := Value;
+  if Assigned(self.FInternalDataset) then
+  begin
+    if Assigned(FInternalDataSource) then
+      FInternalDataSource.Dataset := self.FInternalDataset;
+    FInternalDataset.AfterOpen := DatasetAfterOpen;
+    FInternalDataset.AfterScroll := DatasetAfterScroll;
+    FInternalDataSource.Dataset := FInternalDataset;
+  end;
+end;
+
+procedure TJanuaDBDataset.setLimit(const aValue: integer);
+begin
+  self.FLimit := aValue
+end;
+
+procedure TJanuaDBDataset.SetOnInternalExec(const Value: TNotifyEvent);
+begin
+  FOnInternalExec := Value;
+end;
+
+procedure TJanuaDBDataset.SetOnScroll(const Value: TJanuaDatasetEvent);
+begin
+  self.FOnScroll := Value
+end;
+
+procedure TJanuaDBDataset.setPage(const aValue: integer);
+begin
+  self.FPage := aValue;
+end;
+
+procedure TJanuaDBDataset.setParams(const aValue: IJanuaParams);
+begin
+  FParams := aValue;
+end;
+
+procedure TJanuaDBDataset.SetResultType(const Value: TJanuaFieldType);
+begin
+  // ------------------------------------------------------------------------------------------------//
+  // -- In base al Result Type configurato Viene creato il campo Result come parametro Out della f()
+  // -----------------------------------------------------------------------------------------------//
+  if FResultType <> Value then
+  begin
+    self.FResultType := Value;
+    self.FResult := TJanuaOrmFactory.CreateField('result', self.FResultType)
+  end;
+end;
+
+procedure TJanuaDBDataset.SetSearchFilter(const aSQLFilter: string);
+begin
+  FSearchFilter := aSQLFilter;
+end;
+
+procedure TJanuaDBDataset.AddEntities(const AEntities: TJanuaEntities);
+var
+  I: integer;
+  function IsInSet: boolean;
+  var
+    j: integer;
+  begin
+    Result := false;
+    try
+      for j := 0 to Pred(Length(FEntities)) do
+        if FEntities[j] = AEntities[I] then
+          exit(True);
+    except
+      on e: Exception do
+        Janua.Core.Functions.RaiseException('AddEntities(AEntities).IsInSet', e, self, self.LogString);
+    end;
+  end;
+
+  procedure AddEntity;
+  var
+    k: integer;
+  begin
+    k := Length(FEntities);
+    SetLength(FEntities, k + 1);
+    FEntities[k] := AEntities[I];
+  end;
+
+begin
+  try
+    if FEntities <> AEntities then
+    begin
+      for I := 0 to Pred(Length(AEntities)) do
+        if not IsInSet then
+          AddEntity;
+    end;
+  except
+    on e: Exception do
+      Janua.Core.Functions.RaiseException('AddEntities(AEntities)', e, self, self.LogString);
+  end;
+end;
+
+constructor TJanuaDBDataset.CreateWithNames(const AEntities: TJanuaEntityNames);
+begin
+  self.Create;
+  SetEntityNames(AEntities);
+end;
+
+{ TJanuaBlobField }
+
+procedure TJanuaBlobField.Clear;
+begin
+  FFInternalValue.Clear
+end;
+
+constructor TJanuaBlobField.Create(aKey, aField: string; aIsMonitored: boolean);
+begin
+  Create(aKey, aField, TJanuaFieldType.jpTBlob, aIsMonitored)
+end;
+
+constructor TJanuaBlobField.Create;
+begin
+  inherited;
+  self.FFInternalValue := TJanuaBlob.Create(false);
+  self.FieldType := TJanuaFieldType.jpTBlob;
+end;
+
+procedure TJanuaBlobField.Default;
+begin
+  FFInternalValue.Clear;
+end;
+
+destructor TJanuaBlobField.Destroy;
+begin
+  inherited;
+  self.FInternalValue.Clear;
+  self.FInternalValue.SetNil;
+end;
+
+function TJanuaBlobField.DifferDefault: boolean;
+begin
+  Result := not FInternalValue.Size = 0;
+end;
+
+function TJanuaBlobField.getAsBoolean: boolean;
+begin
+  Result := not FInternalValue.Size = 0;
+end;
+
+function TJanuaBlobField.getAsCurrency: Currency;
+begin
+  Result := 0.0
+end;
+
+function TJanuaBlobField.getAsDateTime: TDateTime;
+begin
+  Result := 0.0
+end;
+
+function TJanuaBlobField.getAsFloat: Extended;
+begin
+  Result := 0.0
+end;
+
+function TJanuaBlobField.getAsInteger: integer;
+begin
+  Result := 0
+end;
+
+function TJanuaBlobField.getAsLargeInt: Int64;
+begin
+  Result := 0
+end;
+
+function TJanuaBlobField.getAsString: String;
+begin
+  Result := self.FInternalValue.Encoded64
+end;
+
+function TJanuaBlobField.getAsUTF8Bytes: TBytes;
+begin
+  Result := FInternalValue.AsBytes
+end;
+
+function TJanuaBlobField.GetAsVariant: Variant;
+var
+  aStream: TStream;
+  MyBuffer: Pointer;
+begin
+  try
+    aStream := TMemoryStream.Create;
+    try
+      FInternalValue.SaveToStream(aStream);
+      Result := VarArrayCreate([0, aStream.Size - 1], VarByte);
+      MyBuffer := VarArrayLock(Result);
+      aStream.ReadBuffer(MyBuffer^, aStream.Size);
+      VarArrayUnlock(Result);
+    finally
+      aStream.Free;
+    end
+  except
+    on e: Exception do
+      RaiseException('GetAsVariant', e, self, self.LogString);
+  end;
+end;
+
+function TJanuaBlobField.GetDefault: TValue;
+begin
+  // il Default di un campo Blob ? nullo o una stringa nulla per default.
+  Result := TValue('');
+end;
+
+function TJanuaBlobField.GetJson: string;
+begin
+  Result := self.GetJsonValue.ToJson
+end;
+
+function TJanuaBlobField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonString.Create('')
+end;
+
+function TJanuaBlobField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonString.Create((self.FInternalValue.Encoded64));
+end;
+
+function TJanuaBlobField.GetModified: boolean;
+begin
+  Result := not FOldValue.IsEqual(self.FInternalValue)
+end;
+
+function TJanuaBlobField.GetOldValue: TValue;
+var
+  tmp: string;
+begin
+  // getAsString esegue la codifica in Base64 del campo BLOB associato.
+  tmp := FOldValue.Encoded64;
+  Result := TValue(tmp);
+end;
+
+function TJanuaBlobField.getValue: TValue;
+var
+  tmp: string;
+begin
+  // getAsString esegue la codifica in Base64 del campo BLOB associato.
+  tmp := self.getAsString;
+  Result := TValue(tmp);
+end;
+
+procedure TJanuaBlobField.LoadFromStream(aStream: TStream);
+begin
+  if Assigned(aStream) then
+    self.FInternalValue.LoadFromStream(aStream);
+end;
+
+procedure TJanuaBlobField.SaveToStream(aStream: TStream);
+begin
+  self.FFInternalValue.SaveToStream(aStream)
+end;
+
+procedure TJanuaBlobField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue.AsBoolean := aValue
+end;
+
+procedure TJanuaBlobField.setAsCurrency(const aValue: Currency);
+begin
+
+end;
+
+procedure TJanuaBlobField.setAsDateTime(const aValue: TDateTime);
+begin
+
+end;
+
+procedure TJanuaBlobField.setAsFloat(const aValue: Extended);
+begin
+
+end;
+
+procedure TJanuaBlobField.setAsInteger(const aValue: integer);
+begin
+
+end;
+
+procedure TJanuaBlobField.setAsLargeInt(const aValue: Int64);
+begin
+
+end;
+
+procedure TJanuaBlobField.setAsString(const aValue: String);
+begin
+  FInternalValue.Encoded64 := aValue;
+end;
+
+procedure TJanuaBlobField.SetAsVariant(const aValue: Variant);
+var
+  ms: TStream;
+  p: Pointer;
+begin
+  ms := TMemoryStream.Create;
+  try
+    ms.Position := 0;
+    p := VarArrayLock(aValue);
+    ms.Write(p^, VarArrayHighBound(aValue, 1));
+    // is it the best way to get the Variant's length?
+    VarArrayUnlock(aValue);
+
+    ms.Position := 0;
+  finally
+    ms.Free;
+  end;
+
+end;
+
+procedure TJanuaBlobField.SetDefault(aValue: TValue);
+begin
+
+end;
+
+procedure TJanuaBlobField.SetFInternalValue(const aValue: TJanuaBlob);
+begin
+  FFInternalValue := aValue;
+end;
+
+procedure TJanuaBlobField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaBlobField.SetJsonDefault(aValue: TJsonValue);
+begin
+
+end;
+
+procedure TJanuaBlobField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.AsString := aValue.Value
+end;
+
+procedure TJanuaBlobField.SetModified(const aValue: boolean);
+begin
+
+end;
+
+procedure TJanuaBlobField.setValue(const aValue: TValue);
+begin
+  self.AsString := aValue.ToString;
+end;
+
+procedure TJanuaBlobField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+
+end;
+
+function TJanuaBlobField.Size: Int64;
+begin
+  Result := self.FInternalValue.Size
+end;
+
+{ TJanuaMemoField }
+
+procedure TJanuaMemoField.Clear;
+begin
+  self.FInternalValue.Clear
+end;
+
+constructor TJanuaMemoField.Create(aKey, aField: string; aIsMonitored: boolean);
+begin
+  self.Create;
+  self.Key := aKey;
+  self.DBField := aField;
+  self.IsMonitored := aIsMonitored;
+end;
+
+constructor TJanuaMemoField.Create;
+begin
+  FFInternalValue := TStringList.Create;
+  self.FInternalValue.Text := self.FDefaultValue;
+  FOldValue := TStringList.Create;
+  self.FOldValue.Text := self.FInternalValue.Text;
+end;
+
+procedure TJanuaMemoField.Default;
+begin
+  FFInternalValue.Clear;
+  FOldValue.Clear;
+end;
+
+destructor TJanuaMemoField.Destroy;
+begin
+  FInternalValue.Free;
+  FOldValue.Free;
+  inherited;
+end;
+
+function TJanuaMemoField.DifferDefault: boolean;
+begin
+  Result := FInternalValue.Text <> ''
+end;
+
+function TJanuaMemoField.getAsBoolean: boolean;
+begin
+  Result := self.FFInternalValue.Count > 0
+end;
+
+function TJanuaMemoField.getAsCurrency: Currency;
+begin
+  TryStrToCurr(self.FFInternalValue.Text, Result)
+end;
+
+function TJanuaMemoField.getAsDateTime: TDateTime;
+begin
+  TryStrToDateTime(self.FFInternalValue.Text, Result)
+end;
+
+function TJanuaMemoField.getAsFloat: Extended;
+begin
+  TryStrToFloat(self.FFInternalValue.Text, Result)
+end;
+
+function TJanuaMemoField.getAsInteger: integer;
+begin
+  TryStrToInt(self.FFInternalValue.Text, Result)
+end;
+
+function TJanuaMemoField.getAsLargeInt: Int64;
+begin
+  TryStrToInt64(self.FFInternalValue.Text, Result)
+end;
+
+function TJanuaMemoField.getAsString: String;
+begin
+  Result := self.FInternalValue.Text
+end;
+
+function TJanuaMemoField.getAsUTF8Bytes: TBytes;
+begin
+  Result := TEncoding.UTF8.GetBytes(self.AsString);
+end;
+
+function TJanuaMemoField.GetAsVariant: Variant;
+begin
+  Result := self.getAsString
+end;
+
+function TJanuaMemoField.GetDefault: TValue;
+begin
+  Result := TValue(self.AsString)
+end;
+
+function TJanuaMemoField.GetJson: string;
+begin
+  Result := TJsonString.Create(self.AsString).ToJson
+end;
+
+function TJanuaMemoField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonString.Create('')
+end;
+
+function TJanuaMemoField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonString.Create(FInternalValue.Text);
+end;
+
+function TJanuaMemoField.GetModified: boolean;
+begin
+  Result := not FOldValue.Equals(self.FInternalValue)
+end;
+
+function TJanuaMemoField.GetOldValue: TValue;
+begin
+  Result := TValue(self.FOldValue.Text);
+end;
+
+function TJanuaMemoField.getValue: TValue;
+begin
+  Result := TValue(self.FInternalValue.Text)
+end;
+
+procedure TJanuaMemoField.LoadFromStream(aStream: TStream);
+begin
+  self.FInternalValue.LoadFromStream(aStream);
+end;
+
+procedure TJanuaMemoField.SaveToStream(aStream: TStream);
+begin
+  self.FInternalValue.SaveToStream(aStream);
+end;
+
+procedure TJanuaMemoField.setAsBoolean(const aValue: boolean);
+begin
+  self.FInternalValue.Text := aValue.ToString
+end;
+
+procedure TJanuaMemoField.setAsCurrency(const aValue: Currency);
+begin
+  self.FInternalValue.Text := CurrToStr(aValue);
+end;
+
+procedure TJanuaMemoField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FFInternalValue.Text := DateTimeToStr(aValue)
+end;
+
+procedure TJanuaMemoField.setAsFloat(const aValue: Extended);
+begin
+  self.FInternalValue.Text := aValue.ToString
+end;
+
+procedure TJanuaMemoField.setAsInteger(const aValue: integer);
+begin
+  self.FInternalValue.Text := aValue.ToString
+end;
+
+procedure TJanuaMemoField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue.Text := aValue.ToString
+end;
+
+procedure TJanuaMemoField.setAsString(const aValue: String);
+begin
+  if aValue <> FInternalValue.Text then
+  begin
+    FInternalValue.Text := aValue;
+    self.CheckNotifications;
+  end;
+end;
+
+procedure TJanuaMemoField.SetAsVariant(const aValue: Variant);
+begin
+  self.FFInternalValue.Text := aValue;
+end;
+
+procedure TJanuaMemoField.SetDefault(aValue: TValue);
+begin
+  self.FDefaultValue := aValue.ToString
+end;
+
+procedure TJanuaMemoField.SetFInternalValue(const aValue: TStrings);
+begin
+  self.FInternalValue := aValue;
+end;
+
+procedure TJanuaMemoField.SetJson(aValue: string);
+begin
+  SetJsonValue(JsonParse(aValue))
+end;
+
+procedure TJanuaMemoField.SetJsonDefault(aValue: TJsonValue);
+begin
+  self.FDefaultValue := TJsonString(aValue).Value;
+end;
+
+procedure TJanuaMemoField.SetJsonValue(aValue: TJsonValue);
+begin
+  self.FInternalValue.Text := TJsonString(aValue).Value;
+end;
+
+procedure TJanuaMemoField.SetModified(const aValue: boolean);
+begin
+  if not aValue then
+    self.FInternalValue.Text := self.FOldValue.Text
+end;
+
+procedure TJanuaMemoField.setValue(const aValue: TValue);
+begin
+  self.FFInternalValue.Text := aValue.ToString
+end;
+
+procedure TJanuaMemoField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  self.FInternalValue.Text := aActualValue.ToString;
+  self.FOldValue.Text := aOldValue.ToString;
+end;
+
+function TJanuaMemoField.Size: Int64;
+begin
+  Result := Length(self.FInternalValue.Text);
+end;
+
+{ TJanuaParams }
+
+function TJanuaParams.AddParam(const aName: string; aType: TJanuaFieldType; aValue: TValue): IJanuaField;
+var
+  tmp: IJanuaField;
+begin
+  tmp := TJanuaOrmFactory.CreateField(aName, aType);
+  Guard.CheckNotNull(tmp, 'Error Creating Parameter: ' + aName + ' Type: ' +
+    TEnumConvertor<TJanuaFieldType>.ToString(aType));
+  tmp.Value := aValue;
+  Result := AddParam(tmp);
+end;
+
+function TJanuaParams.AddParam(aParam: TParam): IJanuaField;
+var
+  tmp: IJanuaField;
+begin
+  tmp := TJanuaOrmFactory.CreateField(aParam.Name, JanuaFieldToPropertyType[aParam.DataType]);
+  Guard.CheckNotNull(tmp, 'Error Creating Parameter: ' + aParam.Name + ' Type: ' +
+    TEnumConvertor<TJanuaFieldType>.ToString(JanuaFieldToPropertyType[aParam.DataType]));
+  tmp.AsVariant := aParam.Value;
+  Result := AddParam(tmp);
+end;
+
+procedure TJanuaParams.Assign(const aParams: Data.DB.TParams);
+var
+  I: integer;
+begin
+  self.ClearParams;
+  if aParams.Count > 0 then
+  begin
+    for I := 0 to Pred(aParams.Count) do
+      AddParam(aParams.Items[I]);
+  end;
+end;
+
+procedure TJanuaParams.AssignValues(const aParams: IJanuaParams);
+var
+  lParam: IJanuaField;
+  LPair: TPair<string, IJanuaField>;
+begin
+  for LPair in aParams.Items do
+  begin
+    if FItems.TryGetValue(LPair.Key, lParam) then
+    begin
+      if lParam.FieldType = LPair.Value.FieldType then
+        lParam.Value := LPair.Value.Value
+      else
+        lParam.AsVariant := lParam.Value.AsVariant
+    end;
+  end;
+end;
+
+procedure TJanuaParams.AssignValues(const aParams: TParams);
+begin
+
+end;
+
+function TJanuaParams.AddParam(aParam: IJanuaField): IJanuaField;
+begin
+  if not FItems.ContainsKey(aParam.Key.ToLower) then
+  begin
+    FItems.Add(aParam.Key.ToLower, aParam);
+    SetLength(FOrderedList, Length(FOrderedList) + 1);
+    // This adds an ordered list of params
+    FOrderedList[Pred(Length(FOrderedList))] := aParam;
+    Result := aParam;
+  end
+  else
+  begin
+    Result := FItems.GetItem(aParam.Key.ToLower);
+  end;
+
+end;
+
+procedure TJanuaParams.Assign(const aParams: IJanuaParams);
+var
+  aPair: TPair<string, IJanuaField>;
+begin
+  self.FItems.Clear;
+  for aPair in aParams.Items do
+  begin
+    self.FItems.Add(aPair.Key, aPair.Value);
+    { TODO : Replace simple Add(IJanuaField) with Add(Factory.Create ...) }
+  end;
+end;
+
+constructor TJanuaParams.Create;
+begin
+  inherited;
+  self.FItems := Spring.Collections.TCollections.CreateDictionary<string, IJanuaField>;
+end;
+
+constructor TJanuaParams.Create(const aObject: TJsonObject);
+begin
+  Guard.CheckNotNull(aObject, 'TJanuaParams.Create aObject nil');
+  self.Create;
+  self.SetAsJsonObject(aObject);
+end;
+
+procedure TJanuaParams.DelParam(const aName: string);
+begin
+  self.FItems.Remove(aName)
+end;
+
+destructor TJanuaParams.Destroy;
+begin
+  if Assigned(FParamsList) then
+    FreeAndNil(FParamsList);
+
+  inherited;
+end;
+
+function TJanuaParams.GetAsJsonObject: TJsonObject;
+var
+  aPair: TPair<string, IJanuaField>;
+  LArr: TJsonArray;
+begin
+  Result := TJsonObject.Create;
+  JsonPair(Result, 'metaonly', FMetaDataOnly);
+  LArr := TJsonArray.Create;
+  for aPair in FItems do
+    LArr.AddElement(aPair.Value.AsJsonMetadata);
+  Janua.Core.Json.JsonPair(Result, 'fields', LArr);
+end;
+
+function TJanuaParams.GetAsMetaData: TJsonObject;
+var
+  FArr: TJsonArray;
+  aPair: TPair<string, IJanuaField>;
+begin
+  Result := TJsonObject.Create;
+  JsonValue(Result, 'metaonly', FMetaDataOnly);
+  // Params are stored in JsonObject as an array named 'params'
+  FArr := TJsonArray.Create;
+  if self.FItems.Count > 0 then
+    for aPair in FItems do
+      FArr.AddElement(aPair.Value.AsJsonMetadata);
+  Janua.Core.Json.JsonPair(Result, 'params', FArr);
+end;
+
+function TJanuaParams.GetAsMetaDataOnly: boolean;
+begin
+  Result := FMetaDataOnly
+end;
+
+function TJanuaParams.getAsString: string;
+var
+  LBuilder: TStringBuilder;
+  aPair: TPair<string, IJanuaField>;
+begin
+  LBuilder := TStringBuilder.Create;
+  try
+    for aPair in FItems do
+      LBuilder.Append(aPair.Key + '=' + aPair.Value.AsString)
+  finally
+    LBuilder.Free
+  end;
+end;
+
+function TJanuaParams.GetItem(const aIndex: integer): IJanuaField;
+begin
+  if aIndex < Length(self.FOrderedList) then
+    Result := FOrderedList[aIndex]
+end;
+
+function TJanuaParams.GetItems: IDictionary<string, IJanuaField>;
+begin
+  Result := self.FItems
+end;
+
+function TJanuaParams.GetOrderedList: TArray<IJanuaField>;
+begin
+  Result := FOrderedList;
+end;
+
+function TJanuaParams.GetParamsList: TStrings;
+var
+  I: integer;
+begin
+  if not Assigned(FParamsList) then
+    FParamsList := TStringList.Create;
+  FParamsList.Clear;
+  for I := 0 to Length(self.FOrderedList) - 1 do
+    FParamsList.Add(FOrderedList[I].Title);
+  Result := FParamsList;
+end;
+
+function TJanuaParams.GetText: string;
+begin
+  Result := ParamsList.Text;
+end;
+
+procedure TJanuaParams.ClearParams;
+var
+  aParam: IJanuaField;
+begin
+  for aParam in FOrderedList do
+    aParam.Clear;
+end;
+
+function TJanuaParams.ContentEquals(const aParams: IJanuaParams): boolean;
+var
+  aPair: TPair<string, IJanuaField>;
+begin
+  Result := True;
+  // Loops in Dictionary Params(Items) and exits False if Item does not Equals.
+  for aPair in FItems do
+    if not(aPair.Value.Value.Equals(aParams.ParamByName(aPair.Key).Value)) then
+      exit(false)
+end;
+
+constructor TJanuaParams.Create(const aParams: TParams);
+begin
+  self.Create;
+  self.Assign(aParams);
+end;
+
+function TJanuaParams.GetItemIndex: integer;
+begin
+  Result := FItemIndex;
+end;
+
+function TJanuaParams.ParamByName(const aName: string): IJanuaField;
+begin
+  FItems.TryGetValue(aName.ToLower, Result);
+  // Result := self.FItems.Extract(aName.ToLower)
+end;
+
+function TJanuaParams.ParamCount: integer;
+begin
+  Result := self.FItems.Count
+end;
+
+procedure TJanuaParams.SetAsJsonObject(const Value: TJsonObject);
+var
+  LArr: TJsonArray;
+  aValue, LValue: TJsonValue;
+  aPair: TJsonPair;
+  LObject: TJsonObject;
+  LItem: IJanuaField;
+begin
+  // Creo una lista vuota di Campi
+  // Result := Spring.Collections.TCollections.CreateList<IJanuaField>;
+  // Devo 'parsare' l'oggetto cercando l'array da Estrarre.
+  self.FItems.Clear;
+
+  Janua.Core.Json.JsonValue(Value, 'fields', LArr);
+
+  if Assigned(LArr) then
+    for aValue in LArr do
+    begin
+      // LObject does a cast of aVAlue (TJsonValue) to TJsonObject
+      LObject := (aValue as TJsonObject);
+      LItem := TJanuaOrmFactory.CreateField(LObject);
+      // Estraggo il valore del campo se presente.
+      JsonValue(LObject, 'value', LValue);
+      // Verifico che sia associato il campo e se s? sovrascrivo il Default con il valore ottenuto
+      if Assigned(LValue) then
+        LItem.AsJsonValue := LValue;
+      // infine inserisco il campo appena Creato
+      self.FItems.Add(LItem.Key.ToLower, LItem);
+    end;
+
+end;
+
+procedure TJanuaParams.SetAsMetaData(const Value: TJsonObject);
+var
+  LFArr, LRarr, LRSArr: TJsonArray;
+  tmp: string;
+  aValue: TJsonValue;
+  LPair: TJsonPair;
+  LObject: TJsonObject;
+  aTest: integer;
+begin
+
+  FItems.Clear;
+
+  Janua.Core.Json.JsonValue(Value, 'params', LFArr);
+
+  if Assigned(LFArr) then
+    for aValue in LFArr do
+    begin
+      LObject := (aValue as TJsonObject);
+      self.AddParam(TJanuaOrmFactory.CreateField(LObject));
+    end;
+
+end;
+
+procedure TJanuaParams.SetAsMetaDataOnly(const Value: boolean);
+begin
+
+end;
+
+procedure TJanuaParams.SetItemIndex(const Value: integer);
+begin
+  FItemIndex := Value;
+end;
+
+procedure TJanuaParams.SetItems(const Value: IDictionary<string, IJanuaField>);
+begin
+  self.FItems := Value;
+end;
+
+{ TJanuaGUIDField }
+
+constructor TJanuaGUIDField.Create;
+begin
+  inherited;
+  self.FInternalValue := GUID_NULL;
+  self.FDefaultValue := GUID_NULL;
+end;
+
+procedure TJanuaGUIDField.Clear;
+begin
+  self.FInternalValue := GUID_NULL
+end;
+
+constructor TJanuaGUIDField.Create(aKey, aField: string; aIsMonitored: boolean = false);
+begin
+  Create(aKey, aField, TJanuaFieldType.jptGUID, aIsMonitored)
+end;
+
+procedure TJanuaGUIDField.Default;
+var
+  t: boolean;
+begin
+  // la procedura imposta sia Internal Value che Default Value ma non lancia nessun evendo di modifica
+  // potrebbe lanciare un Evento 'Modified' ma solo se effettivamente fosse stato modificato il Record.
+  t := FInternalValue <> FDefaultValue;
+  if t then
+  begin
+    FInternalValue := FDefaultValue;
+    if Assigned(self.FOnDataChange) then
+      self.FOnDataChange(self as IJanuaField);
+  end;
+  FOldValue := FInternalValue;
+end;
+
+function TJanuaGUIDField.DifferDefault: boolean;
+begin
+  Result := FDefaultValue <> FFInternalValue
+end;
+
+function TJanuaGUIDField.getAsBoolean: boolean;
+begin
+  Result := NOT(FInternalValue = GUID_NULL);
+end;
+
+function TJanuaGUIDField.getAsCurrency: Currency;
+begin
+  Result := 0.0;
+end;
+
+function TJanuaGUIDField.getAsDateTime: TDateTime;
+begin
+  Result := 0.0;
+  // poi vedo come gestire il TDateTime .................................
+end;
+
+function TJanuaGUIDField.getAsFloat: Extended;
+begin
+  Result := 0.0;
+end;
+
+function TJanuaGUIDField.getAsInteger: integer;
+begin
+  Result := 0;
+end;
+
+function TJanuaGUIDField.getAsLargeInt: Int64;
+begin
+  Result := 0;
+end;
+
+function TJanuaGUIDField.getAsString: String;
+begin
+  Result := FInternalValue.ToString
+end;
+
+function TJanuaGUIDField.getAsUTF8Bytes: TBytes;
+begin
+  Result := FInternalValue.ToByteArray
+end;
+
+function TJanuaGUIDField.GetAsVariant: Variant;
+begin
+  Result := GUIDToString(FInternalValue);
+end;
+
+function TJanuaGUIDField.GetDefault: TValue;
+begin
+  Result := GUIDToString(FDefaultValue)
+end;
+
+function TJanuaGUIDField.GetJson: string;
+begin
+  Result := GetJsonPair.ToJson
+end;
+
+function TJanuaGUIDField.GetJsonDefault: TJsonValue;
+begin
+  Result := TJsonString.Create(FDefaultValue.ToString)
+end;
+
+function TJanuaGUIDField.GetJsonValue: TJsonValue;
+begin
+  Result := TJsonString.Create(FInternalValue.ToString);
+end;
+
+function TJanuaGUIDField.GetModified: boolean;
+begin
+  Result := self.FOldValue <> self.FFInternalValue
+end;
+
+function TJanuaGUIDField.GetOldValue: TValue;
+var
+  tmp: string;
+begin
+  tmp := GUIDToString(FOldValue);
+  Result := TValue.From<string>(tmp)
+end;
+
+function TJanuaGUIDField.getValue: TValue;
+var
+  tmp: string;
+begin
+  tmp := GUIDToString(FInternalValue);
+  Result := TValue.From<string>(tmp)
+end;
+
+procedure TJanuaGUIDField.LoadFromStream(aStream: TStream);
+var
+  SS: TStringStream;
+begin
+  if aStream <> nil then
+  begin
+    SS := TStringStream.Create;
+    TRY
+      SS.LoadFromStream(aStream);
+      FInternalValue := StringToGUID(SS.DataString)
+    FINALLY
+      SS.Free;
+    END;
+  end
+  else
+  begin
+    FInternalValue := GUID_NULL;
+  end;
+end;
+
+procedure TJanuaGUIDField.SaveToStream(aStream: TStream);
+var
+  SS: TStringStream;
+begin
+  SS := TStringStream.Create(FInternalValue.ToString);
+  try
+    aStream.CopyFrom(SS, 0); // No need to position at 0 nor provide size
+  finally
+    SS.Free;
+  end;
+end;
+
+procedure TJanuaGUIDField.setAsBoolean(const aValue: boolean);
+begin
+  if aValue then
+    FInternalValue.Create(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+  else
+    FInternalValue := GUID_NULL;
+
+end;
+
+procedure TJanuaGUIDField.setAsCurrency(const aValue: Currency);
+begin
+  FInternalValue := GUID_NULL // CurrToStr(aValue)
+end;
+
+procedure TJanuaGUIDField.setAsDateTime(const aValue: TDateTime);
+begin
+  self.FInternalValue := GUID_NULL // DateToISO8601(aValue)
+end;
+
+procedure TJanuaGUIDField.setAsFloat(const aValue: Extended);
+begin
+  FInternalValue := GUID_NULL // aValue.ToString
+end;
+
+procedure TJanuaGUIDField.setAsInteger(const aValue: integer);
+begin
+  FInternalValue := GUID_NULL // aValue.ToString
+end;
+
+procedure TJanuaGUIDField.setAsLargeInt(const aValue: Int64);
+begin
+  self.FInternalValue := GUID_NULL // aValue.ToString
+end;
+
+procedure TJanuaGUIDField.setAsString(const aValue: String);
+begin
+  FInternalValue := StringToGUID(aValue)
+end;
+
+procedure TJanuaGUIDField.SetAsVariant(const aValue: Variant);
+begin
+  FInternalValue := StringToGUID(VarToStr(aValue))
+end;
+
+procedure TJanuaGUIDField.SetDefault(aValue: TValue);
+begin
+  FDefaultValue := StringToGUID(aValue.ToString)
+end;
+
+procedure TJanuaGUIDField.SetFInternalValue(const aValue: TGUID);
+begin
+  if aValue <> FFInternalValue then
+  begin
+    FFInternalValue := aValue;
+    if self.IsMonitored and Assigned(self.OnDataChange) then
+      self.OnDataChange(self as IJanuaField);
+    self.CheckNotifications
+  end;
+end;
+
+procedure TJanuaGUIDField.SetJson(aValue: string);
+begin
+
+end;
+
+procedure TJanuaGUIDField.SetJsonDefault(aValue: TJsonValue);
+begin
+  self.FInternalValue := StringToGUID(TJsonString(aValue).Value)
+end;
+
+procedure TJanuaGUIDField.SetJsonValue(aValue: TJsonValue);
+begin
+  FInternalValue := StringToGUID(TJsonString(aValue).Value);
+end;
+
+procedure TJanuaGUIDField.SetModified(const aValue: boolean);
+begin
+  if (not aValue) and self.GetModified then
+    self.FOldValue := FFInternalValue
+end;
+
+procedure TJanuaGUIDField.setValue(const aValue: TValue);
+begin
+  self.FInternalValue := StringToGUID(aValue.ToString)
+end;
+
+procedure TJanuaGUIDField.SetValues(const aActualValue, aOldValue: TValue);
+begin
+  setValue(aActualValue);
+  FOldValue := StringToGUID(aOldValue.AsString)
+end;
+
+function TJanuaGUIDField.Size: Int64;
+begin
+  Result := (16)
+end;
+
+initialization
+
+CheckFields := false;
+TJanuaApplicationFActory.RegisterClass(IJanuaParams, TJanuaParams);
+
+end.

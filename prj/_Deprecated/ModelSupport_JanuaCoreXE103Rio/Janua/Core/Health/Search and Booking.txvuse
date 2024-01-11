@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="pd150bd0wreol3ihh_v">
+    <property name="$metaclass" value="Use Case Diagram" />
+    <property name="$name" value="Search and Booking" />
+    <reference referencedUin="design:node:::pl7rn91i2om1pha3n_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="192, 255, 255" />
+      <property name="bounds" value="60,80,52,86" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::xolsyfg9cjgbkfhbp_l:pl7rn91i2om1pha3n_n">
+        <property name="sourceAnchor" value="112,100" />
+        <property name="targetAnchor" value="380,100" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::xolsyfg9cjgbkfhbp_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="122,103,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::xolsyfg9cjgbkfhbp_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="358,103,12,16" />
+        </reference>
+        <reference referencedUin="label:@label:design:link:::xolsyfg9cjgbkfhbp_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="140,80,97,16" />
+          <property name="location_set_by_user" value="True" />
+        </reference>
+      </reference>
+      <reference referencedUin="design:link:::0i9vu4bvqgtmnublk_l:pl7rn91i2om1pha3n_n">
+        <property name="sourceAnchor" value="112,153" />
+        <property name="targetAnchor" value="387,153" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::0i9vu4bvqgtmnublk_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="122,156,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::0i9vu4bvqgtmnublk_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="365,156,12,16" />
+        </reference>
+        <reference referencedUin="label:@label:design:link:::0i9vu4bvqgtmnublk_l:pl7rn91i2om1pha3n_n">
+          <property name="bounds" value="120,160,140,16" />
+          <property name="location_set_by_user" value="True" />
+        </reference>
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::wi2jk0jzil56yztpo_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="200, 200, 200" />
+      <property name="bounds" value="280,20,380,500" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="design:node:::n3mbuzg3zn8rieasg_n:wi2jk0jzil56yztpo_n">
+        <property name="background_color" value="255, 224, 192" />
+        <property name="bounds" value="100,39,180,40" />
+        <property name="foreground_color" value="0, 0, 0" />
+        <property name="location_set_by_user" value="True" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+      <reference referencedUin="design:node:::bnlv1x7fqgllgvbfj_n:wi2jk0jzil56yztpo_n">
+        <property name="bounds" value="100,99,240,40" />
+        <property name="location_set_by_user" value="True" />
+        <property name="bounds_setted_by_user" value="True" />
+        <reference referencedUin="design:link:::ikhocrh6l0gra3af_l:bnlv1x7fqgllgvbfj_n:wi2jk0jzil56yztpo_n">
+          <property name="sourceAnchor" value="458,178" />
+          <property name="targetAnchor" value="156,316" />
+          <property name="bendpoints" value="" />
+          <reference referencedUin="label:$associationRoleClientInplace:design:link:::ikhocrh6l0gra3af_l:bnlv1x7fqgllgvbfj_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="446,186,12,16" />
+          </reference>
+          <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::ikhocrh6l0gra3af_l:bnlv1x7fqgllgvbfj_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="183,307,12,16" />
+          </reference>
+          <reference referencedUin="label:@label:design:link:::ikhocrh6l0gra3af_l:bnlv1x7fqgllgvbfj_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="120,260,113,16" />
+            <property name="location_set_by_user" value="True" />
+          </reference>
+        </reference>
+      </reference>
+      <reference referencedUin="design:node:::nh3lvvastki_n:wi2jk0jzil56yztpo_n">
+        <property name="bounds" value="80,239,229,57" />
+        <property name="location_set_by_user" value="True" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+      <reference referencedUin="design:node:::3cswbean6rdxstz1n_n:wi2jk0jzil56yztpo_n">
+        <property name="bounds" value="160,319,186,47" />
+        <property name="location_set_by_user" value="True" />
+        <property name="bounds_setted_by_user" value="True" />
+        <reference referencedUin="design:link:::j1iqkr23uvmq8oeoj_l:3cswbean6rdxstz1n_n:wi2jk0jzil56yztpo_n">
+          <property name="sourceAnchor" value="625,383" />
+          <property name="targetAnchor" value="740,383" />
+          <property name="bendpoints" value="" />
+          <reference referencedUin="label:$associationRoleClientInplace:design:link:::j1iqkr23uvmq8oeoj_l:3cswbean6rdxstz1n_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="635,386,12,16" />
+          </reference>
+          <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::j1iqkr23uvmq8oeoj_l:3cswbean6rdxstz1n_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="718,386,12,16" />
+          </reference>
+          <reference referencedUin="label:@label:design:link:::j1iqkr23uvmq8oeoj_l:3cswbean6rdxstz1n_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="660,360,97,16" />
+            <property name="location_set_by_user" value="True" />
+          </reference>
+        </reference>
+      </reference>
+      <reference referencedUin="design:node:::90slbhcz0qp6aux6f_n:wi2jk0jzil56yztpo_n">
+        <property name="bounds" value="100,379,192,51" />
+        <property name="location_set_by_user" value="True" />
+        <property name="bounds_setted_by_user" value="True" />
+        <reference referencedUin="design:link:::1ynkpp71nvf_l:90slbhcz0qp6aux6f_n:wi2jk0jzil56yztpo_n">
+          <property name="sourceAnchor" value="409,427" />
+          <property name="targetAnchor" value="156,358" />
+          <property name="bendpoints" value="" />
+          <reference referencedUin="label:$associationRoleClientInplace:design:link:::1ynkpp71nvf_l:90slbhcz0qp6aux6f_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="358,419,12,16" />
+          </reference>
+          <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::1ynkpp71nvf_l:90slbhcz0qp6aux6f_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="204,377,12,16" />
+          </reference>
+          <reference referencedUin="label:@label:design:link:::1ynkpp71nvf_l:90slbhcz0qp6aux6f_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="160,400,122,16" />
+            <property name="location_set_by_user" value="True" />
+          </reference>
+        </reference>
+      </reference>
+      <reference referencedUin="design:node:::5v4p5b25wyj_n:wi2jk0jzil56yztpo_n">
+        <property name="bounds" value="140,179,196,49" />
+        <property name="bounds_setted_by_user" value="True" />
+        <reference referencedUin="design:link:::060gbkr1p6g_l:5v4p5b25wyj_n:wi2jk0jzil56yztpo_n">
+          <property name="sourceAnchor" value="451,225" />
+          <property name="targetAnchor" value="112,129" />
+          <property name="bendpoints" value="" />
+          <reference referencedUin="label:$associationRoleClientInplace:design:link:::060gbkr1p6g_l:5v4p5b25wyj_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="401,217,12,16" />
+          </reference>
+          <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::060gbkr1p6g_l:5v4p5b25wyj_n:wi2jk0jzil56yztpo_n">
+            <property name="bounds" value="122,137,12,16" />
+          </reference>
+        </reference>
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::q1hndl3txjr_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 128" />
+      <property name="bounds" value="40,300,116,86" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::kwf000ce2ln_l:q1hndl3txjr_n">
+        <property name="sourceAnchor" value="156,318" />
+        <property name="targetAnchor" value="366,318" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::kwf000ce2ln_l:q1hndl3txjr_n">
+          <property name="bounds" value="166,321,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::kwf000ce2ln_l:q1hndl3txjr_n">
+          <property name="bounds" value="344,321,12,16" />
+        </reference>
+      </reference>
+      <reference referencedUin="design:link:::ilqcai09x1iid0l6s_l:q1hndl3txjr_n">
+        <property name="sourceAnchor" value="156,373" />
+        <property name="targetAnchor" value="450,373" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::ilqcai09x1iid0l6s_l:q1hndl3txjr_n">
+          <property name="bounds" value="150,376,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::ilqcai09x1iid0l6s_l:q1hndl3txjr_n">
+          <property name="bounds" value="418,376,12,16" />
+        </reference>
+        <reference referencedUin="label:@label:design:link:::ilqcai09x1iid0l6s_l:q1hndl3txjr_n">
+          <property name="bounds" value="160,360,126,16" />
+          <property name="location_set_by_user" value="True" />
+        </reference>
+      </reference>
+      <reference referencedUin="design:link:::ftg1cpr00yf_l:q1hndl3txjr_n">
+        <property name="sourceAnchor" value="156,328" />
+        <property name="targetAnchor" value="446,260" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::ftg1cpr00yf_l:q1hndl3txjr_n">
+          <property name="bounds" value="185,324,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::ftg1cpr00yf_l:q1hndl3txjr_n">
+          <property name="bounds" value="346,286,12,16" />
+        </reference>
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::5xly785bmq7oh2oqs_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,340,88,86" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::xbf9ra0kb0g_l:5xly785bmq7oh2oqs_n">
+        <property name="sourceAnchor" value="740,423" />
+        <property name="targetAnchor" value="521,423" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:$associationRoleClientInplace:design:link:::xbf9ra0kb0g_l:5xly785bmq7oh2oqs_n">
+          <property name="bounds" value="718,426,12,16" />
+        </reference>
+        <reference referencedUin="label:$associationRoleSupplierInplace:design:link:::xbf9ra0kb0g_l:5xly785bmq7oh2oqs_n">
+          <property name="bounds" value="515,426,12,16" />
+        </reference>
+        <reference referencedUin="label:@label:design:link:::xbf9ra0kb0g_l:5xly785bmq7oh2oqs_n">
+          <property name="bounds" value="680,440,130,16" />
+          <property name="location_set_by_user" value="True" />
+        </reference>
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

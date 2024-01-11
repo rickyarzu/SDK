@@ -1,0 +1,107 @@
+inherited BeaconDiscoverForm_Macintosh: TBeaconDiscoverForm_Macintosh
+  ClientHeight = 480
+  ClientWidth = 640
+  DesignerMasterStyle = 1
+  inherited TabControl1: TTabControl
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Sizes = (
+      640s
+      431s
+      640s
+      431s
+      640s
+      431s)
+    inherited TabItem1: TTabItem
+      Size.Width = 73.000000000000000000
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar3: TToolBar
+        Position.Y = 379.000000000000000000
+        Size.Width = 640.000000000000000000
+        inherited Button2: TButton
+          Position.X = 488.000000000000000000
+        end
+      end
+      inherited Panel1: TPanel
+        Size.Width = 640.000000000000000000
+        Size.Height = 146.000000000000000000
+        inherited Memo1: TMemo
+          Viewport.Width = 329.000000000000000000
+          Viewport.Height = 97.000000000000000000
+        end
+      end
+      inherited ListBox1: TListBox
+        Size.Width = 640.000000000000000000
+        Viewport.Width = 636.000000000000000000
+        Viewport.Height = 229.000000000000000000
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 73.000000000000000000
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 73.000000000000000000
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited BeaconDiscoveryList: TListBox
+        Size.Width = 640.000000000000000000
+        Size.Height = 139.000000000000000000
+        Viewport.Width = 640.000000000000000000
+        Viewport.Height = 431.000000000000000000
+        inherited ListBoxGroupHeader1: TListBoxGroupHeader
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Size.Width = 640.000000000000000000
+        end
+        inherited ListBoxItem1: TListBoxItem
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Size.Width = 640.000000000000000000
+          inherited Label1: TLabel
+            Position.X = 432.000000000000000000
+          end
+        end
+        inherited ListBoxItem2: TListBoxItem
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Size.Width = 640.000000000000000000
+          inherited BeaconDistance: TLabel
+            Position.X = 440.000000000000000000
+          end
+        end
+        inherited ListBoxItem3: TListBoxItem
+          Size.Width = 640.000000000000000000
+          inherited Label2: TLabel
+            Position.X = 440.000000000000000000
+          end
+        end
+      end
+      inherited ToolBar1: TToolBar
+        Position.Y = 139.000000000000000000
+        Size.Width = 640.000000000000000000
+        inherited Label5: TLabel
+          Size.Width = 640.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited ToolBar2: TToolBar
+        Position.Y = 379.000000000000000000
+        Size.Width = 640.000000000000000000
+        inherited CancelDiscoveryBtn: TButton
+          Position.X = 488.000000000000000000
+        end
+      end
+    end
+  end
+  inherited Beacon1: TBeacon
+    OnBeaconProximity = nil
+  end
+  inherited tbDiscovery: TVirtualTable
+    Data = {
+      0300080008006C6F63616C5F696402000000000000000A006D61636164647265
+      73730100140000000000040055554944010026000000000007006D6573736167
+      65010080000000000006006163746976650500000000000000090072656D6F74
+      655F69640300000000000000080044697374616E636506000000000000000F00
+      44697374616E6365547269676765720600000000000000000000000000}
+  end
+end

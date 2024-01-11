@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="zb4kqhy3058o3nnoe_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Countries Regions" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,300,205,220" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.index" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.indent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.AsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.Compare(Janua.Core.Classes.TISORegion)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISORegion.Reset()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,320,183,188" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Region" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Organizations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.SelectedOrganization" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Districts" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.SelectedDistrict" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Cound" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.indent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.lastMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Compare(Janua.Core.Classes.TRegion)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.GetDistrictbyID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.GetDistrictByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.ListDistricts()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.GetDistrictByIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Reset()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Region">
+        <property name="sourceAnchor" value="360,414" />
+        <property name="targetAnchor" value="245,414" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.SelectedDistrict">
+        <property name="sourceAnchor" value="543,416" />
+        <property name="targetAnchor" value="620,416" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TRegion.Districts">
+        <property name="sourceAnchor" value="543,424" />
+        <property name="targetAnchor" value="620,424" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,20,187,235" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.Country" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.SelectedRegion" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.Regions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.Organizations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.indent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.GetRegionByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.GetRegionByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.ListRegions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.GetRegionbyIndex(System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.SelectedRegion">
+        <property name="sourceAnchor" value="451,255" />
+        <property name="targetAnchor" value="451,320" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.Regions">
+        <property name="sourceAnchor" value="443,255" />
+        <property name="targetAnchor" value="443,320" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TCountry.Country">
+        <property name="sourceAnchor" value="360,137" />
+        <property name="targetAnchor" value="249,137" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,340,182,203" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.District" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.Towns" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.SelectedTown" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.indent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.GetTownbyID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.GetTownByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.ListTown()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.GetTownByIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.Reset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.Compare(Janua.Core.Classes.TDistrict)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.AsJsonObject()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TDistrict.District">
+        <property name="sourceAnchor" value="711,340" />
+        <property name="targetAnchor" value="711,203" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,20,209,143" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.Code2" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.index" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.indent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.Compare(Janua.Core.Classes.TISOCountry)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.Reset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISOCountry.AsJsonObject()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,60,204,143" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.index" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.LocalCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.NumberPlate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.indent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.AsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.Compare(Janua.Core.Classes.TISODistrict)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TISODistrict.Reset()" />
+    </reference>
+  </view>
+</nodeSet>

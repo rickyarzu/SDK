@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscAdvancedComboEdit</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscAdvancedComboEdit</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scAdvancedControls.pas</p>
+<p>See <a href="TscEdit.html">TscEdit</a>
+control also</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Edit control with different styles, which use <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+as popup control</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">
+TscAdvancedSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1"> Style of selection...<br>
+<br>
+TscAdvancedSelectionStyle = (scastStyled, scastColor, scastGlow);<br>
+<br>
+scastStyled - bitmap selection from theme or style<br>
+scastColor - color selection from theme or style<br>
+scastGlow - glow effect for selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxWallpapers</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxWallpaperIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of picture for
+listbox's
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxHeaderUseStyleColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1"> ListBoxLineColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxShowLines</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxHeaderStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscHeaderStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxWidth</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Width of listbox</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of listbox</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">DropDownCount</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Count of lines in popup
+listbox</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxSelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscAdvancedSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxItemHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ListBoxHeaderHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HeaderFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TitleFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">AlternateRow</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">See <a href="TscAdvancedListBox.html">TscAdvancedListBox</a>
+properies</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">UseFilter</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If True then text of
+edit will be as filter for listbox</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomDraw</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Set it True to prevent
+drawing any default content in non-focused control with assigned OnDrawBackground
+event&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnDropDown</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on listbox dropdown<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnCloseUp</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event&nbsp;on
+listbox closeup</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h1>Methods</h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BeginUpdateItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method before
+update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">EndUpdateItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method after
+update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">IndexOf</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">IndexOf(const S:
+string): Integer;<br>
+<br>
+Find item index with Captoin = S</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p>&nbsp;</p>
+<small><span style="font-weight: bold;"><big>Note:</big></span></small>
+<span style="color: red;">&nbsp;&nbsp; <br>
+&nbsp;&nbsp; <span style="color: black;">Use
+TControl.StyleElements property to
+adjust custom colors for client and font in all controls when VCL Style
+is enabled!</span></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

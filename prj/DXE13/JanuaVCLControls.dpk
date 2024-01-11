@@ -1,0 +1,99 @@
+﻿package JanuaVCLControls;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua VCL Sidney'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  bindengine,
+  bindcomp,
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  crcontrols270,
+  jcl,
+  QRWRun,
+  DCLGtQRExp,
+  officeXPrt,
+  JvStdCtrls,
+  JvDB,
+  JvSystem,
+  JvCore,
+  gtDocEng,
+  vclwinx,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter,
+  SVGIconPackage,
+  SVGIconImageList,
+  VclSmp,
+  JanuaCore,
+  JanuaMVVM,
+  JanuaUniDAC,
+  JanuaCoreComponents,
+  TMSVCLUIPackPkg,
+  VCLThemeSelector,
+  VisualStyles,
+  TMSCloudPkg;
+
+contains
+  uJanuaVCLForm in '..\..\src\VCL\Forms\uJanuaVCLForm.pas' {JanuaVCLFormModel},
+  udmWinMainApplication in '..\..\src\Win\udmWinMainApplication.pas' {dmWinMainApplication: TDataModule},
+  udmVCLMainApplication in '..\..\src\VCL\Commons\udmVCLMainApplication.pas' {dmVCLMainApplication: TDataModule},
+  Janua.Legacy.Application in '..\..\src\janualegacy\Janua.Legacy.Application.pas',
+  Janua.VCLControls.Impl in '..\..\src\VCL\Janua.VCLControls.Impl.pas',
+  Janua.VCL.Printers in '..\..\src\VCL\Commons\Janua.VCL.Printers.pas',
+  Janua.VCL.Functions in '..\..\src\VCL\Commons\Janua.VCL.Functions.pas',
+  Janua.VCL.Controllers in '..\..\src\VCL\Commons\Janua.VCL.Controllers.pas',
+  Janua.Win.Export in '..\..\src\Win\Janua.Win.Export.pas',
+  uVCLGnosticeReportEngine in '..\..\src\VCL\Forms\uVCLGnosticeReportEngine.pas' {dmVCLGnosticeReportEngine: TDataModule},
+  Janua.VCL.Framework in '..\..\src\VCL\Commons\Janua.VCL.Framework.pas',
+  Janua.VCL.CategoryButtonsFrame in '..\..\src\VCL\Commons\Janua.VCL.CategoryButtonsFrame.pas' {JanuaCategoryButtonsFrame: TFrame},
+  udmSVGImageList in '..\..\src\VCL\Commons\udmSVGImageList.pas' {dmSVGImageList: TDataModule},
+  Janua.VCL.Controls.Forms.Impl in '..\..\src\VCL\Forms\Janua.VCL.Controls.Forms.Impl.pas',
+  Janua.VCL.dlgLogin in '..\..\src\VCL\System\Janua.VCL.dlgLogin.pas' {dlgVCLLoginDialog},
+  uJanuaVCLCustomLoginDialog in '..\..\src\VCL\Forms\uJanuaVCLCustomLoginDialog.pas' {dlgVCLCustomLoginDialog},
+  Janua.VCL.dlgInputNumber in '..\..\src\VCL\Commons\Janua.VCL.dlgInputNumber.pas' {dlgVCLInputNumber},
+  Janua.VCL.dlgInputDate in '..\..\src\VCL\Commons\Janua.VCL.dlgInputDate.pas' {dlgTMSInputDate},
+  Janua.VCL.dlgServer in '..\..\src\VCL\System\Janua.VCL.dlgServer.pas' {dlgVCLSelectServer},
+  Janua.VCL.Dialogs in '..\..\src\VCL\Commons\Janua.VCL.Dialogs.pas',
+  Janua.VCL.dlgInputText in '..\..\src\VCL\Commons\Janua.VCL.dlgInputText.pas' {dlgVCLInputText},
+  Janua.VCL.Bindings.Intf in '..\..\src\VCL\Commons\Janua.VCL.Bindings.Intf.pas',
+  uJanuaVCLFrame in '..\..\src\VCL\Forms\uJanuaVCLFrame.pas' {JanuaVCLFrameModel: TFrame},
+  Janua.Vcl.Styles.ControlColor in '..\..\src\VCL\Commons\Janua.Vcl.Styles.ControlColor.pas',
+  udlgSelectMultiString in '..\..\src\VCL\Commons\udlgSelectMultiString.pas' {dlgSelectMultiString},
+  Janua.VCL.Cloud.Impl in '..\..\src\VCL\Cloud\Janua.VCL.Cloud.Impl.pas',
+  Janua.VCL.ObrLib in '..\..\src\VCL\Controls\Janua.VCL.ObrLib.pas',
+  Janua.VCL.Interposers.Grids in '..\..\src\VCL\Controls\Janua.VCL.Interposers.Grids.pas',
+  Janua.VCL.frmOverlayAnimation in '..\..\src\VCL\Commons\Janua.VCL.frmOverlayAnimation.pas' {frmVCLOverlayAnimation};
+
+end.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<rect x="30" y="31" style="fill:#47568C;" width="452" height="30"/>
+	<rect x="257" y="31" style="fill:#2C3B73;" width="225" height="30"/>
+	<rect x="30" y="151" style="fill:#47568C;" width="452" height="30"/>
+	<rect x="257" y="151" style="fill:#2C3B73;" width="225" height="30"/>
+	<rect x="30" y="241" style="fill:#47568C;" width="452" height="30"/>
+	<rect x="30" y="331" style="fill:#47568C;" width="452" height="30"/>
+	<rect x="257" y="331" style="fill:#2C3B73;" width="225" height="30"/>
+	<rect x="30" y="421" style="fill:#47568C;" width="452" height="30"/>
+	<rect x="257" y="421" style="fill:#2C3B73;" width="225" height="30"/>
+	<rect style="fill:#61729B;" width="61" height="481"/>
+	<polygon style="fill:#47568C;" points="512,271 452,301 452,0 512,0  "/>
+	<g>
+		<path style="fill:#FDE4E4;" d="M512,271v95.099C512,421,490.699,473.301,452,512H289.701L257,478.299l-96.301-95.999    l42.601-42.601L242,378.701V121h68v90h67v30h68v30H512z"/>
+	</g>
+	<path style="fill:#7FE881;" d="M212,46c0,24.901-20.099,45-45,45s-45-20.099-45-45s20.099-46,45-46S212,21.099,212,46z"/>
+	<path style="fill:#5BC980;" d="M212,46c0,24.901-20.099,45-45,45V0C191.901,0,212,21.099,212,46z"/>
+	<path style="fill:#7FE881;" d="M332,46c0,24.901-20.099,45-45,45s-45-20.099-45-45s20.099-46,45-46S332,21.099,332,46z"/>
+	<path style="fill:#5BC980;" d="M332,46c0,24.901-20.099,45-45,45V0C311.901,0,332,21.099,332,46z"/>
+	<path style="fill:#7FE881;" d="M422,46c0,24.901-20.099,45-45,45s-45-20.099-45-45s20.099-46,45-46S422,21.099,422,46z"/>
+	<path style="fill:#5BC980;" d="M422,46c0,24.901-20.099,45-45,45V0C401.901,0,422,21.099,422,46z"/>
+	<path style="fill:#25D9F8;" d="M212,166c0,24.901-20.099,45-45,45s-45-20.099-45-45s20.099-45,45-45S212,141.099,212,166z"/>
+	<path style="fill:#00C0F1;" d="M212,166c0,24.901-20.099,45-45,45v-90C191.901,121,212,141.099,212,166z"/>
+	<path style="fill:#25D9F8;" d="M452,166c0,24.901-20.099,45-45,45s-45-20.099-45-45s20.099-45,45-45S452,141.099,452,166z"/>
+	<path style="fill:#00C0F1;" d="M452,166c0,24.901-20.099,45-45,45v-90C431.901,121,452,141.099,452,166z"/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

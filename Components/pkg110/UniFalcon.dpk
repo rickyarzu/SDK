@@ -1,0 +1,71 @@
+package UniFalcon;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'UniFalcon UniGUI Library'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD ON}
+
+requires
+  vclimg,
+  vcl,
+  vclwinx,
+  soaprtl,
+  dbrtl,
+  vcldb,
+  uniTools28,
+  uniGUI28,
+  uniGUI28Core,
+  rtl;
+
+contains
+  UniFSBadgeText in '..\..\..\Libraries\UniFalcon\Sources\UniFSBadgeText.pas',
+  UniFSButton in '..\..\..\Libraries\UniFalcon\Sources\UniFSButton.pas',
+  UniFSCalcEdit in '..\..\..\Libraries\UniFalcon\Sources\UniFSCalcEdit.pas',
+  UniFSCloud in '..\..\..\Libraries\UniFalcon\Sources\UniFSCloud.pas',
+  UniFSColorPicker in '..\..\..\Libraries\UniFalcon\Sources\UniFSColorPicker.pas',
+  UniFSComboBox in '..\..\..\Libraries\UniFalcon\Sources\UniFSComboBox.pas',
+  UniFSCommon in '..\..\..\Libraries\UniFalcon\Sources\UniFSCommon.pas',
+  UniFSConfirm in '..\..\..\Libraries\UniFalcon\Sources\UniFSConfirm.pas',
+  UniFSDBMaskEdit in '..\..\..\Libraries\UniFalcon\Sources\UniFSDBMaskEdit.pas',
+  UniFSEdit in '..\..\..\Libraries\UniFalcon\Sources\UniFSEdit.pas',
+  UniFSGoogleChart in '..\..\..\Libraries\UniFalcon\Sources\UniFSGoogleChart.pas',
+  UniFSiGrowl in '..\..\..\Libraries\UniFalcon\Sources\UniFSiGrowl.pas',
+  UniFSKendoUI in '..\..\..\Libraries\UniFalcon\Sources\UniFSKendoUI.pas',
+  UniFSMap in '..\..\..\Libraries\UniFalcon\Sources\UniFSMap.pas',
+  UniFSMaskEdit in '..\..\..\Libraries\UniFalcon\Sources\UniFSMaskEdit.pas',
+  UniFSMenuButton in '..\..\..\Libraries\UniFalcon\Sources\UniFSMenuButton.pas',
+  UniFSPopup in '..\..\..\Libraries\UniFalcon\Sources\UniFSPopup.pas',
+  UniFSTelephone in '..\..\..\Libraries\UniFalcon\Sources\UniFSTelephone.pas',
+  UniFSTheme in '..\..\..\Libraries\UniFalcon\Sources\UniFSTheme.pas',
+  UniFSToast in '..\..\..\Libraries\UniFalcon\Sources\UniFSToast.pas',
+  UniFSToggle in '..\..\..\Libraries\UniFalcon\Sources\UniFSToggle.pas',
+  UniJsonDataObjects in '..\..\..\Libraries\UniFalcon\Sources\UniJsonDataObjects.pas',
+  UnimFSGoogleChart in '..\..\..\Libraries\UniFalcon\Sources\UnimFSGoogleChart.pas',
+  UnimFSKendoUI in '..\..\..\Libraries\UniFalcon\Sources\UnimFSKendoUI.pas',
+  UnimFSMap in '..\..\..\Libraries\UniFalcon\Sources\UnimFSMap.pas',
+  UnimFSToggle in '..\..\..\Libraries\UniFalcon\Sources\UnimFSToggle.pas';
+
+end.

@@ -1,0 +1,32 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  AlphaBlend = True
+  AlphaBlendValue = 150
+  BorderStyle = bsNone
+  ClientHeight = 565
+  ClientWidth = 858
+  Color = clBlack
+  TransparentColor = True
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  Visible = True
+  WindowState = wsMaximized
+  StyleElements = []
+  OnMouseDown = FormMouseDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 416
+    Top = 272
+  end
+end

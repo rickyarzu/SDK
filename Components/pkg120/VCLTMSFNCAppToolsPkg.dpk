@@ -1,0 +1,48 @@
+package VCLTMSFNCAppToolsPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC AppTools for VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  VclSmp,
+  VCLTMSFNCCorePkg;
+
+contains
+  VCL.TMSFNCAppFormPersist in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppFormPersist.pas',
+  VCL.TMSFNCAppFormPersistReg in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppFormPersistReg.pas',
+  VCL.TMSFNCAppLock in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppLock.pas',
+  VCL.TMSFNCAppLockForm in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppLockForm.pas',
+  VCL.TMSFNCAppLockReg in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppLockReg.pas',
+  VCL.TMSFNCAppUpdate in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppUpdate.pas',
+  VCL.TMSFNCAppUpdateReg in '..\..\..\tmssoftware\TMS FNC AppTools\VCL.TMSFNCAppUpdateReg.pas';
+
+end.

@@ -1,0 +1,211 @@
+package JanuaCoreXE10;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Core Components XE10 Runtime'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  dsnap,
+  tmsbcl,
+  dac250,
+  pgdac250,
+  CustomIPTransport,
+  DbxCommonDriver,
+  IndyIPCommon,
+  IndyIPClient,
+  RESTComponents,
+  JanuaThirdPartyXE10,
+  odac250;
+
+contains
+  Janua.Core.System in '..\src\januacore\Janua.Core.System.pas',
+  Janua.Core.University in '..\src\januacore\Janua.Core.University.pas',
+  Janua.Core.Users in '..\src\januacore\Janua.Core.Users.pas',
+  Janua.Core.WebServices in '..\src\januacore\Janua.Core.WebServices.pas',
+  Janua.Core.Ads in '..\src\januacore\Janua.Core.Ads.pas',
+  Janua.Core.Anagraph in '..\src\januacore\Janua.Core.Anagraph.pas',
+  Janua.Core.Backup in '..\src\januacore\Janua.Core.Backup.pas',
+  Janua.Core.Books in '..\src\januacore\Janua.Core.Books.pas',
+  Janua.Core.BooksForms in '..\src\januacore\Janua.Core.BooksForms.pas',
+  Janua.Core.Classes in '..\src\januacore\Janua.Core.Classes.pas',
+  Janua.Core.Cloud in '..\src\januacore\Janua.Core.Cloud.pas',
+  Janua.Core.Cms in '..\src\januacore\Janua.Core.Cms.pas',
+  Janua.Core.Collections in '..\src\januacore\Janua.Core.Collections.pas',
+  Janua.Core.CRM in '..\src\januacore\Janua.Core.CRM.pas',
+  Janua.Core.Crypt in '..\src\januacore\Janua.Core.Crypt.pas',
+  Janua.Core.Customcontrols in '..\src\januacore\Janua.Core.Customcontrols.pas',
+  Janua.Core.Customsession in '..\src\januacore\Janua.Core.Customsession.pas',
+  Janua.Core.Customsystem in '..\src\januacore\Janua.Core.Customsystem.pas',
+  Janua.Core.Docs in '..\src\januacore\Janua.Core.Docs.pas',
+  Janua.Core.Exceptions in '..\src\januacore\Janua.Core.Exceptions.pas',
+  Janua.Core.Feeds in '..\src\januacore\Janua.Core.Feeds.pas',
+  Janua.Core.Football in '..\src\januacore\Janua.Core.Football.pas',
+  Janua.Core.Forms in '..\src\januacore\Janua.Core.Forms.pas',
+  Janua.Core.Functions in '..\src\januacore\Janua.Core.Functions.pas',
+  Janua.Core.Http in '..\src\januacore\Janua.Core.Http.pas',
+  Janua.Core.Items in '..\src\januacore\Janua.Core.Items.pas',
+  Janua.Core.JPublic in '..\src\januacore\Janua.Core.JPublic.pas',
+  Janua.Core.Mail in '..\src\januacore\Janua.Core.Mail.pas',
+  Janua.Core.Ords in '..\src\januacore\Janua.Core.Ords.pas',
+  Janua.Core.Params in '..\src\januacore\Janua.Core.Params.pas',
+  Janua.Core.Pharmacies in '..\src\januacore\Janua.Core.Pharmacies.pas',
+  Janua.Core.Pos in '..\src\januacore\Janua.Core.Pos.pas',
+  Janua.Core.RealEstate in '..\src\januacore\Janua.Core.RealEstate.pas',
+  Janua.Core.Social in '..\src\januacore\Janua.Core.Social.pas',
+  Janua.Core.Sockets in '..\src\januacore\Janua.Core.Sockets.pas',
+  Janua.Core.Hash in '..\src\januacore\Janua.Core.Hash.pas',
+  Janua.Core.Swap in '..\src\januacore\Janua.Core.Swap.pas',
+  Janua.Core.Roundings in '..\src\januacore\Janua.Core.Roundings.pas',
+  Janua.Core.Printers in '..\src\januacore\Janua.Core.Printers.pas',
+  Janua.Core.FTP in '..\src\januacore\Janua.Core.FTP.pas',
+  Janua.Core.Mobyt in '..\src\januacore\Janua.Core.Mobyt.pas',
+  Janua.Html.Impl in '..\src\januacore\Janua.Html.Impl.pas',
+  Janua.Core.Excel in '..\src\januacore\Janua.Core.Excel.pas',
+  Janua.Core.Servers in '..\src\januacore\Janua.Core.Servers.pas',
+  Janua.Core.Health in '..\src\januacore\Janua.Core.Health.pas',
+  Janua.Core.Cms.GraphicMenu in '..\src\januacore\Janua.Core.Cms.GraphicMenu.pas',
+  Janua.core.Cloud.Server in '..\src\januacore\Janua.core.Cloud.Server.pas',
+  Janua.Core.Locale in '..\src\januacore\Janua.Core.Locale.pas',
+  Janua.Core.Metronics in '..\src\januacore\Janua.Core.Metronics.pas',
+  Writers in '..\src\januacore\Writers.pas',
+  udmJanuaCoreRSS in '..\src\januacore\udmJanuaCoreRSS.pas' {dmJanuaCoreRSS: TDataModule},
+  Janua.Core.DB in '..\src\januacore\Janua.Core.DB.pas',
+  udmJanuaCoreServer in '..\src\januacore\udmJanuaCoreServer.pas' {dmJanuaCoreServer: TDataModule},
+  Janua.Core.Json in '..\src\januacore\Janua.Core.Json.pas',
+  Janua.Core.Statistics in '..\src\januacore\Janua.Core.Statistics.pas',
+  udmJanuaCoreDBConnection in '..\src\januacore\udmJanuaCoreDBConnection.pas' {dmJanuaCoreDBConnections: TDataModule},
+  Janua.Core.Types in '..\src\januacore\Janua.Core.Types.pas',
+  Janua.Core.Conf in '..\src\januacore\Janua.Core.Conf.pas',
+  Janua.Core.Math in '..\src\januacore\Janua.Core.Math.pas',
+  Janua.Core.RESTCloudDatamodule in '..\src\januacore\Janua.Core.RESTCloudDatamodule.pas' {JanuaRestCloudDataModule: TDataModule},
+  Janua.Core.Classes.Social in '..\src\januacore\Janua.Core.Classes.Social.pas',
+  Janua.Html.Types in '..\src\januacore\Janua.Html.Types.pas',
+  Janua.Football.Intf in '..\src\januacore\Janua.Football.Intf.pas',
+  Janua.football.Types in '..\src\januacore\Janua.football.Types.pas',
+  Janua.Maps.Intf in '..\src\januacore\Janua.Maps.Intf.pas',
+  Janua.Maps.Types in '..\src\januacore\Janua.Maps.Types.pas',
+  Janua.Core.Maps in '..\src\januacore\Janua.Core.Maps.pas',
+  Janua.Cms.Types in '..\src\januacore\Janua.Cms.Types.pas',
+  Janua.Cms.Server.Intf in '..\src\januacore\Janua.Cms.Server.Intf.pas',
+  Janua.Cms.Core in '..\src\januacore\Janua.Cms.Core.pas',
+  Janua.Anagraph.Types in '..\src\januacore\Janua.Anagraph.Types.pas',
+  Janua.Html.Metro5.Types in '..\src\januacore\Janua.Html.Metro5.Types.pas',
+  Janua.Html.Intf in '..\src\januacore\Janua.Html.Intf.pas',
+  Janua.Html.Metro5.Impl in '..\src\januacore\Janua.Html.Metro5.Impl.pas',
+  Janua.Orm.Impl in '..\src\januacore\Janua.Orm.Impl.pas',
+  Janua.Orm.Intf in '..\src\januacore\Janua.Orm.Intf.pas',
+  Janua.Orm.Types in '..\src\januacore\Janua.Orm.Types.pas',
+  udmVirtualFootballStorage in '..\src\januacore\datamodule\udmVirtualFootballStorage.pas' {dmVirtualFootballStorage: TDataModule},
+  Janua.Test.Football in '..\src\januacore\Test\Janua.Test.Football.pas',
+  Janua.Orm.Generator in '..\src\januacore\Janua.Orm.Generator.pas',
+  Janua.Html.Bootstrap4 in '..\src\januacore\Janua.Html.Bootstrap4.pas',
+  Janua.Html.Bootstrap4.Types in '..\src\januacore\Janua.Html.Bootstrap4.Types.pas',
+  JOrm.System.UserProfile.Custom.Intf in '..\src\januacore\orm\JOrm.System.UserProfile.Custom.Intf.pas',
+  JOrm.System.UserProfile.Custom.Impl in '..\src\januacore\orm\JOrm.System.UserProfile.Custom.Impl.pas',
+  JOrm.Cms.MainArguments.Intf in '..\src\januacore\orm\JOrm.Cms.MainArguments.Intf.pas',
+  JOrm.Cms.MainArguments.Impl in '..\src\januacore\orm\JOrm.Cms.MainArguments.Impl.pas',
+  JOrm.Cms.Arguments.Intf in '..\src\januacore\orm\JOrm.Cms.Arguments.Intf.pas',
+  JOrm.Cms.Arguments.Impl in '..\src\januacore\orm\JOrm.Cms.Arguments.Impl.pas',
+  JOrm.Cms.SubArguments.Intf in '..\src\januacore\orm\JOrm.Cms.SubArguments.Intf.pas',
+  JOrm.Cms.SubArguments.Impl in '..\src\januacore\orm\JOrm.Cms.SubArguments.Impl.pas',
+  Janua.Html.Builder.Intf in '..\src\januacore\Janua.Html.Builder.Intf.pas',
+  Janua.Metro5.Builder in '..\src\januacore\Janua.Metro5.Builder.pas',
+  udmVirtualCmsServer in '..\src\januacore\datamodule\udmVirtualCmsServer.pas' {dmVirtualCmsServer: TDataModule},
+  Janua.Metro5.Builder.Intf in '..\src\januacore\Janua.Metro5.Builder.Intf.pas',
+  Janua.Html.Metro5.Pages in '..\src\januacore\Janua.Html.Metro5.Pages.pas',
+  Janua.Html.Bootstrap4.Builder in '..\src\januacore\Janua.Html.Bootstrap4.Builder.pas',
+  Janua.lnd.impl in '..\src\januacore\custom\Janua.lnd.impl.pas',
+  Janua.lnd.Intf in '..\src\januacore\custom\Janua.lnd.Intf.pas',
+  JOrm.Cms.Articles.Intf in '..\src\januacore\orm\JOrm.Cms.Articles.Intf.pas',
+  JOrm.Cms.Articles.Impl in '..\src\januacore\orm\JOrm.Cms.Articles.Impl.pas',
+  Janua.Html.Metro5.Intf in '..\src\januacore\Janua.Html.Metro5.Intf.pas',
+  Janua.Html.Bootstrap4.Intf in '..\src\januacore\Janua.Html.Bootstrap4.Intf.pas',
+  Janua.Cloud.Images.Intf in '..\src\januacore\Janua.Cloud.Images.Intf.pas',
+  Janua.Cloud.Images.Impl in '..\src\januacore\Janua.Cloud.Images.Impl.pas',
+  Janua.Server.Impl in '..\src\januacore\Janua.Server.Impl.pas',
+  Janua.Server.Intf in '..\src\januacore\Janua.Server.Intf.pas',
+  Janua.Cloud.Files.Impl in '..\src\januacore\Janua.Cloud.Files.Impl.pas',
+  Janua.Cloud.Files.Intf in '..\src\januacore\Janua.Cloud.Files.Intf.pas',
+  Janua.Orm.Dataset.Impl in '..\src\januacore\Janua.Orm.Dataset.Impl.pas',
+  Janua.Orm.Dataset.Intf in '..\src\januacore\Janua.Orm.Dataset.Intf.pas',
+  Janua.Orm.Functions in '..\src\januacore\Janua.Orm.Functions.pas',
+  Janua.Core.ServerClasses in '..\src\januacore\Janua.Core.ServerClasses.pas',
+  JOrm.System.Session.Intf in '..\src\januacore\orm\JOrm.System.Session.Intf.pas',
+  JOrm.System.Session.Impl in '..\src\januacore\orm\JOrm.System.Session.Impl.pas',
+  JOrm.System.Intf in '..\src\januacore\orm\JOrm.System.Intf.pas',
+  JOrm.System.Impl in '..\src\januacore\orm\JOrm.System.Impl.pas',
+  Janua.Virtual.Cms in '..\src\januacore\datamodule\Janua.Virtual.Cms.pas',
+  Janua.Cloud.Server.Intf in '..\src\januacore\Janua.Cloud.Server.Intf.pas',
+  Janua.System.Server.Intf in '..\src\januacore\Janua.System.Server.Intf.pas',
+  Janua.System.Server.Impl in '..\src\januacore\Janua.System.Server.Impl.pas',
+  udmVirtualSystemServer in '..\src\januacore\datamodule\udmVirtualSystemServer.pas' {DataModule1: TDataModule},
+  Janua.Cloud.Server.Impl in '..\src\januacore\Janua.Cloud.Server.Impl.pas',
+  Janua.Cms.Server.Impl in '..\src\januacore\Janua.Cms.Server.Impl.pas',
+  JOrm.Anagraph.Branches.Impl in '..\src\januacore\orm\JOrm.Anagraph.Branches.Impl.pas',
+  JOrm.Anagraph.Branches.Intf in '..\src\januacore\orm\JOrm.Anagraph.Branches.Intf.pas',
+  JOrm.System.Users.Impl in '..\src\januacore\orm\JOrm.System.Users.Impl.pas',
+  JOrm.System.Users.Intf in '..\src\januacore\orm\JOrm.System.Users.Intf.pas',
+  Janua.Orm.Virtual in '..\src\januacore\Janua.Orm.Virtual.pas',
+  JOrm.Football.FtChampionships.Impl in '..\src\januacore\orm\JOrm.Football.FtChampionships.Impl.pas',
+  JOrm.Football.FtChampionships.Intf in '..\src\januacore\orm\JOrm.Football.FtChampionships.Intf.pas',
+  JOrm.Anagraph.anagraph.Impl in '..\src\januacore\orm\JOrm.Anagraph.anagraph.Impl.pas',
+  JOrm.Anagraph.anagraph.Intf in '..\src\januacore\orm\JOrm.Anagraph.anagraph.Intf.pas',
+  Janua.Html.Builder.Impl in '..\src\januacore\Janua.Html.Builder.Impl.pas',
+  udmCmsStorage in '..\src\januacore\datamodule\udmCmsStorage.pas' {dmCmsStorage: TDataModule},
+  udmFootballStorage in '..\src\januacore\datamodule\udmFootballStorage.pas' {dmFootballStorage: TDataModule},
+  udmJanuaCoreStorage in '..\src\januacore\datamodule\udmJanuaCoreStorage.pas' {dmJanuaCoreStorage: TDataModule},
+  Janua.Football.Server.Intf in '..\src\januacore\Janua.Football.Server.Intf.pas',
+  Janua.Football.Server.Impl in '..\src\januacore\Janua.Football.Server.Impl.pas',
+  Janua.Virtual.Football in '..\src\januacore\datamodule\Janua.Virtual.Football.pas',
+  udmVirtualFootballServer in '..\src\januacore\datamodule\udmVirtualFootballServer.pas' {dmVirtualFootballServer: TDataModule},
+  JOrm.Football.Matches.Impl in '..\src\januacore\orm\JOrm.Football.Matches.Impl.pas',
+  JOrm.Football.Matches.Intf in '..\src\januacore\orm\JOrm.Football.Matches.Intf.pas',
+  Janua.Dilettantissimo.Intf in '..\src\januacore\custom\Janua.Dilettantissimo.Intf.pas',
+  Janua.Dilettantissimo.Impl in '..\src\januacore\custom\Janua.Dilettantissimo.Impl.pas';
+
+end.
+
+
+
+
+
+
+
+
+
+
+

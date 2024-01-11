@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscComboBoxEx</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscComboBoxEx</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scControls.pas</p>
+<p><span style="font-weight: bold;">TscComboBox =
+class(TCustomComboBoxEx)</span></p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>ComboBoxEx control with additional features</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSelectionStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Kind of selection:<br>
+<br>
+TscSelectionStyle = (scstStyled, scstColor);<br>
+scstStyled - draw selection as bitmap from theme or VCL Style<br>
+scstColor - draw selection as highlight color from theme or VCL Style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom selection color
+for control (value must be &lt;&gt; clNone)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionTextColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of text for custom
+selection color </td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">StyleKind</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscComboStyleKind</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscComboStyleKind = (scscbDefault, scscbPushButton);<br><br>if value is scscbPushButton then control will use style as push button.</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p><small><span style="font-weight: bold;"><big>Note:</big></span></small>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

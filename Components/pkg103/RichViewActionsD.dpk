@@ -1,0 +1,143 @@
+package RichViewActionsD;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView: RichViewActions for Delphi 10.3 Rio runtime (32-bit)'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg,
+  vclx,
+  vclactnband,
+  RVPkg;
+
+contains
+  RVAPopupActionBar in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVAPopupActionBar.pas',
+  RVALUTF8_BLR in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_BLR.pas',
+  RVALUTF8_Bul in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Bul.pas',
+  RVALUTF8_Cat in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Cat.pas',
+  RVALUTF8_ChineseBig5 in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_ChineseBig5.pas',
+  RVALUTF8_ChsZh in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_ChsZh.pas',
+  RVALUTF8_Czech in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Czech.pas',
+  RVALUTF8_Danish in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Danish.pas',
+  RVALUTF8_De in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_De.pas',
+  RVALUTF8_Dutch in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Dutch.pas',
+  RVALUTF8_EngUS in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_EngUS.pas',
+  RVALUTF8_Esp in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Esp.pas',
+  RVALUTF8_Farsi in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Farsi.pas',
+  RVALUTF8_Fin in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Fin.pas',
+  RVALUTF8_FR in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_FR.pas',
+  RVALUTF8_Hun in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Hun.pas',
+  RVALUTF8_Ita in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Ita.pas',
+  RVALUTF8_Kr in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Kr.pas',
+  RVALUTF8_Lith in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Lith.pas',
+  RVALUTF8_Malay in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Malay.pas',
+  RVALUTF8_NorBok in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_NorBok.pas',
+  RVALUTF8_Polish in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Polish.pas',
+  RVALUTF8_PtBr in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_PtBr.pas',
+  RVALUTF8_PtPt in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_PtPt.pas',
+  RVALUTF8_Rom in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Rom.pas',
+  RVALUTF8_Rus in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Rus.pas',
+  RVALUTF8_Slovak in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Slovak.pas',
+  RVALUTF8_Sv in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Sv.pas',
+  RVALUTF8_Thai in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Thai.pas',
+  RVALUTF8_Turkish in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Turkish.pas',
+  RVALUTF8_Ukr in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Ukr.pas',
+  RVALUTF8_Hindi in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Hindi.pas',
+  RVALUTF8_Arm in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Arm.pas',
+  RVALUTF8_Japanese in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALUTF8_Japanese.pas',
+  BackRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\BackRVFrm.pas' {frmRVBack},
+  BaseRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\BaseRVFrm.pas' {frmRVBase},
+  BorderSidesRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\BorderSidesRVFrm.pas' {frmRVBorderSides},
+  ColorRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ColorRVFrm.pas' {frmColor},
+  ColorExRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ColorExRVFrm.pas' {frmColorEx},
+  dmActions in '..\..\..\Libraries\TRichView\RichViewActions\Source\dmActions.pas' {rvActionsResource: TDataModule},
+  FillColorRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\FillColorRVFrm.pas' {frmRVFillColor},
+  FontRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\FontRVFrm.pas' {frmRVFont},
+  FourSidesRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\FourSidesRVFrm.pas' {frmRVFourSides},
+  HypPropRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\HypPropRVFrm.pas' {frmRVHypProp},
+  HypRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\HypRVFrm.pas' {frmRVHyp},
+  InsSymbolRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\InsSymbolRVFrm.pas' {frmRVInsertSymbol},
+  InsTableRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\InsTableRVFrm.pas' {frmInsTable},
+  IntegerRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\IntegerRVFrm.pas' {frmInteger},
+  ItemPropRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ItemPropRVFrm.pas' {frmRVItemProp},
+  ListGalleryRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ListGalleryRVFrm.pas' {frmRVListGallery},
+  ListRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ListRVFrm.pas' {frmRVList},
+  PageSetupRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\PageSetupRVFrm.pas' {frmRVPageSetup},
+  ParaBrdrRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ParaBrdrRVFrm.pas' {frmRVParaBrdr},
+  ParaListRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ParaListRVFrm.pas' {frmRVParaList},
+  ParaRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ParaRVFrm.pas' {frmRVPara},
+  PreviewRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\PreviewRVFrm.pas' {frmRVPreview},
+  RichViewActions in '..\..\..\Libraries\TRichView\RichViewActions\Source\RichViewActions.pas',
+  RVRulerBase in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVRulerBase.pas',
+  RVALocalize in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALocalize.pas',
+  RVALocRuler in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVALocRuler.pas',
+  RVCharCase in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVCharCase.pas',
+  RVColorCombo in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVColorCombo.pas',
+  RVColorGrid in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVColorGrid.pas',
+  rvcsv in '..\..\..\Libraries\TRichView\RichViewActions\Source\rvcsv.pas',
+  RVFontCombos in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVFontCombos.pas',
+  RVGrids in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVGrids.pas',
+  RVNormalize in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVNormalize.pas',
+  RVOfficeRadioBtn in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVOfficeRadioBtn.pas',
+  RVRuler in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVRuler.pas',
+  RVSpinEdit in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVSpinEdit.pas',
+  SpacingRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\SpacingRVFrm.pas' {frmRVSpacing},
+  SplitRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\SplitRVFrm.pas' {frmRVSplit},
+  TableBackRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\TableBackRVFrm.pas' {frmRVTableBack},
+  TableBrdrRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\TableBrdrRVFrm.pas' {frmRVTableBrdr},
+  TableSizeRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\TableSizeRVFrm.pas' {frmRVTableSize},
+  ListGallery2RVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ListGallery2RVFrm.pas' {frmRVListGallery2},
+  ObjectAlignRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ObjectAlignRVFrm.pas' {frmRVObjectAlign},
+  RVColorTransform in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVColorTransform.pas',
+  TableSortRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\TableSortRVFrm.pas' {frmRVTableSort},
+  TableSort in '..\..\..\Libraries\TRichView\RichViewActions\Source\TableSort.pas',
+  RVStyleFuncs in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVStyleFuncs.pas',
+  StylesRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\StylesRVFrm.pas' {frmRVStyles},
+  HypHoverPropRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\HypHoverPropRVFrm.pas' {frmRVHypHoverProp},
+  InfoRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\InfoRVFrm.pas' {frmRVInfo},
+  PasteSpecialRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\PasteSpecialRVFrm.pas' {frmRVPasteSpecial},
+  StyleImportRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\StyleImportRVFrm.pas' {frmRVStyleImport},
+  RVGoToItem in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVGoToItem.pas',
+  VisibleSidesRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\VisibleSidesRVFrm.pas' {frmRVVisibleSides},
+  NumSeqCustomRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\NumSeqCustomRVFrm.pas' {frmRVCustomNumSeq},
+  NumSeqRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\NumSeqRVFrm.pas' {frmRVNumSeq},
+  ItemCaptionRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\ItemCaptionRVFrm.pas' {frmRVItemCaption},
+  RVAResourceLanguage in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVAResourceLanguage.pas',
+  RVAColorDialogInterface in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVAColorDialogInterface.pas',
+  RVASpellInterface in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVASpellInterface.pas',
+  RVADownloadInterface in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVADownloadInterface.pas',
+  RVSpellFormLocalize in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVSpellFormLocalize.pas',
+  BookmarkRVFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\BookmarkRVFrm.pas' {frmRVBookmark},
+  CustomItemPropFrm in '..\..\..\Libraries\TRichView\RichViewActions\Source\CustomItemPropFrm.pas' {frmRVCustomItemProperties},
+  RVAUnicodeBlocks in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVAUnicodeBlocks.pas',
+  RVCharInFont in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVCharInFont.pas';
+
+end.

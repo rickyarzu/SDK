@@ -1,0 +1,48 @@
+﻿package DCLgtDocEng;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Gnostice eDocEngine'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  vcl,
+  gtDocEng;
+
+contains
+  gtDocReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocReg.pas',
+  gtJwaWinCrypt3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinCrypt3.pas',
+  gtJwaWinBase3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinBase3.pas',
+  gtJwaWinType3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinType3.pas',
+  gtJwaNtStatus3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaNtStatus3.pas',
+  gtJwaWinNT3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinNT3.pas',
+  gtJwaWinDLLNames3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinDLLNames3.pas';
+
+end.

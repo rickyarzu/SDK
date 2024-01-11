@@ -1,0 +1,1382 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
+        <MainSource>TMSFMXPackPkg.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <TargetedPlatforms>5123</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>FMX</FrameworkType>
+        <ProjectVersion>19.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Base)'=='true') or '$(Base_iOSSimulator)'!=''">
+        <Base_iOSSimulator>true</Base_iOSSimulator>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
+        <Base_OSX64>true</Base_OSX64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice64)'!=''">
+        <Cfg_1_iOSDevice64>true</Cfg_1_iOSDevice64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE13\JanuaLibDXE13.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE13\JanuaLibDXE13.optset')"/>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_K>false</DCC_K>
+        <DCC_F>false</DCC_F>
+        <DCC_Description>TMS FMX UI Pack</DCC_Description>
+        <GenDll>true</GenDll>
+        <DCC_E>false</DCC_E>
+        <SanitizedProjectName>TMSFMXPackPkg</SanitizedProjectName>
+        <DCC_N>false</DCC_N>
+        <GenPackage>true</GenPackage>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;REST.Authenticator.OAuth.WebForm;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DllSuffix>270</DllSuffix>
+        <CfgDependentOn>..\..\prj\DXE13\JanuaLibDXE13.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services.dex.jar</EnabledSysJars>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage);$(DCC_UsePackage)</DCC_UsePackage>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services.dex.jar</EnabledSysJars>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimulator)'!=''">
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Base_OSX32>true</Base_OSX32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage);$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>rtl;xmlrtl;fmx;dbrtl;bindengine;bindcomp;bindcompfmx;dsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Optimize>false</DCC_Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroup.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroup.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialog.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemo.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditor.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButton.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPickers.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSelectors.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCapture.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBar.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7SegLed.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButton.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmap.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainer.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGauge.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLText.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJogMeter.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSlider.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLed.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedMeter.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixLabel.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopup.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScope.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadge.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileList.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSlider.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinner.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableView.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRating.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButton.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImage.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGrid.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialog.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialog.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBar.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanel.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendar.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBar.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditor.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabel.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanel.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEdit.dcr"/>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="bindcompfmx.dcp"/>
+        <DCCReference Include="fmx.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7segled.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7segledreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBaseControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGauge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGaugereg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLText.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLTextReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLed.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedmeter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedmeterreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixlabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixlabelreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRating.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScope.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScopereg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSliderreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewBindingReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSliderReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadgeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDirectoryTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckedTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollMenuReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTouchKeyboard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTouchKeyboardReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewExReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannervCalAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannervCalAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSvCal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListBindingReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomComponent.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSStyles.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicsHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControlReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopupEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTabSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTabSetReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageEditor.pas">
+            <Form>TMSFMX.HotSpotImageEditorForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridDataUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridCell.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialog.pas">
+            <Form>TMSFMX.ReplaceDialogForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialog.pas">
+            <Form>TMSFMX.FindDialogForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.GridExcelIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.GridExcelIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UBreakList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherGraphToBSE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UExcelAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UExcelRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxNumberFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxRowComments.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UOle2Impl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.USheetNameList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UTextDelim.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseRecordLists.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsCellRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsChart.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsColInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsCondFmt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsEncodeFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsEscher.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsFormulaParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsHyperLink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsMD5.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsNotes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPageBreaks.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPalette.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPictures.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsProtect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsRangeRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsReferences.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsRowColEntries.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSheet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSST.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsStrings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsTokenArray.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsWorkbookGlobals.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsXF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XLSAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsBaseTemplateStore.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsFormulaMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSProgressBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSProgressBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRTFEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridRtf.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridRtfReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridPDFIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPrintPreview.pas">
+            <Form>FMX.TMSPrintPreviewForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPrintPreviewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinnerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoDialogs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoStyles.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorselector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapSelectorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorSelectorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowserReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Linux.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCapture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCaptureReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBaseGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontNamePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontNamePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontSizePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontSizePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPassLock.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPassLockReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlanner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerModeEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGridDataBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerItemEditorRecurrency.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerItemEditorRecurrencyReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRecurrencyHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellcheckCorrectLinesForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckConfForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckLang.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckCorrectForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellSoundEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorMiniHTMLIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellInfos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellparser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorEmoticons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFCoreLibBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLibHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Default.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGDIPlusApi.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGDIPlusClasses.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFImageBook.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicsTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSUndo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJSONReader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJSONWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPersistence.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE13\JanuaLibDXE13.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">TMSFMXPackPkg.dpk</Source>
+                </Source>
+                <Excluded_Packages/>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <Deployment Version="3">
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx64\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\TMSFMXPackPkg.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>TMSFMXPackPkg.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

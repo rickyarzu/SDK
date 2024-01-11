@@ -1,0 +1,111 @@
+object Frame3: TFrame3
+  Left = 0
+  Top = 0
+  Width = 320
+  Height = 240
+  AutoScroll = False
+  TabOrder = 0
+  object bsSkinCheckRadioBox1: TbsSkinCheckRadioBox
+    Left = 16
+    Top = 16
+    Width = 150
+    Height = 25
+    HintImageIndex = 0
+    TabOrder = 0
+    SkinDataName = 'checkbox'
+    DefaultFont.Charset = DEFAULT_CHARSET
+    DefaultFont.Color = clWindowText
+    DefaultFont.Height = 14
+    DefaultFont.Name = 'Arial'
+    DefaultFont.Style = []
+    DefaultWidth = 0
+    DefaultHeight = 0
+    UseSkinFont = True
+    WordWrap = False
+    AllowGrayed = False
+    State = cbUnchecked
+    ImageIndex = 0
+    Flat = True
+    UseSkinFontColor = True
+    CanFocused = True
+    Radio = False
+    Checked = False
+    GroupIndex = 0
+    Caption = 'bsSkinCheckRadioBox1'
+  end
+  object bsSkinSlider1: TbsSkinSlider
+    Left = 16
+    Top = 56
+    Width = 150
+    Height = 40
+    HintImageIndex = 0
+    TabOrder = 1
+    SkinDataName = 'slider'
+    Transparent = True
+    UseSkinThumb = True
+  end
+  object bsSkinComboBox1: TbsSkinComboBox
+    Left = 184
+    Top = 40
+    Width = 120
+    Height = 20
+    HintImageIndex = 0
+    TabOrder = 2
+    SkinDataName = 'combobox'
+    DefaultFont.Charset = DEFAULT_CHARSET
+    DefaultFont.Color = clWindowText
+    DefaultFont.Height = 14
+    DefaultFont.Name = 'Arial'
+    DefaultFont.Style = []
+    DefaultWidth = 0
+    DefaultHeight = 0
+    UseSkinFont = True
+    UseSkinSize = True
+    ToolButtonStyle = False
+    AlphaBlend = False
+    AlphaBlendValue = 0
+    AlphaBlendAnimation = False
+    ListBoxCaptionMode = False
+    ListBoxDefaultFont.Charset = DEFAULT_CHARSET
+    ListBoxDefaultFont.Color = clWindowText
+    ListBoxDefaultFont.Height = 14
+    ListBoxDefaultFont.Name = 'Arial'
+    ListBoxDefaultFont.Style = []
+    ListBoxDefaultCaptionFont.Charset = DEFAULT_CHARSET
+    ListBoxDefaultCaptionFont.Color = clWindowText
+    ListBoxDefaultCaptionFont.Height = 14
+    ListBoxDefaultCaptionFont.Name = 'Arial'
+    ListBoxDefaultCaptionFont.Style = []
+    ListBoxDefaultItemHeight = 20
+    ListBoxCaptionAlignment = taLeftJustify
+    ListBoxUseSkinFont = True
+    ListBoxUseSkinItemHeight = True
+    ListBoxWidth = 0
+    HideSelection = True
+    AutoComplete = True
+    ImageIndex = 0
+    CharCase = ecNormal
+    DefaultColor = clWindow
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5')
+    ItemIndex = -1
+    DropDownCount = 8
+    HorizontalExtent = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Arial'
+    Font.Style = []
+    Sorted = False
+    Style = bscbFixedStyle
+  end
+  object bsSkinFrame1: TbsSkinFrame
+    DrawBackground = True
+    Left = 16
+    Top = 104
+  end
+end

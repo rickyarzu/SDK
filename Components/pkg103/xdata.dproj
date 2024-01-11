@@ -1,0 +1,233 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CE08A195-96D0-44C8-AF2E-354909FAFDA1}</ProjectGuid>
+        <MainSource>xdata.dpk</MainSource>
+        <ProjectVersion>19.1</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>131</TargetedPlatforms>
+        <AppType>Package</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE12\janualibXE12.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE12\janualibXE12.optset')"/>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>xdata</SanitizedProjectName>
+        <DCC_Description>TMS XData - Core Package</DCC_Description>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DllSuffix>260</DllSuffix>
+        <CfgDependentOn>..\..\prj\DXE12\janualibXE12.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="aurelius.dcp"/>
+        <DCCReference Include="sparkle.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Info.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Operation.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Parameter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Path.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Security.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Consts.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Document.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Attributes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Converters.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Serializer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Types.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Utils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.ConnectionPool.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.CriteriaBuilder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.Model.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.ModelBuilder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Bind.Converter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Client.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Comp.ConnectionPool.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Comp.Server.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Consts.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.AliasVisitor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.CriterionVisitor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.ExpandVisitor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.ProjectionVisitor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Dataset.Source.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.BlobGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Builder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Classes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.CriteriaResultGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.EntityGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Generators.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.ListGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.ObjectGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.OrderedDictionaryGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Writer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Converter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Converters.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.CriteriaResultConverter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Deserializer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Serializer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Solver.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Model.Attributes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Base.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Events.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Exceptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Module.QueryInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Module.ResourceInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.OpenApi.Builder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.OpenApi.Service.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Factory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Factory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Reader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Writer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Reader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Writer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Exceptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Expression.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Method.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Parser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Tokenizer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Server.Module.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Service.Common.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Service.Internal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.SwaggerUI.Service.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Sys.Exceptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Client.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Connection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Dataset.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Headers.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.JsonDataset.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Request.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Response.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Classes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Deserializer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Types.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Types.Converters.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Utils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\core\common\XData.Web.DatasetCommon.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE12\janualibXE12.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">xdata.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp260.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfrxTee26.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfsTee26.bpl">FastScript 1.9 Tee Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfrxIBX26.bpl">FastReport 6.0 IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfsIBX26.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3"/>
+            <Platforms>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

@@ -1,0 +1,103 @@
+package JanuaVCLControlsXE4;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD OFF}
+
+requires
+  xmlrtl,
+  rtl,
+  vclactnband,
+  vclx,
+  vcl,
+  vclimg,
+  DbxCommonDriver,
+  dbrtl,
+  dbexpress,
+  soaprtl,
+  inet,
+  dsnap,
+  vcldb,
+  bindengine,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  Jcl,
+  JvCore,
+  JvSystem,
+  JvStdCtrls,
+  JvDB,
+  tmsdXE4,
+  tmsexdXE4,
+  dac180,
+  crcontrols180,
+  JanuaCoreXE4;
+
+contains
+  // Common Forms
+
+
+  // DataModules
+
+  //Units And Classes
+
+  Janua.VCL.Backup in '..\src\januacontrols\Janua.VCL.Backup.pas',
+  udlgWaitModel in '..\src\Forms\VCLXE5\udlgWaitModel.pas' {JanuadlgWaitModel},
+  CryptoUtils in '..\src\januacontrols\CryptoUtils.pas',
+  Janua.VCL.EnhCRDBGrid in '..\src\januacontrols\Janua.VCL.EnhCRDBGrid.pas',
+  Janua.VCL.EnhDBGrid in '..\src\januacontrols\Janua.VCL.EnhDBGrid.pas',
+  Janua.Core.Exceptions in '..\src\januacore\Janua.Core.Exceptions.pas',
+  Janua.VCL.Dialogs in '..\src\januacontrols\Janua.VCL.Dialogs.pas',
+  udlgjanuainputmemo in '..\src\Forms\VCLXE5\udlgjanuainputmemo.pas' {dlgjanuainputmemo},
+  udlgInputCodeMemo in '..\src\Forms\VCLXE5\udlgInputCodeMemo.pas' {Form1},
+  udlgInputDate in '..\src\Forms\VCLXE5\udlgInputDate.pas' {dlgInputDate},
+  udlgInputFloat in '..\src\Forms\VCLXE5\udlgInputFloat.pas' {dlgInputFloat},
+  udlgInputNumber in '..\src\Forms\VCLXE5\udlgInputNumber.pas' {dlgInputNumber},
+  udlgInputText in '..\src\Forms\VCLXE5\udlgInputText.pas' {dlgInputText},
+  udlgLogin in '..\src\Forms\VCLXE5\udlgLogin.pas' {dlgLogin},
+  Janua.VCL.System in '..\src\januacontrols\Janua.VCL.System.pas',
+  uframeUserProfile in '..\src\Forms\VCLXE5\uframeUserProfile.pas' {frameUserProfile: TFrame},
+  Janua.VCL.Anagraph in '..\src\januacontrols\Janua.VCL.Anagraph.pas',
+  Janua.VCL.Health in '..\src\januacontrols\Janua.VCL.Health.pas',
+  Janua.VCL.Users in '..\src\januacontrols\Janua.VCL.Users.pas',
+  Janua.VCL.Controls in '..\src\januacontrols\Janua.VCL.Controls.pas',
+  Janua.Vcl.TestDebug in '..\src\januacontrols\Janua.Vcl.TestDebug.pas',
+  Janua.VCL.Error in '..\src\januacontrols\Janua.VCL.Error.pas',
+  Janua.VCL.TMSStyles in '..\src\januacontrols\Janua.VCL.TMSStyles.pas',
+  Janua.VCL.Application in '..\src\januacontrols\Janua.VCL.Application.pas',
+  Janua.VCL.dlgServer in '..\src\Forms\VCLXE5\Janua.VCL.dlgServer.pas' {dlgSelectServer},
+  Janua.VCL.DirectoryBackup in '..\src\januacontrols\Janua.VCL.DirectoryBackup.pas',
+  Janua.VCL.Functions in '..\src\januacontrols\Janua.VCL.Functions.pas',
+  Janua.VCL.dlgDialog in '..\src\Forms\VCLXE5\repository\Janua.VCL.dlgDialog.pas' {dlgDialogModel},
+  Janua.VCL.dlgSelectSchema in '..\src\Forms\VCLXE5\system\Janua.VCL.dlgSelectSchema.pas' {dlgDialogModel1},
+  Janua.VCL.Cloud in '..\src\januacontrols\Janua.VCL.Cloud.pas',
+  Janua.VCL.Forms in '..\src\januacontrols\Janua.VCL.Forms.pas',
+  udmJanuaVCLSystem in '..\src\DataModules\VCL\udmJanuaVCLSystem.pas' {dmJanuaSystem: TDataModule},
+  uframeNavigator in '..\src\januavcl\repository\uframeNavigator.pas' {Frame3: TFrame},
+  Janua.VCL.Design in '..\src\januacontrols\Janua.VCL.Design.pas',
+  Janua.VCL.FootballControllers in '..\src\januacontrols\Janua.VCL.FootballControllers.pas';
+
+end.

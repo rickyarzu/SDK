@@ -1,0 +1,546 @@
+object TabbedwithNavigationForm: TTabbedwithNavigationForm
+  Left = 0
+  Top = 0
+  Caption = 'Form56'
+  ClientHeight = 596
+  ClientWidth = 405
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 3
+  object TabControl1: TTabControl
+    Touch.GestureManager = GestureManager1
+    OnGesture = GestureDone
+    Align = Client
+    FullSize = True
+    Size.Width = 405.000000000000000000
+    Size.Height = 596.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 3
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      405s
+      547s
+      405s
+      547s
+      405s
+      547s
+      405s
+      547s)
+    object TabItemCore: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemfavorites'
+      TabOrder = 0
+      Text = 'Core'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl2: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 405.000000000000000000
+        Size.Height = 547.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          405s
+          547s
+          405s
+          547s
+          405s
+          547s)
+        object TabItemCoreMenu: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItemCoreMenu'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar1: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lblTitle1: TLabel
+              Align = Contents
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnNext: TSpeedButton
+              Action = NextTabAction1
+              Align = Right
+              Enabled = True
+              ImageIndex = -1
+              Margins.Right = 5.000000000000000000
+              Position.X = 340.000000000000000000
+              Size.Width = 60.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+          object TMSFMXTableView1: TTMSFMXTableView
+            Align = Client
+            DisableFocusEffect = False
+            TabOrder = 1
+            Size.Width = 405.000000000000000000
+            Size.Height = 499.000000000000000000
+            Size.PlatformDefault = False
+            AdaptToStyle = True
+            Fill.Color = claWhite
+            Stroke.Kind = None
+            CanFocus = True
+            Items = <
+              item
+                DetailView = TMSFMXTVCoreFunctions
+                Caption = 'Functions'
+                Description = 'Test delle principali funzioni su piattaforma Mobile'
+                DataBoolean = False
+                Selected = False
+              end
+              item
+                Caption = 'Item 1'
+                Description = 'Description of Item 1'
+                DataBoolean = False
+                Selected = False
+              end
+              item
+                Caption = 'Item 2'
+                Description = 'Description of Item 2'
+                DataBoolean = False
+                Selected = False
+              end
+              item
+                Caption = 'Item 3'
+                Description = 'Description of Item 3'
+                DataBoolean = False
+                Selected = False
+              end>
+            Categories = <>
+            MarkText = 'Mark'
+            MoveText = 'Move'
+            ArchiveText = 'Archive'
+            HeaderText = 'Header'
+            FooterText = 'Footer'
+            HeaderVisible = False
+            FooterVisible = False
+            ItemOptions = [ioEditRectangle, ioCenterRectangle, ioRightRectangle, ioDetailRectangle, ioDeleteRectangle, ioCaptionElement, ioDescriptionElement]
+            Version = '1.5.3.6'
+          end
+        end
+        object TabItemCoreFunctions: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItemCoreFunctions'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar2: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lblTitle2: TLabel
+              Align = Contents
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnBack: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+            end
+          end
+          object TMSFMXTVCoreFunctions: TTMSFMXTableView
+            Align = Client
+            DisableFocusEffect = False
+            TabOrder = 1
+            Size.Width = 405.000000000000000000
+            Size.Height = 499.000000000000000000
+            Size.PlatformDefault = False
+            AdaptToStyle = True
+            Fill.Color = claWhite
+            Stroke.Kind = None
+            CanFocus = True
+            Items = <
+              item
+                DetailView = ScrollBoxCoreFunctionValidation
+                Caption = 'Validation'
+                Description = 'Test Funzioni di validazione'
+                DataBoolean = False
+                Selected = False
+              end
+              item
+                Caption = 'Item 2'
+                Description = 'Description of Item 2'
+                DataBoolean = False
+                Selected = False
+              end
+              item
+                Caption = 'Item 3'
+                Description = 'Description of Item 3'
+                DataBoolean = False
+                Selected = False
+              end>
+            Categories = <>
+            MarkText = 'Mark'
+            MoveText = 'Move'
+            ArchiveText = 'Archive'
+            HeaderText = 'Header'
+            FooterText = 'Footer'
+            HeaderVisible = False
+            FooterVisible = False
+            ItemOptions = [ioEditRectangle, ioCenterRectangle, ioRightRectangle, ioDetailRectangle, ioDeleteRectangle, ioCaptionElement, ioDescriptionElement]
+            Version = '1.5.3.6'
+          end
+        end
+        object TabItem1: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem1'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ScrollBoxCoreFunctionValidation: TScrollBox
+            Align = Client
+            Size.Width = 405.000000000000000000
+            Size.Height = 547.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 405.000000000000000000
+            Viewport.Height = 547.000000000000000000
+            object Panel1: TPanel
+              Align = Top
+              Size.Width = 405.000000000000000000
+              Size.Height = 121.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object edEmail: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Top
+                TabOrder = 1
+                Position.Y = 21.000000000000000000
+                Size.Width = 405.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+              object Label1: TLabel
+                Align = Top
+                Size.Width = 405.000000000000000000
+                Size.Height = 21.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.HorzAlign = Center
+                Text = 'Mail Checker'
+                TabOrder = 3
+              end
+              object Button1: TButton
+                Align = Top
+                Position.Y = 53.000000000000000000
+                Size.Width = 405.000000000000000000
+                Size.Height = 44.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 4
+                Text = 'Validate Email'
+                OnClick = Button1Click
+              end
+              object lbValidateEmail: TLabel
+                Align = Top
+                Position.Y = 97.000000000000000000
+                Size.Width = 405.000000000000000000
+                Size.Height = 21.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.HorzAlign = Center
+                Text = 'Verifica Mail'
+                TabOrder = 2
+              end
+            end
+          end
+        end
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcontacts'
+      TabOrder = 0
+      Text = 'Postgres'
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar3: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle3: TLabel
+          Align = Contents
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Title'
+        end
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemsearch'
+      TabOrder = 0
+      Text = 'Remote'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar4: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle4: TLabel
+          Align = Contents
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Title'
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 102.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitembookmarks'
+      TabOrder = 0
+      Text = 'FMX'
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar5: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle5: TLabel
+          Align = Contents
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'fmx test components'
+        end
+      end
+      object TabControl3: TTabControl
+        Align = Client
+        Size.Width = 405.000000000000000000
+        Size.Height = 499.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        TabPosition = PlatformDefault
+        Sizes = (
+          405s
+          450s
+          405s
+          450s
+          405s
+          450s
+          405s
+          450s)
+        object tab401Standard: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 101.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'tab401Standard'
+          object VertScrollBox1: TVertScrollBox
+            Align = Client
+            Size.Width = 405.000000000000000000
+            Size.Height = 450.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 405.000000000000000000
+            Viewport.Height = 450.000000000000000000
+            object Panel2: TPanel
+              Align = Top
+              Size.Width = 405.000000000000000000
+              Size.Height = 153.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Switch1: TSwitch
+                Anchors = [akTop, akRight]
+                IsChecked = False
+                Position.X = 352.000000000000000000
+                Position.Y = 16.000000000000000000
+                Size.Width = 44.000000000000000000
+                Size.Height = 26.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+              end
+              object Label2: TLabel
+                Anchors = [akLeft, akTop, akRight]
+                Position.X = 24.000000000000000000
+                Position.Y = 16.000000000000000000
+                Size.Width = 305.000000000000000000
+                Size.Height = 23.000000000000000000
+                Size.PlatformDefault = False
+                Text = 'Test Swith component'
+                TabOrder = 2
+              end
+              object Edit1: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Anchors = [akLeft, akTop, akRight]
+                TabOrder = 3
+                Position.X = 24.000000000000000000
+                Position.Y = 48.000000000000000000
+                Size.Width = 369.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+          end
+        end
+        object TabItem6: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 101.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+        end
+        object TabItem7: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 101.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem7'
+        end
+        object TabItem8: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 102.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem8'
+        end
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 104
+    Top = 57
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl2
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  object ActionList1: TActionList
+    Left = 24
+    Top = 56
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl2
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl2
+    end
+  end
+end

@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{07E3EBBE-22D1-4802-B493-A6D5DC929D8F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOracleSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOracleSystemXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaIntrawebXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLFormsD10.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Clean">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Make">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Clean">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Make">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design:Clean">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design:Make">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Clean">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Make">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaIntrawebXE10">
+        <MSBuild Projects="JanuaIntrawebXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaIntrawebXE10:Clean">
+        <MSBuild Projects="JanuaIntrawebXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaIntrawebXE10:Make">
+        <MSBuild Projects="JanuaIntrawebXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLFormsD10">
+        <MSBuild Projects="JanuaVCLFormsD10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLFormsD10:Clean">
+        <MSBuild Projects="JanuaVCLFormsD10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLFormsD10:Make">
+        <MSBuild Projects="JanuaVCLFormsD10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreXE10;JanuaCoreXE10Design;JanuaPostgresSystemXE10;JanuaPostgresSystemXE10Design;JanuaOracleSystemXE10;JanuaOracleSystemXE10Design;JanuaVCLControlsXE10;JanuaIntrawebXE10;JanuaVCLFormsD10"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreXE10:Clean;JanuaCoreXE10Design:Clean;JanuaPostgresSystemXE10:Clean;JanuaPostgresSystemXE10Design:Clean;JanuaOracleSystemXE10:Clean;JanuaOracleSystemXE10Design:Clean;JanuaVCLControlsXE10:Clean;JanuaIntrawebXE10:Clean;JanuaVCLFormsD10:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreXE10:Make;JanuaCoreXE10Design:Make;JanuaPostgresSystemXE10:Make;JanuaPostgresSystemXE10Design:Make;JanuaOracleSystemXE10:Make;JanuaOracleSystemXE10Design:Make;JanuaVCLControlsXE10:Make;JanuaIntrawebXE10:Make;JanuaVCLFormsD10:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

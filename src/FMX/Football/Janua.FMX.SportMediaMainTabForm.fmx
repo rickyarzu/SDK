@@ -1,0 +1,824 @@
+object frmSpormediaAppMainFMX: TfrmSpormediaAppMainFMX
+  Left = 0
+  Top = 0
+  Caption = 'frmSpormediaAppMainFMX'
+  ClientHeight = 596
+  ClientWidth = 416
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 2
+  object TabControl1: TTabControl
+    Touch.GestureManager = GestureManager1
+    OnGesture = GestureDone
+    Align = Client
+    FullSize = True
+    Size.Width = 416.000000000000000000
+    Size.Height = 596.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      416s
+      547s
+      416s
+      547s
+      416s
+      547s
+      416s
+      547s)
+    object tabChampionships: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 104.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemfavorites'
+      TabOrder = 0
+      Text = 'Campionati'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControlChampionships: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 416.000000000000000000
+        Size.Height = 547.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 1
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          416s
+          547s
+          416s
+          547s)
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem5'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar1: TToolBar
+            Size.Width = 416.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lblTitle1: TLabel
+              Align = Contents
+              Size.Width = 416.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.HorzAlign = Center
+              Text = 'Seleziona Campionato'
+            end
+          end
+          object ListViewChampionships: TListView
+            ItemAppearanceClassName = 'TImageListItemRightButtonAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemRightButtonDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 416.000000000000000000
+            Size.Height = 503.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnButtonClick = ListViewChampionshipsButtonClick
+          end
+        end
+        object TabItem6: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar2: TToolBar
+            Size.Width = 416.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lblTitle2: TLabel
+              Align = Contents
+              Size.Width = 416.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnBack: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+            end
+          end
+          object ListViewMatches: TListView
+            ItemAppearanceClassName = 'TImageListItemRightButtonAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemRightButtonDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 416.000000000000000000
+            Size.Height = 503.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnButtonClick = ListViewChampionshipsButtonClick
+          end
+        end
+      end
+    end
+    object tabTeams: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 104.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcontacts'
+      TabOrder = 0
+      Text = 'Squadre'
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar3: TToolBar
+        Size.Width = 416.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle3: TLabel
+          Align = Contents
+          Size.Width = 416.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Cerca una Squadra'
+        end
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 104.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemsearch'
+      TabOrder = 0
+      Text = 'Giocatori'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar4: TToolBar
+        Size.Width = 416.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle4: TLabel
+          Align = Contents
+          Size.Width = 416.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Title'
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 104.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitembookmarks'
+      TabOrder = 0
+      Text = 'Impostazioni'
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar5: TToolBar
+        Size.Width = 416.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle5: TLabel
+          Align = Contents
+          Size.Width = 416.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Title'
+        end
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 64
+    Top = 185
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControlChampionships
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  object ActionList1: TActionList
+    Left = 72
+    Top = 120
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControlChampionships
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControlChampionships
+    end
+  end
+  object PgErgoConnection: TUniConnection
+    DataTypeMap = <
+      item
+        DBType = 521
+        FieldType = ftTimeStamp
+      end
+      item
+        DBType = 520
+        FieldType = ftTimeStamp
+      end>
+    ProviderName = 'PostgreSQL'
+    Port = 5432
+    Database = 'ergomercator'
+    Options.DisconnectedMode = True
+    PoolingOptions.MaxPoolSize = 1000
+    PoolingOptions.ConnectionLifetime = 600
+    PoolingOptions.Validate = True
+    Pooling = True
+    Username = 'januaguest'
+    Server = 'pg.januaservers.com'
+    LoginPrompt = False
+    Left = 64
+    Top = 248
+    EncryptedPassword = '99FFCBFF91FF94FF8AFF93FFCFFF'
+  end
+  object qryChampionships: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'select   l.league_id, league_name, s.*, '#39'->'#39' as forward'
+      ' from '
+      
+        'football.ft_championships c, football.ft_leagues l, football.ft_' +
+        'seasons s'
+      'where'
+      's.season_id = c.season_id and c.season_id = :season_id'
+      'and '
+      'l.league_id = c.league_id '
+      'order by '
+      'league_position')
+    Left = 64
+    Top = 312
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'season_id'
+        ParamType = ptInput
+        Value = 75
+      end>
+    object qryChampionshipsleague_name: TWideStringField
+      FieldName = 'league_name'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryChampionshipsseason_id: TIntegerField
+      FieldName = 'season_id'
+      ReadOnly = True
+      Required = True
+    end
+    object qryChampionshipsseason_des: TWideStringField
+      FieldName = 'season_des'
+      ReadOnly = True
+    end
+    object qryChampionshipsseason_code: TWideStringField
+      FieldName = 'season_code'
+      ReadOnly = True
+      FixedChar = True
+      Size = 5
+    end
+    object qryChampionshipsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+      ReadOnly = True
+      Required = True
+    end
+    object qryChampionshipsleague_id: TSmallintField
+      FieldName = 'league_id'
+      ReadOnly = True
+      Required = True
+    end
+    object qryChampionshipsorder_number: TSmallintField
+      FieldName = 'order_number'
+      ReadOnly = True
+    end
+    object qryChampionshipsremote_id: TSmallintField
+      FieldName = 'remote_id'
+      ReadOnly = True
+    end
+    object qryChampionshipsforward: TWideMemoField
+      FieldName = 'forward'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+  end
+  object qryLastSeason: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'select max(season_id) as season_id from football.ft_seasons')
+    Left = 64
+    Top = 384
+    object qryLastSeasonseason_id: TIntegerField
+      FieldName = 'season_id'
+      ReadOnly = True
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = qryChampionships
+    ScopeMappings = <>
+    Left = 200
+    Top = 360
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 164
+    Top = 229
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'league_id'
+      Control = ListViewChampionships
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillDisplayFieldName = 'league_name'
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'forward'
+          ControlMemberName = 'ButtonText'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ListViewMatches
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'team_des'
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'goal'
+          ControlMemberName = 'ButtonText'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object qryMatchDay: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO football.ft_calendar'
+      
+        '  (match_id, league_id, season_id, match_day_number, match_date,' +
+        ' home_team_id, visitors_team_id, goal_home, goal_visitor, points' +
+        '_home, points_visitors, notes, confirmed, db_schema_id, insert_d' +
+        'ate, update_date, home_notes, visitors_notes)'
+      'VALUES'
+      
+        '  (:match_id, :league_id, :season_id, :match_day_number, :match_' +
+        'date, :home_team_id, :visitors_team_id, :goal_home, :goal_visito' +
+        'r, :points_home, :points_visitors, :notes, :confirmed, :db_schem' +
+        'a_id, :insert_date, :update_date, :home_notes, :visitors_notes)')
+    SQLDelete.Strings = (
+      'DELETE FROM football.ft_calendar'
+      'WHERE'
+      '  match_id = :Old_match_id')
+    SQLUpdate.Strings = (
+      'UPDATE football.ft_calendar'
+      'SET'
+      
+        '  match_id = :match_id, league_id = :league_id, season_id = :sea' +
+        'son_id, match_day_number = :match_day_number, match_date = :matc' +
+        'h_date, home_team_id = :home_team_id, visitors_team_id = :visito' +
+        'rs_team_id, goal_home = :goal_home, goal_visitor = :goal_visitor' +
+        ', points_home = :points_home, points_visitors = :points_visitors' +
+        ', notes = :notes, confirmed = :confirmed, db_schema_id = :db_sch' +
+        'ema_id, insert_date = :insert_date, update_date = :update_date, ' +
+        'home_notes = :home_notes, visitors_notes = :visitors_notes'
+      'WHERE'
+      '  match_id = :Old_match_id')
+    SQLLock.Strings = (
+      'SELECT * FROM football.ft_calendar'
+      'WHERE'
+      '  match_id = :Old_match_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT match_id, league_id, season_id, match_day_number, match_d' +
+        'ate, home_team_id, visitors_team_id, goal_home, goal_visitor, po' +
+        'ints_home, points_visitors, notes, confirmed, db_schema_id, inse' +
+        'rt_date, update_date, home_notes, visitors_notes FROM football.f' +
+        't_calendar'
+      'WHERE'
+      '  match_id = :match_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM football.ft_calendar'
+      ''
+      ') t')
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'select s.season_des, s.season_code, l.league_name, m.*'
+      
+        'from football.ft_match_days m, football.ft_leagues l, football.f' +
+        't_seasons s'
+      'where'
+      's.season_id = :season_id'
+      'and'
+      'l.league_id = :league_id'
+      'and'
+      'm.league_id = :league_id'
+      'and '
+      'm.season_id = :season_id'
+      'and'
+      'm.match_day_number = :match_day_number '
+      '-- and'
+      '-- l.db_schema_id = :db_schema_id')
+    DetailFields = 'league_id;season_id;match_day_number'
+    Left = 187
+    Top = 168
+    ParamData = <
+      item
+        DataType = ftSmallint
+        Name = 'season_id'
+        ParamType = ptInput
+        Value = 75
+      end
+      item
+        DataType = ftSmallint
+        Name = 'league_id'
+        ParamType = ptInput
+        Value = 145
+      end
+      item
+        DataType = ftSmallint
+        Name = 'match_day_number'
+        ParamType = ptInput
+        Value = 2
+      end>
+    object qryMatchDayseason_des: TWideStringField
+      FieldName = 'season_des'
+      ReadOnly = True
+    end
+    object qryMatchDayseason_code: TWideStringField
+      FieldName = 'season_code'
+      ReadOnly = True
+      FixedChar = True
+      Size = 5
+    end
+    object qryMatchDayleague_name: TWideStringField
+      FieldName = 'league_name'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryMatchDayseason_id: TSmallintField
+      FieldName = 'season_id'
+      Required = True
+    end
+    object qryMatchDayleague_id: TSmallintField
+      FieldName = 'league_id'
+      Required = True
+    end
+    object qryMatchDaymatch_day_number: TSmallintField
+      FieldName = 'match_day_number'
+      Required = True
+    end
+    object qryMatchDayrest_team_id: TIntegerField
+      FieldName = 'rest_team_id'
+    end
+    object qryMatchDaydb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryMatchDaymatch_day_date: TDateField
+      FieldName = 'match_day_date'
+    end
+    object qryMatchDaymatch_day_played: TDateField
+      FieldName = 'match_day_played'
+    end
+  end
+  object qryLastMatch: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'select '
+      'max(played_matches) - 2 as last_match '
+      'from '
+      'football.ft_ranking_table '
+      'where '
+      'season_id = :season_id '
+      'and '
+      'league_id = :league_id')
+    Left = 280
+    Top = 168
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'season_id'
+        ParamType = ptInput
+        Value = 45
+      end
+      item
+        DataType = ftInteger
+        Name = 'league_id'
+        ParamType = ptInput
+        Value = 9
+      end>
+    object qryLastMatchlast_match: TSmallintField
+      FieldName = 'last_match'
+      ReadOnly = True
+    end
+  end
+  object qryMatches: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO football.ft_calendar'
+      
+        '  (match_id, league_id, season_id, match_day_number, match_date,' +
+        ' home_team_id, visitors_team_id, goal_home, goal_visitor, points' +
+        '_home, points_visitors, notes, confirmed, db_schema_id, insert_d' +
+        'ate, update_date, home_notes, visitors_notes)'
+      'VALUES'
+      
+        '  (:match_id, :league_id, :season_id, :match_day_number, :match_' +
+        'date, :home_team_id, :visitors_team_id, :goal_home, :goal_visito' +
+        'r, :points_home, :points_visitors, :notes, :confirmed, :db_schem' +
+        'a_id, :insert_date, :update_date, :home_notes, :visitors_notes)')
+    SQLDelete.Strings = (
+      'DELETE FROM football.ft_calendar'
+      'WHERE'
+      '  match_id = :Old_match_id')
+    SQLUpdate.Strings = (
+      'UPDATE football.ft_calendar'
+      'SET'
+      
+        '  match_id = :match_id, league_id = :league_id, season_id = :sea' +
+        'son_id, match_day_number = :match_day_number, match_date = :matc' +
+        'h_date, home_team_id = :home_team_id, visitors_team_id = :visito' +
+        'rs_team_id, goal_home = :goal_home, goal_visitor = :goal_visitor' +
+        ', points_home = :points_home, points_visitors = :points_visitors' +
+        ', notes = :notes, confirmed = :confirmed, db_schema_id = :db_sch' +
+        'ema_id, insert_date = :insert_date, update_date = :update_date, ' +
+        'home_notes = :home_notes, visitors_notes = :visitors_notes'
+      'WHERE'
+      '  match_id = :Old_match_id')
+    SQLLock.Strings = (
+      'SELECT * FROM football.ft_calendar'
+      'WHERE'
+      '  match_id = :Old_match_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT match_id, league_id, season_id, match_day_number, match_d' +
+        'ate, home_team_id, visitors_team_id, goal_home, goal_visitor, po' +
+        'ints_home, points_visitors, notes, confirmed, db_schema_id, inse' +
+        'rt_date, update_date, home_notes, visitors_notes FROM football.f' +
+        't_calendar'
+      'WHERE'
+      '  match_id = :match_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM football.ft_calendar'
+      ''
+      ') t')
+    DataTypeMap = <
+      item
+        FieldName = 'match_date'
+        FieldType = ftDate
+      end
+      item
+        FieldName = 'team_des'
+        FieldType = ftWideString
+        FieldLength = 400
+      end
+      item
+        FieldName = 'goal'
+        FieldType = ftWideString
+        FieldLength = 10
+      end>
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT '
+      'row_number() over() as rownum, '
+      'c.*, a.team_name as home_team, b.team_name as visitors_team,'
+      
+        'a.team_name || '#39' - '#39' || b.team_name  || '#39'  -- '#39' || goal_home::va' +
+        'rchar  || '#39' - '#39' || goal_visitor::varchar  as team_des,'
+      'goal_home::varchar  || '#39' - '#39' || goal_visitor::varchar as goal'
+      
+        '  FROM football.ft_calendar c, football.ft_teams a, football.ft_' +
+        'teams b'
+      'WHERE '
+      'a.team_id = c.home_team_id'
+      'and'
+      'b.team_id = c.visitors_team_id'
+      'and'
+      'c.match_day_number = :match_day_number '
+      '      and c.league_id = :league_id'
+      '       and c.season_id = :season_id')
+    DetailFields = 'league_id;season_id;match_day_number'
+    Left = 251
+    Top = 224
+    ParamData = <
+      item
+        DataType = ftSmallint
+        Name = 'match_day_number'
+        ParamType = ptInput
+        Value = 10
+      end
+      item
+        DataType = ftSmallint
+        Name = 'league_id'
+        ParamType = ptInput
+        Value = 145
+      end
+      item
+        DataType = ftSmallint
+        Name = 'season_id'
+        ParamType = ptInput
+        Value = 75
+      end>
+    object qryMatchesmatch_id: TIntegerField
+      FieldName = 'match_id'
+      Required = True
+    end
+    object qryMatchesleague_id: TSmallintField
+      FieldName = 'league_id'
+    end
+    object qryMatchesseason_id: TSmallintField
+      FieldName = 'season_id'
+    end
+    object qryMatchesmatch_day_number: TSmallintField
+      FieldName = 'match_day_number'
+    end
+    object qryMatchesmatch_date: TDateField
+      FieldName = 'match_date'
+    end
+    object qryMatcheshome_team_id: TSmallintField
+      FieldName = 'home_team_id'
+    end
+    object qryMatchesvisitors_team_id: TSmallintField
+      FieldName = 'visitors_team_id'
+    end
+    object qryMatchesgoal_home: TSmallintField
+      FieldName = 'goal_home'
+    end
+    object qryMatchesgoal_visitor: TSmallintField
+      FieldName = 'goal_visitor'
+    end
+    object qryMatchespoints_home: TSmallintField
+      FieldName = 'points_home'
+    end
+    object qryMatchespoints_visitors: TSmallintField
+      FieldName = 'points_visitors'
+    end
+    object qryMatchesnotes: TWideMemoField
+      FieldName = 'notes'
+      BlobType = ftWideMemo
+    end
+    object qryMatchesconfirmed: TBooleanField
+      FieldName = 'confirmed'
+    end
+    object qryMatchesdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryMatchesinsert_date: TSQLTimeStampField
+      FieldName = 'insert_date'
+    end
+    object qryMatchesupdate_date: TSQLTimeStampField
+      FieldName = 'update_date'
+    end
+    object qryMatcheshome_notes: TWideStringField
+      FieldName = 'home_notes'
+      Size = 1024
+    end
+    object qryMatchesvisitors_notes: TWideStringField
+      FieldName = 'visitors_notes'
+      Size = 1024
+    end
+    object qryMatcheshome_team: TWideStringField
+      FieldName = 'home_team'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryMatchesvisitors_team: TWideStringField
+      FieldName = 'visitors_team'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryMatchesrownum: TLargeintField
+      FieldName = 'rownum'
+      ReadOnly = True
+    end
+    object qryMatchesmatch_time: TSQLTimeStampField
+      FieldName = 'match_time'
+    end
+    object qryMatchesreferee_id: TIntegerField
+      FieldName = 'referee_id'
+    end
+    object qryMatchesreferee_second_id: TIntegerField
+      FieldName = 'referee_second_id'
+    end
+    object qryMatchesreferee_third_id: TIntegerField
+      FieldName = 'referee_third_id'
+    end
+    object qryMatchessuspended: TBooleanField
+      FieldName = 'suspended'
+    end
+    object qryMatchespostponed: TBooleanField
+      FieldName = 'postponed'
+    end
+    object qryMatchesforfeit: TBooleanField
+      FieldName = 'forfeit'
+      Required = True
+    end
+    object qryMatchesremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryMatchesfiled_id: TIntegerField
+      FieldName = 'filed_id'
+    end
+    object qryMatchesteam_des: TWideStringField
+      FieldName = 'team_des'
+      ReadOnly = True
+      Size = 400
+    end
+    object qryMatchesgoal: TWideStringField
+      FieldName = 'goal'
+      ReadOnly = True
+      Size = 10
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = qryMatches
+    ScopeMappings = <>
+    Left = 200
+    Top = 296
+  end
+  object PostgreSQLUniProvider1: TPostgreSQLUniProvider
+    Left = 184
+    Top = 424
+  end
+end

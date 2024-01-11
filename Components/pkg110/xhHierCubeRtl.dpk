@@ -1,0 +1,54 @@
+package xhHierCubeRtl;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'HierCube VCL Runtime package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  xhCntrlsRtl;
+
+contains
+  xhAboutForm in '..\..\..\Libraries\HierCube VCL\source\xhAboutForm.pas',
+  xhExcelConsts in '..\..\..\Libraries\HierCube VCL\source\xhExcelConsts.pas',
+  xhGrid in '..\..\..\Libraries\HierCube VCL\source\xhGrid.pas',
+  xhHierCube in '..\..\..\Libraries\HierCube VCL\source\xhHierCube.pas',
+  xhOptions in '..\..\..\Libraries\HierCube VCL\source\xhOptions.pas',
+  xhBar in '..\..\..\Libraries\HierCube VCL\source\xhBar.pas',
+  xhInternalGrid in '..\..\..\Libraries\HierCube VCL\source\xhInternalGrid.pas',
+  xhDimValuesForm in '..\..\..\Libraries\HierCube VCL\source\xhDimValuesForm.pas',
+  xhAggregates in '..\..\..\Libraries\HierCube VCL\source\xhAggregates.pas',
+  xhFormula in '..\..\..\Libraries\HierCube VCL\source\xhFormula.pas',
+  xhArrays2 in '..\..\..\Libraries\HierCube VCL\source\xhArrays2.pas',
+  xhFactTableEditor in '..\..\..\Libraries\HierCube VCL\source\xhFactTableEditor.pas',
+  xhDimMap in '..\..\..\Libraries\HierCube VCL\source\xhDimMap.pas',
+  xhSavePivot in '..\..\..\Libraries\HierCube VCL\source\xhSavePivot.pas';
+
+end.

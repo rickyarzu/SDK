@@ -1,0 +1,91 @@
+package TMSVCLUIPackPkgXls;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS TAdvStringGrid Excel support'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vclimg,
+  TMSVCLUIPackPkg,
+  rtl;
+
+contains
+  tmsXlsMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsXlsMessages.pas',
+  tmsAdvExcelIOReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsAdvExcelIOReg.pas',
+  tmsAdvGridExcel in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsAdvGridExcel.pas',
+  tmsUBreakList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUBreakList.pas',
+  tmsUEscherGraphToBSE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUEscherGraphToBSE.pas',
+  tmsUEscherOtherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUEscherOtherRecords.pas',
+  tmsUEscherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUEscherRecords.pas',
+  tmsUExcelAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUExcelAdapter.pas',
+  tmsUExcelRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUExcelRecords.pas',
+  tmsUFlxFormats in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxFormats.pas',
+  tmsUFlxMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxMessages.pas',
+  tmsUFlxNumberFormat in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxNumberFormat.pas',
+  tmsUFlxRowComments in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxRowComments.pas',
+  tmsUFlxStack in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxStack.pas',
+  tmsUFlxUtils in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUFlxUtils.pas',
+  tmsUOle2Impl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUOle2Impl.pas',
+  tmsUSheetNameList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUSheetNameList.pas',
+  tmsUXlsBaseClientData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsBaseClientData.pas',
+  tmsUXlsBaseList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsBaseList.pas',
+  tmsUXlsBaseRecordLists in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsBaseRecordLists.pas',
+  tmsUXlsBaseRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsBaseRecords.pas',
+  tmsUXlsCellRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsCellRecords.pas',
+  tmsUXlsChart in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsChart.pas',
+  tmsUXlsClientData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsClientData.pas',
+  tmsUXlsColInfo in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsColInfo.pas',
+  tmsUXlsCondFmt in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsCondFmt.pas',
+  tmsUXlsEncodeFormula in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsEncodeFormula.pas',
+  tmsUXlsEscher in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsEscher.pas',
+  tmsUXlsFormula in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsFormula.pas',
+  tmsUXlsFormulaParser in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsFormulaParser.pas',
+  tmsUXlsHyperLink in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsHyperLink.pas',
+  tmsUXlsMD5 in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsMD5.pas',
+  tmsUXlsNotes in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsNotes.pas',
+  tmsUXlsOtherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsOtherRecords.pas',
+  tmsUXlsPageBreaks in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsPageBreaks.pas',
+  tmsUXlsPalette in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsPalette.pas',
+  tmsUXlsPictures in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsPictures.pas',
+  tmsUXlsProtect in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsProtect.pas',
+  tmsUXlsRangeRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsRangeRecords.pas',
+  tmsUXlsReferences in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsReferences.pas',
+  tmsUXlsRowColEntries in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsRowColEntries.pas',
+  tmsUXlsSections in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsSections.pas',
+  tmsUXlsSheet in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsSheet.pas',
+  tmsUXlsSST in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsSST.pas',
+  tmsUXlsStrings in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsStrings.pas',
+  tmsUXlsTokenArray in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsTokenArray.pas',
+  tmsUXlsWorkbookGlobals in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsWorkbookGlobals.pas',
+  tmsUXlsXF in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsUXlsXF.pas',
+  tmsXLSAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsXLSAdapter.pas',
+  tmsXlsBaseTemplateStore in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsXlsBaseTemplateStore.pas',
+  tmsXlsFormulaMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS VCL UI Pack\xlsadapter\tmsXlsFormulaMessages.pas';
+
+end.

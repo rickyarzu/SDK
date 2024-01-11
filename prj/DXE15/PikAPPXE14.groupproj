@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B9F5FE00-06FD-4F76-A531-070837F90B48}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMX\PikApp\AccessCameraApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\PikApp\PickAPP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\Camera\JanuaSampleCamera.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\CameraRoll\CameraRoll.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AccessCameraApp">
+        <MSBuild Projects="FMX\PikApp\AccessCameraApp.dproj"/>
+    </Target>
+    <Target Name="AccessCameraApp:Clean">
+        <MSBuild Projects="FMX\PikApp\AccessCameraApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AccessCameraApp:Make">
+        <MSBuild Projects="FMX\PikApp\AccessCameraApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PickAPP">
+        <MSBuild Projects="FMX\PikApp\PickAPP.dproj"/>
+    </Target>
+    <Target Name="PickAPP:Clean">
+        <MSBuild Projects="FMX\PikApp\PickAPP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PickAPP:Make">
+        <MSBuild Projects="FMX\PikApp\PickAPP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaSampleCamera">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\Camera\JanuaSampleCamera.dproj"/>
+    </Target>
+    <Target Name="JanuaSampleCamera:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\Camera\JanuaSampleCamera.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaSampleCamera:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\Camera\JanuaSampleCamera.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CameraRoll">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\CameraRoll\CameraRoll.dproj"/>
+    </Target>
+    <Target Name="CameraRoll:Clean">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\CameraRoll\CameraRoll.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CameraRoll:Make">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\CameraRoll\CameraRoll.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AccessCameraApp;PickAPP;JanuaSampleCamera;CameraRoll"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AccessCameraApp:Clean;PickAPP:Clean;JanuaSampleCamera:Clean;CameraRoll:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AccessCameraApp:Make;PickAPP:Make;JanuaSampleCamera:Make;CameraRoll:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

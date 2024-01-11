@@ -1,0 +1,3 @@
+DELETE FROM AADAS.impostazione_parametri WHERE USERGROUP = 'AADAS' ; 
+UPDATE  AADAS.impostazione_parametri SET USERGROUP = 'AADAS'  WHERE USERGROUP = 'ASSNE_INVALIDI';
+commit;

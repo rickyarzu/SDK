@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscSplitView</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscSplitView</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scModernControls.pas</p>
+<p><span style="font-weight: bold;">TscSplitView =
+class(</span><a style="font-weight: bold;" href="TscPanel.html">TscPanel</a><span style="font-weight: bold;">)</span></p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel, which can be opened and closed.&nbsp;</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Placement</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSplitViewPlacement</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscSplitViewPlacement =
+(scsvpLeft, scsvpRight, scsvpTop, scsvpBottom);<br>
+Position of control on parent control.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DisplayMode</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSplitViewDisplayMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscSplitViewDisplayMode = (scsvmOverlay, scsvmDocked);<br><br>scsvmOverlay - control over other controls on the parent in opened state<br>scsvmDocked - control offseet other controls on the parent in opened state</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CompactWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width in closed state.
+If Width = 0 then control not visible. <br>
+(for scsvpLeft, scsvpRight placement)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CompactHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height in closed state.
+If Height = 0 then control not visible. <br>
+(scsvpTop, scsvpBottom placement)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OpenedWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width in opened state. <br>
+(scsvpLeft, scsvpRight placement)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OpenedHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height in opened state. <br>
+(scsvpTop, scsvpBottom placement)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Opened</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+will overlap other controls with Width = OpenedWidth or Height
+=&nbsp;OpenedHeight</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Animation</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable open / close
+animation</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HideControls</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If true then visible controls
+will be hidden when Opened = False</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AnimationStep</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Value to increase size
+of the control in animation cycle</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">GripSize</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if
+Value &gt; 0 then you can resize control in opened state. GripSize
+value define&nbsp; capture area from right or bottom of the control to
+resize it.</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">OpenedMinWidth,&nbsp;<br>OpenedMaxWidth,<br>OpenedMinHeight,<br>OpenedMaxHeight</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Values for size limitations, which controls uses when you change size with GripSize &gt; 0</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">AnimationType</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSplitViewAnimationType</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscSplitViewAnimationType = (scsvaInertial, scsvaLinear);<br><br>scsvaInertial - animation with intertial<br> scsvaLinear - linear animation with AnimationStep</td></tr></tbody>
+</table>
+<h1><br>
+</h1>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnOpening&nbsp;</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event that occur before
+the opening</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnOpened</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event that occur after
+the opening</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClosing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event that occur before
+the closing</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClosed</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event that occur after
+the closing</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+</h1>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 227px;" height="12">Name</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Open</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Call this method to open
+control</td>
+</tr>
+<tr>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Close</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Call this method to
+close control</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<br>
+<p>&nbsp;</p>
+</body></html>

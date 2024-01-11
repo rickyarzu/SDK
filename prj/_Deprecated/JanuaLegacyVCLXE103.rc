@@ -1,0 +1,26 @@
+1 VERSIONINFO
+FILEVERSION 1,0,0,4
+PRODUCTVERSION 1,0,0,4
+FILEFLAGSMASK 0x3FL
+FILEFLAGS 0x00L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x00L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+         BLOCK "040904E4"
+         BEGIN
+              VALUE "CompanyName", "Ergo Mercator SAGL\0"
+              VALUE "FileDescription", "JanuaLegacyVCLXE103\0"
+              VALUE "FileVersion", "1.0.0.4\0"
+              VALUE "ProductName", "JanuaLegacyVCLXE103\0"
+              VALUE "ProductVersion", "1.0.0.4\0"
+              VALUE "CompileDate", "Sunday, November 10, 2019 6:12 PM\0"
+         END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+         VALUE "Translation", 0x0409, 1252
+    END
+END

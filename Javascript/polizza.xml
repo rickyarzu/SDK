@@ -1,0 +1,11 @@
+<polizza>
+    <message>*** OK *****</message>
+	<cliente>Riccardo Arduino</cliente>
+	<numero>09012345</numero>
+	<passeggeri>4</passeggeri>
+	<targa>AH123HH</targa>
+	<data>10/10/2009 NAPOLI-CATANIA</data>
+	<nave>PARTENOPE</nave>
+	<valida>R</valida>
+	<response> Auto = 4, passeggeri = 2 </response>
+</polizza>

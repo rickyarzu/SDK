@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscButtonsBar</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscButtonsBar</h1>
+<h2>Unit</h2>
+<p>scAdvancedControls</p>
+
+<h1>Description</h1>
+<p>Panel with buttons in sections</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Sections</td>
+<td height="12" width="99">TscButtonBarSections
+= class(TCollection)</td>
+<td height="12" width="1145">Sections
+collection</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">SectionIndex</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Index
+of current active section </td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">SectionImages</td>
+<td height="12" width="99">TImageList</td>
+<td height="12" width="1145">Images
+of section-buttons </td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ItemImages</td>
+<td height="12" width="99">TImageList</td>
+<td height="12" width="1145">Images
+in section-items</td>
+</tr>
+
+
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ItemHeight</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Height
+of item</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Font</td>
+<td height="12" width="99">TFont</td>
+<td height="12" width="1145">Font of section-buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ItemFont</td>
+<td height="12" width="99">TFont</td>
+<td height="12" width="1145">Font of items</td>
+</tr>
+<tr><td bgcolor="#efefef" height="12" width="97">ButtonStyle&nbsp;</td><td height="12" width="99">TscbbButtonStyle</td><td height="12" width="1145">Style of section button...<br>TscbbButtonStyle = (scbbPushButton, scbbHeaderSection);</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemStyle</td><td height="12" width="99">TscbbItemStyle </td><td height="12" width="1145">Style of item in section<br>TscbbItemStyle = (scbiToolButton, scbiLink, scbiTransparent);<br></td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemPanelStyle</td><td height="12" width="99">TscbbItemPanelStyle</td><td height="12" width="1145">Style of the panel, in which placed items<br><br>TscbbItemPanelStyle = (scbpPanel, scbpFormBackground);<br><br>scbpPanel - use ItemPanelColor value<br>scbpFormBackground - use backhround as TForm</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemPanelColor</td><td height="12" width="99">TColor</td><td height="12" width="1145">Color of item's panel. If you set clWindow or clBtnFace then if you use VCL Styles, control will use this colors from style</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemPanelWallpaperIndex</td><td height="12" width="99">Integer</td><td height="12" width="1145">Index of wallpaper picture</td></tr><tr><td bgcolor="#efefef" height="12" width="97">Wallpapers</td><td height="12" width="99"><a href="TscImageCollection.html">TscImageCollection</a></td><td height="12" width="1145">Collection of wallpapers</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ShowSelectedItem</td><td height="12" width="99">Boolean</td><td height="12" width="1145">If True then control hold pressed item</td></tr><tr><td bgcolor="#efefef" height="12" width="97">SelectFirstItem</td><td height="12" width="99">Boolean</td><td height="12" width="1145">If True then control automatically select first item in section</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemAnimation</td><td height="12" width="99">Boolean</td><td height="12" width="1145">If True then items and buttons use animation effect</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemGlowEffect</td><td height="12" width="99"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td><td height="12" width="1145">Glow effect for items</td></tr><tr><td bgcolor="#efefef" height="12" width="97">AllButtonsOnTop</td><td height="12" width="99">Boolean</td><td height="12" width="1145">All buttons always will be on top. <br>Button for active sections will be below all other buttons</td></tr></tbody>
+</table>
+<p>&nbsp;</p><h1>Methos</h1>
+<p>&nbsp;</p>
+
+
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">GetItemIndex</td>
+<td height="12" width="1145">function GetItemIndex: Integer;<br><br>Return index of selected item in open section (see SectionIndex property)</td></tr><tr><td bgcolor="#efefef" height="12" width="97">SetItemIndex</td><td height="12" width="1145">procedure SetItemIndex(ASectionIndex, AItemIndex: Integer);<br><br>Use this method to select item in section.</td></tr><tr><td bgcolor="#efefef" height="12" width="97">AddItem</td><td height="12" width="1145">AddItem(ASectionIndex: Integer;&nbsp;AItem: TscButtonBarItem);<br>Add item to section</td></tr><tr><td bgcolor="#efefef" height="12" width="97">InsertItem</td><td height="12" width="1145">&nbsp;procedure InsertItem(AItemIndex, ASectionIndex: Integer; <br>&nbsp; &nbsp;AItem: TscButtonBarItem);<br>Insert item in section</td></tr><tr><td bgcolor="#efefef" height="12" width="97">DeleteItem</td><td height="12" width="1145">DeleteItem(ASectionIndex: Integer;&nbsp;AItem: TscButtonBarItem);<br>Delete item from section</td></tr></tbody></table><p><font face="Helvetica, Arial">&nbsp;</font></p><p><b>TbsButtonBarSection = class(TCollectionItem)</b></p>
+<p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Properties</b></font></p>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ImageIndex</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Index
+of image</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Text</td>
+<td height="12" width="99">String</td>
+<td height="12" width="1145">caption
+of item </td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Items</td>
+<td height="12" width="99">TscButtonBarItems
+= class(TCollection)</td>
+<td height="12" width="1145">Collection
+of TscButtonBarItem </td>
+</tr>
+<tr><td bgcolor="#efefef" height="12" width="97">Layout</td><td height="12" width="99">TButtonLayout</td><td height="12" width="1145">Layout for image and text</td></tr><tr><td bgcolor="#efefef" height="12" width="97">Spacing</td><td height="12" width="99">Integer</td><td height="12" width="1145">Spacing between image and text</td></tr><tr><td bgcolor="#efefef" height="12" width="97">Margin</td><td height="12" width="99">Integer</td><td height="12" width="1145">Margin for image and text in item (-1 - position in center)
+</td></tr><tr><td bgcolor="#efefef" height="12" width="97">BGColor</td><td height="12" width="99">TColor</td><td height="12" width="1145">Color of the items panel background.<br>If value &lt;&gt; clNone then TscButtonsBar will uses this color, instead of&nbsp;TscButtonsBar.ItemPanelColor</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemFontColor</td><td height="12" width="99">TColor</td><td height="12" width="1145">Color of the item font.<br>If value &lt;&gt; clNone then TscButtonsBar will uses this color, instead of&nbsp;TscButtonsBar.FontColor or color from style</td></tr><tr><td bgcolor="#efefef" height="12" width="97">ItemGlowColor</td><td height="12" width="99">TColor</td><td height="12" width="1145">Color of the item glow effect.<br>If value &lt;&gt; clNone then TscButtonsBar will uses this color, instead of&nbsp;TscButtonsBar.ItemGlowEffect colors</td></tr></tbody></table><p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Events</b></font></p>
+<p>&nbsp;</p>
+<table cellpadding="3" cellspacing="1" height="59" width="735">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OnClick</td>
+<td bgcolor="#efefef" height="12" width="99">TNotifyEvent</td>
+<td bgcolor="#efefef" height="12" width="1145">event
+on section-button click</td>
+</tr>
+</tbody>
+</table><br><br><p><b>TscButtonBarItem = class(TCollectionItem)</b></p>
+<p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Properties</b></font></p>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ImageIndex</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Index
+of image</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Caption</td>
+<td height="12" width="99">String</td>
+<td height="12" width="1145">caption
+of item </td>
+</tr>
+<tr><td bgcolor="#efefef" height="12" width="97">Layout</td><td height="12" width="99">TButtonLayout</td><td height="12" width="1145">Layout for image and text</td></tr><tr><td bgcolor="#efefef" height="12" width="97">Spacing</td><td height="12" width="99">Integer</td><td height="12" width="1145">Spacing between image and text</td></tr><tr><td bgcolor="#efefef" height="12" width="97">Margin</td><td height="12" width="99">Integer</td><td height="12" width="1145">Margin for image and text in item (-1 - position in center)</td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Events</b></font></p>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OnClick</td>
+<td height="12" width="99">TNotifyEvent</td>
+<td height="12" width="1145">event
+on item click</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p><br>
+</body></html>

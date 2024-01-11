@@ -1,0 +1,45 @@
+package JanuaThirdPartyVCL;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua 3rd Party VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  DelphiTwain in '..\..\components\src\DelphiTwain.pas',
+  DelphiTwainLang in '..\..\..\lib\delphi-twain\units\DelphiTwainLang.pas',
+  DelphiTwainUtils in '..\..\..\lib\delphi-twain\units\DelphiTwainUtils.pas',
+  Twain in '..\..\..\lib\delphi-twain\units\Twain.pas',
+  DelphiTwain_VCL in '..\..\..\lib\delphi-twain\units\DelphiTwain_VCL.pas',
+  uFormSelectSource_VCL in '..\..\..\lib\delphi-twain\units\uFormSelectSource_VCL.pas',
+  libgfl in '..\..\..\libraries\LibGFLE\GflSDK\Delphi\Include\libgfl.pas';
+
+end.

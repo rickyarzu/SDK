@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F7156E6A-51D8-49BF-B779-962FDAFA4C52}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="StyleChangeDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="StyleChangeDemo">
+        <MSBuild Projects="StyleChangeDemo.dproj"/>
+    </Target>
+    <Target Name="StyleChangeDemo:Clean">
+        <MSBuild Projects="StyleChangeDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleChangeDemo:Make">
+        <MSBuild Projects="StyleChangeDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="StyleChangeDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="StyleChangeDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="StyleChangeDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

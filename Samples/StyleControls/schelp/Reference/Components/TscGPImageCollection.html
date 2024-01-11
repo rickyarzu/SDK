@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPImageCollection</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPImageCollection</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPImages.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>&nbsp;</p>
+<p>Collection
+of images with different drawing style. Images can be HQ scaled to any
+scale factor.</p>
+<p>&nbsp;</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPImageCollectionItems
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscGPImageCollectionItem </td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Draw</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">procedure Draw(ACanvas:
+TCanvas; ARect: TRect; AIndex: Integer; AScaleFactor: Double);<br>
+Draw image with special index, canvas and in specific area </td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscGPImageCollectionItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">PngImage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TPngImage
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Png image, which will be
+converted to the TGPBitmap (GDI+ bitmap)<br><br>Use TscGPImageCollectionItem.LoadPngFromFile method to load png image from file. </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Bitmap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TBitmap</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Bitmap,
+which based from PNG image. You'll see special dialog to load PNG
+image. As result you'll get 32-bit bitmap with alpha channel or
+24-bit bitmap, which will be converted to the TGPBitmap (GDI+ bitmap).
+You can choose between this property and PngImage. Convertation with
+bitmaps more faster, but it has a more lager size in *dfm file.
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Drawing
+style</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscImageDrawStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageDrawStyle
+= (idsTile, idsStretch, idsCenter,<br>
+&nbsp;&nbsp;&nbsp; idsTopLeft, idsTopRight, idsBottomLeft,
+idsBottomRight,<br>
+&nbsp;&nbsp;&nbsp; idsTopTile, idsLeftTile, idsRightTile,
+idsBottomTile,<br>
+&nbsp;&nbsp;&nbsp; idsTopStretch, idsLeftStretch,
+idsRightStretch, idsBottomStretch,<br>
+&nbsp;&nbsp;&nbsp; idsHorzStretchTile, idsVertStretchTile,
+idsHorzCenterStretch, idsVertCenterStretch,<br>
+&nbsp;&nbsp;&nbsp; idsLeftCenter, idsTopCenter,
+idsRightCenter, idsBottomCenter);<br>
+<br>
+If you set <span style="font-style: italic;">Wallpaper or
+CustomImage... </span>(TscImageCollection)
+and<span style="font-style: italic;"> WallpaperIndex,
+CusotmImageIndex...</span>
+property in controls then TscGPImageCollection will automatically draw
+image with control scale factor.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TileOffsetX</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">X offset for
+tile draw style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TileOffsetY</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Y offset for
+tile draw style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Options</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPBitmapOptions</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Options, which define
+how image will be draw with defined margins</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Description</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Description to see info
+about image in big list</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">VirtualWidth, VirtualHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Virtual sizes of image
+for 1x scale. You can add image 100x100 for example, set virtual sizes
+as 50x50. Then in system with 100% DPI &nbsp;you can see image with
+50x50 size, in system with 175% DPI you can see image with 75x75
+size,... 200% - 100x100. This gives you opportunity to get always HQ
+scaled image.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Proportional</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this property to
+keep proportional of image in some drawing styles</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ContentLeftMargin<br>
+ContentRightMargin<br>
+ContentTopMargin<br>
+ContentBottomMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">These
+values define area for content in the control. For example, if you use
+custom image for TscButton control then it will uses this values to
+adjust text and image position.</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">Scaled</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image will be scaled with AScaleFactor in Draw method</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscGPBitmapOptions</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">LeftMargin<br>
+RightMargin<br>
+TopMargin<br>
+BottomMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margins, which defined
+corners, border and client part in the bitmap.<br>
+<br>
+Examples:<br>
+Fixed size:<br>
+(LeftMargin = 0) and (RightMargin = 0) an (TopMargin = 0) and
+(BottomMargin = 0)<br>
+<br>
+Fixed height:<br>
+(LeftMargin &gt; 0) and (RightMargin &gt; 0) and (TopMargin =
+0) and (BottomMargin = 0)<br>
+<br>
+Fixed width:<br>
+(LeftMargin = 0) and (RightMargin = 0) and (TopMargin &gt; 0) and
+(BottomMargin &gt; 0)<br>
+<br>
+Full resize:<br>
+<br>
+LeftMargin &gt; 0) and (RightMargin &gt; 0) and (TopMargin
+&gt; 0) and (BottomMargin &gt; 0) </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Stretch,<br>
+StretchBorder</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Stretch or Tile drawing
+of client part and border </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DrawOnlyBorder</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then only border
+will be drawing </td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">DrawOnlyClient</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then only client part
+will be drawing</td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+</body></html>

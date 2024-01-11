@@ -1,0 +1,87 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 590
+  ClientWidth = 352
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  inline AccessCameraAppForm1: TAccessCameraAppForm
+    Align = Client
+    Size.Width = 352.000000000000000000
+    Size.Height = 590.000000000000000000
+    Size.PlatformDefault = False
+    inherited ToolBar1: TToolBar
+      Size.Width = 352.000000000000000000
+      Size.Height = 48.000000000000000000
+      inherited btnTakePhoto: TButton
+        Position.X = 299.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited btnPhotoLibrary: TButton
+        Position.X = 246.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Button1: TButton
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Button2: TButton
+        Position.X = 69.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Button4: TButton
+        Position.X = 197.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Button3: TButton
+        Position.X = 122.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Label1: TLabel
+        Position.X = 53.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited Label2: TLabel
+        Position.X = 175.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+    end
+    inherited TabControl2: TTabControl
+      Size.Width = 352.000000000000000000
+      Size.Height = 542.000000000000000000
+      Sizes = (
+        352s
+        542s
+        352s
+        542s)
+      inherited TabItem5: TTabItem
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited imgCameraRoll: TImage
+          MultiResBitmap.Height = 1024
+          MultiResBitmap.Width = 576
+          Size.Width = 352.000000000000000000
+          Size.Height = 542.000000000000000000
+        end
+      end
+      inherited TabItem6: TTabItem
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited ToolBar3: TToolBar
+          Size.Width = 352.000000000000000000
+          inherited lblTitle2: TLabel
+            Size.Width = 352.000000000000000000
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,87 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7A7B58A9-B22F-4708-9C72-ACB5ED7884D5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SVGIconPackage">
+        <MSBuild Projects="SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="SVGIconPackage:Clean">
+        <MSBuild Projects="SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconPackage:Make">
+        <MSBuild Projects="SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageList">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageList:Clean">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageList:Make">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageList">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Clean">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Make">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\..\lib\SVGIconImageList\Packages\D10_3\dclSVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SVGIconPackage;SVGIconImageList;dclSVGIconImageList;SVGIconImageListFMX;dclSVGIconImageListFMX;SVGIconPackage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SVGIconPackage:Clean;SVGIconImageList:Clean;dclSVGIconImageList:Clean;SVGIconImageListFMX:Clean;dclSVGIconImageListFMX:Clean;SVGIconPackage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SVGIconPackage:Make;SVGIconImageList:Make;dclSVGIconImageList:Make;SVGIconImageListFMX:Make;dclSVGIconImageListFMX:Make;SVGIconPackage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

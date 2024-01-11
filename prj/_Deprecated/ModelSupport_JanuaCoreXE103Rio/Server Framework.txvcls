@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="m304g5ssqn3rjdc5f_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Server Framework" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,40,311,233" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FJanuaDBServerDialog" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetDatabaseName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetDirect(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetPort(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetSchema(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetUsername(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.GetAddress()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.GetDatabaseName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetAppUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetJanuaDBServerDialog(Janua.Core.Servers.TJanuaCustomDBServerDialog)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FRecordConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.LoadProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.ApplyProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.GlobalConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Conf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.TestAllServers()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.ExecDialogConfig()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Address" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Password" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Username" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Schema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Port" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.DatabaseName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.Direct" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.AppUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.JanuaDBServerDialog" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.JanuaDBServerDialog">
+        <property name="sourceAnchor" value="671,104" />
+        <property name="targetAnchor" value="720,104" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FJanuaDBServerDialog">
+        <property name="sourceAnchor" value="671,112" />
+        <property name="targetAnchor" value="720,112" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FRecordConf">
+        <property name="sourceAnchor" value="671,239" />
+        <property name="targetAnchor" value="740,239" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FTestErrors" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.SetTestErrors(Janua.Core.DB.TJanuaDBDatasetErrors)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.TestErrors" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.FTestErrors">
+        <property name="sourceAnchor" value="360,150" />
+        <property name="targetAnchor" value="286,150" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaServerConf.TestErrors">
+        <property name="sourceAnchor" value="360,142" />
+        <property name="targetAnchor" value="286,142" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,40,312,145" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.FJanuaDBConnection" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.SetServerRecordConf(Janua.Core.Classes.TJanuaServerRecordConf)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.SetJanuaDBConnection(Janua.Core.DB.TJanuaCustomDBConnection)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.FServerRecordConf" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.ServerRecordConf" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.JanuaDBConnection" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.ServerRecordConf">
+        <property name="sourceAnchor" value="873,185" />
+        <property name="targetAnchor" value="873,220" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomDBServerDialog.FServerRecordConf">
+        <property name="sourceAnchor" value="881,185" />
+        <property name="targetAnchor" value="881,220" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,220,283,203" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Port" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.DatabaseName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Password" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Direct" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Address" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Username" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Schema" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.AppUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerRecordConf.Conf()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,300,322,458" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetGlobalServerConf(Janua.Core.Classes.TJanuaServerRecordConf)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetGlobalTest()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerTCPPort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.getServerAddress()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetServerUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetServerUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetServerPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetServerTCPPort(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetServerSchema(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.setServeAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetServerConf()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FOnChangeLanguage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FKeepAlive" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FActiveDatasets" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FDisclaimer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FJanuaSchema" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FJanuaMailSender" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FNetHTTPRequest" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FDatasetErrors" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetKeepAlive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetJanuaServerSession(Janua.Core.Classes.TJanuaServerSession)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetKeepAlive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetOnChangeLanguage(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetActiveDatasets(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetDisclaimer(Janua.Core.Classes.TJanuaDisclaimer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetJanuaSchema(Janua.Core.Classes.TJanuaSchema)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.getSessionKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.getSessionID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetCoordinates(Janua.Core.Classes.TJanuaCoordinates)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetSearchAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.InternalGoogleGeoCoding(ref@System.Boolean,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.InternalOpenMapGeoCoding(ref@System.Boolean,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetJanuaMailSender(Janua.Core.Mail.TJanuaMailSender)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetNetHTTPRequest(System.Net.HttpClientComponent.TNetHTTPRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetDatasetErrors(Janua.Core.DB.TJanuaDBDatasetErrors)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetIDM(udmJanuaCoreServer.TdmJanuaCoreServer)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FIDM" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.IDM" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FMailParts" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SendMail(Janua.Core.Mail.TJanuaMailParts)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SendMail()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FAppUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FCoordinates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FCheckPostalCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FSearchAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FJanuaServerObjects" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FTestMode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FApplicationProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FJanuaServerSession" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetAppUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GetAppUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetSessionID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.InternalActivateDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.InternalDeActivateDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CheckUp()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.LoadProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetApplicationProfile(Janua.Core.Classes.TJanuaApplicationProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.AddFieldsLocally(Datasnap.DBClient.TCustomClientDataSet,Datasnap.DBClient.TCustomClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.AddInLocalData(Datasnap.DBClient.TCustomClientDataSet,Datasnap.DBClient.TCustomClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CloneLocalData(Datasnap.DBClient.TCustomClientDataSet,Datasnap.DBClient.TCustomClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CloneLocalData(MemDS.TMemDataSet,MemDS.TMemDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CloneLocalData(MemDS.TMemDataSet,VirtualTable.TVirtualTable)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetUserProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetTestMode(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.InternalCheckSessionKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetUserSessionProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.DestroyDataModule(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CreateDataModule()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.AssignDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ClearSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.GeoCoding(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CheckSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ActivateDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetSchema(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SetSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Disclaimer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.DisclaimerJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.CloseConnection()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.AddPersistent(Janua.Core.Classes.TJanuaCustomPersistent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.DelPersistent(Janua.Core.Classes.TJanuaCustomPersistent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SearchPostalCode(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.DatasetErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.JanuaServerSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Schema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Coordinates" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.TestDataModule()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerUser" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerPassword" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerTCPPort" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.Url" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ServerAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.JanuaMailSender" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SearchAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ActiveDatasets" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ApplicationProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.KeepAlive" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SessionKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.ActualDisclaimer" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.NetHTTPRequest" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.AppUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.SessionID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.TestMode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.OnChangeLanguage" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FJanuaServerSession">
+        <property name="sourceAnchor" value="362,621" />
+        <property name="targetAnchor" value="420,621" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.JanuaServerSession">
+        <property name="sourceAnchor" value="362,629" />
+        <property name="targetAnchor" value="420,629" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.DatasetErrors">
+        <property name="sourceAnchor" value="155,300" />
+        <property name="targetAnchor" value="155,260" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Servers.TJanuaCustomServer.FDatasetErrors">
+        <property name="sourceAnchor" value="163,300" />
+        <property name="targetAnchor" value="163,260" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Servers.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="389,694,0,0" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="420,500,260,323" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Key" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Email" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Schema_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Session_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.User_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Social_ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Social_Kind" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServerUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServerPort" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServerSchema" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServerPassword" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.CustomServerUser" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.UserSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.SelectedSchema" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.isPublic" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.SetAsJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.getAsJsonObject()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.setSchemaByID(System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.SelectedSchema">
+        <property name="sourceAnchor" value="680,653" />
+        <property name="targetAnchor" value="760,653" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaServerSession.UserSchemas">
+        <property name="sourceAnchor" value="680,661" />
+        <property name="targetAnchor" value="760,661" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="760,560,265,203" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.schema_des" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.personal" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.db_schema_key" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.country_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.language_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.default_user_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaRecordSchema.Clear()" />
+    </reference>
+    <reference referencedUin="design:node:::ksx1h4qvb0f7jgi1j_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,320,300,160" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="design:link:::8vz6d04e10i6o3vdh_l:ksx1h4qvb0f7jgi1j_n">
+        <property name="sourceAnchor" value="362,390" />
+        <property name="targetAnchor" value="400,390" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::s06dq246hjkt10re_l:ksx1h4qvb0f7jgi1j_n">
+        <property name="sourceAnchor" value="740,381" />
+        <property name="targetAnchor" value="700,381" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::gsp0aar16klu9u93f_l:ksx1h4qvb0f7jgi1j_n">
+        <property name="sourceAnchor" value="535,40" />
+        <property name="targetAnchor" value="535,320" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::ca822nj0k8cnpnb3k_l:ksx1h4qvb0f7jgi1j_n">
+        <property name="sourceAnchor" value="535,273" />
+        <property name="targetAnchor" value="535,320" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,40,246,220" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.Items" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.SelectedItem" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.Add(Janua.Core.DB.TJanuaDBDatasetError)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.Framework" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.AsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.DB.TJanuaDBDatasetErrors.AsJsonPretty()" />
+    </reference>
+  </view>
+</nodeSet>

@@ -1,0 +1,209 @@
+inherited frmEuroFloraAppMain_Macintosh: TfrmEuroFloraAppMain_Macintosh
+  DesignerMasterStyle = 0
+  inherited TabControlMain: TTabControl
+    Sizes = (
+      384s
+      517s
+      384s
+      517s
+      384s
+      517s
+      384s
+      517s)
+    inherited tab1Fair: TTabItem
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControl1Fair: TTabControl
+        Sizes = (
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s)
+        inherited TabItem11FairMain: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited Image1: TImage
+            MultiResBitmap.Height = 546
+            MultiResBitmap.Width = 810
+            MultiResBitmap.LoadSize = 2
+          end
+        end
+        inherited tabItem12FairList: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+        inherited TabItem13Location: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited Rectangle3: TRectangle
+            Position.Y = 1.000000000000000000
+          end
+          inherited Rectangle4: TRectangle
+            Position.Y = 258.000000000000000000
+          end
+          inherited ToolBar11: TToolBar
+            Position.Y = 309.000000000000000000
+          end
+          inherited pnlMapFairDetail: TPanel
+            Position.Y = 52.000000000000000000
+          end
+        end
+        inherited TabItem14WebSite: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+      end
+    end
+    inherited tab2Around: TTabItem
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControl2Around: TTabControl
+        Sizes = (
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s)
+        inherited TabItem21AroundMain: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+        inherited TabItem22AroundList: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+        inherited TabItem23Location: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited Rectangle1: TRectangle
+            Corners = [TopRight, BottomLeft, BottomRight]
+            Fill.Kind = None
+          end
+          inherited Rectangle2: TRectangle
+            Stroke.Kind = None
+          end
+        end
+        inherited TabItem23WebSite: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+      end
+    end
+    inherited tab3Events: TTabItem
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControl3Events: TTabControl
+        Sizes = (
+          384s
+          517s
+          384s
+          517s)
+        inherited TabItem31EventsList: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited Panel2: TPanel
+            inherited ListViewEvents: TListView
+              Images = nil
+              OnItemClick = nil
+            end
+          end
+        end
+        inherited TabItem32EventPage: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+      end
+    end
+    inherited tab4News: TTabItem
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControl4News: TTabControl
+        Sizes = (
+          384s
+          517s
+          384s
+          517s)
+        inherited TabItem41News: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited Panel1: TPanel
+            inherited ListViewNews: TListView
+              Images = nil
+              OnItemClick = nil
+            end
+          end
+        end
+        inherited TabItem42News: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+        end
+      end
+    end
+  end
+  inherited GestureManager1: TGestureManager
+    GestureData = <
+      item
+        Control = TabControlMain
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl1Fair
+        Collection = <>
+      end
+      item
+        Control = TabControl2Around
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl3Events
+        Collection = <>
+      end
+      item
+        Control = TabControl4News
+        Collection = <>
+      end>
+  end
+end

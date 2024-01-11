@@ -1,0 +1,44 @@
+package FMXTMSFNCChartPkg;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Chart for FMX'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  fmx,
+  FMXTMSFNCCorePkg;
+
+contains
+  FMX.TMSFNCChart in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChart.pas',
+  FMX.TMSFNCChartEditor in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChartEditor.pas',
+  FMX.TMSFNCChartEditorReg in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChartEditorReg.pas',
+  FMX.TMSFNCChartReg in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChartReg.pas',
+  FMX.TMSFNCChartDatabaseAdapter in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChartDatabaseAdapter.pas',
+  FMX.TMSFNCChartDatabaseAdapterReg in '..\..\..\tmssoftware\TMS FNC Chart\FMX.TMSFNCChartDatabaseAdapterReg.pas';
+
+end.

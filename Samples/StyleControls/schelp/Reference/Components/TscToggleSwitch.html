@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscToggleSwitch</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscToggleSwitch</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scModernControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Switch control with focus, captions and&nbsp;different
+style kinds</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">State</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSwitchState</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscSwitchState =
+(scswOff, scswOn);<br>
+State of switch</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StyleKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSwitchStyleKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscSwitchStyleKind =
+(scswsStyled, scswsColor, scswsCustomImage);<br>
+Style kind of switch:<br>
+<br>
+&nbsp;*
+scswsStyled - control uses elements from style (since RAD Studio 10
+Seattle) and works in scswsColor mode in other versions<br>
+&nbsp;* scswsColor - control uses colors for frame and thumb, which
+has style as in Windows Modern Application <br>
+&nbsp;* &nbsp;scswsCustomImage - control uses custom images for
+frame and thumb </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Animation</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If true then State
+property changed with animation</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ThumbColor, ThumbOnColor,<br>
+ThumbPressedColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Colors for thumb</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor, <br>
+FrameOnColor,<br>
+FramePressedColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Colors for frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ThumbWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the thumb</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom images for swicth</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameImageIndex, <br>
+FrameImageOnIndex,<br>
+FrameImagePressedIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Indexes of custom images
+for different states of frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ThumbImageIndex, <br>
+ThumbImageOnIndex,<br>
+ThumbImagePressedIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Indexes of custom images
+for different states of thumb</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SwitchWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the switch</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SwitchHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of the switch</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionOn</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption for On state</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionOff</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption for Off state</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / Hide&nbsp;caption</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+</h1>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnChangeState</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event which occurs when
+State property was changed</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+</h1>
+<h1>Methods</h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">IsOn</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this method to check
+that switch state is&nbsp;scswOn</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+</h1>
+<p>&nbsp;</p>
+</body></html>

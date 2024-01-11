@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="jpt97iu5ycn_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:JanuaRigaDettaglio.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.@unitclass.Register()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 255, 192" />
+      <property name="bounds" value="180,20,210,480" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Setprezzo(System.Real)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Fq" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FImponibileScorporato" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.aliquota" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetscontoExtra(System.Real)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FPrezzoImponibile" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Fprezzo" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FImpTotNetto" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FscontoCommerciale" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetaliquotaScorporto(System.Real)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetPrezzoImponibile(System.Double)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FscontoFinanziario" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FscontoExtra" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FaliquotaScorporto" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Setq(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetImpTotNetto(System.Double)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FAutoCalcOn" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.scontoExtra" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Calcola()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetImporto(System.Double)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Faliquota" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.AutoCalcOn" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetscontoFinanziario(System.Real)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Importo" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetImponibileScorporato(System.Double)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.ImponibileScorporato" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.PrezzoImponibile" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.scontoCommerciale" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.ImpTotNetto" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.q" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.prezzo" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Setaliquota(System.Real)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetImposta(System.Double)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.Imposta" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.scontoFinanziario" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetAutoCalcOn(System.Boolean)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FImporto" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.FImposta" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.aliquotaScorporto" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaRigaDettaglio.TJanuaRigaDettaglio.SetscontoCommerciale(System.Real)" />
+    </reference>
+    <reference referencedUin="design:node:::a836y139ug3g9hcjo_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,20,420,700" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+    </reference>
+  </view>
+</nodeSet>

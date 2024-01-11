@@ -1,0 +1,78 @@
+package TMSFMXPackPkgDE;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FMX UI Pack Design Time'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  fmx,
+  TMSFMXPackPkg,
+  vcl;
+
+contains
+  FMX.TMSToolBarDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBarDE.pas',
+  FMX.TMSToolBarRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBarRegDE.pas',
+  FMX.TMSPageSliderDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSliderDE.pas',
+  FMX.TMSPageSliderRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSliderRegDE.pas',
+  FMX.TMSBitmapContainerDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainerDE.pas',
+  FMX.TMSBitmapContainerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainerRegDE.pas',
+  FMX.TMSTileListDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListDE.pas',
+  FMX.TMSTileListRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListRegDE.pas',
+  FMX.TMSHotSpotImageDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageDE.pas',
+  FMX.TMSHotSpotImageRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageRegDE.pas',
+  FMX.TMSNavBarDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBarDE.pas',
+  FMX.TMSPageControlDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControlDE.pas',
+  FMX.TMSPageControlRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControlRegDE.pas',
+  FMX.TMSGridRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridRegDE.pas',
+  FMX.TMSNavBarRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBarRegDE.pas',
+  FMX.TMSSpinnerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinnerRegDE.pas',
+  FMX.TMSTableViewRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewRegDE.pas',
+  FMX.TMSSplash in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSplash.pas',
+  FMX.TMSTreeViewDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewDE.pas',
+  FMX.TMSTreeViewRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewRegDE.pas',
+  FMX.TMSScrollMenuRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollMenuRegDE.pas',
+  FMX.TMSListEditorRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditorRegDE.pas',
+  FMX.TMSPlannerDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapterDE.pas',
+  FMX.TMSPlannerDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapterRegDE.pas',
+  FMX.TMSMemoRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoRegDE.pas',
+  FMX.TMSSpellCheckRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckRegDE.pas',
+  FMX.TMSRichEditorAC in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorAC.pas' {TMSFMXRichEditorAC},
+  FMX.TMSRichEditorDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorDE.pas',
+  FMX.TMSRichEditorRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorRegDE.pas',
+  FMX.TMSPlannerDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDE.pas',
+  FMX.TMSPlannerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerRegDE.pas',
+  FMX.TMSGeneralDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGeneralDE.pas',
+  FMX.TMSGeneralRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGeneralRegDE.pas';
+
+end.
+
+
+

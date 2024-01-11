@@ -1,0 +1,183 @@
+object FrameLNDArticle: TFrameLNDArticle
+  Size.Width = 295.000000000000000000
+  Size.Height = 567.000000000000000000
+  Size.PlatformDefault = False
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 295.000000000000000000
+    Size.Height = 567.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      295s
+      567s
+      295s
+      567s)
+    object TabItemArticle: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemArticle'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Rectangle1: TRectangle
+        Align = Client
+        Fill.Color = claWhite
+        Size.Width = 295.000000000000000000
+        Size.Height = 567.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claWhite
+        object TMSFMXRichEditor1: TTMSFMXRichEditor
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          Cursor = crIBeam
+          DisableFocusEffect = False
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          TabOrder = 0
+          Visible = False
+          Size.Width = 289.000000000000000000
+          Size.Height = 235.000000000000000000
+          Size.PlatformDefault = False
+          BorderStyle = bsNone
+          Color = claNull
+          Font.Size = 14.000000000000000000
+          ReadOnly = True
+          SelectionColor = xFF2A96FF
+          AdaptToStyle = True
+          AllowSelect = False
+          Fill.Bitmap.Bitmap.PNG = {
+            89504E470D0A1A0A0000000D49484452000000C8000000C80806000000AD58AE
+            9E000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            021449444154785EEDD33101C02010C0C06FFD7B860E1D210AEE9628C8B33E03
+            1CBD7F8103834030080483403008048340300804834030080483403008048340
+            3008048340300804834030080483403008048340300804834030080483403008
+            0483403008048340300804834030080483403008048340300804834030080483
+            4030080483403008048340300804834030080483403008048340300804834030
+            0804834030080483403008048340300804834030080483403008048340300804
+            8340300804834030080483403008048340300804834030080483403008048340
+            3008048340300804834030080483403008048340300804834030080483403008
+            0483403008048340300804834030080483403008048340300804834030080483
+            4030080483403008048340300804834030080483403008048340300804834030
+            0804834030080483403008048340300804834030080483403008048340300804
+            8340300804834030080483403008048340300804834030080483403008048340
+            3008048340300804834030080483403008048340300804834030080483403008
+            0483403008048340300804834030080483403008048340300804834030080483
+            4030080483403008048340300804834030080483403008048340300804834030
+            0804834030080483403008048340300804834030080483403008048340300804
+            834030080483403008048340300804834030085CCD6C53D9058C82CD52B70000
+            000049454E44AE426082}
+          Fill.Bitmap.WrapMode = TileStretch
+          Fill.Kind = Bitmap
+          CanFocus = True
+        end
+        object Image1: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Top
+          Position.Y = 101.000000000000000000
+          Size.Width = 295.000000000000000000
+          Size.Height = 145.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object btnOpenAttachFile: TButton
+          Align = Top
+          Position.Y = 246.000000000000000000
+          Size.Width = 295.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Apri Comunicato'
+          OnClick = btnOpenAttachFileClick
+        end
+        object btnShowAttachments: TButton
+          Align = Top
+          Position.Y = 286.000000000000000000
+          Size.Width = 295.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Vedi Lista allegati >'
+          OnClick = btnShowAttachmentsClick
+        end
+        object TextSubTitle: TText
+          Align = Top
+          Position.Y = 58.000000000000000000
+          Size.Width = 295.000000000000000000
+          Size.Height = 43.000000000000000000
+          Size.PlatformDefault = False
+          Text = '...'
+          TextSettings.FontColor = claTeal
+          TextSettings.VertAlign = Leading
+        end
+        object TextTitle: TText
+          Align = Top
+          Position.Y = 29.000000000000000000
+          Size.Width = 295.000000000000000000
+          Size.Height = 29.000000000000000000
+          Size.PlatformDefault = False
+          Text = '...'
+          TextSettings.FontColor = claDarkslateblue
+        end
+        object TextConnectionError4: TText
+          Align = Top
+          Size.Width = 295.000000000000000000
+          Size.Height = 29.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Attenzione connessione con il server attendere ...'
+          TextSettings.FontColor = claRed
+        end
+        object WebBrowser1: TWebBrowser
+          Align = Client
+          Size.Width = 291.000000000000000000
+          Size.Height = 237.000000000000000000
+          Size.PlatformDefault = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          WindowsEngine = IEOnly
+        end
+      end
+    end
+    object TabItemAttachments: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemAttachments'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListViewAttachments: TListView
+        ItemAppearanceClassName = 'TImageListItemAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 295.000000000000000000
+        Size.Height = 567.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+        OnItemClick = ListViewAttachmentsItemClick
+        ControlType = Platform
+      end
+    end
+  end
+end

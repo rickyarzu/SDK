@@ -1,0 +1,87 @@
+package FMXTMSFNCBloxPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Blox for FMX'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  fmx,
+  FMXTMSFNCCorePkg;
+
+contains
+  FMX.TMSFNCBloxControl in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxControl.pas',
+  FMX.TMSFNCBloxControlReg in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxControlReg.pas',
+  FMX.TMSFNCBloxCoreBackground in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreBackground.pas',
+  FMX.TMSFNCBloxCoreBaseElement in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreBaseElement.pas',
+  FMX.TMSFNCBloxCoreBlock in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreBlock.pas',
+  FMX.TMSFNCBloxCoreCallback in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreCallback.pas',
+  FMX.TMSFNCBloxCoreDiagram in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreDiagram.pas',
+  FMX.TMSFNCBloxCoreElement in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreElement.pas',
+  FMX.TMSFNCBloxCoreElementList in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreElementList.pas',
+  FMX.TMSFNCBloxCoreGraphics in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreGraphics.pas',
+  FMX.TMSFNCBloxCoreGraphicsUtils in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreGraphicsUtils.pas',
+  FMX.TMSFNCBloxCoreGroup in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreGroup.pas',
+  FMX.TMSFNCBloxCoreHandle in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreHandle.pas',
+  FMX.TMSFNCBloxCoreLayer in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreLayer.pas',
+  FMX.TMSFNCBloxCoreLine in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreLine.pas',
+  FMX.TMSFNCBloxCoreLineArrow in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreLineArrow.pas',
+  FMX.TMSFNCBloxCoreLinkPoint in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreLinkPoint.pas',
+  FMX.TMSFNCBloxCorePaintInfo in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCorePaintInfo.pas',
+  FMX.TMSFNCBloxCorePath in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCorePath.pas',
+  FMX.TMSFNCBloxCorePolygon in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCorePolygon.pas',
+  FMX.TMSFNCBloxCoreTextCell in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreTextCell.pas',
+  FMX.TMSFNCBloxCoreTypes in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreTypes.pas',
+  FMX.TMSFNCBloxCoreUtils in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreUtils.pas',
+  FMX.TMSFNCBloxCoreWrap in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxCoreWrap.pas',
+  FMX.TMSFNCBloxGraphics in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxGraphics.pas',
+  FMX.TMSFNCBloxScrollBar in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxScrollBar.pas',
+  FMX.TMSFNCBloxShapesArrows in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesArrows.pas',
+  FMX.TMSFNCBloxShapesDFD in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesDFD.pas',
+  FMX.TMSFNCBloxShapesElectrical in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesElectrical.pas',
+  FMX.TMSFNCBloxShapesElectrical2 in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesElectrical2.pas',
+  FMX.TMSFNCBloxShapesFlowchart in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesFlowchart.pas',
+  FMX.TMSFNCBloxShapesUML in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesUML.pas',
+  FMX.TMSFNCBloxTestsBasic in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxTestsBasic.pas',
+  FMX.TMSFNCBloxUIEventTypes in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIEventTypes.pas',
+  FMX.TMSFNCBloxUIExceptions in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIExceptions.pas',
+  FMX.TMSFNCBloxUIPresenter in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIPresenter.pas',
+  FMX.TMSFNCBloxUIRegistration in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIRegistration.pas',
+  FMX.TMSFNCBloxUIRenderer in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIRenderer.pas',
+  FMX.TMSFNCBloxUIRuler in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIRuler.pas',
+  FMX.TMSFNCBloxUIScrollBar in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIScrollBar.pas',
+  FMX.TMSFNCBloxUISnapGrid in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUISnapGrid.pas',
+  FMX.TMSFNCBloxUIUserPresenter in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIUserPresenter.pas',
+  FMX.TMSFNCBloxUIUserRenderer in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIUserRenderer.pas',
+  FMX.TMSFNCBloxUserPresenter in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUserPresenter.pas',
+  FMX.TMSFNCBloxSelector in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxSelector.pas',
+  FMX.TMSFNCBloxSelectorReg in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxSelectorReg.pas',
+  FMX.TMSFNCBloxNavigator in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxNavigator.pas',
+  FMX.TMSFNCBloxNavigatorReg in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxNavigatorReg.pas';
+
+end.

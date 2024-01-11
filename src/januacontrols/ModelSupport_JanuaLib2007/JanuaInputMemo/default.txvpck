@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ardbxvehoxn1vilg_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:JanuaInputMemo.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaInputMemo.@unitclass.Register()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 224, 192" />
+      <property name="bounds" value="160,20,180,260" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.FTitle" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.SetTitle(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.Text" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.SetText(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.dlgResult" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.Title" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.Execute()" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.FText" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.SetResult(System.Boolean)" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:JanuaInputMemo.TJanuaInputMemo.FResult" />
+    </reference>
+  </view>
+</nodeSet>

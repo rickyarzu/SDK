@@ -1,0 +1,17 @@
+You can try additional demos for StyleControls VCL:
+
+High-DPI Demos:
+
+http://www.almdev.com/prods/stylecontrols/files/schidpidemo.zip
+
+StyleControls + SmartEffects demos:
+
+http://www.almdev.com/prods/stylecontrols/files/scsedemo.zip
+
+StyleControls + ImageKit demos (required Vista+):
+
+http://www.almdev.com/prods/stylecontrols/files/scikdemo.zip
+
+64-bit compiled demos:
+
+http://www.almdev.com/prods/stylecontrols/files/scdemo64.zip

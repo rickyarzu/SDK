@@ -1,0 +1,46 @@
+﻿package VCL_FlexCel_Components;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FlexCel Visual Components for VCL (Runtime)'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  FlexCel_Core,
+  FlexCel_Render,
+  FlexCel_XlsAdapter,
+  vcl,
+  VCL_FlexCel_Core;
+
+contains
+  _FlexCelPreview.TImageAtts in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Visual\_FlexCelPreview.TImageAtts.pas',
+  _FlexCelPreview.TPageInfoList in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Visual\_FlexCelPreview.TPageInfoList.pas',
+  FlexCel.Preview in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Visual\FlexCel.Preview.pas',
+  __VCLPen in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Visual\__VCLPen.pas';
+
+end.

@@ -1,0 +1,613 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 336
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 41
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    Color = clHighlight
+    ParentBackground = False
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Left = 0
+      Top = 0
+      Width = 635
+      Height = 49
+      ButtonHeight = 30
+      ButtonWidth = 31
+      Caption = 'ToolBar1'
+      Color = clHighlight
+      Images = ImageList
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items.SmallIcons = False
+        Items = <
+          item
+            Action = Action1
+            Caption = '&Uno'
+            ImageIndex = 0
+            ImageName = 'ic_cloud_48px'
+          end
+          item
+            Action = Action2
+            Caption = '&Scarica'
+            ImageIndex = 1
+            ImageName = 'ic_file_download_48px'
+          end
+          item
+            Action = Action3
+            Caption = '&Folder'
+            ImageIndex = 2
+            ImageName = 'ic_folder_48px'
+          end>
+      end>
+    Images = ImageList
+    Left = 248
+    Top = 152
+    StyleName = 'Platform Default'
+    object Action1: TAction
+      Caption = 'Uno'
+      Hint = 'Ciao'
+      ImageIndex = 0
+      ImageName = 'ic_cloud_48px'
+      OnExecute = Action1Execute
+    end
+    object Action2: TAction
+      Caption = 'Scarica'
+      ImageIndex = 1
+      ImageName = 'ic_file_download_48px'
+    end
+    object Action3: TAction
+      Caption = 'Folder'
+      ImageIndex = 2
+      ImageName = 'ic_folder_48px'
+    end
+    object Action4: TAction
+      Caption = 'Invisibile'
+      ImageIndex = 6
+      ImageName = 'ic_account_circle_48px'
+    end
+  end
+  object ImageList: TSVGIconImageList
+    SVGIconItems = <
+      item
+        IconName = 'ic_cloud_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.71 20.07C37.35 13.19 31.28 8 24 ' +
+          '8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.' +
+          '37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93z"' +
+          '/></svg>'#13#10
+        FixedColor = silver
+      end
+      item
+        IconName = 'ic_file_download_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38 18h-8V6H18v12h-8l14 14 14-14zM10' +
+          ' 36v4h28v-4H10z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20 8H8c-2.21 0-3.98 1.79-3.98 4L4 3' +
+          '6c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79-4-4-4H24' +
+          'l-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_open_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 12H24l-4-4H8c-2.21 0-3.98 1.79-3' +
+          '.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79' +
+          '-4-4-4zm0 24H8V16h32v20z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_shared_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 12H24l-4-4H8c-2.21 0-3.98 1.79-3' +
+          '.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79' +
+          '-4-4-4zm-10 6c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-' +
+          '4zm8 16H22v-2c0-2.67 5.33-4 8-4s8 1.33 8 4v2z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_backup_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.71 20.07C37.35 13.19 31.28 8 24 ' +
+          '8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.' +
+          '37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93zM' +
+          '28 26v8h-8v-8h-6l10-10 10 10h-6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_account_circle_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 2' +
+          '0 20 20-8.95 20-20S35.05 4 24 4zm0 6c3.31 0 6 2.69 6 6 0 3.32-2.' +
+          '69 6-6 6s-6-2.68-6-6c0-3.31 2.69-6 6-6zm0 28.4c-5.01 0-9.41-2.56' +
+          '-12-6.44.05-3.97 8.01-6.16 12-6.16s11.94 2.19 12 6.16c-2.59 3.88' +
+          '-6.99 6.44-12 6.44z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_account_box_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 10v28c0 2.21 1.79 4 4 4h28c2.21 0' +
+          ' 4-1.79 4-4V10c0-2.21-1.79-4-4-4H10c-2.21 0-4 1.79-4 4zm24 8c0 3' +
+          '.32-2.69 6-6 6s-6-2.68-6-6c0-3.31 2.69-6 6-6s6 2.69 6 6zM12 34c0' +
+          '-4 8-6.2 12-6.2S36 30 36 34v2H12v-2z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_dashboard_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 26h16V6H6v20zm0 16h16V30H6v12zm20' +
+          ' 0h16V22H26v20zm0-36v12h16V6H26z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_find_in_page_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 39.17V16L28 4H12C9.79 4 8.02 5.7' +
+          '9 8.02 8L8 40c0 2.21 1.77 4 3.98 4H36c.89 0 1.71-.3 2.37-.8l-8.8' +
+          '7-8.87C27.93 35.38 26.04 36 24 36c-5.52 0-10-4.48-10-10s4.48-10 ' +
+          '10-10 10 4.48 10 10c0 2.04-.62 3.93-1.66 5.51L40 39.17zM18 26c0 ' +
+          '3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6-6 2.69-6 6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_delete_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4' +
+          '-1.79 4-4V14H12v24zM38 8h-7l-2-2H19l-2 2h-7v4h28V8z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_add_shopping_cart_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M22 18h4v-6h6V8h-6V2h-4v6h-6v4h6v6zm' +
+          '-8 18c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4' +
+          '-4zm20 0c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-' +
+          '4-4-4zm-19.65-6.5c0-.09.02-.17.06-.24l1.8-3.26h14.9c1.5 0 2.81-.' +
+          '83 3.5-2.06l7.72-14.02L38.83 8h-.01l-2.21 4-5.51 10H17.07l-.26-.' +
+          '54L12.32 12l-1.9-4-1.89-4H2v4h4l7.2 15.17-2.71 4.9c-.31.58-.49 1' +
+          '.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.22-.5-.5z"' +
+          '/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_date_range_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M18 22h-4v4h4v-4zm8 0h-4v4h4v-4zm8 0' +
+          'h-4v4h4v-4zm4-14h-2V4h-4v4H16V4h-4v4h-2c-2.22 0-3.98 1.8-3.98 4L' +
+          '6 40c0 2.2 1.78 4 4 4h28c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4zm0 3' +
+          '2H10V18h28v22z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_home_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20 40V28h8v12h10V24h6L24 6 4 24h6v1' +
+          '6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_credit_card_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 8H8c-2.21 0-3.98 1.79-3.98 4L4 3' +
+          '6c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm0' +
+          ' 28H8V24h32v12zm0-20H8v-4h32v4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_settings_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.86 25.95c.08-.64.14-1.29.14-1.95' +
+          's-.06-1.31-.14-1.95l4.23-3.31c.38-.3.49-.84.24-1.28l-4-6.93c-.25' +
+          '-.43-.77-.61-1.22-.43l-4.98 2.01c-1.03-.79-2.16-1.46-3.38-1.97L2' +
+          '9 4.84c-.09-.47-.5-.84-1-.84h-8c-.5 0-.91.37-.99.84l-.75 5.3c-1.' +
+          '22.51-2.35 1.17-3.38 1.97L9.9 10.1c-.45-.17-.97 0-1.22.43l-4 6.9' +
+          '3c-.25.43-.14.97.24 1.28l4.22 3.31C9.06 22.69 9 23.34 9 24s.06 1' +
+          '.31.14 1.95l-4.22 3.31c-.38.3-.49.84-.24 1.28l4 6.93c.25.43.77.6' +
+          '1 1.22.43l4.98-2.01c1.03.79 2.16 1.46 3.38 1.97l.75 5.3c.08.47.4' +
+          '9.84.99.84h8c.5 0 .91-.37.99-.84l.75-5.3c1.22-.51 2.35-1.17 3.38' +
+          '-1.97l4.98 2.01c.45.17.97 0 1.22-.43l4-6.93c.25-.43.14-.97-.24-1' +
+          '.28l-4.22-3.31zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3' +
+          '.13 7-7 7z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_exit_to_app_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20.17 31.17L23 34l10-10-10-10-2.83 ' +
+          '2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8' +
+          'h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c' +
+          '0-2.21-1.79-4-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_hourglass_full_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M32 4H12v11h.02l-.02.02L20.98 24 12 ' +
+          '32.98l.02.02H12v11h24V33h-.02l.02-.02L27.02 24 36 15.02l-.02-.02' +
+          'H36V4h-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_list_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 26h4v-4H6v4zm0 8h4v-4H6v4zm0-16h4' +
+          'v-4H6v4zm8 8h28v-4H14v4zm0 8h28v-4H14v4zm0-20v4h28v-4H14z"/></sv' +
+          'g>'#13#10
+      end
+      item
+        IconName = 'ic_print_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38 16H10c-3.31 0-6 2.69-6 6v12h8v8h' +
+          '24v-8h8V22c0-3.31-2.69-6-6-6zm-6 22H16V28h16v10zm6-14c-1.11 0-2-' +
+          '.89-2-2s.89-2 2-2c1.11 0 2 .89 2 2s-.89 2-2 2zM36 6H12v8h24V6z"/' +
+          '></svg>'#13#10
+      end
+      item
+        IconName = 'ic_receipt_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M36 34H12v-4h24v4zm0-8H12v-4h24v4zm0' +
+          '-8H12v-4h24v4zM6 44l3-3 3 3 3-3 3 3 3-3 3 3 3-3 3 3 3-3 3 3 3-3 ' +
+          '3 3V4l-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3v40z"/></s' +
+          'vg>'#13#10
+      end
+      item
+        IconName = 'ic_shopping_cart_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M14 36c-2.21 0-3.98 1.79-3.98 4s1.77' +
+          ' 4 3.98 4 4-1.79 4-4-1.79-4-4-4zM2 4v4h4l7.19 15.17-2.7 4.9c-.31' +
+          '.58-.49 1.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.2' +
+          '2-.5-.5 0-.09.02-.17.06-.24L16.2 26h14.9c1.5 0 2.81-.83 3.5-2.06' +
+          'l7.15-12.98c.16-.28.25-.61.25-.96 0-1.11-.9-2-2-2H10.43l-1.9-4H2' +
+          'zm32 32c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4' +
+          '-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_settings_phone_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M26 18h-4v4h4v-4zm8 0h-4v4h4v-4zm6 1' +
+          '3c-2.49 0-4.89-.4-7.14-1.14-.69-.22-1.48-.06-2.03.49l-4.4 4.41c-' +
+          '5.67-2.88-10.29-7.51-13.18-13.17l4.4-4.41c.55-.55.71-1.34.49-2.0' +
+          '3C17.4 12.9 17 10.49 17 8c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2 0' +
+          ' 18.78 15.22 34 34 34 1.11 0 2-.89 2-2v-7c0-1.11-.89-2-2-2zm-2-1' +
+          '3v4h4v-4h-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_zoom_in_24px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v' +
+          'iewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 1' +
+          '6 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16' +
+          'c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-' +
+          '6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9' +
+          '.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_zoom_out_24px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v' +
+          'iewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 1' +
+          '6 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16' +
+          'c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-' +
+          '6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9' +
+          '.5 14zM7 9h5v1H7z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_picture_as_pdf_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 4H16c-2.21 0-4 1.79-4 4v24c0 2.2' +
+          '1 1.79 4 4 4h24c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zM23 19c0 1' +
+          '.66-1.34 3-3 3h-2v4h-3V14h5c1.66 0 3 1.34 3 3v2zm10 4c0 1.66-1.3' +
+          '4 3-3 3h-5V14h5c1.66 0 3 1.34 3 3v6zm8-6h-3v2h3v3h-3v4h-3V14h6v3' +
+          'zm-23 2h2v-2h-2v2zM8 12H4v28c0 2.21 1.79 4 4 4h28v-4H8V12zm20 11' +
+          'h2v-6h-2v6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_menu_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-1' +
+          '4v4h36v-4H6z"/></svg>'#13#10
+      end>
+    Size = 24
+    StoreAsText = True
+    FixedColor = silver
+    Left = 80
+    Top = 72
+    Images = {}
+  end
+  object ImageListBig: TSVGIconImageList
+    SVGIconItems = <
+      item
+        IconName = 'ic_cloud_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.71 20.07C37.35 13.19 31.28 8 24 ' +
+          '8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.' +
+          '37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93z"' +
+          '/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_file_download_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38 18h-8V6H18v12h-8l14 14 14-14zM10' +
+          ' 36v4h28v-4H10z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20 8H8c-2.21 0-3.98 1.79-3.98 4L4 3' +
+          '6c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79-4-4-4H24' +
+          'l-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_open_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 12H24l-4-4H8c-2.21 0-3.98 1.79-3' +
+          '.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79' +
+          '-4-4-4zm0 24H8V16h32v20z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_folder_shared_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 12H24l-4-4H8c-2.21 0-3.98 1.79-3' +
+          '.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V16c0-2.21-1.79' +
+          '-4-4-4zm-10 6c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-' +
+          '4zm8 16H22v-2c0-2.67 5.33-4 8-4s8 1.33 8 4v2z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_backup_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.71 20.07C37.35 13.19 31.28 8 24 ' +
+          '8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.' +
+          '37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93zM' +
+          '28 26v8h-8v-8h-6l10-10 10 10h-6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_account_circle_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 2' +
+          '0 20 20-8.95 20-20S35.05 4 24 4zm0 6c3.31 0 6 2.69 6 6 0 3.32-2.' +
+          '69 6-6 6s-6-2.68-6-6c0-3.31 2.69-6 6-6zm0 28.4c-5.01 0-9.41-2.56' +
+          '-12-6.44.05-3.97 8.01-6.16 12-6.16s11.94 2.19 12 6.16c-2.59 3.88' +
+          '-6.99 6.44-12 6.44z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_account_box_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 10v28c0 2.21 1.79 4 4 4h28c2.21 0' +
+          ' 4-1.79 4-4V10c0-2.21-1.79-4-4-4H10c-2.21 0-4 1.79-4 4zm24 8c0 3' +
+          '.32-2.69 6-6 6s-6-2.68-6-6c0-3.31 2.69-6 6-6s6 2.69 6 6zM12 34c0' +
+          '-4 8-6.2 12-6.2S36 30 36 34v2H12v-2z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_dashboard_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 26h16V6H6v20zm0 16h16V30H6v12zm20' +
+          ' 0h16V22H26v20zm0-36v12h16V6H26z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_find_in_page_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 39.17V16L28 4H12C9.79 4 8.02 5.7' +
+          '9 8.02 8L8 40c0 2.21 1.77 4 3.98 4H36c.89 0 1.71-.3 2.37-.8l-8.8' +
+          '7-8.87C27.93 35.38 26.04 36 24 36c-5.52 0-10-4.48-10-10s4.48-10 ' +
+          '10-10 10 4.48 10 10c0 2.04-.62 3.93-1.66 5.51L40 39.17zM18 26c0 ' +
+          '3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6-6 2.69-6 6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_delete_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4' +
+          '-1.79 4-4V14H12v24zM38 8h-7l-2-2H19l-2 2h-7v4h28V8z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_add_shopping_cart_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M22 18h4v-6h6V8h-6V2h-4v6h-6v4h6v6zm' +
+          '-8 18c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4' +
+          '-4zm20 0c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-' +
+          '4-4-4zm-19.65-6.5c0-.09.02-.17.06-.24l1.8-3.26h14.9c1.5 0 2.81-.' +
+          '83 3.5-2.06l7.72-14.02L38.83 8h-.01l-2.21 4-5.51 10H17.07l-.26-.' +
+          '54L12.32 12l-1.9-4-1.89-4H2v4h4l7.2 15.17-2.71 4.9c-.31.58-.49 1' +
+          '.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.22-.5-.5z"' +
+          '/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_date_range_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M18 22h-4v4h4v-4zm8 0h-4v4h4v-4zm8 0' +
+          'h-4v4h4v-4zm4-14h-2V4h-4v4H16V4h-4v4h-2c-2.22 0-3.98 1.8-3.98 4L' +
+          '6 40c0 2.2 1.78 4 4 4h28c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4zm0 3' +
+          '2H10V18h28v22z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_home_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20 40V28h8v12h10V24h6L24 6 4 24h6v1' +
+          '6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_credit_card_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 8H8c-2.21 0-3.98 1.79-3.98 4L4 3' +
+          '6c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm0' +
+          ' 28H8V24h32v12zm0-20H8v-4h32v4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_settings_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38.86 25.95c.08-.64.14-1.29.14-1.95' +
+          's-.06-1.31-.14-1.95l4.23-3.31c.38-.3.49-.84.24-1.28l-4-6.93c-.25' +
+          '-.43-.77-.61-1.22-.43l-4.98 2.01c-1.03-.79-2.16-1.46-3.38-1.97L2' +
+          '9 4.84c-.09-.47-.5-.84-1-.84h-8c-.5 0-.91.37-.99.84l-.75 5.3c-1.' +
+          '22.51-2.35 1.17-3.38 1.97L9.9 10.1c-.45-.17-.97 0-1.22.43l-4 6.9' +
+          '3c-.25.43-.14.97.24 1.28l4.22 3.31C9.06 22.69 9 23.34 9 24s.06 1' +
+          '.31.14 1.95l-4.22 3.31c-.38.3-.49.84-.24 1.28l4 6.93c.25.43.77.6' +
+          '1 1.22.43l4.98-2.01c1.03.79 2.16 1.46 3.38 1.97l.75 5.3c.08.47.4' +
+          '9.84.99.84h8c.5 0 .91-.37.99-.84l.75-5.3c1.22-.51 2.35-1.17 3.38' +
+          '-1.97l4.98 2.01c.45.17.97 0 1.22-.43l4-6.93c.25-.43.14-.97-.24-1' +
+          '.28l-4.22-3.31zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3' +
+          '.13 7-7 7z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_exit_to_app_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M20.17 31.17L23 34l10-10-10-10-2.83 ' +
+          '2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8' +
+          'h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c' +
+          '0-2.21-1.79-4-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_hourglass_full_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M32 4H12v11h.02l-.02.02L20.98 24 12 ' +
+          '32.98l.02.02H12v11h24V33h-.02l.02-.02L27.02 24 36 15.02l-.02-.02' +
+          'H36V4h-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_list_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 26h4v-4H6v4zm0 8h4v-4H6v4zm0-16h4' +
+          'v-4H6v4zm8 8h28v-4H14v4zm0 8h28v-4H14v4zm0-20v4h28v-4H14z"/></sv' +
+          'g>'#13#10
+      end
+      item
+        IconName = 'ic_print_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M38 16H10c-3.31 0-6 2.69-6 6v12h8v8h' +
+          '24v-8h8V22c0-3.31-2.69-6-6-6zm-6 22H16V28h16v10zm6-14c-1.11 0-2-' +
+          '.89-2-2s.89-2 2-2c1.11 0 2 .89 2 2s-.89 2-2 2zM36 6H12v8h24V6z"/' +
+          '></svg>'#13#10
+      end
+      item
+        IconName = 'ic_receipt_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M36 34H12v-4h24v4zm0-8H12v-4h24v4zm0' +
+          '-8H12v-4h24v4zM6 44l3-3 3 3 3-3 3 3 3-3 3 3 3-3 3 3 3-3 3 3 3-3 ' +
+          '3 3V4l-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3-3 3-3-3v40z"/></s' +
+          'vg>'#13#10
+      end
+      item
+        IconName = 'ic_shopping_cart_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M14 36c-2.21 0-3.98 1.79-3.98 4s1.77' +
+          ' 4 3.98 4 4-1.79 4-4-1.79-4-4-4zM2 4v4h4l7.19 15.17-2.7 4.9c-.31' +
+          '.58-.49 1.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.2' +
+          '2-.5-.5 0-.09.02-.17.06-.24L16.2 26h14.9c1.5 0 2.81-.83 3.5-2.06' +
+          'l7.15-12.98c.16-.28.25-.61.25-.96 0-1.11-.9-2-2-2H10.43l-1.9-4H2' +
+          'zm32 32c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4' +
+          '-4-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_settings_phone_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M26 18h-4v4h4v-4zm8 0h-4v4h4v-4zm6 1' +
+          '3c-2.49 0-4.89-.4-7.14-1.14-.69-.22-1.48-.06-2.03.49l-4.4 4.41c-' +
+          '5.67-2.88-10.29-7.51-13.18-13.17l4.4-4.41c.55-.55.71-1.34.49-2.0' +
+          '3C17.4 12.9 17 10.49 17 8c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2 0' +
+          ' 18.78 15.22 34 34 34 1.11 0 2-.89 2-2v-7c0-1.11-.89-2-2-2zm-2-1' +
+          '3v4h4v-4h-4z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_zoom_in_24px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v' +
+          'iewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 1' +
+          '6 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16' +
+          'c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-' +
+          '6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9' +
+          '.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_zoom_out_24px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v' +
+          'iewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 1' +
+          '6 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16' +
+          'c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-' +
+          '6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9' +
+          '.5 14zM7 9h5v1H7z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_picture_as_pdf_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M40 4H16c-2.21 0-4 1.79-4 4v24c0 2.2' +
+          '1 1.79 4 4 4h24c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zM23 19c0 1' +
+          '.66-1.34 3-3 3h-2v4h-3V14h5c1.66 0 3 1.34 3 3v2zm10 4c0 1.66-1.3' +
+          '4 3-3 3h-5V14h5c1.66 0 3 1.34 3 3v6zm8-6h-3v2h3v3h-3v4h-3V14h6v3' +
+          'zm-23 2h2v-2h-2v2zM8 12H4v28c0 2.21 1.79 4 4 4h28v-4H8V12zm20 11' +
+          'h2v-6h-2v6z"/></svg>'#13#10
+      end
+      item
+        IconName = 'ic_menu_48px'
+        SVGText = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" v' +
+          'iewBox="0 0 48 48"><path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-1' +
+          '4v4h36v-4H6z"/></svg>'#13#10
+      end>
+    Size = 48
+    StoreAsText = True
+    Left = 80
+    Top = 184
+    Images = {}
+  end
+end

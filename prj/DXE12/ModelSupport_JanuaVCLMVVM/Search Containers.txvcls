@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="4cblw59864hqd0c5j_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Search Containers" />
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="140,100,332,125" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.FValues" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.FItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.FItemIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.GetItems()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.GetValues()" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.Items" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.Values" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect.Destroy()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.ComboSelect.TframeComboSelect:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect">
+        <property name="sourceAnchor" value="472,172" />
+        <property name="targetAnchor" value="720,172" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,120,362,306" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.cboLookup" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.memLookupTable" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.memLookupTableKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.memLookupTableValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.dsLookup" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.cboLookupCloseUp(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.FText" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.GetText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.SetJanuaField($Unnamed)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.InternalSetField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.SetText(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect.Text" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.CustomSelect.TframeVCLCustomSelect:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+        <property name="sourceAnchor" value="897,426" />
+        <property name="targetAnchor" value="897,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,460,349,331" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.lbDisplayText" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.pnlFrameSelector" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.FDisplayLabel" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.FActive" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.GetDisplayLabel()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.SetDisplayLabel(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.FJanuaField" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.FActivate" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.SetLabelText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.GetActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.InternalSetField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.GetJanuaField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.SetJanuaField(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.JanuaField" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.Active" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.FrameSelectModel.TframSelectModel.DisplayLabel" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="120,420,419,149" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.edDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.tsDate" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.edDateChange(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.edDateCloseUp(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.tsDateClick(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.FDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.FChecked" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.GetDate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.GetChecked()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.SetChecked(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.SetDate(System.TDate)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.Checked" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect.Date" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSpinSelect.TJanuaVCLFrameDateSpinSelect:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+        <property name="sourceAnchor" value="539,520" />
+        <property name="targetAnchor" value="720,520" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1140,680,330,84" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.seInteger" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.seIntegerChange(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.SetLabelText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.GetActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.InternalSetField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.GetSelectedValue()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.SetSelectedValue(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger.SelectedValue" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.IntegerSelect.TframeSelectInteger:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+        <property name="sourceAnchor" value="1140,722" />
+        <property name="targetAnchor" value="1069,722" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="120,620,420,160" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.edDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.pnlCheck" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.tsDate" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.edDateChange(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.edDateCloseUp(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.tsDateClick(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.FDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.FChecked" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.FUpdatingCheck" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.GetDate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.GetChecked()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.SetChecked(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.SetDate(System.TDate)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.GetActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.InternalSetField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.Checked" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect.Date" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.DateSelect.TJanuaVCLFrameDateSelect:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+        <property name="sourceAnchor" value="540,705" />
+        <property name="targetAnchor" value="720,705" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1140,460,345,152" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.rgSelect" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.FValues" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.FItems" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.GetItemIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.GetSelectedValue()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.SetItemIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.SetSelectedValue(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.GetNoFilterValue()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.SetNoFilterValue(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.GetItems()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.GetValues()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.AddItem(System.string,System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.Items" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.Values" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.ItemIndex" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.SelectedValue" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.NoFilterValue" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup.Destroy()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaVCLMVVM:Janua.VCL.Controls.RadioGroup.TframSelectRadioGroup:Janua.VCL.Controls.FrameSelectModel.TframSelectModel">
+        <property name="sourceAnchor" value="1140,536" />
+        <property name="targetAnchor" value="1069,536" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

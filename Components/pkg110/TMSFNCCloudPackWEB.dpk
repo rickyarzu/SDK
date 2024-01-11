@@ -1,0 +1,79 @@
+package TMSFNCCloudPackWEB;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Cloud Pack'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+contains
+  WEBLib.TMSFNCCloudOAuth in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudOAuth.pas',
+  WEBLib.TMSFNCCloudCloudKit in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudCloudKit.pas',
+  WEBLib.TMSFNCCloudDataStore in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudDataStore.pas',
+  WEBLib.TMSFNCCloudDropBox in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudDropBox.pas',
+  WEBLib.TMSFNCCloudGoogle in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogle.pas',
+  WEBLib.TMSFNCCloudGoogleCalendar in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleCalendar.pas',
+  WEBLib.TMSFNCCloudGoogleDrive in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleDrive.pas',
+  WEBLib.TMSFNCCloudGoogleFireBase in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleFireBase.pas',
+  WEBLib.TMSFNCCloudGoogleFireBaseObject in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleFireBaseObject.pas',
+  WEBLib.TMSFNCCloudGoogleGmail in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleGmail.pas',
+  WEBLib.TMSFNCCloudGoogleLookup in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleLookup.pas',
+  WEBLib.TMSFNCCloudGooglePeople in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGooglePeople.pas',
+  WEBLib.TMSFNCCloudGooglePhotos in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGooglePhotos.pas',
+  WEBLib.TMSFNCCloudGoogleTasks in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleTasks.pas',
+  WEBLib.TMSFNCCloudGoogleYouTube in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleYouTube.pas',
+  WEBLib.TMSFNCCloudImage in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudImage.pas',
+  WEBLib.TMSFNCCloudImgur in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudImgur.pas',
+  WEBLib.TMSFNCCloudMyCloudData in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMyCloudData.pas',
+  WEBLib.TMSFNCCloudMicrosoftOneDrive in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMicrosoftOneDrive.pas',
+  WEBLib.TMSFNCCloudMicrosoft in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMicrosoft.pas',
+  WEBLib.TMSFNCCloudMicrosoftOutlookContacts in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMicrosoftOutlookContacts.pas',
+  WEBLib.TMSFNCCloudMicrosoftOutlookMail in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMicrosoftOutlookMail.pas',
+  WEBLib.TMSFNCCloudPayPal in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudPayPal.pas',
+  WEBLib.TMSFNCCloudReg in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudReg.pas',
+  WEBLib.TMSFNCCloudStorage in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudStorage.pas',
+  WEBLib.TMSFNCCloudMicrosoftOutlookCalendar in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudMicrosoftOutlookCalendar.pas',
+  WEBLib.TMSFNCCloudHubic in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudHubic.pas',
+  WEBLib.TMSFNCCloudSlack in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudSlack.pas',
+  WEBLib.TMSFNCCloudOpenStack in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudOpenStack.pas',
+  WEBLib.TMSFNCCloudDemoListBox in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudDemoListBox.pas',
+  WEBLib.TMSFNCCloudBox in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudBox.pas',
+  WEBLib.TMSFNCCloudCloudinary in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudCloudinary.pas',
+  WEBLib.TMSFNCCloudExceptionless in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudExceptionless.pas',
+  WEBLib.TMSFNCCloudGoogleAnalytics in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudGoogleAnalytics.pas',
+  WEBLib.TMSFNCCloudLogger in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudLogger.pas',
+  WEBLib.TMSFNCCloudRollbar in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudRollbar.pas',
+  WEBLib.TMSFNCCloudSentry in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudSentry.pas',
+  WEBLib.TMSFNCCloudStorageServices in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudStorageServices.pas',
+  WEBLib.TMSFNCCloudSumUp in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudSumUp.pas',
+  WEBLib.TMSFNCCloudTranslation.Google in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudTranslation.Google.pas',
+  WEBLib.TMSFNCCloudTranslation.IBM in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudTranslation.IBM.pas',
+  WEBLib.TMSFNCCloudTranslation.Microsoft in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudTranslation.Microsoft.pas',
+  WEBLib.TMSFNCCloudTranslation in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudTranslation.pas',
+  WEBLib.TMSFNCCloudIPLocalization in '..\..\..\tmssoftware\TMS FNC Cloud Pack\WEBLib.TMSFNCCloudIPLocalization.pas';
+
+end.

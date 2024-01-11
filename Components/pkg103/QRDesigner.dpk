@@ -1,0 +1,102 @@
+package QRDesigner;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'QRDesign run-time'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  dbrtl,
+  vclx,
+  vcldb,
+  QRDBASE,
+  QRWRun;
+
+contains
+  Dsrcsel in '..\..\..\Libraries\QRDesign159w64\Dsrcsel.pas' {DatasourceSelectForm},
+  blockfrm in '..\..\..\Libraries\QRDesign159w64\blockfrm.pas' {BlockForm},
+  Calcfld in '..\..\..\Libraries\QRDesign159w64\Calcfld.pas' {CalcFieldEditForm},
+  ChldProp in '..\..\..\Libraries\QRDesign159w64\ChldProp.pas' {ChildPropertyForm},
+  Dbimprop in '..\..\..\Libraries\QRDesign159w64\Dbimprop.pas' {DBImagePropertyForm},
+  dbsetup in '..\..\..\Libraries\QRDesign159w64\dbsetup.pas' {DBSetupForm},
+  DBTxProp in '..\..\..\Libraries\QRDesign159w64\DBTxProp.pas' {DBTextPropertyForm},
+  BandProp in '..\..\..\Libraries\QRDesign159w64\BandProp.pas' {BandPropertyForm},
+  QRDesign in '..\..\..\Libraries\QRDesign159w64\QRDesign.pas',
+  QRDExBld in '..\..\..\Libraries\QRDesign159w64\QRDExBld.pas' {QRDExpressionBuilder},
+  RepProp in '..\..\..\Libraries\QRDesign159w64\RepProp.pas' {ReportPropertyForm},
+  qscript in '..\..\..\Libraries\QRDesign159w64\qscript.pas',
+  QRDLDR in '..\..\..\Libraries\QRDesign159w64\QRDLDR.pas',
+  Lookupf in '..\..\..\Libraries\QRDesign159w64\Lookupf.pas' {LookupFieldEditForm},
+  Fieldpro in '..\..\..\Libraries\QRDesign159w64\Fieldpro.pas' {FieldPropertyForm},
+  FIELDSEL in '..\..\..\Libraries\QRDesign159w64\FIELDSEL.PAS' {FieldSelectForm},
+  FieldEd in '..\..\..\Libraries\QRDesign159w64\FieldEd.pas' {FieldEditForm},
+  QRDCtrls in '..\..\..\Libraries\QRDesign159w64\QRDCtrls.pas',
+  qrdtypes in '..\..\..\Libraries\QRDesign159w64\qrdtypes.pas',
+  qrdexpr in '..\..\..\Libraries\QRDesign159w64\qrdexpr.pas',
+  QRDConst in '..\..\..\Libraries\QRDesign159w64\QRDConst.pas',
+  QRDProcs in '..\..\..\Libraries\QRDesign159w64\QRDProcs.pas',
+  qrdtools in '..\..\..\Libraries\QRDesign159w64\qrdtools.pas',
+  QRDDlgs in '..\..\..\Libraries\QRDesign159w64\QRDDlgs.pas',
+  LabProp in '..\..\..\Libraries\QRDesign159w64\LabProp.pas' {LabelPropertyForm},
+  Qrdopt in '..\..\..\Libraries\QRDesign159w64\Qrdopt.pas' {QRDOptionsForm},
+  Shapprop in '..\..\..\Libraries\QRDesign159w64\Shapprop.pas' {ShapePropertyForm},
+  memoprop in '..\..\..\Libraries\QRDesign159w64\memoprop.pas' {MemoPropertyForm},
+  SysDProp in '..\..\..\Libraries\QRDesign159w64\SysDProp.pas' {SysDataPropertyForm},
+  GrpProp in '..\..\..\Libraries\QRDesign159w64\GrpProp.pas' {GroupPropertyForm},
+  ExprProp in '..\..\..\Libraries\QRDesign159w64\ExprProp.pas' {ExpressionPropertyForm},
+  imgprop in '..\..\..\Libraries\QRDesign159w64\imgprop.pas' {ImagePropertyForm},
+  SubProp in '..\..\..\Libraries\QRDesign159w64\SubProp.pas' {SubdetailPropertyForm},
+  qrdexprt in '..\..\..\Libraries\QRDesign159w64\qrdexprt.pas' {QRDesignExpertForm},
+  Repprint in '..\..\..\Libraries\QRDesign159w64\Repprint.pas' {ReportPrintForm},
+  Framepro in '..\..\..\Libraries\QRDesign159w64\Framepro.pas' {FramePropertyForm},
+  ScriptEd in '..\..\..\Libraries\QRDesign159w64\ScriptEd.pas' {ScriptEditForm},
+  DBTMap in '..\..\..\Libraries\QRDesign159w64\DBTMap.pas' {DBTextMapForm},
+  STRITEMS in '..\..\..\Libraries\QRDesign159w64\STRITEMS.pas' {StringbandItemsForm},
+  QRDRegisterClasses in '..\..\..\Libraries\QRDesign159w64\QRDRegisterClasses.pas',
+  EditorControlProcs in '..\..\..\Libraries\QRDesign159w64\EditorControlProcs.pas',
+  QRDCtrlFactory in '..\..\..\Libraries\QRDesign159w64\QRDCtrlFactory.pas',
+  qrdMenusButtons in '..\..\..\Libraries\QRDesign159w64\qrdMenusButtons.pas',
+  Datafieldlist in '..\..\..\Libraries\QRDesign159w64\Datafieldlist.pas' {DatafieldListform},
+  qrdPopup in '..\..\..\Libraries\QRDesign159w64\qrdPopup.pas',
+  qrdQuickrep in '..\..\..\Libraries\QRDesign159w64\qrdQuickrep.pas',
+  QRDCreatr in '..\..\..\Libraries\QRDesign159w64\QRDCreatr.pas',
+  QRCtrlFactory in '..\..\..\Libraries\QRDesign159w64\QRCtrlFactory.pas',
+  qrdGridReport in '..\..\..\Libraries\QRDesign159w64\qrdGridReport.pas',
+  DbRtfPro in '..\..\..\Libraries\QRDesign159w64\DbRtfPro.pas' {DBRichtextPropertyForm},
+  QRDFormProcs in '..\..\..\Libraries\QRDesign159w64\QRDFormProcs.pas',
+  QRD3rdPartyControls in '..\..\..\Libraries\QRDesign159w64\QRD3rdPartyControls.pas',
+  qrdBaseExpert in '..\..\..\Libraries\QRDesign159w64\qrdBaseExpert.pas' {QRExpertBaseForm},
+  qrdBaseCtrls in '..\..\..\Libraries\QRDesign159w64\qrdBaseCtrls.pas',
+  qrdBaseCreator in '..\..\..\Libraries\QRDesign159w64\qrdBaseCreator.pas',
+  RichProp in '..\..\..\Libraries\QRDesign159w64\RichProp.pas' {RichtextPropertyForm},
+  Filterdlg in '..\..\..\Libraries\QRDesign159w64\Filterdlg.pas' {FiltDlg},
+  qrdform in '..\..\..\Libraries\QRDesign159w64\qrdform.pas' {ReportDesignerForm};
+
+end.

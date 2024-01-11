@@ -1,0 +1,46 @@
+package gtxDocumentEngines;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Gnostice Document Studio Delphi'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  gtxDocumentStudioCore;
+
+contains
+  gtxPDFFilterStreams in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtxPDFFilterStreams.pas',
+  gtPDFDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtPDFDocument.pas',
+  gtWordClasses in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtWordClasses.pas',
+  gtImageDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtImageDocument.pas',
+  gtDOCXDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtDOCXDocument.pas',
+  gtMSCFBDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtMSCFBDocument.pas',
+  gtPlainTextDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtPlainTextDocument.pas',
+  gtDOCDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\gtDOCDocument.pas';
+
+end.

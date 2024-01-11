@@ -1,0 +1,67 @@
+﻿package dclaurelius;
+
+
+{$R '..\..\..\tmssoftware\TMS Aurelius\source\design\dclaurelius.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Aurelius - Design-Time Package'}
+{$LIBSUFFIX '260'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  dcldb,
+  aurelius,
+  dcltmsbcl;
+
+contains
+  aurelius.Design.ConnectionDesigner
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.ConnectionDesigner.pas' { fmConnectionDesigner } ,
+  aurelius.Design.DatasetDesigner
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.DatasetDesigner.pas' { fmFieldLoader } ,
+  aurelius.Design.DatasetEditor
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.DatasetEditor.pas',
+  aurelius.Design.Editors in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.Editors.pas',
+  aurelius.Design.Register in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.Register.pas',
+  aurelius.Design.SourceCreator
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Design.SourceCreator.pas',
+  aurelius.Plugin.Connection
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.Connection.pas',
+  aurelius.Plugin.Database in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.Database.pas',
+  aurelius.Plugin.ExportForm
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.ExportForm.pas' { fmAureliusExport } ,
+  aurelius.Plugin.Import in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.Import.pas',
+  aurelius.Plugin.LoadingForm
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.LoadingForm.pas' { fmLoading } ,
+  aurelius.Plugin.Options in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.Options.pas',
+  aurelius.Plugin in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.pas',
+  aurelius.Plugin.Types in '..\..\..\tmssoftware\TMS Aurelius\source\design\Aurelius.Plugin.Types.pas',
+  ConnectionModule.Wizard in '..\..\..\tmssoftware\TMS Aurelius\source\design\ConnectionModule.Wizard.pas',
+  ConnectionModule.Wizard.Registration
+    in '..\..\..\tmssoftware\TMS Aurelius\source\design\ConnectionModule.Wizard.Registration.pas';
+
+end.

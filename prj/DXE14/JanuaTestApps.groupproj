@@ -1,0 +1,156 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A481AE79-E39C-4EF7-AB71-71742EE7F4BB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Samples\FMx\Mobile\AccessCameraApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\CameraRoll.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\MessageAlerts.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\SignatureCaptureDemoMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\SimpleListView.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\EuroFloraApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ListView\ListViewAddThumbAndCaption\SampleListViewAddThumbAndCaptionProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\MasterDetailApplicationDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\ListViewImageIndex.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\FMx\Mobile\TabbedwithNavigation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\Location\Location.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AccessCameraApp">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\AccessCameraApp.dproj"/>
+    </Target>
+    <Target Name="AccessCameraApp:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\AccessCameraApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AccessCameraApp:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\AccessCameraApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CameraRoll">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\CameraRoll.dproj"/>
+    </Target>
+    <Target Name="CameraRoll:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\CameraRoll.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CameraRoll:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\CameraRoll.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MessageAlerts">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MessageAlerts.dproj"/>
+    </Target>
+    <Target Name="MessageAlerts:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MessageAlerts.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MessageAlerts:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MessageAlerts.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SignatureCaptureDemoMobile">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SignatureCaptureDemoMobile.dproj"/>
+    </Target>
+    <Target Name="SignatureCaptureDemoMobile:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SignatureCaptureDemoMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SignatureCaptureDemoMobile:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SignatureCaptureDemoMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleListView">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SimpleListView.dproj"/>
+    </Target>
+    <Target Name="SimpleListView:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SimpleListView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleListView:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\SimpleListView.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EuroFloraApp">
+        <MSBuild Projects="FMX\EuroFloraApp.dproj"/>
+    </Target>
+    <Target Name="EuroFloraApp:Clean">
+        <MSBuild Projects="FMX\EuroFloraApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EuroFloraApp:Make">
+        <MSBuild Projects="FMX\EuroFloraApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SampleListViewAddThumbAndCaptionProject">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ListView\ListViewAddThumbAndCaption\SampleListViewAddThumbAndCaptionProject.dproj"/>
+    </Target>
+    <Target Name="SampleListViewAddThumbAndCaptionProject:Clean">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ListView\ListViewAddThumbAndCaption\SampleListViewAddThumbAndCaptionProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleListViewAddThumbAndCaptionProject:Make">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ListView\ListViewAddThumbAndCaption\SampleListViewAddThumbAndCaptionProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MasterDetailApplicationDemo">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MasterDetailApplicationDemo.dproj"/>
+    </Target>
+    <Target Name="MasterDetailApplicationDemo:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MasterDetailApplicationDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MasterDetailApplicationDemo:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\MasterDetailApplicationDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ListViewImageIndex">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\ListViewImageIndex.dproj"/>
+    </Target>
+    <Target Name="ListViewImageIndex:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\ListViewImageIndex.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListViewImageIndex:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\ListViewImageIndex.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TabbedwithNavigation">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\TabbedwithNavigation.dproj"/>
+    </Target>
+    <Target Name="TabbedwithNavigation:Clean">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\TabbedwithNavigation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TabbedwithNavigation:Make">
+        <MSBuild Projects="..\..\Samples\FMx\Mobile\TabbedwithNavigation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Location">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\Location\Location.dproj"/>
+    </Target>
+    <Target Name="Location:Clean">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\Location\Location.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Location:Make">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Samples\Object Pascal\Mobile Snippets\Location\Location.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AccessCameraApp;CameraRoll;MessageAlerts;SignatureCaptureDemoMobile;SimpleListView;EuroFloraApp;SampleListViewAddThumbAndCaptionProject;MasterDetailApplicationDemo;ListViewImageIndex;TabbedwithNavigation;Location"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AccessCameraApp:Clean;CameraRoll:Clean;MessageAlerts:Clean;SignatureCaptureDemoMobile:Clean;SimpleListView:Clean;EuroFloraApp:Clean;SampleListViewAddThumbAndCaptionProject:Clean;MasterDetailApplicationDemo:Clean;ListViewImageIndex:Clean;TabbedwithNavigation:Clean;Location:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AccessCameraApp:Make;CameraRoll:Make;MessageAlerts:Make;SignatureCaptureDemoMobile:Make;SimpleListView:Make;EuroFloraApp:Make;SampleListViewAddThumbAndCaptionProject:Make;MasterDetailApplicationDemo:Make;ListViewImageIndex:Make;TabbedwithNavigation:Make;Location:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

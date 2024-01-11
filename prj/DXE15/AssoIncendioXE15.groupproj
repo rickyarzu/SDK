@@ -1,0 +1,630 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg120\WinsoftVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaDMVC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CoolTrayIconWin">
+        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj"/>
+    </Target>
+    <Target Name="CoolTrayIconWin:Clean">
+        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CoolTrayIconWin:Make">
+        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelector">
+        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Clean">
+        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Make">
+        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WinsoftVCL">
+        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj"/>
+    </Target>
+    <Target Name="WinsoftVCL:Clean">
+        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WinsoftVCL:Make">
+        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Clean">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Make">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDMVC">
+        <MSBuild Projects="JanuaDMVC.dproj"/>
+    </Target>
+    <Target Name="JanuaDMVC:Clean">
+        <MSBuild Projects="JanuaDMVC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDMVC:Make">
+        <MSBuild Projects="JanuaDMVC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLForms">
+        <MSBuild Projects="JanuaVCLForms.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Clean">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Make">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsForms">
+        <MSBuild Projects="JanuaTmsForms.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Clean">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Make">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TGooglePlacesTest">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Make">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UniGuiTreeViewSourceMenu">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj"/>
+    </Target>
+    <Target Name="UniGuiTreeViewSourceMenu:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UniGuiTreeViewSourceMenu:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CoolTrayIconWin;VCLThemeSelector;WinsoftVCL;JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaDMVC;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;TGooglePlacesTest;UniGuiTreeViewSourceMenu"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CoolTrayIconWin:Clean;VCLThemeSelector:Clean;WinsoftVCL:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaDMVC:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;TGooglePlacesTest:Clean;UniGuiTreeViewSourceMenu:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CoolTrayIconWin:Make;VCLThemeSelector:Make;WinsoftVCL:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaDMVC:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;TGooglePlacesTest:Make;UniGuiTreeViewSourceMenu:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaDMVC.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+            <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libs 64bit'">
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaDMVC.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+            <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Apps'">
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaDMVC.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+            <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

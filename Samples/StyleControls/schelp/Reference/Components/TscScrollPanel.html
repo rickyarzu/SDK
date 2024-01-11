@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscScrollPanel</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscScrollPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scExtControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel
+control with scroll feature</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Picture for wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image for additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StyleKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPScrollPanelBGStyleKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style of panel:<br>
+<br>
+&nbsp;TscGPScrollPanelBGStyleKind = (scgspbFormBackground, scgspbPanel,<br>&nbsp;&nbsp;&nbsp; scgspbTransparent);<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of panel for
+scsPanel style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HotScroll</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then scrolling
+start when mouse over scroll button </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll offset value. If
+Value = 0 then scroll offset is client size.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollTimerInterval</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll timer interval</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollType</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscScrollType</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll direction:<br>
+<br>
+TscScrollType = (scstHorizontal, scstVertical);</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">TouchScroll</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable scrolling by touch events</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ScrollButtonWidth</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Size of the scroll button</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">HorzScrollDirection</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscScrollPanelHorzDirection</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscScrollPanelHorzDirection = (scspssdLeftToRight, scspssdRightToLeft);<br><br>Direction of horizontal scrolling: left to right (default) &nbsp;or right to left</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">VertScrollDirection</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscScrollPanelVertDirection</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscScrollPanelVertDirection = (scspssdTopToBottom, scspssdBottomToTop);<br><br>Direction of vertical scrolling: top to bottom default) or bottom to top</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p><p></p><p></p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

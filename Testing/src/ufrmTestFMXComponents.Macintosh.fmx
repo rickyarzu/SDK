@@ -1,0 +1,116 @@
+inherited TabbedForm_Macintosh: TTabbedForm_Macintosh
+  ClientHeight = 587
+  ClientWidth = 922
+  DesignerMasterStyle = 0
+  inherited HeaderToolBar: TToolBar
+    Size.Width = 922.000000000000000000
+    inherited ToolBarLabel: TLabel
+      Size.Width = 922.000000000000000000
+    end
+  end
+  inherited TabControl1: TTabControl
+    Size.Width = 922.000000000000000000
+    Size.Height = 543.000000000000000000
+    Sizes = (
+      922s
+      494s
+      922s
+      494s
+      922s
+      494s
+      922s
+      494s)
+    inherited TabItem1: TTabItem
+      Size.Width = 230.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited tabTestHealth: TTabControl
+        Size.Width = 922.000000000000000000
+        Size.Height = 494.000000000000000000
+        Sizes = (
+          922s
+          445s
+          922s
+          445s
+          922s
+          445s
+          922s
+          445s
+          922s
+          445s)
+        inherited TabItem5: TTabItem
+          Size.Width = 73.000000000000000000
+          ExplicitSize.cx = 63.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inherited ListView1: TListView
+            Size.Width = 922.000000000000000000
+            Size.Height = 396.000000000000000000
+          end
+          inherited Panel1: TPanel
+            Size.Width = 922.000000000000000000
+          end
+        end
+        inherited tabTestInstitutes: TTabItem
+          Size.Width = 73.000000000000000000
+          ExplicitSize.cx = 63.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inherited Panel2: TPanel
+            Size.Width = 922.000000000000000000
+          end
+          inherited pnlMap: TPanel
+            Size.Width = 922.000000000000000000
+          end
+          inherited ListView2: TListView
+            Size.Width = 922.000000000000000000
+            Size.Height = 236.000000000000000000
+          end
+        end
+        inherited tabTestBooking: TTabItem
+          Size.Width = 68.000000000000000000
+          ExplicitSize.cx = 63.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+        inherited TabItem8: TTabItem
+          Size.Width = 73.000000000000000000
+          ExplicitSize.cx = 63.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+        inherited TabItem9: TTabItem
+          Size.Width = 73.000000000000000000
+          ExplicitSize.cx = 63.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 230.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 230.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited TabItem4: TTabItem
+      Size.Width = 232.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+  inherited GestureManager1: TGestureManager
+    Left = 456
+    Top = 120
+    GestureData = <
+      item
+        Control = Owner
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end

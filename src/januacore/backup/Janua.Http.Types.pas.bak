@@ -1,0 +1,277 @@
+unit Janua.Http.Types;
+
+{$I JANUACORE.INC}
+
+interface
+
+uses
+{$IFDEF delphixe}
+  System.Classes,  Spring, Spring.Collections;
+{$ENDIF}
+{$IFDEF fpc}
+Classes, Generics.Collections;
+{$ENDIF}
+// ******************* Janua Mimme and Charset Type Management *************************************
+
+type
+  TJanuaMimeType = (jmtApplicationJson, jmtApplicationXml, jmtTextHtml, jmtTextCss, jmtTextXml, jmtTextPlain,
+    jmtOctetStream, jmtApplicationJavascript, jmtRSSXML, jmtImageIcon, jmtTextJavascript, jmtApplicationPdf,
+    jmtApplicationZip, jmtUnknown);
+
+  TJanuaCharsetType = (jcsUnknown, jcsUTF8, jcsANSI, jcsASCII, jcsISO8859_1);
+
+const
+  JanuaMimeString: array [TJanuaMimeType] of string = ('application/json', 'application/xml', 'text/html',
+    'text/css', 'text/xml', 'text/plain', 'application/octet-stream', 'application/javascript',
+    'application/rss+xml', 'image/x-icon', 'text/javascript', 'application/pdf', 'application/zip',
+    // non assegnato
+    '');
+
+  JanuaCharsetString: array [TJanuaCharsetType] of string = ('', 'UTF-8', 'ANSI', 'ASCII', 'ISO-8859-1');
+
+type
+  TJanuaMimeDef = class
+  private
+{$IFDEF delphixe}
+    class var FMimeExtensions: IDictionary<string, TJanuaMimeType>;
+    class var FMimeExtDict: IDictionary<string, string>;
+    class procedure SetMimeExtensions(const aExtensions: IDictionary<string, TJanuaMimeType>); static;
+    class procedure SetMimeExtDict(const aExtDict: IDictionary<string, string>); static;
+  public
+    class property MimeExtensions: IDictionary<string, TJanuaMimeType> read FMimeExtensions;
+    class property MimeExtDict: IDictionary<string, string> read FMimeExtDict;
+{$ENDIF}
+{$IFDEF fpc}
+    class var FMimeExtensions: TDictionary<string, TJanuaMimeType>;
+    class var FMimeExtDict: TDictionary<string, string>;
+    class procedure SetMimeExtensions(const aExtensions: TDictionary<string, TJanuaMimeType>); static;
+    class procedure SetMimeExtDict(const aExtDict: TDictionary<string, string>); static;
+  public
+    class property MimeExtensions: TDictionary<string, TJanuaMimeType> read FMimeExtensions;
+    class property MimeExtDict: TDictionary<string, string> read FMimeExtDict;
+{$ENDIF}
+  public
+    class function GetMimeStringFromExtension(const aExt: string): string;
+    class function GetMimeFromExtension(const aExt: string): TJanuaMimeType;
+  end;
+
+type
+  TJanuaAuthType = (None, Basic, Bearer);
+
+const
+  CJanuaAuth: array [TJanuaAuthType] of string = ('', 'Basic', 'Bearer');
+
+type
+  TJanuaHttpAuth = record
+  strict private
+    FToken: string;
+    FAuthType: TJanuaAuthType;
+    FPassword: string;
+    FUserName: string;
+  private
+    procedure SetAuthType(const Value: TJanuaAuthType);
+    procedure SetToken(const Value: string);
+    function GetToken: string;
+    function GetAuthType: TJanuaAuthType;
+    procedure SetPassword(const Value: string);
+    procedure SetUserName(const Value: string);
+    function GetPassword: string;
+    function GetUserName: string;
+    function GetAuthString: string;
+  public
+    constructor Create(const aAuthType: TJanuaAuthType); overload;
+    constructor Create(const aAuthType: TJanuaAuthType; const aToken: string); overload;
+    constructor Create(const aAuthType: TJanuaAuthType; const aUserName, aPassword: string); overload;
+  public
+    property AuthType: TJanuaAuthType read GetAuthType write SetAuthType;
+    property Token: string read FToken write SetToken;
+    property UserName: string read FUserName write SetUserName;
+    property Password: string read FPassword write SetPassword;
+    property AuthString: string read GetAuthString;
+  end;
+
+implementation
+
+uses    {$IFDEF delphixe}System{$ENDIF}.SysUtils,  Janua.Core.Functions, Janua.Core.Types;
+
+var
+{$IFDEF delphixe}
+  LMimeExtDict: IDictionary<string, string>;
+  LExtensions: IDictionary<string, TJanuaMimeType>;
+{$ELSE}
+  LMimeExtDict: TDictionary<string, string>;
+  LExtensions: TDictionary<string, TJanuaMimeType>;
+{$ENDIF}
+  { TJanuaAuth }
+
+constructor TJanuaHttpAuth.Create(const aAuthType: TJanuaAuthType);
+begin
+  self.FAuthType := aAuthType;
+  self.FToken := '';
+  self.FPassword := '';
+  self.FUserName := '';
+end;
+
+constructor TJanuaHttpAuth.Create(const aAuthType: TJanuaAuthType; const aToken: string);
+begin
+  self.Create(aAuthType);
+  self.FToken := aToken;
+end;
+
+constructor TJanuaHttpAuth.Create(const aAuthType: TJanuaAuthType; const aUserName, aPassword: string);
+begin
+  self.Create(aAuthType);
+  self.FUserName := aUserName;
+  self.FPassword := aPassword;
+end;
+
+function TJanuaHttpAuth.GetAuthString: string;
+begin
+  Result := CJanuaAuth[self.FAuthType];
+  case FAuthType of
+    None:
+      Result := '';
+    Basic:
+      Result := CJanuaAuth[self.FAuthType];
+    Bearer:
+      begin
+        Guard.CheckTrue(self.FToken <> '', 'Bearer authorization without token');
+        Result := CJanuaAuth[self.FAuthType] + ' ' + self.FToken;
+      end;
+  end;
+end;
+
+function TJanuaHttpAuth.GetAuthType: TJanuaAuthType;
+begin
+  Result := self.FAuthType
+end;
+
+function TJanuaHttpAuth.GetPassword: string;
+begin
+  Result := self.FPassword
+end;
+
+function TJanuaHttpAuth.GetToken: string;
+begin
+  Result := self.FToken
+end;
+
+function TJanuaHttpAuth.GetUserName: string;
+begin
+  Result := self.FUserName
+end;
+
+procedure TJanuaHttpAuth.SetAuthType(const Value: TJanuaAuthType);
+begin
+  FAuthType := Value;
+end;
+
+procedure TJanuaHttpAuth.SetPassword(const Value: string);
+begin
+  FPassword := Value;
+end;
+
+procedure TJanuaHttpAuth.SetToken(const Value: string);
+begin
+  FToken := Value;
+end;
+
+procedure TJanuaHttpAuth.SetUserName(const Value: string);
+begin
+  FUserName := Value;
+end;
+
+{ TJanuaMime }
+
+class function TJanuaMimeDef.GetMimeFromExtension(const aExt: string): TJanuaMimeType;
+begin
+  if not FMimeExtensions.TryGetValue(aExt, Result) then
+    Result := TJanuaMimeType.jmtUnknown
+end;
+
+class function TJanuaMimeDef.GetMimeStringFromExtension(const aExt: string): string;
+begin
+  if not FMimeExtDict.TryGetValue(aExt, Result) then
+    Result := 'application/octet-stream'
+end;
+
+{$IFDEF delphixe}
+
+class procedure TJanuaMimeDef.SetMimeExtDict(const aExtDict: IDictionary<string, string>);
+{$ELSE}
+
+class procedure TJanuaMimeDef.SetMimeExtDict(const aExtDict: TDictionary<string, string>);
+{$ENDIF}
+begin
+  FMimeExtDict := aExtDict
+end;
+
+{$IFDEF delphixe}
+
+class procedure TJanuaMimeDef.SetMimeExtensions(const aExtensions: IDictionary<string, TJanuaMimeType>);
+{$ELSE}
+
+class procedure TJanuaMimeDef.SetMimeExtensions(const aExtensions: TDictionary<string, TJanuaMimeType>);
+{$ENDIF}
+begin
+  FMimeExtensions := aExtensions
+end;
+
+initialization
+
+try
+{$IFDEF delphixe}
+  LMimeExtDict := TCollections.CreateDictionary<string, string>;
+{$ELSE}
+  LMimeExtDict := TDictionary<string, string>.Create;
+{$ENDIF}
+  { Insert Procedures ............................... }
+  LMimeExtDict.Add('.pfr', 'application/font-tdpfr');
+  LMimeExtDict.Add('.bdf', 'application/x-font-bdf');
+  LMimeExtDict.Add('.gsf', 'application/x-font-ghostscript');
+  LMimeExtDict.Add('.psf', 'application/x-font-linux-psf');
+  LMimeExtDict.Add('.otf', 'application/x-font-otf');
+  LMimeExtDict.Add('.pcf', 'application/x-font-pcf');
+  LMimeExtDict.Add('.snf', 'application/x-font-snf');
+  LMimeExtDict.Add('.ttf', 'application/x-font-ttf');
+  LMimeExtDict.Add('.ttc', 'application/x-font-ttf');
+  LMimeExtDict.Add('.pfa', 'application/x-font-type1');
+  LMimeExtDict.Add('.pfb', 'application/x-font-type1');
+  LMimeExtDict.Add('.pfm', 'application/x-font-type1');
+  LMimeExtDict.Add('.afm', 'application/x-font-type1');
+  LMimeExtDict.Add('.woff', 'application/font-woff');
+  LMimeExtDict.Add('.jpg', 'image/jpeg');
+  LMimeExtDict.Add('.png', 'image/png');
+  LMimeExtDict.Add('.gif', 'image/gif');
+  LMimeExtDict.Add('.pdf', 'application/pdf');
+  LMimeExtDict.Add('.js', 'application/javascript');
+  LMimeExtDict.Add('.css', 'text/css');
+  LMimeExtDict.Add('.json', 'application/json');
+  LMimeExtDict.Add('.zip', 'application/zip');
+  TJanuaMimeDef.SetMimeExtDict(LMimeExtDict);
+except
+  on e: exception do
+    Raise exception.Create('Janua.Core.Football.initialization.LMimeExtDict');
+end;
+
+try
+{$IFDEF delphixe}
+  LExtensions := TCollections.CreateDictionary<string, TJanuaMimeType>;
+{$ELSE}
+  LExtensions := TDictionary<string, TJanuaMimeType>.Create;
+{$ENDIF}
+  LExtensions.Add('.jpg', TJanuaMimeType.jmtImageIcon);
+  LExtensions.Add('.png', TJanuaMimeType.jmtImageIcon);
+  LExtensions.Add('.gif', TJanuaMimeType.jmtImageIcon);
+  LExtensions.Add('.pdf', TJanuaMimeType.jmtApplicationPdf);
+  LExtensions.Add('.js', TJanuaMimeType.jmtApplicationJavascript); // 'application/javascript'
+  LExtensions.Add('.css', TJanuaMimeType.jmtTextCss); // 'text/css'
+  LExtensions.Add('.json', TJanuaMimeType.jmtApplicationJson); // 'application/json'
+  LExtensions.Add('.zip', jmtApplicationZip); // application/zip
+  TJanuaMimeDef.SetMimeExtensions(LExtensions);
+except
+  on e: exception do
+    Raise exception.Create('Janua.Core.Football.initialization');
+end;
+
+end.

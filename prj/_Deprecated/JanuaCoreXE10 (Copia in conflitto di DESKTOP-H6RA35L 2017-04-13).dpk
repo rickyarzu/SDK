@@ -1,0 +1,103 @@
+package JanuaCoreXE10;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  DbxCommonDriver,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  dsnap,
+  dbexpress,
+  dac240,
+  sparkle;
+
+contains
+  Janua.Core.System in '..\src\januacore\Janua.Core.System.pas',
+  Janua.Core.University in '..\src\januacore\Janua.Core.University.pas',
+  Janua.Core.Users in '..\src\januacore\Janua.Core.Users.pas',
+  Janua.Core.WebServices in '..\src\januacore\Janua.Core.WebServices.pas',
+  Janua.Core.Ads in '..\src\januacore\Janua.Core.Ads.pas',
+  Janua.Core.Anagraph in '..\src\januacore\Janua.Core.Anagraph.pas',
+  Janua.Core.Backup in '..\src\januacore\Janua.Core.Backup.pas',
+  Janua.Core.Books in '..\src\januacore\Janua.Core.Books.pas',
+  Janua.Core.BooksForms in '..\src\januacore\Janua.Core.BooksForms.pas',
+  Janua.Core.Classes in '..\src\januacore\Janua.Core.Classes.pas',
+  Janua.Core.Cloud in '..\src\januacore\Janua.Core.Cloud.pas',
+  Janua.Core.Cms in '..\src\januacore\Janua.Core.Cms.pas',
+  Janua.Core.Collections in '..\src\januacore\Janua.Core.Collections.pas',
+  Janua.Core.CRM in '..\src\januacore\Janua.Core.CRM.pas',
+  Janua.Core.Crypt in '..\src\januacore\Janua.Core.Crypt.pas',
+  Janua.Core.Customcontrols in '..\src\januacore\Janua.Core.Customcontrols.pas',
+  Janua.Core.Customsession in '..\src\januacore\Janua.Core.Customsession.pas',
+  Janua.Core.Customsystem in '..\src\januacore\Janua.Core.Customsystem.pas',
+  Janua.Core.Docs in '..\src\januacore\Janua.Core.Docs.pas',
+  Janua.Core.Exceptions in '..\src\januacore\Janua.Core.Exceptions.pas',
+  Janua.Core.Feeds in '..\src\januacore\Janua.Core.Feeds.pas',
+  Janua.Core.Football in '..\src\januacore\Janua.Core.Football.pas',
+  Janua.Core.Forms in '..\src\januacore\Janua.Core.Forms.pas',
+  Janua.Core.Functions in '..\src\januacore\Janua.Core.Functions.pas',
+  Janua.Core.Http in '..\src\januacore\Janua.Core.Http.pas',
+  Janua.Core.Items in '..\src\januacore\Janua.Core.Items.pas',
+  Janua.Core.JPublic in '..\src\januacore\Janua.Core.JPublic.pas',
+  Janua.Core.Mail in '..\src\januacore\Janua.Core.Mail.pas',
+  Janua.Core.Ords in '..\src\januacore\Janua.Core.Ords.pas',
+  Janua.Core.Params in '..\src\januacore\Janua.Core.Params.pas',
+  Janua.Core.Pharmacies in '..\src\januacore\Janua.Core.Pharmacies.pas',
+  Janua.Core.Pos in '..\src\januacore\Janua.Core.Pos.pas',
+  Janua.Core.RealEstate in '..\src\januacore\Janua.Core.RealEstate.pas',
+  Janua.Core.ServerClasses in '..\src\januacore\Janua.Core.ServerClasses.pas',
+  Janua.Core.Social in '..\src\januacore\Janua.Core.Social.pas',
+  Janua.Core.Sockets in '..\src\januacore\Janua.Core.Sockets.pas',
+  Janua.Core.Hash in '..\src\januacore\Janua.Core.Hash.pas',
+  Janua.Core.Swap in '..\src\januacore\Janua.Core.Swap.pas',
+  Janua.Core.Roundings in '..\src\januacore\Janua.Core.Roundings.pas',
+  Janua.Core.Printers in '..\src\januacore\Janua.Core.Printers.pas',
+  Janua.Core.FTP in '..\src\januacore\Janua.Core.FTP.pas',
+  Janua.Core.Mobyt in '..\src\januacore\Janua.Core.Mobyt.pas',
+  Delphi.Mocks.Helpers in '..\src\januacore\Delphi.Mocks.Helpers.pas',
+  Janua.Core.html in '..\src\januacore\Janua.Core.html.pas',
+  Janua.Core.Excel in '..\src\januacore\Janua.Core.Excel.pas',
+  Janua.Core.Servers in '..\src\januacore\Janua.Core.Servers.pas',
+  Janua.Core.Health in '..\src\januacore\Janua.Core.Health.pas',
+  Janua.Core.Cms.GraphicMenu in '..\src\januacore\Janua.Core.Cms.GraphicMenu.pas',
+  Janua.core.Cloud.Server in '..\src\januacore\Janua.core.Cloud.Server.pas',
+  Janua.Core.Locale in '..\src\januacore\Janua.Core.Locale.pas',
+  Janua.Core.Metronics in '..\src\januacore\Janua.Core.Metronics.pas',
+  Writers in '..\src\januacore\Writers.pas',
+  udmJanuaCoreRSS in '..\src\januacore\udmJanuaCoreRSS.pas' {dmJanuaCoreRSS: TDataModule};
+
+end.
+
+

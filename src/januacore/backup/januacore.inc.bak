@@ -1,0 +1,31 @@
+
+// JANUA VERSIONS
+// 101 INTRODUCE THE health.meetings server/client procedure ..........................................................
+{$DEFINE JANUAVER101}
+
+{$ifdef fpc}
+{$mode delphi}{$H+}
+{$modeswitch ADVANCEDRECORDS}
+{$ELSE}
+{$IFDEF LINUX}
+{$DEFINE WEBBROKER}
+{$ENDIF}
+{$IFDEF MSWINDOWS}
+{$DEFINE WEBBROKER}
+{$ENDIF}
+{$endif}
+
+{$IF DECLARED(FireMonkeyVersion)}
+  {$DEFINE HAS_FMX}
+{$ELSE}
+  {$DEFINE HAS_VCL}
+{$endif}
+
+{$IFDEF DCC}
+   {$IF CompilerVersion >= 17.0}
+     {$DEFINE HAS_INLINE}
+   {$IFEND}
+   {$IF RTLVersion >= 14.0}
+     {$DEFINE HAS_ERROUTPUT}
+   {$IFEND}
+{$ENDIF}

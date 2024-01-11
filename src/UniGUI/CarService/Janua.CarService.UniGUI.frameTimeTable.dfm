@@ -1,0 +1,174 @@
+object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
+  Left = 0
+  Top = 0
+  ClientHeight = 186
+  ClientWidth = 502
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object cntTimeTable: TUniContainerPanel
+    Left = 0
+    Top = 0
+    Width = 502
+    Height = 186
+    Hint = ''
+    ParentColor = False
+    Align = alClient
+    TabOrder = 0
+    object pnlTop: TUniContainerPanel
+      Left = 0
+      Top = 0
+      Width = 502
+      Height = 33
+      Hint = ''
+      ParentColor = False
+      Align = alTop
+      TabOrder = 1
+      object lbTimeTableType: TUniLabel
+        Left = 16
+        Top = 8
+        Width = 41
+        Height = 17
+        Hint = ''
+        Caption = 'Pickup'
+        ParentFont = False
+        Font.Height = -13
+        Font.Style = [fsBold]
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 1
+      end
+      object lbTimetableDAte: TUniLabel
+        Left = 96
+        Top = 8
+        Width = 66
+        Height = 17
+        Hint = ''
+        Caption = '23/06/2023'
+        ParentFont = False
+        Font.Height = -13
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 2
+      end
+      object lbDeliveryTime: TUniLabel
+        Left = 184
+        Top = 8
+        Width = 31
+        Height = 17
+        Hint = ''
+        Caption = '10:00'
+        ParentFont = False
+        Font.Height = -13
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 3
+      end
+    end
+    object UniContainerPanel2: TUniContainerPanel
+      Left = 0
+      Top = 33
+      Width = 502
+      Height = 60
+      Hint = ''
+      ParentColor = False
+      Align = alTop
+      TabOrder = 2
+      object cboPickup: TUniComboBox
+        AlignWithMargins = True
+        Left = 10
+        Top = 22
+        Width = 482
+        Height = 35
+        Hint = ''
+        Margins.Left = 10
+        Margins.Right = 10
+        Text = ''
+        Align = alClient
+        ParentFont = False
+        Font.Height = -13
+        TabOrder = 1
+        IconItems = <>
+        OnCloseUp = cboPickupCloseUp
+        ExplicitHeight = 34
+      end
+      object lbDeparture: TUniLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 3
+        Width = 129
+        Height = 13
+        Hint = ''
+        Margins.Left = 10
+        Margins.Right = 10
+        Caption = 'Luogo di Prelievo Veicolo'
+        Align = alTop
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 2
+      end
+    end
+    object UniContainerPanel3: TUniContainerPanel
+      Left = 0
+      Top = 93
+      Width = 502
+      Height = 60
+      Hint = ''
+      ParentColor = False
+      Align = alTop
+      TabOrder = 3
+      ExplicitTop = 92
+      object cboReturn: TUniComboBox
+        AlignWithMargins = True
+        Left = 10
+        Top = 22
+        Width = 482
+        Height = 35
+        Hint = ''
+        Margins.Left = 10
+        Margins.Right = 10
+        Text = ''
+        Align = alClient
+        ParentFont = False
+        Font.Height = -13
+        TabOrder = 1
+        IconItems = <>
+        OnCloseUp = cboReturnCloseUp
+        ExplicitTop = 31
+        ExplicitHeight = 34
+      end
+      object lbVehiclePickupPlace: TUniLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 3
+        Width = 482
+        Height = 13
+        Hint = ''
+        Margins.Left = 10
+        Margins.Right = 10
+        AutoSize = False
+        Caption = 'Luogo di Prelievo Veicolo'
+        Align = alTop
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 2
+      end
+    end
+  end
+  object TimeTableUniGUIController1: TTimeTableUniGUIController
+    Enabled = False
+    lbTimeTableType = lbTimeTableType
+    lbTimetableDAte = lbTimetableDAte
+    lbDeliveryTime = lbDeliveryTime
+    cboPickup = cboPickup
+    lbDeparture = lbDeparture
+    cboReturn = cboReturn
+    lbVehiclePickupPlace = lbVehiclePickupPlace
+    Left = 256
+    Top = 73
+  end
+end

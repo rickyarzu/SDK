@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ueziko5k9mk_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::2lwr6cbh7vr_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::dc86ngs3lumd44pjr_v" />
+      <reference referencedUin="design:view:::0txy1u0fquml9rqcn_v" />
+      <reference referencedUin="design:view:::bq7gu0h9vm3yfyhm_v" />
+      <reference referencedUin="design:view:::yqm8h672qvmdhrb7k_v" />
+      <reference referencedUin="design:view:::qj5s1ygq6wmjcos0j_v" />
+      <reference referencedUin="design:view:::oy6360jz0wm0hultn_v" />
+      <reference referencedUin="design:view:::0tcxjc80owm6dgx8o_v" />
+      <reference referencedUin="design:view:::xj2c02lfswmky0iyq_v" />
+      <reference referencedUin="design:view:::z1eq5v1o5xmesoans_v" />
+      <reference referencedUin="design:view:::1q9a13e8gxmo7v9po_v" />
+      <reference referencedUin="design:view:::3gi0uoomuxmc7yq3r_v" />
+      <reference referencedUin="design:view:::m3rd9zcj9ymsvqr9s_v" />
+      <reference referencedUin="design:view:::frbrnpk5oymmsw7he_v" />
+      <reference referencedUin="design:view:::8nv71c1y3zmmygdaq_v" />
+      <reference referencedUin="design:view:::gth5tmgv9zmkgsn8r_v" />
+      <reference referencedUin="design:view:::bpj1xqhqqzm4kw70i_v" />
+      <reference referencedUin="design:view:::fx0muon160n6h06zm_v" />
+      <reference referencedUin="design:view:::7jign4std0nq0rhzo_v" />
+      <reference referencedUin="design:view:::ol2ebr9bt0necreeg_v" />
+      <reference referencedUin="design:view:::z338nj7gy0nptro3j_v" />
+      <reference referencedUin="design:view:::77egif8db1ny00goi_v" />
+      <reference referencedUin="design:view:::bw8os9vyr1nhpw74o_v" />
+      <reference referencedUin="design:view:::aw0m10df92nblw0oi_v" />
+      <reference referencedUin="design:view:::scatajr9m2nkdxq8l_v" />
+      <reference referencedUin="design:view:::cd2m1jw973nqsiper_v" />
+      <reference referencedUin="design:view:::90ftebtzb3nddmb2q_v" />
+      <reference referencedUin="design:view:::t2sj774ds3nxkvimt_v" />
+      <reference referencedUin="design:view:::ab8n8cr694ncqs88j_v" />
+      <reference referencedUin="design:view:::ql125ayht4ngtsmeh_v" />
+      <reference referencedUin="design:view:::c2s5r5tga5nhe9mik_v" />
+      <reference referencedUin="design:view:::gns1h4e0y0o_v" />
+      <reference referencedUin="design:view:::06nel58vq5nk0zw6j_v" />
+      <reference referencedUin="design:view:::9f09jsfl36nnuj0mj_v" />
+      <reference referencedUin="design:view:::2j37rtdhq6nw5j6ht_v" />
+    </reference>
+    <reference referencedUin="design:view:::km37s85v77h0nehap_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::9l4sek3hadh759tap_v" />
+    </reference>
+    <reference referencedUin="design:view:::9f0xfnjranh5ca2ug_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::nyo8dwmgrshfh5lol_v" />
+    </reference>
+    <reference referencedUin="design:view:::ws8ieeozdum0vbtqo_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::zb4kqhy3058o3nnoe_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

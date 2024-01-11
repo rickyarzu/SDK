@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{505258AC-ECB9-4E0F-9D1C-A5481D28F4BB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPgUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Projects\WebBroker\prj\LND\LND.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Projects\WebBroker\prj\DilWeb\DilWeb.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting">
+        <MSBuild Projects="JanuaPgUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Clean">
+        <MSBuild Projects="JanuaPgUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Make">
+        <MSBuild Projects="JanuaPgUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LND">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\LND\LND.dproj"/>
+    </Target>
+    <Target Name="LND:Clean">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\LND\LND.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LND:Make">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\LND\LND.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilWeb">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\DilWeb\DilWeb.dproj"/>
+    </Target>
+    <Target Name="DilWeb:Clean">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\DilWeb\DilWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilWeb:Make">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\DilWeb\DilWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreUnitTesting;JanuaPgUnitTesting;LND;DilWeb"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreUnitTesting:Clean;JanuaPgUnitTesting:Clean;LND:Clean;DilWeb:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreUnitTesting:Make;JanuaPgUnitTesting:Make;LND:Make;DilWeb:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,65 @@
+object MDIChild: TMDIChild
+  Left = 197
+  Top = 117
+  Caption = 'MDI Child'
+  ClientHeight = 278
+  ClientWidth = 480
+  Color = clBtnFace
+  ParentFont = True
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poDefault
+  Visible = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Memo1: TMemo
+    Left = 0
+    Top = 0
+    Width = 480
+    Height = 278
+    Align = alClient
+    BorderStyle = bsNone
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 0
+  end
+  object scStyledForm1: TscStyledForm
+    DropDownForm = False
+    DropDownAnimation = False
+    StylesMenuSorted = False
+    ShowStylesMenu = False
+    StylesMenuCaption = 'Styles'
+    ClientWidth = 0
+    ClientHeight = 0
+    ShowHints = True
+    Buttons = <>
+    ButtonFont.Charset = DEFAULT_CHARSET
+    ButtonFont.Color = clWindowText
+    ButtonFont.Height = -11
+    ButtonFont.Name = 'Tahoma'
+    ButtonFont.Style = []
+    CaptionFont.Charset = DEFAULT_CHARSET
+    CaptionFont.Color = clWindowText
+    CaptionFont.Height = -11
+    CaptionFont.Name = 'Tahoma'
+    CaptionFont.Style = [fsBold]
+    CaptionAlignment = taLeftJustify
+    InActiveClientColor = clWindow
+    InActiveClientColorAlpha = 100
+    InActiveClientBlurAmount = 5
+    Tabs = <>
+    TabFont.Charset = DEFAULT_CHARSET
+    TabFont.Color = clWindowText
+    TabFont.Height = -11
+    TabFont.Name = 'Tahoma'
+    TabFont.Style = []
+    ShowButtons = True
+    ShowTabs = True
+    TabIndex = 0
+    TabsPosition = sctpLeft
+    ShowInactiveTab = True
+    Left = 32
+    Top = 24
+  end
+end

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="20tgjpfgn0j_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Football REST Client" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,40,288,385" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FJanuaCoreOS" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetAppName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetHasErrors(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetLog(System.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetJanuaCoreOS(Janua.Core.Classes.TJanuaCoreOS)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FAppName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsPublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetLoginRecord(Janua.Core.Classes.TJanuaLoginRecord)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.isPublic" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.AppName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.HasErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.ErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.JanuaCoreOS" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LogOut()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord">
+        <property name="sourceAnchor" value="157,425" />
+        <property name="targetAnchor" value="157,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord">
+        <property name="sourceAnchor" value="165,425" />
+        <property name="targetAnchor" value="165,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaCustomRESTClient.SetUserProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,180,294,491" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.FLog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.FLoginRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetJanuaApplicationProfile(Janua.Core.Classes.TJanuaApplicationProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetLoginRecord(Janua.Core.Classes.TJanuaLoginRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetSessionID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetClientRecord(Janua.Core.Classes.TJanuaLoginRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetSessionKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetSessionID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetSession(Janua.Core.Classes.TJanuaServerSession)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.FJanuaApplicationProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SetUserProfile(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.GetIsPublic()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.IsPublic" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.JanuaApplicationProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SaveProfile(ref@Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.StartPublicSession(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.Login(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.Login(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.CheckNewUser(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.CheckNewUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.CreateNewUser(Janua.Core.Classes.TJanuaRecordUserProfile,ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.CreateNewUser(Janua.Core.Classes.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.ClientRecord" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SessionKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.SessionID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.Session" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient:Janua.Core.Classes.TJanuaCustomRESTClient">
+        <property name="sourceAnchor" value="400,302" />
+        <property name="targetAnchor" value="328,302" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.ClientRecord">
+        <property name="sourceAnchor" value="400,557" />
+        <property name="targetAnchor" value="290,557" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.FLoginRecord">
+        <property name="sourceAnchor" value="400,565" />
+        <property name="targetAnchor" value="290,565" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.EchoString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.ReverseString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.System.TJanuaCustomSystemClient.CheckSessionKey(System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,460,250,237" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.Session" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.UserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetIsPublicSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.GetJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.IsPublicSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaLoginRecord.AsJsonObject" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="780,420,300,163" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient:Janua.Core.System.TJanuaCustomSystemClient">
+        <property name="sourceAnchor" value="780,501" />
+        <property name="targetAnchor" value="694,501" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FChampionships" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FSeasons" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetChampionships(Janua.Core.Football.TJanuaFootballChampionships)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetSeasons(Janua.Core.Football.TJanuaFootballSeasons)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.Seasons" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.Championships" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FMatchID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FMatchDayNum" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FChampSummary" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FTeamID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FRankings" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FPlayerID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FGoalRanking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FRanking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FMatchDetails" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FNextMatches" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FMatches" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FChampionshipID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FseasonID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.FNotifications" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetChampionshipID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetChampSummary(Janua.Core.Football.TJanuaChampSummary)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetGoalRanking(Janua.Core.Football.TJanuaGoalRankings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetMatchDayNum(System.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetMatchDetails(Janua.Core.Football.TJanuaMatchDetail)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetMatches(Janua.Core.Football.TJanuaMatches)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetMatchID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetNextMatches(Janua.Core.Football.TJanuaMatches)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetPlayerID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetRanking(Janua.Core.Football.TJanuaRankings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetRankings(Janua.Core.Football.TJanuaRankings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetseasonID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetTeamID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.SetNotifications(Janua.Core.Football.TJanuaFootballNotifications)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getSeasonsList()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getChampionshipsList()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getChampionshipSummary()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getRanking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getGoalRanking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getMatchDay()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getChampSummary()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.getMatchDetails()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.GetTeamChampionship()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.MatchDetails" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.ChampSummary" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.Ranking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.GoalRanking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.matches" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.NextMatches" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.MatchID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.teamID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.playerID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.rankings" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.seasonID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.ChampionshipID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.MatchDayNum" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Football.TJanuaCustomFootballClient.Notifications" />
+    </reference>
+  </view>
+</nodeSet>

@@ -1,0 +1,52 @@
+package FMXTMSFNCDashboardPackPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Dashboard Pack for FMX'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  fmx,
+  FMXTMSFNCCorePkg;
+
+contains
+  FMX.TMSFNCWidgetProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetProgress.pas',
+  FMX.TMSFNCWPReg in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWPReg.pas',
+  FMX.TMSFNCWidgetGraphicsTypes in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetGraphicsTypes.pas',
+  FMX.TMSFNCWidgetMultiProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetMultiProgress.pas',
+  FMX.TMSFNCWidgetSetPoint in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetSetPoint.pas',
+  FMX.TMSFNCGraphicUtils in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCGraphicUtils.pas',
+  FMX.TMSFNCWidgetMarqueeContinuousProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetMarqueeContinuousProgress.pas',
+  FMX.TMSFNCWidgetMarqueeProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetMarqueeProgress.pas',
+  FMX.TMSFNCWidgetArrow in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetArrow.pas',
+  FMX.TMSFNCWidgetLCDLabel in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetLCDLabel.pas',
+  FMX.TMSFNCWidgetGauge in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetGauge.pas',
+  FMX.TMSFNCWidgetTrendIndicator in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetTrendIndicator.pas',
+  FMX.TMSFNCWidgetDistributionIndicator in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCWidgetDistributionIndicator.pas';
+
+end.

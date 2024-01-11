@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="m6qedla0fqn_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.Workflows.ViewModel">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="uml:package:JanuaMVVM:src:Janua.Workflows.ViewModel.Intf" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.Workflows.Model">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="uml:package:JanuaMVVM:src:Janua.Workflows.Model.Impl" />
+    </reference>
+  </view>
+</nodeSet>

@@ -1,0 +1,58 @@
+package JanuaWebXE10;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  DbxCommonDriver,
+  dbrtl,
+  DataSnapCommon,
+  DbxClientDriver,
+  CustomIPTransport,
+  soaprtl,
+  inet,
+  IndyIPServer,
+  IndyIPCommon,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  dsnap,
+  DataSnapServer,
+  DataSnapServerMidas,
+  JanuaCoreXE10,
+  JanuaPostgresSystemXE10;
+
+contains
+  Janua.Web.ServerContainer in '..\src\januawebrest\Janua.Web.ServerContainer.pas' {ServerContainer1: TDataModule},
+  Janua.Web.WebBrokerServer in '..\src\januawebrest\Janua.Web.WebBrokerServer.pas',
+  Janua.Web.WebModule in '..\src\januawebrest\Janua.Web.WebModule.pas' {WebModule1: TWebModule},
+  Unit7 in 'Unit7.pas' {Form7};
+
+end.

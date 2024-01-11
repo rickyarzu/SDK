@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ixt3t9yibqt_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.GetScreenFontName()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.ScreenFontName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.GetScreenFontHeight()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.ScreenFontHeight" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.TrySetStyle(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.GetStyleList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.StyleList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.ShowSelectThemStyler()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.GetStyleName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.SetStyleName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.StyleName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaStyleManager.Activate()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaDataModule">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetModalResult()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetModalResult(System.UITypes.TModalResult)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetShowHint()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetShowHint(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnCreate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnCreate(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnDestroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnDestroy(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnClose()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnClose(Janua.Forms.Types.TJanuaCloseEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnActivate(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnDeactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnDeactivate(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnResize()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnResize(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnShow()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnShow(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnHide()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnHide(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnFocusChanged()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnFocusChanged(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnSaveState()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnSaveState(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnVirtualKeyboardShown()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnVirtualKeyboardShown(Janua.Forms.Types.TVirtualKeyboardEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnVirtualKeyboardHidden()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnVirtualKeyboardHidden(Janua.Forms.Types.TVirtualKeyboardEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetClientHeight()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetClientWidth()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetBorderIcons(TBorderIcons)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetClientHeight(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetClientWidth(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.JanuaSetBiDiMode(System.Classes.TBiDiMode)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetCursor(System.UITypes.TCursor)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetWindowState(System.UITypes.TWindowState)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetWindowState()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetTabOrder()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetTabOrder(System.UITypes.TTabOrder)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetTabStop()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetTabStop(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.ModalResult" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.ShowHint" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnCreate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnDestroy" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnClose" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnActivate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnDeactivate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnResize" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnShow" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnHide" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnFocusChanged" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnVirtualKeyboardShown" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnVirtualKeyboardHidden" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnSaveState" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.WindowState" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.TabOrder" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.TabStop" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetFormStyleJanua()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetFormStyleJanua(Janua.Forms.Types.TJanuaFormStyle)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetOnCloseQueryJanua()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetOnCloseQueryJanua(Janua.Forms.Types.TJanuaCloseQueryEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.GetParentFormJanua()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetBorderStyleJ(Janua.Forms.Types.TJanuaFormBorderStyle)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.SetPositionJ(Janua.Forms.Types.TJanuaFormPosition)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.ParentFormJ" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.FormStyleJ" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.OnCloseQueryJ" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.ShowModal()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm:Janua.Controls.Forms.Intf.IJanuaContainer" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm.ParentFormJ" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaWindowsManager">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaWindowsManager.ShowOverlay()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaWindowsManager.HideOverlay()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetLeft()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetTop()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetLeft(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetTop(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetHeight(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetWidth(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetCaption(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetCaption()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetTransparency()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetTransparency(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetHeight()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetWidth()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetVisible()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetVisible(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.GetParams()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.SetParams(System.Variant[])" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Top" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Caption" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Active" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Transparency" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Width" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Height" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Visible" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Params" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer.Activate()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaRecordForm">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaRecordForm.GetJanuaRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaRecordForm.SetJanuaRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaRecordForm.JanuaRecord" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaRecordForm:Janua.Controls.Forms.Intf.IJanuaForm" />
+    </reference>
+  </view>
+  <link uin="vdistab9orrlp8uen_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaContainer" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Impl.TJanuaFormRecord" role="Supplier" />
+  </link>
+</nodeSet>

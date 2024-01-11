@@ -1,0 +1,53 @@
+package VCLTMSFNCDashboardPackPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Core for VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  vclimg,
+  vcl,
+  rtl,
+  VCLTMSFNCCorePkg;
+
+contains
+  VCL.TMSFNCWidgetProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetProgress.pas',
+  VCL.TMSFNCWPReg in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWPReg.pas',
+  VCL.TMSFNCWidgetMultiProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetMultiProgress.pas',
+  VCL.TMSFNCWidgetGraphicsTypes in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetGraphicsTypes.pas',
+  VCL.TMSFNCWidgetSetPoint in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetSetPoint.pas',
+  VCL.TMSFNCGraphicUtils in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCGraphicUtils.pas',
+  VCL.TMSFNCWidgetMarqueeProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetMarqueeProgress.pas',
+  VCL.TMSFNCWidgetMarqueeContinuousProgress in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetMarqueeContinuousProgress.pas',
+  VCL.TMSFNCWidgetArrow in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetArrow.pas',
+  VCL.TMSFNCWidgetLCDLabel in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetLCDLabel.pas',
+  VCL.TMSFNCWidgetGauge in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetGauge.pas',
+  VCL.TMSFNCWidgetTrendIndicator in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetTrendIndicator.pas',
+  VCL.TMSFNCWidgetDistributionIndicator in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCWidgetDistributionIndicator.pas';
+
+end.

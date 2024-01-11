@@ -1,0 +1,468 @@
+object BeaconDiscoverForm: TBeaconDiscoverForm
+  Left = 0
+  Top = 0
+  Caption = 'Beacon Discovery'
+  ClientHeight = 553
+  ClientWidth = 376
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 376.000000000000000000
+    Size.Height = 553.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 6
+    TabPosition = PlatformDefault
+    Sizes = (
+      376s
+      504s
+      376s
+      504s
+      376s
+      504s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 69.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1'
+      ExplicitSize.cx = 124.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar3: TToolBar
+        Align = Bottom
+        Position.Y = 452.000000000000000000
+        Size.Width = 376.000000000000000000
+        Size.Height = 52.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'panelstyle'
+        TabOrder = 5
+        TintColor = claBeige
+        object Button1: TButton
+          Align = Left
+          ControlType = Platform
+          Margins.Left = 7.000000000000000000
+          Margins.Top = 4.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listitembutton'
+          TabOrder = 0
+          Text = 'Start Discovery'
+          OnClick = Button1Click
+        end
+        object Button2: TButton
+          Align = Right
+          ControlType = Platform
+          Margins.Top = 4.000000000000000000
+          Margins.Right = 7.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 224.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listitembutton'
+          TabOrder = 1
+          Text = 'Cancel Discovery'
+          OnClick = CancelDiscoveryBtnClick
+        end
+      end
+      object Panel1: TPanel
+        Align = Bottom
+        Position.Y = 233.000000000000000000
+        Size.Width = 376.000000000000000000
+        Size.Height = 219.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'panelstyle'
+        TabOrder = 6
+        object lbMacAddress: TLabel
+          Anchors = [akLeft, akRight, akBottom]
+          ControlType = Platform
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 337.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+        end
+        object Memo1: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Anchors = [akLeft, akRight, akBottom]
+          Position.X = 16.000000000000000000
+          Position.Y = 103.000000000000000000
+          Size.Width = 337.000000000000000000
+          Size.Height = 105.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 333.000000000000000000
+          Viewport.Height = 101.000000000000000000
+        end
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Anchors = [akLeft, akTop, akRight]
+          TabOrder = 2
+          Position.X = 20.000000000000000000
+          Position.Y = 60.000000000000000000
+          Size.Width = 333.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object ListBox1: TListBox
+        Align = Client
+        Size.Width = 376.000000000000000000
+        Size.Height = 233.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 372.000000000000000000
+        Viewport.Height = 229.000000000000000000
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      ExplicitSize.cx = 124.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem3'
+      ExplicitSize.cx = 126.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object BeaconDiscoveryList: TListBox
+        Align = Top
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Position.Y = 44.000000000000000000
+        Size.Width = 376.000000000000000000
+        Size.Height = 504.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 6
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        GroupingKind = Grouped
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 504.000000000000000000
+        object ListBoxGroupHeader1: TListBoxGroupHeader
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claDarkslategray
+          StyledSettings = [Family, Other]
+          Size.Width = 376.000000000000000000
+          Size.Height = 56.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = ' Beacon Connectivity '
+        end
+        object ListBoxItem1: TListBoxItem
+          Selectable = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claSteelblue
+          StyledSettings = [Family, Size, Other]
+          Position.Y = 56.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 95.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 1
+          Text = 'Nearby Beacon Info'
+          object Label1: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 168.000000000000000000
+            Size.Width = 208.000000000000000000
+            Size.Height = 95.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+          end
+        end
+        object ListBoxItem2: TListBoxItem
+          Selectable = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claSteelblue
+          StyledSettings = [Family, Size, Other]
+          Position.Y = 151.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 95.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 2
+          Text = 'Distance to Beacon'
+          object BeaconDistance: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 176.000000000000000000
+            Size.Width = 200.000000000000000000
+            Size.Height = 95.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+          end
+        end
+        object ListBoxItem3: TListBoxItem
+          Selectable = False
+          TextSettings.FontColor = claCadetblue
+          StyledSettings = [Family, Size, Other]
+          Position.Y = 246.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 107.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 3
+          Text = 'Is Near?'
+          object Label2: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 176.000000000000000000
+            Size.Width = 200.000000000000000000
+            Size.Height = 107.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+          end
+        end
+      end
+      object Timer1: TTimer
+        OnTimer = Timer1Timer
+        Left = 88
+        Top = 232
+      end
+      object ToolBar1: TToolBar
+        Size.Width = 376.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'panelstyle'
+        TabOrder = 2
+        object Label5: TLabel
+          Align = Contents
+          StyledSettings = [Family, FontColor]
+          Size.Width = 376.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Beacon Discovery'
+        end
+      end
+      object ToolBar2: TToolBar
+        Align = Bottom
+        Position.Y = 452.000000000000000000
+        Size.Width = 376.000000000000000000
+        Size.Height = 52.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'panelstyle'
+        TabOrder = 5
+        TintColor = claBeige
+        object StartDiscoveryBtn: TButton
+          Align = Left
+          Margins.Left = 7.000000000000000000
+          Margins.Top = 4.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listitembutton'
+          TabOrder = 0
+          Text = 'Start Discovery'
+          OnClick = StartDiscoveryBtnClick
+        end
+        object CancelDiscoveryBtn: TButton
+          Align = Right
+          Margins.Top = 4.000000000000000000
+          Margins.Right = 7.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 224.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'listitembutton'
+          TabOrder = 1
+          Text = 'Cancel Discovery'
+          OnClick = CancelDiscoveryBtnClick
+        end
+      end
+    end
+  end
+  object Beacon1: TBeacon
+    ModeExtended = [iBeacons, AltBeacons, Eddystones]
+    MonitorizedRegions = <>
+    SPC = 0.500000000000000000
+    OnBeaconEnter = Beacon1BeaconEnter
+    OnBeaconProximity = Beacon1BeaconProximity
+    Left = 256
+    Top = 64
+  end
+  object Beacon2: TBeacon
+    ModeExtended = [iBeacons, AltBeacons, Eddystones]
+    MonitorizedRegions = <>
+    SPC = 0.500000000000000000
+    OnBeaconEnter = Beacon2BeaconEnter
+    Left = 88
+    Top = 64
+  end
+  object tbDiscovery: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'local_id'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'macaddress'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'UUID'
+        DataType = ftString
+        Size = 38
+      end
+      item
+        Name = 'message'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'active'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'remote_id'
+        DataType = ftInteger
+      end
+      item
+        Name = 'Distance'
+        DataType = ftFloat
+      end
+      item
+        Name = 'DistanceTrigger'
+        DataType = ftFloat
+      end>
+    Left = 112
+    Top = 160
+    Data = {
+      0300080008006C6F63616C5F696402000000000000000A006D61636164647265
+      73730100140000000000040055554944010026000000000007006D6573736167
+      65010080000000000006006163746976650500000000000000090072656D6F74
+      655F69640300000000000000080044697374616E636506000000000000000F00
+      44697374616E6365547269676765720600000000000000000000000000}
+    object VirtualTable1local_id: TSmallintField
+      FieldName = 'local_id'
+    end
+    object VirtualTable1macaddress: TStringField
+      FieldName = 'macaddress'
+    end
+    object VirtualTable1UUID: TStringField
+      FieldName = 'UUID'
+      Size = 38
+    end
+    object VirtualTable1message: TStringField
+      FieldName = 'message'
+      Size = 128
+    end
+    object VirtualTable1active: TBooleanField
+      FieldName = 'active'
+    end
+    object VirtualTable1remote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object tbDiscoveryDistance: TFloatField
+      FieldName = 'Distance'
+    end
+    object tbDiscoveryDistanceTrigger: TFloatField
+      FieldName = 'DistanceTrigger'
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = tbDiscovery
+    ScopeMappings = <>
+    Left = 208
+    Top = 136
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 228
+    Top = 213
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'macaddress'
+      Component = lbMacAddress
+      ComponentProperty = 'Text'
+    end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'local_id'
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillDisplayFieldName = 'message'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'macaddress'
+      FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'message'
+      Control = Memo1
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'DistanceTrigger'
+      Control = Edit1
+      Track = False
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'macaddress'
+      Control = ListBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

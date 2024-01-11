@@ -1,0 +1,33 @@
+maps.exe: 000013E0: 16:15:36 []:>--------------------------------------------------------------<
+maps.exe: 000013E0: 16:15:36 [TUniServerModule]:Server First Init.
+maps.exe: 000013E0: 16:15:36 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\GoogleMaps\
+maps.exe: 000013E0: 16:15:36 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+maps.exe: 000013E0: 16:15:36 [TUniServerModule]:HTTP Server Started on Port: 8077
+maps.exe: 00002380: 16:16:14 [HandleFileRequest[127.0.0.1]]:File not found: C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\GoogleMaps\favicon.ico
+maps.exe: 00001C58: 16:41:48 []:>--------------------------------------------------------------<
+maps.exe: 00001C58: 16:41:48 [TUniServerModule]:Server First Init.
+maps.exe: 00001C58: 16:41:48 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\GoogleMaps\
+maps.exe: 00001C58: 16:41:48 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+maps.exe: 00001C58: 16:41:48 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006CC4EB
+maps.exe: 000013E0: 16:56:57 [TUniServerModule]:Shutting Down Server.
+maps.exe: 000013E0: 16:56:57 [TUniServerModule]:Stopping HTTP Server.
+maps.exe: 000013E0: 16:56:58 [TUniServerModule]:HTTP Server Stopped.
+maps.exe: 000013E0: 16:56:58 [TUniGUISessionManager]:Terminating Session manager.
+maps.exe: 000013E0: 16:56:58 [TUniGUISessionManager]:Stopping Cache Eraser...
+maps.exe: 000013E0: 16:56:58 [TUniGUISessionManager]:Cache Eraser Stopped.
+maps.exe: 000013E0: 16:56:58 [TUniGUISessionManager]:Destroying Worker Threads.
+maps.exe: 000013E0: 16:56:58 [TUniGUISessionManager]:Session manager terminated.
+maps.exe: 000013E0: 16:56:58 [TUniServerModule]:Server Shutdown Completed.
+maps.exe: 000013E0: 16:56:58 []:<-------------------------------------------------------------->
+maps.exe: 000013E0: 16:56:58 [Terminated]:Exit Code: 0
+maps.exe: 00001C58: 16:57:03 [TUniServerModule]:Shutting Down Server.
+maps.exe: 00001C58: 16:57:03 [TUniServerModule]:Stopping HTTP Server.
+maps.exe: 00001C58: 16:57:03 [TUniServerModule]:HTTP Server Stopped.
+maps.exe: 00001C58: 16:57:03 [TUniGUISessionManager]:Terminating Session manager.
+maps.exe: 00001C58: 16:57:03 [TUniGUISessionManager]:Stopping Cache Eraser...
+maps.exe: 00001C58: 16:57:03 [TUniGUISessionManager]:Cache Eraser Stopped.
+maps.exe: 00001C58: 16:57:03 [TUniGUISessionManager]:Destroying Worker Threads.
+maps.exe: 00001C58: 16:57:03 [TUniGUISessionManager]:Session manager terminated.
+maps.exe: 00001C58: 16:57:03 [TUniServerModule]:Server Shutdown Completed.
+maps.exe: 00001C58: 16:57:03 []:<-------------------------------------------------------------->
+maps.exe: 00001C58: 16:57:03 [Terminated]:Exit Code: 0

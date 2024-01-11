@@ -1,0 +1,554 @@
+unit Janua.Html.Intf;
+
+{$I JANUACORE.INC}
+
+interface
+
+uses
+{$IFDEF delphixe}
+  System.Classes, System.SysUtils, System.JSON, Data.DB, Spring.Collections, Spring,
+{$ENDIF}
+{$IFDEF fpc}
+  Classes, SysUtils, fpjson, Generics.Collections,
+{$ENDIF}
+  Janua.Orm.Types, Janua.Html.Types, Janua.Core.Types, Janua.Http.Types;
+
+type
+  IHtmlmenuItem = Interface(IInterface)
+    ['{9BE6F9D9-505C-44BF-90F1-0FBE6804D6B0}']
+    function GetIcon: string;
+    function GetText: string;
+    function GetUrl: string;
+    function GetSelected: boolean;
+    procedure SetIcon(const Value: string);
+    procedure SetText(const Value: string);
+    procedure SetUrl(const Value: string);
+    procedure SetSelected(const Value: boolean);
+    property Icon: string read GetIcon write SetIcon;
+    property Text: string read GetText write SetText;
+    property Url: string read GetUrl write SetUrl;
+    property Selected: boolean read GetSelected write SetSelected;
+  End;
+
+  IHtmlMenuGroup = Interface(IHtmlmenuItem)
+    ['{6A2BAF3B-11C3-4308-9F55-7870E4D0FDB0}']
+{$IFDEF delphixe}
+    function GetItems: IList<IHtmlmenuItem>;
+    procedure SetItems(const Value: IList<IHtmlmenuItem>);
+    property Items: IList<IHtmlmenuItem> read GetItems write SetItems;
+{$ENDIF}
+{$IFDEF fpc}
+    function GetItems: TList<IHtmlmenuItem>;
+    procedure SetItems(const Value: TList<IHtmlmenuItem>);
+    property Items: TList<IHtmlmenuItem> read GetItems write SetItems;
+{$ENDIF}
+    procedure AddItem(aItem: IHtmlmenuItem); overload;
+    procedure AddItem(aIcon, aText, aUrl: string; aSelected: boolean); overload;
+  end;
+
+  IHtmlMenu = Interface(IInterface)
+    ['{83E454FE-9C62-4840-8737-0E7A24F52F1A}']
+{$IFDEF delphixe}
+    function GetItems: IList<IHtmlMenuGroup>;
+    procedure SetItems(const Value: IList<IHtmlMenuGroup>);
+    property Items: IList<IHtmlMenuGroup> read GetItems write SetItems;
+{$ELSE}
+    function GetItems: TList<IHtmlMenuGroup>;
+    procedure SetItems(const Value: TList<IHtmlMenuGroup>);
+    property Items: TList<IHtmlMenuGroup> read GetItems write SetItems;
+{$ENDIF}
+    function GetItemIndex: Integer;
+    function GetSelectedItem: IHtmlMenuGroup;
+    procedure SetSelectedItem(const Value: IHtmlMenuGroup);
+
+    procedure SetItemIndex(const Value: Integer);
+    procedure AddGroup(aGroup: IHtmlMenuGroup);
+    property ItemIndex: Integer read GetItemIndex write SetItemIndex;
+
+    property SelectedItem: IHtmlMenuGroup read GetSelectedItem write SetSelectedItem;
+  end;
+
+  IHtmlHelper = interface;
+
+  IJanuaHtmlObject = Interface(IInterface)
+    ['{1A47F005-637B-4EA7-9ACC-57FEF05EFDDB}']
+    // Getters corresponding to Fields in Object ..............................................
+    function GetLevel: Integer;
+    function GetTag: string;
+    function GetTitle: string;
+    function GetId: string;
+    function GetOpenTagClass: TFuncOfCssClass;
+    function GetStyle: TJanuaCss;
+    function GetAutoClose: boolean;
+    function GetTerminateSlash: boolean;
+    function GetText: string;
+    function GetNewLine: boolean;
+    function GetCommentBeforeInLine: string;
+    function GetCommentBefore: string;
+    function GetCommentAfterInLine: string;
+    function GetCommentAfter: string;
+    function GetInlined: boolean;
+    function GetHidden: boolean;
+    function GetItemIndex: Integer;
+    function GetHtmlHelper: IHtmlHelper;
+    function GetAccessKey: char;
+    function GetUID: string;
+    function GetShowEnclosingTag: boolean;
+    function GetHide: boolean;
+    function GetFTag: string;
+    function GetOnClick: string;
+    // Setters ..................................
+    procedure SetStyle(const Value: TJanuaCss);
+    procedure SetAutoClose(const Value: boolean);
+    procedure SetTerminateSlash(const Value: boolean);
+    procedure SetText(const Value: string);
+    procedure SetId(const Value: string);
+    procedure SetOpenTagClass(const Value: TFuncOfCssClass);
+    procedure SetTag(const Value: string);
+    procedure SetIndent(const Value: Integer);
+    procedure SetNewLine(const Value: boolean);
+    procedure SetCommentAfter(const Value: string);
+    procedure SetCommentAfterInLine(const Value: string);
+    procedure SetCommentBefore(const Value: string);
+    procedure SetCommentBeforeInLine(const Value: string);
+    procedure SetInlined(const Value: boolean);
+    procedure SetHidden(const Value: boolean);
+    procedure SetTitle(const Value: string);
+    procedure SetSelectedItem(const Value: IJanuaHtmlObject);
+    function GetSelectedItem: IJanuaHtmlObject;
+    procedure SeTCustomHtmlHelper(const Value: IHtmlHelper);
+    procedure SetAccessKey(const Value: char);
+    procedure SetUID(const Value: string);
+    procedure SetShowEnclosingTag(const Value: boolean);
+    procedure SetHide(const Value: boolean);
+    procedure SetOnclick(const Value: string);
+    // Public Functions and Procedures
+    function HtmlComment(aComment: string; aInline: boolean): string;
+    function SIndent(aIndent: Integer = 0): string;
+    function OpenTag: string;
+    function BodyBeforeText: string;
+    // Here goes the Html Code and overriding modification to Text ................
+    function BodyText: string;
+    // Here goes the Html Code AFTER the Internal Body Text .......................
+    function BodyAfterText: string;
+    function CloseTag: string;
+    procedure AppendHtml(aBuilder: IStringBuilder);
+    function GetParamCount: Integer;
+    procedure SetLineText(aText: string);
+    procedure StartLineText(aText: string);
+    procedure AddLineText(aText: string);
+    procedure EndLineText(aText: string);
+    procedure Prepare;
+    procedure Clear;
+    // Public Procedures .............................................................................
+    procedure AddParam(const aKey, aValue: string);
+    procedure DelParam(const aKey: string);
+    function GetParamValue(const aKey: string): string;
+    procedure AddStyle(const aKey: THtmlStyle; aValue: string); overload;
+    procedure AddStyles(const aStyles: THtmlStyles);
+    procedure DelStyle(const aKey: THtmlStyle);
+    procedure AddClass(const aClassName: string);
+    procedure AddClasses(const aClases: TArray<string>);
+    procedure DelClass(const aClassName: string);
+    procedure DelClasses(const aClasses: TArray<string>);
+    function AsHtml: string;
+    function Count(bRecursive: boolean = False): Integer;
+    procedure AddOrReplaceSimpleTag(const aTag, aValue: string; aNewLine: boolean = False); overload;
+    procedure AddOrReplaceSimpleTag(const aTag, aValue: string; aParams: TJanuaHtmlParams;
+      aNewLine: boolean = False); overload;
+{$IFDEF delphixe}
+    function AddSimpleTag(const aTag: string; const aValue: string = ''; const aNewLine: boolean = False;
+      aClasses: TArray<string> = []): IJanuaHtmlObject; overload;
+{$ELSE delphixe}
+    function AddSimpleTag(const aTag: string; const aValue: string = ''; const aNewLine: boolean = False;
+      aClasses: array of string): IJanuaHtmlObject; overload;
+{$ENDIF delphixe}
+    function AddSimpleTag(const aTag, aValue: string; aParams: TJanuaHtmlParams; aNewLine: boolean = False)
+      : IJanuaHtmlObject; overload;
+    // Object Management
+    function FindByUID(aUID: string): boolean;
+    function FindByTag(aTag: string): boolean;
+    function ClassCount: Integer;
+    function Add(aObject: IJanuaHtmlObject): Integer;
+    procedure AddOrReplace(aObject: IJanuaHtmlObject);
+    procedure Insert(aPos: Integer; aObject: IJanuaHtmlObject);
+    procedure Delete(aPos: Integer);
+    function GetItem(aID: Integer): IJanuaHtmlObject;
+    // Properties .................................................................
+    property Style: TJanuaCss read GetStyle write SetStyle;
+    property AutoClose: boolean read GetAutoClose write SetAutoClose;
+    property TerminateSlash: boolean read GetTerminateSlash write SetTerminateSlash;
+    property Text: string read GetText write SetText;
+    property NewLine: boolean read GetNewLine write SetNewLine;
+    property Inlined: boolean read GetInlined write SetInlined;
+    property CommentBefore: string read GetCommentBefore write SetCommentBefore;
+    property CommentAfter: string read GetCommentAfter write SetCommentAfter;
+    property CommentBeforeInLine: string read GetCommentBeforeInLine write SetCommentBeforeInLine;
+    property CommentAfterInLine: string read GetCommentAfterInLine write SetCommentAfterInLine;
+    // this adds the attribute 'hidden' to the Object .......................................
+    property Hidden: boolean read GetHidden write SetHidden;
+    property Title: string read GetTitle write SetTitle;
+    property SelectedItem: IJanuaHtmlObject read GetSelectedItem write SetSelectedItem;
+    property ItemIndex: Integer read GetItemIndex;
+    property ParamCount: Integer read GetParamCount;
+    property HtmlHelper: IHtmlHelper read GetHtmlHelper write SeTCustomHtmlHelper;
+    property AccessKey: char read GetAccessKey write SetAccessKey;
+    property UID: string read GetUID write SetUID;
+    // if Set to 'False' it hides teh enclosing tags and print out only its content
+    property ShowEnclosingTag: boolean read GetShowEnclosingTag write SetShowEnclosingTag;
+    // la property 'Items' la nascondo per renderla accessibile solo tramite funzioni specifiche
+    // if set to True it hides all the object and its content so set the AsHtml Property to ''
+    property Hide: boolean read GetHide write SetHide;
+    property Level: Integer read GetLevel write SetIndent;
+    property tag: string read GetFTag write SetTag;
+    property OpenTagClass: TFuncOfCssClass read GetOpenTagClass write SetOpenTagClass;
+    property Id: string read GetId write SetId;
+    property Onclick: string read GetOnClick write SetOnclick;
+{$IFDEF delphixe}
+    function GetItems: IList<IJanuaHtmlObject>;
+    procedure SetItems(const Value: IList<IJanuaHtmlObject>);
+    property Items: IList<IJanuaHtmlObject> read GetItems write SetItems;
+{$ENDIF}
+{$IFDEF fpc}
+    function GetItems: TList<IHtmlmenuItem>;
+    procedure SetItems(const Value: TList<IHtmlmenuItem>);
+    property Items: TList<IHtmlmenuItem> read GetItems write SetItems;
+{$ENDIF}
+  End;
+
+  IHtmlSelect = Interface(IJanuaHtmlObject)
+    ['{70CC3093-49CD-469C-87EF-99EA1AB25912}']
+    function AddItem(aValue, aText: string; aSelected: boolean): IJanuaHtmlObject;
+  End;
+
+  IJanuaStyles = Interface(IJanuaHtmlObject)
+    ['{0CD031B4-E21D-46BB-891B-E6696600B096}']
+    function GetStyles: TArray<TJanuaCss>;
+    procedure SetStyles(const Value: TArray<TJanuaCss>);
+    procedure AddStyle(aStyle: TJanuaCss); overload;
+    property Styles: TArray<TJanuaCss> read GetStyles write SetStyles;
+  End;
+
+  IJanuaHtmlImage = Interface(IJanuaHtmlObject)
+    ['{1A7F9E48-B5E2-4DA3-B3A2-F8C693B8EF5B}']
+    function GetAlt: string;
+    function GetSrc: string;
+    procedure SetAlt(const Value: string);
+    procedure SetSrc(const Value: string);
+    property Alt: string read GetAlt write SetAlt;
+    property Src: string read GetSrc write SetSrc;
+  end;
+
+  IJanuaCssObject = Interface(IInterface)
+    ['{85CC9545-AC06-4A05-92F8-4E90CBB10FF2}']
+{$IFDEF delphixe}
+    procedure SetTags(const Value: IList<string>);
+    function GetClasses: IList<string>;
+    function GetTags: IList<string>;
+    function GetStyles: IDictionary<THtmlStyle, string>;
+    procedure SetClasses(const Value: IList<string>);
+    procedure SetStyles(const Value: IDictionary<THtmlStyle, string>);
+
+    property Classes: IList<string> read GetClasses write SetClasses;
+    property Tags: IList<string> read GetTags write SetTags;
+    property Styles: IDictionary<THtmlStyle, string> read GetStyles write SetStyles;
+{$ENDIF}
+{$IFDEF fpc}
+    procedure SetTags(const Value: TList<string>);
+    function GetClasses: TList<string>;
+    function GetTags: TList<string>;
+    function GetStyles: TDictionary<THtmlStyle, string>;
+    procedure SetClasses(const Value: TList<string>);
+    procedure SetStyles(const Value: TDictionary<THtmlStyle, string>);
+
+    property Classes: TList<string> read GetClasses write SetClasses;
+    property Tags: TList<string> read GetTags write SetTags;
+    property Styles: TDictionary<THtmlStyle, string> read GetStyles write SetStyles;
+{$ENDIF}
+    procedure DelStyle(aStyle: THtmlStyle);
+    procedure AddStyle(aStyle: THtmlStyle; aValue: string);
+    procedure AddClass(aClass: string);
+    procedure AddClasses(aClasses: TArray<string>);
+    procedure DelClass(aClass: string);
+    function Generate: string;
+  End;
+
+  IJanuaCssMedia = Interface(IInterface)
+    ['{85CC9545-AC06-4A05-92F8-4E90CBB10FF2}']
+{$IFDEF delphixe}
+    function GetCss: IList<IJanuaCssObject>;
+    function GetFeatures: IList<TCssMediaFeatureRecord>;
+    procedure SetCss(const Value: IList<IJanuaCssObject>);
+    procedure SetFeatures(const Value: IList<TCssMediaFeatureRecord>);
+    property Css: IList<IJanuaCssObject> read GetCss write SetCss;
+    property Geteatures: IList<TCssMediaFeatureRecord> read GetFeatures write SetFeatures;
+{$ENDIF}
+{$IFDEF fpc}
+    function GetCss: TList<IJanuaCssObject>;
+    function GetFeatures: TList<TCssMediaFeatureRecord>;
+    procedure SetCss(const Value: TList<IJanuaCssObject>);
+    procedure SetFeatures(const Value: TList<TCssMediaFeatureRecord>);
+    property Css: TList<IJanuaCssObject> read GetCss write SetCss;
+    property Geteatures: TList<TCssMediaFeatureRecord> read GetFeatures write SetFeatures;
+{$ENDIF}
+    function GetMediaType: TCssMediaType;
+    function GetMediaString: string;
+    function GetMediaUse: TCssMediaTypeUse;
+    procedure SetMediaString(const Value: string);
+    procedure SetMediaType(const Value: TCssMediaType);
+    procedure SetMediaUse(const Value: TCssMediaTypeUse);
+    Procedure AddCss(aObject: IJanuaCssObject);
+    function AddCssByClasses(aClasses: TArray<string>): IJanuaCssObject;
+    function AddCssByTags(aClasses: TArray<string>): IJanuaCssObject;
+    procedure AddFeature(aFeature: TCssMediaFeature; aValue: string);
+    function Generate: string;
+    property MediaType: TCssMediaType read GetMediaType write SetMediaType;
+    property MediaUse: TCssMediaTypeUse read GetMediaUse write SetMediaUse;
+    property MediaString: string read GetMediaString write SetMediaString;
+  End;
+
+  IJanuaCssStyle = Interface(IJanuaHtmlObject)
+    ['{D2FF40F8-1961-49B4-B961-964BF532DD48}']
+{$IFDEF delphixe}
+    function GetMedias: IList<IJanuaCssMedia>;
+    function GetCss: IList<IJanuaCssObject>;
+    procedure SetCss(const Value: IList<IJanuaCssObject>);
+    procedure SetMedias(const Value: IList<IJanuaCssMedia>);
+    function GetText: string;
+    property Medias: IList<IJanuaCssMedia> read GetMedias write SetMedias;
+    property Css: IList<IJanuaCssObject> read GetCss write SetCss;
+{$ENDIF}
+{$IFDEF fpc}
+    function GetMedias: TList<IJanuaCssMedia>;
+    function GetCss: TList<IJanuaCssObject>;
+    procedure SetCss(const Value: TList<IJanuaCssObject>);
+    procedure SetMedias(const Value: TList<IJanuaCssMedia>);
+    function GetText: string;
+    property Medias: TList<IJanuaCssMedia> read GetMedias write SetMedias;
+    property Css: TList<IJanuaCssObject> read GetCss write SetCss;
+{$ENDIF}
+    procedure AddCss(aObject: IJanuaCssObject);
+    function GetSelectedCss: IJanuaCssObject;
+    procedure SetSelectedCss(const Value: IJanuaCssObject);
+    property SelectedCss: IJanuaCssObject read GetSelectedCss write SetSelectedCss;
+    function AddCssByClasses(aClasses: TArray<string>): IJanuaCssObject;
+    function AddCssByTags(aClasses: TArray<string>): IJanuaCssObject;
+    function GetSelectedMedia: IJanuaCssMedia;
+    procedure SetSelectedMedia(const Value: IJanuaCssMedia);
+    property SelectedMedia: IJanuaCssMedia read GetSelectedMedia write SetSelectedMedia;
+    function AddMediaByType(aType: TCssMediaType; aUse: TCssMediaTypeUse = tuNone): IJanuaCssMedia;
+    function AddMediaByFeature(aType: TCssMediaType; aFeature: TCssMediaFeature; aValue: string): IJanuaCssMedia;
+    procedure AddMedia(aObject: IJanuaCssMedia);
+  End;
+
+  IJanuaHtmlLink = Interface(IJanuaHtmlObject)
+    ['{CD4B6BEC-5BC4-4D29-8CF0-EB1F0368EB74}']
+    function GetLinkURL: string;
+    function GetMimeType: TJanuaMimeType;
+    function GetIsCrossOrigin: boolean;
+    function GetRelTypes: TJanuaLinkRelTypes;
+    function GetUseAssetsUrl: boolean;
+    function GetImage: IJanuaHtmlImage;
+    function GetHasImage: boolean;
+    function GetRel: string;
+    function GetUrl: string;
+    // Setters
+    procedure SetLinkURL(const Value: string);
+    procedure SetUrl(const Value: string);
+    procedure SetMimeType(const Value: TJanuaMimeType);
+    procedure SetIsCrossOrigin(const Value: boolean);
+    procedure SetRelTypes(const Value: TJanuaLinkRelTypes);
+    procedure SetUseAssetsUrl(const Value: boolean);
+    procedure SetHasImage(const Value: boolean);
+    procedure SetImage(const Value: IJanuaHtmlImage);
+    // indica se gli 'assets' (css, js, images ...) risiedono su una location separata (url)
+    property UseAssetsUrl: boolean read GetUseAssetsUrl write SetUseAssetsUrl;
+    // URL ? l'url del server che contiene la risorsa di riferimento..........................
+    property Url: string read GetUrl write SetUrl;
+    // Link Url ? l'url base della risorsa impiegata dalla pagina web generata................
+    property LinkUrl: string read GetLinkURL write SetLinkURL;
+    // Relazione tipo rel=....
+    // MIME Type se specificato da Janua Core Types ..........................................
+    property MimeType: TJanuaMimeType read GetMimeType write SetMimeType;
+    // a Link to a resource (external resource) should be cross-origin .......................
+    property IsCrossOrigin: boolean read GetIsCrossOrigin write SetIsCrossOrigin;
+    // Relation Type icon, Author questa relazione ? OBBLIGATORIA !!!!!
+    property RelTypes: TJanuaLinkRelTypes read GetRelTypes write SetRelTypes;
+    // Image Management
+    property HasImage: boolean read GetHasImage write SetHasImage;
+    property Image: IJanuaHtmlImage read GetImage write SetImage;
+  end;
+
+  IJanuaHtmlForm = Interface(IJanuaHtmlObject)
+    ['{E3F2B664-33D4-4808-B21F-8A44880F5A9F}']
+    function AddInput(aInputType: THtmlInputType; aPlaceHolder, aName: string): Integer;
+  end;
+
+  IJanuaCustomSection = Interface(IJanuaHtmlObject)
+    ['{22F2A096-60AC-436F-87CD-54E5AE05ECB7}']
+    procedure AddCssRef(aRef: string; aAssetsUrl: boolean = True; CrossOrigin: boolean = False);
+    procedure AddScript(aScript: string; aMimeType: TJanuaMimeType = TJanuaMimeType.jmtUnknown);
+    procedure AddScriptUrl(aScriptUrl: string; aMimeType: TJanuaMimeType = TJanuaMimeType.jmtUnknown);
+  end;
+
+  IJanuaHeadSection = Interface(IJanuaCustomSection)
+    ['{6C65ADBF-6343-4B6F-BF42-E36AFFA9689E}']
+    procedure AddMeta(const aParams: TJanuaHtmlParams);
+    function GetCharset: string;
+    function GEtPageTitle: IJanuaHtmlObject;
+    function GetPageDescription: IJanuaHtmlObject;
+    procedure SetPageTitle(const Value: IJanuaHtmlObject);
+    procedure SetPageDescription(const Value: IJanuaHtmlObject);
+    procedure Setcharset(const Value: string);
+    property charset: string read GetCharset write Setcharset;
+    property PageTitle: IJanuaHtmlObject read GEtPageTitle write SetPageTitle;
+    property PageDescription: IJanuaHtmlObject read GetPageDescription write SetPageDescription;
+    procedure SetCssStyle(const Value: IJanuaCssStyle);
+    function GetCssStyle: IJanuaCssStyle;
+    property CssStyle: IJanuaCssStyle read GetCssStyle write SetCssStyle;
+  end;
+
+  IJanuaFooter = Interface(IJanuaHtmlObject)
+    ['{7BAA480D-26EC-4CC7-8EED-8EC6BCB5A079}']
+    function GetColor: string;
+    procedure SetColor(const Value: string);
+    property Color: string read GetColor write SetColor;
+    function Getbgcolor: string;
+    procedure Setbgcolor(const Value: string);
+    property bgcolor: string read Getbgcolor write Setbgcolor;
+  End;
+
+  IJanuaBody = Interface(IJanuaHtmlObject)
+    ['{D9099504-D7FB-4248-9ADA-DFE26AE9A010}']
+    function GetColor: string;
+    procedure SetColor(const Value: string);
+    property Color: string read GetColor write SetColor;
+    function Getbgcolor: string;
+    procedure Setbgcolor(const Value: string);
+    procedure AddMenu(aMenu: IJanuaHtmlObject);
+    property bgcolor: string read Getbgcolor write Setbgcolor;
+  end;
+
+  IJanuaHtmlPage = Interface(IJanuaHtmlObject)
+    ['{1D8B3B04-C86A-4217-81C1-E3B68CC58B95}']
+    procedure SetHeadSection(const Value: IJanuaHeadSection);
+    function GetHeadSection: IJanuaHeadSection;
+    procedure SetAssetsUrl(const Value: string);
+    function GetAssetsUrl: string;
+    // Getters
+    function GetLanguage: TJanuaLanguage;
+    function GEtPageTitle: string;
+    function GetPageDescription: string;
+    function GetPageName: string;
+    function GetViewPort: string;
+    function GetBody: IJanuaBody;
+    // Setters
+    procedure SetLanguage(const Value: TJanuaLanguage);
+    procedure SetPageTitle(const Value: string);
+    procedure SetPageDescription(const Value: string);
+    procedure SetPageName(const Value: string);
+    procedure SetViewPort(const Value: string);
+    procedure SetBody(const Value: IJanuaBody);
+    function OpenTag: string;
+    property HeadSection: IJanuaHeadSection read GetHeadSection write SetHeadSection;
+    property Language: TJanuaLanguage read GetLanguage write SetLanguage;
+    property PageTitle: string read GEtPageTitle write SetPageTitle;
+    property PageName: string read GetPageName write SetPageName;
+    property PageDescription: string read GetPageDescription write SetPageDescription;
+    property ViewPort: string read GetViewPort write SetViewPort;
+    property Body: IJanuaBody read GetBody write SetBody;
+    property AssetsUrl: string read GetAssetsUrl write SetAssetsUrl;
+    function GetBackGroundColor: string;
+    procedure SetBackGroundColor(const Value: string);
+    property BackGroundColor: string read GetBackGroundColor write SetBackGroundColor;
+  end;
+
+  IHtmlHelper = Interface(IInterface)
+    ['{02873649-8E9A-499C-B373-1D405AD3B8E8}']
+    function FactoryCreate(aTag: string; aAutoCloseTag: boolean = False): IJanuaHtmlObject; overload;
+    function FactoryCreate(aTag: string; aParams: TJanuaHtmlParams; aAutoCloseTag: boolean = False;
+      aTerminateSlash: boolean = False): IJanuaHtmlObject; overload;
+    function FactoryCreate(const aTag, aValue: string; aNewLine: boolean = False): IJanuaHtmlObject; overload;
+    function FactoryCreate(const aTag: string; aStrings: TStrings; aNewLine: boolean = True): IJanuaHtmlObject;
+      overload;
+    function FactoryCreate(const aTag, aValue: string; aParams: TJanuaHtmlParams; aNewLine: boolean = False)
+      : IJanuaHtmlObject; overload;
+    function FactoryCreate(aTag: string; aClasses: TArray<string>): IJanuaHtmlObject; overload;
+    function GetTheme: string;
+    procedure SetTheme(Value: string);
+    property Theme: string read GetTheme write SetTheme;
+    function FactoryInput(aInputType: THtmlInputType; aPlaceHolder, aName: string): IJanuaHtmlObject;
+  End;
+
+  IHtmlTableCell = Interface(IJanuaHtmlObject)
+    ['{8924C9DF-F916-4F60-B454-A2019213D603}']
+    function GetIsHeader: boolean;
+    function GetHasLabel: boolean;
+    function Getcolspan: Integer;
+    function Getrowspan: Integer;
+    function GetValue: string;
+    procedure Setcolspan(const Value: Integer);
+    procedure SetHasLabel(const Value: boolean);
+    procedure SetIsHeader(const Value: boolean);
+    procedure Setrowspan(const Value: Integer);
+    procedure SetValue(const Value: string);
+    property CellValue: string read GetValue write SetValue;
+    property IsHeader: boolean read GetIsHeader write SetIsHeader;
+    property HasLabel: boolean read GetHasLabel write SetHasLabel;
+    property colspan: Integer read Getcolspan write Setcolspan;
+    property rowspan: Integer read Getrowspan write Setrowspan;
+  End;
+
+  IHtmlTableRow = Interface(IJanuaHtmlObject)
+    ['{5A3A328B-FB12-4B75-A510-F930E5BA7283}']
+    procedure AddCell(aCell: IHtmlTableCell);
+    procedure AddValue(aValue: Integer; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddValue(aValue: Int64; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddValue(aValue: smallint; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddValue(aValue: string; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddValue(aValue: TDateTime; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddValue(aValue: Extended; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = ''); overload;
+    procedure AddLink(aValue, aUrlLink: string; colspan: Integer = 0; rowspan: Integer = 0; Onclick: string = '');
+    procedure AddImage(aValue, aUrlImage, aUrlLink: string; colspan: Integer = 0; rowspan: Integer = 0;
+      Onclick: string = '');
+    // properties
+    function GetIsHeader: boolean;
+    function GetIsSortable: boolean;
+    procedure SetIsHeader(const Value: boolean);
+    procedure SetIsSortable(const Value: boolean);
+    property IsHeader: boolean read GetIsHeader write SetIsHeader;
+    property IsSortable: boolean read GetIsSortable write SetIsSortable;
+  End;
+
+  IHtmlTable = Interface(IJanuaHtmlObject)
+    ['{E83B9438-C463-4AED-873A-5C882AEAC751}']
+    procedure AddRow(aRow: IHtmlTableRow);
+    function GetStriped: boolean;
+    function GetHover: boolean;
+    function GetHeader: IJanuaHtmlObject;
+    function GetHasHeader: boolean;
+    function GetBordered: boolean;
+    function GetBody: IJanuaHtmlObject;
+    function GetFooter: IJanuaHtmlObject;
+    function GetHasFooter: boolean;
+    procedure SetBordered(const Value: boolean);
+    procedure SetHasHeader(const Value: boolean);
+    procedure SetHeader(const Value: IJanuaHtmlObject);
+    procedure SetHover(const Value: boolean);
+    procedure SetStriped(const Value: boolean);
+    procedure SetBody(const Value: IJanuaHtmlObject);
+    property Header: IJanuaHtmlObject read GetHeader write SetHeader;
+    property HasHeader: boolean read GetHasHeader write SetHasHeader;
+    property Bordered: boolean read GetBordered write SetBordered;
+    property Striped: boolean read GetStriped write SetStriped;
+    property Hover: boolean read GetHover write SetHover;
+    property Body: boolean read GetHover write SetHover;
+    function GetSortable: boolean;
+    procedure SetSortable(const Value: boolean);
+    property Sortable: boolean read GetSortable write SetSortable;
+    procedure SetupSortable(aID: string);
+  End;
+
+implementation
+
+end.

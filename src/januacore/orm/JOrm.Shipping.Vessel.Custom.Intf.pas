@@ -1,0 +1,170 @@
+unit JOrm.Shipping.Vessel.Custom.Intf;
+
+interface
+
+uses Janua.Orm.Intf;
+
+type
+
+  ICustomVessel = interface(IJanuaRecord)
+    ['{165B626D-2C46-4356-A5C7-329A6873A71C}']
+    function GetVesselId: IJanuaField;
+    procedure SetVesselId(const Value: IJanuaField);
+    property VesselId: IJanuaField read GetVesselId write SetVesselId;
+    function GetName: IJanuaField;
+    procedure SetName(const Value: IJanuaField);
+    property Name: IJanuaField read GetName write SetName;
+    function GetCode: IJanuaField;
+    procedure SetCode(const Value: IJanuaField);
+    property Code: IJanuaField read GetCode write SetCode;
+    function GetNetTonnage: IJanuaField;
+    procedure SetNetTonnage(const Value: IJanuaField);
+    property NetTonnage: IJanuaField read GetNetTonnage write SetNetTonnage;
+    function GetGrossTonnage: IJanuaField;
+    procedure SetGrossTonnage(const Value: IJanuaField);
+    property GrossTonnage: IJanuaField read GetGrossTonnage write SetGrossTonnage;
+    function GetDeadweight: IJanuaField;
+    procedure SetDeadweight(const Value: IJanuaField);
+    property Deadweight: IJanuaField read GetDeadweight write SetDeadweight;
+    function GetInsertDate: IJanuaField;
+    procedure SetInsertDate(const Value: IJanuaField);
+    property InsertDate: IJanuaField read GetInsertDate write SetInsertDate;
+    function GetUpdateDate: IJanuaField;
+    procedure SetUpdateDate(const Value: IJanuaField);
+    property UpdateDate: IJanuaField read GetUpdateDate write SetUpdateDate;
+    function GetInsId: IJanuaField;
+    procedure SetInsId(const Value: IJanuaField);
+    property InsId: IJanuaField read GetInsId write SetInsId;
+    function GetUpdId: IJanuaField;
+    procedure SetUpdId(const Value: IJanuaField);
+    property UpdId: IJanuaField read GetUpdId write SetUpdId;
+    function GetUserInsertId: IJanuaField;
+    procedure SetUserInsertId(const Value: IJanuaField);
+    property UserInsertId: IJanuaField read GetUserInsertId write SetUserInsertId;
+    function GetUserUpdateId: IJanuaField;
+    procedure SetUserUpdateId(const Value: IJanuaField);
+    property UserUpdateId: IJanuaField read GetUserUpdateId write SetUserUpdateId;
+    function GetLocal: IJanuaField;
+    procedure SetLocal(const Value: IJanuaField);
+    property Local: IJanuaField read GetLocal write SetLocal;
+    function GetPassengerLimit: IJanuaField;
+    procedure SetPassengerLimit(const Value: IJanuaField);
+    property PassengerLimit: IJanuaField read GetPassengerLimit write SetPassengerLimit;
+    function GetDbSchemaId: IJanuaField;
+    procedure SetDbSchemaId(const Value: IJanuaField);
+    property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
+    function GetJguid: IJanuaField;
+    procedure SetJguid(const Value: IJanuaField);
+    property Jguid: IJanuaField read GetJguid write SetJguid;
+    function GetDeleted: IJanuaField;
+    procedure SetDeleted(const Value: IJanuaField);
+    property Deleted: IJanuaField read GetDeleted write SetDeleted;
+    function GetNotes: IJanuaField;
+    procedure SetNotes(const Value: IJanuaField);
+    property Notes: IJanuaField read GetNotes write SetNotes;
+    function GetCustomChar1: IJanuaField;
+    procedure SetCustomChar1(const Value: IJanuaField);
+    property CustomChar1: IJanuaField read GetCustomChar1 write SetCustomChar1;
+    function GetCustomChar2: IJanuaField;
+    procedure SetCustomChar2(const Value: IJanuaField);
+    property CustomChar2: IJanuaField read GetCustomChar2 write SetCustomChar2;
+    function GetCustomChar3: IJanuaField;
+    procedure SetCustomChar3(const Value: IJanuaField);
+    property CustomChar3: IJanuaField read GetCustomChar3 write SetCustomChar3;
+    function GetCustomInt1: IJanuaField;
+    procedure SetCustomInt1(const Value: IJanuaField);
+    property CustomInt1: IJanuaField read GetCustomInt1 write SetCustomInt1;
+    function GetCustomInt2: IJanuaField;
+    procedure SetCustomInt2(const Value: IJanuaField);
+    property CustomInt2: IJanuaField read GetCustomInt2 write SetCustomInt2;
+    function GetCustomInt3: IJanuaField;
+    procedure SetCustomInt3(const Value: IJanuaField);
+    property CustomInt3: IJanuaField read GetCustomInt3 write SetCustomInt3;
+    function GetAnagraphId: IJanuaField;
+    procedure SetAnagraphId(const Value: IJanuaField);
+    property AnagraphId: IJanuaField read GetAnagraphId write SetAnagraphId;
+  end;
+
+  ICustomVessels = interface(IJanuaRecordSet)
+    ['{A12C60D1-F36F-4784-A31B-1C1680153799}']
+    function GetVesselId: IJanuaField;
+    procedure SetVesselId(const Value: IJanuaField);
+    property VesselId: IJanuaField read GetVesselId write SetVesselId;
+    function GetName: IJanuaField;
+    procedure SetName(const Value: IJanuaField);
+    property Name: IJanuaField read GetName write SetName;
+    function GetCode: IJanuaField;
+    procedure SetCode(const Value: IJanuaField);
+    property Code: IJanuaField read GetCode write SetCode;
+    function GetNetTonnage: IJanuaField;
+    procedure SetNetTonnage(const Value: IJanuaField);
+    property NetTonnage: IJanuaField read GetNetTonnage write SetNetTonnage;
+    function GetGrossTonnage: IJanuaField;
+    procedure SetGrossTonnage(const Value: IJanuaField);
+    property GrossTonnage: IJanuaField read GetGrossTonnage write SetGrossTonnage;
+    function GetDeadweight: IJanuaField;
+    procedure SetDeadweight(const Value: IJanuaField);
+    property Deadweight: IJanuaField read GetDeadweight write SetDeadweight;
+    function GetInsertDate: IJanuaField;
+    procedure SetInsertDate(const Value: IJanuaField);
+    property InsertDate: IJanuaField read GetInsertDate write SetInsertDate;
+    function GetUpdateDate: IJanuaField;
+    procedure SetUpdateDate(const Value: IJanuaField);
+    property UpdateDate: IJanuaField read GetUpdateDate write SetUpdateDate;
+    function GetInsId: IJanuaField;
+    procedure SetInsId(const Value: IJanuaField);
+    property InsId: IJanuaField read GetInsId write SetInsId;
+    function GetUpdId: IJanuaField;
+    procedure SetUpdId(const Value: IJanuaField);
+    property UpdId: IJanuaField read GetUpdId write SetUpdId;
+    function GetUserInsertId: IJanuaField;
+    procedure SetUserInsertId(const Value: IJanuaField);
+    property UserInsertId: IJanuaField read GetUserInsertId write SetUserInsertId;
+    function GetUserUpdateId: IJanuaField;
+    procedure SetUserUpdateId(const Value: IJanuaField);
+    property UserUpdateId: IJanuaField read GetUserUpdateId write SetUserUpdateId;
+    function GetLocal: IJanuaField;
+    procedure SetLocal(const Value: IJanuaField);
+    property Local: IJanuaField read GetLocal write SetLocal;
+    function GetPassengerLimit: IJanuaField;
+    procedure SetPassengerLimit(const Value: IJanuaField);
+    property PassengerLimit: IJanuaField read GetPassengerLimit write SetPassengerLimit;
+    function GetDbSchemaId: IJanuaField;
+    procedure SetDbSchemaId(const Value: IJanuaField);
+    property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
+    function GetJguid: IJanuaField;
+    procedure SetJguid(const Value: IJanuaField);
+    property Jguid: IJanuaField read GetJguid write SetJguid;
+    function GetDeleted: IJanuaField;
+    procedure SetDeleted(const Value: IJanuaField);
+    property Deleted: IJanuaField read GetDeleted write SetDeleted;
+    function GetNotes: IJanuaField;
+    procedure SetNotes(const Value: IJanuaField);
+    property Notes: IJanuaField read GetNotes write SetNotes;
+    function GetCustomChar1: IJanuaField;
+    procedure SetCustomChar1(const Value: IJanuaField);
+    property CustomChar1: IJanuaField read GetCustomChar1 write SetCustomChar1;
+    function GetCustomChar2: IJanuaField;
+    procedure SetCustomChar2(const Value: IJanuaField);
+    property CustomChar2: IJanuaField read GetCustomChar2 write SetCustomChar2;
+    function GetCustomChar3: IJanuaField;
+    procedure SetCustomChar3(const Value: IJanuaField);
+    property CustomChar3: IJanuaField read GetCustomChar3 write SetCustomChar3;
+    function GetCustomInt1: IJanuaField;
+    procedure SetCustomInt1(const Value: IJanuaField);
+    property CustomInt1: IJanuaField read GetCustomInt1 write SetCustomInt1;
+    function GetCustomInt2: IJanuaField;
+    procedure SetCustomInt2(const Value: IJanuaField);
+    property CustomInt2: IJanuaField read GetCustomInt2 write SetCustomInt2;
+    function GetCustomInt3: IJanuaField;
+    procedure SetCustomInt3(const Value: IJanuaField);
+    property CustomInt3: IJanuaField read GetCustomInt3 write SetCustomInt3;
+    function GetAnagraphId: IJanuaField;
+    procedure SetAnagraphId(const Value: IJanuaField);
+    property AnagraphId: IJanuaField read GetAnagraphId write SetAnagraphId;
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGPTrackBar</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPTrackBar</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Trackbar control with vector graphic and Windows 10 UWP design</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MinValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Min value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MaxValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Max value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Value</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Current value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MouseSupport</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can
+change value with mouse</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">JumpWhenClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can
+change value by click</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowFocusRect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show focus rect</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CanFocused</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled focus state for
+button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Vertical</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Vertical kind</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for track</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for track</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackProgressColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for progress line
+on track</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TrackProgressAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value of progress
+line</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ThumbColor,ThumbHotColor<br>
+ThumbPressedColor, <br>
+ThumbDisabledColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Colors for thumb</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ThumbShapeStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPThumbShapeStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPThumbShapeStyle =
+(scgptssRoundRect, scgptssCircle);<br>
+<br>
+Style of the thumb shape</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MouseWheelSupport</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable mouse wheel to
+change value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MouseWheelOpposite</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then increasing
+and decreasing of the value will be opposite from mouse wheel delta</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnChange</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event when value changed</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnLastChange</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event when value changed
+and you release thumb capture</td>
+</tr>
+</tbody>
+</table>
+&nbsp;<br>
+<br>
+<p><span style="color: red;"><span style="color: black;"></span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

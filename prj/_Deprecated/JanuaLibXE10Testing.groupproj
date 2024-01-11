@@ -1,0 +1,408 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{07E3EBBE-22D1-4802-B493-A6D5DC929D8F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOracleSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOracleSystemXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaVCLControlsUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaVCLComponentsTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Playground\Prototipi\TestFMXComponents\JanuaFmxComponentsMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\TestWebBrokerServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\linux\mod_januatest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\TestSDKMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Books\DelphiDabbler.com\article-14-demo\WebBrowserTests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\linux\mod_webbrokertest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\ThirdParty\barcompXE10\BarcompXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\ThirdParty\Ean50XE10\EanXE10Editors.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\ThirdParty\Ean50XE10\EanXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\ThirdParty\delphitwain\DelphiTwainVCLXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\ThirdParty\delphitwain\DelphiTwainFMXxe10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTestingDebugger.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Books\Delphi_Cookbook-2\Chapter 3\RECIPE03\NetEncoding.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Books\ExpertDelphi\Chapter07\MapApp\JanuaMapApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\ergom\Documents\Embarcadero\Studio\Projects\TestFMXImages64.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Playground\Prototipi\ImageEncoding64\ImageEncodingVCL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE10">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Make">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Clean">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Make">
+        <MSBuild Projects="JanuaCoreXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Clean">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10:Make">
+        <MSBuild Projects="JanuaOracleSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design:Clean">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOracleSystemXE10Design:Make">
+        <MSBuild Projects="JanuaOracleSystemXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Clean">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Make">
+        <MSBuild Projects="JanuaVCLControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10">
+        <MSBuild Projects="..\..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10:Clean">
+        <MSBuild Projects="..\..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE10:Make">
+        <MSBuild Projects="..\..\Legacy\JanuaLib\JanuaLegacyVCLXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10">
+        <MSBuild Projects="JanuaFMXControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Clean">
+        <MSBuild Projects="JanuaFMXControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Make">
+        <MSBuild Projects="JanuaFMXControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXControlsUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLComponentsTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLComponentsTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLComponentsTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFmxComponentsMobile">
+        <MSBuild Projects="..\..\Playground\Prototipi\TestFMXComponents\JanuaFmxComponentsMobile.dproj"/>
+    </Target>
+    <Target Name="JanuaFmxComponentsMobile:Clean">
+        <MSBuild Projects="..\..\Playground\Prototipi\TestFMXComponents\JanuaFmxComponentsMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFmxComponentsMobile:Make">
+        <MSBuild Projects="..\..\Playground\Prototipi\TestFMXComponents\JanuaFmxComponentsMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop:Clean">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop:Make">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestWebBrokerServer">
+        <MSBuild Projects="..\Testing\TestWebBrokerServer.dproj"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Clean">
+        <MSBuild Projects="..\Testing\TestWebBrokerServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Make">
+        <MSBuild Projects="..\Testing\TestWebBrokerServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_januatest">
+        <MSBuild Projects="..\Testing\linux\mod_januatest.dproj"/>
+    </Target>
+    <Target Name="mod_januatest:Clean">
+        <MSBuild Projects="..\Testing\linux\mod_januatest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_januatest:Make">
+        <MSBuild Projects="..\Testing\linux\mod_januatest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestSDKMobile">
+        <MSBuild Projects="..\Testing\prj\TestSDKMobile.dproj"/>
+    </Target>
+    <Target Name="TestSDKMobile:Clean">
+        <MSBuild Projects="..\Testing\prj\TestSDKMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestSDKMobile:Make">
+        <MSBuild Projects="..\Testing\prj\TestSDKMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebBrowserTests">
+        <MSBuild Projects="..\..\..\Books\DelphiDabbler.com\article-14-demo\WebBrowserTests.dproj"/>
+    </Target>
+    <Target Name="WebBrowserTests:Clean">
+        <MSBuild Projects="..\..\..\Books\DelphiDabbler.com\article-14-demo\WebBrowserTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebBrowserTests:Make">
+        <MSBuild Projects="..\..\..\Books\DelphiDabbler.com\article-14-demo\WebBrowserTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_webbrokertest">
+        <MSBuild Projects="..\Testing\linux\mod_webbrokertest.dproj"/>
+    </Target>
+    <Target Name="mod_webbrokertest:Clean">
+        <MSBuild Projects="..\Testing\linux\mod_webbrokertest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_webbrokertest:Make">
+        <MSBuild Projects="..\Testing\linux\mod_webbrokertest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BarcompXE10">
+        <MSBuild Projects="..\..\..\ThirdParty\barcompXE10\BarcompXE10.dproj"/>
+    </Target>
+    <Target Name="BarcompXE10:Clean">
+        <MSBuild Projects="..\..\..\ThirdParty\barcompXE10\BarcompXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BarcompXE10:Make">
+        <MSBuild Projects="..\..\..\ThirdParty\barcompXE10\BarcompXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EanXE10Editors">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10Editors.dproj"/>
+    </Target>
+    <Target Name="EanXE10Editors:Clean">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10Editors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanXE10Editors:Make">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10Editors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EanXE10">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10.dproj"/>
+    </Target>
+    <Target Name="EanXE10:Clean">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanXE10:Make">
+        <MSBuild Projects="..\..\..\ThirdParty\Ean50XE10\EanXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiTwainVCLXE10">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainVCLXE10.dproj"/>
+    </Target>
+    <Target Name="DelphiTwainVCLXE10:Clean">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainVCLXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiTwainVCLXE10:Make">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainVCLXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiTwainFMXxe10">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainFMXxe10.dproj"/>
+    </Target>
+    <Target Name="DelphiTwainFMXxe10:Clean">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainFMXxe10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiTwainFMXxe10:Make">
+        <MSBuild Projects="..\..\..\ThirdParty\delphitwain\DelphiTwainFMXxe10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTestingDebugger">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTestingDebugger.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTestingDebugger:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTestingDebugger.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTestingDebugger:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTestingDebugger.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NetEncoding">
+        <MSBuild Projects="..\..\..\Books\Delphi_Cookbook-2\Chapter 3\RECIPE03\NetEncoding.dproj"/>
+    </Target>
+    <Target Name="NetEncoding:Clean">
+        <MSBuild Projects="..\..\..\Books\Delphi_Cookbook-2\Chapter 3\RECIPE03\NetEncoding.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NetEncoding:Make">
+        <MSBuild Projects="..\..\..\Books\Delphi_Cookbook-2\Chapter 3\RECIPE03\NetEncoding.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMapApp">
+        <MSBuild Projects="..\..\..\Books\ExpertDelphi\Chapter07\MapApp\JanuaMapApp.dproj"/>
+    </Target>
+    <Target Name="JanuaMapApp:Clean">
+        <MSBuild Projects="..\..\..\Books\ExpertDelphi\Chapter07\MapApp\JanuaMapApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMapApp:Make">
+        <MSBuild Projects="..\..\..\Books\ExpertDelphi\Chapter07\MapApp\JanuaMapApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXImages64">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\Projects\TestFMXImages64.dproj"/>
+    </Target>
+    <Target Name="TestFMXImages64:Clean">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\Projects\TestFMXImages64.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXImages64:Make">
+        <MSBuild Projects="C:\Users\ergom\Documents\Embarcadero\Studio\Projects\TestFMXImages64.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ImageEncodingVCL">
+        <MSBuild Projects="..\..\Playground\Prototipi\ImageEncoding64\ImageEncodingVCL.dproj"/>
+    </Target>
+    <Target Name="ImageEncodingVCL:Clean">
+        <MSBuild Projects="..\..\Playground\Prototipi\ImageEncoding64\ImageEncodingVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ImageEncodingVCL:Make">
+        <MSBuild Projects="..\..\Playground\Prototipi\ImageEncoding64\ImageEncodingVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE10;JanuaCoreXE10;JanuaCoreXE10Design;JanuaCoreUnitTesting;JanuaPostgresSystemXE10;JanuaPostgresSystemXE10Design;JanuaOracleSystemXE10;JanuaOracleSystemXE10Design;JanuaVCLControlsXE10;JanuaVCLControlsUnitTesting;JanuaVCLControlsUnitTestingDebug;JanuaLegacyVCLXE10;JanuaFMXControlsXE10;JanuaFMXControlsUnitTesting;JanuaVCLComponentsTesting;JanuaFmxComponentsMobile;JanuaFMXComponentsDesktop;TestWebBrokerServer;mod_januatest;TestSDKMobile;WebBrowserTests;mod_webbrokertest;BarcompXE10;EanXE10Editors;EanXE10;DelphiTwainVCLXE10;DelphiTwainFMXxe10;JanuaCoreUnitTestingDebugger;NetEncoding;JanuaMapApp;TestFMXImages64;ImageEncodingVCL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE10:Clean;JanuaCoreXE10:Clean;JanuaCoreXE10Design:Clean;JanuaCoreUnitTesting:Clean;JanuaPostgresSystemXE10:Clean;JanuaPostgresSystemXE10Design:Clean;JanuaOracleSystemXE10:Clean;JanuaOracleSystemXE10Design:Clean;JanuaVCLControlsXE10:Clean;JanuaVCLControlsUnitTesting:Clean;JanuaVCLControlsUnitTestingDebug:Clean;JanuaLegacyVCLXE10:Clean;JanuaFMXControlsXE10:Clean;JanuaFMXControlsUnitTesting:Clean;JanuaVCLComponentsTesting:Clean;JanuaFmxComponentsMobile:Clean;JanuaFMXComponentsDesktop:Clean;TestWebBrokerServer:Clean;mod_januatest:Clean;TestSDKMobile:Clean;WebBrowserTests:Clean;mod_webbrokertest:Clean;BarcompXE10:Clean;EanXE10Editors:Clean;EanXE10:Clean;DelphiTwainVCLXE10:Clean;DelphiTwainFMXxe10:Clean;JanuaCoreUnitTestingDebugger:Clean;NetEncoding:Clean;JanuaMapApp:Clean;TestFMXImages64:Clean;ImageEncodingVCL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE10:Make;JanuaCoreXE10:Make;JanuaCoreXE10Design:Make;JanuaCoreUnitTesting:Make;JanuaPostgresSystemXE10:Make;JanuaPostgresSystemXE10Design:Make;JanuaOracleSystemXE10:Make;JanuaOracleSystemXE10Design:Make;JanuaVCLControlsXE10:Make;JanuaVCLControlsUnitTesting:Make;JanuaVCLControlsUnitTestingDebug:Make;JanuaLegacyVCLXE10:Make;JanuaFMXControlsXE10:Make;JanuaFMXControlsUnitTesting:Make;JanuaVCLComponentsTesting:Make;JanuaFmxComponentsMobile:Make;JanuaFMXComponentsDesktop:Make;TestWebBrokerServer:Make;mod_januatest:Make;TestSDKMobile:Make;WebBrowserTests:Make;mod_webbrokertest:Make;BarcompXE10:Make;EanXE10Editors:Make;EanXE10:Make;DelphiTwainVCLXE10:Make;DelphiTwainFMXxe10:Make;JanuaCoreUnitTestingDebugger:Make;NetEncoding:Make;JanuaMapApp:Make;TestFMXImages64:Make;ImageEncodingVCL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

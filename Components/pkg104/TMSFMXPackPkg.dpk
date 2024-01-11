@@ -1,0 +1,383 @@
+package TMSFMXPackPkg;
+
+{$R *.res}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroup.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroup.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialog.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEdit.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemo.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditor.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButton.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPickers.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSelectors.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCapture.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBar.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7SegLed.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButton.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmap.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainer.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGauge.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLText.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJogMeter.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSlider.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLed.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedMeter.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixLabel.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopup.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScope.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadge.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileList.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEdit.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSlider.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinner.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableView.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRating.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButton.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImage.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGrid.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialog.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialog.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBar.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanel.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendar.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBar.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEdit.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditor.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabel.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanel.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEdit.dcr'}
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEdit.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FMX UI Pack'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  bindengine,
+  bindcomp,
+  bindcompfmx,
+  fmx,
+  xmlrtl,
+  dsnap;
+
+contains
+  FMX.TMSCheckGroupPicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupPicker.pas',
+  FMX.TMSCheckGroupPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupPickerReg.pas',
+  FMX.TMSRadioGroupPicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupPicker.pas',
+  FMX.TMSRadioGroupPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupPickerReg.pas',
+  FMX.TMSIPEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEdit.pas',
+  FMX.TMSIPEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSIPEditReg.pas',
+  FMX.TMSGraphicCheckLabel in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabel.pas',
+  FMX.TMSGraphicCheckLabelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicCheckLabelReg.pas',
+  FMX.TMSLabelEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEdit.pas',
+  FMX.TMSLabelEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLabelEditReg.pas',
+  FMX.TMSToolBar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBar.pas',
+  FMX.TMSToolBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSToolBarReg.pas',
+  FMX.TMS7segled in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7segled.pas',
+  FMX.TMS7segledreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMS7segledreg.pas',
+  FMX.TMSBarButton in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButton.pas',
+  FMX.TMSBarButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBarButtonReg.pas',
+  FMX.TMSBaseControl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBaseControl.pas',
+  FMX.TMSBitmap in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmap.pas',
+  FMX.TMSBitmapContainer in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainer.pas',
+  FMX.TMSBitmapContainerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapContainerReg.pas',
+  FMX.TMSBitmapReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapReg.pas',
+  FMX.TMSGauge in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGauge.pas',
+  FMX.TMSGaugereg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGaugereg.pas',
+  FMX.TMSHTMLEngine in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLEngine.pas',
+  FMX.TMSHTMLText in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLText.pas',
+  FMX.TMSHTMLTextReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHTMLTextReg.pas',
+  FMX.TMSLed in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLed.pas',
+  FMX.TMSLedmeter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedmeter.pas',
+  FMX.TMSLedmeterreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedmeterreg.pas',
+  FMX.TMSLedreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLedreg.pas',
+  FMX.TMSMatrixlabel in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixlabel.pas',
+  FMX.TMSMatrixlabelreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMatrixlabelreg.pas',
+  FMX.TMSPopup in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopup.pas',
+  FMX.TMSCustomEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomEdit.pas',
+  FMX.TMSPopupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopupReg.pas',
+  FMX.TMSRating in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRating.pas',
+  FMX.TMSRatingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingReg.pas',
+  FMX.TMSScope in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScope.pas',
+  FMX.TMSScopereg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScopereg.pas',
+  FMX.TMSSearchEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEdit.pas',
+  FMX.TMSSearchEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSearchEditReg.pas',
+  FMX.TMSSlider in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSlider.pas',
+  FMX.TMSSliderreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSliderreg.pas',
+  FMX.TMSSpinner in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinner.pas',
+  FMX.TMSTableView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableView.pas',
+  FMX.TMSTableViewBinding in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewBinding.pas',
+  FMX.TMSTableViewBindingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewBindingReg.pas',
+  FMX.TMSPageSliderReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSliderReg.pas',
+  FMX.TMSPageSlider in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageSlider.pas',
+  FMX.TMSTileList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileList.pas',
+  FMX.TMSBadge in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadge.pas',
+  FMX.TMSBadgeReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBadgeReg.pas',
+  FMX.TMSTreeView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeView.pas',
+  FMX.TMSTreeViewEditor in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewEditor.pas',
+  FMX.TMSCustomTreeView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomTreeView.pas',
+  FMX.TMSTreeViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewReg.pas',
+  FMX.TMSDirectoryTreeView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDirectoryTreeView.pas',
+  FMX.TMSCheckedTreeView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckedTreeView.pas',
+  FMX.TMSTreeViewData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewData.pas',
+  FMX.TMSTreeViewBase in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTreeViewBase.pas',
+  FMX.TMSScrollMenu in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollMenu.pas',
+  FMX.TMSScrollMenuReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollMenuReg.pas',
+  FMX.TMSTouchKeyboard in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTouchKeyboard.pas',
+  FMX.TMSTouchKeyboardReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTouchKeyboardReg.pas',
+  FMX.TMSHotSpotImage in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImage.pas',
+  FMX.TMSHotSpotImageReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageReg.pas',
+  FMX.TMSTableViewEx in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewEx.pas',
+  FMX.TMSTableViewExReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewExReg.pas',
+  FMX.TMSPlannervCalAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannervCalAdapter.pas',
+  FMX.TMSPlannervCalAdapterReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannervCalAdapterReg.pas',
+  FMX.TMSvCal in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSvCal.pas',
+  FMX.TMSTileListBinding in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListBinding.pas',
+  FMX.TMSTileListBindingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListBindingReg.pas',
+  FMX.TMSCustomButton in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomButton.pas',
+  FMX.TMSSpeedButton in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButton.pas',
+  FMX.TMSCustomComponent in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomComponent.pas',
+  FMX.TMSCustomControl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomControl.pas',
+  FMX.TMSStyles in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSStyles.pas',
+  FMX.TMSGraphicsHTMLEngine in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicsHTMLEngine.pas',
+  FMX.TMSPageControl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControl.pas',
+  FMX.TMSPageControlReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPageControlReg.pas',
+  FMX.TMSPopupEx in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPopupEx.pas',
+  FMX.TMSTabSet in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTabSet.pas',
+  FMX.TMSTabSetReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTabSetReg.pas',
+  FMX.TMSTypes in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTypes.pas',
+  FMX.TMSUtils in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSUtils.pas',
+  FMX.TMSSpeedButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpeedButtonReg.pas',
+  FMX.TMSHotSpotImageEditor in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSHotSpotImageEditor.pas' {TMSFMX.HotSpotImageEditorForm},
+  FMX.TMSGrid in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGrid.pas',
+  FMX.TMSGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridReg.pas',
+  FMX.TMSGridData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridData.pas',
+  FMX.TMSGridDataUtil in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridDataUtil.pas',
+  FMX.TMSGridCell in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridCell.pas',
+  FMX.TMSEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEdit.pas',
+  FMX.TMSEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSEditReg.pas',
+  FMX.TMSNavBar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBar.pas',
+  FMX.TMSNavBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSNavBarReg.pas',
+  FMX.TMSFindDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialogReg.pas',
+  FMX.TMSReplaceDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialogReg.pas',
+  FMX.TMSReplaceDialog in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSReplaceDialog.pas' {TMSFMX.ReplaceDialogForm},
+  FMX.TMSFindDialog in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFindDialog.pas' {TMSFMX.FindDialogForm},
+  FMX.TMSPanel in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanel.pas',
+  FMX.TMSPanelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPanelReg.pas',
+  FMX.GridExcelIOReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.GridExcelIOReg.pas',
+  FMX.TMSGridOptions in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridOptions.pas',
+  FMX.GridExcelIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.GridExcelIO.pas',
+  FMX.UBreakList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UBreakList.pas',
+  FMX.UEscherGraphToBSE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherGraphToBSE.pas',
+  FMX.UEscherOtherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherOtherRecords.pas',
+  FMX.UEscherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UEscherRecords.pas',
+  FMX.UExcelAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UExcelAdapter.pas',
+  FMX.UExcelRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UExcelRecords.pas',
+  FMX.UFlxFormats in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxFormats.pas',
+  FMX.UFlxMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxMessages.pas',
+  FMX.UFlxNumberFormat in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxNumberFormat.pas',
+  FMX.UFlxRowComments in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxRowComments.pas',
+  FMX.UFlxStack in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxStack.pas',
+  FMX.UFlxUtils in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UFlxUtils.pas',
+  FMX.UOle2Impl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UOle2Impl.pas',
+  FMX.USheetNameList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.USheetNameList.pas',
+  FMX.UTextDelim in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UTextDelim.pas',
+  FMX.UXlsBaseClientData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseClientData.pas',
+  FMX.UXlsBaseList in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseList.pas',
+  FMX.UXlsBaseRecordLists in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseRecordLists.pas',
+  FMX.UXlsBaseRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsBaseRecords.pas',
+  FMX.UXlsCellRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsCellRecords.pas',
+  FMX.UXlsChart in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsChart.pas',
+  FMX.UXlsClientData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsClientData.pas',
+  FMX.UXlsColInfo in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsColInfo.pas',
+  FMX.UXlsCondFmt in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsCondFmt.pas',
+  FMX.UXlsEncodeFormula in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsEncodeFormula.pas',
+  FMX.UXlsEscher in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsEscher.pas',
+  FMX.UXlsFormula in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsFormula.pas',
+  FMX.UXlsFormulaParser in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsFormulaParser.pas',
+  FMX.UXlsHyperLink in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsHyperLink.pas',
+  FMX.UXlsMD5 in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsMD5.pas',
+  FMX.UXlsNotes in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsNotes.pas',
+  FMX.UXlsOtherRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsOtherRecords.pas',
+  FMX.UXlsPageBreaks in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPageBreaks.pas',
+  FMX.UXlsPalette in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPalette.pas',
+  FMX.UXlsPictures in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsPictures.pas',
+  FMX.UXlsProtect in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsProtect.pas',
+  FMX.UXlsRangeRecords in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsRangeRecords.pas',
+  FMX.UXlsReferences in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsReferences.pas',
+  FMX.UXlsRowColEntries in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsRowColEntries.pas',
+  FMX.UXlsSections in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSections.pas',
+  FMX.UXlsSheet in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSheet.pas',
+  FMX.UXlsSST in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsSST.pas',
+  FMX.UXlsStrings in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsStrings.pas',
+  FMX.UXlsTokenArray in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsTokenArray.pas',
+  FMX.UXlsWorkbookGlobals in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsWorkbookGlobals.pas',
+  FMX.UXlsXF in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.UXlsXF.pas',
+  FMX.XLSAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XLSAdapter.pas',
+  FMX.XlsBaseTemplateStore in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsBaseTemplateStore.pas',
+  FMX.XlsFormulaMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsFormulaMessages.pas',
+  FMX.XlsMessages in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\XlsAdapter\FMX.XlsMessages.pas',
+  FMX.TMSProgressBar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSProgressBar.pas',
+  FMX.TMSProgressBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSProgressBarReg.pas',
+  FMX.TMSRTFEngine in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRTFEngine.pas',
+  FMX.TMSGridRtf in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridRtf.pas',
+  FMX.TMSGridRtfReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridRtfReg.pas',
+  FMX.TMSGridPDFIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridPDFIO.pas',
+  FMX.TMSGridPDFIOReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridPDFIOReg.pas',
+  FMX.TMSPrintPreview in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPrintPreview.pas' {FMX.TMSPrintPreviewForm},
+  FMX.TMSPrintPreviewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPrintPreviewReg.pas',
+  FMX.TMSCustomGrid in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomGrid.pas',
+  FMX.TMSSpinnerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpinnerReg.pas',
+  FMX.TMSTileListReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTileListReg.pas',
+  FMX.TMSTableViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTableViewReg.pas',
+  FMX.TMSCalendar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendar.pas',
+  FMX.TMSCalendarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCalendarReg.pas',
+  FMX.TMSMemo in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemo.pas',
+  FMX.TMSMemoDialogs in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoDialogs.pas',
+  FMX.TMSMemoReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoReg.pas',
+  FMX.TMSMemoStyles in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoStyles.pas',
+  FMX.TMSBitmapPicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapPicker.pas',
+  FMX.TMSBitmapSelector in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapSelector.pas',
+  FMX.TMSColorPicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorPicker.pas',
+  FMX.TMSColorselector in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorselector.pas',
+  FMX.TMSCustomSelector in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomSelector.pas',
+  FMX.TMSCustomPicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCustomPicker.pas',
+  FMX.TMSButton in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButton.pas',
+  FMX.TMSButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSButtonReg.pas',
+  FMX.TMSBitmapPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapPickerReg.pas',
+  FMX.TMSBitmapSelectorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBitmapSelectorReg.pas',
+  FMX.TMSColorPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorPickerReg.pas',
+  FMX.TMSColorSelectorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSColorSelectorReg.pas',
+  FMX.TMSWebBrowser in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.pas',
+  FMX.TMSWebBrowserReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowserReg.pas',
+  FMX.TMSWebBrowser.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.iOS.pas',
+  FMX.TMSWebBrowser.Linux in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Linux.pas',
+  FMX.TMSWebBrowser.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Android.pas',
+  FMX.TMSWebBrowser.Win in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Win.pas',
+  FMX.TMSWebBrowser.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSWebBrowser.Mac.pas',
+  FMX.TMSSignatureCapture in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCapture.pas',
+  FMX.TMSSignatureCaptureReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSignatureCaptureReg.pas',
+  FMX.TMSTrackBar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBar.pas',
+  FMX.TMSTrackBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTrackBarReg.pas',
+  FMX.TMSListEditor in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditor.pas',
+  FMX.TMSListEditorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListEditorReg.pas',
+  FMX.TMSBaseGroup in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSBaseGroup.pas',
+  FMX.TMSCheckGroup in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroup.pas',
+  FMX.TMSCheckGroupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSCheckGroupReg.pas',
+  FMX.TMSRadioGroup in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroup.pas',
+  FMX.TMSRadioGroupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRadioGroupReg.pas',
+  FMX.TMSTaskDialog in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialog.pas',
+  FMX.TMSTaskDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSTaskDialogReg.pas',
+  FMX.TMSFontNamePicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontNamePicker.pas',
+  FMX.TMSFontNamePickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontNamePickerReg.pas',
+  FMX.TMSFontSizePicker in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontSizePicker.pas',
+  FMX.TMSFontSizePickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSFontSizePickerReg.pas',
+  FMX.TMSRichEditor in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditor.pas',
+  FMX.TMSRichEditorBase in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorBase.pas',
+  FMX.TMSRichEditorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorReg.pas',
+  FMX.TMSRichEditorToolBar in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorToolBar.pas',
+  FMX.TMSRichEditorIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorIO.pas',
+  FMX.TMSScrollControl in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSScrollControl.pas',
+  FMX.TMSPassLock in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPassLock.pas',
+  FMX.TMSPassLockReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPassLockReg.pas',
+  FMX.TMSRatingGrid in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingGrid.pas',
+  FMX.TMSRatingGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRatingGridReg.pas',
+  FMX.TMSPlanner in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlanner.pas',
+  FMX.TMSPlannerModeEditor in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerModeEditor.pas',
+  FMX.TMSPlannerData in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerData.pas',
+  FMX.TMSPlannerBase in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerBase.pas',
+  FMX.TMSPlannerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerReg.pas',
+  FMX.TMSLiveGrid in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGrid.pas',
+  FMX.TMSLiveGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGridReg.pas',
+  FMX.TMSDateTimeEdit in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEdit.pas',
+  FMX.TMSDateTimeEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSDateTimeEditReg.pas',
+  FMX.TMSLiveGridDataBinding in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSLiveGridDataBinding.pas',
+  FMX.TMSGridFilterPanel in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanel.pas',
+  FMX.TMSPlannerDatabaseAdapter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapter.pas',
+  FMX.TMSPlannerDatabaseAdapterReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerDatabaseAdapterReg.pas',
+  FMX.TMSPlannerItemEditorRecurrency in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerItemEditorRecurrency.pas',
+  FMX.TMSPlannerItemEditorRecurrencyReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPlannerItemEditorRecurrencyReg.pas',
+  FMX.TMSRecurrencyHandler in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRecurrencyHandler.pas',
+  FMX.TMSGridFilterPanelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGridFilterPanelReg.pas',
+  FMX.TMSSpellCheck in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheck.pas',
+  FMX.TMSRichEditorSpellCheck in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorSpellCheck.pas',
+  FMX.TMSSpellcheckCorrectLinesForm in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellcheckCorrectLinesForm.pas',
+  FMX.TMSSpellCheckConfForm in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckConfForm.pas',
+  FMX.TMSSpellCheckLang in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckLang.pas',
+  FMX.TMSSpellCheckCorrectForm in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckCorrectForm.pas',
+  FMX.TMSSpellCheckReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckReg.pas',
+  FMX.TMSSpellSoundEx in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellSoundEx.pas',
+  FMX.TMSRichEditorMiniHTMLIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorMiniHTMLIO.pas',
+  FMX.TMSSpellCheckUtil in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellCheckUtil.pas',
+  FMX.TMSSpellInfos in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellInfos.pas',
+  FMX.TMSSpellparser in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSSpellparser.pas',
+  FMX.TMSRichEditorEmoticons in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorEmoticons.pas',
+  FMX.TMSListView in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListView.pas',
+  FMX.TMSListViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSListViewReg.pas',
+  FMX.TMSMemoPDFIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSMemoPDFIO.pas',
+  FMX.TMSRichEditorPDFIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSRichEditorPDFIO.pas',
+  FMX.TMSPDFCoreLibBase in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFCoreLibBase.pas',
+  FMX.TMSPDFGraphicsLib.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.Android.pas',
+  FMX.TMSPDFGraphicsLib.General in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.General.pas',
+  FMX.TMSPDFGraphicsLib.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.iOS.pas',
+  FMX.TMSPDFGraphicsLib.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.Mac.pas',
+  FMX.TMSPDFGraphicsLib in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLib.pas',
+  FMX.TMSPDFGraphicsLibHTMLEngine in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFGraphicsLibHTMLEngine.pas',
+  FMX.TMSPDFIO in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFIO.pas',
+  FMX.TMSPDFLib.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.Android.pas',
+  FMX.TMSPDFLib.General.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Android.pas',
+  FMX.TMSPDFLib.General.Default in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Default.pas',
+  FMX.TMSPDFLib.General.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.iOS.pas',
+  FMX.TMSPDFLib.General.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Mac.pas',
+  FMX.TMSPDFLib.General in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.pas',
+  FMX.TMSPDFLib.General.Win in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.General.Win.pas',
+  FMX.TMSPDFLib.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.iOS.pas',
+  FMX.TMSPDFLib.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.Mac.pas',
+  FMX.TMSPDFLib in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFLib.pas',
+  FMX.TMSPDFRichTextLib.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.Android.pas',
+  FMX.TMSPDFRichTextLib.General in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.General.pas',
+  FMX.TMSPDFRichTextLib.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.iOS.pas',
+  FMX.TMSPDFRichTextLib.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.Mac.pas',
+  FMX.TMSPDFRichTextLib in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFRichTextLib.pas',
+  FMX.TMSGDIPlusApi in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGDIPlusApi.pas',
+  FMX.TMSGDIPlusClasses in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGDIPlusClasses.pas',
+  FMX.TMSGraphics.Android in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Android.pas',
+  FMX.TMSGraphics.General in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.General.pas',
+  FMX.TMSGraphics.iOS in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.iOS.pas',
+  FMX.TMSGraphics.Mac in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Mac.pas',
+  FMX.TMSGraphics in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.pas',
+  FMX.TMSGraphics.Win in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphics.Win.pas',
+  FMX.TMSPDFImageBook in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPDFImageBook.pas',
+  FMX.TMSGraphicsTypes in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSGraphicsTypes.pas',
+  FMX.TMSUndo in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSUndo.pas',
+  FMX.TMSJSONReader in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJSONReader.pas',
+  FMX.TMSJSONWriter in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSJSONWriter.pas',
+  FMX.TMSPersistence in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\TMS FMX Pack\FMX.TMSPersistence.pas';
+
+end.

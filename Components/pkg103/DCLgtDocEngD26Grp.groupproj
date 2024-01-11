@@ -1,0 +1,170 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0A5A2547-58FB-4923-975D-063CA85E4653}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="gtCompression.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtCrypt.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtFont.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DCLgtQRExp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="gtCompression">
+        <MSBuild Projects="gtCompression.dproj"/>
+    </Target>
+    <Target Name="gtCompression:Clean">
+        <MSBuild Projects="gtCompression.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCompression:Make">
+        <MSBuild Projects="gtCompression.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtRtl">
+        <MSBuild Projects="gtRtl.dproj"/>
+    </Target>
+    <Target Name="gtRtl:Clean">
+        <MSBuild Projects="gtRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtRtl:Make">
+        <MSBuild Projects="gtRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFilters">
+        <MSBuild Projects="gtFilters.dproj"/>
+    </Target>
+    <Target Name="gtFilters:Clean">
+        <MSBuild Projects="gtFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFilters:Make">
+        <MSBuild Projects="gtFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCrypt">
+        <MSBuild Projects="gtCrypt.dproj"/>
+    </Target>
+    <Target Name="gtCrypt:Clean">
+        <MSBuild Projects="gtCrypt.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCrypt:Make">
+        <MSBuild Projects="gtCrypt.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFont">
+        <MSBuild Projects="gtFont.dproj"/>
+    </Target>
+    <Target Name="gtFont:Clean">
+        <MSBuild Projects="gtFont.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFont:Make">
+        <MSBuild Projects="gtFont.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEng">
+        <MSBuild Projects="gtDocEng.dproj"/>
+    </Target>
+    <Target Name="gtDocEng:Clean">
+        <MSBuild Projects="gtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEng:Make">
+        <MSBuild Projects="gtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocEng">
+        <MSBuild Projects="DCLgtDocEng.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Clean">
+        <MSBuild Projects="DCLgtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Make">
+        <MSBuild Projects="DCLgtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExp">
+        <MSBuild Projects="DCLgtQRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Clean">
+        <MSBuild Projects="DCLgtQRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Make">
+        <MSBuild Projects="DCLgtQRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="gtCompression;gtRtl;gtFilters;gtCrypt;gtFont;gtDocEng;DCLgtDocEng;DCLgtQRExp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="gtCompression:Clean;gtRtl:Clean;gtFilters:Clean;gtCrypt:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtDocEng:Clean;DCLgtQRExp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="gtCompression:Make;gtRtl:Make;gtFilters:Make;gtCrypt:Make;gtFont:Make;gtDocEng:Make;DCLgtDocEng:Make;DCLgtQRExp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Gnostice'">
+        <BuildGroupProject Include="gtDocEng.dproj">
+            <ProjectGuid>{EC59CA3C-FD43-4346-9F92-252B24964E18}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtFont.dproj">
+            <ProjectGuid>{E2E77405-B88C-49AC-8382-E7BBAEAF9CCF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtDocEng.dproj">
+            <ProjectGuid>{90E8848B-7E5F-40D7-AA72-0E958E68ABB5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtFilters.dproj">
+            <ProjectGuid>{0FC654F0-587C-40C5-AF54-AA3FE9861CE6}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtCrypt.dproj">
+            <ProjectGuid>{B929CC3E-F582-42D8-8543-A61D9CCB27FB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtRtl.dproj">
+            <ProjectGuid>{28560C9C-985A-4D6F-A75A-A8F00D73F599}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gtCompression.dproj">
+            <ProjectGuid>{B79A1AF9-069B-412F-876E-17674F6286EA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DCLgtQRExp.dproj">
+            <ProjectGuid>{1CD22D5A-DDE7-4DD0-B25C-F1B473C0E628}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

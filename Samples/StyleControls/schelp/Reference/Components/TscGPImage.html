@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGPImage</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPImage</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPImages.pas</p>
+<p><span style="font-weight: bold;">TscGPImage
+=&nbsp;
+class(<a href="TscPanel.html">TscPanel</a>)</span></p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+Full analogue of TImage control, but inherited from TscPanel and use
+TGPBitmap (GDI+) to show and clip graphic (smooth scaling)&nbsp; <br>
+This control has all properties as TImage control and new...<br>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Position</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPImagePosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPImagePosition =
+(scgpipLeft, scgpipRight, scgpipCenter);<br>
+<br>
+Additional property for picture position (use Proportional, Stretch and
+other properties as in TImage control)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrame</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPImageClipFrame</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPImageClipFrame =
+(scgpcfNone, scgpcfRoundedRect, scgpcfEllipse);<br>
+<br>
+Define type of clip shape</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameFillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of clip area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameFillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+clip area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of clip frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+clip frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the clip frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ClipFrameRadius</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Corner radius for clip
+frame (ClipFrame = scgpcfRoundedRect)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RotationAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Rotation angle for
+TPciture</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RotateAnimation</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable of rotate
+animation</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">PngImage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TPngImage</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TPngImage
+object.&nbsp;Use it to work directly with png images </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscCustomImageCollection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">It can be
+TscImageCollection or TscGPImageCollection component.<br>
+If you use TscImageCollection then control will uses TPicture from
+image collection item.<br>
+If
+you use TscGPImageCollection then control will uses draw methods from
+this component and directly draw image with drawing style, which
+defined for collection item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AnimationAcceleration</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled acceleration
+type of animation</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">InterpolationMode</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPInterpolationMode</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPInterpolationMode =(scgppimDefault, scgppimHighQualityBilinear);<br><br>scgppimDefault - high quality interpolation by default<br>scgppimHighQualityBilinear - high quality bilinear inerpolation</td></tr></tbody>
+</table>
+<br>
+<br>
+<p><span style="color: red;"><span style="color: black;"></span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

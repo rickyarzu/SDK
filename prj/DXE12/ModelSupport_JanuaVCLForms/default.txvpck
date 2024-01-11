@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="1lmtclsd7039r7i9h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::tvarfiq87gc0v9ujr_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::a98phdwoz0kvagq8p_v" />
+    </reference>
+    <reference referencedUin="design:view:::klrwgkob7ncsiomjs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLAnagraphPanel.TFrameVCLAnagraphPanel" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLAnagraphPanel.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::z5wwueo01uc4yy3fj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLAnagraphMVVM.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLAnagraphMVVM.TframeVCLAnagraphMVVM" />
+    </reference>
+    <reference referencedUin="design:view:::5cv38wcuf0d1awurm_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLAnagraphLocations.TFrameVCLAnagraphLocations" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLAnagraphLocations.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::x4r3721i17dszitpj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeAnagraphCompanyAddress.TFrameVCLCompanyAddress" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeAnagraphCompanyAddress.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::8iiio6hm1eddvbcio_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceipt.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt" />
+    </reference>
+    <reference referencedUin="design:view:::15cr1n8epkdbbg6zh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLTest.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLTest.TframeVCLTest" />
+    </reference>
+    <reference referencedUin="design:view:::wmq2rn3tytd39c05l_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogistiReceiptsNavigator.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogistiReceiptsNavigator.TfrmVCLLogistiReceiptsNavigator" />
+    </reference>
+    <reference referencedUin="design:view:::ldn3tsass2ecl3k4i_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow" />
+    </reference>
+    <reference referencedUin="design:view:::9nccrw772behc060h_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLVMAnagraphNavigator.TfrmVCLVMAnagraphNavigator" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLVMAnagraphNavigator.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::bv5u8degrygm4gg0t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogisticInventoryNavigator.TfrmVCLLogisticInventoryNavigator" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogisticInventoryNavigator.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0gzkppilahtkzi4j_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLVMTestNavigator.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLVMTestNavigator.TfrmVCLVMTestNavigator" />
+    </reference>
+    <reference referencedUin="design:view:::9oy18p5urjhwx6oxo_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLShippingAddress.TframeVCLShippingAddress" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLShippingAddress.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::w0grbjua4thf17mnh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLCompanyInformations.TframeVCLCompanyInformations" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLCompanyInformations.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::4q8ahy6k70iv28icg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticCustomDocuments.TframeVCLLogisticCustomDocuments" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticCustomDocuments.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::buexhuv0saiwk319o_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLAnagraphNavigator.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLAnagraphNavigator.TfrmVCLAnagraphNavigator" />
+    </reference>
+    <reference referencedUin="design:view:::zomy9h1v7kirv2zkq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uJanuaVCLframeMainToobar.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uJanuaVCLframeMainToobar.TFrameVCLMainToolBar" />
+    </reference>
+    <reference referencedUin="design:view:::abbu2e7duido8wnn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeAnagraphCompanyPayments.TframeAnagraphCompanyPayments" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeAnagraphCompanyPayments.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::obynbhyjg6ji1u7eq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLViewModelNavigator.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLViewModelNavigator.TfrmVCLViewModelNavigator" />
+    </reference>
+    <reference referencedUin="design:view:::luh43tbwpfj629uqr_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLDBAnagraphLocations.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uFrameVCLDBAnagraphLocations.TFrameVCLDBAnagraphLocations" />
+    </reference>
+    <reference referencedUin="design:view:::ry091ai0nrjoxdpfs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogisticReceipt.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt" />
+    </reference>
+    <reference referencedUin="design:view:::uedpk6wn24k4nqv7s_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uJanuaVCLMainForm.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uJanuaVCLMainForm.TJanuaVCLMainForm" />
+    </reference>
+    <reference referencedUin="design:view:::lc1iopjwrccu670wf_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::e3kaapsdyu0ubbhoj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uqrpInvoice.TqrpInvoice" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uqrpInvoice.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::q4lvlpok8w0yrl1rn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uqrpAirWayBill.TqrpAirWayBill" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uqrpAirWayBill.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::5qg1hbfkwx0mi3mqs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmAirWayBill.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmAirWayBill.TfrmAirWayBill" />
+    </reference>
+    <reference referencedUin="design:view:::ypx1dr97at0r3qwnt_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

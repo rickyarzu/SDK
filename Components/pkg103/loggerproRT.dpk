@@ -1,0 +1,53 @@
+﻿package loggerproRT;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore;
+
+contains
+  LoggerPro.ElasticSearchAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ElasticSearchAppender.pas',
+  LoggerPro.EMailAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.EMailAppender.pas',
+  LoggerPro.FileAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas',
+  LoggerPro.GlobalLogger in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.GlobalLogger.pas',
+  LoggerPro.MemoryAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.MemoryAppender.pas',
+  LoggerPro.NSQAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.NSQAppender.pas',
+  LoggerPro in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.pas',
+  LoggerPro.Proxy in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Proxy.pas',
+  LoggerPro.RESTAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.RESTAppender.pas',
+  LoggerPro.UDPSyslogAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.UDPSyslogAppender.pas',
+  LoggerPro.Utils in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Utils.pas',
+  ThreadSafeQueueU in '..\..\..\lib\delphimvcframework\lib\loggerpro\ThreadSafeQueueU.pas',
+  LoggerPro.OutputDebugStringAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas';
+
+end.

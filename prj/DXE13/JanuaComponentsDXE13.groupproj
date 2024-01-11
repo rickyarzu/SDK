@@ -1,0 +1,204 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EA879EE4-1245-4456-AED9-57FDF63577E6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWRunDXE10_4_W64.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWDesignDXE10_4.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\DCLgtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\DCLgtQRExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\loggerproRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\dmvcframeworkRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaIconFontsImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclJanuaIconFontsImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\Janua.SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\Janua.SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\Janua.SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\Janua.dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDXE13.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDEDXE13.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QRWRunDXE10_4_W64">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWRunDXE10_4_W64.dproj"/>
+    </Target>
+    <Target Name="QRWRunDXE10_4_W64:Clean">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWRunDXE10_4_W64.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWRunDXE10_4_W64:Make">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWRunDXE10_4_W64.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRWDesignDXE10_4">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWDesignDXE10_4.dproj"/>
+    </Target>
+    <Target Name="QRWDesignDXE10_4:Clean">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWDesignDXE10_4.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWDesignDXE10_4:Make">
+        <MSBuild Projects="..\..\..\Libraries\QR6-RAD-10-3-Rio\src\QRWDesignDXE10_4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEng">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocEng.dproj"/>
+    </Target>
+    <Target Name="gtDocEng:Clean">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEng:Make">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocEng">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\DCLgtDocEng.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Clean">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\DCLgtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Make">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\DCLgtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExp">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\DCLgtQRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Clean">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\DCLgtQRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Make">
+        <MSBuild Projects="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\DCLgtQRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="loggerproRT">
+        <MSBuild Projects="..\..\components\pkg104\loggerproRT.dproj"/>
+    </Target>
+    <Target Name="loggerproRT:Clean">
+        <MSBuild Projects="..\..\components\pkg104\loggerproRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="loggerproRT:Make">
+        <MSBuild Projects="..\..\components\pkg104\loggerproRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcframeworkRT">
+        <MSBuild Projects="..\..\components\pkg104\dmvcframeworkRT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Clean">
+        <MSBuild Projects="..\..\components\pkg104\dmvcframeworkRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Make">
+        <MSBuild Projects="..\..\components\pkg104\dmvcframeworkRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList:Clean">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList:Make">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList">
+        <MSBuild Projects="dclJanuaIconFontsImageList.dproj"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList:Clean">
+        <MSBuild Projects="dclJanuaIconFontsImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList:Make">
+        <MSBuild Projects="dclJanuaIconFontsImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Clean">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Make">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Clean">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Make">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\components\pkg104\Janua.SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList">
+        <MSBuild Projects="..\..\components\pkg104\Janua.dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Clean">
+        <MSBuild Projects="..\..\components\pkg104\Janua.dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Make">
+        <MSBuild Projects="..\..\components\pkg104\Janua.dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE13">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDXE13.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE13:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDXE13.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE13:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDXE13.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDEDXE13">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDEDXE13.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDEDXE13:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDEDXE13.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDEDXE13:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS WebGMaps\pkg\TMSWebGMapsPkgDEDXE13.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QRWRunDXE10_4_W64;QRWDesignDXE10_4;gtDocEng;DCLgtDocEng;DCLgtQRExp;loggerproRT;dmvcframeworkRT;JanuaIconFontsImageList;dclJanuaIconFontsImageList;Janua_SVGIconPackage;Janua_SVGIconImageList;Janua_SVGIconImageListFMX;Janua_dclSVGIconImageList;TMSWebGMapsPkgDXE13;TMSWebGMapsPkgDEDXE13"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="QRWRunDXE10_4_W64:Clean;QRWDesignDXE10_4:Clean;gtDocEng:Clean;DCLgtDocEng:Clean;DCLgtQRExp:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;JanuaIconFontsImageList:Clean;dclJanuaIconFontsImageList:Clean;Janua_SVGIconPackage:Clean;Janua_SVGIconImageList:Clean;Janua_SVGIconImageListFMX:Clean;Janua_dclSVGIconImageList:Clean;TMSWebGMapsPkgDXE13:Clean;TMSWebGMapsPkgDEDXE13:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="QRWRunDXE10_4_W64:Make;QRWDesignDXE10_4:Make;gtDocEng:Make;DCLgtDocEng:Make;DCLgtQRExp:Make;loggerproRT:Make;dmvcframeworkRT:Make;JanuaIconFontsImageList:Make;dclJanuaIconFontsImageList:Make;Janua_SVGIconPackage:Make;Janua_SVGIconImageList:Make;Janua_SVGIconImageListFMX:Make;Janua_dclSVGIconImageList:Make;TMSWebGMapsPkgDXE13:Make;TMSWebGMapsPkgDEDXE13:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

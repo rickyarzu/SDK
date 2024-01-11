@@ -1,0 +1,60 @@
+package JanuaCoreRuntime;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD OFF}
+
+requires
+  IndyIPClient,
+  rtl,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  CustomIPTransport,
+  DbxCommonDriver,
+  RESTComponents,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  IndyIPCommon,
+  dmvcframeworkRT,
+  loggerproRT,
+  Spring.base;
+
+contains
+  Janua.Core.Classes.Intf in '..\..\src\januacore\Janua.Core.Classes.Intf.pas',
+  Janua.Core.Json in '..\..\src\januacore\Janua.Core.Json.pas',
+  Janua.Core.Types in '..\..\src\januacore\Janua.Core.Types.pas',
+  Janua.Application.Intf in '..\..\src\januacore\Janua.Application.Intf.pas',
+  Writers in '..\..\src\januacore\Writers.pas',
+  Janua.Application.Framework in '..\..\src\januacore\Janua.Application.Framework.pas';
+
+end.

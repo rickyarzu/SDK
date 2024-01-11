@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{54839FB9-D12F-47DD-98F6-B457DEF92812}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Basic\TestBeacons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Discovery\BeaconDiscoveryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestBeacons">
+        <MSBuild Projects="Basic\TestBeacons.dproj"/>
+    </Target>
+    <Target Name="TestBeacons:Clean">
+        <MSBuild Projects="Basic\TestBeacons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBeacons:Make">
+        <MSBuild Projects="Basic\TestBeacons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BeaconDiscoveryDemo">
+        <MSBuild Projects="Discovery\BeaconDiscoveryDemo.dproj"/>
+    </Target>
+    <Target Name="BeaconDiscoveryDemo:Clean">
+        <MSBuild Projects="Discovery\BeaconDiscoveryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BeaconDiscoveryDemo:Make">
+        <MSBuild Projects="Discovery\BeaconDiscoveryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestBeacons;BeaconDiscoveryDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestBeacons:Clean;BeaconDiscoveryDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestBeacons:Make;BeaconDiscoveryDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

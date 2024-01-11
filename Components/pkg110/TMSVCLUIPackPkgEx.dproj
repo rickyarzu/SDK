@@ -1,0 +1,1377 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{355f8050-813f-428f-8f6e-6176febceb1a}</ProjectGuid>
+        <MainSource>TMSVCLUIPackPkgEx.dpk</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\5.0\Bpl\TMSVCLUIPackPkgExD2007.bpl</DCC_DependencyCheckOutputName>
+        <ProjectVersion>19.5</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Base>True</Base>
+        <AppType>Package</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE14\JanuaLibDXE14.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE14\JanuaLibDXE14.optset')"/>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>TMSVCLUIPackPkgEx</SanitizedProjectName>
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Data.Win;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>2067</VerInfo_Locale>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Description>TMS VCL UI Pack Extra</DCC_Description>
+        <DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\7.0\Bpl\TMSVCLUIPackPkgExD2010.bpl</DCC_DependencyCheckOutputName>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <CfgDependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>vcl;TMSVCLUIPackPkgDXE2;TMSVCLUIPackPkgExDXE2;TMSVCLUIPackPkgDXE3;TMSVCLUIPackPkgDXE4;TMSVCLUIPackPkgDXE5;DbxCommonDriver;soaprtl;dsnap;TMSVCLUIPackPkgDXE10;TMSVCLUIPackPkgDXE11;TMSVCLUIPackPkgDXE12;TMSVCLUIPackPkgDXE14;TMSVCLUIPackPkgDXE14;TMSVCLUIPackPkg;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>vcl;TMSVCLUIPackPkgDXE4;TMSVCLUIPackPkgDXE5;DbxCommonDriver;soaprtl;dsnap;TMSVCLUIPackPkgDXE10;TMSVCLUIPackPkgDXE11;TMSVCLUIPackPkgDXE12;TMSVCLUIPackPkgDXE14;TMSVCLUIPackPkgDXE14;TMSVCLUIPackPkg;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Debugger_HostApplication>C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin\bds.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <Import Project="..\..\SDK\prj\DXE14\JanuaLibDXE14.optset" Condition="'$(Base)'!='' And Exists('..\..\SDK\prj\DXE14\JanuaLibDXE14.optset')"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHookReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8MarqueeReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calpreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calcreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\exeinforeg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ellipslblreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\fsreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\frmsreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimagereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\lfreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorderreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\sysmreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothbuttonreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcalendarreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothdatepickerreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothlabelreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothlistboxreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcomboboxreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothimagelistboxreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothimagelistboxpickerreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothmenureg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothpanelreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothspinnerreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtrackbarreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtogglebuttonreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothpagesliderreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothstatusindicatorreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtabpagerreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothprogressbarreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothledlabelreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothjogwheelreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothgaugereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothexpandergroupreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothdockreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothsplashscreenreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothmessagedialogreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenuReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothscrollbarreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtimelinereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothsliderreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\gdippicturecontainerreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advfocushelperreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcalculatorreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPagerReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBoxReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShowReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPCReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopupReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStepControlReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Bars.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Buttons.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Images.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Labels.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7ListViewItems.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7NaviButtons.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Panels.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7ProgressBars.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabelReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advduallistboxreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgressReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurveReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenuReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGEREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSERREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVPICTUREPANEREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLESREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WEBPICTURECONTAINERREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVSIGNATURECAPTUREREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGRAPHICCHECKLABELREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLEREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryListReg.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanelReg.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenu.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighLightLabelReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableView.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HotspotEditor.dcr"/>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="TMSVCLUIPackPkg.dcp"/>
+        <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="DbxCommonDriver.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHookReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHook.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTouchKeyboardReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTouchKeyboard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\CurvyControls.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\CurvyControlsReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockAppReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockApp.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockAppDlg.pas">
+            <Form>AdvUnLockForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroButtons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroButtonsReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroRes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroWizardButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AeroWizardButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calpreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calcomp.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calcreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calpanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\exeinforeg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ellipslabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ellipslblreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\exeinfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\fsreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\formsize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\frmshape.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\frmsreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimagereg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\hotspoteditorcomp.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\hotspoteditor.pas">
+            <Form>frmHSIEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\lfreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\linelibrary.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorderreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\layeredform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\sysmreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\sysmon.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\moneycal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFocusHelper.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFocusHelperReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDatePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDatePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBoxDragDrop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothComboBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothComboBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMenuReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStyles.pas">
+            <Form>AdvSmoothStyleForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillEditor.pas">
+            <Form>AdvSmoothFillEditorForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothHTMLEditor.pas">
+            <Form>AdvSmoothHTMLEditorForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillPreview.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillPreviewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSelectors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSelectorsReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpin.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothXPVS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEddd.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEditButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinnerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothJogWheel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothJogWheelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothGauge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothGaugeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTrackbar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTrackbarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStatusIndicator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStatusIndicatorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothProgressBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothProgressBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTabPager.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTabPagerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothToggleButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothToggleButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLEDLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLEDLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLedLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLEDLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDock.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDockReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDockDragDrop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderButtonPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderButtonPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTimeLine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTimeLineReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMessageDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMessageDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSplashScreen.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSplashScreenReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothScrollBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothScrollBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSliderReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTouchKeyBoard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTouchKeyBoardReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDropDownList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenuReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculatorDropDown.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculatorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvExplorerTreeview.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvExplorerTreeviewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGDIPicture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGDIPicReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGDIPPicture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGDIPPictureReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPictureContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPictureContainerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\gdipmenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxDragDrop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothTimeLineReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothComboBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothComboBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothImageListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothImageListBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothDatePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothDatePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothListBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothTimeLine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPager.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPagerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\CustomItemsContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPButtonItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPCheckItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPCustomItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPDropDownItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPExpandableImageSectionItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPGraphicItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPGroupItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLSectionItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageSectionItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextButtonItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextButtonSectionItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPLargeButtonedItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPRadioItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPSectionItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPTextItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPWedgeItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPButtonBarItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPFullDropDownItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHeaderItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPLargeButtonedHTMLItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPSplitterItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPreviewItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLEngine.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShow.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShowReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GDIPProgressItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPC.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPCReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvsmoothStepControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvsmoothStepControlReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSW7Reg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Bars.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Buttons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Classes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Common.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Graphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Images.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Labels.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7ListViewItems.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7NaviButtons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7Panels.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\W7ProgressBars.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListHTMLVisualizer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListImageVisualizer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPageSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPageSliderReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroDlgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroFindDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroFindDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroHint.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroHintReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroProgressBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroProgressBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroReplaceDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroReplaceDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroRes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroScrollBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroScrollBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTaskDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTaskDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTile.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvListEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvListEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advduallistbox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advduallistboxreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advwordcloud.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advwordcloudreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudDropDownReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudDropDown.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgressReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFancyLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFancyLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurve.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurveReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenuReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8Marquee.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8MarqueeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormLayouter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advlabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGraphicCheckLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGraphicCheckLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGraphicCheckLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGraphicCheckLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothSliderReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGE.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGEREG.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLE.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLEREG.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECONTROL.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSER.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSERREG.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLES.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLESREG.PAS"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WebPictureContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WebPictureContainerreg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSignatureCapture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSignatureCaptureReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRTF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorEditButtonBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorEditButtonBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorFormatButtonBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorFormatButtonBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckConfForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckCorrectForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckCorrectLinesForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellInfos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellSoundEX.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellUpdateDictProgForm.pas">
+            <Form>TMSSpellUpdateDictProgForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorpdfio.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditordd.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditoremoticons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorMinihtmlio.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorspellcheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\asgspellcheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMemoSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorPopupToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advricheditoreditlink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRatingGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarRes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRatingGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGridToolBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGridToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDirectoryTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCheckedTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMultiInputQueryDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMultiInputQueryDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenuReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorPic.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPopupEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchEditEditLink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPicturePane.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPicturePaneReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormComboBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBDataLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBDataLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSearchEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSearchList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvResponsiveList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditorRTFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvResponsiveListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighlightLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardDatabaseAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomScrollControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvUndo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvImageEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvBitmapSelectorEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorSelectorEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorWheel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorWheelResources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomSelectorEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarResEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighlightLabelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowserReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowser.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRuler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRulerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeCalendar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeCalendarReg.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters/>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">2067</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">TMSVCLUIPackPkgEx.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <Deployment Version="4">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\TMSVCLUIPackPkgEx.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

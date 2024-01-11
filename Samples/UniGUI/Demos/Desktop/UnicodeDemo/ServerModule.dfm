@@ -1,0 +1,87 @@
+object UniServerModule: TUniServerModule
+  OldCreateOrder = False
+  FilesFolder = 'files\'
+  TempFolder = 'temp\'
+  Title = 'New Application'
+  BGColor = 8404992
+  CharSet = 'utf-8'
+  Favicon.Data = {
+    0000010001001010180000000000680300001600000028000000100000002000
+    0000010018000000000000030000000000000000000000000000000000000000
+    00178ABB005F8A00000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000178ABB005F8A000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00178ABB005F8A000000000000000000000000000000B54D0EB54D0EB54D0EB5
+    4D0EB54D0E000000000000000000000000178ABB905434BB8C70000000000000
+    B87E5DB54A0CCF6111E6943CE69E47D88A39C7681DB54D0E0000000000000000
+    00178ABBA45D26EB993ED0600ECD5100E05C00EA6200EF7C1AFAAE4CFFC15FFE
+    BE5CF79E3CEA6908BD794F000000000000178ABB8C5229F9AA48EE7816EA6200
+    EA6200EA6200EF7C1AFAAE4CFFC15FFEBE5CF79E3CEB6A08C46B310000000000
+    00178ABB906A4DF19B3DEE7816EA6200EA6200EA6200EF7C1AFAAE4CFFC15FFE
+    BE5CF79E3CEB6A08CB6F31000000000000178ABB95806EEB8E31EE7816EA6200
+    EA6200EA6200EF7C1AFAAE4CFFC15FFEBE5CF79E3CEB6A08D172310000000000
+    00178ABB9A9185E88428EE7816EA6200EA6200EA6200EF7C1AFAAE4CFFC15FFE
+    BE5CF79E3CEB6A08D67431000000000000178ABB9B8066F09233EE7816EA6200
+    EA6200EA6200EF7C1AFAAE4CFFC15FFEBE5CF79E3CEB6A08DB78310000000000
+    00178ABBA26D41F6A240EE7816EA6200EA6200EA6200EF7C1AFAAE4CFFC15FFE
+    BE5CF79E3CEB6A08E07B31000000000000178ABBB96A25FAAC4AEE7816EA6200
+    EA6200EA6200EE7A18F8A240FDB957FEBE5CF79E3CEB6A08E07B310000000000
+    00178ABBCE7425F9AB49EE7816EA6200EA6200EA6506E6843CE49F6AE39458E9
+    8230EE7616EA6604E07B31000000000000006392A37C5AE68D48E77C2AE48741
+    E49C66000000000000000000000000000000000000E49C66E489460000000084
+    B586D0E4156E9500000000000000000000000000000000000000000000000000
+    00000000000000000000000000000000000084B5000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000009FFF
+    00009FFF00009F0700008C030000800100008001000080010000800100008001
+    00008001000080010000800100008001000081F900001FFF0000BFFF0000}
+  FaviconOptions = [foVisible, foLocalCache]
+  DefaultImageFormat = cfJpeg
+  SuppressErrors = []
+  UnavailableErrMsg = 'Server unavailable, please try later'
+  LoadingMessage = 'Loading...'
+  Bindings = <>
+  ServerMessages.ExceptionTemplate.Strings = (
+    '<html>'
+    '<body bgcolor="#dfe8f6">'
+    
+      '<p style="text-align:center;color:#A05050">An Exception has occu' +
+      'red in application:</p>'
+    '<p style="text-align:center;color:#0000A0">[###message###]</p>'
+    
+      '<p style="text-align:center;color:#A05050"><a href="[###url###]"' +
+      '>Restart application</a></p>'
+    '</body>'
+    '</html>')
+  ServerMessages.InvalidSessionTemplate.Strings = (
+    '<html>'
+    '<body bgcolor="#dfe8f6">'
+    '<p style="text-align:center;color:#0000A0">[###message###]</p>'
+    
+      '<p style="text-align:center;color:#A05050"><a href="[###url###]"' +
+      '>Restart application</a></p>'
+    '</body>'
+    '</html>')
+  ServerMessages.TerminateTemplate.Strings = (
+    '<html>'
+    '<body bgcolor="#dfe8f6">'
+    '<p style="text-align:center;color:#0000A0">[###message###]</p>'
+    
+      '<p style="text-align:center;color:#A05050"><a href="[###url###]"' +
+      '>Restart application</a></p>'
+    '</body>'
+    '</html>')
+  ServerMessages.InvalidSessionMessage = 'Invalid session or session Timeout.'
+  ServerMessages.TerminateMessage = 'Web session terminated.'
+  ExtLocale = '[Auto]'
+  Compression.MinTextSize = 512
+  SSL.SSLOptions.RootCertFile = 'root.pem'
+  SSL.SSLOptions.CertFile = 'cert.pem'
+  SSL.SSLOptions.KeyFile = 'key.pem'
+  SSL.SSLOptions.Mode = sslmUnassigned
+  SSL.SSLOptions.VerifyMode = []
+  SSL.SSLOptions.VerifyDepth = 0
+  ConnectionFailureRecovery.ErrorMessage = 'Connection Error'
+  ConnectionFailureRecovery.RetryMessage = 'Retrying...'
+  Height = 150
+  Width = 215
+end

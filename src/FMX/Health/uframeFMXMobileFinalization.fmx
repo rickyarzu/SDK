@@ -1,0 +1,461 @@
+object frameFMXMobileFinalization: TframeFMXMobileFinalization
+  Size.Width = 426.000000000000000000
+  Size.Height = 653.000000000000000000
+  Size.PlatformDefault = False
+  object TabControlFinalization: TTabControl
+    Align = Client
+    Size.Width = 426.000000000000000000
+    Size.Height = 653.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    OnChange = TabControlFinalizationChange
+    Sizes = (
+      426s
+      653s
+      426s
+      653s
+      426s
+      653s
+      426s
+      653s)
+    object Tab11Notes: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Note'
+      ExplicitSize.cx = 104.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object Text2: TText
+        Align = Top
+        Size.Width = 426.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Text = 
+          'Personalizza la tua prenotazione con annotazioni sulla prestazio' +
+          'ne scelta e indicandoci le tue date preferite'
+      end
+      object pnlBookingNotes: TPanel
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 183.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lbBookingNotes: TLabel
+          Align = Bottom
+          StyledSettings = [Family, Style, FontColor]
+          Position.Y = 58.000000000000000000
+          Size.Width = 426.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Scrivi qui sotto le tue Note'
+          TabOrder = 2
+        end
+        object memBookingNotes: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Align = Bottom
+          Margins.Left = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 90.000000000000000000
+          Size.Width = 416.000000000000000000
+          Size.Height = 88.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 412.000000000000000000
+          Viewport.Height = 84.000000000000000000
+        end
+        object pnlBookingUntil: TPanel
+          Align = Top
+          Position.Y = 31.000000000000000000
+          Size.Width = 426.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object lbBookingUntil: TLabel
+            Align = Left
+            Margins.Left = 4.000000000000000000
+            Position.X = 4.000000000000000000
+            Size.Width = 93.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            Text = ' Al Giorno'
+            TabOrder = 4
+          end
+          object dateBookingUntil: TDateEdit
+            OnOpenPicker = dateBookingUntilEnter
+            Align = Center
+            Margins.Right = 4.000000000000000000
+            Size.Width = 90.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            OnEnter = dateBookingUntilEnter
+          end
+        end
+        object pnlBookingSince: TPanel
+          Align = Top
+          Size.Width = 426.000000000000000000
+          Size.Height = 31.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object lbBookingSince: TLabel
+            Align = Left
+            Margins.Left = 4.000000000000000000
+            Position.X = 4.000000000000000000
+            Size.Width = 93.000000000000000000
+            Size.Height = 31.000000000000000000
+            Size.PlatformDefault = False
+            Text = ' Dal Giorno'
+            TabOrder = 5
+          end
+          object dateBookingSince: TDateEdit
+            Align = Center
+            Margins.Right = 4.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+          end
+        end
+      end
+      object btnFinalPrescription: TButton
+        Align = Top
+        Position.Y = 233.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Inserisci Una Ricetta'
+        OnClick = btnFinalPrescriptionClick
+      end
+      object btnFinalPerson: TButton
+        Align = Top
+        Position.Y = 289.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Prenota per un'#39'altra persona'
+        OnClick = btnFinalPersonClick
+      end
+      object btnFinalBooking: TButton
+        Align = Top
+        Position.Y = 345.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Completa la Prenotazione'
+        OnClick = btnFinalBookingClick
+      end
+      object btnFinalUndoBooking: TButton
+        Align = Top
+        StyledSettings = [Family, Size, Style]
+        Position.Y = 401.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Annulla la prenotazione'
+        TextSettings.FontColor = claRed
+      end
+    end
+    object Tab12Prescription: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Ricetta'
+      ExplicitSize.cx = 104.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inline frameFMXMobilePrescription1: TframeFMXMobilePrescription
+        Align = Client
+        Size.Width = 426.000000000000000000
+        Size.Height = 653.000000000000000000
+        Size.PlatformDefault = False
+        inherited TabControl1: TTabControl
+          Size.Width = 426.000000000000000000
+          Size.Height = 653.000000000000000000
+          Sizes = (
+            426s
+            653s
+            426s
+            653s)
+          inherited TabItem71Personal: TTabItem
+            ExplicitSize.cx = 8.000000000000000000
+            ExplicitSize.cy = 8.000000000000000000
+            inherited VertScrollBoxPersonal: TVertScrollBox
+              Size.Width = 426.000000000000000000
+              Size.Height = 653.000000000000000000
+              Viewport.Width = 426.000000000000000000
+              Viewport.Height = 653.000000000000000000
+              inherited LayoutPrescription: TLayout
+                Size.Width = 426.000000000000000000
+                Size.Height = 492.000000000000000000
+                inherited edFirstBarcode: TEdit
+                  Size.Width = 422.000000000000000000
+                end
+                inherited edLastBarcode: TEdit
+                  Size.Width = 422.000000000000000000
+                end
+                inherited edLastName: TEdit
+                  Size.Width = 422.000000000000000000
+                end
+                inherited edFirstName: TEdit
+                  Size.Width = 422.000000000000000000
+                end
+                inherited Label1: TLabel
+                  Size.Width = 426.000000000000000000
+                end
+                inherited pnlPriority: TPanel
+                  Size.Width = 426.000000000000000000
+                end
+                inherited edFiscalCode: TEdit
+                  Size.Width = 422.000000000000000000
+                end
+                inherited btnCopyData: TButton
+                  Size.Width = 426.000000000000000000
+                end
+                inherited btnNext: TButton
+                  Size.Width = 426.000000000000000000
+                  OnClick = frameFMXMobilePrescription1btnNextClick
+                end
+              end
+            end
+          end
+          inherited TabItem72Prescription: TTabItem
+            ExplicitSize.cx = 8.000000000000000000
+            ExplicitSize.cy = 8.000000000000000000
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 426.000000000000000000
+              Size.Height = 653.000000000000000000
+              Viewport.Width = 426.000000000000000000
+              Viewport.Height = 653.000000000000000000
+              inherited Layout1: TLayout
+                Size.Width = 426.000000000000000000
+                Size.Height = 648.000000000000000000
+                inherited Panel1: TPanel
+                  Size.Width = 426.000000000000000000
+                  inherited Label3: TLabel
+                    Size.Width = 337.000000000000000000
+                  end
+                  inherited Edit1: TEdit
+                    Position.X = 341.000000000000000000
+                  end
+                end
+                inherited Panel2: TPanel
+                  Size.Width = 426.000000000000000000
+                  inherited Label6: TLabel
+                    Size.Width = 337.000000000000000000
+                  end
+                  inherited edProvince: TEdit
+                    Position.X = 341.000000000000000000
+                  end
+                end
+                inherited pnlExemption: TPanel
+                  Size.Width = 426.000000000000000000
+                  inherited ckbExemption: TSwitch
+                    Position.X = 346.000000000000000000
+                  end
+                  inherited lbExemption: TLabel
+                    Size.Width = 342.000000000000000000
+                  end
+                end
+                inherited pnlExemptionCode: TPanel
+                  Size.Width = 426.000000000000000000
+                  inherited lbExemptionCode: TLabel
+                    Size.Width = 337.000000000000000000
+                  end
+                  inherited edExemptionCode: TEdit
+                    Position.X = 341.000000000000000000
+                  end
+                end
+                inherited pnlIncomeExemption: TPanel
+                  Size.Width = 426.000000000000000000
+                  inherited ckbIncomeExemption: TSwitch
+                    Position.X = 346.000000000000000000
+                  end
+                  inherited lbIncomeExemption: TLabel
+                    Size.Width = 342.000000000000000000
+                  end
+                end
+                inherited lbPrescriptionExemption: TLabel
+                  Size.Width = 422.000000000000000000
+                end
+                inherited btnSavePrescription: TButton
+                  Size.Width = 426.000000000000000000
+                  OnClick = frameFMXMobilePrescription1btnSavePrescriptionClick
+                end
+                inherited Label2: TLabel
+                  Size.Width = 426.000000000000000000
+                end
+                inherited edPrescriptionDate: TDateEdit
+                  Size.Width = 422.000000000000000000
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    object Tab13Person: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Persona'
+      ExplicitSize.cx = 104.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inline frameFMXAnagraphPersonalMobile1: TframeFMXAnagraphPersonalMobile
+        Align = Client
+        Size.Width = 426.000000000000000000
+        Size.Height = 603.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScrollBox1: TVertScrollBox
+          Size.Width = 426.000000000000000000
+          Size.Height = 603.000000000000000000
+          Viewport.Width = 426.000000000000000000
+          Viewport.Height = 603.000000000000000000
+          inherited Layout1: TLayout
+            inherited btnSave2: TButton
+              OnClick = frameFMXAnagraphPersonalMobile1btnSave2Click
+            end
+            inherited btnUndo: TButton
+              OnClick = frameFMXAnagraphPersonalMobile1btnUndoClick
+            end
+            inherited Panel2: TPanel
+              inherited rgGender: TTMSFMXRadioGroup
+                Margins.Top = 5.000000000000000000
+                Margins.Bottom = 5.000000000000000000
+                Size.Width = 229.000000000000000000
+              end
+            end
+            inherited Panel4: TPanel
+              inherited edBirthDate: TDateEdit
+                Margins.Top = 5.000000000000000000
+                Margins.Bottom = 5.000000000000000000
+                Position.Y = 5.000000000000000000
+                Size.Height = 30.000000000000000000
+              end
+            end
+            inherited lbError: TLabel
+              Position.Y = 373.000000000000000000
+            end
+          end
+        end
+      end
+      object Text3: TText
+        Align = Top
+        Size.Width = 426.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Text = 
+          'Qui puoi inserire i dati per prenotare per conto di un'#39'altra per' +
+          'sona o di un tuo familiare'
+        TextSettings.Font.Size = 11.000000000000000000
+      end
+    end
+    object Tab14End: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Riepilogo'
+      ExplicitSize.cx = 105.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inline frameFMXMobileSummary1: TframeFMXMobileSummary
+        Align = Client
+        Size.Width = 426.000000000000000000
+        Size.Height = 653.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScrollBox1: TVertScrollBox
+          Size.Width = 426.000000000000000000
+          Size.Height = 653.000000000000000000
+          Viewport.Width = 426.000000000000000000
+          Viewport.Height = 653.000000000000000000
+          inherited Layout1: TLayout
+            Size.Width = 426.000000000000000000
+            inherited btnFinalize: TButton
+              Size.Width = 426.000000000000000000
+              OnClick = frameFMXMobileSummary1btnFinalizeClick
+            end
+            inherited btnUndo: TButton
+              Size.Width = 426.000000000000000000
+              OnClick = frameFMXMobileSummary1btnUndoClick
+            end
+            inherited Label11: TLabel
+              Size.Width = 426.000000000000000000
+            end
+            inherited ListViewInstitutes: TListView
+              Size.Width = 426.000000000000000000
+            end
+            inherited Panel1: TPanel
+              Size.Width = 426.000000000000000000
+              inherited SwitchRelative: TSwitch
+                Position.X = 348.000000000000000000
+              end
+            end
+            inherited Panel7: TPanel
+              Size.Width = 426.000000000000000000
+              inherited lbBooking: TLabel
+                Size.Width = 426.000000000000000000
+              end
+              inherited txtPrestazione: TText
+                Size.Width = 426.000000000000000000
+              end
+              inherited Label10: TLabel
+                Size.Width = 426.000000000000000000
+              end
+              inherited txtFirstName: TLabel
+                Size.Width = 426.000000000000000000
+              end
+            end
+            inherited Panel8: TPanel
+              Size.Width = 426.000000000000000000
+              inherited SwitchHasPrescription: TSwitch
+                Position.X = 348.000000000000000000
+              end
+            end
+            inherited Panel9: TPanel
+              Size.Width = 426.000000000000000000
+              inherited txtNotes: TText
+                Size.Width = 426.000000000000000000
+              end
+              inherited Label13: TLabel
+                Size.Width = 426.000000000000000000
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

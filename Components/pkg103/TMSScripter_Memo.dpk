@@ -1,0 +1,55 @@
+package TMSScripter_Memo;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - Memo Package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  ScrCodeHint in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrCodeHint.pas',
+  ScrCodeList in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrCodeList.pas',
+  ScrCodeListDD in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrCodeListDD.pas',
+  ScrCodeListLib in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrCodeListLib.pas',
+  ScrFindDialogForm in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrFindDialogForm.pas' {ScrFindDlgForm},
+  ScrMbs in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMbs.pas',
+  ScrMdd in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMdd.pas',
+  ScrMemo in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMemo.pas',
+  ScrMemoAC in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMemoAC.pas' {ACMemo},
+  ScrMemoEd in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMemoEd.pas',
+  ScrMemoStylerManager in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMemoStylerManager.pas',
+  ScrMps in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrMps.pas',
+  ScrReplaceDialogForm in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrReplaceDialogForm.pas' {ScrReplaceDlgForm},
+  ScrRTFEng in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrRTFEng.pas',
+  ScrStyleIf in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrStyleIf.pas',
+  ScrAppStyler in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\memo\ScrAppStyler.pas';
+
+end.

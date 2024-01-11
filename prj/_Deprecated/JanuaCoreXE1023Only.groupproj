@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7EA87498-EF57-4B32-85E0-3D1074FF952A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE1023.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaFMXTestDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE10">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Make">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE1023">
+        <MSBuild Projects="JanuaCoreXE1023.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE1023:Clean">
+        <MSBuild Projects="JanuaCoreXE1023.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE1023:Make">
+        <MSBuild Projects="JanuaCoreXE1023.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXTestDesktop">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXTestDesktop.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXTestDesktop:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXTestDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXTestDesktop:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaFMXTestDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE10;JanuaCoreXE1023;JanuaCoreUnitTesting;JanuaFMXTestDesktop"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE10:Clean;JanuaCoreXE1023:Clean;JanuaCoreUnitTesting:Clean;JanuaFMXTestDesktop:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE10:Make;JanuaCoreXE1023:Make;JanuaCoreUnitTesting:Make;JanuaFMXTestDesktop:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

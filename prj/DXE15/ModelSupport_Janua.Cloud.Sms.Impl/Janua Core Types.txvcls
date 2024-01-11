@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="dg93np19ack_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,60,240,562" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.FBuilder" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.AppendLine(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Add(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Text()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.AppendSQL(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.AppendVars(System.string,Janua.Core.Types.variant[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Char)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Currency)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(Janua.Core.Types.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Shortint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Single)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.UInt64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(Janua.Core.Types.TCharArray)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Cardinal)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.AnsiChar*)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(Janua.Core.Types.RawByteString)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.Char,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(Janua.Core.Types.TCharArray,System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Append(System.string,System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaStringBuilder.Destroy()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,60,224,163" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;.FObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;.Invoke()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;.Create(T)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;.Destroy()" />
+      <reference referencedUin="delphi:l_impl:src:JanuaCore:Janua.Core.Types.TSmartReference&lt;1&gt;:Janua.Core.Types.ISmartReference&lt;1&gt;">
+        <property name="sourceAnchor" value="472,223" />
+        <property name="targetAnchor" value="472,260" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.ISmartReference&lt;1&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,260,252,42" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,320,242,98" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeType.jbtEAN13" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeType.jbtEAN8" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeType.jbtOther" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,440,245,218" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblL7161_A4" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblL7161_A4_gioielli" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblCopyBasic_LP4MS_3821" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jbl7161_A4_3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblAveryClan" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblL7161_A4_2" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblL7159_A4" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblLabel5230" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblL5230Buffetti" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblDymoHorizontal" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaBarcodeLabel.jblDymoVertical" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="660,60,224,188" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbOracle" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbPostgres" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbMySql" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbMongoDB" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbODBC" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbInterbase" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbFirebird" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbTmsRemoteDB" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaDBEngine.jdbMSAccess" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaFieldType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="920,60,222,488" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptUnknown" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptCurrency" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptExtended" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptDateTime" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptInteger" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptCardinal" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptLargeInt" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptAutoInc" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptSmallint" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptShortint" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptByte" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptWord" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptFilename" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptString" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptFloat" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptSingle" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptHtmlText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptRichText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptBoolean" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptBlob" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptBytes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptVariant" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptGUID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptArray" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptADT" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaFieldType.jptXML" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaPlatform">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="660,280,214,173" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josWindows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josWin64" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josAndroid" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josAndroid64" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josIOS32" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josiOS64" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josWin32" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaPlatform.josLinux64" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaTheme">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="660,480,206,83" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaTheme.jtLight" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaTheme.jtDark" />
+    </reference>
+  </view>
+</nodeSet>

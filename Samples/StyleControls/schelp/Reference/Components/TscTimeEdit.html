@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscTimeEdit</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscTimeEdit</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scExtContols.pas</p>
+<p>See also <a href="TscEdit.html">TscEdit</a>
+properties</p>
+
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Edit
+control to work with time value</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<br>
+&nbsp;
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TimeValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TTime</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TTime value of time</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Milliseconds</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Milliseconds value</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowUpDown</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show up and down buttons</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowMSec</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show milliseconds</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowSec</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show seconds</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TimeFormat</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscTimeFormat</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscTimeFormat = (sctf24Hour, sctf12Hour);<br><br>Format to display time (12 or 24 hour)</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">Time</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">String value of time</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<h1>Methods</h1>
+<br>
+&nbsp;
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DecodeTime</td>
+
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Decode time from edit to get all values...<br><br>DecodeTime(var Hour, Min, Sec, MSec: Word);</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">EncodeTime</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Encode time to the edit...<br><br>EncodeTime(Hour, Min, Sec, MSec: Word);</td></tr></tbody>
+</table>
+<small><span style="font-weight: bold;"><big><br>
+Note:</big></span></small>
+<span style="color: red;">&nbsp;&nbsp;&nbsp; <span style="color: black;">Use TControl.StyleElements property to
+adjust custom colors for client and font in all controls when VCL Style
+is enabled!</span></span><br>
+<p>&nbsp;</p>
+</body></html>

@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2B97B85D-A477-4C90-B835-A0BBF1344B94}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AutoComplete and Codelist drag and drop\AdvMemoAutoCompleteDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AutoCompleteList\AdvMemoAutoCompleteListDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AutoCorrection\AdvMemoAutoCorrectionDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Main Demo\AdvMemoMainDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Syntax Highlighting and Export of file\AdvMemoSyntaxDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AdvMemoAutoCompleteDemo">
+        <MSBuild Projects="AutoComplete and Codelist drag and drop\AdvMemoAutoCompleteDemo.dproj"/>
+    </Target>
+    <Target Name="AdvMemoAutoCompleteDemo:Clean">
+        <MSBuild Projects="AutoComplete and Codelist drag and drop\AdvMemoAutoCompleteDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvMemoAutoCompleteDemo:Make">
+        <MSBuild Projects="AutoComplete and Codelist drag and drop\AdvMemoAutoCompleteDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvMemoAutoCompleteListDemo">
+        <MSBuild Projects="AutoCompleteList\AdvMemoAutoCompleteListDemo.dproj"/>
+    </Target>
+    <Target Name="AdvMemoAutoCompleteListDemo:Clean">
+        <MSBuild Projects="AutoCompleteList\AdvMemoAutoCompleteListDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvMemoAutoCompleteListDemo:Make">
+        <MSBuild Projects="AutoCompleteList\AdvMemoAutoCompleteListDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvMemoAutoCorrectionDemo">
+        <MSBuild Projects="AutoCorrection\AdvMemoAutoCorrectionDemo.dproj"/>
+    </Target>
+    <Target Name="AdvMemoAutoCorrectionDemo:Clean">
+        <MSBuild Projects="AutoCorrection\AdvMemoAutoCorrectionDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvMemoAutoCorrectionDemo:Make">
+        <MSBuild Projects="AutoCorrection\AdvMemoAutoCorrectionDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvMemoMainDemo">
+        <MSBuild Projects="Main Demo\AdvMemoMainDemo.dproj"/>
+    </Target>
+    <Target Name="AdvMemoMainDemo:Clean">
+        <MSBuild Projects="Main Demo\AdvMemoMainDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvMemoMainDemo:Make">
+        <MSBuild Projects="Main Demo\AdvMemoMainDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvMemoSyntaxDemo">
+        <MSBuild Projects="Syntax Highlighting and Export of file\AdvMemoSyntaxDemo.dproj"/>
+    </Target>
+    <Target Name="AdvMemoSyntaxDemo:Clean">
+        <MSBuild Projects="Syntax Highlighting and Export of file\AdvMemoSyntaxDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvMemoSyntaxDemo:Make">
+        <MSBuild Projects="Syntax Highlighting and Export of file\AdvMemoSyntaxDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AdvMemoAutoCompleteDemo;AdvMemoAutoCompleteListDemo;AdvMemoAutoCorrectionDemo;AdvMemoMainDemo;AdvMemoSyntaxDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AdvMemoAutoCompleteDemo:Clean;AdvMemoAutoCompleteListDemo:Clean;AdvMemoAutoCorrectionDemo:Clean;AdvMemoMainDemo:Clean;AdvMemoSyntaxDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AdvMemoAutoCompleteDemo:Make;AdvMemoAutoCompleteListDemo:Make;AdvMemoAutoCorrectionDemo:Make;AdvMemoMainDemo:Make;AdvMemoSyntaxDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

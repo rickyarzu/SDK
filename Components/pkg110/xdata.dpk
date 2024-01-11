@@ -1,0 +1,133 @@
+package xdata;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS XData - Core Package'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  aurelius,
+  sparkle,
+  xmlrtl;
+
+contains
+  XData.Model.Classes in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Classes.pas',
+  XData.Model.Deserializer in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Deserializer.pas',
+  XData.Model.Types in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Model.Types.pas',
+  XData.Types.Converters in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Types.Converters.pas',
+  XData.Utils in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Utils.pas',
+  XData.Web.DatasetCommon in '..\..\..\tmssoftware\TMS XData\source\core\common\XData.Web.DatasetCommon.pas',
+  OpenAPI.Classes.Info in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Info.pas',
+  OpenAPI.Classes.Operation in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Operation.pas',
+  OpenAPI.Classes.Parameter in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Parameter.pas',
+  OpenAPI.Classes in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.pas',
+  OpenAPI.Classes.Path in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Path.pas',
+  OpenAPI.Classes.Security in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Classes.Security.pas',
+  OpenAPI.Consts in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Consts.pas',
+  OpenAPI.Document in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Document.pas',
+  OpenAPI.Json.Attributes in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Attributes.pas',
+  OpenAPI.Json.Converters in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Converters.pas',
+  OpenAPI.Json.Serializer in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Json.Serializer.pas',
+  OpenAPI.Types in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Types.pas',
+  OpenAPI.Utils in '..\..\..\tmssoftware\TMS XData\source\core\OpenAPI.Utils.pas',
+  XData.Aurelius.ConnectionPool in '..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.ConnectionPool.pas',
+  XData.Aurelius.CriteriaBuilder in '..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.CriteriaBuilder.pas',
+  XData.Aurelius.Model in '..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.Model.pas',
+  XData.Aurelius.ModelBuilder in '..\..\..\tmssoftware\TMS XData\source\core\XData.Aurelius.ModelBuilder.pas',
+  XData.Bind.Converter in '..\..\..\tmssoftware\TMS XData\source\core\XData.Bind.Converter.pas',
+  XData.Client in '..\..\..\tmssoftware\TMS XData\source\core\XData.Client.pas',
+  XData.Comp.ConnectionPool in '..\..\..\tmssoftware\TMS XData\source\core\XData.Comp.ConnectionPool.pas',
+  XData.Comp.Server in '..\..\..\tmssoftware\TMS XData\source\core\XData.Comp.Server.pas',
+  XData.Consts in '..\..\..\tmssoftware\TMS XData\source\core\XData.Consts.pas',
+  XData.Criteria.AliasVisitor in '..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.AliasVisitor.pas',
+  XData.Criteria.CriterionVisitor in '..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.CriterionVisitor.pas',
+  XData.Criteria.ExpandVisitor in '..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.ExpandVisitor.pas',
+  XData.Criteria.ProjectionVisitor in '..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.ProjectionVisitor.pas',
+  XData.Dataset.Source in '..\..\..\tmssoftware\TMS XData\source\core\XData.Dataset.Source.pas',
+  XData.JSchema.BlobGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.BlobGenerator.pas',
+  XData.JSchema.Builder in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Builder.pas',
+  XData.JSchema.Classes in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Classes.pas',
+  XData.JSchema.CriteriaResultGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.CriteriaResultGenerator.pas',
+  XData.JSchema.EntityGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.EntityGenerator.pas',
+  XData.JSchema.Generators in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Generators.pas',
+  XData.JSchema.ListGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.ListGenerator.pas',
+  XData.JSchema.ObjectGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.ObjectGenerator.pas',
+  XData.JSchema.OrderedDictionaryGenerator in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.OrderedDictionaryGenerator.pas',
+  XData.Json.Converter in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Converter.pas',
+  XData.Json.Converters in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Converters.pas',
+  XData.Json.CriteriaResultConverter in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.CriteriaResultConverter.pas',
+  XData.Json.Deserializer in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Deserializer.pas',
+  XData.Json.Serializer in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Serializer.pas',
+  XData.Json.Solver in '..\..\..\tmssoftware\TMS XData\source\core\XData.Json.Solver.pas',
+  XData.Model.Attributes in '..\..\..\tmssoftware\TMS XData\source\core\XData.Model.Attributes.pas',
+  XData.Module.Base in '..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Base.pas',
+  XData.Module.Events in '..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Events.pas',
+  XData.Module.Exceptions in '..\..\..\tmssoftware\TMS XData\source\core\XData.Module.Exceptions.pas',
+  XData.Module.QueryInfo in '..\..\..\tmssoftware\TMS XData\source\core\XData.Module.QueryInfo.pas',
+  XData.Module.ResourceInfo in '..\..\..\tmssoftware\TMS XData\source\core\XData.Module.ResourceInfo.pas',
+  XData.OpenApi.Builder in '..\..\..\tmssoftware\TMS XData\source\core\XData.OpenApi.Builder.pas',
+  XData.OpenApi.Service.Internal in '..\..\..\tmssoftware\TMS XData\source\core\XData.OpenApi.Service.Internal.pas',
+  XData.OpenApi.Service in '..\..\..\tmssoftware\TMS XData\source\core\XData.OpenApi.Service.pas',
+  XData.Payload.Factory in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Factory.pas',
+  XData.Payload.Form.Reader in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Form.Reader.pas',
+  XData.Payload.Json.Factory in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Factory.pas',
+  XData.Payload.Json.Reader in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Reader.pas',
+  XData.Payload.Json.Writer in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Json.Writer.pas',
+  XData.Payload.Reader in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Reader.pas',
+  XData.Payload.Writer in '..\..\..\tmssoftware\TMS XData\source\core\XData.Payload.Writer.pas',
+  XData.Query.Exceptions in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Exceptions.pas',
+  XData.Query.Expression in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Expression.pas',
+  XData.Query.Method in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Method.pas',
+  XData.Query.Parser in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Parser.pas',
+  XData.Query in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.pas',
+  XData.Query.Tokenizer in '..\..\..\tmssoftware\TMS XData\source\core\XData.Query.Tokenizer.pas',
+  XData.QueryBuilder in '..\..\..\tmssoftware\TMS XData\source\core\XData.QueryBuilder.pas',
+  XData.Security.Attributes in '..\..\..\tmssoftware\TMS XData\source\core\XData.Security.Attributes.pas',
+  XData.Security.Interfaces in '..\..\..\tmssoftware\TMS XData\source\core\XData.Security.Interfaces.pas',
+  XData.Server.Module in '..\..\..\tmssoftware\TMS XData\source\core\XData.Server.Module.pas',
+  XData.Service.Common in '..\..\..\tmssoftware\TMS XData\source\core\XData.Service.Common.pas',
+  XData.Service.Internal in '..\..\..\tmssoftware\TMS XData\source\core\XData.Service.Internal.pas',
+  XData.SwaggerUI.Service.Internal in '..\..\..\tmssoftware\TMS XData\source\core\XData.SwaggerUI.Service.Internal.pas',
+  XData.SwaggerUI.Service in '..\..\..\tmssoftware\TMS XData\source\core\XData.SwaggerUI.Service.pas',
+  XData.Sys.Exceptions in '..\..\..\tmssoftware\TMS XData\source\core\XData.Sys.Exceptions.pas',
+  XData.Types.Map in '..\..\..\tmssoftware\TMS XData\source\core\XData.Types.Map.pas',
+  XData.Web.Client in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Client.pas',
+  XData.Web.Connection in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Connection.pas',
+  XData.Web.Dataset in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Dataset.pas',
+  XData.Web.Headers in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Headers.pas',
+  XData.Web.JsonDataset in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.JsonDataset.pas',
+  XData.Web.Request in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Request.pas',
+  XData.Web.Response in '..\..\..\tmssoftware\TMS XData\source\core\XData.Web.Response.pas',
+  XData.XmlDoc.Builder in '..\..\..\tmssoftware\TMS XData\source\core\XData.XmlDoc.Builder.pas',
+  XData.XmlDoc in '..\..\..\tmssoftware\TMS XData\source\core\XData.XmlDoc.pas',
+  XData.JSchema.Reader in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Reader.pas',
+  XData.JSchema.Writer in '..\..\..\tmssoftware\TMS XData\source\core\XData.JSchema.Writer.pas',
+  XData.Criteria.SelectVisitor in '..\..\..\tmssoftware\TMS XData\source\core\XData.Criteria.SelectVisitor.pas';
+
+end.

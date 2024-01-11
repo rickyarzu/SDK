@@ -1,0 +1,152 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{23E38E32-FA2D-4698-B906-A5C6A5F40068}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGImage32Package.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\SVGIconImageList\Demo\D10_4\SVGIconImageListDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SVGIconPackage">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="SVGIconPackage:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconPackage:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGImage32Package">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGImage32Package.dproj"/>
+    </Target>
+    <Target Name="SVGImage32Package:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGImage32Package.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGImage32Package:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGImage32Package.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageList">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageList:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageList:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageList">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageListDemo">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Demo\D10_4\SVGIconImageListDemo.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageListDemo:Clean">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Demo\D10_4\SVGIconImageListDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageListDemo:Make">
+        <MSBuild Projects="..\..\..\Lib\SVGIconImageList\Demo\D10_4\SVGIconImageListDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SVGIconPackage;SVGImage32Package;SVGIconImageList;dclSVGIconImageList;SVGIconImageListFMX;dclSVGIconImageListFMX;SVGIconImageListDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SVGIconPackage:Clean;SVGImage32Package:Clean;SVGIconImageList:Clean;dclSVGIconImageList:Clean;SVGIconImageListFMX:Clean;dclSVGIconImageListFMX:Clean;SVGIconImageListDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SVGIconPackage:Make;SVGImage32Package:Make;SVGIconImageList:Make;dclSVGIconImageList:Make;SVGIconImageListFMX:Make;dclSVGIconImageListFMX:Make;SVGIconImageListDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='BuildAll'">
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageList.dproj">
+            <ProjectGuid>{67EDECA9-2CF8-4EB1-BCE1-910D4B3F08F1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Demo\D10_4\SVGIconImageListDemo.dproj">
+            <ProjectGuid>{60259119-4A8F-4FB3-AAAB-25CBFB58FEE8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconPackage.dproj">
+            <ProjectGuid>{099DEF19-06D1-4B7C-A46A-EE1940BAF102}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageList.dproj">
+            <ProjectGuid>{E2019DDD-8241-4D27-BDC9-9941252DAC1D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\dclSVGIconImageListFMX.dproj">
+            <ProjectGuid>{AC5E58B2-BDF0-4A77-9084-92441FBD9BC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGIconImageListFMX.dproj">
+            <ProjectGuid>{2CD11B99-3805-4F90-B598-3652213872B2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\SVGIconImageList\Packages\D10_4\SVGImage32Package.dproj">
+            <ProjectGuid>{B99FE27C-AFB6-4F9D-81C1-CB6C06A5075F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

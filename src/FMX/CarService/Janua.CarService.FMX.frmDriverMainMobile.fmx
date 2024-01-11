@@ -1,0 +1,290 @@
+object frmFMXDriverMainMobile: TfrmFMXDriverMainMobile
+  Left = 0
+  Top = 0
+  Caption = 'Header Footer Form'
+  ClientHeight = 588
+  ClientWidth = 384
+  Padding.Bottom = 20.000000000000000000
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  OnVirtualKeyboardShown = FormVirtualKeyboardShown
+  OnVirtualKeyboardHidden = FormVirtualKeyboardHidden
+  DesignerMasterStyle = 2
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = Timer1Timer
+    Left = 176
+    Top = 92
+  end
+  object CameraComponent1: TCameraComponent
+    Left = 240
+    Top = 212
+  end
+  object tbcPickupUser: TTabControl
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 568.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 6
+    TabPosition = PlatformDefault
+    Sizes = (
+      384s
+      519s
+      384s
+      519s
+      384s
+      519s)
+    object tabCalendar: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Calendario'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    object tabPickup: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Pickup'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object tbcPickup: TTabControl
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 519.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = PlatformDefault
+        Sizes = (
+          384s
+          470s
+          384s
+          470s
+          384s
+          470s
+          384s
+          470s)
+        object tabPickupReport: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 96.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Riepilogo'
+          ExplicitSize.cx = 96.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+        object tabSelectedPickup: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 96.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Ritiro'
+          ExplicitSize.cx = 96.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+        object tabReport: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 96.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Foto Report'
+          ExplicitSize.cx = 96.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ComposePanel: TPanel
+            Align = Bottom
+            Position.Y = 306.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 120.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            object PreviewImage: TImage
+              MultiResBitmap = <
+                item
+                end>
+              Align = Left
+              Margins.Left = 8.000000000000000000
+              Margins.Top = 8.000000000000000000
+              Margins.Bottom = 8.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 8.000000000000000000
+              Size.Width = 104.000000000000000000
+              Size.Height = 104.000000000000000000
+              Size.PlatformDefault = False
+            end
+            object NotesEdit: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              DataDetectorTypes = []
+              Align = Client
+              Margins.Left = 8.000000000000000000
+              Margins.Top = 8.000000000000000000
+              Margins.Right = 8.000000000000000000
+              Margins.Bottom = 8.000000000000000000
+              Size.Width = 256.000000000000000000
+              Size.Height = 104.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Viewport.Width = 256.000000000000000000
+              Viewport.Height = 104.000000000000000000
+            end
+          end
+          object Footer: TToolBar
+            Align = Bottom
+            Position.Y = 426.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'bottomtoolbar'
+            TabOrder = 1
+            object BtnTakePicture: TSpeedButton
+              Action = ActionTakePhotoForReport
+              Align = Center
+              Enabled = True
+              ImageIndex = -1
+              Size.Width = 44.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'cameratoolbutton'
+            end
+            object BtnSaveReport: TSpeedButton
+              Action = ActionSaveReport
+              Align = Right
+              Enabled = True
+              ImageIndex = -1
+              Position.X = 340.000000000000000000
+              Size.Width = 44.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'organizetoolbutton'
+            end
+            object BtnDiscardReport: TSpeedButton
+              Action = ActionDiscardReport
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Size.Width = 44.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'trashtoolbutton'
+            end
+          end
+          object Header: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lbPickupReport: TLabel
+              Align = Contents
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.HorzAlign = Center
+              Text = 'Pickup Report'
+            end
+          end
+          object ReportContainer: TVertScrollBox
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 262.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 6
+            Viewport.Width = 384.000000000000000000
+            Viewport.Height = 262.000000000000000000
+          end
+        end
+        object tabDelivery: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 96.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Consegna'
+          ExplicitSize.cx = 96.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+        end
+      end
+    end
+    object tabMessage: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Messaggi'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+  object ActionList1: TActionList
+    Left = 56
+    Top = 80
+    object ActionTakePhotoForReport: TTakePhotoFromCameraAction
+      Category = 'Reports'
+      OnDidFinishTaking = ActionTakePhotoForReportDidFinishTaking
+    end
+    object ActionDiscardReport: TAction
+      Category = 'Reports'
+      Text = 'Discard'
+      OnExecute = ActionDiscardReportExecute
+    end
+    object ActionSaveReport: TAction
+      Category = 'Reports'
+      Text = 'Save Report'
+      OnExecute = ActionSaveReportExecute
+    end
+  end
+  object JanuaFmxBadge1: TJanuaFmxBadge
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Badge = 0
+    Left = 208
+    Top = 408
+  end
+end

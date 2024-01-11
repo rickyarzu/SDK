@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="j8y0vrv0kv00z6whp_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="uml:package:JanuaCoreXE103Rio:src:Delphi">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,100,119" />
+      <reference referencedUin="uml:package:JanuaCoreXE103Rio:src:Delphi.Mocks" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaCoreXE103Rio:src:supertypes">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.PtrUInt" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.SOChar" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.SuperInt" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.SOString" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.PtrInt" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.PSOChar" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:supertypes.SOIChar" />
+    </reference>
+    <reference referencedUin="design:view:::ayt25m2ehubj9aw4r_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmWpJson.TdmWpJson" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmWpJson.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::y50dge454ug_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreStorage.TdmJanuaCoreStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::oklk5ruoote_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmFootballStorage.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmFootballStorage.TdmFootballStorage" />
+    </reference>
+    <reference referencedUin="design:view:::8b0jgj0fetj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualSystemServer.TdmVirtualSystemServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualSystemServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::zlfd2wtbkphok8uqg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::uxm0t9db6or_v" />
+      <reference referencedUin="design:view:::78wa60k9e6jwtz2rl_v" />
+      <reference referencedUin="design:view:::klgb22p18j2acael_v" />
+      <reference referencedUin="design:view:::j6jqjl7zv9j77zq3s_v" />
+    </reference>
+    <reference referencedUin="design:view:::p506e8zfr4l_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreServer.TdmJanuaCoreServer" />
+    </reference>
+    <reference referencedUin="design:view:::bl0livydlvhrh9pni_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualCmsServer.TdmVirtualCmsServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualCmsServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::ueziko5k9mk_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::8bab5p29aqouoainr_v" />
+      <reference referencedUin="design:view:::7hjkk0bq1antzfq0m_v" />
+      <reference referencedUin="design:view:::t0b3x4gwswf_v" />
+      <reference referencedUin="design:view:::z90l6ua0q0i1unnls_v" />
+      <reference referencedUin="design:view:::7cb0pwczcxh7q7qll_v" />
+      <reference referencedUin="design:view:::75vj3as7o0edqasdh_v" />
+      <reference referencedUin="design:view:::1gcqjkq2uzqftinar_v" />
+      <reference referencedUin="design:view:::xj3wzwh4zhc25kdq_v">
+        <reference referencedUin="design:view:::5ba5e1moihl5q8hus_v" />
+      </reference>
+      <reference referencedUin="design:view:::9f0xfnjranh5ca2ug_v" />
+      <reference referencedUin="design:view:::n9nr1ucbmlnl7d3wf_v" />
+      <reference referencedUin="design:view:::1nuy7nw402g_v" />
+      <reference referencedUin="design:view:::vno2vbsl99iiey00o_v" />
+      <reference referencedUin="design:view:::b5pv61x3f7iaf0ioh_v" />
+      <reference referencedUin="design:view:::c0n5e6ncr4i4itutg_v" />
+      <reference referencedUin="design:view:::0dvsh4m1oqp_v" />
+      <reference referencedUin="design:view:::lupddtmq73io0o6gn_v" />
+      <reference referencedUin="design:view:::77kug7p9fvg_v" />
+      <reference referencedUin="design:view:::zzq8jjjc16i4yi0zq_v" />
+      <reference referencedUin="design:view:::d869d6sqw1il2jrin_v" />
+      <reference referencedUin="design:view:::pponcfjjtgedzi7ys_v" />
+      <reference referencedUin="design:view:::n9d0mieyk4eo02jom_v" />
+    </reference>
+    <reference referencedUin="design:view:::wvj0gcsy74d3mdmts_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.TJsonBuilderGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.TJsonWriterGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.TJsonCodeWriter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.TJsonStringWriter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Writers.TJsonStringReader" />
+    </reference>
+    <reference referencedUin="design:view:::5n0o9noo44t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualCloudServer.TdmVirtualCloudServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualCloudServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::sry0ntx9w3dzflbfq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreRSS.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreRSS.TdmJanuaCoreRSS" />
+    </reference>
+    <reference referencedUin="design:view:::se24x44odsj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualFootballServer.TdmVirtualFootballServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualFootballServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::ah2e4ea6v6t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualFootballStorage.TdmVirtualFootballStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmVirtualFootballStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::opn04oo10vs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmCmsStorage.TdmCmsStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmCmsStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::jl7ybtr0po3tkk0gk_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreDBConnection.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:udmJanuaCoreDBConnection.TdmJanuaCoreDBConnections" />
+    </reference>
+    <reference referencedUin="design:view:::okko2t7j5sbp1svwi_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

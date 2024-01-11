@@ -1,0 +1,100 @@
+object UniURLFrameURLHTMLFrame: TUniURLFrameURLHTMLFrame
+  Left = 0
+  Top = 0
+  Width = 801
+  Height = 575
+  OnCreate = UniFrameCreate
+  TabOrder = 0
+  ParentRTL = False
+  DesignSize = (
+    801
+    575)
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 3
+    Top = 0
+    Width = 798
+    Height = 572
+    Hint = ''
+    ParentColor = False
+    Anchors = []
+    TabOrder = 0
+    DesignSize = (
+      798
+      572)
+    object UniBitBtn1: TUniBitBtn
+      Left = 720
+      Top = 544
+      Width = 75
+      Height = 25
+      Hint = ''
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000012170000121700000000000000000000FF00FFFF00FF
+        BCA89A988270806D59AA9D901C1C1C606060606060858279A6998B806D59806D
+        59806D59806D59FF00FFFF00FFFF00FFBCA89AFBF6F3FBF5F2FAF3F0A39D9894
+        E4F60098C8002C3CBAB8B4ECE1DAF6EBE4F7ECE6806D59FF00FFFF00FFFF00FF
+        BCA89AFBF7F4F0DDD3FBF5F2A39D980098C84ABEDF0098C8002C3CBAB8B4ECE1
+        DAF6EBE4806D59FF00FFFF00FFFF00FFBCA89AF0DFD5B25422E1BCA8CEE4EA00
+        98C894E4F64ABEDF0098C8002C3CBAB8B4ECE1DA806D59FF00FFFF00FFFF00FF
+        CDB4A4B25422CB6C39B65B2BFBF6F3CEE4EA0098C894E4F64ABEDF0098C8002C
+        3CBAB8B4806D59FF00FFFF00FFFF00FFB25422EF8A54EF8A54B45624DFB8A2FB
+        F6F3CEE4EA0098C894E4F64ABEDF0098C8606060A99889FF00FFFF00FFB25422
+        EF8A54EF8A54FFC39AD2703BB75826F3E4DCFBF6F3CEE4EA0098C894E4F66060
+        60C7AA9700009AFF00FFCB6D3DFFC39AEF8A54FFC39ADA8050FCAE7EBB5C29D0
+        9778FBF7F4FBF6F3CEE4EA808080D2BAAC0030F80000C800009AFF00FFCB6D3D
+        FFC39ACB6D3DCE9373E79060F9A575B35725ECD7CBFBF7F4FBF6F3F3EAE50030
+        F86D8AFD0030F8292BA6FF00FFFF00FFCB6D3DF3E4DCFDFBFAC88662F09E6EEB
+        9361C27851FBF8F5FBF7F4FBF6F3CED2F20030F8193CD7FF00FFFF00FFFF00FF
+        CDB4A4FFFFFFFFFEFEFBF6F4BF7046F8AB7CD47B49DFB9A4FBF8F5FBF7F4FBF6
+        F3FBF5F2AA9D90FF00FFFF00FFFF00FFBCA89AFFFFFFFFFFFFFFFEFEF6EBE6BB
+        6437FAAE80C76937F8EFEABCA89A988270806D59806D59FF00FFFF00FFFF00FF
+        BCA89AFFFFFFFFFFFFFFFFFFFFFEFEEED9CEBF6534E28C5BD09879BCA89AF3EB
+        E6E1C6B2806D59FF00FFFF00FFFF00FFBCA89AFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FEFEE3C1AFB25422BF6130BA9A86E1C6B2806D59FF00FFFF00FFFF00FFFF00FF
+        BCA89AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEF6EBE6F5E8E1BBA393806D
+        59FF00FFFF00FFFF00FFFF00FFFF00FFBCA89ABCA89ABCA89ABCA89ABCA89ABC
+        A89ABCA89ABCA89ABCA89ABCA89AFF00FFFF00FFFF00FFFF00FF}
+      Caption = 'Apply'
+      Anchors = [akRight, akBottom]
+      TabOrder = 0
+      OnClick = UniBitBtn1Click
+    end
+    object UniHTMLFrame1: TUniURLFrame
+      Left = 8
+      Top = 8
+      Width = 787
+      Height = 258
+      Hint = ''
+      HTML.Strings = (
+        
+          '<script type="text/javascript">'#13#10'function removeOption()'#13#10'{'#13#10'var' +
+          ' x=document.getElementById("mySelect");'#13#10'x.remove(x.selectedInde' +
+          'x);'#13#10'}'#13#10'</script>'#13#10#13#10'<select id="mySelect">'#13#10'  <option>Apple</op' +
+          'tion>'#13#10'  <option>Pear</option>'#13#10'  <option>Banana</option>'#13#10'  <op' +
+          'tion>Orange</option>'#13#10'</select>'#13#10'<input type="button" onclick="r' +
+          'emoveOption()" value="Remove selected option">'#13#10#13#10'<br><br><br>'#13#10 +
+          #13#10'<script type="text/javascript">'#13#10'function changeBorder()'#13#10'{'#13#10'd' +
+          'ocument.getElementById('#39'myTable'#39').border="10";'#13#10'}'#13#10'</script>'#13#10#13#10 +
+          '<table border="1" id="myTable">'#13#10'<tr>'#13#10'<td>100</td>'#13#10'<td>200</td' +
+          '>'#13#10'</tr>'#13#10'<tr>'#13#10'<td>300</td>'#13#10'<td>400</td>'#13#10'</tr>'#13#10'</table>'#13#10'<br' +
+          ' />'#13#10'<input type="button" onclick="changeBorder()" value="Change' +
+          ' Border">'#13#10#13#10'<br><br><br>'#13#10'<a href='#39'http://www.w3schools.com/'#39' t' +
+          'arget='#39'new'#39'>Code samples taken from W3Schools</a>')
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 1
+      ParentColor = False
+      Color = clWindow
+    end
+    object UniSyntaxEdit1: TUniSyntaxEdit
+      Left = 8
+      Top = 272
+      Width = 787
+      Height = 266
+      Hint = ''
+      Language = 'HTML'
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Anchors = [akLeft, akTop, akRight, akBottom]
+    end
+  end
+end

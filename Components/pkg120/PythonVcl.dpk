@@ -1,0 +1,60 @@
+package PythonVcl;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Python4Delphi - Run-time Engine Package for VCL'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  Python,
+  VclSmp,
+  vclimg,
+  vclwinx;
+
+contains
+  Vcl.PythonGUIInputOutput in '..\..\..\Lib\python4delphi\Source\vcl\Vcl.PythonGUIInputOutput.pas',
+  WrapDelphiVCL in '..\..\..\Lib\python4delphi\Source\vcl\WrapDelphiVCL.pas',
+  WrapVclActnList in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclActnList.pas',
+  WrapVclMenus in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclMenus.pas',
+  WrapVclButtons in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclButtons.pas',
+  WrapVclComCtrls in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclComCtrls.pas',
+  WrapVclControls in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclControls.pas',
+  WrapVclDialogs in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclDialogs.pas',
+  WrapVclExtCtrls in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclExtCtrls.pas',
+  WrapVclForms in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclForms.pas',
+  WrapVclGraphics in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclGraphics.pas',
+  WrapVclGrids in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclGrids.pas',
+  WrapVclSamplesSpin in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclSamplesSpin.pas',
+  WrapVclStdCtrls in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclStdCtrls.pas',
+  WrapVclWinXCtrls in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclWinXCtrls.pas',
+  WrapVclThemes in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclThemes.pas',
+  WrapVclMedia in '..\..\..\Lib\python4delphi\Source\vcl\WrapVclMedia.pas';
+
+end.

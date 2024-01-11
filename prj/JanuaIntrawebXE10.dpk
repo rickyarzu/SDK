@@ -1,0 +1,52 @@
+package JanuaIntrawebXE10;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Intraweb Libraries'}
+{$IMPLICITBUILD OFF}
+
+requires
+  iw14tmsdxe9,
+  xmlrtl,
+  DbxCommonDriver,
+  soaprtl,
+  bindengine,
+  dsnap,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  dac230,
+  JanuaCoreXE10;
+
+contains
+  Janua.Intraweb.Classes in '..\src\januaintraweb\Janua.Intraweb.Classes.pas',
+  Janua.Intraweb.Design in '..\src\januaintraweb\Janua.Intraweb.Design.pas',
+  Janua.Intraweb.Forms in '..\src\januaintraweb\Janua.Intraweb.Forms.pas',
+  Janua.Intraweb.ServerController in '..\src\januaintraweb\Janua.Intraweb.ServerController.pas',
+  Janua.Intraweb.WebFormSetup in '..\src\januaintraweb\Janua.Intraweb.WebFormSetup.pas',
+  Janua.Intraweb.WebFormsModel in '..\src\januaintraweb\Janua.Intraweb.WebFormsModel.pas';
+
+end.

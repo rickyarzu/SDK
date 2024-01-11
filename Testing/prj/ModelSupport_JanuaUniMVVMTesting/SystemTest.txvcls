@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="a1em81wbo1mzk2uti_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="SystemTest" />
+    <reference referencedUin="delphi:e_class:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="140,100,259,278" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.Setup()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TearDown()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TestDataModule()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TestCreateModelSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TestCreateViewModelSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TestLoginDataModule(System.Boolean,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.TestLoginModel(System.Boolean,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.Login(System.Boolean,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.CreateUser(System.Boolean,System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.SessionKeyLogin(System.Boolean,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.DoUserPayPalPayment(System.Boolean,System.string,System.string,System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.DoSessionPayment(System.Boolean,System.string,System.string,System.Currency)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest.ModifyUser(System.Boolean,System.string,System.string,System.string,System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLegacyUniMVVMTesting:unitTestSystemMVVM.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="761,163,0,0" />
+    </reference>
+  </view>
+</nodeSet>

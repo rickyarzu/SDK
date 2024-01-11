@@ -1,0 +1,177 @@
+unit Janua.Controls.Standard.Intf;
+
+interface
+
+uses System.Classes, Janua.Orm.Intf;
+
+type
+  TJanuaDBButton = (jdbPrior, jdbFirst, jdbNext, jdbLast, jdbInsert, jdbDelete, jdbPost, jdbUndo,
+    jdbApplyUpdates);
+
+type
+  IJanuaControlBuilder = interface; // Forward Declaration
+
+  IJanuaControl = interface
+    ['{4A2B17F9-8A75-4242-A523-3B7D9A02C498}']
+    function GetName: string;
+    procedure SetName(const Value: string);
+    property Name: string read GetName write SetName;
+    function GetHint: string;
+    procedure SetHint(const Value: string);
+    property Hint: string read GetHint write SetHint;
+    function GetComponent: TComponent;
+    procedure SetComponent(const Value: TComponent);
+    property Component: TComponent read GetComponent write SetComponent;
+  end;
+
+  IJanuaRSControl = interface(IJanuaControl)
+    ['{619F8EA7-713F-4A78-8B50-C6844A3EF6DC}']
+    procedure BindField(const aField: IJanuaField);
+  end;
+
+  IJanuaCaptionControl = interface(IJanuaRSControl)
+    ['{35370A79-742E-471F-9243-8AE918D42312}']
+    procedure SetCaption(const Value: string);
+    function GetCaption: string;
+    property Caption: string read GetCaption write SetCaption;
+  end;
+
+  IJanuaCustomEdit = interface(IJanuaCaptionControl)
+    ['{8D7CCB76-6391-46A2-8E34-DB68643CB698}']
+    function GetText: string;
+    procedure SetText(const Value: string);
+    /// <summary>
+    /// Questa proprietà legge e scrive il valore di Text direttamente nel
+    /// controllo grafico a schermo generalmente penso sia usata in sola lettura
+    /// </summary>;
+    property Text: string read GetText write SetText;
+  end;
+
+  IJanuaIntegerEdit = interface(IJanuaCaptionControl)
+    ['{B16D899F-CFDE-4E17-A5A2-2321F06D8BC5}']
+    function GetNumber: string;
+    procedure SetNumber(const Value: string);
+    /// <summary>
+    /// Questa proprietà legge e scrive il valore di Number direttamente nel
+    /// controllo grafico a schermo generalmente penso sia usata in sola lettura
+    /// </summary>;
+    property Number: string read GetNumber write SetNumber;
+  end;
+
+  IJanuaEdit = interface(IJanuaCustomEdit)
+    ['{D61E3C45-A7FA-4B82-B27E-17C0E247397C}']
+    procedure SetPasswordChar(const Value: string);
+    procedure SetTextHint(const Value: string);
+    procedure SetHasPassword(const Value: boolean);
+    function GetTextHint: string;
+    property TextHint: string read GetTextHint write SetTextHint;
+    function GetHasPassword: boolean;
+    property HasPassword: boolean read GetHasPassword write SetHasPassword;
+    function GetPasswordChar: string;
+    property PasswordChar: string read GetPasswordChar write SetPasswordChar;
+  end;
+
+  IJanuaDateEdit = interface(IJanuaCustomEdit)
+    ['{CB23FA44-D66F-465F-98EF-4EC152FA285E}']
+    function GetDateTime: TDateTime;
+    procedure SetDateTime(const Value: TDateTime);
+    property DateTime: TDateTime read GetDateTime write SetDateTime;
+  end;
+
+  IJanuaLabel = interface(IJanuaCaptionControl)
+    ['{3D8391C7-0541-4D8F-9540-2D8E4DF46CEC}']
+
+  end;
+
+  IJanuaButton = interface(IJanuaCaptionControl)
+    ['{9845391A-D737-4C24-9C62-C57FF1DDB044}']
+    procedure ButtonClick(Sender: TObject);
+    function GetOnButtonClick: TNotifyEvent;
+    procedure SetOnButtonClick(const Value: TNotifyEvent);
+    property OnButtonClick: TNotifyEvent read GetOnButtonClick write SetOnButtonClick;
+  end;
+
+  IJanuaDBButton = interface(IJanuaButton)
+    ['{9845391A-D737-4C24-9C62-C57FF1DDB044}']
+    procedure SetCaption(const Value: string);
+    function GetCaption: string;
+    property Caption: string read GetCaption write SetCaption;
+    procedure BindRecordset(const aRecordSet: IJanuaRecordSet);
+  end;
+
+  IJanuaCombo = interface(IJanuaCaptionControl)
+    ['{F4BD6AA0-E1E5-4540-8BAE-9A818A774018}']
+    procedure SetStringList(const Value: TStrings);
+    function GetText: string;
+    procedure SetText(Value: string);
+    // SetComboBox E' la funzione della libreria Target che deve 'conoscere' la combo Box Target
+    function GetComboSelectedText(aCombo: TComponent): string;
+    procedure SetComboSelectedText(aCombo: TComponent; aText: string);
+    function SetComboList(aCombo: TComponent; aList: TStrings): string;
+    procedure ComboChange(Sender: TObject);
+    property Text: string read GetText write SetText;
+    function GetStringList: TStrings;
+    property StringList: TStrings read GetStringList write SetStringList;
+    function GetTargetIndexField: IJanuaField;
+    procedure SetTargetIndexField(const Value: IJanuaField);
+    property TargetIndexField: IJanuaField read GetTargetIndexField write SetTargetIndexField;
+  end;
+
+  IJanuaSelect = interface(IJanuaCaptionControl)
+    ['{C2F66E39-1009-4057-AC6E-8AF31CFB925A}']
+
+  end;
+
+  IJanuaGroupBox = interface(IJanuaCaptionControl)
+    ['{8E0CE641-6FD0-4D99-95F3-384E664BAB80}']
+    function GetSelected: Integer;
+    procedure SetSelected(const Value: Integer);
+    property Selected: Integer read GetSelected write SetSelected;
+
+  end;
+
+  IJanuaControlFactory = interface
+    ['{53D33B77-2AE0-463A-99F8-D92D7D8D65BB}']
+    /// <summary>Creates </summary>
+    function CreateEdit(aComponent: TComponent): IJanuaEdit;
+    /// <summary></summary>
+    function CreateDateEdit(aComponent: TComponent): IJanuaDateEdit;
+    /// <summary></summary>
+    function CreateCombo(aComponent: TComponent): IJanuaCombo;
+    /// <summary></summary>
+    function CreateLabel(aComponent: TComponent): IJanuaLabel;
+    /// <summary></summary>
+    function CreateButton(aComponent: TComponent): IJanuaButton;
+    /// <summary></summary>
+    function CreateJanuaDateEdit(aComponent: TComponent): IJanuaDateEdit;
+    /// <summary></summary>
+    function CreateGroupBox(aComponent: TComponent): IJanuaGroupBox;
+  end;
+
+  IJanuaControlBuilder = interface
+    ['{9DBF39B1-2A7F-4906-8925-969F105C780D}']
+    function SetEditControl(aJanuaEdit: IJanuaEdit; aComponent: TComponent; aName: string = '';
+      aTextHint: string = ''; aCaption: string = ''): IJanuaEdit;
+    function SetComboControl(aJanuaCombo: IJanuaCombo; aComponent: TComponent; aName: string = '';
+      aCaption: string = ''): IJanuaCombo;
+    function SetLabelControl(aJanuaLabel: IJanuaLabel; aComponent: TComponent; aName: string = '';
+      aCaption: string = ''): IJanuaLabel;
+    function SetDateControl(aJanuaDate: IJanuaDateEdit; aComponent: TComponent; aName: string = '';
+      aCaption: string = ''): IJanuaDateEdit;
+    // GroupBox
+    function SetGroupBoxControl(aJanuaGroupBox: IJanuaGroupBox; aComponent: TComponent;
+      aName: string = ''; aCaption: string = ''): IJanuaGroupBox;
+    // IJanuaButton
+    function SetButtonControl(aJanuaGroupBox: IJanuaButton; aComponent: TComponent; aName: string = '';
+      aCaption: string = ''): IJanuaButton;
+    // IJanuaIntegerEdit
+    function SetIntegerEdit(aJanuaGroupBox: IJanuaIntegerEdit; aComponent: TComponent;
+      aName: string = ''; aCaption: string = ''): IJanuaIntegerEdit;
+    // IJanuaSelect
+    function SetSelectControl(aJanuaSelect: IJanuaSelect; aComponent: TComponent; aName: string = '';
+      aCaption: string = ''): IJanuaSelect;
+  end;
+
+implementation
+
+end.

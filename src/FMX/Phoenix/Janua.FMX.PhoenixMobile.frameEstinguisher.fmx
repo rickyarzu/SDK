@@ -1,0 +1,439 @@
+object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
+  Size.Width = 344.000000000000000000
+  Size.Height = 316.000000000000000000
+  Size.PlatformDefault = False
+  object rctMatr: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbNR: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'NR.'
+      TabOrder = 3
+    end
+    object lbtMatrYear: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Size.Width = 109.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'MAT/ANNO'
+      TabOrder = 2
+    end
+    object lbSpace: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 195.000000000000000000
+      Size.Width = 38.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TabOrder = 0
+    end
+    object lbIntervento: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Size.Width = 109.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'INTERVENTO'
+      TabOrder = 1
+    end
+  end
+  object layMatr: TLayout
+    Align = Top
+    Position.Y = 25.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object txtNR: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = '1'
+      TabOrder = 2
+    end
+    object txMatrYear: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Size.Width = 109.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = '12346/2018'
+      TabOrder = 1
+    end
+    object TMSFMXSpeedButton1: TTMSFMXSpeedButton
+      Align = Left
+      CanFocus = True
+      GroupName = ''
+      Position.X = 193.000000000000000000
+      Size.Width = 38.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      BitmapName = 'specification'
+      ShowImage = True
+      Version = '1.6.0.0'
+      TabOrder = 3
+    end
+    object txtIntervento: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Size.Width = 111.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Ordinario'
+      TabOrder = 0
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 49.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbTipo: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'TIPO'
+      TabOrder = 0
+    end
+  end
+  object Layout1: TLayout
+    Align = Top
+    Position.Y = 74.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object txtTipo: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Size.Width = 342.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'P634E Estintore Polvere Kg. 06En3'
+      TabOrder = 0
+    end
+  end
+  object Rectangle2: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 98.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbProssRev: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'PROSS. REV.'
+      TabOrder = 2
+    end
+    object lbProssColl: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 94.000000000000000000
+      Size.Width = 109.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'PROSS COLL'
+      TabOrder = 1
+    end
+    object lbAnnoSost: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 205.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'ANNO SOST'
+      TabOrder = 0
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Position.Y = 123.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object lbProssReve: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = '08/2021'
+      TabOrder = 2
+    end
+    object txtProssColl: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 94.000000000000000000
+      Size.Width = 109.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = '08/2023'
+      TabOrder = 1
+    end
+    object txtAnnoSost: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 205.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = '2036'
+      TabOrder = 0
+    end
+  end
+  object Rectangle3: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 147.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbLocation: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'UBICAZIONE'
+      TabOrder = 0
+    end
+  end
+  object Layout3: TLayout
+    Align = Top
+    Position.Y = 172.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object txtLocation: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Size.Width = 342.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Ingresso Ufficio'
+      TabOrder = 0
+    end
+  end
+  object Layout4: TLayout
+    Align = Top
+    Position.Y = 221.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 28.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object ckbEseg: TTMSFNCRadioButton
+      Color = claNull
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      GroupName = '1'
+      Font.Name = 'Segoe UI'
+    end
+    object ckbRitir: TTMSFNCRadioButton
+      Color = claNull
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 58.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      GroupName = '1'
+      Font.Name = 'Segoe UI'
+    end
+    object ckbSmalt: TTMSFNCRadioButton
+      Color = claNull
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 112.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      GroupName = '1'
+      Font.Name = 'Segoe UI'
+    end
+    object ckbRest: TTMSFNCRadioButton
+      Color = claNull
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 166.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      GroupName = '1'
+      Font.Name = 'Segoe UI'
+    end
+    object ckbNonEseg: TTMSFNCRadioButton
+      Color = claNull
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 220.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      GroupName = '1'
+      Font.Name = 'Segoe UI'
+    end
+  end
+  object Rectangle4: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 196.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbExecuted: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'ESEG'
+      TabOrder = 4
+    end
+    object lbRitir: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 54.000000000000000000
+      Size.Width = 52.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RITIR'
+      TabOrder = 3
+    end
+    object lbSmalt: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 108.000000000000000000
+      Size.Width = 54.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'SMALT'
+      TabOrder = 2
+    end
+    object lbNonEseg: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 220.000000000000000000
+      Size.Width = 87.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'NON ESEG.'
+      TabOrder = 1
+    end
+    object lbRest: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 164.000000000000000000
+      Size.Width = 54.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'REST'
+      TabOrder = 0
+    end
+  end
+  object Rectangle5: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 249.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbAnomali: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'ANOMALIA'
+      TabOrder = 0
+    end
+  end
+  object memAnomalia: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 344.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Viewport.Width = 340.000000000000000000
+    Viewport.Height = 38.000000000000000000
+  end
+end

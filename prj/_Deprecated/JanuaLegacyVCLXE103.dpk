@@ -1,0 +1,86 @@
+package JanuaLegacyVCLXE103;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua VCL Legacy XE 103'}
+{$IMPLICITBUILD OFF}
+
+requires
+  JanuaVCLControlsXE103,
+  TMSVCLUIPackPkgExDXE12,
+  TMSVCLUIPackPkgDXE12,
+  crcontrols260,
+  JanuaUnidacXE103,
+  JanuaCoreXE103Rio,
+  gtQRExpD26;
+
+contains
+  Janua.Legacy.Error in '..\src\JanuaLegacy\Janua.Legacy.Error.pas',
+  Janua.Legacy.Functions in '..\src\JanuaLegacy\Janua.Legacy.Functions.pas',
+  Janua.Legacy.Logger in '..\src\JanuaLegacy\Janua.Legacy.Logger.pas',
+  JvxSpeedButton in '..\src\JanuaLegacy\JvxSpeedButton.pas',
+  JanuaLegacyRegisterUnit in '..\src\JanuaLegacy\JanuaLegacyRegisterUnit.pas',
+  Janua.Legacy.Anagraph in '..\src\JanuaLegacy\Janua.Legacy.Anagraph.pas',
+  Janua.Legacy.Core in '..\src\JanuaLegacy\Janua.Legacy.Core.pas',
+  Janua.Legacy.UnderInstall in '..\src\JanuaLegacy\Janua.Legacy.UnderInstall.pas',
+  Janua.Oracle.Repository in '..\src\JanuaLegacy\Janua.Oracle.Repository.pas',
+  Janua.Legacy.QuickReport in '..\src\JanuaLegacy\Janua.Legacy.QuickReport.pas',
+  Janua.Legacy.SelectPrinter in '..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas',
+  Janua.Oracle.System in '..\src\JanuaLegacy\Janua.Oracle.System.pas',
+  Janua.Legacy.System in '..\src\JanuaLegacy\Janua.Legacy.System.pas',
+  uJanuaFrameNavigator in '..\src\JanuaLegacy\uJanuaFrameNavigator.pas' {JanuaFrameNavigator: TFrame},
+  udmRegisterCARDS in '..\src\JanuaLegacy\udmRegisterCARDS.pas' {dmRegisterCards: TDataModule},
+  Janua.Legacy.RegisterCards in '..\src\JanuaLegacy\Janua.Legacy.RegisterCards.pas',
+  udmrepository in '..\src\JanuaLegacy\udmrepository.pas' {dmRepository: TDataModule},
+  udlgSelectPrinter in '..\src\JanuaLegacy\udlgSelectPrinter.pas' {dlgSelectPrinter},
+  udmJanuaLegacySystem in '..\src\JanuaLegacy\udmJanuaLegacySystem.pas' {dmJanuaSystem: TDataModule},
+  JanuaServiceTrattative in '..\src\JanuaLegacy\JanuaServiceTrattative.pas',
+  uJanuaSimulationRow in '..\src\JanuaLegacy\uJanuaSimulationRow.pas',
+  Janua.Legacy.Fakes in '..\src\JanuaLegacy\Janua.Legacy.Fakes.pas',
+  Janua.Legacy.SplashDialog in '..\src\JanuaLegacy\Janua.Legacy.SplashDialog.pas',
+  ufrmAttesa in '..\src\JanuaLegacy\ufrmAttesa.pas' {frmAttesa},
+  Janua.Legacy.IBan in '..\src\JanuaLegacy\Janua.Legacy.IBan.pas',
+  Janua.Oracle.Dataset in '..\src\JanuaLegacy\Janua.Oracle.Dataset.pas',
+  Janua.Legacy.DialogDate in '..\src\JanuaLegacy\Janua.Legacy.DialogDate.pas',
+  AcroPDFLib_TLB in '..\src\JanuaLegacy\AcroPDFLib_TLB.pas',
+  JanuaRigaDettaglio in '..\src\JanuaLegacy\JanuaRigaDettaglio.pas',
+  JvxLabel in '..\src\JanuaLegacy\JvxLabel.pas',
+  JanuaPromo in '..\src\JanuaLegacy\JanuaPromo.pas',
+  Janua.Legacy.InputNumber in '..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas',
+  Janua.Legacy.DBTables in '..\src\JanuaLegacy\Janua.Legacy.DBTables.pas',
+  Janua.Legacy.ReadOnly in '..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas',
+  Janua.Legacy.Qranglbl in '..\src\JanuaLegacy\Janua.Legacy.Qranglbl.pas',
+  Janua.Legacy.Printers in '..\src\JanuaLegacy\Janua.Legacy.Printers.pas',
+  Janua.Shipping.RefundAgentStatement in '..\src\JanuaLegacy\Janua.Shipping.RefundAgentStatement.pas',
+  Janua.Shipping.Refund in '..\src\JanuaLegacy\Janua.Shipping.Refund.pas',
+  Janua.Oracle.StoredProcedure in '..\src\JanuaLegacy\Janua.Oracle.StoredProcedure.pas',
+  Janua.Legacy.EndPeriod in '..\src\JanuaLegacy\Janua.Legacy.EndPeriod.pas',
+  udmEndPeriod in '..\src\JanuaLegacy\udmEndPeriod.pas' {dmEndPeriod: TDataModule},
+  Janua.Legacy.Application in '..\src\janualegacy\Janua.Legacy.Application.pas',
+  Janua.Legacy.InputText in '..\src\janualegacy\Janua.Legacy.InputText.pas';
+
+end.
+

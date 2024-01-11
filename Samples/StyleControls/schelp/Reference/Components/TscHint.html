@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscHint</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscHint</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scHints.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Component to show custom hints. Hints can be with title, image and text.</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">LineSeparator</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Separator for lines. Default values is "@@". <br>If you want to show multiline hint then add LineSeparator to the end of your line.<br>For example: "Line1@@Line2"</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AlphaBlend</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True the hints with be with alphablend effect</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">AlphaBlendValue</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">AlphaBlend value</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">AlphaBlendAnimation</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable / Disable showing animation for hint</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">ActiveForAllApplication</span></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Set it to True and replace all hints in
+applications to hints from TscHint component (this helps you to fix all
+problems with hints on multi-monitors High-DPI systems)</td></tr></tbody>
+</table>
+<p><small><span style="font-weight: bold;"></span></small></p><h1><font face="Helvetica, Arial">Methods</font></h1>
+<p><br>
+</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 386px;" height="12">Name</th>
+<th style="height: 12px; width: 729px;">Description</th>
+</tr>
+<tr>
+<td style="width: 386px;" bgcolor="#efefef" height="1">procedure ActivateHint(P: TPoint; const AHint: string);</td>
+<td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Activate hint from point</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">procedure ActivateHint(const AHint: string);&nbsp;</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Activate hint from cursor position. Component get cursor position and scan cursor mask to detect position for hint.</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">procedure ActivateHint(AFromRect: TRect; const AHint: string; ATop: Boolean);</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">ActivateHint from screen rect. if ATop then hint will be on the top from rect else on the bottom.</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">procedure ActivateHintEx(P: TPoint;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const AHintTitle, AHint: string;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AImageIndex: Integer; AImageList: TCustomImageList);</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Activate hint with title, image and text from point</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">procedure ActivateHintEx(const AHintTitle, AHint: string;<br>&nbsp;&nbsp;&nbsp;&nbsp; AImageIndex: Integer; AImageList: TCustomImageList);</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Activate
+hint with title, image and text from cursor position.&nbsp; Component
+get cursor position and scan cursor mask to detect position for hint.</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">procedure HideHint;</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Hide hint</td></tr><tr><td style="width: 386px;" bgcolor="#efefef" height="1">function IsVisible: Boolean;</td><td style="background-color: white; width: 729px;" bgcolor="#efefef" height="1">Call this method to get visibility of hint</td></tr></tbody></table>
+<span style="color: red;"><span style="color: black;"></span></span>
+</body></html>

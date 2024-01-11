@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="wa51jgz92io_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TBook">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="600,321,156,178" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBook.fAuthorID" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBook.fTitle" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBook.fPubYear" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TBook.OnValidation(MVCFramework.ActiveRecord.TMVCEntityAction)" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBook.AuthorID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBook.Title" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBook.PubYear" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TBook:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="600,409" />
+        <property name="targetAnchor" value="500,409" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TEntityBase">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,352,100,115" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TEntityBase.fID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TEntityBase.ID" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="707,567,131,178" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.fPwd" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.fActualPwd" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.GetPwd()" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.SetPwd(System.string)" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.OnBeforeInsert()" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.OnValidation(MVCFramework.ActiveRecord.TMVCEntityAction)" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword.Pwd" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TUserWithPassword:EntitiesU.TUser">
+        <property name="sourceAnchor" value="707,655" />
+        <property name="targetAnchor" value="607,655" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.EMLException">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,790,132,81" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TLending">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="544,10,207,251" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fCustomerID" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fBookID" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fLendingStart" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fLendingEnd" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fLendingStartUserID" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TLending.fLendingEndUserID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.CustomerID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.BookID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.LendingStart" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.LendingEnd" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.LendingStartUserID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TLending.LendingEndUserID" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TLending:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="647,261" />
+        <property name="targetAnchor" value="500,370" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TPersonEntityBase">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="256,605,125,101" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TPersonEntityBase.fDateOfBirth" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TPersonEntityBase.DateOfBirth" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TPersonEntityBase:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="347,605" />
+        <property name="targetAnchor" value="430,467" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TUser">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="421,575,186,161" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TUser.fEmail" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TUser.fLastLogin" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TUser.fDeleted" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TUser.Email" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TUser.LastLogin" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TUser.Deleted" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TUser:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="460,575" />
+        <property name="targetAnchor" value="460,467" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="390,40,114,191" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.fAuthorID" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.fTitle" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.fPubYear" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.fAuthor" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.AuthorID" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.Title" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.PubYear" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor.Author" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TBookAndAuthor:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="450,231" />
+        <property name="targetAnchor" value="450,352" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TBookRef">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="159,46,191,178" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookRef.fLinks" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookRef.fTitle" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TBookRef.fPubYear" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TBookRef.GetLinks()" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookRef.Title" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookRef.PubYear" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TBookRef.Links" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TBookRef:EntitiesU.TEntityBase">
+        <property name="sourceAnchor" value="254,224" />
+        <property name="targetAnchor" value="425,352" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TAuthor">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="143,336,217,148" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TAuthor.fBooks" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TAuthor.fFullName" />
+      <reference referencedUin="delphi:e_method:src:MunicipalLibraryVer3:EntitiesU.TAuthor.GetBooks()" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TAuthor.FullName" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TAuthor.Books" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TAuthor:EntitiesU.TPersonEntityBase">
+        <property name="sourceAnchor" value="308,484" />
+        <property name="targetAnchor" value="308,605" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:MunicipalLibraryVer3:EntitiesU.TCustomer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,575,130,161" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TCustomer.fLastName" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TCustomer.fFirstName" />
+      <reference referencedUin="delphi:e_field:src:MunicipalLibraryVer3:EntitiesU.TCustomer.fNote" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TCustomer.FirstName" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TCustomer.LastName" />
+      <reference referencedUin="delphi:e_property:src:MunicipalLibraryVer3:EntitiesU.TCustomer.Note" />
+      <reference referencedUin="delphi:l_gnt:src:MunicipalLibraryVer3:EntitiesU.TCustomer:EntitiesU.TPersonEntityBase">
+        <property name="sourceAnchor" value="140,655" />
+        <property name="targetAnchor" value="256,655" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

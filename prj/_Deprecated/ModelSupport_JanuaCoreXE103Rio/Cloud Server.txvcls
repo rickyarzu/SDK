@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="mimcoby7bnhchf0if_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Cloud Server" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="640,60,294,427" />
+      <property name="hideOperation" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetItemIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetSelectedItem()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SetSelectedItem(Janua.Cloud.Files.Intf.IJanuaFileRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.AddFileFromStream(System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileAsBlob(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SearchFileByID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileAsStream(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SaveFileToStream(System.Int64,System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileByIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileByID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileByFileName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.AddFile(Janua.Cloud.Files.Intf.IJanuaFileRecord,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SaveFileToStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.DeleteFile(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.Count" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.ItemIndex" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SelectedItem" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.LoadFilesList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.AddFromFile(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SaveToFile(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SaveToFileDir(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.SelectedItem">
+        <property name="sourceAnchor" value="934,275" />
+        <property name="targetAnchor" value="1020,275" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage.GetFileByGUID(System.TGUID)">
+        <property name="bounds" value="235,137,0,0" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1020,160,244,230" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetBlob()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetBlob(MemData.TBlob)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetFileName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetFileName(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.getSchemaID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetSchemaID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.getSaved()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetSaved(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.getModified()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetMime()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetMime(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetMimeType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetMimeType(Janua.Core.Types.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetExt()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetExt(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetItemIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetItemIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.GetID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SetID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.LoadFromStream(System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SaveToStream(System.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.LoadFromFile(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SaveToFile(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SaveToFileDir(System.SysUtils.@unitclass.TFileName)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.Blob" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.ID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.FileName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.SchemaID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.MIME" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.MimeType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.Ext" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.ItemIndex" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.Modified" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileRecord.Saved" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,140,248,200" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.SaveFileToStorage(Janua.Cloud.Files.Intf.IJanuaFileRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.LoadFileFromStorage(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.DeleteFileFromStorage(Janua.Cloud.Files.Intf.IJanuaFileRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.DeleteFileFromStorage(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.AsyncSaveFileToStorage(Janua.Cloud.Files.Intf.IJanuaFileRecord,Janua.Cloud.Files.Intf.TOutputProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.AsyncDeleteFileFromStorage(System.Int64,Janua.Cloud.Files.Intf.TOutputProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.AsyncLoadFileFromStorage(System.Int64,Janua.Cloud.Files.Intf.TOutputProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Files.Intf.IJanuaFileStorage.FilesList(System.Integer)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="640,520,323,113" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage:Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage">
+        <property name="sourceAnchor" value="787,520" />
+        <property name="targetAnchor" value="787,487" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage.SelectedImage" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage.SelectedImage">
+        <property name="sourceAnchor" value="963,552" />
+        <property name="targetAnchor" value="1000,552" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage.SetSelectedImage(Janua.Cloud.Images.Intf.IJanuaImageRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage.GetSelectedImage()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1000,520,273,64" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageRecord:Janua.Cloud.Files.Intf.IJanuaFileRecord">
+        <property name="sourceAnchor" value="1142,520" />
+        <property name="targetAnchor" value="1142,390" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,460,277,64" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Cloud.Images.Intf.IJanuaImageStorage:Janua.Cloud.Files.Intf.IJanuaFileStorage">
+        <property name="sourceAnchor" value="124,460" />
+        <property name="targetAnchor" value="124,340" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="320,260,280,380" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.ImageStorage">
+        <property name="sourceAnchor" value="320,492" />
+        <property name="targetAnchor" value="277,492" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.ImageFiles">
+        <property name="sourceAnchor" value="600,576" />
+        <property name="targetAnchor" value="640,576" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.GetImageFiles()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.SetImageFiles(Janua.Cloud.Images.Intf.IJanuaImageMemoryStorage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.ImageFiles" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.GetImageStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.SetImageStorage(Janua.Cloud.Images.Intf.IJanuaImageStorage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.ImageStorage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.Files" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.Files">
+        <property name="sourceAnchor" value="600,373" />
+        <property name="targetAnchor" value="640,373" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.SetFiles(Janua.Cloud.Files.Intf.IJanuaFileMemoryStorage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.GetFiles()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.FileStorage" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.FileStorage">
+        <property name="sourceAnchor" value="320,300" />
+        <property name="targetAnchor" value="248,300" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.SetFileStorage(Janua.Cloud.Files.Intf.IJanuaFileStorage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.GetFileStorage()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.JanuaServerSystem" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.JanuaServerSystem">
+        <property name="sourceAnchor" value="455,640" />
+        <property name="targetAnchor" value="455,720" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.SetJanuaServerSystem(Janua.System.Server.Intf.IJanuaServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cloud.Server.Intf.IJanuaServerCloud.GetJanuaServerSystem()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="320,720,282,412" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.user" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUser(JOrm.System.User.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUser()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.usersession" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUserSession(JOrm.System.UserSession.Intf.IJanuaUserSession)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUserSession()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.userprofile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUserProfile(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.UsersList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetUsersList(JOrm.System.User.Intf.IUsers)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetUsersList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.ServerCache" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetServerCache(Janua.System.Server.Intf.IJanuaServerCache)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetServerCache()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.IsLoggedIn" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.SetIsLoggedIn(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Login()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.Login(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.LoginByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.System.Server.Intf.IJanuaServerSystem.LoginByGUID(System.TGUID)" />
+    </reference>
+  </view>
+</nodeSet>

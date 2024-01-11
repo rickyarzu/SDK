@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="8wqsy0juwid20xytr_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Health Booking" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,20,334,67" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomServerHealthBooking:Janua.Core.Health.TJanuaCustomHealthBooking">
+        <property name="sourceAnchor" value="170,87" />
+        <property name="targetAnchor" value="170,120" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,120,301,773" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FBooking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FJanuaServerSystem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FRecordServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesGMapsRowTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesHtmlHeadTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesHtmlGMaps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesGMapsHeadTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesHtmlRowTemplate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesHtmlList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Fselect2" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Fselect3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Fselect1" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FHtmlServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FJsonServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FTableInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsPrescription" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsBooking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsBookingInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsRelative" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FVqrySearchServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FGMapsServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitutesJson" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FSearchID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FBookingInstitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FInstitueID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FNetHTTPClient" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FHealthNotifications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsNotifications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FMeetings" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FmdsMeetings" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetJanuaServerSystem(Janua.Core.System.TJanuaCustomServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetRecordServices(Janua.Core.Health.TJanuaServices)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetBookingID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutes(Janua.Core.Anagraph.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesGMapsHeadTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesGMapsRowTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesHtmlGMaps(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesHtmlHeadTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesHtmlList(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesHtmlRowTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetSearchAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetSearchItemID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetTableInstitutes(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getLatitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getLongitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.setLatitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.setLongitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Setselect1(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Setselect2(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Setselect3(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetHtmlServices(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getIsPublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsServices(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsInstitutes(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetJsonServices(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getPrescription()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getBookingRelative()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.LoadPrescription()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.LoadBooking(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.LoadBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.setBooking(Janua.Core.Health.TJanuaHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsBooking(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsPrescription(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsRelative(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsBookingInstitutes(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetVqrySearchServices(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.setPrescription(Janua.Core.Health.TJanuaITHealthPrescription)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetGMapsServices(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitutesJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetSearchID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetBookingInstitutes(Janua.Core.Anagraph.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.setBookingRelative(Janua.Core.Anagraph.TJanuaAnagraphRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalInstitutesGMaps(Janua.Core.Anagraph.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalInstitutesHtml(Janua.Core.Anagraph.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.AssignBookingDataSources()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GetSearchItemID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetBooking64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GetBooking64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitueID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetInstitute64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GetInstitute64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetJanuaServices(Janua.Core.Health.TJanuaServices)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetNetHTTPClient(System.Net.HttpClientComponent.TNetHTTPClient)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetHealthNotifications(Janua.Core.Health.TJanuaHealthNotifications)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsNotifications(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetMeetings(Janua.Core.Health.TJanuaHealthBookingRows)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetmdsMeetings(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FSearchLimit" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FSearchPage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FSearchItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FSearchServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FServices" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.RS" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FBookingID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalHealthNotifications(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalSetServices()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalCheckOut()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalBookingInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalInstituteConfirmation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalSearchInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalAssignSessionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalDoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalSearchServices()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalGetMeetings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getAppUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GenerateInstitutesHtml()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GenerateInstitutesGMaps()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GenerateInstitutesJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getGMapCenter()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalOpenBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalFinalisation(Janua.Core.Health.TJanuaHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SendMailBooking(Janua.Core.Mail.TJanuaMailParts,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.PrepareMailBooking(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Finalisation(Janua.Core.Health.TJanuaHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.AssignSessionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SetServices()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SearchServices(System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.DoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.DoBooking(Janua.Core.Anagraph.TJanuaAnagraphs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.PrepareHtmlInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getHtmlBookingInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.OpenBooking(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.OpenBooking(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.OpenBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Notifications()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GetHealthNotifications(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.StartPublicWebSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.CheckOut(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.CheckOut()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SearchInstitutes(System.Integer,System.Integer,System.string,Janua.Core.Classes.TJanuaRecordCoordinates,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SearchInstitutes(Janua.Core.Health.TJanuaHealthSearchHeader)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstituteConfirmation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.getServices64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GetMeetings()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.RecordServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Meetings" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Institutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.JanuaServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Booking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.HealthNotifications" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Prescription" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.BookingRelative" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.BookingInstitutes" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.CheckPrescription()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.CheckRelative()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.CheckBooking()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Institute64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstituteID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.BookingInstitutesHtml()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.BookingInstitutesJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.BookingInstitutesGMaps()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.IsPublic" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsInstitutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.TableInstitutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.VqrySearchServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsBooking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsPrescription" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsRelative" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsBookingInstitutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsNotifications" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.mdsMeetings" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.JsonServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GMapsServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.GMapCenter" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.latitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.longitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.select1" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.select2" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.select3" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.HtmlServices" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.JanuaServerSystem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.bookingID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.booking64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SearchID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.SearchItemID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesHtmlList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesJson" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesHtmlGMaps" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesHtmlHeadTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesHtmlRowTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesGMapsHeadTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.InstitutesGMapsRowTemplate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Services" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Services64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.NetHTTPClient" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Booking">
+        <property name="sourceAnchor" value="321,708" />
+        <property name="targetAnchor" value="360,708" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FBooking">
+        <property name="sourceAnchor" value="321,716" />
+        <property name="targetAnchor" value="360,716" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.Meetings">
+        <property name="sourceAnchor" value="321,279" />
+        <property name="targetAnchor" value="580,279" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaCustomHealthBooking.FMeetings">
+        <property name="sourceAnchor" value="321,287" />
+        <property name="targetAnchor" value="580,287" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1160,160,288,968" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="False" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FJanuaServerHealthBooking">
+        <property name="sourceAnchor" value="1160,526" />
+        <property name="targetAnchor" value="321,526" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.JanuaServerHealthBooking">
+        <property name="sourceAnchor" value="1160,518" />
+        <property name="targetAnchor" value="321,518" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FFromPage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FToPage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FHtmlInsitutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FTemplateHealth" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FCoordinates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Fservice_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Faddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FInstitute3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FInstitue2" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FInstitute1" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetHtmlInsitutes(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SeTJanuaClientHealthBooking(Janua.Core.Health.TJanuaCustomHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetTemplateHealth(Janua.Core.Health.TJanuaTemplateHealth)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setaddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetCoordinates(Janua.Core.Classes.TJanuaRecordCoordinates)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetInstitue2(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetInstitute1(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetInstitute3(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setsearch_id(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setservice_id(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setbooking_id(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetFromPage(Janua.Core.Health.TJanuaHealtPage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetToPage(Janua.Core.Health.TJanuaHealtPage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GoToPage(ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Fsearch_page" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Getbooking_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Getsearch_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GetBooking64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GetInstituteID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GetInstitute64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.setBooking(Janua.Core.Health.TJanuaHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetBooking64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setinstitute_id(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetInstitute64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetAnagraphID64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetBookingID64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Setsearch_page(System.Integer)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FJanuaServerHealthBooking" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.getHtmlInsitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.getService_ID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.getBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GetBookingID64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.GetAnagraphID64()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionRestNotifications()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.StartPublicWebSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.AssignSessionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.DoBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.PrepareHtmlInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.SetBookingID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionFinalisation(Janua.Core.Health.TJanuaHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Action501()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Action404()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionRestHealthSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionHealthRestInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionPage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionBookingSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionHomeSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionDashboard(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionRestFinalisation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionLogin(System.Boolean,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionCheckOut()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionChoice()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionDoLogout()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionConfirmation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionDoLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionDoRegister()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionBookingCompletion()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionSearchServices(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ActionSearchDACServices(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.HtmlInstitutes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Booking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.bookingID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.BookingID64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.AnagraphID64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.booking_id" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.service_id" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.search_id" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.search_page" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Institute64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.booking64" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.institute_ID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Institute1" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Institute2" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Institute3" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.address" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Coordinates" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FromPage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.ToPage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.JanuaServerHealthBooking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.JanuaTemplateHealth" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.JanuaTemplateHealth">
+        <property name="sourceAnchor" value="1253,160" />
+        <property name="targetAnchor" value="1253,135" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.FTemplateHealth">
+        <property name="sourceAnchor" value="1261,160" />
+        <property name="targetAnchor" value="1261,135" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthWebController.Booking">
+        <property name="sourceAnchor" value="1160,806" />
+        <property name="targetAnchor" value="730,806" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1060,20,302,115" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.JanuaHealthBooking">
+        <property name="sourceAnchor" value="1060,127" />
+        <property name="targetAnchor" value="321,127" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.FJanuaHealthBooking">
+        <property name="sourceAnchor" value="1062,134" />
+        <property name="targetAnchor" value="321,135" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.SetJanuaHealthBooking(Janua.Core.Health.TJanuaCustomHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePageContent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.ShowBooking(Janua.Core.Health.TJanuaCustomHealthBooking)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareFinalisation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePageBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.ShowBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePage404()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePage501()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePageBookingCompletion()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareBookingSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareHomeSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PreparePageLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareMailBookingConfirmation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareMailMeetingReminder()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.PrepareMailBookingChoice()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageContent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageBookingCompletion()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageBooking()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminateHomeSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageConfirmation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageDashboard()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageFinalisation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminatePageLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.TerminateFinalisation()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.FJanuaHealthBooking" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaTemplateHealth.JanuaHealthBooking" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,540,370,533" />
+      <property name="hideAttribute" value="False" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.id64" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Coordinates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.checked" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.booked" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.cancelled" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.UserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.session_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.session_key" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.db_user_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.HasPrescription" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.HealthPrescription" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Service" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.HasRelative" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Relative" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Rows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.SelectedInstitute" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Institutes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Book_Since" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Book_Until" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Insurance" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Agreement" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.notes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Log" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.ErrorObject" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.ErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.FSearch" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.ContainerForm" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.ContainerInstitutes" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.SetSearch(Janua.Core.Health.TJanuaHealthSearch)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.GetHeder()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.SetHeader(Janua.Core.Health.TJanuaHealthSearchHeader)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Search" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.SearchHeader" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.AsHtml(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.CheckPerson(Janua.Core.Anagraph.TJanuaAnagraphRecord,ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Check()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.AddSearchSelectedInstitute()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.LoadFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.HtmlForm()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.HtmlInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.JsForm()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.JsInstitutes()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.JsGmap()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.LoadFromHttpParams(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.LoadRelative(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBooking.Rows">
+        <property name="sourceAnchor" value="655,540" />
+        <property name="targetAnchor" value="655,375" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="580,200,284,175" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Items" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.SelectedItem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.SecondLineChar" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.TemplateHeader" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.TemplateRow" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Count()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Add(Janua.Core.Health.TJanuaHealthBookingRow)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Add(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.AsHtml(System.string,System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.AsHtml(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.LoadFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.AddFromHttpParams(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Add(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.SelectedItem">
+        <property name="sourceAnchor" value="824,375" />
+        <property name="targetAnchor" value="824,540" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRows.Items">
+        <property name="sourceAnchor" value="832,375" />
+        <property name="targetAnchor" value="832,540" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="800,540,329,638" />
+      <property name="hideAttribute" value="False" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booking_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booking64" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.Institute" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booksince" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.bookuntil" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.notes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.confirmed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.opened" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.db_operator_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.closed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.closed_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booked" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booking_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booking_hour" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.booking_mins" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.sent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.sent_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.received" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.received_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.alarm_sent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.alarm_read" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.distance" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.cancelled" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.call_center_notes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.insert_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.update_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.selected" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_confirmed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.insurance_confirmed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.agreement_confirmed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_has_code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_has_price" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_price" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_fast" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_different_address" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.ck_address" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.AsHtml(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.AsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.LoadFromJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.LoadFromDataset(Data.DB.TDataSet,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.LoadFromHttpParams(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Health.TJanuaHealthBookingRow.LoadFromPersonHttpParams(Web.HTTPApp.TWebRequest)" />
+    </reference>
+  </view>
+</nodeSet>

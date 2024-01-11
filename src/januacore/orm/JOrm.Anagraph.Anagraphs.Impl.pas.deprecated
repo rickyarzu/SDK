@@ -1,0 +1,2409 @@
+unit JOrm.Anagraph.Anagraphs.Impl;
+
+interface
+
+uses Janua.Orm.Intf, Janua.Orm.Impl,JOrm.Anagraph.Anagraphs.Intf;
+
+//------------------------------------------ Impl object interface ----------------------------------
+
+type
+  TAnagraphs = class(TJanuaRecord, IAnagraphs)
+  private
+    FDb_schema_id: IJanuaField;
+    FDb_schema_idIndex : Integer;
+    FAnagraph_id: IJanuaField;
+    FAnagraph_idIndex : Integer;
+    FAn_title: IJanuaField;
+    FAn_titleIndex : Integer;
+    FAn_name: IJanuaField;
+    FAn_nameIndex : Integer;
+    FAn_second_name: IJanuaField;
+    FAn_second_nameIndex : Integer;
+    FAn_last_name: IJanuaField;
+    FAn_last_nameIndex : Integer;
+    FAn_notes: IJanuaField;
+    FAn_notesIndex : Integer;
+    FAn_address: IJanuaField;
+    FAn_addressIndex : Integer;
+    FAn_town: IJanuaField;
+    FAn_townIndex : Integer;
+    FAn_postal_code: IJanuaField;
+    FAn_postal_codeIndex : Integer;
+    FAn_iso_country_code: IJanuaField;
+    FAn_iso_country_codeIndex : Integer;
+    FAn_state_province: IJanuaField;
+    FAn_state_provinceIndex : Integer;
+    FAn_phone: IJanuaField;
+    FAn_phoneIndex : Integer;
+    FAn_phone2: IJanuaField;
+    FAn_phone2Index : Integer;
+    FAn_fax: IJanuaField;
+    FAn_faxIndex : Integer;
+    FAn_cellular: IJanuaField;
+    FAn_cellularIndex : Integer;
+    FAn_code: IJanuaField;
+    FAn_codeIndex : Integer;
+    FAn_vat_numeric: IJanuaField;
+    FAn_vat_numericIndex : Integer;
+    FAn_email: IJanuaField;
+    FAn_emailIndex : Integer;
+    FAn_web: IJanuaField;
+    FAn_webIndex : Integer;
+    FAn_contact_id: IJanuaField;
+    FAn_contact_idIndex : Integer;
+    FAn_bank_account: IJanuaField;
+    FAn_bank_accountIndex : Integer;
+    FAn_payment_des: IJanuaField;
+    FAn_payment_desIndex : Integer;
+    FAn_discount: IJanuaField;
+    FAn_discountIndex : Integer;
+    FAn_distance: IJanuaField;
+    FAn_distanceIndex : Integer;
+    FAn_distance_mesunit: IJanuaField;
+    FAn_distance_mesunitIndex : Integer;
+    FAn_sex: IJanuaField;
+    FAn_sexIndex : Integer;
+    FAn_cod_comune: IJanuaField;
+    FAn_cod_comuneIndex : Integer;
+    FAn_cod_provincia: IJanuaField;
+    FAn_cod_provinciaIndex : Integer;
+    FAn_credit_line: IJanuaField;
+    FAn_credit_lineIndex : Integer;
+    FAn_currency_id: IJanuaField;
+    FAn_currency_idIndex : Integer;
+    FAn_cat_id: IJanuaField;
+    FAn_cat_idIndex : Integer;
+    FAn_notes2: IJanuaField;
+    FAn_notes2Index : Integer;
+    FAn_notes3: IJanuaField;
+    FAn_notes3Index : Integer;
+    FAn_edi: IJanuaField;
+    FAn_ediIndex : Integer;
+    FAn_privacy: IJanuaField;
+    FAn_privacyIndex : Integer;
+    FAn_office_id: IJanuaField;
+    FAn_office_idIndex : Integer;
+    FAn_cod_prov_rif: IJanuaField;
+    FAn_cod_prov_rifIndex : Integer;
+    FAn_data_fido: IJanuaField;
+    FAn_data_fidoIndex : Integer;
+    FAn_user_insert: IJanuaField;
+    FAn_user_insertIndex : Integer;
+    FAn_user_update: IJanuaField;
+    FAn_user_updateIndex : Integer;
+    FAn_area_id: IJanuaField;
+    FAn_area_idIndex : Integer;
+    FAn_agent_id: IJanuaField;
+    FAn_agent_idIndex : Integer;
+    FAn_area_code: IJanuaField;
+    FAn_area_codeIndex : Integer;
+    FAn_zone_id: IJanuaField;
+    FAn_zone_idIndex : Integer;
+    FAn_ins_id: IJanuaField;
+    FAn_ins_idIndex : Integer;
+    FAn_upd_id: IJanuaField;
+    FAn_upd_idIndex : Integer;
+    FAn_documents: IJanuaField;
+    FAn_documentsIndex : Integer;
+    FAn_last_date: IJanuaField;
+    FAn_last_dateIndex : Integer;
+    FAn_birthdate: IJanuaField;
+    FAn_birthdateIndex : Integer;
+    FAn_office_type_id: IJanuaField;
+    FAn_office_type_idIndex : Integer;
+    FAn_searchname: IJanuaField;
+    FAn_searchnameIndex : Integer;
+    FAn_extra_ue_flag: IJanuaField;
+    FAn_extra_ue_flagIndex : Integer;
+    FAn_external_code: IJanuaField;
+    FAn_external_codeIndex : Integer;
+    FAn_vat_id: IJanuaField;
+    FAn_vat_idIndex : Integer;
+    FAn_personal_fiscal_code: IJanuaField;
+    FAn_personal_fiscal_codeIndex : Integer;
+    FAn_privacy_print: IJanuaField;
+    FAn_privacy_printIndex : Integer;
+    FAn_sms: IJanuaField;
+    FAn_smsIndex : Integer;
+    FAn_encrypted_fiscal_code: IJanuaField;
+    FAn_encrypted_fiscal_codeIndex : Integer;
+    FAn_vat_purcentage: IJanuaField;
+    FAn_vat_purcentageIndex : Integer;
+    FAn_status: IJanuaField;
+    FAn_statusIndex : Integer;
+    FAn_ownsite: IJanuaField;
+    FAn_ownsiteIndex : Integer;
+    FAn_insurance_id: IJanuaField;
+    FAn_insurance_idIndex : Integer;
+    FAn_anagraphs_anagraph_id: IJanuaField;
+    FAn_anagraphs_anagraph_idIndex : Integer;
+    FAn_main_language_code: IJanuaField;
+    FAn_main_language_codeIndex : Integer;
+    FAn_main_culture_code: IJanuaField;
+    FAn_main_culture_codeIndex : Integer;
+    FAn_fiscal_code: IJanuaField;
+    FAn_fiscal_codeIndex : Integer;
+    FAn_main_group_id: IJanuaField;
+    FAn_main_group_idIndex : Integer;
+    FAn_image_id: IJanuaField;
+    FAn_image_idIndex : Integer;
+    FLatitude: IJanuaField;
+    FLatitudeIndex : Integer;
+    FLongitude: IJanuaField;
+    FLongitudeIndex : Integer;
+    FTest: IJanuaField;
+    FTestIndex : Integer;
+    FSearch_index: IJanuaField;
+    FSearch_indexIndex : Integer;
+    FAn_birthplace: IJanuaField;
+    FAn_birthplaceIndex : Integer;
+    FAn_birthplace_code: IJanuaField;
+    FAn_birthplace_codeIndex : Integer;
+    FAnagraph64: IJanuaField;
+    FAnagraph64Index : Integer;
+    FAnag_jguid: IJanuaField;
+    FAnag_jguidIndex : Integer;
+    FAnag_deleted: IJanuaField;
+    FAnag_deletedIndex : Integer;
+  private
+    function GetDb_schema_id: IJanuaField;
+    procedure SetDb_schema_id(const Value: IJanuaField);
+    function GetAnagraph_id: IJanuaField;
+    procedure SetAnagraph_id(const Value: IJanuaField);
+    function GetAn_title: IJanuaField;
+    procedure SetAn_title(const Value: IJanuaField);
+    function GetAn_name: IJanuaField;
+    procedure SetAn_name(const Value: IJanuaField);
+    function GetAn_second_name: IJanuaField;
+    procedure SetAn_second_name(const Value: IJanuaField);
+    function GetAn_last_name: IJanuaField;
+    procedure SetAn_last_name(const Value: IJanuaField);
+    function GetAn_notes: IJanuaField;
+    procedure SetAn_notes(const Value: IJanuaField);
+    function GetAn_address: IJanuaField;
+    procedure SetAn_address(const Value: IJanuaField);
+    function GetAn_town: IJanuaField;
+    procedure SetAn_town(const Value: IJanuaField);
+    function GetAn_postal_code: IJanuaField;
+    procedure SetAn_postal_code(const Value: IJanuaField);
+    function GetAn_iso_country_code: IJanuaField;
+    procedure SetAn_iso_country_code(const Value: IJanuaField);
+    function GetAn_state_province: IJanuaField;
+    procedure SetAn_state_province(const Value: IJanuaField);
+    function GetAn_phone: IJanuaField;
+    procedure SetAn_phone(const Value: IJanuaField);
+    function GetAn_phone2: IJanuaField;
+    procedure SetAn_phone2(const Value: IJanuaField);
+    function GetAn_fax: IJanuaField;
+    procedure SetAn_fax(const Value: IJanuaField);
+    function GetAn_cellular: IJanuaField;
+    procedure SetAn_cellular(const Value: IJanuaField);
+    function GetAn_code: IJanuaField;
+    procedure SetAn_code(const Value: IJanuaField);
+    function GetAn_vat_numeric: IJanuaField;
+    procedure SetAn_vat_numeric(const Value: IJanuaField);
+    function GetAn_email: IJanuaField;
+    procedure SetAn_email(const Value: IJanuaField);
+    function GetAn_web: IJanuaField;
+    procedure SetAn_web(const Value: IJanuaField);
+    function GetAn_contact_id: IJanuaField;
+    procedure SetAn_contact_id(const Value: IJanuaField);
+    function GetAn_bank_account: IJanuaField;
+    procedure SetAn_bank_account(const Value: IJanuaField);
+    function GetAn_payment_des: IJanuaField;
+    procedure SetAn_payment_des(const Value: IJanuaField);
+    function GetAn_discount: IJanuaField;
+    procedure SetAn_discount(const Value: IJanuaField);
+    function GetAn_distance: IJanuaField;
+    procedure SetAn_distance(const Value: IJanuaField);
+    function GetAn_distance_mesunit: IJanuaField;
+    procedure SetAn_distance_mesunit(const Value: IJanuaField);
+    function GetAn_sex: IJanuaField;
+    procedure SetAn_sex(const Value: IJanuaField);
+    function GetAn_cod_comune: IJanuaField;
+    procedure SetAn_cod_comune(const Value: IJanuaField);
+    function GetAn_cod_provincia: IJanuaField;
+    procedure SetAn_cod_provincia(const Value: IJanuaField);
+    function GetAn_credit_line: IJanuaField;
+    procedure SetAn_credit_line(const Value: IJanuaField);
+    function GetAn_currency_id: IJanuaField;
+    procedure SetAn_currency_id(const Value: IJanuaField);
+    function GetAn_cat_id: IJanuaField;
+    procedure SetAn_cat_id(const Value: IJanuaField);
+    function GetAn_notes2: IJanuaField;
+    procedure SetAn_notes2(const Value: IJanuaField);
+    function GetAn_notes3: IJanuaField;
+    procedure SetAn_notes3(const Value: IJanuaField);
+    function GetAn_edi: IJanuaField;
+    procedure SetAn_edi(const Value: IJanuaField);
+    function GetAn_privacy: IJanuaField;
+    procedure SetAn_privacy(const Value: IJanuaField);
+    function GetAn_office_id: IJanuaField;
+    procedure SetAn_office_id(const Value: IJanuaField);
+    function GetAn_cod_prov_rif: IJanuaField;
+    procedure SetAn_cod_prov_rif(const Value: IJanuaField);
+    function GetAn_data_fido: IJanuaField;
+    procedure SetAn_data_fido(const Value: IJanuaField);
+    function GetAn_user_insert: IJanuaField;
+    procedure SetAn_user_insert(const Value: IJanuaField);
+    function GetAn_user_update: IJanuaField;
+    procedure SetAn_user_update(const Value: IJanuaField);
+    function GetAn_area_id: IJanuaField;
+    procedure SetAn_area_id(const Value: IJanuaField);
+    function GetAn_agent_id: IJanuaField;
+    procedure SetAn_agent_id(const Value: IJanuaField);
+    function GetAn_area_code: IJanuaField;
+    procedure SetAn_area_code(const Value: IJanuaField);
+    function GetAn_zone_id: IJanuaField;
+    procedure SetAn_zone_id(const Value: IJanuaField);
+    function GetAn_ins_id: IJanuaField;
+    procedure SetAn_ins_id(const Value: IJanuaField);
+    function GetAn_upd_id: IJanuaField;
+    procedure SetAn_upd_id(const Value: IJanuaField);
+    function GetAn_documents: IJanuaField;
+    procedure SetAn_documents(const Value: IJanuaField);
+    function GetAn_last_date: IJanuaField;
+    procedure SetAn_last_date(const Value: IJanuaField);
+    function GetAn_birthdate: IJanuaField;
+    procedure SetAn_birthdate(const Value: IJanuaField);
+    function GetAn_office_type_id: IJanuaField;
+    procedure SetAn_office_type_id(const Value: IJanuaField);
+    function GetAn_searchname: IJanuaField;
+    procedure SetAn_searchname(const Value: IJanuaField);
+    function GetAn_extra_ue_flag: IJanuaField;
+    procedure SetAn_extra_ue_flag(const Value: IJanuaField);
+    function GetAn_external_code: IJanuaField;
+    procedure SetAn_external_code(const Value: IJanuaField);
+    function GetAn_vat_id: IJanuaField;
+    procedure SetAn_vat_id(const Value: IJanuaField);
+    function GetAn_personal_fiscal_code: IJanuaField;
+    procedure SetAn_personal_fiscal_code(const Value: IJanuaField);
+    function GetAn_privacy_print: IJanuaField;
+    procedure SetAn_privacy_print(const Value: IJanuaField);
+    function GetAn_sms: IJanuaField;
+    procedure SetAn_sms(const Value: IJanuaField);
+    function GetAn_encrypted_fiscal_code: IJanuaField;
+    procedure SetAn_encrypted_fiscal_code(const Value: IJanuaField);
+    function GetAn_vat_purcentage: IJanuaField;
+    procedure SetAn_vat_purcentage(const Value: IJanuaField);
+    function GetAn_status: IJanuaField;
+    procedure SetAn_status(const Value: IJanuaField);
+    function GetAn_ownsite: IJanuaField;
+    procedure SetAn_ownsite(const Value: IJanuaField);
+    function GetAn_insurance_id: IJanuaField;
+    procedure SetAn_insurance_id(const Value: IJanuaField);
+    function GetAn_anagraphs_anagraph_id: IJanuaField;
+    procedure SetAn_anagraphs_anagraph_id(const Value: IJanuaField);
+    function GetAn_main_language_code: IJanuaField;
+    procedure SetAn_main_language_code(const Value: IJanuaField);
+    function GetAn_main_culture_code: IJanuaField;
+    procedure SetAn_main_culture_code(const Value: IJanuaField);
+    function GetAn_fiscal_code: IJanuaField;
+    procedure SetAn_fiscal_code(const Value: IJanuaField);
+    function GetAn_main_group_id: IJanuaField;
+    procedure SetAn_main_group_id(const Value: IJanuaField);
+    function GetAn_image_id: IJanuaField;
+    procedure SetAn_image_id(const Value: IJanuaField);
+    function GetLatitude: IJanuaField;
+    procedure SetLatitude(const Value: IJanuaField);
+    function GetLongitude: IJanuaField;
+    procedure SetLongitude(const Value: IJanuaField);
+    function GetTest: IJanuaField;
+    procedure SetTest(const Value: IJanuaField);
+    function GetSearch_index: IJanuaField;
+    procedure SetSearch_index(const Value: IJanuaField);
+    function GetAn_birthplace: IJanuaField;
+    procedure SetAn_birthplace(const Value: IJanuaField);
+    function GetAn_birthplace_code: IJanuaField;
+    procedure SetAn_birthplace_code(const Value: IJanuaField);
+    function GetAnagraph64: IJanuaField;
+    procedure SetAnagraph64(const Value: IJanuaField);
+    function GetAnag_jguid: IJanuaField;
+    procedure SetAnag_jguid(const Value: IJanuaField);
+    function GetAnag_deleted: IJanuaField;
+    procedure SetAnag_deleted(const Value: IJanuaField);
+  public
+    constructor Create; override;
+    property Db_schema_id: IJanuaField read GetDb_schema_id write SetDb_schema_id;
+    property Anagraph_id: IJanuaField read GetAnagraph_id write SetAnagraph_id;
+    property An_title: IJanuaField read GetAn_title write SetAn_title;
+    property An_name: IJanuaField read GetAn_name write SetAn_name;
+    property An_second_name: IJanuaField read GetAn_second_name write SetAn_second_name;
+    property An_last_name: IJanuaField read GetAn_last_name write SetAn_last_name;
+    property An_notes: IJanuaField read GetAn_notes write SetAn_notes;
+    property An_address: IJanuaField read GetAn_address write SetAn_address;
+    property An_town: IJanuaField read GetAn_town write SetAn_town;
+    property An_postal_code: IJanuaField read GetAn_postal_code write SetAn_postal_code;
+    property An_iso_country_code: IJanuaField read GetAn_iso_country_code write SetAn_iso_country_code;
+    property An_state_province: IJanuaField read GetAn_state_province write SetAn_state_province;
+    property An_phone: IJanuaField read GetAn_phone write SetAn_phone;
+    property An_phone2: IJanuaField read GetAn_phone2 write SetAn_phone2;
+    property An_fax: IJanuaField read GetAn_fax write SetAn_fax;
+    property An_cellular: IJanuaField read GetAn_cellular write SetAn_cellular;
+    property An_code: IJanuaField read GetAn_code write SetAn_code;
+    property An_vat_numeric: IJanuaField read GetAn_vat_numeric write SetAn_vat_numeric;
+    property An_email: IJanuaField read GetAn_email write SetAn_email;
+    property An_web: IJanuaField read GetAn_web write SetAn_web;
+    property An_contact_id: IJanuaField read GetAn_contact_id write SetAn_contact_id;
+    property An_bank_account: IJanuaField read GetAn_bank_account write SetAn_bank_account;
+    property An_payment_des: IJanuaField read GetAn_payment_des write SetAn_payment_des;
+    property An_discount: IJanuaField read GetAn_discount write SetAn_discount;
+    property An_distance: IJanuaField read GetAn_distance write SetAn_distance;
+    property An_distance_mesunit: IJanuaField read GetAn_distance_mesunit write SetAn_distance_mesunit;
+    property An_sex: IJanuaField read GetAn_sex write SetAn_sex;
+    property An_cod_comune: IJanuaField read GetAn_cod_comune write SetAn_cod_comune;
+    property An_cod_provincia: IJanuaField read GetAn_cod_provincia write SetAn_cod_provincia;
+    property An_credit_line: IJanuaField read GetAn_credit_line write SetAn_credit_line;
+    property An_currency_id: IJanuaField read GetAn_currency_id write SetAn_currency_id;
+    property An_cat_id: IJanuaField read GetAn_cat_id write SetAn_cat_id;
+    property An_notes2: IJanuaField read GetAn_notes2 write SetAn_notes2;
+    property An_notes3: IJanuaField read GetAn_notes3 write SetAn_notes3;
+    property An_edi: IJanuaField read GetAn_edi write SetAn_edi;
+    property An_privacy: IJanuaField read GetAn_privacy write SetAn_privacy;
+    property An_office_id: IJanuaField read GetAn_office_id write SetAn_office_id;
+    property An_cod_prov_rif: IJanuaField read GetAn_cod_prov_rif write SetAn_cod_prov_rif;
+    property An_data_fido: IJanuaField read GetAn_data_fido write SetAn_data_fido;
+    property An_user_insert: IJanuaField read GetAn_user_insert write SetAn_user_insert;
+    property An_user_update: IJanuaField read GetAn_user_update write SetAn_user_update;
+    property An_area_id: IJanuaField read GetAn_area_id write SetAn_area_id;
+    property An_agent_id: IJanuaField read GetAn_agent_id write SetAn_agent_id;
+    property An_area_code: IJanuaField read GetAn_area_code write SetAn_area_code;
+    property An_zone_id: IJanuaField read GetAn_zone_id write SetAn_zone_id;
+    property An_ins_id: IJanuaField read GetAn_ins_id write SetAn_ins_id;
+    property An_upd_id: IJanuaField read GetAn_upd_id write SetAn_upd_id;
+    property An_documents: IJanuaField read GetAn_documents write SetAn_documents;
+    property An_last_date: IJanuaField read GetAn_last_date write SetAn_last_date;
+    property An_birthdate: IJanuaField read GetAn_birthdate write SetAn_birthdate;
+    property An_office_type_id: IJanuaField read GetAn_office_type_id write SetAn_office_type_id;
+    property An_searchname: IJanuaField read GetAn_searchname write SetAn_searchname;
+    property An_extra_ue_flag: IJanuaField read GetAn_extra_ue_flag write SetAn_extra_ue_flag;
+    property An_external_code: IJanuaField read GetAn_external_code write SetAn_external_code;
+    property An_vat_id: IJanuaField read GetAn_vat_id write SetAn_vat_id;
+    property An_personal_fiscal_code: IJanuaField read GetAn_personal_fiscal_code write SetAn_personal_fiscal_code;
+    property An_privacy_print: IJanuaField read GetAn_privacy_print write SetAn_privacy_print;
+    property An_sms: IJanuaField read GetAn_sms write SetAn_sms;
+    property An_encrypted_fiscal_code: IJanuaField read GetAn_encrypted_fiscal_code write SetAn_encrypted_fiscal_code;
+    property An_vat_purcentage: IJanuaField read GetAn_vat_purcentage write SetAn_vat_purcentage;
+    property An_status: IJanuaField read GetAn_status write SetAn_status;
+    property An_ownsite: IJanuaField read GetAn_ownsite write SetAn_ownsite;
+    property An_insurance_id: IJanuaField read GetAn_insurance_id write SetAn_insurance_id;
+    property An_anagraphs_anagraph_id: IJanuaField read GetAn_anagraphs_anagraph_id write SetAn_anagraphs_anagraph_id;
+    property An_main_language_code: IJanuaField read GetAn_main_language_code write SetAn_main_language_code;
+    property An_main_culture_code: IJanuaField read GetAn_main_culture_code write SetAn_main_culture_code;
+    property An_fiscal_code: IJanuaField read GetAn_fiscal_code write SetAn_fiscal_code;
+    property An_main_group_id: IJanuaField read GetAn_main_group_id write SetAn_main_group_id;
+    property An_image_id: IJanuaField read GetAn_image_id write SetAn_image_id;
+    property Latitude: IJanuaField read GetLatitude write SetLatitude;
+    property Longitude: IJanuaField read GetLongitude write SetLongitude;
+    property Test: IJanuaField read GetTest write SetTest;
+    property Search_index: IJanuaField read GetSearch_index write SetSearch_index;
+    property An_birthplace: IJanuaField read GetAn_birthplace write SetAn_birthplace;
+    property An_birthplace_code: IJanuaField read GetAn_birthplace_code write SetAn_birthplace_code;
+    property Anagraph64: IJanuaField read GetAnagraph64 write SetAnagraph64;
+    property Anag_jguid: IJanuaField read GetAnag_jguid write SetAnag_jguid;
+    property Anag_deleted: IJanuaField read GetAnag_deleted write SetAnag_deleted;
+
+  end;
+
+  TAnagraphss = class(TJanuaRecordSet, IJanuaRecordSet, IAnagraphss)
+  private
+    function GetDb_schema_id: IJanuaField;
+    procedure SetDb_schema_id(const Value: IJanuaField);
+    function GetAnagraph_id: IJanuaField;
+    procedure SetAnagraph_id(const Value: IJanuaField);
+    function GetAn_title: IJanuaField;
+    procedure SetAn_title(const Value: IJanuaField);
+    function GetAn_name: IJanuaField;
+    procedure SetAn_name(const Value: IJanuaField);
+    function GetAn_second_name: IJanuaField;
+    procedure SetAn_second_name(const Value: IJanuaField);
+    function GetAn_last_name: IJanuaField;
+    procedure SetAn_last_name(const Value: IJanuaField);
+    function GetAn_notes: IJanuaField;
+    procedure SetAn_notes(const Value: IJanuaField);
+    function GetAn_address: IJanuaField;
+    procedure SetAn_address(const Value: IJanuaField);
+    function GetAn_town: IJanuaField;
+    procedure SetAn_town(const Value: IJanuaField);
+    function GetAn_postal_code: IJanuaField;
+    procedure SetAn_postal_code(const Value: IJanuaField);
+    function GetAn_iso_country_code: IJanuaField;
+    procedure SetAn_iso_country_code(const Value: IJanuaField);
+    function GetAn_state_province: IJanuaField;
+    procedure SetAn_state_province(const Value: IJanuaField);
+    function GetAn_phone: IJanuaField;
+    procedure SetAn_phone(const Value: IJanuaField);
+    function GetAn_phone2: IJanuaField;
+    procedure SetAn_phone2(const Value: IJanuaField);
+    function GetAn_fax: IJanuaField;
+    procedure SetAn_fax(const Value: IJanuaField);
+    function GetAn_cellular: IJanuaField;
+    procedure SetAn_cellular(const Value: IJanuaField);
+    function GetAn_code: IJanuaField;
+    procedure SetAn_code(const Value: IJanuaField);
+    function GetAn_vat_numeric: IJanuaField;
+    procedure SetAn_vat_numeric(const Value: IJanuaField);
+    function GetAn_email: IJanuaField;
+    procedure SetAn_email(const Value: IJanuaField);
+    function GetAn_web: IJanuaField;
+    procedure SetAn_web(const Value: IJanuaField);
+    function GetAn_contact_id: IJanuaField;
+    procedure SetAn_contact_id(const Value: IJanuaField);
+    function GetAn_bank_account: IJanuaField;
+    procedure SetAn_bank_account(const Value: IJanuaField);
+    function GetAn_payment_des: IJanuaField;
+    procedure SetAn_payment_des(const Value: IJanuaField);
+    function GetAn_discount: IJanuaField;
+    procedure SetAn_discount(const Value: IJanuaField);
+    function GetAn_distance: IJanuaField;
+    procedure SetAn_distance(const Value: IJanuaField);
+    function GetAn_distance_mesunit: IJanuaField;
+    procedure SetAn_distance_mesunit(const Value: IJanuaField);
+    function GetAn_sex: IJanuaField;
+    procedure SetAn_sex(const Value: IJanuaField);
+    function GetAn_cod_comune: IJanuaField;
+    procedure SetAn_cod_comune(const Value: IJanuaField);
+    function GetAn_cod_provincia: IJanuaField;
+    procedure SetAn_cod_provincia(const Value: IJanuaField);
+    function GetAn_credit_line: IJanuaField;
+    procedure SetAn_credit_line(const Value: IJanuaField);
+    function GetAn_currency_id: IJanuaField;
+    procedure SetAn_currency_id(const Value: IJanuaField);
+    function GetAn_cat_id: IJanuaField;
+    procedure SetAn_cat_id(const Value: IJanuaField);
+    function GetAn_notes2: IJanuaField;
+    procedure SetAn_notes2(const Value: IJanuaField);
+    function GetAn_notes3: IJanuaField;
+    procedure SetAn_notes3(const Value: IJanuaField);
+    function GetAn_edi: IJanuaField;
+    procedure SetAn_edi(const Value: IJanuaField);
+    function GetAn_privacy: IJanuaField;
+    procedure SetAn_privacy(const Value: IJanuaField);
+    function GetAn_office_id: IJanuaField;
+    procedure SetAn_office_id(const Value: IJanuaField);
+    function GetAn_cod_prov_rif: IJanuaField;
+    procedure SetAn_cod_prov_rif(const Value: IJanuaField);
+    function GetAn_data_fido: IJanuaField;
+    procedure SetAn_data_fido(const Value: IJanuaField);
+    function GetAn_user_insert: IJanuaField;
+    procedure SetAn_user_insert(const Value: IJanuaField);
+    function GetAn_user_update: IJanuaField;
+    procedure SetAn_user_update(const Value: IJanuaField);
+    function GetAn_area_id: IJanuaField;
+    procedure SetAn_area_id(const Value: IJanuaField);
+    function GetAn_agent_id: IJanuaField;
+    procedure SetAn_agent_id(const Value: IJanuaField);
+    function GetAn_area_code: IJanuaField;
+    procedure SetAn_area_code(const Value: IJanuaField);
+    function GetAn_zone_id: IJanuaField;
+    procedure SetAn_zone_id(const Value: IJanuaField);
+    function GetAn_ins_id: IJanuaField;
+    procedure SetAn_ins_id(const Value: IJanuaField);
+    function GetAn_upd_id: IJanuaField;
+    procedure SetAn_upd_id(const Value: IJanuaField);
+    function GetAn_documents: IJanuaField;
+    procedure SetAn_documents(const Value: IJanuaField);
+    function GetAn_last_date: IJanuaField;
+    procedure SetAn_last_date(const Value: IJanuaField);
+    function GetAn_birthdate: IJanuaField;
+    procedure SetAn_birthdate(const Value: IJanuaField);
+    function GetAn_office_type_id: IJanuaField;
+    procedure SetAn_office_type_id(const Value: IJanuaField);
+    function GetAn_searchname: IJanuaField;
+    procedure SetAn_searchname(const Value: IJanuaField);
+    function GetAn_extra_ue_flag: IJanuaField;
+    procedure SetAn_extra_ue_flag(const Value: IJanuaField);
+    function GetAn_external_code: IJanuaField;
+    procedure SetAn_external_code(const Value: IJanuaField);
+    function GetAn_vat_id: IJanuaField;
+    procedure SetAn_vat_id(const Value: IJanuaField);
+    function GetAn_personal_fiscal_code: IJanuaField;
+    procedure SetAn_personal_fiscal_code(const Value: IJanuaField);
+    function GetAn_privacy_print: IJanuaField;
+    procedure SetAn_privacy_print(const Value: IJanuaField);
+    function GetAn_sms: IJanuaField;
+    procedure SetAn_sms(const Value: IJanuaField);
+    function GetAn_encrypted_fiscal_code: IJanuaField;
+    procedure SetAn_encrypted_fiscal_code(const Value: IJanuaField);
+    function GetAn_vat_purcentage: IJanuaField;
+    procedure SetAn_vat_purcentage(const Value: IJanuaField);
+    function GetAn_status: IJanuaField;
+    procedure SetAn_status(const Value: IJanuaField);
+    function GetAn_ownsite: IJanuaField;
+    procedure SetAn_ownsite(const Value: IJanuaField);
+    function GetAn_insurance_id: IJanuaField;
+    procedure SetAn_insurance_id(const Value: IJanuaField);
+    function GetAn_anagraphs_anagraph_id: IJanuaField;
+    procedure SetAn_anagraphs_anagraph_id(const Value: IJanuaField);
+    function GetAn_main_language_code: IJanuaField;
+    procedure SetAn_main_language_code(const Value: IJanuaField);
+    function GetAn_main_culture_code: IJanuaField;
+    procedure SetAn_main_culture_code(const Value: IJanuaField);
+    function GetAn_fiscal_code: IJanuaField;
+    procedure SetAn_fiscal_code(const Value: IJanuaField);
+    function GetAn_main_group_id: IJanuaField;
+    procedure SetAn_main_group_id(const Value: IJanuaField);
+    function GetAn_image_id: IJanuaField;
+    procedure SetAn_image_id(const Value: IJanuaField);
+    function GetLatitude: IJanuaField;
+    procedure SetLatitude(const Value: IJanuaField);
+    function GetLongitude: IJanuaField;
+    procedure SetLongitude(const Value: IJanuaField);
+    function GetTest: IJanuaField;
+    procedure SetTest(const Value: IJanuaField);
+    function GetSearch_index: IJanuaField;
+    procedure SetSearch_index(const Value: IJanuaField);
+    function GetAn_birthplace: IJanuaField;
+    procedure SetAn_birthplace(const Value: IJanuaField);
+    function GetAn_birthplace_code: IJanuaField;
+    procedure SetAn_birthplace_code(const Value: IJanuaField);
+    function GetAnagraph64: IJanuaField;
+    procedure SetAnagraph64(const Value: IJanuaField);
+    function GetAnag_jguid: IJanuaField;
+    procedure SetAnag_jguid(const Value: IJanuaField);
+    function GetAnag_deleted: IJanuaField;
+    procedure SetAnag_deleted(const Value: IJanuaField);
+    function GetAnagraphs: IAnagraphs;
+    procedure SetAnagraphs(const Value: IAnagraphs);
+  public
+    constructor Create; override;
+    property Db_schema_id: IJanuaField read GetDb_schema_id write SetDb_schema_id;
+    property Anagraph_id: IJanuaField read GetAnagraph_id write SetAnagraph_id;
+    property An_title: IJanuaField read GetAn_title write SetAn_title;
+    property An_name: IJanuaField read GetAn_name write SetAn_name;
+    property An_second_name: IJanuaField read GetAn_second_name write SetAn_second_name;
+    property An_last_name: IJanuaField read GetAn_last_name write SetAn_last_name;
+    property An_notes: IJanuaField read GetAn_notes write SetAn_notes;
+    property An_address: IJanuaField read GetAn_address write SetAn_address;
+    property An_town: IJanuaField read GetAn_town write SetAn_town;
+    property An_postal_code: IJanuaField read GetAn_postal_code write SetAn_postal_code;
+    property An_iso_country_code: IJanuaField read GetAn_iso_country_code write SetAn_iso_country_code;
+    property An_state_province: IJanuaField read GetAn_state_province write SetAn_state_province;
+    property An_phone: IJanuaField read GetAn_phone write SetAn_phone;
+    property An_phone2: IJanuaField read GetAn_phone2 write SetAn_phone2;
+    property An_fax: IJanuaField read GetAn_fax write SetAn_fax;
+    property An_cellular: IJanuaField read GetAn_cellular write SetAn_cellular;
+    property An_code: IJanuaField read GetAn_code write SetAn_code;
+    property An_vat_numeric: IJanuaField read GetAn_vat_numeric write SetAn_vat_numeric;
+    property An_email: IJanuaField read GetAn_email write SetAn_email;
+    property An_web: IJanuaField read GetAn_web write SetAn_web;
+    property An_contact_id: IJanuaField read GetAn_contact_id write SetAn_contact_id;
+    property An_bank_account: IJanuaField read GetAn_bank_account write SetAn_bank_account;
+    property An_payment_des: IJanuaField read GetAn_payment_des write SetAn_payment_des;
+    property An_discount: IJanuaField read GetAn_discount write SetAn_discount;
+    property An_distance: IJanuaField read GetAn_distance write SetAn_distance;
+    property An_distance_mesunit: IJanuaField read GetAn_distance_mesunit write SetAn_distance_mesunit;
+    property An_sex: IJanuaField read GetAn_sex write SetAn_sex;
+    property An_cod_comune: IJanuaField read GetAn_cod_comune write SetAn_cod_comune;
+    property An_cod_provincia: IJanuaField read GetAn_cod_provincia write SetAn_cod_provincia;
+    property An_credit_line: IJanuaField read GetAn_credit_line write SetAn_credit_line;
+    property An_currency_id: IJanuaField read GetAn_currency_id write SetAn_currency_id;
+    property An_cat_id: IJanuaField read GetAn_cat_id write SetAn_cat_id;
+    property An_notes2: IJanuaField read GetAn_notes2 write SetAn_notes2;
+    property An_notes3: IJanuaField read GetAn_notes3 write SetAn_notes3;
+    property An_edi: IJanuaField read GetAn_edi write SetAn_edi;
+    property An_privacy: IJanuaField read GetAn_privacy write SetAn_privacy;
+    property An_office_id: IJanuaField read GetAn_office_id write SetAn_office_id;
+    property An_cod_prov_rif: IJanuaField read GetAn_cod_prov_rif write SetAn_cod_prov_rif;
+    property An_data_fido: IJanuaField read GetAn_data_fido write SetAn_data_fido;
+    property An_user_insert: IJanuaField read GetAn_user_insert write SetAn_user_insert;
+    property An_user_update: IJanuaField read GetAn_user_update write SetAn_user_update;
+    property An_area_id: IJanuaField read GetAn_area_id write SetAn_area_id;
+    property An_agent_id: IJanuaField read GetAn_agent_id write SetAn_agent_id;
+    property An_area_code: IJanuaField read GetAn_area_code write SetAn_area_code;
+    property An_zone_id: IJanuaField read GetAn_zone_id write SetAn_zone_id;
+    property An_ins_id: IJanuaField read GetAn_ins_id write SetAn_ins_id;
+    property An_upd_id: IJanuaField read GetAn_upd_id write SetAn_upd_id;
+    property An_documents: IJanuaField read GetAn_documents write SetAn_documents;
+    property An_last_date: IJanuaField read GetAn_last_date write SetAn_last_date;
+    property An_birthdate: IJanuaField read GetAn_birthdate write SetAn_birthdate;
+    property An_office_type_id: IJanuaField read GetAn_office_type_id write SetAn_office_type_id;
+    property An_searchname: IJanuaField read GetAn_searchname write SetAn_searchname;
+    property An_extra_ue_flag: IJanuaField read GetAn_extra_ue_flag write SetAn_extra_ue_flag;
+    property An_external_code: IJanuaField read GetAn_external_code write SetAn_external_code;
+    property An_vat_id: IJanuaField read GetAn_vat_id write SetAn_vat_id;
+    property An_personal_fiscal_code: IJanuaField read GetAn_personal_fiscal_code write SetAn_personal_fiscal_code;
+    property An_privacy_print: IJanuaField read GetAn_privacy_print write SetAn_privacy_print;
+    property An_sms: IJanuaField read GetAn_sms write SetAn_sms;
+    property An_encrypted_fiscal_code: IJanuaField read GetAn_encrypted_fiscal_code write SetAn_encrypted_fiscal_code;
+    property An_vat_purcentage: IJanuaField read GetAn_vat_purcentage write SetAn_vat_purcentage;
+    property An_status: IJanuaField read GetAn_status write SetAn_status;
+    property An_ownsite: IJanuaField read GetAn_ownsite write SetAn_ownsite;
+    property An_insurance_id: IJanuaField read GetAn_insurance_id write SetAn_insurance_id;
+    property An_anagraphs_anagraph_id: IJanuaField read GetAn_anagraphs_anagraph_id write SetAn_anagraphs_anagraph_id;
+    property An_main_language_code: IJanuaField read GetAn_main_language_code write SetAn_main_language_code;
+    property An_main_culture_code: IJanuaField read GetAn_main_culture_code write SetAn_main_culture_code;
+    property An_fiscal_code: IJanuaField read GetAn_fiscal_code write SetAn_fiscal_code;
+    property An_main_group_id: IJanuaField read GetAn_main_group_id write SetAn_main_group_id;
+    property An_image_id: IJanuaField read GetAn_image_id write SetAn_image_id;
+    property Latitude: IJanuaField read GetLatitude write SetLatitude;
+    property Longitude: IJanuaField read GetLongitude write SetLongitude;
+    property Test: IJanuaField read GetTest write SetTest;
+    property Search_index: IJanuaField read GetSearch_index write SetSearch_index;
+    property An_birthplace: IJanuaField read GetAn_birthplace write SetAn_birthplace;
+    property An_birthplace_code: IJanuaField read GetAn_birthplace_code write SetAn_birthplace_code;
+    property Anagraph64: IJanuaField read GetAnagraph64 write SetAnagraph64;
+    property Anag_jguid: IJanuaField read GetAnag_jguid write SetAnag_jguid;
+    property Anag_deleted: IJanuaField read GetAnag_deleted write SetAnag_deleted;
+    property Anagraphs:IAnagraphs read GetAnagraphs write SetAnagraphs;
+  end;
+
+  TAnagraphsFactory = class
+    class function CreateRecord(const aKey: string): IAnagraphs; overload;
+    class function CreateRecordset((const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): IAnagraphss; overload;
+  end;
+
+implementation
+
+//------------------------------------------ Impl TAnagraphs -------------------------------
+
+{TAnagraphs}
+
+  constructor TAnagraphs.Create;
+  begin
+    inherited;
+    self.FPrefix := 'anag';
+    FDb_schema_id:= TJanuaOrmFactory.CreateIntegerField('db_schema_id', 'Db_schema_id');
+    FDb_schema_idIndex := AddField(FDb_schema_id);
+    FAnagraph_id:= TJanuaOrmFactory.CreateIntegerField('anagraph_id', 'Anagraph_id');
+    FAnagraph_idIndex := AddField(FAnagraph_id);
+    FAn_title:= TJanuaOrmFactory.CreateStringField('an_title', 'An_title');
+    FAn_titleIndex := AddField(FAn_title);
+    FAn_name:= TJanuaOrmFactory.CreateStringField('an_name', 'An_name');
+    FAn_nameIndex := AddField(FAn_name);
+    FAn_second_name:= TJanuaOrmFactory.CreateStringField('an_second_name', 'An_second_name');
+    FAn_second_nameIndex := AddField(FAn_second_name);
+    FAn_last_name:= TJanuaOrmFactory.CreateStringField('an_last_name', 'An_last_name');
+    FAn_last_nameIndex := AddField(FAn_last_name);
+    FAn_notes:= TJanuaOrmFactory.CreateStringField('an_notes', 'An_notes');
+    FAn_notesIndex := AddField(FAn_notes);
+    FAn_address:= TJanuaOrmFactory.CreateStringField('an_address', 'An_address');
+    FAn_addressIndex := AddField(FAn_address);
+    FAn_town:= TJanuaOrmFactory.CreateStringField('an_town', 'An_town');
+    FAn_townIndex := AddField(FAn_town);
+    FAn_postal_code:= TJanuaOrmFactory.CreateStringField('an_postal_code', 'An_postal_code');
+    FAn_postal_codeIndex := AddField(FAn_postal_code);
+    FAn_iso_country_code:= TJanuaOrmFactory.CreateStringField('an_iso_country_code', 'An_iso_country_code');
+    FAn_iso_country_codeIndex := AddField(FAn_iso_country_code);
+    FAn_state_province:= TJanuaOrmFactory.CreateStringField('an_state_province', 'An_state_province');
+    FAn_state_provinceIndex := AddField(FAn_state_province);
+    FAn_phone:= TJanuaOrmFactory.CreateStringField('an_phone', 'An_phone');
+    FAn_phoneIndex := AddField(FAn_phone);
+    FAn_phone2:= TJanuaOrmFactory.CreateStringField('an_phone2', 'An_phone2');
+    FAn_phone2Index := AddField(FAn_phone2);
+    FAn_fax:= TJanuaOrmFactory.CreateStringField('an_fax', 'An_fax');
+    FAn_faxIndex := AddField(FAn_fax);
+    FAn_cellular:= TJanuaOrmFactory.CreateStringField('an_cellular', 'An_cellular');
+    FAn_cellularIndex := AddField(FAn_cellular);
+    FAn_code:= TJanuaOrmFactory.CreateStringField('an_code', 'An_code');
+    FAn_codeIndex := AddField(FAn_code);
+    FAn_vat_numeric:= TJanuaOrmFactory.CreateStringField('an_vat_numeric', 'An_vat_numeric');
+    FAn_vat_numericIndex := AddField(FAn_vat_numeric);
+    FAn_email:= TJanuaOrmFactory.CreateStringField('an_email', 'An_email');
+    FAn_emailIndex := AddField(FAn_email);
+    FAn_web:= TJanuaOrmFactory.CreateStringField('an_web', 'An_web');
+    FAn_webIndex := AddField(FAn_web);
+    FAn_contact_id:= TJanuaOrmFactory.CreateIntegerField('an_contact_id', 'An_contact_id');
+    FAn_contact_idIndex := AddField(FAn_contact_id);
+    FAn_bank_account:= TJanuaOrmFactory.CreateStringField('an_bank_account', 'An_bank_account');
+    FAn_bank_accountIndex := AddField(FAn_bank_account);
+    FAn_payment_des:= TJanuaOrmFactory.CreateStringField('an_payment_des', 'An_payment_des');
+    FAn_payment_desIndex := AddField(FAn_payment_des);
+    FAn_discount:= TJanuaOrmFactory.CreateDoubleField('an_discount', 'An_discount');
+    FAn_discountIndex := AddField(FAn_discount);
+    FAn_distance:= TJanuaOrmFactory.CreateIntegerField('an_distance', 'An_distance');
+    FAn_distanceIndex := AddField(FAn_distance);
+    FAn_distance_mesunit:= TJanuaOrmFactory.CreateSmallintField('an_distance_mesunit', 'An_distance_mesunit');
+    FAn_distance_mesunitIndex := AddField(FAn_distance_mesunit);
+    FAn_sex:= TJanuaOrmFactory.CreateStringField('an_sex', 'An_sex');
+    FAn_sexIndex := AddField(FAn_sex);
+    FAn_cod_comune:= TJanuaOrmFactory.CreateStringField('an_cod_comune', 'An_cod_comune');
+    FAn_cod_comuneIndex := AddField(FAn_cod_comune);
+    FAn_cod_provincia:= TJanuaOrmFactory.CreateStringField('an_cod_provincia', 'An_cod_provincia');
+    FAn_cod_provinciaIndex := AddField(FAn_cod_provincia);
+    FAn_credit_line:= TJanuaOrmFactory.CreateDoubleField('an_credit_line', 'An_credit_line');
+    FAn_credit_lineIndex := AddField(FAn_credit_line);
+    FAn_currency_id:= TJanuaOrmFactory.CreateSmallintField('an_currency_id', 'An_currency_id');
+    FAn_currency_idIndex := AddField(FAn_currency_id);
+    FAn_cat_id:= TJanuaOrmFactory.CreateSmallintField('an_cat_id', 'An_cat_id');
+    FAn_cat_idIndex := AddField(FAn_cat_id);
+    FAn_notes2:= TJanuaOrmFactory.CreateStringField('an_notes2', 'An_notes2');
+    FAn_notes2Index := AddField(FAn_notes2);
+    // Campo non GestitoAn_notes3 Type= ftWideMemo
+    FAn_edi:= TJanuaOrmFactory.CreateBoolField('an_edi', 'An_edi');
+    FAn_ediIndex := AddField(FAn_edi);
+    FAn_privacy:= TJanuaOrmFactory.CreateBoolField('an_privacy', 'An_privacy');
+    FAn_privacyIndex := AddField(FAn_privacy);
+    FAn_office_id:= TJanuaOrmFactory.CreateSmallintField('an_office_id', 'An_office_id');
+    FAn_office_idIndex := AddField(FAn_office_id);
+    FAn_cod_prov_rif:= TJanuaOrmFactory.CreateStringField('an_cod_prov_rif', 'An_cod_prov_rif');
+    FAn_cod_prov_rifIndex := AddField(FAn_cod_prov_rif);
+    // Campo non GestitoAn_data_fido Type= ftDate
+    FAn_user_insert:= TJanuaOrmFactory.CreateStringField('an_user_insert', 'An_user_insert');
+    FAn_user_insertIndex := AddField(FAn_user_insert);
+    FAn_user_update:= TJanuaOrmFactory.CreateStringField('an_user_update', 'An_user_update');
+    FAn_user_updateIndex := AddField(FAn_user_update);
+    FAn_area_id:= TJanuaOrmFactory.CreateSmallintField('an_area_id', 'An_area_id');
+    FAn_area_idIndex := AddField(FAn_area_id);
+    FAn_agent_id:= TJanuaOrmFactory.CreateSmallintField('an_agent_id', 'An_agent_id');
+    FAn_agent_idIndex := AddField(FAn_agent_id);
+    FAn_area_code:= TJanuaOrmFactory.CreateStringField('an_area_code', 'An_area_code');
+    FAn_area_codeIndex := AddField(FAn_area_code);
+    FAn_zone_id:= TJanuaOrmFactory.CreateStringField('an_zone_id', 'An_zone_id');
+    FAn_zone_idIndex := AddField(FAn_zone_id);
+    FAn_ins_id:= TJanuaOrmFactory.CreateLargeIntField('an_ins_id', 'An_ins_id');
+    FAn_ins_idIndex := AddField(FAn_ins_id);
+    FAn_upd_id:= TJanuaOrmFactory.CreateLargeIntField('an_upd_id', 'An_upd_id');
+    FAn_upd_idIndex := AddField(FAn_upd_id);
+    FAn_documents:= TJanuaOrmFactory.CreateSmallintField('an_documents', 'An_documents');
+    FAn_documentsIndex := AddField(FAn_documents);
+    // Campo non GestitoAn_last_date Type= ftDate
+    // Campo non GestitoAn_birthdate Type= ftDate
+    FAn_office_type_id:= TJanuaOrmFactory.CreateSmallintField('an_office_type_id', 'An_office_type_id');
+    FAn_office_type_idIndex := AddField(FAn_office_type_id);
+    FAn_searchname:= TJanuaOrmFactory.CreateStringField('an_searchname', 'An_searchname');
+    FAn_searchnameIndex := AddField(FAn_searchname);
+    FAn_extra_ue_flag:= TJanuaOrmFactory.CreateBoolField('an_extra_ue_flag', 'An_extra_ue_flag');
+    FAn_extra_ue_flagIndex := AddField(FAn_extra_ue_flag);
+    FAn_external_code:= TJanuaOrmFactory.CreateStringField('an_external_code', 'An_external_code');
+    FAn_external_codeIndex := AddField(FAn_external_code);
+    FAn_vat_id:= TJanuaOrmFactory.CreateSmallintField('an_vat_id', 'An_vat_id');
+    FAn_vat_idIndex := AddField(FAn_vat_id);
+    FAn_personal_fiscal_code:= TJanuaOrmFactory.CreateStringField('an_personal_fiscal_code', 'An_personal_fiscal_code');
+    FAn_personal_fiscal_codeIndex := AddField(FAn_personal_fiscal_code);
+    FAn_privacy_print:= TJanuaOrmFactory.CreateSmallintField('an_privacy_print', 'An_privacy_print');
+    FAn_privacy_printIndex := AddField(FAn_privacy_print);
+    FAn_sms:= TJanuaOrmFactory.CreateBoolField('an_sms', 'An_sms');
+    FAn_smsIndex := AddField(FAn_sms);
+    FAn_encrypted_fiscal_code:= TJanuaOrmFactory.CreateStringField('an_encrypted_fiscal_code', 'An_encrypted_fiscal_code');
+    FAn_encrypted_fiscal_codeIndex := AddField(FAn_encrypted_fiscal_code);
+    FAn_vat_purcentage:= TJanuaOrmFactory.CreateSmallintField('an_vat_purcentage', 'An_vat_purcentage');
+    FAn_vat_purcentageIndex := AddField(FAn_vat_purcentage);
+    FAn_status:= TJanuaOrmFactory.CreateSmallintField('an_status', 'An_status');
+    FAn_statusIndex := AddField(FAn_status);
+    FAn_ownsite:= TJanuaOrmFactory.CreateBoolField('an_ownsite', 'An_ownsite');
+    FAn_ownsiteIndex := AddField(FAn_ownsite);
+    FAn_insurance_id:= TJanuaOrmFactory.CreateLargeIntField('an_insurance_id', 'An_insurance_id');
+    FAn_insurance_idIndex := AddField(FAn_insurance_id);
+    FAn_anagraphs_anagraph_id:= TJanuaOrmFactory.CreateIntegerField('an_anagraphs_anagraph_id', 'An_anagraphs_anagraph_id');
+    FAn_anagraphs_anagraph_idIndex := AddField(FAn_anagraphs_anagraph_id);
+    FAn_main_language_code:= TJanuaOrmFactory.CreateStringField('an_main_language_code', 'An_main_language_code');
+    FAn_main_language_codeIndex := AddField(FAn_main_language_code);
+    FAn_main_culture_code:= TJanuaOrmFactory.CreateStringField('an_main_culture_code', 'An_main_culture_code');
+    FAn_main_culture_codeIndex := AddField(FAn_main_culture_code);
+    FAn_fiscal_code:= TJanuaOrmFactory.CreateStringField('an_fiscal_code', 'An_fiscal_code');
+    FAn_fiscal_codeIndex := AddField(FAn_fiscal_code);
+    FAn_main_group_id:= TJanuaOrmFactory.CreateIntegerField('an_main_group_id', 'An_main_group_id');
+    FAn_main_group_idIndex := AddField(FAn_main_group_id);
+    FAn_image_id:= TJanuaOrmFactory.CreateLargeIntField('an_image_id', 'An_image_id');
+    FAn_image_idIndex := AddField(FAn_image_id);
+    FLatitude:= TJanuaOrmFactory.CreateDoubleField('latitude', 'Latitude');
+    FLatitudeIndex := AddField(FLatitude);
+    FLongitude:= TJanuaOrmFactory.CreateDoubleField('longitude', 'Longitude');
+    FLongitudeIndex := AddField(FLongitude);
+    FTest:= TJanuaOrmFactory.CreateDoubleField('test', 'Test');
+    FTestIndex := AddField(FTest);
+    FSearch_index:= TJanuaOrmFactory.CreateStringField('search_index', 'Search_index');
+    FSearch_indexIndex := AddField(FSearch_index);
+    FAn_birthplace:= TJanuaOrmFactory.CreateStringField('an_birthplace', 'An_birthplace');
+    FAn_birthplaceIndex := AddField(FAn_birthplace);
+    FAn_birthplace_code:= TJanuaOrmFactory.CreateStringField('an_birthplace_code', 'An_birthplace_code');
+    FAn_birthplace_codeIndex := AddField(FAn_birthplace_code);
+    FAnagraph64:= TJanuaOrmFactory.CreateStringField('anagraph64', 'Anagraph64');
+    FAnagraph64Index := AddField(FAnagraph64);
+    FAnag_jguid:= TJanuaOrmFactory.CreateStringField('anag_jguid', 'Anag_jguid');
+    FAnag_jguidIndex := AddField(FAnag_jguid);
+    FAnag_deleted:= TJanuaOrmFactory.CreateBoolField('anag_deleted', 'Anag_deleted');
+    FAnag_deletedIndex := AddField(FAnag_deleted);
+  end;
+
+  function TAnagraphs.GetDb_schema_id: IJanuaField;
+  begin
+    Result := FDb_schema_id;
+  end;
+
+  procedure TAnagraphs.SetDb_schema_id(const Value: IJanuaField);
+  begin
+    FDb_schema_id := Value;
+  end;
+
+  function TAnagraphs.GetAnagraph_id: IJanuaField;
+  begin
+    Result := FAnagraph_id;
+  end;
+
+  procedure TAnagraphs.SetAnagraph_id(const Value: IJanuaField);
+  begin
+    FAnagraph_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_title: IJanuaField;
+  begin
+    Result := FAn_title;
+  end;
+
+  procedure TAnagraphs.SetAn_title(const Value: IJanuaField);
+  begin
+    FAn_title := Value;
+  end;
+
+  function TAnagraphs.GetAn_name: IJanuaField;
+  begin
+    Result := FAn_name;
+  end;
+
+  procedure TAnagraphs.SetAn_name(const Value: IJanuaField);
+  begin
+    FAn_name := Value;
+  end;
+
+  function TAnagraphs.GetAn_second_name: IJanuaField;
+  begin
+    Result := FAn_second_name;
+  end;
+
+  procedure TAnagraphs.SetAn_second_name(const Value: IJanuaField);
+  begin
+    FAn_second_name := Value;
+  end;
+
+  function TAnagraphs.GetAn_last_name: IJanuaField;
+  begin
+    Result := FAn_last_name;
+  end;
+
+  procedure TAnagraphs.SetAn_last_name(const Value: IJanuaField);
+  begin
+    FAn_last_name := Value;
+  end;
+
+  function TAnagraphs.GetAn_notes: IJanuaField;
+  begin
+    Result := FAn_notes;
+  end;
+
+  procedure TAnagraphs.SetAn_notes(const Value: IJanuaField);
+  begin
+    FAn_notes := Value;
+  end;
+
+  function TAnagraphs.GetAn_address: IJanuaField;
+  begin
+    Result := FAn_address;
+  end;
+
+  procedure TAnagraphs.SetAn_address(const Value: IJanuaField);
+  begin
+    FAn_address := Value;
+  end;
+
+  function TAnagraphs.GetAn_town: IJanuaField;
+  begin
+    Result := FAn_town;
+  end;
+
+  procedure TAnagraphs.SetAn_town(const Value: IJanuaField);
+  begin
+    FAn_town := Value;
+  end;
+
+  function TAnagraphs.GetAn_postal_code: IJanuaField;
+  begin
+    Result := FAn_postal_code;
+  end;
+
+  procedure TAnagraphs.SetAn_postal_code(const Value: IJanuaField);
+  begin
+    FAn_postal_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_iso_country_code: IJanuaField;
+  begin
+    Result := FAn_iso_country_code;
+  end;
+
+  procedure TAnagraphs.SetAn_iso_country_code(const Value: IJanuaField);
+  begin
+    FAn_iso_country_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_state_province: IJanuaField;
+  begin
+    Result := FAn_state_province;
+  end;
+
+  procedure TAnagraphs.SetAn_state_province(const Value: IJanuaField);
+  begin
+    FAn_state_province := Value;
+  end;
+
+  function TAnagraphs.GetAn_phone: IJanuaField;
+  begin
+    Result := FAn_phone;
+  end;
+
+  procedure TAnagraphs.SetAn_phone(const Value: IJanuaField);
+  begin
+    FAn_phone := Value;
+  end;
+
+  function TAnagraphs.GetAn_phone2: IJanuaField;
+  begin
+    Result := FAn_phone2;
+  end;
+
+  procedure TAnagraphs.SetAn_phone2(const Value: IJanuaField);
+  begin
+    FAn_phone2 := Value;
+  end;
+
+  function TAnagraphs.GetAn_fax: IJanuaField;
+  begin
+    Result := FAn_fax;
+  end;
+
+  procedure TAnagraphs.SetAn_fax(const Value: IJanuaField);
+  begin
+    FAn_fax := Value;
+  end;
+
+  function TAnagraphs.GetAn_cellular: IJanuaField;
+  begin
+    Result := FAn_cellular;
+  end;
+
+  procedure TAnagraphs.SetAn_cellular(const Value: IJanuaField);
+  begin
+    FAn_cellular := Value;
+  end;
+
+  function TAnagraphs.GetAn_code: IJanuaField;
+  begin
+    Result := FAn_code;
+  end;
+
+  procedure TAnagraphs.SetAn_code(const Value: IJanuaField);
+  begin
+    FAn_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_vat_numeric: IJanuaField;
+  begin
+    Result := FAn_vat_numeric;
+  end;
+
+  procedure TAnagraphs.SetAn_vat_numeric(const Value: IJanuaField);
+  begin
+    FAn_vat_numeric := Value;
+  end;
+
+  function TAnagraphs.GetAn_email: IJanuaField;
+  begin
+    Result := FAn_email;
+  end;
+
+  procedure TAnagraphs.SetAn_email(const Value: IJanuaField);
+  begin
+    FAn_email := Value;
+  end;
+
+  function TAnagraphs.GetAn_web: IJanuaField;
+  begin
+    Result := FAn_web;
+  end;
+
+  procedure TAnagraphs.SetAn_web(const Value: IJanuaField);
+  begin
+    FAn_web := Value;
+  end;
+
+  function TAnagraphs.GetAn_contact_id: IJanuaField;
+  begin
+    Result := FAn_contact_id;
+  end;
+
+  procedure TAnagraphs.SetAn_contact_id(const Value: IJanuaField);
+  begin
+    FAn_contact_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_bank_account: IJanuaField;
+  begin
+    Result := FAn_bank_account;
+  end;
+
+  procedure TAnagraphs.SetAn_bank_account(const Value: IJanuaField);
+  begin
+    FAn_bank_account := Value;
+  end;
+
+  function TAnagraphs.GetAn_payment_des: IJanuaField;
+  begin
+    Result := FAn_payment_des;
+  end;
+
+  procedure TAnagraphs.SetAn_payment_des(const Value: IJanuaField);
+  begin
+    FAn_payment_des := Value;
+  end;
+
+  function TAnagraphs.GetAn_discount: IJanuaField;
+  begin
+    Result := FAn_discount;
+  end;
+
+  procedure TAnagraphs.SetAn_discount(const Value: IJanuaField);
+  begin
+    FAn_discount := Value;
+  end;
+
+  function TAnagraphs.GetAn_distance: IJanuaField;
+  begin
+    Result := FAn_distance;
+  end;
+
+  procedure TAnagraphs.SetAn_distance(const Value: IJanuaField);
+  begin
+    FAn_distance := Value;
+  end;
+
+  function TAnagraphs.GetAn_distance_mesunit: IJanuaField;
+  begin
+    Result := FAn_distance_mesunit;
+  end;
+
+  procedure TAnagraphs.SetAn_distance_mesunit(const Value: IJanuaField);
+  begin
+    FAn_distance_mesunit := Value;
+  end;
+
+  function TAnagraphs.GetAn_sex: IJanuaField;
+  begin
+    Result := FAn_sex;
+  end;
+
+  procedure TAnagraphs.SetAn_sex(const Value: IJanuaField);
+  begin
+    FAn_sex := Value;
+  end;
+
+  function TAnagraphs.GetAn_cod_comune: IJanuaField;
+  begin
+    Result := FAn_cod_comune;
+  end;
+
+  procedure TAnagraphs.SetAn_cod_comune(const Value: IJanuaField);
+  begin
+    FAn_cod_comune := Value;
+  end;
+
+  function TAnagraphs.GetAn_cod_provincia: IJanuaField;
+  begin
+    Result := FAn_cod_provincia;
+  end;
+
+  procedure TAnagraphs.SetAn_cod_provincia(const Value: IJanuaField);
+  begin
+    FAn_cod_provincia := Value;
+  end;
+
+  function TAnagraphs.GetAn_credit_line: IJanuaField;
+  begin
+    Result := FAn_credit_line;
+  end;
+
+  procedure TAnagraphs.SetAn_credit_line(const Value: IJanuaField);
+  begin
+    FAn_credit_line := Value;
+  end;
+
+  function TAnagraphs.GetAn_currency_id: IJanuaField;
+  begin
+    Result := FAn_currency_id;
+  end;
+
+  procedure TAnagraphs.SetAn_currency_id(const Value: IJanuaField);
+  begin
+    FAn_currency_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_cat_id: IJanuaField;
+  begin
+    Result := FAn_cat_id;
+  end;
+
+  procedure TAnagraphs.SetAn_cat_id(const Value: IJanuaField);
+  begin
+    FAn_cat_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_notes2: IJanuaField;
+  begin
+    Result := FAn_notes2;
+  end;
+
+  procedure TAnagraphs.SetAn_notes2(const Value: IJanuaField);
+  begin
+    FAn_notes2 := Value;
+  end;
+
+  function TAnagraphs.GetAn_notes3: IJanuaField;
+  begin
+    Result := FAn_notes3;
+  end;
+
+  procedure TAnagraphs.SetAn_notes3(const Value: IJanuaField);
+  begin
+    FAn_notes3 := Value;
+  end;
+
+  function TAnagraphs.GetAn_edi: IJanuaField;
+  begin
+    Result := FAn_edi;
+  end;
+
+  procedure TAnagraphs.SetAn_edi(const Value: IJanuaField);
+  begin
+    FAn_edi := Value;
+  end;
+
+  function TAnagraphs.GetAn_privacy: IJanuaField;
+  begin
+    Result := FAn_privacy;
+  end;
+
+  procedure TAnagraphs.SetAn_privacy(const Value: IJanuaField);
+  begin
+    FAn_privacy := Value;
+  end;
+
+  function TAnagraphs.GetAn_office_id: IJanuaField;
+  begin
+    Result := FAn_office_id;
+  end;
+
+  procedure TAnagraphs.SetAn_office_id(const Value: IJanuaField);
+  begin
+    FAn_office_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_cod_prov_rif: IJanuaField;
+  begin
+    Result := FAn_cod_prov_rif;
+  end;
+
+  procedure TAnagraphs.SetAn_cod_prov_rif(const Value: IJanuaField);
+  begin
+    FAn_cod_prov_rif := Value;
+  end;
+
+  function TAnagraphs.GetAn_data_fido: IJanuaField;
+  begin
+    Result := FAn_data_fido;
+  end;
+
+  procedure TAnagraphs.SetAn_data_fido(const Value: IJanuaField);
+  begin
+    FAn_data_fido := Value;
+  end;
+
+  function TAnagraphs.GetAn_user_insert: IJanuaField;
+  begin
+    Result := FAn_user_insert;
+  end;
+
+  procedure TAnagraphs.SetAn_user_insert(const Value: IJanuaField);
+  begin
+    FAn_user_insert := Value;
+  end;
+
+  function TAnagraphs.GetAn_user_update: IJanuaField;
+  begin
+    Result := FAn_user_update;
+  end;
+
+  procedure TAnagraphs.SetAn_user_update(const Value: IJanuaField);
+  begin
+    FAn_user_update := Value;
+  end;
+
+  function TAnagraphs.GetAn_area_id: IJanuaField;
+  begin
+    Result := FAn_area_id;
+  end;
+
+  procedure TAnagraphs.SetAn_area_id(const Value: IJanuaField);
+  begin
+    FAn_area_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_agent_id: IJanuaField;
+  begin
+    Result := FAn_agent_id;
+  end;
+
+  procedure TAnagraphs.SetAn_agent_id(const Value: IJanuaField);
+  begin
+    FAn_agent_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_area_code: IJanuaField;
+  begin
+    Result := FAn_area_code;
+  end;
+
+  procedure TAnagraphs.SetAn_area_code(const Value: IJanuaField);
+  begin
+    FAn_area_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_zone_id: IJanuaField;
+  begin
+    Result := FAn_zone_id;
+  end;
+
+  procedure TAnagraphs.SetAn_zone_id(const Value: IJanuaField);
+  begin
+    FAn_zone_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_ins_id: IJanuaField;
+  begin
+    Result := FAn_ins_id;
+  end;
+
+  procedure TAnagraphs.SetAn_ins_id(const Value: IJanuaField);
+  begin
+    FAn_ins_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_upd_id: IJanuaField;
+  begin
+    Result := FAn_upd_id;
+  end;
+
+  procedure TAnagraphs.SetAn_upd_id(const Value: IJanuaField);
+  begin
+    FAn_upd_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_documents: IJanuaField;
+  begin
+    Result := FAn_documents;
+  end;
+
+  procedure TAnagraphs.SetAn_documents(const Value: IJanuaField);
+  begin
+    FAn_documents := Value;
+  end;
+
+  function TAnagraphs.GetAn_last_date: IJanuaField;
+  begin
+    Result := FAn_last_date;
+  end;
+
+  procedure TAnagraphs.SetAn_last_date(const Value: IJanuaField);
+  begin
+    FAn_last_date := Value;
+  end;
+
+  function TAnagraphs.GetAn_birthdate: IJanuaField;
+  begin
+    Result := FAn_birthdate;
+  end;
+
+  procedure TAnagraphs.SetAn_birthdate(const Value: IJanuaField);
+  begin
+    FAn_birthdate := Value;
+  end;
+
+  function TAnagraphs.GetAn_office_type_id: IJanuaField;
+  begin
+    Result := FAn_office_type_id;
+  end;
+
+  procedure TAnagraphs.SetAn_office_type_id(const Value: IJanuaField);
+  begin
+    FAn_office_type_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_searchname: IJanuaField;
+  begin
+    Result := FAn_searchname;
+  end;
+
+  procedure TAnagraphs.SetAn_searchname(const Value: IJanuaField);
+  begin
+    FAn_searchname := Value;
+  end;
+
+  function TAnagraphs.GetAn_extra_ue_flag: IJanuaField;
+  begin
+    Result := FAn_extra_ue_flag;
+  end;
+
+  procedure TAnagraphs.SetAn_extra_ue_flag(const Value: IJanuaField);
+  begin
+    FAn_extra_ue_flag := Value;
+  end;
+
+  function TAnagraphs.GetAn_external_code: IJanuaField;
+  begin
+    Result := FAn_external_code;
+  end;
+
+  procedure TAnagraphs.SetAn_external_code(const Value: IJanuaField);
+  begin
+    FAn_external_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_vat_id: IJanuaField;
+  begin
+    Result := FAn_vat_id;
+  end;
+
+  procedure TAnagraphs.SetAn_vat_id(const Value: IJanuaField);
+  begin
+    FAn_vat_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_personal_fiscal_code: IJanuaField;
+  begin
+    Result := FAn_personal_fiscal_code;
+  end;
+
+  procedure TAnagraphs.SetAn_personal_fiscal_code(const Value: IJanuaField);
+  begin
+    FAn_personal_fiscal_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_privacy_print: IJanuaField;
+  begin
+    Result := FAn_privacy_print;
+  end;
+
+  procedure TAnagraphs.SetAn_privacy_print(const Value: IJanuaField);
+  begin
+    FAn_privacy_print := Value;
+  end;
+
+  function TAnagraphs.GetAn_sms: IJanuaField;
+  begin
+    Result := FAn_sms;
+  end;
+
+  procedure TAnagraphs.SetAn_sms(const Value: IJanuaField);
+  begin
+    FAn_sms := Value;
+  end;
+
+  function TAnagraphs.GetAn_encrypted_fiscal_code: IJanuaField;
+  begin
+    Result := FAn_encrypted_fiscal_code;
+  end;
+
+  procedure TAnagraphs.SetAn_encrypted_fiscal_code(const Value: IJanuaField);
+  begin
+    FAn_encrypted_fiscal_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_vat_purcentage: IJanuaField;
+  begin
+    Result := FAn_vat_purcentage;
+  end;
+
+  procedure TAnagraphs.SetAn_vat_purcentage(const Value: IJanuaField);
+  begin
+    FAn_vat_purcentage := Value;
+  end;
+
+  function TAnagraphs.GetAn_status: IJanuaField;
+  begin
+    Result := FAn_status;
+  end;
+
+  procedure TAnagraphs.SetAn_status(const Value: IJanuaField);
+  begin
+    FAn_status := Value;
+  end;
+
+  function TAnagraphs.GetAn_ownsite: IJanuaField;
+  begin
+    Result := FAn_ownsite;
+  end;
+
+  procedure TAnagraphs.SetAn_ownsite(const Value: IJanuaField);
+  begin
+    FAn_ownsite := Value;
+  end;
+
+  function TAnagraphs.GetAn_insurance_id: IJanuaField;
+  begin
+    Result := FAn_insurance_id;
+  end;
+
+  procedure TAnagraphs.SetAn_insurance_id(const Value: IJanuaField);
+  begin
+    FAn_insurance_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_anagraphs_anagraph_id: IJanuaField;
+  begin
+    Result := FAn_anagraphs_anagraph_id;
+  end;
+
+  procedure TAnagraphs.SetAn_anagraphs_anagraph_id(const Value: IJanuaField);
+  begin
+    FAn_anagraphs_anagraph_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_main_language_code: IJanuaField;
+  begin
+    Result := FAn_main_language_code;
+  end;
+
+  procedure TAnagraphs.SetAn_main_language_code(const Value: IJanuaField);
+  begin
+    FAn_main_language_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_main_culture_code: IJanuaField;
+  begin
+    Result := FAn_main_culture_code;
+  end;
+
+  procedure TAnagraphs.SetAn_main_culture_code(const Value: IJanuaField);
+  begin
+    FAn_main_culture_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_fiscal_code: IJanuaField;
+  begin
+    Result := FAn_fiscal_code;
+  end;
+
+  procedure TAnagraphs.SetAn_fiscal_code(const Value: IJanuaField);
+  begin
+    FAn_fiscal_code := Value;
+  end;
+
+  function TAnagraphs.GetAn_main_group_id: IJanuaField;
+  begin
+    Result := FAn_main_group_id;
+  end;
+
+  procedure TAnagraphs.SetAn_main_group_id(const Value: IJanuaField);
+  begin
+    FAn_main_group_id := Value;
+  end;
+
+  function TAnagraphs.GetAn_image_id: IJanuaField;
+  begin
+    Result := FAn_image_id;
+  end;
+
+  procedure TAnagraphs.SetAn_image_id(const Value: IJanuaField);
+  begin
+    FAn_image_id := Value;
+  end;
+
+  function TAnagraphs.GetLatitude: IJanuaField;
+  begin
+    Result := FLatitude;
+  end;
+
+  procedure TAnagraphs.SetLatitude(const Value: IJanuaField);
+  begin
+    FLatitude := Value;
+  end;
+
+  function TAnagraphs.GetLongitude: IJanuaField;
+  begin
+    Result := FLongitude;
+  end;
+
+  procedure TAnagraphs.SetLongitude(const Value: IJanuaField);
+  begin
+    FLongitude := Value;
+  end;
+
+  function TAnagraphs.GetTest: IJanuaField;
+  begin
+    Result := FTest;
+  end;
+
+  procedure TAnagraphs.SetTest(const Value: IJanuaField);
+  begin
+    FTest := Value;
+  end;
+
+  function TAnagraphs.GetSearch_index: IJanuaField;
+  begin
+    Result := FSearch_index;
+  end;
+
+  procedure TAnagraphs.SetSearch_index(const Value: IJanuaField);
+  begin
+    FSearch_index := Value;
+  end;
+
+  function TAnagraphs.GetAn_birthplace: IJanuaField;
+  begin
+    Result := FAn_birthplace;
+  end;
+
+  procedure TAnagraphs.SetAn_birthplace(const Value: IJanuaField);
+  begin
+    FAn_birthplace := Value;
+  end;
+
+  function TAnagraphs.GetAn_birthplace_code: IJanuaField;
+  begin
+    Result := FAn_birthplace_code;
+  end;
+
+  procedure TAnagraphs.SetAn_birthplace_code(const Value: IJanuaField);
+  begin
+    FAn_birthplace_code := Value;
+  end;
+
+  function TAnagraphs.GetAnagraph64: IJanuaField;
+  begin
+    Result := FAnagraph64;
+  end;
+
+  procedure TAnagraphs.SetAnagraph64(const Value: IJanuaField);
+  begin
+    FAnagraph64 := Value;
+  end;
+
+  function TAnagraphs.GetAnag_jguid: IJanuaField;
+  begin
+    Result := FAnag_jguid;
+  end;
+
+  procedure TAnagraphs.SetAnag_jguid(const Value: IJanuaField);
+  begin
+    FAnag_jguid := Value;
+  end;
+
+  function TAnagraphs.GetAnag_deleted: IJanuaField;
+  begin
+    Result := FAnag_deleted;
+  end;
+
+  procedure TAnagraphs.SetAnag_deleted(const Value: IJanuaField);
+  begin
+    FAnag_deleted := Value;
+  end;
+
+  { TAnagraphss }
+  constructor TAnagraphss.Create;
+  begin
+    inherited;
+    self.FRecord := Factory.CreateRecord('Anagraphs');
+  end;
+
+  function TAnagraphss.GetDb_schema_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.Db_schema_id;
+  end;
+
+  procedure TAnagraphss.SetDb_schema_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Db_schema_id := Value;
+  end;
+
+  function TAnagraphss.GetAnagraph_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.Anagraph_id;
+  end;
+
+  procedure TAnagraphss.SetAnagraph_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Anagraph_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_title: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_title;
+  end;
+
+  procedure TAnagraphss.SetAn_title(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_title := Value;
+  end;
+
+  function TAnagraphss.GetAn_name: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_name;
+  end;
+
+  procedure TAnagraphss.SetAn_name(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_name := Value;
+  end;
+
+  function TAnagraphss.GetAn_second_name: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_second_name;
+  end;
+
+  procedure TAnagraphss.SetAn_second_name(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_second_name := Value;
+  end;
+
+  function TAnagraphss.GetAn_last_name: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_last_name;
+  end;
+
+  procedure TAnagraphss.SetAn_last_name(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_last_name := Value;
+  end;
+
+  function TAnagraphss.GetAn_notes: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_notes;
+  end;
+
+  procedure TAnagraphss.SetAn_notes(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_notes := Value;
+  end;
+
+  function TAnagraphss.GetAn_address: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_address;
+  end;
+
+  procedure TAnagraphss.SetAn_address(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_address := Value;
+  end;
+
+  function TAnagraphss.GetAn_town: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_town;
+  end;
+
+  procedure TAnagraphss.SetAn_town(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_town := Value;
+  end;
+
+  function TAnagraphss.GetAn_postal_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_postal_code;
+  end;
+
+  procedure TAnagraphss.SetAn_postal_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_postal_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_iso_country_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_iso_country_code;
+  end;
+
+  procedure TAnagraphss.SetAn_iso_country_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_iso_country_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_state_province: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_state_province;
+  end;
+
+  procedure TAnagraphss.SetAn_state_province(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_state_province := Value;
+  end;
+
+  function TAnagraphss.GetAn_phone: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_phone;
+  end;
+
+  procedure TAnagraphss.SetAn_phone(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_phone := Value;
+  end;
+
+  function TAnagraphss.GetAn_phone2: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_phone2;
+  end;
+
+  procedure TAnagraphss.SetAn_phone2(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_phone2 := Value;
+  end;
+
+  function TAnagraphss.GetAn_fax: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_fax;
+  end;
+
+  procedure TAnagraphss.SetAn_fax(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_fax := Value;
+  end;
+
+  function TAnagraphss.GetAn_cellular: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_cellular;
+  end;
+
+  procedure TAnagraphss.SetAn_cellular(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_cellular := Value;
+  end;
+
+  function TAnagraphss.GetAn_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_code;
+  end;
+
+  procedure TAnagraphss.SetAn_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_vat_numeric: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_vat_numeric;
+  end;
+
+  procedure TAnagraphss.SetAn_vat_numeric(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_vat_numeric := Value;
+  end;
+
+  function TAnagraphss.GetAn_email: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_email;
+  end;
+
+  procedure TAnagraphss.SetAn_email(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_email := Value;
+  end;
+
+  function TAnagraphss.GetAn_web: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_web;
+  end;
+
+  procedure TAnagraphss.SetAn_web(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_web := Value;
+  end;
+
+  function TAnagraphss.GetAn_contact_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_contact_id;
+  end;
+
+  procedure TAnagraphss.SetAn_contact_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_contact_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_bank_account: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_bank_account;
+  end;
+
+  procedure TAnagraphss.SetAn_bank_account(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_bank_account := Value;
+  end;
+
+  function TAnagraphss.GetAn_payment_des: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_payment_des;
+  end;
+
+  procedure TAnagraphss.SetAn_payment_des(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_payment_des := Value;
+  end;
+
+  function TAnagraphss.GetAn_discount: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_discount;
+  end;
+
+  procedure TAnagraphss.SetAn_discount(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_discount := Value;
+  end;
+
+  function TAnagraphss.GetAn_distance: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_distance;
+  end;
+
+  procedure TAnagraphss.SetAn_distance(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_distance := Value;
+  end;
+
+  function TAnagraphss.GetAn_distance_mesunit: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_distance_mesunit;
+  end;
+
+  procedure TAnagraphss.SetAn_distance_mesunit(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_distance_mesunit := Value;
+  end;
+
+  function TAnagraphss.GetAn_sex: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_sex;
+  end;
+
+  procedure TAnagraphss.SetAn_sex(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_sex := Value;
+  end;
+
+  function TAnagraphss.GetAn_cod_comune: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_cod_comune;
+  end;
+
+  procedure TAnagraphss.SetAn_cod_comune(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_cod_comune := Value;
+  end;
+
+  function TAnagraphss.GetAn_cod_provincia: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_cod_provincia;
+  end;
+
+  procedure TAnagraphss.SetAn_cod_provincia(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_cod_provincia := Value;
+  end;
+
+  function TAnagraphss.GetAn_credit_line: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_credit_line;
+  end;
+
+  procedure TAnagraphss.SetAn_credit_line(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_credit_line := Value;
+  end;
+
+  function TAnagraphss.GetAn_currency_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_currency_id;
+  end;
+
+  procedure TAnagraphss.SetAn_currency_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_currency_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_cat_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_cat_id;
+  end;
+
+  procedure TAnagraphss.SetAn_cat_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_cat_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_notes2: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_notes2;
+  end;
+
+  procedure TAnagraphss.SetAn_notes2(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_notes2 := Value;
+  end;
+
+  function TAnagraphss.GetAn_notes3: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_notes3;
+  end;
+
+  procedure TAnagraphss.SetAn_notes3(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_notes3 := Value;
+  end;
+
+  function TAnagraphss.GetAn_edi: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_edi;
+  end;
+
+  procedure TAnagraphss.SetAn_edi(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_edi := Value;
+  end;
+
+  function TAnagraphss.GetAn_privacy: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_privacy;
+  end;
+
+  procedure TAnagraphss.SetAn_privacy(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_privacy := Value;
+  end;
+
+  function TAnagraphss.GetAn_office_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_office_id;
+  end;
+
+  procedure TAnagraphss.SetAn_office_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_office_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_cod_prov_rif: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_cod_prov_rif;
+  end;
+
+  procedure TAnagraphss.SetAn_cod_prov_rif(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_cod_prov_rif := Value;
+  end;
+
+  function TAnagraphss.GetAn_data_fido: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_data_fido;
+  end;
+
+  procedure TAnagraphss.SetAn_data_fido(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_data_fido := Value;
+  end;
+
+  function TAnagraphss.GetAn_user_insert: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_user_insert;
+  end;
+
+  procedure TAnagraphss.SetAn_user_insert(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_user_insert := Value;
+  end;
+
+  function TAnagraphss.GetAn_user_update: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_user_update;
+  end;
+
+  procedure TAnagraphss.SetAn_user_update(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_user_update := Value;
+  end;
+
+  function TAnagraphss.GetAn_area_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_area_id;
+  end;
+
+  procedure TAnagraphss.SetAn_area_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_area_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_agent_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_agent_id;
+  end;
+
+  procedure TAnagraphss.SetAn_agent_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_agent_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_area_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_area_code;
+  end;
+
+  procedure TAnagraphss.SetAn_area_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_area_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_zone_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_zone_id;
+  end;
+
+  procedure TAnagraphss.SetAn_zone_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_zone_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_ins_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_ins_id;
+  end;
+
+  procedure TAnagraphss.SetAn_ins_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_ins_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_upd_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_upd_id;
+  end;
+
+  procedure TAnagraphss.SetAn_upd_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_upd_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_documents: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_documents;
+  end;
+
+  procedure TAnagraphss.SetAn_documents(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_documents := Value;
+  end;
+
+  function TAnagraphss.GetAn_last_date: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_last_date;
+  end;
+
+  procedure TAnagraphss.SetAn_last_date(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_last_date := Value;
+  end;
+
+  function TAnagraphss.GetAn_birthdate: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_birthdate;
+  end;
+
+  procedure TAnagraphss.SetAn_birthdate(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_birthdate := Value;
+  end;
+
+  function TAnagraphss.GetAn_office_type_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_office_type_id;
+  end;
+
+  procedure TAnagraphss.SetAn_office_type_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_office_type_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_searchname: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_searchname;
+  end;
+
+  procedure TAnagraphss.SetAn_searchname(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_searchname := Value;
+  end;
+
+  function TAnagraphss.GetAn_extra_ue_flag: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_extra_ue_flag;
+  end;
+
+  procedure TAnagraphss.SetAn_extra_ue_flag(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_extra_ue_flag := Value;
+  end;
+
+  function TAnagraphss.GetAn_external_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_external_code;
+  end;
+
+  procedure TAnagraphss.SetAn_external_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_external_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_vat_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_vat_id;
+  end;
+
+  procedure TAnagraphss.SetAn_vat_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_vat_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_personal_fiscal_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_personal_fiscal_code;
+  end;
+
+  procedure TAnagraphss.SetAn_personal_fiscal_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_personal_fiscal_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_privacy_print: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_privacy_print;
+  end;
+
+  procedure TAnagraphss.SetAn_privacy_print(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_privacy_print := Value;
+  end;
+
+  function TAnagraphss.GetAn_sms: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_sms;
+  end;
+
+  procedure TAnagraphss.SetAn_sms(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_sms := Value;
+  end;
+
+  function TAnagraphss.GetAn_encrypted_fiscal_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_encrypted_fiscal_code;
+  end;
+
+  procedure TAnagraphss.SetAn_encrypted_fiscal_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_encrypted_fiscal_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_vat_purcentage: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_vat_purcentage;
+  end;
+
+  procedure TAnagraphss.SetAn_vat_purcentage(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_vat_purcentage := Value;
+  end;
+
+  function TAnagraphss.GetAn_status: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_status;
+  end;
+
+  procedure TAnagraphss.SetAn_status(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_status := Value;
+  end;
+
+  function TAnagraphss.GetAn_ownsite: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_ownsite;
+  end;
+
+  procedure TAnagraphss.SetAn_ownsite(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_ownsite := Value;
+  end;
+
+  function TAnagraphss.GetAn_insurance_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_insurance_id;
+  end;
+
+  procedure TAnagraphss.SetAn_insurance_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_insurance_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_anagraphs_anagraph_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_anagraphs_anagraph_id;
+  end;
+
+  procedure TAnagraphss.SetAn_anagraphs_anagraph_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_anagraphs_anagraph_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_main_language_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_main_language_code;
+  end;
+
+  procedure TAnagraphss.SetAn_main_language_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_main_language_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_main_culture_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_main_culture_code;
+  end;
+
+  procedure TAnagraphss.SetAn_main_culture_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_main_culture_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_fiscal_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_fiscal_code;
+  end;
+
+  procedure TAnagraphss.SetAn_fiscal_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_fiscal_code := Value;
+  end;
+
+  function TAnagraphss.GetAn_main_group_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_main_group_id;
+  end;
+
+  procedure TAnagraphss.SetAn_main_group_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_main_group_id := Value;
+  end;
+
+  function TAnagraphss.GetAn_image_id: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_image_id;
+  end;
+
+  procedure TAnagraphss.SetAn_image_id(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_image_id := Value;
+  end;
+
+  function TAnagraphss.GetLatitude: IJanuaField;
+  begin
+    Result := self.Anagraphs.Latitude;
+  end;
+
+  procedure TAnagraphss.SetLatitude(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Latitude := Value;
+  end;
+
+  function TAnagraphss.GetLongitude: IJanuaField;
+  begin
+    Result := self.Anagraphs.Longitude;
+  end;
+
+  procedure TAnagraphss.SetLongitude(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Longitude := Value;
+  end;
+
+  function TAnagraphss.GetTest: IJanuaField;
+  begin
+    Result := self.Anagraphs.Test;
+  end;
+
+  procedure TAnagraphss.SetTest(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Test := Value;
+  end;
+
+  function TAnagraphss.GetSearch_index: IJanuaField;
+  begin
+    Result := self.Anagraphs.Search_index;
+  end;
+
+  procedure TAnagraphss.SetSearch_index(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Search_index := Value;
+  end;
+
+  function TAnagraphss.GetAn_birthplace: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_birthplace;
+  end;
+
+  procedure TAnagraphss.SetAn_birthplace(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_birthplace := Value;
+  end;
+
+  function TAnagraphss.GetAn_birthplace_code: IJanuaField;
+  begin
+    Result := self.Anagraphs.An_birthplace_code;
+  end;
+
+  procedure TAnagraphss.SetAn_birthplace_code(const Value: IJanuaField);
+  begin
+    self.Anagraphs.An_birthplace_code := Value;
+  end;
+
+  function TAnagraphss.GetAnagraph64: IJanuaField;
+  begin
+    Result := self.Anagraphs.Anagraph64;
+  end;
+
+  procedure TAnagraphss.SetAnagraph64(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Anagraph64 := Value;
+  end;
+
+  function TAnagraphss.GetAnag_jguid: IJanuaField;
+  begin
+    Result := self.Anagraphs.Anag_jguid;
+  end;
+
+  procedure TAnagraphss.SetAnag_jguid(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Anag_jguid := Value;
+  end;
+
+  function TAnagraphss.GetAnag_deleted: IJanuaField;
+  begin
+    Result := self.Anagraphs.Anag_deleted;
+  end;
+
+  procedure TAnagraphss.SetAnag_deleted(const Value: IJanuaField);
+  begin
+    self.Anagraphs.Anag_deleted := Value;
+  end;
+
+  function TAnagraphss.GetAnagraphs: IAnagraphs;
+  begin
+    Result := self.FRecord as IAnagraphs;
+  end;
+
+  procedure TAnagraphss.SetAnagraphs(const Value: IAnagraphs);
+  begin
+    self.FRecord := Value;
+  end;
+
+  { TAnagraphsFactory }
+
+  class function TAnagraphsFactory.CreateRecord(const aKey: string): IAnagraphs;
+  begin
+    Result := TAnagraphs.Create;
+  end;
+
+  class function TAnagraphsFactory.CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage):Anagraphss;
+  begin
+    Result := TAnagraphss.Create(aName, aTableName);
+  end;
+
+end.

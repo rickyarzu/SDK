@@ -1,0 +1,47 @@
+package htmlfastreport;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'HTML Report Library - Fast Report VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  soaprtl,
+  hclcore,
+  htmlcomp,
+  htmleditcore,
+  htmledit,
+  vclx,
+  frx,
+  fs;
+
+contains
+  htFastReport in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\reports\htFastReport.pas',
+  htFastReportEditor in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\reports\htFastReportEditor.pas' {HtFastReportEditorForm};
+
+end.

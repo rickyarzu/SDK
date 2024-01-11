@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Use Repsonse Text with inner HTML</title>
+<script type="text/javascript">
+var XMLHttp
+
+function createXMLHttpRequest() {
+
+  if (window.ActiveXObject) {
+	  xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+	  
+  }
+  else if (window.XMLHttpRequest) {
+	xmlHttp = new XMLHttpRequest  
+  }
+
+}
+
+
+function startRequest() {
+	createXMLHttpRequest();
+	xmlHttp.onreadystatechange = handleStateChange;
+	
+	xmlHttp.open("GET", "innerHTML.xml", true);
+	
+	
+	
+	xmlHttp.send(null);	
+	
+
+	
+	
+}
+
+function handleStateChange() {
+	window.alert(xmlHttp.readyState);
+    if (xmlHttp.readyState == 4) {
+	window.alert(xmlHttp.status);	
+		if (xmlHttp.status == 0) {
+			document.getElementById("results").innerHTML = xmlHttp.responseText;
+		}
+		
+	}
+	
+}
+
+</script>
+
+</head>
+
+<body>
+   <form action="#">
+     <input type="button" value="Cosa dobbiamo fare oggi????" onclick="startRequest();" />
+   </form>
+  <div id="results"><div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="88ujtztdcpk_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,40,279,248" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SetGender(Janua.Core.Classes.TJanuaGenderType)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.User" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.FirstName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SecondName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.LastName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Gender" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.GenderCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.BirthDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.PublicEmail" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Address" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.BirthLocation" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.AsJSONObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.FullName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SaveToDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SetGenderCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.User">
+        <property name="sourceAnchor" value="900,288" />
+        <property name="targetAnchor" value="900,380" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.System.TJanuaUser">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="800,380,201,263" />
+      <property name="hideAttribute" value="False" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.Username" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.SocialID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.SocialTypeID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.SocialType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.Email" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.Password" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.Key" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.role_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.role_name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.SelectedRole" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaUser.Roles" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.getRoleByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.GetRolebyIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.GetRoleByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.SetRoleByID(System.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.ToJSON()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaUser.AsSJSONObJect()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="340,40,298,925" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FLoginDialog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FLocalConnect" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FJanuaOS" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FLoadedProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FAppID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FAppKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FSearchUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetLoginDialog(Janua.Core.Customcontrols.TJanuaCustomDialogLogin)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetLoginPrompt(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetLocalConnect(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetJanuaOS(Janua.Core.System.TJanuaOS)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerList(System.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerSchema(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerTCPPort(System.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetLoadedProfile(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetcdsUsersList(Datasnap.DBClient.TClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetAppID(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetAppKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetSearchUserProfile(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FcdsUsersList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FPassword" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FUsername" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FSessionKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FLoginPrompt" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FCounter" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerTCPPort" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerSchema" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetUserProfile(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetUsername(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.CheckUp()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetApplicationProfile(Janua.Core.Classes.TJanuaApplicationProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Login()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SaveProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.NewProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.CheckNewUser(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.CreateNewUser(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LoadProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetUserDefaultSchema(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetDefaultSchema(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUserByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.AppLogin(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.AppLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.CheckNewUserJSON(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LoginJSON()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.CreateNewUserJSON(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUserJSON(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUserByIDJSON(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SessionKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Username" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.Password" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LoginDialog" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LoginPrompt" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LocalConnect" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.JanuaOS" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerTCPPort" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.LoadedProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.cdsUsersList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.AppID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.AppKey" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FUserProfile">
+        <property name="sourceAnchor" value="638,164" />
+        <property name="targetAnchor" value="740,164" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FSearchUserProfile">
+        <property name="sourceAnchor" value="638,156" />
+        <property name="targetAnchor" value="740,156" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.UserProfile">
+        <property name="sourceAnchor" value="638,148" />
+        <property name="targetAnchor" value="740,148" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SearchUserProfile">
+        <property name="sourceAnchor" value="638,140" />
+        <property name="targetAnchor" value="740,140" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.InternalLogin()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerPublicKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerPassword" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.FServerUser" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerPublicKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.SetServerUser(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerUser" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerPassword" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.System.TJanuaCustomServerSystem.ServerPublicKey" />
+    </reference>
+  </view>
+</nodeSet>

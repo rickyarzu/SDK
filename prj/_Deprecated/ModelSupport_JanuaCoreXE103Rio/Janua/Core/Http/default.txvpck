@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="3gi0uoomuxmc7yq3r_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomain">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomain.url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomain.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomain.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomain.Whois" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCharsetType">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCharsetType.jcsUTF8" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCharsetType.jcsANSI" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCharsetType.jcsASCII" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCharsetType.jcsISO8859_1" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FMimeType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FMimeText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FJanuaSparkleServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FJanuaSparkleServerModule" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.SetMimeType(Janua.Core.Http.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.SetMimeText(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.SetJanuaSparkleServer(Janua.Core.Http.TJanuaSparkleCoreServer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.SetJanuaSparkleServerModule(Janua.Core.Http.TJanuaSparkleHttpServerModule)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.JanuaSparkleServerModule" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.ContentType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.ContentText" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.JanuaSparkleServer" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FMimeType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FJanuaSparkleServer" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.FJanuaSparkleServerModule" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.JanuaSparkleServerModule" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.ContentType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServerModule.JanuaSparkleServer" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jptFtp" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jptTcpIp" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jptUdp" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jptHttp" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jtpHttps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jtpSMTP" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jtpPOP" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaProtocol.jtpIMAP" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.@unitclass.JanuaMimeString" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.@unitclass.JanuaCharsetString" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FWebBrokerRequest" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetWebBrokerRequest(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FDebug" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FRequestHandler" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FpostParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FgetParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FJanuaIsoCulture" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FServerLog" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetWebProfile(Janua.Core.Http.TJanuaRequestHandler)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetJanuaIsoCulture(Janua.Core.Classes.TJanuaIsoLanguageCountry)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetBrowserName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetIsMobile(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetServerLog(Janua.Core.Http.TJanuaCustomServerLogs)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.SetLanguageCode(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.RecordSessionLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.GetWebProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.AssignWebProfile(Janua.Core.Http.TJanuaRequestHandler)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.WebBrokerRequest" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.RequestHandler" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.JanuaIsoCulture" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.ServerLog" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FRequestHandler" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.FServerLog" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.RequestHandler" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestParser.ServerLog" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.FJanuaMimeType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.FContentType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.SetContentType(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.SetJanuaMimeType(Janua.Core.Http.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.ProcessRequest(Sparkle.HttpServer.Context.THttpServerContext)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.ContentType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.JanuaMimeType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.FJanuaMimeType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleHttpServerModule.JanuaMimeType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FContentType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FContentString" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FRawContent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FContent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FEncoding" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetContent(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetContentString(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetContentType(Janua.Core.Http.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetRawContent(.Byte[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetEncoding(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.SetFromWebBrokerRequest(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.Content" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.RawContent" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.ContentType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.ContentString" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.Encoding" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.FContentType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaContent.ContentType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.FDebug" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.FpostParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.FgetParams" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.SetDebug(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.SetgetParams(Janua.Core.Params.TJanuaParamsReader)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.SetpostParams(Janua.Core.Params.TJanuaParamsReader)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.FWebProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.Debug" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.getParams" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.postParams" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomRequestManager.FWebProfile" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.FWebProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.FWebProfileID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.SetWebProfile(Janua.Core.Http.TJanuaRequestHandler)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.SetWebProfileID(.Int64)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.WebProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.WebProfileID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.RecoverProfileID(.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.SaveWebProfile(Janua.Core.Http.TJanuaRequestHandler)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.FWebProfile" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaCustomServerLogs.WebProfile" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FWebBrokerRequest" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FContent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FIsMobile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FRawHeaders" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FLanguageCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FIPAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FRemoteAddr" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FPathInfo" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FHost" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FBrowserName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FUserAgent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetContent(Janua.Core.Http.TJanuaContent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetBrowserName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetHost(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetIPAddress(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetIsMobile(.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetLanguageCode(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetPathInfo(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetRawHeaders(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetRemoteAddr(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetUserAgent(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.SetFromWebBrokerRequest(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.RawHeaders" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.IPAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.PathInfo" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.UserAgent" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.LanguageCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.RemoteAddr" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.Host" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.IsMobile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.BrowserName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.WebBrokerRequest" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.Content" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.FContent" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaRequestHandler.Content" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.FHttpSysServer" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.SetHttpSysServer(Sparkle.HttpSys.Server.THttpSysServer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.HttpSysServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.FProtocol" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.FServer" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.SetProtocol(Janua.Core.Http.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.SetServer(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Deactivate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Server" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Protocol" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.FProtocol" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleCoreServer.Protocol" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtApplicationJson" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtApplicationXml" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtTextHtml" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtTextCss" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtTextXml" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtTextPlain" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtOctetStream" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeType.jmtApplicationJavascript" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.FJanuaMimeType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.FContentType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.FExtension" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.SetContentType(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.SetJanuaMimeType(Janua.Core.Http.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.SetExtension(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.JanuaMimeType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.ContentType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.Extension" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.FJanuaMimeType" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaMimeObject.JanuaMimeType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.Domains" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.SelectedDomain" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.getDomainByName(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.getDomainByUrlRequest(System.@unitclass.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.AddDomain(Janua.Core.Http.TJanuaDomain)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.Create(.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.Domains" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaDomains.SelectedDomain" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Http.TJanuaSparkleRequestEvent">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::u1c0o929rb60itsms_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

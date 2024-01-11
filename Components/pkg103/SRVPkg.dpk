@@ -1,0 +1,96 @@
+package SRVPkg;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView: ScaleRichView for Delphi 10.3 Rio runtime (32-bit)'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg,
+  RVPkg,
+  RichViewActionsD;
+
+contains
+  SRVIMouse in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVIMouse.pas',
+  SRVALUTF8_BLR in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_BLR.pas',
+  SRVALUTF8_Bul in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Bul.pas',
+  SRVALUTF8_Cat in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Cat.pas',
+  SRVALUTF8_ChineseBig5 in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_ChineseBig5.pas',
+  SRVALUTF8_ChsZh in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_ChsZh.pas',
+  SRVALUTF8_Czech in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Czech.pas',
+  SRVALUTF8_Danish in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Danish.pas',
+  SRVALUTF8_De in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_De.pas',
+  SRVALUTF8_Dutch in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Dutch.pas',
+  SRVALUTF8_EngUS in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_EngUS.pas',
+  SRVALUTF8_Esp in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Esp.pas',
+  SRVALUTF8_Farsi in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Farsi.pas',
+  SRVALUTF8_Fin in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Fin.pas',
+  SRVALUTF8_FR in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_FR.pas',
+  SRVALUTF8_Hun in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Hun.pas',
+  SRVALUTF8_Ita in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Ita.pas',
+  SRVALUTF8_Kr in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Kr.pas',
+  SRVALUTF8_Lith in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Lith.pas',
+  SRVALUTF8_Malay in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Malay.pas',
+  SRVALUTF8_NorBok in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_NorBok.pas',
+  SRVALUTF8_Polish in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Polish.pas',
+  SRVALUTF8_PtBr in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_PtBr.pas',
+  SRVALUTF8_PtPt in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_PtPt.pas',
+  SRVALUTF8_Rom in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Rom.pas',
+  SRVALUTF8_Rus in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Rus.pas',
+  SRVALUTF8_Slovak in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Slovak.pas',
+  SRVALUTF8_Sv in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Sv.pas',
+  SRVALUTF8_Thai in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Thai.pas',
+  SRVALUTF8_Turkish in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Turkish.pas',
+  SRVALUTF8_Ukr in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Ukr.pas',
+  SRVALUTF8_Hindi in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Hindi.pas',
+  SRVALUTF8_Arm in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Arm.pas',
+  SRVALUTF8_Japanese in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALUTF8_Japanese.pas',
+  SclRView in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SclRView.pas',
+  SclRVRuler in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SclRVRuler.pas',
+  SRVControl in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVControl.pas',
+  SRVCtrl in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVCtrl.pas',
+  SRVPageScroll in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVPageScroll.pas',
+  SRVPreview in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVPreview.pas',
+  SRVPrint in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVPrint.pas',
+  SRVPrtInfo in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVPrtInfo.pas',
+  SRVToolBar in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVToolBar.pas',
+  SRVToolWindow in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVToolWindow.pas',
+  TFSclSelectData in '..\..\..\Libraries\TRichView\ScaleRichView\Source\TFSclSelectData.pas' {FSelectData},
+  SRVTabSet in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVTabSet.pas',
+  SRVSBar in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVSBar.pas',
+  SRVSkinManager in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVSkinManager.pas',
+  SRVPageSetupFrm in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVPageSetupFrm.pas' {frmSRVPageSetup},
+  SRVActions in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVActions.pas',
+  SRVActionDM in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVActionDM.pas' {dmSRVActions: TDataModule},
+  SRVALocalize in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVALocalize.pas',
+  SRVAResourceLanguage in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVAResourceLanguage.pas',
+  SRVZoomPanel in '..\..\..\Libraries\TRichView\ScaleRichView\Source\SRVZoomPanel.pas';
+
+end.

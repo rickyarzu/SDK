@@ -1,0 +1,3603 @@
+unit januacoretypes;
+
+{$I JANUACORE.INC}
+
+
+interface
+
+uses
+  {$IFDEF WEBBROKER}
+    Web.HTTPApp,
+ {$ENDIF}
+ {$IFDEF FPC}
+  {$IFDEF LINUX}
+   unixtype, linux,
+  {$ENDIF LINUX}
+   Classes, Types, TypInfo, SysUtils, DB, fpjson, fgl;
+ {$ELSE}
+  System.Classes, System.Types, System.TypInfo, System.SysUtils, System.IOUtils, System.Json,
+  System.DateUtils,
+  System.Diagnostics, // For TStopWatch Record
+ FireDAC.Comp.Client, // FireDac Client for MemTable
+ Data.DB;
+ {$ENDIF}
+
+  {$IFDEF FPC}
+ type
+  { TStopWatch }
+  TStopWatch = record
+  private
+    const
+      C_THOUSAND = 1000;
+      C_MILLION  = C_THOUSAND * C_THOUSAND;
+      C_BILLION  = C_THOUSAND * C_THOUSAND * C_THOUSAND;
+      TicksPerNanoSecond   = 100;
+      TicksPerMilliSecond  =  10000;
+      TicksPerSecond       = C_BILLION div 100;
+    Type
+      TBaseMesure = {$IFDEF LINUX} TTimeSpec; {$ELSE} Int64; {$ENDIF LINUX}
+  strict private
+    class var FFrequency : Int64;
+    class var FIsHighResolution : Boolean;
+  strict private
+    FElapsed : Int64;
+    FRunning : Boolean;
+     FStartPosition : TBaseMesure;
+  strict private
+    procedure CheckInitialization();inline;
+    function GetElapsedMilliseconds: Int64;
+    function GetElapsedTicks: Int64;
+  public
+    class function Create() : TStopWatch;static;
+    class function StartNew() : TStopWatch;static;
+    class property Frequency : Int64 read FFrequency;
+    class property IsHighResolution : Boolean read FIsHighResolution;
+    procedure Reset();
+    procedure Start();
+    procedure Stop();
+    property ElapsedMilliseconds : Int64 read GetElapsedMilliseconds;
+    property ElapsedTicks : Int64 read GetElapsedTicks;
+    property IsRunning : Boolean read FRunning;
+  end;
+
+resourcestring
+  sStopWatchNotInitialized = 'The StopWatch is not initialized.';
+   {$ENDIF}
+
+
+type
+  /// <summary>
+  /// This are the possibile Types of properties managed by The System.
+  /// </summary>
+  TJanuaPropertyType = (
+    /// <summary>
+    /// Not set or Unknown Property
+    /// </summary>
+    jptUnknown,
+    /// <summary>
+    /// Delphi currency datatype can store internally values to correct rounding procedures on
+    /// Currency values such as Euros, Pounds or Dollars.
+    /// </summary>
+    jptCurrency,
+
+    jptExtended,
+
+    /// <summary>
+    /// Date or just TDateTime property
+    /// </summary>
+    jptDate,
+
+    /// <summary>
+    /// Date or just TDateTime property
+    /// </summary>
+    jptDateTime,
+
+    /// <summary>
+    /// Integer Number Property
+    /// </summary>
+    jptInteger,
+
+    /// <summary>
+    /// Integer Number Property
+    /// </summary>
+    jptLargeInt,
+
+    /// <summary>
+    /// Filename descendant of TFileName property
+    /// </summary>
+    jptFilename,
+
+    /// <summary>
+    /// Standard UTF String (UTF16 Win and UTF8 Unix)
+    /// </summary>
+    jptString,
+
+    /// <summary>
+    /// Floating Point Number
+    /// </summary>
+    jptFloat,
+
+    /// <summary>
+    /// Html formatted Text just a special Text Property
+    /// </summary>
+    jptHtmlText,
+
+    /// <summary>
+    /// Rich Text formatted Text can be a Blob
+    /// </summary>
+    jptRichText,
+
+    /// <summary>
+    /// Rich Text formatted Text can be a Blob
+    /// </summary>
+    jptBoolean,
+
+    /// <summary>
+    /// Delphi Memo or just Text or CBlob Field in Postgres / Oracle
+    /// </summary>
+    jptText,
+
+    /// <summary>
+    /// Blob in Delphi are usually used to manage file content such as Images, Pdf Documents and so on
+    /// </summary>
+    jptBlob,
+
+    /// <summary>
+    /// Bytes in Delphi are usually used to manage non UTF16 Text like a Web Page in UTF8 Format
+    /// </summary>
+    jptBytes,
+
+    /// <summary>
+    /// A standard URL can be absolute or just relative
+    /// </summary>
+    jptUrl);
+
+const
+  JanuaProperty: array [jptUnknown .. jptUrl] of string = ('', 'currency', 'extended', 'date', 'datetime',
+    'integer', 'largeint', 'filename', 'string', 'float', 'html', 'rtf', 'boolean', 'text', 'blob',
+    'bytes', 'url');
+
+  FieldDefaultProperty: array [TJanuaPropertyType] of string = ('', 'AsCurrency', 'AsFloat', 'AsDate',
+    'AsDateTime', 'AsInteger', 'AsLargeInt', 'AsString', 'AsString', 'AsFloat', 'AsString', 'AsString',
+    'AsBoolean', 'AsString', 'AsString', 'AsString', 'AsString');
+
+  {$IFDEF FPC}
+type
+
+  { Guard }
+
+  Guard = class
+    public
+      /// <summary>
+      /// Raises an <see cref="EArgumentException" /> exception.
+      /// </summary>
+      /// <param name="msg">
+      /// The general error message.
+      /// </param>
+      class procedure RaiseArgumentException(const msg: string); overload; static;
+      /// <summary>
+      /// Raises an <see cref="EArgumentNullException" /> exception.
+      /// </summary>
+      class procedure RaiseArgumentNullException(const argumentName: string); overload; static;
+    public
+      class procedure CheckTrue(condition: Boolean; const msg: string = ''); static; inline;
+      class procedure CheckFalse(condition: Boolean; const msg: string = ''); static; inline;
+      class procedure CheckNotNull(const aObjectValue: TObject; const aObjectMessage: string);
+    end;
+    {$ENDIF}
+
+type
+  TJanuaProperty = record
+  private
+    FPropertyType: TJanuaPropertyType;
+    function getName: string;
+    procedure SetPropertyType(const Value: TJanuaPropertyType);
+    procedure SetName(const Value: string);
+  public
+    constructor Create(const aName: string); overload;
+    constructor Create(aType: TJanuaPropertyType); overload;
+    property PropertyType: TJanuaPropertyType read FPropertyType write SetPropertyType;
+    property Name: string read getName write SetName;
+  end;
+
+  // Janua Applications & Application Packages
+
+const
+  sl = sLineBreak;
+
+  // TJsonStringList serve per le proprietà di tipo Json. Che sono di fatto dei 'Text'
+type
+  // <summary> A Json Formatted String to be connected to the proper Editor </summary>
+  TJanuaJsonString = string;
+  TJanuaSQLString = string;
+  TJanuaJSString = string;
+  TJanuaHtmlString = string;
+
+type
+  TJanuaBlob = record
+  private
+    FBlob: TBytes;
+    FIsUnicode: Boolean;
+    FAsByteDynArray: TByteDynArray;
+    function GetAsBytes: TBytes;
+    function GetEncoded64: string;
+    procedure SetEncoded64(const Value: string);
+    procedure SetAsBytes(const Value: TBytes);
+    procedure Setup;
+    function GetAsByteDynArray: TByteDynArray;
+    procedure SetAsByteDynArray(const Value: TByteDynArray);
+    function GetAsBoolean: Boolean;
+    procedure SetAsBoolean(const Value: Boolean);
+  public
+    Constructor Create(aFileName: string); overload;
+    Constructor Create(aStream: TStream); overload;
+    Constructor Create(aIsUnicode: Boolean); overload;
+    procedure LoadFromStream(aStream: TStream);
+    procedure SaveToStream(aStream: TStream);
+    procedure LoadFromFile(aFile: string);
+    procedure SaveToFile(aFile: string);
+    procedure Clear;
+    procedure Assign(aBlob: TJanuaBlob); overload;
+    procedure Assign(aBytes: TBytes); overload;
+    function size: Int64;
+    procedure SetNil;
+    function IsEqual(aBlob: TJanuaBlob): Boolean;
+  public
+    property Encoded64: string read GetEncoded64 write SetEncoded64;
+    property AsBytes: TBytes read GetAsBytes write SetAsBytes;
+    property AsByteDynArray: TByteDynArray read FAsByteDynArray write SetAsByteDynArray;
+    property AsBoolean: Boolean read GetAsBoolean write SetAsBoolean;
+  end;
+
+type
+  TJanuaPlatform = (josWindows, josWin64, josAndroid, josIOS32, josiOS64, josWin32);
+
+type
+  TJanuaLoginError = (jleWrongPassword, jleWrongUsername, JleWrongEmail, jleSystemError);
+
+  TJanuaRegisterError = (jreNone, jreUserAlreadyRegistered, jreWrongUsername, jreWrongEmail, jreSystemError);
+
+  TJanuaApplication = (apNone, japAttorneys, japCloud, japHealth, japErgo, japLawyer, japFootball, japMarket,
+    japUniBoard, japSwapush);
+
+  TJanuaScriptType = (jstUnknown, jstJson, jstJavascript, jstPython, jstSQL, jstHtml, jstPascal, jstCSS,
+    jstCSharp, jstBasic);
+
+const
+  JanuaApplicationCode: array [TJanuaApplication] of string = ('None', 'Attorneys', 'Cloud', 'Health', 'Ergo',
+    'Lawyer', 'Football', 'Market', 'UnibBoard', 'Swapush');
+
+type
+  TJanuaApplicationType = (jatConsoleSrv, jatConsoleClient, jatWinService, jatWebBroker, jatClientWin,
+    jatIntraweb, jatClientTablet, jatLinuxService, jatWinWebBrokerService, jatLinuxWebBrokerService,
+    jatLinuxApacheModule, jatWinApacheModule, jatDefault);
+
+  TJanuaApplicationFramework = (jafServerDatasnap, jafServerWebBroker, jafMac, jafVCL, jafIOSTablet,
+    jafIOSPhone, jafAndroidTablet, jafAndroidPhone, jafLinux64, jafWin32VCL, jafWin64VCL, jafWin64, jafWin32,
+    jafWin32FMX, jafWin64FMX, jafDefault);
+
+type
+  TPrintType = (ptPdf, ptPreview, ptPrint, ptPdfPreview, ptPdfSaveFile);
+  TCallerType = (ctReservation, ctTicketing);
+
+  TJanuaFileType = (jftXml, jftText, jftBinary, jftImage);
+
+  TjanuaCashFormKind = (jfkStandard, jfkReso, jfkDelete);
+
+  TJanuaBarcodeLabel = (jblL7161_A4, jblL7161_A4_gioielli, jblCopyBasic_LP4MS_3821, jbl7161_A4_3,
+    jblAveryClan, jblL7161_A4_2, jblL7159_A4, jblLabel5230, jblL5230Buffetti, jblDymoHorizontal,
+    jblDymoVertical);
+
+type
+  TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird);
+
+const
+  JanuaDBEngineCode: array [TJanuaDBEngine] of string = ('Oracle', 'Postgres', 'MySql', 'MongoDB', 'ODBC',
+    'Interbase', 'Firebird)');
+
+type
+  // Main protocols on internet TCP/IP protocols ..............................
+  TJanuaProtocol = (jptFtp, jptFtps, jptSCP, jptTcpIp, jptUdp, jptHttp, jtpHttps, jtpSMTP, jtpPOP, jtpIMAP,
+    jptStop, jptStompSSL, jptNone);
+
+type
+  TJanuaPaymentMethod = (jppPaypal, jppCreditCard, jppCash, jppWireTransfer);
+  TJanuaPaymentSpec = (jpsMaestro, jpsVisa, jpsPaypal, jpsMasterCard, jpsAmex);
+  TJanuaCurrencyType = (jctEur, jctUSD, jctCHF);
+
+const
+  TJanuaCurrencyCode: array [TJanuaCurrencyType] of string = ('EUR', 'USD', 'CHF');
+
+type
+  TJanuaIntervalType = (jitYears, jitMonths, jitDays, jitQuarters, jitMinutes);
+
+
+  // Janua Http Socket
+
+type
+  TJanuaHttpParamTypes = (jhtString, jhtStrings, jhtMultipart);
+
+  TJanuaHttpMethod = (jhmAny, jhmGet, jhmPut, jhmPost, jhmHead, jhmDelete, jhmPatch, jhmTrace,
+    jhmOptions, jhmNone);
+
+const
+  JanuaHttpMethodString: array [TJanuaHttpMethod] of string = ('Any', 'Get', 'Put', 'Post', 'Head', 'Delete',
+    'Patch', 'Trace', 'Options', 'None');
+
+{$IF Defined(WEBBROKER)}
+
+const
+  JanuaWebBrokerMethod: array [jhmAny .. jhmPatch] of Web.HTTPApp.TMethodType = (mtAny, mtGet, mtPut, mtPost,
+    mtHead, mtDelete, mtPatch);
+{$ENDIF Defined(WEBBROKER)}
+  /// ***************************** Web Methods and Protocols **************************************
+
+  /// ***************************** Http Protocol Classes ******************************************
+
+  // il protocollo di comunicazione per ora è http ed https, è utile soprattutto per il client
+  // potrà variare il Framework usato (Sparkle, Embarcadero e compagnia bella ma il resto rimane).
+const
+  JanuaProtocolText: array [jptFtp .. jptNone] of string = ('ftp', 'ftps', 'scp', 'tcp-ip', 'udp', 'http',
+    'https', 'smtp', 'pop', 'imap', 'stomp', 'stomp+ssl', '');
+  /// Web Broker Specific Classes
+  JanuaProtocolPort: array [jptFtp .. jptNone] of integer = (21, 22, 22, 0, 0, 80, 443, 0, 0, 0, 0, 0, 0);
+
+
+
+  // *************************************** Janua Main Type Definitions *************************************************
+  // ISO COUNTRIES
+
+type
+  TJanuaISOCountries = (jicNone, jicItalia, jicFrance, jicEngland, jicUnitedStates, jicEspana, jicPortugal,
+    jicBrazil, jicArgentina, jicRussia, jicWorld, jicDeutschland);
+
+const
+  JanuaIsoCountry2Code: array [TJanuaISOCountries] of string = ('nn', 'it', 'fr', 'en', 'us', 'es', 'po',
+    'br', 'ar', 'ru', 'ww', 'de');
+
+  JanuaIsoCountry3Code: array [TJanuaISOCountries] of string = ('nnn', 'ita', 'fra', 'eng', 'usa', 'esp',
+    'por', 'bra', 'arg', 'rus', 'www', 'deu');
+
+Type
+
+  TJanuaisoCountryCode = (jicNNN, jicITA, jicGBR, jicUSA, jicFRA, jicPOR, jicESP, jicARG, jicBRA, jicDEU);
+
+  TJanuaisoCultureCode = (jilNone, jilITA_ITA, jilENG_ENG, jilEN_US, jilFRA_FRA, jilPOR_POR, jilPOR_BRA,
+    jilESP_ESP, jilESP_ARG, jilESP_MEX, jilDEU, jilHOL);
+
+  TJanuaLanguage = (jlaNone, jlaItalian, jlaEnglish, jlaFrancais, jlaEspanol, jlaPortugues, jlaRussian,
+    jlaGerman);
+
+const
+  JanuaLanguageCode: array [TJanuaLanguage] of string = ('', 'it', 'en', 'fr', 'es', 'po', 'ru', 'de');
+
+type
+
+  TJanuaCultures = (jicNone_None, jicItalian_Italy, jicEnglish_England, jicEnglish_USA, jicFrancais_France,
+    jicEspanol_Espana, jicEspanol_Argentina, jicPortugues_Portugal, jicPortugues_Brazil,
+    jicDeutsch_Deutschland);
+
+  TPaymentType = (ptCheque, ptCash, ptDraft, ptCreditCard, ptDeferred, ptWireTranfer);
+
+  TReportType = (rtInvoice, rtBof, rtShippingVoucher, rtShippingStatement);
+
+  TDocumentType = (jdtOrder, jdtDocument);
+
+  TRowInsert = (riInsert, riUpdate, riInsertSilent);
+
+  TJanuaDocumentPrintType = (jdtSalesInvoice, jdtBillOfLading);
+
+  TJanuaRSSFeedType = (jrtWordpress, jrtStandard, jrtAIFA, jrtEmbarcadero);
+
+  TJanuaCMSArticleType = (jcaNews, jcaDataSearch);
+
+  TJanuaRoleLevel = (jrlSysAdmin, jrlAppAdmin, jrlAdmin, jrlUser, jrlOperator);
+
+  TJanuaLogType = (jltLog, jltWarning, jltError);
+
+const
+  JanuaLogType: array [TJanuaLogType] of string = ('Message', 'Warning', 'Error');
+
+  // TJanuaRecordStatus is used to tell the State of a Record just to instruct the CRUD procedures how to operate
+  // CRUD : acronym of Create, Read, Update, Delete and is used in both Database and Web Services recordset procedures
+
+type
+  TJanuaGenderType = (Male, Female, Company, Corporate, NotSet);
+
+const
+  JanuaGenderIndex: array [TJanuaGenderType.Male .. TJanuaGenderType.NotSet] of smallint = (0, 1, 2, 3, -1);
+  JanuaGenderCode: array [TJanuaGenderType.Male .. TJanuaGenderType.NotSet] of string = ('M', 'F', 'C',
+    'S', 'N');
+  JanuaGenderName: array [TJanuaGenderType.Male .. TJanuaGenderType.NotSet] of string = ('Male', 'Female',
+    'Company', 'Corporate', 'NotSet');
+
+type
+  TJanuaGender = record
+  private
+    FGenderType: TJanuaGenderType;
+    function getGenderCode: string;
+    function getGenderIndex: smallint;
+    procedure SetGenderCode(const Value: string);
+    procedure SetGenderIndex(const Value: smallint);
+    procedure SetGenderType(const Value: TJanuaGenderType);
+    function GetGenderName: string;
+  public
+    Constructor Create(aType: TJanuaGenderType); overload;
+    Constructor Create(aCode: string); overload;
+    property GenderIndex: smallint read getGenderIndex write SetGenderIndex;
+    property GenderType: TJanuaGenderType read FGenderType write SetGenderType;
+    property GenderCode: string read getGenderCode write SetGenderCode;
+    property GenderName: string read GetGenderName;
+
+  end;
+
+type
+  TJanuaInterval = record
+    FromDate: TDate;
+    IntervalType: TJanuaIntervalType;
+    Duration: Word;
+  public
+    function ExpirationDate: TDate;
+  end;
+
+type
+  TJanuaPayment = record
+    Amount: Currency;
+    Currency: TJanuaCurrencyType;
+    Method: TJanuaPaymentMethod;
+    Specification: TJanuaPaymentSpec;
+    PaymentDuration: TJanuaInterval;
+  end;
+
+type
+  TJanuaRecordCoordinates = record
+    Latitude: Double;
+    Longitude: Double;
+    Address: string;
+  public
+    constructor Create(aLatitude, aLongitude: Double; aAddress: string = '');
+    function AsJsonObject: TJsonObject;
+    procedure LoadFromJsonObject(aJsonObject: TJsonObject);
+    function AsJson: string;
+    procedure LoadFromDataset(aDataset: TDataset);
+    procedure LoadFromJson(aJson: string);
+    procedure Clear;
+  end;
+
+  // Organizations sono le organizzazioni della sanità di solito organizzazioni
+  // Territoriali, una organizzazione Sanitaria può avere sotto di sè diverse
+  // Branche e Branche Specialistiche suppongo
+
+type
+  TJanuaCase = (jcNone, jcLower, jcUpper);
+  TJanuaAlign = (jaNone, jaLeft, jaRight, jaCenter);
+
+type
+  /// <summary>
+  /// Record Definition for Export/Import procedures
+  /// </summary>
+  TRecFieldDef = record
+  private
+    FCharCase: TJanuaCase;
+    FFieldName: string;
+    FAlign: TJanuaAlign;
+    procedure SetCharCase(const Value: TJanuaCase);
+    procedure SetFieldName(const Value: string);
+    procedure SetAlign(const Value: TJanuaAlign);
+  public
+    Constructor Create(aFieldName: string; aCase: TJanuaCase = jcNone; aAlign: TJanuaAlign = jaNone;
+      aFixedWidth: smallint = -1);
+  public
+    property CharCase: TJanuaCase read FCharCase write SetCharCase;
+    property FieldName: string read FFieldName write SetFieldName;
+    property Align: TJanuaAlign read FAlign write SetAlign;
+  end;
+
+  TRecFieldDefArray = Tarray<TRecFieldDef>;
+
+  TRecFieldDefList = record
+  private
+    FTableName: string;
+    FItems: TRecFieldDefArray;
+    procedure SetItems(const Value: TRecFieldDefArray);
+    procedure SetTableName(const Value: string);
+  public
+    property Items: TRecFieldDefArray read FItems write SetItems;
+    property TableName: string read FTableName write SetTableName;
+  public
+    constructor Create(const aName: string);
+    function Clear: TRecFieldDefList;
+    function Count: integer;
+    function Add(aFieldDef: TRecFieldDef): TRecFieldDefList; overload;
+    function Add(aFieldName: string; aCase: TJanuaCase = jcNone; aAlign: TJanuaAlign = jaNone;
+      aFixedWidth: smallint = -1): TRecFieldDefList; overload;
+  end;
+
+type
+  TJanuaOrganizationsTypes = (jotItalianASL, jotHospital);
+
+type
+  TOrganization = record
+    ID: integer;
+    index: integer;
+    Name: string;
+    Code: string;
+  public
+    procedure Reset;
+    function ToString: string;
+    function Compare(a: TOrganization): Boolean;
+  end;
+
+  TJanuaAnagraphType = (jatCustomer, jatAgent, jatSupplier, jatUnknown, jatCustom,
+
+    jatMinilink, jatNoProfit, jatMarketCustomer, JatMarketCompany
+
+    , jatMarketWorker, jatSchoolCustomer, jatSchoolSupplier,
+
+    jatSchoolWorker, jatSchoolStudent, jatSchoolGroup,
+
+    jatSchoolTeacher);
+
+type
+  /// <summary>
+  /// TISOCountry is the record with all properties of a country as defined by ISO Standards
+  /// </summary>
+  TISOCountry = record
+    /// <summary>
+    /// The unique contry ID as in ErgoMercator Database
+    /// </summary>
+    ID: smallint;
+    Name: string;
+    Code: string;
+    Code2: string;
+    index: integer;
+    indent: string;
+  public
+    function ToString(full: Boolean = true): string;
+    function Compare(a: TISOCountry): Boolean;
+    procedure Reset;
+
+    /// <summary>
+    /// Converts the ISOCountry record in its Json Type
+    /// </summary>
+    /// <returns>
+    /// The Json Object representingh record as structure and data
+    /// </returns>
+    function AsJsonObject: TJsonObject;
+  end;
+
+type
+  TISORegion = record
+    ID: smallint;
+    index: integer;
+    Name: string;
+    Code: string;
+    indent: string;
+  public
+    function ToString: string;
+    function AsJsonObject: TJsonObject;
+    function Compare(a: TISORegion): Boolean;
+    procedure Reset;
+  end;
+
+type
+  TTown = record
+    ID: smallint;
+    index: integer;
+    Code: string;
+    isocode: string;
+    postalcode: string;
+    Name: string;
+    indent: string;
+  public
+    function ToString(full: Boolean = true): string;
+    function Compare(a: TTown): Boolean;
+    procedure Reset;
+    function AsJsonObject: TJsonObject;
+  end;
+
+type
+  TISODistrict = record
+    ID: smallint;
+    index: integer;
+    Code: string;
+    Name: string;
+    LocalCode: string;
+    NumberPlate: string;
+    indent: string;
+  public
+    function ToString(full: Boolean = true): string;
+    function AsJsonObject: TJsonObject;
+    function Compare(a: TISODistrict): Boolean;
+    procedure Reset;
+  end;
+
+type
+  TDistrict = record
+    District: TISODistrict;
+    Towns: array of TTown;
+    SelectedTown: TTown;
+    indent: string;
+  public
+    function ToString(full: Boolean = true): string;
+    function GetTownbyID(aID: integer): Boolean;
+    function GetTownByName(aName: String): Boolean;
+    function ListTown: TStringList;
+    function GetTownByIndex(aIndex: integer): Boolean;
+    procedure Reset;
+    function Compare(a: TDistrict): Boolean;
+    function AsJsonObject: TJsonObject;
+  end;
+
+type
+  TRegion = record
+    Region: TISORegion;
+    Organizations: array of TOrganization;
+    SelectedOrganization: TOrganization;
+    Districts: array of TDistrict;
+    SelectedDistrict: TDistrict;
+    Cound: integer;
+    indent: string;
+    lastMessage: string;
+    function Compare(a: TRegion): Boolean;
+  public
+    function ToString(full: Boolean = true): String;
+    function GetDistrictbyID(aID: integer): Boolean;
+    function GetDistrictByName(aName: String): Boolean;
+    function ListDistricts: TStringList;
+    function GetDistrictByIndex(aIndex: integer): Boolean;
+    procedure Reset;
+  end;
+
+type
+  TCountry = record
+    Country: TISOCountry;
+    SelectedRegion: TRegion;
+    Regions: array of TRegion;
+    Organizations: array of TOrganization;
+    indent: string;
+  public
+    function ToString(full: Boolean = true): string;
+    function GetRegionByName(aName: string): Boolean;
+    function GetRegionByID(aID: integer): Boolean;
+    function ListRegions: TStringList;
+    function GetRegionbyIndex(aIndex: integer): Boolean;
+  end;
+
+type
+  TRecordCountrySearch = record
+    Countries: Array of TCountry;
+    SelectedCountry: TCountry;
+    procedure SetSelectedCountry(const Value: TCountry);
+  public
+    function CountryByID(ID: integer): Boolean;
+    function CountryByName(Name: string): Boolean;
+    procedure AddCountry(aCountry: TCountry);
+  end;
+
+type
+  TRecordLocation = record
+    CountryRecord: TCountry;
+    Country: TISOCountry;
+    Region: TISORegion;
+    District: TISODistrict;
+    Town: TTown;
+  private
+    function GetJsonObject: TJsonObject;
+  public
+    procedure LoadFromJsonObject(aObject: TJsonObject);
+    procedure ResetTown;
+    procedure ResetDistrict;
+    procedure ResetRegion;
+    function ToString: string;
+    function SetCountry(aCountry: TCountry): Boolean;
+    function SetRegionName(aName: string): Boolean;
+    function SetRegionID(aID: integer): Boolean;
+    function SetDistrictName(aName: string): Boolean;
+    function SetDistrictID(aID: integer): Boolean;
+    function SetTownName(aName: string): Boolean;
+    function SetTownID(aID: integer): Boolean;
+    function AsHtml(aTemplate: string): string;
+  public
+    property AsJsonObject: TJsonObject read GetJsonObject write LoadFromJsonObject;
+  end;
+
+type
+  TJanuaRecordAddress = record
+    Location: TRecordLocation;
+    AddressFull: string;
+    Address: string;
+    Number: string;
+    postalcode: string;
+    Town: string;
+    StateProvince: string;
+    Phone: string;
+    CellularPhone: string;
+    SMSSent: Boolean;
+    SMSDate: TDateTime;
+    SMSConfirmed: Boolean;
+    SMSCheckNumber: string;
+    WorkPhone: string;
+    FaxNumber: string;
+    AddressMail: string;
+    indent: string;
+    Latitude: Double; // standard from address
+    Longitude: Double; // standard from address
+    Distance: Double;
+  private
+    function GetLongAddress: string;
+    function getISOCountryCode: string;
+    procedure setISOCounrtryCode(aCode: string);
+    function GetJsonObject: TJsonObject;
+    procedure SetLongAddress(const Value: string);
+  public
+    procedure Clear;
+    constructor Create(indent: string);
+    function ToString: string;
+    function AsHtml(aTemplate: string): string;
+    procedure LoadFromAnagraphDataset(aDataset: TDataset);
+    procedure SaveToAnagraphDataset(aDataset: TDataset);
+{$IFDEF WEBBROKER}
+    procedure LoadFromHttpParams(aRequest: TWebRequest);
+    procedure LoadFromPersonHttpParams(aRequest: TWebRequest);
+{$ENDIF}
+    procedure LoadFromJsonObject(aJson: TJsonObject);
+  public
+    property ISOCountryCode: string read getISOCountryCode write setISOCounrtryCode;
+    property AsJsonObject: TJsonObject read GetJsonObject write LoadFromJsonObject;
+    property LongAddress: string read GetLongAddress write SetLongAddress;
+  end;
+
+  TJanuaOSHomeDir = (johDefault, johUser, johCustom, johCurrent);
+
+  TJanuaOSProfile = record
+    AppName: string;
+    SharedDocumentsPath: string;
+    Directory: String;
+    LinuxHome: string;
+    Title: String;
+    LastErrorMessage: string;
+    CustomServer: Boolean;
+    ResolveToFile: Boolean;
+    UseCurrentDir: Boolean;
+    HomeDirectory: TJanuaOSHomeDir;
+  public
+    procedure Initialize;
+    function GetConfiguration: string;
+  end;
+
+type
+  TJanuaServerRecordConf = record
+    Port: Word;
+    DatabaseName: string;
+    Password: string;
+    Direct: Boolean;
+    Address: string;
+    Username: string;
+    Schema: string;
+    Success: Boolean;
+    IP: string;
+    TestMessage: string;
+    DBEngine: TJanuaDBEngine;
+    Pooling: Boolean;
+    ItemIndex: integer;
+  public
+    procedure Initialize;
+    constructor Create(aAddress: string);
+    function Conf: String;
+    function TestAddress: Boolean;
+    function GetConfiguration: string;
+    function Equals(aConf: TJanuaServerRecordConf): Boolean;
+    procedure LoadFromFile(aFileName: string);
+    procedure SaveToFile(aFileName: string);
+  end;
+
+type
+  TJanuaServerRecordConfs = record
+    Items: array of TJanuaServerRecordConf;
+  private
+    FasJsonObject: TJsonObject;
+    function GetAsJson: string;
+    function GetasJsonPretty: string;
+    procedure SetasJson(const Value: string);
+    procedure SetasJsonObject(const Value: TJsonObject);
+    procedure setasJsonPretty(const Value: string);
+  public
+    constructor Create(aItem: TJanuaServerRecordConf); overload;
+    constructor Create(aItems: integer); overload;
+    function Count: integer;
+    procedure Add(aItem: TJanuaServerRecordConf);
+    function find(aItem: TJanuaServerRecordConf): Boolean;
+    procedure delete(aItem: TJanuaServerRecordConf); overload;
+    procedure delete(aIndex: integer); overload;
+    property AsJsonObject: TJsonObject read FasJsonObject write SetasJsonObject;
+    property AsJson: string read GetAsJson write SetasJson;
+    property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
+    function Equals(aConf: TJanuaServerRecordConfs): Boolean;
+    function AsText: string;
+  end;
+
+type
+  TJanuaRecordProfile = record
+    // Queste sono tutte le variabili Globali di Un server
+    // indirizzo (se presente)
+    // password
+    // user name
+    // schema (se presente)
+    // Database Name (se presente), in oracle indica in particolare l'istanza del Database in uso.
+    // porta (se non usa la porta di default in tal caso vale -1);
+    // FGlobalServerConf: TJanuaServerRecordConf;
+    // indica se la connessione al server è diretta o meno.
+    JanuaServerConf: TJanuaServerRecordConf;
+    OsProfile: TJanuaOSProfile;
+  private
+    FProtocol: TJanuaProtocol;
+    FApplicationType: TJanuaApplicationType;
+    FApplicationFramework: TJanuaApplicationFramework;
+    FOSActive: Boolean;
+    FAssetsUrl: string;
+    FLoaded: Boolean;
+    FLog: string;
+    FSiteAddess: string;
+    FVerbose: Boolean;
+    FTestMode: Boolean;
+    FDBSchemaID: integer;
+    FDBUserID: integer;
+    FLanguage: TJanuaLanguage;
+    FAppVersion: string;
+    FUnitTesting: Boolean;
+    FIsTestVersion: Boolean;
+    FIsLocal: Boolean;
+    FRelease: string;
+    FWebServer: string;
+    FRestServer: string;
+    FListenPort: Word;
+    FReleaseDate: string;
+    FSentLog: Boolean;
+    FAppTitle: string;
+    FLogFileRoot: string;
+    FLogFileDir: string;
+    procedure SetCustomServer(const Value: Boolean);
+    procedure SetDirectory(const Value: string);
+    procedure SetResolveToFile(const Value: Boolean);
+    procedure SetTitle(const Value: string);
+    procedure SetUseCurrentDir(const Value: Boolean);
+    procedure SetAppName(const Value: string);
+    procedure SetApplicationFramework(const Value: TJanuaApplicationFramework);
+    procedure SetApplicationType(const Value: TJanuaApplicationType);
+    procedure SetAssetsUrl(const Value: string);
+    procedure SetLoaded(const Value: Boolean);
+    procedure SetOSActive(const Value: Boolean);
+    procedure SetProtocol(const Value: TJanuaProtocol);
+    procedure SetLog(const Value: string);
+    function GetProtocolAssetsUrl: string;
+    function GetProtocolText: string;
+    function GetProtocolUrl: string;
+    procedure SetSiteAddess(const Value: string);
+    procedure SetVerbose(const Value: Boolean);
+    procedure SetTestMode(const Value: Boolean);
+    procedure SetDBSchemaID(const Value: integer);
+    procedure SetDBUserID(const Value: integer);
+    procedure SetLanguage(const Value: TJanuaLanguage);
+    procedure SetAppVersion(const Value: string);
+    procedure SetUnitTesting(const Value: Boolean);
+    procedure SetIsTestVersion(const Value: Boolean);
+    procedure SetIsLocal(const Value: Boolean);
+    procedure SetRelease(const Value: string);
+    procedure SetRestServer(const Value: string);
+    procedure SetWebServer(const Value: string);
+    procedure SetListenPort(const Value: Word);
+    procedure SetReleaseDate(const Value: string);
+    procedure SetSentLog(const Value: Boolean);
+    procedure SetAppTitle(const Value: string);
+    /// <summary> LogFileRoot if set is used as root for all logs, should appended or used as directory </summary>
+    procedure SetLogFileRoot(const Value: string);
+    procedure SetLogFileDir(const Value: string);
+  public
+    property OSActive: Boolean read FOSActive write SetOSActive;
+    // Variabile Globale che indica che JanuaOS è attivo e caricato.
+    property AssetsUrl: string read FAssetsUrl write SetAssetsUrl;
+    property ApplicationFramework: TJanuaApplicationFramework read FApplicationFramework
+      write SetApplicationFramework;
+    property ApplicationType: TJanuaApplicationType read FApplicationType write SetApplicationType;
+    property Protocol: TJanuaProtocol read FProtocol write SetProtocol;
+    property Loaded: Boolean read FLoaded write SetLoaded;
+    property SiteAddess: string read FSiteAddess write SetSiteAddess;
+    property ProtocolUrl: string read GetProtocolUrl;
+    property ProtocolAssetsUrl: string read GetProtocolAssetsUrl;
+    property ProtocolText: string read GetProtocolText;
+    function LanguageID: Word;
+  public
+    function IsServer: Boolean;
+    function IsClient: Boolean;
+    function IsFMX: Boolean;
+    function IsVCL: Boolean;
+    function IsLinux: Boolean;
+    function IsConsole: Boolean;
+  public
+    constructor Create(aAppName: string); overload;
+    constructor Create(aAppName: string; aOsProfile: TJanuaOSProfile); overload;
+    procedure AddLog(aLog: string);
+    property CustomServer: Boolean read OsProfile.CustomServer write SetCustomServer;
+    property Directory: string read OsProfile.Directory write SetDirectory;
+    property ResolveToFile: Boolean read OsProfile.ResolveToFile write SetResolveToFile;
+    property UseCurrentDir: Boolean read OsProfile.UseCurrentDir write SetUseCurrentDir;
+    property Title: string read OsProfile.Title write SetTitle;
+    property AppName: string read OsProfile.AppName write SetAppName;
+    property AppTitle: string read FAppTitle write SetAppTitle;
+    property Release: string read FRelease write SetRelease;
+    function GetConfiguration: string;
+    property LinuxHome: string read OsProfile.LinuxHome write OsProfile.LinuxHome;
+    property Log: string read FLog write SetLog;
+    property Verbose: Boolean read FVerbose write SetVerbose;
+    property TestMode: Boolean read FTestMode write SetTestMode;
+    property DBSchemaID: integer read FDBSchemaID write SetDBSchemaID;
+    property DBUserID: integer read FDBUserID write SetDBUserID;
+    property Language: TJanuaLanguage read FLanguage write SetLanguage;
+    property AppVersion: string read FAppVersion write SetAppVersion;
+    property UnitTesting: Boolean read FUnitTesting write SetUnitTesting;
+    property IsTestVersion: Boolean read FIsTestVersion write SetIsTestVersion;
+    property IsLocal: Boolean read FIsLocal write SetIsLocal;
+    property WebServer: string read FWebServer write SetWebServer;
+    property RestServer: string read FRestServer write SetRestServer;
+    property ListenPort: Word read FListenPort write SetListenPort;
+    property ReleaseDate: string read FReleaseDate write SetReleaseDate;
+    property SentLog: Boolean read FSentLog write SetSentLog;
+    property LogFileRoot: string read FLogFileRoot write SetLogFileRoot;
+    property LogFileDir: string read FLogFileDir write SetLogFileDir;
+  end;
+
+type
+  TEnumSet<T> = record
+  strict private
+    class function TypeInfo: PTypeInfo; inline; static;
+  public
+    class function IsSet: Boolean; static;
+    class function Cardinality(const Value: T): integer; static;
+  end;
+
+  TJanuaBarcodeType = (jbtEAN13, jbtEAN8, jbtOther);
+
+{$IFNDEF FPC}
+
+const
+  Masks: array [0 .. 7] of Byte = (1, 2, 4, 8, 16, 32, 64, 128);
+
+var
+  JanuaPlatforms: set of TJanuaPlatform;
+
+type
+  ISmartReference<T: class> = reference to function: T;
+  /// <summary>
+  /// TSmartReference è una classe 'wrapper' di un oggetto di tipo T:class.
+  /// Sfrutta il fatto che una reference to function è di fatto un discendente di IInterface
+  /// Quanto la variabile di riferimento all'istanza di TSmartFerence è deferenziata viene
+  /// eseguito il metodo 'Destroy'.
+  /// A smart pointer is a sort of transparent wrapper round an underlying object
+  /// that frees the object when the wrapper itself goes out of scope:
+  /// </summary>
+  TSmartReference<T: class> = class(TInterfacedObject, ISmartReference<T>)
+  strict private
+    FObject: T;
+  protected
+    function Invoke: T;
+  public
+    /// <summary>
+    /// Il costruttore richiede una istanza create dell'oggetto di tipo T:class
+    /// </summary>
+    /// <param name="aObject">
+    /// Istanza (TObject.Create) di un oggetto di classe T
+    /// </param>
+    constructor Create(aObject: T);
+    destructor Destroy; override;
+  end;
+  {$ENDIF}
+
+type
+  TEnumConvertor<T: record > = record
+    class function TryFromInteger(aOrdValue: integer; var EnumValue: T): Boolean; static;
+    class function TryFromStringArray(S: string; const a: array of string; var EnumValue: T): Boolean; static;
+    class function TryFromString(const Str: string; var EnumValue: T): Boolean; static;
+    class function ToString(Value: T): string; static;
+  end;
+
+  // How can I get the number of elements of any variable of type set?
+  // https://stackoverflow.com/questions/34442102/how-can-i-get-the-number-of-elements-of-any-variable-of-type-set
+  // This is a Class to Test a SET and check if SET is a Set and its cardinality
+  // It uses only  Class functions so its Usage is Writeln(TSet<SomeSet>.Cardinality(Value));
+  ERuntimeTypeError = class(Exception);
+
+{$REGION 'Logger'}
+
+type
+
+  TJanuaLogRecord = record
+    DateTime: TDateTime;
+    ClassName: string;
+    OwnerName: string;
+    ProcedureName: string;
+    LogMessage: string;
+    LogType: TJanuaLogType;
+    Milliseconds: Int64;
+  public
+  {$IFNDEF FPC}   procedure CreateDataset(aDataset: TFdMemTable); {$ENDIF}
+    procedure SaveToDataset(aDataset: TDataset);
+    procedure AppendToDataset(aDataset: TDataset);
+    procedure Clear;
+    function LogText: string;
+    function LogCsv: string;
+    constructor Create(const aProcedure, aMessage: string; aClass: TObject; const aType: TJanuaLogType;
+      const aMS: Int64 = 0);
+  end;
+
+  TJanuaLogRecords = record
+    Items: array of TJanuaLogRecord;
+    ItemIndex: integer;
+  public
+    procedure Add(aItem: TJanuaLogRecord);
+    function Count: integer;
+    function SelectedItem: TJanuaLogRecord;
+    function LogString: string;
+    procedure ExportToCSV(const aFileName: string);
+    procedure Clear;
+  end;
+
+type
+  TJanuaLogger = class
+  private
+     class var sw: TStopWatch;
+     class var FlogRecords: TJanuaLogRecords;
+    class var FWatchStarted: Boolean;
+    class var FLogStarted: Boolean;
+    class procedure SetlogRecords(const Value: TJanuaLogRecords); static;
+    class constructor Create;
+  public
+    class property Calendar: TJanuaLogRecords read FlogRecords write SetlogRecords;
+    class procedure LogRecord(const aProcedure, aMessage: string; aClass: TObject);
+    class procedure ClearLog;
+    class procedure StartWatch;
+    class procedure StopWatch;
+    class procedure SaveLogToFile(aFileName: string);
+    class procedure StartLog;
+    class procedure StopLog;
+    class procedure ExportToCSV(aFileName: string);
+  end;
+
+  // Declare an event type. It looks allot like a normal method declaration except
+  // it suffixed by "of object". That "of object" tells Delphi the variable of this
+  // type needs to be assigned a method of an object, not just any global function
+  // with the correct signature.
+  TJanuaLogEvent = procedure(const Sender: TObject; const aLog: TJanuaLogRecord) of object;
+
+{$ENDREGION 'Logger'}
+
+  // ------------------- Janua Core OS Definitions -------------------------------
+
+function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): Boolean;
+function GetCardinality(const PSet: PByteArray; const SizeOfSet (* in bytes *) : integer): integer; inline;
+
+var
+  JanuaApplicationGlobalProfile: TJanuaRecordProfile;
+
+implementation
+
+uses
+  {$IFNDEF FPC}
+    Soap.EncdDecd, System.StrUtils, System.Math, REST.Utils, Spring,  System.NetEncoding;
+  {$ELSE}
+    {$IFDEF LINUX}
+    unixtype, linux,
+    {$ENDIF LINUX}
+    StrUtils, Math, Masks,
+  {$ENDIF}
+    januacorefunctions;
+
+
+function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): Boolean;
+var
+  numero, totale_pari, totale_dispari, totale, multiplo: integer;
+  check_digit, stringa: string;
+begin
+  Result := False;
+  Case aBarcodeType of
+    TJanuaBarcodeType.jbtEAN8:
+      begin
+        stringa := copy(aBarcode, 1, 7);
+        totale_pari := 0;
+        numero := strtoint(aBarcode[2]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[4]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[6]);
+        totale_pari := totale_pari + numero;
+        // totale_pari := totale_pari * 3;
+
+        totale_dispari := 0;
+        numero := strtoint(aBarcode[1]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[3]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[5]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[7]);
+        totale_dispari := totale_dispari + numero;
+        totale_dispari := totale_dispari * 3;
+
+        totale := totale_pari + totale_dispari;
+        multiplo := trunc(totale / 10);
+        multiplo := multiplo * 10 + 10;
+        multiplo := multiplo - totale;
+        if multiplo > 9 then
+        begin
+          multiplo := multiplo - 10;
+        end;
+        check_digit := inttostr(multiplo);
+
+        if Length(aBarcode) = 8 then
+        begin
+          Result := copy(aBarcode, 8, 1) = check_digit;
+        end
+        else
+        begin
+          Result := true;
+          aBarcode := stringa + check_digit;
+        end;
+      end;
+    TJanuaBarcodeType.jbtEAN13:
+      begin
+        stringa := copy(aBarcode, 1, 12);
+        totale_pari := 0;
+        numero := strtoint(aBarcode[2]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[4]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[6]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[8]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[10]);
+        totale_pari := totale_pari + numero;
+        numero := strtoint(aBarcode[12]);
+        totale_pari := totale_pari + numero;
+        totale_pari := totale_pari * 3;
+
+        totale_dispari := 0;
+        numero := strtoint(aBarcode[1]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[3]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[5]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[7]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[9]);
+        totale_dispari := totale_dispari + numero;
+        numero := strtoint(aBarcode[11]);
+        totale_dispari := totale_dispari + numero;
+
+        totale := totale_pari + totale_dispari;
+        multiplo := trunc(totale / 10);
+        multiplo := multiplo * 10 + 10;
+        multiplo := multiplo - totale;
+        if multiplo > 9 then
+        begin
+          multiplo := multiplo - 10;
+        end;
+        check_digit := inttostr(multiplo);
+        if Length(aBarcode) = 13 then
+        begin
+          Result := copy(aBarcode, 13, 1) = check_digit;
+        end
+        else
+        begin
+          Result := true;
+          aBarcode := stringa + check_digit;
+        end;
+      end;
+    TJanuaBarcodeType.jbtOther:
+      Result := true;
+  end;
+
+end;
+
+{ TStopWatch }
+
+{$IFDEF FPC}
+
+class function TStopWatch.Create(): TStopWatch;
+{$IFDEF LINUX}
+var
+  r : TBaseMesure;
+{$ENDIF LINUX}
+begin
+  if (FFrequency = 0) then begin
+{$IFDEF WINDOWS}
+    FIsHighResolution := QueryPerformanceFrequency(FFrequency);
+{$ENDIF WINDOWS}
+{$IFDEF LINUX}
+    FIsHighResolution := (clock_getres(CLOCK_MONOTONIC,@r) = 0);
+    FIsHighResolution := FIsHighResolution and (r.tv_nsec <> 0);
+    if (r.tv_nsec <> 0) then
+      FFrequency := C_BILLION div r.tv_nsec;
+{$ENDIF LINUX}
+  end;
+  FillChar(Result,SizeOf(Result),0);
+end;
+
+class function TStopWatch.StartNew() : TStopWatch;
+begin
+  Result := TStopWatch.Create();
+  Result.Start();
+end;
+
+procedure TStopWatch.CheckInitialization();
+begin
+  if (FFrequency = 0) then
+    raise Exception.Create(sStopWatchNotInitialized);
+end;
+
+function TStopWatch.GetElapsedMilliseconds: Int64;
+begin
+  {$IFDEF WINDOWS}
+    Result := ElapsedTicks * TicksPerMilliSecond;
+  {$ENDIF WINDOWS}
+  {$IFDEF LINUX}
+    Result := FElapsed div C_MILLION;
+  {$ENDIF LINUX}
+end;
+
+function TStopWatch.GetElapsedTicks: Int64;
+begin
+  CheckInitialization();
+{$IFDEF WINDOWS}
+  Result := (FElapsed * TicksPerSecond) div FFrequency;
+{$ENDIF WINDOWS}
+{$IFDEF LINUX}
+  Result := FElapsed div TicksPerNanoSecond;
+{$ENDIF LINUX}
+end;
+
+procedure TStopWatch.Reset();
+begin
+  Stop();
+  FElapsed := 0;
+  FillChar(FStartPosition,SizeOf(FStartPosition),0);
+end;
+
+procedure TStopWatch.Start();
+begin
+  if FRunning then
+    exit;
+  FRunning := True;
+{$IFDEF WINDOWS}
+  QueryPerformanceCounter(FStartPosition);
+{$ENDIF WINDOWS}
+{$IFDEF LINUX}
+  clock_gettime(CLOCK_MONOTONIC,@FStartPosition);
+{$ENDIF LINUX}
+end;
+
+procedure TStopWatch.Stop();
+var
+  locEnd : TBaseMesure;
+  s, n : Int64;
+begin
+  if not FRunning then
+    exit;
+  FRunning := False;
+{$IFDEF WINDOWS}
+  QueryPerformanceCounter(locEnd);
+  FElapsed := FElapsed + (UInt64(locEnd) - UInt64(FStartPosition));
+{$ENDIF WINDOWS}
+{$IFDEF LINUX}
+  clock_gettime(CLOCK_MONOTONIC,@locEnd);
+  if (locEnd.tv_nsec < FStartPosition.tv_nsec) then begin
+    s := locEnd.tv_sec - FStartPosition.tv_sec - 1;
+    n := C_BILLION + locEnd.tv_nsec - FStartPosition.tv_nsec;
+  end else begin
+    s := locEnd.tv_sec - FStartPosition.tv_sec;
+    n := locEnd.tv_nsec - FStartPosition.tv_nsec;
+  end;
+  FElapsed := FElapsed + (s * C_BILLION) + n;
+{$ENDIF LINUX}
+end;
+{$ENDIF FPC}
+
+{ Guard }
+
+class procedure Guard.RaiseArgumentException(const msg: string);
+begin
+
+end;
+
+class procedure Guard.RaiseArgumentNullException(const argumentName: string);
+begin
+
+end;
+
+class procedure Guard.CheckTrue(condition: Boolean; const msg: string);
+begin
+
+end;
+
+class procedure Guard.CheckFalse(condition: Boolean; const msg: string);
+begin
+
+end;
+
+class procedure Guard.CheckNotNull(const aObjectValue: TObject;
+  const aObjectMessage: string);
+begin
+
+end;
+
+
+{$REGION 'Logger'}
+{ TJanuaLogRecord }
+
+procedure TJanuaLogRecord.AppendToDataset(aDataset: TDataset);
+begin
+  if Assigned(aDataset) then
+  begin
+   {$IFNDEF FPC}
+    if (aDataset is TFdMemTable) and not aDataset.Active then
+      CreateDataset(aDataset as TFdMemTable);
+   {$ELSE}
+   {$ENDIF FPC}
+    aDataset.Append;
+    self.SaveToDataset(aDataset);
+  end;
+end;
+
+procedure TJanuaLogRecord.Clear;
+begin
+  self.DateTime := 0.0;
+  self.ClassName := '';
+  self.OwnerName := '';
+  self.LogMessage := '';
+  self.LogType := TJanuaLogType.jltLog;
+end;
+
+constructor TJanuaLogRecord.Create(const aProcedure, aMessage: string; aClass: TObject;
+  const aType: TJanuaLogType; const aMS: Int64);
+begin
+  self.DateTime := Now();
+  self.ProcedureName := aProcedure;
+  self.LogMessage := aMessage;
+  self.Milliseconds := aMS;
+
+  if Assigned(aClass) then
+  begin
+    if (aClass is TComponent) then
+    begin
+      self.ClassName := aClass.ClassName + '.' + (aClass as TComponent).Name;;
+      if Assigned((aClass as TComponent).Owner) then
+        self.OwnerName := (aClass as TComponent).Owner.ClassName + '.' + (aClass as TComponent).Owner.Name;
+    end
+    else
+      self.ClassName := aClass.ClassName;
+  end;
+end;
+{$IFNDEF FPC}
+procedure TJanuaLogRecord.CreateDataset(aDataset: TFdMemTable);
+begin
+  aDataset.Close;
+  aDataset.FieldDefs.Clear;
+  aDataset.FieldDefs.Add('DateTime', TFieldType.ftDateTime, 0, true);
+  aDataset.FieldDefs.Add('ClassName', TFieldType.ftWideString, 1024, true);
+  aDataset.FieldDefs.Add('OwnerName', TFieldType.ftWideString, 1024, False);
+  aDataset.FieldDefs.Add('LogMessage', TFieldType.ftWideString, 8192, true);
+  aDataset.FieldDefs.Add('LogType', TFieldType.ftSmallint, 0, true);
+  aDataset.FieldDefs.Add('Duration', TFieldType.ftLargeInt, 0, False);
+  aDataset.Open;
+end;
+{$ENDIF FPC}
+
+function TJanuaLogRecord.LogCsv: string;
+begin
+  Result := '';
+  Result := Result + FormatDateTime('yyy-mm-dd hh:nn:ss', self.DateTime) + ';';
+  Result := Result + (self.Milliseconds.ToString) + ';';
+  Result := Result + '"' + self.ClassName + '"' + ';';
+  Result := Result + '"' + self.ProcedureName + '"' + ';';
+  Result := Result + '"' + self.LogMessage + '"' + ';';
+end;
+
+function TJanuaLogRecord.LogText: string;
+begin
+  Result := FormatDateTime('yyyy-mm-dd hh:nn:ss.zzz', self.DateTime) { Date and Time Forma with Now } +
+    IfThen(Milliseconds = 0, ': ', ' Elapsed:  ' + Milliseconds.ToString + 'ms: ')
+  { Milliseconds } + IfThen(OwnerName = '', '', ' - ' + OwnerName + ' -> ')
+  { Owner Name Used for Components } + IfThen(ClassName = '', '', ClassName + '.')
+  { Owner Name Used for Objects and Classes } + IfThen(ProcedureName = '', '', ProcedureName) + sl +
+    (LogMessage);
+end;
+
+procedure TJanuaLogRecord.SaveToDataset(aDataset: TDataset);
+begin
+  aDataset.Edit;
+  Janua.Core.Functions.SetFieldValue(self.DateTime, aDataset, 'DateTime');
+  Janua.Core.Functions.SetFieldValue(self.ClassName, aDataset, 'ClassName');
+  Janua.Core.Functions.SetFieldValue(self.OwnerName, aDataset, 'OwnerName');
+  Janua.Core.Functions.SetFieldValue(self.LogMessage, aDataset, 'LogMessage');
+  Janua.Core.Functions.SetFieldValue(Ord(LogType), aDataset, 'LogType');
+  aDataset.Post;
+end;
+
+{ TJanuaLogRecords }
+
+procedure TJanuaLogRecords.Add(aItem: TJanuaLogRecord);
+begin
+  self.ItemIndex := self.Count;
+  SetLength(self.Items, Succ(self.ItemIndex));
+  self.Items[self.ItemIndex] := aItem;
+end;
+
+procedure TJanuaLogRecords.Clear;
+begin
+  SetLength(self.Items, 0);
+end;
+
+function TJanuaLogRecords.Count: integer;
+begin
+  Result := Length(self.Items);
+end;
+
+procedure TJanuaLogRecords.ExportToCSV(const aFileName: string);
+var
+  Stream: TFileStream;
+  OutLine: string;
+  aRecord: TJanuaLogRecord;
+  Lsl: string;
+begin
+  Stream := TFileStream.Create(aFileName, fmCreate);
+  try
+    for aRecord in self.Items do
+    begin
+      // You'll need to add your special handling here where OutLine is built
+      OutLine := aRecord.LogCsv;
+      // Remove final unnecessary ';'
+      SetLength(OutLine, Length(OutLine) - 1);
+      // Write line to file
+      Stream.Write(OutLine[1], Length(OutLine) * SizeOf(Char));
+      // Write line ending
+      Lsl :=  sLineBreak;
+      Stream.Write(Lsl, Length(sLineBreak));
+    end;
+  finally
+    Stream.Free; // Saves the file
+  end;
+
+end;
+
+function TJanuaLogRecords.LogString: string;
+var
+  aRecord: TJanuaLogRecord;
+begin
+  Result := '';
+  if self.Count > 0 then
+    for aRecord in Items do
+    begin
+      Result := Result + (aRecord.LogText) + sl;
+    end;
+end;
+
+function TJanuaLogRecords.SelectedItem: TJanuaLogRecord;
+begin
+  if self.Count > 0 then
+    Result := self.Items[self.ItemIndex];
+end;
+
+{ TJanuaLogger }
+
+class procedure TJanuaLogger.ClearLog;
+begin
+  self.FlogRecords.Clear
+end;
+
+class constructor TJanuaLogger.Create;
+begin
+  FWatchStarted := False;
+end;
+
+class procedure TJanuaLogger.ExportToCSV(aFileName: string);
+begin
+  FlogRecords.ExportToCSV(IncludeTrailingPathDelimiter(JanuaApplicationGlobalProfile.LogFileDir) +
+    JanuaApplicationGlobalProfile.LogFileRoot + aFileName + '.csv');
+  FlogRecords.Clear;
+end;
+
+class procedure TJanuaLogger.LogRecord(const aProcedure, aMessage: string; aClass: TObject);
+begin
+  if FLogStarted then
+  begin
+    if FWatchStarted then
+    begin
+      sw.Stop;
+      FlogRecords.Add(TJanuaLogRecord.Create(aProcedure, aMessage, aClass, TJanuaLogType.jltLog,
+        sw.ElapsedMilliseconds));
+      sw := TStopWatch.StartNew;
+    end
+    else
+    begin
+      FlogRecords.Add(TJanuaLogRecord.Create(aProcedure, aMessage, aClass, TJanuaLogType.jltLog, 0));
+    end;
+  end;
+end;
+
+class procedure TJanuaLogger.SaveLogToFile(aFileName: string);
+{$IFDEF FPC}  Var f : text; {$ENDIF FPC}
+begin
+  with JanuaApplicationGlobalProfile do
+  begin
+    {$IFDEF FPC}
+    Assign (f, IncludeTrailingPathDelimiter(LogFileDir) + LogFileRoot + aFileName);
+    Append(f);
+    Writeln (f,FlogRecords.LogString);
+    Close (f);
+    {$ELSE}
+    TFile.AppendAllText(IncludeTrailingPathDelimiter(LogFileDir) + LogFileRoot + aFileName,
+      FlogRecords.LogString);
+    {$ENDIF FPC}
+    FlogRecords.Clear;
+  end;
+end;
+
+class procedure TJanuaLogger.SetlogRecords(const Value: TJanuaLogRecords);
+begin
+  FlogRecords := Value
+end;
+
+class procedure TJanuaLogger.StartLog;
+begin
+  FLogStarted := true
+end;
+
+class procedure TJanuaLogger.StartWatch;
+begin
+  sw := TStopWatch.StartNew;
+  FWatchStarted := true;
+end;
+
+class procedure TJanuaLogger.StopLog;
+begin
+  FLogStarted := False;
+  StopWatch
+end;
+
+class procedure TJanuaLogger.StopWatch;
+begin
+  sw.Stop;
+  FWatchStarted := False;
+end;
+
+{$ENDREGION Logger}
+{ TSmartReference }
+
+{$IFNDEF FPC}
+constructor TSmartReference<T>.Create(aObject: T);
+begin
+  inherited Create;
+  FObject := aObject;
+end;
+
+destructor TSmartReference<T>.Destroy;
+begin
+  FObject.Free;
+  inherited;
+end;
+
+function TSmartReference<T>.Invoke: T;
+begin
+  Result := FObject;
+end;
+
+{$ENDIF FPC}
+
+// -------------------- Test Smart Reference ---------------------------------------------
+
+{ TSet<T> }
+
+class function TEnumSet<T>.TypeInfo: PTypeInfo;
+begin
+  Result := System.TypeInfo(T);
+end;
+
+class function TEnumSet<T>.IsSet: Boolean;
+begin
+  Result := TypeInfo.Kind = tkSet;
+end;
+
+function GetCardinality(const PSet: PByteArray; const SizeOfSet (* in bytes *) : integer): integer; inline;
+var
+  i, J: integer;
+begin
+  Result := 0;
+  {$IFNDEF FPC}
+  for i := 0 to SizeOfSet - 1 do
+     for J := 0 to 7 do
+      if (PSet^[i] and Masks[J]) > 0 then
+        Inc(Result);
+  {$ENDIF FPC}
+end;
+
+class function TEnumSet<T>.Cardinality(const Value: T): integer;
+var
+  EnumTypeData: PTypeData;
+begin
+  if not IsSet then
+    raise ERuntimeTypeError.Create('Invalid type in TSet<T>, T must be a set');
+  Result := GetCardinality(PByteArray(@Value), SizeOf(Value));
+end;
+
+{ TJanuaGender }
+
+constructor TJanuaGender.Create(aType: TJanuaGenderType);
+begin
+  self.GenderType := aType;
+end;
+
+constructor TJanuaGender.Create(aCode: string);
+var
+  sCode: string;
+begin
+  if aCode.Length = 1 then
+    sCode := aCode
+  else if aCode.ToLower = 'male' then
+    sCode := 'M'
+  else if aCode.ToLower = 'female' then
+    sCode := 'F'
+  else if aCode.ToLower = 'company' then
+    sCode := 'C';
+  self.GenderCode := sCode;
+end;
+
+function TJanuaGender.getGenderCode: string;
+begin
+  Result := JanuaGenderCode[self.GenderType]
+end;
+
+function TJanuaGender.getGenderIndex: smallint;
+begin
+  Result := JanuaGenderIndex[self.GenderType]
+end;
+
+function TJanuaGender.GetGenderName: string;
+begin
+  Result := JanuaGenderName[self.FGenderType]
+end;
+
+procedure TJanuaGender.SetGenderCode(const Value: string);
+var
+  aGenderType: TJanuaGenderType;
+begin
+  if Value <> '' then
+  begin
+   {$IFNDEF FPC}
+    if TEnumConvertor<TJanuaGenderType>.TryFromStringArray(Value, JanuaGenderCode, aGenderType) then
+      self.GenderType := aGenderType
+    else
+    {$ENDIF FPC}
+      raise Exception.Create('TJanuaGender unexpected value for gender code: ' + Value);
+  end
+  else
+    self.GenderType := TJanuaGenderType.NotSet;
+
+end;
+
+procedure TJanuaGender.SetGenderIndex(const Value: smallint);
+begin
+  case Value of
+    0:
+      self.FGenderType := TJanuaGenderType.Male;
+    1:
+      self.FGenderType := TJanuaGenderType.Female;
+    2:
+      self.FGenderType := TJanuaGenderType.Company;
+    -1:
+      self.FGenderType := TJanuaGenderType.NotSet;
+  else
+    Exception.Create('TJanuaGender unexpected value for gender Index: ' + Value.ToString);
+  end;
+end;
+
+procedure TJanuaGender.SetGenderType(const Value: TJanuaGenderType);
+begin
+  FGenderType := Value;
+end;
+
+{ TTown }
+
+function TTown.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  {$IFNDEF FPC}
+  Janua.Core.Functions.JsonPair(Result, 'id', ID);
+  Janua.Core.Functions.JsonPair(Result, 'Name', Name);
+  Janua.Core.Functions.JsonPair(Result, 'Code', Code);
+  {$ENDIF FPC}
+  {
+    Result.AddPair(TJsonPair.Create('id', TJSONNumber.Create(self.ID)));
+    Result.AddPair(TJsonPair.Create('Name', TJSONString.Create(self.Name)));
+    Result.AddPair(TJsonPair.Create('Code', TJSONString.Create(self.Code)));
+  }
+end;
+
+function TTown.Compare(a: TTown): Boolean;
+begin
+  Result := (ID = a.ID) and (Name = a.Name) and (Code = a.Code);
+end;
+
+procedure TTown.Reset;
+begin
+  ID := 0; // smallint;
+  index := 0; // integer;
+  Code := ''; // string;
+  Name := ''; // string;
+  isocode := ''; // string;
+end;
+
+function TTown.ToString(full: Boolean = true): string;
+
+begin
+  Result := self.indent + 'id: ' + inttostr(self.ID) + sLineBreak + self.indent + 'code: ' + self.Code +
+    sLineBreak + self.indent + 'name: ' + self.Name + sLineBreak + self.indent + 'index: ' + self.
+    index.ToString + sLineBreak;
+end;
+
+{ TRegion }
+
+function TRegion.Compare(a: TRegion): Boolean;
+begin
+  Result := self.Region.Compare(a.Region) and self.SelectedDistrict.Compare(a.SelectedDistrict) and
+    self.SelectedOrganization.Compare(a.SelectedOrganization)
+end;
+
+function TRegion.GetDistrictbyID(aID: integer): Boolean;
+var
+  aRegion: TDistrict;
+begin
+  Result := False;
+  if aID = 0 then
+    Exit(False);
+  // non eseguo la procedura se ricevo id = 0
+  self.lastMessage := 'Ricerca distretto: ' + aID.ToString;
+  for aRegion in self.Districts do
+    if aRegion.District.ID = aID then
+    begin
+      Result := true;
+      self.SelectedDistrict := aRegion;
+      self.lastMessage := 'Trovato distretto: ' + aRegion.District.Name;
+      Exit;
+    end;
+end;
+
+function TRegion.GetDistrictByIndex(aIndex: integer): Boolean;
+var
+  aRegion: TDistrict;
+begin
+  Result := False;
+  for aRegion in self.Districts do
+    if aRegion.District.index = aIndex then
+    begin
+      Result := true;
+      self.SelectedDistrict := aRegion;
+      Exit;
+    end;
+end;
+
+function TRegion.GetDistrictByName(aName: string): Boolean;
+var
+  aRegion: TDistrict;
+begin
+  Result := False;
+  if aName = '' then
+    Exit(False);
+  // non eseguo la ricerca se viene passato un nome nullo ....
+  self.lastMessage := 'Ricerca distretto: ' + aName;
+  for aRegion in self.Districts do
+    if UpperCase(Trim(aRegion.District.Name)) = UpperCase(Trim(aName)) then
+    begin
+      Result := true;
+      self.SelectedDistrict := aRegion;
+      self.lastMessage := 'Trovato distretto: ' + aRegion.District.Name;
+      Exit;
+    end;
+end;
+
+function TRegion.ListDistricts: TStringList;
+var
+  i: integer;
+  aRegion: TDistrict;
+begin
+  Result := TStringList.Create;
+  if Length(self.Districts) > 0 then
+  begin
+    for aRegion in self.Districts do
+      Result.Add(aRegion.District.Name);
+    Result.Sort;
+    for i := 0 to SizeOf(Districts) - 1 do
+      Districts[i].District.index := Result.IndexOf(Districts[i].District.Name);
+  end
+  else
+  begin
+    Result.Text := '';
+  end;
+end;
+
+procedure TRegion.Reset;
+begin
+  self.Region.Reset;
+  SetLength(self.Districts, 0);
+end;
+
+function TRegion.ToString(full: Boolean = true): String;
+var
+  i: integer;
+begin
+  Result := self.Region.ToString + sLineBreak;
+
+  if full then
+    for i := 0 to Length(self.Districts) - 1 do
+    begin
+      self.Districts[i].indent := self.indent + '   ';
+      Result := Result + sLineBreak + self.Districts[i].ToString;
+    end;
+end;
+
+{ TDistrict }
+
+function TDistrict.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+end;
+
+function TDistrict.Compare(a: TDistrict): Boolean;
+begin
+  Result := District.Compare(a.District)
+end;
+
+function TDistrict.GetTownbyID(aID: integer): Boolean;
+var
+  aRegion: TTown;
+begin
+  Result := False;
+  if aID = 0 then
+    Exit(False);
+  for aRegion in self.Towns do
+    if aRegion.ID = aID then
+    begin
+      Result := true;
+      self.SelectedTown := aRegion;
+      Exit;
+    end;
+end;
+
+function TDistrict.GetTownByIndex(aIndex: integer): Boolean;
+var
+  aRegion: TTown;
+begin
+  Result := False;
+  if aIndex = -1 then
+    Exit(False);
+
+  for aRegion in self.Towns do
+    if aRegion.index = aIndex then
+    begin
+      Result := true;
+      self.SelectedTown := aRegion;
+      Exit;
+    end;
+end;
+
+function TDistrict.GetTownByName(aName: String): Boolean;
+var
+  aRegion: TTown;
+begin
+  Result := False;
+  if aName = '' then
+    Exit(False);
+  for aRegion in self.Towns do
+    if UpperCase(aRegion.Name) = UpperCase(aName) then
+    begin
+      Result := true;
+      self.SelectedTown := aRegion;
+      Exit;
+    end;
+end;
+
+function TDistrict.ListTown: TStringList;
+var
+  i: integer;
+  aRegion: TTown;
+begin
+  Result := TStringList.Create;
+
+  for aRegion in self.Towns do
+    Result.Add(aRegion.Name);
+  Result.Sort;
+  for i := 0 to SizeOf(Towns) - 1 do
+    Towns[i].index := Result.IndexOf(Towns[i].Name);
+
+end;
+
+procedure TDistrict.Reset;
+begin
+  self.District.Reset;
+  SetLength(self.Towns, 0);
+  self.SelectedTown.Reset;
+end;
+
+function TDistrict.ToString(full: Boolean = true): string;
+var
+  i: integer;
+begin
+  Result := self.District.ToString(full) + sLineBreak;
+  if full and (Length(self.Towns) > 0) then
+    for i := 0 to Length(self.Towns) - 1 do
+    begin
+      self.Towns[i].indent := self.indent + '   ';
+      Result := Result + sLineBreak + self.Towns[i].ToString;
+    end;
+
+end;
+
+{ TCountry }
+
+function TCountry.GetRegionByID(aID: integer): Boolean;
+var
+  aRegion: TRegion;
+begin
+  Result := False;
+  for aRegion in self.Regions do
+    if aRegion.Region.ID = aID then
+    begin
+      Result := true;
+      self.SelectedRegion := aRegion;
+      Exit;
+    end;
+end;
+
+function TCountry.GetRegionbyIndex(aIndex: integer): Boolean;
+var
+  aRegion: TRegion;
+begin
+  Result := False;
+  for aRegion in self.Regions do
+    if aRegion.Region.index = aIndex then
+    begin
+      Result := true;
+      self.SelectedRegion := aRegion;
+      Exit;
+    end;
+end;
+
+function TCountry.GetRegionByName(aName: string): Boolean;
+var
+  aRegion: TRegion;
+begin
+  Result := False;
+  for aRegion in self.Regions do
+    if UpperCase(aRegion.Region.Name) = UpperCase(aName) then
+    begin
+      Result := true;
+      self.SelectedRegion := aRegion;
+      Exit;
+    end;
+end;
+
+function TCountry.ListRegions: TStringList;
+var
+  i: integer;
+  aRegion: TRegion;
+begin
+  Result := TStringList.Create;
+  if Length(self.Regions) > 0 then
+  begin
+    for aRegion in self.Regions do
+      Result.Add(aRegion.Region.Name);
+    Result.Sort;
+    for i := 0 to SizeOf(Regions) - 1 do
+      Regions[i].Region.index := Result.IndexOf(Regions[i].Region.Name);
+  end
+end;
+
+function TCountry.ToString(full: Boolean = true): string;
+var
+  i: integer;
+begin
+  Result := self.Country.ToString(False);
+
+  if full then
+    for i := 0 to Length(self.Regions) - 1 do
+    begin
+      self.Regions[i].indent := self.indent + '   ';
+      Result := Result + sLineBreak + self.Regions[i].ToString;
+    end;
+end;
+
+{ TISOCountry }
+
+function TISOCountry.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  {$IFNDEF FPC}
+  Janua.Core.Functions.JsonPair(Result, 'id', ID);
+  Janua.Core.Functions.JsonPair(Result, 'Name', Name);
+  Janua.Core.Functions.JsonPair(Result, 'Code', Code);
+  Janua.Core.Functions.JsonPair(Result, 'Code2', Code2);
+  {$ENDIF FPC}
+  {
+    Result.AddPair(TJsonPair.Create('id', TJSONNumber.Create(self.ID)));
+    Result.AddPair(TJsonPair.Create('Name', TJSONString.Create(self.Name)));
+    Result.AddPair(TJsonPair.Create('Code', TJSONString.Create(self.Code)));
+    Result.AddPair(TJsonPair.Create('Code2', TJSONString.Create(self.Code2)));
+    ID: smallint;
+    Name: string;
+    Code: string;
+    Code2: string; }
+end;
+
+function TISOCountry.Compare(a: TISOCountry): Boolean;
+begin
+  Result := (ID = a.ID) and (Name = a.Name) and (Code = a.Code) and (Code2 = a.Code2)
+end;
+
+procedure TISOCountry.Reset;
+begin
+  ID := 0; // smallint;
+  index := 0; // integer;
+  Code := ''; // string;
+  Name := ''; // string;
+end;
+
+function TISOCountry.ToString(full: Boolean): string;
+begin
+  Result := self.indent + 'id: ' + inttostr(self.ID) + sLineBreak + self.indent + 'code: ' + self.Code +
+    sLineBreak + self.indent + 'name: ' + self.Name + sLineBreak + self.indent + 'index: ' + self.
+    index.ToString + sLineBreak;
+end;
+
+{ TRecordCountrySearch }
+
+procedure TRecordCountrySearch.AddCountry(aCountry: TCountry);
+begin
+  if not self.CountryByID(aCountry.Country.ID) then
+  begin
+    SetLength(self.Countries, Length(self.Countries) + 1);
+    self.Countries[Length(self.Countries) - 1] := aCountry;
+    self.SelectedCountry := aCountry;
+  end;
+end;
+
+function TRecordCountrySearch.CountryByID(ID: integer): Boolean;
+var
+  aCountry: TCountry;
+begin
+  Result := False;
+  if (Length(self.Countries) = 0) or (ID = 0) then
+    Exit(False)
+  else
+    for aCountry in self.Countries do
+      if aCountry.Country.ID = ID then
+      begin
+        Result := true;
+        self.SelectedCountry := aCountry;
+      end;
+end;
+
+function TRecordCountrySearch.CountryByName(Name: string): Boolean;
+var
+  aCountry: TCountry;
+begin
+  Result := False;
+  if (Length(self.Countries) = 0) or (Name = '') then
+    Exit(False)
+  else
+    for aCountry in self.Countries do
+      if UpperCase(aCountry.Country.Name) = Name then
+      begin
+        Result := true;
+        self.SelectedCountry := aCountry;
+        Exit;
+      end;
+end;
+
+procedure TRecordCountrySearch.SetSelectedCountry(const Value: TCountry);
+begin
+  SelectedCountry := Value;
+end;
+
+{ TJanuaRecordCoordinates }
+
+function TJanuaRecordCoordinates.AsJson: string;
+begin
+  Result := self.AsJsonObject.ToJSON;
+end;
+
+function TJanuaRecordCoordinates.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  {$IFNDEF FPC}
+  Janua.Core.Functions.JsonPair(Result, 'latitude', self.Latitude);
+  Janua.Core.Functions.JsonPair(Result, 'longitude', self.Longitude);
+  Janua.Core.Functions.JsonPair(Result, 'address', self.Address);
+  {$ENDIF FPC}
+end;
+
+procedure TJanuaRecordCoordinates.Clear;
+begin
+  self.Latitude := 0.0;
+  self.Longitude := 0.0;
+  self.Address := '';
+end;
+
+constructor TJanuaRecordCoordinates.Create(aLatitude, aLongitude: Double; aAddress: string = '');
+begin
+  self.Latitude := aLatitude;
+  self.Longitude := aLongitude;
+  self.Address := aAddress;
+end;
+
+procedure TJanuaRecordCoordinates.LoadFromDataset(aDataset: TDataset);
+begin
+
+end;
+
+procedure TJanuaRecordCoordinates.LoadFromJson(aJson: string);
+begin
+  LoadFromJsonObject(Janua.Core.Functions.JsonParse(aJson));
+end;
+
+procedure TJanuaRecordCoordinates.LoadFromJsonObject(aJsonObject: TJsonObject);
+begin
+  {$IFNDEF FPC}
+  Janua.Core.Functions.JsonValue(aJsonObject, 'latitude', self.Latitude);
+  Janua.Core.Functions.JsonValue(aJsonObject, 'longitude', self.Latitude);
+  Janua.Core.Functions.JsonValue(aJsonObject, 'address', self.Address);
+  {$ENDIF FPC}
+end;
+
+{ TEnumConvertor<T> }
+
+class function TEnumConvertor<T>.ToString(Value: T): string;
+var
+  IntValue: integer;
+begin
+  IntValue := 0;
+  Move(Value, IntValue, SizeOf(T));
+  Result := GetEnumName(TypeInfo(T), IntValue)
+end;
+
+class function TEnumConvertor<T>.TryFromInteger(aOrdValue: integer; var EnumValue: T): Boolean;
+var
+  // Pointer to Type Info
+  aInfo: PTypeInfo;
+  // Pointer to Type Data
+  aData: PTypeData;
+begin
+  aInfo := TypeInfo(T);
+  // check we have a valid type
+  if (aInfo = nil) or (aInfo.Kind <> tkEnumeration) then
+    raise EArgumentException.Create('TEnumConvertor not instatiated with a valid type');
+  // do the actual range test
+  aData := GetTypeData(aInfo);
+  Result := (aOrdValue >= aData.MinValue) and (aOrdValue <= aData.MaxValue);
+  // check the reusult and returns convertion (and True) or Default value (and False)
+  if Result then
+    Move(aOrdValue, EnumValue, SizeOf(T));
+end;
+
+{ TEnumArrayConvertor<T, S> }
+
+class function TEnumConvertor<T>.TryFromString(const Str: string; var EnumValue: T): Boolean;
+var
+  Info: PTypeInfo;
+  IntValue: integer;
+begin
+  IntValue := GetEnumValue(TypeInfo(T), Str);
+  Result := (IntValue <> -1);
+  if Result then
+    Move(IntValue, EnumValue, SizeOf(T));
+end;
+
+class function TEnumConvertor<T>.TryFromStringArray(S: string; const a: array of string;
+  var EnumValue: T): Boolean;
+var
+  // Pointer to Type Info
+  tInfo: PTypeInfo;
+  // Pointer to Type Data
+  tData: PTypeData;
+  // Pointer to Type Info
+  i: integer;
+begin
+  tInfo := TypeInfo(T);
+  if (tInfo = nil) or (tInfo.Kind <> tkEnumeration) then
+    raise EArgumentException.Create('TEnumConvertor not instatiated with a valid type');
+  tData := GetTypeData(tInfo);
+  Result := False;
+  for i := tData.MinValue to tData.MaxValue do
+    if a[i].ToLower = S.ToLower then
+    begin
+      Result := true;
+      Break
+    end;
+  if Result then
+    Move(i, EnumValue, SizeOf(T));
+
+end;
+
+{ TJanuaOSProfile }
+
+function TJanuaOSProfile.GetConfiguration: string;
+var
+  a: TStringBuilder;
+begin
+  { AppName: string;
+    SharedDocumentsPath: string;
+    Directory: String;
+    LinuxHome: string;
+    Title: String;
+    LastErrorMessage: string;
+    CustomServer: boolean;
+    ResolveToFile: boolean;
+    UseCurrentDir: boolean;
+    HomeDirectory: TJanuaOSHomeDir;
+  }
+  a := TStringBuilder.Create;
+  try
+    a.AppendLine('AppName: ' + self.AppName);
+    a.AppendLine('SharedDocumentsPath: ' + self.SharedDocumentsPath);
+    a.AppendLine('Directory: ' + self.Directory);
+    a.AppendLine('HomeDirectory: ' + System.TypInfo.GetEnumName(TypeInfo(TJanuaOSHomeDir),
+      Ord(HomeDirectory)));
+    a.AppendLine('LinuxHome: ' + self.LinuxHome);
+    a.AppendLine('Title: ' + self.Title);
+    a.AppendLine('ResolveToFile: ' + self.ResolveToFile.ToString(true));
+    a.AppendLine('UseCurrentDir: ' + self.UseCurrentDir.ToString(true));
+    Result := a.ToString;
+  finally
+    a.DisposeOf;
+  end;
+end;
+
+procedure TJanuaOSProfile.Initialize;
+begin
+  SharedDocumentsPath := '';
+  Directory := '';
+  Title := '';
+  LastErrorMessage := '';
+  CustomServer := False;
+  ResolveToFile := False;
+  UseCurrentDir := False;
+  LinuxHome := '';
+  HomeDirectory := TJanuaOSHomeDir.johDefault;
+  self.AppName := 'test.ergomercator.com';
+end;
+
+{ TJanuaInterval }
+
+function TJanuaInterval.ExpirationDate: TDate;
+begin
+  Result := 0;
+
+  case self.IntervalType of
+    jitYears:
+      Result := IncYear(self.FromDate, self.Duration);
+    jitMonths:
+      Result := IncMonth(self.FromDate, self.Duration);
+    jitDays:
+      Result := IncDay(self.FromDate, self.Duration);
+    jitQuarters:
+      Result := IncMonth(self.FromDate, self.Duration * 3);
+    jitMinutes:
+      Result := IncYear(self.FromDate, self.Duration);
+  end;
+end;
+
+{ TRecordLocation }
+
+function TRecordLocation.AsHtml(aTemplate: string): string;
+begin
+  { CountryRecord: TCountry;
+    Country: TISOCountry;
+    Region: TISORegion;
+    District: TISODistrict;
+    Town: TTown;
+  }
+
+  Result := StringReplace(Result, '$countrycode$', self.Country.Code, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$districtcode$', self.District.Code, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$townname$', self.Town.Name, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$districtname$', self.District.Name, [rfReplaceAll, rfIgnoreCase]);
+end;
+
+function TRecordLocation.GetJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Functions.JsonPair(Result, 'country', self.Country.AsJsonObject);
+  Janua.Core.Functions.JsonPair(Result, 'region', self.Region.AsJsonObject);
+  Janua.Core.Functions.JsonPair(Result, 'district', self.District.AsJsonObject);
+  Janua.Core.Functions.JsonPair(Result, 'town', self.Town.AsJsonObject);
+end;
+
+procedure TRecordLocation.LoadFromJsonObject(aObject: TJsonObject);
+begin
+  // procedura non implementata del tutto...............
+  { TODO : Implementare la procedura di Localizzazione NUTS se mai servisse }
+  if Assigned(aObject) then
+  begin
+
+  end;
+end;
+
+procedure TRecordLocation.ResetDistrict;
+begin
+  self.District.Reset;
+  self.CountryRecord.SelectedRegion.SelectedDistrict.Reset;
+  self.ResetTown;
+end;
+
+procedure TRecordLocation.ResetRegion;
+begin
+  self.Region.Reset;
+  self.CountryRecord.SelectedRegion.Reset;
+end;
+
+procedure TRecordLocation.ResetTown;
+begin
+  self.Town.Reset;
+end;
+
+function TRecordLocation.SetCountry(aCountry: TCountry): Boolean;
+begin
+  if aCountry.Country.ID = self.Country.ID then
+  begin
+    Result := true;
+    CountryRecord := aCountry;
+    self.Country := CountryRecord.Country;
+    if CountryRecord.GetRegionByID(self.Region.ID) then
+      self.Region := CountryRecord.SelectedRegion.Region;
+    if CountryRecord.SelectedRegion.GetDistrictbyID(self.District.ID) then
+      self.District := CountryRecord.SelectedRegion.SelectedDistrict.District;
+    if CountryRecord.SelectedRegion.SelectedDistrict.GetTownbyID(self.Town.ID) then
+      self.Town := CountryRecord.SelectedRegion.SelectedDistrict.SelectedTown;
+  end
+  else
+  begin
+    Result := False;
+  end;
+end;
+
+function TRecordLocation.SetDistrictID(aID: integer): Boolean;
+begin
+  Result := self.District.ID <> aID;
+  if not Result then
+  begin
+    Result := self.CountryRecord.SelectedRegion.GetDistrictbyID(aID);
+    if Result then
+    begin
+      self.District := self.CountryRecord.SelectedRegion.SelectedDistrict.District;
+      if (self.Town.ID = 0) or not self.CountryRecord.SelectedRegion.SelectedDistrict.GetTownbyID(self.Town.ID)
+      then
+        self.ResetTown;
+    end;
+  end;
+
+  if not Result then
+    self.ResetDistrict;
+
+end;
+
+function TRecordLocation.SetDistrictName(aName: string): Boolean;
+begin
+  Result := self.District.Name = aName;
+
+  if not Result then
+  begin
+    Result := self.CountryRecord.SelectedRegion.GetDistrictByName(aName);
+    if Result then
+    begin
+      self.District := self.CountryRecord.SelectedRegion.SelectedDistrict.District;
+      if (self.Town.ID = 0) or not self.CountryRecord.SelectedRegion.SelectedDistrict.GetTownbyID(self.Town.ID)
+      then
+        self.ResetTown;
+    end;
+  end;
+
+  if not Result then
+    self.ResetDistrict;
+end;
+
+function TRecordLocation.SetRegionID(aID: integer): Boolean;
+begin
+  Result := self.Region.ID = aID;
+  if not Result then
+  begin
+    Result := self.CountryRecord.GetRegionByID(aID);
+    if Result then
+    begin
+      self.Region := self.CountryRecord.SelectedRegion.Region;
+      if not self.CountryRecord.SelectedRegion.GetDistrictbyID(self.Town.ID) then
+        self.ResetDistrict;
+    end;
+  end;
+  if not Result then
+    self.ResetRegion;
+end;
+
+function TRecordLocation.SetRegionName(aName: string): Boolean;
+begin
+  Result := self.Region.Name = aName;
+
+  if not Result then
+  begin
+    Result := self.CountryRecord.GetRegionByName(aName);
+    if Result then
+    begin
+      self.Region := self.CountryRecord.SelectedRegion.Region;
+      if (District.ID = 0) or not CountryRecord.SelectedRegion.GetDistrictbyID(District.ID) then
+        self.ResetDistrict;
+    end;
+  end;
+
+  if not Result then
+    self.ResetRegion;
+end;
+
+function TRecordLocation.SetTownID(aID: integer): Boolean;
+begin
+  Result := self.Town.ID = aID;
+  if not Result then
+  begin
+    Result := self.CountryRecord.SelectedRegion.SelectedDistrict.GetTownbyID(aID);
+    if Result then
+    begin
+      self.Town := self.CountryRecord.SelectedRegion.SelectedDistrict.SelectedTown;
+    end;
+  end;
+
+  if not Result then
+    self.ResetTown;
+end;
+
+function TRecordLocation.SetTownName(aName: string): Boolean;
+begin
+  Result := self.Town.Name = aName;
+  if not Result then
+  begin
+    Result := self.CountryRecord.SelectedRegion.SelectedDistrict.GetTownByName(aName);
+    if Result then
+    begin
+      self.Town := self.CountryRecord.SelectedRegion.SelectedDistrict.SelectedTown;
+    end;
+  end;
+
+  if not Result then
+    self.ResetTown;
+
+end;
+
+function TRecordLocation.ToString: string;
+begin
+  Result := 'Country:' + sLineBreak + Country.ToString(False) + sLineBreak + 'Region:' + sLineBreak +
+    Region.ToString() + sLineBreak + 'Town:' + sLineBreak + Town.ToString(False) + sLineBreak + 'District:' +
+    sLineBreak + District.ToString(False)
+end;
+
+{ TRecordAddress }
+
+function TJanuaRecordAddress.AsHtml(aTemplate: string): string;
+begin
+  Result := StringReplace(aTemplate, '$AddressFull$', self.AddressFull, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$Address$', self.Address, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$Number$', self.Number, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$postalcode$', self.postalcode, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$Phone$', self.Phone, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$CellularPhone$', self.CellularPhone, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$WorkPhone$', self.WorkPhone, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$FaxNumber$', self.FaxNumber, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$AddressMail$', self.AddressMail, [rfReplaceAll, rfIgnoreCase]);
+  Result := StringReplace(Result, '$Town$', self.Town, [rfReplaceAll, rfIgnoreCase]);
+  Result := self.Location.AsHtml(aTemplate);
+end;
+
+procedure TJanuaRecordAddress.Clear;
+begin
+  self.Latitude := 0;
+  self.Longitude := 0;
+  self.AddressFull := '';
+  self.Address := '';
+  self.Number := '';
+  self.postalcode := '';
+  self.Town := '';
+  self.StateProvince := '';
+  self.Phone := '';
+  self.CellularPhone := '';
+  self.SMSSent := False;
+  self.SMSDate := 0.0;
+  self.SMSConfirmed := False;
+  self.SMSCheckNumber := '';
+  self.WorkPhone := '';
+  self.FaxNumber := '';
+  self.AddressMail := '';
+  self.indent := '';
+end;
+
+constructor TJanuaRecordAddress.Create(indent: string);
+begin
+  self.indent := indent;
+  Clear;
+end;
+
+function TJanuaRecordAddress.getISOCountryCode: string;
+begin
+  Result := self.Location.CountryRecord.Country.Code
+end;
+
+function TJanuaRecordAddress.GetJsonObject: TJsonObject;
+begin
+  { Location: TRecordLocation;
+    Address: unicodestring;
+    Number: unicodestring;
+    postalcode: unicodestring;
+    Phone: string;
+    CellularPhone: string;
+    WorkPhone: string;
+    FaxNumber: string;
+    AddressMail: string; }
+  Result := TJsonObject.Create;
+  Janua.Core.Functions.JsonPair(Result, 'location', self.Location.AsJsonObject);
+  // full address, its location is processed by Google address location identifiers
+  Janua.Core.Functions.JsonPair(Result, 'full_address', self.AddressFull);
+  Janua.Core.Functions.JsonPair(Result, 'latitude', self.Latitude);
+  Janua.Core.Functions.JsonPair(Result, 'longitude', self.Longitude);
+  Janua.Core.Functions.JsonPair(Result, 'address', self.Address);
+  Janua.Core.Functions.JsonPair(Result, 'number', self.Number);
+  Janua.Core.Functions.JsonPair(Result, 'postalcode', self.postalcode);
+  Janua.Core.Functions.JsonPair(Result, 'phone', self.Phone);
+  Janua.Core.Functions.JsonPair(Result, 'cellularphone', self.CellularPhone);
+  Janua.Core.Functions.JsonPair(Result, 'workphone', self.WorkPhone);
+  Janua.Core.Functions.JsonPair(Result, 'faxnumber', self.FaxNumber);
+  Janua.Core.Functions.JsonPair(Result, 'addressmail', self.AddressMail);
+  Janua.Core.Functions.JsonPair(Result, 'smssent', self.SMSSent);
+  Janua.Core.Functions.JsonPair(Result, 'smsdate', self.SMSDate);
+  Janua.Core.Functions.JsonPair(Result, 'smsconfirmed', self.SMSConfirmed);
+  Janua.Core.Functions.JsonPair(Result, 'smscheckNumber', self.SMSCheckNumber);
+end;
+
+function TJanuaRecordAddress.GetLongAddress: string;
+begin
+  Result := self.AddressFull
+end;
+
+procedure TJanuaRecordAddress.LoadFromAnagraphDataset(aDataset: TDataset);
+begin
+  GetFieldValue(self.AddressFull, aDataset, 'full_address');
+  GetFieldValue(self.Address, aDataset, 'an_address');
+  GetFieldValue(self.Number, aDataset, 'an_address_number');
+  GetFieldValue(self.Town, aDataset, 'an_town');
+  GetFieldValue(self.postalcode, aDataset, 'an_postal_code');
+  self.ISOCountryCode := GetFieldAsString(aDataset, 'an_iso_country_code');
+  GetFieldValue(self.StateProvince, aDataset, 'an_state_province');
+  GetFieldValue(self.Phone, aDataset, 'an_phone');
+  GetFieldValue(self.WorkPhone, aDataset, 'an_phone2');
+  GetFieldValue(self.FaxNumber, aDataset, 'an_fax');
+  GetFieldValue(self.CellularPhone, aDataset, 'an_cellular');
+  GetFieldValue(self.Latitude, aDataset, 'latitude');
+  GetFieldValue(self.Longitude, aDataset, 'longitude');
+  GetFieldValue(self.Distance, aDataset, 'distance');
+end;
+
+procedure TJanuaRecordAddress.LoadFromJsonObject(aJson: TJsonObject);
+begin
+  self.Clear;
+  if Assigned(aJson) then
+  begin
+    Location.AsJsonObject := Janua.Core.Functions.JsonObject('location', aJson);
+    // Janua.Core.Functions.JsonValue(Result, , self.Location.AsJsonObject);
+    // full address, its location is processed by Google address location identifiers
+    Janua.Core.Functions.JsonValue(aJson, 'full_address', self.AddressFull);
+    Janua.Core.Functions.JsonValue(aJson, 'latitude', self.Latitude);
+    Janua.Core.Functions.JsonValue(aJson, 'longitude', self.Longitude);
+    Janua.Core.Functions.JsonValue(aJson, 'address', self.Address);
+    Janua.Core.Functions.JsonValue(aJson, 'number', self.Number);
+    Janua.Core.Functions.JsonValue(aJson, 'postalcode', self.postalcode);
+    Janua.Core.Functions.JsonValue(aJson, 'phone', self.Phone);
+    Janua.Core.Functions.JsonValue(aJson, 'cellularphone', self.CellularPhone);
+    Janua.Core.Functions.JsonValue(aJson, 'workphone', self.WorkPhone);
+    Janua.Core.Functions.JsonValue(aJson, 'faxnumber', self.FaxNumber);
+    Janua.Core.Functions.JsonValue(aJson, 'addressmail', self.AddressMail);
+    Janua.Core.Functions.JsonValue(aJson, 'smssent', self.SMSSent);
+    Janua.Core.Functions.JsonValue(aJson, 'smsdate', self.SMSDate);
+    Janua.Core.Functions.JsonValue(aJson, 'smsconfirmed', self.SMSConfirmed);
+    Janua.Core.Functions.JsonValue(aJson, 'smschecknumber', self.SMSCheckNumber);
+  end;
+end;
+
+procedure TJanuaRecordAddress.SaveToAnagraphDataset(aDataset: TDataset);
+begin
+  aDataset.Edit;
+  SetFieldValue(self.AddressFull, aDataset, 'full_address');
+  SetFieldValue(self.Address, aDataset, 'an_address');
+  SetFieldValue(self.Number, aDataset, 'an_address_number');
+  SetFieldValue(self.Town, aDataset, 'an_town');
+  SetFieldValue(self.postalcode, aDataset, 'an_postal_code');
+  SetFieldValue(ISOCountryCode, aDataset, 'an_iso_country_code');
+  SetFieldValue(self.StateProvince, aDataset, 'an_state_province');
+  SetFieldValue(self.Phone, aDataset, 'an_phone');
+  SetFieldValue(self.WorkPhone, aDataset, 'an_phone2');
+  SetFieldValue(self.FaxNumber, aDataset, 'an_fax');
+  SetFieldValue(self.CellularPhone, aDataset, 'an_cellular');
+  SetFieldValue(self.Latitude, aDataset, 'latitude');
+  SetFieldValue(self.Longitude, aDataset, 'longitude');
+  SetFieldValue(self.Distance, aDataset, 'distance');
+end;
+
+{$IFDEF WEBBROKER}
+
+procedure TJanuaRecordAddress.LoadFromPersonHttpParams(aRequest: TWebRequest);
+begin
+  Address := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_address');
+  Town := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_town');
+  postalcode := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_postalcode');
+  StateProvince := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_stateprovince');
+
+  Phone := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_phone');
+  WorkPhone := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_work_phone');
+  self.FaxNumber := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_fax');
+  CellularPhone := Janua.Core.Functions.HttpGetParamValue(aRequest, 'person_cellular');
+end;
+
+procedure TJanuaRecordAddress.LoadFromHttpParams(aRequest: TWebRequest);
+begin
+  if HttpGetParamValue(aRequest, 'postal_code') <> '' then
+    self.postalcode := HttpGetParamValue(aRequest, 'postalcode');
+  if HttpGetParamValue(aRequest, 'cellularphone') <> '' then
+    self.CellularPhone := HttpGetParamValue(aRequest, 'cellularphone');
+  if HttpGetParamValue(aRequest, 'address') <> '' then
+    Address := Janua.Core.Functions.HttpGetParamValue(aRequest, 'address');
+  if HttpGetParamValue(aRequest, 'address_number') <> '' then
+    Number := Janua.Core.Functions.HttpGetParamValue(aRequest, 'address_number');
+  if HttpGetParamValue(aRequest, 'town') <> '' then
+    Town := Janua.Core.Functions.HttpGetParamValue(aRequest, 'town');
+  if HttpGetParamValue(aRequest, 'postal_code') <> '' then
+    postalcode := Janua.Core.Functions.HttpGetParamValue(aRequest, 'postal_code');
+  if HttpGetParamValue(aRequest, 'iso_country_code') <> '' then
+    ISOCountryCode := Janua.Core.Functions.HttpGetParamValue(aRequest, 'iso_country_code');
+  if HttpGetParamValue(aRequest, 'state_province') <> '' then
+    StateProvince := Janua.Core.Functions.HttpGetParamValue(aRequest, 'state_province');
+  if HttpGetParamValue(aRequest, 'phone') <> '' then
+    Phone := Janua.Core.Functions.HttpGetParamValue(aRequest, 'phone');
+  if HttpGetParamValue(aRequest, 'work_phone') <> '' then
+    WorkPhone := Janua.Core.Functions.HttpGetParamValue(aRequest, 'work_phone');
+  if HttpGetParamValue(aRequest, 'fax') <> '' then
+    self.FaxNumber := Janua.Core.Functions.HttpGetParamValue(aRequest, 'fax');
+end;
+{$ENDIF}
+
+procedure TJanuaRecordAddress.setISOCounrtryCode(aCode: string);
+begin
+  self.Location.CountryRecord.Country.Code := aCode;
+end;
+
+procedure TJanuaRecordAddress.SetLongAddress(const Value: string);
+begin
+  self.AddressFull := Value;
+end;
+
+function TJanuaRecordAddress.ToString: string;
+begin
+  if self.indent = '' then
+    self.indent := '   ';
+  Result := self.indent + 'location: ' + Location.ToString + self.indent + 'Address: ' + Address + self.indent
+    + 'Number: ' + Number + self.indent + 'postalcode: ' + postalcode + self.indent + 'Phone: ' + Phone +
+    self.indent + 'CellularPhone: ' + CellularPhone + self.indent + 'WorkPhone: ' + WorkPhone + self.indent +
+    'FaxNumber: ' + FaxNumber + self.indent + 'AddressMail: ' + AddressMail;
+end;
+
+{ TISODistrict }
+
+function TISODistrict.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Result.AddPair(TJsonPair.Create('id', TJSONNumber.Create(self.ID)));
+  Result.AddPair(TJsonPair.Create('Name', TJSONString.Create(self.Name)));
+  Result.AddPair(TJsonPair.Create('Code', TJSONString.Create(self.Code)));
+end;
+
+function TISODistrict.Compare(a: TISODistrict): Boolean;
+begin
+  Result := (ID = a.ID) and (Name = a.Name) and (Code = a.Code);
+end;
+
+procedure TISODistrict.Reset;
+begin
+  ID := 0; // smallint;
+  index := 0; // integer;
+  Code := ''; // string;
+  Name := ''; // string;
+  LocalCode := ''; // string;
+  NumberPlate := ''; // string;
+end;
+
+function TISODistrict.ToString(full: Boolean): string;
+begin
+  if self.indent = '' then
+    self.indent := '  ';
+  Result := self.indent + 'id: ' + inttostr(self.ID) + sLineBreak + self.indent + 'code: ' + self.Code +
+    sLineBreak + self.indent + 'name: ' + self.Name + sLineBreak + self.indent + 'index: ' + self.
+    index.ToString;
+end;
+
+{ TISORegion }
+
+function TISORegion.AsJsonObject: System.Json.TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Functions.JsonPair(Result, 'id', ID);
+  Janua.Core.Functions.JsonPair(Result, 'Name', Name);
+  Janua.Core.Functions.JsonPair(Result, 'Code', Code);
+  {
+    Result.AddPair(TJsonPair.Create('id', TJSONNumber.Create(self.ID)));
+    Result.AddPair(TJsonPair.Create('Name', TJSONString.Create(self.Name)));
+    Result.AddPair(TJsonPair.Create('Code', TJSONString.Create(self.Code)));
+    ID: smallint;
+    Name: string;
+    Code: string;
+    Code2: string; }
+end;
+
+function TISORegion.Compare(a: TISORegion): Boolean;
+begin
+  Result := (ID = a.ID) and (Name = a.Name) and (Code = a.Code);
+
+end;
+
+procedure TISORegion.Reset;
+begin
+  ID := 0; // smallint;
+  index := 0; // integer;
+  Code := ''; // string;
+  Name := ''; // string;
+end;
+
+function TISORegion.ToString: string;
+begin
+  if self.indent = '' then
+    self.indent := '   ';
+  Result := self.indent + 'id: ' + inttostr(ID) + sLineBreak + self.indent + 'code: ' + Code + sLineBreak +
+    self.indent + 'name: ' + Name + sLineBreak + self.indent + 'index: ' + index.ToString;
+end;
+
+{ TOrganization }
+
+function TOrganization.Compare(a: TOrganization): Boolean;
+begin
+  Result := (ID = a.ID) and (Name = a.Name) and (Code = a.Code);
+end;
+
+procedure TOrganization.Reset;
+begin
+  ID := 0; // smallint;
+  index := 0; // integer;
+  Code := ''; // string;
+  Name := ''; // string;
+end;
+
+function TOrganization.ToString: string;
+begin
+  Result := 'ID:' + ID.ToString() + 'index: ' + index.ToString() + 'Name: ' + Name + 'Code:' + Code;
+end;
+
+{ TJanuaBlob }
+
+constructor TJanuaBlob.Create(aFileName: string);
+begin
+  self.LoadFromFile(aFileName);
+end;
+
+procedure TJanuaBlob.Assign(aBlob: TJanuaBlob);
+begin
+  self.Assign(aBlob.AsBytes);
+end;
+
+procedure TJanuaBlob.Assign(aBytes: TBytes);
+begin
+  self.FBlob := copy(aBytes, 0, High(integer));
+end;
+
+procedure TJanuaBlob.Clear;
+begin
+  SetLength(self.FBlob, 0);
+end;
+
+constructor TJanuaBlob.Create(aIsUnicode: Boolean);
+begin
+  self.Setup;
+  self.FIsUnicode := aIsUnicode;
+end;
+
+constructor TJanuaBlob.Create(aStream: TStream);
+begin
+  self.Setup;
+  self.LoadFromStream(aStream);
+end;
+
+function TJanuaBlob.GetAsBoolean: Boolean;
+begin
+  Result := (Length(self.FBlob) = 1) and (self.FBlob[1] = 1);
+end;
+
+function TJanuaBlob.GetAsByteDynArray: TByteDynArray;
+begin
+  Result := TByteDynArray(self.FBlob);
+end;
+
+function TJanuaBlob.GetAsBytes: TBytes;
+begin
+  Result := self.FBlob
+end;
+
+function TJanuaBlob.GetEncoded64: string;
+var
+  aStream: TBytesStream;
+begin
+  aStream := TBytesStream.Create(self.FBlob);
+  try
+    aStream.Position := 0;
+    Result := String(EncodeBase64(aStream.Memory, aStream.size));
+  finally
+    aStream.Free;
+  end;
+end;
+
+function TJanuaBlob.IsEqual(aBlob: TJanuaBlob): Boolean;
+var
+  p1, p2: PByteArray;
+  a, b: TByteDynArray;
+begin
+  Result := Length(FBlob) = Length(aBlob.AsBytes);
+  a := copy(GetAsByteDynArray, Low(GetAsByteDynArray), Length(GetAsByteDynArray));
+  p1 := @a;
+  p2 := @b;
+  if Result then
+    Result := CompareMem(p1, p2, Length(FBlob));
+end;
+
+procedure TJanuaBlob.LoadFromFile(aFile: string);
+var
+  Stream: TFileStream;
+begin
+  Stream := TFileStream.Create(aFile, fmOpenRead);
+  try
+    Stream.Position := 0;
+    self.LoadFromStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TJanuaBlob.LoadFromStream(aStream: TStream);
+begin
+  aStream.Position := 0;
+  SetLength(FBlob, aStream.size);
+  if aStream.size > 0 then
+    aStream.Read(FBlob[0], aStream.size);
+end;
+
+procedure TJanuaBlob.SaveToFile(aFile: string);
+var
+  Stream: TFileStream;
+begin
+  Stream := TFileStream.Create(aFile, fmCreate);
+  try
+    self.SaveToStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TJanuaBlob.SaveToStream(aStream: TStream);
+begin
+  if self.FBlob <> nil then
+    aStream.WriteBuffer(FBlob[0], Length(FBlob));
+end;
+
+procedure TJanuaBlob.SetAsBoolean(const Value: Boolean);
+begin
+
+end;
+
+procedure TJanuaBlob.SetAsByteDynArray(const Value: TByteDynArray);
+begin
+  FAsByteDynArray := Value;
+end;
+
+procedure TJanuaBlob.SetAsBytes(const Value: TBytes);
+begin
+  self.FBlob := Value;
+end;
+
+procedure TJanuaBlob.SetEncoded64(const Value: string);
+begin
+  if Value <> '' then
+    self.FBlob := DecodeBase64(AnsiString(Value))
+  else
+    SetLength(self.FBlob, 0);
+end;
+
+procedure TJanuaBlob.SetNil;
+begin
+  self.FBlob := nil;
+end;
+
+procedure TJanuaBlob.Setup;
+begin
+  self.FIsUnicode := False;
+  self.Clear;
+end;
+
+function TJanuaBlob.size: Int64;
+var
+  Stream: TMemoryStream;
+begin
+  Stream := TMemoryStream.Create;
+  try
+    self.SaveToStream(Stream);
+    Result := Stream.size;
+    Stream.Position := 0;
+  finally
+    Stream.Free;
+  end;
+end;
+
+{ TJanuaServerRecordConf }
+
+function TJanuaServerRecordConf.Conf: String;
+var
+  aList: TStringBuilder;
+begin
+  aList := TStringBuilder.Create;
+  try
+    aList.AppendLine('Address:' + self.Address);
+    aList.AppendLine('DatabaseName:' + self.DatabaseName);
+    aList.AppendLine('Schema:' + self.Schema);
+    aList.AppendLine('Port:' + self.Port.ToString);
+    Result := aList.ToString;
+  finally
+    aList.Free;
+  end;
+end;
+
+constructor TJanuaServerRecordConf.Create(aAddress: string);
+begin
+  self.Initialize;
+end;
+
+function TJanuaServerRecordConf.Equals(aConf: TJanuaServerRecordConf): Boolean;
+begin
+  Result := (self.Port = aConf.Port) and (self.DatabaseName = aConf.DatabaseName) and
+    (self.Password = aConf.Password) and (self.Direct = aConf.Direct) and (self.Address = aConf.Address) and
+    (self.Username = aConf.Username);
+end;
+
+function TJanuaServerRecordConf.GetConfiguration: string;
+var
+  a: TStringBuilder;
+begin
+  a := TStringBuilder.Create;
+  try
+    a.AppendLine('Port: ' + self.Port.ToString);
+    a.AppendLine('Address: ' + self.Address);
+    a.AppendLine('IP: ' + self.IP);
+    a.AppendLine('Direct: ' + self.Direct.ToString(true));
+    a.AppendLine('DatabaseName: ' + self.DatabaseName);
+    a.AppendLine('Schema: ' + self.Schema);
+    a.AppendLine('Username: ' + self.Username);
+    a.AppendLine('Passowrd: ' + self.Password);
+    a.AppendLine('Success: ' + self.Success.ToString(true));
+    a.AppendLine('DBEngine: ' + System.TypInfo.GetEnumName(TypeInfo(TJanuaDBEngine), Ord(DBEngine)));
+    Result := a.ToString;
+  finally
+    a.Free;
+  end;
+
+end;
+
+procedure TJanuaServerRecordConf.Initialize;
+begin
+  Port := 0;
+  DatabaseName := '';
+  Password := '';
+  Direct := False;
+  Address := '';
+  Username := '';
+  Schema := '';
+  Success := False;
+  IP := '';
+  TestMessage := '';
+end;
+
+procedure TJanuaServerRecordConf.LoadFromFile(aFileName: string);
+var
+  LObject: TJsonObject;
+  LStrings: TStrings;
+begin
+  { TODO : Realizzare lo Unit Testing di TJanuaServerRecordConf.LoadFromFile }
+  LStrings := TStringList.Create;
+  try
+    LStrings.LoadFromFile(aFileName);
+    LObject := Janua.Core.Functions.JsonParse(LStrings.Text);
+    try
+      Janua.Core.Functions.JsonValue(LObject, 'username', self.Username);
+      Janua.Core.Functions.JsonValue(LObject, 'password', self.Password);
+    finally
+      LObject.Free
+    end;
+  finally
+    LStrings.Free;
+  end;
+end;
+
+procedure TJanuaServerRecordConf.SaveToFile(aFileName: string);
+var
+  LObject: TJsonObject;
+  LStrings: TStrings;
+begin
+  { TODO : Realizzare lo Unit Testing di TJanuaServerRecordConf.SaveToFile }
+  LObject := TJsonObject.Create;
+  try
+    Janua.Core.Functions.JsonPair(LObject, 'username', self.Username);
+    Janua.Core.Functions.JsonPair(LObject, 'password', self.Password);
+    LStrings := TStringList.Create;
+    try
+      LStrings.Text := LObject.ToJSON;
+      LStrings.SaveToFile(aFileName);
+    finally
+      LStrings.Free;
+    end;
+  finally
+    LObject.Free
+  end;
+end;
+
+function TJanuaServerRecordConf.TestAddress: Boolean;
+begin
+  Result := False;
+  self.IP := GetIPFromHost(self.Address);
+  if IP = '0.0.0.0' then
+    TestMessage := 'Host Unknown'
+  else if Ping(Address) then
+  begin
+    TestMessage := 'Ping Is OK';
+    Result := true;
+  end
+  else
+    TestMessage := 'Host not respond to Ping';
+
+  self.Success := Result;
+end;
+
+{ TJanuaRecordProfile }
+
+procedure TJanuaRecordProfile.AddLog(aLog: string);
+begin
+  self.FLog := self.FLog + aLog + sLineBreak;
+end;
+
+constructor TJanuaRecordProfile.Create(aAppName: string);
+begin
+  self.OsProfile.AppName := aAppName;
+  self.ApplicationFramework := jafDefault;
+{$IFDEF android}
+  self.ApplicationFramework := jafAndroidPhone;
+{$ENDIF}
+{$IFDEF LINUX}
+  self.ApplicationFramework := jafLinux64;
+{$ENDIF}
+{$IFDEF MACOS}
+{$IFDEF ios}
+  self.ApplicationFramework := jafIOSPhone;
+{$ELSE}
+  self.ApplicationFramework := jafMac;
+{$ENDIF}
+{$ENDIF}
+{$IFDEF WIN32}
+{$IFDEF HAS_VCL}
+  self.ApplicationFramework := jafWin32VCL;
+{$ELSE}
+  self.ApplicationFramework := jafWin32FMX;
+{$ENDIF HAS_VCL}
+{$ENDIF}
+{$IFDEF WIN64}
+{$IFDEF HAS_VCL}
+  self.ApplicationFramework := jafWin64VCL;
+{$ELSE}
+  self.ApplicationFramework := jafWin64FMX;
+{$ENDIF HAS_VCL}
+{$ENDIF}
+  self.ApplicationType := TJanuaApplicationType.jatDefault;
+  self.AssetsUrl := 'cdn.ergomercator.com';
+  self.Protocol := TJanuaProtocol.jptNone;
+  self.OsProfile.Initialize;
+  self.Loaded := False;
+  self.JanuaServerConf.Initialize;
+  self.FDBSchemaID := 0;
+  self.FLanguage := TJanuaLanguage.jlaItalian;
+  self.FUnitTesting := False;
+  self.FSentLog := False;
+end;
+
+constructor TJanuaRecordProfile.Create(aAppName: string; aOsProfile: TJanuaOSProfile);
+begin
+  OsProfile := aOsProfile;
+end;
+
+function TJanuaRecordProfile.GetConfiguration: string;
+var
+  a: TStringBuilder;
+begin
+  { OSActive: boolean; // Variabile Globale che indica che JanuaOS è attivo e caricato.
+    AssetsUrl: string;
+    ApplicationFramework: TJanuaApplicationFramework;
+    ApplicationType: TJanuaApplicationType;
+    Protocol: TJanuaProtocol;
+    OsProfile: TJanuaOSProfile;
+    Loaded: boolean;
+  }
+
+  a := TStringBuilder.Create;
+  try
+    a.AppendLine('O.S. Active: ' + self.OSActive.ToString(true));
+    a.AppendLine('AssetsUrl: ' + self.AssetsUrl);
+    a.AppendLine('ApplicationFramework: ' + System.TypInfo.GetEnumName(TypeInfo(TJanuaApplicationFramework),
+      Ord(ApplicationFramework)));
+    a.AppendLine('ApplicationType: ' + System.TypInfo.GetEnumName(TypeInfo(TJanuaApplicationType),
+      Ord(ApplicationType)));
+    a.AppendLine('Protocol: ' + System.TypInfo.GetEnumName(TypeInfo(TJanuaProtocol), Ord(Protocol)));
+    a.AppendLine('OsProfile: ');
+    a.AppendLine(self.OsProfile.GetConfiguration);
+    a.AppendLine('Server Profile: ');
+    a.AppendLine(self.JanuaServerConf.GetConfiguration);
+    Result := a.ToString;
+  finally
+    a.DisposeOf;
+  end;
+end;
+
+function TJanuaRecordProfile.GetProtocolAssetsUrl: string;
+begin
+  Result := JanuaProtocolText[FProtocol] + '://' + self.AssetsUrl;
+end;
+
+function TJanuaRecordProfile.GetProtocolText: string;
+begin
+  Result := JanuaProtocolText[FProtocol]
+end;
+
+function TJanuaRecordProfile.GetProtocolUrl: string;
+begin
+  Result := JanuaProtocolText[FProtocol] + '://' + self.SiteAddess;
+end;
+
+function TJanuaRecordProfile.IsClient: Boolean;
+begin
+  Result := self.FApplicationType in [jatConsoleClient, jatClientWin, jatClientTablet];
+end;
+
+function TJanuaRecordProfile.IsConsole: Boolean;
+begin
+  Result := self.FApplicationType in [jatConsoleSrv, jatConsoleClient]
+end;
+
+function TJanuaRecordProfile.IsFMX: Boolean;
+begin
+  Result := self.ApplicationFramework in [jafMac, jafIOSTablet, jafIOSPhone, jafAndroidTablet,
+    jafAndroidPhone, jafWin32FMX, jafWin64FMX]
+end;
+
+function TJanuaRecordProfile.IsLinux: Boolean;
+begin
+  Result := self.ApplicationFramework = jafLinux64;
+end;
+
+function TJanuaRecordProfile.IsServer: Boolean;
+begin
+  Result := FApplicationType in [jatConsoleSrv, jatWinService, jatWebBroker, jatIntraweb, jatLinuxService]
+end;
+
+function TJanuaRecordProfile.IsVCL: Boolean;
+begin
+  Result := self.ApplicationFramework in [jafVCL, jafWin32VCL, jafWin64VCL]
+end;
+
+function TJanuaRecordProfile.LanguageID: Word;
+begin
+  Result := Ord(self.FLanguage);
+end;
+
+procedure TJanuaRecordProfile.SetApplicationFramework(const Value: TJanuaApplicationFramework);
+begin
+  FApplicationFramework := Value;
+end;
+
+procedure TJanuaRecordProfile.SetApplicationType(const Value: TJanuaApplicationType);
+begin
+  FApplicationType := Value;
+end;
+
+procedure TJanuaRecordProfile.SetAppName(const Value: string);
+begin
+  self.OsProfile.AppName := Value;
+end;
+
+procedure TJanuaRecordProfile.SetAppTitle(const Value: string);
+begin
+  FAppTitle := Value;
+end;
+
+procedure TJanuaRecordProfile.SetAppVersion(const Value: string);
+begin
+  FAppVersion := Value;
+end;
+
+procedure TJanuaRecordProfile.SetAssetsUrl(const Value: string);
+begin
+  FAssetsUrl := Value;
+end;
+
+procedure TJanuaRecordProfile.SetCustomServer(const Value: Boolean);
+begin
+  self.OsProfile.CustomServer := Value;
+end;
+
+procedure TJanuaRecordProfile.SetDBSchemaID(const Value: integer);
+begin
+  FDBSchemaID := Value;
+end;
+
+procedure TJanuaRecordProfile.SetDBUserID(const Value: integer);
+begin
+  FDBUserID := Value;
+end;
+
+procedure TJanuaRecordProfile.SetDirectory(const Value: string);
+begin
+  OsProfile.Directory := Value;
+end;
+
+procedure TJanuaRecordProfile.SetIsLocal(const Value: Boolean);
+begin
+  FIsLocal := Value;
+end;
+
+procedure TJanuaRecordProfile.SetIsTestVersion(const Value: Boolean);
+begin
+  FIsTestVersion := Value;
+end;
+
+procedure TJanuaRecordProfile.SetLanguage(const Value: TJanuaLanguage);
+begin
+  FLanguage := Value;
+end;
+
+procedure TJanuaRecordProfile.SetListenPort(const Value: Word);
+begin
+  FListenPort := Value;
+end;
+
+procedure TJanuaRecordProfile.SetLoaded(const Value: Boolean);
+begin
+  FLoaded := Value;
+end;
+
+procedure TJanuaRecordProfile.SetLog(const Value: string);
+begin
+  FLog := Value;
+end;
+
+procedure TJanuaRecordProfile.SetLogFileDir(const Value: string);
+begin
+  FLogFileDir := Value;
+end;
+
+procedure TJanuaRecordProfile.SetLogFileRoot(const Value: string);
+begin
+  FLogFileRoot := Value;
+end;
+
+procedure TJanuaRecordProfile.SetOSActive(const Value: Boolean);
+begin
+  FOSActive := Value;
+end;
+
+procedure TJanuaRecordProfile.SetProtocol(const Value: TJanuaProtocol);
+begin
+  FProtocol := Value;
+end;
+
+procedure TJanuaRecordProfile.SetRelease(const Value: string);
+begin
+  FRelease := Value;
+end;
+
+procedure TJanuaRecordProfile.SetReleaseDate(const Value: string);
+begin
+  FReleaseDate := Value;
+end;
+
+procedure TJanuaRecordProfile.SetResolveToFile(const Value: Boolean);
+begin
+  OsProfile.ResolveToFile := Value;
+end;
+
+procedure TJanuaRecordProfile.SetRestServer(const Value: string);
+begin
+  FRestServer := Value;
+end;
+
+procedure TJanuaRecordProfile.SetSentLog(const Value: Boolean);
+begin
+  FSentLog := Value;
+end;
+
+procedure TJanuaRecordProfile.SetSiteAddess(const Value: string);
+begin
+  FSiteAddess := Value;
+end;
+
+procedure TJanuaRecordProfile.SetTestMode(const Value: Boolean);
+begin
+  FTestMode := Value;
+end;
+
+procedure TJanuaRecordProfile.SetTitle(const Value: string);
+begin
+  OsProfile.Title := Value;
+end;
+
+procedure TJanuaRecordProfile.SetUnitTesting(const Value: Boolean);
+begin
+  FUnitTesting := Value;
+end;
+
+procedure TJanuaRecordProfile.SetUseCurrentDir(const Value: Boolean);
+begin
+  OsProfile.UseCurrentDir := Value;
+end;
+
+procedure TJanuaRecordProfile.SetVerbose(const Value: Boolean);
+begin
+  FVerbose := Value;
+end;
+
+procedure TJanuaRecordProfile.SetWebServer(const Value: string);
+begin
+  FWebServer := Value;
+end;
+
+{ TJanuaServerRecordConfs }
+
+procedure TJanuaServerRecordConfs.Add(aItem: TJanuaServerRecordConf);
+begin
+  SetLength(self.Items, self.Count + 1);
+  self.Items[self.Count - 1] := aItem;
+end;
+
+function TJanuaServerRecordConfs.AsText: string;
+var
+  aItem: TJanuaServerRecordConf;
+begin
+  for aItem in self.Items do
+    Result := Result + aItem.DatabaseName + sLineBreak;
+
+end;
+
+function TJanuaServerRecordConfs.Count: integer;
+begin
+  Result := Length(Items);
+end;
+
+constructor TJanuaServerRecordConfs.Create(aItems: integer);
+begin
+  SetLength(self.Items, 0);
+end;
+
+constructor TJanuaServerRecordConfs.Create(aItem: TJanuaServerRecordConf);
+begin
+  SetLength(self.Items, 0);
+  self.Add(aItem);
+end;
+
+procedure TJanuaServerRecordConfs.delete(aItem: TJanuaServerRecordConf);
+begin
+
+end;
+
+procedure TJanuaServerRecordConfs.delete(aIndex: integer);
+var
+  i: Cardinal;
+begin
+  if self.Count > aIndex then
+  begin
+    for i := aIndex + 1 to Count - 1 do
+      Items[i - 1] := Items[i];
+    SetLength(Items, Count - 1);
+  end;
+end;
+
+function TJanuaServerRecordConfs.Equals(aConf: TJanuaServerRecordConfs): Boolean;
+var
+  i: integer;
+begin
+  Result := self.Count = aConf.Count;
+  if Result and (self.Count > 0) then
+  begin
+    for i := Low(self.Items) to High(self.Items) do
+      if not self.Items[i].Equals(aConf.Items[i]) then
+        Exit(False);
+  end;
+
+end;
+
+function TJanuaServerRecordConfs.find(aItem: TJanuaServerRecordConf): Boolean;
+var
+  LItem: TJanuaServerRecordConf;
+begin
+  Result := False;
+  for LItem in Items do
+    if (LItem.DatabaseName = aItem.DatabaseName) and (LItem.Address = aItem.Address) then
+      Exit(true)
+
+end;
+
+function TJanuaServerRecordConfs.GetAsJson: string;
+begin
+
+end;
+
+function TJanuaServerRecordConfs.GetasJsonPretty: string;
+begin
+
+end;
+
+procedure TJanuaServerRecordConfs.SetasJson(const Value: string);
+begin
+
+end;
+
+procedure TJanuaServerRecordConfs.SetasJsonObject(const Value: TJsonObject);
+begin
+  FasJsonObject := Value;
+end;
+
+procedure TJanuaServerRecordConfs.setasJsonPretty(const Value: string);
+begin
+
+end;
+
+{ TRecFieldDef }
+
+constructor TRecFieldDef.Create(aFieldName: string; aCase: TJanuaCase; aAlign: TJanuaAlign;
+  aFixedWidth: smallint);
+begin
+  self.FFieldName := aFieldName;
+end;
+
+procedure TRecFieldDef.SetAlign(const Value: TJanuaAlign);
+begin
+  FAlign := Value;
+end;
+
+procedure TRecFieldDef.SetCharCase(const Value: TJanuaCase);
+begin
+  FCharCase := Value;
+end;
+
+procedure TRecFieldDef.SetFieldName(const Value: string);
+begin
+  FFieldName := Value;
+end;
+
+{ TRecFieldDefList }
+
+function TRecFieldDefList.Add(aFieldName: string; aCase: TJanuaCase; aAlign: TJanuaAlign;
+  aFixedWidth: smallint): TRecFieldDefList;
+begin
+  Result := self.Add(TRecFieldDef.Create(aFieldName, aCase, aAlign, aFixedWidth))
+end;
+
+function TRecFieldDefList.Clear: TRecFieldDefList;
+begin
+  SetLength(self.FItems, 0);
+  Result := self;
+end;
+
+function TRecFieldDefList.Count: integer;
+begin
+  Result := Length(self.FItems)
+end;
+
+constructor TRecFieldDefList.Create(const aName: string);
+begin
+  self.Clear;
+  self.FTableName := LowerCase(aName);
+end;
+
+function TRecFieldDefList.Add(aFieldDef: TRecFieldDef): TRecFieldDefList;
+begin
+  Guard.CheckNotNull(aFieldDef, 'TRecFieldDefList.Add: aFieldDef is niil');
+  SetLength(self.FItems, Succ(Count));
+  self.FItems[Pred(self.Count)] := aFieldDef;
+end;
+
+procedure TRecFieldDefList.SetItems(const Value: TRecFieldDefArray);
+begin
+  FItems := Value;
+end;
+
+procedure TRecFieldDefList.SetTableName(const Value: string);
+begin
+  FTableName := Value;
+end;
+
+{ TJanuaProperty }
+
+constructor TJanuaProperty.Create(const aName: string);
+begin
+  self.SetName(aName);
+end;
+
+constructor TJanuaProperty.Create(aType: TJanuaPropertyType);
+begin
+  self.SetPropertyType(aType);
+end;
+
+function TJanuaProperty.getName: string;
+begin
+  Result := JanuaProperty[FPropertyType]
+end;
+
+procedure TJanuaProperty.SetPropertyType(const Value: TJanuaPropertyType);
+begin
+  FPropertyType := Value;
+end;
+
+procedure TJanuaProperty.SetName(const Value: string);
+var
+  a: TJanuaPropertyType;
+  Found: Boolean;
+begin
+  Found := False;
+  if Value <> '' then
+    for a in [TJanuaPropertyType.jptUnknown .. TJanuaPropertyType.jptUrl] do
+      if LowerCase(JanuaProperty[a]) = LowerCase(Value) then
+      begin
+        self.FPropertyType := a;
+        Found := true;
+        Exit;
+      end;
+  if not Found then
+  begin
+    self.FPropertyType := TJanuaPropertyType.jptUnknown;
+    raise Exception.Create('TJanuaProperty, property Name: ' + Value + ' not found');
+  end;
+end;
+
+initialization
+
+Janua.Core.Functions.ExecProc(
+  procedure
+  begin
+    // Initialize the unit
+    JanuaPlatforms := [];
+{$IFDEF WINDOWS}
+    JanuaPlatforms := JanuaPlatforms + [TJanuaPlatform.josWindows];
+{$ENDIF WINDOWS}
+{$IFDEF ANDROID}
+    JanuaPlatforms := JanuaPlatforms + [TJanuaPlatform.josAndroid];
+{$ENDIF ANDROID}
+  end, 'Janua.Core.Football.initialization');
+
+end.

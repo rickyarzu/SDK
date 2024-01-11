@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="lc1iopjwrccu670wf_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="VCL Logistic Receipt" />
+    <reference referencedUin="design:view:::8iiio6hm1eddvbcio_v">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1060,40,167,121" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceipt.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,60,324,214" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.grpImportExport" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.grpTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.grpDocInfo" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.cboTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtTypeOfGoodsid" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtTypeOfGoodsdescription" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.dsTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edWarehouseName" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edDocDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edDocNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label4" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edDocYear" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label5" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.GroupBox1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbSupplier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbVessel" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label9" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label10" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edSupplier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edVesselName" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.JvDBLookupCombo2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtDepartments" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edPONumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.ButtonedEdit7" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbPONumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label12" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.CheckBox1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.GroupBox2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edCarrier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbCarrier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtDepartmentsid" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.vtDepartmentsname" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.dsDepartments" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edCarrierInvoiceDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Label14" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edCarrierInvoiceNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.CarrierInvoiceNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edCarrierInvoiceAmount" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbTransportInvoice" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edTrackingNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbTrackingNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.GroupBox3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edDocRefNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edDocAmount" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.cboInvoiceCurrency" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbDocAmount" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbCurrency" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.lbInvoiceNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.radioTypeOperation" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.jscWarehouseName" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.jscVesselLocation" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.jscSupplier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.jscCarrier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.btnSupplier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.btnVesselLocation" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.btnCarrier" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.btnWarehouseName" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edCarrierID" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edLocationID" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edHolderID" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.edWarehouseID" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.FDocHead" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.FWHReceiptsViewModel" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.GetDocHead()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.SetDocHead(JOrm.Documents.Heads.Intf.IDocHead)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.SetWHReceiptsViewModel(Janua.Documents.WarehouseReceipts.ViewModel.intf.IJanuaWHReceiptsViewModel)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.DocHead" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.WHReceiptsViewModel" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.Initialize()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceipt.TframeVCLLogisticReceipt.ActivateSearch()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="600,320,447,169" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.grpItemRow" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.ToolBar1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JanuaVCLSearchItemController" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JanuaActionViewRowsDetailController" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edItemsModel" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbItemsDescription" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.btnItemSearch" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.cboTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lblinkItemPackage" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedPallets" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedQuantyEntrance" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbQtyUnits" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbConfirmedWeight" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.GroupBox1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SpinEdit5" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel4" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SpinEdit6" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel5" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.GroupBox2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SpinEdit7" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SpinEdit8" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SpinEdit9" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel6" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel7" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel8" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Edit1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel9" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Label1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbPriceValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.MoneyEdit1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.MoneyEdit2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel11" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel12" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.MoneyEdit3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Edit2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Button2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel13" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvDBLookupCombo1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbCurrency" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.MoneyEdit4" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel10" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.MoneyEdit5" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel14" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.grpCustomsReference" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.cboCustomsDocumentType" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvLinkLabel15" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Edit3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edCustomsNumber" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Edit4" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edCustomsCin" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.DateTimePicker1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.DateTimePicker2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edCustomsDocDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbCustomsExpirationDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Edit5" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edCustomsMRN" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.grpWarehouseCoordinates" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvDBLookupCombo2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Label2" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Label3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.JvDBLookupCombo3" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbPosition" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedQtyInventory" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.lbInvUnits" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedCalcVolume" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edCalcVolume" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.edConfirmedWeight" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedWeightOnDelivery" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.sedVolume" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.FDocHead" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.FWHReceiptsViewModel" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.SetWHReceiptsViewModel(Janua.Documents.WarehouseReceipts.ViewModel.intf.IJanuaWHReceiptsViewModel)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.WHReceiptsViewModel" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.Initialize()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:uframeVCLLogisticReceiptSingleRow.TframeVCLLogisticReceiptSingleRow.ActivateSearch()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="120,100,439,333" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.pnlForm" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.frameVCLLogisticReceipt1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.frameVCLLogisticReceiptSingleRow1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.JanuaActionViewController1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.Panel1" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.edButtonSave" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.btnUndo" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.tbDocument" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.FormResize(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.FormShow(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.FViewModel" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.GetViewModel()" />
+      <reference referencedUin="delphi:e_method:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.SetViewModel(Janua.Documents.WarehouseReceipts.ViewModel.intf.IJanuaWHReceiptsViewModel)" />
+      <reference referencedUin="delphi:e_property:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.ViewModel" />
+      <reference referencedUin="delphi:l_ast:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.frameVCLLogisticReceipt1">
+        <property name="sourceAnchor" value="559,187" />
+        <property name="targetAnchor" value="620,187" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaVCLForms:ufrmVCLLogisticReceipt.TfrmVCLLogisticReceipt.frameVCLLogisticReceiptSingleRow1">
+        <property name="sourceAnchor" value="559,376" />
+        <property name="targetAnchor" value="600,376" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.Documents.ViewModel.Intf.IJanuaDocWarehouseReceiptsViewModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1040,120,449,78" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.Documents.WarehouseReceipts.ViewModel.intf.IJanuaWHReceiptsViewModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1020,220,501,78" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+  </view>
+</nodeSet>

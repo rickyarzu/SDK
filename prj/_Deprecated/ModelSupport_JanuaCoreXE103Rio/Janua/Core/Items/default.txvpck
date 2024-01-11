@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="m3rd9zcj9ymsvqr9s_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCustomProductRegController">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.Barcode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.FamilyId" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.Price" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.SupplierID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCoreItem.Discount" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE10:Janua.Core.Items.TJanuaCustomProductRegServer">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE10:Janua.Core.Items.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::96klq11z7mp7607ir_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

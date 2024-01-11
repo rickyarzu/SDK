@@ -1,0 +1,167 @@
+package ZComponentsVCL;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+
+requires
+  rtl,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  bindcomp,
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  vclwinx,
+  VclSmp,
+  QRWRunDXE11_W64,
+  gtDocEng,
+  FIBPlus,
+  dsnap,
+  ZipMasterR,
+  ZLibrariesWin,
+  JanuaThirdParty,
+  JanuaThirdPartyVCL;
+
+contains
+  ZALWinInetFTPClient in '..\..\..\Libraries\ZPhoenix\ZFTPAlcinoe\source\ZALWinInetFTPClient.pas',
+  ZALFTPClient in '..\..\..\Libraries\ZPhoenix\ZFTPAlcinoe\source\ZALFTPClient.pas',
+  ZFrameTabAccessoria in '..\..\..\Libraries\ZPhoenix\VelocizzazioneDBase\ZFrameTabAccessoria.pas' {FRAME_TABELLA_ACCESSORIA: TFrame},
+  ZFrameGestioneFoto in '..\..\..\Libraries\ZPhoenix\VelocizzazioneDBase\ZFrameGestioneFoto.pas' {ZFRAME_GESTIONE_FOTO: TFrame},
+  ZFormShowMessage in '..\..\..\Libraries\ZPhoenix\ZFormShowMessage.pas' {FORM_SHOW_MESSAGE},
+  ZConfermaAnnullaTralascia in '..\..\..\Libraries\ZPhoenix\ZConfermaAnnullaTralascia.pas' {DLG_CONF_ANN_TRAL},
+  ZImageFunct in '..\..\..\Libraries\ZPhoenix\ZImageFunct.pas',
+  ZFormShowMessageWithImage in '..\..\..\Libraries\ZPhoenix\ZFormShowMessageWithImage.pas' {FORM_SHOW_MESSAGE_WITH_IMAGE},
+  ZRegioniItaliane in '..\..\..\Libraries\ZPhoenix\ZRegioniItaliane.pas',
+  ZDlgHandleImageProperties in '..\..\..\Libraries\ZPhoenix\ZDlgHandleImageProperties.pas' {ZDLG_HANDLE_IMAGE_PROPERTIES},
+  ZDelphiTwain_VCL in '..\..\..\Libraries\ZPhoenix\ZDelphiTwain_VCL.pas',
+  ZFormPreview in '..\..\..\Libraries\ZPhoenix\ZFormPreview.pas' {FORM_PREVIEW},
+  DialogPrinter in '..\..\..\Libraries\ZPhoenix\DialogPrinter.pas' {DLG_PRINTER},
+  TnPdf in '..\..\..\Libraries\ZPhoenix\PdfPrinter\TnPdf.pas',
+  ZINFLATE in '..\..\..\Libraries\ZPhoenix\PdfPrinter\ZINFLATE.PAS',
+  ZQRPdfFilter in '..\..\..\Libraries\ZPhoenix\PdfPrinter\ZQRPdfFilter.pas',
+  dzlib in '..\..\..\Libraries\ZPhoenix\PdfPrinter\dzlib.pas',
+  _zlib in '..\..\..\Libraries\ZPhoenix\PdfPrinter\_zlib.pas',
+  ADLER in '..\..\..\Libraries\ZPhoenix\PdfPrinter\ADLER.PAS',
+  trees in '..\..\..\Libraries\ZPhoenix\PdfPrinter\trees.pas',
+  zcompres in '..\..\..\Libraries\ZPhoenix\PdfPrinter\zcompres.pas',
+  infblock in '..\..\..\Libraries\ZPhoenix\PdfPrinter\infblock.pas',
+  infcodes in '..\..\..\Libraries\ZPhoenix\PdfPrinter\infcodes.pas',
+  inffast in '..\..\..\Libraries\ZPhoenix\PdfPrinter\inffast.pas',
+  inftrees in '..\..\..\Libraries\ZPhoenix\PdfPrinter\inftrees.pas',
+  infutil in '..\..\..\Libraries\ZPhoenix\PdfPrinter\infutil.pas',
+  zDeflate in '..\..\..\Libraries\ZPhoenix\PdfPrinter\zDeflate.pas',
+  ZFatturaElettronicaImportaDaFTP in '..\..\..\Libraries\ZPhoenix\ZFatturaElettronica\ZFatturaElettronicaImportaDaFTP.pas' {ZDLG_IMPORT_FROM_FTP_FATTURA_ELETTRONICA},
+  ZFElettronicaConfig in '..\..\..\Libraries\ZPhoenix\ZFatturaElettronica\ZFElettronicaConfig.pas' {ZDLG_CONFIG_FATTURA_ELETTRONICA},
+  ZQrFattElettResocontoE0 in '..\..\..\Libraries\ZPhoenix\ZFatturaElettronica\ZQrFattElettResocontoE0.pas' {ZQR_FATT_ELETT_RESOCONTO_E0: TQuickRep},
+  ZQrFattElettResocontoF0 in '..\..\..\Libraries\ZPhoenix\ZFatturaElettronica\ZQrFattElettResocontoF0.pas' {ZQR_FATT_ELETT_RESOCONTO_F0: TQuickRep},
+  ZDocumentContainer in '..\..\..\Libraries\ZPhoenix\ZDocumentContainer.pas' {DocumentContainer: TFrame},
+  ZFatturaElettronica in '..\..\..\Libraries\ZPhoenix\ZFatturaElettronica\ZFatturaElettronica.pas',
+  ZUTIL in '..\..\..\Libraries\ZPhoenix\PdfPrinter\ZUTIL.PAS',
+  ZJSON in '..\..\..\Libraries\ZPhoenix\ZJSON.pas',
+  ZLettere in '..\..\..\Libraries\ZPhoenix\ZLettere.pas',
+  ZAmaDvLed in '..\..\..\Libraries\ZPhoenix\ZAmaDvLed.pas',
+  ZDualValuePieChart in '..\..\..\Libraries\ZPhoenix\ZDualValuePieChart.pas',
+  ZStringFunct in '..\..\..\Libraries\ZPhoenix\ZStringFunct.pas',
+  ZDateFunct in '..\..\..\Libraries\ZPhoenix\ZDateFunct.pas',
+  ZTreeViewFunct in '..\..\..\Libraries\ZPhoenix\ZTreeViewFunct.pas',
+  ZGenericFunct in '..\..\..\Libraries\ZPhoenix\ZGenericFunct.pas',
+  ZTStringsFunct in '..\..\..\Libraries\ZPhoenix\ZTStringsFunct.pas',
+  ZEdit in '..\..\..\Libraries\ZPhoenix\ZEdit.pas',
+  ZStringConvFunct in '..\..\..\Libraries\ZPhoenix\ZStringConvFunct.pas',
+  ZFileFunct in '..\..\..\Libraries\ZPhoenix\ZFileFunct.pas',
+  ZAdvancedStringGrid in '..\..\..\Libraries\ZPhoenix\ZAdvancedStringGrid.pas',
+  ZMathFunct in '..\..\..\Libraries\ZPhoenix\ZMathFunct.pas',
+  ZDoubleListObjects in '..\..\..\Libraries\ZPhoenix\ZDoubleListObjects.pas',
+  ZCalendar in '..\..\..\Libraries\ZPhoenix\ZCalendar.pas',
+  ZDlgRete in '..\..\..\Libraries\ZPhoenix\ZDlgRete.pas' {DLG_RETE},
+  ZGestioneLingue in '..\..\..\Libraries\ZPhoenix\ZGestioneLingue.pas' {DLG_LNG_DLG_CHOOSE},
+  ZFormConfAnnulla in '..\..\..\Libraries\ZPhoenix\ZFormConfAnnulla.pas' {DLG_CONFERMA},
+  Zipmaster19 in '..\..\..\Libraries\ZPhoenix\Zipmaster19.pas',
+  ZGFLSdk in '..\..\..\Libraries\ZPhoenix\ZGFLSdk.pas',
+  ZGraphs in '..\..\..\Libraries\ZPhoenix\ZGraphs.pas',
+  ZLibGfl in '..\..\..\Libraries\ZPhoenix\ZLibGfl.pas',
+  ZMP3 in '..\..\..\Libraries\ZPhoenix\ZMP3.pas',
+  ZSincronizzazioni in '..\..\..\Libraries\ZPhoenix\ZSincronizzazioni.pas',
+  ZSocket in '..\..\..\Libraries\ZPhoenix\ZSocket.pas',
+  ZSocketForm in '..\..\..\Libraries\ZPhoenix\ZSocketForm.pas' {SocketMessageHandler},
+  ZLibra in '..\..\..\Libraries\ZPhoenix\ZLibra\ZLibra.pas' {LIBRA_MAINFORM},
+  ZLibraGlobale in '..\..\..\Libraries\ZPhoenix\ZLibra\ZLibraGlobale.pas',
+  ZLibraGUICheckDatabase in '..\..\..\Libraries\ZPhoenix\ZLibra\ZLibraGUICheckDatabase.pas' {LIBRA_DLG_GUICHECK_DATABASE},
+  LibraFormProgress in '..\..\..\Libraries\ZPhoenix\ZLibra\LibraFormProgress.pas' {LIBRA_FORM_PROGRESS},
+  LibraFrameCampi in '..\..\..\Libraries\ZPhoenix\ZLibra\LibraFrameCampi.pas' {LIBRA_FRAME_CAMPI: TFrame},
+  LibraFrameProcedure in '..\..\..\Libraries\ZPhoenix\ZLibra\LibraFrameProcedure.pas' {LIBRA_FRAME_PROCEDURE: TFrame},
+  LibraFrameStoredProcedure in '..\..\..\Libraries\ZPhoenix\ZLibra\LibraFrameStoredProcedure.pas' {LIBRA_FRAME_STORED_PROCEDURE: TFrame},
+  ZDlgInput in '..\..\..\Libraries\ZPhoenix\ZDlgInput.pas' {ZDLG_INPUT},
+  ZXMLFunct in '..\..\..\Libraries\ZPhoenix\ZXMLFunct.pas',
+  ZDBaseFunct in '..\..\..\Libraries\ZPhoenix\ZDBaseFunct.pas',
+  ZCheckAggiornamenti2 in '..\..\..\Libraries\ZPhoenix\ZUserId\ZCheckAggiornamenti2.pas',
+  ZUserID in '..\..\..\Libraries\ZPhoenix\ZUserId\ZUserID.pas',
+  ZUserIdDlgRegistration in '..\..\..\Libraries\ZPhoenix\ZUserId\ZUserIdDlgRegistration.pas' {USER_ID_DLG_REGISTRAZIONE},
+  ZFormProgress in '..\..\..\Libraries\ZPhoenix\ZFormProgress.pas' {ZFORM_PROGRESS},
+  Zregister in '..\..\..\Libraries\ZPhoenix\Zregister.pas',
+  AcroPDFLib_TLB in '..\..\..\Libraries\ZPhoenix\AcroPDFLib_TLB.pas',
+  ZCurl.Lib in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Lib.pas',
+  ZOpenSSL in '..\..\..\Libraries\ZPhoenix\OpenSSL\ZOpenSSL.pas',
+  CRC in '..\..\..\Libraries\ZPhoenix\PdfPrinter\CRC.PAS',
+  gzio in '..\..\..\Libraries\ZPhoenix\PdfPrinter\gzio.pas',
+  zuncompr in '..\..\..\Libraries\ZPhoenix\PdfPrinter\zuncompr.pas',
+  ZDlgChecklist in '..\..\..\Libraries\ZPhoenix\ZDlgChecklist.pas' {DLG_CHECKLIST},
+  ZDlgHandleNodoGenerico in '..\..\..\Libraries\ZPhoenix\ZDlgHandleNodoGenerico.pas' {DLG_HANDLE_NODO_GENERICO},
+  ZDlgMeseAnno in '..\..\..\Libraries\ZPhoenix\ZDlgMeseAnno.pas' {DLG_MESE_ANNO},
+  ZEAN13Funct in '..\..\..\Libraries\ZPhoenix\ZEAN13Funct.pas',
+  ZEAN128Funct in '..\..\..\Libraries\ZPhoenix\ZEAN128Funct.pas',
+  ZFattureInCloud in '..\..\..\Libraries\ZPhoenix\ZFattureInCloud.pas',
+  ZFIBPlusNodoGenerico2 in '..\..\..\Libraries\ZPhoenix\ZFIBPlusNodoGenerico2.pas',
+  ZFIBPlusNodoGenericoOld in '..\..\..\Libraries\ZPhoenix\ZFIBPlusNodoGenericoOld.pas',
+  ZFormShowList in '..\..\..\Libraries\ZPhoenix\ZFormShowList.pas' {FORM_SHOW_LIST},
+  ZGridFunct in '..\..\..\Libraries\ZPhoenix\ZGridFunct.pas',
+  ZHandleImage in '..\..\..\Libraries\ZPhoenix\ZHandleImage.pas',
+  Globale in '..\..\..\Libraries\ZPhoenix\ZPegaso\Globale.pas',
+  ZCurl.Easy in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Easy.pas',
+  ZCurl.Interfaces in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Interfaces.pas',
+  ZCurl.Encoders in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Encoders.pas',
+  ZCurl.Form in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Form.pas',
+  ZCurl.HttpCodes in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.HttpCodes.pas',
+  ZCurl.Slist in '..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Slist.pas',
+  ZDlgData in '..\..\..\Libraries\ZPhoenix\ZDlgData.pas' {DLG_DATA},
+  ZDlgInputList in '..\..\..\Libraries\ZPhoenix\ZDlgInputList.pas' {DLG_INPUT_LISTA},
+  ZDlgInputPeriodo in '..\..\..\Libraries\ZPhoenix\ZDlgInputPeriodo.pas' {ZDLG_INTERVALLO_DATE},
+  ZDlgInputPeriodoDataOra in '..\..\..\Libraries\ZPhoenix\ZDlgInputPeriodoDataOra.pas' {ZDLG_INTERVALLO_DATETIME},
+  ZFIBNodoGenericoInterfacce in '..\..\..\Libraries\ZPhoenix\VelocizzazioneDBase\ZFIBNodoGenericoInterfacce.pas';
+
+end.
+

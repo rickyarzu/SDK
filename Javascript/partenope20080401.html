@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style type="text/css"> .highlight {font-weight: bold} </style>
+
+<script type="text/javascript">
+var XMLHttp
+var colore
+var numero
+var cliente
+var response
+var status
+var targhe 
+var message
+
+  function done() {
+	 colore = '#FFFF00'; 
+	 document.bgColor=colore; 
+  }
+
+function createXMLHttpRequest() {
+
+  if (window.ActiveXObject) {
+	  xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+	  
+  }
+  else if (window.XMLHttpRequest) {
+	xmlHttp = new XMLHttpRequest  
+  }
+
+}
+
+function checkRequest () {
+  var stringa = document.getElementById("input").value.toUpperCase();  
+  var carattere = stringa.substring(stringa.length - 1, stringa.length); 
+  document.getElementById("carattere").innerHTML = carattere; 
+  if (carattere == "." ||  carattere == "*" ||  carattere == "*" )  {
+	   startRequest();
+	  //window.alert("Premuto tasto " +  carattere)
+	  
+	  };
+  
+}
+
+
+function startRequest() {	
+	createXMLHttpRequest();
+	xmlHttp.onreadystatechange = handleStateChange;	
+	xmlHttp.open("GET", "imbarco3.dll?polizza=724282&vesselid=1", true);	
+ //   xmlHttp.open("GET", "polizza1.xml", true);	
+	
+	document.getElementById("input").value = ""; 
+	document.getElementById("input").focus();	
+
+ <!--		if (colore = red) { colore = lime } else { colore = red}; -->	
+	xmlHttp.send(null);		
+}
+
+function handleStateChange() {
+  <!--	window.alert(xmlHttp.readyState); -->
+    if (xmlHttp.readyState == 4) {
+	
+  <!--	window.alert(xmlHttp.status); -->	
+		if (xmlHttp.status == 200) {
+		   
+ 
+	      xmlDoc = xmlHttp.responseXML;
+          cliente = xmlDoc.getElementsByTagName("cliente")[0].firstChild.data;
+          numero = xmlDoc.getElementsByTagName("numero")[0].firstChild.data
+		  var  partenza = xmlDoc.getElementsByTagName("data")[0].firstChild.data;
+		  status =  xmlDoc.getElementsByTagName("valida")[0].firstChild.data;
+	      targhe =  xmlDoc.getElementsByTagName("targa")[0].firstChild.data;
+		  message =  xmlDoc.getElementsByTagName("message")[0].firstChild.data;
+		  response =  xmlDoc.getElementsByTagName("response")[0].firstChild.data;
+		 
+           if (status == 'G') { colore = '#00FF00'} ;
+	       if (status == 'R') {colore =  '#FF0000'}; 
+		   if (status == 'Y') {colore = '#FFFF00'};	
+		  document.bgColor = colore;  	
+	
+	
+		  document.getElementById("input").focus();
+		  document.getElementById("polizza").innerHTML = numero; 
+	      document.getElementById("cliente").innerHTML = cliente;
+		  document.getElementById("partenza").innerHTML = partenza; 
+		  document.getElementById("targhe").innerHTML = targhe; 
+		  document.getElementById("message").innerHTML = message; 
+		  document.getElementById("response").innerHTML = response; 
+		  }
+	}
+}
+ 
+fColor=colore; 
+
+
+</script>
+
+
+
+</head>
+
+<body onload="done()">
+
+<div id="container" style=" height:100%">
+
+
+ <span id="mainform">
+ 
+ <input type="text" name="input" id="input" value="" onkeyup="checkRequest()" onchange="startRequest()" style="width:120px"  />
+ 
+ 
+ <input type="button" value="Click Me" onclick="startRequest()" />
+ 
+ 
+ <span id="carattere"> </span>
+ </span> 
+ <br />
+ 
+    <span id="spanMessage">
+     <b>
+     <span id="message"></span>
+      </b>
+   </span>
+   <br />
+   <span id="spanPolizza">
+     <b>Polizza N°: </b>
+     <span id="polizza"></span>
+   </span>
+   <br />
+   <span id = "spanCliente">
+  <b>Cliente: </b>
+     <span id="cliente"></span>
+    </span>
+   <br />    
+   <span id = "spanPartenza">
+  <b>Partenza: </b>
+     <span id="partenza"></span>
+    </span>
+    <br /> 
+   <span id = "spanTarghe">
+  <b>Targhe: </b>
+     <span id="targhe"></span>
+    </span> 
+    <br /> 
+   <span id = "spanResponse">
+  <b> </b>
+     <span id="response"></span>
+    </span>    
+
+ 
+</div>
+
+</body>
+</html>

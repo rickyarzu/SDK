@@ -1,0 +1,110 @@
+package JanuaTmsControls;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '260'}
+{$IMPLICITBUILD OFF}
+
+requires
+  TMSVCLUIPackPkgExDXE12,
+  TMSVCLUIPackPkgDXE12,
+  FlexCel_XlsAdapter,
+  FlexCel_Core,
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  JanuaCore,
+  JanuaVCLControls,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  PngComponentsD,
+  dac260,
+  crcontrols260,
+  jcl,
+  unidac260,
+  QRWRunDXE10_3_w64,
+  officeXPrt,
+  JvDB,
+  JvStdCtrls,
+  JvSystem,
+  JvCore,
+  gtDocEngD26,
+  gteDocSharedD26,
+  gtQRExpD26,
+  VCL_FlexCel_Core,
+  vclwinx,
+  dmvcframeworkRT,
+  loggerproRT,
+  JanuaUnidac,
+  TMSWebGMapsPkgDXE12;
+
+contains
+  Janua.Legacy.SelectPrinter in '..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas',
+  Janua.Shipping.RefundAgentStatement in '..\src\JanuaLegacy\Janua.Shipping.RefundAgentStatement.pas',
+  Janua.Shipping.Refund in '..\src\JanuaLegacy\Janua.Shipping.Refund.pas',
+  Janua.Legacy.InputText in '..\src\janualegacy\Janua.Legacy.InputText.pas',
+  Janua.Legacy.ReadOnly in '..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas',
+  Janua.Legacy.InputNumber in '..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas',
+  uJanuaFrameNavigator in '..\src\JanuaLegacy\uJanuaFrameNavigator.pas' {JanuaFrameNavigator: TFrame},
+  udlgSelectPrinter in '..\src\JanuaLegacy\udlgSelectPrinter.pas' {dlgSelectPrinter},
+  Janua.Legacy.Functions in '..\src\JanuaLegacy\Janua.Legacy.Functions.pas',
+  Janua.Legacy.Error in '..\src\JanuaLegacy\Janua.Legacy.Error.pas',
+  Janua.Legacy.DialogDate in '..\src\JanuaLegacy\Janua.Legacy.DialogDate.pas',
+  Janua.VCL.Application in '..\src\VCL\System\Janua.VCL.Application.pas',
+  Janua.VCL.frmMDCModel in '..\src\VCL\Commons\Janua.VCL.frmMDCModel.pas' {frmMDCModel},
+  uJanuaVCLFormMDIModel in '..\src\VCL\Commons\uJanuaVCLFormMDIModel.pas' {JanuaVCLFormMDIModel},
+  Janua.VCL.Forms in '..\src\VCL\Commons\Janua.VCL.Forms.pas',
+  Janua.VCL.TMSStyles in '..\src\VCL\Controls\Janua.VCL.TMSStyles.pas',
+  Janua.VCL.dlgLogin in '..\src\VCL\System\Janua.VCL.dlgLogin.pas' {dlgLogin},
+  Janua.VCL.dlgServer in '..\src\VCL\System\Janua.VCL.dlgServer.pas' {dlgSelectServer},
+  Janua.VCL.Dialogs in '..\src\VCL\Commons\Janua.VCL.Dialogs.pas',
+  Janua.VCL.dlgInputDate in '..\src\VCL\Commons\Janua.VCL.dlgInputDate.pas' {dlgInputDate},
+  Janua.VCL.dlgInputFloat in '..\src\VCL\Commons\Janua.VCL.dlgInputFloat.pas' {dlgInputFloat},
+  Janua.VCL.dlgInputNumber in '..\src\VCL\Commons\Janua.VCL.dlgInputNumber.pas' {dlgInputNumber},
+  Janua.VCL.dlgInputText in '..\src\VCL\Commons\Janua.VCL.dlgInputText.pas' {dlgInputText},
+  Janua.TMS.Functions in '..\src\TMS\Janua.TMS.Functions.pas',
+  udmJanuaTmsSystem in '..\src\TMS\udmJanuaTmsSystem.pas' {dmJanuaSystem1: TDataModule},
+  Janua.Tms.Controls.Impl in '..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas',
+  udlgJanuaWizardModel in '..\src\VCL\Commons\udlgJanuaWizardModel.pas' {dlgJanuaWizardModel},
+  Janua.TMS.Cloud in '..\src\TMS\Janua.TMS.Cloud.pas',
+  Janua.TMS.Statistics.MainFormController in '..\src\TMS\Janua.TMS.Statistics.MainFormController.pas',
+  Janua.VCL.dlgRegisterUser in '..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas' {dlgRegisterUser},
+  Janua.VCL.Geocoding in '..\src\VCL\Cloud\Janua.VCL.Geocoding.pas' {dmGeoCoding: TDataModule},
+  Janua.VCL.Users in '..\src\VCL\System\Janua.VCL.Users.pas',
+  Janua.TMS.RegisterUnit in '..\src\TMS\Janua.TMS.RegisterUnit.pas',
+  Janua.TMS.Error in '..\src\TMS\Janua.TMS.Error.pas';
+
+end.

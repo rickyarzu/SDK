@@ -1,0 +1,144 @@
+unit unitTestOrm;
+
+interface
+uses
+  DUnitX.TestFramework, Janua.Orm.Intf, Janua.Orm.Types;
+
+type
+
+  [TestFixture]
+  TOrmTest = class(TObject) 
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+    // Sample Methods
+    // Simple single Test
+    [Test]
+    procedure IntegerField;
+    [Test]
+    procedure FloatField;
+    [Test]
+    procedure StringField;
+    [Test]
+    procedure BoolField;
+    // Test with TestCase Attribute to supply parameters.
+  end;
+
+implementation
+
+uses Janua.Orm.Impl, System.JSON;
+
+procedure TOrmTest.Setup;
+begin
+end;
+
+procedure TOrmTest.StringField;
+begin
+
+end;
+
+procedure TOrmTest.TearDown;
+begin
+end;
+
+procedure TOrmTest.BoolField;
+var
+  a: Janua.Orm.Intf.IJanuaField;
+  aObject: TJsonObject;
+begin
+  a := Janua.Orm.Impl.TJanuaOrmFactory.CreateBoolField('test', 'test');
+  a.AsInteger := 1;
+  Assert.AreEqual(1, a.AsInteger);
+  a.AsDateTime := 2.0;
+  Assert.AreEqual(2, a.AsInteger);
+  a.Value := 5.0;
+  Assert.AreEqual(5.0, a.AsFloat);
+  a.AsFloat := 1;
+  Assert.AreEqual(1, a.AsInteger);
+  a.AsLargeInt := 3;
+  Assert.AreEqual(3.0, a.AsFloat);
+  a.AsString := '2';
+  Assert.AreEqual(2.0, a.AsFloat);
+  aObject := TJsonObject.Create;
+  try
+    a.Value := 1.0;
+    a.WriteJsonValue(aObject);
+    a.Value := 0;
+    Assert.AreEqual(0, a.AsInteger);
+    a.ReadJsonValue(aObject);
+    Assert.AreEqual(1, a.AsInteger);
+  finally
+    aObject.Free
+  end;
+
+end;
+
+procedure TOrmTest.FloatField;
+var
+  a: Janua.Orm.Intf.IJanuaField;
+  aObject: TJsonObject;
+begin
+  a := Janua.Orm.Impl.TJanuaOrmFactory.CreateDoubleField('test', 'test');
+  a.AsInteger := 1;
+  Assert.AreEqual(1.0, a.AsFloat);
+  a.AsDateTime := 2.0;
+  Assert.AreEqual(2.0, a.AsFloat);
+  a.Value := 5.0;
+  Assert.AreEqual(5.0, a.AsFloat);
+  a.AsFloat := 8.0;
+  Assert.AreEqual(8.0, a.AsFloat);
+  a.AsLargeInt := 3;
+  Assert.AreEqual(3.0, a.AsFloat);
+  a.AsString := '2';
+  Assert.AreEqual(2.0, a.AsFloat);
+  aObject := TJsonObject.Create;
+  try
+    a.Value := 10.0;
+    a.WriteJsonValue(aObject);
+    a.Value := 0;
+    Assert.AreEqual(0.0, a.AsFloat);
+    a.ReadJsonValue(aObject);
+    Assert.AreEqual(10.0, a.AsFloat);
+  finally
+    aObject.Free
+  end;
+
+
+end;
+
+procedure TOrmTest.IntegerField;
+var
+  a: Janua.Orm.Intf.IJanuaField;
+  aObject: TJsonObject;
+begin
+  a := Janua.Orm.Impl.TJanuaOrmFactory.CreateIntegerField('test', 'test');
+  a.AsInteger := 1;
+  a.AsDateTime := 2.0;
+  Assert.AreEqual(2, a.AsInteger);
+  a.Value := 3;
+  Assert.AreEqual(3, a.AsInteger);
+  a.AsFloat := 4;
+  Assert.AreEqual(4, a.AsInteger);
+  a.AsLargeInt := 5;
+  Assert.AreEqual(5, a.AsInteger);
+  aObject := TJsonObject.Create;
+  try
+    a.Value := 1;
+    a.WriteJsonValue(aObject);
+    a.Value := 0;
+    Assert.AreEqual(0, a.AsInteger);
+    a.ReadJsonValue(aObject);
+    Assert.AreEqual(1, a.AsInteger);
+  finally
+    aObject.Free
+  end;
+
+end;
+
+
+
+initialization
+  TDUnitX.RegisterTestFixture(TOrmTest);
+end.

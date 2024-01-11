@@ -1,0 +1,29 @@
+unit Janua.DBGrids.Intf;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+
+  { IJanuaDBGrid }
+
+  TJanuaColumns = TList<IJanuaGridColumn>;
+
+  IJanuaDBGrid = interface
+    function GetColumunCount: integer;
+    procedure SetColumunCount(AValue: integer);
+
+    property ColumunCount: integer read GetColumunCount write SetColumunCount;
+    property Columuns: TList<IJanuaGridColumn>;
+  end;
+
+implementation
+
+
+
+end.
+

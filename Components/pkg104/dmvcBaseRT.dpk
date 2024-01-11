@@ -1,0 +1,63 @@
+﻿package dmvcBaseRT;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  inet,
+  FireDAC,
+  IndyCore,
+  IndyProtocols,
+  loggerproRT,
+  SwagDoc,
+  bindengine,
+  bindcomp,
+  RESTComponents;
+
+contains
+  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
+  MVCFramework.Cache in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas',
+  MVCFramework.Nullables in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Nullables.pas',
+  MVCFramework.Serializer.Abstract in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Abstract.pas',
+  MVCFramework.Serializer.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Commons.pas',
+  MVCFramework.Serializer.Defaults in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Defaults.pas',
+  MVCFramework.Serializer.Intf in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Intf.pas',
+  MVCFramework.RESTClient.Indy in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RESTClient.Indy.pas',
+  MVCFramework.RESTClient.Intf in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RESTClient.Intf.pas',
+  MVCFramework.RESTClient in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RESTClient.pas',
+  MVCFramework.NullableTypes in '..\..\..\lib\delphimvcframework\sources\MVCFramework.NullableTypes.pas',
+  MVCFramework.DataSet.Utils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DataSet.Utils.pas',
+  MVCFramework.DuckTyping in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DuckTyping.pas',
+  MVCFramework.Serializer.JsonDataObjects in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.pas',
+  MVCFramework.Serializer.JsonDataObjects.CustomTypes in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.CustomTypes.pas',
+  MVCFramework.Serializer.JsonDataObjects.NullableTypes in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.NullableTypes.pas',
+  MVCFramework.Serializer.JsonDataObjects.OptionalCustomTypes in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.OptionalCustomTypes.pas';
+
+end.

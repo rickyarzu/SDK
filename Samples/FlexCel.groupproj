@@ -1,0 +1,216 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1EBD1042-4259-4ABD-A4A8-A1E98A9004F7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\sdk\prj\JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\sdk\prj\JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\sdk\prj\JanuaVCLControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Dico33\VCL\Dico33BackOffice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\projects\VCL\prj\Dico33Manager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ErgoAds\ErgoAdsWebBrokerApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BDMSparkle\VCL_JanuaprojectSparkle_Server.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Riccardo\Actions\prjActions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Januaproject\Components\delphimvcframework\samples\BasicDemo\BasicDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\12.Advanced API\AdvancedAPI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\40.Copy And Paste\CopyAndPaste.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\TMS Component Pack\Demos\AdvSpreadGrid\Demo\aspgdemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg59\AdvGridWorkBook.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg56\Project1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Flexcel\Importer\Dico33ExcelImporter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\20.Reading Files\ReadingFiles.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="..\..\sdk\prj\JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="..\..\sdk\prj\JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="..\..\sdk\prj\JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="..\..\sdk\prj\JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="..\..\sdk\prj\JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="..\..\sdk\prj\JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10">
+        <MSBuild Projects="..\..\sdk\prj\JanuaVCLControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Clean">
+        <MSBuild Projects="..\..\sdk\prj\JanuaVCLControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Make">
+        <MSBuild Projects="..\..\sdk\prj\JanuaVCLControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33BackOffice">
+        <MSBuild Projects="Dico33\VCL\Dico33BackOffice.dproj"/>
+    </Target>
+    <Target Name="Dico33BackOffice:Clean">
+        <MSBuild Projects="Dico33\VCL\Dico33BackOffice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33BackOffice:Make">
+        <MSBuild Projects="Dico33\VCL\Dico33BackOffice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33Manager">
+        <MSBuild Projects="..\..\projects\VCL\prj\Dico33Manager.dproj"/>
+    </Target>
+    <Target Name="Dico33Manager:Clean">
+        <MSBuild Projects="..\..\projects\VCL\prj\Dico33Manager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33Manager:Make">
+        <MSBuild Projects="..\..\projects\VCL\prj\Dico33Manager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ErgoAdsWebBrokerApp">
+        <MSBuild Projects="ErgoAds\ErgoAdsWebBrokerApp.dproj"/>
+    </Target>
+    <Target Name="ErgoAdsWebBrokerApp:Clean">
+        <MSBuild Projects="ErgoAds\ErgoAdsWebBrokerApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ErgoAdsWebBrokerApp:Make">
+        <MSBuild Projects="ErgoAds\ErgoAdsWebBrokerApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_JanuaprojectSparkle_Server">
+        <MSBuild Projects="BDMSparkle\VCL_JanuaprojectSparkle_Server.dproj"/>
+    </Target>
+    <Target Name="VCL_JanuaprojectSparkle_Server:Clean">
+        <MSBuild Projects="BDMSparkle\VCL_JanuaprojectSparkle_Server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_JanuaprojectSparkle_Server:Make">
+        <MSBuild Projects="BDMSparkle\VCL_JanuaprojectSparkle_Server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjActions">
+        <MSBuild Projects="..\Riccardo\Actions\prjActions.dproj"/>
+    </Target>
+    <Target Name="prjActions:Clean">
+        <MSBuild Projects="..\Riccardo\Actions\prjActions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjActions:Make">
+        <MSBuild Projects="..\Riccardo\Actions\prjActions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BasicDemo">
+        <MSBuild Projects="C:\Januaproject\Components\delphimvcframework\samples\BasicDemo\BasicDemo.dproj"/>
+    </Target>
+    <Target Name="BasicDemo:Clean">
+        <MSBuild Projects="C:\Januaproject\Components\delphimvcframework\samples\BasicDemo\BasicDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BasicDemo:Make">
+        <MSBuild Projects="C:\Januaproject\Components\delphimvcframework\samples\BasicDemo\BasicDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvancedAPI">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\12.Advanced API\AdvancedAPI.dproj"/>
+    </Target>
+    <Target Name="AdvancedAPI:Clean">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\12.Advanced API\AdvancedAPI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvancedAPI:Make">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\12.Advanced API\AdvancedAPI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CopyAndPaste">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\40.Copy And Paste\CopyAndPaste.dproj"/>
+    </Target>
+    <Target Name="CopyAndPaste:Clean">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\40.Copy And Paste\CopyAndPaste.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CopyAndPaste:Make">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\40.Copy And Paste\CopyAndPaste.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="aspgdemo">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvSpreadGrid\Demo\aspgdemo.dproj"/>
+    </Target>
+    <Target Name="aspgdemo:Clean">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvSpreadGrid\Demo\aspgdemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="aspgdemo:Make">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvSpreadGrid\Demo\aspgdemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AdvGridWorkBook">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg59\AdvGridWorkBook.dproj"/>
+    </Target>
+    <Target Name="AdvGridWorkBook:Clean">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg59\AdvGridWorkBook.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdvGridWorkBook:Make">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg59\AdvGridWorkBook.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg56\Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg56\Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="C:\tms\TMS Component Pack\Demos\AdvStringGrid\asg56\Project1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33ExcelImporter">
+        <MSBuild Projects="Flexcel\Importer\Dico33ExcelImporter.dproj"/>
+    </Target>
+    <Target Name="Dico33ExcelImporter:Clean">
+        <MSBuild Projects="Flexcel\Importer\Dico33ExcelImporter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33ExcelImporter:Make">
+        <MSBuild Projects="Flexcel\Importer\Dico33ExcelImporter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReadingFiles">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\20.Reading Files\ReadingFiles.dproj"/>
+    </Target>
+    <Target Name="ReadingFiles:Clean">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\20.Reading Files\ReadingFiles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReadingFiles:Make">
+        <MSBuild Projects="C:\tms\Flexcel\Demo\Delphi\Modules\10.API\20.Reading Files\ReadingFiles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreXE10;JanuaPostgresSystemXE10;JanuaVCLControlsXE10;Dico33BackOffice;Dico33Manager;ErgoAdsWebBrokerApp;VCL_JanuaprojectSparkle_Server;prjActions;BasicDemo;AdvancedAPI;CopyAndPaste;aspgdemo;AdvGridWorkBook;Project1;Dico33ExcelImporter;ReadingFiles"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreXE10:Clean;JanuaPostgresSystemXE10:Clean;JanuaVCLControlsXE10:Clean;Dico33BackOffice:Clean;Dico33Manager:Clean;ErgoAdsWebBrokerApp:Clean;VCL_JanuaprojectSparkle_Server:Clean;prjActions:Clean;BasicDemo:Clean;AdvancedAPI:Clean;CopyAndPaste:Clean;aspgdemo:Clean;AdvGridWorkBook:Clean;Project1:Clean;Dico33ExcelImporter:Clean;ReadingFiles:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreXE10:Make;JanuaPostgresSystemXE10:Make;JanuaVCLControlsXE10:Make;Dico33BackOffice:Make;Dico33Manager:Make;ErgoAdsWebBrokerApp:Make;VCL_JanuaprojectSparkle_Server:Make;prjActions:Make;BasicDemo:Make;AdvancedAPI:Make;CopyAndPaste:Make;aspgdemo:Make;AdvGridWorkBook:Make;Project1:Make;Dico33ExcelImporter:Make;ReadingFiles:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

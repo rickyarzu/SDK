@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="xps93huc0wp_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="bnzkcp28v7t_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaVCLControls:Janua.VCL.Controls.Forms.Impl.TJanuaVCLPageController" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Impl.TJanuaFormRecord" role="Supplier" />
+  </link>
+  <link uin="9xhr1j90i7o_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link2" />
+    <participant referencedUin="delphi:e_class:src:JanuaVCLControls:Janua.VCL.Controls.Forms.Impl.TJanuaVCLPageController" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Intf.IJanuaForm" role="Supplier" />
+  </link>
+  <link uin="tp5rhupbkh1bcpn0n_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link3" />
+    <participant referencedUin="delphi:e_class:src:JanuaVCLControls:Janua.VCL.Controls.Forms.Impl.TJanuaVCLPageController" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Controls.Forms.Impl.TJanuaCustomPageController" role="Supplier" />
+  </link>
+  <link uin="w51qnrn0yuq_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link4" />
+    <participant referencedUin="delphi:e_class:src:JanuaVCLControls:Janua.VCL.Controls.Forms.Impl.TJanuaVCLPageController" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaVCLControls:uJanuaVCLForm.TJanuaVCLFormModel" role="Supplier" />
+  </link>
+</nodeSet>

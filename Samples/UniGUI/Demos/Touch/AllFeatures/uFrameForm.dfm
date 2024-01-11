@@ -1,0 +1,19 @@
+object UnimFrameForm: TUnimFrameForm
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 320
+  Caption = ''
+  ScreenMask.Message = 'Loading...'
+  ScreenMask.Target = Owner
+  CloseButton.Text = 'Back'
+  CloseButton.UI = 'back'
+  CloseButton.ShowIcon = False
+  TitleDocked = True
+  TitleButtons = <>
+  PixelsPerInch = 96
+  TextHeight = 15
+  ScrollPosition = 0
+  ScrollHeight = 47
+  PlatformData = {}
+end

@@ -1,0 +1,20 @@
+{
+  "title": "",
+  "body": "Buongiorno abbiamo ricevuto la richiesta di ritirare la vettura $$vehicle_model$$ targata $$vehicle_numberplate$$ per conto di $$service_name$$ in data $$pickup_date$$ alle ore $$pickup_time$$ presso $$pickup_address$$ con restituzione il giorno $$return_day$$ ore $$return_time$$ presso $$return2_address$$ per confermare e visualizzare l'appuntamento cliccate il link $$tinyurl$$    ",
+  "msgto": "$$cust_cellular$$",
+  "msgfrom": "",
+  "msgfromname": "",
+  "customfields": {
+    "params": {
+      "farray": [
+        {
+          "key": "tinyurl",
+          "value": "https://tinyurl.com/28sp4aud"
+        }
+      ]
+    }
+  },
+  "url": "https://custconf.januaservers.com/?BookingID=$$jguid$$",
+  "urlgenengine": "jgeTinyUrl",
+  "smssendingengine": "jseSMS"
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscPageControl</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscPageControl</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scControls.pas</p>
+<p style="font-weight: bold;">TscPageControl =
+class(TPageControl)</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>PageControl
+with different styles, wallpapers for pages and&nbsp;with
+additional features for tabsheet (see <a href="TscTabSheet.html">TscTabSheet</a>)</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HideTabs</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Hide / show all tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HideBorders</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Hide / show border</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">MouseWheelSupport</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can change page with mouse wheel</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowButtonDivider</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control draw divider between buttons when Style = tsFlatButtons and Multiline = False</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowCloseButton</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then tab has close button</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowFocusRect</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control draw focus rect on tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowInActiveTab</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If False then control not draw inactive tab (only image and text)</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabExtendedDraw</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then control use extended methods to draw tab's content. You can
+use TabMargin, TabSpacing, TabLayout, TabGlowEffect properties to
+adjust tabs.</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabGlowEffect</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Glow effect for text and image&nbsp;</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabImageGlow</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then TabGlowEffect can apply for image in tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabLayout</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TButtonLayout</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Layout of image in tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabMargin</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin of image and tex in tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabSpacing</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between image and text in tab</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabsInCenter</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then Tabs will draw in center of control. TabWidth must be &gt; 0 in this case. Control
+emulate this behaviour and in designing time when you click on control
+it can offset position if you not set Align property.This property work only with TabPosition = tpTop. </td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabsOffset</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset
+for tabs from left. This property work only with TabPosition = tpTop.
+Control emulate this behaviour and in designing time when you click on
+control it can offset position if you not set Align property. UpDown
+control is disabled in this case.</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Wallpapers for tabs and pages</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TabsWallpaperIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of wallpapers for tab's background</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">FreeOnClose</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True the control destroy page else TabVisible will be False </td></tr></tbody>
+</table>
+<br><h1><font face="Helvetica, Arial">Events</font></h1>
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnDrawTab</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscTabCloseEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event for custom drawing in tab...<br>&nbsp;<br>TscDrawTabEvent = procedure(TabIndex: Integer; const Rct: TRect; Active,<br>&nbsp;&nbsp;&nbsp; MouseIn: Boolean; Cnvs: TCanvas) of object;</td>
+</tr>
+
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">OnCloseTab</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscTabCloseEvent</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event before close tab... <br>TscTabCloseEvent = procedure(Sender: TObject; var CanClose: Boolean) of object;</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">OnAfterCloseTab</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event, which executed when page was closed</td></tr></tbody>
+</table><br>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

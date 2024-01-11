@@ -1,0 +1,79 @@
+package TMSScripter_IDE;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - IDE Package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  TMSScripter,
+  TMSScripter_Memo,
+  TMSScripter_VCL,
+  dbrtl,
+  vcldb,
+  vclx;
+
+contains
+  atMemoInterface in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\atMemoInterface.pas',
+  CollectionInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\CollectionInspEditor.pas',
+  componentinspector in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\componentinspector.pas',
+  DatasetFieldsEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DatasetFieldsEditor.pas' {fmDatasetFieldsEditor},
+  DesignerAddControls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DesignerAddControls.pas' {frmDesignerAddControls},
+  DesignerAlignDialog in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DesignerAlignDialog.pas' {frmAlign},
+  DesignerAlignPalette in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DesignerAlignPalette.pas' {frmAlignmentPalette},
+  DesignerControlsEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DesignerControlsEditor.pas' {frmDesignerControlsEditor},
+  designeroptionsdialog in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\designeroptionsdialog.pas' {frmDesignerOptions},
+  designersizedialog in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\designersizedialog.pas' {frmSize},
+  DesignerTabOrderDialog in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DesignerTabOrderDialog.pas' {frmTabOrder},
+  DFEAddFields in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DFEAddFields.pas' {fmDFEAddFields},
+  DFENewField in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\DFENewField.pas' {fmDFENewField},
+  dideactions in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\dideactions.pas' {dmIDEActions},
+  fIDEEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fIDEEditor.pas',
+  fLibraryBrowser in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fLibraryBrowser.pas' {fmLibraryBrowser},
+  fObjectInspector in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fObjectInspector.pas',
+  FormDesigner in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\FormDesigner.pas',
+  fSelectLanguage in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fSelectLanguage.pas' {fmSelectLanguage},
+  fSelectUnit in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fSelectUnit.pas' {fmSelectUnit},
+  fToolPalette in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fToolPalette.pas',
+  fWatches in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fWatches.pas',
+  IDEDialog in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\IDEDialog.pas',
+  idemain in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\idemain.pas',
+  imagelisteditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\imagelisteditor.pas' {fmImageListEditor},
+  inspectorcontrols in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\inspectorcontrols.pas',
+  ListViewInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\ListViewInspEditor.pas',
+  MenuInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\MenuInspEditor.pas',
+  MenuInspIDEEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\MenuInspIDEEditor.pas' {frmMenuIDEEditor},
+  PictureInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\PictureInspEditor.pas' {frmPicture},
+  PropertyInspEditors in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\PropertyInspEditors.pas',
+  PropertyList in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\PropertyList.pas',
+  StringsInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\StringsInspEditor.pas' {frmStrings},
+  TreeViewInspEditor in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\TreeViewInspEditor.pas',
+  fWatchProperties in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\ide\fWatchProperties.pas' {fmWatchProperties};
+
+end.

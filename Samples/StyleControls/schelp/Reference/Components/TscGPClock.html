@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPClock</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPClock</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Analogue clock control
+</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Fill color for control
+shape (clNone - fill is missing)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value of the fill
+color for control shape</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle =
+(scgpsfColor, scgpsfGradient);<br>
+<br>
+scgpsfColor - solid color<br>
+scgpsfGradient - auto gradient from FillColor</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle of fill gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the frame
+(clNone -&nbsp;frame is invisible)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Frame color of the
+center circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameShadow</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then frame has
+inner shadow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFrameColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for frame
+color of the center circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Fill color of the center
+circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for the fill
+color of the center circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFillStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Fill style for center
+circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFillGradientAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle of fill gradient
+for center circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CenterFrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Frame width of the
+center circle</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowHourColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Arrow color for hour
+arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowHourColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value
+for&nbsp;hour arrow
+color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowHourWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the hour arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowMinColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Arrow color for min arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowMinColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for min
+arrow
+color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowShadow</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then arrows and
+center circle has shadow </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowMinWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the min arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowSecColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Arrow color for sec arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowSecColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for sec
+arrow
+color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ArrowSecWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the sec arrow</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the scale ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+the scale ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the tick on
+scale</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TicksSmallWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width for small ticks</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HourOffset </td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">You can set hour offset
++ or - from your time</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p><br>
+</p>
+</body></html>

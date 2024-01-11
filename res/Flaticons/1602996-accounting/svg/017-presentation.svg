@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<rect x="121" y="421" style="fill:#61729B;" width="270" height="30"/>
+	<rect x="256" y="421" style="fill:#47568C;" width="135" height="30"/>
+	<rect x="361" y="361" style="fill:#47568C;" width="60" height="151"/>
+	<rect x="91" y="361" style="fill:#61729B;" width="60" height="151"/>
+	<rect x="30" y="76" style="fill:#FFF5F5;" width="452" height="300"/>
+	<rect x="256" y="76" style="fill:#EFE2DD;" width="226" height="300"/>
+	<path style="fill:#61729B;" d="M286,30v61h-60V30c0-16.5,13.5-30,30-30S286,13.5,286,30z"/>
+	<polygon style="fill:#47568C;" points="391,211 361,211 361,151 301,151 301,121 391,121  "/>
+	<path style="fill:#47568C;" d="M286,30v61h-30V0C272.5,0,286,13.5,286,30z"/>
+	<rect y="61" style="fill:#FF9100;" width="512" height="30"/>
+	<rect x="256" y="61" style="fill:#FF641A;" width="256" height="30"/>
+	<rect y="361" style="fill:#FF9100;" width="512" height="30"/>
+	<rect x="256" y="361" style="fill:#FF641A;" width="256" height="30"/>
+	<polygon style="fill:#00C0F1;" points="301,316 256,316 241,263.5 256,211 301,211  "/>
+	<polygon style="fill:#25D9F8;" points="211,181 256,211 256,316 211,316 196,263.5  "/>
+	<polygon style="fill:#00C0F1;" points="211,316 166,316 151,271 166,226 211,181  "/>
+	<polygon style="fill:#25D9F8;" points="166,316 121,316 106,248.5 121,181 166,226  "/>
+	<g>
+		<polygon style="fill:#61729B;" points="387.4,145.6 303.999,246.099 256,213.999 214.6,186.4 167.5,248.8 95.501,176.499     116.499,155.499 164.5,203.2 207.4,145.6 256,177.999 298.001,205.899 364.6,126.4   "/>
+	</g>
+	<polygon style="fill:#47568C;" points="387.4,145.6 303.999,246.099 256,213.999 256,177.999 298.001,205.899 364.6,126.4  "/>
+	<polygon style="fill:#61729B;" points="421,301 421,331 91,331 91,121 121,121 121,301  "/>
+	<rect x="256" y="301" style="fill:#47568C;" width="165" height="30"/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

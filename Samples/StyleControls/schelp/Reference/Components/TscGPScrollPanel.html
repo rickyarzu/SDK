@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPScrollPanel</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPScrollPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPExtControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel
+control with scroll feature</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p><br>
+</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Picture for wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image for additional
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StyleKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPScrollPanelBGStyleKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style of panel:<br>
+<br>
+&nbsp;TscGPScrollPanelBGStyleKind = (scgspbFormBackground,
+scgspbPanel,<br>
+&nbsp;&nbsp;&nbsp; scgspbTransparent);<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of panel for
+scsPanel style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HotScroll</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then scrolling
+start when mouse over scroll button </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll offset value. If
+Value = 0 then scroll offset is client size.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollTimerInterval</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll timer interval</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollType</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscScrollType</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Scroll direction:<br>
+<br>
+TscScrollType = (scstHorizontal, scstVertical);</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TouchScroll</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable scrolling by
+touch events</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollButtonWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Size of the scroll button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor2</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Second color for
+background with gradient style. <br>
+If value is clNone then this color will be ignored and gradient filling
+will uses only one color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle =
+(scgpsfColor, scgpsfGradient);<br>
+<br>
+Filling style for panel.<br>
+&nbsp;scgpsfColor - one color<br>
+&nbsp;scgpsfGradient - control automatically create light and dark
+colors for gradient from FillColor value.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle for gradient (90,
+-90, 45, -125, ....)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientBeginAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color in
+the begin of gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientEndAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color in
+the end of gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientBeginColorOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Lightness offset in
+percents for first color in gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientEndColorOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Darkness offset in
+percents for second color in gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">StorePaintBuffer</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then transparent
+child controls from StyleControls VCL will use special paint buffer to
+get parent image. This solution really increase performance!</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HorzScrollDirection</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPScrollPanelHorzDirection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscScrollPanelHorzDirection
+= (scgspsdLeftToRight, scgspsdRightToLeft);<br><br>
+Direction of horizontal scrolling: left to right (default) &nbsp;or
+right to left</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">VertScrollDirection</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPScrollPanelVertDirection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscScrollPanelVertDirection
+= (scgspsdTopToBottom, scgspsdBottomToTop);<br><br>
+Direction of vertical scrolling: top to bottom default) or bottom to top</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p></p>
+<p></p>
+<p><br>
+</p>
+</body></html>

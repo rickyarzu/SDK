@@ -1,0 +1,228 @@
+inherited TabbedwithNavigationForm_iPhone4in: TTabbedwithNavigationForm_iPhone4in
+  ClientHeight = 548
+  ClientWidth = 320
+  DesignerMasterStyle = 3
+  inherited TabControl1: TTabControl
+    Size.Width = 320.000000000000000000
+    Size.Height = 548.000000000000000000
+    Sizes = (
+      320s
+      499s
+      320s
+      499s
+      320s
+      499s
+      320s
+      499s)
+    inherited tabSearch: TTabItem
+      Size.Width = 80.000000000000000000
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited TabControlSearch: TTabControl
+        Size.Width = 320.000000000000000000
+        Size.Height = 499.000000000000000000
+        Sizes = (
+          320s
+          499s
+          320s
+          499s
+          320s
+          499s)
+        inherited TabPrestazioni: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited ToolBar1: TToolBar
+            Size.Width = 320.000000000000000000
+            inherited lblTitle1: TLabel
+              Size.Width = 320.000000000000000000
+            end
+            inherited Image1: TImage
+              MultiResBitmap.Height = 348
+              MultiResBitmap.Width = 926
+              Size.Width = 320.000000000000000000
+              Size.Height = 41.000000000000000000
+            end
+          end
+          inherited ListViewPrestazioni: TListView
+            Size.Width = 320.000000000000000000
+            Size.Height = 333.000000000000000000
+          end
+          inherited Panel1: TPanel
+            Size.Width = 320.000000000000000000
+            inherited edSearch: TEdit
+              Size.Width = 320.000000000000000000
+              inherited ClearEditButton2: TClearEditButton
+                Position.Y = 1.000000000000000000
+              end
+            end
+            inherited edLocation: TEdit
+              Size.Width = 320.000000000000000000
+              inherited ClearEditButton1: TClearEditButton
+                Position.Y = 1.000000000000000000
+              end
+            end
+            inherited Text1: TText
+              Size.Width = 320.000000000000000000
+            end
+          end
+          inherited ListBox1: TListBox
+            Size.Width = 0.000000000000000000
+            Viewport.Width = 0.000000000000000000
+            Viewport.Height = 313.000000000000000000
+          end
+        end
+        inherited TabIstituti: TTabItem
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          inherited ToolBar2: TToolBar
+            Size.Width = 320.000000000000000000
+            inherited Image2: TImage
+              MultiResBitmap.Height = 348
+              MultiResBitmap.Width = 926
+              Size.Width = 84.000000000000000000
+            end
+          end
+          inherited ListView2: TListView
+            Size.Width = 320.000000000000000000
+            Size.Height = 455.000000000000000000
+          end
+        end
+        inherited TabIstituto: TTabItem
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          inherited ToolBar6: TToolBar
+            Size.Width = 320.000000000000000000
+            inherited Image3: TImage
+              MultiResBitmap.Height = 348
+              MultiResBitmap.Width = 926
+              Size.Width = 84.000000000000000000
+            end
+          end
+          inherited lbName: TLabel
+            Size.Width = 320.000000000000000000
+          end
+          inherited lbAddress: TLabel
+            Size.Width = 320.000000000000000000
+          end
+          inherited lbTelefono: TLabel
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          inherited Button1: TButton
+            Size.Width = 320.000000000000000000
+          end
+          inherited Text2: TText
+            Size.Width = 320.000000000000000000
+          end
+        end
+      end
+    end
+    inherited TabItem1: TTabItem
+      Size.Width = 80.000000000000000000
+      ExplicitSize.cx = 81.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar7: TToolBar
+        Size.Width = 320.000000000000000000
+        inherited Image5: TImage
+          MultiResBitmap.Height = 348
+          MultiResBitmap.Width = 926
+          Size.Width = 84.000000000000000000
+        end
+      end
+      inherited ListViewBookingBasket: TListView
+        Size.Width = 320.000000000000000000
+        Size.Height = 455.000000000000000000
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 80.000000000000000000
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar8: TToolBar
+        Size.Width = 320.000000000000000000
+        inherited Image6: TImage
+          MultiResBitmap.Height = 348
+          MultiResBitmap.Width = 926
+          Size.Width = 84.000000000000000000
+        end
+      end
+      inherited ListView3: TListView
+        Size.Width = 320.000000000000000000
+        Size.Height = 455.000000000000000000
+      end
+    end
+    inherited TabItem4: TTabItem
+      Size.Width = 80.000000000000000000
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar3: TToolBar
+        Size.Width = 320.000000000000000000
+        inherited Image7: TImage
+          MultiResBitmap.Height = 348
+          MultiResBitmap.Width = 926
+          Size.Width = 84.000000000000000000
+        end
+      end
+      inherited TabControl2: TTabControl
+        Size.Width = 320.000000000000000000
+        Size.Height = 455.000000000000000000
+        Sizes = (
+          320s
+          455s
+          320s
+          455s)
+        inherited TabItem3: TTabItem
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+        end
+        inherited TabItem5: TTabItem
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+        end
+      end
+    end
+  end
+  inherited GestureManager1: TGestureManager
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControlSearch
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  inherited PgConnection1: TUniConnection
+    EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
+  end
+  inherited vtBookingsBasket: TVirtualTable
+    Data = {
+      04000B000B00616E6167726170685F696403000000000000000800616E5F7469
+      746C6518002000000000000A00616E5F6164647265737318000001000000000C
+      0066756C6C5F6164647265737327000000000000000C00616E5F6C6173745F6E
+      616D6518008000000000000800616E5F70686F6E651800140000000000060061
+      6E5F66617818001400000000000800616E5F656D61696C18000001000000000E
+      00616E5F706F7374616C5F636F646518000800000000000700616E5F746F776E
+      18008000000000001100616E5F73746174655F70726F76696E636518001E0000
+      000000000000000000}
+  end
+  inherited vtSearchServices: TVirtualTable
+    Data = {04000000000000000000}
+  end
+end

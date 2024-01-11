@@ -1,0 +1,108 @@
+package FMXTMSFNCMapsPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Maps for FMX'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  fmx,
+  FMXTMSFNCCorePkg;
+
+contains
+  FMX.TMSFNCDirections.Azure in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.Azure.pas',
+  FMX.TMSFNCDirections.Bing in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.Bing.pas',
+  FMX.TMSFNCDirections.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.Google.pas',
+  FMX.TMSFNCDirections.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.Here.pas',
+  FMX.TMSFNCDirections.MapBox in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.MapBox.pas',
+  FMX.TMSFNCDirections in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.pas',
+  FMX.TMSFNCDirections.TomTom in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.TomTom.pas',
+  FMX.TMSFNCGeocoding.Azure in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.Azure.pas',
+  FMX.TMSFNCGeocoding.Bing in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.Bing.pas',
+  FMX.TMSFNCGeocoding.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.Google.pas',
+  FMX.TMSFNCGeocoding.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.Here.pas',
+  FMX.TMSFNCGeocoding.MapBox in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.MapBox.pas',
+  FMX.TMSFNCGeocoding in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.pas',
+  FMX.TMSFNCGeocoding.TomTom in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.TomTom.pas',
+  FMX.TMSFNCGoogleMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGoogleMaps.pas',
+  FMX.TMSFNCLocation.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCLocation.Google.pas',
+  FMX.TMSFNCLocation.IPStack in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCLocation.IPStack.pas',
+  FMX.TMSFNCLocation in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCLocation.pas',
+  FMX.TMSFNCMaps.AzureMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.AzureMaps.pas',
+  FMX.TMSFNCMaps.BingMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.BingMaps.pas',
+  FMX.TMSFNCMaps.GoogleMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.GoogleMaps.pas',
+  FMX.TMSFNCMaps.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.Here.pas',
+  FMX.TMSFNCMaps.OpenLayers in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.OpenLayers.pas',
+  FMX.TMSFNCMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.pas',
+  FMX.TMSFNCMaps.TomTom in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.TomTom.pas',
+  FMX.TMSFNCMapsCommonTypes in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMapsCommonTypes.pas',
+  FMX.TMSFNCMapsReg in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMapsReg.pas',
+  FMX.TMSFNCMaps.MapBox in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.MapBox.pas',
+  FMX.TMSFNCMapBox in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMapBox.pas',
+  FMX.TMSFNCElevation.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCElevation.Google.pas',
+  FMX.TMSFNCElevation in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCElevation.pas',
+  FMX.TMSFNCMaps.MapKit in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMaps.MapKit.pas',
+  FMX.TMSFNCOpenLayers in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCOpenLayers.pas',
+  FMX.TMSFNCElevation.MapQuest in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCElevation.MapQuest.pas',
+  FMX.TMSFNCElevation.AirMap in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCElevation.AirMap.pas',
+  FMX.TMSFNCMapKit in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMapKit.pas',
+  FMX.TMSFNCTomTom in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTomTom.pas',
+  FMX.TMSFNCMapsImage in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCMapsImage.pas',
+  FMX.TMSFNCStaticMap.Azure in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.Azure.pas',
+  FMX.TMSFNCStaticMap.Bing in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.Bing.pas',
+  FMX.TMSFNCStaticMap.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.Google.pas',
+  FMX.TMSFNCStaticMap.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.Here.pas',
+  FMX.TMSFNCStaticMap.MapBox in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.MapBox.pas',
+  FMX.TMSFNCStaticMap in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.pas',
+  FMX.TMSFNCStaticMap.TomTom in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCStaticMap.TomTom.pas',
+  FMX.TMSFNCTollCost.PTVxServer in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTollCost.PTVxServer.pas',
+  FMX.TMSFNCTollCost.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTollCost.Here.pas',
+  FMX.TMSFNCTollCost in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTollCost.pas',
+  FMX.TMSFNCTimeZone.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTimeZone.Google.pas',
+  FMX.TMSFNCTimeZone in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTimeZone.pas',
+  FMX.TMSFNCTimeZone.Azure in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTimeZone.Azure.pas',
+  FMX.TMSFNCTimeZone.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTimeZone.Here.pas',
+  FMX.TMSFNCTimeZone.Bing in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCTimeZone.Bing.pas',
+  FMX.TMSFNCRouteCalculator in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCRouteCalculator.pas',
+  FMX.TMSFNCGeocoding.OpenStreetMap in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.OpenStreetMap.pas',
+  FMX.TMSFNCGeocoding.OpenRouteService in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.OpenRouteService.pas',
+  FMX.TMSFNCDirections.OpenRouteService in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.OpenRouteService.pas',
+  FMX.TMSFNCDirections.GeoApify in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCDirections.GeoApify.pas',
+  FMX.TMSFNCGeocoding.GeoApify in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGeocoding.GeoApify.pas',
+  FMX.TMSFNCPlaces.Google in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.Google.pas',
+  FMX.TMSFNCPlaces in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.pas',
+  FMX.TMSFNCPlaces.Here in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.Here.pas',
+  FMX.TMSFNCPlaces.GeoApify in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.GeoApify.pas',
+  FMX.TMSFNCPlaces.Azure in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.Azure.pas',
+  FMX.TMSFNCPlaces.Bing in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCPlaces.Bing.pas',
+  FMX.TMSFNCGooglePlaces in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCGooglePlaces.pas',
+  FMX.TMSFNCBingMaps in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCBingMaps.pas',
+  FMX.TMSFNCHere in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCHere.pas',
+  FMX.TMSFNCHereDirections in '..\..\..\tmssoftware\TMS FNC Maps\FMX.TMSFNCHereDirections.pas';
+
+end.

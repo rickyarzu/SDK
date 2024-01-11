@@ -1,0 +1,75 @@
+package FrameViewer;
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  soaprtl,
+  VclSmp;
+
+contains
+  BegaHtmlPrintPreviewForm in '..\..\..\lib\HtmlViewer\source\BegaHtmlPrintPreviewForm.pas',
+  BegaMetaFilePrinter in '..\..\..\lib\HtmlViewer\source\BegaMetaFilePrinter.pas',
+  BegaPreview in '..\..\..\lib\HtmlViewer\source\BegaPreview.pas',
+  BegaPreviewForm in '..\..\..\lib\HtmlViewer\source\BegaPreviewForm.pas' {BegaCustomPrintPreviewForm},
+  BegaPreviewPanel in '..\..\..\lib\HtmlViewer\source\BegaPreviewPanel.pas',
+  BegaScrollBox in '..\..\..\lib\HtmlViewer\source\BegaScrollBox.pas',
+  BegaZoom in '..\..\..\lib\HtmlViewer\source\BegaZoom.pas',
+  BuffConv in '..\..\..\lib\HtmlViewer\source\BuffConv.pas',
+  BuffConvArrays in '..\..\..\lib\HtmlViewer\source\BuffConvArrays.pas',
+  DitherUnit in '..\..\..\lib\HtmlViewer\source\DitherUnit.pas',
+  FramBrwz in '..\..\..\lib\HtmlViewer\source\FramBrwz.pas',
+  framview in '..\..\..\lib\HtmlViewer\source\framview.pas',
+  GDIPL2A in '..\..\..\lib\HtmlViewer\source\GDIPL2A.pas',
+  HSLUtils in '..\..\..\lib\HtmlViewer\source\HSLUtils.pas',
+  HtmlBuffer in '..\..\..\lib\HtmlViewer\source\HtmlBuffer.pas',
+  HtmlCaches in '..\..\..\lib\HtmlViewer\source\HtmlCaches.pas',
+  HtmlFonts in '..\..\..\lib\HtmlViewer\source\HtmlFonts.pas',
+  htmlgif1 in '..\..\..\lib\HtmlViewer\source\htmlgif1.pas',
+  HTMLGif2 in '..\..\..\lib\HtmlViewer\source\HTMLGif2.pas',
+  HtmlGlobals in '..\..\..\lib\HtmlViewer\source\HtmlGlobals.pas',
+  HtmlImages in '..\..\..\lib\HtmlViewer\source\HtmlImages.pas',
+  Htmlsbs1 in '..\..\..\lib\HtmlViewer\source\Htmlsbs1.pas',
+  HTMLSubs in '..\..\..\lib\HtmlViewer\source\HTMLSubs.pas',
+  HtmlSymb in '..\..\..\lib\HtmlViewer\source\HtmlSymb.pas',
+  HTMLUn2 in '..\..\..\lib\HtmlViewer\source\HTMLUn2.pas',
+  htmlview in '..\..\..\lib\HtmlViewer\source\htmlview.pas',
+  MetaFilePrinter in '..\..\..\lib\HtmlViewer\source\MetaFilePrinter.pas',
+  ReadHTML in '..\..\..\lib\HtmlViewer\source\ReadHTML.pas',
+  StylePars in '..\..\..\lib\HtmlViewer\source\StylePars.pas',
+  StyleTypes in '..\..\..\lib\HtmlViewer\source\StyleTypes.pas',
+  StyleUn in '..\..\..\lib\HtmlViewer\source\StyleUn.pas',
+  URLSubs in '..\..\..\lib\HtmlViewer\source\URLSubs.pas',
+  UrlConn in '..\..\..\lib\HtmlViewer\Source\UrlConn.pas',
+  vwPrint in '..\..\..\lib\HtmlViewer\source\vwPrint.pas';
+
+end.
+

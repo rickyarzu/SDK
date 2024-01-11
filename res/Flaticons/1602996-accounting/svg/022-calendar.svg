@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<polygon style="fill:#FFF5F5;" points="512,181 512,512 0,512 0,181 31,151 482,151  "/>
+	<polygon style="fill:#EFE2DD;" points="512,181 512,512 256,512 256,151 482,151  "/>
+	<polygon style="fill:#FDBF00;" points="512,60 512,181 0,181 0,60 61,60 76,45 91,60 211,60 226,45 241,60 361,60 376,45 391,60     "/>
+	<polygon style="fill:#FF9100;" points="512,60 512,181 256,181 256,60 361,60 376,45 391,60  "/>
+	<path style="fill:#25D9F8;" d="M241,241v60H61v150h300v-60h90V241H241z"/>
+	<polygon style="fill:#00C0F1;" points="451,241 451,391 361,391 361,451 256,451 256,241  "/>
+	<path style="fill:#61729B;" d="M106,0C81.186,0,61,20.186,61,45v15h30V45c0-8.276,6.724-15,15-15s15,6.724,15,15v15v46   c0,8.276-6.724,15-15,15s-15-6.724-15-15H61c0,24.814,20.186,45,45,45s45-20.186,45-45V60V45C151,20.186,130.814,0,106,0z"/>
+	<path style="fill:#61729B;" d="M301,45v61c0,24.901-20.099,45-45,45s-45-20.099-45-45h30c0,8.401,6.599,15,15,15s15-6.599,15-15V45   c0-8.401-6.599-15-15-15s-15,6.599-15,15v15h-30V45c0-24.901,20.099-45,45-45S301,20.099,301,45z"/>
+	<path style="fill:#47568C;" d="M406,0c-24.814,0-45,20.186-45,45v15h30V45c0-8.276,6.724-15,15-15s15,6.724,15,15v15v46   c0,8.276-6.724,15-15,15s-15-6.724-15-15h-30c0,24.814,20.186,45,45,45s45-20.186,45-45V60V45C451,20.186,430.814,0,406,0z"/>
+	<rect x="361" y="271" style="fill:#EFE2DD;" width="60" height="30"/>
+	<rect x="271" y="271" style="fill:#EFE2DD;" width="60" height="30"/>
+	<rect x="271" y="331" style="fill:#EFE2DD;" width="60" height="30"/>
+	<rect x="181" y="391" style="fill:#FFF5F5;" width="60" height="30"/>
+	<rect x="181" y="331" style="fill:#FFF5F5;" width="60" height="30"/>
+	<rect x="91" y="331" style="fill:#FFF5F5;" width="60" height="30"/>
+	<rect x="91" y="391" style="fill:#FFF5F5;" width="60" height="30"/>
+	<rect x="271" y="391" style="fill:#EFE2DD;" width="60" height="30"/>
+	<rect x="361" y="331" style="fill:#EFE2DD;" width="60" height="30"/>
+	<path style="fill:#47568C;" d="M301,45v61c0,24.901-20.099,45-45,45v-30c8.401,0,15-6.599,15-15V45c0-8.401-6.599-15-15-15V0   C280.901,0,301,20.099,301,45z"/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

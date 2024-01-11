@@ -1,0 +1,116 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{328EEEB4-D6B0-4C8A-B9F3-3B6E0588A117}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TMSVCLUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgXls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgWiz.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TMSVCLUIPackPkg">
+        <MSBuild Projects="TMSVCLUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkg:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkg:Make">
+        <MSBuild Projects="TMSVCLUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx">
+        <MSBuild Projects="TMSVCLUIPackPkgEx.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE">
+        <MSBuild Projects="TMSVCLUIPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls">
+        <MSBuild Projects="TMSVCLUIPackPkgXls.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgXls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgXls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz">
+        <MSBuild Projects="TMSVCLUIPackPkgWiz.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgWiz.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgWiz.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;TMSVCLUIPackPkgDE;TMSVCLUIPackPkgXls;TMSVCLUIPackPkgWiz"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TMSVCLUIPackPkg:Clean;TMSVCLUIPackPkgEx:Clean;TMSVCLUIPackPkgDE:Clean;TMSVCLUIPackPkgXls:Clean;TMSVCLUIPackPkgWiz:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TMSVCLUIPackPkg:Make;TMSVCLUIPackPkgEx:Make;TMSVCLUIPackPkgDE:Make;TMSVCLUIPackPkgXls:Make;TMSVCLUIPackPkgWiz:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='TMSUIPack'">
+        <BuildGroupProject Include="TMSVCLUIPackPkgXls.dproj">
+            <ProjectGuid>{E2E6EE1C-96BA-4DCA-9D2B-0BA6D3E61236}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSVCLUIPackPkgWiz.dproj">
+            <ProjectGuid>{F2765D4F-2DF4-4316-B2BC-BDCE4929C3D8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSVCLUIPackPkg.dproj">
+            <ProjectGuid>{3CBC48B9-1535-4679-B84B-E7D6DFA6140A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSVCLUIPackPkgEx.dproj">
+            <ProjectGuid>{355F8050-813F-428F-8F6E-6176FEBCEB1A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSVCLUIPackPkgDE.dproj">
+            <ProjectGuid>{E449567B-198A-426F-955D-08A3E482995A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

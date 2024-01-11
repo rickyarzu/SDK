@@ -1,0 +1,137 @@
+unit Janua.Core.DB;
+
+interface
+
+Type
+  TJanuaJsonDacDataset = class(TJanuaPersistent)
+  private
+    FName: string;
+    FEncodedDataset: String;
+    FDecodedDataset: TStrings;
+    FJsonObject: TJsonObject;
+    procedure SetName(const Value: string);
+    procedure SetVirtualTable(const Value: TMemDataset);
+    procedure SetDecodedDataset(const Value: TStrings);
+    procedure SetEncodedDataset(const Value: string);
+    procedure SetJsonObject(const Value: TJsonObject);
+  protected
+    FMemDataset: MemDS.TMemDataset;
+  public
+    procedure LoadFromJsonObject(aObject: TJsonObject);
+    constructor Create; override;
+    destructor Destroy; override;
+    function AsJsonObject: TJsonObject;
+    function AsJson: string;
+  public
+    procedure LoadFromJson(aJson: string);
+    property EncodedDataset: string read FEncodedDataset write SetEncodedDataset;
+    property DecodedDataset: TStrings read FDecodedDataset write SetDecodedDataset;
+    property JsonObject: TJsonObject read FJsonObject write SetJsonObject;
+  published
+    property Name: string read FName write SetName;
+    property MemDataset: TMemDataset read FMemDataset write SetVirtualTable;
+  end;
+
+
+implementation
+
+{ TJanuaJsonDacDataset }
+
+function TJanuaJsonDacDataset.AsJson: string;
+begin
+  Result := self.AsJsonObject.ToJSON
+end;
+
+function TJanuaJsonDacDataset.AsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  if Assigned(FMemDataset) then
+  begin
+    Janua.Core.Functions.JsonPair(Result, 'count', self.FMemDataset.RecordCount);
+    Janua.Core.Functions.JsonPair(Result, 'name', self.Name);
+    Janua.Core.Functions.JsonPair(Result, 'datasetname', self.FMemDataset.Name);
+    Janua.Core.Functions.ExportDatasetToBase64String(self.FMemDataset, FEncodedDataset);
+    Janua.Core.Functions.JsonPair(Result, 'dataset', FEncodedDataset);
+  end
+  else
+  begin
+    raise exception.Create('TJanuaJsonDacDataset.AsJsonObject Error FMemDataset not Set');
+  end;
+end;
+
+constructor TJanuaJsonDacDataset.Create;
+begin
+  inherited;
+  self.FDecodedDataset := TStringList.Create;
+  self.FJsonObject := TJsonObject.Create;
+end;
+
+destructor TJanuaJsonDacDataset.Destroy;
+begin
+  if Assigned(FDecodedDataset) then
+    FDecodedDataset.Free;
+  if Assigned(FJsonObject) then
+    FJsonObject.Free;
+  inherited;
+end;
+
+procedure TJanuaJsonDacDataset.LoadFromJson(aJson: string);
+var
+  vParsed: integer;
+begin
+  self.FJsonObject := Janua.Core.Functions.JsonParse(aJson);
+
+  //vParsed := FJsonObject.Parse(BytesOf(AJson), 0);
+  //if vParsed <= 0 then
+  //  raise exception.Create('Janua Core Functions Error in Json Parse, not a json text');
+
+  self.LoadFromJsonObject(FJsonObject);
+end;
+
+procedure TJanuaJsonDacDataset.LoadFromJsonObject(aObject: TJsonObject);
+// var
+// vObject: TJsonObject;
+begin
+  // deprecated this proceeure should be Executed by the incapsulation object
+  // vObject := Janua.Core.Functions.JsonObject(self.Name, aObject);
+  if Assigned(aObject) then
+  begin
+    Janua.Core.Functions.JsonValue(aObject, 'dataset', self.FEncodedDataset);
+    self.FDecodedDataset.Text := Janua.Core.Functions.Decode64(self.FEncodedDataset);
+    if Assigned(self.FMemDataset) and (self.FMemDataset is TVirtualTable) and (self.FDecodedDataset.count > 0) then
+    begin
+      Janua.Core.Functions.ImportDatasetFromXMLMemo((self.FMemDataset as TVirtualTable), self.FDecodedDataset);
+      if not self.FMemDataset.Active then
+        self.FMemDataset.Open;
+    end;
+  end
+  else
+    raise exception.Create('JanuaJsonDacDataset.LoadFromJsonObject Error object is not set');
+end;
+
+procedure TJanuaJsonDacDataset.SetDecodedDataset(const Value: TStrings);
+begin
+  FDecodedDataset := Value;
+end;
+
+procedure TJanuaJsonDacDataset.SetEncodedDataset(const Value: string);
+begin
+  FEncodedDataset := Value;
+end;
+
+procedure TJanuaJsonDacDataset.SetJsonObject(const Value: TJsonObject);
+begin
+  FJsonObject := Value;
+end;
+
+procedure TJanuaJsonDacDataset.SetName(const Value: string);
+begin
+  FName := Value;
+end;
+
+procedure TJanuaJsonDacDataset.SetVirtualTable(const Value: TMemDataset);
+begin
+  FMemDataset := Value;
+end;
+
+end.

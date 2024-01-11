@@ -1,0 +1,271 @@
+object frameFMXMobileChoice: TframeFMXMobileChoice
+  Size.Width = 413.000000000000000000
+  Size.Height = 694.000000000000000000
+  Size.PlatformDefault = False
+  object Text1: TText
+    Align = Top
+    Size.Width = 413.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'Abbiamo prenotato per te gli istituti che avevi richiesto. Devi ' +
+      'indicarci quale prenotazione vuoi scegliere tra quelle proposte ' +
+      'qui di seguito'
+  end
+  object pnl1: TPanel
+    Align = Top
+    Position.Y = 97.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object lbInstitute1: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 2
+    end
+    object lbAddress1: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 17.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 1
+    end
+    object lbDateTime1: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Data e ora della prenotazione'
+      TabOrder = 0
+    end
+    object Panel2: TPanel
+      Align = Bottom
+      Position.Y = 56.000000000000000000
+      Size.Width = 413.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Label2: TLabel
+        Align = Left
+        Margins.Left = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Conferma Istituto'
+        TabOrder = 0
+      end
+      object Switch1: TSwitch
+        Align = Right
+        IsChecked = False
+        Position.X = 335.000000000000000000
+        Size.Width = 78.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnSwitch = Switch1Switch
+      end
+    end
+  end
+  object pnl3: TPanel
+    Align = Top
+    Position.Y = 369.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lbInstitute3: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 3
+    end
+    object lbAddress3: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 17.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 2
+    end
+    object lbDateTime3: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Data e ora della prenotazione'
+      TabOrder = 1
+    end
+    object Panel4: TPanel
+      Align = Bottom
+      Position.Y = 56.000000000000000000
+      Size.Width = 413.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Label5: TLabel
+        Align = Left
+        Margins.Left = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Conferma Istituto'
+        TabOrder = 1
+      end
+      object Switch2: TSwitch
+        Align = Right
+        IsChecked = False
+        Position.X = 335.000000000000000000
+        Size.Width = 78.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnSwitch = Switch2Switch
+      end
+    end
+  end
+  object pnl2: TPanel
+    Align = Top
+    Position.Y = 233.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lbInstitute2: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 3
+    end
+    object lbAddress2: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 17.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbInstitute1'
+      TabOrder = 2
+    end
+    object lbDateTime2: TLabel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 403.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Data e ora della prenotazione'
+      TabOrder = 1
+    end
+    object Panel6: TPanel
+      Align = Bottom
+      Position.Y = 56.000000000000000000
+      Size.Width = 413.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Label9: TLabel
+        Align = Left
+        Margins.Left = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Conferma Istituto'
+        TabOrder = 1
+      end
+      object Switch3: TSwitch
+        Align = Right
+        IsChecked = False
+        Position.X = 335.000000000000000000
+        Size.Width = 78.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnSwitch = Switch3Switch
+      end
+    end
+  end
+  object Button1: TButton
+    Align = Top
+    Position.Y = 465.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Conferma la tua scelta'
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Align = Top
+    StyledSettings = [Family, Size, Style]
+    Position.Y = 513.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Annulla Tutti gli Istituti'
+    TextSettings.FontColor = claRed
+  end
+  object Panel1: TPanel
+    Align = Top
+    Position.Y = 329.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+  end
+  object Panel3: TPanel
+    Align = Top
+    Position.Y = 561.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object Panel5: TPanel
+      Align = Top
+      Size.Width = 413.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+    end
+  end
+  object Panel7: TPanel
+    Align = Top
+    Position.Y = 193.000000000000000000
+    Size.Width = 413.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+  end
+end

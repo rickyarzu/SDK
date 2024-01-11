@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="januacorelaz"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="7">
+      <Item1>
+        <Filename Value="Janua.Core.Types.pas"/>
+        <UnitName Value="Janua.Core.Types"/>
+      </Item1>
+      <Item2>
+        <Filename Value="Janua.Core.Functions.pas"/>
+        <UnitName Value="Janua.Core.Functions"/>
+      </Item2>
+      <Item3>
+        <Filename Value="Janua.Html.Types.pas"/>
+        <UnitName Value="Janua.Html.Types"/>
+      </Item3>
+      <Item4>
+        <Filename Value="Janua.Orm.Types.pas"/>
+        <UnitName Value="Janua.Orm.Types"/>
+      </Item4>
+      <Item5>
+        <Filename Value="Janua.Core.Classes.Intf.pas"/>
+        <UnitName Value="Janua.Core.Classes.Intf"/>
+      </Item5>
+      <Item6>
+        <Filename Value="Janua.Http.Intf.pas"/>
+        <UnitName Value="Janua.Http.Intf"/>
+      </Item6>
+      <Item7>
+        <Filename Value="Janua.Core.Classes.pas"/>
+        <UnitName Value="Janua.Core.Classes"/>
+      </Item7>
+    </Files>
+    <RequiredPkgs Count="4">
+      <Item1>
+        <PackageName Value="dac10"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="janualaz"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="indylaz"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

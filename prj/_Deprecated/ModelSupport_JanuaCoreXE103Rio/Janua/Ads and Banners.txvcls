@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ws8ieeozdum0vbtqo_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Ads and Banners" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,40,257,325" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.FSelectedBanners" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.FStoredBanners" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SetJanuaWebProfile(Janua.Core.Http.TJanuaCustomWebProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SetSelectedBanners(Janua.Core.Ads.TJanuaBanners)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SetStoredBanners(Janua.Core.Ads.TJanuaBanners)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.FJanuaWebProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBannerByID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBannerInternal()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBannerUrlInternal(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetSiteBanner(System.Int64,Janua.Core.Ads.TJanuaBannerTypes)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.PopulateBanner(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBannerUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBannerUrl(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBanners(System.Integer,System.Int64,Janua.Core.Ads.TJanuaBannerTypes)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.GetBanner()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.JanuaWebProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SelectedBanners" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.StoredBanners" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.StoredBanners">
+        <property name="sourceAnchor" value="297,172" />
+        <property name="targetAnchor" value="360,172" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.SelectedBanners">
+        <property name="sourceAnchor" value="297,180" />
+        <property name="targetAnchor" value="360,180" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.FStoredBanners">
+        <property name="sourceAnchor" value="297,156" />
+        <property name="targetAnchor" value="360,156" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaCustomServerAds.FSelectedBanners">
+        <property name="sourceAnchor" value="297,164" />
+        <property name="targetAnchor" value="360,164" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,40,229,128" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes.jbtSmallFrame" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes.jbtRightColumn" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes.jbtHeader" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes.jbtFooter" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBannerTypes.jbtManchette" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,40,201,280" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.BannersList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.SelectedBanner" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.Found" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.Advertisment" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.Title" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.ToString(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.GetBannerByUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.GetBannerByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.ListBanners()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.GetBannerbyIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.Add(Janua.Core.Ads.TJanuaBanner)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.DeleteBanners()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.SelectedBanner">
+        <property name="sourceAnchor" value="561,252" />
+        <property name="targetAnchor" value="620,252" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanners.BannersList">
+        <property name="sourceAnchor" value="561,260" />
+        <property name="targetAnchor" value="620,260" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,200,229,177" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.targeturl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.BannerType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.FBannerType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.SetBannerType(Janua.Core.Ads.TJanuaBannerTypes)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.BannerType">
+        <property name="sourceAnchor" value="744,200" />
+        <property name="targetAnchor" value="744,168" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Ads.TJanuaBanner.FBannerType">
+        <property name="sourceAnchor" value="736,200" />
+        <property name="targetAnchor" value="736,168" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

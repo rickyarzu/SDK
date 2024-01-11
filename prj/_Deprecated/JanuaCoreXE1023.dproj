@@ -1,0 +1,1019 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2C9FEE1F-7088-4CB3-A385-A796500EC8B4}</ProjectGuid>
+        <MainSource>JanuaCoreXE1023.dpk</MainSource>
+        <ProjectVersion>18.4</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1119</TargetedPlatforms>
+        <AppType>Package</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice32' and '$(Base)'=='true') or '$(Base_iOSDevice32)'!=''">
+        <Base_iOSDevice32>true</Base_iOSDevice32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Base)'=='true') or '$(Base_iOSSimulator)'!=''">
+        <Base_iOSSimulator>true</Base_iOSSimulator>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+        <Base_OSX32>true</Base_OSX32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Cfg_1)'=='true') or '$(Cfg_1_Android)'!=''">
+        <Cfg_1_Android>true</Cfg_1_Android>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice32' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice32)'!=''">
+        <Cfg_1_iOSDevice32>true</Cfg_1_iOSDevice32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice64)'!=''">
+        <Cfg_1_iOSDevice64>true</Cfg_1_iOSDevice64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSSimulator)'!=''">
+        <Cfg_1_iOSSimulator>true</Cfg_1_iOSSimulator>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Cfg_1)'=='true') or '$(Cfg_1_OSX32)'!=''">
+        <Cfg_1_OSX32>true</Cfg_1_OSX32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android)'!=''">
+        <Cfg_2_Android>true</Cfg_2_Android>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSSimulator)'!=''">
+        <Cfg_2_iOSSimulator>true</Cfg_2_iOSSimulator>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Janua;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>JanuaCoreXE1023</SanitizedProjectName>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <DCC_DcuOutput>C:\januaproject\dcu\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_DcpOutput>C:\januaproject\dcu\$(Platform)\$(Config)</DCC_DcpOutput>
+        <DCC_BplOutput>C:\januaproject\bpl\$(Platform)\</DCC_BplOutput>
+        <DCC_OutputXMLDocumentation>true</DCC_OutputXMLDocumentation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+        <BT_BuildType>Debug</BT_BuildType>
+        <EnabledSysJars>android-support-v4.dex.jar;apk-expansion.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services.dex.jar</EnabledSysJars>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice32)'!=''">
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+        
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;FMLocalNotificationPermission=false;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSCameraUsageDescription=The reason for accessing the camera;CFBundleShortVersionString=1.0.0</VerInfo_Keys>
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+        
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;FMLocalNotificationPermission=false;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSCameraUsageDescription=The reason for accessing the camera;CFBundleShortVersionString=1.0.0</VerInfo_Keys>
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimulator)'!=''">
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;FMLocalNotificationPermission=false;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSCameraUsageDescription=The reason for accessing the camera;CFBundleShortVersionString=1.0.0</VerInfo_Keys>
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX32)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;CFBundleShortVersionString=1.0.0</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>vcl;vcldb;officeXPrt;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>vcl;vcldb;officeXPrt;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_OutputXMLDocumentation>false</DCC_OutputXMLDocumentation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Android)'!=''">
+        <VerInfo_Build>1</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice32)'!=''">
+        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        
+        <BT_BuildType>Adhoc</BT_BuildType>
+        <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
+        
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSSimulator)'!=''">
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_OSX32)'!=''">
+        <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Description>Janua Core Components XE10 Runtime</DCC_Description>
+        <DCC_OutputDRCFile>true</DCC_OutputDRCFile>
+        <DCC_DebugInfoInTds>true</DCC_DebugInfoInTds>
+        <DCC_OutputXMLDocumentation>true</DCC_OutputXMLDocumentation>
+        <DCC_XmlOutput>C:\januaproject\xml\JanuaCoreXE10\</DCC_XmlOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
+        <VerInfo_Build>1</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSSimulator)'!=''">
+        <DCC_BplOutput>C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\iOSSimulator</DCC_BplOutput>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
+        
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="soaprtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="inet.dcp"/>
+        <DCCReference Include="DbxCommonDriver.dcp"/>
+        <DCCReference Include="CustomIPTransport.dcp"/>
+        <DCCReference Include="IndyIPCommon.dcp"/>
+        <DCCReference Include="IndySystem.dcp"/>
+        <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndyCore.dcp"/>
+        <DCCReference Include="IndyIPClient.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="JanuaThirdPartyXE10.dcp"/>
+        <DCCReference Include="dac250.dcp"/>
+        <DCCReference Include="pgdac250.dcp"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.System.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.University.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Users.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.WebServices.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Ads.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Anagraph.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Backup.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Books.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.BooksForms.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Classes.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Cloud.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Cms.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Collections.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.CRM.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Crypt.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Customcontrols.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Customsession.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Customsystem.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Docs.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Exceptions.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Feeds.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Football.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Forms.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Functions.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Http.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Items.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.JPublic.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Mail.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Ords.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Params.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Pharmacies.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Pos.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.RealEstate.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Social.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Sockets.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Hash.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Swap.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Roundings.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Printers.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.FTP.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Mobyt.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Excel.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Servers.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Health.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Cms.GraphicMenu.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.core.Cloud.Server.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Locale.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Metronics.pas"/>
+        <DCCReference Include="..\src\januacore\Writers.pas"/>
+        <DCCReference Include="..\src\januacore\udmJanuaCoreRSS.pas">
+            <Form>dmJanuaCoreRSS</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Core.DB.pas"/>
+        <DCCReference Include="..\src\januacore\udmJanuaCoreServer.pas">
+            <Form>dmJanuaCoreServer</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Core.Json.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Statistics.pas"/>
+        <DCCReference Include="..\src\januacore\udmJanuaCoreDBConnection.pas">
+            <Form>dmJanuaCoreDBConnections</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Core.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Conf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Math.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.RESTCloudDatamodule.pas">
+            <Form>JanuaRestCloudDataModule</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Core.Classes.Social.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Football.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.football.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Maps.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Maps.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.Maps.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cms.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cms.Server.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cms.Core.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Anagraph.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Metro5.Types.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Metro5.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Types.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmVirtualFootballStorage.pas">
+            <Form>dmVirtualFootballStorage</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Test\Janua.Test.Football.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Generator.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Bootstrap4.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Bootstrap4.Types.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.UserProfile.Custom.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.UserProfile.Custom.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.MainArguments.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.MainArguments.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.Arguments.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.Arguments.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.SubArguments.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.SubArguments.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Builder.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Metro5.Builder.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmVirtualCmsServer.pas">
+            <Form>dmVirtualCmsServer</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Metro5.Builder.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Metro5.Pages.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Bootstrap4.Builder.pas"/>
+        <DCCReference Include="..\src\januacore\custom\Janua.lnd.impl.pas"/>
+        <DCCReference Include="..\src\januacore\custom\Janua.lnd.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.Articles.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.Articles.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Metro5.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Bootstrap4.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Images.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Images.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Server.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Server.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Files.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Files.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Dataset.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Dataset.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Functions.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Core.ServerClasses.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Session.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Session.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\Janua.Virtual.Cms.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Server.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.System.Server.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.System.Server.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmVirtualSystemServer.pas">
+            <Form>dmVirtualSystemServer</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Server.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cms.Server.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Anagraph.Branches.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Anagraph.Branches.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Users.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.System.Users.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Orm.Virtual.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Anagraph.anagraph.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Anagraph.anagraph.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Builder.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmCmsStorage.pas">
+            <Form>dmCmsStorage</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\datamodule\udmFootballStorage.pas">
+            <Form>dmFootballStorage</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\datamodule\udmJanuaCoreStorage.pas">
+            <Form>dmJanuaCoreStorage</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\Janua.Football.Server.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Football.Server.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\Janua.Virtual.Football.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmVirtualFootballServer.pas">
+            <Form>dmVirtualFootballServer</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Matches.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Matches.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\custom\Janua.Dilettantissimo.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\custom\Janua.Dilettantissimo.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Football.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Mime.Types.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.RankingTable.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.RankingTable.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.GoalRanking.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.GoalRanking.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Championship.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Championship.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchDay.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchDay.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchPlayer.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchPlayer.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchEvent.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchEvent.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchEventDetail.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchEventDetail.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchDetails.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.MatchDetails.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Season.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Season.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Http.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Http.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Football.Web.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Football.Web.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Images.Cache.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Files.Cache.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Images.WebBroker.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Cloud.Files.WebBroker.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\udmVirtualCloudServer.pas">
+            <Form>dmVirtualCloudServer</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\src\januacore\datamodule\Janua.Virtual.Cloud.pas"/>
+        <DCCReference Include="..\src\januacore\datamodule\Janua.Virtual.System.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.LeagueGroups.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.LeagueGroups.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Leagues.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Football.Leagues.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.ArticlesAttachment.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\orm\JOrm.Cms.ArticlesAttachment.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Html.Intf.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Http.Impl.pas"/>
+        <DCCReference Include="..\src\januacore\Janua.Http.Intf.pas"/>
+        <None Include="ModelSupport_JanuaCoreXE10\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCoreXE1023\default.txaPackage"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Excluded_Packages/>
+                <Source>
+                    <Source Name="MainSource">JanuaCoreXE1023.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplIndyProtocols250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplDBXCommonDriver250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplrtl250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplinet250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bpldsnap250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bpl\Win32\JanuaCoreXE1023.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaCoreXE1023.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="bpldac250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bpldbrtl250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bpl\OSX32\bplJanuaCoreXE1023.dylib" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="OSX32">
+                        <RemoteName>bplJanuaCoreXE1023.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bpl\Linux64\bplJanuaCoreXE10.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplJanuaCoreXE10.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplsoaprtl250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplxmlrtl250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplIndyCore250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplbindengine250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bpl\Win32\JanuaCoreXE10.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaCoreXE10.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bpl\Win64\JanuaCoreXE10.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>JanuaCoreXE10.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplIndySystem250.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File"/>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Android">True</Platform>
+                <Platform value="iOSDevice32">True</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimulator">True</Platform>
+                <Platform value="OSX32">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <ModelSupport>True</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <ProjectExtensions/>
+</Project>

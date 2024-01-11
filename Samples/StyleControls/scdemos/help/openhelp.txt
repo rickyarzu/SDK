@@ -1,0 +1,5 @@
+If CHM file is empty in your system then, to fix this, simply right-click on the CHM file in explorer and select the 'Properties' menu item.
+Then, click the 'Unblock' button near the bottom of the properties page.
+
+Also you can download html version from this link:
+http://www.almdev.com/prods/stylecontrols/files/schelp.zip

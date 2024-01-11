@@ -1,0 +1,242 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2AE4C6A2-8E1F-40E2-9D1E-4AE4F3A10000}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL_FlexCel_Core.dproj">
+            <Dependencies>FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="SKIA_FlexCel_Core.dproj">
+            <Dependencies>FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FMX_FlexCel_Core.dproj">
+            <Dependencies>FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FlexCel_XlsAdapter.dproj">
+            <Dependencies>FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FlexCel_Pdf.dproj">
+            <Dependencies>FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FlexCel_Render.dproj">
+            <Dependencies>FlexCel_Core.dproj;FlexCel_XlsAdapter.dproj;FlexCel_Pdf.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FlexCel_Report.dproj">
+            <Dependencies>FlexCel_Core.dproj;FlexCel_XlsAdapter.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FMX_FlexCel_Components.dproj">
+            <Dependencies>FlexCel_Core.dproj;FMX_FlexCel_Core.dproj;FlexCel_Render.dproj;FlexCel_Pdf.dproj;FlexCel_XlsAdapter.dproj</Dependencies>
+        </Projects>
+        <Projects Include="FMX_FlexCel_Components_DESIGN.dproj">
+            <Dependencies>FlexCel_Core.dproj;FMX_FlexCel_Components.dproj</Dependencies>
+        </Projects>
+        <Projects Include="VCL_FlexCel_Components.dproj">
+            <Dependencies>FlexCel_Core.dproj;FlexCel_Render.dproj;FlexCel_XlsAdapter.dproj;VCL_FlexCel_Core.dproj</Dependencies>
+        </Projects>
+        <Projects Include="VCL_FlexCel_Components_DESIGN.dproj">
+            <Dependencies>FlexCel_Core.dproj;FlexCel_XlsAdapter.dproj;FlexCel_Render.dproj;VCL_FlexCel_Components.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FlexCel_Core">
+        <MSBuild Projects="FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Core:Clean">
+        <MSBuild Projects="FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Core:Make">
+        <MSBuild Projects="FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core" DependsOnTargets="FlexCel_Core">
+        <MSBuild Projects="VCL_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Clean" DependsOnTargets="FlexCel_Core:Clean">
+        <MSBuild Projects="VCL_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Make" DependsOnTargets="FlexCel_Core:Make">
+        <MSBuild Projects="VCL_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core" DependsOnTargets="FlexCel_Core">
+        <MSBuild Projects="SKIA_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core:Clean" DependsOnTargets="FlexCel_Core:Clean">
+        <MSBuild Projects="SKIA_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core:Make" DependsOnTargets="FlexCel_Core:Make">
+        <MSBuild Projects="SKIA_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core" DependsOnTargets="FlexCel_Core">
+        <MSBuild Projects="FMX_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core:Clean" DependsOnTargets="FlexCel_Core:Clean">
+        <MSBuild Projects="FMX_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core:Make" DependsOnTargets="FlexCel_Core:Make">
+        <MSBuild Projects="FMX_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter" DependsOnTargets="FlexCel_Core">
+        <MSBuild Projects="FlexCel_XlsAdapter.dproj"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Clean" DependsOnTargets="FlexCel_Core:Clean">
+        <MSBuild Projects="FlexCel_XlsAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Make" DependsOnTargets="FlexCel_Core:Make">
+        <MSBuild Projects="FlexCel_XlsAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Pdf" DependsOnTargets="FlexCel_Core">
+        <MSBuild Projects="FlexCel_Pdf.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Pdf:Clean" DependsOnTargets="FlexCel_Core:Clean">
+        <MSBuild Projects="FlexCel_Pdf.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Pdf:Make" DependsOnTargets="FlexCel_Core:Make">
+        <MSBuild Projects="FlexCel_Pdf.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Render" DependsOnTargets="FlexCel_Core;FlexCel_XlsAdapter;FlexCel_Pdf">
+        <MSBuild Projects="FlexCel_Render.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Render:Clean" DependsOnTargets="FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Pdf:Clean">
+        <MSBuild Projects="FlexCel_Render.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Render:Make" DependsOnTargets="FlexCel_Core:Make;FlexCel_XlsAdapter:Make;FlexCel_Pdf:Make">
+        <MSBuild Projects="FlexCel_Render.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Report" DependsOnTargets="FlexCel_Core;FlexCel_XlsAdapter">
+        <MSBuild Projects="FlexCel_Report.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Report:Clean" DependsOnTargets="FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean">
+        <MSBuild Projects="FlexCel_Report.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Report:Make" DependsOnTargets="FlexCel_Core:Make;FlexCel_XlsAdapter:Make">
+        <MSBuild Projects="FlexCel_Report.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components" DependsOnTargets="FlexCel_Core;FMX_FlexCel_Core;FlexCel_Render;FlexCel_Pdf;FlexCel_XlsAdapter">
+        <MSBuild Projects="FMX_FlexCel_Components.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components:Clean" DependsOnTargets="FlexCel_Core:Clean;FMX_FlexCel_Core:Clean;FlexCel_Render:Clean;FlexCel_Pdf:Clean;FlexCel_XlsAdapter:Clean">
+        <MSBuild Projects="FMX_FlexCel_Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components:Make" DependsOnTargets="FlexCel_Core:Make;FMX_FlexCel_Core:Make;FlexCel_Render:Make;FlexCel_Pdf:Make;FlexCel_XlsAdapter:Make">
+        <MSBuild Projects="FMX_FlexCel_Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN" DependsOnTargets="FlexCel_Core;FMX_FlexCel_Components">
+        <MSBuild Projects="FMX_FlexCel_Components_DESIGN.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN:Clean" DependsOnTargets="FlexCel_Core:Clean;FMX_FlexCel_Components:Clean">
+        <MSBuild Projects="FMX_FlexCel_Components_DESIGN.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN:Make" DependsOnTargets="FlexCel_Core:Make;FMX_FlexCel_Components:Make">
+        <MSBuild Projects="FMX_FlexCel_Components_DESIGN.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components" DependsOnTargets="FlexCel_Core;FlexCel_Render;FlexCel_XlsAdapter;VCL_FlexCel_Core">
+        <MSBuild Projects="VCL_FlexCel_Components.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components:Clean" DependsOnTargets="FlexCel_Core:Clean;FlexCel_Render:Clean;FlexCel_XlsAdapter:Clean;VCL_FlexCel_Core:Clean">
+        <MSBuild Projects="VCL_FlexCel_Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components:Make" DependsOnTargets="FlexCel_Core:Make;FlexCel_Render:Make;FlexCel_XlsAdapter:Make;VCL_FlexCel_Core:Make">
+        <MSBuild Projects="VCL_FlexCel_Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN" DependsOnTargets="FlexCel_Core;FlexCel_XlsAdapter;FlexCel_Render;VCL_FlexCel_Components">
+        <MSBuild Projects="VCL_FlexCel_Components_DESIGN.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN:Clean" DependsOnTargets="FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Render:Clean;VCL_FlexCel_Components:Clean">
+        <MSBuild Projects="VCL_FlexCel_Components_DESIGN.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN:Make" DependsOnTargets="FlexCel_Core:Make;FlexCel_XlsAdapter:Make;FlexCel_Render:Make;VCL_FlexCel_Components:Make">
+        <MSBuild Projects="VCL_FlexCel_Components_DESIGN.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FlexCel_Core;VCL_FlexCel_Core;SKIA_FlexCel_Core;FMX_FlexCel_Core;FlexCel_XlsAdapter;FlexCel_Pdf;FlexCel_Render;FlexCel_Report;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FlexCel_Core:Clean;VCL_FlexCel_Core:Clean;SKIA_FlexCel_Core:Clean;FMX_FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Pdf:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FlexCel_Core:Make;VCL_FlexCel_Core:Make;SKIA_FlexCel_Core:Make;FMX_FlexCel_Core:Make;FlexCel_XlsAdapter:Make;FlexCel_Pdf:Make;FlexCel_Render:Make;FlexCel_Report:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Flexcel Win32/64'">
+        <BuildGroupProject Include="FMX_FlexCel_Components_DESIGN.dproj">
+            <ProjectGuid>{4B526C2D-4E45-47D6-A4EF-CE12F2164284}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX_FlexCel_Core.dproj">
+            <ProjectGuid>{F7A33BE3-307D-4C73-9F25-B19A6D8CEDC8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL_FlexCel_Core.dproj">
+            <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FlexCel_Core.dproj">
+            <ProjectGuid>{37445864-AF9D-4172-8D5D-72668FE43061}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FlexCel_XlsAdapter.dproj">
+            <ProjectGuid>{DB2DD675-3C59-4E1E-A860-01CF651C9BB9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="SKIA_FlexCel_Core.dproj">
+            <ProjectGuid>{489A1610-F907-4C32-8DDE-AB59B46FCC16}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FlexCel_Pdf.dproj">
+            <ProjectGuid>{E6E2180C-39A2-4604-B0E7-BE2164901BB4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FlexCel_Render.dproj">
+            <ProjectGuid>{1ACBC5BB-FF1A-4F3E-9322-08E16B35F8AA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX_FlexCel_Components.dproj">
+            <ProjectGuid>{66FE8C73-3AA3-4A8D-8C3D-B8F61B0E8E0B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL_FlexCel_Components.dproj">
+            <ProjectGuid>{092797EF-F908-4592-BF20-F986F1E4A89F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL_FlexCel_Components_DESIGN.dproj">
+            <ProjectGuid>{D338620F-84FD-4B7C-93F0-23A066E851DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FlexCel_Report.dproj">
+            <ProjectGuid>{020A5013-642E-41CA-818D-1423079016AE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

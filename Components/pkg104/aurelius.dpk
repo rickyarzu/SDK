@@ -1,0 +1,162 @@
+﻿package aurelius;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Aurelius - Core Package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  tmsbcl;
+
+contains
+  Aurelius.Bind.BaseDataset in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Bind.BaseDataset.pas',
+  Aurelius.Bind.Dataset in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Bind.Dataset.pas',
+  Aurelius.Bind.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Bind.Exceptions.pas',
+  Aurelius.Commands.AbstractCommandPerformer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.AbstractCommandPerformer.pas',
+  Aurelius.Commands.AbstractSqlPerformer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.AbstractSqlPerformer.pas',
+  Aurelius.Commands.CommandPerformerFactory in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.CommandPerformerFactory.pas',
+  Aurelius.Commands.DBIndexCreator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.DBIndexCreator.pas',
+  Aurelius.Commands.Deleter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Deleter.pas',
+  Aurelius.Commands.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Exceptions.pas',
+  Aurelius.Commands.ForeignKeyCreator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.ForeignKeyCreator.pas',
+  Aurelius.Commands.Inserter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Inserter.pas',
+  Aurelius.Commands.Listeners in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Listeners.pas',
+  Aurelius.Commands.Loader in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Loader.pas',
+  Aurelius.Commands.MetadataCommandPerformer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.MetadataCommandPerformer.pas',
+  Aurelius.Commands.Selecter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Selecter.pas',
+  Aurelius.Commands.SequenceCreator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.SequenceCreator.pas',
+  Aurelius.Commands.TableCreator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.TableCreator.pas',
+  Aurelius.Commands.Updater in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Commands.Updater.pas',
+  Aurelius.Comp.Adapters in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Comp.Adapters.pas',
+  Aurelius.Comp.Connection in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Comp.Connection.pas',
+  Aurelius.Comp.Drivers in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Comp.Drivers.pas',
+  Aurelius.Criteria.Base in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Base.pas',
+  Aurelius.Criteria.Dictionary in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Dictionary.pas',
+  Aurelius.Criteria.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Exceptions.pas',
+  Aurelius.Criteria.Expression in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Expression.pas',
+  Aurelius.Criteria.Linq in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Linq.pas',
+  Aurelius.Criteria.Projections in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Criteria.Projections.pas',
+  Aurelius.Drivers.Base in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Base.pas',
+  Aurelius.Drivers.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Exceptions.pas',
+  Aurelius.Drivers.FireDacRtti in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.FireDacRtti.pas',
+  Aurelius.Drivers.Interfaces in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Interfaces.pas',
+  Aurelius.Drivers.MSSQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.MSSQL.pas',
+  Aurelius.Drivers.Odbc.Api in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Odbc.Api.pas',
+  Aurelius.Drivers.Odbc.Classes in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Odbc.Classes.pas',
+  Aurelius.Drivers.Odbc in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.Odbc.pas',
+  Aurelius.Drivers.SQLite.Classes in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.SQLite.Classes.pas',
+  Aurelius.Drivers.SQLite.Import in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.SQLite.Import.pas',
+  Aurelius.Drivers.SQLite in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Drivers.SQLite.pas',
+  Aurelius.Engine.AbstractManager in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.AbstractManager.pas',
+  Aurelius.Engine.BlobController in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.BlobController.pas',
+  Aurelius.Engine.DatabaseManager in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.DatabaseManager.pas',
+  Aurelius.Engine.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.Exceptions.pas',
+  Aurelius.Engine.ObjectManager in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.ObjectManager.pas',
+  Aurelius.Engine.ObjectMap in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.ObjectMap.pas',
+  Aurelius.Engine.ProxyController in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Engine.ProxyController.pas',
+  Aurelius.Events.Manager in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Events.Manager.pas',
+  Aurelius.Global.Config in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Global.Config.pas',
+  Aurelius.Global.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Global.Exceptions.pas',
+  Aurelius.Global.Utils in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Global.Utils.pas',
+  Aurelius.Id.AbstractGenerator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.AbstractGenerator.pas',
+  Aurelius.Id.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.Exceptions.pas',
+  Aurelius.Id.Guid in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.Guid.pas',
+  Aurelius.Id.IdentifierGenerator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.IdentifierGenerator.pas',
+  Aurelius.Id.IdentityOrSequence in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.IdentityOrSequence.pas',
+  Aurelius.Id.Uuid in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Id.Uuid.pas',
+  Aurelius.Json.BlobConverter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.BlobConverter.pas',
+  Aurelius.Json.Converter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Converter.pas',
+  Aurelius.Json.Deserializer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Deserializer.pas',
+  Aurelius.Json.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Exceptions.pas',
+  Aurelius.Json.Interfaces in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Interfaces.pas',
+  Aurelius.Json.NullableConverter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.NullableConverter.pas',
+  Aurelius.Json.Serializer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Serializer.pas',
+  Aurelius.Json.Settings in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Json.Settings.pas',
+  Aurelius.Mapping.Attributes in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Attributes.pas',
+  Aurelius.Mapping.AttributeStrategy in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.AttributeStrategy.pas',
+  Aurelius.Mapping.AutoMapping in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.AutoMapping.pas',
+  Aurelius.Mapping.ClassHierarchyExplorer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.ClassHierarchyExplorer.pas',
+  Aurelius.Mapping.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Exceptions.pas',
+  Aurelius.Mapping.Explorer in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Explorer.pas',
+  Aurelius.Mapping.MappedClasses in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.MappedClasses.pas',
+  Aurelius.Mapping.Metadata in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Metadata.pas',
+  Aurelius.Mapping.Optimization in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Optimization.pas',
+  Aurelius.Mapping.RttiUtils in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.RttiUtils.pas',
+  Aurelius.Mapping.Setup in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Setup.pas',
+  Aurelius.Mapping.Strategy in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Mapping.Strategy.pas',
+  Aurelius.Schema.AbstractImporter in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.AbstractImporter.pas',
+  Aurelius.Schema.Commands in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Commands.pas',
+  Aurelius.Schema.DB2 in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.DB2.pas',
+  Aurelius.Schema.ElevateDB in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.ElevateDB.pas',
+  Aurelius.Schema.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Exceptions.pas',
+  Aurelius.Schema.Firebird in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Firebird.pas',
+  Aurelius.Schema.Firebird3 in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Firebird3.pas',
+  Aurelius.Schema.Interbase in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Interbase.pas',
+  Aurelius.Schema.Interfaces in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Interfaces.pas',
+  Aurelius.Schema.Messages in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Messages.pas',
+  Aurelius.Schema.MSSQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.MSSQL.pas',
+  Aurelius.Schema.MySQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.MySQL.pas',
+  Aurelius.Schema.NexusDB in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.NexusDB.pas',
+  Aurelius.Schema.Oracle in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Oracle.pas',
+  Aurelius.Schema.PostgreSQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.PostgreSQL.pas',
+  Aurelius.Schema.Register in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Register.pas',
+  Aurelius.Schema.SQLite in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.SQLite.pas',
+  Aurelius.Schema.Utils in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Schema.Utils.pas',
+  Aurelius.Sql.AbsoluteDB in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.AbsoluteDB.pas',
+  Aurelius.Sql.AbstractSqlGenerator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.AbstractSqlGenerator.pas',
+  Aurelius.Sql.AnsiSqlGenerator in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.AnsiSqlGenerator.pas',
+  Aurelius.Sql.BaseTypes in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.BaseTypes.pas',
+  Aurelius.Sql.Commands in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Commands.pas',
+  Aurelius.Sql.DB2 in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.DB2.pas',
+  Aurelius.Sql.ElevateDB in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.ElevateDB.pas',
+  Aurelius.Sql.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Exceptions.pas',
+  Aurelius.Sql.Firebird in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Firebird.pas',
+  Aurelius.Sql.Firebird3 in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Firebird3.pas',
+  Aurelius.Sql.Functions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Functions.pas',
+  Aurelius.Sql.Interbase in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Interbase.pas',
+  Aurelius.Sql.Interfaces in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Interfaces.pas',
+  Aurelius.Sql.Metadata in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Metadata.pas',
+  Aurelius.Sql.MSSQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.MSSQL.pas',
+  Aurelius.Sql.MySQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.MySQL.pas',
+  Aurelius.Sql.NexusDB in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.NexusDB.pas',
+  Aurelius.Sql.Oracle in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Oracle.pas',
+  Aurelius.Sql.PostgreSQL in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.PostgreSQL.pas',
+  Aurelius.Sql.Register in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.Register.pas',
+  Aurelius.Sql.SQLite in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Sql.SQLite.pas',
+  Aurelius.Types.Blob in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.Blob.pas',
+  Aurelius.Types.DynamicProperties in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.DynamicProperties.pas',
+  Aurelius.Types.Exceptions in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.Exceptions.pas',
+  Aurelius.Types.MasterObjectValue in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.MasterObjectValue.pas',
+  Aurelius.Types.Nullable in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.Nullable.pas',
+  Aurelius.Types.Proxy in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.Proxy.pas';
+
+// Aurelius.Types.Proxy in '..\..\..\tmssoftware\TMS Aurelius\source\core\Aurelius.Types.Proxy.pas';
+
+end.

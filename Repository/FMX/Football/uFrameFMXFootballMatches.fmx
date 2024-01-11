@@ -1,0 +1,432 @@
+object FrameFMXFootballMatches: TFrameFMXFootballMatches
+  Size.Width = 314.000000000000000000
+  Size.Height = 525.000000000000000000
+  Size.PlatformDefault = False
+  object TabControlMatches: TTabControl
+    Align = Client
+    Size.Width = 314.000000000000000000
+    Size.Height = 525.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 2
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      314s
+      525s
+      314s
+      525s
+      314s
+      525s
+      314s
+      525s)
+    object TabItemMatches: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemMatches'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListViewMatches: TListView
+        ItemAppearanceClassName = 'TDynamicAppearance'
+        ItemEditAppearanceClassName = 'TDynamicAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 314.000000000000000000
+        Size.Height = 525.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Trimming = Character
+            Appearance.Width = 196.000000000000000000
+            Appearance.Height = 44.000000000000000000
+            Appearance.PlaceOffset.X = 3.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text2'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Width = 57.000000000000000000
+            Appearance.Height = 44.000000000000000000
+            Appearance.Align = Trailing
+            Appearance.PlaceOffset.X = -40.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Accessory3'
+            AppearanceClassName = 'TAccessoryObjectAppearance'
+            Appearance.Width = 40.000000000000000000
+            Appearance.Height = 44.000000000000000000
+            Appearance.Align = Trailing
+          end>
+        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+          end>
+        OnItemClick = ListViewMatchesItemClick
+      end
+    end
+    object TabItemMatchDetail: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemMatchDetail'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object VertScrollBox1: TVertScrollBox
+        Align = Client
+        Size.Width = 314.000000000000000000
+        Size.Height = 525.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 314.000000000000000000
+        Viewport.Height = 525.000000000000000000
+        object LabelEvents: TLabel
+          Align = Top
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 1.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 2.000000000000000000
+          Position.Y = 101.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = 'Eventi Partita'
+          TabOrder = 2
+        end
+        object PanelHome: TPanel
+          Align = Top
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 3.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object lbHome: TLabel
+            Align = Client
+            StyledSettings = [Family, FontColor]
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Size.Width = 242.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Genova Calcio'
+            TabOrder = 2
+            OnClick = HomeTeamClick
+          end
+          object lbHomeGoal: TLabel
+            Align = Right
+            StyledSettings = [Family, FontColor]
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Position.X = 248.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 30.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = '2'
+            TabOrder = 1
+            OnClick = HomeTeamClick
+          end
+          object SpeedButton1: TSpeedButton
+            Align = Right
+            Position.X = 280.000000000000000000
+            Size.Width = 28.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'arrowrighttoolbuttonbordered'
+            Text = 'SpeedButton1'
+            OnClick = HomeTeamClick
+          end
+        end
+        object PanelVisitors: TPanel
+          Align = Top
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 53.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lbVisitors: TLabel
+            Align = Client
+            StyledSettings = [Family, FontColor]
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Size.Width = 242.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Genova Calcio'
+            TabOrder = 2
+            OnClick = VisitorsClick
+          end
+          object lbGoalVisitors: TLabel
+            Align = Right
+            StyledSettings = [Family, FontColor]
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Position.X = 248.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 30.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = '2'
+            TabOrder = 1
+            OnClick = VisitorsClick
+          end
+          object SpeedButton2: TSpeedButton
+            Align = Right
+            Position.X = 280.000000000000000000
+            Size.Width = 28.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'arrowrighttoolbuttonbordered'
+            Text = 'SpeedButton1'
+            OnClick = VisitorsClick
+          end
+        end
+        object TabControlTabellino: TTabControl
+          Align = Top
+          Position.Y = 253.000000000000000000
+          Size.Width = 314.000000000000000000
+          Size.Height = 200.000000000000000000
+          Size.PlatformDefault = False
+          TabIndex = 0
+          TabOrder = 3
+          TabPosition = PlatformDefault
+          Sizes = (
+            314s
+            174s
+            314s
+            174s)
+          object TabItemHome: TTabItem
+            CustomIcon = <
+              item
+              end>
+            IsSelected = True
+            Size.Width = 45.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = ''
+            TabOrder = 0
+            Text = 'Casa'
+            ExplicitSize.cx = 45.000000000000000000
+            ExplicitSize.cy = 26.000000000000000000
+            object Rectangle1: TRectangle
+              Align = Client
+              Fill.Color = claWhite
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 310.000000000000000000
+              Size.Height = 170.000000000000000000
+              Size.PlatformDefault = False
+              object TextHome: TText
+                Align = Client
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 306.000000000000000000
+                Size.Height = 166.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+          end
+          object TabItemVisitors: TTabItem
+            CustomIcon = <
+              item
+              end>
+            IsSelected = False
+            Size.Width = 96.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = ''
+            TabOrder = 0
+            Text = 'Genova Calcio'
+            ExplicitSize.cx = 96.000000000000000000
+            ExplicitSize.cy = 26.000000000000000000
+            object Rectangle2: TRectangle
+              Align = Client
+              Fill.Color = claWhite
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 310.000000000000000000
+              Size.Height = 170.000000000000000000
+              Size.PlatformDefault = False
+              object TextVisitors: TText
+                Align = Client
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 306.000000000000000000
+                Size.Height = 166.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+          end
+        end
+        object ListViewMatchEvents: TListView
+          ItemAppearanceClassName = 'TListItemAppearance'
+          ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Top
+          Position.Y = 121.000000000000000000
+          Size.Width = 314.000000000000000000
+          Size.Height = 132.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          ItemAppearance.ItemHeight = 40
+          ItemAppearance.ItemEditHeight = 40
+        end
+      end
+    end
+    object TabItemMatchTeam: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemMatchTeam'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object lbTeamName: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Position.Y = 2.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Genova Calcio'
+        TabOrder = 1
+        OnClick = HomeTeamClick
+      end
+      object VertScrollBox2: TVertScrollBox
+        Align = Client
+        Size.Width = 314.000000000000000000
+        Size.Height = 481.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Viewport.Width = 314.000000000000000000
+        Viewport.Height = 481.000000000000000000
+        object ListViewTeam: TListView
+          ItemAppearanceClassName = 'TDynamicAppearance'
+          ItemEditAppearanceClassName = 'TDynamicAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Top
+          Size.Width = 314.000000000000000000
+          Size.Height = 289.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Trimming = Character
+              Appearance.Width = 249.000000000000000000
+              Appearance.Height = 22.000000000000000000
+              Appearance.PlaceOffset.X = 22.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'Text2'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Trimming = Character
+              Appearance.Width = 249.000000000000000000
+              Appearance.Height = 22.000000000000000000
+              Appearance.PlaceOffset.X = 22.000000000000000000
+              Appearance.PlaceOffset.Y = 22.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'Accessory3'
+              AppearanceClassName = 'TAccessoryObjectAppearance'
+              Appearance.Width = 24.000000000000000000
+              Appearance.Align = Trailing
+            end
+            item
+              AppearanceObjectName = 'Text4'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Width = 22.000000000000000000
+            end>
+          ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+            end>
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem4'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+  end
+end

@@ -1,0 +1,42 @@
+UniGUIMap.exe: 00002784: 14:45:24 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00002784: 14:45:24 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00002784: 14:45:24 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00002784: 14:45:24 [TUniServerModule]:Debug Mode = ON
+UniGUIMap.exe: 00002784: 14:45:24 [TUniGUISessionManager]:Cache erase job created, Folder count: [2]
+UniGUIMap.exe: 00002784: 14:45:24 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00002784: 14:45:24 [TUniServerModule]:HTTP Server Started on Port: 8077
+UniGUIMap.exe: 000003F4: 14:45:44 [HandleFileRequest[127.0.0.1]]:File not found: C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\favicon.ico
+UniGUIMap.exe: 00002ED4: 14:46:34 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00002ED4: 14:46:34 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00002ED4: 14:46:34 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00002ED4: 14:46:34 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00002ED4: 14:46:34 [TUniServerModule]:HTTP Server Started on Port: 8077
+UniGUIMap.exe: 000025FC: 14:46:52 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 000025FC: 14:46:52 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 000025FC: 14:46:52 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 000025FC: 14:46:52 [TUniServerModule]:Debug Mode = ON
+UniGUIMap.exe: 000025FC: 14:46:52 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 000025FC: 14:47:03 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006D096F
+UniGUIMap.exe: 00003124: 14:48:35 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00003124: 14:48:35 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00003124: 14:48:35 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00003124: 14:48:35 [TUniServerModule]:Debug Mode = ON
+UniGUIMap.exe: 00003124: 14:48:35 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00003124: 14:48:41 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006D096F
+UniGUIMap.exe: 00003124: 14:48:59 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 00003124: 14:48:59 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 00003124: 14:49:00 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 00003124: 14:49:00 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 00003124: 14:49:00 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 00003124: 14:49:00 [Terminated]:Exit Code: 0
+UniGUIMap.exe: 00001170: 14:49:07 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00001170: 14:49:07 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00001170: 14:49:07 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00001170: 14:49:07 [TUniServerModule]:Debug Mode = ON
+UniGUIMap.exe: 00001170: 14:49:07 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00001170: 14:49:13 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006D096F

@@ -1,0 +1,71 @@
+package JanuaCoreThirdParty;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  RESTComponents;
+
+contains
+  Pkg.Json.DTO in '..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas',
+  Pkg.Json.Settings in '..\..\..\Lib\JsonToDelphi\Pkg.Json.Settings.pas',
+  Pkg.Json.JSONName in '..\..\..\Lib\JsonToDelphi\Pkg.Json.JSONName.pas',
+  OpenAI.Utils.ChatHistory in '..\..\..\Libraries\OpenAI\OpenAI.Utils.ChatHistory.pas',
+  OpenAI in '..\..\..\Libraries\OpenAI\OpenAI.pas',
+  OpenAI.Moderations in '..\..\..\Libraries\OpenAI\OpenAI.Moderations.pas',
+  OpenAI.Models in '..\..\..\Libraries\OpenAI\OpenAI.Models.pas',
+  OpenAI.Images in '..\..\..\Libraries\OpenAI\OpenAI.Images.pas',
+  OpenAI.FineTunes in '..\..\..\Libraries\OpenAI\OpenAI.FineTunes.pas',
+  OpenAI.Files in '..\..\..\Libraries\OpenAI\OpenAI.Files.pas',
+  OpenAI.Errors in '..\..\..\Libraries\OpenAI\OpenAI.Errors.pas',
+  OpenAI.Engines in '..\..\..\Libraries\OpenAI\OpenAI.Engines.pas',
+  OpenAI.Embeddings in '..\..\..\Libraries\OpenAI\OpenAI.Embeddings.pas',
+  OpenAI.Edits in '..\..\..\Libraries\OpenAI\OpenAI.Edits.pas',
+  OpenAI.Completions in '..\..\..\Libraries\OpenAI\OpenAI.Completions.pas',
+  OpenAI.Chat in '..\..\..\Libraries\OpenAI\OpenAI.Chat.pas',
+  OpenAI.Chat.Functions.Samples in '..\..\..\Libraries\OpenAI\OpenAI.Chat.Functions.Samples.pas',
+  OpenAI.Chat.Functions in '..\..\..\Libraries\OpenAI\OpenAI.Chat.Functions.pas',
+  OpenAI.Audio in '..\..\..\Libraries\OpenAI\OpenAI.Audio.pas',
+  OpenAI.API in '..\..\..\Libraries\OpenAI\OpenAI.API.pas',
+  DataSet.Serialize.Config in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Config.pas',
+  DataSet.Serialize.Consts in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Consts.pas',
+  DataSet.Serialize.Export in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Export.pas',
+  DataSet.Serialize.Import in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Import.pas',
+  DataSet.Serialize.Language in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Language.pas',
+  DataSet.Serialize in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas',
+  DataSet.Serialize.UpdatedStatus in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas',
+  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas',
+  OpenAI.API.Params in '..\..\..\Libraries\OpenAI\OpenAI.API.Params.pas';
+
+end.

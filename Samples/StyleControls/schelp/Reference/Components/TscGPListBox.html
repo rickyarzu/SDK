@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGPListBox</title>
+
+</head>
+<body>
+&nbsp;&nbsp; &nbsp;
+<font face="Helvetica, Arial"><a name="link89"></a></font>
+<h1 class="bigH">TscGPListBox</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPExtControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>ListBox
+control&nbsp;with vector graphic for scrollbars, backgroud,
+selection, headers and more</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Options</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPScrollingControlOptions</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Options for frame and
+background (see "Scale..." properties to on / off scale of some
+parameters)<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ScrollBarOptions</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPControlScrollBarOptions</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Options for scrollbars<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionOptions</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPSelectionOptions</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Options for selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HeaderOptions</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPHeaderOptions</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Options for header</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">CheckBoxOptions</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPListCheckBoxOptions</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Options for
+checkboxes&nbsp;(see "Scale..." properties to on / off scale of
+some parameters)</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Items</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPListBoxItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscGPListBoxItem</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1"> ItemIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of active item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowItemTitles</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show item's title </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of item </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HeaderHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of items
+with&nbsp;Header = True</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowLines</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show divider lines
+between items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">LineColor</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Color of lines</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">LineColorAlpha</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Alpha value for lines</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">MouseMoveChangeIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If True then ItemIndex
+will change with mouse</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">HeaderFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for header items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Color value for
+scbgsColor background style</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">DetailFont</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for detail in item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowItemDetails</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If true then item have
+area for detail on bottom</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin between border
+and item's content</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemSpacing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between image
+and text in item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Filter</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Filter string for listbox</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">IndentMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin value for indent
+(offset = item.indent * IndentMargin)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemWordWrap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable word wrap for
+item caption </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ItemShowEllipsis</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then long item
+caption can has ellipsis</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">TscGPImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Collection of images for
+wallpaper, which draws on the bottom&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of picture for
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">TscGPImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Collection of images for
+additional image, which draws on the top</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DetailPosition</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">&nbsp;TscGPListBoxDetailPosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPListBoxDetailPosition
+= (scglbdBottom, sclgbdRight);<br>
+<br>
+Position of the detail text in item (bottom or right)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DetailWordWrap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable word wrap for
+detail text</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnItemClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item click (use
+ItemIndex property to get active item)</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnItemCheckClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item checkbox
+click&nbsp;(use ItemIndex property to get active item)</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnItemButtonClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item button
+click&nbsp;(use ItemIndex property to get active item)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1>Methods</h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BeginUpdateItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method before
+update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">EndUpdateItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method after
+update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ScrollToItem</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">ScrollToItem(Index:
+Integer);<br>
+<br>
+Scroll to specific item<br>
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">IndexOfCaption</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">IndexOfCaption(const S:
+string): Integer;<br>
+<br>
+Find item index with Captoin = S</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">IndexOfDetail</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">function
+IndexOfDetail(const S: string): Integer;<br>
+<br>
+Find item index with Detail = S</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p></p>
+<h1 class="bigH"><small>TscGPListBoxItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Header</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then item is
+header</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Title</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Title of item </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption of item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Checked</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Checked value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Detail</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Detail text of item,
+which draw on the bottom</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Indent</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Define offset for item
+as in TComboBoxEx control. Use this property to create tree of items.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom color for item
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for custom
+background color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomTextColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom text color for
+item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomDetailTextColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom detail text color
+for item</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

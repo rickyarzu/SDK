@@ -1,0 +1,22 @@
+object FrmFront: TFrmFront
+  AlignWithMargins = True
+  Left = 0
+  Top = 0
+  Margins.Left = 10
+  Margins.Top = 52
+  Margins.Right = 10
+  Margins.Bottom = 10
+  BorderStyle = bsNone
+  Caption = 'FrmFront'
+  ClientHeight = 240
+  ClientWidth = 463
+  Color = clGrayText
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+end

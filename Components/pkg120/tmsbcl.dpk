@@ -1,0 +1,116 @@
+package tmsbcl;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS BIZ Core Library'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  IndyCore,
+  IndyProtocols,
+  IndySystem;
+
+contains
+  Bcl.Code.DelphiGenerator in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Code.DelphiGenerator.pas',
+  Bcl.Code.MetaClasses in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Code.MetaClasses.pas',
+  Bcl.Collections.Micro in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Collections.Micro.pas',
+  Bcl.Collections.MicroDictionary in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Collections.MicroDictionary.pas',
+  Bcl.Collections in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Collections.pas',
+  Bcl.Core.Encoding in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Core.Encoding.pas',
+  Bcl.Core.MergeSort in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Core.MergeSort.pas',
+  Bcl.Json.BaseObjectConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.BaseObjectConverter.pas',
+  Bcl.Json.Binder in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.Binder.pas',
+  Bcl.Json.Classes in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.Classes.pas',
+  Bcl.Json.Converters in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.Converters.pas',
+  Bcl.Json.Deserializer in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.Deserializer.pas',
+  Bcl.Json.ElementConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.ElementConverter.pas',
+  Bcl.Json.ListConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.ListConverter.pas',
+  Bcl.Json.NamingStrategies in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.NamingStrategies.pas',
+  Bcl.Json.NullableConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.NullableConverter.pas',
+  Bcl.Json.ObjectConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.ObjectConverter.pas',
+  Bcl.Json.OrderedDictionaryConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.OrderedDictionaryConverter.pas',
+  Bcl.Json in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.pas',
+  Bcl.Json.Serializer in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.Serializer.pas',
+  Bcl.Json.StreamReader in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.StreamReader.pas',
+  Bcl.Json.ValueConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.ValueConverter.pas',
+  Bcl.Logging in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Logging.pas',
+  Bcl.Rtti.ObjectFactory in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Rtti.ObjectFactory.pas',
+  Bcl.Rtti.Utils in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Rtti.Utils.pas',
+  Bcl.Types.Nullable in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Types.Nullable.pas',
+  Bcl.Types in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Types.pas',
+  Bcl.Validation.Classes in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Validation.Classes.pas',
+  Bcl.Validation.Exceptions in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Validation.Exceptions.pas',
+  Bcl.Validation.Interfaces in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Validation.Interfaces.pas',
+  Bcl.Validation.Utils in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Validation.Utils.pas',
+  Bcl.Xml.Base in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Xml.Base.pas',
+  Bcl.Xml.Reader in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Xml.Reader.pas',
+  Bcl.Xml.Writer in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Xml.Writer.pas',
+  Bcl.Collections.Common in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Collections.Common.pas',
+  Bcl.Json.Attributes in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Json.Attributes.pas',
+  Bcl.Json.Common in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Json.Common.pas',
+  Bcl.Json.Reader in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Json.Reader.pas',
+  Bcl.Json.StringReader in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Json.StringReader.pas',
+  Bcl.Json.Writer in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Json.Writer.pas',
+  Bcl.Lang in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Lang.pas',
+  Bcl.Rtti.Common in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Rtti.Common.pas',
+  Bcl.SysUtils in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.SysUtils.pas',
+  Bcl.TypInfo.Common in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.TypInfo.Common.pas',
+  Bcl.Utils in '..\..\..\tmssoftware\TMS Business Core Library\source\core\common\Bcl.Utils.pas',
+  Bcl.Validation.Attributes in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Validation.Attributes.pas',
+  Bcl.Json.AssignableConverter in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Json.AssignableConverter.pas',
+  Bcl.Types.Assignable in '..\..\..\tmssoftware\TMS Business Core Library\source\core\Bcl.Types.Assignable.pas',
+  Bcl.Jose.Encoding.Base64 in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Encoding.Base64.pas',
+  Bcl.Jose.Hashing.HMAC in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Hashing.HMAC.pas',
+  Bcl.Jose.OpenSSL.Headers in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.OpenSSL.Headers.pas',
+  Bcl.Jose.Signing.Base in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Signing.Base.pas',
+  Bcl.Jose.Signing.ECDSA in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Signing.ECDSA.pas',
+  Bcl.Jose.Signing.RSA in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Signing.RSA.pas',
+  Bcl.Jose.Types.Arrays in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Types.Arrays.pas',
+  Bcl.Jose.Types.Bytes in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Types.Bytes.pas',
+  Bcl.Jose.Types.Json in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Types.Json.pas',
+  Bcl.Jose.Types.Utils in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\common\Bcl.Jose.Types.Utils.pas',
+  Bcl.Jose.Builder in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Builder.pas',
+  Bcl.Jose.Consumer in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Consumer.pas',
+  Bcl.Jose.Consumer.Validators in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Consumer.Validators.pas',
+  Bcl.Jose.Context in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Context.pas',
+  Bcl.Jose.Core.Base in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.Base.pas',
+  Bcl.Jose.Core.Builder in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.Builder.pas',
+  Bcl.Jose.Core.JWA.Compression in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWA.Compression.pas',
+  Bcl.Jose.Core.JWA.Encryption in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWA.Encryption.pas',
+  Bcl.Jose.Core.JWA.Factory in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWA.Factory.pas',
+  Bcl.Jose.Core.JWA in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWA.pas',
+  Bcl.Jose.Core.JWA.Signing in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWA.Signing.pas',
+  Bcl.Jose.Core.JWE in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWE.pas',
+  Bcl.Jose.Core.JWK in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWK.pas',
+  Bcl.Jose.Core.JWS in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWS.pas',
+  Bcl.Jose.Core.JWT in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.JWT.pas',
+  Bcl.Jose.Core.Parts in '..\..\..\tmssoftware\TMS Business Core Library\source\jose\jose\Bcl.Jose.Core.Parts.pas';
+
+end.

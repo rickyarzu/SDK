@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscExPanel</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscExPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scExtControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel control, which can roll horizontally or vertically.</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p></p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Text on control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BackgroundStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscExPanelBackgroundStyle
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscExPanelBackgroundStyle
+=<br>
+&nbsp;&nbsp;&nbsp; (scexbgsPanel, scexbgsFormBackground,
+scexbgsTransparent);<br>
+<br>
+Style for control background. &nbsp;You can use Color property with
+scexbgsPanel style.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RollKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscExPanelRollKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscExPanelRollKind =
+(scrkRollHorizontal, scrkRollVertical);<br>
+<br>
+This property define how control will be roll: horizontally or
+vertically</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RollUpState</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then panel is in
+rollup state</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowFrame</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show frame of the panel</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RealWidth,<br>
+RealHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width and Height when
+RollUpState = False. <br>
+With RollKind = scrkRollHorizontal panel uses RealWidt value and <br>
+with RollKind = scrkRollVertical panel uses RealHeight value.&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowRollButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show button to change
+RollUpState</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCloseButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show button to change
+Visible of the control to False</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Height of the caption.
+Also this values defines size of the control when RollUpState = true</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image list for caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for caption </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Spacing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between image
+and text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Moveable</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can
+move panel with caption by mouse (as with form)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Sizeable</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then you can
+change panel size with mouse (as with form)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MovingInParent&#1057;lientBounds</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then when you
+moving control then it can be moved only in parent client area</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">StorePaintBuffer</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If
+True then transparent child controls from StyleControls VCL will use
+special paint buffer to get parent image. This solution really increase
+performance!</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">HeaderStyle</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscExPanelHeaderStyle</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscExPanelHeaderStyle = &nbsp; (scexphsHeader, scexphsColor);<br>Style for header</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">HeaderColor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color value if TscExPanelHeaderStyle =&nbsp;scexphsColor</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ButtonGlyphColor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color value for button glyph&nbsp; if TscExPanelHeaderStyle =&nbsp;scexphsColor</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ChangeRollStateWithCaptionClick</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable changing of roll state with caption click</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">BorderWidth</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Border width, which defines border to resize control (Sizeable = True) and client area</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the frame</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowFrame</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / hide frame</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">HorzRollButtonPosition</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscExPanelHorzRollButtonPosition</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscExPanelHorzRollButtonPosition = (scrbpRight, scrbpLeft);<br><br>Position of roll button in horizontal mode.</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

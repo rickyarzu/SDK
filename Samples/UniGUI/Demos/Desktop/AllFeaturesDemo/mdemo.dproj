@@ -1,0 +1,1044 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7D787A38-A53C-4409-B22C-2989BA4DE9E4}</ProjectGuid>
+        <MainSource>mdemo.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>38017</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>19.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <SanitizedProjectName>mdemo</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Data.Win;Echo;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="ServerModule.pas">
+            <Form>UniServerModule</Form>
+            <DesignClass>TUniGUIServerModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="MainModule.pas">
+            <Form>UniMainModule</Form>
+            <DesignClass>TUniGUIMainModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Main.pas">
+            <Form>MainForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\umain.pas">
+            <Form>FrameMain</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ShowSource.pas">
+            <Form>SourceForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ButtonsSimpleButtons.pas">
+            <Form>UniButtonsSimpleButtons</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ButtonsIconButtons.pas">
+            <Form>UniButtonsIconButtons</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\PanelsSimplePanels.pas">
+            <Form>UniPanelsSimplePanels</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\PanelsCollapsiblePanels.pas">
+            <Form>UniPanelsCollapsiblePanels</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ThreadTimerThreadSort.pas">
+            <Form>UniThreadTimerThreadSort</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTML5CanvasCanvas.pas">
+            <Form>UniHTML5CanvasCanvas</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseFishFacts.pas">
+            <Form>UniDatabaseFishFacts</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsVariousCharts.pas">
+            <Form>UniChartsVariousCharts</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousGoogleMaps.pas">
+            <Form>UniMiscellaneousGoogleMaps</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\TabPageControlPageControl.pas">
+            <Form>UniTabPageControlPageControl</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsCheckBox.pas">
+            <Form>UniGridsCheckBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsColumnLocking.pas">
+            <Form>UniGridsColumnLocking</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsColumnLockingAndHeaderGrouping.pas">
+            <Form>UniGridsColumnLockingAndHeaderGrouping</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsColumnSort.pas">
+            <Form>UniGridsColumnSort</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsCellEditors.pas">
+            <Form>UniGridsCellEditors</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowEditor.pas">
+            <Form>UniGridsRowEditor</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowGrouping.pas">
+            <Form>UniGridsRowGrouping</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowGroupingSummary.pas">
+            <Form>UniGridsRowGroupingSummary</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowGroupingSummaryGrandTotal.pas">
+            <Form>UniGridsRowGroupingSummaryGrandTotal</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsHeaderGrouping.pas">
+            <Form>UniGridsHeaderGrouping</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsHeaderMultipleLevelGrouping.pas">
+            <Form>UniGridsHeaderMultipleLevelGrouping</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsImagesGrid.pas">
+            <Form>UniGridsImagesGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsFilter.pas">
+            <Form>UniGridsFilter</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsFilter2.pas">
+            <Form>UniGridsFilter2</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsGroupingSorting.pas">
+            <Form>UniGridsGroupingSorting</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsLookupField.pas">
+            <Form>UniGridsLookupField</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsSummary.pas">
+            <Form>UniGridsSummary</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsDBLookupComboEditor.pas">
+            <Form>UniGridsDBLookupComboEditor</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseLookup.pas">
+            <Form>UniDatabaseLookup</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseDelayedSearch.pas">
+            <Form>UniDatabaseDelayedSearch</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseLiveCombo.pas">
+            <Form>UniDatabaseLiveCombo</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsMemoAndImageColumn.pas">
+            <Form>UniGridsMemoAndImageColumn</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousHTMLFrame.pas">
+            <Form>UniMiscellaneousHTMLFrame</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsCellDraw.pas">
+            <Form>UniGridsCellDraw</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ButtonsMenuButton.pas">
+            <Form>UniButtonsMenuButton</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsEditEvents.pas">
+            <Form>UniFormControlsEditEvents</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsEditTypes.pas">
+            <Form>UniFormControlsEditTypes</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsEditProperties.pas">
+            <Form>UniFormControlsEditProperties</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsSyntaxEdit.pas">
+            <Form>UniFormControlsSyntaxEdit</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ButtonsSpeedButton.pas">
+            <Form>UniButtonsSpeedButton</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsButtonClick.pas">
+            <Form>UniClientEventsButtonClick</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsMouseEvents.pas">
+            <Form>UniClientEventsMouseEvents</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsEditClientEvents.pas">
+            <Form>UniClientEventsEditClientEvents</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsComboBox.pas">
+            <Form>UniFormControlsComboBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsAjaxCalls.pas">
+            <Form>UniClientEventsAjaxCalls</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsPinpon.pas">
+            <Form>UniClientEventsPinpon</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\CookiesGetSetCookies.pas">
+            <Form>UniCookiesGetSetCookies</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MessageBoxesDialogs.pas">
+            <Form>UniMessageBoxesDialogs</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MessageBoxesAnonymousCallBack.pas">
+            <Form>UniMessageBoxesAnonymousCallBack</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DownloadUploadSimpleDownload.pas">
+            <Form>UniDownloadUploadSimpleDownload</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DownloadUploadAdvancedDownload.pas">
+            <Form>UniDownloadUploadAdvancedDownload</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DownloadUploadFileUpload.pas">
+            <Form>UniDownloadUploadFileUpload</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\PromptsSimplePrompt.pas">
+            <Form>UniPromptsSimplePrompt</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsDynamicForm.pas">
+            <Form>UniFormsDynamicForm</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormAnonymousCallBack.pas">
+            <Form>UniFormsFormAnonymousCallBack</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormCallBack\CallBackFormUnit.pas">
+            <Form>UniCallBackFormUnit</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormCallBack.pas">
+            <Form>UniFormsFormCallBack</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormNavigation.pas">
+            <Form>UniFormsFormNavigation</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormNavigation\NavigationUnit1.pas">
+            <Form>UniNavigationUnit1Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormNavigation\NavigationUnit2.pas">
+            <Form>UniNavigationUnit2Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormNavigation\NavigationUnit3.pas">
+            <Form>UniNavigationUnit3Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DataBaseMasterDetail.pas">
+            <Form>UniDataBaseMasterDetail</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\URLFrameSimpleWebBrowser.pas">
+            <Form>UniURLFrameSimpleWebBrowser</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ToolBarAdvancedToolBar.pas">
+            <Form>UniToolBarAdvancedToolBar</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\TreeViewUniTreeView.pas">
+            <Form>UniTreeViewUniTreeView</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\URLFrameURLHTMLFrame.pas">
+            <Form>UniURLFrameURLHTMLFrame</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousHTML5Audio.pas">
+            <Form>UniMiscellaneousHTML5Audio</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsHTMLEditor.pas">
+            <Form>UniFormControlsHTMLEditor</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ThreadTimerThreadTimer.pas">
+            <Form>UniThreadTimerThreadTimer</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MaskUniMask.pas">
+            <Form>UniMaskUniMask</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MaskClientMask.pas">
+            <Form>UniMaskClientMask</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MaskMaskData.pas">
+            <Form>UniMaskMaskData</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\UnicodeUnicodeDemo.pas">
+            <Form>UniUnicodeUnicodeDemo</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ImageUniImage.pas">
+            <Form>UniImageUniImage</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DownloadUploadSendFile.pas">
+            <Form>UniDownloadUploadSendFile</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsSubmitCancel.pas">
+            <Form>UniFormsSubmitCancel</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsSubmitCancel\SubmitCancelUnit.pas">
+            <Form>UniForm1</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ScrollBoxScrollBox.pas">
+            <Form>UniScrollBoxScrollBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MenuPopUpMenu.pas">
+            <Form>UniMenuPopUpMenu</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsMonitoredKey.pas">
+            <Form>UniFormsMonitoredKey</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsMonitoredKey\MonitoredKeyUnit.pas">
+            <Form>UniForm2</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsListBox.pas">
+            <Form>UniFormControlsListBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\PanelsContainerPanel.pas">
+            <Form>UniPanelsContainerPanel</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\JQuerySampleBasicJQuery.pas">
+            <Form>UniJQuerySampleBasicJQuery</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsCharEOL.pas">
+            <Form>UniFormControlsCharEOL</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousCalendarPanel.pas">
+            <Form>UniMiscellaneousCalendarPanel</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousCalendarPanel\EventModuleUnit.pas">
+            <Form>EventEditForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseSQLQuery.pas">
+            <Form>UniDatabaseSQLQuery</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ClientEventsDynamicClient.pas">
+            <Form>UniClientEventsDynamicClient</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTML5CanvasPaint.pas">
+            <Form>UniHTML5CanvasPaint</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTML5CanvasPaint\PaintSaveUnit.pas">
+            <Form>UniForm3</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousClientInfo.pas">
+            <Form>UniMiscellaneousClientInfo</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsDynamicForm\DynamicUnit.pas">
+            <Form>UniForm4</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsCheckSelect.pas">
+            <Form>UniGridsCheckSelect</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsCheckSelectOnly.pas">
+            <Form>UniGridsCheckSelectOnly</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsRadios.pas">
+            <Form>UniFormControlsRadios</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsMemo.pas">
+            <Form>UniFormControlsMemo</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsCheckBox.pas">
+            <Form>UniFormControlsCheckBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes.pas">
+            <Form>UniFormsFormTypes</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\DialogFormUnit.pas">
+            <Form>DialogForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\NoneBorderFormUnit.pas">
+            <Form>NoneBorderForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\SingleBorderFormUnit.pas">
+            <Form>SingleBorderForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\SizeAbleFormUnit.pas">
+            <Form>SizeableForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\AllBorderIconOpenUnit.pas">
+            <Form>AllBorderIconOpenForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\OnlyCloseIconUnit.pas">
+            <Form>OnlyCloseIconForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\FormShowNormalUnit.pas">
+            <Form>FormShowNormal</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormTypes\FormShowModalUnit.pas">
+            <Form>FormShowModal</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsDateTime.pas">
+            <Form>UniFormControlsDateTime</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsLabels.pas">
+            <Form>UniFormControlsLabels</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\TabPageControlTabControl.pas">
+            <Form>UniTabPageControlTabControl</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsProgressBar.pas">
+            <Form>UniFormControlsProgressBar</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsGroupBox.pas">
+            <Form>UniFormControlsGroupBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsTrackBar.pas">
+            <Form>UniFormControlsTrackBar</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsStatusBar.pas">
+            <Form>UniFormControlsStatusBar</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsStringGrid.pas">
+            <Form>UniGridsStringGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousSplitter.pas">
+            <Form>UniMiscellaneousSplitter</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsAlignAnchor\FormAlignUnit.pas">
+            <Form>FormAlign</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsAlignAnchor\FormAnchorUnit.pas">
+            <Form>FormAnchor</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ToolBarSimpleToolbar.pas">
+            <Form>UniToolBarSimpleToolbar</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsCalendarDialog.pas">
+            <Form>UniFormControlsCalendarDialog</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\TimerTimer.pas">
+            <Form>UniTimerTimer</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsAlignAnchor.pas">
+            <Form>UniFormControlsAlignAnchor</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ImageImageList.pas">
+            <Form>UniImageImageList</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseEmployeeData.pas">
+            <Form>UniDatabaseEmployeeData</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsAreaChart.pas">
+            <Form>UniChartsAreaChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsBarChart.pas">
+            <Form>UniChartsBarChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsBar3DChart.pas">
+            <Form>UniChartsBar3DChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsHorizontalBarChart.pas">
+            <Form>UniChartsHorizontalBarChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsGaugeChart.pas">
+            <Form>UniChartsGaugeChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsLineChart.pas">
+            <Form>UniChartsLineChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsPieChart.pas">
+            <Form>UniChartsPieChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsRadarChart.pas">
+            <Form>UniChartsRadarChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsScatterChart.pas">
+            <Form>UniChartsScatterChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MenuMainMenu.pas">
+            <Form>UniMenuMainMenu</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MenuMainMenu\MainMenuUnit.pas">
+            <Form>MainMenuForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MenuMainMenu\FrameMenu.pas">
+            <Form>UniMenuFrame</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousServerStatistics.pas">
+            <Form>UniMiscellaneousServerStatistics</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsContextMenu.pas">
+            <Form>UniGridsContextMenu</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousCurve3D.pas">
+            <Form>UniMiscellaneousCurve3D</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsFormattedEdit.pas">
+            <Form>UniFormControlsFormattedEdit</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsEditMask.pas">
+            <Form>UniFormControlsEditMask</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\TreeViewUniTreeViewSample.pas">
+            <Form>UniTreeViewUniTreeViewSample</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ImageImageList3.pas">
+            <Form>UniImageImageList3</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementAccordionLayout.pas">
+            <Form>UniLayoutManagementAccordionLayout</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementDockAndAlign.pas">
+            <Form>UniLayoutManagementDockAndAlign</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementAnchor.pas">
+            <Form>UniLayoutManagementAnchor</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementBorder.pas">
+            <Form>UniLayoutManagementBorder</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementFormLayout.pas">
+            <Form>UniLayoutManagementFormLayout</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementHBoxLayout.pas">
+            <Form>UniLayoutManagementHBoxLayout</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementVBoxLayout.pas">
+            <Form>UniLayoutManagementVBoxLayout</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementTable.pas">
+            <Form>UniLayoutManagementTable</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementTableSpan.pas">
+            <Form>UniLayoutManagementTableSpan</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementFit.pas">
+            <Form>UniLayoutManagementFit</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsFieldSet.pas">
+            <Form>UniFormControlsFieldSet</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\LayoutManagementHBoxLayoutPercentage.pas">
+            <Form>UniLayoutManagementHBoxLayoutPercentage</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentFitFormWithParent\UnitFitForm.pas">
+            <Form>UniFitForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPanelFrameFormWithParent.pas">
+            <Form>UniFormWithParentPanelFrameFormWithParent</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPanelFrameFormWithParent\UnitPanel.pas">
+            <Form>UniPanelForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPanelFrameFormWithParent\UnitFrame.pas">
+            <Form>UniFrameForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPanelFrameFormWithParent\UnitFrameContainer.pas">
+            <Form>UniFrame3</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent.pas">
+            <Form>UniFormWithParentPercentageFormWithParent</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent\UnitPer1.pas">
+            <Form>UniPerForm1</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent\UnitPer2.pas">
+            <Form>UniPerForm2</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent\UnitPer3.pas">
+            <Form>UniPerForm3</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent\UnitPer4.pas">
+            <Form>UniPerForm4</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentPercentageFormWithParent\UnitPer5.pas">
+            <Form>UniPerForm5</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent.pas">
+            <Form>UniFormWithParentBorderFormWithParent</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent\UnitBorder1.pas">
+            <Form>UnitBorder1Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent\UnitBorder2.pas">
+            <Form>UnitBorder2Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent\UnitBorder3.pas">
+            <Form>UnitBorder3Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent\UnitBorder4.pas">
+            <Form>UnitBorder4Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentBorderFormWithParent\UnitBorder5.pas">
+            <Form>UnitBorder5Form</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentFitFormWithParent.pas">
+            <Form>UniFormWithParentFitFormWithParent</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentFormInFrame.pas">
+            <Form>UniFormWithParentFormInFrame</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormWithParentFormInFrame\UnitFormWithParentFrame.pas">
+            <Form>UniFormFrame</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousDraggableComponent.pas">
+            <Form>UniMiscellaneousDraggableComponent</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsStringGridFixedColAndHeader.pas">
+            <Form>UniGridsStringGridFixedColAndHeader</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsColorButtons.pas">
+            <Form>UniFormControlsColorButtons</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsColorPalette.pas">
+            <Form>UniFormControlsColorPalette</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousPDFViewer.pas">
+            <Form>UniMiscellaneousPDFViewer</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousPDFViewer\pdfform.pas">
+            <Form>UniPDFForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsMultiSelect.pas">
+            <Form>UniGridsMultiSelect</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackNewBrowserWindow.pas">
+            <Form>UniHTTPCallbackNewBrowserWindow</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackHTMLFrame2.pas">
+            <Form>UniHTTPCallbackHTMLFrame2</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackHTMLFrame1.pas">
+            <Form>UniHTTPCallbackHTMLFrame1</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackHTMLFrame1\HTMLFrameTwoUnit.pas">
+            <Form>UniHTMLFrameTwoForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackUrlFrameAutoTarget.pas">
+            <Form>UniHTTPCallbackUrlFrameAutoTarget</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\HTTPCallbackUrlFrameAutoTarget\AutoTargetUnit.pas">
+            <Form>AutoTargetForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsFormAnonymousCallBack\AnonymousCallBackUnit.pas">
+            <Form>UniAnonymousCallBackForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsComboBoxTrigger.pas">
+            <Form>UniFormControlsComboBoxTrigger</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsComboBoxTrigger\ComboTriggerUnit.pas">
+            <Form>ComboTrigger</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsPropertyGrid.pas">
+            <Form>UniFormControlsPropertyGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DatabaseDBLookupComboBox.pas">
+            <Form>UniDatabaseDBLookupComboBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ImageImageList2.pas">
+            <Form>UniImageImageList2</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ActionListActions.pas">
+            <Form>UniActionListActions</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsDragDrop.pas">
+            <Form>UniGridsDragDrop</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsVerticalGrid.pas">
+            <Form>UniGridsVerticalGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsTreeGrid.pas">
+            <Form>UniGridsTreeGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsVerticalTreeGrid.pas">
+            <Form>UniGridsVerticalTreeGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsPivotGrid2.pas">
+            <Form>UniGridsPivotGrid2</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsPivotGrid.pas">
+            <Form>UniGridsPivotGrid</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowWidget.pas">
+            <Form>UniGridsRowWidget</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsRowWidget\RowWidgetDetailFrm.pas">
+            <Form>DetailFrame</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousUsingJSInterface.pas">
+            <Form>UniMiscellaneousUsingJSInterface</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\MiscellaneousSweetAlert.pas">
+            <Form>UniMiscellaneousSweetAlert</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsTagField.pas">
+            <Form>UniFormControlsTagField</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsDBTagField.pas">
+            <Form>UniFormControlsDBTagField</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsCheckListBox.pas">
+            <Form>UniFormControlsCheckListBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ButtonEditTriggers.pas">
+            <Form>UniButtonEditTriggers</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsExporter.pas">
+            <Form>UniGridsExporter</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsInfiniteScroll.pas">
+            <Form>UniGridsInfiniteScroll</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\DownloadUploadFileUploadDragDrop.pas">
+            <Form>UniDownloadUploadFileUploadDragDrop</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsMultiSort.pas">
+            <Form>UniGridsMultiSort</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormsToolButtons.pas">
+            <Form>UniFormsToolButtons</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\FormControlsCheckComboBox.pas">
+            <Form>UniFormControlsCheckComboBox</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsHorizontalBar3DChart.pas">
+            <Form>UniChartsHorizontalBar3DChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\ChartsMultiDataChart.pas">
+            <Form>UniChartsMultiDataChart</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsColumnWidget.pas">
+            <Form>UniGridsColumnWidget</Form>
+            <DesignClass>TUniFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GridsColumnWidget\WidgetForm.pas">
+            <Form>ColumnWidgetForm</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">mdemo.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

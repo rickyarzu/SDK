@@ -1,0 +1,2 @@
+inherited frameVCLDocAttachments: TframeVCLDocAttachments
+end

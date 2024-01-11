@@ -1,0 +1,98 @@
+package JanuaVCLLegacyXE103;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua VCL Legacy'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  JanuaCoreXE103Rio,
+  JanuaThirdPartyXE103,
+  vclactnband,
+  vclx,
+  vcldb,
+  crcontrols260,
+  QRWRunDXE10_3_w64,
+  tmsdXE12,
+  tmsexdXE12,
+  Jcl,
+  JvCore,
+  JvSystem,
+  JvStdCtrls,
+  JvDB,
+  JanuaVCLControlsXE103,
+  unidac260,
+  JanuaOraUniDacXE103;
+
+contains
+  AcroPDFLib_TLB in '..\..\..\JanuaLib\src\Legacy\AcroPDFLib_TLB.pas',
+  Janua.Legacy.Anagraph in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Anagraph.pas',
+  Janua.Legacy.Core in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Core.pas',
+  Janua.Legacy.DBTables in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.DBTables.pas',
+  Janua.Legacy.DialogDate in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.DialogDate.pas',
+  Janua.Legacy.EndPeriod in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.EndPeriod.pas',
+  Janua.Legacy.Error in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Error.pas',
+  Janua.Legacy.Fakes in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Fakes.pas',
+  Janua.Legacy.Functions in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Functions.pas',
+  Janua.Legacy.IBan in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.IBan.pas',
+  Janua.Legacy.InputNumber in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.InputNumber.pas',
+  Janua.Legacy.InputText in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.InputText.pas',
+  Janua.Legacy.Logger in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Logger.pas',
+  Janua.Legacy.Printers in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Printers.pas',
+  Janua.Legacy.Qranglbl in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.Qranglbl.pas',
+  Janua.Legacy.QuickReport in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.QuickReport.pas',
+  Janua.Legacy.ReadOnly in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.ReadOnly.pas',
+  Janua.Legacy.RegisterCards in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.RegisterCards.pas',
+  Janua.Legacy.SelectPrinter in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.SelectPrinter.pas',
+  Janua.Legacy.SplashDialog in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.SplashDialog.pas',
+  Janua.Legacy.StoredProcedure in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.StoredProcedure.pas',
+  Janua.Legacy.System in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.System.pas',
+  Janua.Legacy.UnderInstall in '..\..\..\JanuaLib\src\Legacy\Janua.Legacy.UnderInstall.pas',
+  Janua.Oracle.Dataset in '..\..\..\JanuaLib\src\Legacy\Janua.Oracle.Dataset.pas',
+  Janua.Oracle.StoredProcedure in '..\..\..\JanuaLib\src\Legacy\Janua.Oracle.StoredProcedure.pas',
+  Janua.Oracle.System in '..\..\..\JanuaLib\src\Legacy\Janua.Oracle.System.pas',
+  Janua.Shipping.Refund in '..\..\..\JanuaLib\src\Legacy\Janua.Shipping.Refund.pas',
+  Janua.Shipping.RefundAgentStatement in '..\..\..\JanuaLib\src\Legacy\Janua.Shipping.RefundAgentStatement.pas',
+  JanuaPromo in '..\..\..\JanuaLib\src\Legacy\JanuaPromo.pas',
+  JanuaRigaDettaglio in '..\..\..\JanuaLib\src\Legacy\JanuaRigaDettaglio.pas',
+  JanuaServiceTrattative in '..\..\..\JanuaLib\src\Legacy\JanuaServiceTrattative.pas',
+  JvxLabel in '..\..\..\JanuaLib\src\Legacy\JvxLabel.pas',
+  JvxSpeedButton in '..\..\..\JanuaLib\src\Legacy\JvxSpeedButton.pas',
+  udlgInputDate in '..\..\..\JanuaLib\src\Legacy\udlgInputDate.pas' {dlgInputDate},
+  udlgInputFloat in '..\..\..\JanuaLib\src\Legacy\udlgInputFloat.pas' {dlgInputFloat},
+  udlgInputText in '..\..\..\JanuaLib\src\Legacy\udlgInputText.pas' {dlgInputText},
+  udlgSelectPrinter in '..\..\..\JanuaLib\src\Legacy\udlgSelectPrinter.pas' {dlgSelectPrinter},
+  udmJanuaLegacySystem in '..\..\..\JanuaLib\src\Legacy\udmJanuaLegacySystem.pas' {dmJanuaSystem: TDataModule},
+  udmRegisterCARDS in '..\..\..\JanuaLib\src\Legacy\udmRegisterCARDS.pas' {dmRegisterCards: TDataModule},
+  ufrmAttesa in '..\..\..\JanuaLib\src\Legacy\ufrmAttesa.pas' {frmAttesa},
+  uJanuaFrameNavigator in '..\..\..\JanuaLib\src\Legacy\uJanuaFrameNavigator.pas' {JanuaFrameNavigator: TFrame},
+  uJanuaSimulationRow in '..\..\..\JanuaLib\src\Legacy\uJanuaSimulationRow.pas',
+  udmEndPeriod in '..\..\..\JanuaLib\src\Legacy\udmEndPeriod.pas' {dmEndPeriod: TDataModule},
+  udmrepository in '..\..\..\JanuaLib\src\Legacy\udmrepository.pas' {dmRepository: TDataModule},
+  JanuaLegacyRegisterUnit in '..\..\..\JanuaLib\src\JanuaLegacyRegisterUnit.pas';
+
+end.

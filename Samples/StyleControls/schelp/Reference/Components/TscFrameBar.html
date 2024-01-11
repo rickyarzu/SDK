@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscFrameBar</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscFrameBar</h1>
+<h2>Unit</h2>
+<p>scExtControls</p>
+<h1>Description</h1>
+<p>TscFrameBar = class(<a href="TscScrollBox.html">TscScrollBox</a>)</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Animation</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">Open / Close frames with animation</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonFont</td>
+<td height="12" width="99">TFont</td>
+<td height="12" width="1145">Font for item's buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonImages</td>
+<td height="12" width="99">TCustomImageList</td>
+<td height="12" width="1145">Images for buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonSpacing</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Spacing between image and text in buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonMargin</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Margin for text and image in button</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButonHeight</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Height of the buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonStyle</td>
+<td height="12" width="99">TscbbButtonStyle</td>
+<td height="12" width="1145">Style for button...<br>TscbbButtonStyle = (scbbPushButton, scbbHeaderSection);</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ButtonAnimation</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">Enable animation on buttons</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Items</td>
+<td height="12" width="99">TscFrameBarItems</td>
+<td height="12" width="1145">Collection of items to link frames</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">CanCloseAll</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">If True then all frames can be closed</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">CanOpenAll</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">If True then not only one frame can be opened</td>
+</tr>
+
+
+
+
+
+
+<tr><td bgcolor="#efefef" height="12" width="97">ActiveFrameIndex</td><td height="12" width="99">Integer</td><td height="12" width="1145">Index of open section (useful when CanOpenAll = False) </td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+<h1>Methos</h1>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OpenFrame</td>
+<td height="12" width="1145">procedure OpenFrame(Index: Integer);<br>Open Items[Index].Frame</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">CloseFrame<br></td>
+<td height="12" width="1145">procedureCloseFrame(Index: Integer);<br>Close Items[Index].Frame</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OpenAllFrames</td>
+<td height="12" width="1145">Open all frames</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">CloseAllFrames</td>
+<td height="12" width="1145">Close all frames</td>
+</tr>
+
+</tbody>
+</table>
+<p><font face="Helvetica, Arial">&nbsp;</font></p><br><h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+
+
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OnFrameChange</td>
+<td height="12" width="99">TscOnFrameChangeEvent</td>
+<td height="12" width="1145">Event when frame state changed....<br><br>&nbsp;TscOnFrameChangeEvent = procedure(Sender: TObject; FrameItem: TscFrameBarItem) of object;</td></tr><tr><td bgcolor="#efefef" height="12" width="97">OnFrameChanging</td><td height="12" width="99">TscOnFrameChangeEvent</td><td height="12" width="1145">Event before frame will be changed</td></tr></tbody></table><br><p><b></b></p><p><b>TscFrameBarItem&nbsp;= class(TCollectionItem)</b></p>
+<p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Properties</b></font></p>
+<p>&nbsp;</p>
+<table style="width: 735px; height: 59px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">ImageIndex</td>
+<td height="12" width="99">Integer</td>
+<td height="12" width="1145">Index
+of image</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Caption</td>
+<td height="12" width="99">String</td>
+<td height="12" width="1145">caption
+of item </td>
+</tr>
+
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Visible</td>
+<td height="12" width="99">Boolean</td><td height="12" width="1145">Visibility of item</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">Enabled</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">Enabled of item</td>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">FreezeState</td>
+<td height="12" width="99">Boolean</td>
+<td height="12" width="1145">Freeze state of item
+</td>
+</tr>
+<tr><td bgcolor="#efefef" height="12" width="97">Frame</td><td height="12" width="99">TCustomFrame</td><td height="12" width="1145">Frame control</td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+<p><font face="Helvetica, Arial"><b>Events</b></font></p>
+<p>&nbsp;</p>
+<table cellpadding="3" cellspacing="1" height="59" width="735">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th height="12" width="97"><small><small>Name</small></small></th>
+<th height="12" width="99"><small><small>Type</small></small></th>
+<th height="12" width="1145"><small><small>Description</small></small></th>
+</tr>
+<tr>
+<td bgcolor="#efefef" height="12" width="97">OnClick</td>
+<td bgcolor="#efefef" height="12" width="99">TNotifyEvent</td>
+<td bgcolor="#efefef" height="12" width="1145">event
+on item's button click</td>
+</tr>
+<tr><td bgcolor="#efefef" height="12" width="97">OnFrameCreate</td><td bgcolor="#efefef" height="12" width="99">TscCreateFrameEvent</td><td bgcolor="#efefef" height="12" width="1145">Event, in which you must create frame...<br><br>TscCreateFrameEvent = procedure(Sender: TObject; var AFrame: TCustomFrame) of object;<br><br></td></tr><tr><td bgcolor="#efefef" height="12" width="97">OnFrameDestroy</td><td bgcolor="#efefef" height="12" width="99">TscFrameDestroyEvent</td><td bgcolor="#efefef" height="12" width="1145">Event, in which you must define that frame can be destroyed (ACanDestroy = True) or can be hide.<br><br>procedure(Sender: TObject; var AFrame: TCustomFrame; var ACanDestroy: Boolean) of object;</td></tr><tr><td bgcolor="#efefef" height="12" width="97">OnFrameShow</td><td bgcolor="#efefef" height="12" width="99">TNotifyEvent</td><td bgcolor="#efefef" height="12" width="1145">Event on show frame</td></tr><tr><td bgcolor="#efefef" height="12" width="97">OnFrameClose</td><td bgcolor="#efefef" height="12" width="99">TNotifyEvent </td><td bgcolor="#efefef" height="12" width="1145">Event on close frame</td></tr></tbody>
+</table>
+<br>
+<br><br>
+</body></html>

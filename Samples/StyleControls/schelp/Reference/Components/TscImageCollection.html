@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscImageCollection</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscImageCollection</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scImageCollection.pas</p>
+<p><span style="font-weight: bold;">TscImageCollection
+= class(TComponent)</span></p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>&nbsp;</p>
+<p>Collection
+of images with different drawing style</p>
+<p>&nbsp;</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscImageCollectionItems
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscImageCollectionItem </td>
+</tr>
+</tbody>
+</table><br>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Draw</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">procedure Draw(ACanvas: TCanvas; ARect: TRect; AIndex: Integer);<br>Draw image with special index, canvas and in specific area </td>
+</tr>
+</tbody>
+</table><br>
+<p>&nbsp;</p><p>&nbsp;</p>
+<h1 class="bigH"><small>TscImageCollectionItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Picture</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TPicture
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image with different
+formats (*.jpg, *.png, *.bmp) </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Drawing
+style</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscImageDrawStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageDrawStyle
+= (idsTile, idsStretch, idsCenter,<br>
+&nbsp;&nbsp;&nbsp; idsTopLeft, idsTopRight, idsBottomLeft,
+idsBottomRight,<br>
+&nbsp;&nbsp;&nbsp; idsTopTile, idsLeftTile, idsRightTile,
+idsBottomTile,<br>
+&nbsp;&nbsp;&nbsp; idsTopStretch, idsLeftStretch,
+idsRightStretch, idsBottomStretch,<br>
+&nbsp;&nbsp;&nbsp; idsHorzStretchTile, idsVertStretchTile,
+idsHorzCenterStretch, idsVertCenterStretch,<br>
+&nbsp;&nbsp;&nbsp; idsLeftCenter, idsTopCenter,
+idsRightCenter, idsBottomCenter);<br>
+<br>
+If you set <span style="font-style: italic;">Wallpaper or CustomImage... </span>(TscImageCollection)
+and<span style="font-style: italic;"> WallpaperIndex, CusotmImageIndex...</span>
+property in controls then TscImageCollection will automatically draw image as you defined with this property.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TileOffsetX</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">X offset for
+tile draw style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TileOffsetY</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Y offset for
+tile draw style</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">Bitmap</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TBitmap</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Bitmap,
+which based from PNG image. You'll see special dialog to load PNG
+image. As result you'll get 32-bit bitmap with alpha channel or
+24-bit bitmap. Also dialog autumatically can adjust alphablend properties
+in BitmapOptions property.<br>32-bit bitmap drawn much more faster than PNG
+image. This is why the best for performance convert PNG image to the
+32-bit bitmap or 24-bit bitmap</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">BitmapOptions</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscBitmapOptions</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Options, which define how bitmap will be draw</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">Description</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Description to see info about bitmap in big list</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p><h1 class="bigH"><small>TscBitmapOptions</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">LeftMargin<br>RightMargin<br>TopMargin<br>BottomMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margins, which defined corners, border and client part in the bitmap.<br><br>Examples:<br>Fixed size:<br>(LeftMargin = 0) and (RightMargin = 0) an (TopMargin = 0) and (BottomMargin = 0)<br><br>Fixed height:<br>(LeftMargin &gt; 0) and (RightMargin &gt; 0) and (TopMargin = 0) and (BottomMargin = 0)<br><br>Fixed width:<br>(LeftMargin = 0) and (RightMargin = 0) and (TopMargin &gt; 0) and (BottomMargin &gt; 0)<br><br>Full resize:<br><br>LeftMargin &gt; 0) and (RightMargin &gt; 0) and (TopMargin &gt; 0) and (BottomMargin &gt; 0) </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AlphaBlend<br>AlphaBlendBorder<br>AlphaBlendCorners<br></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean<br></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">This
+values define which part of the bitmap has alpha-channel. This need for
+optimization of performance. When you set Bitmap from PNG then dialog
+automatically scan Bitmap and set this properties, but you can set
+values as you need.<br>AlphaBlend - alpha-channel of client part of the bitmap<br>AlphaBlendBorder - alpha-channel of border<br>AlphaBlendCorners - alpha-channel of corners</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><br>TileOffsetX</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">X offset for
+tile draw style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TileOffsetY</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Y offset for
+tile draw style</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">Stretch,<br>StretchBorder</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Stretch or Tile drawing of client part and border </td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">DrawOnlyBorder</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then only border will be drawing </td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">DrawInClipRect</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then bitmap will be drawing in clip rect<br></td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ContentLeftMargin<br>ContentRightMargin<br>ContentTopMargin<br>ContentBottomMargin</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">These
+values define area for content of the control. For example, if you use
+custom image for TscButton control then it will use this values to
+adjust text and image position. </td></tr></tbody>
+</table>
+<p>&nbsp;</p>
+</body></html>

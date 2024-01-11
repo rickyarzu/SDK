@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="f45wbksavwa9xot9j_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::k1vxaiyc68rljmprh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::azzu932696n2he88j_v" />
+      <reference referencedUin="design:view:::ncqi1c4908j_v" />
+      <reference referencedUin="design:view:::0qwz73kjssg_v" />
+      <reference referencedUin="design:view:::vpao6uuzhx9u72o0h_v" />
+      <reference referencedUin="design:view:::9j78dbwdxir313p9n_v" />
+      <reference referencedUin="design:view:::pxwwge30isj_v" />
+      <reference referencedUin="design:view:::yrj7w0uyu7o95rs3t_v" />
+      <reference referencedUin="design:view:::c0vakghsjg02z1d6i_v" />
+      <reference referencedUin="design:view:::6my4k870p0swt078q_v" />
+      <reference referencedUin="design:view:::020d0r0zr9l_v" />
+      <reference referencedUin="design:view:::o2ljk610gyo_v" />
+      <reference referencedUin="design:view:::4f0kbd3wtfg_v" />
+      <reference referencedUin="design:view:::uu2fp0v2gyk_v" />
+      <reference referencedUin="design:view:::4bb0jv7yshq413o0s_v" />
+      <reference referencedUin="design:view:::9kvuhws5fwqn0dt8j_v" />
+      <reference referencedUin="design:view:::wkk4g3szeen539q9m_v" />
+      <reference referencedUin="design:view:::0hh7ci53cdk_v" />
+      <reference referencedUin="design:view:::lrwc2drn0bk_v" />
+      <reference referencedUin="design:view:::gpqgr73g00t_v" />
+      <reference referencedUin="design:view:::064vdz03cag_v" />
+      <reference referencedUin="design:view:::0f2pyvt2gxp_v" />
+      <reference referencedUin="design:view:::xuok7z5cmue_v" />
+      <reference referencedUin="design:view:::4h9x41tzh1i_v" />
+      <reference referencedUin="design:view:::ee958elnq2r_v" />
+      <reference referencedUin="uml:package:JanuaCore:src:Janua.Virtual" />
+      <reference referencedUin="design:view:::808clb94ghf_v" />
+      <reference referencedUin="design:view:::t6sk927sw6k_v" />
+      <reference referencedUin="design:view:::9gz0ypzslja69euji_v" />
+      <reference referencedUin="design:view:::1wpgkj8atk0rrdbfq_v" />
+      <reference referencedUin="design:view:::xln6824cfuo_v" />
+      <reference referencedUin="design:view:::0nngm0cb60i_v" />
+      <reference referencedUin="design:view:::92lgsgu448f_v" />
+      <reference referencedUin="design:view:::2imep0j9zlm_v" />
+      <reference referencedUin="design:view:::ra3ulk6grjm_v" />
+      <reference referencedUin="design:view:::hov9v7kl9bp_v" />
+      <reference referencedUin="design:view:::kefk5hi6szq_v" />
+      <reference referencedUin="design:view:::t6sk9kmwb0m_v" />
+      <reference referencedUin="design:view:::6303fbg0yhs_v" />
+      <reference referencedUin="design:view:::bkd0nzhqh3l_v" />
+      <reference referencedUin="design:view:::0ruq2qtx6tn_v" />
+      <reference referencedUin="design:view:::oqsiwd0jowarjal8f_v" />
+      <reference referencedUin="design:view:::671urfxhgck_v" />
+      <reference referencedUin="design:view:::pppqygyk3pl_v" />
+      <reference referencedUin="design:view:::kk5b9q2wg5bcafxxp_v" />
+    </reference>
+    <reference referencedUin="design:view:::88ujtztdcpk_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::zyblgki0wwdvmiptf_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreServer.TdmJanuaCoreServer" />
+    </reference>
+    <reference referencedUin="design:view:::20ry4nh9ub7amp9uh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.TJanuaSimulationRow" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::rpi6erg9c9cvbazqr_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreStorage.TdmJanuaCoreStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::8d0wv0y7cd49rfsj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::pbbsb0suigdxo6u5m_v" />
+    </reference>
+    <reference referencedUin="design:view:::m401r1z4jj7jfqptg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.TdmJanuaLegacySystem" />
+    </reference>
+    <reference referencedUin="design:view:::ysztoponf4cb6fj1m_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualCloudServer.TdmVirtualCloudServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualCloudServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::hyl8eisc2t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmFootballStorage.TdmFootballStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmFootballStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::qjdrbsvhgcn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualFootballServer.TdmVirtualFootballServer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualFootballServer.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::gt61b37sg28or33qn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.TJanuaRigaDettaglio" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0ed3gznk9pj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.TdmJanuaCoreRSS" />
+    </reference>
+    <reference referencedUin="design:view:::d3ais13euoc9uj05m_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualCmsServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualCmsServer.TdmVirtualCmsServer" />
+    </reference>
+    <reference referencedUin="design:view:::ovng106cgg8rh9gij_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.TJanuaServiceTrattativa" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::vat76j8qilmnhofol_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmCmsStorage.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmCmsStorage.TdmCmsStorage" />
+    </reference>
+    <reference referencedUin="design:view:::8kiqm4wvf8f_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TActivator" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TNullableBoolean" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.Helpers" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.PTypeInfo" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TStringDynArray" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.IEvent&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TLazy&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TPropertyChangedEventArgs" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TValue" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.TInterfacedObjectEx" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.Tuple&lt;4&gt;" />
+      <reference referencedUin="delphi:e_class:lib:DelphiWin32:Spring.PInterface" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TActionMethod&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TEnum" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Event&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Lazy&lt;1&gt;" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.VirtualClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableCurrency" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IPropertyChangedEventArgs" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.INotifyEvent&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TStopwatch" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.DefaultAttribute" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TLazyInitializer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Tuple" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TCollectionChangedAction" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TAction&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNotifyProc" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EInsufficientMemoryException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Nullable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TByteSet" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.PObject" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TEventHandler&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ENotSupportedException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.PPPTypeInfo" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.ResourceStrings" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableAnsiString" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableInteger" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EArgumentNilException" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.ValueConverters" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableNativeInt" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.DesignPatterns" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNotificationHandler" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.INotifyEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TAction&lt;3&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.PValue" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Tuple&lt;3&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Shared" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ICountable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNamedValue" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TMethodImplementationHelper" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.SystemUtils" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableWideString" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TAction&lt;4&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TTimeSpan" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TAttributeClass" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.Collections" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IWeakReference&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableGuid" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TTypeInfoHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Weak&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.INotifyPropertyChanged" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ICriticalSection" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.@unitclass" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.VirtualInterface" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Vector&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ILazy" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TPredicate&lt;1&gt;" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.Events" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EInvalidOperationException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TAction&lt;2&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Shared&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TBaseAttribute" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Lock" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TInterfacedCriticalSection" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IShared&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.VectorHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TInitTable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TTypeDataHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TRttiInvokableTypeHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TEventArgs" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ILazy&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNotificationEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EInvalidCastException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TInterfaceBase" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TManagedObject" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IPropertyChangedEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EArgumentOutOfRangeException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Tuple&lt;2&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableString" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TMethodPointer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TPropertyChangedEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TRttiMethodHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TManagedInterfacedObject" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TTypedValue" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TConstructor" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TActionProc&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EArgumentNullException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableDateTime" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IClonable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TArgument" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TLazyKind" />
+      <reference referencedUin="uml:package:JanuaCore:src:Spring.MethodIntercept" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IEventArgs" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Guard" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableDouble" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ENotImplementedException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TArrayEnumerator&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.Nullable&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TArray" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TWeakReference&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TValueHelper" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNullableInt64" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TBytes" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IObjectActivator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.EArgumentException" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TLazy" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TNotifyEvent&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.ManagedAttribute" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.IComparable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Spring.TWeakReference" />
+    </reference>
+    <reference referencedUin="design:view:::v014y51l9vcm38x5r_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualFootballStorage.TdmVirtualFootballStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualFootballStorage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::l080x9gqy3dd0pohg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.TdmWpJson" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::isixx0zb42eyj0ngq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonStringReader" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonBuilderGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonCodeWriter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonWriterGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonStringWriter" />
+    </reference>
+    <reference referencedUin="design:view:::cz8y71q0dqdgsyj4g_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.TdmJanuaCoreDBConnections" />
+    </reference>
+    <reference referencedUin="design:view:::ncay776y18dik6sue_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualSystemServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualSystemServer.TdmVirtualSystemServer" />
+    </reference>
+    <reference referencedUin="design:view:::y40b7ucj0hc5901wm_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualServerModel.TdmVirtualServerModel" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmVirtualServerModel.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::1sd3o2pq5wu6ssbj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::h4ptfquh5i42wxw0l_v" />
+      <reference referencedUin="design:view:::2kvfq6t0nl2uzcn0i_v" />
+      <reference referencedUin="design:view:::8k9ogz2pe01z9f3fl_v" />
+      <reference referencedUin="design:view:::2n2h31fo2v6z6yilg_v" />
+      <reference referencedUin="design:view:::veilxmec6ap_v" />
+      <reference referencedUin="design:view:::r3ar1s0av5n_v" />
+      <reference referencedUin="design:view:::0c6fmc0oxup_v" />
+      <reference referencedUin="design:view:::fbji92ek7ucj8va9p_v" />
+      <reference referencedUin="design:view:::p9j2ik7kbycbgdo7f_v" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaCore:src:AsyncTask">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.TAsyncBackgroundTask&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.TAsyncSuccessCallback&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.TAsyncErrorCallback" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.TAsyncDefaultErrorCallback" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:AsyncTask.Async" />
+    </reference>
+    <reference referencedUin="design:view:::48ep9fwo227sum5or_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::9ixeg87qfuq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaCoreDataModule.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaCoreDataModule.TJanuaCoreDataModule" />
+    </reference>
+    <reference referencedUin="design:view:::x1a2rm0q92r_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.TdmMainApplication" />
+    </reference>
+    <reference referencedUin="design:view:::aikic1b05wl_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::kgx4uk357re_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::ifkyrvuqgbh_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::pepox1khj8anl6y8n_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

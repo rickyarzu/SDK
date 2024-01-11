@@ -1,0 +1,69 @@
+﻿package Spring.Core;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Spring4D Core package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  Spring.Base;
+
+contains
+  Spring.Services in '..\..\..\lib\spring4d\Source\Core\Services\Spring.Services.pas',
+  Spring.Container in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.pas',
+  Spring.Container.ActivatorExtension in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ActivatorExtension.pas',
+  Spring.Container.AutoMockExtension in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.AutoMockExtension.pas',
+  Spring.Container.Builder in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Builder.pas',
+  Spring.Container.Common in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Common.pas',
+  Spring.Container.ComponentActivator in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ComponentActivator.pas',
+  Spring.Container.Core in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Core.pas',
+  Spring.Container.CreationContext in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.CreationContext.pas',
+  Spring.Container.Extensions in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Extensions.pas',
+  Spring.Container.Injection in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Injection.pas',
+  Spring.Container.LifetimeManager in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.LifetimeManager.pas',
+  Spring.Container.Pool in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Pool.pas',
+  Spring.Container.ProxyFactory in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ProxyFactory.pas',
+  Spring.Container.Registration in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Registration.pas',
+  Spring.Container.Resolvers in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Resolvers.pas',
+  Spring.Container.ResourceStrings in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ResourceStrings.pas',
+  Spring.Interception in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.pas',
+  Spring.Interception.AbstractInvocation in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.AbstractInvocation.pas',
+  Spring.Interception.ClassProxy in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.ClassProxy.pas',
+  Spring.Interception.CustomProxy in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.CustomProxy.pas',
+  Spring.Interception.InterfaceProxy in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.InterfaceProxy.pas',
+  Spring.Interception.ResourceStrings in '..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.ResourceStrings.pas',
+  Spring.Logging.Configuration in '..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Configuration.pas',
+  Spring.Logging.Configuration.Builder in '..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Configuration.Builder.pas',
+  Spring.Logging.Container in '..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Container.pas',
+  Spring.Mocking in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.pas',
+  Spring.Mocking.Core in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Core.pas',
+  Spring.Mocking.Interceptor in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Interceptor.pas',
+  Spring.Mocking.Matching in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Matching.pas';
+
+end.

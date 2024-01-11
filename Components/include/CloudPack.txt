@@ -1,0 +1,196 @@
+**********************************************************************
+Author: TMS Software
+        Copyright © 1996-2017
+        E-mail: info@tmssoftware.com
+        Web: http://www.tmssoftware.com
+**********************************************************************
+TMS VCL Cloud Pack
+-----------------
+
+Seamless access to cloud services from Windows applications
+
+Feature Overview
+-----------------
+
+Service types
+
+Cloud PIM
+Google Places, Google Tasks, Google Calendar, Google Contacts, Windows Live Calendar, Windows Live Contacts, Outlook Calendar, Outlook Contacts, iCloud contacts, iCloud calendar, WebDAV, CardDAV, CalDAV 
+
+Cloud storage
+Apple CloudKit, DropBox, Onedrive, Google DataStore, Google Sheets, Google Drive, Box, Pryv, Amazon, HiDrive, Hubic, myCloudData.net 
+
+Cloud data binding
+TDataSet based data binding for CloudKit and Google DataStore 
+
+Cloud image services 
+Picasa, Flickr, Instagram, Imgur, Cloudinary 
+
+GEO 
+FourSquare, Google Maps address data 
+
+Social media 
+Twitter, Facebook, LinkedIn, Trello 
+
+Payment service 
+PayPal 
+
+And much more 
+YouTube API, Weather Underground, URL Shortener, PushOver, Twilio, Esendex, BulkSMS, TelAPI, CloudConvert, Barcodes4.Me, Google Analytics, Google Mail, Exceptionless, Outlook Mail, Computer Vision, Emotion, Bing Speech 
+
+Additional tools
+
+Import or export events from Google Calendar or Windows Live Calendar with TPlannerGCalendarExchange and TPlannerLiveCalendarExchange
+
+Version History
+-----------------
+
+const
+  MAJ_VER = 4; // Major version nr.
+  MIN_VER = 0; // Minor version nr.
+  REL_VER = 2; // Release nr.
+  BLD_VER = 0; // Build nr.
+  DATE_VER = 'JUN, 2019'; // Month version
+
+  //version history
+  //3.7.5.0: New : TAdvPushOver: Support for HTML formatted messages added
+  //       : New : TAdvPushOver: Priority level mpLowestPriority added
+  //       : New : TAdvPayPal: ExternalBrowser property
+  //       : Improved : Customizable ExternalBrowser message strings added
+  //       : Fixed : TAdvFacebook: Authentication issues due to changes in the API
+  //3.8.0.0: New : TAdvFirebaseObjectDatabase: New component
+  //       : New : TAdvYandexDisk: New component
+  //       : New : TAdvTwitter: DeleteTweet method added
+  //       : New : TAdvTwitter: MuteUser and UnMuteUser methods added
+  //       : New : TAdvTwitter: BlockUser and UnBlockUser methods added
+  //       : New : TAdvGContacts: Extra GPhoneType values added
+  //       : New : TAdvGContacts: Contact.Updated property added
+  //       : New : TAdvGCalendar: Event SendNotifications property
+  //       : Fixed : TAdvMyCloudData: Issue with inserting a record with an empty boolean value
+  //       : Fixed : TAdvDropBox: Issue with TestTokens (Android only)
+  //       : Fixed : TAdvFacebook: Issue with Count parameter in GetFeed method
+  //       : Fixed : TAdvGCalendar: Event StartTime and EndTime TimeZone offset
+  //       : Fixed : TAdvInstagram: Issue with posting and retrieving comments due to changes in the Instagram API
+  //       : Fixed : TAdvInstagram: Issue with retrieving the caption and likes for a photo due to changes in the Instagram API
+  //       : Fixed : Issue with HttpsUpdate response value
+  //3.8.1.0: New : TAdvFacebook: Support for the latest Facebook API v2.10
+  //       : New : TAdvFacebook: PostGroup method added
+  //       : New : TAdvGContacts: GetConactByID(ContactID) method added  
+  //       : New : TAdvGMail: TGMailMessage.Date and TGMailMessage.From properties
+  //       : New : Orientation property added in TAdvCloudExifImage
+  //       : Fixed : TAdvTwitter: Issue with GetFriends and GetFollowers methods 
+  //       : Fixed : TCloudTreeviewAdapter: Possible issue with the OnChange event
+  //       : Fixed : TAdvCloudTreeViewAdapter: Possible issue with the OnAfterSelectNode event
+  //       : Fixed : TAdvYandexDisk: Issue with deleting files in folder with special characters 
+  //3.8.1.1: Fixed : TAdvTwitter : Issue with ProfileList.Find and 64bit IDs handling 
+  //3.8.2.0: Fixed : TAdvGTasks: Issue with retrieving task notes
+  //       : Improved : TAdvDropBox: Authentication behavior
+  //3.8.3.0: New : TAdvTwitter: Support for Tweets up to 280 characters
+  //       : Fixed : TAdvBoxNetDrive: Fixed possible issue with Upload
+  //3.8.3.1: Improved : TAdvDropBox: Share links are now also returned if a share already exists
+  //       : Fixed : Issue with event UID retrieval in TCloudvCalendar
+  //       : Fixed : Issue with ExDates retrieval in TCloudvCalendar
+  //       : Fixed : TAdvGCalendar: TimeZone Bias was incorrect for specific timezones
+  //3.8.4.0: New : TAdvEsendex: CharacterSet property
+  //       : Improved : Picasa & Flickr Demo
+  //       : Fixed : TAdvPicasa: CreateAlbum is deprecated by the API
+  //       : Fixed : TAdvTrello: Issue with date encoding
+  //       : Fixed : TAdvTreeviewAdapter: Possible issue when drive is empty
+  //3.8.4.1: Fixed : TAdvGDrive: Issue with SearchList and single quote characters
+  //       : Fixed : TAdvEsendex: Issue with using unicode characters
+  //3.8.4.2: Fixed : TAdvGSheets: Issue with using unicode characters
+  //3.8.5.0: New : TAdvTwitter: Support for the new DirectMessage and GetDirectMessages API
+  //       : New : TAdvTwitter: HasNextDirectMessages property
+  //       : New : TAdvTwitter: DirectMessageWithMedia method
+  //       : New : TAdvTwitter: TweetWithMedia overload for adding multiple images
+  //       : New : TAdvTwitter: TwitterStatus.MediaURLs property for tweets with multiple images
+  //       : New : TAdvTwitter: UploadMedia method to upload images
+  //       : New : TAdvMSComputerVision: Support for API v2
+  //       : New : TAdvMSEmotion: Support for API v2
+  //       : New : TAdvGDrive: Rename files support
+  //       : New : TAdvDropBox: UploadMode property
+  //       : New : TAdvOutlookCalendar: AddCalendar, UpdateCalendar, DeleteCalendar
+  //       : New : TAdvIPLocation: Converted to IPStack.com
+  //       : New : TAdvIPLocation: ContinentCode & ContinentName properties
+  //       : New : TAdvGSheets: Support for Google Sheets API v4
+  //       : New : TAdvFacebook: Facebook API v3 compatibility
+  //       : Improved : TAdvGSheets: CreateWorkBook auto delete temp file
+  //       : Improved : TAdvGMail: Unicode character handling
+  //       : Fixed : TAdvGMail: Issue with parsing Body content for plain text messages
+  //3.8.6.0: New : TAdvMSComputerVision: App.Location property
+  //       : New : TAdvMSEmotion: App.Location property
+  //       : Fixed : TAdvPayPal: Issue with payment authorization
+  //3.8.7.0: New : TAdvFacebook: Facebook API v3 compatibility
+  //       : New : TAdvGCalendar: CalendarItem ETag, MasterID, Attendees, ReminderEnabled, ReminderMinutesBefore properties
+  //       : New : TAdvGCalendar: GetItemByID method overload
+  //       : Improved : TAdvFacebook: Default scopes updated due to changes in Facebook API
+  //       : Fixed : TAdvFacebook: Post calls are now deprecated in the Facebook API
+  //3.8.7.1: Fixed : TADVGContacts: Issues with retrieving Groups and Contacts due to changes in the Google Contacts API
+  //3.8.8.0: New : TAdvOutlookCalendar: TimeZone property
+  //       : Fixed : TAdvOutlookCalendar: Issue with DaylightSavingsTime when adding events
+  //       : Fixed : TAdvGDrive: Issue with authentication due to changes in the API
+  //       : Fixed : TAdvGMail: Send message with body text > 255 characters
+  //3.8.8.1: Fixed : TAdvMyCloudData: Issue with retrieving MetaData
+  //       : New : Added PRODID specifier for generating vCal data 
+  //3.8.8.2: Improved : Handling of PRODID in vCal data export 
+  //3.8.8.3: Fixed : TAdvGMail: Issue with body text in HTML format with attachment
+  //3.9.0.0: New : RAD Studio 10.3 Rio support
+  //4.0.0.0: New : TAdvGooglePhotos component
+  //       : New : TAdvOutlookMail: OutlookMailItem IsRead and IsDraft properties
+  //       : Improved : TAdvPicasa is deprecated and can be replaced by TAdvGooglePhotos
+  //       : Fixed : TAdvFirebase: Possible issue with AddIndexRule 
+  //4.0.0.1: Improved : TAdvGooglePhotos: DownloadPhoto will now download the image in it's original size
+  //       : Fixed : TAdvMyCloudData: Issue with JSON encoding
+  //       : Fixed : Issue with cookies during handling multiple sessions in CalDav 
+  //4.0.0.2: Fixed : TAdvMyCloudData: Issue with inserting a record with an empty integer value
+  //4.0.1.0: New : TAdvFlickr: ExternalBrowser support added
+  //4.0.2.0: New : TAdvTwitter: Retrieve Tweets with text >140 characters
+  //       : Fixed : TAdvGTasks: Issue with AddTaskToList due to changes in the API
+  //       : Fixed : TAdvTrello: issue with authentication
+  //       : Fixed : TAdvTrello: issue with GetBoardLabels
+
+Usage:
+------
+ Use of TMS software components in applications requires a license.
+ A license can be obtained by registration. A single developer license
+ registration is available as well as a site license.
+ With the purchase of one single developer license, one developer in
+ the company is entitled to:
+ - use of registered version that contains full source code and no
+   limitations 
+ - free updates for a full version cycle
+ - free email priority support & access to support newsgroups
+ - discounts to purchases of other products
+
+ With a site license, multiple developers in the company are entitled
+ to:
+ - use of registered version that contains full source code and no
+   limitations 
+ - add additional developers at any time who make use of the components
+ - free updates for a full version cycle
+ - free email priority support & access to support newsgroups
+ - discounts to purchases of other products
+
+ Online order information can be found at:
+ http://www.tmssoftware.com/site/orders.asp
+
+Note: 
+-----
+
+ The components are also part of the TMS Component Pack bundle, see 
+ http://www.tmssoftware.com/site/tmspack.asp
+
+
+Help, hints, tips, bug reports:
+-------------------------------
+ Send any questions/remarks/suggestions to : help@tmssoftware.com
+
+ Before contacting support about a possible issue with the component
+ you encounter, make sure that you are using the latest version of the 
+ component.
+ If a problem persists with the latest version, provide information 
+ about which Delphi or C++Builder version you are using as well as
+ the operating system and if possible, steps to reproduce the problem
+ you encounter. That will guarantee the fastest turnaround times for
+ your support case. 
+

@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPPanel</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPPanel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Panel
+control with vector graphic for frame shape</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p></p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Text on control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show text on panel</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CaptionGlowEffect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGlowEffect.html">TscGlowEffect</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Adjust glow effect for
+caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Alignment</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TAlignment</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alignment for caption</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameRadius</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Radius of the frame (0
+value is rectangle frame)</td>
+</tr>
+<tr>
+<td style="width: 189px; font-weight: bold;" bgcolor="#efefef" height="1">FrameSides</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPPanelFrameSides</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPPanelFrameSide =
+(gppfsLeft, gppfsTop, gppfsRight, gppfsBottom);<br>
+TscGPPanelFrameSides = set of TscGPPanelFrameSide;<br>
+<br>
+You can disable any frame side with this property</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor2</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Second color for
+background with gradient style. <br>
+If value is clNone then this color will be ignored and gradient filling
+will uses only one color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color of
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScaleFrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+will scale frame width (depends on the system DPI)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle =
+(scgpsfColor, scgpsfGradient);<br>
+<br>
+Filling style for panel.<br>
+&nbsp;scgpsfColor - one color<br>
+&nbsp;scgpsfGradient - control automatically create light and dark
+colors for gradient from FillColor value.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle for gradient (90,
+-90, 45, -125, ....)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientBeginAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color in
+the begin of gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientEndAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for color in
+the end of gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientBeginColorOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Lightness offset in
+percents for first color in gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientEndColorOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Darkness offset in
+percents for second color in gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">StorePaintBuffer</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then transparent
+child controls from StyleControls VCL will use special paint buffer to
+get parent image. This solution really increase performance!</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">TscGPImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Collection of images for
+wallpaper, which draws on the bottom&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of picture for
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">TscGPImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Collection of images for
+additional image, which draws on the top</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image for
+additional background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Sizeable</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True the control can
+be resizable with mouse<br>
+If Align = alClient then parent control or form will be resizable with
+mouse</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">WordWrap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then caption will be with word wrap.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BackgroundStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPPanelBGStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPPanelBGStyle =
+(gppbsColor, gppbsFormBackground);<br>
+<br>
+Background style for panel (if TransparentBackground is False):<br>
+<br>
+gppbsColor - color (TscGPPanel.Color property)<br>
+gppbsFormBackground - background as for form (if VCL Style enabled then
+it will be bitmap background as defined in style).<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">FluentUIOpacity</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Set it to True to get
+opacity area of the form with Fluent UI (see <a href="TscStyledForm.html">TscStyledForm</a> component)</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ContentMarginLeft,<br>
+ContentMarginTop,<br>
+ContentMarginRight,<br>
+ContentMarginBottom</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margins for caption and
+client area</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p><br>
+</p>
+</body></html>

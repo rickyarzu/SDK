@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscColorButton</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscColorButton</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scExtControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Button to select color</p>
+<p>See <a href="TscButton.html">TscButton</a>
+properties also</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AutoColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color, which will be
+default in popup color grid</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowAutoColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show AutoColor item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">AutoCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption for AutoColor
+item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowMoreColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show item to call color dialog</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCustomColors</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show items for custom colors from color dialog</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MoreCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption for MoreColor
+item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ColorValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Current color value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ColorDialog</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColorDialog</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TColorDialog component</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuBGStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGalleryMenu.html">TscGalleryMenuBGStyle</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style for popup grid
+background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MenuFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont </td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for popup color grid</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ColorGridType</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscColorGridType</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Type of color's grid...<br>
+<br>
+TscColorGridType = (scgsExtended, scgsSimple);<br>
+<br>
+scgsExtended - rich color grid<br>
+scgsSimple - simple color grid<br>
+</td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">CustomColors</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscCustomColorButtonValues = array[1..8] of TColor;</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Values of custom colors</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Click event</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnChangeColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event when colors is
+changed</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;<small><span style="font-weight: bold;"></span></small></p>
+<p><small><span style="font-weight: bold;"></span></small></p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscModernSplitView</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscModernSplitView</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scModernControls.pas</p>
+<p><span style="font-weight: bold;">TscModernSplitView
+= class(</span><a style="font-weight: bold;" href="TscSplitView.html">TscSplitView</a><span style="font-weight: bold;">)</span></p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>SplitView control to create Windows 10 Modern Application.&nbsp;</p><p>It can interact with <a href="TscButton.html">TscButton</a>, <a href="TscPageViewer.html">TscPageViewer</a> and <a href="TscSplitView.html">TscSplitView</a> controls with special properties amd methods.</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">PageViewer</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscPageViewer.html">TscPageViewer</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Page control to show pages. Control automatically save browsing history.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BottomSplitView</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscSplitView.html">TscSplitView</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Bottom split panel. Control automatically can closed it.</td>
+</tr>
+
+
+
+
+
+
+</tbody>
+</table>
+<h1><br>
+</h1>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnShowBackButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to show or enable your button with "back" functionality</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnHideBackButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to hide or disable your button with "back" functionality</td>
+</tr>
+
+
+</tbody>
+</table>
+<h1><br>
+</h1>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 227px;" height="12">Name</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">OpenPage</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure OpenPage(APageIndex: Integer; AButton: TscButton);<br>Call this method to open page in PageViewer control and link some button to the page.<br>Control automatically will &nbsp;show and hide PageViewer control.<br>This action will be added to the browsing history.<br><br>Put TscButton controls to the TscModernSplitView and adjust style and color of them.<br>Use TscButton.OnClick event to call OpenPage method.<br>Set TscButton.GroupIndex property to get one group for buttons, which can open pages.</td>
+</tr>
+<tr>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Back</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure Back;<br>Call this method to execure previous action from browsing history.</td>
+</tr>
+<tr><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">CloseAll</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure CloseAll;<br>Call this method to close control, PageView control and BottomSplitView control.</td></tr></tbody>
+</table><br>
+<p>&nbsp;</p>
+</body></html>

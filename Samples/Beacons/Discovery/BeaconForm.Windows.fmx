@@ -1,0 +1,60 @@
+inherited BeaconDiscoverForm_Windows: TBeaconDiscoverForm_Windows
+  DesignerMasterStyle = 3
+  inherited TabControl1: TTabControl
+    Sizes = (
+      376s
+      504s
+      376s
+      504s
+      376s
+      504s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 125.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Panel1: TPanel
+        inherited Memo1: TMemo
+          Viewport.Width = 333.000000000000000000
+          Viewport.Height = 101.000000000000000000
+        end
+      end
+      inherited ListBox1: TListBox
+        Viewport.Width = 372.000000000000000000
+        Viewport.Height = 229.000000000000000000
+      end
+    end
+    inherited TabItem2: TTabItem
+      ExplicitSize.cx = 125.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited TabItem3: TTabItem
+      ExplicitSize.cx = 126.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited BeaconDiscoveryList: TListBox
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 504.000000000000000000
+        inherited ListBoxGroupHeader1: TListBoxGroupHeader
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited ListBoxItem1: TListBoxItem
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited ListBoxItem2: TListBoxItem
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited ToolBar1: TToolBar
+        inherited Label5: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+  inherited tbDiscovery: TVirtualTable
+    Data = {
+      0300080008006C6F63616C5F696402000000000000000A006D61636164647265
+      73730100140000000000040055554944010026000000000007006D6573736167
+      65010080000000000006006163746976650500000000000000090072656D6F74
+      655F69640300000000000000080044697374616E636506000000000000000F00
+      44697374616E6365547269676765720600000000000000000000000000}
+  end
+end

@@ -1,0 +1,435 @@
+unit Janua.Html.Types;
+
+{$I JANUACORE.INC}
+
+interface
+
+uses
+
+{$IFDEF DELPHIXE}
+  System.UITypes, System.SysUtils, System.Classes, System.StrUtils, System.SysConst,
+  Spring.Collections;
+{$ENDIF DELPHIXE}
+{$IFDEF FPC}
+UITypes, SysUtils, Classes, StrUtils, SysConst, Graphics, Generics.Collections;
+{$ENDIF FPC}
+
+Type
+  TJanuaHtmlColorType = (AliceBlue, AntiqueWhite, Aqua, Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond, Blue,
+    BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornflowerBlue, Cornsilk, Crimson, Cyan,
+    DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGrey, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen,
+    DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkSlateGrey,
+    DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DimGrey, DodgerBlue, FireBrick, FloralWhite, ForestGreen,
+    Fuchsia, Gainsboro, GhostWhite, Gold, GoldenRod, Gray, Grey, Green, GreenYellow, HoneyDew, HotPink, IndianRed,
+    Indigo, Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LemonChiffon, LightBlue, LightCoral, LightCyan,
+    LightGoldenRodYellow, LightGray, LightGrey, LightGreen, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue,
+    LightSlateGray, LightSlateGrey, LightSteelBlue, LightYellow, Lime, LimeGreen, Linen, Magenta, Maroon,
+    MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen,
+    MediumTurquoise, MediumVioletRed, MidnightBlue, MintCream, MistyRose, Moccasin, NavajoWhite, Navy, OldLace, Olive,
+    OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PapayaWhip, PeachPuff,
+    Peru, Pink, Plum, PowderBlue, Purple, RebeccaPurple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown,
+    SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, SlateGrey, Snow, SpringGreen, SteelBlue, Tan,
+    Teal, Thistle, Tomato, Turquoise, Violet, Wheat, White, WhiteSmoke, Yellow, YellowGreen);
+
+const
+  CINDENT = 3;
+
+type
+  TJanuaHtmlParam = record
+    K: string;
+    V: string;
+  public
+    constructor Create(const aKey, aValue: string);
+  end;
+
+type
+  TJanuaHtmlParams = TArray<TJanuaHtmlParam>;
+  // Janua Link Types
+
+type
+  TJanuaLinkRelType = (alternate, author, dnsprefetch, help, icon, license, next, pingback, preconnect, prefetch,
+    preload, prerender, prev, search, stylesheet, tag, none);
+
+const
+  JanuaLinkRelText: array [TJanuaLinkRelType] of string = ('alternate', 'author', 'dns-prefetch', 'help', 'icon',
+    'license', 'next', 'pingback', 'preconnect', 'prefetch', 'preload', 'prerender', 'prev', 'search', 'stylesheet',
+    'tag', '');
+
+type
+  TJanuaLinkRelTypes = set of TJanuaLinkRelType;
+
+type
+  THtmlInputType = (Inputtext, Inputpassword, Inputcheckbox, Inputcolor, Inputdate, InputDatetimeLocal, Inputemail,
+    InputFile, Inputhidden, Inputimage, Inputmonth, Inputnumber, Inputradio, Inputrange, Inputreset, Inputsearch,
+    Inputsubmit, Inputtel, Inputtime, Inputurl, Inputweek);
+
+const
+  HtmlInputText: array [THtmlInputType] of string = ('text', 'password', 'checkbox', 'color', 'date', 'datetime-local',
+    'email', 'file', 'hidden', 'image', 'month', 'number', 'radio', 'range', 'reset', 'search', 'submit', 'tel', 'time',
+    'url', 'week');
+
+type
+  TJanuaCssDisplay = (jcdInline, jcdCssArea, jcdCssExternal);
+
+type
+  TJanuaHtmlPosition = (jpNone, jpLeft, jpRight, jpCenter);
+
+const
+  JanuaHtmlPosition: array [TJanuaHtmlPosition] of string = ('', 'left', 'right', 'center');
+
+type
+  TJanuaHtmlObjectType = (jhoObject, jhoID, jhoClass);
+
+type
+  THtmlStyle = (BackgroundColor, BackgroundAttachment, BackgroundBlendMode, BackgroundClip, BackgroundImage,
+    BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, BorderBottomColor, BorderBottomLeftRadius,
+    BorderBottomRightRadius, BorderBottomStyle, BorderBottomWidth, BordCollapse, Width, Height, AlignContent, Left,
+    Right, color, Border, BackGround, MarginBottom, MarginLeft, MarginRight, MarginTop, position, TextAlign,
+    PaddingLeft, PaddingRight, PaddingTop, PaddingBottom, Padding, FontSize, LineHeigth, ZIndex);
+
+  THmtlStyleRecord = Record
+    K: THtmlStyle;
+    V: string;
+  public
+    Constructor Create(const aK: THtmlStyle; const aV: string);
+    function AsText: string;
+  end;
+
+const
+  HtmlStyle: array [THtmlStyle] of string = ('background-color', 'background-attachment', 'background-blend-mode',
+    'background-clip', 'background-image', 'background-origin', 'background-position', 'background-repeat',
+    'background-size', 'border-bottom-color', 'border-bottom-left-radius', 'border-bottom-right-radius',
+    'border-bottom-style', 'border-bottom-width', 'border-collapse', 'width', 'height', 'align-content', 'left',
+    'right', 'color', 'border', 'background', 'margin-bottom', 'margin-left', 'margin-right', 'margin-top', 'position',
+    'text-align', 'padding-left', 'padding-right', 'padding-top', 'padding-bottom', 'padding', 'font-size',
+    'line-height', 'z-index');
+
+type
+  TCssMediaFeature = (MinHeight, MaxHeight, MaxWidth, MinWidth, FeatureNone);
+  TCssMediaType = (Screen, Printer, MediaNone, All, Speech);
+  TCssMediaTypeUse = (tuNone, tuOnly, tuNot);
+
+  TCssMediaFeatureRecord = Record
+    K: TCssMediaFeature;
+    V: string;
+  public
+    Constructor Create(const aK: TCssMediaFeature; const aV: string);
+    function AsText: string;
+  end;
+
+const
+  CssMediaFeatures: array [TCssMediaFeature] of string = ('min-height', 'max-height', 'max-width', 'min-width', '');
+  CssMediaTypes: array [TCssMediaType] of string = ('screen', 'printer', '', 'all', 'speech');
+  CssMediaTypeUse: array [TCssMediaTypeUse] of string = ('', 'only', 'not');
+
+function FindMediaFeatures(aName: string): TCssMediaFeature;
+function FindMediaTypes(aName: string): TCssMediaType;
+
+Type
+{$IFDEF DELPHIXE}
+  TFuncOfCheckString = reference to function(x: string): boolean;
+{$ENDIF DELPHIXE}
+{$IFDEF FPC}
+  TFuncOfCheckString = procedure(const x: string; var aResult: boolean) of Object;
+{$ENDIF FPC}
+
+Type
+  THmtlStyleCheck = Record
+    C: boolean;
+    V: TArray<string>;
+    CheckFunction: TFuncOfCheckString;
+    D: string;
+  public
+    function Count: Integer;
+{$IFDEF FPC}
+    constructor Create(aC: boolean; aV: array of string); overload;
+{$ELSE}
+    constructor Create(aC: boolean; aV: TArray<string>); overload;
+{$ENDIF}
+    constructor Create(aCheckFunction: TFuncOfCheckString; aDefault: string = ''); overload;
+    function CheckValue(aValue: string): boolean;
+  end;
+
+  THtmlStyles = TArray<THmtlStyleRecord>;
+
+type
+  TJanuaHtmlColor = record
+  private
+    FB: byte;
+    FG: byte;
+    FR: byte;
+    color: TColor;
+    FA: byte;
+    FColorHex: string;
+    procedure SetB(const Value: byte);
+    procedure SetColorHex(const Value: String);
+    procedure SetG(const Value: byte);
+    procedure SetR(const Value: byte);
+    procedure SetA(const Value: byte);
+  public
+    function IsSet: boolean;
+    constructor Create(aColor: string);
+    function AsHtml: string;
+    property ColorHex: string read FColorHex write SetColorHex;
+    property R: byte read FR write SetR;
+    property G: byte read FG write SetG;
+    property B: byte read FB write SetB;
+    property A: byte read FA write SetA;
+  end;
+
+type
+  TJanuaCss = Record
+    ObjectName: string;
+    ObjectType: TJanuaHtmlObjectType;
+    ColorBackground: TJanuaHtmlColor;
+    IsInline: boolean;
+    function AsHtml: string;
+    constructor Create(const aName: string; const aIsInline: boolean);
+  End;
+
+type
+{$IFDEF DELPHIXE}
+  TFuncOfCssClass = reference to function(x: IList<string>): string;
+{$ENDIF DELPHIXE}
+{$IFDEF FPC}
+  TFuncOfCssClass = procedure(x: TList<string>; aResult: string) of Object;
+{$ENDIF FPC}
+
+var
+  AssetsURL: string;
+{$IFDEF DELPHIXE}
+  StyleChecks: IDictionary<THtmlStyle, THmtlStyleCheck>;
+{$ENDIF DELPHIXE}
+{$IFDEF FPC}
+  StyleChecks: TDictionary<THtmlStyle, THmtlStyleCheck>;
+{$ENDIF FPC}
+function Check(aStyle: THtmlStyle; aValue: string): boolean;
+
+implementation
+
+uses Janua.Core.Functions, Janua.Core.Types, Janua.Application.Framework;
+
+function FindMediaFeatures(aName: string): TCssMediaFeature;
+begin
+{$IFDEF DELPHIXE}
+  if not TEnumConvertor<TCssMediaFeature>.TryFromStringArray(aName, CssMediaFeatures, Result) then
+    Result := TCssMediaFeature.FeatureNone;
+{$ENDIF DELPHIXE}
+end;
+
+function FindMediaTypes(aName: string): TCssMediaType;
+begin
+{$IFDEF DELPHIXE}
+  if not TEnumConvertor<TCssMediaType>.TryFromStringArray(aName, CssMediaTypes, Result) then
+    Result := TCssMediaType.MediaNone;
+{$ENDIF DELPHIXE}
+end;
+
+function Check(aStyle: THtmlStyle; aValue: string): boolean;
+var
+  A: THmtlStyleCheck;
+begin
+  Result := True;
+  if StyleChecks.TryGetValue(aStyle, A) then
+    Result := A.CheckValue(aValue)
+end;
+
+procedure Setup;
+var
+  A: THtmlStyle;
+begin
+  for A := Low(THtmlStyle) to High(THtmlStyle) do
+  begin
+    case A of
+      AlignContent:
+        StyleChecks.Add(A, THmtlStyleCheck.Create(True, ['stretch', 'center', 'flex-start', 'flex-end', 'space-between',
+          'space-around', 'initial', 'inherit']));
+{$IFDEF DELPHIXE}
+      THtmlStyle.BackgroundColor:
+        StyleChecks.Add(A, THmtlStyleCheck.Create(
+          function(x: string): boolean
+          begin
+            Result := IsHex(x);
+          end));
+{$ENDIF DELPHIXE}
+    else
+      StyleChecks.Add(A, THmtlStyleCheck.Create(False, []));
+    end;
+
+  end;
+end;
+
+{ TJanuaHtmlColor }
+
+function TJanuaHtmlColor.AsHtml: string;
+begin
+  Result := '#' + self.ColorHex;
+end;
+
+{ JanuaCss }
+
+function TJanuaCss.AsHtml: string;
+var
+  Builder: IStringBuilder;
+begin
+  Builder := TJanuaStringBuilder.Create;
+
+end;
+
+constructor TJanuaCss.Create(const aName: string; const aIsInline: boolean);
+begin
+  self := Default (TJanuaCss);
+  self.ObjectName := aName;
+
+end;
+
+constructor TJanuaHtmlColor.Create(aColor: string);
+begin
+  self := Default (TJanuaHtmlColor);
+end;
+
+function TJanuaHtmlColor.IsSet: boolean;
+begin
+  Result := self.FColorHex <> '';
+end;
+
+procedure TJanuaHtmlColor.SetA(const Value: byte);
+begin
+  FA := Value;
+end;
+
+procedure TJanuaHtmlColor.SetB(const Value: byte);
+begin
+  FB := Value;
+end;
+
+procedure TJanuaHtmlColor.SetColorHex(const Value: String);
+var
+  tmp: Longint;
+begin
+  FColorHex := Value;
+  case Length(Value) of
+    6:
+      tmp := StrToInt('$' + Value);
+  else
+    tmp := 0;
+  end;
+
+end;
+
+procedure TJanuaHtmlColor.SetG(const Value: byte);
+begin
+  FG := Value;
+end;
+
+procedure TJanuaHtmlColor.SetR(const Value: byte);
+begin
+  FR := Value;
+
+end;
+
+{ TJanuaHtmlParam }
+
+constructor TJanuaHtmlParam.Create(const aKey, aValue: string);
+begin
+  self.K := aKey;
+  self.V := aValue;
+end;
+
+{ THmtlStyleCheck }
+{$IFDEF fpc}
+
+constructor THmtlStyleCheck.Create(aC: boolean; aV: array of string);
+var
+  I: Integer;
+{$ELSE}
+
+constructor THmtlStyleCheck.Create(aC: boolean; aV: TArray<string>);
+{$ENDIF}
+begin
+  self.C := aC;
+{$IFDEF fpc}
+  SetLength(V, Length(aV));
+  for I := 0 to Pred(Length(aV)) do
+    V[I] := AnsiString(aV[I]);
+{$ELSE}
+  self.V := aV;
+{$ENDIF}
+end;
+
+function THmtlStyleCheck.CheckValue(aValue: string): boolean;
+var
+  s: string;
+begin
+  Result := True;
+  if self.C then
+  begin
+    Result := False;
+    for s in self.V do
+      if aValue.ToLower = s.ToLower then
+        Exit(True)
+  end
+  else if Assigned(CheckFunction) then
+{$IFDEF fpc}
+    CheckFunction(aValue, Result);
+{$ELSE}
+    Result := CheckFunction(aValue);
+{$ENDIF FPC}
+end;
+
+function THmtlStyleCheck.Count: Integer;
+begin
+  Result := Length(self.V);
+end;
+
+constructor THmtlStyleCheck.Create(aCheckFunction: TFuncOfCheckString; aDefault: string);
+begin
+  self.C := False;
+  SetLength(self.V, 0);
+  self.CheckFunction := aCheckFunction;
+  self.D := aDefault;
+end;
+
+{ TCssMediaFeatureRecord }
+
+function TCssMediaFeatureRecord.AsText: string;
+begin
+  Result := '(' + CssMediaFeatures[self.K] + ': ' + self.V + ')';
+end;
+
+constructor TCssMediaFeatureRecord.Create(const aK: TCssMediaFeature; const aV: string);
+begin
+  self.K := aK;
+  self.V := aV;
+end;
+
+{ THmtlStyleRecord }
+
+function THmtlStyleRecord.AsText: string;
+begin
+  Result := '(' + HtmlStyle[self.K] + ': ' + self.V + ')';
+end;
+
+constructor THmtlStyleRecord.Create(const aK: THtmlStyle; const aV: string);
+begin
+  self.K := aK;
+  self.V := aV;
+end;
+
+initialization
+
+try
+{$IFDEF DELPHIXE}
+  StyleChecks := TCollections.CreateDictionary<THtmlStyle, THmtlStyleCheck>;
+{$ENDIF}
+  Setup;
+except
+  on e: exception do
+    RaiseException('Janua.Html.Types.initialization', e);
+end;
+
+finalization
+
+StyleChecks := nil;
+
+end.

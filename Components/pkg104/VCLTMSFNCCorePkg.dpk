@@ -1,0 +1,72 @@
+package VCLTMSFNCCorePkg;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Core for VCL'}
+{$LIBSUFFIX '270'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  VclSmp,
+  vclie;
+
+contains
+  VCL.TMSFNCBitmapContainer in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCBitmapContainer.pas',
+  VCL.TMSFNCBitmapContainerReg in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCBitmapContainerReg.pas',
+  VCL.TMSFNCCustomComponent in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCCustomComponent.pas',
+  VCL.TMSFNCCustomControl in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCCustomControl.pas',
+  VCL.TMSFNCCustomScrollControl in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCCustomScrollControl.pas',
+  VCL.TMSFNCGraphics in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGraphics.pas',
+  VCL.TMSFNCHTMLEngine in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCHTMLEngine.pas',
+  VCL.TMSFNCHint in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCHint.pas',
+  VCL.TMSFNCHintReg in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCHintReg.pas',
+  VCL.TMSFNCPopup in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCPopup.pas',
+  VCL.TMSFNCPopupReg in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCPopupReg.pas',
+  VCL.TMSFNCScrollBar in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCScrollBar.pas',
+  VCL.TMSFNCScrollBarReg in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCScrollBarReg.pas',
+  VCL.TMSFNCStyles in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCStyles.pas',
+  VCL.TMSFNCTypes in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCTypes.pas',
+  VCL.TMSFNCURLBitmapContainer in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCURLBitmapContainer.pas',
+  VCL.TMSFNCUtils in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCUtils.pas',
+  VCL.TMSFNCXPVS in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCXPVS.pas',
+  VCL.TMSFNCGDIPlusApi in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGDIPlusApi.pas',
+  VCL.TMSFNCGDIPlusClasses in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGDIPlusClasses.pas',
+  VCL.TMSFNCGraphics.General in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGraphics.General.pas',
+  VCL.TMSFNCGraphics.Win in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGraphics.Win.pas',
+  VCL.TMSFNCGraphicsTypes in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCGraphicsTypes.pas',
+  VCL.TMSFNCUndo in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCUndo.pas',
+  VCL.TMSFNCJSONReader in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCJSONReader.pas',
+  VCL.TMSFNCJSONWriter in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCJSONWriter.pas',
+  VCL.TMSFNCPersistence in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCPersistence.pas',
+  VCL.TMSFNCWebBrowser in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCWebBrowser.pas',
+  VCL.TMSFNCWebBrowser.Win in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCWebBrowser.Win.pas',
+  VCL.TMSFNCWebCoreClientBrowser in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCWebCoreClientBrowser.pas',
+  VCL.TMSFNCWebBrowserReg in '..\..\..\tmssoftware\TMS FNC Core\VCL.TMSFNCWebBrowserReg.pas';
+
+end.

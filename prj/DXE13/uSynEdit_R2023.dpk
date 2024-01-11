@@ -1,0 +1,138 @@
+package uSynEdit_R2023;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'uSynEdit component suite runtime'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  vclx,
+  rtl;
+
+contains
+  uSynTextDrawer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynTextDrawer.pas',
+  uSynAutoCorrect in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynAutoCorrect.pas',
+  uSynAutoCorrectEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynAutoCorrectEditor.pas' {frmAutoCorrectEditor},
+  uSynCompletionProposal in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynCompletionProposal.pas',
+  uSynDBEdit in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynDBEdit.pas',
+  uSynEdit in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEdit.pas',
+  uSynEditAutoComplete in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditAutoComplete.pas',
+  uSynEditExport in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditExport.pas',
+  uSynEditHighlighter in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditHighlighter.pas',
+  uSynEditKbdHandler in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditKbdHandler.pas',
+  uSynEditKeyCmdEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditKeyCmdEditor.pas' {uSynEditKeystrokeEditorForm},
+  uSynEditKeyCmds in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditKeyCmds.pas',
+  uSynEditKeyCmdsEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditKeyCmdsEditor.pas' {uSynEditKeystrokesEditorForm},
+  uSynEditKeyConst in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditKeyConst.pas',
+  uSynEditMiscClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditMiscClasses.pas',
+  uSynEditMiscProcs in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditMiscProcs.pas',
+  uSynEditOptionsDialog in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditOptionsDialog.pas' {fmEditorOptionsDialog},
+  uSynEditPlugins in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPlugins.pas',
+  uSynEditWordWrap in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditWordWrap.pas',
+  uSynEditPrint in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrint.pas',
+  uSynEditPrinterInfo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrinterInfo.pas',
+  uSynEditPrintHeaderFooter in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrintHeaderFooter.pas',
+  uSynEditPrintMargins in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrintMargins.pas',
+  uSynEditPrintMarginsDialog in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrintMarginsDialog.pas' {uSynEditPrintMarginsDlg},
+  uSynEditPrintPreview in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrintPreview.pas',
+  uSynEditPrintTypes in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPrintTypes.pas',
+  uSynEditPythonBehaviour in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPythonBehaviour.pas',
+  uSynEditRegexSearch in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditRegexSearch.pas',
+  uSynEditSearch in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditSearch.pas',
+  uSynEditStrConst in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditStrConst.pas',
+  uSynEditTextBuffer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditTextBuffer.pas',
+  uSynEditTypes in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditTypes.pas',
+  uSynExportHTML in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynExportHTML.pas',
+  uSynExportRTF in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynExportRTF.pas',
+  uSynExportTeX in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynExportTeX.pas',
+  uSynHighlighterADSP21xx in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterADSP21xx.pas',
+  uSynHighlighterAsm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterAsm.pas',
+  uSynHighlighterAWK in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterAWK.pas',
+  uSynHighlighterBaan in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterBaan.pas',
+  uSynHighlighterBat in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterBat.pas',
+  uSynHighlighterCAC in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCAC.pas',
+  uSynHighlighterCache in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCache.pas',
+  uSynHighlighterCobol in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCobol.pas',
+  uSynHighlighterCPM in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCPM.pas',
+  uSynHighlighterCpp in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCpp.pas',
+  uSynHighlighterCS in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCS.pas',
+  uSynHighlighterDfm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterDfm.pas',
+  uSynHighlighterDml in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterDml.pas',
+  uSynHighlighterFortran in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterFortran.pas',
+  uSynHighlighterFoxpro in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterFoxpro.pas',
+  uSynHighlighterGalaxy in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterGalaxy.pas',
+  uSynHighlighterGeneral in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterGeneral.pas',
+  uSynHighlighterGWS in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterGWS.pas',
+  uSynHighlighterHashEntries in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterHashEntries.pas',
+  uSynHighlighterHaskell in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterHaskell.pas',
+  uSynHighlighterHC11 in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterHC11.pas',
+  uSynHighlighterHP48 in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterHP48.pas',
+  uSynHighlighterHtml in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterHtml.pas',
+  uSynHighlighterIDL in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterIDL.pas',
+  uSynHighlighterIni in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterIni.pas',
+  uSynHighlighterInno in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterInno.pas',
+  uSynHighlighterJava in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterJava.pas',
+  uSynHighlighterJScript in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterJScript.pas',
+  uSynHighlighterKix in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterKix.pas',
+  uSynHighlighterM3 in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterM3.pas',
+  uSynHighlighterModelica in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterModelica.pas',
+  uSynHighlighterMsg in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterMsg.pas',
+  uSynHighlighterMulti in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterMulti.pas',
+  uSynHighlighterPas in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterPas.pas',
+  uSynHighlighterPerl in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterPerl.pas',
+  uSynHighlighterPHP in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterPHP.pas',
+  uSynHighlighterProgress in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterProgress.pas',
+  uSynHighlighterPython in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterPython.pas',
+  uSynHighlighterRC in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterRC.pas',
+  uSynHighlighterRuby in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterRuby.pas',
+  uSynHighlighterSDD in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterSDD.pas',
+  uSynHighlighterSml in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterSml.pas',
+  uSynHighlighterSQL in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterSQL.pas',
+  uSynHighlighterST in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterST.pas',
+  uSynHighlighterTclTk in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterTclTk.pas',
+  uSynHighlighterTeX in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterTeX.pas',
+  uSynHighlighterUNIXShellScript in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterUNIXShellScript.pas',
+  uSynHighlighterUnreal in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterUnreal.pas',
+  uSynHighlighterVB in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterVB.pas',
+  uSynHighlighterVBScript in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterVBScript.pas',
+  uSynHighlighterXML in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterXML.pas',
+  uSynMacroRecorder in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynMacroRecorder.pas',
+  uSynMemo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynMemo.pas',
+  uSynRegExpr in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynRegExpr.pas',
+  uSynHighlighterCss in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterCss.pas',
+  uSynHighlighterLDraw in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterLDraw.pas',
+  uSynHighlighterURI in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterURI.pas',
+  uSynURIOpener in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynURIOpener.pas',
+  uSynHighlighterDOT in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterDOT.pas',
+  uSynHighlighterVrml97 in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterVrml97.pas',
+  uSynHighlighterEiffel in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterEiffel.pas',
+  uSynUnicode in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynUnicode.pas' {$IFNDEF CPUX64},
+  uSynUsp10 in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynUsp10.pas' {$ENDIF};
+
+end.

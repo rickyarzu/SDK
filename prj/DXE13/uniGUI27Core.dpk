@@ -1,0 +1,80 @@
+package uniGUI27Core;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FMSoft uniGUI Core Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  vclimg,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  uIndy27,
+  uniTools27;
+
+contains
+  Ext in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\Ext.pas',
+  ExtPascal in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\ExtPascal.pas',
+  ExtPascalUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\ExtPascalUtils.pas',
+  ExtHTTPServer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\ExtHTTPServer.pas',
+  seCSSParser in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\seCSSParser.pas',
+  uniGUICoreInterfaces in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUICoreInterfaces.pas',
+  uniGUIApplication in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIApplication.pas',
+  uniGUIBaseClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIBaseClasses.pas',
+  uniGUIClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIClasses.pas',
+  uniGUIExClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIExClasses.pas',
+  uniGUIClientEvents in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIClientEvents.pas',
+  uniGUIConst in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIConst.pas',
+  uniGUICookie in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUICookie.pas',
+  uniGUIDialogs in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIDialogs.pas',
+  uniGUIFont in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIFont.pas',
+  uniGUIForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIForm.pas',
+  uniGUIFrame in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIFrame.pas',
+  uniGUIJSForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIJSForm.pas',
+  uniGUIJSInterface in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIJSInterface.pas',
+  uniGUIJSUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIJSUtils.pas',
+  uniGUIMainModule in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIMainModule.pas',
+  uniGUIModuleReg in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIModuleReg.pas',
+  uniGUIParser in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIParser.pas',
+  uniGUIRTTI in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIRTTI.pas',
+  uniGUIServer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIServer.pas',
+  uniGUIServerForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIServerForm.pas' {ServerForm},
+  uniGUIServerUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIServerUtils.pas',
+  uniGUIService in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIService.pas',
+  uniGUISessionManager in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUISessionManager.pas',
+  uniGUIStream in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIStream.pas',
+  uniGUITheme in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUITheme.pas',
+  uniGUITypes in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUITypes.pas',
+  uniGUIUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniGUIUtils.pas',
+  uniMainMenu in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniMainMenu.pas',
+  uniImageList in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniImageList.pas',
+  uniThreadTimer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core\uniThreadTimer.pas';
+
+end.

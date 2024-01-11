@@ -1,0 +1,84 @@
+UniGUIMap.exe: 00002CFC: 15:59:56 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00002CFC: 15:59:56 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00002CFC: 15:59:56 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00002CFC: 15:59:56 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00002CFC: 15:59:56 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006D096F
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 00002CFC: 16:00:02 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 00002CFC: 16:00:02 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 00002CFC: 16:00:02 [Terminated]:Exit Code: 0
+UniGUIMap.exe: 000025AC: 16:00:08 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 000025AC: 16:00:08 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 000025AC: 16:00:08 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 000025AC: 16:00:08 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 000025AC: 16:00:08 [TUniServerModule]:HTTP Server Started on Port: 8077
+UniGUIMap.exe: 00001D34: 16:00:25 [HandleFileRequest[127.0.0.1]]:File not found: C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\favicon.ico
+UniGUIMap.exe: 000025AC: 16:02:49 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 000025AC: 16:02:49 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 000025AC: 16:02:50 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 000025AC: 16:02:50 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 000025AC: 16:02:50 [Terminated]:Exit Code: 0
+UniGUIMap.exe: 00000180: 16:56:51 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00000180: 16:56:51 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00000180: 16:56:51 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00000180: 16:56:51 [TUniGUISessionManager]:Cache erase job created, Folder count: [1]
+UniGUIMap.exe: 00000180: 16:56:51 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00000180: 16:56:51 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. : Addr: $006D096F
+UniGUIMap.exe: 00000180: 16:56:59 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 00000180: 16:56:59 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 00000180: 16:57:00 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 00000180: 16:57:00 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 00000180: 16:57:00 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 00000180: 16:57:00 [Terminated]:Exit Code: 0
+UniGUIMap.exe: 00001E20: 16:57:13 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00001E20: 16:57:13 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00001E20: 16:57:13 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00001E20: 16:57:13 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00001E20: 16:57:13 [TUniServerModule]:HTTP Server Started on Port: 8077
+UniGUIMap.exe: 00001918: 16:57:24 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. (Session not found: PcHs42HSph10957164D ) : Addr: $007DD33F
+UniGUIMap.exe: 00001E20: 17:10:32 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 00001E20: 17:10:32 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 00001E20: 17:10:33 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 00001E20: 17:10:33 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 00001E20: 17:10:33 [Terminated]:Exit Code: 0
+UniGUIMap.exe: 00002C14: 17:10:36 []:>--------------------------------------------------------------<
+UniGUIMap.exe: 00002C14: 17:10:36 [TUniServerModule]:Server First Init.
+UniGUIMap.exe: 00002C14: 17:10:36 [TUniServerModule]:Start Path = C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\UniMap\
+UniGUIMap.exe: 00002C14: 17:10:36 [TUniGUISessionManager]:Cache erase job created, Folder count: [1]
+UniGUIMap.exe: 00002C14: 17:10:37 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+UniGUIMap.exe: 00002C14: 17:10:37 [TUniServerModule]:HTTP Server Started on Port: 8077
+UniGUIMap.exe: 00002C14: 17:11:05 [TUniServerModule]:Shutting Down Server.
+UniGUIMap.exe: 00002C14: 17:11:05 [TUniServerModule]:Stopping HTTP Server.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniServerModule]:HTTP Server Stopped.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniGUISessionManager]:Terminating Session manager.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniGUISessionManager]:Stopping Cache Eraser...
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniGUISessionManager]:Cache Eraser Stopped.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniGUISessionManager]:Destroying Worker Threads.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniGUISessionManager]:Session manager terminated.
+UniGUIMap.exe: 00002C14: 17:11:06 [TUniServerModule]:Server Shutdown Completed.
+UniGUIMap.exe: 00002C14: 17:11:06 []:<-------------------------------------------------------------->
+UniGUIMap.exe: 00002C14: 17:11:06 [Terminated]:Exit Code: 0

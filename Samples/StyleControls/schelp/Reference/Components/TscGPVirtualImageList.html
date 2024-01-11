@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscGPVirtualImageList</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPVirtualImageList</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPImages.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+TscGPVirtualImageList - image list component, which can uses one
+external TImageList as source for images. <br>
+You can set dynamically size, scale factor (High-DPI support is easy
+now) for images and get smooth HQ scaling! <br>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Width</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Virtual width of the images</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Height</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Virtual height of the images</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DefaultWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Default virtual width of the images. SetScaleFactor method will uses this value to calc actual size with scale factor</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">DefaultHeight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Default virtual height of the images. SetScaleFactor method will uses this value to calc actual size with scale factor</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="color: red;">SourceImageList</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TImageList</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TImageList component with source images. <span style="color: red;">ColorDepth property in it must be cd32Bit!<br></span>You can use one TImageList for different TscGPVirtualImageList components.<br><br>You can dynamicly set Width and Height properties as you want.</td>
+</tr>
+
+
+
+
+
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="color: red;">SourceImageCollection</span></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPImageCollection</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPImageCollection component with any images<br><br>Use it as source for images. 
+TscGPVirtualImageList will automatically drawing scaled images.</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">InterpolationMode</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPInterpolationMode</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPInterpolationMode =(scgppimDefault, scgppimHighQualityBilinear);<br><br>scgppimDefault - high quality interpolation by default<br>scgppimHighQualityBilinear - high quality bilinear inerpolation</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold; color: red;">DirectDraw</span></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True (default value) then component scales and draws images directly from sources.<br>Can be used with controls, which uses TCustomImageList.Draw method.<br>If False then component generate scaled internal images. <br>Can be used with control, which uses system ImageList_Draw, ImageList_DrawEx methods (TToolBar, TTreeView, TListView)</td></tr></tbody>
+</table>
+<br>
+<br>
+<p><span style="color: red;"><span style="color: black;"></span></span><br style="color: red;">
+</p><h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SetScaleFactor</td>
+
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">procedure&nbsp;SetScaleFactor(Value: Double);<br><br>Use this method in scaled form and in applications with High-DPI option. <br>It automatically set virtual sizes for images.<br>For example, you can use TscStyledForm.OnChangeScale event:<br><br>procedure TForm1.scStyledForm1ChangeScale(AScaleFactor: Double);<br>begin<br>&nbsp; scGPVirtualImageList1.SetScaleFactor(AScaleFactor);<br>&nbsp; scGPVirtualImageList2.SetScaleFactor(AScaleFactor);<br>end;<br></td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1"><span style="color: red;">Update</span></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this method to synchronize count value in TscGPVirtualImageList and in SourceImageList or SourceImageCollection</td></tr></tbody></table><p><br>
+</p>
+</body></html>

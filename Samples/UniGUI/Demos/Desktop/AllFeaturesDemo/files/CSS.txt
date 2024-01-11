@@ -1,0 +1,68 @@
+ /* Code From http://www.w3schools.com/css/demo_default.htm */
+body {
+    font: 100%/26px Lucida Sans;
+    margin: 20px;
+}
+.container {
+    min-width: 900px;
+}
+.wrapper {
+    overflow: auto;
+    position: relative;
+}
+#top, #sidebar, #bottom, .menuitem {
+    border-radius: 4px;
+    margin: 4px;
+}
+#top {
+    background-color: #84c754;
+    color: #ffffff;
+    padding: 15px;
+}
+#menubar {
+    float: left;
+    width: 200px;
+}
+#main {
+    margin: 0 210px;
+    padding: 10px;
+}
+#sidebar {
+    background-color: #32a4e7;
+    bottom: 0;
+    color: #ffffff;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 180px;
+}
+#bottom {
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    font-size: 70%;
+    line-height: 14px;
+    padding: 10px;
+    text-align: center;
+}
+#top h1, #top p, #menulist {
+    margin: 0;
+    padding: 0;
+}
+.menuitem {
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    cursor: pointer;
+    list-style-type: none;
+    padding: 2px;
+}
+.menuitem:hover {
+    background-color: #ffffff;
+}
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}

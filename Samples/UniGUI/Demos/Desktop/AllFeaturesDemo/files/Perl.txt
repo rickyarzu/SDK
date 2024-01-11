@@ -1,0 +1,24 @@
+// Code From http://www.codecodex.com
+sub bubbleSort {
+    my @list   = @_;
+    my $sorted = 0;
+
+    while ( not $sorted ) {
+        $sorted = 1; # Innocent until proven guilty.
+
+        for my $current ( 1 .. $#list ) {
+            my $previous = $current - 1;
+
+            if ( $list[$current] < $list[$previous] ) {
+                ($list[$current], $list[$previous]) = ($list[$previous], $list[$current]);
+
+                $sorted = 0;
+            }
+        }
+    }
+
+    return @list;
+}
+
+my @unsorted = qw( 1 7 6 3 83 64 8281 0 38 1 );
+my @sorted = bubbleSort(@unsorted);

@@ -1,0 +1,77 @@
+package Janua.VCL.TMLogistic;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua TM Logistic VCL Framework'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclimg,
+  vcl,
+  xmlrtl,
+  vclactnband,
+  vclwinx,
+  soaprtl,
+  dbrtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  vcldb,
+  VclSmp,
+  RESTComponents,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  TMSVCLUIPackPkg,
+  TMSVCLUIPackPkgEx,
+  JanuaVCLControls,
+  JanuaUnidac,
+  Janua.Core.TMLogistic,
+  Janua.UNI.TMLogistic,
+  JanuaVCLForms,
+  JanuaTmsControls,
+  JanuaTMSForms,
+  TMSWebGMapsPkg,
+  EAN,
+  dxCoreRS26,
+  dxGDIPlusRS26;
+
+contains
+  ufrmTMMigrationMain in '..\..\src\VCL\Logistic\ufrmTMMigrationMain.pas' {frmTMMigrationMain},
+  uframeTMMigration in '..\..\src\VCL\Logistic\uframeTMMigration.pas' {frameTMMigration: TFrame},
+  uqrpTMLabels in '..\..\src\VCL\Logistic\uqrpTMLabels.pas' {qrpTMLabels},
+  uqrpTMWarehouseReceipt in '..\..\src\VCL\Logistic\uqrpTMWarehouseReceipt.pas' {qrpTMWarehouseReceipt},
+  Janua.TMLogistic.dlgVCLLogin in '..\..\src\VCL\Logistic\Janua.TMLogistic.dlgVCLLogin.pas' {dlgVCLTMLogisticLogin},
+  Janua.TMLogistic.VCLApplication in '..\..\src\VCL\Logistic\Janua.TMLogistic.VCLApplication.pas',
+  Janua.TMLogistic.frmVCLFileMigration in '..\..\src\VCL\Logistic\Janua.TMLogistic.frmVCLFileMigration.pas' {frmTMLogisticVCLFileMigration},
+  ufrmVCLOutlookOLEAutomation in '..\..\Samples\Office OLE\Outlook\ufrmVCLOutlookOLEAutomation.pas' {frmVCLOutlookOLEAutomation};
+
+end.

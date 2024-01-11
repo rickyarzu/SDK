@@ -1,0 +1,76 @@
+package uniGUI27dcl;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FMSoft uniGUI Design Package'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  designide,
+  dclDb,
+  dclStd,
+  uniGUI27VCL;
+
+contains
+  uniGUIProjectFile in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIProjectFile.pas',
+  uniGUIFormCreator in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIFormCreator.pas',
+  uniGUIFormExpert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIFormExpert.pas',
+  uniGUIFormFile in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIFormFile.pas',
+  uniGUIFrameExpert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIFrameExpert.pas',
+  uniGUIHideProperty in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIHideProperty.pas',
+  uniGUIModuleCreator in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIModuleCreator.pas',
+  uniGUIModuleExpert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIModuleExpert.pas',
+  uniGUIModuleFile in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIModuleFile.pas',
+  uniGUIModuleFileWeb in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIModuleFileWeb.pas',
+  uniGUIProjectCreator in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIProjectCreator.pas',
+  uniGUIProjectExpert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIProjectExpert.pas',
+  uniGUIPromptProject in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIPromptProject.pas' {PromptForm},
+  uniToolBarEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniToolBarEditor.pas',
+  uniGUIReg in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIReg.pas',
+  uniGUIEditors in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIEditors.pas',
+  uniGUIRegInfo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIRegInfo.pas',
+  uniGUIInheritedFormExpert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIInheritedFormExpert.pas',
+  uniGUIPromptForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIPromptForm.pas' {PromptFormsForm},
+  uniHTMLEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniHTMLEditor.pas' {HTMLEditForm},
+  uniJSEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniJSEditor.pas' {JSEditForm},
+  uniPageControlEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniPageControlEditor.pas',
+  uniGUIModuleTypeForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIModuleTypeForm.pas' {ModuleTypeForm},
+  uniGUIFormTypeForm in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIFormTypeForm.pas' {FormTypeForm},
+  uniGUIDesignerNotify in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIDesignerNotify.pas',
+  uniTreeViewEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniTreeViewEditor.pas',
+  uniEventEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniEventEditor.pas' {EventEditorForm},
+  uniCSSEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniCSSEditor.pas' {CSSEditForm},
+  uniGUIBaseWizard in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIBaseWizard.pas',
+  uniGUIExpertSrc in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIExpertSrc.pas',
+  uniImageDialog in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniImageDialog.pas' {uniImageSelect},
+  uniRegVCL in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniRegVCL.pas',
+  uniGUIExEditors in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIExEditors.pas',
+  uniGUIRegEx in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniGUIRegEx.pas',
+  uniNativeImageListDialog in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\uniNativeImageListDialog.pas' {ImgListNativeForm},
+  ExpertUtilities in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design\ExpertUtilities.pas';
+
+end.

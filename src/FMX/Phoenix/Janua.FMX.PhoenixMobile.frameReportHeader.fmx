@@ -1,0 +1,1090 @@
+object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
+  Size.Width = 358.000000000000000000
+  Size.Height = 655.000000000000000000
+  Size.PlatformDefault = False
+  object lbScheduling: TLabel
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 3.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 3.000000000000000000
+    Size.Width = 348.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Programmazione'
+    TabOrder = 0
+  end
+  object Layout1: TLayout
+    Align = Top
+    Margins.Top = 3.000000000000000000
+    Position.Y = 23.000000000000000000
+    Size.Width = 358.000000000000000000
+    Size.Height = 122.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Layout2: TLayout
+      Align = Top
+      Size.Width = 358.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object TMSFMXDateTimeEdit1: TTMSFMXDateTimeEdit
+        Align = HorzCenter
+        DisableFocusEffect = False
+        Position.X = 39.000000000000000000
+        TabOrder = 0
+        Size.Width = 230.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Version = '1.0.1.0'
+        DateTime = -693593.000000000000000000
+        IsDateEmpty = True
+        IsTimeEmpty = True
+        Fill.Kind = Solid
+        Stroke.Kind = Solid
+      end
+      object Switch1: TSwitch
+        Align = Right
+        IsChecked = False
+        Position.X = 309.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+    object Layout3: TLayout
+      Align = Bottom
+      Position.Y = 90.000000000000000000
+      Size.Width = 358.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object btnMessages: TButton
+        Align = Right
+        Margins.Right = 2.000000000000000000
+        Position.X = 249.000000000000000000
+        Size.Width = 34.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object TMSFMXImage1: TTMSFMXImage
+          Align = Fit
+          ClipChildren = True
+          Size.Width = 32.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          StrokeThickness = 1.000000000000000000
+          Version = '1.5.1.1'
+          BitmapName = 'message'
+          BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+          object BitmapAnimation1: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'Fill.Bitmap.Bitmap'
+            object BitmapAnimation2: TBitmapAnimation
+              Duration = 0.200000002980232200
+              PropertyName = 'StartValue'
+              object BitmapAnimation3: TBitmapAnimation
+                Duration = 0.200000002980232200
+                PropertyName = 'StartValue'
+              end
+            end
+          end
+        end
+      end
+      object btnCellPhoneCall: TButton
+        Align = Right
+        Margins.Right = 3.000000000000000000
+        Position.X = 321.000000000000000000
+        Size.Width = 34.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object TMSFMXImage2: TTMSFMXImage
+          Align = Fit
+          ClipChildren = True
+          Size.Width = 32.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          StrokeThickness = 1.000000000000000000
+          Version = '1.5.1.1'
+          BitmapName = 'telphone'
+          BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+          object BitmapAnimation4: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'Fill.Bitmap.Bitmap'
+            object BitmapAnimation5: TBitmapAnimation
+              Duration = 0.200000002980232200
+              PropertyName = 'StartValue'
+              object BitmapAnimation6: TBitmapAnimation
+                Duration = 0.200000002980232200
+                PropertyName = 'StartValue'
+              end
+            end
+          end
+        end
+      end
+      object btnGoogleMaps: TButton
+        Align = Right
+        Margins.Right = 2.000000000000000000
+        Position.X = 285.000000000000000000
+        Size.Width = 34.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object TMSFMXImage3: TTMSFMXImage
+          Align = Fit
+          ClipChildren = True
+          Size.Width = 32.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          StrokeThickness = 1.000000000000000000
+          Version = '1.5.1.1'
+          BitmapName = 'Google Maps'
+          BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+          object BitmapAnimation7: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'Fill.Bitmap.Bitmap'
+            object BitmapAnimation8: TBitmapAnimation
+              Duration = 0.200000002980232200
+              PropertyName = 'StartValue'
+              object BitmapAnimation9: TBitmapAnimation
+                Duration = 0.200000002980232200
+                PropertyName = 'StartValue'
+              end
+            end
+          end
+        end
+      end
+      object lbDatiRapportino: TLabel
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 3.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Size.Width = 239.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Dati Rapportino'
+        TabOrder = 0
+      end
+    end
+    object lbInfoMeeting: TLabel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 28.000000000000000000
+      Size.Width = 348.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Informazioni Appuntamento (Note)'
+      TabOrder = 0
+    end
+    object memMeetingNotes: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Margins.Left = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Size.Width = 352.000000000000000000
+      Size.Height = 45.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Viewport.Width = 352.000000000000000000
+      Viewport.Height = 45.000000000000000000
+    end
+  end
+  object rcReportSummary: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Margins.Top = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.Y = 147.000000000000000000
+    Size.Width = 358.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+    object txtReportSummay: TTMSFMXHTMLText
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 92.000000000000000000
+      Size.PlatformDefault = False
+      Text = 
+        '<b>Intervento N'#176': </b> 1950952 <br /><b>Mese Emissione: </b>  <b' +
+        'r /><b>Amministratore: </b> Asso Antincendio<br /><b>Contratto: ' +
+        '</b> Asso Antincendio prova Mobile 2021<br /><b>Filiale: </b> Se' +
+        'de <br />'
+      TextSettings.HorzAlign = Leading
+      TextSettings.VertAlign = Leading
+      PrefixStyle = NoPrefix
+      AdaptToStyle = False
+      Version = '1.5.5.4'
+    end
+  end
+  object Layout4: TLayout
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 247.000000000000000000
+    Size.Width = 354.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object TMSFMXImage4: TTMSFMXImage
+      Align = Left
+      Position.X = 168.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'fatture'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation10: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation11: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation12: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object TMSFMXImage5: TTMSFMXImage
+      Align = Left
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'contacts'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation13: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation14: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation15: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object Label1: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 46.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'ANAGRAFICA'
+      TabOrder = 3
+    end
+    object lbInvoices: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Size.Width = 142.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'FATTURE'
+      TabOrder = 2
+    end
+  end
+  object Rectangle2: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Margins.Top = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.Y = 289.000000000000000000
+    Size.Width = 358.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    object TMSFMXHTMLText1: TTMSFMXHTMLText
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      Text = '<b>INTERVENTI DA ESEGUIRE</b>'
+      PrefixStyle = NoPrefix
+      AdaptToStyle = False
+      Version = '1.5.5.4'
+    end
+  end
+  object Rectangle3: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Margins.Top = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.Y = 334.000000000000000000
+    Size.Width = 358.000000000000000000
+    Size.Height = 52.000000000000000000
+    Size.PlatformDefault = False
+    object TMSFMXHTMLText2: TTMSFMXHTMLText
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 
+        '<P align="center"><B>NOTE PER IL TECNICO</B></P><P align="left">' +
+        'prova note tecnico</P>'
+      TextSettings.HorzAlign = Leading
+      TextSettings.VertAlign = Leading
+      PrefixStyle = NoPrefix
+      AdaptToStyle = False
+      Version = '1.5.5.4'
+    end
+  end
+  object lbControlliOrdinari: TLabel
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 315.000000000000000000
+    Size.Width = 354.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'CONTROLLI ORDINARI'
+    TabOrder = 6
+  end
+  object Layout5: TLayout
+    Align = Top
+    Margins.Top = 4.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 358.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object Rectangle4: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 358.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      object TMSFMXHTMLText3: TTMSFMXHTMLText
+        Align = Client
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 354.000000000000000000
+        Size.Height = 20.000000000000000000
+        Size.PlatformDefault = False
+        Text = '<b>LISTA ATTREZZATURE</b>'
+        PrefixStyle = NoPrefix
+        AdaptToStyle = False
+        Version = '1.5.5.4'
+      end
+    end
+    object Layout6: TLayout
+      Align = Left
+      Position.Y = 28.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 101.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Layout8: TLayout
+        Align = Top
+        Size.Width = 161.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object lbEstinguishers: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Estintori'
+          TabOrder = 1
+        end
+        object lbEstinguishersN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 142.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '8'
+          TabOrder = 0
+        end
+      end
+      object Layout9: TLayout
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lbPorteN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 142.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '3'
+          TabOrder = 0
+        end
+        object lbPorte: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Porte'
+          TabOrder = 1
+        end
+      end
+      object Layout10: TLayout
+        Align = Top
+        Position.Y = 25.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lbIdrantiN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 142.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '1'
+          TabOrder = 0
+        end
+        object lbIdranti: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Idranti'
+          TabOrder = 1
+        end
+      end
+      object Layout14: TLayout
+        Align = Top
+        Position.Y = 75.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lbLuciEMN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 142.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '3'
+          TabOrder = 0
+        end
+        object lbLuciEM: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Luci em. '
+          TabOrder = 1
+        end
+      end
+    end
+    object Layout7: TLayout
+      Align = Client
+      Size.Width = 197.000000000000000000
+      Size.Height = 101.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Layout11: TLayout
+        Align = Top
+        Size.Width = 197.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object lbSprinklerN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 178.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '0'
+          TabOrder = 0
+        end
+        object lbSprinkler: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 172.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Sprinkler'
+          TabOrder = 1
+        end
+      end
+      object Layout12: TLayout
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lbGruppiN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 178.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '0'
+          TabOrder = 0
+        end
+        object lbGruppi: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 172.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Gruppi'
+          TabOrder = 1
+        end
+      end
+      object Layout13: TLayout
+        Align = Top
+        Position.Y = 25.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lbRilFumoN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 178.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '0'
+          TabOrder = 0
+        end
+        object lbRilFumo: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 172.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Ril. Fumo'
+          TabOrder = 1
+        end
+      end
+      object Layout15: TLayout
+        Align = Top
+        Position.Y = 75.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lbImpElettriciN: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 178.000000000000000000
+          Size.Width = 17.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = '0'
+          TabOrder = 0
+        end
+        object lbImpElettrici: TLabel
+          Align = Client
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Size.Width = 172.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Imp. elettrici'
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object Layout16: TLayout
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 523.000000000000000000
+    Size.Width = 354.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object btnFireHydrants: TTMSFMXImage
+      Align = Left
+      Position.X = 45.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'idranti'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation16: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation17: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation18: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnFireExtinguishers: TTMSFMXImage
+      Align = Left
+      Position.X = 1.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'estintori'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation19: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation20: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation21: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnFireDoors: TTMSFMXImage
+      Align = Left
+      Position.X = 89.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'porte'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation22: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation23: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation24: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnElectricalSystems: TTMSFMXImage
+      Align = Left
+      Position.X = 221.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'impianti'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation31: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation32: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation33: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnSprinklers: TTMSFMXImage
+      Align = Left
+      Position.X = 177.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'sprinklers'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation34: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation35: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation36: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btn: TTMSFMXImage
+      Align = Left
+      Position.X = 133.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'lampade'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation37: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation38: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation39: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnSmokeDetectors: TTMSFMXImage
+      Align = Left
+      Position.X = 265.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'rilevatori di fumo'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation40: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation41: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation42: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object btnPressurizationGroup: TTMSFMXImage
+      Align = Left
+      Position.X = 309.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 1.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'pressurization group'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation43: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation44: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation45: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+  end
+  object Layout17: TLayout
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 565.000000000000000000
+    Size.Width = 354.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object TMSFMXImage9: TTMSFMXImage
+      Align = Left
+      Position.X = 168.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'newcategory'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation25: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation26: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation27: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object TMSFMXImage10: TTMSFMXImage
+      Align = Left
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      ClipChildren = True
+      Size.Width = 42.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      StrokeThickness = 1.000000000000000000
+      Version = '1.5.1.1'
+      BitmapName = 'transfer'
+      BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+      object BitmapAnimation28: TBitmapAnimation
+        Duration = 0.200000002980232200
+        PropertyName = 'Fill.Bitmap.Bitmap'
+        object BitmapAnimation29: TBitmapAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'StartValue'
+          object BitmapAnimation30: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'StartValue'
+          end
+        end
+      end
+    end
+    object lbSend: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 46.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Invia ad un altro tecnico'
+      TabOrder = 3
+    end
+    object lbInsert: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, FontColor]
+      Size.Width = 142.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Inserisci nuova categoria'
+      TabOrder = 2
+    end
+  end
+  object btnTerminate: TButton
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 607.000000000000000000
+    Size.Width = 354.000000000000000000
+    Size.Height = 36.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    object rctTerminate: TRectangle
+      Align = Client
+      Fill.Color = claForestgreen
+      Size.Width = 354.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      object Label2: TLabel
+        Align = Center
+        StyledSettings = [Family, Size, Style]
+        Size.Width = 169.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'CONCLUSIONE INTERVENTO'
+        TabOrder = 0
+      end
+    end
+  end
+  object JanuaFmxBadge1: TJanuaFmxBadge
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Badge = 0
+    BadgeItem = memMeetingNotes
+    Left = 256
+    Top = 328
+  end
+end

@@ -1,0 +1,324 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{413E664D-4959-43AC-8FBA-379E29909C36}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="prj\JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaCoreXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaPostgresSystemXE10Design.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaFMXControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="prj\JanuaVCLControlsXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Playground\Prototipi\Dico33\VCL\Dico33BackOffice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\Dico33BackEnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Playground\Prototipi\Dico33\VCL\Dico33CallCenter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\WebBroker\prj\Dico33\Dico33DatasnapApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestWebBrokerServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Playground\Prototipi\SmsMailingPromo\SmsMailingPromo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\projects\mobile\Dico33Fmx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\projects\Prototyping\Health\HealthPrototype.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\projects\Prototyping\Health\mod_dico33.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\projects\VCL\prj\Dico33Maps.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\Dico33RestTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\mobile\Dico33Old.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestFMXComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\DataSnap\Dico33\Dico33RESTApplication.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\mobile\Dico33.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\DataSnap\Dico33\Dico33RESTClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestSDKMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Projects\mobile\Dico33Android.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="prj\JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design">
+        <MSBuild Projects="prj\JanuaCoreXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Clean">
+        <MSBuild Projects="prj\JanuaCoreXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10Design:Make">
+        <MSBuild Projects="prj\JanuaCoreXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10Design.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Clean">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10Design.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10Design:Make">
+        <MSBuild Projects="prj\JanuaPostgresSystemXE10Design.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Clean">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE10:Make">
+        <MSBuild Projects="prj\JanuaFMXControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Clean">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE10:Make">
+        <MSBuild Projects="prj\JanuaVCLControlsXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33BackOffice">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33BackOffice.dproj"/>
+    </Target>
+    <Target Name="Dico33BackOffice:Clean">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33BackOffice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33BackOffice:Make">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33BackOffice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33BackEnd">
+        <MSBuild Projects="Testing\prj\Dico33BackEnd.dproj"/>
+    </Target>
+    <Target Name="Dico33BackEnd:Clean">
+        <MSBuild Projects="Testing\prj\Dico33BackEnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33BackEnd:Make">
+        <MSBuild Projects="Testing\prj\Dico33BackEnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33CallCenter">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33CallCenter.dproj"/>
+    </Target>
+    <Target Name="Dico33CallCenter:Clean">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33CallCenter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33CallCenter:Make">
+        <MSBuild Projects="..\Playground\Prototipi\Dico33\VCL\Dico33CallCenter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33DatasnapApp">
+        <MSBuild Projects="..\Projects\WebBroker\prj\Dico33\Dico33DatasnapApp.dproj"/>
+    </Target>
+    <Target Name="Dico33DatasnapApp:Clean">
+        <MSBuild Projects="..\Projects\WebBroker\prj\Dico33\Dico33DatasnapApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33DatasnapApp:Make">
+        <MSBuild Projects="..\Projects\WebBroker\prj\Dico33\Dico33DatasnapApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestWebBrokerServer">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Clean">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Make">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SmsMailingPromo">
+        <MSBuild Projects="..\Playground\Prototipi\SmsMailingPromo\SmsMailingPromo.dproj"/>
+    </Target>
+    <Target Name="SmsMailingPromo:Clean">
+        <MSBuild Projects="..\Playground\Prototipi\SmsMailingPromo\SmsMailingPromo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SmsMailingPromo:Make">
+        <MSBuild Projects="..\Playground\Prototipi\SmsMailingPromo\SmsMailingPromo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33Fmx">
+        <MSBuild Projects="..\projects\mobile\Dico33Fmx.dproj"/>
+    </Target>
+    <Target Name="Dico33Fmx:Clean">
+        <MSBuild Projects="..\projects\mobile\Dico33Fmx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33Fmx:Make">
+        <MSBuild Projects="..\projects\mobile\Dico33Fmx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HealthPrototype">
+        <MSBuild Projects="..\projects\Prototyping\Health\HealthPrototype.dproj"/>
+    </Target>
+    <Target Name="HealthPrototype:Clean">
+        <MSBuild Projects="..\projects\Prototyping\Health\HealthPrototype.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HealthPrototype:Make">
+        <MSBuild Projects="..\projects\Prototyping\Health\HealthPrototype.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_dico33">
+        <MSBuild Projects="..\projects\Prototyping\Health\mod_dico33.dproj"/>
+    </Target>
+    <Target Name="mod_dico33:Clean">
+        <MSBuild Projects="..\projects\Prototyping\Health\mod_dico33.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_dico33:Make">
+        <MSBuild Projects="..\projects\Prototyping\Health\mod_dico33.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33Maps">
+        <MSBuild Projects="..\projects\VCL\prj\Dico33Maps.dproj"/>
+    </Target>
+    <Target Name="Dico33Maps:Clean">
+        <MSBuild Projects="..\projects\VCL\prj\Dico33Maps.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33Maps:Make">
+        <MSBuild Projects="..\projects\VCL\prj\Dico33Maps.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33RestTest">
+        <MSBuild Projects="Testing\prj\Dico33RestTest.dproj"/>
+    </Target>
+    <Target Name="Dico33RestTest:Clean">
+        <MSBuild Projects="Testing\prj\Dico33RestTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33RestTest:Make">
+        <MSBuild Projects="Testing\prj\Dico33RestTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33Old">
+        <MSBuild Projects="..\Projects\mobile\Dico33Old.dproj"/>
+    </Target>
+    <Target Name="Dico33Old:Clean">
+        <MSBuild Projects="..\Projects\mobile\Dico33Old.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33Old:Make">
+        <MSBuild Projects="..\Projects\mobile\Dico33Old.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXComponents">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj"/>
+    </Target>
+    <Target Name="TestFMXComponents:Clean">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXComponents:Make">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33RESTApplication">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTApplication.dproj"/>
+    </Target>
+    <Target Name="Dico33RESTApplication:Clean">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTApplication.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33RESTApplication:Make">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTApplication.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33">
+        <MSBuild Projects="..\Projects\mobile\Dico33.dproj"/>
+    </Target>
+    <Target Name="Dico33:Clean">
+        <MSBuild Projects="..\Projects\mobile\Dico33.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33:Make">
+        <MSBuild Projects="..\Projects\mobile\Dico33.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33RESTClient">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTClient.dproj"/>
+    </Target>
+    <Target Name="Dico33RESTClient:Clean">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33RESTClient:Make">
+        <MSBuild Projects="..\Projects\DataSnap\Dico33\Dico33RESTClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestSDKMobile">
+        <MSBuild Projects="Testing\prj\TestSDKMobile.dproj"/>
+    </Target>
+    <Target Name="TestSDKMobile:Clean">
+        <MSBuild Projects="Testing\prj\TestSDKMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestSDKMobile:Make">
+        <MSBuild Projects="Testing\prj\TestSDKMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Dico33Android">
+        <MSBuild Projects="..\Projects\mobile\Dico33Android.dproj"/>
+    </Target>
+    <Target Name="Dico33Android:Clean">
+        <MSBuild Projects="..\Projects\mobile\Dico33Android.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Dico33Android:Make">
+        <MSBuild Projects="..\Projects\mobile\Dico33Android.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ScrollableFormDemo">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj"/>
+    </Target>
+    <Target Name="ScrollableFormDemo:Clean">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ScrollableFormDemo:Make">
+        <MSBuild Projects="..\..\..\..\Documents\Embarcadero\Studio\19.0\Samples\Object Pascal\Multi-Device Samples\User Interface\ScrollableForm\ScrollableFormDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreXE10;JanuaCoreXE10Design;JanuaPostgresSystemXE10;JanuaPostgresSystemXE10Design;JanuaFMXControlsXE10;JanuaVCLControlsXE10;Dico33BackOffice;Dico33BackEnd;Dico33CallCenter;Dico33DatasnapApp;TestWebBrokerServer;SmsMailingPromo;Dico33Fmx;HealthPrototype;mod_dico33;Dico33Maps;Dico33RestTest;Dico33Old;TestFMXComponents;Dico33RESTApplication;Dico33;Dico33RESTClient;TestSDKMobile;Dico33Android;ScrollableFormDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreXE10:Clean;JanuaCoreXE10Design:Clean;JanuaPostgresSystemXE10:Clean;JanuaPostgresSystemXE10Design:Clean;JanuaFMXControlsXE10:Clean;JanuaVCLControlsXE10:Clean;Dico33BackOffice:Clean;Dico33BackEnd:Clean;Dico33CallCenter:Clean;Dico33DatasnapApp:Clean;TestWebBrokerServer:Clean;SmsMailingPromo:Clean;Dico33Fmx:Clean;HealthPrototype:Clean;mod_dico33:Clean;Dico33Maps:Clean;Dico33RestTest:Clean;Dico33Old:Clean;TestFMXComponents:Clean;Dico33RESTApplication:Clean;Dico33:Clean;Dico33RESTClient:Clean;TestSDKMobile:Clean;Dico33Android:Clean;ScrollableFormDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreXE10:Make;JanuaCoreXE10Design:Make;JanuaPostgresSystemXE10:Make;JanuaPostgresSystemXE10Design:Make;JanuaFMXControlsXE10:Make;JanuaVCLControlsXE10:Make;Dico33BackOffice:Make;Dico33BackEnd:Make;Dico33CallCenter:Make;Dico33DatasnapApp:Make;TestWebBrokerServer:Make;SmsMailingPromo:Make;Dico33Fmx:Make;HealthPrototype:Make;mod_dico33:Make;Dico33Maps:Make;Dico33RestTest:Make;Dico33Old:Make;TestFMXComponents:Make;Dico33RESTApplication:Make;Dico33:Make;Dico33RESTClient:Make;TestSDKMobile:Make;Dico33Android:Make;ScrollableFormDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,48 @@
+package VCL_FlexCel_Core;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FlexCel Core Library for VCL'}
+{$LIBSUFFIX '260'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  FlexCel_Core,
+  vcl;
+
+contains
+  VCL.FlexCel.Core in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Core\VCL.FlexCel.Core.pas',
+  _FloydSteinbergDither.FloydSteinbergDither in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_FloydSteinbergDither.FloydSteinbergDither.pas',
+  _GDIPlusCanvas.GdiPlusGraphics in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_GDIPlusCanvas.GdiPlusGraphics.pas',
+  _GDIPlusGraphicsFactory in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_GDIPlusGraphicsFactory.pas',
+  _OctreeQuantizer.Octree in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_OctreeQuantizer.Octree.pas',
+  _OctreeQuantizer.OctreeQuantizer in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_OctreeQuantizer.OctreeQuantizer.pas',
+  _Quantizer.Quantizer in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_Quantizer.Quantizer.pas',
+  _GDIPlusUIClasses in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_GDIPlusUIClasses.pas',
+  _GDIPlusUIClasses.TGdipUIPrinter in '..\..\..\Libraries\TMS_FlexCel_Studio\Source\Draw\_GDIPlusUIClasses.TGdipUIPrinter.pas';
+
+end.

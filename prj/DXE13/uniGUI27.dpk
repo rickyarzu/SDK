@@ -1,0 +1,119 @@
+package uniGUI27;
+
+{$R *.res}
+{$R 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIVer.res'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FMSoft uniGUI Component Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  uniGUI27Core,
+  dsnap;
+
+contains
+  uniGUIControlLogin in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIControlLogin.pas' {UniControlLogin: TUniForm},
+  uniGUIServerCP in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIServerCP.pas' {ServerControlPanelForm: TUniForm},
+  uniGUIAbstractClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIAbstractClasses.pas',
+  uniGUIInterfaces in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIInterfaces.pas',
+  uniGUIRegClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGUIRegClasses.pas',
+  uniBasicGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniBasicGrid.pas',
+  uniBitBtn in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniBitBtn.pas',
+  uniButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniButton.pas',
+  uniCalendar in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniCalendar.pas',
+  uniCanvas in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniCanvas.pas',
+  uniCheckBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniCheckBox.pas',
+  uniComboBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniComboBox.pas',
+  uniDateTimePicker in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDateTimePicker.pas',
+  uniDBCheckBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBCheckBox.pas',
+  uniDBComboBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBComboBox.pas',
+  uniDBDateTimePicker in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBDateTimePicker.pas',
+  uniDBEdit in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBEdit.pas',
+  uniDBGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBGrid.pas',
+  uniDBTreeGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBTreeGrid.pas',
+  uniDBVerticalGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBVerticalGrid.pas',
+  uniDBVerticalTreeGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBVerticalTreeGrid.pas',
+  uniDBImage in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBImage.pas',
+  uniDBListBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBListBox.pas',
+  uniDBLookupComboBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBLookupComboBox.pas',
+  uniDBLookupHelper in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBLookupHelper.pas',
+  uniDBLookupListBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBLookupListBox.pas',
+  uniDBMemo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBMemo.pas',
+  uniDBNavigator in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBNavigator.pas',
+  uniDBText in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBText.pas',
+  uniDBUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBUtils.pas',
+  uniEdit in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniEdit.pas',
+  uniFileUpload in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniFileUpload.pas',
+  uniGenericControl in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGenericControl.pas',
+  uniGroupBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGroupBox.pas',
+  uniHTMLFrame in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniHTMLFrame.pas',
+  uniHTMLMemo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniHTMLMemo.pas',
+  uniImage in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniImage.pas',
+  uniImgTools in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniImgTools.pas',
+  uniLabel in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniLabel.pas',
+  uniListBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniListBox.pas',
+  uniMemo in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniMemo.pas',
+  uniMenuButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniMenuButton.pas',
+  uniMultiItem in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniMultiItem.pas',
+  uniPageControl in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniPageControl.pas',
+  uniPanel in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniPanel.pas',
+  uniProgressBar in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniProgressBar.pas',
+  uniRadioButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniRadioButton.pas',
+  uniRadioGroup in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniRadioGroup.pas',
+  uniScreenMask in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniScreenMask.pas',
+  uniScrollBox in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniScrollBox.pas',
+  uniSpeedButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSpeedButton.pas',
+  uniSpinEdit in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSpinEdit.pas',
+  uniSplitter in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSplitter.pas',
+  uniStatusBar in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniStatusBar.pas',
+  uniStringGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniStringGrid.pas',
+  uniTabControl in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniTabControl.pas',
+  uniTimer in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniTimer.pas',
+  uniToolBar in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniToolBar.pas',
+  uniTrackBar in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniTrackBar.pas',
+  uniTreeView in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniTreeView.pas',
+  uniURLFrame in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniURLFrame.pas',
+  uniCalendarPanel in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniCalendarPanel.pas',
+  uniSyntaxEditorBase in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSyntaxEditorBase.pas',
+  uniSyntaxEditor in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSyntaxEditor.pas',
+  uniSyntaxEditorEx in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSyntaxEditorEx.pas',
+  uniDBRadioGroup in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBRadioGroup.pas',
+  uniCommonClasses in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniCommonClasses.pas',
+  uniFieldSet in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniFieldSet.pas',
+  uniColorButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniColorButton.pas',
+  uniColorPalette in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniColorPalette.pas',
+  uniPropertyGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniPropertyGrid.pas',
+  uniTreeMenu in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniTreeMenu.pas',
+  uniReCAPTCHA in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniReCAPTCHA.pas',
+  uniDBPivotGrid in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniDBPivotGrid.pas',
+  uniMap in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniMap.pas',
+  uniMapKeys in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniMapKeys.pas',
+  uniWidgets in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniWidgets.pas',
+  uniSweetAlert in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSweetAlert.pas',
+  uniGridExporters in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniGridExporters.pas',
+  uniSegmentedButton in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components\uniSegmentedButton.pas';
+
+end.

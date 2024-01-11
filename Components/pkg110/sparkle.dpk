@@ -1,0 +1,103 @@
+package sparkle;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Sparkle - Core Package'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  tmsbcl;
+
+contains
+  Sparkle.Android.HttpEngine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Android.HttpEngine.pas',
+  Sparkle.Android.Import in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Android.Import.pas',
+  Sparkle.Comp.BasicAuthMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.BasicAuthMiddleware.pas',
+  Sparkle.Comp.CompressMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.CompressMiddleware.pas',
+  Sparkle.Comp.CorsMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.CorsMiddleware.pas',
+  Sparkle.Comp.ForwardMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.ForwardMiddleware.pas',
+  Sparkle.Comp.GenericMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.GenericMiddleware.pas',
+  Sparkle.Comp.HttpSysDispatcher in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.HttpSysDispatcher.pas',
+  Sparkle.Comp.JwtMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.JwtMiddleware.pas',
+  Sparkle.Comp.LoggingMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.LoggingMiddleware.pas',
+  Sparkle.Comp.Server in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.Server.pas',
+  Sparkle.Comp.StaticServer in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.StaticServer.pas',
+  Sparkle.Encrypted.Response in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Encrypted.Response.pas',
+  Sparkle.Http.Client in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Http.Client.pas',
+  Sparkle.Http.Engine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Http.Engine.pas',
+  Sparkle.Http.Headers in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Http.Headers.pas',
+  Sparkle.Http.InProcEngine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Http.InProcEngine.pas',
+  Sparkle.HttpServer.Context in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpServer.Context.pas',
+  Sparkle.HttpServer.Dispatcher in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpServer.Dispatcher.pas',
+  Sparkle.HttpServer.Module in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpServer.Module.pas',
+  Sparkle.HttpServer.Request in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpServer.Request.pas',
+  Sparkle.HttpServer.Response in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpServer.Response.pas',
+  Sparkle.HttpSys.Api in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpSys.Api.pas',
+  Sparkle.HttpSys.Config in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpSys.Config.pas',
+  Sparkle.HttpSys.Context in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpSys.Context.pas',
+  Sparkle.HttpSys.Server in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpSys.Server.pas',
+  Sparkle.HttpSys.Session in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.HttpSys.Session.pas',
+  Sparkle.InProc.Context in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.InProc.Context.pas',
+  Sparkle.InProc.Server in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.InProc.Server.pas',
+  Sparkle.Json.Converters in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Json.Converters.pas',
+  Sparkle.Json.Deserializer in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Json.Deserializer.pas',
+  Sparkle.Json.Reader in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Json.Reader.pas',
+  Sparkle.Json.Serializer in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Json.Serializer.pas',
+  Sparkle.Json.Writer in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Json.Writer.pas',
+  Sparkle.Logger in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Logger.pas',
+  Sparkle.Mac.HttpEngine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Mac.HttpEngine.pas',
+  Sparkle.Middleware.BasicAuth in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.BasicAuth.pas',
+  Sparkle.Middleware.Compress in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Compress.pas',
+  Sparkle.Middleware.Cors in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Cors.pas',
+  Sparkle.Middleware.Encryption in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Encryption.pas',
+  Sparkle.Middleware.Forward in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Forward.pas',
+  Sparkle.Middleware.Jwt in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Jwt.pas',
+  Sparkle.Middleware.Logging in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Logging.pas',
+  Sparkle.Module.Static in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Module.Static.pas',
+  Sparkle.Multipart.FormDataReader in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Multipart.FormDataReader.pas',
+  Sparkle.Multipart.Stream in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Multipart.Stream.pas',
+  Sparkle.NativeHttp.Engine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.NativeHttp.Engine.pas',
+  Sparkle.Security in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Security.pas',
+  Sparkle.Sys.JobRunner in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Sys.JobRunner.pas',
+  Sparkle.Sys.ObjectPool in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Sys.ObjectPool.pas',
+  Sparkle.Sys.ThreadPool in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Sys.ThreadPool.pas',
+  Sparkle.Sys.Timer in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Sys.Timer.pas',
+  Sparkle.Uri in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Uri.pas',
+  Sparkle.WebBroker.Context in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.WebBroker.Context.pas',
+  Sparkle.WebBroker.Server in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.WebBroker.Server.pas',
+  Sparkle.Win.Socket in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Win.Socket.pas',
+  Sparkle.WinHttp.Api in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.WinHttp.Api.pas',
+  Sparkle.WinHttp.Engine in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.WinHttp.Engine.pas',
+  Sparkle.ZLib in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.ZLib.pas',
+  Sparkle.App.Factories in '..\..\..\tmssoftware\TMS Sparkle\source\app\Sparkle.App.Factories.pas',
+  Sparkle.Comp.InProcDispatcher in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.InProcDispatcher.pas',
+  Sparkle.Utils in '..\..\..\tmssoftware\TMS Sparkle\source\core\common\Sparkle.Utils.pas',
+  Sparkle.Middleware.Tenant in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Middleware.Tenant.pas',
+  Sparkle.Comp.TenantMiddleware in '..\..\..\tmssoftware\TMS Sparkle\source\core\Sparkle.Comp.TenantMiddleware.pas';
+
+end.

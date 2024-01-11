@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/10/25 17:40:45.000.414,Z:\Ergomercator\Delphi\januaproject\sdk\prj\JanuaOracleSystemXE10.dproj=Z:\Ergomercator\Delphi\januaproject\sdk\prj\JanuaOracleSystemXE4.dproj</Transaction>
+    <Transaction>2015/10/25 18:00:34.000.328,=JanuaCoreXE10Design.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.790,=pgdac230.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.772,=odac230.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.707,=DataSnapCommon.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.756,=DataSnapServer.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.741,=CustomIPTransport.dcp</Transaction>
+    <Transaction>2015/10/25 18:21:28.000.724,=DbxClientDriver.dcp</Transaction>
+    <Transaction>2015/10/25 18:26:06.000.729,=JanuaPostgresSystemXE10.dcp</Transaction>
+    <Transaction>2016/04/07 09:29:34.000.138,=C:\Users\ergom\Dropbox\sdk\prj\ModelSupport_JanuaOracleSystemXE10\default.txaPackage</Transaction>
+    <Transaction>2016/04/18 08:13:22.000.805,=C:\Users\ergom\Dropbox\sdk\prj\ModelSupport_JanuaOracleSystemXE10\default.txvpck</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.864,=bindengine.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.693,=DbxCommonDriver.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.711,=dbrtl.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.911,=DataSnapServer.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.789,=CustomIPTransport.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.675,=rtl.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.656,=xmlrtl.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.827,=inet.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.988,=dac230.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.947,=IndyProtocols.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.930,=IndySystem.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.846,=soaprtl.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.762,=DbxClientDriver.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.735,=DataSnapCommon.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.967,=IndyCore.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:39.000.884,=dsnap.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:40.000.018,=pgdac230.dcp</Transaction>
+    <Transaction>2016/04/19 08:41:40.000.049,=odac230.dcp</Transaction>
+    <Transaction>2016/05/15 11:59:56.000.799,=C:\Users\ergom\Dropbox\sdk\prj\Unit1.pas</Transaction>
+    <Transaction>2016/05/15 12:01:08.000.163,C:\Users\ergom\Dropbox\sdk\src\januaoracle\Janua.Oracle.Functions.pas=C:\Users\ergom\Dropbox\sdk\prj\Unit1.pas</Transaction>
+    <Transaction>2016/05/15 12:09:43.000.402,=pgdac230.dcp</Transaction>
+    <Transaction>2016/05/26 18:11:45.000.686,=C:\Users\ergom\iCloudDrive\sdk\prj\ModelSupport_JanuaOracleSystemXE10\Janua\default.txvpck</Transaction>
+    <Transaction>2016/05/26 18:11:47.000.184,=C:\Users\ergom\iCloudDrive\sdk\prj\ModelSupport_JanuaOracleSystemXE10\Janua\Oracle\default.txvpck</Transaction>
+    <Transaction>2018/01/12 13:00:34.000.511,=Z:\januaproject\Delphi\Dev\SDK\src\januaoracle\Janua.Oracle.SessionSource.pas</Transaction>
+    <Transaction>2018/01/12 13:14:13.000.879,=JanuaThirdPartyXE10.dcp</Transaction>
+    <Transaction>2018/01/12 13:24:01.000.649,=odac250.dcp</Transaction>
+    <Transaction>2018/04/16 12:31:10.000.398,=DataSnapServer.dcp</Transaction>
+    <Transaction>2018/04/16 12:31:10.000.366,=DataSnapCommon.dcp</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="NF5TNZG6ZH9LPREM"/>
+		<PMacbook iOSDevice32="_iosdevice_958daf0197c818a8510949fe686126558218d2bf" iOSDevice64="_iosdevice_958daf0197c818a8510949fe686126558218d2bf"/>
+	</ActiveMobileDevice>
+</BorlandProject>

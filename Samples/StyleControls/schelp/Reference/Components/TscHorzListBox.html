@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscHorzListBox</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscHorzListBox</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scAdvancedControls.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>ListBox
+control with horizontal items and with different styles, wallpapers,
+transparency, advanced features</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">
+TscAdvancedSelectionStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1"> Style of selection...<br>
+<br>
+TscAdvancedSelectionStyle = (scastStyled, scastColor, scastGlow);<br>
+<br>
+scastStyled - bitmap selection from theme or style<br>
+scastColor - color selection from theme or style<br>
+scastGlow - glow effect for selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">SelectionGlow</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscGlowEffect.html">TscGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for
+selection</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ShowFocusRect<br>
+</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Show focus rect</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Items</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscHorzListItems</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscHorzListItem</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1"> ItemIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of active item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemWidth</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Width of item </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">MouseMoveChangeIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">If True then ItemIndex
+will change with mouse</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BorderStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"> TscBorderStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Border style...<br>
+<br>
+TscBorderStyle = (scbsSingle, scbsNone);</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BackgroundStyle</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscBackgroundStyle</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Style for background...<br>
+<br>
+TscBackgroundStyle = (scbgsColor, scbgsFormBackground,
+scbgsTransparent);</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Wallpapers</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Wallpapers</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">WallpaperIndex</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Index of picture for
+wallpaper</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Color</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Color value for
+scbgsColor background style</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">ItemLayout</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TButtonLayout</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Position image in item</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for items</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom selection color
+for control (value must be &lt;&gt; clNone)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">SelectionTextColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of text for custom
+selection color </td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BalloonHint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TBalloonHint</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Component for hints if
+text of item is cut off</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">HintComponent</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscHint.html">TscHint</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alternate component&nbsp;for hints if
+text of item is cut off</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageCollection
+component. Bitmap property must be defined in all items, which you will
+use for custom style</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomBackgroundImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for
+background. You can set combination of wallpaper and custom background</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomSelectionImageIndex<br>
+CustomFocusedSelectionImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for selection</td>
+</tr>
+</tbody>
+</table><br><h1>Methods</h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">BeginUpdateItems</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method before update items</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">EndUpdateItems</td>
+
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Call this method after update items</td>
+</tr>
+
+
+<tr><td style="width: 185px;" bgcolor="#efefef" height="1">ScrollToItem</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">ScrollToItem(Index: Integer);<br><br>Scroll to specific item<br></td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">IndexOf</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">IndexOf(const S: string): Integer;<br><br>Find item index with Captoin = S</td></tr></tbody>
+</table><br><br>
+<p>&nbsp;</p><br><h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnDrawItem</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscImageCollectionItems
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TscDrawAdvancedListItemEvent
+= procedure(Cnvs: TCanvas; Index: Integer;<br>
+&nbsp;&nbsp;&nbsp; TextRct: TRect) of object; </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnItemClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event on item click (use
+ItemIndex property to get active item)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscHorzListItem</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Item enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption of item</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><small><font face="Helvetica, Arial">Events</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event on item click</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;</p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<span style="color: red;">&nbsp;&nbsp;&nbsp; <span style="color: black;">Use TControl.StyleElements property to
+adjust custom colors for client and font in all controls when VCL Style
+is enabled!</span></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

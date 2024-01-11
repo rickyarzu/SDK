@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="gmz35p0nge94ccd8k_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::dv0qd2h7laf_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,141,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.JPublic.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.JPublic.TJanuaServerJPublic" />
+    </reference>
+    <reference referencedUin="design:view:::efgw87fmlaj_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="170,1,142,166" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.System.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerForms" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem" />
+    </reference>
+    <reference referencedUin="design:view:::if9d9pl9ch9dlp8qp_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="151,180,151,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Forms.TJanuaPgServerForms" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Forms.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::00bcb06juko_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="32,180,109,134" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Anagraph.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::8yr3yxz7sf952ipop_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="331,1,170,166" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Univeristy.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Univeristy.TJanuaServerPgUniBooks" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Univeristy.TJanuaServerPgUniversity" />
+    </reference>
+    <reference referencedUin="design:view:::orzhb2bln0o_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="350,186,133,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Users.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers" />
+    </reference>
+    <reference referencedUin="design:view:::vlomxfn1zg9xc9l5q_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="539,1,196,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Pharmacies.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Pharmacies.TJanuaServerPgAnPharmacies" />
+    </reference>
+    <reference referencedUin="design:view:::r5da8v3wfg95f8exg_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="539,171,203,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Functions.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Functions.TJanuaPostgresServerFunctions" />
+    </reference>
+    <reference referencedUin="design:view:::e0pveygpdci_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="350,356,134,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Social.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Social.TJanuaServerSocial" />
+    </reference>
+    <reference referencedUin="design:view:::067rdyak3eg_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="211,369,136,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Health.TJanuaServerHealth" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Health.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::jyg9w3m0ve9swbehi_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="52,369,150,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Books.TJanuaPgServerBooks" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Books.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::dlk1xm6a7f9tzr7qo_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="539,341,145,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Cloud.TJanuaPostgresCloud" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Cloud.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::zgdqlv3f8g9vcapvi_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="539,511,137,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Ads.TJanuaServerPgAds" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Ads.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::ay9k0vqsdf9609d0s_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="780,1,160,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Football.TJanuaServerPgFootball" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Football.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::8amw45d20hk_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="390,558,141,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Cms.TJanuaServerPgCms" />
+      <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Cms.@unitclass" />
+    </reference>
+  </view>
+</nodeSet>

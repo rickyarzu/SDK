@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscLabel</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscHtmlLabel</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scHtmlControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Label control, which has support of html tags in caption</p>
+
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption<br></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption can has html tags, such as:<br>&lt;a&gt;, &lt;a href="somelink"&gt;&lt;/a&gt;<br>&lt;font size=xxx, color=yyy, bgcolor=zzz&gt;&lt;/font&gt;<br>&lt;br&gt;, <br>&lt;b&gt;&lt;/b&gt;,&lt;i&gt;&lt;/i&gt;,&lt;s&gt;&lt;/s&gt;,&lt;u&gt;&lt;/u&gt;<br><br>Color value&nbsp; can be Integer value, HEX value and&nbsp;string value (orange,blue,red,green,...).<br>Expressions, such as size=xxx, color=xxx, bgcolor=xxx, href=, must be without spaces.<br><br>Example:<br>&lt;font color=orange&gt;&lt;b&gt;TscHtmlLabel:&lt;/b&gt;&lt;/font&gt;&lt;br&gt;<br>&lt;font
+color=red&gt;Please&lt;/font&gt;, visit &lt;b&gt;our
+website&lt;/b&gt;&lt;br&gt;at address: &lt;a
+href="http://www.almdev.com"&gt;www.almdev.com&lt;/a&gt;&lt;br&gt;or
+&lt;a&gt;About&lt;/a&gt; page in &lt;font color=white
+bgcolor=red&gt;&lt;i&gt;this demo&lt;/i&gt;&lt;/font&gt; !<br></td>
+</tr>
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">AutoSizeWidth</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Adjust width automatically</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">AutoSizeHeight</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Adjust height automatically</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">LinkFontNormal</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for link &nbsp;in normal state</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">LinkFontHover</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for link in mouse over state</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">MaxWidth</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Max width of the control</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TextAlignment</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TAlignment</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alignment of html text in control</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">AutoExecuteURL</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then control will automatically call&nbsp; ShellExecute method with href value</td></tr></tbody>
+</table>
+<br><h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnLinkClick</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TOnLinkClick
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TOnLinkClick = procedure (Sender: TObject; LinkIndex: Integer;<br>&nbsp;&nbsp;&nbsp; LinkText: String; LinkURL: String) of object;<br>Event on link click.<br>LinkIndex - index of link in label<br>LinkText - text of link<br>LinkURL - url of link  </td>
+</tr>
+
+
+
+<tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnHeightChanged</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event when label changed height</td></tr><tr><td style="width: 185px;" bgcolor="#efefef" height="1">OnWidthChanged</td><td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent</td><td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event when label changed width</td></tr></tbody>
+</table>
+<p></p>
+<p>&nbsp;</p><p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p><span style="color: red;">&nbsp;&nbsp;&nbsp; <span style="color: black;">Use TControl.StyleElements property to adjust custom colors for client and font in all controls when VCL Style is enabled!</span></span>
+</body></html>

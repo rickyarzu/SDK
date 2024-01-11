@@ -1,0 +1,117 @@
+package JanuaUnidacXE103;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  xmlrtl,
+  dbrtl,
+  CustomIPTransport,
+  soaprtl,
+  inet,
+  IndyIPCommon,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  IndyIPClient,
+  bindengine,
+  dsnap,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  bindcomp,
+  RESTComponents,
+  dac260,
+  unidac260,
+  JanuaCoreXE103Rio,
+  pgprovider260;
+
+contains
+  Janua.Postgres.Anagraph in '..\src\januaunidac\Janua.Postgres.Anagraph.pas',
+  Janua.Postgres.Cms in '..\src\januaunidac\Janua.Postgres.Cms.pas',
+  Janua.Postgres.Health in '..\src\januaunidac\Janua.Postgres.Health.pas',
+  Janua.Postgres.JPublic in '..\src\januaunidac\Janua.Postgres.JPublic.pas',
+  Janua.Postgres.Social in '..\src\januaunidac\Janua.Postgres.Social.pas',
+  Janua.Postgres.System in '..\src\januaunidac\Janua.Postgres.System.pas',
+  Janua.Postgres.Users in '..\src\januaunidac\Janua.Postgres.Users.pas',
+  udmPgAnagraph in '..\src\januaunidac\datamodules\udmPgAnagraph.pas' {dmPgAnagraph: TDataModule},
+  udmPgCms in '..\src\januaunidac\datamodules\udmPgCms.pas' {dmPgCms: TDataModule},
+  udmPgHealth in '..\src\januaunidac\datamodules\udmPgHealth.pas' {dmPgHealth: TDataModule},
+  udmPgCloud in '..\src\januaunidac\datamodules\udmPgCloud.pas' {dmPostgresCloud: TDataModule},
+  udmPublic in '..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic: TDataModule},
+  udmSocial in '..\src\januaunidac\datamodules\udmSocial.pas' {dmSocial: TDataModule},
+  udmPgSystemCommand in '..\src\januaunidac\datamodules\udmPgSystemCommand.pas' {dmPgSystemCommand: TDataModule},
+  Janua.Postgres.Cloud in '..\src\januaunidac\Janua.Postgres.Cloud.pas',
+  Janua.Postgres.Functions in '..\src\januaunidac\Janua.Postgres.Functions.pas',
+  udmFootballPostgres in '..\src\januaunidac\datamodules\udmFootballPostgres.pas' {dmFootballPostgres: TDataModule},
+  udmPgMailService in '..\src\januaunidac\datamodules\udmPgMailService.pas' {dmPgMailService: TDataModule},
+  udmPgMail in '..\src\januaunidac\datamodules\udmPgMail.pas' {dmMail: TDataModule},
+  udmPgBooks in '..\src\januaunidac\datamodules\udmPgBooks.pas' {dmPgBooks: TDSServerModule},
+  udmPgAnagraphPharmacies in '..\src\januaunidac\datamodules\udmPgAnagraphPharmacies.pas' {dmPgAnagraphPharmacies: TDSServerModule},
+  udmPgFootballServer in '..\src\januaunidac\datamodules\udmPgFootballServer.pas' {dmPgFootballServer: TDSServerModule},
+  udmPgAdsServer in '..\src\januaunidac\datamodules\udmPgAdsServer.pas' {dmPgAdsServer: TDSServerModule},
+  Janua.Postgres.Football in '..\src\januaunidac\Janua.Postgres.Football.pas',
+  Janua.Postgres.Ads in '..\src\januaunidac\Janua.Postgres.Ads.pas',
+  Janua.Postgres.Univeristy in '..\src\januaunidac\Janua.Postgres.Univeristy.pas',
+  udmPgUniversity in '..\src\januaunidac\datamodules\udmPgUniversity.pas' {dmPgUniversity: TDSServerModule},
+  Janua.Postgres.Pharmacies in '..\src\januaunidac\Janua.Postgres.Pharmacies.pas',
+  Janua.Postgres.Books in '..\src\januaunidac\Janua.Postgres.Books.pas',
+  uJanuaPostgresServerController in '..\src\januaunidac\uJanuaPostgresServerController.pas' {JanuaPostgresServerController: TDataModule},
+  udmPgbooksUniversity in '..\src\januaunidac\datamodules\udmPgbooksUniversity.pas' {dmPgbooksUniversity: TDSServerModule},
+  udmPgForms in '..\src\januaunidac\datamodules\udmPgForms.pas' {dmPgForms: TDSServerModule},
+  Janua.Postgres.Forms in '..\src\januaunidac\Janua.Postgres.Forms.pas',
+  Janua.Postgres.Swap in '..\src\januaunidac\Janua.Postgres.Swap.pas',
+  udmJanuaPostgresExpo in '..\src\januaunidac\datamodules\udmJanuaPostgresExpo.pas' {dmJanuaPostgresExpo: TDataModule},
+  udmJanuaPostgresExpoAnagraph in '..\src\januaunidac\datamodules\udmJanuaPostgresExpoAnagraph.pas' {dmJanuaPostgresExpoAnagraph: TDataModule},
+  udmPgAnagraphHealth in '..\src\januaunidac\datamodules\udmPgAnagraphHealth.pas' {dmPgAnagraphHealth: TDataModule},
+  udmPgItems in '..\src\januaunidac\datamodules\udmPgItems.pas' {dmPgItems: TDataModule},
+  udmPgWebSite in '..\src\januaunidac\datamodules\udmPgWebSite.pas' {dmPgWebSite: TDataModule},
+  udmHealthBooking in '..\src\januaunidac\datamodules\udmHealthBooking.pas' {dmHealthBooking: TDataModule},
+  udmPgCmsGraphicMenu in '..\src\januaunidac\datamodules\udmPgCmsGraphicMenu.pas' {dmPgCmsGraphicMenu: TDataModule},
+  Janua.Postgres.Statistics in '..\src\januaunidac\Janua.Postgres.Statistics.pas',
+  udmPgStatistics in '..\src\januaunidac\datamodules\udmPgStatistics.pas' {dmPgStatistics: TDataModule},
+  Janua.Postgres.Servers in '..\src\januaunidac\Janua.Postgres.Servers.pas',
+  Janua.Orm.Postgres in '..\src\januaunidac\Janua.Orm.Postgres.pas',
+  udmPgCmsStorage in '..\src\januaunidac\datamodules\udmPgCmsStorage.pas' {dmPgCmsStorage: TDataModule},
+  udmPgCloudStorage in '..\src\januaunidac\datamodules\udmPgCloudStorage.pas' {dmPgCloudStorage: TDataModule},
+  udmPgStorage in '..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
+  Janua.Postgres.Cms.Impl in '..\src\januaunidac\Janua.Postgres.Cms.Impl.pas',
+  udmJanuaPostgresModel in '..\src\januaunidac\datamodules\udmJanuaPostgresModel.pas' {dmJanuaPostgresModel: TDataModule},
+  udmPgFootballStorage in '..\src\januaunidac\datamodules\udmPgFootballStorage.pas' {dmPgFootballStorage: TDataModule},
+  Janua.Postgres.Football.Impl in '..\src\januaunidac\Janua.Postgres.Football.Impl.pas',
+  udmPgSystemStorage in '..\src\januaunidac\datamodules\udmPgSystemStorage.pas' {dmPgStorage1: TDataModule},
+  Janua.Postgres.System.Impl in '..\src\januaunidac\Janua.Postgres.System.Impl.pas',
+  udmPgSwap in '..\src\januaunidac\datamodules\udmPgSwap.pas' {dmPgSwap: TDataModule},
+  udmJanuaOraWebLog in '..\src\januaunidac\datamodules\udmJanuaOraWebLog.pas' {dmJanuaOraWebLog: TDSServerModule},
+  udmJanuaOraModel in '..\src\januaunidac\datamodules\udmJanuaOraModel.pas' {dmJanuaOraModel: TDSServerModule},
+  Janua.Oracle.Web in '..\src\januaunidac\Janua.Oracle.Web.pas',
+  Janua.Oracle.Functions in '..\src\januaunidac\Janua.Oracle.Functions.pas',
+  Janua.Oracle.SessionSource in '..\src\januaunidac\Janua.Oracle.SessionSource.pas',
+  Janua.Oracle.Design in '..\src\januaunidac\Janua.Oracle.Design.pas';
+
+end.

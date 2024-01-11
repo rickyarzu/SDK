@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPTabControl</title>
+
+</head>
+<body>
+&nbsp;&nbsp; &nbsp;
+<font face="Helvetica, Arial"><a name="link89"></a></font>
+<h1 class="bigH">TscGPTabControl</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPPagers.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Tab control&nbsp;
+with vector shapes for tabs, with left, right offset for tabs and
+advanced
+features</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Tabs</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscAdvancedPagerTabs</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Collection of
+TscAdvancedPagerTab
+</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabOptions</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGPTabOptions<br>
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Property
+to adjust tab shape, border, text for different states</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabGlowEffect</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Adjust gllow effect for
+Tab</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabHeight</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Height of Tab </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">TabImages</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Images for Tabs</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">Font</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Font for Tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of the tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabsLeftOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset for tabs from
+left. Use&nbsp;this to put any control on left area before tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">TabsRightOffset</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Offset for tabs from
+right. Use this to put any control on right area after tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">BorderStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPTabControlBorderStyle
+</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPTabControlBorderStyle
+= (scgpbsFrame, scgpbsLine, scgpbsNone);<br>
+Border style for control<br>
+</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowCloseButtons</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show close buttons on
+tabs</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FreeOnClose</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then Tab and
+Page will be destroyed when you close page, else Tab and Page will be
+unvisible only.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MouseWheelSupport</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then you can
+change active tab by mouse wheel</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowInactiveTab</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If False then inactive
+tab will be transparent, else it has a tab-style.</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ScrollButtonWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the scroll
+button</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">FrameScaleWidth</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then frame of
+the control and frame for tab will be scaled in Digh-DPI systems</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for frame
+color</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 185px;" height="12">Name</th>
+<th style="width: 226px;" height="12">Type</th>
+<th style="height: 12px; width: 695px;">Description</th>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnChangePage</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TNotifyEvent
+</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">Event when page changed </td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnClose</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscTabCloseEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TscTabCloseEvent =
+procedure(Sender: TObject; var CanClose: Boolean) of object;<br>
+Set CanClose = True to close page.</td>
+</tr>
+<tr>
+<td style="width: 185px;" bgcolor="#efefef" height="1">OnGetTabDrawParams</td>
+<td style="background-color: white; width: 226px;" bgcolor="#efefef" height="1">TscGetAdvTabDrawParamsEvent</td>
+<td style="background-color: white; width: 695px;" bgcolor="#efefef" height="1">TscGetAdvTabDrawParamsEvent
+= procedure(ATabIndex: Integer; ATabState: TscsCtrlState;<br>
+&nbsp;&nbsp;&nbsp; ACanvas: TCanvas) of object;<br>
+<br>
+Use this event to customize tab font (ACanvas.Font), for example.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1 class="bigH"><small>TscTabControlTab</small></h1>
+<p><br>
+</p>
+<h1><small><font face="Helvetica, Arial">Properties</font></small></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Enabled</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Tab&nbsp;enabled</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Caption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Caption of Tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Visible</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Visibility of Tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomOptions</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPTabOptions</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Options to adjust custom
+vector shape, color for tab and text</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CustomGlowEffect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TscButtonGlowEffect</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Custom glow effect for
+tab</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">UseCustomOptions</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable using of custom
+options</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<span style="color: red;"><span style="color: black;"></span></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body></html>

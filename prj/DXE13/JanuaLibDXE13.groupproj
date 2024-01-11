@@ -1,0 +1,404 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EA879EE4-1245-4456-AED9-57FDF63577E6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\components\pkg104\VisualStyles.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVirtual.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE13.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaVCLUITestDXE13.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\DXE13\JanuaVCLFrameworkDemosDXE13.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\JanuaVCLDemos\jpg\JanuaMainDemoVCL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VisualStyles">
+        <MSBuild Projects="..\..\components\pkg104\VisualStyles.dproj"/>
+    </Target>
+    <Target Name="VisualStyles:Clean">
+        <MSBuild Projects="..\..\components\pkg104\VisualStyles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VisualStyles:Make">
+        <MSBuild Projects="..\..\components\pkg104\VisualStyles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponentsD">
+        <MSBuild Projects="JanuaCoreComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponentsD:Clean">
+        <MSBuild Projects="JanuaCoreComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponentsD:Make">
+        <MSBuild Projects="JanuaCoreComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVirtual">
+        <MSBuild Projects="JanuaVirtual.dproj"/>
+    </Target>
+    <Target Name="JanuaVirtual:Clean">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVirtual:Make">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsD">
+        <MSBuild Projects="JanuaVCLComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsD:Clean">
+        <MSBuild Projects="JanuaVCLComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponentsD:Make">
+        <MSBuild Projects="JanuaVCLComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLForms">
+        <MSBuild Projects="JanuaVCLForms.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Clean">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Make">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsForms">
+        <MSBuild Projects="JanuaTmsForms.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Clean">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Make">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE13">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE13.dproj"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE13:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE13.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE13:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE13.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE13">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE13.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE13:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE13.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE13:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE13.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher:Clean">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher:Make">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLFrameworkDemosDXE13">
+        <MSBuild Projects="..\..\Testing\prj\DXE13\JanuaVCLFrameworkDemosDXE13.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLFrameworkDemosDXE13:Clean">
+        <MSBuild Projects="..\..\Testing\prj\DXE13\JanuaVCLFrameworkDemosDXE13.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLFrameworkDemosDXE13:Make">
+        <MSBuild Projects="..\..\Testing\prj\DXE13\JanuaVCLFrameworkDemosDXE13.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMainDemoVCL">
+        <MSBuild Projects="..\..\Samples\VCL\JanuaVCLDemos\jpg\JanuaMainDemoVCL.dproj"/>
+    </Target>
+    <Target Name="JanuaMainDemoVCL:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\JanuaVCLDemos\jpg\JanuaMainDemoVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMainDemoVCL:Make">
+        <MSBuild Projects="..\..\Samples\VCL\JanuaVCLDemos\jpg\JanuaMainDemoVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VisualStyles;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaCoreComponentsD;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaVCLComponentsD;JanuaTmsControls;JanuaVCLMVVM;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;JanuaMainWinVCLUnitTestingDXE13;JanuaVCLUITestDXE13;VCLThemeSelectorLauncher;JanuaVCLFrameworkDemosDXE13;JanuaMainDemoVCL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VisualStyles:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaCoreComponentsD:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLComponentsD:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaMainWinVCLUnitTestingDXE13:Clean;JanuaVCLUITestDXE13:Clean;VCLThemeSelectorLauncher:Clean;JanuaVCLFrameworkDemosDXE13:Clean;JanuaMainDemoVCL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VisualStyles:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaCoreComponentsD:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLComponentsD:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaMainWinVCLUnitTestingDXE13:Make;JanuaVCLUITestDXE13:Make;VCLThemeSelectorLauncher:Make;JanuaVCLFrameworkDemosDXE13:Make;JanuaMainDemoVCL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='JanuaProject'">
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{81989FB8-232B-4FE6-91C7-90423CAF4DC8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{BBA0C65C-465C-4043-9A39-CB2FC8B83DE5}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{D38FF98E-ED2E-4694-AC17-F4B838616ADE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{C04B5C1A-921D-41B1-8A30-D950B188D0DD}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE13.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{DC62B2C0-A42D-4091-928D-C623F378AF81}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{2CA7580E-BDAE-47A4-98A8-DDA3B46899E7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponentsD.dproj">
+            <ProjectGuid>{212E4DBC-6117-4156-BE2E-9F1A4674650E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponentsD.dproj">
+            <ProjectGuid>{B775B357-61D0-4F57-A866-CBA478EE00DE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE13.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{6F96BE06-26E5-45B4-A4C4-9E5F71D83D65}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{1434733F-3AAA-46C0-B5EB-DEED7A680B7E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{9240CE32-6CFA-4206-9E61-39B393207BC3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{977CAE92-49AA-467B-9234-07277CE05F8B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{FF8EC771-FDFC-457D-97D7-8BE44DA1B6D3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\JanuaVCLDemos\jpg\JanuaMainDemoVCL.dproj">
+            <ProjectGuid>{F28BB8FD-EAAA-486F-AA8A-2EACB48FDB80}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{2DAA07D2-FE69-497D-A6E2-CB1015196E15}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\DXE13\JanuaVCLFrameworkDemosDXE13.dproj">
+            <ProjectGuid>{CD13BE9D-F372-41FC-B7BD-7CB18C0BFC7C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{06268811-2348-4210-A4BE-691261F67B44}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

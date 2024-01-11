@@ -1,0 +1,50 @@
+package TMSScripter_Imports_RTL;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - RTL Import Package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  TMSScripter;
+
+contains
+  ap_Classes in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Classes.pas',
+  ap_Contnrs in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Contnrs.pas',
+  ap_DateUtils in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_DateUtils.pas',
+  ap_IniFiles in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_IniFiles.pas',
+  ap_Math in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Math.pas',
+  ap_StrUtils in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_StrUtils.pas',
+  ap_System in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_System.pas',
+  ap_SysUtils in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_SysUtils.pas',
+  ap_Types in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Types.pas',
+  ap_Variants in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Variants.pas',
+  ap_Windows in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\rtl\ap_Windows.pas';
+
+end.

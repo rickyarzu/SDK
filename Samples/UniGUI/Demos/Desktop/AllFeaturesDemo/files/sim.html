@@ -1,0 +1,49 @@
+<html>
+<script>
+
+function do_submit()
+{
+	var ss = undefined;
+	var frm=document.forms[0];
+	
+	var submitUrl=location.search.split('submitUrl=')[1];
+	if (submitUrl) var ss=submitUrl.split('&')[0];
+	frm.action=(ss ? ss: submitUrl);
+	frm.submit();
+}
+
+function do_cancel()
+{
+	var cUrl=location.search.split('cancelUrl=')[1];
+	if (cUrl) var ss=cUrl.split('&')[0];
+	var xurl = (ss ? ss: cUrl);
+	
+	window.location=xurl;
+}
+
+</script>
+<form name="input" action="" method="POST">
+<div style="padding:10;background-color:#eee;color:#0000CC">
+<br/>
+<br/>
+<br/>
+<br/>
+
+First name: <input type="text" name="firstname" value ="Name"><br>
+Last name: <input type="text" name="lastname" value="Last Name">
+
+<br/>
+<br/>
+
+<input type="button" value="Submit" onclick="do_submit()">
+
+<input type="button" value="Cancel" onclick="do_cancel()">
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div >
+</form> 
+
+</html>

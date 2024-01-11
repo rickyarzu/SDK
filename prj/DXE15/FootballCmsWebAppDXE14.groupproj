@@ -1,0 +1,204 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2F71F398-AC87-493C-BC72-FC7A57AB54FF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\DilettantissimoManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\LndCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\DilettantissimoCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaVCLUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\SportmediaApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\SportMediaConsole.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\LNDLiguriaApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilettantissimoManager">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj"/>
+    </Target>
+    <Target Name="DilettantissimoManager:Clean">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilettantissimoManager:Make">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LndCms">
+        <MSBuild Projects="VCL\LndCms.dproj"/>
+    </Target>
+    <Target Name="LndCms:Clean">
+        <MSBuild Projects="VCL\LndCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LndCms:Make">
+        <MSBuild Projects="VCL\LndCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilettantissimoCms">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Clean">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Make">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SportmediaApp">
+        <MSBuild Projects="FMX\SportmediaApp.dproj"/>
+    </Target>
+    <Target Name="SportmediaApp:Clean">
+        <MSBuild Projects="FMX\SportmediaApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SportmediaApp:Make">
+        <MSBuild Projects="FMX\SportmediaApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SportMediaConsole">
+        <MSBuild Projects="WebREST\SportMediaConsole.dproj"/>
+    </Target>
+    <Target Name="SportMediaConsole:Clean">
+        <MSBuild Projects="WebREST\SportMediaConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SportMediaConsole:Make">
+        <MSBuild Projects="WebREST\SportMediaConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LNDLiguriaApp">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj"/>
+    </Target>
+    <Target Name="LNDLiguriaApp:Clean">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDLiguriaApp:Make">
+        <MSBuild Projects="FMX\LNDLiguriaApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;DilettantissimoManager;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;SportmediaApp;SportMediaConsole;LNDLiguriaApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;DilettantissimoManager:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;SportmediaApp:Clean;SportMediaConsole:Clean;LNDLiguriaApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;DilettantissimoManager:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;SportmediaApp:Make;SportMediaConsole:Make;LNDLiguriaApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

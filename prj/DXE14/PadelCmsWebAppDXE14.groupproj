@@ -1,0 +1,1106 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2F71F398-AC87-493C-BC72-FC7A57AB54FF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\components\pkg110\Neon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\UniDac\TestUniComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\SportsManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelWordpressBackEnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelUniGuiBackEndService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\mod_padelbackend.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelMobileFrontEnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelMobileFrontEndService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelWordpressFrontEnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\PadelWordpressFrontEndService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\LndCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\DilettantissimoCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaVCLUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\ApacheTest\mod_apachepadeltest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\UniGuiFramework.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceXE14x86.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceUsersUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceUsersUniGUIService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceApache.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CarServiceCustomerConfirmation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceCustConfService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\mod_cscustomersmobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceDriverConfirmation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\CarServiceDriverConfService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UniGUI\mod_csdriversmersmobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\CarServiceMessageTester\CarServiceConfigMsgTester.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniFalcon\Demos\FSButton\ButtonStyle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Json\NeonMainDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaAllDemos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Neon">
+        <MSBuild Projects="..\..\components\pkg110\Neon.dproj"/>
+    </Target>
+    <Target Name="Neon:Clean">
+        <MSBuild Projects="..\..\components\pkg110\Neon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Neon:Make">
+        <MSBuild Projects="..\..\components\pkg110\Neon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="unidac280">
+        <MSBuild Projects="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj"/>
+    </Target>
+    <Target Name="unidac280:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="unidac280:Make">
+        <MSBuild Projects="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UnifalconXE14">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj"/>
+    </Target>
+    <Target Name="UnifalconXE14:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UnifalconXE14:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Clean">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Make">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestUniComponents">
+        <MSBuild Projects="..\..\Samples\VCL\UniDac\TestUniComponents.dproj"/>
+    </Target>
+    <Target Name="TestUniComponents:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\UniDac\TestUniComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestUniComponents:Make">
+        <MSBuild Projects="..\..\Samples\VCL\UniDac\TestUniComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SportsManager">
+        <MSBuild Projects="VCL\SportsManager.dproj"/>
+    </Target>
+    <Target Name="SportsManager:Clean">
+        <MSBuild Projects="VCL\SportsManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SportsManager:Make">
+        <MSBuild Projects="VCL\SportsManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelWordpressBackEnd">
+        <MSBuild Projects="UniGUI\PadelWordpressBackEnd.dproj"/>
+    </Target>
+    <Target Name="PadelWordpressBackEnd:Clean">
+        <MSBuild Projects="UniGUI\PadelWordpressBackEnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelWordpressBackEnd:Make">
+        <MSBuild Projects="UniGUI\PadelWordpressBackEnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelUniGuiBackEndService">
+        <MSBuild Projects="UniGUI\PadelUniGuiBackEndService.dproj"/>
+    </Target>
+    <Target Name="PadelUniGuiBackEndService:Clean">
+        <MSBuild Projects="UniGUI\PadelUniGuiBackEndService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelUniGuiBackEndService:Make">
+        <MSBuild Projects="UniGUI\PadelUniGuiBackEndService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_padelbackend">
+        <MSBuild Projects="UniGUI\mod_padelbackend.dproj"/>
+    </Target>
+    <Target Name="mod_padelbackend:Clean">
+        <MSBuild Projects="UniGUI\mod_padelbackend.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_padelbackend:Make">
+        <MSBuild Projects="UniGUI\mod_padelbackend.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelMobileFrontEnd">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEnd.dproj"/>
+    </Target>
+    <Target Name="PadelMobileFrontEnd:Clean">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelMobileFrontEnd:Make">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelMobileFrontEndService">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEndService.dproj"/>
+    </Target>
+    <Target Name="PadelMobileFrontEndService:Clean">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEndService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelMobileFrontEndService:Make">
+        <MSBuild Projects="UniGUI\PadelMobileFrontEndService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEnd">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEnd.dproj"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEnd:Clean">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEnd:Make">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEndService">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEndService.dproj"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEndService:Clean">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEndService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PadelWordpressFrontEndService:Make">
+        <MSBuild Projects="UniGUI\PadelWordpressFrontEndService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LndCms">
+        <MSBuild Projects="VCL\LndCms.dproj"/>
+    </Target>
+    <Target Name="LndCms:Clean">
+        <MSBuild Projects="VCL\LndCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LndCms:Make">
+        <MSBuild Projects="VCL\LndCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilettantissimoCms">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Clean">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Make">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_apachepadeltest">
+        <MSBuild Projects="..\..\Samples\UniGUI\ApacheTest\mod_apachepadeltest.dproj"/>
+    </Target>
+    <Target Name="mod_apachepadeltest:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\ApacheTest\mod_apachepadeltest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_apachepadeltest:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\ApacheTest\mod_apachepadeltest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TTMSFNCCloudSendGridVCLDemo">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj"/>
+    </Target>
+    <Target Name="TTMSFNCCloudSendGridVCLDemo:Clean">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTMSFNCCloudSendGridVCLDemo:Make">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg">
+        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Clean">
+        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Make">
+        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FSTheme">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj"/>
+    </Target>
+    <Target Name="FSTheme:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FSTheme:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UniGuiFramework">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj"/>
+    </Target>
+    <Target Name="UniGuiFramework:Clean">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UniGuiFramework:Make">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLForms">
+        <MSBuild Projects="JanuaVCLForms.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Clean">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Make">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsForms">
+        <MSBuild Projects="JanuaTmsForms.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Clean">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Make">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceXE14x86">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj"/>
+    </Target>
+    <Target Name="CarServiceXE14x86:Clean">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceXE14x86:Make">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceXE14">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj"/>
+    </Target>
+    <Target Name="CarServiceXE14:Clean">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceXE14:Make">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUI">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUI:Clean">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUI:Make">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUIService">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUIService.dproj"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUIService:Clean">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUIService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceUsersUniGUIService:Make">
+        <MSBuild Projects="UniGUI\CarServiceUsersUniGUIService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceApache">
+        <MSBuild Projects="UniGUI\CarServiceApache.dproj"/>
+    </Target>
+    <Target Name="CarServiceApache:Clean">
+        <MSBuild Projects="UniGUI\CarServiceApache.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceApache:Make">
+        <MSBuild Projects="UniGUI\CarServiceApache.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceBackOfficeUniGUI">
+        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj"/>
+    </Target>
+    <Target Name="CarServiceBackOfficeUniGUI:Clean">
+        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceBackOfficeUniGUI:Make">
+        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation:Clean">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation:Make">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceCustConfService">
+        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj"/>
+    </Target>
+    <Target Name="CarServiceCustConfService:Clean">
+        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceCustConfService:Make">
+        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_cscustomersmobile">
+        <MSBuild Projects="UniGUI\mod_cscustomersmobile.dproj"/>
+    </Target>
+    <Target Name="mod_cscustomersmobile:Clean">
+        <MSBuild Projects="UniGUI\mod_cscustomersmobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_cscustomersmobile:Make">
+        <MSBuild Projects="UniGUI\mod_cscustomersmobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceDriverConfirmation">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj"/>
+    </Target>
+    <Target Name="CarServiceDriverConfirmation:Clean">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceDriverConfirmation:Make">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceDriverConfService">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj"/>
+    </Target>
+    <Target Name="CarServiceDriverConfService:Clean">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceDriverConfService:Make">
+        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_csdriversmersmobile">
+        <MSBuild Projects="UniGUI\mod_csdriversmersmobile.dproj"/>
+    </Target>
+    <Target Name="mod_csdriversmersmobile:Clean">
+        <MSBuild Projects="UniGUI\mod_csdriversmersmobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_csdriversmersmobile:Make">
+        <MSBuild Projects="UniGUI\mod_csdriversmersmobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceUnitTesting">
+        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj"/>
+    </Target>
+    <Target Name="CarServiceUnitTesting:Clean">
+        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceUnitTesting:Make">
+        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceConfigMsgTester">
+        <MSBuild Projects="..\..\Samples\VCL\CarServiceMessageTester\CarServiceConfigMsgTester.dproj"/>
+    </Target>
+    <Target Name="CarServiceConfigMsgTester:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\CarServiceMessageTester\CarServiceConfigMsgTester.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceConfigMsgTester:Make">
+        <MSBuild Projects="..\..\Samples\VCL\CarServiceMessageTester\CarServiceConfigMsgTester.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Archive">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj"/>
+    </Target>
+    <Target Name="Archive:Clean">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Archive:Make">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Review">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj"/>
+    </Target>
+    <Target Name="Review:Clean">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Review:Make">
+        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mod_uniparams">
+        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj"/>
+    </Target>
+    <Target Name="mod_uniparams:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mod_uniparams:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FSThemeApache">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj"/>
+    </Target>
+    <Target Name="FSThemeApache:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FSThemeApache:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ButtonStyle">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSButton\ButtonStyle.dproj"/>
+    </Target>
+    <Target Name="ButtonStyle:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSButton\ButtonStyle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ButtonStyle:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSButton\ButtonStyle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UniMobileDemo">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj"/>
+    </Target>
+    <Target Name="UniMobileDemo:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UniMobileDemo:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UniGuiTouch">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj"/>
+    </Target>
+    <Target Name="UniGuiTouch:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UniGuiTouch:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeonMainDemo">
+        <MSBuild Projects="..\..\Samples\Json\NeonMainDemo.dproj"/>
+    </Target>
+    <Target Name="NeonMainDemo:Clean">
+        <MSBuild Projects="..\..\Samples\Json\NeonMainDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeonMainDemo:Make">
+        <MSBuild Projects="..\..\Samples\Json\NeonMainDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TGooglePlacesTest">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TGooglePlacesTest:Make">
+        <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaAllDemos">
+        <MSBuild Projects="JanuaAllDemos.dproj"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Clean">
+        <MSBuild Projects="JanuaAllDemos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Make">
+        <MSBuild Projects="JanuaAllDemos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServerSideViewsCustomEngine">
+        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj"/>
+    </Target>
+    <Target Name="ServerSideViewsCustomEngine:Clean">
+        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServerSideViewsCustomEngine:Make">
+        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EditorDemo">
+        <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj"/>
+    </Target>
+    <Target Name="EditorDemo:Clean">
+        <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EditorDemo:Make">
+        <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Neon;unidac280;UnifalconXE14;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;TestUniComponents;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaUniGUI;SportsManager;PadelWordpressBackEnd;PadelUniGuiBackEndService;mod_padelbackend;PadelMobileFrontEnd;PadelMobileFrontEndService;PadelWordpressFrontEnd;PadelWordpressFrontEndService;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;mod_apachepadeltest;TTMSFNCCloudSendGridVCLDemo;VCLTMSFNCCloudPackPkg;FSTheme;UniGuiFramework;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceXE14x86;CarServiceXE14;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;ServerSideViewsCustomEngine;EditorDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Neon:Clean;unidac280:Clean;UnifalconXE14:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;TestUniComponents:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;SportsManager:Clean;PadelWordpressBackEnd:Clean;PadelUniGuiBackEndService:Clean;mod_padelbackend:Clean;PadelMobileFrontEnd:Clean;PadelMobileFrontEndService:Clean;PadelWordpressFrontEnd:Clean;PadelWordpressFrontEndService:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;mod_apachepadeltest:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;VCLTMSFNCCloudPackPkg:Clean;FSTheme:Clean;UniGuiFramework:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE14x86:Clean;CarServiceXE14:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Neon:Make;unidac280:Make;UnifalconXE14:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;TestUniComponents:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;SportsManager:Make;PadelWordpressBackEnd:Make;PadelUniGuiBackEndService:Make;mod_padelbackend:Make;PadelMobileFrontEnd:Make;PadelMobileFrontEndService:Make;PadelWordpressFrontEnd:Make;PadelWordpressFrontEndService:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;mod_apachepadeltest:Make;TTMSFNCCloudSendGridVCLDemo:Make;VCLTMSFNCCloudPackPkg:Make;FSTheme:Make;UniGuiFramework:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE14x86:Make;CarServiceXE14:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Janua Libs'">
+        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
+            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelMobileFrontEndService.dproj">
+            <ProjectGuid>{C3527B73-412E-4822-A427-6479ABEEF2E1}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\DilettantissimoCms.dproj">
+            <ProjectGuid>{C2D8F6F4-3B09-4E51-8981-A62AE630B48C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
+            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
+            <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSButton\ButtonStyle.dproj">
+            <ProjectGuid>{13188859-9AB0-4520-9600-497BDBB26924}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
+            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\UniDac\TestUniComponents.dproj">
+            <ProjectGuid>{ACCBAEBB-F05D-41C3-8028-F9359F8219BE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\ApacheTest\mod_apachepadeltest.dproj">
+            <ProjectGuid>{DC807F77-96C2-45FE-95B1-1AD0B17044E4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelWordpressFrontEndService.dproj">
+            <ProjectGuid>{4C45AC47-EAF1-4D3C-B1FD-925101702903}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj">
+            <ProjectGuid>{4A191310-7202-4055-94EF-37FF8187BFA9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+            <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\UniGuiFramework.dproj">
+            <ProjectGuid>{11E90FA0-4876-4056-925F-01B5B68F9CEA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\SportsManager.dproj">
+            <ProjectGuid>{A883C1B1-16FF-4678-8100-6059BE608D94}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
+            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj">
+            <ProjectGuid>{367346D0-65E1-4D0D-AC65-3D3B9FFAD191}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelWordpressBackEnd.dproj">
+            <ProjectGuid>{121DA8D7-3A41-437A-9410-3167A13321B0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
+            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
+            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj">
+            <ProjectGuid>{470CACE7-3809-4415-811F-B07CF0B60656}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelMobileFrontEnd.dproj">
+            <ProjectGuid>{AC157187-3121-464F-BF68-0E41EBE44ADD}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
+            <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
+            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
+            <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
+            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CarServiceMessageTester\CarServiceConfigMsgTester.dproj">
+            <ProjectGuid>{DB467383-DC5B-4BBD-A8E2-697F6C0F6F5B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
+            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUnitTesting.dproj">
+            <ProjectGuid>{9C00DD38-038C-4BC7-8263-9A5691528EBB}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\mod_padelbackend.dproj">
+            <ProjectGuid>{E94360D1-92B9-4C15-8355-DCE031FE934F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
+            <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\CarServiceXE14x86.dproj">
+            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelWordpressFrontEnd.dproj">
+            <ProjectGuid>{6EDE3B3C-0C80-47AC-98F8-AA44324419F9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\CarServiceXE14.dproj">
+            <ProjectGuid>{9229D38B-3886-4495-B54C-D78F04C489ED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUIService.dproj">
+            <ProjectGuid>{F8693131-D419-4E78-9D0B-BBD2C7A6F566}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
+            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
+            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\LndCms.dproj">
+            <ProjectGuid>{A11F76B7-3D4C-49BA-89A9-0B9AA1CB1D66}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
+            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\PadelUniGuiBackEndService.dproj">
+            <ProjectGuid>{F6F1CCAD-71AB-41AB-8AD9-C578B070CF37}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
+            <ProjectGuid>{57CFDCF4-3C6A-4774-9E34-2316897D983C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj">
+            <ProjectGuid>{EA9EC1CE-8ACE-4BC6-9D70-DFEE1626F110}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

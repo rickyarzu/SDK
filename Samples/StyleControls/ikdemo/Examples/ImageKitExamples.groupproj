@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2643810A-0AE6-44C9-AAD0-1BAD455636EC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CanvasDemo\CanvasDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ImageFilters\ImageFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ImageView\ImageView.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FormAnimation\FormAnimation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SimpleAnimation\SimpleAnimation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PageViewer\PageViewer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CanvasDemo">
+        <MSBuild Projects="CanvasDemo\CanvasDemo.dproj"/>
+    </Target>
+    <Target Name="CanvasDemo:Clean">
+        <MSBuild Projects="CanvasDemo\CanvasDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CanvasDemo:Make">
+        <MSBuild Projects="CanvasDemo\CanvasDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ImageFilters">
+        <MSBuild Projects="ImageFilters\ImageFilters.dproj"/>
+    </Target>
+    <Target Name="ImageFilters:Clean">
+        <MSBuild Projects="ImageFilters\ImageFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ImageFilters:Make">
+        <MSBuild Projects="ImageFilters\ImageFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ImageView">
+        <MSBuild Projects="ImageView\ImageView.dproj"/>
+    </Target>
+    <Target Name="ImageView:Clean">
+        <MSBuild Projects="ImageView\ImageView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ImageView:Make">
+        <MSBuild Projects="ImageView\ImageView.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FormAnimation">
+        <MSBuild Projects="FormAnimation\FormAnimation.dproj"/>
+    </Target>
+    <Target Name="FormAnimation:Clean">
+        <MSBuild Projects="FormAnimation\FormAnimation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FormAnimation:Make">
+        <MSBuild Projects="FormAnimation\FormAnimation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleAnimation">
+        <MSBuild Projects="SimpleAnimation\SimpleAnimation.dproj"/>
+    </Target>
+    <Target Name="SimpleAnimation:Clean">
+        <MSBuild Projects="SimpleAnimation\SimpleAnimation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleAnimation:Make">
+        <MSBuild Projects="SimpleAnimation\SimpleAnimation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PageViewer">
+        <MSBuild Projects="PageViewer\PageViewer.dproj"/>
+    </Target>
+    <Target Name="PageViewer:Clean">
+        <MSBuild Projects="PageViewer\PageViewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PageViewer:Make">
+        <MSBuild Projects="PageViewer\PageViewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CanvasDemo;ImageFilters;ImageView;FormAnimation;SimpleAnimation;PageViewer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CanvasDemo:Clean;ImageFilters:Clean;ImageView:Clean;FormAnimation:Clean;SimpleAnimation:Clean;PageViewer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CanvasDemo:Make;ImageFilters:Make;ImageView:Make;FormAnimation:Make;SimpleAnimation:Make;PageViewer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

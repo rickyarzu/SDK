@@ -1,0 +1,192 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9B63F31F-0F5A-42C3-A90E-ED0F4EABE448}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\JanuaPgUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\JanuaVCLUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestVCLLibraries.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Playground\Prototipi\MailSender\JanuaMailSender.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestFMXDesktopLibraries.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestWebBrokerServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestRSSFeed.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TextFlexcel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestGeoCoding.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\TestFMXComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\prj\TestFMXMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Library\MoveVKControl2\VKControl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\src\JanuaTestService.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting">
+        <MSBuild Projects="Testing\prj\JanuaPgUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Clean">
+        <MSBuild Projects="Testing\prj\JanuaPgUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Make">
+        <MSBuild Projects="Testing\prj\JanuaPgUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting">
+        <MSBuild Projects="Testing\prj\JanuaVCLUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Clean">
+        <MSBuild Projects="Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUnitTesting:Make">
+        <MSBuild Projects="Testing\prj\JanuaVCLUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestVCLLibraries">
+        <MSBuild Projects="Testing\TestVCLLibraries.dproj"/>
+    </Target>
+    <Target Name="TestVCLLibraries:Clean">
+        <MSBuild Projects="Testing\TestVCLLibraries.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestVCLLibraries:Make">
+        <MSBuild Projects="Testing\TestVCLLibraries.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMailSender">
+        <MSBuild Projects="..\Playground\Prototipi\MailSender\JanuaMailSender.dproj"/>
+    </Target>
+    <Target Name="JanuaMailSender:Clean">
+        <MSBuild Projects="..\Playground\Prototipi\MailSender\JanuaMailSender.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMailSender:Make">
+        <MSBuild Projects="..\Playground\Prototipi\MailSender\JanuaMailSender.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXDesktopLibraries">
+        <MSBuild Projects="Testing\TestFMXDesktopLibraries.dproj"/>
+    </Target>
+    <Target Name="TestFMXDesktopLibraries:Clean">
+        <MSBuild Projects="Testing\TestFMXDesktopLibraries.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXDesktopLibraries:Make">
+        <MSBuild Projects="Testing\TestFMXDesktopLibraries.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestWebBrokerServer">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Clean">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestWebBrokerServer:Make">
+        <MSBuild Projects="Testing\TestWebBrokerServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestRSSFeed">
+        <MSBuild Projects="Testing\prj\TestRSSFeed.dproj"/>
+    </Target>
+    <Target Name="TestRSSFeed:Clean">
+        <MSBuild Projects="Testing\prj\TestRSSFeed.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestRSSFeed:Make">
+        <MSBuild Projects="Testing\prj\TestRSSFeed.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TextFlexcel">
+        <MSBuild Projects="Testing\prj\TextFlexcel.dproj"/>
+    </Target>
+    <Target Name="TextFlexcel:Clean">
+        <MSBuild Projects="Testing\prj\TextFlexcel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TextFlexcel:Make">
+        <MSBuild Projects="Testing\prj\TextFlexcel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestGeoCoding">
+        <MSBuild Projects="Testing\prj\TestGeoCoding.dproj"/>
+    </Target>
+    <Target Name="TestGeoCoding:Clean">
+        <MSBuild Projects="Testing\prj\TestGeoCoding.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestGeoCoding:Make">
+        <MSBuild Projects="Testing\prj\TestGeoCoding.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXComponents">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj"/>
+    </Target>
+    <Target Name="TestFMXComponents:Clean">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXComponents:Make">
+        <MSBuild Projects="Testing\TestFMXComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestFMXMobile">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj"/>
+    </Target>
+    <Target Name="TestFMXMobile:Clean">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestFMXMobile:Make">
+        <MSBuild Projects="Testing\prj\TestFMXMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VKControl">
+        <MSBuild Projects="..\Library\MoveVKControl2\VKControl.dproj"/>
+    </Target>
+    <Target Name="VKControl:Clean">
+        <MSBuild Projects="..\Library\MoveVKControl2\VKControl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VKControl:Make">
+        <MSBuild Projects="..\Library\MoveVKControl2\VKControl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTestService">
+        <MSBuild Projects="Testing\src\JanuaTestService.dproj"/>
+    </Target>
+    <Target Name="JanuaTestService:Clean">
+        <MSBuild Projects="Testing\src\JanuaTestService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTestService:Make">
+        <MSBuild Projects="Testing\src\JanuaTestService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCoreUnitTesting;JanuaPgUnitTesting;JanuaVCLUnitTesting;TestVCLLibraries;JanuaMailSender;TestFMXDesktopLibraries;TestWebBrokerServer;TestRSSFeed;TextFlexcel;TestGeoCoding;TestFMXComponents;TestFMXMobile;VKControl;JanuaTestService"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCoreUnitTesting:Clean;JanuaPgUnitTesting:Clean;JanuaVCLUnitTesting:Clean;TestVCLLibraries:Clean;JanuaMailSender:Clean;TestFMXDesktopLibraries:Clean;TestWebBrokerServer:Clean;TestRSSFeed:Clean;TextFlexcel:Clean;TestGeoCoding:Clean;TestFMXComponents:Clean;TestFMXMobile:Clean;VKControl:Clean;JanuaTestService:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCoreUnitTesting:Make;JanuaPgUnitTesting:Make;JanuaVCLUnitTesting:Make;TestVCLLibraries:Make;JanuaMailSender:Make;TestFMXDesktopLibraries:Make;TestWebBrokerServer:Make;TestRSSFeed:Make;TextFlexcel:Make;TestGeoCoding:Make;TestFMXComponents:Make;TestFMXMobile:Make;VKControl:Make;JanuaTestService:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

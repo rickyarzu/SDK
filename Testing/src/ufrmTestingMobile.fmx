@@ -1,0 +1,567 @@
+object frmTestingMobile: TfrmTestingMobile
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 791
+  ClientWidth = 367
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 2
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 367.000000000000000000
+    Size.Height = 791.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    OnChange = TabControl1Change
+    Sizes = (
+      367s
+      742s
+      367s
+      742s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 183.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'KeyBoard'
+      ExplicitSize.cx = 183.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl2: TTabControl
+        Align = Client
+        Size.Width = 367.000000000000000000
+        Size.Height = 742.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = PlatformDefault
+        OnChange = TabControl2Change
+        Sizes = (
+          367s
+          693s
+          367s
+          693s
+          367s
+          693s
+          367s
+          693s)
+        object TabItem3: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem3'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inline Frame21: TFrame2
+            Align = Client
+            Size.Width = 367.000000000000000000
+            Size.Height = 693.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 367.000000000000000000
+              Size.Height = 693.000000000000000000
+              Viewport.Width = 367.000000000000000000
+              Viewport.Height = 693.000000000000000000
+              inherited MainLayout1: TLayout
+                Size.Width = 367.000000000000000000
+                Size.Height = 693.000000000000000000
+                inherited Edit1: TEdit
+                  Position.Y = 663.000000000000000000
+                  Size.Width = 367.000000000000000000
+                  Size.Height = 30.000000000000000000
+                  inherited ClearEditButton1: TClearEditButton
+                    Size.Width = 22.000000000000000000
+                    Size.Height = 27.000000000000000000
+                  end
+                end
+                inherited Button2: TButton
+                  Position.X = 120.000000000000000000
+                  Size.Width = 193.000000000000000000
+                end
+                inherited Memo1: TMemo
+                  Size.Width = 367.000000000000000000
+                  Viewport.Width = 354.000000000000000000
+                  Viewport.Height = 168.000000000000000000
+                end
+                inherited LabelTitle: TLabel
+                  Size.Width = 367.000000000000000000
+                end
+                inherited Edit2: TEdit
+                  Position.Y = 216.000000000000000000
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit3: TEdit
+                  Position.Y = 248.000000000000000000
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit4: TEdit
+                  Position.Y = 280.000000000000000000
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit5: TEdit
+                  Position.Y = 316.000000000000000000
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit6: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        object TabItem4: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem4'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inline Frame22: TFrame2
+            Align = Client
+            Size.Width = 367.000000000000000000
+            Size.Height = 693.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 367.000000000000000000
+              Size.Height = 693.000000000000000000
+              Viewport.Width = 367.000000000000000000
+              Viewport.Height = 693.000000000000000000
+              inherited MainLayout1: TLayout
+                Align = Top
+                Size.Width = 367.000000000000000000
+                Size.Height = 800.000000000000000000
+                inherited Edit1: TEdit
+                  Position.Y = 770.000000000000000000
+                  Size.Width = 367.000000000000000000
+                  Size.Height = 30.000000000000000000
+                  inherited ClearEditButton1: TClearEditButton
+                    Size.Width = 22.000000000000000000
+                    Size.Height = 27.000000000000000000
+                  end
+                end
+                inherited Memo1: TMemo
+                  Size.Width = 367.000000000000000000
+                  Viewport.Width = 367.000000000000000000
+                  Viewport.Height = 176.000000000000000000
+                end
+                inherited LabelTitle: TLabel
+                  Size.Width = 367.000000000000000000
+                end
+                inherited Edit2: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit3: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit4: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit5: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit6: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem5'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inline Frame23: TFrame2
+            Align = Client
+            Size.Width = 367.000000000000000000
+            Size.Height = 693.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 367.000000000000000000
+              Size.Height = 693.000000000000000000
+              Viewport.Width = 367.000000000000000000
+              Viewport.Height = 693.000000000000000000
+              inherited MainLayout1: TLayout
+                Size.Width = 367.000000000000000000
+                Size.Height = 693.000000000000000000
+                inherited Edit1: TEdit
+                  Position.Y = 663.000000000000000000
+                  Size.Width = 367.000000000000000000
+                  Size.Height = 30.000000000000000000
+                  inherited ClearEditButton1: TClearEditButton
+                    Size.Width = 22.000000000000000000
+                    Size.Height = 27.000000000000000000
+                  end
+                end
+                inherited Memo1: TMemo
+                  Size.Width = 367.000000000000000000
+                  Viewport.Width = 367.000000000000000000
+                  Viewport.Height = 176.000000000000000000
+                end
+                inherited LabelTitle: TLabel
+                  Size.Width = 367.000000000000000000
+                end
+                inherited Edit2: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit3: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit4: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit5: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit6: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        object TabItem6: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 94.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+          ExplicitSize.cx = 94.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inline Frame24: TFrame2
+            Align = Client
+            Size.Width = 367.000000000000000000
+            Size.Height = 693.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 367.000000000000000000
+              Size.Height = 693.000000000000000000
+              Viewport.Width = 367.000000000000000000
+              Viewport.Height = 693.000000000000000000
+              inherited MainLayout1: TLayout
+                Size.Width = 367.000000000000000000
+                Size.Height = 693.000000000000000000
+                inherited Edit1: TEdit
+                  Position.Y = 663.000000000000000000
+                  Size.Width = 367.000000000000000000
+                  Size.Height = 30.000000000000000000
+                  inherited ClearEditButton1: TClearEditButton
+                    Size.Width = 22.000000000000000000
+                    Size.Height = 27.000000000000000000
+                  end
+                end
+                inherited Memo1: TMemo
+                  Size.Width = 367.000000000000000000
+                  Viewport.Width = 367.000000000000000000
+                  Viewport.Height = 176.000000000000000000
+                end
+                inherited LabelTitle: TLabel
+                  Size.Width = 367.000000000000000000
+                end
+                inherited Edit2: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit3: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit4: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit5: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+                inherited Edit6: TEdit
+                  Size.Height = 30.000000000000000000
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 184.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Tab Key'
+      ExplicitSize.cx = 184.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object VertScrollBox2: TVertScrollBox
+        Anchors = [akLeft, akTop, akRight]
+        Size.Width = 367.000000000000000000
+        Size.Height = 697.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 367.000000000000000000
+        Viewport.Height = 697.000000000000000000
+        object Button1: TButton
+          Align = Top
+          Position.Y = 650.000000000000000000
+          Size.Width = 367.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 13
+          Text = 'Prova Bottone 1'
+        end
+        object Edit11: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 2
+          Position.X = 5.000000000000000000
+          Position.Y = 110.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit12: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 4
+          Position.X = 5.000000000000000000
+          Position.Y = 210.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit13: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 6
+          Position.X = 5.000000000000000000
+          Position.Y = 310.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit2: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 8
+          Position.X = 5.000000000000000000
+          Position.Y = 410.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit3: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 10
+          Position.X = 5.000000000000000000
+          Position.Y = 510.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit4: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 12
+          Position.X = 5.000000000000000000
+          Position.Y = 610.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit5: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 11
+          Position.X = 5.000000000000000000
+          Position.Y = 560.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit6: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 9
+          Position.X = 5.000000000000000000
+          Position.Y = 460.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit7: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 7
+          Position.X = 5.000000000000000000
+          Position.Y = 360.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit8: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 5
+          Position.X = 5.000000000000000000
+          Position.Y = 260.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit9: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 3
+          Position.X = 5.000000000000000000
+          Position.Y = 160.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit10: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 1
+          Position.X = 5.000000000000000000
+          Position.Y = 60.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 0
+          Position.X = 5.000000000000000000
+          Position.Y = 10.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 357.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+  end
+  object JanuaCoreOS1: TJanuaCoreOS
+    Directory = '.'
+    HasErrors = False
+    CustomServer = False
+    ResolveToFile = False
+    UseCurrentDir = False
+    Left = 192
+    Top = 232
+  end
+  object JanuaCoreLogger1: TJanuaCoreLogger
+    Component = Owner
+    LogType = jltError
+    AutoFileName = True
+    IsCustomServer = False
+    ErrorFileName = 'Error'
+    LogFileName = 'Log'
+    ApplicationType = jatDefault
+    Left = 192
+    Top = 288
+  end
+  object JanuaFMXFormManager1: TJanuaFMXFormManager
+    LogToFile = False
+    JanuaLogger = JanuaCoreLogger1
+    ApplicationType = jatDefault
+    Language = jlaNone
+    TestMode = False
+    JanuaOS = JanuaCoreOS1
+    VertScrollBox = Frame21.VertScrollBox1
+    Form = Owner
+    AutoShowKeyBoard = False
+    Left = 176
+    Top = 398
+  end
+end

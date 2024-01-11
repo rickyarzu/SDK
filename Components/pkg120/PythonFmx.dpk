@@ -1,0 +1,64 @@
+package PythonFmx;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Python4Delphi - Run-time Engine Package for FMX'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  fmx,
+  bindcompfmx,
+  python;
+
+contains
+  FMX.PythonGUIInputOutput in '..\..\..\Lib\python4delphi\Source\fmx\FMX.PythonGUIInputOutput.pas',
+  WrapDelphiFmx in '..\..\..\Lib\python4delphi\Source\fmx\WrapDelphiFmx.pas',
+  WrapFmxActnList in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxActnList.pas',
+  WrapFmxColors in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxColors.pas',
+  WrapFmxComCtrls in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxComCtrls.pas',
+  WrapFmxControls in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxControls.pas',
+  WrapFmxDataBind in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxDataBind.pas',
+  WrapFmxDialogs in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxDialogs.pas',
+  WrapFmxEdit in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxEdit.pas',
+  WrapFmxForms in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxForms.pas',
+  WrapFmxGrids in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxGrids.pas',
+  WrapFmxLayouts in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxLayouts.pas',
+  WrapFmxListBox in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxListBox.pas',
+  WrapFmxListView in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxListView.pas',
+  WrapFmxMedia in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxMedia.pas',
+  WrapFmxMemo in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxMemo.pas',
+  WrapFmxMenus in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxMenus.pas',
+  WrapFmxScrollBox in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxScrollBox.pas',
+  WrapFmxShapes in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxShapes.pas',
+  WrapFmxStdActns in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxStdActns.pas',
+  WrapFmxStdCtrls in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxStdCtrls.pas',
+  WrapFmxStyles in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxStyles.pas',
+  WrapFmxTypes in '..\..\..\Lib\python4delphi\Source\fmx\WrapFmxTypes.pas';
+
+end.

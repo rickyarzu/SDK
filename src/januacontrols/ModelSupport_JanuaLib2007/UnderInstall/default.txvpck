@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="rkvsw938u0a6ti91h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:UnderInstall.TUnderInstall">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,203,894" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneTaglie" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestionePratiche" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.ImpostazioniOrologio" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FInserimentoOrologio" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.DocumentoDefault" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.StampaMandato" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneTipo" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneTipo" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneEvasi" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneMagazzino" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FEtichetteA4" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.VistaUnita" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestionePrenotazioni" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestionePagamenti" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.TerminaleCassa" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneAgenti" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestionePagamenti" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.InserimentoOrologio" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.DefaultPolizza" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestionePrezzipersonali" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneMagazzino" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FStampaMandato" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneOrdini" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneCatalogo" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FDefaultPolizza" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FTerminaleCassa" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FVistaInevasi" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FSede" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FImpostazioniOrologio" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FTotOrdini" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneTaglie" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestEntUscite" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.TotOrdini" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneCatalogo" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.ValutaDefautl" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FDocumentoDefault" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FValutaDefautl" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneServizi" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FVistaUnita" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneOrdini" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestionePratiche" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneEvasi" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.EtichetteA4" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneStatistiche" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.VistaInevasi" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestioneStatistiche" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneServizi" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.Sede" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneAgenti" />
+      <reference referencedUin="delphi:e_field:src:JanuaLib2007:UnderInstall.TUnderInstall.FGestionePrezzipersonali" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestioneEntrateUscite" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.GestionePrenotazioni" />
+      <reference referencedUin="delphi:e_property:src:JanuaLib2007:UnderInstall.TUnderInstall.Ciao">
+        <property name="bounds" value="165,-1,0,0" />
+        <reference referencedUin="delphi:e_method:src:JanuaLib2007:UnderInstall.TUnderInstall.Ciao.set_Ciao" />
+        <reference referencedUin="delphi:e_method:src:JanuaLib2007:UnderInstall.TUnderInstall.Ciao.get_Ciao" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:UnderInstall.TUnderInstall.SetCiao(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:UnderInstall.TUnderInstall.GetCiao()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaLib2007:UnderInstall.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaLib2007:UnderInstall.@unitclass.Register()" />
+    </reference>
+  </view>
+</nodeSet>

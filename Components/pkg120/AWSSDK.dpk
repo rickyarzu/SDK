@@ -1,0 +1,75 @@
+﻿package AWSSDK;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Appercept AWS SDK for Delphi'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore;
+
+contains
+  AWS.AssumeRoleCredentials in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.AssumeRoleCredentials.pas',
+  AWS.Client in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.pas',
+  AWS.Core in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Core.pas',
+  AWS.CredentialResolution in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CredentialResolution.pas',
+  AWS.EC2.InstanceMetadataService in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.EC2.InstanceMetadataService.pas',
+  AWS.ECS.ContainerCredentials in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.ECS.ContainerCredentials.pas',
+  AWS.Enumeration in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Enumeration.pas',
+  AWS.ExpiringToken in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.ExpiringToken.pas',
+  AWS.S3 in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.S3.pas',
+  AWS.SigV4 in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SigV4.pas',
+  AWS.SNS in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SNS.pas',
+  AWS.SQS in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SQS.pas',
+  AWS.STS in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.STS.pas',
+  AWS.Types in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Types.pas',
+  AWS.XML in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.XML.pas',
+  AWS.IAM.PolicyDocument in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.IAM.PolicyDocument.pas',
+  AWS.JSON in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.JSON.pas',
+  AWS.SESV2 in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SESV2.pas',
+  AWS.Utils in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Utils.pas',
+  AWS.Polly in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Polly.pas',
+  AWS.Textract in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Textract.pas',
+  AWS.JSON.Attributes in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.JSON.Attributes.pas',
+  AWS.Translate in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Translate.pas',
+  AWS.SecretsManager in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SecretsManager.pas',
+  AWS.KMS in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.KMS.pas',
+  AWS.CognitoIdentityProvider in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoIdentityProvider.pas',
+  AWS.CognitoIdentity in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoIdentity.pas',
+  AWS.CognitoOIDC in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoOIDC.pas',
+  Appercept.Encoding.RFC2047 in '..\..\..\Libraries\aws-sdk\Source\AWS\Appercept.Encoding.RFC2047.pas',
+  AWS.Client.JSONResponse in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.JSONResponse.pas',
+  AWS.Client.Request in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.Request.pas',
+  AWS.Client.Response in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.Response.pas',
+  AWS.Client.XMLResponse in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.XMLResponse.pas',
+  Appercept.AttributesHelper in '..\..\..\Libraries\aws-sdk\Source\AWS\Appercept.AttributesHelper.pas',
+  AWS.Transcribe in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Transcribe.pas';
+
+end.

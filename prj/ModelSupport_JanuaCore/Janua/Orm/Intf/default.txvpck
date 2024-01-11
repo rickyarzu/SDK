@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="mx18dicn05t_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="eq7456vn4om_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaFields" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaField" role="Supplier" />
+  </link>
+  <link uin="x02c5ne7ojg_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link2" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IFiedlFactory" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaField" role="Supplier" />
+  </link>
+  <link uin="vf1jxlx4rghm6kjns_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link3" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TSetList" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.ISetSerialization" role="Supplier" />
+  </link>
+  <link uin="7c537qp7yspwtidwq_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link4" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TRecList" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IRecSerialization" role="Supplier" />
+  </link>
+</nodeSet>

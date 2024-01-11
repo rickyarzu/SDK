@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="gwp0vkizltt_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Cloud Maps" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,20,264,218" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FHTTPClient" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FResponseText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FAccept" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FProtocol" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FMethod" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FNetHTTPRequest" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FResponseString" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FISOCountry" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.getLanguage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.getLanguageCode()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetIsoLanguage(Janua.Core.Classes.TJanuaISOLanguage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetLanguage(Janua.Core.Classes.TJanuaLanguage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetInternalParams(Janua.Core.Classes.TJanuaParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetNetHTTPRequest(System.Net.HttpClientComponent.TNetHTTPRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetMethod(Janua.Core.Classes.TJanuaHttpMethod)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetUrlResponse()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetResponseString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetISOCountry(Janua.Core.Classes.TJanuaISOCountry)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FIsoLanguage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FInternalParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FMultiPartForm" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.SetResponseText(System.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetJsonResponse()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetXmlResponse()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetRSSREsponse()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetJsonResponse(System.string,Janua.Core.Classes.TJanuaHttpMethod,Janua.Core.Classes.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetJsonResponse(System.string,Janua.Core.Classes.TJanuaParams,Janua.Core.Classes.TJanuaHttpMethod,Janua.Core.Classes.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetXmlResponse(System.string,Janua.Core.Classes.TJanuaHttpMethod,Janua.Core.Classes.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetXmlResponse(System.string,Janua.Core.Classes.TJanuaParams,Janua.Core.Classes.TJanuaHttpMethod,Janua.Core.Classes.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.GetRSSREsponse(System.string,Janua.Core.Classes.TJanuaHttpMethod,Janua.Core.Classes.TJanuaProtocol)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.InternalParams" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.Method" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.ISOCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.ResponseText" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.Language" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.LanguageCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.Url" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.NetHTTPRequest" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.ResponseString" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.FISOCountry">
+        <property name="sourceAnchor" value="304,76" />
+        <property name="targetAnchor" value="340,76" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaCloudComponent.ISOCountry">
+        <property name="sourceAnchor" value="304,84" />
+        <property name="targetAnchor" value="340,84" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="100,460,271,208" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.FGoogleKey" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.SetGoogleKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.GetCoordinates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.GetSuggestions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding.GoogleKey" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaGoogleGeoCoding:Janua.Core.Cloud.TJanuaMapComponent">
+        <property name="sourceAnchor" value="355,460" />
+        <property name="targetAnchor" value="355,374" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="340,200,255,174" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FCoordinates" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetCoordinates(Janua.Core.Classes.TJanuaCoordinates)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.getCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetAddressText(System.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetFoundAddress(Janua.Core.Classes.TJanuaRecordAddress)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetInputAddress(Janua.Core.Classes.TJanuaRecordAddress)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FLat" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FLng" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FSearchAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FAddressList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FAddressText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FFoundAddress" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FInputAddress" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.SetSearchAddress()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Prepare()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.InternalGetRecordCoordinates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.AddAddress(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.GetCoordinates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.GetCoordinates(Janua.Core.Classes.TJanuaRecordAddress)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.GetCoordinates(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.GetSuggestions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Clear()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Coordinates" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.FoundAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.InputAddress" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.IsoLanguage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Address" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.Count" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent.AddressText" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaMapComponent:Janua.Core.Cloud.TJanuaCloudComponent">
+        <property name="sourceAnchor" value="340,219" />
+        <property name="targetAnchor" value="304,219" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="539,451,224,144" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap.GetCoordinates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap.GetSuggestions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap.Activate()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Core.Cloud.TJanuaStreetMap:Janua.Core.Cloud.TJanuaMapComponent">
+        <property name="sourceAnchor" value="567,451" />
+        <property name="targetAnchor" value="567,374" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="340,20,244,128" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.FCountry2Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.FisoCountry" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.FCountry3Code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.GetCountry2Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.GetCountry3Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.SetCountry2Code(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.SetCountry3Code(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.SetisoCountry(Janua.Core.Classes.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.Create(System.Classes.TComponent,Janua.Core.Classes.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.Country3Code" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.isoCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.Country2Code" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.isoCountry">
+        <property name="sourceAnchor" value="584,96" />
+        <property name="targetAnchor" value="620,96" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountry.FisoCountry">
+        <property name="sourceAnchor" value="584,104" />
+        <property name="targetAnchor" value="620,104" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="620,60,254,233" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicNone" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicItalia" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicFrance" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicEngland" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicUnitedStates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicEspana" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicPortugal" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicBrazil" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicArgentina" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicRussia" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicWorld" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Classes.TJanuaISOCountries.jicDeutschland" />
+    </reference>
+  </view>
+</nodeSet>

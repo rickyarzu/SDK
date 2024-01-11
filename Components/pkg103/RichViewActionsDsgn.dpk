@@ -1,0 +1,59 @@
+package RichViewActionsDsgn;
+
+
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\rvActionsRegCool.dcr'}
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\RVColorRegCool.dcr'}
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\RVFontCombosRegCool.dcr'}
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\RVOfficeRadioBtnRegCool.dcr'}
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\RVRulerRegCool.dcr'}
+{$R '..\..\..\Libraries\TRichView\RichViewActions\Source\RVSpinEditRegCool.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView: RichViewActions for Delphi 10.3 Rio'}
+{$LIBSUFFIX '260'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg,
+  vclx,
+  designide,
+  vclactnband,
+  RVPkg,
+  RVPkgDsgn,
+  RichViewActionsD;
+
+contains
+  RVOfficeRadioBtnReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVOfficeRadioBtnReg.pas',
+  RVRulerReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVRulerReg.pas',
+  RVSpinEditReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVSpinEditReg.pas',
+  RVFontCombosReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVFontCombosReg.pas',
+  RVColorReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVColorReg.pas',
+  rvActionsReg in '..\..\..\Libraries\TRichView\RichViewActions\Source\rvActionsReg.pas',
+  RVADsgn in '..\..\..\Libraries\TRichView\RichViewActions\Source\RVADsgn.pas';
+
+end.

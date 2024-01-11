@@ -1,0 +1,116 @@
+﻿package JanuaVCLMVVM;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Model View View Model Library'}
+{$LIBSUFFIX '260'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  dac260,
+  crcontrols260,
+  jcl,
+  unidac260,
+  QRWRun,
+  officeXPrt,
+  JvStdCtrls,
+  JvDB,
+  JvSystem,
+  JvCore,
+  gtDocEng,
+  vclwinx,
+  dsnap,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter,
+  Janua.Ethea.VCLThemeSelector,
+  Janua.SVGIconPackage,
+  Janua.SVGIconImageList,
+  VclSmp,
+  JanuaCore,
+  JanuaUniDAC,
+  JanuaMVVM,
+  JanuaUniDACComponents,
+  JanuaCoreComponents,
+  JanuaVCLControls,
+  JanuaVCLComponents,
+  TMSVCLUIPackPkg,
+  JanuaTmsControls;
+
+contains
+  Janua.VCL.ViewModels.Register in '..\..\src\VCL\ViewModels\Janua.VCL.ViewModels.Register.pas',
+  Janua.VCL.Actions in '..\..\src\VCL\Commons\Janua.VCL.Actions.pas',
+  Janua.VCL.Interposers in '..\..\src\VCL\Commons\Janua.VCL.Interposers.pas',
+  Janua.VCL.ViewModel in '..\..\src\VCL\Commons\Janua.VCL.ViewModel.pas',
+  Janua.VCL.ParamsBuilder in '..\..\src\VCL\Commons\Janua.VCL.ParamsBuilder.pas',
+  Janua.VCL.ViewModel.Search in '..\..\src\VCL\Commons\Janua.VCL.ViewModel.Search.pas',
+  Janua.VCL.MVVM.Framework in '..\..\src\VCL\ViewModels\Janua.VCL.MVVM.Framework.pas',
+  uframeVCLDBReceiptRows in '..\..\src\VCL\Logistic\uframeVCLDBReceiptRows.pas' {frameVCLDBReceiptRows: TFrame},
+  Janua.VCL.dlgViewModelSearch in '..\..\src\VCL\Commons\Janua.VCL.dlgViewModelSearch.pas' {dlgViewModelSearch},
+  Janua.VCL.dlgCustomLogin in '..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas' {dlgVCLCustomLogin},
+  Janua.VCL.Lookup in '..\..\src\VCL\Commons\Janua.VCL.Lookup.pas',
+  Janua.VCL.FormController in '..\..\src\VCL\Commons\Janua.VCL.FormController.pas';
+
+end.

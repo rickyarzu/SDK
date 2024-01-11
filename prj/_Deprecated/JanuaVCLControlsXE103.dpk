@@ -1,0 +1,124 @@
+package JanuaVCLControlsXE103;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Vcl Controls XE10'}
+{$IMPLICITBUILD OFF}
+
+requires
+  TMSVCLUIPackPkgExDXE12,
+  TMSVCLUIPackPkgDXE12,
+  FlexCel_XlsAdapter,
+  FlexCel_Core,
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  JanuaCoreXE103Rio,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  PngComponentsD,
+  TMSWebGMapsPkgDXE12,
+  dac260,
+  crcontrols260,
+  jcl,
+  unidac260,
+  QRWRunDXE10_3_w64,
+  officeXPrt,
+  JvDB,
+  JvStdCtrls,
+  JvSystem,
+  JvCore,
+  gtDocEngD26,
+  gteDocSharedD26,
+  gtQRExpD26,
+  VCL_FlexCel_Core,
+  vclwinx,
+  dmvcframeworkRT,
+  loggerproRT;
+
+contains
+  Janua.VCLControls.Impl in '..\src\VCL\Janua.VCLControls.Impl.pas',
+  Janua.VCL.Dialogs in '..\src\VCL\Commons\Janua.VCL.Dialogs.pas',
+  Janua.VCL.dlgInputDate in '..\src\VCL\Commons\Janua.VCL.dlgInputDate.pas' {dlgInputDate},
+  Janua.VCL.dlgInputFloat in '..\src\VCL\Commons\Janua.VCL.dlgInputFloat.pas' {dlgInputFloat},
+  Janua.VCL.dlgInputNumber in '..\src\VCL\Commons\Janua.VCL.dlgInputNumber.pas' {dlgInputNumber},
+  Janua.VCL.dlgInputText in '..\src\VCL\Commons\Janua.VCL.dlgInputText.pas' {dlgInputText},
+  Janua.VCL.frmMDCModel in '..\src\VCL\Commons\Janua.VCL.frmMDCModel.pas' {frmMDCModel},
+  uJanuaVCLFormMDIModel in '..\src\VCL\Commons\uJanuaVCLFormMDIModel.pas' {JanuaVCLFormMDIModel},
+  Janua.VCL.Printers in '..\src\VCL\Commons\Janua.VCL.Printers.pas',
+  Janua.VCL.dlgLogin in '..\src\VCL\System\Janua.VCL.dlgLogin.pas' {dlgLogin},
+  Janua.VCL.dlgServer in '..\src\VCL\System\Janua.VCL.dlgServer.pas' {dlgSelectServer},
+  Janua.VCL.OS in '..\src\VCL\System\Janua.VCL.OS.pas',
+  udmJanuaVCLSystem in '..\src\VCL\System\udmJanuaVCLSystem.pas' {dmJanuaSystem: TDataModule},
+  Janua.VCL.Anagraph in '..\src\VCL\Controls\Janua.VCL.Anagraph.pas',
+  Janua.VCL.Application in '..\src\VCL\System\Janua.VCL.Application.pas',
+  Janua.VCL.Backup in '..\src\VCL\Backup\Janua.VCL.Backup.pas',
+  Janua.VCL.Cloud in '..\src\VCL\Cloud\Janua.VCL.Cloud.pas',
+  Janua.VCL.EnhDBGrid in '..\src\VCL\Controls\Janua.VCL.EnhDBGrid.pas',
+  Janua.VCL.TMSStyles in '..\src\VCL\Controls\Janua.VCL.TMSStyles.pas',
+  udlgWaitModel in '..\src\VCL\Commons\udlgWaitModel.pas' {JanuadlgWaitModel},
+  Janua.VCL.Users in '..\src\VCL\System\Janua.VCL.Users.pas',
+  Janua.VCL.Error in '..\src\VCL\Commons\Janua.VCL.Error.pas',
+  Janua.VCL.Health in '..\src\VCL\Health\Janua.VCL.Health.pas',
+  Janua.VCL.System in '..\src\VCL\System\Janua.VCL.System.pas',
+  Janua.VCL.TestDebug in '..\src\VCL\Commons\Janua.VCL.TestDebug.pas',
+  Janua.VCL.DirectoryBackup in '..\src\VCL\Backup\Janua.VCL.DirectoryBackup.pas',
+  Janua.VCL.Forms in '..\src\VCL\Commons\Janua.VCL.Forms.pas',
+  Janua.VCL.FootballControllers in '..\src\VCL\Football\Janua.VCL.FootballControllers.pas',
+  Janua.VCL.RegisterUnit in '..\src\VCL\Janua.VCL.RegisterUnit.pas',
+  Janua.VCL.SMS in '..\src\VCL\Cloud\Janua.VCL.SMS.pas',
+  udlgJanuaWizardModel in '..\src\VCL\Commons\udlgJanuaWizardModel.pas' {dlgJanuaWizardModel},
+  Janua.VCL.Functions in '..\src\VCL\Commons\Janua.VCL.Functions.pas',
+  Janua.VCL.Mail in '..\src\VCL\Mail\Janua.VCL.Mail.pas',
+  Janua.VCL.Controllers in '..\src\VCL\Commons\Janua.VCL.Controllers.pas',
+  Janua.VCL.Statistics.MainFormController in '..\src\VCL\Statistics\Janua.VCL.Statistics.MainFormController.pas',
+  Janua.VCL.Grids in '..\src\VCL\Controls\Janua.VCL.Grids.pas',
+  Janua.VCL.RESTAuthenticatorOAuth in '..\src\VCL\Cloud\Janua.VCL.RESTAuthenticatorOAuth.pas' {frmJanuaOAuthWebForm},
+  Janua.Win.libeay32 in '..\src\Win\Janua.Win.libeay32.pas',
+  Janua.Win.CryptoUtils in '..\src\Win\Janua.Win.CryptoUtils.pas',
+  Janua.VCL.Geocoding in '..\src\VCL\Cloud\Janua.VCL.Geocoding.pas' {dmGeoCoding: TDataModule},
+  Janua.VCL.WebBrowser in '..\src\VCL\Controls\Janua.VCL.WebBrowser.pas',
+  Janua.VCL.Cloud.Images in '..\src\VCL\Cloud\Janua.VCL.Cloud.Images.pas',
+  Janua.VCL.Cloud.Files in '..\src\VCL\Cloud\Janua.VCL.Cloud.Files.pas',
+  Janua.VCL.dlgRegisterUser in '..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas' {dlgRegisterUser},
+  Janua.VCL.EnhCRDBGrid in '..\src\VCL\Controls\Janua.VCL.EnhCRDBGrid.pas',
+  Janua.Win.CFCrypt in '..\src\Win\Janua.Win.CFCrypt.pas',
+  Janua.Win.Export in '..\src\Win\Janua.Win.Export.pas',
+  Janua.VCL.AppController in '..\src\VCL\System\Janua.VCL.AppController.pas',
+  uVCLGnosticeReportEngine in '..\src\VCL\Forms\uVCLGnosticeReportEngine.pas' {DataModule1: TDataModule},
+  Janua.Tms.Controls.Impl in '..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas';
+
+end.

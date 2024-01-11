@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link href="../styles.css" rel="stylesheet"><title>TscGPGearDial</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscGPGearDial</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGPMeters.pas</p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Rounded dial control with big rotation angle
+</p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MinValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Min value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">MaxValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Max value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">Value</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Double</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Current value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Fill color for control
+shape (clNone - fill is missing)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value of the fill
+color for control shape</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillStyle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGPShapeFillStyle =
+(scgpsfColor, scgpsfGradient);<br>
+<br>
+scgpsfColor - solid color<br>
+scgpsfGradient - auto gradient from FillColor</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FillGradientAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle of fill gradient</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the frame
+(clNone -&nbsp;frame is invisible)</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FrameWidth</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Width of the frame</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">CanFocused</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enable focus on control</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">KnobColor</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color of the knob</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">KnobColorAlpha</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Byte</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Alpha value for knob
+color</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">RotationAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Rotation angle. It can
+be &gt; 360, for example, 3600 - 10 turns</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">StartAngle</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Angle to start rotation</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageCollection</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscCustomImageCollection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1"><a href="TscGPImageCollection.html">Image collection</a>&nbsp;component</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of image from <a href="TscGPImageCollection.html">image collection</a></td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowImage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show / Hide image</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">FormatStrValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Float format to display
+value</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">ShowValue</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+shows value</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1"><span style="font-weight: bold;">DrawTextMode</span></td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscDrawTextMode</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscDrawTextMode =
+(scdtmGDI, scdtmGDIPlus);<br>
+<br>
+scdtmGDI - draw text with GDI methods<br>
+scdtmGDIPlus - draw text with GDI+ methods<br>
+<br>
+Use&nbsp;scdtmGDIPlus value on the&nbsp;Fluent UI background
+(see <a href="TscStyledForm.html">TscStyledForm</a>
+component)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnChange</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event when value changed</td>
+</tr>
+<tr>
+<td style="width: 189px;" bgcolor="#efefef" height="1">OnLastChange</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Event when value changed
+and you release thumb capture</td>
+</tr>
+</tbody>
+</table>
+&nbsp;<br>
+&nbsp;<small><span style="font-weight: bold;"></span></small><br>
+<p><br>
+</p>
+</body></html>

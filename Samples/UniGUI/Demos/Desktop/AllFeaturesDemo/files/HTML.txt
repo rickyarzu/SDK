@@ -1,0 +1,40 @@
+<script type="text/javascript">
+function removeOption()
+{
+var x=document.getElementById("mySelect");
+x.remove(x.selectedIndex);
+}
+</script>
+
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+<input type="button" onclick="removeOption()" value="Remove selected option">
+
+<br><br><br>
+
+<script type="text/javascript">
+function changeBorder()
+{
+document.getElementById('myTable').border="10";
+}
+</script>
+
+<table border="1" id="myTable">
+<tr>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>300</td>
+<td>400</td>
+</tr>
+</table>
+<br />
+<input type="button" onclick="changeBorder()" value="Change Border">
+
+<br><br><br>
+<a href='http://www.w3schools.com/' target='new'>Code samples taken from W3Schools</a>

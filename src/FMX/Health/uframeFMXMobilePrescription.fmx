@@ -1,0 +1,475 @@
+object frameFMXMobilePrescription: TframeFMXMobilePrescription
+  Size.Width = 326.000000000000000000
+  Size.Height = 618.000000000000000000
+  Size.PlatformDefault = False
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 326.000000000000000000
+    Size.Height = 618.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 17
+    TabPosition = None
+    Sizes = (
+      326s
+      618s
+      326s
+      618s)
+    object TabItem71Personal: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem71Personal'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object VertScrollBoxPersonal: TVertScrollBox
+        Align = Client
+        Size.Width = 326.000000000000000000
+        Size.Height = 618.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 326.000000000000000000
+        Viewport.Height = 618.000000000000000000
+        object LayoutPrescription: TLayout
+          Align = Client
+          Size.Width = 326.000000000000000000
+          Size.Height = 618.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 18
+          object edFirstBarcode: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 0
+            KeyboardType = NumberPad
+            Position.X = 2.000000000000000000
+            Position.Y = 85.000000000000000000
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Primo Codice a Barre Ricetta'
+          end
+          object edLastBarcode: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 1
+            KeyboardType = NumberPad
+            Position.X = 2.000000000000000000
+            Position.Y = 121.000000000000000000
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Secondo Codice  a Barre Ricetta'
+          end
+          object edLastName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 2
+            Position.X = 2.000000000000000000
+            Position.Y = 157.000000000000000000
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Cognome Intestatario Ricetta'
+          end
+          object edFirstName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 3
+            Position.X = 2.000000000000000000
+            Position.Y = 193.000000000000000000
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Nome Intestatario Ricetta'
+          end
+          object Label1: TLabel
+            Align = Top
+            Position.Y = 262.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Priorit'#224
+            TabOrder = 4
+          end
+          object pnlPriority: TPanel
+            Align = Top
+            Position.Y = 292.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object rbU: TRadioButton
+              GroupName = 'Priority'
+              Position.X = 32.000000000000000000
+              Size.Width = 57.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 39
+              Text = 'U'
+            end
+            object rbB: TRadioButton
+              GroupName = 'Priority'
+              Position.X = 96.000000000000000000
+              Size.Width = 57.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 38
+              Text = 'B'
+            end
+            object rbD: TRadioButton
+              GroupName = 'Priority'
+              Position.X = 160.000000000000000000
+              Size.Width = 57.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 37
+              Text = 'D'
+            end
+            object rbP: TRadioButton
+              GroupName = 'Priority'
+              Position.X = 224.000000000000000000
+              Size.Width = 57.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 35
+              Text = 'P'
+            end
+          end
+          object edFiscalCode: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 7
+            Position.X = 2.000000000000000000
+            Position.Y = 229.000000000000000000
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Codice Fiscale Italiano'
+            CharCase = ecUpperCase
+          end
+          object btnCopyData: TButton
+            Align = Top
+            Size.Width = 326.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 17
+            Text = 'Copia dati da Impostazioni App'
+          end
+          object btnNext: TButton
+            Align = Top
+            Position.Y = 41.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 18
+            Text = 'Prosegui'
+            OnClick = btnNextClick
+          end
+        end
+      end
+    end
+    object TabItem72Prescription: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem72Prescription'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object VertScrollBox1: TVertScrollBox
+        Align = Client
+        Size.Width = 326.000000000000000000
+        Size.Height = 618.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 326.000000000000000000
+        Viewport.Height = 618.000000000000000000
+        object Layout1: TLayout
+          Align = Client
+          Size.Width = 326.000000000000000000
+          Size.Height = 618.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Panel1: TPanel
+            Align = Top
+            Position.Y = 135.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 10
+            object Label3: TLabel
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 237.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              Text = 'Codice ASL'
+              TabOrder = 0
+            end
+            object Edit1: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Right
+              TabOrder = 1
+              Position.X = 241.000000000000000000
+              Position.Y = 2.000000000000000000
+              Padding.Left = 2.000000000000000000
+              Padding.Top = 2.000000000000000000
+              Padding.Right = 2.000000000000000000
+              Padding.Bottom = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 81.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              CharCase = ecUpperCase
+            end
+          end
+          object Panel2: TPanel
+            Align = Top
+            Position.Y = 101.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 11
+            object Label6: TLabel
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 237.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              Text = 'Sigla Provincia'
+              TabOrder = 0
+            end
+            object edProvince: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Right
+              TabOrder = 1
+              Position.X = 241.000000000000000000
+              Position.Y = 2.000000000000000000
+              Padding.Left = 2.000000000000000000
+              Padding.Top = 2.000000000000000000
+              Padding.Right = 2.000000000000000000
+              Padding.Bottom = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 81.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              CharCase = ecUpperCase
+            end
+          end
+          object pnlExemption: TPanel
+            Align = Top
+            Position.Y = 267.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 7
+            object ckbExemption: TSwitch
+              Align = Right
+              IsChecked = True
+              Padding.Left = 2.000000000000000000
+              Padding.Top = 2.000000000000000000
+              Padding.Right = 2.000000000000000000
+              Padding.Bottom = 2.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Position.X = 246.000000000000000000
+              Position.Y = 4.000000000000000000
+              Size.Width = 78.000000000000000000
+              Size.Height = 26.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              OnExit = ckbExemptionExit
+            end
+            object lbExemption: TLabel
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 242.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              Text = 'Non Esente'
+              TabOrder = 1
+            end
+          end
+          object pnlExemptionCode: TPanel
+            Align = Top
+            Position.Y = 233.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+            object lbExemptionCode: TLabel
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 237.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              Text = 'Codice Esenzione'
+              TabOrder = 0
+            end
+            object edExemptionCode: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Right
+              TabOrder = 1
+              Position.X = 241.000000000000000000
+              Position.Y = 2.000000000000000000
+              Padding.Left = 2.000000000000000000
+              Padding.Top = 2.000000000000000000
+              Padding.Right = 2.000000000000000000
+              Padding.Bottom = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 81.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              CharCase = ecUpperCase
+            end
+          end
+          object pnlIncomeExemption: TPanel
+            Align = Top
+            Position.Y = 199.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 9
+            object ckbIncomeExemption: TSwitch
+              Align = Right
+              IsChecked = False
+              Padding.Left = 2.000000000000000000
+              Padding.Top = 2.000000000000000000
+              Padding.Right = 2.000000000000000000
+              Padding.Bottom = 2.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Position.X = 246.000000000000000000
+              Position.Y = 4.000000000000000000
+              Size.Width = 78.000000000000000000
+              Size.Height = 26.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              OnExit = ckbIncomeExemptionExit
+            end
+            object lbIncomeExemption: TLabel
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 242.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              Text = 'Esente per Reddito'
+              TabOrder = 1
+            end
+          end
+          object lbPrescriptionExemption: TLabel
+            Align = Top
+            Margins.Left = 4.000000000000000000
+            Position.X = 4.000000000000000000
+            Position.Y = 169.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Esenzioni Ricetta'
+            TabOrder = 6
+          end
+          object btnSavePrescription: TButton
+            Align = Top
+            Size.Width = 326.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 21
+            Text = 'Registra Ricetta'
+            OnClick = btnSavePrescriptionClick
+          end
+          object Label2: TLabel
+            Align = Top
+            Position.Y = 41.000000000000000000
+            Size.Width = 326.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Data emissione Ricetta'
+            TabOrder = 4
+          end
+          object edPrescriptionDate: TDateEdit
+            Date = 42850.000000000000000000
+            DateFormatKind = Long
+            Align = Top
+            Margins.Left = 2.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Position.X = 2.000000000000000000
+            Position.Y = 71.000000000000000000
+            Size.Width = 322.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+          end
+        end
+      end
+    end
+  end
+  object lbError: TLabel
+    Align = Top
+    StyledSettings = [Family, Size, Style]
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 43.000000000000000000
+    Size.Width = 322.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
+    TextSettings.HorzAlign = Center
+    Text = 'Errore'
+    Visible = False
+    TabOrder = 18
+  end
+end

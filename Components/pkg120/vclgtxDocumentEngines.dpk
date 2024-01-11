@@ -1,0 +1,52 @@
+package vclgtxDocumentEngines;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Gnostice Document Studio Delphi'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  gtxDocumentStudioCore,
+  vclgtxDocumentStudioCore,
+  gtxDocumentEngines,
+  vcl,
+  vclimg;
+
+contains
+  vclgtxStandardDocuments in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\vclgtxStandardDocuments.pas',
+  vclgtxPDFDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\vclgtxPDFDocument.pas',
+  vclgtxDOCXDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\vclgtxDOCXDocument.pas',
+  vclgtxCustomWriter in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\writers\vclgtxCustomWriter.pas',
+  vclgtxCustomWriterHelper in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\writers\vclgtxCustomWriterHelper.pas',
+  vclgtxDocConsts in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\writers\vclgtxDocConsts.pas',
+  vclgtxFilters in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\writers\vclgtxFilters.pas',
+  vclgtxDOCDocument in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\vclgtxDOCDocument.pas',
+  vclgtxMetafileProcessor in '..\..\..\Libraries\Gnostice Document Studio\source\DocumentEngines\writers\vclgtxMetafileProcessor.pas';
+
+end.

@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscButton</title>
+
+</head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscButton</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scControls.pas</p>
+<h1></h1>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Button
+control with many styles and addtional features</p>
+<p></p>
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 237px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Title</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">String</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled animation on
+button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">TitleFont</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TFont</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Font for Title</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Images</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TCustomImageList</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Images for button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for normal
+state</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">HotImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for hot state</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">PressedImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for pressed
+state</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">FocusedImageIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for focused
+state</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Margin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Margin for text and
+image (-1 - image and text in center)</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Spacing</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Spacing between image
+and text</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Layout</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TButtonLayout</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Layout for image</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Animation</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled animation on
+button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">CanFocused</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled focus state for
+button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">StyleKind</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscButtonStyleKind</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Style for button...<br>
+<br>
+TscButtonStyleKind = (scbsPushButton, scbsToolButton,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scbsPushButtonTransparent, scbsToolButtonTransparent, scbsTransparent,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scbsLink,
+scbsHeaderSection, scbsUpSpinButton, scbsDownSpinButton,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scbsLeftSpinButton, scbsRightSpinButton, scbsDropDownButton,
+scbsColorButton, scCustomImage, scCustomImageOverContent,<br>
+scbsTab, scbsTabTransparent, &nbsp;scbsSegmentedLeft,
+scbsSegmentedMiddle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scbsSegmentedRight, scbsSegmentedToolLeft,
+scbsSegmentedToolMiddle,&nbsp; scbsSegmentedToolRight,
+scbsDropDownCombo);<br>
+</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">RepeatClick</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enabled repeat of
+OnClick event until buttons is pressed</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">RepeatClickInterval</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Interval for timer to
+repeat OnClick event</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">GlowEffect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscButtonGlowEffect.html">TButtonGlowEffect</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Adjust glow effect for
+button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">DropDownMenu</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TPopupMenu</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Drop down menu</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">SplitButton</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button has
+splitter for drop down menu</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ShowFocuRect</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button draw
+focus rect</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">Down</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Pressed</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Set pressed state for
+button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">GroupIndex</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Index of button's
+group&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">AllowAllUp</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Specifies whether all
+buttons in the group that contains this&nbsp; button can be
+unselected at the same time</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">GalleryMenu</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscGalleryMenu.html">TscGalleryMenu</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1"><a href="TscGalleryMenu.html">TscGalleryMenu</a> component</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">UseGalleryMenuImage</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button use
+image from GalleryMenu item</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">UseGalleryMenuCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button use
+caption form GalleryMenu item</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">TransparentBackground</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if True then button has
+transparent background</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ColorOptions</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscButtonColorOptions</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Property
+to adjust button with StyleKind = scbsColorButton(color for boby, frame
+and font for all button states (normal,
+hot, pressed, focused disabled)). If color value is clNone then color
+is
+transparent.<br>
+Also use StyleColors (default value is True) property to adjust colors
+from
+styles(for example, if you set some color to clBtnFace or clHighLight
+then button will get this color from style.</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">CustomImages</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageCollection
+component. Bitmap property must be defined in all items, which you will
+use for custom style</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">CustomImageNormalIndex<br>
+CustomImageHotIndex<br>
+CustomImagePressedIndex<br>
+CustomImageFocusedIndex&nbsp;<br>
+CustomImageDisabledIndex&nbsp;</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for button
+state</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ShowGalleryMenuFromTop</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">GalleryMenu will be show
+from top of the button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ShowGalleryMenuFromRight</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">GalleryMenu will be show
+from right of the button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ShowMenuArrow</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">if GalleryMenu
+&lt;&gt; nil or DropDownMenu &lt;&gt; nil then arrow
+will be visible on the button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ShowCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Show caption in button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">WidthWithCaption,<br>
+WidthWithoutCaption</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use these values of
+button width when you set ShowCaption property.</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ArrowPosition</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscArrowPosition</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscArrowPosition =
+(scapRight, scapBottom);<br>
+<br>
+Positiion of the arrow in button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ArrowDirection</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscArrowDirection</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscArrowPosition =
+(scadDefault, scadRight);<br>
+<br>
+Direction of the arrow in button.<br>
+If Value is scadRight then drop down menu position will be from right
+also.</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">UseImagesFromAction</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+will uses Images from action</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">UseImageIndexFromAction</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control
+will uses image index from action</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">WordWrap</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then caption of
+button will be with word wrap.</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">CustomDropDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button will
+work with dropdown form.<br>
+<br>
+<a href="TscStyledForm.html">See also TscStyledForm</a></td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ImageMargin</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Define
+area for image in button (Margin property will be ignored). This
+property is really useful, for example, on TscSplitView control. Set
+ImageMargin = TscSplitView.CompactWidth and buttons will scale area for
+image properly
+(Image always will be in center of rectangle, which defined by this
+property)</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">ToggleMode</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then button can
+toggle down state (checkbox behavior). Check Down property in OnClick
+event.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<h1><font face="Helvetica, Arial">Events</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 237px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">OnPaint</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscPaintButtonEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscPaintButtonEvent =
+procedure(ACanvas: TCanvas; ARect: TRect;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AState:
+TscsCtrlState) of object;<br>
+Use this event to draw your content in button</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">OnDropDown</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TNotifyEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this event to call
+dropdown form:<br>
+<br>
+MyDropDownForm.scStyledForm1.DropDown(scButton1);<br>
+<br>
+<a href="TscStyledForm.html">See also TscStyledForm</a><br>
+</td>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">OnCloseUp</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscButtonCloseUpEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">&nbsp;TscButtonCloseUpEvent
+= procedure(Sender: TObject; AAcceptChanges: Boolean) of object;<br>
+<br>
+Use this event after closing of dropdown form:<br>
+<br>
+if AAcceptChanges then<br>
+&nbsp;&nbsp;&nbsp; scButton1.Caption
+:=MyDropDownForm.scListView1.Selected.Caption;<br>
+<br>
+<a href="TscStyledForm.html">See also TscStyledForm</a></td>
+</tr>
+</tbody>
+</table>
+<p><small><span style="font-weight: bold;"></span></small></p>
+<p><small><span style="font-weight: bold;"></span></small></p>
+<h1><font face="Helvetica, Arial">Methods</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 237px;" height="12">Name</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">CloseUp</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Use this method on
+dropdown form to redraw button after closing of dropdown form...<br>
+<br>
+procedure TDropDownForm.scStyledForm1CloseUp(ADropDownForm: TCustomForm;<br>
+&nbsp; ADropDownControl: TControl; AAcceptChanges: Boolean);<br>
+begin<br>
+&nbsp; if ADropDownControl &lt;&gt; nil then<br>
+&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp; if ADropDownControl is TscButton then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TscButton(ADropDownControl).CloseUp(AAcceptChanges);<br>
+&nbsp; end;<br>
+end;</td>
+</tr>
+</tbody>
+</table>
+<p><small><span style="font-weight: bold;"></span></small></p>
+<p><small><span style="font-weight: bold;"><big>Note:</big></span></small></p>
+<p><span style="color: red;">&nbsp;&nbsp;&nbsp;
+<span style="color: black;">Use TControl.StyleElements
+property to adjust custom colors for client and font in all controls
+when VCL Style is enabled!</span></span><br style="color: red;">
+<br>
+</p>
+</body></html>

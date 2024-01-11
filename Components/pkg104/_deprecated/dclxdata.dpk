@@ -1,0 +1,64 @@
+package dclxdata;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS XData - Design-Time Package'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dcltmsbcl,
+  dcldb,
+  xdata,
+  dclaurelius;
+
+contains
+  Scaffolding.SourceGenerator in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.SourceGenerator.pas',
+  Scaffolding.Types in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Types.pas',
+  Scaffolding.Wizard in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.pas',
+  Scaffolding.Wizard.Form in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Form.pas' {FScaffoldingWizard},
+  Scaffolding.Wizard.Headers in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Headers.pas' {FScaffoldingWizardHeaders},
+  Scaffolding.Wizard.Registration in '..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Registration.pas',
+  XData.Design.DatasetDesigner in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.DatasetDesigner.pas' {fmXDataFieldLoader},
+  XData.Design.DatasetEditor in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.DatasetEditor.pas',
+  XData.Design.Editors in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.Editors.pas',
+  XData.Design.Register in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.Register.pas',
+  XData.Design.SourceCreator in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.SourceCreator.pas',
+  XData.Design.WebDatasetEditor in '..\..\..\tmssoftware\TMS XData\source\design\XData.Design.WebDatasetEditor.pas',
+  XData.Resource in '..\..\..\tmssoftware\TMS XData\source\design\XData.Resource.pas',
+  XData.Wizard in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.pas',
+  XData.Wizard.Console in '..\..\..\tmssoftware\TMS XData\Source\design\XData.Wizard.Console.pas',
+  XData.Wizard.Registration in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Registration.pas',
+  XData.Wizard.Service in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.pas',
+  XData.Wizard.Service.CodeGenerator in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.CodeGenerator.pas',
+  XData.Wizard.Service.Form in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Form.pas' {FServiceWizardForm},
+  XData.Wizard.Service.Registration in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Registration.pas',
+  XData.Wizard.Service.Settings in '..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Settings.pas',
+  XData.Wizard.Vcl in '..\..\..\tmssoftware\TMS XData\Source\design\XData.Wizard.Vcl.pas';
+
+end.

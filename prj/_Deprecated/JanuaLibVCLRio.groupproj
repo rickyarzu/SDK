@@ -1,0 +1,288 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{266477C7-9EA4-4160-AC05-726A5DDC3D05}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\VCL_FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\TMS Component Pack\tmsdXE12.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\TMS Component Pack\tmsexdXE12.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\TMS WebGMaps\TMSWebGMapsPkgDXE12.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Z:\Januaproject\Delphi\Dev\Library\PNGComponents\Packages\Rio\Delphi\PngComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\Shared3\Source\Rtl\gtRtlD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\Shared3\Source\Filters\gtFiltersD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\Shared3\Source\PDFFontProcessor\gtFontD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\Shared3\Source\PDFCrypt\gtCryptD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\Shared3\Source\Compression\gtCompressionD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\eDocEngine VCL\Source\gtDocEngD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Libraries\eDocEngine VCL\Source\TMS\DCLgtAdvGridExpD26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPgUnidacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaOraUniDacXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControlsXE103Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControlsXE103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaLegacyVCLXE103.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FlexCel_Core">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Core:Make">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Clean">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Make">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\FlexCel_XlsAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\VCL_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\VCL_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Make">
+        <MSBuild Projects="..\..\tmssoftware\FlexCelVCLNT\Packages\dRio\VCL_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="tmsdXE12">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsdXE12.dproj"/>
+    </Target>
+    <Target Name="tmsdXE12:Clean">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsdXE12.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tmsdXE12:Make">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsdXE12.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="tmsexdXE12">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsexdXE12.dproj"/>
+    </Target>
+    <Target Name="tmsexdXE12:Clean">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsexdXE12.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tmsexdXE12:Make">
+        <MSBuild Projects="..\..\tmssoftware\TMS Component Pack\tmsexdXE12.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE12">
+        <MSBuild Projects="..\..\tmssoftware\TMS WebGMaps\TMSWebGMapsPkgDXE12.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE12:Clean">
+        <MSBuild Projects="..\..\tmssoftware\TMS WebGMaps\TMSWebGMapsPkgDXE12.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDXE12:Make">
+        <MSBuild Projects="..\..\tmssoftware\TMS WebGMaps\TMSWebGMapsPkgDXE12.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12:Clean">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDXE12:Make">
+        <MSBuild Projects="..\..\tmssoftware\TMS FMX WebGMaps\TMSFMXWebGMapsPkgDXE12.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PngComponentsD">
+        <MSBuild Projects="Z:\Januaproject\Delphi\Dev\Library\PNGComponents\Packages\Rio\Delphi\PngComponentsD.dproj"/>
+    </Target>
+    <Target Name="PngComponentsD:Clean">
+        <MSBuild Projects="Z:\Januaproject\Delphi\Dev\Library\PNGComponents\Packages\Rio\Delphi\PngComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PngComponentsD:Make">
+        <MSBuild Projects="Z:\Januaproject\Delphi\Dev\Library\PNGComponents\Packages\Rio\Delphi\PngComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtRtlD26">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Rtl\gtRtlD26.dproj"/>
+    </Target>
+    <Target Name="gtRtlD26:Clean">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Rtl\gtRtlD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtRtlD26:Make">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Rtl\gtRtlD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFiltersD26">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Filters\gtFiltersD26.dproj"/>
+    </Target>
+    <Target Name="gtFiltersD26:Clean">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Filters\gtFiltersD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFiltersD26:Make">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Filters\gtFiltersD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFontD26">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFFontProcessor\gtFontD26.dproj"/>
+    </Target>
+    <Target Name="gtFontD26:Clean">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFFontProcessor\gtFontD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFontD26:Make">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFFontProcessor\gtFontD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCryptD26">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFCrypt\gtCryptD26.dproj"/>
+    </Target>
+    <Target Name="gtCryptD26:Clean">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFCrypt\gtCryptD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCryptD26:Make">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\PDFCrypt\gtCryptD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCompressionD26">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Compression\gtCompressionD26.dproj"/>
+    </Target>
+    <Target Name="gtCompressionD26:Clean">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Compression\gtCompressionD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCompressionD26:Make">
+        <MSBuild Projects="..\..\Libraries\Shared3\Source\Compression\gtCompressionD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEngD26">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\gtDocEngD26.dproj"/>
+    </Target>
+    <Target Name="gtDocEngD26:Clean">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\gtDocEngD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEngD26:Make">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\gtDocEngD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26:Clean">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExpD26:Make">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\QR\DCLgtQRExpD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExpD26">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\TMS\DCLgtAdvGridExpD26.dproj"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExpD26:Clean">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\TMS\DCLgtAdvGridExpD26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExpD26:Make">
+        <MSBuild Projects="..\..\Libraries\eDocEngine VCL\Source\TMS\DCLgtAdvGridExpD26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Clean">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE103Rio:Make">
+        <MSBuild Projects="JanuaCoreXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Clean">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnidacXE103:Make">
+        <MSBuild Projects="JanuaPgUnidacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Clean">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOraUniDacXE103:Make">
+        <MSBuild Projects="JanuaOraUniDacXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio:Clean">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsXE103Rio:Make">
+        <MSBuild Projects="JanuaFMXControlsXE103Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103">
+        <MSBuild Projects="JanuaVCLControlsXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103:Clean">
+        <MSBuild Projects="JanuaVCLControlsXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsXE103:Make">
+        <MSBuild Projects="JanuaVCLControlsXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE103">
+        <MSBuild Projects="JanuaLegacyVCLXE103.dproj"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE103:Clean">
+        <MSBuild Projects="JanuaLegacyVCLXE103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaLegacyVCLXE103:Make">
+        <MSBuild Projects="JanuaLegacyVCLXE103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;tmsdXE12;tmsexdXE12;TMSWebGMapsPkgDXE12;TMSFMXWebGMapsPkgDXE12;PngComponentsD;gtRtlD26;gtFiltersD26;gtFontD26;gtCryptD26;gtCompressionD26;gtDocEngD26;DCLgtQRExpD26;DCLgtAdvGridExpD26;JanuaCoreXE103Rio;JanuaPgUnidacXE103;JanuaOraUniDacXE103;JanuaFMXControlsXE103Rio;JanuaVCLControlsXE103;JanuaLegacyVCLXE103"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FlexCel_Core:Clean;FlexCel_XlsAdapter:Clean;VCL_FlexCel_Core:Clean;tmsdXE12:Clean;tmsexdXE12:Clean;TMSWebGMapsPkgDXE12:Clean;TMSFMXWebGMapsPkgDXE12:Clean;PngComponentsD:Clean;gtRtlD26:Clean;gtFiltersD26:Clean;gtFontD26:Clean;gtCryptD26:Clean;gtCompressionD26:Clean;gtDocEngD26:Clean;DCLgtQRExpD26:Clean;DCLgtAdvGridExpD26:Clean;JanuaCoreXE103Rio:Clean;JanuaPgUnidacXE103:Clean;JanuaOraUniDacXE103:Clean;JanuaFMXControlsXE103Rio:Clean;JanuaVCLControlsXE103:Clean;JanuaLegacyVCLXE103:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FlexCel_Core:Make;FlexCel_XlsAdapter:Make;VCL_FlexCel_Core:Make;tmsdXE12:Make;tmsexdXE12:Make;TMSWebGMapsPkgDXE12:Make;TMSFMXWebGMapsPkgDXE12:Make;PngComponentsD:Make;gtRtlD26:Make;gtFiltersD26:Make;gtFontD26:Make;gtCryptD26:Make;gtCompressionD26:Make;gtDocEngD26:Make;DCLgtQRExpD26:Make;DCLgtAdvGridExpD26:Make;JanuaCoreXE103Rio:Make;JanuaPgUnidacXE103:Make;JanuaOraUniDacXE103:Make;JanuaFMXControlsXE103Rio:Make;JanuaVCLControlsXE103:Make;JanuaLegacyVCLXE103:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

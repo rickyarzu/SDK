@@ -1,0 +1,206 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3E20D68D-BE72-4F57-8EA4-F3315298C36D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="uSynEdit_R2023.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uSynEdit_D2023.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniTools27.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uIndy27.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27dcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27Chart.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniGUI27Chartdcl.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="uSynEdit_R2023">
+        <MSBuild Projects="uSynEdit_R2023.dproj"/>
+    </Target>
+    <Target Name="uSynEdit_R2023:Clean">
+        <MSBuild Projects="uSynEdit_R2023.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uSynEdit_R2023:Make">
+        <MSBuild Projects="uSynEdit_R2023.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uSynEdit_D2023">
+        <MSBuild Projects="uSynEdit_D2023.dproj"/>
+    </Target>
+    <Target Name="uSynEdit_D2023:Clean">
+        <MSBuild Projects="uSynEdit_D2023.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uSynEdit_D2023:Make">
+        <MSBuild Projects="uSynEdit_D2023.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniTools27">
+        <MSBuild Projects="uniTools27.dproj"/>
+    </Target>
+    <Target Name="uniTools27:Clean">
+        <MSBuild Projects="uniTools27.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniTools27:Make">
+        <MSBuild Projects="uniTools27.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uIndy27">
+        <MSBuild Projects="uIndy27.dproj"/>
+    </Target>
+    <Target Name="uIndy27:Clean">
+        <MSBuild Projects="uIndy27.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uIndy27:Make">
+        <MSBuild Projects="uIndy27.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27Core">
+        <MSBuild Projects="uniGUI27Core.dproj"/>
+    </Target>
+    <Target Name="uniGUI27Core:Clean">
+        <MSBuild Projects="uniGUI27Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27Core:Make">
+        <MSBuild Projects="uniGUI27Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27">
+        <MSBuild Projects="uniGUI27.dproj"/>
+    </Target>
+    <Target Name="uniGUI27:Clean">
+        <MSBuild Projects="uniGUI27.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27:Make">
+        <MSBuild Projects="uniGUI27.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27VCL">
+        <MSBuild Projects="uniGUI27VCL.dproj"/>
+    </Target>
+    <Target Name="uniGUI27VCL:Clean">
+        <MSBuild Projects="uniGUI27VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27VCL:Make">
+        <MSBuild Projects="uniGUI27VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27dcl">
+        <MSBuild Projects="uniGUI27dcl.dproj"/>
+    </Target>
+    <Target Name="uniGUI27dcl:Clean">
+        <MSBuild Projects="uniGUI27dcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27dcl:Make">
+        <MSBuild Projects="uniGUI27dcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27Chart">
+        <MSBuild Projects="uniGUI27Chart.dproj"/>
+    </Target>
+    <Target Name="uniGUI27Chart:Clean">
+        <MSBuild Projects="uniGUI27Chart.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27Chart:Make">
+        <MSBuild Projects="uniGUI27Chart.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniGUI27Chartdcl">
+        <MSBuild Projects="uniGUI27Chartdcl.dproj"/>
+    </Target>
+    <Target Name="uniGUI27Chartdcl:Clean">
+        <MSBuild Projects="uniGUI27Chartdcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniGUI27Chartdcl:Make">
+        <MSBuild Projects="uniGUI27Chartdcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="uSynEdit_R2023;uSynEdit_D2023;uniTools27;uIndy27;uniGUI27Core;uniGUI27;uniGUI27VCL;uniGUI27dcl;uniGUI27Chart;uniGUI27Chartdcl"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="uSynEdit_R2023:Clean;uSynEdit_D2023:Clean;uniTools27:Clean;uIndy27:Clean;uniGUI27Core:Clean;uniGUI27:Clean;uniGUI27VCL:Clean;uniGUI27dcl:Clean;uniGUI27Chart:Clean;uniGUI27Chartdcl:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="uSynEdit_R2023:Make;uSynEdit_D2023:Make;uniTools27:Make;uIndy27:Make;uniGUI27Core:Make;uniGUI27:Make;uniGUI27VCL:Make;uniGUI27dcl:Make;uniGUI27Chart:Make;uniGUI27Chartdcl:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Libs W32/64'">
+        <BuildGroupProject Include="uniGUI27.dproj">
+            <ProjectGuid>{114813FB-1313-4DCF-9ABC-E1D6ADE85DE3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniGUI27dcl.dproj">
+            <ProjectGuid>{DDEF0E62-27DD-47BF-9C6E-93E65EE6C813}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniGUI27VCL.dproj">
+            <ProjectGuid>{2EF1B159-9AA6-4F35-8892-037865200788}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniTools27.dproj">
+            <ProjectGuid>{6C49E2A3-EB4C-4DD2-9544-D92981DAFF83}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniGUI27Core.dproj">
+            <ProjectGuid>{153AF22D-9CA4-47AE-8FF7-6FB4C36E2462}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniGUI27Chart.dproj">
+            <ProjectGuid>{F28BC24D-B5A2-45A6-A572-A6E3C03DF9AC}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uniGUI27Chartdcl.dproj">
+            <ProjectGuid>{57150805-37A6-4AA7-8EB0-F2BE115DCBFD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uIndy27.dproj">
+            <ProjectGuid>{502AB3DF-E9A4-445E-A7D8-D35463537909}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uSynEdit_R2023.dproj">
+            <ProjectGuid>{3507F48E-BF03-45CD-BC3E-45F492538C20}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="uSynEdit_D2023.dproj">
+            <ProjectGuid>{11A1E859-62B7-4982-9F5F-B1835CAB0455}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

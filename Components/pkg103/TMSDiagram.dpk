@@ -1,0 +1,76 @@
+﻿package TMSDiagram;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Diagram Studio - Core Package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  atDiagram in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\atDiagram.pas',
+  DgrButtons in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DgrButtons.pas',
+  dgrclasses in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\dgrclasses.pas',
+  dgrcombo in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\dgrcombo.pas',
+  DgrEditorActions in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DgrEditorActions.pas',
+  dgrgdipapi in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\dgrgdipapi.pas',
+  dgrgdipobj in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\dgrgdipobj.pas',
+  dgrselectors in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\dgrselectors.pas',
+  diagramactns in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\diagramactns.pas',
+  DiagramEditor in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramEditor.pas',
+  DiagramExtra in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramExtra.pas',
+  diagramgradient in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\diagramgradient.pas' {GradientEditor},
+  DiagramNavigator in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramNavigator.pas',
+  DiagramPreview in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramPreview.pas' {fmDiagramPreview},
+  DiagramShadow in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramShadow.pas' {ShadowEditor},
+  DiagramUtils in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\DiagramUtils.pas',
+  Direct2dClasses in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\Direct2dClasses.pas',
+  fDgrLayerManager in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fDgrLayerManager.pas' {DgrLayerManager},
+  fDgrLibraryManagerEditor in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fDgrLibraryManagerEditor.pas' {DgrLibraryManagerEditor},
+  fdgrpagesettings in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fdgrpagesettings.pas' {fmDgrPageSettings},
+  fDgrPrintDialog in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fDgrPrintDialog.pas' {fmDgrPrintDialog},
+  fDiagramEditor in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fDiagramEditor.pas',
+  fLibItemEditor in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\fLibItemEditor.pas' {fmLibItemEditor},
+  gdipclasses in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\gdipclasses.pas',
+  LiveDiagram in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\LiveDiagram.pas',
+  LiveFlowChart in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\LiveFlowChart.pas',
+  LiveStateChart in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\LiveStateChart.pas',
+  ArrowBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\ArrowBlocks.pas',
+  DfdBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\DfdBlocks.pas',
+  ElectricBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\ElectricBlocks.pas',
+  ElectricBlocks2 in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\ElectricBlocks2.pas',
+  FlowchartBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\FlowchartBlocks.pas',
+  MiscBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\MiscBlocks.pas',
+  UMLBlocks in '..\..\..\tmssoftware\TMS Diagram Studio\source\objects\UMLBlocks.pas',
+  AutoLayoutDiagram in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\AutoLayoutDiagram.pas',
+  AutoLayoutExecuter in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\AutoLayoutExecuter.pas',
+  AutoLayoutForce in '..\..\..\tmssoftware\TMS Diagram Studio\source\core\AutoLayoutForce.pas';
+
+end.

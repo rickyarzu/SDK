@@ -1,0 +1,12 @@
+{$I DacVer.inc}
+
+//////////////////////////////////////////////////
+//  Universal Data Access Components
+//  Copyright © 1998-2022 Devart. All right reserved.
+//////////////////////////////////////////////////
+
+const
+  UniDACVersion = '9.3.0';
+
+
+

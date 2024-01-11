@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="stylesheet" href="../styles.css"><title>TscCustomGrid</title></head>
+<body>
+<font face="Helvetica, Arial"><a name="link89">
+</a></font>
+<h1 class="bigH">TscCustomGrid</h1>
+<h1><font><font face="Helvetica, Arial">Unit</font></font></h1>
+<p>scGrids.pas</p>
+<p><span style="font-weight: bold;">TscCustomGrid=&nbsp;
+class(TscCustomControl)</span></p>
+<h1><font face="Helvetica, Arial">Description</font></h1>
+<p>Full analogue of standard TCustomGrid control with additional features</p>
+
+<h1><font face="Helvetica, Arial">Properties</font></h1>
+<p>&nbsp;</p>
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1">
+<tbody>
+<tr bgcolor="#e0e0e0">
+<th style="width: 189px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><td style="width: 189px;" bgcolor="#efefef" height="1">CustomImages</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageCollection component. Bitmap property must be defined in all items, which you will use for custom style</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">Wallpapers</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1"><a href="TscImageCollection.html">TscImageCollection</a></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscImageCollection component for wallpaper</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CustomBackgroundImageIndex<br></td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image for custom background</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">CustomOverContentImageIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer<br></td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image, which will be over grid</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">WallpaperIndex</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Integer</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Image index for wallpaper</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">TransparentEditor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then grid editor will be fully transparent</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">LinesColor</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TColor</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Color for lines</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">ShowFocusRect</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Enanble / Disable drawing of focus rect</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">BackgroundStyle</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGridBackgroundStyle</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGridBackgroundStyle = (scgbColor, scbgbFormBackground, scgbTransparent);<br>Background style for grid</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">SelectionStyle</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscSelectionStyle</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">Kind of selection:<br>
+<br>
+TscSelectionStyle = (scstStyled, scstColor);<br>
+scstStyled - draw selection as bitmap from theme or VCL Style<br>
+scstColor - draw selection as highlight color from theme or VCL Style</td></tr><tr><td style="width: 189px;" bgcolor="#efefef" height="1">AlternateRow</td><td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">Boolean</td><td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">If True then control has
+alternate row color</td></tr></tbody>
+</table>
+<br>
+<p>&nbsp;</p><h1><font face="Helvetica, Arial">Events</font></h1>Control has a events as in standard TDBGrid control and some additional.
+<p>&nbsp;</p>
+
+
+<table style="background-color: rgb(153, 153, 153); width: 90%; height: 1px;" cellpadding="3" cellspacing="1"><tbody><tr bgcolor="#e0e0e0">
+<th style="width: 237px;" height="12">Name</th>
+<th style="width: 227px;" height="12">Type</th>
+<th style="height: 12px; width: 696px;">Description</th>
+</tr>
+<tr>
+<td style="width: 237px;" bgcolor="#efefef" height="1">OnGetCellParams</td>
+<td style="background-color: white; width: 227px;" bgcolor="#efefef" height="1">TscGetDBCellParamsEvent</td>
+<td style="background-color: white; width: 696px;" bgcolor="#efefef" height="1">TscGetDBCellParamsEvent = procedure (Sender: TObject; Column: TscColumn;&nbsp; State: TscGridDrawState;<br>&nbsp;&nbsp;&nbsp; var ABGColor: TColor; var ABGColorAlpha: Byte; AFont: TFont) of object;<br><br>
+Use this event to set background color,&nbsp;alpha value of background color and font color for cell</td></tr></tbody></table><p>&nbsp;<br style="color: red;">
+<br>
+</p>
+</body></html>

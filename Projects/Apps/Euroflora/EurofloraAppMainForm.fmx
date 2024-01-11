@@ -1,0 +1,1880 @@
+object frmEuroFloraAppMain: TfrmEuroFloraAppMain
+  Left = 0
+  Top = 0
+  ClientHeight = 566
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 2
+  object TabControlMain: TTabControl
+    Touch.GestureManager = GestureManager1
+    OnGesture = GestureDone
+    Align = Client
+    FullSize = True
+    Size.Width = 384.000000000000000000
+    Size.Height = 566.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'tabcontrolstyle'
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = Bottom
+    OnChange = TabControlMainChange
+    Sizes = (
+      384s
+      517s
+      384s
+      517s
+      384s
+      517s
+      384s
+      517s)
+    object tab1Fair: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Font.Size = 13.000000000000000000
+      TextSettings.FontColor = claTeal
+      StyledSettings = [Family, Style]
+      IsSelected = False
+      ImageIndex = 5
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'In Fiera'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl1Fair: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 384.000000000000000000
+        Size.Height = 517.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s)
+        object TabItem11FairMain: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItemAround'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ListViewFair: TListView
+            ItemAppearanceClassName = 'TImageListItemAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 300.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+            ControlType = Platform
+          end
+          object ToolBar4: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblTitle4: TLabel
+              Align = Contents
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claForestgreen
+              TextSettings.HorzAlign = Center
+              Text = 'Scopri Euroflora'
+            end
+          end
+          object Image1: TImage
+            MultiResBitmap.Height = 546
+            MultiResBitmap.Width = 810
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 543
+                Height = 285
+                PNG = {
+                  89504E470D0A1A0A0000000D494844520000021F0000011D0806000000AC7D05
+                  47000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  026F49444154785EEDC13101000000C2A0F54F6D0B2F20000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000808F1A73B000010EEC310F0000000049454E
+                  44AE426082}
+                FileName = 'Z:\januaproject\Resources\Euroflora\landscape.png'
+              end>
+            Align = Top
+            Position.Y = 44.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 173.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object tabItem12FairList: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar1: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object Label1: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkgreen
+              TextSettings.HorzAlign = Center
+              Text = 'Mappa di Euroflora'
+            end
+            object btnFairPlacesBack: TSpeedButton
+              Align = Left
+              StyledSettings = [Family, Size, Style]
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+              TextSettings.FontColor = claDarkgreen
+              OnClick = btnFairPlacesBackClick
+            end
+          end
+          object pnlMapListFair: TPanel
+            Align = Top
+            ControlType = Platform
+            Position.Y = 44.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 205.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+          end
+          object ListViewFairPlaces: TListView
+            ItemAppearanceClassName = 'TDynamicAppearance'
+            ItemEditAppearanceClassName = 'TDynamicAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Images = dmFMXResources.ImageList512
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 268.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearance.ItemHeight = 48
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.Font.StyleExt = {00070000000000000004000000}
+                Appearance.TextAlign = Leading
+                Appearance.Trimming = Character
+                Appearance.Height = 24.000000000000000000
+                Appearance.PlaceOffset.X = 3.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Detail1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.Trimming = Character
+                Appearance.Height = 24.000000000000000000
+                Appearance.VertAlign = Trailing
+                Appearance.PlaceOffset.X = 3.000000000000000000
+                Appearance.Opacity = 0.600000023841857900
+              end
+              item
+                AppearanceObjectName = 'Accessory4'
+                AppearanceClassName = 'TAccessoryObjectAppearance'
+                Appearance.Width = 20.000000000000000000
+                Appearance.Align = Trailing
+              end>
+            ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end>
+            ControlType = Platform
+          end
+        end
+        object TabItem13Location: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem13Location'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object Rectangle3: TRectangle
+            Align = Top
+            Fill.Color = claAzure
+            Margins.Left = 1.000000000000000000
+            Margins.Top = 1.000000000000000000
+            Margins.Right = 1.000000000000000000
+            Margins.Bottom = 1.000000000000000000
+            Position.X = 1.000000000000000000
+            Position.Y = 250.000000000000000000
+            Size.Width = 382.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            object lbNameFair: TLabel
+              Align = Client
+              ControlType = Platform
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 376.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.HorzAlign = Center
+              TextSettings.VertAlign = Leading
+              Text = 'lbName'
+              TabOrder = 0
+            end
+          end
+          object Rectangle4: TRectangle
+            Align = Top
+            Fill.Color = claBeige
+            Margins.Left = 1.000000000000000000
+            Margins.Top = 1.000000000000000000
+            Margins.Right = 1.000000000000000000
+            Margins.Bottom = 1.000000000000000000
+            Position.X = 1.000000000000000000
+            Position.Y = 302.000000000000000000
+            Size.Width = 382.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claDarkturquoise
+            Stroke.Cap = Round
+            object lbAddressFair: TLabel
+              Align = Client
+              ControlType = Platform
+              StyledSettings = [Size, Style]
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 376.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Arial'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              TextSettings.VertAlign = Leading
+              Text = 'lbName'
+              TabOrder = 0
+            end
+          end
+          object ToolBar11: TToolBar
+            ControlType = Platform
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lbFairName: TLabel
+              Align = Client
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 331.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton4: TSpeedButton
+              Align = Left
+              ControlType = Platform
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+              OnClick = SpeedButton4Click
+            end
+          end
+          object btnCallFair: TButton
+            Align = Top
+            ControlType = Platform
+            StyledSettings = [Family, Size, Style]
+            Images = ImageList1
+            ImageIndex = 5
+            Margins.Left = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Position.X = 3.000000000000000000
+            Position.Y = 353.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 33
+            Text = 'btnCall'
+            TextSettings.FontColor = claDarkmagenta
+            OnClick = btnCallFairClick
+          end
+          object btnWebFair: TButton
+            Align = Top
+            ControlType = Platform
+            Images = ImageList1
+            ImageIndex = 2
+            Margins.Left = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Position.X = 3.000000000000000000
+            Position.Y = 400.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 32
+            Text = 'Sito Web'
+            OnClick = btnWebFairClick
+          end
+          object pnlMapFairDetail: TPanel
+            Align = Top
+            ControlType = Platform
+            Position.Y = 44.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 205.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+          end
+        end
+        object TabItem14WebSite: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem14WebSite'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ToolBar12: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lbFairBrowser: TLabel
+              Align = Client
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 331.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton5: TSpeedButton
+              Align = Left
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+              OnClick = SpeedButton5Click
+            end
+          end
+          object WebBrowserFair: TWebBrowser
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 441.000000000000000000
+            Size.PlatformDefault = False
+            WindowsEngine = IEOnly
+          end
+          object edFairUrl: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 3
+            ControlType = Platform
+            KeyboardType = URL
+            Position.Y = 44.000000000000000000
+            Hint = 'http://'
+            Size.Width = 384.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'http://'
+            CharCase = ecLowerCase
+          end
+        end
+      end
+    end
+    object tab2Around: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.FontColor = claTeal
+      StyledSettings = [Family, Style]
+      IsSelected = True
+      ImageIndex = 6
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Dintorni'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl2Around: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 384.000000000000000000
+        Size.Height = 517.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s
+          384s
+          517s)
+        object TabItem21AroundMain: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem21AroundMain'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ListViewAround: TListView
+            ItemAppearanceClassName = 'TImageListItemAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Images = dmFMXResources.ImageList512
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+            ControlType = Platform
+          end
+          object ToolBar3: TToolBar
+            ControlType = Platform
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object Label2: TLabel
+              Align = Contents
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Scopri i dintorni'
+            end
+          end
+        end
+        object TabItem22AroundList: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem22AroundList'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar2: TToolBar
+            ControlType = Platform
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblTitleAround: TLabel
+              Align = Contents
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnBack: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              ControlType = Platform
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+            end
+          end
+          object pnlAround: TPanel
+            Align = Top
+            ControlType = Platform
+            Position.Y = 44.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 205.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+          end
+          object ListViewAroundPlaces: TListView
+            ItemAppearanceClassName = 'TDynamicAppearance'
+            ItemEditAppearanceClassName = 'TDynamicAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 268.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearance.ItemHeight = 48
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.Font.StyleExt = {00070000000000000004000000}
+                Appearance.TextAlign = Leading
+                Appearance.Trimming = Character
+                Appearance.Height = 24.000000000000000000
+                Appearance.PlaceOffset.X = 70.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Detail1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.Trimming = Character
+                Appearance.Height = 24.000000000000000000
+                Appearance.VertAlign = Trailing
+                Appearance.PlaceOffset.X = 70.000000000000000000
+                Appearance.Opacity = 0.600000023841857900
+              end
+              item
+                AppearanceObjectName = 'Portrait'
+                AppearanceClassName = 'TImageObjectAppearance'
+                Appearance.Width = 64.000000000000000000
+                Appearance.Height = 64.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Accessory4'
+                AppearanceClassName = 'TAccessoryObjectAppearance'
+                Appearance.Width = 20.000000000000000000
+                Appearance.Align = Trailing
+              end>
+            ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end>
+            ControlType = Platform
+          end
+        end
+        object TabItem23Location: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem23Location'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ToolBar5: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lbAroundName: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton1: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              ControlType = Platform
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+            end
+          end
+          object btnCall: TButton
+            Align = Top
+            StyledSettings = [Family, Size, Style]
+            Images = ImageList1
+            ImageIndex = 5
+            Margins.Left = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Position.X = 3.000000000000000000
+            Position.Y = 291.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            Text = 'btnCall'
+            TextSettings.FontColor = claDarkmagenta
+            OnClick = btnCallClick
+          end
+          object btnWeb: TButton
+            Align = Top
+            Images = ImageList1
+            ImageIndex = 2
+            Margins.Left = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Position.X = 3.000000000000000000
+            Position.Y = 338.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Text = 'Sito Web'
+            OnClick = btnWebClick
+          end
+          object Rectangle1: TRectangle
+            Align = Top
+            Fill.Color = claAzure
+            Margins.Left = 1.000000000000000000
+            Margins.Top = 1.000000000000000000
+            Margins.Right = 1.000000000000000000
+            Margins.Bottom = 1.000000000000000000
+            Position.X = 1.000000000000000000
+            Position.Y = 188.000000000000000000
+            Size.Width = 382.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            object lbName: TLabel
+              Align = Client
+              ControlType = Platform
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 376.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.HorzAlign = Center
+              TextSettings.VertAlign = Leading
+              Text = 'lbName'
+              TabOrder = 0
+            end
+          end
+          object Rectangle2: TRectangle
+            Align = Top
+            Fill.Color = claBeige
+            Margins.Left = 1.000000000000000000
+            Margins.Top = 1.000000000000000000
+            Margins.Right = 1.000000000000000000
+            Margins.Bottom = 1.000000000000000000
+            Position.X = 1.000000000000000000
+            Position.Y = 240.000000000000000000
+            Size.Width = 382.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claDarkturquoise
+            Stroke.Cap = Round
+            object lbAddress: TLabel
+              Align = Client
+              ControlType = Platform
+              StyledSettings = [Size, Style]
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 376.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Arial'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              TextSettings.VertAlign = Leading
+              Text = 'lbName'
+              TabOrder = 0
+            end
+          end
+          object pnlMapAroundDetail: TPanel
+            Align = Top
+            ControlType = Platform
+            Position.Y = 44.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 143.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+          end
+        end
+        object TabItem23WebSite: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem23WebSite'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ToolBar6: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lbAroundBrowserTitle: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton2: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+            end
+          end
+          object WebBrowser1: TWebBrowser
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            WindowsEngine = IEOnly
+          end
+        end
+      end
+    end
+    object tab3Events: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Font.Size = 13.000000000000000000
+      TextSettings.FontColor = claTeal
+      StyledSettings = [Family, Style]
+      IsSelected = False
+      ImageIndex = 0
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Eventi'
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl3Events: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 384.000000000000000000
+        Size.Height = 517.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          384s
+          517s
+          384s
+          517s)
+        object TabItem31EventsList: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItemAround'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar10: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label6: TLabel
+              Align = Contents
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Eventi Euroflora 2018'
+            end
+          end
+          object Panel2: TPanel
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object ListViewEvents: TListView
+              ItemAppearanceClassName = 'TDynamicAppearance'
+              ItemEditAppearanceClassName = 'TDynamicAppearance'
+              HeaderAppearanceClassName = 'TListHeaderObjects'
+              FooterAppearanceClassName = 'TListHeaderObjects'
+              Align = Client
+              Size.Width = 334.000000000000000000
+              Size.Height = 503.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Visible = False
+              ItemAppearance.ItemHeight = 64
+              ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+                item
+                  AppearanceObjectName = 'Text1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.Font.StyleExt = {00070000000000000004000000}
+                  Appearance.TextAlign = Leading
+                  Appearance.Width = 619.000000000000000000
+                  Appearance.Height = 41.000000000000000000
+                  Appearance.PlaceOffset.X = 70.000000000000000000
+                end
+                item
+                  AppearanceObjectName = 'Detail1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.TextAlign = Leading
+                  Appearance.Width = 619.000000000000000000
+                  Appearance.Height = 41.000000000000000000
+                  Appearance.VertAlign = Trailing
+                  Appearance.PlaceOffset.X = 70.000000000000000000
+                  Appearance.Opacity = 0.600000023841857900
+                end
+                item
+                  AppearanceObjectName = 'Portrait'
+                  AppearanceClassName = 'TImageObjectAppearance'
+                  Appearance.Width = 64.000000000000000000
+                  Appearance.Height = 64.000000000000000000
+                end>
+              ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+                item
+                  AppearanceObjectName = 'Text1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                end>
+              ControlType = Platform
+            end
+            object lbListViewEvents: TLabel
+              Align = VertCenter
+              AutoSize = True
+              Position.Y = 225.000000000000000000
+              Size.Width = 384.000000000000000000
+              Size.Height = 23.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.HorzAlign = Center
+              Text = 'Aggiornamento in Corso ...'
+              TabOrder = 2
+            end
+          end
+        end
+        object TabItem32EventPage: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar8: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lbEventArticle: TLabel
+              Align = Client
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 331.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkgreen
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnEventsBack: TSpeedButton
+              Align = Left
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+              OnClick = btnEventsBackClick
+            end
+          end
+          object WebBrowserEvents: TWebBrowser
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            WindowsEngine = IEOnly
+          end
+        end
+      end
+    end
+    object tab4News: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Font.Size = 13.000000000000000000
+      TextSettings.FontColor = claTeal
+      StyledSettings = [Family, Style]
+      IsSelected = False
+      ImageIndex = 24
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'News'
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControl4News: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 384.000000000000000000
+        Size.Height = 517.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          384s
+          517s
+          384s
+          517s)
+        object TabItem41News: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItemAround'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar9: TToolBar
+            ControlType = Platform
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label4: TLabel
+              Align = Contents
+              ControlType = Platform
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 384.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claForestgreen
+              TextSettings.HorzAlign = Center
+              Text = 'Euroflora News'
+            end
+          end
+          object Panel1: TPanel
+            Align = Client
+            ControlType = Platform
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object ListViewNews: TListView
+              ItemAppearanceClassName = 'TDynamicAppearance'
+              ItemEditAppearanceClassName = 'TDynamicAppearance'
+              HeaderAppearanceClassName = 'TListHeaderObjects'
+              FooterAppearanceClassName = 'TListHeaderObjects'
+              Align = Client
+              Size.Width = 334.000000000000000000
+              Size.Height = 503.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Visible = False
+              ItemAppearance.ItemHeight = 64
+              ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+                item
+                  AppearanceObjectName = 'Text1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.Font.StyleExt = {00070000000000000004000000}
+                  Appearance.TextAlign = Leading
+                  Appearance.Width = 619.000000000000000000
+                  Appearance.Height = 41.000000000000000000
+                  Appearance.PlaceOffset.X = 70.000000000000000000
+                end
+                item
+                  AppearanceObjectName = 'Detail1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                  Appearance.TextAlign = Leading
+                  Appearance.Width = 619.000000000000000000
+                  Appearance.Height = 41.000000000000000000
+                  Appearance.VertAlign = Trailing
+                  Appearance.PlaceOffset.X = 70.000000000000000000
+                  Appearance.Opacity = 0.600000023841857900
+                end
+                item
+                  AppearanceObjectName = 'Portrait'
+                  AppearanceClassName = 'TImageObjectAppearance'
+                  Appearance.Width = 64.000000000000000000
+                  Appearance.Height = 64.000000000000000000
+                end>
+              ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+                item
+                  AppearanceObjectName = 'Text1'
+                  AppearanceClassName = 'TTextObjectAppearance'
+                end>
+              ControlType = Platform
+            end
+            object lbListViewNews: TLabel
+              Align = VertCenter
+              AutoSize = True
+              ControlType = Platform
+              Position.Y = 225.000000000000000000
+              Size.Width = 384.000000000000000000
+              Size.Height = 23.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.HorzAlign = Center
+              Text = 'Aggiornamento in Corso ...'
+              TabOrder = 2
+            end
+          end
+        end
+        object TabItem42News: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 11.000000000000000000
+          Size.Height = 11.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem6'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar7: TToolBar
+            Size.Width = 384.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lbNewsArticle: TLabel
+              Align = Client
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 331.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkcyan
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton3: TSpeedButton
+              Align = Left
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+              Text = '  '
+              OnClick = SpeedButton3Click
+            end
+          end
+          object WebBrowser2: TWebBrowser
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 473.000000000000000000
+            Size.PlatformDefault = False
+            WindowsEngine = IEOnly
+          end
+        end
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 2000
+    OnTimer = Timer1Timer
+    Left = 248
+    Top = 241
+  end
+  object TimerAround: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TimerAroundTimer
+    Left = 248
+    Top = 361
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = Timer2Timer
+    Left = 248
+    Top = 304
+  end
+  object TimerListFair: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TimerListFairTimer
+    Left = 152
+    Top = 272
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 48
+    Top = 57
+    GestureData = <
+      item
+        Control = TabControlMain
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl1Fair
+        Collection = <>
+      end
+      item
+        Control = TabControl2Around
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = TabControl3Events
+        Collection = <>
+      end
+      item
+        Control = TabControl4News
+        Collection = <>
+      end>
+  end
+  object ActionList1: TActionList
+    Left = 48
+    Top = 232
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl2Around
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl2Around
+    end
+  end
+  object JFMXLVMenuAround: TJanuaFMXListViewMenu
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    CalendarItem.CategoryTag = 0
+    AirportItem.Text = 'Aeroporto C. Colombo'
+    AirportItem.CategoryTag = 0
+    CarItem.Text = 'Auto (Park, Mecc., Gas)'
+    CarItem.CategoryTag = 77
+    MuseumItem.Text = 'Musei di Nervi'
+    MuseumItem.CategoryTag = 0
+    GlobeItem.CategoryTag = 0
+    LocalMapItem.CategoryTag = 0
+    GPSItem.Text = 'Scopri intorno'
+    GPSItem.CategoryTag = 0
+    CompassItem.Text = 'Intorno a te'
+    CompassItem.CategoryTag = 0
+    MapItem.Text = 'Cerca Intorno a te'
+    MapItem.CategoryTag = 0
+    TourismItem.CategoryTag = 0
+    PortItem.Text = 'Porto di Genova'
+    PortItem.CategoryTag = 0
+    SwimmingPoolItem.CategoryTag = 0
+    SeatBeachItem.Text = 'Bagni e stabilimenti'
+    SeatBeachItem.CategoryTag = 0
+    HotelItem.Text = 'Hotel Esperia '
+    HotelItem.CategoryTag = 0
+    LightHouseItem.Text = 'Lanterna di Genova'
+    LightHouseItem.CategoryTag = 0
+    RailWayItem.Text = 'Stazioni e Trasporti'
+    RailWayItem.CategoryTag = 81
+    CameraItem.Text = 'Fotografa i Dintorni'
+    CameraItem.CategoryTag = 0
+    BusItem.Text = 'Capolinea Bus 15'
+    BusItem.CategoryTag = 0
+    BoatItem.Text = 'Escursioni in battello'
+    BoatItem.CategoryTag = 0
+    BallItem.CategoryTag = 0
+    SwimmerItem.CategoryTag = 0
+    TennisItem.CategoryTag = 0
+    FerryItem.Text = 'Porto di Genova'
+    FerryItem.CategoryTag = 0
+    ParkItem.Text = 'Parchi e Giardini'
+    ParkItem.CategoryTag = 0
+    JournalItem.CategoryTag = 0
+    NewsItem.CategoryTag = 0
+    HealthItem.Text = 'Farmacie e Sanit'#224
+    HealthItem.CategoryTag = 75
+    FoodItem.Text = 'Risto Bar Alimentari'
+    FoodItem.CategoryTag = 73
+    ToiltItem.CategoryTag = 0
+    BankItem.Text = 'Banche e Bancomat'
+    BankItem.CategoryTag = 76
+    MarketItem.Text = 'Supermarket'
+    MarketItem.CategoryTag = 62
+    PoliceItem.CategoryTag = 0
+    TheatreItem.Text = 'Cinema e Teatri'
+    TheatreItem.CategoryTag = 78
+    ShopItem.Text = 'Negozi'
+    ShopItem.CategoryTag = 83
+    ListView = ListViewAround
+    BeforeItemClick = JFMXLVMenuAroundBeforeItemClick
+    AfterItemClick = JFMXLVMenuAroundAfterItemClick
+    Left = 152
+    Top = 152
+  end
+  object JFMXLVMenuFair: TJanuaFMXListViewMenu
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    CalendarItem.CategoryTag = 0
+    AirportItem.Text = 'Aeroporto C. Colombo'
+    AirportItem.CategoryTag = 0
+    CarItem.Text = 'Parcheggi '
+    CarItem.CategoryTag = 0
+    MuseumItem.Text = 'Musei di Nervi'
+    MuseumItem.CategoryTag = 0
+    GlobeItem.CategoryTag = 0
+    LocalMapItem.CategoryTag = 0
+    GPSItem.CategoryTag = 0
+    CompassItem.CategoryTag = 0
+    MapItem.Text = 'Cerca in Fiera ...'
+    MapItem.CategoryTag = 0
+    TourismItem.CategoryTag = 0
+    PortItem.Text = 'Porto di Genova'
+    PortItem.CategoryTag = 0
+    SwimmingPoolItem.CategoryTag = 0
+    SeatBeachItem.CategoryTag = 0
+    HotelItem.Text = 'Hotel Esperia '
+    HotelItem.CategoryTag = 0
+    LightHouseItem.Text = 'Lanterna di Genova'
+    LightHouseItem.CategoryTag = 0
+    RailWayItem.Text = 'Stazioni dei Treni'
+    RailWayItem.CategoryTag = 0
+    CameraItem.Text = 'Fotografa i Dintorni'
+    CameraItem.CategoryTag = 0
+    BusItem.Text = 'Fermate Autobus e Taxi'
+    BusItem.CategoryTag = 82
+    BoatItem.Text = 'Porticciolo di Nervi'
+    BoatItem.CategoryTag = 0
+    BallItem.CategoryTag = 0
+    SwimmerItem.CategoryTag = 0
+    TennisItem.CategoryTag = 0
+    FerryItem.Text = 'Porto di Genova'
+    FerryItem.CategoryTag = 0
+    ParkItem.Text = 'Da vedere in Fiera'
+    ParkItem.CategoryTag = 0
+    JournalItem.CategoryTag = 0
+    NewsItem.CategoryTag = 0
+    HealthItem.CategoryTag = 0
+    FoodItem.CategoryTag = 0
+    ToiltItem.CategoryTag = 0
+    BankItem.CategoryTag = 0
+    MarketItem.Text = 'Elenco Espositori'
+    MarketItem.CategoryTag = 91
+    PoliceItem.CategoryTag = 0
+    TheatreItem.CategoryTag = 0
+    ShopItem.CategoryTag = 0
+    ListView = ListViewFair
+    BeforeItemClick = JFMXLVMenuFairBeforeItemClick
+    Left = 152
+    Top = 32
+  end
+  object JanuaDialer1: TJanuaDialer
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Left = 152
+    Top = 336
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 499
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 499
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
+              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
+              00000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\media-3.png'
+          end>
+        Name = 'media-3'
+      end
+      item
+        MultiResBitmap.Height = 508
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 508
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001FC0806000000A7C017
+              05000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              040849444154785EEDC13101000000C2A0F54F6D0C1F20000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000B8A801E2DD000104FF62850000000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\media-10.png'
+          end>
+        Name = 'media-10'
+      end
+      item
+        MultiResBitmap.Height = 499
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 499
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
+              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
+              00000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\media.png'
+          end>
+        Name = 'media'
+      end
+      item
+        MultiResBitmap.Height = 508
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 508
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001FC0806000000A7C017
+              05000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              040849444154785EEDC13101000000C2A0F54F6D0C1F20000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000B8A801E2DD000104FF62850000000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\media-11.png'
+          end>
+        Name = 'media-11'
+      end
+      item
+        MultiResBitmap.Height = 505
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 505
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001F90806000000F70D86
+              B6000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              040249444154785EEDC13101000000C2A0F54F6D0D0F20000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00F85703CADA00016B2C08FC0000000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\camera.png'
+          end>
+        Name = 'camera'
+      end
+      item
+        MultiResBitmap.Height = 499
+        MultiResBitmap.Width = 512
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 512
+            Height = 499
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
+              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
+              00000049454E44AE426082}
+            FileName = '\\vmware-host\Shared Folders\Downloads\media-2.png'
+          end>
+        Name = 'media-2'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'media-3'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 499.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'media-10'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 508.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'media'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 499.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'media-11'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 508.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'camera'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 505.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'media-2'
+            SourceRect.Right = 512.000000000000000000
+            SourceRect.Bottom = 499.000000000000000000
+          end>
+      end>
+    Left = 48
+    Top = 376
+  end
+  object JanuaFMXListEvents1: TJanuaFMXListNews
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaItalian
+    TestMode = False
+    OnSelectedItem = JanuaFMXListEvents1SelectedItem
+    ListView = ListViewEvents
+    NetHttpRequest = NetHTTPRequest1
+    ServerUrl = 'http://cdn.ergomercator.com/euroflora/events'
+    Left = 154
+    Top = 88
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 42
+    Top = 304
+  end
+  object NetHTTPRequest1: TNetHTTPRequest
+    Client = NetHTTPClient1
+    Left = 50
+    Top = 112
+  end
+  object JanuaFMXListNews1: TJanuaFMXListNews
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    OnSelectedItem = JanuaFMXListNews1SelectedItem
+    ListView = ListViewNews
+    NetHttpRequest = NetHTTPRequest1
+    ServerUrl = 'http://cdn.ergomercator.com/euroflora/news'
+    Left = 250
+    Top = 64
+  end
+  object JanuaMapListFair: TJanuaFMXStandardMapList
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaItalian
+    TestMode = False
+    TextTitle = 'Text1'
+    TextDescription = 'Detail1'
+    Zoom = 17.000000000000000000
+    MapDetail.Verbose = False
+    ListView = ListViewFairPlaces
+    ListViewType = jltDynamic
+    MapParent = pnlMapListFair
+    Page = 0
+    PageSize = 0
+    LocationSensor1 = LocationSensor1
+    OnItemClick = OnMapFairItemClick
+    Left = 248
+    Top = 120
+  end
+  object JanuaMapListAround: TJanuaFMXStandardMapList
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaItalian
+    TestMode = False
+    TextTitle = 'Text1'
+    TextDescription = 'Detail1'
+    TextImage = 'Portrait'
+    Zoom = 16.000000000000000000
+    MapDetail.Verbose = False
+    ListView = ListViewAroundPlaces
+    ListViewType = jltDynamic
+    MapParent = pnlAround
+    Page = 0
+    PageSize = 0
+    LocationSensor1 = LocationSensor1
+    OnItemClick = OnMapAroundItemClick
+    Left = 248
+    Top = 184
+  end
+  object LocationSensor1: TLocationSensor
+    ActivityType = Other
+    UsageAuthorization = WhenInUse
+    Left = 48
+    Top = 176
+  end
+  object JanuaFmxBadge1: TJanuaFmxBadge
+    Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    Badge = 0
+    BadgeItem = tab4News
+    Left = 152
+    Top = 208
+  end
+end

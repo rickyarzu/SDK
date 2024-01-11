@@ -1,0 +1,82 @@
+package JanuaThirdPartyXE103;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  dbrtl;
+
+contains
+  LoggerPro in '..\..\lib\loggerpro\LoggerPro.pas',
+  LoggerPro.FileAppender in '..\..\lib\loggerpro\LoggerPro.FileAppender.pas',
+  MVCFramework.Commons in '..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
+  MVCFramework.Session in '..\..\lib\delphimvcframework\sources\MVCFramework.Session.pas',
+  Delphi.Mocks.Helpers in '..\..\lib\Delphi-Mocks\Delphi.Mocks.Helpers.pas',
+  AsyncTask in '..\..\Libraries\Books\Async\AsyncTask.pas',
+  ThreadSafeQueueU in '..\..\lib\loggerpro\ThreadSafeQueueU.pas',
+  JsonDataObjects in '..\..\lib\JsonDataObjects\Source\JsonDataObjects.pas',
+  MVCFramework.DuckTyping in '..\..\lib\delphimvcframework\sources\MVCFramework.DuckTyping.pas',
+  MVCFramework.Serializer.Abstract in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Abstract.pas',
+  MVCFramework.Serializer.Commons in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Commons.pas',
+  MVCFramework.Serializer.Defaults in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Defaults.pas',
+  MVCFramework.Serializer.Intf in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Intf.pas',
+  MVCFramework.Serializer.JsonDataObjects.CustomTypes in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.CustomTypes.pas',
+  MVCFramework.Serializer.JsonDataObjects in '..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.pas',
+  MVCFramework.Logger in '..\..\lib\delphimvcframework\sources\MVCFramework.Logger.pas',
+  MVCFramework.Cache in '..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas',
+  Spring in '..\..\lib\spring4d\Source\Base\Spring.pas',
+  Spring.DesignPatterns in '..\..\lib\spring4d\Source\Base\Spring.DesignPatterns.pas',
+  Spring.Events.Base in '..\..\lib\spring4d\Source\Base\Spring.Events.Base.pas',
+  Spring.Events in '..\..\lib\spring4d\Source\Base\Spring.Events.pas',
+  Spring.Helpers in '..\..\lib\spring4d\Source\Base\Spring.Helpers.pas',
+  Spring.VirtualClass in '..\..\lib\spring4d\Source\Base\Spring.VirtualClass.pas',
+  Spring.VirtualInterface in '..\..\lib\spring4d\Source\Base\Spring.VirtualInterface.pas',
+  Spring.Collections.Adapters in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Adapters.pas',
+  Spring.Collections.Base in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Base.pas',
+  Spring.Collections.Dictionaries in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Dictionaries.pas',
+  Spring.Collections.Enumerable in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Enumerable.pas',
+  Spring.Collections.Events in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Events.pas',
+  Spring.Collections.Extensions in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Extensions.pas',
+  Spring.Collections.LinkedLists in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.LinkedLists.pas',
+  Spring.Collections.Lists in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Lists.pas',
+  Spring.Collections.MultiMaps in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.MultiMaps.pas',
+  Spring.Collections in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.pas',
+  Spring.Collections.Queues in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Queues.pas',
+  Spring.Collections.Sets in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Sets.pas',
+  Spring.Collections.Stacks in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Stacks.pas',
+  Spring.Collections.Trees in '..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Trees.pas',
+  Spring.ResourceStrings in '..\..\lib\spring4d\Source\Base\Spring.ResourceStrings.pas',
+  Spring.SystemUtils in '..\..\lib\spring4d\Source\Base\Spring.SystemUtils.pas',
+  Spring.MethodIntercept in '..\..\lib\spring4d\Source\Base\Spring.MethodIntercept.pas',
+  Spring.ValueConverters in '..\..\lib\spring4d\Source\Base\Spring.ValueConverters.pas';
+
+end.
+

@@ -1,0 +1,50 @@
+﻿package JanuaCoreComponents;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Core Components'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  JanuaMVVM,
+  JanuaCore;
+
+contains
+  Janua.Legacy.Promo in '..\..\src\JanuaLegacy\Janua.Legacy.Promo.pas',
+  Janua.Components.Dialogs in '..\..\src\januacore\Janua.Components.Dialogs.pas',
+  Janua.Components.Forms in '..\..\src\januacore\Janua.Components.Forms.pas',
+  Janua.Components.Mail in '..\..\src\januacore\Janua.Components.Mail.pas',
+  Janua.Components.Maps in '..\..\src\januacore\Janua.Components.Maps.pas',
+  Janua.Components.Cloud in '..\..\src\januacore\Janua.Components.Cloud.pas',
+  Janua.Components.Remoting in '..\..\src\januacore\Janua.Components.Remoting.pas',
+  Janua.Components.Servers in '..\..\src\januacore\Janua.Components.Servers.pas',
+  Janua.Components.Planner in '..\..\src\januacore\Janua.Components.Planner.pas',
+  Janua.Components.Grids in '..\..\src\januacore\Janua.Components.Grids.pas';
+
+end.

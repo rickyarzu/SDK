@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="q1mh37opj0l_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="uml:package:JanuaUniMVVMTesting:src:unitTestSystemMVVM">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestSystemMVVM.TMVVMSystemTest" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestSystemMVVM.@unitclass" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaUniMVVMTesting:src:unitTestDocumentsViewModel">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestDocumentsViewModel.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestDocumentsViewModel.TTDocsMVVM" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaUniMVVMTesting:src:unitTestAWBViewModel">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestAWBViewModel.TTAWBMVVM" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:unitTestAWBViewModel.@unitclass" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaUniMVVMTesting:src:JanuaUniMVVMTesting">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaUniMVVMTesting:JanuaUniMVVMTesting.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::a1em81wbo1mzk2uti_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

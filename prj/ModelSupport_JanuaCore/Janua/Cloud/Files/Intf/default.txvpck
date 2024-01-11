@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ruwkymxksntmjqf7l_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="cn8hg6ixdlg_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Files.Intf.IJanuaFileStorage" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Files.Intf.IJanuaFileRecord" role="Supplier" />
+  </link>
+</nodeSet>

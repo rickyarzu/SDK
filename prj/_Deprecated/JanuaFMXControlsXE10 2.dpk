@@ -1,0 +1,66 @@
+package JanuaFMXControlsXE10;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  JanuaCoreXE10,
+  dac250,
+  dbrtl,
+  tmsbcl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  fmx,
+  bindcomp,
+  JanuaPostgresSystemXE10,
+  JanuaThirdPartyXE10,
+  TMSFMXPackPkgDXE11,
+  TMSFMXWebGMapsPkgDXE11,
+  TMSFMXWebOSMapsPkgDXE11;
+
+contains
+  Janua.FMX.Register in '..\src\FMX\Janua.FMX.Register.pas',
+  Janua.FMX.HealthThreads in '..\src\FMX\Health\Janua.FMX.HealthThreads.pas',
+  Janua.FMX.Forms in '..\src\FMX\Janua.FMX.Forms.pas',
+  Janua.FMX.FormControls in '..\src\FMX\Janua.FMX.FormControls.pas',
+  Janua.FMX.MapControls in '..\src\FMX\Cloud\Janua.FMX.MapControls.pas',
+  Janua.FMX.Geocoding in '..\src\FMX\Cloud\Janua.FMX.Geocoding.pas',
+  Janua.FMX.Dialogs in '..\src\FMX\Janua.FMX.Dialogs.pas',
+  Janua.FMX.ListViewMenu in '..\src\FMX\Janua.FMX.ListViewMenu.pas',
+  Janua.FMX.AnagraphSearch in '..\src\FMX\Janua.FMX.AnagraphSearch.pas',
+  Janua.FMX.Maps in '..\src\FMX\Janua.FMX.Maps.pas',
+  Janua.FMX.Functions in '..\src\FMX\Janua.FMX.Functions.pas',
+  Janua.FMX.Services in '..\src\FMX\Janua.FMX.Services.pas',
+  Janua.FMX.Cms in '..\src\FMX\Janua.FMX.Cms.pas';
+
+end.

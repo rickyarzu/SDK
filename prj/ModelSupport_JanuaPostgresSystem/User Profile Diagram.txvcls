@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ocx004091tr_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="User Profile Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="420,300,339,282" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.lSys" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.FUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.FServerSystem" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.SetUserProfile(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.SetServerSystem(Janua.Core.System.TJanuaCustomServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.CreateLSys()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.DestroyLsys()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.FindAddressbyID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.AddUser(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaPostgresSystem:Janua.Postgres.Users.TJanuaServerUsers.ServerSystem" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="100,420,277,387" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.lSys" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.FNewUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SetNewUserProfile(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_field:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.FAttempts" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.Create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.CreateSys()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.DestroySys()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SaveProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.NewProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.CheckNewUser(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.CreateNewUser(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SetUserDefaultSchema(Janua.Core.System.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SearchUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SetDefaultSchema(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.SearchUserByID(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.NewUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaPostgresSystem:Janua.Postgres.System.TJanuaServerSystem.InternalLogin()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaGenderType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="440,40,248,83" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaGenderType.jgtMale" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaGenderType.jgtFemale" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="100,40,279,355" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.User" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.FirstName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SecondName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.LastName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Gender" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.GenderCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.BirthDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.PublicEmail" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Address" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.BirthLocation" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.AsJSONObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.FullName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SaveToDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SetGenderCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SetGender($Unnamed)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.SetGender(Janua.Core.Classes.TJanuaGenderType)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.System.TJanuaRecordUserProfile.Gender" />
+    </reference>
+  </view>
+</nodeSet>

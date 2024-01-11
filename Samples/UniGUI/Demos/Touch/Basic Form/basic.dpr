@@ -1,0 +1,35 @@
+{$define UNIGUI_VCL} // Comment out this line to turn this project into an ISAPI module'
+
+{$ifndef UNIGUI_VCL}
+library
+{$else}
+program
+{$endif}
+  basic;
+
+uses
+  uniGUIISAPI,
+  Forms,
+  ServerModule in 'ServerModule.pas' {UniServerModule: TUniGUIServerModule},
+  MainModule in 'MainModule.pas' {UniMainModule: TUniGUIMainModule},
+  Mainm in 'Mainm.pas' {MainmForm: TUnimForm},
+  Unit1 in 'Unit1.pas' {UnimForm1: TUnimForm},
+  Unit2 in 'Unit2.pas' {UnimForm2: TUnimForm},
+  Unit3 in 'Unit3.pas' {UnimForm3: TUnimForm};
+
+{$R *.res}
+
+{$ifndef UNIGUI_VCL}
+exports
+  GetExtensionVersion,
+  HttpExtensionProc,
+  TerminateExtension;
+{$endif}
+
+begin
+{$ifdef UNIGUI_VCL}
+  Application.Initialize;
+  TUniServerModule.Create(Application);
+  Application.Run;
+{$endif}
+end.

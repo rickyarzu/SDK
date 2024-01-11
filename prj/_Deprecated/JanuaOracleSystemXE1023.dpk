@@ -1,0 +1,58 @@
+package JanuaOracleSystemXE1023;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  soaprtl,
+  dbrtl,
+  inet,
+  DbxCommonDriver,
+  DataSnapCommon,
+  DbxClientDriver,
+  CustomIPTransport,
+  IndyIPCommon,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  IndyIPClient,
+  bindengine,
+  bindcomp,
+  dsnap,
+  RESTComponents;
+
+contains
+  udmJanuaOraWebLog in '..\src\januaunidac\datamodules\udmJanuaOraWebLog.pas' {dmJanuaOraWebLog: TDSServerModule},
+  udmJanuaOraModel in '..\src\januaunidac\datamodules\udmJanuaOraModel.pas' {dmJanuaOraModel: TDSServerModule},
+  Janua.Oracle.Web in '..\src\januaunidac\Janua.Oracle.Web.pas',
+  Janua.Oracle.Functions in '..\src\januaunidac\Janua.Oracle.Functions.pas',
+  Janua.Oracle.SessionSource in '..\src\januaunidac\Janua.Oracle.SessionSource.pas';
+
+end.

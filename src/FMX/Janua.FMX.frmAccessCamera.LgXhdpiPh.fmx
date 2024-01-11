@@ -1,0 +1,49 @@
+inherited AccessCameraAppForm_LgXhdpiPh: TAccessCameraAppForm_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  WindowState = wsNormal
+  DesignerMasterStyle = 0
+  inherited ToolBar1: TToolBar
+    Size.Width = 450.000000000000000000
+    inherited btnTakePhoto: TButton
+      Position.X = 397.000000000000000000
+    end
+  end
+  inherited TabControl2: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 647.000000000000000000
+    Sizes = (
+      450s
+      647s
+      450s
+      647s)
+    inherited TabItem5: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited imgCameraRoll: TImage
+        MultiResBitmap.Height = 1024
+        MultiResBitmap.Width = 576
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        inherited btnTakePhoto2: TButton
+          Size.Width = 450.000000000000000000
+        end
+      end
+    end
+    inherited TabItem6: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ToolBar3: TToolBar
+        Size.Width = 450.000000000000000000
+        inherited lblTitle2: TLabel
+          Size.Width = 450.000000000000000000
+        end
+      end
+    end
+  end
+  inherited alGetCameraRoll: TActionList
+    inherited TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction
+      OnDidFinishTaking = nil
+    end
+  end
+end

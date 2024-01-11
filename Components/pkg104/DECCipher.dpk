@@ -1,0 +1,59 @@
+package DECCipher;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'DEC - Delphi Encryption Compendium'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl;
+
+contains
+  DECBaseClass in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECBaseClass.pas',
+  DECCipherBase in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherBase.pas',
+  DECCipherFormats in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherFormats.pas',
+  DECCipherInterface in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherInterface.pas',
+  DECCipherModes in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherModes.pas',
+  DECCiphers in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCiphers.pas',
+  DECCRC in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCRC.pas',
+  DECData in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECData.pas',
+  DECDataCipher in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECDataCipher.pas',
+  DECDataHash in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECDataHash.pas',
+  DECFormat in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECFormat.pas',
+  DECFormatBase in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECFormatBase.pas',
+  DECHash in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECHash.pas',
+  DECHashAuthentication in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashAuthentication.pas',
+  DECHashBase in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashBase.pas',
+  DECHashInterface in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashInterface.pas',
+  DECRandom in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECRandom.pas',
+  DECTypes in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECTypes.pas',
+  DECUtil in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECUtil.pas',
+  DECUtilRawByteStringHelper in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECUtilRawByteStringHelper.pas',
+  DECHashBitBase in '..\..\..\Lib\DelphiEncryptionCompendium\Source\DECHashBitBase.pas';
+
+end.

@@ -1,0 +1,24 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <DCC_DcuOutput>c:\januaproject\dcu\DXE14\UniGUI\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>c:\januaproject\bin\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_HppOutputARM>false</DCC_HppOutputARM>
+        <DCC_UnitSearchPath>c:\januaproject\dcu\DXE14\UniGUI\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_Hints>false</DCC_Hints>
+        <DCC_IOChecking>true</DCC_IOChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_XmlOutput>C:\Januaproject\xmldoc\</DCC_XmlOutput>
+        <DCC_OutputXMLDocumentation>true</DCC_OutputXMLDocumentation>
+        <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
+        <DCC_Define>JANUASERVER;JANUAUNIGUI;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

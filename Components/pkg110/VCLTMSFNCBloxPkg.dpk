@@ -1,0 +1,87 @@
+package VCLTMSFNCBloxPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC Blox for VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  VCLTMSFNCCorePkg;
+
+contains
+  VCL.TMSFNCBloxControl in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxControl.pas',
+  VCL.TMSFNCBloxControlReg in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxControlReg.pas',
+  VCL.TMSFNCBloxCoreBackground in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreBackground.pas',
+  VCL.TMSFNCBloxCoreBaseElement in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreBaseElement.pas',
+  VCL.TMSFNCBloxCoreBlock in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreBlock.pas',
+  VCL.TMSFNCBloxCoreCallback in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreCallback.pas',
+  VCL.TMSFNCBloxCoreDiagram in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreDiagram.pas',
+  VCL.TMSFNCBloxCoreElement in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreElement.pas',
+  VCL.TMSFNCBloxCoreElementList in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreElementList.pas',
+  VCL.TMSFNCBloxCoreGraphics in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreGraphics.pas',
+  VCL.TMSFNCBloxCoreGraphicsUtils in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreGraphicsUtils.pas',
+  VCL.TMSFNCBloxCoreGroup in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreGroup.pas',
+  VCL.TMSFNCBloxCoreHandle in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreHandle.pas',
+  VCL.TMSFNCBloxCoreLayer in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreLayer.pas',
+  VCL.TMSFNCBloxCoreLine in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreLine.pas',
+  VCL.TMSFNCBloxCoreLineArrow in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreLineArrow.pas',
+  VCL.TMSFNCBloxCoreLinkPoint in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreLinkPoint.pas',
+  VCL.TMSFNCBloxCorePaintInfo in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCorePaintInfo.pas',
+  VCL.TMSFNCBloxCorePath in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCorePath.pas',
+  VCL.TMSFNCBloxCorePolygon in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCorePolygon.pas',
+  VCL.TMSFNCBloxCoreTextCell in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreTextCell.pas',
+  VCL.TMSFNCBloxCoreTypes in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreTypes.pas',
+  VCL.TMSFNCBloxCoreUtils in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreUtils.pas',
+  VCL.TMSFNCBloxCoreWrap in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxCoreWrap.pas',
+  VCL.TMSFNCBloxGraphics in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxGraphics.pas',
+  VCL.TMSFNCBloxScrollBar in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxScrollBar.pas',
+  VCL.TMSFNCBloxShapesArrows in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesArrows.pas',
+  VCL.TMSFNCBloxShapesDFD in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesDFD.pas',
+  VCL.TMSFNCBloxShapesElectrical in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesElectrical.pas',
+  VCL.TMSFNCBloxShapesElectrical2 in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesElectrical2.pas',
+  VCL.TMSFNCBloxShapesFlowchart in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesFlowchart.pas',
+  VCL.TMSFNCBloxShapesUML in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxShapesUML.pas',
+  VCL.TMSFNCBloxTestsBasic in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxTestsBasic.pas',
+  VCL.TMSFNCBloxUIEventTypes in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIEventTypes.pas',
+  VCL.TMSFNCBloxUIExceptions in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIExceptions.pas',
+  VCL.TMSFNCBloxUIPresenter in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIPresenter.pas',
+  VCL.TMSFNCBloxUIRegistration in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIRegistration.pas',
+  VCL.TMSFNCBloxUIRenderer in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIRenderer.pas',
+  VCL.TMSFNCBloxUIRuler in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIRuler.pas',
+  VCL.TMSFNCBloxUIScrollBar in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIScrollBar.pas',
+  VCL.TMSFNCBloxUISnapGrid in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUISnapGrid.pas',
+  VCL.TMSFNCBloxUIUserPresenter in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIUserPresenter.pas',
+  VCL.TMSFNCBloxUIUserRenderer in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUIUserRenderer.pas',
+  VCL.TMSFNCBloxUserPresenter in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxUserPresenter.pas',
+  VCL.TMSFNCBloxSelector in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxSelector.pas',
+  VCL.TMSFNCBloxSelectorReg in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxSelectorReg.pas',
+  VCL.TMSFNCBloxNavigator in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxNavigator.pas',
+  VCL.TMSFNCBloxNavigatorReg in '..\..\..\tmssoftware\TMS FNC Blox\VCL.TMSFNCBloxNavigatorReg.pas';
+
+end.

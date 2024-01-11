@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="gns1h4e0y0o_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,40,342,325" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.UserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Items" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Followers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Following" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Swaps" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.LoadFromDataset(Janua.Core.Swap.TDataset,Janua.Core.Swap.TDataset)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Items">
+        <property name="sourceAnchor" value="422,111" />
+        <property name="targetAnchor" value="512,384" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.FollowersCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.FollowingCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.SwapsCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.NotificationsCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.UnreadNotifications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.likes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.IsFollowed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.IsFollowing" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.SaveToDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.likes">
+        <property name="sourceAnchor" value="422,129" />
+        <property name="targetAnchor" value="506,384" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapProfile.Followers">
+        <property name="sourceAnchor" value="351,365" />
+        <property name="targetAnchor" value="1023,1462" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="460,40,201,325" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.description" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.image_url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.owner_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.insert_date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.available" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.swapped" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.likes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.Images" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.OwnerName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.OwnerAvatar" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.Clear()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItem.Images">
+        <property name="sourceAnchor" value="661,259" />
+        <property name="targetAnchor" value="968,434" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="212,384,227,205" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.total" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.pages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.unread" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.Notifications" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.AsJSonObject()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotifications.Notifications">
+        <property name="sourceAnchor" value="439,441" />
+        <property name="targetAnchor" value="958,239" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="699,3,201,160" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.swaps" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.Clear()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwaps.swaps">
+        <property name="sourceAnchor" value="790,163" />
+        <property name="targetAnchor" value="790,960" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="699,182,221,205" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.swaps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.Followers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.likes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.NotificationCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.DiscoveredItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.Following" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapDiscover.DiscoveredItems">
+        <property name="sourceAnchor" value="699,384" />
+        <property name="targetAnchor" value="541,386" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="699,406,202,263" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnSwap" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnLike" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnSwapAgreement" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnFollowing" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnSwapClosed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnSwapRevoked" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnNewEvent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnEventReminder" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnItemRemoved" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnItemAdded" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnEventParticipate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnEventCancelled" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationTypeList.jsnEventDelayed" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="490,627,201,295" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.swap_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.Read" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.Created" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.Text" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.ImageURL" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.FromUserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.ToUserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.LastErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.FromUserImageURL" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.AsSJSONString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.LoadFromHttpParam(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessage.LoadFromDataset(Data.DB.TDataSet)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="281,627,201,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents.Events" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents.count" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvents.Events">
+        <property name="sourceAnchor" value="419,772" />
+        <property name="targetAnchor" value="729,1364" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="140,880,289,533" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedItem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsItem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedImages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FJanuaServerSystem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FItemsDiscovered" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FUserSwaps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FItemsLikesList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsItemsLikes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsSelectedItem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsUserLikes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FUserItemsLikes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedSwap" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FEventsList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FMessages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FLastMessageID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FLimit" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FOffset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualFeeds" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetJanuaSwapProfile(Janua.Core.Swap.TJanuaSwapProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetActualDiscover(Janua.Core.Swap.TJanuaSwapDiscover)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetdsSwapProfile(Datasnap.DBClient.TClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedItem(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedItems(Janua.Core.Swap.TJanuaSwapItems)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetdsItem(Datasnap.DBClient.TClientDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedImages(Janua.Core.Swap.TJanuaSwapImages)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetJanuaServerSystem(Janua.Core.System.TJanuaCustomServerSystem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedFollowers(Janua.Core.Swap.TJanuaFollowers)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedFollowings(Janua.Core.Swap.TJanuaFollowers)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetActualNotifications(Janua.Core.Swap.TJanuaSwapNotifications)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetItemsDiscovered(Janua.Core.Swap.TJanuaSwapItems)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSwapForm(Janua.Core.Swap.TJanuaSwapForm)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetUserSwaps(Janua.Core.Swap.TJanuaSwaps)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetItemsLikesList(Janua.Core.Swap.TJanuaSwapItemLikes)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetdsItemsLikes(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetdsSelectedItem(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetdsUserLikes(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetUserItemsLikes(Janua.Core.Swap.TJanuaSwapItems)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedSwap(Janua.Core.Swap.TJanuaSwap)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetSelectedEvent(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetEventsList(Janua.Core.Swap.TJanuaSwapEvents)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetMessages(Janua.Core.Swap.TJanuaSwapMessages)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetLastMessage(Janua.Core.Swap.TJanuaSwapMessage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetLastMessageID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetLimit(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetOffset(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SetActualFeeds(Janua.Core.Swap.TJanuaSwapNotifications)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSwapForm" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualDiscover" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualNotifications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedFollowings" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedFollowers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FJanuaSwapProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsUserItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsUserItemsImages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsDiscoverItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsDiscover" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FdsSwapProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedEvent" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FLastSwapMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalDiscover()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalLikes(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalDiscovered(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemsDiscover()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalNotifications()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalNotificationRead(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InernalFeeds()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalSwapperProfile(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUpdateUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserFollow(System.Integer,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserFollowers(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserFollowings(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserLikes(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventAddUser(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventDelUser(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventInsert(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventDelete(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventUsersList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventsList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventWatch(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalEventUpdate(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalSwapStart(System.Int64,System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalSwapWatch(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserSwapsList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalSwapAgree(System.Integer,System.Int64,Janua.Core.Swap.TJanuaSwapActionType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalMessageInsert(Janua.Core.Swap.TJanuaSwapMessage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalMessageDelete(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalMessagesList(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalMessageWatch(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalAddItem(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemInsert(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemSeen(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemDelete(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemsList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemWatch(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemUpdate(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemLike(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemDisLike(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemImageInsert(Janua.Core.Swap.TJanuaSwapImage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemImageList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemImageDelete(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalItemLikesList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.InternalUserSwap(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Discover()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.DiscoverJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.likes(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Discovered(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.DiscoveredJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Notifications()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.NotificationsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.NotificationRead(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.NotificationReadJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Feeds()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FeedsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FeedRead(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FeedReadJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsDiscover()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsDiscoverJSON()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapStart(System.Int64,System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapStartJson(System.Int64,System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapAgree(System.Integer,System.Int64,Janua.Core.Swap.TJanuaSwapActionType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapAgreeJson(System.Integer,System.Int64,Janua.Core.Swap.TJanuaSwapActionType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapWatchJson(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapWatch(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwapsList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwapsListJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwap(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwapJson(System.Int64,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessageInsert(Janua.Core.Swap.TJanuaSwapMessage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessageDelete(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessagesList(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessageInsertJson(Janua.Core.Swap.TJanuaSwapMessage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessageDeleteJson(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.MessagesListJson(System.Int64,System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapperProfile(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapperProfileJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UpdateUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UpdateUserProfileJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserLikesList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserLikesListJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollow(System.Integer,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollowJSON(System.Integer,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollowers(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollowersJSON(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollowings(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserFollowingsJSON(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventAddUser(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventAddUserJson(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventDelUser(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventDelUserJson(System.Integer,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventInsert(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventInsertJson(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventDelete(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventDeleteJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventUsersList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventUsersListJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventsList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventsListJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventWatch(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventWatchJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventUpdate(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.EventUpdateJson(Janua.Core.Swap.TJanuaSwapEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemInsert(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemInsertJson(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemUpdate(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemUpdateJson(Janua.Core.Swap.TJanuaSwapItem)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemDelete(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemDeleteJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemSeen(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemSeenJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsList(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsListJson(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemWatch(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemWatchJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemLike(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemLikeJson(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemDisLike(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemDisLikeJson(System.Int64,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageInsert(Janua.Core.Swap.TJanuaSwapImage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageInsertJson(Janua.Core.Swap.TJanuaSwapImage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageDelete(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageDeleteJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemImageListJson(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemLikesList(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemLikesListJson(System.Int64)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.JanuaSwapProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualDiscover" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedItem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedItems" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedImages" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedFollowers" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedFollowings" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualFeeds" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualNotifications" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsDiscovered" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapForm" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwaps" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsLikesList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserItemsLikes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedSwap" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedEvent" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedEventsList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Messages" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.LastSwapMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.JanuaServerSystem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsSwapProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsUserItems" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsDiscoverItems" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsItem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsItemsLikes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsSelectedItem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.dsUserLikes" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.LastMessageID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Offset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Limit" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedItems">
+        <property name="sourceAnchor" value="385,880" />
+        <property name="targetAnchor" value="507,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedItem">
+        <property name="sourceAnchor" value="361,880" />
+        <property name="targetAnchor" value="512,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedImages">
+        <property name="sourceAnchor" value="429,1176" />
+        <property name="targetAnchor" value="968,1176" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FItemsDiscovered">
+        <property name="sourceAnchor" value="378,880" />
+        <property name="targetAnchor" value="500,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FUserSwaps">
+        <property name="sourceAnchor" value="412,880" />
+        <property name="targetAnchor" value="760,163" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FItemsLikesList">
+        <property name="sourceAnchor" value="170,880" />
+        <property name="targetAnchor" value="170,608" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FUserItemsLikes">
+        <property name="sourceAnchor" value="371,880" />
+        <property name="targetAnchor" value="493,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedSwap">
+        <property name="sourceAnchor" value="429,1130" />
+        <property name="targetAnchor" value="680,1130" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FEventsList">
+        <property name="sourceAnchor" value="355,880" />
+        <property name="targetAnchor" value="355,772" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FMessages">
+        <property name="sourceAnchor" value="429,893" />
+        <property name="targetAnchor" value="968,893" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualFeeds">
+        <property name="sourceAnchor" value="320,880" />
+        <property name="targetAnchor" value="320,589" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSwapForm">
+        <property name="sourceAnchor" value="429,1249" />
+        <property name="targetAnchor" value="968,1633" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualDiscover">
+        <property name="sourceAnchor" value="429,907" />
+        <property name="targetAnchor" value="746,387" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FActualNotifications">
+        <property name="sourceAnchor" value="312,880" />
+        <property name="targetAnchor" value="312,589" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedFollowings">
+        <property name="sourceAnchor" value="429,1217" />
+        <property name="targetAnchor" value="968,1484" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedFollowers">
+        <property name="sourceAnchor" value="429,1214" />
+        <property name="targetAnchor" value="968,1481" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FJanuaSwapProfile">
+        <property name="sourceAnchor" value="281,880" />
+        <property name="targetAnchor" value="281,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FSelectedEvent">
+        <property name="sourceAnchor" value="429,1366" />
+        <property name="targetAnchor" value="729,1366" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.FLastSwapMessage">
+        <property name="sourceAnchor" value="429,901" />
+        <property name="targetAnchor" value="490,901" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.JanuaSwapProfile">
+        <property name="sourceAnchor" value="273,880" />
+        <property name="targetAnchor" value="273,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualDiscover">
+        <property name="sourceAnchor" value="429,896" />
+        <property name="targetAnchor" value="739,387" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedItem">
+        <property name="sourceAnchor" value="354,880" />
+        <property name="targetAnchor" value="506,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedItems">
+        <property name="sourceAnchor" value="364,880" />
+        <property name="targetAnchor" value="486,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedImages">
+        <property name="sourceAnchor" value="429,1168" />
+        <property name="targetAnchor" value="968,1168" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedFollowers">
+        <property name="sourceAnchor" value="429,1214" />
+        <property name="targetAnchor" value="968,1481" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedFollowings">
+        <property name="sourceAnchor" value="429,1214" />
+        <property name="targetAnchor" value="968,1481" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualFeeds">
+        <property name="sourceAnchor" value="304,880" />
+        <property name="targetAnchor" value="304,589" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ActualNotifications">
+        <property name="sourceAnchor" value="296,880" />
+        <property name="targetAnchor" value="296,589" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsDiscovered">
+        <property name="sourceAnchor" value="357,880" />
+        <property name="targetAnchor" value="479,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SwapForm">
+        <property name="sourceAnchor" value="429,1252" />
+        <property name="targetAnchor" value="968,1636" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserSwaps">
+        <property name="sourceAnchor" value="405,880" />
+        <property name="targetAnchor" value="753,163" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.ItemsLikesList">
+        <property name="sourceAnchor" value="162,880" />
+        <property name="targetAnchor" value="162,608" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.UserItemsLikes">
+        <property name="sourceAnchor" value="350,880" />
+        <property name="targetAnchor" value="472,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedSwap">
+        <property name="sourceAnchor" value="429,1122" />
+        <property name="targetAnchor" value="680,1122" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedEvent">
+        <property name="sourceAnchor" value="429,1358" />
+        <property name="targetAnchor" value="729,1358" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.SelectedEventsList">
+        <property name="sourceAnchor" value="347,880" />
+        <property name="targetAnchor" value="347,772" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.Messages">
+        <property name="sourceAnchor" value="429,885" />
+        <property name="targetAnchor" value="968,885" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaCustomServerSwap.LastSwapMessage">
+        <property name="sourceAnchor" value="429,893" />
+        <property name="targetAnchor" value="490,893" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="729,688,201,265" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.FirstName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.LastName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.Town" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.CountryCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.Latitude" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.Longitude" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.IsFollowed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.IsFollowing" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.AvatarImage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollower.LoadFromDataset(Data.DB.TDataSet)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="132,627,145,128" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList.jsaNotSet" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList.jsaDelete" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList.jsaUndo" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList.jsaClose" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionList.jsaAgree" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="0,463,201,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.Item" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.likes" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.AsSJSONObJect()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.Item">
+        <property name="sourceAnchor" value="198,463" />
+        <property name="targetAnchor" value="460,274" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItemLikes.likes">
+        <property name="sourceAnchor" value="170,608" />
+        <property name="targetAnchor" value="998,1462" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="680,960,201,340" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.swap_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.UserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.FromUserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.fromItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.fromItemImage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.toItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.toItemImage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.ToUserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.toUserName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.completed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.datestarted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.dateended" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.canagree" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.Status" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.toUserImage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwap.Status">
+        <property name="sourceAnchor" value="881,1291" />
+        <property name="targetAnchor" value="968,1291" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="958,1,276,370" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.UserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.Date" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.NotificationType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.IsRead" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.UserName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.OtherUserID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.OtherUserImageUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.IsFollowing" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.IsFollowed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.SwapID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.SwapItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.SwapItemImageUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.UserItemID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.UserItemImageUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.EventID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.AsJSonObject()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotification.NotificationType">
+        <property name="sourceAnchor" value="1234,73" />
+        <property name="targetAnchor" value="1272,73" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="729,1319,201,475" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Owner" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.OwnerID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.description" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.ImageURL" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.DateTime" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Hour" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Mins" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Address" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.currency_code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.price" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.lat" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.lng" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.ParticipantsCount" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Participants" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.LastErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.participates" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Create(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.AsJSONString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.SaveToDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.LoadFromHttpParams(Web.HTTPApp.TWebRequest)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Owner">
+        <property name="sourceAnchor" value="829,1319" />
+        <property name="targetAnchor" value="829,953" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEvent.Participants">
+        <property name="sourceAnchor" value="930,1542" />
+        <property name="targetAnchor" value="968,1542" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,390,201,205" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.item_id" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.description" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.image_url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.insert_date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImage.LoadFromDataset(Data.DB.TDataSet)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusList">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,614,146,113" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusList.jssStarted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusList.jssDeleted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusList.jssClosed" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusList.jssAgreed" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,746,205,160" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.unread" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.Messages" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapMessages.Messages">
+        <property name="sourceAnchor" value="968,826" />
+        <property name="targetAnchor" value="691,826" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1272,1,296,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType.NotificationType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType.AsString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType.SetFromString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapNotificationType.NotificationType">
+        <property name="sourceAnchor" value="1322,146" />
+        <property name="targetAnchor" value="901,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="441,384,201,175" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.Items" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.count" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.Clear()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapItems.Items">
+        <property name="sourceAnchor" value="551,384" />
+        <property name="targetAnchor" value="551,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,925,215,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType.StatusType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType.AsString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType.AsInteger()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType.SetFromString(System.string)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapActionType.StatusType">
+        <property name="sourceAnchor" value="968,959" />
+        <property name="targetAnchor" value="277,716" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,1089,201,175" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.Images" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.ArrayLength(System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapImages.Images">
+        <property name="sourceAnchor" value="1068,1089" />
+        <property name="targetAnchor" value="1068,595" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,1283,215,160" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.StatusType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.AsString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.AsInteger()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.SetFromString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapStatusType.StatusType">
+        <property name="sourceAnchor" value="1041,1283" />
+        <property name="targetAnchor" value="1041,727" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,1462,201,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers.count" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers.Followers" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers.LoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaFollowers.Followers">
+        <property name="sourceAnchor" value="1044,1462" />
+        <property name="targetAnchor" value="873,953" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="968,1626,201,160" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.UserItem" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.OtherUser" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.OtherItems" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.AsSJSONObJect()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.LoadFromDataset(Data.DB.TDataSet,Data.DB.TDataSet,Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.UserItem">
+        <property name="sourceAnchor" value="1041,1626" />
+        <property name="targetAnchor" value="614,365" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.OtherUser">
+        <property name="sourceAnchor" value="1046,1626" />
+        <property name="targetAnchor" value="864,953" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapForm.OtherItems">
+        <property name="sourceAnchor" value="1033,1626" />
+        <property name="targetAnchor" value="578,559" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEventOptions">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="511,991,166,83" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEventOptions.jseParticipantList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCoreXE103Rio:Janua.Core.Swap.TJanuaSwapEventOptions.jseOwnerInfo" />
+    </reference>
+  </view>
+</nodeSet>

@@ -1,0 +1,728 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{998D6DE0-C85E-4D77-862D-9290977CDF1C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dac270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dacvcl270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dacfmx270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dcldac270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidac270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\vquery270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacvcl270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacfmx270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidac270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidacfmx270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\oraprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\tdsprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\msprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\myprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\ibprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\pgprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\liteprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\nexusprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\odbcprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\accessprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\adsprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\aseprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\mongoprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\db2provider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dbfprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\bigcommerceprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dynamicsprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\exacttargetprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\freshbooksprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\magentoprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\mailchimpprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\netsuiteprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\quickbooksprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\salesforceprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\sugarprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\zohoprovider270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclvquery270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\crcontrols270.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclcrcontrols270.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dac270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dac270.dproj"/>
+    </Target>
+    <Target Name="dac270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dac270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dac270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dac270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dacvcl270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacvcl270.dproj"/>
+    </Target>
+    <Target Name="dacvcl270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacvcl270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dacvcl270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacvcl270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dacfmx270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacfmx270.dproj"/>
+    </Target>
+    <Target Name="dacfmx270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacfmx270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dacfmx270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dacfmx270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dcldac270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dcldac270.dproj"/>
+    </Target>
+    <Target Name="dcldac270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dcldac270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dcldac270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dcldac270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="unidac270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidac270.dproj"/>
+    </Target>
+    <Target Name="unidac270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidac270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="unidac270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidac270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vquery270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\vquery270.dproj"/>
+    </Target>
+    <Target Name="vquery270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\vquery270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vquery270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\vquery270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="unidacvcl270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacvcl270.dproj"/>
+    </Target>
+    <Target Name="unidacvcl270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacvcl270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="unidacvcl270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacvcl270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="unidacfmx270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacfmx270.dproj"/>
+    </Target>
+    <Target Name="unidacfmx270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacfmx270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="unidacfmx270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacfmx270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclunidac270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidac270.dproj"/>
+    </Target>
+    <Target Name="dclunidac270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidac270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclunidac270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidac270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclunidacfmx270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidacfmx270.dproj"/>
+    </Target>
+    <Target Name="dclunidacfmx270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidacfmx270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclunidacfmx270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidacfmx270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="oraprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\oraprovider270.dproj"/>
+    </Target>
+    <Target Name="oraprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\oraprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="oraprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\oraprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="tdsprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\tdsprovider270.dproj"/>
+    </Target>
+    <Target Name="tdsprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\tdsprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tdsprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\tdsprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="msprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\msprovider270.dproj"/>
+    </Target>
+    <Target Name="msprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\msprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="msprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\msprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="myprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\myprovider270.dproj"/>
+    </Target>
+    <Target Name="myprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\myprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="myprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\myprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ibprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\ibprovider270.dproj"/>
+    </Target>
+    <Target Name="ibprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\ibprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ibprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\ibprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pgprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\pgprovider270.dproj"/>
+    </Target>
+    <Target Name="pgprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\pgprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pgprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\pgprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="liteprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\liteprovider270.dproj"/>
+    </Target>
+    <Target Name="liteprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\liteprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="liteprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\liteprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="nexusprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\nexusprovider270.dproj"/>
+    </Target>
+    <Target Name="nexusprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\nexusprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="nexusprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\nexusprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="odbcprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\odbcprovider270.dproj"/>
+    </Target>
+    <Target Name="odbcprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\odbcprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="odbcprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\odbcprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="accessprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\accessprovider270.dproj"/>
+    </Target>
+    <Target Name="accessprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\accessprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="accessprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\accessprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="adsprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\adsprovider270.dproj"/>
+    </Target>
+    <Target Name="adsprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\adsprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="adsprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\adsprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="aseprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\aseprovider270.dproj"/>
+    </Target>
+    <Target Name="aseprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\aseprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="aseprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\aseprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mongoprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mongoprovider270.dproj"/>
+    </Target>
+    <Target Name="mongoprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mongoprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mongoprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mongoprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="db2provider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\db2provider270.dproj"/>
+    </Target>
+    <Target Name="db2provider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\db2provider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="db2provider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\db2provider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dbfprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dbfprovider270.dproj"/>
+    </Target>
+    <Target Name="dbfprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dbfprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dbfprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dbfprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="bigcommerceprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\bigcommerceprovider270.dproj"/>
+    </Target>
+    <Target Name="bigcommerceprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\bigcommerceprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="bigcommerceprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\bigcommerceprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dynamicsprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dynamicsprovider270.dproj"/>
+    </Target>
+    <Target Name="dynamicsprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dynamicsprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dynamicsprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dynamicsprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="exacttargetprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\exacttargetprovider270.dproj"/>
+    </Target>
+    <Target Name="exacttargetprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\exacttargetprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="exacttargetprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\exacttargetprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="freshbooksprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\freshbooksprovider270.dproj"/>
+    </Target>
+    <Target Name="freshbooksprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\freshbooksprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="freshbooksprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\freshbooksprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="magentoprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\magentoprovider270.dproj"/>
+    </Target>
+    <Target Name="magentoprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\magentoprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="magentoprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\magentoprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mailchimpprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mailchimpprovider270.dproj"/>
+    </Target>
+    <Target Name="mailchimpprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mailchimpprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mailchimpprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\mailchimpprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="netsuiteprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\netsuiteprovider270.dproj"/>
+    </Target>
+    <Target Name="netsuiteprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\netsuiteprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="netsuiteprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\netsuiteprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="quickbooksprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\quickbooksprovider270.dproj"/>
+    </Target>
+    <Target Name="quickbooksprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\quickbooksprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="quickbooksprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\quickbooksprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="salesforceprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\salesforceprovider270.dproj"/>
+    </Target>
+    <Target Name="salesforceprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\salesforceprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="salesforceprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\salesforceprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sugarprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\sugarprovider270.dproj"/>
+    </Target>
+    <Target Name="sugarprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\sugarprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sugarprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\sugarprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="zohoprovider270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\zohoprovider270.dproj"/>
+    </Target>
+    <Target Name="zohoprovider270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\zohoprovider270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="zohoprovider270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\zohoprovider270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclvquery270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclvquery270.dproj"/>
+    </Target>
+    <Target Name="dclvquery270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclvquery270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclvquery270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclvquery270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="crcontrols270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\crcontrols270.dproj"/>
+    </Target>
+    <Target Name="crcontrols270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\crcontrols270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="crcontrols270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\crcontrols270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclcrcontrols270">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclcrcontrols270.dproj"/>
+    </Target>
+    <Target Name="dclcrcontrols270:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclcrcontrols270.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclcrcontrols270:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniDAC\Source\Delphi27\dclcrcontrols270.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dac270;dacvcl270;dacfmx270;dcldac270;unidac270;vquery270;unidacvcl270;unidacfmx270;dclunidac270;dclunidacfmx270;oraprovider270;tdsprovider270;msprovider270;myprovider270;ibprovider270;pgprovider270;liteprovider270;nexusprovider270;odbcprovider270;accessprovider270;adsprovider270;aseprovider270;mongoprovider270;db2provider270;dbfprovider270;bigcommerceprovider270;dynamicsprovider270;exacttargetprovider270;freshbooksprovider270;magentoprovider270;mailchimpprovider270;netsuiteprovider270;quickbooksprovider270;salesforceprovider270;sugarprovider270;zohoprovider270;dclvquery270;crcontrols270;dclcrcontrols270"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dac270:Clean;dacvcl270:Clean;dacfmx270:Clean;dcldac270:Clean;unidac270:Clean;vquery270:Clean;unidacvcl270:Clean;unidacfmx270:Clean;dclunidac270:Clean;dclunidacfmx270:Clean;oraprovider270:Clean;tdsprovider270:Clean;msprovider270:Clean;myprovider270:Clean;ibprovider270:Clean;pgprovider270:Clean;liteprovider270:Clean;nexusprovider270:Clean;odbcprovider270:Clean;accessprovider270:Clean;adsprovider270:Clean;aseprovider270:Clean;mongoprovider270:Clean;db2provider270:Clean;dbfprovider270:Clean;bigcommerceprovider270:Clean;dynamicsprovider270:Clean;exacttargetprovider270:Clean;freshbooksprovider270:Clean;magentoprovider270:Clean;mailchimpprovider270:Clean;netsuiteprovider270:Clean;quickbooksprovider270:Clean;salesforceprovider270:Clean;sugarprovider270:Clean;zohoprovider270:Clean;dclvquery270:Clean;crcontrols270:Clean;dclcrcontrols270:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dac270:Make;dacvcl270:Make;dacfmx270:Make;dcldac270:Make;unidac270:Make;vquery270:Make;unidacvcl270:Make;unidacfmx270:Make;dclunidac270:Make;dclunidacfmx270:Make;oraprovider270:Make;tdsprovider270:Make;msprovider270:Make;myprovider270:Make;ibprovider270:Make;pgprovider270:Make;liteprovider270:Make;nexusprovider270:Make;odbcprovider270:Make;accessprovider270:Make;adsprovider270:Make;aseprovider270:Make;mongoprovider270:Make;db2provider270:Make;dbfprovider270:Make;bigcommerceprovider270:Make;dynamicsprovider270:Make;exacttargetprovider270:Make;freshbooksprovider270:Make;magentoprovider270:Make;mailchimpprovider270:Make;netsuiteprovider270:Make;quickbooksprovider270:Make;salesforceprovider270:Make;sugarprovider270:Make;zohoprovider270:Make;dclvquery270:Make;crcontrols270:Make;dclcrcontrols270:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Libs'">
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\netsuiteprovider270.dproj">
+            <ProjectGuid>{28AB7924-9BEE-42BA-A5D4-A9B8195D6E8E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\myprovider270.dproj">
+            <ProjectGuid>{A1E40028-9DE4-43EC-AF13-CF76394F6495}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\mongoprovider270.dproj">
+            <ProjectGuid>{E186D48F-D196-45B3-BF3F-F0DFC4BFABBA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dac270.dproj">
+            <ProjectGuid>{3E934519-3666-4902-AA40-EB29EED797EA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidac270.dproj">
+            <ProjectGuid>{EA9EC1CE-8ACE-4BC6-9D70-DFEE1626F110}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\tdsprovider270.dproj">
+            <ProjectGuid>{A295296A-6EBA-488D-8015-262FB208A187}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\exacttargetprovider270.dproj">
+            <ProjectGuid>{A47EAA1C-44A9-4FE2-9B65-37AC22EBBD8A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\accessprovider270.dproj">
+            <ProjectGuid>{515A7CE6-629C-4760-8ACF-0FE26D84523A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\adsprovider270.dproj">
+            <ProjectGuid>{FE6D4932-9201-4CE7-B983-B2E56B874E8A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\aseprovider270.dproj">
+            <ProjectGuid>{83CBB4F1-1165-4684-A1F4-775D68ADCD6C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacfmx270.dproj">
+            <ProjectGuid>{4312A9F0-157D-4479-BE7F-2F6686E7DD07}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\liteprovider270.dproj">
+            <ProjectGuid>{7DEFBD43-C3E7-4980-8966-C7023447CD50}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\salesforceprovider270.dproj">
+            <ProjectGuid>{FFEE3210-D5E3-41E1-8C09-B335EF58F2C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\db2provider270.dproj">
+            <ProjectGuid>{7100E1E6-5C5C-4991-BD4D-3E474F3142A4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\zohoprovider270.dproj">
+            <ProjectGuid>{F30725FD-E075-490C-B2F0-896C9ED47FB7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\sugarprovider270.dproj">
+            <ProjectGuid>{56E6AC47-4755-4C2D-B624-0ACB869D4BDC}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclvquery270.dproj">
+            <ProjectGuid>{A8B81931-9E1E-4E03-900C-B50C6FDFA828}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dcldac270.dproj">
+            <ProjectGuid>{1ACE60BB-2BFF-4717-9389-4C2AB1BBB8F6}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dacvcl270.dproj">
+            <ProjectGuid>{EF997099-04A2-4688-A33C-951D776B5404}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\mailchimpprovider270.dproj">
+            <ProjectGuid>{601E76F1-84C7-43CA-BAB3-84640603A6CA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclcrcontrols270.dproj">
+            <ProjectGuid>{A05307FF-C581-4A53-83C6-B322682279BF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\unidacvcl270.dproj">
+            <ProjectGuid>{CD7618DD-88FE-452B-AC9F-8E6341DB9E29}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\quickbooksprovider270.dproj">
+            <ProjectGuid>{4DB9544E-7F96-4F56-B736-784B01A708FE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\odbcprovider270.dproj">
+            <ProjectGuid>{4862F630-3DE5-464A-816C-F12D0E60BDDD}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\pgprovider270.dproj">
+            <ProjectGuid>{17D89745-BBEB-44F0-9785-B4A6F8B84272}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\nexusprovider270.dproj">
+            <ProjectGuid>{1401AE8E-DB3B-4200-980C-42FDA23BD38A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\msprovider270.dproj">
+            <ProjectGuid>{542CA66A-57E8-48EA-B513-338D5CC83FBB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidacfmx270.dproj">
+            <ProjectGuid>{F1AFFA0F-1037-4EE2-88F7-BFF7FD832A29}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\oraprovider270.dproj">
+            <ProjectGuid>{BF0C7236-A21E-4A5B-B08A-38329DDD5DE1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dbfprovider270.dproj">
+            <ProjectGuid>{1A63B6E7-C230-4369-BC9D-D11B386FB33F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\magentoprovider270.dproj">
+            <ProjectGuid>{DD28CC00-EE03-4885-A5F1-56C7E4167ADF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dynamicsprovider270.dproj">
+            <ProjectGuid>{81C1711F-7F34-4386-BD4F-9C7902D10B5A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\crcontrols270.dproj">
+            <ProjectGuid>{E44F660D-03D3-4983-8E77-76A2D7226CEF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\vquery270.dproj">
+            <ProjectGuid>{5FAD0C50-F4D5-4AAA-9719-F065A7EB292B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dacfmx270.dproj">
+            <ProjectGuid>{EB9174D8-8EB7-404A-AA40-9087616D6E0B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\dclunidac270.dproj">
+            <ProjectGuid>{B3C5DDCC-9704-4351-AD7B-5D16603319E1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\ibprovider270.dproj">
+            <ProjectGuid>{6017969C-C167-4CD3-BB1F-F71FA138C214}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\freshbooksprovider270.dproj">
+            <ProjectGuid>{33021893-36ED-45DE-8BF2-7339BEB9467E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniDAC\Source\Delphi27\bigcommerceprovider270.dproj">
+            <ProjectGuid>{A8291790-E26D-4F1A-B23D-3F1AF7054776}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

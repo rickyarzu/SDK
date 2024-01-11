@@ -1,0 +1,208 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{54C85531-567B-4567-A172-DD2628CF3A03}</ProjectGuid>
+        <MainSource>dclxdata.dpk</MainSource>
+        <ProjectVersion>19.1</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Package</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
+        <Base_Linux64>true</Base_Linux64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE12\janualibXE12.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE12\janualibXE12.optset')"/>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>dclxdata</SanitizedProjectName>
+        <DCC_Description>TMS XData - Design-Time Package</DCC_Description>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <DesignOnlyPackage>true</DesignOnlyPackage>
+        <DllSuffix>260</DllSuffix>
+        <DCC_BpiOutput>.\$(Platform)\$(Config)</DCC_BpiOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_HppOutput>.\$(Platform)\$(Config)</DCC_HppOutput>
+        <DCC_ObjOutput>.\$(Platform)\$(Config)</DCC_ObjOutput>
+        <CfgDependentOn>..\..\prj\DXE12\janualibXE12.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
+        <DCC_UsePackage>rtl;xdata;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+        
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>rtl;xdata;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+        
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>rtl;xdata;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dcltmsbcl.dcp"/>
+        <DCCReference Include="dcldb.dcp"/>
+        <DCCReference Include="xdata.dcp"/>
+        <DCCReference Include="dclaurelius.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.SourceGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Types.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Form.pas">
+            <Form>FScaffoldingWizard</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Headers.pas">
+            <Form>FScaffoldingWizardHeaders</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\Scaffolding.Wizard.Registration.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.DatasetDesigner.pas">
+            <Form>fmXDataFieldLoader</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.DatasetEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.Editors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.Register.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.SourceCreator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Design.WebDatasetEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Resource.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\Source\design\XData.Wizard.Console.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Registration.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.CodeGenerator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Form.pas">
+            <Form>FServiceWizardForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Registration.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.Service.Settings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS XData\Source\design\XData.Wizard.Vcl.pas"/>
+        <RcCompile Include="..\..\..\tmssoftware\TMS XData\source\design\XData.Wizard.rc">
+            <Form>XData.Wizard.res</Form>
+        </RcCompile>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE12\janualibXE12.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">dclxdata.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\Janua.dclSVGIconImageList260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\Janua.dclSVGIconImageList260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclIconFontsImageListFMX260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclIconFontsImageListFMX260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\Janua.dclIconFontsImageList260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\Janua.dclIconFontsImageList260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\DDetours260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\DDetours260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\VisualStyles260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\VisualStyles260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dcltmsbcl260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dcltmsbcl260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclaurelius260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclaurelius260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclsparkle260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\dclsparkle260.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp260.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfrxTee26.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfsTee26.bpl">FastScript 1.9 Tee Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfrxIBX26.bpl">FastReport 6.0 IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Januaproject\Components\FastReport 6 VCL Enterprise\LibD26\dclfsIBX26.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FlexCel_Core260.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FlexCel_Core260.bpl not found</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3"/>
+            <Platforms>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

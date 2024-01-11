@@ -1,0 +1,728 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A019FB32-C851-49BA-A1AC-97C8FAA610D8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="clinetsuite.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dcl_clinetsuite.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FrameViewer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclFrameViewer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVPkgDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVDBPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVQR.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\TRichView\ThirdParty\QuickReport\Source\RVQRDDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RichViewActionsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SRVPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVARibbon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVMath.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RichViewActionsDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVMathDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReportWorkshop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReportWorkshopDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RWSRV.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RW_Uni.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RW_UniDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RvHtml.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RvHtmlDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RvXml.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RvXmlDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SRVPkgDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBSRVPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBSRVPkgDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVDBPkgDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVCleverComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVCleverComponentsDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVIndy.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RVIndyDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="rvHtmlViewImportD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="rvHtmlViewImportDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Almediadev\StyleControls\StyleControlsRio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\OfficeConverters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\prj\CleverGMailIMAP_103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\prj\CleverRichViewMailClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Projects\Prototyping\VCL\EMail\prjVCLCleverEmailOAuthComponents.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="clinetsuite">
+        <MSBuild Projects="clinetsuite.dproj"/>
+    </Target>
+    <Target Name="clinetsuite:Clean">
+        <MSBuild Projects="clinetsuite.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="clinetsuite:Make">
+        <MSBuild Projects="clinetsuite.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dcl_clinetsuite">
+        <MSBuild Projects="dcl_clinetsuite.dproj"/>
+    </Target>
+    <Target Name="dcl_clinetsuite:Clean">
+        <MSBuild Projects="dcl_clinetsuite.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dcl_clinetsuite:Make">
+        <MSBuild Projects="dcl_clinetsuite.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FrameViewer">
+        <MSBuild Projects="FrameViewer.dproj"/>
+    </Target>
+    <Target Name="FrameViewer:Clean">
+        <MSBuild Projects="FrameViewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FrameViewer:Make">
+        <MSBuild Projects="FrameViewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclFrameViewer">
+        <MSBuild Projects="dclFrameViewer.dproj"/>
+    </Target>
+    <Target Name="dclFrameViewer:Clean">
+        <MSBuild Projects="dclFrameViewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclFrameViewer:Make">
+        <MSBuild Projects="dclFrameViewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVPkg">
+        <MSBuild Projects="RVPkg.dproj"/>
+    </Target>
+    <Target Name="RVPkg:Clean">
+        <MSBuild Projects="RVPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVPkg:Make">
+        <MSBuild Projects="RVPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVPkgDsgn">
+        <MSBuild Projects="RVPkgDsgn.dproj"/>
+    </Target>
+    <Target Name="RVPkgDsgn:Clean">
+        <MSBuild Projects="RVPkgDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVPkgDsgn:Make">
+        <MSBuild Projects="RVPkgDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVDBPkg">
+        <MSBuild Projects="RVDBPkg.dproj"/>
+    </Target>
+    <Target Name="RVDBPkg:Clean">
+        <MSBuild Projects="RVDBPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVDBPkg:Make">
+        <MSBuild Projects="RVDBPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVQR">
+        <MSBuild Projects="RVQR.dproj"/>
+    </Target>
+    <Target Name="RVQR:Clean">
+        <MSBuild Projects="RVQR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVQR:Make">
+        <MSBuild Projects="RVQR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVQRDDsgn">
+        <MSBuild Projects="..\..\..\Libraries\TRichView\ThirdParty\QuickReport\Source\RVQRDDsgn.dproj"/>
+    </Target>
+    <Target Name="RVQRDDsgn:Clean">
+        <MSBuild Projects="..\..\..\Libraries\TRichView\ThirdParty\QuickReport\Source\RVQRDDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVQRDDsgn:Make">
+        <MSBuild Projects="..\..\..\Libraries\TRichView\ThirdParty\QuickReport\Source\RVQRDDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RichViewActionsD">
+        <MSBuild Projects="RichViewActionsD.dproj"/>
+    </Target>
+    <Target Name="RichViewActionsD:Clean">
+        <MSBuild Projects="RichViewActionsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RichViewActionsD:Make">
+        <MSBuild Projects="RichViewActionsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SRVPkg">
+        <MSBuild Projects="SRVPkg.dproj"/>
+    </Target>
+    <Target Name="SRVPkg:Clean">
+        <MSBuild Projects="SRVPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SRVPkg:Make">
+        <MSBuild Projects="SRVPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVARibbon">
+        <MSBuild Projects="RVARibbon.dproj"/>
+    </Target>
+    <Target Name="RVARibbon:Clean">
+        <MSBuild Projects="RVARibbon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVARibbon:Make">
+        <MSBuild Projects="RVARibbon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVMath">
+        <MSBuild Projects="RVMath.dproj"/>
+    </Target>
+    <Target Name="RVMath:Clean">
+        <MSBuild Projects="RVMath.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVMath:Make">
+        <MSBuild Projects="RVMath.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RichViewActionsDsgn">
+        <MSBuild Projects="RichViewActionsDsgn.dproj"/>
+    </Target>
+    <Target Name="RichViewActionsDsgn:Clean">
+        <MSBuild Projects="RichViewActionsDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RichViewActionsDsgn:Make">
+        <MSBuild Projects="RichViewActionsDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVMathDsgn">
+        <MSBuild Projects="RVMathDsgn.dproj"/>
+    </Target>
+    <Target Name="RVMathDsgn:Clean">
+        <MSBuild Projects="RVMathDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVMathDsgn:Make">
+        <MSBuild Projects="RVMathDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReportWorkshop">
+        <MSBuild Projects="ReportWorkshop.dproj"/>
+    </Target>
+    <Target Name="ReportWorkshop:Clean">
+        <MSBuild Projects="ReportWorkshop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReportWorkshop:Make">
+        <MSBuild Projects="ReportWorkshop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReportWorkshopDsgn">
+        <MSBuild Projects="ReportWorkshopDsgn.dproj"/>
+    </Target>
+    <Target Name="ReportWorkshopDsgn:Clean">
+        <MSBuild Projects="ReportWorkshopDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReportWorkshopDsgn:Make">
+        <MSBuild Projects="ReportWorkshopDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RWSRV">
+        <MSBuild Projects="RWSRV.dproj"/>
+    </Target>
+    <Target Name="RWSRV:Clean">
+        <MSBuild Projects="RWSRV.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RWSRV:Make">
+        <MSBuild Projects="RWSRV.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RW_Uni">
+        <MSBuild Projects="RW_Uni.dproj"/>
+    </Target>
+    <Target Name="RW_Uni:Clean">
+        <MSBuild Projects="RW_Uni.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RW_Uni:Make">
+        <MSBuild Projects="RW_Uni.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RW_UniDsgn">
+        <MSBuild Projects="RW_UniDsgn.dproj"/>
+    </Target>
+    <Target Name="RW_UniDsgn:Clean">
+        <MSBuild Projects="RW_UniDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RW_UniDsgn:Make">
+        <MSBuild Projects="RW_UniDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RvHtml">
+        <MSBuild Projects="RvHtml.dproj"/>
+    </Target>
+    <Target Name="RvHtml:Clean">
+        <MSBuild Projects="RvHtml.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RvHtml:Make">
+        <MSBuild Projects="RvHtml.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RvHtmlDsgn">
+        <MSBuild Projects="RvHtmlDsgn.dproj"/>
+    </Target>
+    <Target Name="RvHtmlDsgn:Clean">
+        <MSBuild Projects="RvHtmlDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RvHtmlDsgn:Make">
+        <MSBuild Projects="RvHtmlDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RvXml">
+        <MSBuild Projects="RvXml.dproj"/>
+    </Target>
+    <Target Name="RvXml:Clean">
+        <MSBuild Projects="RvXml.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RvXml:Make">
+        <MSBuild Projects="RvXml.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RvXmlDsgn">
+        <MSBuild Projects="RvXmlDsgn.dproj"/>
+    </Target>
+    <Target Name="RvXmlDsgn:Clean">
+        <MSBuild Projects="RvXmlDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RvXmlDsgn:Make">
+        <MSBuild Projects="RvXmlDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SRVPkgDsgn">
+        <MSBuild Projects="SRVPkgDsgn.dproj"/>
+    </Target>
+    <Target Name="SRVPkgDsgn:Clean">
+        <MSBuild Projects="SRVPkgDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SRVPkgDsgn:Make">
+        <MSBuild Projects="SRVPkgDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DBSRVPkg">
+        <MSBuild Projects="DBSRVPkg.dproj"/>
+    </Target>
+    <Target Name="DBSRVPkg:Clean">
+        <MSBuild Projects="DBSRVPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBSRVPkg:Make">
+        <MSBuild Projects="DBSRVPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DBSRVPkgDsgn">
+        <MSBuild Projects="DBSRVPkgDsgn.dproj"/>
+    </Target>
+    <Target Name="DBSRVPkgDsgn:Clean">
+        <MSBuild Projects="DBSRVPkgDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBSRVPkgDsgn:Make">
+        <MSBuild Projects="DBSRVPkgDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVDBPkgDsgn">
+        <MSBuild Projects="RVDBPkgDsgn.dproj"/>
+    </Target>
+    <Target Name="RVDBPkgDsgn:Clean">
+        <MSBuild Projects="RVDBPkgDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVDBPkgDsgn:Make">
+        <MSBuild Projects="RVDBPkgDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVCleverComponents">
+        <MSBuild Projects="RVCleverComponents.dproj"/>
+    </Target>
+    <Target Name="RVCleverComponents:Clean">
+        <MSBuild Projects="RVCleverComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVCleverComponents:Make">
+        <MSBuild Projects="RVCleverComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVCleverComponentsDsgn">
+        <MSBuild Projects="RVCleverComponentsDsgn.dproj"/>
+    </Target>
+    <Target Name="RVCleverComponentsDsgn:Clean">
+        <MSBuild Projects="RVCleverComponentsDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVCleverComponentsDsgn:Make">
+        <MSBuild Projects="RVCleverComponentsDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVIndy">
+        <MSBuild Projects="RVIndy.dproj"/>
+    </Target>
+    <Target Name="RVIndy:Clean">
+        <MSBuild Projects="RVIndy.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVIndy:Make">
+        <MSBuild Projects="RVIndy.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RVIndyDsgn">
+        <MSBuild Projects="RVIndyDsgn.dproj"/>
+    </Target>
+    <Target Name="RVIndyDsgn:Clean">
+        <MSBuild Projects="RVIndyDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RVIndyDsgn:Make">
+        <MSBuild Projects="RVIndyDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="rvHtmlViewImportD">
+        <MSBuild Projects="rvHtmlViewImportD.dproj"/>
+    </Target>
+    <Target Name="rvHtmlViewImportD:Clean">
+        <MSBuild Projects="rvHtmlViewImportD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rvHtmlViewImportD:Make">
+        <MSBuild Projects="rvHtmlViewImportD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="rvHtmlViewImportDsgn">
+        <MSBuild Projects="rvHtmlViewImportDsgn.dproj"/>
+    </Target>
+    <Target Name="rvHtmlViewImportDsgn:Clean">
+        <MSBuild Projects="rvHtmlViewImportDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rvHtmlViewImportDsgn:Make">
+        <MSBuild Projects="rvHtmlViewImportDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControlsRio">
+        <MSBuild Projects="..\..\..\Libraries\Almediadev\StyleControls\StyleControlsRio.dproj"/>
+    </Target>
+    <Target Name="StyleControlsRio:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Almediadev\StyleControls\StyleControlsRio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControlsRio:Make">
+        <MSBuild Projects="..\..\..\Libraries\Almediadev\StyleControls\StyleControlsRio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OfficeConverters">
+        <MSBuild Projects="Demos\OfficeConverters.dproj"/>
+    </Target>
+    <Target Name="OfficeConverters:Clean">
+        <MSBuild Projects="Demos\OfficeConverters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OfficeConverters:Make">
+        <MSBuild Projects="Demos\OfficeConverters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CleverGMailIMAP_103">
+        <MSBuild Projects="Demos\prj\CleverGMailIMAP_103.dproj"/>
+    </Target>
+    <Target Name="CleverGMailIMAP_103:Clean">
+        <MSBuild Projects="Demos\prj\CleverGMailIMAP_103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CleverGMailIMAP_103:Make">
+        <MSBuild Projects="Demos\prj\CleverGMailIMAP_103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CleverRichViewMailClient">
+        <MSBuild Projects="Demos\prj\CleverRichViewMailClient.dproj"/>
+    </Target>
+    <Target Name="CleverRichViewMailClient:Clean">
+        <MSBuild Projects="Demos\prj\CleverRichViewMailClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CleverRichViewMailClient:Make">
+        <MSBuild Projects="Demos\prj\CleverRichViewMailClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjVCLCleverEmailOAuthComponents">
+        <MSBuild Projects="..\..\..\Projects\Prototyping\VCL\EMail\prjVCLCleverEmailOAuthComponents.dproj"/>
+    </Target>
+    <Target Name="prjVCLCleverEmailOAuthComponents:Clean">
+        <MSBuild Projects="..\..\..\Projects\Prototyping\VCL\EMail\prjVCLCleverEmailOAuthComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjVCLCleverEmailOAuthComponents:Make">
+        <MSBuild Projects="..\..\..\Projects\Prototyping\VCL\EMail\prjVCLCleverEmailOAuthComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="clinetsuite;dcl_clinetsuite;FrameViewer;dclFrameViewer;RVPkg;RVPkgDsgn;RVDBPkg;RVQR;RVQRDDsgn;RichViewActionsD;SRVPkg;RVARibbon;RVMath;RichViewActionsDsgn;RVMathDsgn;ReportWorkshop;ReportWorkshopDsgn;RWSRV;RW_Uni;RW_UniDsgn;RvHtml;RvHtmlDsgn;RvXml;RvXmlDsgn;SRVPkgDsgn;DBSRVPkg;DBSRVPkgDsgn;RVDBPkgDsgn;RVCleverComponents;RVCleverComponentsDsgn;RVIndy;RVIndyDsgn;rvHtmlViewImportD;rvHtmlViewImportDsgn;StyleControlsRio;OfficeConverters;CleverGMailIMAP_103;CleverRichViewMailClient;prjVCLCleverEmailOAuthComponents"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="clinetsuite:Clean;dcl_clinetsuite:Clean;FrameViewer:Clean;dclFrameViewer:Clean;RVPkg:Clean;RVPkgDsgn:Clean;RVDBPkg:Clean;RVQR:Clean;RVQRDDsgn:Clean;RichViewActionsD:Clean;SRVPkg:Clean;RVARibbon:Clean;RVMath:Clean;RichViewActionsDsgn:Clean;RVMathDsgn:Clean;ReportWorkshop:Clean;ReportWorkshopDsgn:Clean;RWSRV:Clean;RW_Uni:Clean;RW_UniDsgn:Clean;RvHtml:Clean;RvHtmlDsgn:Clean;RvXml:Clean;RvXmlDsgn:Clean;SRVPkgDsgn:Clean;DBSRVPkg:Clean;DBSRVPkgDsgn:Clean;RVDBPkgDsgn:Clean;RVCleverComponents:Clean;RVCleverComponentsDsgn:Clean;RVIndy:Clean;RVIndyDsgn:Clean;rvHtmlViewImportD:Clean;rvHtmlViewImportDsgn:Clean;StyleControlsRio:Clean;OfficeConverters:Clean;CleverGMailIMAP_103:Clean;CleverRichViewMailClient:Clean;prjVCLCleverEmailOAuthComponents:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="clinetsuite:Make;dcl_clinetsuite:Make;FrameViewer:Make;dclFrameViewer:Make;RVPkg:Make;RVPkgDsgn:Make;RVDBPkg:Make;RVQR:Make;RVQRDDsgn:Make;RichViewActionsD:Make;SRVPkg:Make;RVARibbon:Make;RVMath:Make;RichViewActionsDsgn:Make;RVMathDsgn:Make;ReportWorkshop:Make;ReportWorkshopDsgn:Make;RWSRV:Make;RW_Uni:Make;RW_UniDsgn:Make;RvHtml:Make;RvHtmlDsgn:Make;RvXml:Make;RvXmlDsgn:Make;SRVPkgDsgn:Make;DBSRVPkg:Make;DBSRVPkgDsgn:Make;RVDBPkgDsgn:Make;RVCleverComponents:Make;RVCleverComponentsDsgn:Make;RVIndy:Make;RVIndyDsgn:Make;rvHtmlViewImportD:Make;rvHtmlViewImportDsgn:Make;StyleControlsRio:Make;OfficeConverters:Make;CleverGMailIMAP_103:Make;CleverRichViewMailClient:Make;prjVCLCleverEmailOAuthComponents:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Full Build'">
+        <BuildGroupProject Include="..\..\..\Libraries\TRichView\ThirdParty\QuickReport\Source\RVQRDDsgn.dproj">
+            <ProjectGuid>{96DDBA65-5412-4025-906A-328DD1038C66}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVMathDsgn.dproj">
+            <ProjectGuid>{2DF3074E-052C-4FE4-AED6-ABF48AE8460E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RvXml.dproj">
+            <ProjectGuid>{3A119044-D107-4507-94A0-CAD8C4D3EB6D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVPkgDsgn.dproj">
+            <ProjectGuid>{C8407A7F-AF89-44A0-A3E1-B4B09B1FBD1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RWSRV.dproj">
+            <ProjectGuid>{2ED8563E-F3AF-4123-A429-F0E298DED93D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RvHtml.dproj">
+            <ProjectGuid>{AB884F32-5790-4FD0-A830-BF6796326A65}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="SRVPkg.dproj">
+            <ProjectGuid>{C331673E-1055-484C-A173-AEA1F1CDFDEA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="dcl_clinetsuite.dproj">
+            <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVCleverComponents.dproj">
+            <ProjectGuid>{D88A5C39-C419-42B3-BB47-A67C4915FB00}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVPkg.dproj">
+            <ProjectGuid>{C8699BF6-D387-47F2-910F-6F4C0EBE07E4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RvHtmlDsgn.dproj">
+            <ProjectGuid>{DC1AB50C-5832-4AE5-8F8D-AA1F049FC3B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Demos\prj\CleverGMailIMAP_103.dproj">
+            <ProjectGuid>{FA72BC28-E4FD-49A0-B18E-4FBB1E5682FF}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Demos\prj\CleverRichViewMailClient.dproj">
+            <ProjectGuid>{980018BF-F5D1-4F9E-81CE-AB60C676B02F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rvHtmlViewImportDsgn.dproj">
+            <ProjectGuid>{A4C86EC6-B330-4056-8C4F-D96987AE144C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DBSRVPkg.dproj">
+            <ProjectGuid>{ABBB031C-7DD3-4F6D-8F71-7353C2CDD654}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="clinetsuite.dproj">
+            <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="dclFrameViewer.dproj">
+            <ProjectGuid>{996BB2D9-895E-483E-9E15-9BE4E4C058CB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReportWorkshop.dproj">
+            <ProjectGuid>{7757F382-8840-4538-BD04-CA91661ADE6B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVARibbon.dproj">
+            <ProjectGuid>{3EBE8365-FE21-4179-910F-A3BD1EAD630F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RichViewActionsD.dproj">
+            <ProjectGuid>{DC7DD7DF-3849-4151-A860-1963D83549D5}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RichViewActionsDsgn.dproj">
+            <ProjectGuid>{6D6BADC6-E9AD-4741-9168-0911CF179DE1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVMath.dproj">
+            <ProjectGuid>{FB31719E-3CF1-40F4-AAD6-D754664EB802}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVDBPkgDsgn.dproj">
+            <ProjectGuid>{2FDF755D-D7F9-4BC5-821A-50C4093F1F45}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVIndy.dproj">
+            <ProjectGuid>{82A5D1C5-CBCF-4BFA-8524-5851106C4F59}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rvHtmlViewImportD.dproj">
+            <ProjectGuid>{C8A4B52A-811F-47C2-86AF-25FE7F6FF9F3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\Prototyping\VCL\EMail\prjVCLCleverEmailOAuthComponents.dproj">
+            <ProjectGuid>{FBC2F1CA-421F-4818-9394-E5F4F2449E99}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RvXmlDsgn.dproj">
+            <ProjectGuid>{6A9736A2-4888-40E9-9732-69DC9C1860E9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVDBPkg.dproj">
+            <ProjectGuid>{271B19E2-FE38-4263-9100-A75BE5677B28}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RW_Uni.dproj">
+            <ProjectGuid>{E435F468-8BF1-408C-ABD7-562426099EE4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Demos\OfficeConverters.dproj">
+            <ProjectGuid>{9EABF2C2-64A8-45E6-B8CA-FB40C2FDD840}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FrameViewer.dproj">
+            <ProjectGuid>{57FF375C-8B06-4922-82A5-5514DEA1BF61}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVIndyDsgn.dproj">
+            <ProjectGuid>{EBB20916-8570-4291-BE3B-5E1FDBBA598F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="SRVPkgDsgn.dproj">
+            <ProjectGuid>{3AB88EB8-79EB-4A06-950D-060D27CBC7B9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DBSRVPkgDsgn.dproj">
+            <ProjectGuid>{8C7C7A0A-5C5B-4A37-9FAA-3770BC2CEEDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Almediadev\StyleControls\StyleControlsRio.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVCleverComponentsDsgn.dproj">
+            <ProjectGuid>{015509CF-EFA8-4F20-A2BA-5695A37F8654}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RVQR.dproj">
+            <ProjectGuid>{4D951AB3-4DE8-42BB-812A-71BE8FBE0AC4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReportWorkshopDsgn.dproj">
+            <ProjectGuid>{2F9A11AC-3D61-4E73-8313-B5FE63D222AF}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="RW_UniDsgn.dproj">
+            <ProjectGuid>{1DBF79E2-0C8C-4DD6-A329-9B4731F22DFA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

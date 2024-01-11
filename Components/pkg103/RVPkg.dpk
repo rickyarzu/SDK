@@ -1,0 +1,134 @@
+package RVPkg;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TRichView for Delphi 10.3 Rio runtime (64-bit)'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclimg;
+
+contains
+  RVGifAnimate2007 in '..\..\..\Libraries\TRichView\TRichView\Source\RVGifAnimate2007.pas',
+  RVStyle in '..\..\..\Libraries\TRichView\TRichView\Source\RVStyle.pas',
+  DLines in '..\..\..\Libraries\TRichView\TRichView\Source\DLines.pas',
+  RVScroll in '..\..\..\Libraries\TRichView\TRichView\Source\RVScroll.pas',
+  RVItem in '..\..\..\Libraries\TRichView\TRichView\Source\RVItem.pas',
+  RVFuncs in '..\..\..\Libraries\TRichView\TRichView\Source\RVFuncs.pas',
+  RVFMisc in '..\..\..\Libraries\TRichView\TRichView\Source\RVFMisc.pas',
+  CRVData in '..\..\..\Libraries\TRichView\TRichView\Source\CRVData.pas',
+  RVRVData in '..\..\..\Libraries\TRichView\TRichView\Source\RVRVData.pas',
+  CRVFData in '..\..\..\Libraries\TRichView\TRichView\Source\CRVFData.pas',
+  RVBack in '..\..\..\Libraries\TRichView\TRichView\Source\RVBack.pas',
+  PtRVData in '..\..\..\Libraries\TRichView\TRichView\Source\PtRVData.pas',
+  PtblRV in '..\..\..\Libraries\TRichView\TRichView\Source\PtblRV.pas',
+  CRVPP in '..\..\..\Libraries\TRichView\TRichView\Source\CRVPP.pas',
+  RVPP in '..\..\..\Libraries\TRichView\TRichView\Source\RVPP.pas',
+  RVERVData in '..\..\..\Libraries\TRichView\TRichView\Source\RVERVData.pas',
+  RVEdit in '..\..\..\Libraries\TRichView\TRichView\Source\RVEdit.pas',
+  RVUndo in '..\..\..\Libraries\TRichView\TRichView\Source\RVUndo.pas',
+  RVUni in '..\..\..\Libraries\TRichView\TRichView\Source\RVUni.pas',
+  RichView in '..\..\..\Libraries\TRichView\TRichView\Source\RichView.pas',
+  RVClasses in '..\..\..\Libraries\TRichView\TRichView\Source\RVClasses.pas',
+  RVCodePages in '..\..\..\Libraries\TRichView\TRichView\Source\RVCodePages.pas',
+  RVDataList in '..\..\..\Libraries\TRichView\TRichView\Source\RVDataList.pas',
+  RVTable in '..\..\..\Libraries\TRichView\TRichView\Source\RVTable.pas',
+  RVTInplace in '..\..\..\Libraries\TRichView\TRichView\Source\RVTInplace.pas',
+  RVCtrlData in '..\..\..\Libraries\TRichView\TRichView\Source\RVCtrlData.pas',
+  RVRTF in '..\..\..\Libraries\TRichView\TRichView\Source\RVRTF.pas',
+  RVRTFProps in '..\..\..\Libraries\TRichView\TRichView\Source\RVRTFProps.pas',
+  RVStr in '..\..\..\Libraries\TRichView\TRichView\Source\RVStr.pas',
+  RVRTFErr in '..\..\..\Libraries\TRichView\TRichView\Source\RVRTFErr.pas',
+  RVMapWht in '..\..\..\Libraries\TRichView\TRichView\Source\RVMapWht.pas',
+  CtrlImg in '..\..\..\Libraries\TRichView\TRichView\Source\CtrlImg.pas',
+  RVMisc in '..\..\..\Libraries\TRichView\TRichView\Source\RVMisc.pas',
+  RVReport in '..\..\..\Libraries\TRichView\TRichView\Source\RVReport.pas',
+  RVSer in '..\..\..\Libraries\TRichView\TRichView\Source\RVSer.pas',
+  RVOfficeCnv in '..\..\..\Libraries\TRichView\TRichView\Source\RVOfficeCnv.pas',
+  RVMarker in '..\..\..\Libraries\TRichView\TRichView\Source\RVMarker.pas',
+  RVXPTheme in '..\..\..\Libraries\TRichView\TRichView\Source\RVXPTheme.pas',
+  RVResize in '..\..\..\Libraries\TRichView\TRichView\Source\RVResize.pas',
+  RVDragDrop in '..\..\..\Libraries\TRichView\TRichView\Source\RVDragDrop.pas',
+  RVThread in '..\..\..\Libraries\TRichView\TRichView\Source\RVThread.pas',
+  RVWordPaint in '..\..\..\Libraries\TRichView\TRichView\Source\RVWordPaint.pas',
+  RVLinear in '..\..\..\Libraries\TRichView\TRichView\Source\RVLinear.pas',
+  RVGetText in '..\..\..\Libraries\TRichView\TRichView\Source\RVGetText.pas',
+  RVAnimate in '..\..\..\Libraries\TRichView\TRichView\Source\RVAnimate.pas',
+  RVGetTextW in '..\..\..\Libraries\TRichView\TRichView\Source\RVGetTextW.pas',
+  RVPopup in '..\..\..\Libraries\TRichView\TRichView\Source\RVPopup.pas',
+  RVSeqItem in '..\..\..\Libraries\TRichView\TRichView\Source\RVSeqItem.pas',
+  RVLabelItem in '..\..\..\Libraries\TRichView\TRichView\Source\RVLabelItem.pas',
+  RVNote in '..\..\..\Libraries\TRichView\TRichView\Source\RVNote.pas',
+  RVSubData in '..\..\..\Libraries\TRichView\TRichView\Source\RVSubData.pas',
+  RVDocParams in '..\..\..\Libraries\TRichView\TRichView\Source\RVDocParams.pas',
+  RVTypes in '..\..\..\Libraries\TRichView\TRichView\Source\RVTypes.pas',
+  RVWinGrIn in '..\..\..\Libraries\TRichView\TRichView\Source\RVWinGrIn.pas',
+  RVGrIn in '..\..\..\Libraries\TRichView\TRichView\Source\RVGrIn.pas',
+  RVZip in '..\..\..\Libraries\TRichView\TRichView\Source\RVZip.pas',
+  RVFloatingBox in '..\..\..\Libraries\TRichView\TRichView\Source\RVFloatingBox.pas',
+  RVFloatingPos in '..\..\..\Libraries\TRichView\TRichView\Source\RVFloatingPos.pas',
+  RVFontCache in '..\..\..\Libraries\TRichView\TRichView\Source\RVFontCache.pas',
+  RVSelectionHandles in '..\..\..\Libraries\TRichView\TRichView\Source\RVSelectionHandles.pas',
+  RVSidenote in '..\..\..\Libraries\TRichView\TRichView\Source\RVSidenote.pas',
+  RVThumbMaker in '..\..\..\Libraries\TRichView\TRichView\Source\RVThumbMaker.pas',
+  RVDocX in '..\..\..\Libraries\TRichView\TRichView\Source\RVDocX.pas',
+  RVGrHandler in '..\..\..\Libraries\TRichView\TRichView\Source\RVGrHandler.pas',
+  RVFieldItems in '..\..\..\Libraries\TRichView\TRichView\Source\RVFieldItems.pas',
+  RVUniscribe in '..\..\..\Libraries\TRichView\TRichView\Source\RVUniscribe.pas',
+  RVUniscribeGrIn in '..\..\..\Libraries\TRichView\TRichView\Source\RVUniscribeGrIn.pas',
+  RVInsertItems in '..\..\..\Libraries\TRichView\TRichView\Source\RVInsertItems.pas',
+  RVGDIPlusGrIn in '..\..\..\Libraries\TRichView\TRichView\Source\RVGDIPlusGrIn.pas',
+  RVWordEnum in '..\..\..\Libraries\TRichView\TRichView\Source\RVWordEnum.pas',
+  RVKoi8 in '..\..\..\Libraries\TRichView\TRichView\Source\RVKoi8.pas',
+  RVISO8859 in '..\..\..\Libraries\TRichView\TRichView\Source\RVISO8859.pas',
+  RVCustomSpellFrm in '..\..\..\Libraries\TRichView\TRichView\Source\RVCustomSpellFrm.pas' {frmRVCustomSpell},
+  RVSpellFrm in '..\..\..\Libraries\TRichView\TRichView\Source\RVSpellFrm.pas' {frmRVSpell},
+  RVSpellWordFrm in '..\..\..\Libraries\TRichView\TRichView\Source\RVSpellWordFrm.pas' {frmRVSpellWord},
+  RVSpellFormUtils in '..\..\..\Libraries\TRichView\TRichView\Source\RVSpellFormUtils.pas',
+  RVFile in '..\..\..\Libraries\TRichView\TRichView\Source\RVFile.pas',
+  RVGrCache in '..\..\..\Libraries\TRichView\TRichView\Source\RVGrCache.pas',
+  RVDataRootProps in '..\..\..\Libraries\TRichView\TRichView\Source\RVDataRootProps.pas',
+  RVDataRootPropsEx in '..\..\..\Libraries\TRichView\TRichView\Source\RVDataRootPropsEx.pas',
+  RVEditRootProps in '..\..\..\Libraries\TRichView\TRichView\Source\RVEditRootProps.pas',
+  RVThumbCache in '..\..\..\Libraries\TRichView\TRichView\Source\RVThumbCache.pas',
+  RVEventHandlers in '..\..\..\Libraries\TRichView\TRichView\Source\RVEventHandlers.pas',
+  RVWithHeaderFooter in '..\..\..\Libraries\TRichView\TRichView\Source\RVWithHeaderFooter.pas',
+  RVLineBreak in '..\..\..\Libraries\TRichView\TRichView\Source\RVLineBreak.pas',
+  RVHtmlSave in '..\..\..\Libraries\TRichView\TRichView\Source\RVHtmlSave.pas',
+  RVStrFuncs in '..\..\..\Libraries\TRichView\TRichView\Source\RVStrFuncs.pas',
+  RVSymbolStrFuncs in '..\..\..\Libraries\TRichView\TRichView\Source\RVSymbolStrFuncs.pas',
+  RVDocXSaveFuncs in '..\..\..\Libraries\TRichView\TRichView\Source\RVDocXSaveFuncs.pas',
+  RVRTFSave in '..\..\..\Libraries\TRichView\TRichView\Source\RVRTFSave.pas',
+  RVFileFuncs in '..\..\..\Libraries\TRichView\TRichView\Source\RVFileFuncs.pas',
+  RVTOCItem in '..\..\..\Libraries\TRichView\TRichView\Source\RVTOCItem.pas',
+  RVTextSave in '..\..\..\Libraries\TRichView\TRichView\Source\RVTextSave.pas',
+  RVClipboard in '..\..\..\Libraries\TRichView\TRichView\Source\RVClipboard.pas';
+
+end.

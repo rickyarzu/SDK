@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="JanuaCore"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="../src/januacore"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Version Minor="2" Release="1"/>
+    <Files Count="2">
+      <Item1>
+        <Filename Value="../src/januacore/Janua.Core.Functions.pas"/>
+        <UnitName Value="Janua.Core.Functions"/>
+      </Item1>
+      <Item2>
+        <Filename Value="../src/januacore/Janua.Core.Roundings.pas"/>
+        <UnitName Value="Janua.Core.Roundings"/>
+      </Item2>
+    </Files>
+    <RequiredPkgs Count="6">
+      <Item1>
+        <PackageName Value="odac10"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="pgdac10"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="laz_synapse"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="dac10"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="indylaz"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="FCL"/>
+      </Item6>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

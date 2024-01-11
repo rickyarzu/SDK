@@ -1,0 +1,21 @@
+You can try additional demos for StyleControls VCL:
+
+High-DPI Demos, which compiled in Delphi 10.3 Rio with PerMonitorV2 DPI Awareness option:
+(set "Enable High-DPI" option for Seattle, Berlin and Tokyo versions)
+
+http://www.almdev.com/prods/stylecontrols/files/schidpidemo.zip
+
+New High-DPI Demos, with new features of 10.4 Sydney (support of new High-DPI VCL Styles and per-control styling):
+http://www.almdev.com/prods/stylecontrols/files/sydneydemo.zip
+
+StyleControls + SmartEffects demos:
+
+http://www.almdev.com/prods/stylecontrols/files/scsedemo.zip
+
+StyleControls + ImageKit demos (required Vista+):
+
+http://www.almdev.com/prods/stylecontrols/files/scikdemo.zip
+
+64-bit compiled demos:
+
+http://www.almdev.com/prods/stylecontrols/files/scdemo64.zip

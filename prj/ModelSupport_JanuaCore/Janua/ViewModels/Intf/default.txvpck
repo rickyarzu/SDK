@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="go11hf15edjd1l7tq_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="26alph0wj2s_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel" role="Supplier" />
+  </link>
+  <link uin="caogb1pwdoq_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link2" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetViewModel" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel" role="Supplier" />
+  </link>
+  <link uin="pm738kzuouj_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link3" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel" role="Supplier" />
+  </link>
+</nodeSet>

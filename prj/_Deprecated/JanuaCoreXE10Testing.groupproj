@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C1877D2E-5527-46B7-BE31-49FF5370916F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaPostgresSystemXE10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\JanuaPgUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\prj\TestJormDatasnapREST\TestDataSnapRESTServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Testing\src\DatasnapCoreTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaThirdPartyXE10">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Clean">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyXE10:Make">
+        <MSBuild Projects="C:\Januaproject\lib\JanuaThirdPartyXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreXE10">
+        <MSBuild Projects="JanuaCoreXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Clean">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreXE10:Make">
+        <MSBuild Projects="JanuaCoreXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop:Clean">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXComponentsDesktop:Make">
+        <MSBuild Projects="..\..\Playground\Testing\TestFMXComponents\JanuaFMXComponentsDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControlsUnitTestingDebug:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaVCLControlsUnitTestingDebug.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Clean">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPostgresSystemXE10:Make">
+        <MSBuild Projects="JanuaPostgresSystemXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Clean">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaPgUnitTesting:Make">
+        <MSBuild Projects="..\Testing\prj\JanuaPgUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestDataSnapRESTServer">
+        <MSBuild Projects="..\Testing\prj\TestJormDatasnapREST\TestDataSnapRESTServer.dproj"/>
+    </Target>
+    <Target Name="TestDataSnapRESTServer:Clean">
+        <MSBuild Projects="..\Testing\prj\TestJormDatasnapREST\TestDataSnapRESTServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestDataSnapRESTServer:Make">
+        <MSBuild Projects="..\Testing\prj\TestJormDatasnapREST\TestDataSnapRESTServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DatasnapCoreTest">
+        <MSBuild Projects="..\Testing\src\DatasnapCoreTest.dproj"/>
+    </Target>
+    <Target Name="DatasnapCoreTest:Clean">
+        <MSBuild Projects="..\Testing\src\DatasnapCoreTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DatasnapCoreTest:Make">
+        <MSBuild Projects="..\Testing\src\DatasnapCoreTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaThirdPartyXE10;JanuaCoreXE10;JanuaCoreUnitTesting;JanuaFMXComponentsDesktop;JanuaVCLControlsUnitTestingDebug;JanuaPostgresSystemXE10;JanuaPgUnitTesting;TestDataSnapRESTServer;DatasnapCoreTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaThirdPartyXE10:Clean;JanuaCoreXE10:Clean;JanuaCoreUnitTesting:Clean;JanuaFMXComponentsDesktop:Clean;JanuaVCLControlsUnitTestingDebug:Clean;JanuaPostgresSystemXE10:Clean;JanuaPgUnitTesting:Clean;TestDataSnapRESTServer:Clean;DatasnapCoreTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaThirdPartyXE10:Make;JanuaCoreXE10:Make;JanuaCoreUnitTesting:Make;JanuaFMXComponentsDesktop:Make;JanuaVCLControlsUnitTestingDebug:Make;JanuaPostgresSystemXE10:Make;JanuaPgUnitTesting:Make;TestDataSnapRESTServer:Make;DatasnapCoreTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

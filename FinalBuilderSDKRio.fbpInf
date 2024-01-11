@@ -1,0 +1,113 @@
+<project>
+  <watches/>
+  <collapsedNodes></collapsedNodes>
+  <actions>
+    <action id="{3903FCB9-6BEF-4E79-84CC-7F7C766582D9}">
+      <Description>JanuaCoreXE103Rio Release Win32 [ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{A6A1C6C2-262B-44DE-A88B-A5BE3510AA3A}">
+      <Description>JanuaCoreXE103Rio Win32 Debug [ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{56A8CFDA-0EB5-4A3E-966B-1F4D25C087DE}">
+      <Description>JanuaCoreXE103Rio Win64 Debug [ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{C53035A6-4004-4D96-AF7E-DC68804580B5}">
+      <Description>JanuaCoreXE103Rio Win64 Release [ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{D366B6CB-05AC-463D-ACD9-B488A8689E64}">
+      <Description>JanuaCoreXE103Rio OSX32 Debug [ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{F37F7236-1C92-40B2-945D-26922D5E5F01}">
+      <Description>JanuaCoreXE103Rio OSX32 Release[ Z:\GitHub\SDK\prj\JanuaCoreXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{F06F6411-6D45-4377-8417-38252EAA0311}">
+      <Description>JanuaUnidacXE103 Win32 Debug [ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{8D41A069-AF0F-4AF0-9B68-FAAA0F3A5BB2}">
+      <Description>JanuaUnidacXE103 Win32 Release [ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{5C7DBBA6-9C5B-4BF9-850C-4EBAA2DAD0D3}">
+      <Description>JanuaUnidacXE103 Win64 Debug[ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{319FB641-22EE-4792-8123-D69855A7CBB5}">
+      <Description>JanuaUnidacXE103 Win64 Release [ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>2</BuildVersion>
+    </action>
+    <action id="{53EAF560-CDFF-4CD1-840D-6A12D9857167}">
+      <Description>JanuaUnidacXE103 OSX32 Debug [ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{69EA7311-A610-4DEF-8F14-CBF99DE0097F}">
+      <Description>JanuaUnidacXE103 OSX32 Release [ Z:\GitHub\SDK\prj\JanuaUnidacXE103.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{D7595B32-B5B8-4A16-9238-2D98372178EB}">
+      <Description>JanuaFMXXE103 Win32 Debug [ Z:\GitHub\SDK\prj\JanuaFMXControlsXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{818F5DBE-39F8-44A9-AC4F-A13BE10DE531}">
+      <Description>JanuaFMXXE103 Win32 Release[ Z:\GitHub\SDK\prj\JanuaFMXControlsXE103Rio.dpk ]</Description>
+      <BuildVersion>2</BuildVersion>
+    </action>
+    <action id="{86BC6F74-1142-4E17-A918-4FEC5AE909E7}">
+      <Description>JanuaFMXXE103 Win64 Debug [ Z:\GitHub\SDK\prj\JanuaFMXControlsXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{243FB8D8-D8BB-4549-A5AF-4AE9D0B08E0A}">
+      <Description>JanuaFMXXE103 Win64 Release[ Z:\GitHub\SDK\prj\JanuaFMXControlsXE103Rio.dpk ]</Description>
+      <BuildVersion>0</BuildVersion>
+    </action>
+    <action id="{28F66DC0-45D8-4D02-BF47-0A6CF7B14DAA}">
+      <Description>JanuaVCLControlsXE103 Win32 Debug [ Z:\GitHub\SDK\prj\JanuaVCLControlsXE103.dpk ]</Description>
+      <BuildVersion>2</BuildVersion>
+    </action>
+    <action id="{8146AFB1-8CD9-4BDF-A922-F2BE83D8618B}">
+      <Description>JanuaVCLControlsXE103  Release Win32 [ Z:\GitHub\SDK\prj\JanuaVCLControlsXE103.dpk ]</Description>
+      <BuildVersion>4</BuildVersion>
+    </action>
+    <action id="{4714B324-6E68-416E-B148-2E8A66439839}">
+      <Description>JanuaVCLControlsXE103 Win64 Debug [ Z:\GitHub\SDK\prj\JanuaVCLControlsXE103.dpk ]</Description>
+      <BuildVersion>4</BuildVersion>
+    </action>
+    <action id="{BF5EC02E-807C-4DD7-BA0E-435FD8D6A97A}">
+      <Description>JanuaVCLControlsXE103 Win64 Release [ Z:\GitHub\SDK\prj\JanuaVCLControlsXE103.dpk ]</Description>
+      <BuildVersion>4</BuildVersion>
+    </action>
+    <action id="{E5946301-3378-490D-BD5E-F86B43A44D58}">
+      <Description>JanuaLegacyVCLXE103 Win32 Debug [ Z:\GitHub\SDK\prj\JanuaLegacyVCLXE103.dpk ]</Description>
+      <BuildVersion>3</BuildVersion>
+    </action>
+    <action id="{63AEE0AA-E0AB-468D-8FBA-4274DE911C34}">
+      <Description>JanuaLegacyVCLXE103  Release Win32 [ Z:\GitHub\SDK\prj\JanuaLegacyVCLXE103.dpk ]</Description>
+      <BuildVersion>4</BuildVersion>
+    </action>
+    <action id="{AA612052-D11E-42B9-A144-1E3D1C25DC41}">
+      <Description>JanuaLegacyVCLXE103 Win64 Debug [ Z:\GitHub\SDK\prj\JanuaLegacyVCLXE103.dpk ]</Description>
+      <BuildVersion>5</BuildVersion>
+    </action>
+    <action id="{3F40F3C6-9ADF-4726-A021-90F6C05DA33F}">
+      <Description>JanuaLegacyVCLXE103 Win64 Release [ Z:\GitHub\SDK\prj\JanuaLegacyVCLXE103.dpk ]</Description>
+      <BuildVersion>5</BuildVersion>
+    </action>
+  </actions>
+  <propertysets/>
+  <variables/>
+  <properties>
+    <Author></Author>
+    <Notes>
+      <![CDATA[]]>
+    </Notes>
+    <LastBuildRun>00:00:55</LastBuildRun>
+    <LastBuildStart>11/10/2019 6:12:06 PM</LastBuildStart>
+    <LastBuildState>True</LastBuildState>
+  </properties>
+</project>

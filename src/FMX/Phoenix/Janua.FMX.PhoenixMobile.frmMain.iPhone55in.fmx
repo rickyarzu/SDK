@@ -1,0 +1,301 @@
+inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55in
+  ClientHeight = 716
+  ClientWidth = 414
+  DesignerMasterStyle = 3
+  inherited TabControl1: TTabControl
+    Size.Width = 414.000000000000000000
+    Size.Height = 716.000000000000000000
+    Sizes = (
+      414s
+      716s
+      414s
+      716s
+      414s
+      716s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ListViewMain: TListView
+        Size.Width = 414.000000000000000000
+        Size.Height = 668.000000000000000000
+      end
+      inherited TopToolBar: TToolBar
+        Size.Width = 414.000000000000000000
+        inherited Rectangle1: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited btnNext: TSpeedButton
+            Position.X = 366.000000000000000000
+          end
+          inherited Layout1: TLayout
+            Size.Width = 346.000000000000000000
+            inherited lbUtente: TLabel
+              Size.Width = 346.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Label1: TLabel
+              Position.X = 58.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ToolBar1: TToolBar
+        Size.Width = 414.000000000000000000
+        inherited Rectangle2: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited Layout2: TLayout
+            Size.Width = 366.000000000000000000
+            inherited lbTitle: TLabel
+              Size.Width = 366.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lbDate: TLabel
+              Position.X = 78.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+          inherited SpeedButton1: TSpeedButton
+            Position.X = 366.000000000000000000
+          end
+        end
+      end
+      inherited edLocation: TEdit
+        Opacity = 0.000000000000000000
+        Size.Width = 414.000000000000000000
+        Size.Height = 44.000000000000000000
+      end
+      inherited Layout3: TLayout
+        Size.Width = 414.000000000000000000
+        inherited Rectangle3: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited Layout4: TLayout
+            Size.Width = 414.000000000000000000
+            inherited rgSelectSearch: TTMSFMXRadioGroup
+              Margins.Top = 2.000000000000000000
+              Size.Width = 412.000000000000000000
+              Size.Height = 99.000000000000000000
+              Font.StyleExt = {00070000000000000004000000}
+              ItemFont.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited frameFMXPhoenixMobileReportHeader1: TframeFMXPhoenixMobileReportHeader
+        Size.Width = 414.000000000000000000
+        Size.Height = 716.000000000000000000
+        inherited lbScheduling: TLabel
+          Size.Width = 404.000000000000000000
+        end
+        inherited Layout1: TLayout
+          Size.Width = 414.000000000000000000
+          inherited Layout2: TLayout
+            Size.Width = 414.000000000000000000
+            inherited TMSFMXDateTimeEdit1: TTMSFMXDateTimeEdit
+              Position.X = 64.000000000000000000
+            end
+            inherited Switch1: TSwitch
+              Position.X = 359.000000000000000000
+              Size.Width = 55.000000000000000000
+              Size.Height = 30.000000000000000000
+            end
+          end
+          inherited Layout3: TLayout
+            Size.Width = 414.000000000000000000
+            inherited btnMessages: TButton
+              Position.X = 305.000000000000000000
+            end
+            inherited btnCellPhoneCall: TButton
+              Position.X = 377.000000000000000000
+            end
+            inherited btnGoogleMaps: TButton
+              Position.X = 341.000000000000000000
+            end
+            inherited lbDatiRapportino: TLabel
+              Size.Width = 295.000000000000000000
+            end
+          end
+          inherited lbInfoMeeting: TLabel
+            Size.Width = 404.000000000000000000
+          end
+          inherited memMeetingNotes: TMemo
+            Size.Width = 408.000000000000000000
+            Viewport.Width = 408.000000000000000000
+            Viewport.Height = 44.000000000000000000
+          end
+        end
+        inherited rcReportSummary: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited txtReportSummay: TTMSFMXHTMLText
+            Size.Width = 410.000000000000000000
+          end
+        end
+        inherited Layout4: TLayout
+          Size.Width = 410.000000000000000000
+          inherited Label1: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbInvoices: TLabel
+            Size.Width = 198.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Rectangle2: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited TMSFMXHTMLText1: TTMSFMXHTMLText
+            Size.Width = 410.000000000000000000
+          end
+        end
+        inherited Rectangle3: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited TMSFMXHTMLText2: TTMSFMXHTMLText
+            Size.Width = 410.000000000000000000
+          end
+        end
+        inherited lbControlliOrdinari: TLabel
+          Size.Width = 410.000000000000000000
+          TabOrder = 5
+        end
+        inherited Layout5: TLayout
+          Size.Width = 414.000000000000000000
+          TabOrder = 6
+          inherited Rectangle4: TRectangle
+            Size.Width = 414.000000000000000000
+            inherited TMSFMXHTMLText3: TTMSFMXHTMLText
+              Size.Width = 410.000000000000000000
+            end
+          end
+          inherited Layout6: TLayout
+            inherited Layout8: TLayout
+              inherited lbEstinguishers: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout9: TLayout
+              inherited lbPorte: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout10: TLayout
+              inherited lbIdranti: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout14: TLayout
+              inherited lbLuciEM: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+          inherited Layout7: TLayout
+            Size.Width = 253.000000000000000000
+            inherited Layout11: TLayout
+              Size.Width = 253.000000000000000000
+              inherited lbSprinklerN: TLabel
+                Position.X = 234.000000000000000000
+              end
+              inherited lbSprinkler: TLabel
+                Size.Width = 228.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout12: TLayout
+              Size.Width = 253.000000000000000000
+              inherited lbGruppiN: TLabel
+                Position.X = 234.000000000000000000
+              end
+              inherited lbGruppi: TLabel
+                Size.Width = 228.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout13: TLayout
+              Size.Width = 253.000000000000000000
+              inherited lbRilFumoN: TLabel
+                Position.X = 234.000000000000000000
+              end
+              inherited lbRilFumo: TLabel
+                Size.Width = 228.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+            inherited Layout15: TLayout
+              Size.Width = 253.000000000000000000
+              inherited lbImpElettriciN: TLabel
+                Position.X = 234.000000000000000000
+              end
+              inherited lbImpElettrici: TLabel
+                Size.Width = 228.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+        inherited Layout16: TLayout
+          Size.Width = 410.000000000000000000
+          TabOrder = 4
+        end
+        inherited Layout17: TLayout
+          Size.Width = 410.000000000000000000
+          TabOrder = 3
+          inherited lbSend: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbInsert: TLabel
+            Size.Width = 198.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited btnTerminate: TButton
+          Size.Width = 410.000000000000000000
+          TabOrder = 9
+          inherited rctTerminate: TRectangle
+            Size.Width = 410.000000000000000000
+          end
+        end
+      end
+    end
+  end
+  inherited jlvMenuController: TJanuaFMXListViewMenuController
+    MenuItems = <
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 17
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 6
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 13
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 7
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 9
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 10
+      end
+      item
+        Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+        ImageIndex = 22
+      end>
+  end
+end

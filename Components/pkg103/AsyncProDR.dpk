@@ -1,0 +1,122 @@
+﻿package AsyncProDR;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TurboPack Async Professional Delphi Runtime Package'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  ADEXCEPT in '..\..\..\lib\AsyncPro\source\ADEXCEPT.pas',
+  AdFax in '..\..\..\lib\AsyncPro\source\AdFax.pas',
+  ADFAXCTL in '..\..\..\lib\AsyncPro\source\ADFAXCTL.pas',
+  AdFaxCvt in '..\..\..\lib\AsyncPro\source\AdFaxCvt.pas',
+  AdFaxPrn in '..\..\..\lib\AsyncPro\source\AdFaxPrn.pas',
+  AdFaxSrv in '..\..\..\lib\AsyncPro\source\AdFaxSrv.pas',
+  AdFIDlg in '..\..\..\lib\AsyncPro\source\AdFIDlg.pas',
+  Adfpstat in '..\..\..\lib\AsyncPro\source\Adfpstat.pas',
+  Adfstat in '..\..\..\lib\AsyncPro\source\Adfstat.pas',
+  AdFtp in '..\..\..\lib\AsyncPro\source\AdFtp.pas',
+  Adfview in '..\..\..\lib\AsyncPro\source\Adfview.pas',
+  AdGSM in '..\..\..\lib\AsyncPro\source\AdGSM.pas',
+  AdLibMdm in '..\..\..\lib\AsyncPro\source\AdLibMdm.pas',
+  AdMdm in '..\..\..\lib\AsyncPro\source\AdMdm.pas',
+  AdMdmCfg in '..\..\..\lib\AsyncPro\source\AdMdmCfg.pas',
+  AdMdmDlg in '..\..\..\lib\AsyncPro\source\AdMdmDlg.pas',
+  AdMeter in '..\..\..\lib\AsyncPro\source\AdMeter.pas',
+  AdPacket in '..\..\..\lib\AsyncPro\source\AdPacket.pas',
+  AdPager in '..\..\..\lib\AsyncPro\source\AdPager.pas',
+  AdPort in '..\..\..\lib\AsyncPro\source\AdPort.pas',
+  AdProtcl in '..\..\..\lib\AsyncPro\source\AdProtcl.pas',
+  ADPSTAT in '..\..\..\lib\AsyncPro\source\ADPSTAT.pas',
+  AdRas in '..\..\..\lib\AsyncPro\source\AdRas.pas',
+  AdRasUtl in '..\..\..\lib\AsyncPro\source\AdRasUtl.pas',
+  AdRStat in '..\..\..\lib\AsyncPro\source\AdRStat.pas',
+  AdScript in '..\..\..\lib\AsyncPro\source\AdScript.pas',
+  AdSelCom in '..\..\..\lib\AsyncPro\source\AdSelCom.pas',
+  AdSocket in '..\..\..\lib\AsyncPro\source\AdSocket.pas',
+  AdSrmgr in '..\..\..\lib\AsyncPro\source\AdSrmgr.pas',
+  AdStatLt in '..\..\..\lib\AsyncPro\source\AdStatLt.pas',
+  AdStMach in '..\..\..\lib\AsyncPro\source\AdStMach.pas',
+  AdTapi in '..\..\..\lib\AsyncPro\source\AdTapi.pas',
+  ADTrmBuf in '..\..\..\lib\AsyncPro\source\ADTrmBuf.pas',
+  ADTrmEmu in '..\..\..\lib\AsyncPro\source\ADTrmEmu.pas',
+  ADTrmMap in '..\..\..\lib\AsyncPro\source\ADTrmMap.pas',
+  ADTrmPsr in '..\..\..\lib\AsyncPro\source\ADTrmPsr.pas',
+  adtsel in '..\..\..\lib\AsyncPro\source\adtsel.pas',
+  AdTStat in '..\..\..\lib\AsyncPro\source\AdTStat.pas',
+  AdTUtil in '..\..\..\lib\AsyncPro\source\AdTUtil.pas',
+  AdWnPort in '..\..\..\lib\AsyncPro\source\AdWnPort.pas',
+  Adwutil in '..\..\..\lib\AsyncPro\source\Adwutil.pas',
+  AdXBase in '..\..\..\lib\AsyncPro\source\AdXBase.pas',
+  AdXChrFlt in '..\..\..\lib\AsyncPro\source\AdXChrFlt.pas',
+  Adxdial in '..\..\..\lib\AsyncPro\source\Adxdial.pas',
+  Adxdown in '..\..\..\lib\AsyncPro\source\Adxdown.pas',
+  AdXLbMdm in '..\..\..\lib\AsyncPro\source\AdXLbMdm.pas',
+  AdXParsr in '..\..\..\lib\AsyncPro\source\AdXParsr.pas',
+  Adxport in '..\..\..\lib\AsyncPro\source\Adxport.pas',
+  Adxprot in '..\..\..\lib\AsyncPro\source\Adxprot.pas',
+  Adxup in '..\..\..\lib\AsyncPro\source\Adxup.pas',
+  OoMisc in '..\..\..\lib\AsyncPro\source\OoMisc.pas',
+  AWABSPCL in '..\..\..\lib\AsyncPro\source\AWABSPCL.pas',
+  AwAscii in '..\..\..\lib\AsyncPro\source\AwAscii.pas',
+  awfax in '..\..\..\lib\AsyncPro\source\awfax.pas',
+  Awfaxcvt in '..\..\..\lib\AsyncPro\source\Awfaxcvt.pas',
+  AwFView in '..\..\..\lib\AsyncPro\source\AwFView.pas',
+  AwKermit in '..\..\..\lib\AsyncPro\source\AwKermit.pas',
+  AwTPcl in '..\..\..\lib\AsyncPro\source\AwTPcl.pas',
+  AwUser in '..\..\..\lib\AsyncPro\source\AwUser.pas',
+  AwWin32 in '..\..\..\lib\AsyncPro\source\AwWin32.pas',
+  AwWnSock in '..\..\..\lib\AsyncPro\source\AwWnSock.pas',
+  AwXmodem in '..\..\..\lib\AsyncPro\source\AwXmodem.pas',
+  AwYmodem in '..\..\..\lib\AsyncPro\source\AwYmodem.pas',
+  awzmodem in '..\..\..\lib\AsyncPro\source\awzmodem.pas',
+  Awabsfax in '..\..\..\lib\AsyncPro\source\Awabsfax.pas',
+  AdSapiEn in '..\..\..\lib\AsyncPro\source\AdSapiEn.pas',
+  AdISapi in '..\..\..\lib\AsyncPro\source\AdISapi.pas',
+  AdSapiGr in '..\..\..\lib\AsyncPro\source\AdSapiGr.pas',
+  AdVoIP in '..\..\..\lib\AsyncPro\source\AdVoIP.pas',
+  AdITapi3 in '..\..\..\lib\AsyncPro\source\AdITapi3.pas',
+  AdSapiPh in '..\..\..\lib\AsyncPro\source\AdSapiPh.pas',
+  AdVoIPEd in '..\..\..\lib\AsyncPro\source\AdVoIPEd.pas' {VoipAudioVideoEditor},
+  AdStrMap in '..\..\..\lib\AsyncPro\source\AdStrMap.pas',
+  AdStDS in '..\..\..\lib\AsyncPro\source\AdStDS.pas',
+  AdPgr in '..\..\..\lib\AsyncPro\source\AdPgr.pas',
+  AdStFax in '..\..\..\lib\AsyncPro\source\AdStFax.pas',
+  AdStProt in '..\..\..\lib\AsyncPro\source\AdStProt.pas',
+  AdStSapi in '..\..\..\lib\AsyncPro\source\AdStSapi.pas',
+  adstst in '..\..\..\lib\AsyncPro\source\adstst.pas',
+  LNSWin32 in '..\..\..\lib\AsyncPro\source\LNSWin32.pas',
+  LNSQueue in '..\..\..\lib\AsyncPro\source\LNSQueue.pas',
+  AdAnsiStrings in '..\..\..\lib\AsyncPro\source\AdAnsiStrings.pas';
+
+end.

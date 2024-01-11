@@ -1,0 +1,42 @@
+package uSynEdit_D2023;
+
+{$R *.res}
+{$R 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditReg.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'uSynEdit component suite'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  designide,
+  uSynEdit_R2023;
+
+contains
+  uSynEditReg in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditReg.pas',
+  uSynEditPropertyReg in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynEditPropertyReg.pas',
+  uSynHighlighterManager in 'C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source\uSynHighlighterManager.pas';
+
+end.

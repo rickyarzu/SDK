@@ -1,0 +1,73 @@
+package Spring.Base;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Spring4D Base package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl;
+
+contains
+  Spring in '..\..\..\Lib\spring4d\Source\Base\Spring.pas',
+  Spring.Collections in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.pas',
+  Spring.Collections.Adapters in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Adapters.pas',
+  Spring.Collections.Base in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Base.pas',
+  Spring.Collections.Dictionaries in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Dictionaries.pas',
+  Spring.Collections.Events in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Events.pas',
+  Spring.Collections.Extensions in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Extensions.pas',
+  Spring.Collections.Lists in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Lists.pas',
+  Spring.Collections.LinkedLists in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.LinkedLists.pas',
+  Spring.Collections.MultiMaps in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.MultiMaps.pas',
+  Spring.Collections.Queues in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Queues.pas',
+  Spring.Collections.Sets in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Sets.pas',
+  Spring.Collections.Stacks in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Stacks.pas',
+  Spring.Collections.Trees in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.Trees.pas',
+  Spring.DesignPatterns in '..\..\..\Lib\spring4d\Source\Base\Spring.DesignPatterns.pas',
+  Spring.Events in '..\..\..\Lib\spring4d\Source\Base\Spring.Events.pas',
+  Spring.Events.Base in '..\..\..\Lib\spring4d\Source\Base\Spring.Events.Base.pas',
+  Spring.Helpers in '..\..\..\Lib\spring4d\Source\Base\Spring.Helpers.pas',
+  Spring.Logging in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.pas',
+  Spring.Logging.Appenders in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.pas',
+  Spring.Logging.Appenders.Base in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.Base.pas',
+  Spring.Logging.Controller in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Controller.pas',
+  Spring.Logging.Extensions in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Extensions.pas',
+  Spring.Logging.Loggers in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Loggers.pas',
+  Spring.Logging.NullLogger in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.NullLogger.pas',
+  Spring.Logging.ResourceStrings in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.ResourceStrings.pas',
+  Spring.Logging.Serializers in '..\..\..\Lib\spring4d\Source\Base\Logging\Spring.Logging.Serializers.pas',
+  Spring.MethodIntercept in '..\..\..\Lib\spring4d\Source\Base\Spring.MethodIntercept.pas',
+  Spring.Reflection in '..\..\..\Lib\spring4d\Source\Base\Spring.Reflection.pas',
+  Spring.ResourceStrings in '..\..\..\Lib\spring4d\Source\Base\Spring.ResourceStrings.pas',
+  Spring.SystemUtils in '..\..\..\Lib\spring4d\Source\Base\Spring.SystemUtils.pas',
+  Spring.Times in '..\..\..\Lib\spring4d\Source\Base\Spring.Times.pas',
+  Spring.ValueConverters in '..\..\..\Lib\spring4d\Source\Base\Spring.ValueConverters.pas',
+  Spring.VirtualClass in '..\..\..\Lib\spring4d\Source\Base\Spring.VirtualClass.pas',
+  Spring.VirtualInterface in '..\..\..\Lib\spring4d\Source\Base\Spring.VirtualInterface.pas';
+
+end.

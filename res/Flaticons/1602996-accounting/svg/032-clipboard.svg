@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<polygon style="fill:#61729B;" points="332,60 332,392 242,452 212,512 0,512 0,60  "/>
+	<polygon style="fill:#47568C;" points="332,60 332,392 242,452 212,512 167,512 167,60  "/>
+	<polygon style="fill:#FFF5F5;" points="302,90 302,482 30,482 30,90 107,90 167,60 227,90  "/>
+	<polygon style="fill:#EFE2DD;" points="302,90 302,482 167,482 167,60 227,90  "/>
+	<rect x="422" y="437" style="fill:#FFF5F5;" width="30" height="75"/>
+	<rect x="437" y="437" style="fill:#EFE2DD;" width="15" height="75"/>
+	<polygon style="fill:#5BC980;" points="107,248.211 66.395,207.605 87.605,186.395 107,205.789 156.395,156.395 177.605,177.605     "/>
+	<polygon style="fill:#5BC980;" points="107,338.211 66.395,297.605 87.605,276.395 107,295.789 156.395,246.395 177.605,267.605     "/>
+	<polygon style="fill:#5BC980;" points="107,428.211 66.395,387.605 87.605,366.395 107,385.789 156.395,336.395 177.605,357.605     "/>
+	<rect x="212" y="212" style="fill:#CDBFBA;" width="60" height="30"/>
+	<rect x="212" y="302" style="fill:#CDBFBA;" width="60" height="30"/>
+	<path style="fill:#25D9F8;" d="M227,30v60H107V30h30c0-16.5,13.5-30,30-30s30,13.5,30,30H227z"/>
+	<path style="fill:#FDBF00;" d="M497,422v30H377v-30c0-22.2,12.001-41.4,30-51.599V317h60v53.401C484.999,380.6,497,399.8,497,422z"/>
+	<path style="fill:#FF9100;" d="M497,422v30h-60V317h30v53.401C484.999,380.6,497,399.8,497,422z"/>
+	<rect x="362" y="302" style="fill:#FF9100;" width="150" height="30"/>
+	<rect x="437" y="302" style="fill:#FF641A;" width="75" height="30"/>
+	<rect x="422" y="197" style="fill:#FFF5F5;" width="30" height="75"/>
+	<rect x="437" y="197" style="fill:#EFE2DD;" width="15" height="75"/>
+	<path style="fill:#FDBF00;" d="M497,182v30H377v-30c0-22.2,12.001-41.4,30-51.599V75h60v55.401C484.999,140.6,497,159.8,497,182z"/>
+	<path style="fill:#FF9100;" d="M497,182v30h-60V75h30v55.401C484.999,140.6,497,159.8,497,182z"/>
+	<rect x="362" y="60" style="fill:#FF9100;" width="150" height="30"/>
+	<rect x="437" y="60" style="fill:#FF641A;" width="75" height="30"/>
+	<path style="fill:#00C0F1;" d="M227,30v60h-60V0c16.5,0,30,13.5,30,30H227z"/>
+	<polygon style="fill:#47568C;" points="212,512 332,512 332,392 242,422  "/>
+	<polygon style="fill:#CDBFBA;" points="332,392 212,512 212,392  "/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

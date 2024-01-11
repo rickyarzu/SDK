@@ -1,0 +1,109 @@
+﻿package dmvcframeworkRT;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'DMVCFramework - CopyRight (2010-2020) Daniele Teti and the DMVCFramework Team'}
+{$LIBSUFFIX '260'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  inet,
+  FireDAC,
+  IndyCore,
+  IndyProtocols,
+  FireDACIBDriver,
+  FireDACMySQLDriver,
+  loggerproRT,
+  FireDACPgDriver,
+  FireDACSqliteDriver,
+  SwagDoc;
+
+contains
+  Web.ApacheConst,
+  Web.Win.IsapiHTTP,
+  Web.ApacheHTTP,
+  Web.HTTPDMethods,
+  Web.HTTPDImpl,
+  JsonDataObjects in '..\..\..\lib\delphimvcframework\sources\JsonDataObjects.pas',
+  MVCFramework.ActiveRecord in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecord.pas',
+  MVCFramework.ActiveRecordController in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecordController.pas',
+  MVCFramework.ApplicationSession in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ApplicationSession.pas',
+  MVCFramework.Cache in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas',
+  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
+  MVCFramework.Console in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Console.pas',
+  MVCFramework.DataSet.Utils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DataSet.Utils.pas',
+  MVCFramework.DuckTyping in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DuckTyping.pas',
+  MVCFramework.FireDAC.Utils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.FireDAC.Utils.pas',
+  MVCFramework.HMAC in '..\..\..\lib\delphimvcframework\sources\MVCFramework.HMAC.pas',
+  MVCFramework.JSONRPC.Client in '..\..\..\lib\delphimvcframework\sources\MVCFramework.JSONRPC.Client.pas',
+  MVCFramework.JSONRPC in '..\..\..\lib\delphimvcframework\sources\MVCFramework.JSONRPC.pas',
+  MVCFramework.JWT in '..\..\..\lib\delphimvcframework\sources\MVCFramework.JWT.pas',
+  MVCFramework.Logger in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Logger.pas',
+  MVCFramework.Middleware.Analytics in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Analytics.pas',
+  MVCFramework.Middleware.Authentication in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Authentication.pas',
+  MVCFramework.Middleware.Authentication.RoleBasedAuthHandler in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Authentication.RoleBasedAuthHandler.pas',
+  MVCFramework.Middleware.Compression in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Compression.pas',
+  MVCFramework.Middleware.CORS in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.CORS.pas',
+  MVCFramework.Middleware.JWT in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.JWT.pas',
+  MVCFramework.Middleware.SecurityHeaders in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.SecurityHeaders.pas',
+  MVCFramework.MultiMap in '..\..\..\lib\delphimvcframework\sources\MVCFramework.MultiMap.pas',
+  MVCFramework in '..\..\..\lib\delphimvcframework\sources\MVCFramework.pas',
+  MVCFramework.Patches in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Patches.pas',
+  MVCFramework.RESTAdapter in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RESTAdapter.pas',
+  MVCFramework.RESTClient in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RESTClient.pas',
+  MVCFramework.Router in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Router.pas',
+  MVCFramework.RQL.AST2FirebirdSQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.AST2FirebirdSQL.pas',
+  MVCFramework.RQL.AST2InterbaseSQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.AST2InterbaseSQL.pas',
+  MVCFramework.RQL.AST2MySQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.AST2MySQL.pas',
+  MVCFramework.RQL.AST2PostgreSQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.AST2PostgreSQL.pas',
+  MVCFramework.RQL.AST2SQLite in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.AST2SQLite.pas',
+  MVCFramework.RQL.Parser in '..\..\..\lib\delphimvcframework\sources\MVCFramework.RQL.Parser.pas',
+  MVCFramework.Rtti.Utils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Rtti.Utils.pas',
+  MVCFramework.Serializer.Abstract in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Abstract.pas',
+  MVCFramework.Serializer.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Commons.pas',
+  MVCFramework.Serializer.Defaults in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Defaults.pas',
+  MVCFramework.Serializer.Intf in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Intf.pas',
+  MVCFramework.Serializer.JsonDataObjects.CustomTypes in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.CustomTypes.pas',
+  MVCFramework.Serializer.JsonDataObjects in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.JsonDataObjects.pas',
+  MVCFramework.Session in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Session.pas',
+  MVCFramework.SysControllers in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SysControllers.pas',
+  MVCFramework.SystemJSONUtils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SystemJSONUtils.pas',
+  MVCFramework.View.Cache in '..\..\..\lib\delphimvcframework\sources\MVCFramework.View.Cache.pas',
+  MVCFramework.Controllers.Register in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Controllers.Register.pas',
+  MVCFramework.SQLGenerators.Firebird in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SQLGenerators.Firebird.pas',
+  MVCFramework.SQLGenerators.Interbase in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SQLGenerators.Interbase.pas',
+  MVCFramework.SQLGenerators.MySQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SQLGenerators.MySQL.pas',
+  MVCFramework.SQLGenerators.PostgreSQL in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SQLGenerators.PostgreSQL.pas',
+  MVCFramework.SQLGenerators.Sqlite in '..\..\..\lib\delphimvcframework\sources\MVCFramework.SQLGenerators.Sqlite.pas',
+  MVCFramework.Swagger.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Swagger.Commons.pas',
+  MVCFramework.Middleware.Swagger in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Swagger.pas',
+  MVCFramework.Middleware.Trace in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Middleware.Trace.pas',
+  MVCFramework.Nullables in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Nullables.pas',
+  MVCFramework.Serializer.HTML in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.HTML.pas';
+
+end.

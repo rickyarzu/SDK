@@ -1,0 +1,676 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8E8F4397-1D2A-4671-A85A-A568E61CDBCB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMXTMSFNCCorePkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCCorePkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCCoreWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCCorePkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSWebLibCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCCloudPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCCloudPackWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCChartPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCChartPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCUIPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCDashboardPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCDashboardPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCDashBoardPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLTMSFNCMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCWXPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSFNCWXPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FMXTMSFNCCorePkg">
+        <MSBuild Projects="FMXTMSFNCCorePkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCCorePkg:Clean">
+        <MSBuild Projects="FMXTMSFNCCorePkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCCorePkg:Make">
+        <MSBuild Projects="FMXTMSFNCCorePkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg">
+        <MSBuild Projects="VCLTMSFNCCorePkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg:Clean">
+        <MSBuild Projects="VCLTMSFNCCorePkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg:Make">
+        <MSBuild Projects="VCLTMSFNCCorePkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB">
+        <MSBuild Projects="TMSFNCCoreWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB:Clean">
+        <MSBuild Projects="TMSFNCCoreWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB:Make">
+        <MSBuild Projects="TMSFNCCoreWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE">
+        <MSBuild Projects="TMSFNCCorePkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE:Clean">
+        <MSBuild Projects="TMSFNCCorePkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE:Make">
+        <MSBuild Projects="TMSFNCCorePkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebLibCore">
+        <MSBuild Projects="TMSWebLibCore.dproj"/>
+    </Target>
+    <Target Name="TMSWebLibCore:Clean">
+        <MSBuild Projects="TMSWebLibCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebLibCore:Make">
+        <MSBuild Projects="TMSWebLibCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg">
+        <MSBuild Projects="FMXTMSFNCCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg:Make">
+        <MSBuild Projects="FMXTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg">
+        <MSBuild Projects="VCLTMSFNCCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Clean">
+        <MSBuild Projects="VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Make">
+        <MSBuild Projects="VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE">
+        <MSBuild Projects="TMSFNCCloudPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE:Clean">
+        <MSBuild Projects="TMSFNCCloudPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE:Make">
+        <MSBuild Projects="TMSFNCCloudPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB">
+        <MSBuild Projects="TMSFNCCloudPackWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB:Clean">
+        <MSBuild Projects="TMSFNCCloudPackWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB:Make">
+        <MSBuild Projects="TMSFNCCloudPackWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg">
+        <MSBuild Projects="FMXTMSFNCChartPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCChartPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg:Make">
+        <MSBuild Projects="FMXTMSFNCChartPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg">
+        <MSBuild Projects="VCLTMSFNCChartPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg:Clean">
+        <MSBuild Projects="VCLTMSFNCChartPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg:Make">
+        <MSBuild Projects="VCLTMSFNCChartPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCChartWEB">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCChartWEB:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCChartWEB:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg">
+        <MSBuild Projects="FMXTMSFNCUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg:Make">
+        <MSBuild Projects="FMXTMSFNCUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg">
+        <MSBuild Projects="VCLTMSFNCUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg:Clean">
+        <MSBuild Projects="VCLTMSFNCUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg:Make">
+        <MSBuild Projects="VCLTMSFNCUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE">
+        <MSBuild Projects="TMSFNCUIPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE:Clean">
+        <MSBuild Projects="TMSFNCUIPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE:Make">
+        <MSBuild Projects="TMSFNCUIPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCUIPackWEB">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCUIPackWEB:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCUIPackWEB:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg">
+        <MSBuild Projects="VCLTMSFNCDashboardPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg:Clean">
+        <MSBuild Projects="VCLTMSFNCDashboardPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg:Make">
+        <MSBuild Projects="VCLTMSFNCDashboardPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg">
+        <MSBuild Projects="FMXTMSFNCDashboardPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCDashboardPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg:Make">
+        <MSBuild Projects="FMXTMSFNCDashboardPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE">
+        <MSBuild Projects="TMSFNCDashBoardPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE:Clean">
+        <MSBuild Projects="TMSFNCDashBoardPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE:Make">
+        <MSBuild Projects="TMSFNCDashBoardPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCDashboardPackWEB">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCDashboardPackWEB:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCDashboardPackWEB:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg">
+        <MSBuild Projects="VCLTMSFNCMapsPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg:Clean">
+        <MSBuild Projects="VCLTMSFNCMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg:Make">
+        <MSBuild Projects="VCLTMSFNCMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg">
+        <MSBuild Projects="FMXTMSFNCMapsPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg:Make">
+        <MSBuild Projects="FMXTMSFNCMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE">
+        <MSBuild Projects="TMSFNCMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE:Clean">
+        <MSBuild Projects="TMSFNCMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE:Make">
+        <MSBuild Projects="TMSFNCMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCMapsWEB">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCMapsWEB:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCMapsWEB:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg">
+        <MSBuild Projects="FMXTMSFNCWXPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg:Clean">
+        <MSBuild Projects="FMXTMSFNCWXPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg:Make">
+        <MSBuild Projects="FMXTMSFNCWXPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE">
+        <MSBuild Projects="TMSFNCWXPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE:Clean">
+        <MSBuild Projects="TMSFNCWXPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE:Make">
+        <MSBuild Projects="TMSFNCWXPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FMXTMSFNCCorePkg;VCLTMSFNCCorePkg;TMSFNCCoreWEB;TMSFNCCorePkgDE;TMSWebLibCore;FMXTMSFNCCloudPackPkg;VCLTMSFNCCloudPackPkg;TMSFNCCloudPackPkgDE;TMSFNCCloudPackWEB;FMXTMSFNCChartPkg;VCLTMSFNCChartPkg;TMSFNCChartPkgDE;TMSFNCChartWEB;FMXTMSFNCUIPackPkg;VCLTMSFNCUIPackPkg;TMSFNCUIPackPkgDE;TMSFNCUIPackWEB;VCLTMSFNCDashboardPackPkg;FMXTMSFNCDashboardPackPkg;TMSFNCDashBoardPackPkgDE;TMSFNCDashboardPackWEB;VCLTMSFNCMapsPkg;FMXTMSFNCMapsPkg;TMSFNCMapsPkgDE;TMSFNCMapsWEB;FMXTMSFNCWXPackPkg;TMSFNCWXPackPkgDE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FMXTMSFNCCorePkg:Clean;VCLTMSFNCCorePkg:Clean;TMSFNCCoreWEB:Clean;TMSFNCCorePkgDE:Clean;TMSWebLibCore:Clean;FMXTMSFNCCloudPackPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;TMSFNCCloudPackPkgDE:Clean;TMSFNCCloudPackWEB:Clean;FMXTMSFNCChartPkg:Clean;VCLTMSFNCChartPkg:Clean;TMSFNCChartPkgDE:Clean;TMSFNCChartWEB:Clean;FMXTMSFNCUIPackPkg:Clean;VCLTMSFNCUIPackPkg:Clean;TMSFNCUIPackPkgDE:Clean;TMSFNCUIPackWEB:Clean;VCLTMSFNCDashboardPackPkg:Clean;FMXTMSFNCDashboardPackPkg:Clean;TMSFNCDashBoardPackPkgDE:Clean;TMSFNCDashboardPackWEB:Clean;VCLTMSFNCMapsPkg:Clean;FMXTMSFNCMapsPkg:Clean;TMSFNCMapsPkgDE:Clean;TMSFNCMapsWEB:Clean;FMXTMSFNCWXPackPkg:Clean;TMSFNCWXPackPkgDE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FMXTMSFNCCorePkg:Make;VCLTMSFNCCorePkg:Make;TMSFNCCoreWEB:Make;TMSFNCCorePkgDE:Make;TMSWebLibCore:Make;FMXTMSFNCCloudPackPkg:Make;VCLTMSFNCCloudPackPkg:Make;TMSFNCCloudPackPkgDE:Make;TMSFNCCloudPackWEB:Make;FMXTMSFNCChartPkg:Make;VCLTMSFNCChartPkg:Make;TMSFNCChartPkgDE:Make;TMSFNCChartWEB:Make;FMXTMSFNCUIPackPkg:Make;VCLTMSFNCUIPackPkg:Make;TMSFNCUIPackPkgDE:Make;TMSFNCUIPackWEB:Make;VCLTMSFNCDashboardPackPkg:Make;FMXTMSFNCDashboardPackPkg:Make;TMSFNCDashBoardPackPkgDE:Make;TMSFNCDashboardPackWEB:Make;VCLTMSFNCMapsPkg:Make;FMXTMSFNCMapsPkg:Make;TMSFNCMapsPkgDE:Make;TMSFNCMapsWEB:Make;FMXTMSFNCWXPackPkg:Make;TMSFNCWXPackPkgDE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='All'">
+        <BuildGroupProject Include="VCLTMSFNCUIPackPkg.dproj">
+            <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCChartPkg.dproj">
+            <ProjectGuid>{1C973352-058B-407F-92FC-3C962EE1C319}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj">
+            <ProjectGuid>{6C355D94-2496-4C6F-A3BC-7C7AFCC62FA3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCDashboardPackPkg.dproj">
+            <ProjectGuid>{47E39625-4F6A-43A7-AA3E-03B14731B72F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj">
+            <ProjectGuid>{5397E1BF-74BA-4104-AA38-210910DFF978}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCWXPackPkgDE.dproj">
+            <ProjectGuid>{D5469973-2F83-4D35-9FB9-BAB6C66368F5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCCloudPackPkg.dproj">
+            <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCMapsPkgDE.dproj">
+            <ProjectGuid>{50BD3191-AD1D-45C4-A60A-ADEF95E8E4BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCCorePkg.dproj">
+            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCDashBoardPackPkgDE.dproj">
+            <ProjectGuid>{53BDB9A3-1EAF-4DC1-89CA-15A402A65AE9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCUIPackPkg.dproj">
+            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj">
+            <ProjectGuid>{C67175E1-30CF-48E8-AFED-A642BEA62757}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCMapsPkg.dproj">
+            <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSWebLibCore.dproj">
+            <ProjectGuid>{3C6429C3-B9A1-4266-8921-C465ECFF6B42}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj">
+            <ProjectGuid>{76E0623F-9E63-4386-97F5-B90236599355}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCCloudPackPkg.dproj">
+            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj">
+            <ProjectGuid>{5FB75DDF-12BD-4C94-9046-3D38FEA0D314}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCorePkgDE.dproj">
+            <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCloudPackPkgDE.dproj">
+            <ProjectGuid>{6510DFA2-1479-4961-BDE4-19A351B1103B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCMapsPkg.dproj">
+            <ProjectGuid>{58DB2D50-F4E2-455E-9FB3-F2EE40560050}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCWXPackPkg.dproj">
+            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCloudPackWEB.dproj">
+            <ProjectGuid>{D77B704F-E12E-465E-933A-2F19108010A7}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCoreWEB.dproj">
+            <ProjectGuid>{B2BF91FA-09B2-4582-9262-7EB1BF29E2B9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCDashboardPackPkg.dproj">
+            <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCCorePkg.dproj">
+            <ProjectGuid>{8CA79B7E-30D4-488A-8748-C4BE93CE462A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCUIPackPkgDE.dproj">
+            <ProjectGuid>{0DF8736A-8603-44FD-BF18-EB95283B6F43}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Win64'">
+        <BuildGroupProject Include="VCLTMSFNCUIPackPkg.dproj">
+            <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCChartPkg.dproj">
+            <ProjectGuid>{1C973352-058B-407F-92FC-3C962EE1C319}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC UI Pack\TMSFNCUIPackWEB.dproj">
+            <ProjectGuid>{6C355D94-2496-4C6F-A3BC-7C7AFCC62FA3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCDashboardPackPkg.dproj">
+            <ProjectGuid>{47E39625-4F6A-43A7-AA3E-03B14731B72F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\TMSFNCDashboardPackWEB.dproj">
+            <ProjectGuid>{5397E1BF-74BA-4104-AA38-210910DFF978}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCWXPackPkgDE.dproj">
+            <ProjectGuid>{D5469973-2F83-4D35-9FB9-BAB6C66368F5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCCloudPackPkg.dproj">
+            <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCMapsPkgDE.dproj">
+            <ProjectGuid>{50BD3191-AD1D-45C4-A60A-ADEF95E8E4BA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCCorePkg.dproj">
+            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCDashBoardPackPkgDE.dproj">
+            <ProjectGuid>{53BDB9A3-1EAF-4DC1-89CA-15A402A65AE9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCUIPackPkg.dproj">
+            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Maps\TMSFNCMapsWEB.dproj">
+            <ProjectGuid>{C67175E1-30CF-48E8-AFED-A642BEA62757}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCMapsPkg.dproj">
+            <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSWebLibCore.dproj">
+            <ProjectGuid>{3C6429C3-B9A1-4266-8921-C465ECFF6B42}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartWEB.dproj">
+            <ProjectGuid>{76E0623F-9E63-4386-97F5-B90236599355}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\tmssoftware\TMS FNC Chart\TMSFNCChartPkgDE.dproj">
+            <ProjectGuid>{5FB75DDF-12BD-4C94-9046-3D38FEA0D314}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCCloudPackPkg.dproj">
+            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCloudPackPkgDE.dproj">
+            <ProjectGuid>{6510DFA2-1479-4961-BDE4-19A351B1103B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCorePkgDE.dproj">
+            <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCMapsPkg.dproj">
+            <ProjectGuid>{58DB2D50-F4E2-455E-9FB3-F2EE40560050}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMXTMSFNCWXPackPkg.dproj">
+            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCloudPackWEB.dproj">
+            <ProjectGuid>{D77B704F-E12E-465E-933A-2F19108010A7}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCCoreWEB.dproj">
+            <ProjectGuid>{B2BF91FA-09B2-4582-9262-7EB1BF29E2B9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCDashboardPackPkg.dproj">
+            <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCLTMSFNCCorePkg.dproj">
+            <ProjectGuid>{8CA79B7E-30D4-488A-8748-C4BE93CE462A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TMSFNCUIPackPkgDE.dproj">
+            <ProjectGuid>{0DF8736A-8603-44FD-BF18-EB95283B6F43}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

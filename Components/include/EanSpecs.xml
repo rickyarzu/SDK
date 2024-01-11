@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="EanSpecs">
+  <const name="gtBmp" type="TGraphicsType">
+    <value>
+      gtBmp
+    </value>
+  </const>
+  <const name="gtWmf" type="TGraphicsType">
+    <value>
+      gtWmf
+    </value>
+  </const>
+  <const name="gtEmf" type="TGraphicsType">
+    <value>
+      gtEmf
+    </value>
+  </const>
+  <const name="gtJPeg" type="TGraphicsType">
+    <value>
+      gtJPeg
+    </value>
+  </const>
+  <const name="gtGif" type="TGraphicsType">
+    <value>
+      gtGif
+    </value>
+  </const>
+  <enum name="TGraphicsType">
+    <element name="gtBmp" />
+    <element name="gtWmf" />
+    <element name="gtEmf" />
+    <element name="gtJPeg" />
+    <element name="gtGif" />
+  </enum>
+  <const name="bcEan8" type="TTypBarCode">
+    <value>
+      bcEan8
+    </value>
+  </const>
+  <const name="bcEan13" type="TTypBarCode">
+    <value>
+      bcEan13
+    </value>
+  </const>
+  <const name="bcCodabar" type="TTypBarCode">
+    <value>
+      bcCodabar
+    </value>
+  </const>
+  <const name="bcCode39Standard" type="TTypBarCode">
+    <value>
+      bcCode39Standard
+    </value>
+  </const>
+  <const name="bcCode39Full" type="TTypBarCode">
+    <value>
+      bcCode39Full
+    </value>
+  </const>
+  <const name="bcCode93Standard" type="TTypBarCode">
+    <value>
+      bcCode93Standard
+    </value>
+  </const>
+  <const name="bcCode93Full" type="TTypBarCode">
+    <value>
+      bcCode93Full
+    </value>
+  </const>
+  <const name="bcCode128" type="TTypBarCode">
+    <value>
+      bcCode128
+    </value>
+  </const>
+  <const name="bcABCCodabar" type="TTypBarCode">
+    <value>
+      bcABCCodabar
+    </value>
+  </const>
+  <const name="bc25Datalogic" type="TTypBarCode">
+    <value>
+      bc25Datalogic
+    </value>
+  </const>
+  <const name="bc25Interleaved" type="TTypBarCode">
+    <value>
+      bc25Interleaved
+    </value>
+  </const>
+  <const name="bc25Matrix" type="TTypBarCode">
+    <value>
+      bc25Matrix
+    </value>
+  </const>
+  <const name="bc25Industrial" type="TTypBarCode">
+    <value>
+      bc25Industrial
+    </value>
+  </const>
+  <const name="bc25IATA" type="TTypBarCode">
+    <value>
+      bc25IATA
+    </value>
+  </const>
+  <const name="bc25Invert" type="TTypBarCode">
+    <value>
+      bc25Invert
+    </value>
+  </const>
+  <const name="bcITF" type="TTypBarCode">
+    <value>
+      bcITF
+    </value>
+  </const>
+  <const name="bcISBN" type="TTypBarCode">
+    <value>
+      bcISBN
+    </value>
+  </const>
+  <const name="bcISSN" type="TTypBarCode">
+    <value>
+      bcISSN
+    </value>
+  </const>
+  <const name="bcISMN" type="TTypBarCode">
+    <value>
+      bcISMN
+    </value>
+  </const>
+  <const name="bcUPCA" type="TTypBarCode">
+    <value>
+      bcUPCA
+    </value>
+  </const>
+  <const name="bcUPCE0" type="TTypBarCode">
+    <value>
+      bcUPCE0
+    </value>
+  </const>
+  <const name="bcUPCE1" type="TTypBarCode">
+    <value>
+      bcUPCE1
+    </value>
+  </const>
+  <const name="bcUPCShipping" type="TTypBarCode">
+    <value>
+      bcUPCShipping
+    </value>
+  </const>
+  <const name="bcSCC14" type="TTypBarCode">
+    <value>
+      bcSCC14
+    </value>
+  </const>
+  <const name="bcJAN8" type="TTypBarCode">
+    <value>
+      bcJAN8
+    </value>
+  </const>
+  <const name="bcJAN13" type="TTypBarCode">
+    <value>
+      bcJAN13
+    </value>
+  </const>
+  <const name="bcMSIPlessey" type="TTypBarCode">
+    <value>
+      bcMSIPlessey
+    </value>
+  </const>
+  <const name="bcPostNet" type="TTypBarCode">
+    <value>
+      bcPostNet
+    </value>
+  </const>
+  <const name="bcPlanet" type="TTypBarCode">
+    <value>
+      bcPlanet
+    </value>
+  </const>
+  <const name="bcRoyalMail" type="TTypBarCode">
+    <value>
+      bcRoyalMail
+    </value>
+  </const>
+  <const name="bc4State" type="TTypBarCode">
+    <value>
+      bc4State
+    </value>
+  </const>
+  <const name="bcDutch4StatePostal" type="TTypBarCode">
+    <value>
+      bcDutch4StatePostal
+    </value>
+  </const>
+  <const name="bcTelepen" type="TTypBarCode">
+    <value>
+      bcTelepen
+    </value>
+  </const>
+  <const name="bcSwissPostal" type="TTypBarCode">
+    <value>
+      bcSwissPostal
+    </value>
+  </const>
+  <const name="bcSingapore4StatePostalCode" type="TTypBarCode">
+    <value>
+      bcSingapore4StatePostalCode
+    </value>
+  </const>
+  <const name="bcPostBar" type="TTypBarCode">
+    <value>
+      bcPostBar
+    </value>
+  </const>
+  <const name="bcOPC" type="TTypBarCode">
+    <value>
+      bcOPC
+    </value>
+  </const>
+  <const name="bcEan128" type="TTypBarCode">
+    <value>
+      bcEan128
+    </value>
+  </const>
+  <const name="bc25Coop" type="TTypBarCode">
+    <value>
+      bc25Coop
+    </value>
+  </const>
+  <const name="bcCode11" type="TTypBarCode">
+    <value>
+      bcCode11
+    </value>
+  </const>
+  <const name="bcPZN" type="TTypBarCode">
+    <value>
+      bcPZN
+    </value>
+  </const>
+  <const name="bcPDF417" type="TTypBarCode">
+    <value>
+      bcPDF417
+    </value>
+  </const>
+  <const name="bcCodablockF" type="TTypBarCode">
+    <value>
+      bcCodablockF
+    </value>
+  </const>
+  <const name="bcSSCC" type="TTypBarCode">
+    <value>
+      bcSSCC
+    </value>
+  </const>
+  <const name="bcSISAC" type="TTypBarCode">
+    <value>
+      bcSISAC
+    </value>
+  </const>
+  <const name="bcCode16K" type="TTypBarCode">
+    <value>
+      bcCode16K
+    </value>
+  </const>
+  <const name="bcCodabarMonarch" type="TTypBarCode">
+    <value>
+      bcCodabarMonarch
+    </value>
+  </const>
+  <const name="bcFimA" type="TTypBarCode">
+    <value>
+      bcFimA
+    </value>
+  </const>
+  <const name="bcFimB" type="TTypBarCode">
+    <value>
+      bcFimB
+    </value>
+  </const>
+  <const name="bcFimC" type="TTypBarCode">
+    <value>
+      bcFimC
+    </value>
+  </const>
+  <const name="bcFimD" type="TTypBarCode">
+    <value>
+      bcFimD
+    </value>
+  </const>
+  <enum name="TTypBarCode">
+    <element name="bcEan8" />
+    <element name="bcEan13" />
+    <element name="bcCodabar" />
+    <element name="bcCode39Standard" />
+    <element name="bcCode39Full" />
+    <element name="bcCode93Standard" />
+    <element name="bcCode93Full" />
+    <element name="bcCode128" />
+    <element name="bcABCCodabar" />
+    <element name="bc25Datalogic" />
+    <element name="bc25Interleaved" />
+    <element name="bc25Matrix" />
+    <element name="bc25Industrial" />
+    <element name="bc25IATA" />
+    <element name="bc25Invert" />
+    <element name="bcITF" />
+    <element name="bcISBN" />
+    <element name="bcISSN" />
+    <element name="bcISMN" />
+    <element name="bcUPCA" />
+    <element name="bcUPCE0" />
+    <element name="bcUPCE1" />
+    <element name="bcUPCShipping" />
+    <element name="bcSCC14" />
+    <element name="bcJAN8" />
+    <element name="bcJAN13" />
+    <element name="bcMSIPlessey" />
+    <element name="bcPostNet" />
+    <element name="bcPlanet" />
+    <element name="bcRoyalMail" />
+    <element name="bc4State" />
+    <element name="bcDutch4StatePostal" />
+    <element name="bcTelepen" />
+    <element name="bcSwissPostal" />
+    <element name="bcSingapore4StatePostalCode" />
+    <element name="bcPostBar" />
+    <element name="bcOPC" />
+    <element name="bcEan128" />
+    <element name="bc25Coop" />
+    <element name="bcCode11" />
+    <element name="bcPZN" />
+    <element name="bcPDF417" />
+    <element name="bcCodablockF" />
+    <element name="bcSSCC" />
+    <element name="bcSISAC" />
+    <element name="bcCode16K" />
+    <element name="bcCodabarMonarch" />
+    <element name="bcFimA" />
+    <element name="bcFimB" />
+    <element name="bcFimC" />
+    <element name="bcFimD" />
+  </enum>
+  <struct name="TBarCodeInfo">
+    <field name="Supported" type="Boolean" visibility="public" />
+    <field name="Name" type="string" visibility="public" />
+    <field name="LongName" type="string" visibility="public" />
+    <field name="InitValue" type="string" visibility="public" />
+    <field name="Chars" type="string" visibility="public" />
+    <field name="ParentCode" type="TTypBarCode" visibility="public" />
+    <field name="Year" type="Word" visibility="public" />
+    <field name="Country" visibility="public">
+      <type name="Country" type="ShortString" />
+    </field>
+    <field name="CodeContry" visibility="public">
+      <type name="CodeContry" type="ShortString" />
+    </field>
+    <field name="EnabledAdd" type="Boolean" visibility="public" />
+    <field name="AutoCaption" type="Boolean" visibility="public" />
+    <field name="OptCharWidthMM" type="Double" visibility="public" />
+    <field name="Length" type="Word" visibility="public" />
+  </struct>
+  <variable name="grExtensions" visibility="public">
+    <array generated="true">
+      <element type="string" />
+    </array>
+  </variable>
+  <function name="BarcodeInfo" visibility="public">
+    <parameters>
+      <parameter name="T" type="TTypBarCode" />
+      <parameter name="Barcode" type="string" />
+      <retval type="TBarCodeInfo" />
+    </parameters>
+  </function>
+</namespace>

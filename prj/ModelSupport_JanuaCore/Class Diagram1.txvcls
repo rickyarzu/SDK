@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ys0wg209xzr_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram1" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-220,200,256,201" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.OpenArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.OpenArticles(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.OpenArticles(System.TGUID,System.Word,System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticles(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticles(System.TGUID,System.Word,System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticle(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticlesListPos(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticlesList(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage.GetArticlesList(System.TGUID,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaCmsStorage:Janua.Orm.Intf.IJanuaStorage">
+        <property name="sourceAnchor" value="-81,401" />
+        <property name="targetAnchor" value="-81,480" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,440,274,216" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetdsArgumentsArticles()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetdsMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetdsArticles()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetdsArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetdsArguments(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetdsArgumentsArticles(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetdsArticles(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetdsMainArguments(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetjdsMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetjdsMainArguments(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetjdsArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetjdsArguments(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetjdsArticles()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetjdsArticles(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.dsMainArguments" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.dsArguments" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.dsArticles" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.dsArgumentsArticles" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.jdsMainArguments" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.jdsArguments" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.jdsArticles" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetjdsArticlesAttachments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetjdsArticlesAttachments(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.jdsArticlesAttachments" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetArgumentsStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetArgumentsStorage(Janua.Orm.Intf.IJanuaRecordSetStorage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.ArgumentsStorage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.GetArticlesStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.SetArticlesStorage(Janua.Orm.Intf.IJanuaRecordSetStorage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.ArticlesStorage" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.ArticlesStorage">
+        <property name="sourceAnchor" value="196,440" />
+        <property name="targetAnchor" value="196,275" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage.ArgumentsStorage">
+        <property name="sourceAnchor" value="204,440" />
+        <property name="targetAnchor" value="204,275" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_gnt:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaDBCmsStorage:Janua.Orm.Intf.IJanuaStorage">
+        <property name="sourceAnchor" value="80,565" />
+        <property name="targetAnchor" value="17,565" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,80,312,155" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.SetMainArguments(JOrm.Cms.MainArguments.Intf.IMainArguments)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.MainArguments" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.OpenMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.AsyncOpenMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.LocalOpenMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetArticles()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.SetArticles(JOrm.Cms.Articles.Intf.IArticles)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.Articles" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetCache()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.SetCache(Janua.Cms.Server.Intf.IJanuaServerCmsCache)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.Cache" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetLocalArgumentsStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.SetLocalArgumentsStorage(Janua.Orm.Intf.IJanuaRecordSetStorage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetRemoteArgumentsStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.SetRemoteArgumentsStorage(Janua.Orm.Intf.IJanuaRecordSetStorage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.LocalArgumentsStorage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.RemoteArgumentsStorage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.OpenArgumentArticles(System.Integer,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.OpenArticles(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetArticle(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetArticlesListPos(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetArticlesList(System.Word,System.Word,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.GetArticlesList(System.TGUID,System.Word,System.Word,System.Boolean)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.Cache">
+        <property name="sourceAnchor" value="535,235" />
+        <property name="targetAnchor" value="535,540" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.RemoteArgumentsStorage">
+        <property name="sourceAnchor" value="400,169" />
+        <property name="targetAnchor" value="328,169" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.LocalArgumentsStorage">
+        <property name="sourceAnchor" value="400,177" />
+        <property name="targetAnchor" value="328,177" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.MainArguments">
+        <property name="sourceAnchor" value="655,235" />
+        <property name="targetAnchor" value="765,320" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCms.Articles">
+        <property name="sourceAnchor" value="712,109" />
+        <property name="targetAnchor" value="760,109" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,540,286,248" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.GetMainArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.SetMainArguments(JOrm.Cms.MainArguments.Intf.IMainArguments)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.MainArguments" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.StoreArticles(System.TGUID,JOrm.Cms.Articles.Intf.IArticles)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.GetArticles(System.TGUID,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.StoreArticle(System.TGUID,JOrm.Cms.Articles.Intf.IArticle)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.GetArticle(System.Int64,out@JOrm.Cms.Articles.Intf.IArticle)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.GetArticle(System.TGUID,out@JOrm.Cms.Articles.Intf.IArticle)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.GetServerCms()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.setServerCms(Janua.Cms.Server.Intf.IJanuaServerCms)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.ServerCms" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.LoadCache()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.ServerCms">
+        <property name="sourceAnchor" value="543,540" />
+        <property name="targetAnchor" value="543,235" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Cms.Server.Intf.IJanuaServerCmsCache.MainArguments">
+        <property name="sourceAnchor" value="686,544" />
+        <property name="targetAnchor" value="770,475" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,120,248,155" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetUpdatedRecordSet()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.UpdatedRecordSet" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetOnUpdateSuccess()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetOnUpdateSuccess(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.OnUpdateSuccess" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetOnUpdateError()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetOnUpdateError(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.OnUpdateError" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.ApplyUpdates(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.AsyncApplyUpdates(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetParameters()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetParameters(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.Parameters" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetMaxRecords()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetMaxRecords(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.MaxRecords" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.ParamByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.LoadData()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.AsyncLoadData()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="-180,480,197,170" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetLastErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.getLimit()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetLastCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetLastCount(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetOffset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.setLimit(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetOffset(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.InternalCreateDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.InternalDestroyDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetKeepAlive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetKeepAlive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.CreateDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.DestroyDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.KeepAlive" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.Limit" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.Offset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.LastCount" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.LastErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetDBFunctions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetDBFunctions(Janua.Orm.Intf.IDatasetFunctions)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.DBFunctions" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,320,288,155" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.GetMain_argument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.SetMain_argument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.Main_argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.GetMain_argument_des()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.SetMain_argument_des(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.Main_argument_des" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.GetPos()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.SetPos(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.Pos" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.GetMainArgument()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.SetMainArgument(JOrm.Cms.MainArguments.Intf.IMainArgument)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.MainArgument" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.GetArguments()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.SetArguments(JOrm.Cms.Arguments.Intf.IArguments)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.Arguments" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:JOrm.Cms.MainArguments.Intf.IMainArguments.Arguments">
+        <property name="sourceAnchor" value="856,475" />
+        <property name="targetAnchor" value="856,600" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="760,60,194,78" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetArticle_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetArticle_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Article_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetTitle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetTitle(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Title" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAbstract()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAbstract(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Abstract" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAuthor_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAuthor_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Author_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetText(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Text" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetDatetime()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetDatetime(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Datetime" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetExternal_link()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetExternal_link(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.External_link" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetImage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetImage(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Image" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetShorttext()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetShorttext(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Shorttext" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetMain_argument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetMain_argument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Main_argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetArgument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetArgument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetSub_argument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetSub_argument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Sub_argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetSpecification_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetSpecification_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Specification_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetArticle_key()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetArticle_key(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Article_key" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetImage_url()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetImage_url(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Image_url" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetLanguage_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetLanguage_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Language_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetFeed_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetFeed_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Feed_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetImagetext()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetImagetext(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Imagetext" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAttachment()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAttachment(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Attachment" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetHasimage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetHasimage(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Hasimage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetHasattach()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetHasattach(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Hasattach" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetArticle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetArticle(JOrm.Cms.Articles.Intf.IArticle)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Article" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetImageUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetImageUrl(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.ImageUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAttachmentUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAttachmentUrl(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.AttachmentUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetArticleUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetArticleUrl(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.ArticleUrl" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAuthor()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAuthor(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.Author" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetAuthorText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetAuthorText(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.AuthorText" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetMainImageId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetMainImageId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.MainImageId" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetMainAttachId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetMainAttachId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.MainAttachId" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.GetThumbImageId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.SetThumbImageId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Articles.Intf.IArticles.ThumbImageId" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,160,260,91" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetArticleId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetArticleId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.ArticleId" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetFileId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetFileId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.FileId" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetDescription()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetDescription(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.Description" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetExtension()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetExtension(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.Extension" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetMime()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetMime(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.Mime" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.GetDbSchemaId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.SetDbSchemaId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.DbSchemaId" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.Getarticles_attachment()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.Setarticles_attachment(JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachment)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.ArticlesAttachment.Intf.IArticlesAttachments.articles_attachment" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,600,232,78" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetMain_argument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetMain_argument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Main_argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetArgument_id()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetArgument_id(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Argument_id" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetArgument_des()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetArgument_des(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Argument_des" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetCode()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetCode(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Code" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetPos()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetPos(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Pos" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetIcon()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetIcon(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Icon" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetUrl(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Url" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetArgument()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetArgument(JOrm.Cms.Arguments.Intf.IArgument)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.Argument" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.GetLeagueId()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.SetLeagueId(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:JOrm.Cms.Arguments.Intf.IArguments.LeagueId" />
+    </reference>
+  </view>
+</nodeSet>

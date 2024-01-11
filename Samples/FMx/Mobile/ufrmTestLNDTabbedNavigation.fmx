@@ -1,0 +1,501 @@
+object TabbedwithNavigationForm: TTabbedwithNavigationForm
+  Left = 0
+  Top = 0
+  Caption = 'Form56'
+  ClientHeight = 596
+  ClientWidth = 405
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 3
+  object TabControlLND: TTabControl
+    Touch.GestureManager = GestureManager1
+    OnGesture = GestureDone
+    Align = Client
+    FullSize = True
+    Size.Width = 405.000000000000000000
+    Size.Height = 596.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'tabcontrolstyle'
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = Bottom
+    Sizes = (
+      405s
+      547s
+      405s
+      547s
+      405s
+      547s
+      405s
+      547s)
+    object TabItem1LND: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.FontColor = claDarkblue
+      StyledSettings = [Family, Size, Style]
+      IsSelected = False
+      ImageIndex = 0
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcustom'
+      TabOrder = 0
+      Text = 'News'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControlMenu: TTabControl
+        Touch.GestureManager = GestureManager1
+        OnGesture = GestureDone
+        Align = Client
+        FullSize = True
+        Size.Width = 405.000000000000000000
+        Size.Height = 547.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 3
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          405s
+          547s
+          405s
+          547s
+          405s
+          547s
+          405s
+          547s)
+        object TabItem11: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem11'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar1: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblTitle1: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkblue
+              TextSettings.HorzAlign = Center
+              Text = 'LND Liguria App'
+            end
+            object SpeedButton1: TSpeedButton
+              Align = Left
+              StyledSettings = [Family, Size, Style]
+              ImageIndex = 0
+              Size.Width = 49.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = claDarkblue
+            end
+          end
+          object ListViewMainMenu: TListView
+            ItemAppearanceClassName = 'TImageListItemAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 405.000000000000000000
+            Size.Height = 454.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+          end
+          object TextConnectionError1: TText
+            Align = Top
+            Position.Y = 48.000000000000000000
+            Size.Width = 405.000000000000000000
+            Size.Height = 45.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Attenzione connessione con il server attendere ...'
+            TextSettings.FontColor = claRed
+          end
+        end
+        object TabItem12: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem12'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ToolBar2: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblTitle12: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkblue
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object btnBack: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+            end
+          end
+          object ListViewArguments: TListView
+            ItemAppearanceClassName = 'TImageListItemAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 405.000000000000000000
+            Size.Height = 470.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+          end
+          object TextConnectionError2: TText
+            Align = Top
+            Position.Y = 48.000000000000000000
+            Size.Width = 405.000000000000000000
+            Size.Height = 29.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Attenzione connessione con il server attendere ...'
+            TextSettings.FontColor = claRed
+          end
+        end
+        object TabItem13: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem13'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ToolBar6: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object lbTitle13: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkblue
+              TextSettings.HorzAlign = Center
+              Text = 'Title'
+            end
+            object SpeedButton2: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+            end
+          end
+        end
+        object TabItem14: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem14'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ToolBar7: TToolBar
+            Size.Width = 405.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object Label2: TLabel
+              Align = Contents
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 405.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.FontColor = claDarkblue
+              TextSettings.HorzAlign = Center
+              Text = 'Articolo'
+            end
+            object SpeedButton3: TSpeedButton
+              Action = PreviousTabAction1
+              Align = Left
+              Enabled = True
+              ImageIndex = -1
+              Margins.Left = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'backtoolbutton'
+            end
+          end
+          object Rectangle1: TRectangle
+            Align = Client
+            Fill.Color = claWhite
+            Size.Width = 405.000000000000000000
+            Size.Height = 499.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claWhite
+          end
+        end
+      end
+    end
+    object TabItem2Championships: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      ImageIndex = 1
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'LND'
+      ExplicitSize.cx = 102.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar3: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle3: TLabel
+          Align = Contents
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.FontColor = claDarkblue
+          TextSettings.HorzAlign = Center
+          Text = 'LND 2018/19'
+        end
+      end
+      object TabControlChampionships: TTabControl
+        Align = Client
+        Size.Width = 405.000000000000000000
+        Size.Height = 499.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        TabPosition = Dots
+        Sizes = (
+          405s
+          499s
+          405s
+          499s)
+        object TabItem21: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem21'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+          object ListViewChampionships: TListView
+            ItemAppearanceClassName = 'TImageListItemAppearance'
+            ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 405.000000000000000000
+            Size.Height = 499.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+            ControlType = Platform
+          end
+        end
+        object TabItem22: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TabItem22'
+          ExplicitSize.cx = 11.000000000000000000
+          ExplicitSize.cy = 11.000000000000000000
+        end
+      end
+    end
+    object TabItemMap: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 2
+      Size.Width = 101.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Contatti'
+      ExplicitSize.cx = 101.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar4: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle4: TLabel
+          Align = Contents
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.FontColor = claDarkblue
+          TextSettings.HorzAlign = Center
+          Text = 'Contatti'
+        end
+      end
+      object Label1: TLabel
+        Align = Top
+        Position.Y = 48.000000000000000000
+        Size.Width = 405.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.HorzAlign = Center
+        Text = 'Via Col Dino, 4, 16149 Genova GE'
+        TabOrder = 1
+      end
+      object btnCallFair: TButton
+        Align = Top
+        ControlType = Platform
+        StyledSettings = [Family, Size, Style]
+        ImageIndex = 5
+        Margins.Left = 3.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Margins.Bottom = 3.000000000000000000
+        Position.X = 3.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 399.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 25
+        Text = '010 810952'
+        TextSettings.FontColor = claDarkmagenta
+      end
+      object btnWebFair: TButton
+        Align = Top
+        ControlType = Platform
+        ImageIndex = 2
+        Margins.Left = 3.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Margins.Bottom = 3.000000000000000000
+        Position.X = 3.000000000000000000
+        Position.Y = 113.000000000000000000
+        Size.Width = 399.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+        Text = 'Sito Web'
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 3
+      Size.Width = 102.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Profilo'
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar5: TToolBar
+        Size.Width = 405.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTitle5: TLabel
+          Align = Contents
+          Size.Width = 405.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Impostazioni'
+        end
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 16
+    Top = 177
+  end
+  object ActionList1: TActionList
+    Left = 16
+    Top = 120
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+    end
+  end
+end

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="okko2t7j5sbp1svwi_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Janua Orm Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,280,208,171" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.GetDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.SetDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Dataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.GetDataSource()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.SetDataSource(Data.DB.TDataSource)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.DataSource" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.DeleteFromDataset(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.DeleteFromDataset(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.UpdateRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.InsertRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.getGUIDPrefix()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.setGUIDPrefix(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.GUIDPrefix" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Open()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.OpenThreaded()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Close()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.getParams()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.setParams(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Params" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.AddParam(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.AddParam(System.string,Janua.Orm.Types.TJanuaPropertyType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.ParamByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.getDatasetType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.setDatasetType(Janua.Orm.Types.TJanuaDatasetType)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.DatasetType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.SearchRecord(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.GUIDField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.getLimit()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.setLimit(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Limit" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.getPage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.setPage(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.Page" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaDBDataset.RecordCount()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,520,224,410" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetKeyFields(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetKeyFields()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.KeyFields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AddKeyField(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.CheckIsStored()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetDeleted(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetDeleted()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Deleted" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.FieldCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AddField(Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetJanuaFields()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetJanuaFields(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Fields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.FindField(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.FieldByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetRecords()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetRecords(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Records" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetRecordSets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetRecordSets(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RecordSets" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AddRecordSet(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.WriteToJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.ReadFromJson(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetAsJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetupDataset(Janua.Orm.Intf.IJanuaDBDataset,Janua.Orm.Intf.IJanuaDBDataset[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LoadRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LoadFromDataset(Janua.Orm.Intf.IJanuaDBDataset,Janua.Orm.Intf.IJanuaDBDataset[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LoadFromDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SaveToDataset(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AppendToDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.UpdateToDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.CheckInDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RefreshFromDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.ReadRecord(Janua.Orm.Intf.IRecSerialization)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.WriteRecord(Janua.Orm.Intf.IRecSerialization)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Append()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.NewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RecordValue()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RecordSetIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RecordCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.RecordSetCount(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Equals(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DoCalcFields()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetNotifyEvent(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetNotifyEvent()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.OnCalcFields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetGUID()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GUID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetItemIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetItemIndex()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.ItemIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetMasterRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetMasterRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.MasterRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AddMasterField(Janua.Orm.Intf.IJanuaField,Janua.Orm.Intf.IJanuaField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.UndoUpdates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetModified()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetModified(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Modified" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetIsNewRecod()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetIsNewReoord(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.IsNewRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetIsRemoteStored()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetIsRemoteStored(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetIsLocalStored()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetIsLocalStored(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.IsLocalStored" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.IsRemoteStored" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetUpdatesPending()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetUpdatesPending(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.UpdatesPending" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.ApplyRemoteUpdates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LoadFromRemoteStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.ApplyLocalUpdates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LoadFromLocalStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Assign(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetStoreDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetStoreDataset(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.StoreDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetIsDeleted()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetIsDeleted(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.IsDeleted" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetPrefix()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetPrefix(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.Prefix" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DirectLoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DirectLoadFromDataset(Data.DB.TDataSet[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DirectSaveToDataset(Data.DB.TDataSet,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DirectSaveToDataset(Data.DB.TDataSet[],System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.DBDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AssignDatasets(Data.DB.TDataSet[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.PrefixGUIDField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetAsMetadata()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetAsMetadata(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.AsMetadata" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.GetLastMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.SetLastMessage(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.LastMessage" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.MasterRecord">
+        <property name="sourceAnchor" value="704,922" />
+        <property name="targetAnchor" value="696,930" />
+        <property name="bendpoints" value="737,922,737,963,696,963" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecord.StoreDataset">
+        <property name="sourceAnchor" value="602,520" />
+        <property name="targetAnchor" value="602,451" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordField">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="800,500,211,127" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordField.SetRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordField.GetRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordField.JanuaRecord" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordField.JanuaRecord">
+        <property name="sourceAnchor" value="800,573" />
+        <property name="targetAnchor" value="704,573" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,320,250,340" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ToJsonPretty()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.LoadFromDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.LoadFromDataset(Janua.Orm.Intf.IJanuaDBDataset,Janua.Orm.Intf.IJanuaDBDataset[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SaveToDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SaveToDataset(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SaveToDataset(Janua.Orm.Intf.IJanuaDBDataset,Janua.Orm.Intf.IJanuaDBDataset[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.RecordCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetItemIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetItemIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ItemIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Name" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Append()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Append(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Append(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Delete()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Post()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Next()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Prev()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.First()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Last()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Bof()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Eof()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Equals(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.WriteToJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ReadFromJsonObject(System.JSON.TJSONObject,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetFromJsonObject(System.JSON.TJSONObject,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ReadFromJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ToJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetAsJsonObject(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.AsJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetCurrentRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Dataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetActualGUID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetActualGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ActualGUID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.WriteToSerialization(Janua.Orm.Intf.ISetSerialization)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ReadFromSerialization(Janua.Orm.Intf.ISetSerialization)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SearchByGUID(System.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetOnScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetOnScroll(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.OnScroll" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetDelRecords()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetDelRecords(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.DelRecords" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetModified()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetModified(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Modified" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetParameters()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetParameters(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Parameters" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.IsLocalUpdated()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.IsRemoteUpdated()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ApplyRemoteUpdates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.LoadFromRemoteStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.ApplyLocalUpdates()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.LoadFromLocalStorage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Assign(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetStoreDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetStoreDataset(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.StoreDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.DirectLoadFromDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.DirectLoadFromDataset(Data.DB.TDataSet[])" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.DirectSaveToDataset(Data.DB.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GoToBookmark(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetOnNewRecord(Janua.Orm.Intf.IJanuaRecordSet.SetOnNewRecord.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetOnRecordChange(Janua.Orm.Intf.IJanuaRecordSet.SetOnRecordChange.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetOnNewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetOnRecordChange()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.OnNewRecord" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.OnRecordChange" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetLazyLoading()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetLazyLoading(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.LazyLoading" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.GetAsMetadata()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.SetAsMetadata(System.JSON.TJSONObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.AsMetadata" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Iterate(System.SysUtils.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Locate(Janua.Orm.Intf.IJanuaField,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Locate(Janua.Orm.Intf.IJanuaField,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Locate(Janua.Orm.Intf.IJanuaField,System.Variant)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.Locate(Janua.Orm.Intf.IJanuaField,Spring.TValue)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.CurrentRecord">
+        <property name="sourceAnchor" value="330,590" />
+        <property name="targetAnchor" value="480,590" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSet.StoreDataset">
+        <property name="sourceAnchor" value="330,385" />
+        <property name="targetAnchor" value="500,385" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="789,54,197,170" />
+      <property name="hideOperation" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetLastErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.getLimit()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetLastCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetLastCount(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetOffset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.setLimit(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetOffset(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetKeepAlive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetKeepAlive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.CreateDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.DestroyDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.KeepAlive" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.Limit" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.Offset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.LastCount" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.LastErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.GetDBFunctions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.SetDBFunctions(Janua.Orm.Intf.IDatasetFunctions)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaStorage.DBFunctions" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="80,740,248,155" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetUpdatedRecordSet()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.UpdatedRecordSet" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetOnUpdateSuccess()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetOnUpdateSuccess(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.OnUpdateSuccess" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetOnUpdateError()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetOnUpdateError(System.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.OnUpdateError" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.ApplyUpdates(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.AsyncApplyUpdates(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetParameters()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetParameters(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.Parameters" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.GetMaxRecords()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.SetMaxRecords(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.MaxRecords" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.ParamByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.LoadData()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.AsyncLoadData()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCoreXE103Rio:Janua.Orm.Intf.IJanuaRecordSetStorage.UpdatedRecordSet">
+        <property name="sourceAnchor" value="205,740" />
+        <property name="targetAnchor" value="205,660" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="120,60,224,155" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.GetKeepAlive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.SetKeepAlive(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.KeepAlive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.GetRecordSets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.SetRecordSets(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.RecordSets" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.GetIsServer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.SetIsServer(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.IsServer" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.GetFunctions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.SetFunctions(Spring.Collections.IDictionary`2)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.Functions" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.GetName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.SetName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCoreXE103Rio:Janua.Server.Intf.IJanuaServer.Name" />
+    </reference>
+  </view>
+</nodeSet>
