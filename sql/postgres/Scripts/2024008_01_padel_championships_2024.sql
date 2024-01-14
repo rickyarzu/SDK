@@ -29,11 +29,13 @@ SET SESSION "system.db_schema_id" = 39;
 INSERT INTO sports.championships_view(
 	season_id, league_id, promoted, playoff, relegation , champions	, playout, teams)
 VALUES 
-    (3		 , 			7, 		  0,       4, 			0, 			0, 	    4,     8);
+    (3		 , 			11, 		  0,       4, 			0, 			0, 	    4,     8);
 INSERT INTO sports.championships_view(
 	season_id, league_id, promoted, playoff, relegation , champions	, playout, teams)
 VALUES 
-    (3		 , 			8, 		  0,       4, 			0, 			0, 	    4,     8);
+    (3		 , 			12, 		  0,       4, 			0, 			0, 	    4,     8);
+	
+UPDATE sports.championships set db_schema_id = 39 where db_schema_id = 32;
 	
 SET SESSION "system.db_schema_id" = 39; 
 SELECT season_id, league_id, league_name  FROM sports.championships_VIEW;
@@ -49,53 +51,12 @@ INSERT INTO sports.teams_view(team_name) VALUES
 ('DAMA 3 PADEL'),
 ('VISPADELLO'),
 ('VANGHEL'); 
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_view(team_name) VALUES
-('GLI ARCANGELI'),
-('OFFICINA DEL PADEL 2.0'),
-('FISSOLOGRU PADEL TEAM'),
-('I CHIQUITI'),
-('ZOOPADEL'),
-('PADELISTI PER CASO'),
-('EXGB'),
-('LOS CHAVALES'); 
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_view(team_name) VALUES
-('OFFICINA DEL PADEL'),
-('SPADELLATORI BRUTTI'),
-('THE OLD MEN'),
-('SIRPadel'),
-('A.S. INTOMATICI'),
-('TEAM BATTILEI'),
-('SUMA PADEL TOR'),
-('GAME, SET & BEER');
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_view(team_name) VALUES
-('PADELVISCUNEO'),
-('CARAGLIO RICAMBI OLIMAC'),
-('BIG MAC'),
-('BUGIA NEN'),
-('4 SALTI IN PADEL'),
-('PRATO NEVOSO PADEL'),
-('BAR ENJOY'),
-('CUNEO CENTRO ASSICURAZIONI');
-
 select * from sports.teams order by team_name; 
 
 SET SESSION "system.db_schema_id" = 39;
 SELECT * FROM sports.teams_championships;
 SELECT * FROM sports.leagues WHERE Db_schema_id = 39;  
 
-select * from sports.teams where team_name like 'OFFICINA DEL PADEL 2.0%';
-
-CREATE TRIGGER teams_championships_view_iou_trg
-    INSTEAD OF INSERT OR DELETE OR UPDATE 
-    ON sports.teams_championships_view
-    FOR EACH ROW
-    EXECUTE PROCEDURE sports.teams_championships_view_trg();
 
 SET SESSION "system.db_schema_id" = 39;
 INSERT INTO sports.teams_championships_view(  season_id, league_id, team_name  )
@@ -109,41 +70,7 @@ VALUES
 (3, 8, 'VISPADELLO'),
 (3, 8, 'VANGHEL');
 
-SELECT * FROM sports.teams V WHERE V.team_name = 'BAR PEANO';
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_championships_view(  season_id, league_id, team_name  ) VALUES
-(3, 7, 'GLI ARCANGELI'),
-(3, 7, 'OFFICINA DEL PADEL 2.0'),
-(3, 7, 'FISSOLOGRU PADEL TEAM'),
-(3, 7, 'I CHIQUITI'),
-(3, 7, 'ZOOPADEL'),
-(3, 7, 'PADELISTI PER CASO'),
-(3, 7, 'EXGB'),
-(3, 7, 'LOS CHAVALES');
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_championships_view(  season_id, league_id, team_name  ) VALUES
-(3, 9, 'OFFICINA DEL PADEL'),
-(3, 9, 'SPADELLATORI BRUTTI'),
-(3, 9, 'THE OLD MEN'),
-(3, 9, 'SIRPadel'),
-(3, 9, 'A.S. INTOMATICI'),
-(3, 9, 'TEAM BATTILEI'),
-(3, 9, 'SUMA PADEL TOR'),
-(3, 9, 'GAME, SET & BEER'); 
-
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.teams_championships_view(  season_id, league_id, team_name  ) VALUES
-(3, 10, 'PADELVISCUNEO'),
-(3, 10, 'CARAGLIO RICAMBI OLIMAC'),
-(3, 10, 'BIG MAC'),
-(3, 10, 'BUGIA NEN'),
-(3, 10, '4 SALTI IN PADEL'),
-(3, 10, 'PRATO NEVOSO PADEL'),
-(3, 10, 'BAR ENJOY'),
-(3, 10, 'CUNEO CENTRO ASSICURAZIONI'); 
-
+SELECT * FROM sports.teams V WHERE season_id = 3 and league_id = 11; 
 DELETE FROM system.syslog;
 SELECT * FROM system.syslog ORDER BY LOGTIME DESC; 
 
@@ -152,7 +79,7 @@ select * from sports.teams_championships where season_id = 3;
 select * from sports.teams where team_name = 'VANGHEL'; 
 select * from sports.calendar; 
 
--- 10	"GIRONE CISL" 
+-- calendar_view
 SET SESSION "system.db_schema_id" = 39;
 INSERT INTO sports.calendar_view ( season_id, league_id, match_day_number, match_day_date ) 
 VALUES 
@@ -164,210 +91,402 @@ VALUES
 (3, 10, 6, '2023-11-30'), 
 (3, 10, 7, '2023-12-11'); 
 SET SESSION "system.db_schema_id" = 39;
-select * from sports.calendar_view where season_id = 3 and league_id = 10; 
-
-
--- 9	"GIRONE LAB TRAVEL"
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.calendar_view ( season_id, league_id, match_day_number, match_day_date ) 
-VALUES 
-(3, 9, 1, '2023-10-16'), 
-(3, 9, 2, '2023-10-25'), 
-(3, 9, 3, '2023-11-6'), 
-(3, 9, 4, '2023-11-15'), 
-(3, 9, 5, '2023-11-23'), 
-(3, 9, 6, '2023-11-30'), 
-(3, 9, 7, '2023-12-11');
-SET SESSION "system.db_schema_id" = 39;
-select * from sports.calendar_view where season_id = 3 and league_id = 9; 
-
---8	"GIRONE GINO BMW MINI"
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.calendar_view ( season_id, league_id, match_day_number, match_day_date ) 
-VALUES 
-(3, 8, 1, '2023-10-16'), 
-(3, 8, 2, '2023-10-27'), 
-(3, 8, 3, '2023-11-7'), 
-(3, 8, 4, '2023-11-17'), 
-(3, 8, 5, '2023-11-20'), 
-(3, 8, 6, '2023-11-28'), 
-(3, 8, 7, '2023-12-12');  
-SET SESSION "system.db_schema_id" = 39;
-select * from sports.calendar_view where season_id = 3 and league_id = 8; 
-
---7	"GIRONE PAROLA SPORT"
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.calendar_view ( season_id, league_id, match_day_number, match_day_date ) 
-VALUES 
-(3, 7, 1, '2023-10-17'), 
-(3, 7, 2, '2023-10-23'), 
-(3, 7, 3, '2023-11-6'), 
-(3, 7, 4, '2023-11-13'), 
-(3, 7, 5, '2023-11-20'), 
-(3, 7, 6, '2023-11-27'), 
-(3, 7, 7, '2023-11-15'); 
-SET SESSION "system.db_schema_id" = 39;
-select * from sports.calendar_view where season_id = 3 and league_id = 7; 
+select * from sports.calendar_view where season_id = 3 and league_id = 11; 
 
 
 --7	"GIRONE PAROLA SPORT"
-DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 7; 
-DELETE FROM sports.calendar_teams WHERE SEASON_ID = 3 AND LEAGUE_ID = 7; 
+DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 11; 
+-- DELETE FROM sports.calendar_teams WHERE SEASON_ID = 3 AND LEAGUE_ID = 7; 
 SET SESSION "system.db_schema_id" = 39;
 INSERT INTO sports.matches_view (home_team_name, visitors_team_name, season_id, league_id, match_day_number, match_date  )
 VALUES
-('GLI ARCANGELI' , 'ZOOPADEL', 3, 7, 1, '2023-10-18'), 
-('OFFICINA DEL PADEL 2.0' , 'PADELISTI PER CASO', 3, 7, 1, '2023-10-17'), 
-('FISSOLOGRU PADEL TEAM' , 'EXGB', 3, 7, 1, '2023-10-19'), 
-('I CHIQUITI' , 'LOS CHAVALES', 3, 7, 1, '2023-10-18'), 
-('ZOOPADEL' , 'I CHIQUITI', 3, 7, 2, '2023-10-23'), 
-('LOS CHAVALES' , 'FISSOLOGRU PADEL TEAM', 3, 7, 2, '2023-10-23'), 
-('EXGB' , 'OFFICINA DEL PADEL 2.0', 3, 7, 2, '2023-10-24'), 
-('PADELISTI PER CASO' , 'GLI ARCANGELI', 3, 7, 2, '2023-10-25'), 
-('OFFICINA DEL PADEL 2.0' , 'LOS CHAVALES', 3, 7, 3, '2023-11-6'), 
-('FISSOLOGRU PADEL TEAM' , 'ZOOPADEL', 3, 7, 3, '2023-11-6'), 
-('I CHIQUITI' , 'GLI ARCANGELI', 3, 7, 3, '2023-11-7'), 
-('EXGB' , 'PADELISTI PER CASO', 3, 7, 3, '2023-11-8'), 
-('GLI ARCANGELI' , 'FISSOLOGRU PADEL TEAM', 3, 7, 4, '2023-11-13'), 
-('ZOOPADEL' , 'OFFICINA DEL PADEL 2.0', 3, 7, 4, '2023-11-13'), 
-('LOS CHAVALES' , 'EXGB', 3, 7, 4, '2023-11-13'), 
-('PADELISTI PER CASO' , 'I CHIQUITI', 3, 7, 4, '2023-11-13'), 
-('OFFICINA DEL PADEL 2.0' , 'GLI ARCANGELI', 3, 7, 5, '2023-11-20'), 
-('FISSOLOGRU PADEL TEAM' , 'I CHIQUITI', 3, 7, 5, '2023-11-20'), 
-('LOS CHAVALES' , 'PADELISTI PER CASO', 3, 7, 5, '2023-11-21'), 
-('EXGB' , 'ZOOPADEL', 3, 7, 5, '2023-11-22'), 
-('GLI ARCANGELI' , 'EXGB', 3, 7, 6, '2023-11-27'), 
-('ZOOPADEL' , 'LOS CHAVALES', 3, 7, 6, '2023-11-27'), 
-('FISSOLOGRU PADEL TEAM' , 'PADELISTI PER CASO', 3, 7, 6, '2023-11-28'), 
-('I CHIQUITI' , 'OFFICINA DEL PADEL 2.0', 3, 7, 6, '2023-11-28'), 
-('OFFICINA DEL PADEL 2.0' , 'FISSOLOGRU PADEL TEAM', 3, 7, 7, '2023-12-14'), 
-('LOS CHAVALES' , 'GLI ARCANGELI', 3, 7, 7, '2023-11-15'), 
-('EXGB' , 'I CHIQUITI', 3, 7, 7, '2023-11-15'), 
-('PADELISTI PER CASO' , 'ZOOPADEL', 3, 7, 7, '2023-11-15');
+('CUNEO CENTRO ASSICURAZIONI' , 'LOS CHAVALES', 3, 11, 1, '2024-1-15'), 
+('LOS PICANTES ' , 'TEAM BATTILEI', 3, 11, 1, '2024-1-15'), 
+('DAMA3 PADEL ' , 'OFFICINA DEL PADEL', 3, 11, 1, '2024-1-15'), 
+('BAR PEANO' , 'PADELVIS CUNEO', 3, 11, 1, '2024-1-16'), 
+('CREATTIVA ' , 'A.S. INTOMATICI', 3, 11, 1, '2024-1-17'), 
+('GLI ARCANGELI' , 'SUMA PADEL TOR', 3, 11, 1, '2024-1-19'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'FISSOLOGRU PADEL TEAM', 3, 11, 1, '2024-1-18'), 
+('BIG MAC' , 'ZOO PADEL', 3, 11, 1, '2024-1-17'), 
+---  2
+('LOS CHAVALES' , 'A.S. INTOMATICI', 3, 11, 2, '2024-1-22'), 
+('PADELVIS CUNEO' , 'DAMA3 PADEL', 3, 11, 2, '2024-1-26'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'ZOO PADEL', 3, 11, 2, '2024-1-22'), 
+('SUMA PADEL TOR' , 'FISSOLOGRU PADEL TEAM', 3, 11, 2, '2024-1-23'), 
+('BAR PEANO' , 'BIG MAC', 3, 11, 2, '2024-1-24'), 
+('CREATTIVA' , 'TEAM BATTILEI', 3, 11, 2, '2024-1-24'), 
+('GLI ARCANGELI' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 2, '2024-1-25'), 
+('OFFICINA DEL PADEL' , 'LOS PICANTES', 3, 11, 2, '2024-1-22'), 
+---  3
+('LOS PICANTES' , 'GLI ARCANGELI', 3, 11, 3, '2024-2-2'), 
+('SUMA PADEL TOR' , 'LOS CHAVALES', 3, 11, 3, '2024-1-31'), 
+('DAMA3 PADEL' , 'BAR PEANO', 3, 11, 3, '2024-1-29'), 
+('TEAM BATTILEI' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 3, '2024-1-30'), 
+('A.S. INTOMATICI' , 'OFFICINA DEL PADEL', 3, 11, 3, '2024-1-29'), 
+('ZOO PADEL' , 'PADELVIS CUNEO', 3, 11, 3, '2024-1-31'), 
+('FISSOLOGRU PADEL TEAM' , 'CREATTIVA', 3, 11, 3, '2024-2-1'), 
+('BIG MAC' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 3, '2024-1-29'), 
+---  4
+('PADELVIS CUNEO' , 'TEAM BATTILEI', 3, 11, 4, '2024-2-5'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'A.S. INTOMATICI', 3, 11, 4, '2024-2-7'), 
+('LOS PICANTES' , 'FISSOLOGRU PADEL TEAM', 3, 11, 4, '2024-2-5'), 
+('BAR PEANO' , 'SUMA PADEL TOR', 3, 11, 4, '2024-2-9'), 
+('CREATTIVA' , 'OFFICINA DEL PADEL', 3, 11, 4, '2024-2-5'), 
+('GLI ARCANGELI' , 'LOS CHAVALES', 3, 11, 4, '2024-2-7'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'ZOO PADEL', 3, 11, 4, '2024-2-8'), 
+('BIG MAC' , 'DAMA3 PADEL', 3, 11, 4, '2024-2-6'), 
+---  5
+('LOS CHAVALES' , 'BIG MAC', 3, 11, 5, '2024-2-12'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'BAR PEANO', 3, 11, 5, '2024-2-14'), 
+('DAMA3 PADEL' , 'TEAM BATTILEI', 3, 11, 5, '2024-2-12'), 
+('ZOO PADEL' , 'CREATTIVA', 3, 11, 5, '2024-2-13'), 
+('GLI ARCANGELI' , 'PADELVIS CUNEO', 3, 11, 5, '2024-2-14'), 
+('OFFICINA DEL PADEL ' , 'SUMA PADEL TOR', 3, 11, 5, '2024-2-12'), 
+('FISSOLOGRU PADEL TEAM' , 'A.S. INTOMATICI', 3, 11, 5, '2024-2-15'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'LOS PICANTES', 3, 11, 5, '2024-2-16'), 
+---  6
+('PADELVIS CUNEO' , 'LOS PICANTES', 3, 11, 6, '2024-2-19'), 
+('SUMA PADEL TOR' , 'ZOO PADEL', 3, 11, 6, '2024-2-19'), 
+('BAR PEANO' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 6, '2024-2-19'), 
+('CREATTIVA' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 6, '2024-2-20'), 
+('TEAM BATTILEI ' , 'FISSOLOGRU PADEL TEAM', 3, 11, 6, '2024-2-21'), 
+('A.S. INTOMATICI' , 'DAMA3 PADEL', 3, 11, 6, '2024-2-21'), 
+('OFFICINA DEL PADEL' , 'LOS CHAVALES', 3, 11, 6, '2024-2-22'), 
+('BIG MAC' , 'GLI ARCANGELI', 3, 11, 6, '2024-2-23'), 
+---  7
+('LOS CHAVALES' , 'CREATTIVA', 3, 11, 7, '2024-2-26'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'PADELVIS CUNEO', 3, 11, 7, '2024-2-26'), 
+('LOS PICANTES' , 'BIG MAC', 3, 11, 7, '2024-2-26'), 
+('DAMA3 PADEL ' , 'SUMA PADEL TOR', 3, 11, 7, '2024-2-27'), 
+('BAR PEANO' , 'A.S. INTOMATICI', 3, 11, 7, '2024-2-28'), 
+('ZOO PADEL' , 'TEAM BATTILEI', 3, 11, 7, '2024-2-28'), 
+('GLI ARCANGELI' , 'FISSOLOGRU PADEL TEAM', 3, 11, 7, '2024-2-29'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'OFFICINA DEL PADEL', 3, 11, 7, '2024-3-1'), 
+---  8
+('LOS CHAVALES' , 'DAMA3 PADEL', 3, 11, 8, '2024-3-4'), 
+('PADELVIS CUNEO' , 'BIG MAC', 3, 11, 8, '2024-3-4'), 
+('SUMA PADEL TOR' , 'CREATTIVA', 3, 11, 8, '2024-3-4'), 
+('TEAM BATTILEI' , 'BAR PEANO', 3, 11, 8, '2024-3-5'), 
+('A.S. INTOMATICI ' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 8, '2024-3-6'), 
+('ZOO PADEL' , 'LOS PICANTES', 3, 11, 8, '2024-3-6'), 
+('OFFICINA DEL PADEL' , 'GLI ARCANGELI', 3, 11, 8, '2024-3-7'), 
+('FISSOLOGRU PADEL TEAM' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 8, '2024-3-8'), 
+---  9
+('LOS PICANTES' , 'BAR PEANO', 3, 11, 9, '2024-3-11'), 
+('DAMA3 PADEL' , 'CREATTIVA', 3, 11, 9, '2024-3-11'), 
+('TEAM BATTILEI' , 'OFFICINA DEL PADEL', 3, 11, 9, '2024-3-11'), 
+('A.S. INTOMATICI' , 'SUMA PADEL TOR', 3, 11, 9, '2024-3-12'), 
+('ZOO PADEL' , 'GLI ARCANGELI', 3, 11, 9, '2024-3-13'), 
+('FISSOLOGRU PADEL TEAM' , 'LOS CHAVALES', 3, 11, 9, '2024-3-13'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'PADELVIS CUNEO', 3, 11, 9, '2024-3-14'), 
+('BIG MAC' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 9, '2024-3-15'), 
+--- 10
+('LOS CHAVALES' , 'PADELVIS CUNEO', 3, 11, 10, '2024-3-18'), 
+('SUMA PADEL TOR' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 10, '2024-3-18'), 
+('DAMA3 PADEL' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 10, '2024-3-18'), 
+('CREATTIVA' , 'GLI ARCANGELI', 3, 11, 10, '2024-3-19'), 
+('TEAM BATTILEI' , 'BIG MAC', 3, 11, 10, '2024-3-20'), 
+('A.S. INTOMATICI' , 'LOS PICANTES', 3, 11, 10, '2024-3-20'), 
+('OFFICINA DEL PADEL' , 'BAR PEANO', 3, 11, 10, '2024-3-21'), 
+('FISSOLOGRU PADEL TEAM' , 'ZOO PADEL', 3, 11, 10, '2024-3-22'), 
+--- 11
+('PADELVIS CUNEO' , 'FISSOLOGRU PADEL TEAM', 3, 11, 11, '2024-4-8'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'OFFICINA DEL PADEL', 3, 11, 11, '2024-4-8'), 
+('LOS PICANTES' , 'CREATTIVA', 3, 11, 11, '2024-4-12'), 
+('BAR PEANO' , 'LOS CHAVALES', 3, 11, 11, '2024-4-9'), 
+('ZOO PADEL' , 'DAMA3 PADEL', 3, 11, 11, '2024-4-10'), 
+('GLI ARCANGELI' , 'A.S. INTOMATICI', 3, 11, 11, '2024-4-10'), 
+('CARAGLIO RICAMBI IMBIMBOVET ' , 'TEAM BATTILEI', 3, 11, 11, '2024-4-11'), 
+('BIG MAC' , 'SUMA PADEL TOR', 3, 11, 11, '2024-4-8'), 
+--- 12
+('LOS CHAVALES' , 'LOS PICANTES', 3, 11, 12, '2024-4-15'), 
+('SUMA PADEL TOR' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 12, '2024-4-15'), 
+('DAMA3 PADEL' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 12, '2024-4-15'), 
+('CREATTIVA' , 'BAR PEANO', 3, 11, 12, '2024-4-16'), 
+('TEAM BATTILEI' , 'GLI ARCANGELI', 3, 11, 12, '2024-4-17'), 
+('A.S. INTOMATICI' , 'ZOO PADEL', 3, 11, 12, '2024-4-17'), 
+('OFFICINA DEL PADEL' , 'PADELVIS CUNEO', 3, 11, 12, '2024-4-18'), 
+('ISSOLOGRU PADEL TEAM' , 'BIG MAC', 3, 11, 12, '2024-4-19'), 
+--- 13
+('PADELVIS CUNEO' , 'CREATTIVA', 3, 11, 13, '2024-5-6'), 
+('LOS PICANTES' , 'SUMA PADEL TOR', 3, 11, 13, '2024-5-6'), 
+('BAR PEANO' , 'FISSOLOGRU PADEL TEAM', 3, 11, 13, '2024-5-6'), 
+('TEAM BATTILEI' , 'A.S. INTOMATICI', 3, 11, 13, '2024-5-7'), 
+('ZOO PADEL' , 'LOS CHAVALES', 3, 11, 13, '2024-5-8'), 
+('GLI ARCANGELI' , 'DAMA3 PADEL', 3, 11, 13, '2024-5-8'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 13, '2024-5-9'), 
+('BIG MAC' , 'OFFICINA DEL PADEL', 3, 11, 13, '2024-5-10'), 
+--- 14
+('LOS CHAVALES' , 'TEAM BATTILEI', 3, 11, 14, '2024-5-13'), 
+('CUNEO CENTRO ASSICURAZIONI' , 'GLI ARCANGELI', 3, 11, 14, '2024-5-17'), 
+('SUMA PADEL TOR' , 'PADELVIS CUNEO', 3, 11, 14, '2024-5-13'), 
+('DAMA3 PADEL' , 'LOS PICANTES', 3, 11, 14, '2024-5-14'), 
+('BAR PEANO' , 'ZOO PADEL', 3, 11, 14, '2024-5-15'), 
+('CREATTIVA' , 'CARAGLIO RICAMBI IMBIMBOVET', 3, 11, 14, '2024-5-15'), 
+('A.S. INTOMATICI' , 'BIG MAC', 3, 11, 14, '2024-5-16'), 
+('OFFICINA DEL PADEL' , 'FISSOLOGRU PADEL TEAM', 3, 11, 14, '2024-5-13'), 
+--- 15
+('PADELVIS CUNEO' , 'A.S. INTOMATICI', 3, 11, 15, '2024-5-20'), 
+('LOS PICANTES' , 'CUNEO CENTRO ASSICURAZIONI', 3, 11, 15, '2024-5-21'), 
+('TEAM BATTILEI' , 'SUMA PADEL TOR', 3, 11, 15, '2024-5-24'), 
+('ZOO PADEL' , 'OFFICINA DEL PADEL', 3, 11, 15, '2024-5-20'), 
+('GLI ARCANGELI' , 'BAR PEANO', 3, 11, 15, '2024-5-22'), 
+('FISSOLOGRU PADEL TEAM' , 'DAMA3 PADEL', 3, 11, 15, '2024-5-22'), 
+('CARAGLIO RICAMBI IMBIMBOVET' , 'LOS CHAVALES', 3, 11, 15, '2024-5-23'), 
+('BIG MAC' , 'CREATTIVA', 3, 11, 15, '2024-5-20');
+
 SET SESSION "system.db_schema_id" = 39;
 select match_date AS DATA, match_day_number AS Giornata, home_team_id AS HID, home_team_name, visitors_team_name   
-from sports.matches_view where season_id = 3 and league_id = 7 ORDER BY match_day_number, match_date;
+from sports.matches_view where season_id = 3 and league_id = 11 ORDER BY match_day_number, match_date;
 
 SET SESSION "system.db_schema_id" = 39;
 UPDATE sports.matches SET POINTS_HOME = 3, SCORE_HOME = 3, POINTS_VISITORS = 0, SCORE_VISITOR = 0 WHERE 
 JGUID = '54c48a96-6b4c-11ee-acf3-0050569bfc1b';
 
-SELECT sports.generate_day_ranking(2::SMALLINT, 7::SMALLINT, 3::SMALLINT); 
+SELECT sports.generate_day_ranking(1::SMALLINT, 11::SMALLINT, 3::SMALLINT); 
 
 SET SESSION "system.db_schema_id" = 39;
 SELECT * FROM sports.matches_view WHERE season_iD = 3 AND league_id = 7 AND match_day_number = 2
 
+create temporary table tmp_teams ( team_name character varying (128) );
+
+insert into tmp_teams values
+('PRATO NEVOSO PADEL'), 
+('VISPADELLO'), 
+('MUSSO PASTICCERIA'), 
+('PADELISTI PER CASO'), 
+('I CHIQUITI'), 
+('EXGB'), 
+('BAR ENJOY'), 
+('4 SALTI IN PADEL'), 
+('SIRPADEL'), 
+('BUGIA NEN '), 
+('THE OLD MEN '), 
+('SPADELLATORI BRUTTI'), 
+('GLI ULTIMI'), 
+('LE RAGADI'), 
+('OFFICINA DEL PADEL 2.0 '), 
+('VANGHEL');
+
+SET SESSION "system.db_schema_id" = 39;
+insert into sports.teams_view (team_name)
+select team_name from tmp_teams t where not exists
+(select 1 from sports.teams s where t.team_name = s.team_name); 
+
+SET SESSION "system.db_schema_id" = 39;
+insert into  sports.teams_championships_view (season_id, league_id, team_name   )
+VALUES 
+(3, 12, 'PRATO NEVOSO PADEL'),
+(3, 12, 'VISPADELLO'),
+(3, 12, 'MUSSO PASTICCERIA'),
+(3, 12, 'PADELISTI PER CASO'),
+(3, 12, 'I CHIQUITI'),
+(3, 12, 'EXGB'),
+(3, 12, 'BAR ENJOY'),
+(3, 12, '4 SALTI IN PADEL'),
+(3, 12, 'SIRPADEL'),
+(3, 12, 'BUGIA NEN '),
+(3, 12, 'THE OLD MEN '),
+(3, 12, 'SPADELLATORI BRUTTI'),
+(3, 12, 'GLI ULTIMI'),
+(3, 12, 'LE RAGADI'),
+(3, 12, 'OFFICINA DEL PADEL 2.0 '),
+(3, 12, 'VANGHEL'); 
+
+
+-- calendar_view
+SET SESSION "system.db_schema_id" = 39;
+INSERT INTO sports.calendar_view ( season_id, league_id, match_day_number, match_day_date ) 
+VALUES 
+(3, 12, 1, '2024-1-19'), 
+(3, 12, 2, '2024-1-22'), 
+(3, 12, 3, '2024-2-2'),
+(3, 12, 4, '2024-2-5'), 
+(3, 12, 5, '2024-2-12'), 
+(3, 12, 6, '2024-2-23'), 
+(3, 12, 7, '2024-2-26'), 
+(3, 12, 8, '2024-3-4'), 
+(3, 12, 9, '2024-3-11'), 
+(3, 12, 10, '2024-3-18'), 
+(3, 12, 11, '2024-4-8'), 
+(3, 12, 12, '2024-4-15'),
+(3, 12, 13, '2024-5-6'),
+(3, 12, 14, '2024-5-13'),
+(3, 12, 15, '2024-5-20');
+
+select * from sports.calendar_view where season_id = 3 and league_id = 12; 
+
+
 
 --8	"GIRONE GINO BMW MINI"
-DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 8; 
+DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 12; 
 DELETE FROM sports.calendar_teams WHERE SEASON_ID = 3 AND LEAGUE_ID = 8; 
 SET SESSION "system.db_schema_id" = 39;
 INSERT INTO sports.matches_view (home_team_name, visitors_team_name, season_id, league_id, match_day_number, match_date  )
 VALUES
-('LOS PICANTES ' , 'BAR PEANO', 3, 8, 1, '2023-10-16'), 
-('DAMA 3 PADEL' , 'GLI ULTIMI', 3, 8, 1, '2023-10-16'), 
-('VISPADELLO ' , 'LE RAGADI', 3, 8, 1, '2023-10-20'), 
-('VANGHEL' , 'CREATTIVA', 3, 8, 1, '2023-10-16'), 
-('BAR PEANO' , 'VANGHEL', 3, 8, 2, '2023-10-26'), 
-('CREATTIVA' , 'VISPADELLO', 3, 8, 2, '2023-10-27'), 
-('LE RAGADI' , 'DAMA 3 PADEL', 3, 8, 2, '2023-10-27'), 
-('GLI ULTIMI' , 'LOS PICANTES', 3, 8, 2, '2023-10-27'), 
-('DAMA 3 PADEL' , 'CREATTIVA', 3, 8, 3, '2023-11-8'), 
-('VISPADELLO' , 'BAR PEANO', 3, 8, 3, '2023-11-7'), 
-('VANGHEL' , 'LOS PICANTES', 3, 8, 3, '2023-11-8'), 
-('LE RAGADI' , 'GLI ULTIMI', 3, 8, 3, '2023-11-9'), 
-('LOS PICANTES' , 'VISPADELLO', 3, 8, 4, '2023-11-17'), 
-('BAR PEANO' , 'DAMA 3 PADEL', 3, 8, 4, '2023-11-17'), 
-('CREATTIVA' , 'LE RAGADI', 3, 8, 4, '2023-11-16'), 
-('GLI ULTIMI' , 'VANGHEL', 3, 8, 4, '2023-11-17'), 
-('DAMA 3 PADEL' , 'LOS PICANTES', 3, 8, 5, '2023-11-20'), 
-('VISPADELLO' , 'VANGHEL', 3, 8, 5, '2023-11-20'), 
-('CREATTIVA' , 'GLI ULTIMI', 3, 8, 5, '2023-11-20'), 
-('LE RAGADI' , 'BAR PEANO', 3, 8, 5, '2023-11-20'), 
-('LOS PICANTES' , 'LE RAGADI', 3, 8, 6, '2023-11-29'), 
-('BAR PEANO' , 'CREATTIVA', 3, 8, 6, '2023-11-28'), 
-('VISPADELLO' , 'GLI ULTIMI', 3, 8, 6, '2023-12-1'), 
-('VANGHEL' , 'DAMA 3 PADEL', 3, 8, 6, '2023-11-30'), 
-('DAMA 3 PADEL' , 'VISPADELLO', 3, 8, 7, '2023-12-13'), 
-('CREATTIVA' , 'LOS PICANTES', 3, 8, 7, '2023-12-12'), 
-('LE RAGADI' , 'VANGHEL', 3, 8, 7, '2023-12-14'), 
-('GLI ULTIMI' , 'BAR PEANO', 3, 8, 7, '2023-12-13');
+('BUGIA NEN' , 'OFFICINA DEL PADEL 2.0', 3, 12, 1, '2024-1-19'), 
+('4 SALTI IN PADEL' , 'PADELISTI PER CASO', 3, 12, 1, '2024-1-15'), 
+('LE RAGADI' , 'SPADELLATORI BRUTTI', 3, 12, 1, '2024-1-15'), 
+('GLI ULTIMI ' , 'PRATO NEVOSO PADEL', 3, 12, 1, '2024-1-17'), 
+('VANGHEL' , 'SIRPADEL', 3, 12, 1, '2024-1-16'), 
+('I CHIQUITI' , 'THE OLD MEN', 3, 12, 1, '2024-1-18'), 
+('BAR ENJOY' , 'EXGB', 3, 12, 1, '2024-1-15'), 
+('VISPADELLO' , 'MUSSO PASTICCERIA', 3, 12, 1, '2024-1-19'), 
+
+
+('OFFICINA DEL PADEL 2.0' , 'SIRPADEL', 3, 12, 2, '2024-1-22'), 
+('PRATO NEVOSO PADEL' , 'LE RAGADI', 3, 12, 2, '2024-1-22'), 
+('BUGIA NEN' , 'PADELISTI PER CASO', 3, 12, 2, '2024-1-22'), 
+('THE OLD MEN' , 'EXGB', 3, 12, 2, '2024-1-24'), 
+('GLI ULTIMI' , '4 SALTI IN PADEL', 3, 12, 2, '2024-1-23'), 
+('VANGHEL' , 'MUSSO PASTICCERIA', 3, 12, 2, '2024-1-25'), 
+('I CHIQUITI' , 'BAR ENJOY', 3, 12, 2, '2024-1-26'), 
+('SPADELLATORI BRUTTI' , 'VISPADELLO', 3, 12, 2, '2024-1-26'), 
+
+
+('VISPADELLO' , ' I CHIQUITI', 3, 12, 3, '2024-2-2'), 
+('THE OLD MEN' , 'OFFICINA DEL PADEL 2.0', 3, 12, 3, '2024-1-29'), 
+('LE RAGADI' , 'GLI ULTIMI', 3, 12, 3, '2024-1-29'), 
+('MUSSO PASTICCERIA' , 'BUGIA NEN', 3, 12, 3, '2024-1-31'), 
+('SIRPADEL' , 'SPADELLATORI BRUTTI', 3, 12, 3, '2024-1-30'), 
+('PADELISTI PER CASO' , 'PRATO NEVOSO PADEL', 3, 12, 3, '2024-2-1'), 
+('EXGB' , 'VANGHEL', 3, 12, 3, '2024-2-2'), 
+('4 SALTI IN PADEL' , 'BAR ENJOY', 3, 12, 3, '2024-1-29'), 
+
+
+('PRATO NEVOSO PADEL' , 'MUSSO PASTICCERIA', 3, 12, 4, '2024-2-5'), 
+('BUGIA NEN' , 'SIRPADEL', 3, 12, 4, '2024-2-5'), 
+('VISPADELLO' , 'EXGB', 3, 12, 4, '2024-2-9'), 
+('GLI ULTIMI' , 'THE OLD MEN', 3, 12, 4, '2024-2-7'), 
+('VANGHEL' , 'SPADELLATORI BRUTTI', 3, 12, 4, '2024-2-6'), 
+('I CHIQUIT' , 'OFFICINA DEL PADEL 2.0', 3, 12, 4, '2024-2-8'), 
+('BAR ENJOY' , 'PADELISTI PER CASO', 3, 12, 4, '2024-2-9'), 
+('4 SALTI IN PADEL' , 'LE RAGADI', 3, 12, 4, '2024-2-5'), 
+
+
+('OFFICINA DEL PADEL 2.0' , '4 SALTI IN PADEL', 3, 12, 5, '2024-2-12'), 
+('BUGIA NEN' , 'GLI ULTIMI', 3, 12, 5, '2024-2-12'), 
+('LE RAGADI' , 'MUSSO PASTICCERIA', 3, 12, 5, '2024-2-12'), 
+('PADELISTI PER CASO' , 'VANGHEL', 3, 12, 5, '2024-2-14'), 
+('I CHIQUITI' , 'PRATO NEVOSO PADEL', 3, 12, 5, '2024-2-13'), 
+('SPADELLATORI BRUTTI' , 'THE OLD MEN', 3, 12, 5, '2024-2-15'), 
+('EXGB' , 'SIRPADEL', 3, 12, 5, '2024-2-16'), 
+('BAR ENJOY' , 'VISPADELLO', 3, 12, 5, '2024-2-16'), 
+
+
+('PRATO NEVOSO PADEL' , 'VISPADELLO', 3, 12, 6, '2024-2-23'), 
+('THE OLD MEN' , 'PADELISTI PER CASO', 3, 12, 6, '2024-2-19'), 
+('GLI ULTIMI' , 'BAR ENJOY', 3, 12, 6, '2024-2-19'), 
+('VANGHEL' , 'BUGIA NEN', 3, 12, 6, '2024-2-21'), 
+('MUSSO PASTICCERIA' , 'EXGB', 3, 12, 6, '2024-2-20'), 
+('SIRPADEL' , 'LE RAGADI', 3, 12, 6, '2024-2-22'), 
+('SPADELLATORI BRUTTI' , 'OFFICINA DEL PADEL 2.0', 3, 12, 6, '2024-2-19'), 
+('4 SALTI IN PADEL' , 'I CHIQUITI', 3, 12, 6, '2024-2-23'), 
+
+
+('OFFICINA DEL PADEL 2.0' , 'VANGHEL', 3, 12, 7, '2024-2-26'), 
+('BUGIA NEN' , 'PRATO NEVOSO PADEL', 3, 12, 7, '2024-2-26'), 
+('VISPADELLO' , '4 SALTI IN PADEL', 3, 12, 7, '2024-2-26'), 
+('LE RAGADI' , 'THE OLD MEN', 3, 12, 7, '2024-2-28'), 
+('GLI ULTIMI' , 'SIRPADEL', 3, 12, 7, '2024-2-27'), 
+('PADELISTI PER CASO' , 'MUSSO PASTICCERIA', 3, 12, 7, '2024-2-29'), 
+('I CHIQUITI' , 'EXGB', 3, 12, 7, '2024-3-1'), 
+('BAR ENJOY' , 'SPADELLATORI BRUTTI', 3, 12, 7, '2024-3-1'), 
+
+
+('OFFICINA DEL PADEL 2.0' , 'LE RAGADI', 3, 12, 8, '2024-3-4'), 
+('PRATO NEVOSO PADEL' , '4 SALTI IN PADEL', 3, 12, 8, '2024-3-4'), 
+('THE OLD MEN' , 'VANGHEL', 3, 12, 8, '2024-3-4'), 
+('MUSSO PASTICCERIA' , 'GLI ULTIMI', 3, 12, 8, '2024-3-6'), 
+('SIRPADEL' , 'BAR ENJOY', 3, 12, 8, '2024-3-5'), 
+('PADELISTI PER CASO' , 'VISPADELLO', 3, 12, 8, '2024-3-8'), 
+('SPADELLATORI BRUTTI' , 'I CHIQUITI', 3, 12, 8, '2024-3-7'), 
+('EXGB' , 'BUGIA NEN', 3, 12, 8, '2024-3-8'), 
+
+
+('VISPADELLO' , 'GLI ULTIMI', 3, 12, 9, '2024-3-11'), 
+('LE RAGADI' , 'VANGHEL', 3, 12, 9, '2024-3-11'), 
+('MUSSO PASTICCERIA' , 'SPADELLATORI BRUTTI', 3, 12, 9, '2024-3-11'), 
+('SIRPADEL' , 'THE OLD MEN', 3, 12, 9, '2024-3-13'), 
+('PADELISTI PER CASO ' , ' I CHIQUITI', 3, 12, 9, '2024-3-12'), 
+('EXGB' , 'OFFICINA DEL PADEL 2.0', 3, 12, 9, '2024-3-14'), 
+('BAR ENJOY' , 'PRATO NEVOSO PADEL', 3, 12, 9, '2024-3-15'), 
+('4 SALTI IN PADEL' , 'BUGIA NEN', 3, 12, 9, '2024-3-15'), 
+
+
+('OFFICINA DEL PADEL 2.0 ' , 'PRATO NEVOSO PADEL', 3, 12, 10, '2024-3-18'), 
+('THE OLD MEN ' , 'BUGIA NEN', 3, 12, 10, '2024-3-18'), 
+('LE RAGADI' , 'BAR ENJOY', 3, 12, 10, '2024-3-18'), 
+('VANGHEL' , 'I CHIQUITI', 3, 12, 10, '2024-3-20'), 
+('MUSSO PASTICCERIA' , '4 SALTI IN PADEL', 3, 12, 10, '2024-3-19'), 
+('SIRPADEL' , 'VISPADELLO', 3, 12, 10, '2024-3-22'), 
+('SPADELLATORI BRUTTI ' , ' GLI ULTIMI', 3, 12, 10, '2024-3-21'), 
+('EXGB' , 'ADELISTI PER CASO', 3, 12, 10, '2024-3-22'), 
+
+
+('PRATO NEVOSO PADEL' , 'EXGB', 3, 12, 11, '2024-4-8'), 
+('BUGIA NEN' , 'SPADELLATORI BRUTTI', 3, 12, 11, '2024-4-8'), 
+('VISPADELLO' , 'VANGHEL', 3, 12, 11, '2024-4-12'), 
+('GLI ULTIMI' , 'OFFICINA DEL PADEL 2.0', 3, 12, 11, '2024-4-10'), 
+('PADELISTI PER CASO' , 'LE RAGADI', 3, 12, 11, '2024-4-9'), 
+('I CHIQUITI' , 'SIRPADEL', 3, 12, 11, '2024-4-11'), 
+('BAR ENJOY ' , 'MUSSO PASTICCERIA', 3, 12, 11, '2024-4-12'), 
+('4 SALTI IN PADEL' , 'THE OLD MEN', 3, 12, 11, '2024-4-8'), 
+
+
+('OFFICINA DEL PADEL 2.0' , 'VISPADELLO', 3, 12, 12, '2024-4-15'), 
+('THE OLD MEN' , 'BAR ENJOY', 3, 12, 12, '2024-4-15'), 
+('LE RAGADI' , 'BUGIA NEN', 3, 12, 12, '2024-4-15'), 
+('VANGHEL' , 'GLI ULTIMI', 3, 12, 12, '2024-4-17'), 
+('MUSSO PASTICCERIA' , 'I CHIQUITI', 3, 12, 12, '2024-4-16'), 
+('SIRPADEL' , ' PADELISTI PER CASO', 3, 12, 12, '2024-4-18'), 
+('SPADELLATORI BRUTTI ' , 'PRATO NEVOSO PADEL', 3, 12, 12, '2024-4-19'), 
+('EXGB' , '4 SALTI IN PADEL', 3, 12, 12, '2024-4-19'), 
+
+
+('PRATO NEVOSO PADEL' , 'VANGHEL', 3, 12, 13, '2024-5-6'), 
+('VISPADELLO' , ' THE OLD MEN', 3, 12, 13, '2024-5-10'), 
+('GLI ULTIMI' , 'EXGB', 3, 12, 13, '2024-5-6'), 
+('MUSSO PASTICCERIA' , 'SIRPADEL', 3, 12, 13, '2024-5-8'), 
+('PADELISTI PER CASO' , 'OFFICINA DEL PADEL 2.0', 3, 12, 13, '2024-5-7'), 
+('I CHIQUITI' , 'LE RAGADI', 3, 12, 13, '2024-5-9'), 
+('BAR ENJOY' , 'BUGIA NEN', 3, 12, 13, '2024-5-6'), 
+('4 SALTI IN PADEL' , 'SPADELLATORI BRUTTI', 3, 12, 13, '2024-5-10'), 
+
+
+('OFFICINA DEL PADEL 2.0 ' , 'MUSSO PASTICCERIA', 3, 12, 14, '2024-5-13'), 
+('BUGIA NEN ' , 'I CHIQUITI', 3, 12, 14, '2024-5-13'), 
+('THE OLD MEN ' , 'PRATO NEVOSO PADEL', 3, 12, 14, '2024-5-13'), 
+('LE RAGADI' , 'VISPADELLO', 3, 12, 14, '2024-5-17'), 
+('GLI ULTIMI' , 'PADELISTI PER CASO', 3, 12, 14, '2024-5-14'), 
+('VANGHEL' , 'BAR ENJOY', 3, 12, 14, '2024-5-16'), 
+('SIRPADEL' , '4 SALTI IN PADEL', 3, 12, 14, '2024-5-15'), 
+('SPADELLATORI BRUTTI' , 'EXGB', 3, 12, 14, '2024-5-17'), 
+
+
+('PRATO NEVOSO PADEL' , 'SIRPADEL', 3, 12, 15, '2024-5-20'), 
+('VISPADELLO' , 'BUGIA NEN ', 3, 12, 15, '2024-5-24'), 
+('MUSSO PASTICCERIA' , 'THE OLD MEN ', 3, 12, 15, '2024-5-20'), 
+('PADELISTI PER CASO' , 'SPADELLATORI BRUTTI', 3, 12, 15, '2024-5-22'), 
+('I CHIQUITI' , 'GLI ULTIMI', 3, 12, 15, '2024-5-21'), 
+('EXGB' , 'LE RAGADI', 3, 12, 15, '2024-5-23'), 
+('BAR ENJOY' , 'OFFICINA DEL PADEL 2.0 ', 3, 12, 15, '2024-5-20'), 
+('4 SALTI IN PADEL' , 'VANGHEL', 3, 12, 15, '2024-5-24');
+
+SELECT * FROM  sports.matches_view  where season_id = 3 AND league_id = 12 AND match_day_number = 1 AND home_team_id = 0; 
+
+INSERT INTO sports.matches_view (home_team_name, visitors_team_name, season_id, league_id, match_day_number, match_date  ) VALUES
+('LE RAGADI' , 'SPADELLATORI BRUTTI', 3, 12, 1, '2024-1-15');
+
+DELETE FROM sports.matches WHERE ID = 577;
+
 SET SESSION "system.db_schema_id" = 39;
 select match_date AS DATA, match_day_number AS Giornata, home_team_id AS HID, home_team_name, visitors_team_name   
 from sports.matches_view where season_id = 3 and league_id = 8 ORDER BY match_day_number, match_date, insert_date; 
 
--- 9	"GIRONE LAB TRAVEL"
-DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 9; 
-DELETE FROM sports.calendar_teams WHERE SEASON_ID = 3 AND LEAGUE_ID = 9; 
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.matches_view (home_team_name, visitors_team_name, season_id, league_id, match_day_number, match_date  )
-VALUES
-('A.S. INTOMATICI' , 'OFFICINA DEL PADEL', 3, 9, 1, '2023-10-16'), 
-('TEAM BATTILEI' , 'SPADELLATORI BRUTTI', 3, 9, 1, '2023-10-16'), 
-('SUMA PADEL TOR' , 'THE OLD MEN', 3, 9, 1, '2023-10-17'), 
-('GAME, SET & BEER' , 'SIRPadel', 3, 9, 1, '2023-10-18'), 
-('OFFICINA DEL PADEL' , 'GAME, SET & BEER', 3, 9, 2, '2023-10-25'), 
-('SIRPadel' , 'SUMA PADEL TOR', 3, 9, 2, '2023-10-24'), 
-('THE OLD MEN' , 'TEAM BATTILEI', 3, 9, 2, '2023-10-25'), 
-('SPADELLATORI BRUTTI' , 'A.S. INTOMATICI', 3, 9, 2, '2023-10-26'), 
-('TEAM BATTILEI' , 'SIRPadel', 3, 9, 3, '2023-11-6'), 
-('SUMA PADEL TOR' , 'OFFICINA DEL PADEL', 3, 9, 3, '2023-11-6'), 
-('GAME, SET & BEER' , 'A.S. INTOMATICI', 3, 9, 3, '2023-11-6'), 
-('THE OLD MEN' , 'SPADELLATORI BRUTTI', 3, 9, 3, '2023-11-6'), 
-('A.S. INTOMATICI' , 'SUMA PADEL TOR', 3, 9, 4, '2023-11-15'), 
-('OFFICINA DEL PADEL' , 'TEAM BATTILEI ', 3, 9, 4, '2023-11-14'), 
-('SIRPadel' , 'THE OLD MEN', 3, 9, 4, '2023-11-15'), 
-('SPADELLATORI BRUTTI' , 'GAME, SET & BEER', 3, 9, 4, '2023-11-16'), 
-('TEAM BATTILEI' , 'A.S. INTOMATICI', 3, 9, 5, '2023-11-23'), 
-('SUMA PADEL TOR' , 'GAME, SET & BEER', 3, 9, 5, '2023-11-24'), 
-('SIRPadel' , 'SPADELLATORI BRUTTI', 3, 9, 5, '2023-11-24'), 
-('THE OLD MEN' , 'OFFICINA DEL PADEL', 3, 9, 5, '2023-11-24'), 
-('A.S. INTOMATICI' , 'THE OLD MEN', 3, 9, 6, '2023-11-30'), 
-('OFFICINA DEL PADEL' , 'SIRPadel', 3, 9, 6, '2023-11-29'), 
-('SUMA PADEL TOR' , 'SPADELLATORI BRUTTI', 3, 9, 6, '2023-12-1'), 
-('GAME, SET & BEER' , 'TEAM BATTILEI ', 3, 9, 6, '2023-12-1'), 
-('TEAM BATTILEI' , 'SUMA PADEL TOR', 3, 9, 7, '2023-12-11'), 
-('SIRPadel' , 'A.S. INTOMATICI', 3, 9, 7, '2023-12-11'), 
-('THE OLD MEN' , 'GAME, SET & BEER', 3, 9, 7, '2023-12-11'), 
-('SPADELLATORI BRUTTI' , 'OFFICINA DEL PADEL', 3, 9, 7, '2023-12-11');
-SET SESSION "system.db_schema_id" = 39;
-select match_date AS DATA, match_day_number AS Giornata, home_team_id AS HID, home_team_name, visitors_team_name   
-from sports.matches_view where season_id = 3 and league_id = 9 ORDER BY match_day_number, match_date, insert_date; 
 
--- 10	"GIRONE CISL" 
-DELETE FROM sports.matches WHERE SEASON_ID = 3 AND LEAGUE_ID = 10; 
-DELETE FROM sports.calendar_teams WHERE SEASON_ID = 3 AND LEAGUE_ID = 10; 
-SET SESSION "system.db_schema_id" = 39;
-INSERT INTO sports.matches_view (home_team_name, visitors_team_name, season_id, league_id, match_day_number, match_date  )
-VALUES
-('PADELVISCUNEO' , '4 SALTI IN PADEL', 3, 10, 1, '2023-10-16'), 
-('CARAGLIO RICAMBI OLIMAC' , 'PRATO NEVOSO PADEL', 3, 10, 1, '2023-10-16'), 
-('BIG MAC' , 'BAR ENJOY', 3, 10, 1, '2023-10-17'), 
-('BUGIA NEN' , 'CUNEO CENTRO ASSICURAZIONI', 3, 10, 1, '2023-10-18'), 
-('4 SALTI IN PADEL' , 'BUGIA NEN', 3, 10, 2, '2023-10-25'), 
-('CUNEO CENTRO ASSICURAZIONI' , 'BIG MAC', 3, 10, 2, '2023-10-24'), 
-('BAR ENJOY' , 'CARAGLIO RICAMBI OLIMAC', 3, 10, 2, '2023-10-25'), 
-('PRATO NEVOSO PADEL' , 'PADELVISCUNEO', 3, 10, 2, '2023-10-26'), 
-('CARAGLIO RICAMBI OLIMAC' , 'CUNEO CENTRO ASSICURAZIONI', 3, 10, 3, '2023-11-6'), 
-('BIG MAC' , '4 SALTI IN PADEL', 3, 10, 3, '2023-11-6'), 
-('BUGIA NEN' , 'PADELVISCUNEO', 3, 10, 3, '2023-11-6'), 
-('BAR ENJOY' , 'PRATO NEVOSO PADEL', 3, 10, 3, '2023-11-6'), 
-('PADELVISCUNEO' , 'BIG MAC', 3, 10, 4, '2023-11-15'), 
-('4 SALTI IN PADEL' , 'CARAGLIO RICAMBI OLIMAC', 3, 10, 4, '2023-11-14'), 
-('CUNEO CENTRO ASSICURAZIONI' , 'BAR ENJOY', 3, 10, 4, '2023-11-15'), 
-('PRATO NEVOSO PADEL' , 'BUGIA NEN', 3, 10, 4, '2023-11-16'), 
-('CARAGLIO RICAMBI OLIMAC' , 'PADELVISCUNEO', 3, 10, 5, '2023-11-23'), 
-('BIG MAC' , 'BUGIA NEN', 3, 10, 5, '2023-11-24'), 
-('CUNEO CENTRO ASSICURAZIONI' , 'PRATO NEVOSO PADEL', 3, 10, 5, '2023-11-24'), 
-('BAR ENJOY' , '4 SALTI IN PADEL', 3, 10, 5, '2023-11-24'), 
-('PADELVISCUNEO' , 'BAR ENJOY', 3, 10, 6, '2023-11-30'), 
-('4 SALTI IN PADEL' , 'CUNEO CENTRO ASSICURAZIONI', 3, 10, 6, '2023-11-29'), 
-('BIG MAC' , 'PRATO NEVOSO PADEL', 3, 10, 6, '2023-12-1'), 
-('BUGIA NEN' , 'CARAGLIO RICAMBI OLIMAC', 3, 10, 6, '2023-12-1'), 
-('CARAGLIO RICAMBI OLIMAC' , 'BIG MAC', 3, 10, 7, '2023-12-11'), 
-('CUNEO CENTRO ASSICURAZIONI' , 'PADELVISCUNEO', 3, 10, 7, '2023-12-11'), 
-('BAR ENJOY' , 'BUGIA NEN', 3, 10, 7, '2023-12-11'), 
-('PRATO NEVOSO PADEL' , '4 SALTI IN PADEL', 3, 10, 7, '2023-12-11'); 
+
+
 SET SESSION "system.db_schema_id" = 39;
 select match_date AS DATA, match_day_number AS Giornata, home_team_id AS HID, home_team_name, visitors_team_name   
 from sports.matches_view where season_id = 3 and league_id = 10 ORDER BY match_day_number, match_date, insert_date; 
