@@ -35,12 +35,13 @@ type
   public
     constructor Create; override;
     destructor Destroy; override;
-    // <summary>  </summary>
+    // <summary> If there are some Detail Table it can update those Tables </summary>
     procedure RefreshDetails; virtual;
     /// <summary>  Boolean: If True then the Details are refreshed on demand when Record Is Loaded</summary>
     /// <seealso href="https://ergomercator.atlassian.net/jira/software/projects/JF/boards/1?selectedIssue=JF-71">
     /// Lazy Loading of Remote Dataset (master-detail) for better  control/peformances JF-71 </seealso>
     property LazyLoading: Boolean read GetLazyLoading write SetLazyLoading;
+    // <summary> The main Dataset of the module (master) it points to one record using its uuid </summary>
     property MainDataset: IJanuaDBDataset read FMainDataset write SetMainDataset;
     property SelectedSchema: Integer read GetSelectedSchema write SetSelectedSchema;
   end;
@@ -104,7 +105,7 @@ type
     function SearchByGUID(const aGuid: TGUID): Boolean; virtual;
     function SearchByParams(aParams: IJanuaParams): Integer; virtual;
   public
-    /// <summary> Actual Model main Record casting to IJanuaRecord Interface</summary>
+    /// <summary> Actual Model main Record casting to IJanuaRecord Interface can be searched by GUID</summary>
     property InternalRecord: IJanuaRecord read GetInternalRecord;
     /// <summary> The state of the main Record of the Model (inserting, editing, default) </summary>
     property State: TJanuaModelState read GetState write SetState;

@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 499
     Hint = ''
-    ActivePage = pgDateSelectionPage
+    ActivePage = pgClientInformationsPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -125,7 +125,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alLeft
           TabOrder = 1
-          ExplicitTop = -2
           object cldPickup1: TUniCalendar
             Left = 0
             Top = 85
@@ -156,8 +155,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 2
-            ExplicitTop = 18
-            ExplicitWidth = 360
           end
           object lbPickupDateSelect: TUniLabel
             AlignWithMargins = True
@@ -175,9 +172,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 3
-            ExplicitLeft = 11
-            ExplicitTop = 67
-            ExplicitWidth = 352
           end
           object btnCheckPickupDate: TUniButton
             Left = 72
@@ -235,9 +229,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 3
-            ExplicitLeft = 19
-            ExplicitTop = 67
-            ExplicitWidth = 352
           end
           object lbReturnDate: TUniLabel
             AlignWithMargins = True
@@ -257,9 +248,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 4
-            ExplicitLeft = 11
-            ExplicitTop = 16
-            ExplicitWidth = 360
           end
         end
       end
@@ -6110,6 +6098,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController1: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected1
     imgBooked = imgBooked1
     ulbTime = ulbTime1
@@ -6120,6 +6109,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController2: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected2
     imgBooked = imgBooked2
     ulbTime = ulbTime2
@@ -6130,6 +6120,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController3: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected3
     imgBooked = imgBooked3
     ulbTime = ulbTime3
@@ -6140,6 +6131,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController4: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected4
     imgBooked = imgBooked4
     ulbTime = ulbTime4
@@ -6150,6 +6142,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController5: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected5
     imgBooked = imgBooked5
     ulbTime = ulbTime5
@@ -6160,6 +6153,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController6: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = tgSelected6
     imgBooked = imgBooked6
     ulbTime = ulbTime6
@@ -6258,6 +6252,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController7: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle1
     imgBooked = UniImage1
     ulbTime = UniLabel8
@@ -6268,6 +6263,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController8: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle5
     imgBooked = UniImage5
     ulbTime = UniLabel19
@@ -6278,6 +6274,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController9: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle4
     imgBooked = UniImage4
     ulbTime = UniLabel16
@@ -6288,6 +6285,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController10: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle3
     imgBooked = UniImage3
     ulbTime = UniLabel13
@@ -6298,6 +6296,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController11: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle2
     imgBooked = UniImage2
     ulbTime = UniLabel10
@@ -6308,6 +6307,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object TimeSelectUniGUIController12: TTimeSelectUniGUIController
     Enabled = False
+    IsTest = False
     tgSelected = UniFSToggle6
     imgBooked = UniImage6
     ulbTime = UniLabel22

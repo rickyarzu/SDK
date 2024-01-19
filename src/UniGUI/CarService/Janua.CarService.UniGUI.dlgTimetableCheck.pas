@@ -66,6 +66,7 @@ type
     TimeSelectUniGUIController6: TTimeSelectUniGUIController;
     CarServiceSlotSelectionController1: TCarServiceSlotSelectionController;
     procedure btnOKClick(Sender: TObject);
+    procedure UniFormCreate(Sender: TObject);
   private
     FBookingDate: TDate;
     function GetTimeTableSlots: IList<ItimetableSlot>;
@@ -110,6 +111,9 @@ end;
 
 procedure TdlgUniGUICarserviceTimetableCheck.SetTimeTableSlots(const Value: IList<ItimetableSlot>);
 begin
+  if not CarServiceSlotSelectionController1.Active then
+    CarServiceSlotSelectionController1.Activate;
+
   if Value.Count > 0 then
   begin
     CarServiceSlotSelectionController1.TimeTableSlots := Value;
@@ -126,6 +130,13 @@ begin
       DateTimeToStr(FBookingDate) + '</span><span style="color: #ff0000;"> Non è prenotabile');
     unhtmlfrm1.HTML.Add('</span></h1>');
   end;
+end;
+
+procedure TdlgUniGUICarserviceTimetableCheck.UniFormCreate(Sender: TObject);
+begin
+  CarServiceSlotSelectionController1.Enabled := True;
+  CarServiceSlotSelectionController1.IsTest := True;
+  CarServiceSlotSelectionController1.Activate;
 end;
 
 end.

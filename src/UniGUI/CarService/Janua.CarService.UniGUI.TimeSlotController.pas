@@ -31,14 +31,15 @@ type
     procedure SetulbDate(const Value: TUniLabel);
     procedure SetulbDeliveryTime(const Value: TUniLabel);
     procedure SetulbTime(const Value: TUniLabel);
+    procedure SetVisibleTest;
     { Private declarations }
   public
     constructor Create(AOwner: TComponent); override;
     procedure tgSelectedToggled(const Value: Boolean);
-    property IsTest: Boolean read FIsTest write SetIsTest;
     property TimeTableSlot: ItimetableSlot read FTimeTableSlot write SetTimeTableSlot;
   published
     // TUniControl
+    property IsTest: Boolean read FIsTest write SetIsTest;
     property tgSelected: TUniFSToggle read FtgSelected write SettgSelected;
     property OnToggledChange: TNotifyEvent read FOnToggledChange write SetOnToggledChange;
     property imgBooked: TUniImage read FimgBooked write SetimgBooked;
@@ -65,13 +66,13 @@ end;
 procedure TTimeSelectUniGUIController.SetimgBooked(const Value: TUniImage);
 begin
   FimgBooked := Value;
+  SetVisibleTest;
 end;
 
 procedure TTimeSelectUniGUIController.SetIsTest(const Value: Boolean);
 begin
   FIsTest := Value;
-  FimgBooked.Visible := FIsTest;
-  tgSelected.Visible := not FIsTest;
+  SetVisibleTest;
 end;
 
 procedure TTimeSelectUniGUIController.SetOnToggledChange(const Value: TNotifyEvent);
@@ -82,6 +83,7 @@ end;
 procedure TTimeSelectUniGUIController.SettgSelected(const Value: TUniFSToggle);
 begin
   FtgSelected := Value;
+  SetVisibleTest;
   if Assigned(FtgSelected) then
     FtgSelected.OnToggled := tgSelectedToggled;
 end;
@@ -130,6 +132,14 @@ end;
 procedure TTimeSelectUniGUIController.SetulbTime(const Value: TUniLabel);
 begin
   FulbTime := Value;
+end;
+
+procedure TTimeSelectUniGUIController.SetVisibleTest;
+begin
+  if Assigned(FimgBooked) then
+    FimgBooked.Visible := FIsTest;
+  if Assigned(tgSelected) then
+    tgSelected.Visible := not FIsTest;
 end;
 
 procedure TTimeSelectUniGUIController.tgSelectedToggled(const Value: Boolean);

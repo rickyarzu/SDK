@@ -6,15 +6,16 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Vcl.Controls, Vcl.Forms,
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniMultiItem, uniComboBox, uniDBComboBox,
-  uniDBLookupComboBox, uniGUIBaseClasses, uniEdit, UniFSCombobox, uniListBox, uniButton, uniBitBtn,  uniPanel, uniLabel,
+  uniDBLookupComboBox, uniGUIBaseClasses, uniEdit, UniFSCombobox, uniListBox, uniButton, uniBitBtn, uniPanel,
+  uniLabel,
   UniFSButton,
   // Januaproject {Janua.UniGUI.Interposers,}
-  Janua.UniGUI.dlgSearchGoogleAddress,  Janua.Cloud.GoogleAPIs,
+  Janua.UniGUI.dlgSearchGoogleAddress, Janua.Cloud.GoogleAPIs,
   // ViewModels
   Janua.Anagraph.ViewModel.Intf, Janua.Carservice.Anagraph.ViewModel.Intf,
-  JOrm.Carservice.Booking.Intf,  JOrm.Anagraph.Intf,
-  // Controllers
-  Janua.UniGUI.Controller;
+  JOrm.Carservice.Booking.Intf, JOrm.Anagraph.Intf,
+  // Controllers Framework (Bindings, controllers)
+  Janua.Orm.Intf, Janua.Bindings.Intf, Janua.Controls.Forms.Intf, Janua.UniGUI.Controller;
 
 type
   TCarBookingClientController = class(TJanuaUniGUIController)
@@ -377,12 +378,12 @@ begin
 end;
 
 procedure TCarBookingClientController.SetUsersList(const Value: IAnagraphViews);
+var
+  aList: IJanuaRecordsetBindableComboControl;
 begin
   FUsersList := Value;
-  {
-    if Assigned(FUsersList) then
-    dblcbAnagraphCustomers.BindToRecordSet(Value, Value.AnagraphId, [Value.AnLastName, Value.AnName]);
-  }
+  if Assigned(FUsersList) and Supports(dblcbAnagraphCustomers, IJanuaBindableComboControl, aList) then
+    aList.BindToRecordSet(Value, Value.AnagraphId, [Value.AnLastName, Value.AnName]);
 end;
 
 end.

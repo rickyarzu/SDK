@@ -7,6 +7,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
   BorderStyle = bsDialog
   OldCreateOrder = False
   MonitoredKeys.Keys = <>
+  OnCreate = UniFormCreate
   TextHeight = 15
   object pnlSlotSelection: TUniSimplePanel
     Left = 0
@@ -32,8 +33,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
       object tgSelected1: TUniFSToggle
@@ -42,6 +43,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -131,6 +133,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 24
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -142,8 +145,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
     end
@@ -196,6 +199,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 24
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -207,8 +211,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
     end
@@ -261,6 +265,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 24
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -272,8 +277,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
     end
@@ -326,6 +331,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 24
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -337,8 +343,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
     end
@@ -391,6 +397,7 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 24
         Hint = ''
+        Visible = False
         ThemeOn = Success
         ThemeOff = Gray
         TitleOn = 'ON'
@@ -402,8 +409,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         Width = 51
         Height = 25
         Hint = ''
-        Visible = False
         Stretch = True
+        Images = imglSlotBooking
         ImageIndex = 0
       end
     end
@@ -516,7 +523,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
       F23F1F4D5D69CB1A0EB50000000049454E44AE426082}
   end
   object TimeSelectUniGUIController1: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected1
     imgBooked = imgBooked1
     ulbTime = ulbTime1
@@ -526,7 +534,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
     Top = 8
   end
   object TimeSelectUniGUIController2: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected2
     imgBooked = imgBooked2
     ulbTime = ulbTime2
@@ -536,7 +545,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
     Top = 16
   end
   object TimeSelectUniGUIController3: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected3
     imgBooked = imgBooked3
     ulbTime = ulbTime3
@@ -546,7 +556,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
     Top = 24
   end
   object TimeSelectUniGUIController4: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected4
     imgBooked = imgBooked4
     ulbTime = ulbTime4
@@ -556,7 +567,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
     Top = 32
   end
   object TimeSelectUniGUIController5: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected5
     imgBooked = imgBooked5
     ulbTime = ulbTime5
@@ -566,7 +578,8 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
     Top = 40
   end
   object TimeSelectUniGUIController6: TTimeSelectUniGUIController
-    Enabled = False
+    Enabled = True
+    IsTest = True
     tgSelected = tgSelected6
     imgBooked = imgBooked6
     ulbTime = ulbTime6

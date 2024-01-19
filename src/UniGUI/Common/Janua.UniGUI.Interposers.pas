@@ -9,7 +9,7 @@ uses
   uniGUIClasses, uniEdit, Data.Bind.Components, uniCheckBox, uniBitBtn, uniDateTimePicker, UniComboBox,
   uniDBLookupComboBox, uniMemo, UniFSToggle, uniGUITypes, uniRadioGroup, UniFSCombobox,
   // Janua
-  Janua.Core.Types, Janua.Orm.Intf, Janua.Core.Classes.Intf, Janua.Bindings.Intf,
+  Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Bindings.Intf, Janua.Orm.Intf,
   Janua.Controls.Forms.Impl, Janua.Controls.Forms.Intf;
 
 type
@@ -223,8 +223,8 @@ type
 
   [ObservableMember('Text')]
   [ObservableMember('ItemText')]
-  TUniComboBox = class(UniComboBox.TUniComboBox, IJanuaBindableComboControl, IJanuaBindableControl,
-    IJanuaBindable)
+  TUniComboBox = class(UniComboBox.TUniComboBox, IJanuaRecordsetBindableComboControl,
+    IJanuaBindableComboControl, IJanuaBindableControl, IJanuaBindable)
     // ------- Observer
   private
     procedure ObserverToggle(const AObserver: IObserver; const Value: Boolean);
@@ -257,6 +257,10 @@ type
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
       jbcEvaluate]);
     procedure BindToField(const aField: IJanuaField);
+    procedure BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+      const aFields: TArray<IJanuaField>); overload;
+    procedure BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+      const aFieldNames: TArray<string>); overload;
     property BindManager: IJanuaBindManager read GetBindManager;
     // ************************************* Bindings Procedures ***********************************
   protected
@@ -1069,8 +1073,33 @@ procedure TUniComboBox.BindToField(const aField: IJanuaField);
 begin
   if Assigned(aField) then
   begin
-
+    ItemIndex := aField.AsInteger;
+    aField.Bind('AsInteger', Self, 'ItemIndex');
   end;
+end;
+
+procedure TUniComboBox.BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+  const aFieldNames: TArray<string>);
+begin
+  // {$IFNDEF  WIN64}
+  aRecordSet.ListFieldNames := aFieldNames;
+  aRecordSet.First;
+  Items.Assign(aRecordSet.AsStringList);
+  ItemIndex := 0;
+  BindToField(aField);
+  // {$ENDIF}
+end;
+
+procedure TUniComboBox.BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+  const aFields: TArray<IJanuaField>);
+begin
+  // {$IFNDEF  WIN64}
+  aRecordSet.ListFields := aFields;
+  aRecordSet.First;
+  Items.Assign(aRecordSet.AsStringList);
+  ItemIndex := 0;
+  BindToField(aField);
+  // {$ENDIF}
 end;
 
 procedure TUniComboBox.CallObservers;
@@ -1675,25 +1704,25 @@ end;
 procedure TUniFSCombobox.BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
   const aFieldNames: TArray<string>);
 begin
-//{$IFNDEF  WIN64}
+  // {$IFNDEF  WIN64}
   aRecordSet.ListFieldNames := aFieldNames;
   aRecordSet.First;
   Items.Assign(aRecordSet.AsStringList);
   ItemIndex := 0;
   BindToField(aField);
-//{$ENDIF}
+  // {$ENDIF}
 end;
 
 procedure TUniFSCombobox.BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
   const aFields: TArray<IJanuaField>);
 begin
-//{$IFNDEF  WIN64}
+  // {$IFNDEF  WIN64}
   aRecordSet.ListFields := aFields;
   aRecordSet.First;
   Items.Assign(aRecordSet.AsStringList);
   ItemIndex := 0;
   BindToField(aField);
-//{$ENDIF}
+  // {$ENDIF}
 end;
 
 procedure TUniFSCombobox.CallObservers;

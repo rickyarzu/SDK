@@ -1117,11 +1117,7 @@ end;
 
 class function TJanuaApplication.GetUseCurrentDir: Boolean;
 begin
-{$IFDEF LOCAL_HOME}
-  Result := True
-{$ELSE}
   Result := FOsProfile.UseCurrentDir
-{$ENDIF}
 end;
 
 class function TJanuaApplication.GetUserSessionVM: IJanuaSystemUserSessionViewModel;

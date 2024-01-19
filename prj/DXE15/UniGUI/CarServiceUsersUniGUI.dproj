@@ -133,8 +133,8 @@
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
         <VerInfo_MinorVer>9</VerInfo_MinorVer>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.43;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>43</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.48;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>48</VerInfo_Build>
         <Icon_MainIcon>..\..\..\res\CarService\pikapp_logo_mono_1024.ico</Icon_MainIcon>
         <VerInfo_Release>1</VerInfo_Release>
     </PropertyGroup>
@@ -295,6 +295,7 @@
         <None Include="..\..\..\History\CarServiceUsersUniGUI.txt"/>
         <None Include="..\..\..\Components\include\Dac.inc"/>
         <None Include="..\..\..\Components\include\IdeVer.inc"/>
+        <None Include="..\..\..\include\JANUACORE.INC"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaUNIGUIXE15.optset</DependentOn>
@@ -340,6 +341,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\..\..\History\CarServiceUsersUniGUI.txt" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\include\JANUACORE.INC" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

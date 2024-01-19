@@ -53,8 +53,6 @@ type
     procedure SetupFrames;
     procedure OnToggleChange(Sender: TObject);
     procedure AfterConstruction; override;
-  public
-    property TimeTableSlots: IList<ItimetableSlot> read FTimeTableSlots write SetTimeTableSlots;
   published
     property BookingDate: TDate read FBookingDate write SetBookingDate;
     property ulbPickupDate: TUniLabel read FulbPickupDate write SetulbPickupDate;
@@ -63,6 +61,9 @@ type
     property lbPickup: TUniLabel read FlbPickup write SetlbPickup;
     property lbDelivery: TUniLabel read FlbDelivery write SetlbDelivery;
     property IsTest: Boolean read FIsTest write SetIsTest;
+  public
+    property TimeTableSlots: IList<ItimetableSlot> read FTimeTableSlots write SetTimeTableSlots;
+  published
     property frameTimeSelect1: TTimeSelectUniGUIController read FframeTimeSelect1 write SetframeTimeSelect1;
     property frameTimeSelect2: TTimeSelectUniGUIController read FframeTimeSelect2 write SetframeTimeSelect2;
     property frameTimeSelect3: TTimeSelectUniGUIController read FframeTimeSelect3 write SetframeTimeSelect3;
@@ -181,6 +182,8 @@ var
   I: Integer;
 begin
   FTimeTableSlots := Value;
+  SetupFrames;
+
   if Assigned(FTimeTableSlots) then
     for I := 0 to FTimeTableSlots.Count - 1 do
     begin

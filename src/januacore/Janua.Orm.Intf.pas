@@ -1587,6 +1587,14 @@ Type
     function CreateField(aKey, aDBField: string; aType: TJanuaFieldType): IJanuaField;
   end;
 
+  IJanuaRecordsetBindableComboControl = interface(IJanuaBindableComboControl)
+    ['{E9E9994A-42E8-44C1-9DDB-EA18EBA68658}']
+    procedure BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+      const aFields: TArray<IJanuaField>); overload;
+    procedure BindToRecordSet(const aRecordSet: IJanuaRecordSet; const aField: IJanuaField;
+      const aFieldNames: TArray<string>); overload;
+  end;
+
 implementation
 
 uses Spring;
