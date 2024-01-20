@@ -31,10 +31,10 @@ package sbridge;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl;
 
-contains
+ocontains
   ScTypes in '..\..\..\Libraries\Devart SecureBridge\Source\ScTypes.pas',
   ScFunctions in '..\..\..\Libraries\Devart SecureBridge\Source\ScFunctions.pas',
   ScAlgorithmSupport in '..\..\..\Libraries\Devart SecureBridge\Source\ScAlgorithmSupport.pas',
@@ -122,4 +122,4 @@ contains
   ScMailMessage in '..\..\..\Libraries\Devart SecureBridge\Source\ScMailMessage.pas',
   ScSMTPClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScSMTPClient.pas';
 
-end.
+d.

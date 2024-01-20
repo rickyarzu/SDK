@@ -45,16 +45,16 @@
         <Projects Include="JanuaVCLComponents.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="UniGUI\UniGuiFramework.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaTmsControls.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaFMXControls.dproj">
+        <Projects Include="JanuaVCLMVVM.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaVCLMVVM.dproj">
+        <Projects Include="UniGUI\UniGuiFramework.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaVCLForms.dproj">
@@ -287,15 +287,6 @@
     <Target Name="JanuaVCLComponents:Make">
         <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UniGuiFramework">
-        <MSBuild Projects="UniGUI\UniGuiFramework.dproj"/>
-    </Target>
-    <Target Name="UniGuiFramework:Clean">
-        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="UniGuiFramework:Make">
-        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaTmsControls">
         <MSBuild Projects="JanuaTmsControls.dproj"/>
     </Target>
@@ -305,15 +296,6 @@
     <Target Name="JanuaTmsControls:Make">
         <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaFMXControls">
-        <MSBuild Projects="JanuaFMXControls.dproj"/>
-    </Target>
-    <Target Name="JanuaFMXControls:Clean">
-        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaFMXControls:Make">
-        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaVCLMVVM">
         <MSBuild Projects="JanuaVCLMVVM.dproj"/>
     </Target>
@@ -322,6 +304,24 @@
     </Target>
     <Target Name="JanuaVCLMVVM:Make">
         <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UniGuiFramework">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj"/>
+    </Target>
+    <Target Name="UniGuiFramework:Clean">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UniGuiFramework:Make">
+        <MSBuild Projects="UniGUI\UniGuiFramework.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaVCLForms">
         <MSBuild Projects="JanuaVCLForms.dproj"/>
@@ -612,13 +612,13 @@
         <MSBuild Projects="..\..\..\libraries\UniFalcon\Packages\UniFalconXE15.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;UniGuiFramework;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;JanuaUniGUI;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;UniFalconXE15"/>
+        <CallTarget Targets="JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;JanuaUniGUI;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;UniFalconXE15"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;UniGuiFramework:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;JanuaUniGUI:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;UniFalconXE15:Clean"/>
+        <CallTarget Targets="JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;JanuaUniGUI:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;UniFalconXE15:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;UniGuiFramework:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;JanuaUniGUI:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;UniFalconXE15:Make"/>
+        <CallTarget Targets="JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;JanuaUniGUI:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;UniFalconXE15:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">

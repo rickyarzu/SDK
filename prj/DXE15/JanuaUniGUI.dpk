@@ -45,7 +45,7 @@ requires
   UniTools29,
   uniGUI29,
   Spring.Base,
-  UniFalconXE15;
+  TUniFalcon29;
 
 contains
   Janua.UniGUI.Interposers in '..\..\src\UniGUI\Common\Janua.UniGUI.Interposers.pas',
