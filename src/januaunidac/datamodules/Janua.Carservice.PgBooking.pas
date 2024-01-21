@@ -384,6 +384,7 @@ type
     procedure qryLookupBranchesBeforeOpen(DataSet: TDataSet);
     procedure qryPickupTimeTableBeforeOpen(DataSet: TDataSet);
     procedure qryReturnTimeTableBeforeOpen(DataSet: TDataSet);
+    procedure qryCustomerVehiclesBeforeOpen(DataSet: TDataSet);
   private
     [weak]
     FUserProfile: IUserProfile;
@@ -1218,12 +1219,24 @@ begin
     '"  , "sql" : "' + LJSONObject.ToJson + '", "record" : ' + LJSONObject.ToJson);
 end;
 
+procedure TdmPgCarServiceBookingStorage.qryCustomerVehiclesBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+  (*
+    select distinct vehicle_model, vehicle_color, vehicle_numberplate
+    from carservice.booking_head_view
+    where customer_id = :customer_id;
+  *)
+
+  qryCustomerVehicles.ParamByName('customer_id').AsInteger := BookingRecord.CustomerId.AsInteger;
+end;
+
 procedure TdmPgCarServiceBookingStorage.qryDeliveryBeforeOpen(DataSet: TDataSet);
 begin
   inherited;
   FBranchID := UserSession.UserProfile.AnagraphId.AsInteger;
 
-  qryDelivery.ParamByName('booking_id').AsInteger := qryBookingid.AsInteger;
+  qryDelivery.ParamByName('booking_id').AsLargeInt := qryBookingid.AsLargeInt;
   if FFromBranch then
     qryDelivery.ParamByName('from_id').AsInteger := FCustomerID
   else

@@ -3,7 +3,7 @@ unit Janua.CarService.UniGUI.dlgBookingWizard;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Spring.Collections,
+  Windows, Messages, SysUtils, Variants, Classes, VCL.Graphics, VCL.Controls, VCL.Forms, Spring.Collections,
   // Unigui
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIForm, uniGUIBaseClasses, uniPanel, uniPageControl,
   uniButton, uniGUIFrame, uniCalendar, uniLabel, uniImage, uniEdit, uniBitBtn, uniColorButton,
@@ -418,6 +418,7 @@ begin
         begin
           CarBookingClientController1.CarBooking := FdmPgCarServiceBooking.BookingRecord;
           CarBookingClientController1.UsersList := FdmPgCarServiceBooking.UsersList;
+          CarBookingClientController1.CustomerVehicleDataset :=  FdmPgCarServiceBooking.qryCustomerVehicles;
           var
           hr := FdmPgCarServiceBooking.HasReturn;
           CarBookingClientController1.edReturnAddress.Visible := hr;

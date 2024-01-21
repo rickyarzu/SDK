@@ -393,9 +393,9 @@ procedure TBookingHeadView.SetVehicleFromDataset(const aDataset: TDataset);
 begin
   if Assigned(aDataset) then
   begin
-    VehicleModel.ReadFromDataset(aDataset);
-    VehicleNumberplate.ReadFromDataset(aDataset);
-    VehicleColor.ReadFromDataset(aDataset);
+    VehicleModel.AsString := aDataset.FieldByName(VehicleModel.DBField).AsString;
+    VehicleNumberplate.AsString := aDataset.FieldByName(VehicleNumberplate.DBField).AsString;
+    VehicleColor.AsString := aDataset.FieldByName(VehicleColor.DBField).AsString;
   end;
 end;
 

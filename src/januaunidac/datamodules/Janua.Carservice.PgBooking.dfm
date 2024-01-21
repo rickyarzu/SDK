@@ -2902,6 +2902,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
         'e'
       'from carservice.booking_head_view '
       'where customer_id = :customer_id; ')
+    BeforeOpen = qryCustomerVehiclesBeforeOpen
     Left = 472
     Top = 376
     ParamData = <

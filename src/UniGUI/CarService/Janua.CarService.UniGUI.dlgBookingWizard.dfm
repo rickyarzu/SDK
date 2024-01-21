@@ -1270,7 +1270,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 1
-            ExplicitTop = 61
             object UniContainerPanel9: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1326,7 +1325,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 2
-            ExplicitTop = 127
             object UniContainerPanel12: TUniContainerPanel
               Left = 632
               Top = 0
@@ -1397,7 +1395,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 3
-            ExplicitTop = 183
             object UniContainerPanel15: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1453,7 +1450,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 4
-            ExplicitTop = 311
             object UniContainerPanel18: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1509,7 +1505,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 5
-            ExplicitTop = 374
             object UniContainerPanel21: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1580,7 +1575,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 6
-            ExplicitTop = 245
             object edCarModel: TUniEdit
               AlignWithMargins = True
               Left = 3
@@ -1622,7 +1616,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               ParentColor = False
               Color = clBtnFace
               TabOrder = 1
-              ExplicitHeight = 13
             end
             object dblcbAnagraphCustomers: TUniFSComboBox
               AlignWithMargins = True
@@ -1640,7 +1633,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               AnyMatch = True
               IconItems = <>
               Value = '-1'
-              ExplicitTop = 26
             end
           end
         end

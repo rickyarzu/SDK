@@ -9,9 +9,9 @@ uses
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniMultiItem, uniComboBox, uniDBComboBox,
   uniDBLookupComboBox, uniGUIBaseClasses, uniEdit, UniFSCombobox, uniListBox, uniButton, uniBitBtn, uniPanel,
-  uniLabel,  UniFSButton,
+  uniLabel, UniFSButton,
   // Januaproject {Janua.UniGUI.Interposers,}
-  Janua.UniGUI.dlgSearchGoogleAddress, Janua.Cloud.GoogleAPIs, Janua.CarService.UniGUI.dlgCustomerVehicles,
+  Janua.UniGUI.dlgSearchGoogleAddress, Janua.Cloud.GoogleAPIs, Janua.Carservice.UniGUI.dlgCustomerVehicles,
   // ViewModels
   Janua.Anagraph.ViewModel.Intf, Janua.Carservice.Anagraph.ViewModel.Intf,
   JOrm.Carservice.Booking.Intf, JOrm.Anagraph.Intf,
@@ -99,7 +99,8 @@ type
     procedure GoogleResult1(Sender: TObject);
     procedure GoogleResult2(Sender: TObject);
     procedure PostRecord;
-    procedure SearchVehicleResult(Sender: TObject);
+    procedure SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
+    /// procedure GoogleMapsClose(Sender: TObject; var Action: TCloseAction);
   end;
 
 procedure Register;
@@ -216,6 +217,9 @@ begin
     { TODO : Occorre recuperare il record anagrafico completo e metterlo in un temp e poi assegnarlo }
     var
     lAddress := CarBooking.AnagraphClient.AnFullAddress.AsString;
+
+    if Assigned(CustomerVehicleDataset) then
+      SelectCustomerVehicle;
   end
   else
   begin
@@ -237,7 +241,6 @@ begin
           end;
         end);
   end;
-
 end;
 
 procedure TCarBookingClientController.EdFullAddressEnter(Sender: TObject);
@@ -314,24 +317,38 @@ begin
     FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
 end;
 
-procedure TCarBookingClientController.SearchVehicleResult(Sender: TObject);
+procedure TCarBookingClientController.SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
 begin
-  if lDlg.SearchResult then
-      FCarBooking.SetVehicleFromDataset(FCustomerVehicleDataset);
+  if Assigned(lDlg) then
+    try
+      if lDlg.SearchResult then
+        FCarBooking.SetVehicleFromDataset(FCustomerVehicleDataset);
+
+      edCarModel.Text := FCarBooking.VehicleModel.AsString;
+      edCarNumberPlate.Text := FCarBooking.VehicleNumberplate.AsString;
+      edCarColor.Text := FCarBooking.VehicleColor.AsString;
+      lDlg := nil;
+    finally
+      Action := TCloseAction.caFree;
+    end;
 end;
 
 procedure TCarBookingClientController.SelectCustomerVehicle;
 begin
-  if Assigned(self.FCustomerVehicleDataset) then
+  if Assigned(Self.FCustomerVehicleDataset) then
   begin
+    FCustomerVehicleDataset.Close;
     FCustomerVehicleDataset.Open;
     if FCustomerVehicleDataset.RecordCount = 1 then
     begin
-
+      FCarBooking.SetVehicleFromDataset(FCustomerVehicleDataset);
     end
     else
-    begin
-
+    begin // TdlgUniGUICarServiceCustomerVehicles
+      lDlg := TdlgUniGUICarServiceCustomerVehicles.Create(UniApplication);
+      lDlg.SearchDataset := FCustomerVehicleDataset;
+      lDlg.OnClose := SearchVehicleResult;
+      lDlg.ShowModal;
     end;
   end;
 end;
