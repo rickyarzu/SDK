@@ -45,7 +45,7 @@ requires
   UniTools29,
   uniGUI29,
   Spring.Base,
-  TUniFalcon29;
+  TUniFalcon;
 
 contains
   Janua.UniGUI.Interposers in '..\..\src\UniGUI\Common\Janua.UniGUI.Interposers.pas',
@@ -67,6 +67,7 @@ contains
   Janua.CarService.UniGUI.BookingSummaryController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.BookingSummaryController.pas',
   Janua.Anagraph.UniGUI.dlgSimpleAnagraph in '..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.dlgSimpleAnagraph.pas' {dlgUniGUISimpleAnagraph: TUniForm},
   Janua.UniGUI.dlgHTMLDisclaimer in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLDisclaimer.pas' {frmUniGUIHtmlDisclaimer: TUniForm},
-  Janua.UniGUI.dlgHTMLMessage in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLMessage.pas' {frmUniGUIHtmlMessage: TUniForm};
+  Janua.UniGUI.dlgHTMLMessage in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLMessage.pas' {frmUniGUIHtmlMessage: TUniForm},
+  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm};
 
 end.

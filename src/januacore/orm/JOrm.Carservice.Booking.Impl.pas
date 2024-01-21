@@ -6,6 +6,7 @@ unit JOrm.Carservice.Booking.Impl;
 interface
 
 uses
+  Data.DB,
   JOrm.Carservice.BookingHeadView.Custom.Impl, JOrm.Carservice.BookingHeadView.Custom.Intf,
   Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, JOrm.Carservice.Booking.Intf,
   JOrm.Carservice.TimetableView.Custom.Impl, JOrm.Anagraph.Impl, JOrm.Anagraph.Intf,
@@ -176,6 +177,8 @@ type
     /// <summary> Reads Customer Addresses and Service Selected Address and Populates Addresses List  </summary>
     procedure RefreshAddresses;
     function checkBooking: boolean;
+    /// <summary> Populates Vehicle Informations (Model, Color, Numberplace) from a Dataset </summary>
+    procedure SetVehicleFromDataset(const aDataset: TDataset);
   public { Public Properties }
     /// <summary> This is the Timetable Recordset that summarize both delivery and pickup travels </summary>
     property TimeTable: ItimetableViews read GetTimeTable;
@@ -383,6 +386,16 @@ begin
       FDeliveryDateTime.SlotId.Clear;
     end;
     Notify('HasReturn');
+  end;
+end;
+
+procedure TBookingHeadView.SetVehicleFromDataset(const aDataset: TDataset);
+begin
+  if Assigned(aDataset) then
+  begin
+    VehicleModel.ReadFromDataset(aDataset);
+    VehicleNumberplate.ReadFromDataset(aDataset);
+    VehicleColor.ReadFromDataset(aDataset);
   end;
 end;
 
@@ -662,7 +675,7 @@ begin
   FPickupAnagraph.AnCellular.DBField := 'pickup_cellular';
   FDeliveryAnagraph := TAnagraph.Create;
   FDeliveryAnagraph.Name := 'delivery_anagraph';
-  Self.AddRecordDef(FDeliveryAnagraph);
+  self.AddRecordDef(FDeliveryAnagraph);
   FDeliveryAnagraph.NotStored := True;
   { delivery_an_id: TIntegerField; }
   FDeliveryAnagraph.AnagraphId.DBField := 'delivery_an_id';
@@ -692,7 +705,6 @@ begin
   FBookingHead.Name := 'booking_head';
 
   self.AddRecordDef(FBookingHead);
-
 
 end;
 

@@ -292,6 +292,11 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.CalendarSelectController.pas"/>
         <DCCReference Include="..\..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas"/>
+        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas">
+            <Form>dlgUniGUICarServiceCustomerVehicles</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
         <None Include="..\..\..\History\CarServiceUsersUniGUI.txt"/>
         <None Include="..\..\..\Components\include\Dac.inc"/>
         <None Include="..\..\..\Components\include\IdeVer.inc"/>

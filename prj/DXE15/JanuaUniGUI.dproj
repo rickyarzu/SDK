@@ -108,6 +108,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -148,7 +150,7 @@
         <DCCReference Include="UniTools29.dcp"/>
         <DCCReference Include="uniGUI29.dcp"/>
         <DCCReference Include="Spring.Base.dcp"/>
-        <DCCReference Include="TUniFalcon29.dcp"/>
+        <DCCReference Include="TUniFalcon.dcp"/>
         <DCCReference Include="..\..\src\UniGUI\Common\Janua.UniGUI.Interposers.pas"/>
         <DCCReference Include="..\..\src\UniGUI\Common\Janua.UniGUI.UniDacApplication.pas"/>
         <DCCReference Include="..\..\src\UniGUI\Common\Janua.UniGUI.NavBar.pas"/>
@@ -200,6 +202,11 @@
             <FormType>dfm</FormType>
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas">
+            <Form>dlgUniGUICarServiceCustomerVehicles</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaUNIGUIXE15.optset</DependentOn>
@@ -222,10 +229,7 @@
                     <Source Name="MainSource">JanuaUniGUI.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\sgcWebSockets280.bpl">ESeGeCe Web Sockets</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaTmsControls280.bpl">Janua TMS Controls</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaFMXControls280.bpl">Janua FMX Controls Sidney</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaVCLMVVM280.bpl">Janua Model View View Model Library Sidney</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaUniGUI290.bpl">Janua UniGUI Library</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

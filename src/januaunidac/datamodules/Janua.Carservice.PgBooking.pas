@@ -367,6 +367,10 @@ type
     qryDeliveryto_longitude: TFloatField;
     qryDeliveryto_full_address: TWideStringField;
     qryDeliveryslot_delivery: TWideStringField;
+    qryCustomerVehicles: TUniQuery;
+    qryCustomerVehiclesvehicle_model: TWideStringField;
+    qryCustomerVehiclesvehicle_color: TWideStringField;
+    qryCustomerVehiclesvehicle_numberplate: TWideStringField;
     procedure qryPickupBeforePost(DataSet: TDataSet);
     procedure qryDeliveryBeforePost(DataSet: TDataSet);
     procedure qryPickupBeforeOpen(DataSet: TDataSet);

@@ -2894,4 +2894,34 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       end>
     CommandStoredProcName = 'carservice.carservice_book_jguid_upd_address'
   end
+  object qryCustomerVehicles: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      
+        'select distinct vehicle_model, vehicle_color, vehicle_numberplat' +
+        'e'
+      'from carservice.booking_head_view '
+      'where customer_id = :customer_id; ')
+    Left = 472
+    Top = 376
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'customer_id'
+        ParamType = ptInput
+        Value = 253923
+      end>
+    object qryCustomerVehiclesvehicle_model: TWideStringField
+      FieldName = 'vehicle_model'
+      Size = 128
+    end
+    object qryCustomerVehiclesvehicle_color: TWideStringField
+      FieldName = 'vehicle_color'
+      Size = 64
+    end
+    object qryCustomerVehiclesvehicle_numberplate: TWideStringField
+      FieldName = 'vehicle_numberplate'
+      Size = 24
+    end
+  end
 end
