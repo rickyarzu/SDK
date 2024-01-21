@@ -165,12 +165,7 @@ type
     UniLabel23: TUniLabel;
     UniFSToggle6: TUniFSToggle;
     UniImage6: TUniImage;
-    TimeSelectUniGUIController7: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController8: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController9: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController10: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController11: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController12: TTimeSelectUniGUIController;
+
     CalendarSelectPickup: TUNIControllerCalendarSelect;
     CalendarSelectDelivery: TUNIControllerCalendarSelect;
     cntAddressSelect: TUniContainerPanel;
@@ -253,7 +248,16 @@ type
     CarBookingClientController1: TCarBookingClientController;
     AddressSelectUniGUICController1: TAddressSelectUniGUICController;
     BookingSummaryUniGUIController1: TBookingSummaryUniGUIController;
+
+    // TimeTable - Selection
+    TimeSelectUniGUIController7: TTimeSelectUniGUIController;
+    TimeSelectUniGUIController8: TTimeSelectUniGUIController;
+    TimeSelectUniGUIController9: TTimeSelectUniGUIController;
+    TimeSelectUniGUIController10: TTimeSelectUniGUIController;
+    TimeSelectUniGUIController11: TTimeSelectUniGUIController;
+    TimeSelectUniGUIController12: TTimeSelectUniGUIController;
     UniContainerPanel23: TUniContainerPanel;
+    cntSelectCustomer: TUniContainerPanel;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);

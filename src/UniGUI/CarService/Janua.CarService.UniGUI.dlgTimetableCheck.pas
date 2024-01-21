@@ -64,6 +64,7 @@ type
     TimeSelectUniGUIController4: TTimeSelectUniGUIController;
     TimeSelectUniGUIController5: TTimeSelectUniGUIController;
     TimeSelectUniGUIController6: TTimeSelectUniGUIController;
+    // Replaced Janua.CarService.UniGUI.frameSlotSelection
     CarServiceSlotSelectionController1: TCarServiceSlotSelectionController;
     procedure btnOKClick(Sender: TObject);
     procedure UniFormCreate(Sender: TObject);
@@ -84,7 +85,7 @@ type
 implementation
 
 uses
-  uniGUIApplication, Janua.CarService.UniGUI.frameSlotSelection;
+  uniGUIApplication;
 
 {$R *.dfm}
 { TdlgUniGUICarserviceTimetableCheck }
