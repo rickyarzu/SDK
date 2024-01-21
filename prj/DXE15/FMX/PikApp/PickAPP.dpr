@@ -50,11 +50,17 @@ begin
   TJanuaApplication.AppName := ('drivers.carservice.com');
   Application.Initialize;
   TJanuaCarServiceFMXMobileApplication.ApplicationSetup('drivers.carservice.com');
-  TJanuaApplication.ServerAddress := '185.36.74.140';
-  {'https://api.pikapp.it/'}
-  TJanuaApplication.RestServer := 'http://127.0.0.1';
-  TJanuaApplication.RESTClientConf.Server := 'http://127.0.0.1';
-  TJanuaApplication.RESTClientConf.Port := 9010;
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
+  // Remote Configuration  {'https://api.pikapp.it/'}
+  TJanuaApplication.RestServer := 'https://api.pikapp.it';
+  TJanuaApplication.RESTClientConf.Server := 'https://api.pikapp.it';
+  TJanuaApplication.RESTClientConf.Port := 0;
+  (*
+    // Local Configuration
+    TJanuaApplication.RestServer := 'http://127.0.0.1';
+    TJanuaApplication.RESTClientConf.Server := 'http://127.0.0.1';
+    TJanuaApplication.RESTClientConf.Port := 9010;
+  *)
 
   if FSessionKey = '' then
   begin
