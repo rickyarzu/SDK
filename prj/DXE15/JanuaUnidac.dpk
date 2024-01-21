@@ -36,6 +36,8 @@ requires
   unidac290,
   pgprovider290,
   oraprovider290,
+  RestRequestLib,
+  JanuaCoreThirdParty,
   JanuaCore,
   JanuaCoreComponents,
   JanuaMVVM,

@@ -1,7 +1,7 @@
 object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   Left = 0
   Top = 0
-  ClientHeight = 556
+  ClientHeight = 587
   ClientWidth = 748
   Caption = 'Nuova Prenotazione'
   OnShow = UniFormShow
@@ -14,13 +14,14 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   TextHeight = 15
   object pnlBottom: TUniSimplePanel
     Left = 0
-    Top = 499
+    Top = 530
     Width = 748
     Height = 57
     Hint = ''
     ParentColor = False
     Align = alBottom
     TabOrder = 0
+    ExplicitTop = 499
     DesignSize = (
       748
       57)
@@ -64,19 +65,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Left = 0
     Top = 0
     Width = 748
-    Height = 499
+    Height = 530
     Hint = ''
     ActivePage = pgClientInformationsPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
+    ExplicitHeight = 499
     object pgDateSelectionPage: TUniTabSheet
       Hint = ''
       Caption = 'pgDateSelection'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       object UniPanel1: TUniPanel
         Left = 0
         Top = 0
@@ -115,20 +114,22 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Left = 0
         Top = 41
         Width = 740
-        Height = 430
+        Height = 461
         Hint = ''
         ParentColor = False
         Align = alClient
         TabOrder = 1
+        ExplicitHeight = 430
         object pnlPickup: TUniContainerPanel
           Left = 0
           Top = 0
           Width = 369
-          Height = 430
+          Height = 461
           Hint = ''
           ParentColor = False
           Align = alLeft
           TabOrder = 1
+          ExplicitHeight = 430
           object cldPickup1: TUniCalendar
             Left = 0
             Top = 85
@@ -191,11 +192,12 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 369
           Top = 0
           Width = 371
-          Height = 430
+          Height = 461
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 2
+          ExplicitHeight = 430
           object btnCheckReturnDate: TUniButton
             Left = 72
             Top = 403
@@ -259,31 +261,30 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgTimeSelection: TUniTabSheet
       Hint = ''
       Caption = 'pgTimeSelection'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       object UniContainerPanel1: TUniContainerPanel
         Left = 0
         Top = 0
         Width = 740
-        Height = 471
+        Height = 502
         Hint = ''
         ParentColor = False
         Align = alClient
         TabOrder = 0
+        ExplicitHeight = 471
         object pnlPickupTimeSelect: TUniContainerPanel
           Left = 0
           Top = 0
           Width = 369
-          Height = 471
+          Height = 502
           Hint = ''
           ParentColor = False
           Align = alLeft
           TabOrder = 1
+          ExplicitHeight = 471
           DesignSize = (
             369
-            469)
+            502)
           object ulbPickupDate: TUniLabel
             Left = 0
             Top = 0
@@ -350,12 +351,12 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Left = 3
             Top = 104
             Width = 360
-            Height = 253
+            Height = 284
             Hint = ''
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
             TabOrder = 6
-            ExplicitHeight = 255
+            ExplicitHeight = 253
             object pnlSlotSelection: TUniSimplePanel
               Left = 0
               Top = 0
@@ -762,7 +763,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 369
           Top = 0
           Width = 371
-          Height = 469
+          Height = 502
           Hint = ''
           ParentColor = False
           Align = alClient
@@ -770,7 +771,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ExplicitHeight = 471
           DesignSize = (
             371
-            469)
+            502)
           object UniLabel2: TUniLabel
             Left = 0
             Top = 0
@@ -837,7 +838,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Left = 6
             Top = 107
             Width = 360
-            Height = 253
+            Height = 286
             Hint = ''
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
@@ -1250,137 +1251,95 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgClientInformationsPage: TUniTabSheet
       Hint = ''
       Caption = 'pgClientInformations'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       object pnlBookingClient: TUniContainerPanel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 734
-        Height = 465
+        Height = 496
         Hint = ''
         ParentColor = False
         Align = alClient
         TabOrder = 0
+        ExplicitHeight = 465
         object cntCarBookingClient: TUniContainerPanel
           Left = 0
           Top = 0
           Width = 734
-          Height = 465
+          Height = 496
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 1
-          object dblcbAnagraphCustomers: TUniFSComboBox
-            AlignWithMargins = True
-            Left = 10
-            Top = 51
-            Width = 714
-            Height = 23
-            Hint = ''
-            Margins.Left = 10
-            Margins.Top = 5
-            Margins.Right = 10
-            Text = 'Seleziona Cliente'
-            Align = alTop
-            TabOrder = 1
-            AnyMatch = True
-            IconItems = <>
-            Value = '-1'
-          end
-          object edCarModel: TUniEdit
-            AlignWithMargins = True
-            Left = 10
-            Top = 288
-            Width = 714
-            Hint = ''
-            Margins.Left = 10
-            Margins.Top = 30
-            Margins.Right = 10
-            Text = ''
-            Align = alTop
-            TabOrder = 2
-            FieldLabel = 'Modello Veicolo'
-            FieldLabelAlign = laTop
-          end
-          object lbSelectCustomer: TUniLabel
-            AlignWithMargins = True
-            Left = 10
-            Top = 30
-            Width = 714
-            Height = 13
-            Hint = ''
-            Margins.Left = 10
-            Margins.Top = 30
-            Margins.Right = 10
-            AutoSize = False
-            Caption = 'Seleziona Scheda Cliente precedente'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
+          ExplicitTop = 1
+          ExplicitHeight = 465
           object UniContainerPanel8: TUniContainerPanel
             AlignWithMargins = True
-            Left = 7
-            Top = 80
-            Width = 720
-            Height = 57
+            Left = 5
+            Top = 61
+            Width = 724
+            Height = 60
             Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
+            Margins.Left = 5
+            Margins.Right = 5
             ParentColor = False
             Align = alTop
-            TabOrder = 4
+            TabOrder = 1
+            ExplicitTop = 80
             object UniContainerPanel9: TUniContainerPanel
               Left = 0
               Top = 0
               Width = 209
-              Height = 57
+              Height = 60
               Hint = ''
               ParentColor = False
               Align = alLeft
               TabOrder = 0
+              ExplicitHeight = 57
               object edFirstName: TUniEdit
                 AlignWithMargins = True
                 Left = 3
-                Top = 32
+                Top = 35
                 Width = 203
                 Hint = ''
                 Text = ''
                 Align = alBottom
                 TabOrder = 0
                 EmptyText = 'Nome'
+                ExplicitTop = 32
               end
             end
             object UniContainerPanel10: TUniContainerPanel
               Left = 209
               Top = 0
-              Width = 511
-              Height = 57
+              Width = 515
+              Height = 60
               Hint = ''
               ParentColor = False
               Align = alClient
               TabOrder = 2
+              ExplicitWidth = 511
+              ExplicitHeight = 57
               object EdLastName: TUniEdit
                 AlignWithMargins = True
                 Left = 3
-                Top = 32
-                Width = 505
+                Top = 35
+                Width = 509
                 Hint = ''
                 Text = ''
                 Align = alBottom
                 TabOrder = 1
                 EmptyText = 'Cognome Cliente'
+                ExplicitTop = 32
+                ExplicitWidth = 505
               end
             end
           end
           object UniContainerPanel11: TUniContainerPanel
             AlignWithMargins = True
             Left = 7
-            Top = 143
+            Top = 127
             Width = 720
             Height = 50
             Hint = ''
@@ -1388,7 +1347,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Right = 7
             ParentColor = False
             Align = alTop
-            TabOrder = 5
+            TabOrder = 2
+            ExplicitTop = 143
             object UniContainerPanel12: TUniContainerPanel
               Left = 632
               Top = 0
@@ -1450,7 +1410,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           object UniContainerPanel14: TUniContainerPanel
             AlignWithMargins = True
             Left = 7
-            Top = 199
+            Top = 183
             Width = 720
             Height = 56
             Hint = ''
@@ -1458,7 +1418,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Right = 7
             ParentColor = False
             Align = alTop
-            TabOrder = 6
+            TabOrder = 3
+            ExplicitTop = 199
             object UniContainerPanel15: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1505,7 +1466,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           object UniContainerPanel17: TUniContainerPanel
             AlignWithMargins = True
             Left = 7
-            Top = 316
+            Top = 311
             Width = 720
             Height = 57
             Hint = ''
@@ -1513,7 +1474,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Right = 7
             ParentColor = False
             Align = alTop
-            TabOrder = 7
+            TabOrder = 4
+            ExplicitTop = 316
             object UniContainerPanel18: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1560,7 +1522,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           object UniContainerPanel20: TUniContainerPanel
             AlignWithMargins = True
             Left = 7
-            Top = 379
+            Top = 374
             Width = 720
             Height = 60
             Hint = ''
@@ -1568,7 +1530,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Right = 7
             ParentColor = False
             Align = alTop
-            TabOrder = 8
+            TabOrder = 5
+            ExplicitTop = 379
             object UniContainerPanel21: TUniContainerPanel
               Left = 0
               Top = 0
@@ -1627,35 +1590,115 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               end
             end
           end
+          object UniContainerPanel23: TUniContainerPanel
+            AlignWithMargins = True
+            Left = 7
+            Top = 245
+            Width = 720
+            Height = 60
+            Hint = ''
+            Margins.Left = 7
+            Margins.Right = 7
+            ParentColor = False
+            Align = alTop
+            TabOrder = 6
+            ExplicitLeft = 0
+            ExplicitTop = 313
+            ExplicitWidth = 734
+            object edCarModel: TUniEdit
+              AlignWithMargins = True
+              Left = 3
+              Top = 35
+              Width = 714
+              Hint = ''
+              Text = ''
+              Align = alBottom
+              TabOrder = 1
+              FieldLabel = 'Modello Veicolo'
+              FieldLabelAlign = laTop
+              ExplicitLeft = 10
+              ExplicitTop = 288
+            end
+          end
+          object cntSelectCustomer: TUniContainerPanel
+            AlignWithMargins = True
+            Left = 7
+            Top = 3
+            Width = 720
+            Height = 52
+            Hint = ''
+            Margins.Left = 7
+            Margins.Right = 7
+            ParentColor = False
+            Align = alTop
+            TabOrder = 7
+            object lbSelectCustomer: TUniLabel
+              AlignWithMargins = True
+              Left = 10
+              Top = 5
+              Width = 700
+              Height = 13
+              Hint = ''
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              AutoSize = False
+              Caption = 'Seleziona Scheda Cliente precedente'
+              Align = alClient
+              ParentColor = False
+              Color = clBtnFace
+              TabOrder = 1
+              ExplicitTop = 30
+              ExplicitWidth = 714
+            end
+            object dblcbAnagraphCustomers: TUniFSComboBox
+              AlignWithMargins = True
+              Left = 10
+              Top = 26
+              Width = 700
+              Height = 23
+              Hint = ''
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Text = 'Seleziona Cliente'
+              Align = alBottom
+              TabOrder = 2
+              AnyMatch = True
+              IconItems = <>
+              Value = '-1'
+              ExplicitTop = 71
+              ExplicitWidth = 714
+            end
+          end
         end
       end
     end
     object pgTimetableLocations: TUniTabSheet
       Hint = ''
       Caption = 'pgTimetableLocations'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       object pnlTimetableLocations: TUniContainerPanel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 734
-        Height = 465
+        Height = 496
         Hint = ''
         ParentColor = False
         Align = alClient
         TabOrder = 0
+        ExplicitHeight = 465
         object cntAddressSelect: TUniContainerPanel
           Left = 0
           Top = 0
           Width = 734
-          Height = 465
+          Height = 496
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 465
           object UniContainerPanel2: TUniContainerPanel
             AlignWithMargins = True
             Left = 3
@@ -2060,13 +2103,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgSummaryConfirmationPage: TUniTabSheet
       Hint = ''
       Caption = 'pgSummaryConfirmation'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       DesignSize = (
         740
-        469)
+        502)
       object lbAmount: TUniLabel
         Left = 174
         Top = 382
@@ -2359,13 +2399,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgPaymentPage: TUniTabSheet
       Hint = ''
       Caption = 'pgPayment'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 256
-      ExplicitHeight = 128
+      ExplicitHeight = 471
       DesignSize = (
         740
-        469)
+        502)
       object imgCreditCards: TUniImage
         Left = 152
         Top = 31
