@@ -82,6 +82,7 @@ type
     procedure SetCarBooking(const Value: IBookingHeadView);
     procedure SetUsersList(const Value: IAnagraphViews);
     function GetAnagraph: IBookingAnagraphView;
+    procedure AssignUserList;
   public
     constructor Create(AOwner: TComponent); override;
     { Public declarations }
@@ -103,6 +104,31 @@ uses Data.DB, Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Core.Entities,
 procedure Register;
 begin
   RegisterComponents('Janua CarService UniGUI', [TCarBookingClientController]);
+end;
+
+procedure TCarBookingClientController.AssignUserList;
+var
+  aList: IJanuaRecordsetBindableComboControl;
+begin
+  if Assigned(FUsersList) and Assigned(FdblcbAnagraphCustomers) then
+    if Supports(dblcbAnagraphCustomers, IJanuaBindableComboControl, aList) then
+    begin
+      var
+      aLastName := FUsersList.AnLastName;
+      var
+      aAnagraphId := FUsersList.AnagraphId;
+      var
+      aName := FUsersList.AnName;
+
+      FUsersList.ListFields := [aName, aLastName];
+      FUsersList.First;
+      dblcbAnagraphCustomers.Items.Assign(FUsersList.AsStringList);
+      dblcbAnagraphCustomers.ItemIndex := -1;
+
+      {
+        aList.BindToRecordSet(FUsersList, aAnagraphId, [aLastName, aLastName]);
+      }
+    end;
 end;
 
 procedure TCarBookingClientController.btnReturnAddressClick(Sender: TObject);
@@ -307,6 +333,7 @@ end;
 procedure TCarBookingClientController.SetdblcbAnagraphCustomers(const Value: TUniFSComboBox);
 begin
   FdblcbAnagraphCustomers := Value;
+  AssignUserList;
   if Assigned(FdblcbAnagraphCustomers) then
     FdblcbAnagraphCustomers.OnChange := dblcbAnagraphCustomersChange;
 end;
@@ -378,12 +405,9 @@ begin
 end;
 
 procedure TCarBookingClientController.SetUsersList(const Value: IAnagraphViews);
-var
-  aList: IJanuaRecordsetBindableComboControl;
 begin
   FUsersList := Value;
-  if Assigned(FUsersList) and Supports(dblcbAnagraphCustomers, IJanuaBindableComboControl, aList) then
-    aList.BindToRecordSet(Value, Value.AnagraphId, [Value.AnLastName, Value.AnName]);
+  AssignUserList;
 end;
 
 end.

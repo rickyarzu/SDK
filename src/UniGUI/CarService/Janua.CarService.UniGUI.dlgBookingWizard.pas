@@ -206,7 +206,6 @@ type
     lbVehiclePickupPlaceD: TUniLabel;
     cntCarBookingClient: TUniContainerPanel;
     dblcbAnagraphCustomers: TUniFSComboBox;
-    edCarModel: TUniEdit;
     lbSelectCustomer: TUniLabel;
     UniContainerPanel8: TUniContainerPanel;
     UniContainerPanel9: TUniContainerPanel;
@@ -254,6 +253,7 @@ type
     CarBookingClientController1: TCarBookingClientController;
     AddressSelectUniGUICController1: TAddressSelectUniGUICController;
     BookingSummaryUniGUIController1: TBookingSummaryUniGUIController;
+    UniContainerPanel23: TUniContainerPanel;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);
