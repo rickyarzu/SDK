@@ -142,8 +142,9 @@ begin
 
     FBookingHead.Addresses.Post;
 
-    if not FBookingHead.AnagraphClient.MainAddress.Id.AsInteger =
-      (FBookingHead.AnagraphClient.ReturnAddress.Id.AsInteger) then
+    if (FBookingHead.AnagraphClient.ReturnAddress.FullAddress.AsString <> '') and
+      not (FBookingHead.AnagraphClient.MainAddress.FullAddress.AsString =
+      FBookingHead.AnagraphClient.ReturnAddress.FullAddress.AsString) then
     begin
       FBookingHead.Addresses.Append;
       FBookingHead.Addresses.BookingAddress.Assign(FBookingHead.AnagraphClient.ReturnAddress);

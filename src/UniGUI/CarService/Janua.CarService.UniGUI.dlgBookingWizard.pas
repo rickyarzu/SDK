@@ -459,7 +459,7 @@ begin
           begin
             var
             lCount := FdmPgCarServiceBooking.BookingRecord.Addresses.RecordCount;
-            Guard.CheckTrue(3 = lCount, 'Error address count ' + lCount.ToString + ' ' + lReturnAddress);
+            // Guard.CheckTrue(3 = lCount, 'Error address count ' + lCount.ToString + ' ' + lReturnAddress);
           end;
 
 {$ENDIF}

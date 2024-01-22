@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgTimetableLocations
+    ActivePage = pgSummaryConfirmationPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -2107,8 +2107,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         TabOrder = 2
       end
       object lbBookingAmount: TUniLabel
-        Left = 476
-        Top = 383
+        Left = 587
+        Top = 385
         Width = 113
         Height = 25
         Hint = ''
@@ -2123,8 +2123,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         TabOrder = 3
       end
       object lbBookingVAT: TUniLabel
-        Left = 476
-        Top = 414
+        Left = 587
+        Top = 416
         Width = 113
         Height = 25
         Hint = ''
@@ -2139,8 +2139,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         TabOrder = 4
       end
       object lbBookingTotalAmount: TUniLabel
-        Left = 476
-        Top = 445
+        Left = 587
+        Top = 447
         Width = 113
         Height = 25
         Hint = ''
@@ -2182,6 +2182,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Width = 98
             Height = 28
             Hint = ''
+            Visible = False
             StyleButton = Success
             BadgeText.Text = '0'
             BadgeText.TextColor = '#FFFFFF'
@@ -2192,8 +2193,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             TabOrder = 1
           end
           object btnShowContract: TUniFSButton
-            Left = 432
-            Top = 292
+            Left = 556
+            Top = 323
             Width = 153
             Height = 28
             Hint = ''
@@ -2204,7 +2205,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             BadgeText.TextStyle = 'bold'
             BadgeText.BackgroundColor = '#D50000'
             Caption = 'Vedi Condizioni'
-            Anchors = [akLeft, akRight]
+            Anchors = [akTop, akRight]
             TabOrder = 2
           end
           object cboBranchSelection: TUniFSComboBox
@@ -2223,7 +2224,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           end
           object ckbConditiions: TUniCheckBox
             Left = 25
-            Top = 303
+            Top = 332
             Width = 264
             Height = 17
             Hint = ''
@@ -2245,6 +2246,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Top = 4
             Margins.Right = 4
             Margins.Bottom = 4
+            Visible = False
             Caption = 'Consuntivo Viaggio Rientro (Consegna)'
             TabOrder = 5
             object grpDeliveryDirection: TUniRadioGroup
@@ -2299,6 +2301,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Top = 4
             Margins.Right = 4
             Margins.Bottom = 4
+            Visible = False
             Caption = 'Consuntivo Viaggio Ritiro'
             TabOrder = 6
             object grpPickupDirection: TUniRadioGroup
@@ -2348,10 +2351,11 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           end
           object htmlBookingSummary: TUniHTMLFrame
             Left = -9
-            Top = 192
-            Width = 594
-            Height = 128
+            Top = 3
+            Width = 740
+            Height = 303
             Hint = ''
+            Anchors = [akLeft, akTop, akRight, akBottom]
           end
         end
       end
