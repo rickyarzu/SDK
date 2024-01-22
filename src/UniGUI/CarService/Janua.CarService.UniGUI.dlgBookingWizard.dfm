@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgClientInformationsPage
+    ActivePage = pgTimetableLocations
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -1781,10 +1781,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 object lbTimeTableType: TUniLabel
                   Left = 16
                   Top = 8
-                  Width = 41
+                  Width = 34
                   Height = 17
                   Hint = ''
-                  Caption = 'Pickup'
+                  Caption = 'Ritiro'
                   ParentFont = False
                   Font.Height = -13
                   Font.Style = [fsBold]
@@ -1935,10 +1935,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 object lbTimeTableTypeD: TUniLabel
                   Left = 16
                   Top = 8
-                  Width = 52
+                  Width = 70
                   Height = 17
                   Hint = ''
-                  Caption = 'Delivery'
+                  Caption = 'Riconsegna'
                   ParentFont = False
                   Font.Height = -13
                   Font.Style = [fsBold]
@@ -6349,8 +6349,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     lbIndirizzoReturn = lbIndirizzoReturn
     TimeTablePickupController = TimeTablePickupController
     TimeTableDeliveryController = TimeTableDeliveryController
-    Left = 619
-    Top = 55
+    Left = 443
+    Top = 111
   end
   object TimeTableDeliveryController: TTimeTableUniGUIController
     Enabled = False

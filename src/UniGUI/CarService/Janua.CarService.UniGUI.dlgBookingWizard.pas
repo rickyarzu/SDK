@@ -7,7 +7,7 @@ uses
   // Unigui
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIForm, uniGUIBaseClasses, uniPanel, uniPageControl,
   uniButton, uniGUIFrame, uniCalendar, uniLabel, uniImage, uniEdit, uniBitBtn, uniColorButton,
-  Vcl.Imaging.pngimage, uniImageList, uniDateTimePicker, UniFSButton, uniCheckBox, uniRadioGroup, UniFSToggle,
+  VCL.Imaging.pngimage, uniImageList, uniDateTimePicker, UniFSButton, uniCheckBox, uniRadioGroup, UniFSToggle,
   uniMultiItem, uniComboBox, UniFSCombobox, uniHTMLFrame, uniGroupBox,
   // Januaproject
   Janua.Core.Commons, JOrm.CarService.Booking.Intf, Janua.Core.Types, Janua.UniGUI.Controller,
@@ -17,7 +17,8 @@ uses
   {Janua.CarService.UniGUI.frameCarBookingClient ->} Janua.CarService.UniGUI.CarBookingClientController,
   {Janua.CarService.UniGUI.frameAddressesSelect  ->} Janua.CarService.UniGUI.AddressSelectController,
   {Janua.CarService.UniGUI.frameBookingSummary   ->} Janua.CarService.UniGUI.BookingSummaryController,
-  Janua.CarService.UniGUI.SlotSelectionController, Janua.CarService.UniGUI.TimeTableSelectController,
+  {Janua.CarService.UniGUI.frameTimeTable        ->} Janua.CarService.UniGUI.TimeTableSelectController,
+  Janua.CarService.UniGUI.SlotSelectionController,
   Janua.CarService.PgBooking, Janua.UniGUI.Interposers;
 
 type
@@ -418,7 +419,7 @@ begin
         begin
           CarBookingClientController1.CarBooking := FdmPgCarServiceBooking.BookingRecord;
           CarBookingClientController1.UsersList := FdmPgCarServiceBooking.UsersList;
-          CarBookingClientController1.CustomerVehicleDataset :=  FdmPgCarServiceBooking.qryCustomerVehicles;
+          CarBookingClientController1.CustomerVehicleDataset := FdmPgCarServiceBooking.qryCustomerVehicles;
           var
           hr := FdmPgCarServiceBooking.HasReturn;
           CarBookingClientController1.edReturnAddress.Visible := hr;
@@ -438,8 +439,30 @@ begin
           FdmPgCarServiceBooking.BookingRecord.AnagraphClient.SyncMainAddress;
           Guard.CheckTrue(FdmPgCarServiceBooking.BookingRecord.AnagraphClient.MainAddress.FullAddress.AsString
             <> '', 'MainAddress');
+
+          var
+          lMainAddress := FdmPgCarServiceBooking.BookingRecord.AnagraphClient.MainAddress.
+            FullAddress.AsString;
+          var
+          lReturnAddress := FdmPgCarServiceBooking.BookingRecord.AnagraphClient.ReturnAddress.
+            FullAddress.AsString;
+
 {$ENDIF}
           FdmPgCarServiceBooking.PostRecord(True);
+{$IFDEF DEBUG }
+          lMainAddress := FdmPgCarServiceBooking.BookingRecord.AnagraphClient.MainAddress.
+            FullAddress.AsString;
+          lReturnAddress := FdmPgCarServiceBooking.BookingRecord.AnagraphClient.ReturnAddress.
+            FullAddress.AsString;
+
+          if lMainAddress <> lReturnAddress then
+          begin
+            var
+            lCount := FdmPgCarServiceBooking.BookingRecord.Addresses.RecordCount;
+            Guard.CheckTrue(3 = lCount, 'Error address count ' + lCount.ToString + ' ' + lReturnAddress);
+          end;
+
+{$ENDIF}
           AddressSelectUniGUICController1.BookingHead := FdmPgCarServiceBooking.BookingRecord;
           PgCBookingSteps.ActivePageIndex := Ord(pgLocations);
         end
