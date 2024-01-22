@@ -315,6 +315,15 @@ begin
     (FGoogleSearchDialog2.GooglePlace.AddressFull <> FCarBooking.AnagraphClient.ReturnAddress.FullAddress.
     AsString) then
     FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
+
+{$IFDEF DEBUG}
+  var
+  lReturn := FCarBooking.AnagraphClient.ReturnAddress.FullAddress.AsString;
+  var
+  lMain := FCarBooking.AnagraphClient.MainAddress.FullAddress.AsString;
+  if lReturn <> lMain then
+    ShowMessage(lReturn + sl + lMain);
+{$ENDIF}
 end;
 
 procedure TCarBookingClientController.SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
