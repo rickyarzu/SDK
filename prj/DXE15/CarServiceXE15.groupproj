@@ -3,6 +3,12 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="JanuaThirdPartyVCL.dproj">
             <Dependencies/>
         </Projects>
@@ -51,6 +57,9 @@
         <Projects Include="JanuaVCLMVVM.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="UniGUI\UniGuiFramework.dproj">
             <Dependencies/>
         </Projects>
@@ -64,9 +73,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="VCL\CarServiceXE15x86.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="JanuaUniGUI.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\CarServiceUsersUniGUI.dproj">
@@ -158,6 +164,24 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="TUniFalcon">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj"/>
+    </Target>
+    <Target Name="TUniFalcon:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TUniFalcon:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclUniFalcon">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj"/>
+    </Target>
+    <Target Name="dclUniFalcon:Clean">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclUniFalcon:Make">
+        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj" Targets="Make"/>
+    </Target>
     <Target Name="JanuaThirdPartyVCL">
         <MSBuild Projects="JanuaThirdPartyVCL.dproj"/>
     </Target>
@@ -302,6 +326,15 @@
     <Target Name="JanuaVCLMVVM:Make">
         <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
     <Target Name="UniGuiFramework">
         <MSBuild Projects="UniGUI\UniGuiFramework.dproj"/>
     </Target>
@@ -346,15 +379,6 @@
     </Target>
     <Target Name="CarServiceXE15x86:Make">
         <MSBuild Projects="VCL\CarServiceXE15x86.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaUniGUI">
-        <MSBuild Projects="JanuaUniGUI.dproj"/>
-    </Target>
-    <Target Name="JanuaUniGUI:Clean">
-        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaUniGUI:Make">
-        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
     </Target>
     <Target Name="CarServiceUsersUniGUI">
         <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj"/>
@@ -600,13 +624,13 @@
         <MSBuild Projects="..\..\components\pkg110\dclsgcWebSockets.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;JanuaUniGUI;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets"/>
+        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;JanuaUniGUI:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean"/>
+        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;JanuaUniGUI:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make"/>
+        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -748,6 +772,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations/>
@@ -854,7 +884,7 @@
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
             <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
@@ -867,6 +897,12 @@
             <Configurations>Debug</Configurations>
             <Platforms/>
             <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
@@ -1044,6 +1080,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations/>
@@ -1162,6 +1204,12 @@
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -1340,6 +1388,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations/>
@@ -1457,6 +1511,12 @@
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1636,6 +1696,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1754,6 +1820,12 @@
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -1932,6 +2004,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2050,6 +2128,12 @@
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -2228,6 +2312,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations/>
@@ -2345,6 +2435,12 @@
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2524,6 +2620,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
+            <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2643,6 +2745,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
+            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>

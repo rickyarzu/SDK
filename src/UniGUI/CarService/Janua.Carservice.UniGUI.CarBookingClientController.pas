@@ -3,14 +3,15 @@ unit Janua.Carservice.UniGUI.CarBookingClientController;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Vcl.Controls, Vcl.Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Data.DB,
+  // VCL - FMX
+  Vcl.Controls, Vcl.Forms,
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniMultiItem, uniComboBox, uniDBComboBox,
   uniDBLookupComboBox, uniGUIBaseClasses, uniEdit, UniFSCombobox, uniListBox, uniButton, uniBitBtn, uniPanel,
-  uniLabel,
-  UniFSButton,
+  uniLabel, UniFSButton,
   // Januaproject {Janua.UniGUI.Interposers,}
-  Janua.UniGUI.dlgSearchGoogleAddress, Janua.Cloud.GoogleAPIs,
+  Janua.UniGUI.dlgSearchGoogleAddress, Janua.Cloud.GoogleAPIs, Janua.Carservice.UniGUI.dlgCustomerVehicles,
   // ViewModels
   Janua.Anagraph.ViewModel.Intf, Janua.Carservice.Anagraph.ViewModel.Intf,
   JOrm.Carservice.Booking.Intf, JOrm.Anagraph.Intf,
@@ -41,6 +42,7 @@ type
     FedFirstName: TUniEdit;
     FbtnSearch: TUniFSButton;
     FbtnReturnAddress: TUniFSButton;
+    lDlg: TdlgUniGUICarServiceCustomerVehicles;
     procedure SetbtnReturnAddress(const Value: TUniFSButton);
     procedure SetbtnSearch(const Value: TUniFSButton);
     procedure SetdblcbAnagraphCustomers(const Value: TUniFSComboBox);
@@ -54,6 +56,10 @@ type
     procedure SetEdLastName(const Value: TUniEdit);
     procedure SetedReturnAddress(const Value: TUniEdit);
     procedure SetlbSelectCustomer(const Value: TUniLabel);
+    procedure SelectCustomerVehicle;
+  private
+    FCustomerVehicleDataset: TDataset;
+    procedure SetCustomerVehicleDataset(const Value: TDataset);
   published
     property edCarModel: TUniEdit read FedCarModel write SetedCarModel;
     property dblcbAnagraphCustomers: TUniFSComboBox read FdblcbAnagraphCustomers
@@ -69,6 +75,7 @@ type
     property edReturnAddress: TUniEdit read FedReturnAddress write SetedReturnAddress;
     property btnReturnAddress: TUniFSButton read FbtnReturnAddress write SetbtnReturnAddress;
     property lbSelectCustomer: TUniLabel read FlbSelectCustomer write SetlbSelectCustomer;
+    property CustomerVehicleDataset: TDataset read FCustomerVehicleDataset write SetCustomerVehicleDataset;
   private
     { Private declarations }
     FGoogleSearchDialog1: TUniGoogleSearchDialog;
@@ -92,13 +99,15 @@ type
     procedure GoogleResult1(Sender: TObject);
     procedure GoogleResult2(Sender: TObject);
     procedure PostRecord;
+    procedure SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
+    /// procedure GoogleMapsClose(Sender: TObject; var Action: TCloseAction);
   end;
 
 procedure Register;
 
 implementation
 
-uses Data.DB, Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Core.Entities,
+uses Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Core.Entities,
   Janua.Carservice.Anagraph.Model.Impl;
 
 procedure Register;
@@ -208,6 +217,9 @@ begin
     { TODO : Occorre recuperare il record anagrafico completo e metterlo in un temp e poi assegnarlo }
     var
     lAddress := CarBooking.AnagraphClient.AnFullAddress.AsString;
+
+    if Assigned(CustomerVehicleDataset) then
+      SelectCustomerVehicle;
   end
   else
   begin
@@ -229,7 +241,6 @@ begin
           end;
         end);
   end;
-
 end;
 
 procedure TCarBookingClientController.EdFullAddressEnter(Sender: TObject);
@@ -306,6 +317,42 @@ begin
     FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
 end;
 
+procedure TCarBookingClientController.SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
+begin
+  if Assigned(lDlg) then
+    try
+      if lDlg.SearchResult then
+        FCarBooking.SetVehicleFromDataset(FCustomerVehicleDataset);
+
+      edCarModel.Text := FCarBooking.VehicleModel.AsString;
+      edCarNumberPlate.Text := FCarBooking.VehicleNumberplate.AsString;
+      edCarColor.Text := FCarBooking.VehicleColor.AsString;
+      lDlg := nil;
+    finally
+      Action := TCloseAction.caFree;
+    end;
+end;
+
+procedure TCarBookingClientController.SelectCustomerVehicle;
+begin
+  if Assigned(Self.FCustomerVehicleDataset) then
+  begin
+    FCustomerVehicleDataset.Close;
+    FCustomerVehicleDataset.Open;
+    if FCustomerVehicleDataset.RecordCount = 1 then
+    begin
+      FCarBooking.SetVehicleFromDataset(FCustomerVehicleDataset);
+    end
+    else
+    begin // TdlgUniGUICarServiceCustomerVehicles
+      lDlg := TdlgUniGUICarServiceCustomerVehicles.Create(UniApplication);
+      lDlg.SearchDataset := FCustomerVehicleDataset;
+      lDlg.OnClose := SearchVehicleResult;
+      lDlg.ShowModal;
+    end;
+  end;
+end;
+
 procedure TCarBookingClientController.SetbtnReturnAddress(const Value: TUniFSButton);
 begin
   FbtnReturnAddress := Value;
@@ -328,6 +375,11 @@ begin
   begin
     FGoogleSearchDialog1.RecordAnagraph := FCarBooking.AnagraphClient as IAnagraph;
   end;
+end;
+
+procedure TCarBookingClientController.SetCustomerVehicleDataset(const Value: TDataset);
+begin
+  FCustomerVehicleDataset := Value;
 end;
 
 procedure TCarBookingClientController.SetdblcbAnagraphCustomers(const Value: TUniFSComboBox);

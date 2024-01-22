@@ -3,6 +3,7 @@ unit JOrm.Carservice.Booking.Intf;
 interface
 
 uses
+  Data.DB,
   JOrm.Anagraph.Intf, Janua.Orm.Intf, JOrm.Carservice.BookingHeadView.Custom.Intf,
   JOrm.Carservice.TimetableView.Custom.Intf, JOrm.Carservice.BookingHead.Intf;
 
@@ -134,6 +135,9 @@ type
 
     /// <summary> Reads Customer Addresses and Service Selected Address and Populates Addresses List  </summary>
     procedure RefreshAddresses;
+
+    /// <summary> Populates Vehicle Informations (Model, Color, Numberplace) from a Dataset </summary>
+    procedure SetVehicleFromDataset(const aDataset: TDataset);
   end;
 
   /// <summary> IBookingHeadsView Extends the custom ICustomBookingHeadsView with checks and properties </summary>

@@ -39,7 +39,8 @@ uses
   Janua.Anagraph.UniGUI.frameAnagraphHorizontal in '..\..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.frameAnagraphHorizontal.pas' {frameUniGUIAnagraphHorizontal: TUniFrame},
   Janua.UniGUI.frameDBUser in '..\..\..\src\UniGUI\Common\Janua.UniGUI.frameDBUser.pas' {frameUniGUIDBUser: TUniFrame},
   Janua.CarService.UniGUI.CalendarSelectController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.CalendarSelectController.pas',
-  Janua.UniGUI.Controller in '..\..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas';
+  Janua.UniGUI.Controller in '..\..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas',
+  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm};
 
 {$R *.res}
 
