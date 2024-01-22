@@ -234,10 +234,12 @@ begin
   if Assigned(lDlg) then
     try
       FGooglePlace := lDlg.GooglePlace;
-      if lDlg.SearchResult then
+      if lDlg.SearchResult and (FGooglePlace.AddressFull <> '') then
       begin
         if Assigned(FRecordAddress) then
           FRecordAddress.SetfromRecordAddress(FGooglePlace { TJanuaRecordAddress } );
+        if Assigned(FedtFullAddress) then
+          FedtFullAddress.Text := FGooglePlace.AddressFull;
         UpdateGoogleResult;
       end;
       lDlg := nil;

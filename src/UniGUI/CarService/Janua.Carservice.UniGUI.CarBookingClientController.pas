@@ -142,6 +142,8 @@ end;
 
 procedure TCarBookingClientController.btnReturnAddressClick(Sender: TObject);
 begin
+  // edtFullAddress
+  FGoogleSearchDialog2.edtFullAddress := edReturnAddress;
   FGoogleSearchDialog2.RecordAddress := Anagraph.ReturnAddress;
   FGoogleSearchDialog2.Execute(edReturnAddress.Text);
 end;
@@ -150,6 +152,7 @@ procedure TCarBookingClientController.btnSearchClick(Sender: TObject);
 begin
   FGoogleSearchDialog1.RecordAnagraph := FCarBooking.AnagraphClient as IAnagraph;
   FGoogleSearchDialog1.RecordAddress := FCarBooking.AnagraphClient.MainAddress;
+  FGoogleSearchDialog1.edtFullAddress := EdFullAddress;
   FGoogleSearchDialog1.Execute(EdFullAddress.Text);
 end;
 
@@ -279,7 +282,7 @@ end;
 
 procedure TCarBookingClientController.GoogleResult2(Sender: TObject);
 begin
-  Anagraph.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog1.GooglePlace);
+  Anagraph.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
   FReturnAddress := edReturnAddress.Text;
 end;
 
@@ -311,18 +314,19 @@ begin
     FCarBooking.AnagraphClient.SyncMainAddress;
   end;
 
-  if (FGoogleSearchDialog2.GooglePlace.AddressFull <> '') and
-    (FGoogleSearchDialog2.GooglePlace.AddressFull <> FCarBooking.AnagraphClient.ReturnAddress.FullAddress.
-    AsString) then
+  var
+  lReturn := FCarBooking.AnagraphClient.ReturnAddress.FullAddress.AsString;
+  var
+  lGoogle := FGoogleSearchDialog2.GooglePlace.AddressFull;
+
+  if (lGoogle <> '') and (lReturn <> lGoogle) then
     FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
 
 {$IFDEF DEBUG}
   var
-  lReturn := FCarBooking.AnagraphClient.ReturnAddress.FullAddress.AsString;
-  var
   lMain := FCarBooking.AnagraphClient.MainAddress.FullAddress.AsString;
   if lReturn <> lMain then
-    ShowMessage(lReturn + sl + lMain);
+    ShowMessage(lReturn + sLineBreak + lMain, nil);
 {$ENDIF}
 end;
 
