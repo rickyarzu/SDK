@@ -19,10 +19,6 @@ object frameUniGUIBookingSummary: TframeUniGUIBookingSummary
     ParentColor = False
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 88
-    ExplicitTop = 16
-    ExplicitWidth = 256
-    ExplicitHeight = 128
     DesignSize = (
       585
       320)

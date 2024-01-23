@@ -1,6 +1,6 @@
 inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
-  Height = 457
-  Width = 563
+  Height = 438
+  Width = 810
   inherited PgErgoConnection: TJanuaUniConnection
     DataTypeMap = <
       item
@@ -18,6 +18,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       end>
     Port = 5432
     Server = 'pg.januaservers.com'
+    SchemaID = 36
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
   object qryBooking: TUniQuery
@@ -467,7 +468,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
         ', '#39#39'::character varying, '#39#39', '#39#39', '#39#39', '#39#39',  0, 0, '#39#39', '#39#39', '#39#39', '#39#39', ' +
         #39#39', '#39#39)
     BeforeOpen = qryLookupUsersBeforeOpen
-    Left = 480
+    Left = 472
     Top = 40
     ParamData = <
       item
@@ -744,7 +745,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       '  anagraph_id = :office_id'
       '')
     Left = 472
-    Top = 232
+    Top = 240
     ParamData = <
       item
         DataType = ftUnknown
@@ -2904,7 +2905,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       'where customer_id = :customer_id; ')
     BeforeOpen = qryCustomerVehiclesBeforeOpen
     Left = 472
-    Top = 376
+    Top = 368
     ParamData = <
       item
         DataType = ftInteger
@@ -2923,6 +2924,649 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
     object qryCustomerVehiclesvehicle_numberplate: TWideStringField
       FieldName = 'vehicle_numberplate'
       Size = 24
+    end
+  end
+  object spAccountFunding: TUniStoredProc
+    StoredProcName = 'carservice.account_funding'
+    SQL.Strings = (
+      'SELECT carservice.account_funding(:p_customer_id, :p_amount)')
+    Connection = PgErgoConnection
+    Left = 592
+    Top = 16
+    ParamData = <
+      item
+        DataType = ftCurrency
+        Name = 'result'
+        ParamType = ptResult
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'p_customer_id'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftCurrency
+        Name = 'p_amount'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'carservice.account_funding'
+    StoredProcIsQuery = True
+  end
+  object spAccountBalance: TUniStoredProc
+    StoredProcName = 'carservice.account_balance'
+    SQL.Strings = (
+      'SELECT carservice.account_balance(:p_customer_id)')
+    Connection = PgErgoConnection
+    Left = 592
+    Top = 80
+    ParamData = <
+      item
+        DataType = ftCurrency
+        Name = 'result'
+        ParamType = ptResult
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'p_customer_id'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'carservice.account_balance'
+  end
+  object spBookingAmount: TUniStoredProc
+    StoredProcName = 'carservice.booking_amount'
+    SQL.Strings = (
+      'SELECT * FROM carservice.booking_amount(:p_booking_id)')
+    Connection = PgErgoConnection
+    Left = 592
+    Top = 144
+    ParamData = <
+      item
+        DataType = ftLargeint
+        Name = 'p_booking_id'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'q'
+        ParamType = ptOutput
+        Value = nil
+      end
+      item
+        DataType = ftCurrency
+        Name = 'net_amount'
+        ParamType = ptOutput
+        Value = nil
+      end
+      item
+        DataType = ftCurrency
+        Name = 'tax_amount'
+        ParamType = ptOutput
+        Value = nil
+      end
+      item
+        DataType = ftCurrency
+        Name = 'full_amount'
+        ParamType = ptOutput
+        Value = nil
+      end>
+    CommandStoredProcName = 'carservice.booking_amount'
+  end
+  object spBookingPayment: TUniStoredProc
+    StoredProcName = 'carservice.booking_payment'
+    SQL.Strings = (
+      'SELECT carservice.booking_payment(:p_booking_id)')
+    Connection = PgErgoConnection
+    Left = 592
+    Top = 216
+    ParamData = <
+      item
+        DataType = ftCurrency
+        Name = 'result'
+        ParamType = ptResult
+        Value = nil
+      end
+      item
+        DataType = ftLargeint
+        Name = 'p_booking_id'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'carservice.booking_payment'
+  end
+  object qryAccountFunding: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO anagraph.anagraphs_view'
+      
+        '  (db_schema_id, anagraph_id, an_name, an_last_name, an_address,' +
+        ' an_town, an_postal_code, an_phone, an_cellular, an_email,'
+      '   an_main_group_id, an_office_id)'
+      'VALUES'
+      
+        '  (:db_schema_id, :anagraph_id, :an_name, :an_last_name, :an_add' +
+        'ress, :an_town, :an_postal_code, :an_phone, :an_cellular, :an_em' +
+        'ail,'
+      '   :an_main_group_id, :an_office_id)')
+    SQLDelete.Strings = (
+      'DELETE FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLUpdate.Strings = (
+      'UPDATE anagraph.anagraphs'
+      'SET'
+      
+        '  db_schema_id = :db_schema_id, anagraph_id = :anagraph_id, an_n' +
+        'ame = :an_name, an_last_name = :an_last_name, an_town = :an_town' +
+        ', an_postal_code = :an_postal_code, an_cellular = :an_cellular, ' +
+        'an_email = :an_email'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLLock.Strings = (
+      'SELECT * FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT db_schema_id, anagraph_id, an_name, an_last_name, an_town' +
+        ', an_postal_code, an_cellular, an_email FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :anagraph_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM anagraph.anagraphs'
+      ''
+      ') t')
+    DataTypeMap = <
+      item
+        DBType = 508
+        DBLengthMin = 256
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        DBType = 517
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_last_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_email'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address_number'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_full_address'
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_town'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_state_province'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_postal_code'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end>
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT carservice.account_funding(:p_customer_id, :p_amount)')
+    BeforeOpen = qryLookupUsersBeforeOpen
+    Left = 704
+    Top = 48
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'p_customer_id'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftCurrency
+        Name = 'p_amount'
+        ParamType = ptInput
+        Value = nil
+      end>
+    object qryAccountFundingaccount_funding: TCurrencyField
+      FieldName = 'account_funding'
+      ReadOnly = True
+    end
+  end
+  object qryAccountBalance: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO anagraph.anagraphs_view'
+      
+        '  (db_schema_id, anagraph_id, an_name, an_last_name, an_address,' +
+        ' an_town, an_postal_code, an_phone, an_cellular, an_email,'
+      '   an_main_group_id, an_office_id)'
+      'VALUES'
+      
+        '  (:db_schema_id, :anagraph_id, :an_name, :an_last_name, :an_add' +
+        'ress, :an_town, :an_postal_code, :an_phone, :an_cellular, :an_em' +
+        'ail,'
+      '   :an_main_group_id, :an_office_id)')
+    SQLDelete.Strings = (
+      'DELETE FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLUpdate.Strings = (
+      'UPDATE anagraph.anagraphs'
+      'SET'
+      
+        '  db_schema_id = :db_schema_id, anagraph_id = :anagraph_id, an_n' +
+        'ame = :an_name, an_last_name = :an_last_name, an_town = :an_town' +
+        ', an_postal_code = :an_postal_code, an_cellular = :an_cellular, ' +
+        'an_email = :an_email'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLLock.Strings = (
+      'SELECT * FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT db_schema_id, anagraph_id, an_name, an_last_name, an_town' +
+        ', an_postal_code, an_cellular, an_email FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :anagraph_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM anagraph.anagraphs'
+      ''
+      ') t')
+    DataTypeMap = <
+      item
+        DBType = 508
+        DBLengthMin = 256
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        DBType = 517
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_last_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_email'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address_number'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_full_address'
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_town'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_state_province'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_postal_code'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end>
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT * from carservice.account_balance(:p_customer_id)')
+    BeforeOpen = qryAccountBalanceBeforeOpen
+    Left = 704
+    Top = 112
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'p_customer_id'
+        ParamType = ptInput
+        Value = 253911
+      end>
+    object qryAccountBalanceaccount_balance: TCurrencyField
+      FieldName = 'account_balance'
+      ReadOnly = True
+    end
+  end
+  object qryBookingAmount: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO anagraph.anagraphs_view'
+      
+        '  (db_schema_id, anagraph_id, an_name, an_last_name, an_address,' +
+        ' an_town, an_postal_code, an_phone, an_cellular, an_email,'
+      '   an_main_group_id, an_office_id)'
+      'VALUES'
+      
+        '  (:db_schema_id, :anagraph_id, :an_name, :an_last_name, :an_add' +
+        'ress, :an_town, :an_postal_code, :an_phone, :an_cellular, :an_em' +
+        'ail,'
+      '   :an_main_group_id, :an_office_id)')
+    SQLDelete.Strings = (
+      'DELETE FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLUpdate.Strings = (
+      'UPDATE anagraph.anagraphs'
+      'SET'
+      
+        '  db_schema_id = :db_schema_id, anagraph_id = :anagraph_id, an_n' +
+        'ame = :an_name, an_last_name = :an_last_name, an_town = :an_town' +
+        ', an_postal_code = :an_postal_code, an_cellular = :an_cellular, ' +
+        'an_email = :an_email'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLLock.Strings = (
+      'SELECT * FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT db_schema_id, anagraph_id, an_name, an_last_name, an_town' +
+        ', an_postal_code, an_cellular, an_email FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :anagraph_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM anagraph.anagraphs'
+      ''
+      ') t')
+    DataTypeMap = <
+      item
+        DBType = 508
+        DBLengthMin = 256
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        DBType = 517
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_last_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_email'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address_number'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_full_address'
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_town'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_state_province'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_postal_code'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end>
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT * FROM carservice.booking_amount(:p_booking_id)')
+    BeforeOpen = qryBookingAmountBeforeOpen
+    Left = 704
+    Top = 184
+    ParamData = <
+      item
+        DataType = ftLargeint
+        Name = 'p_booking_id'
+        ParamType = ptInput
+        Value = 166
+      end>
+    object qryBookingAmountq: TIntegerField
+      FieldName = 'q'
+      ReadOnly = True
+    end
+    object qryBookingAmountnet_amount: TCurrencyField
+      FieldName = 'net_amount'
+      ReadOnly = True
+    end
+    object qryBookingAmounttax_amount: TCurrencyField
+      FieldName = 'tax_amount'
+      ReadOnly = True
+    end
+    object qryBookingAmountfull_amount: TCurrencyField
+      FieldName = 'full_amount'
+      ReadOnly = True
+    end
+  end
+  object qryBookingPayment: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO anagraph.anagraphs_view'
+      
+        '  (db_schema_id, anagraph_id, an_name, an_last_name, an_address,' +
+        ' an_town, an_postal_code, an_phone, an_cellular, an_email,'
+      '   an_main_group_id, an_office_id)'
+      'VALUES'
+      
+        '  (:db_schema_id, :anagraph_id, :an_name, :an_last_name, :an_add' +
+        'ress, :an_town, :an_postal_code, :an_phone, :an_cellular, :an_em' +
+        'ail,'
+      '   :an_main_group_id, :an_office_id)')
+    SQLDelete.Strings = (
+      'DELETE FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLUpdate.Strings = (
+      'UPDATE anagraph.anagraphs'
+      'SET'
+      
+        '  db_schema_id = :db_schema_id, anagraph_id = :anagraph_id, an_n' +
+        'ame = :an_name, an_last_name = :an_last_name, an_town = :an_town' +
+        ', an_postal_code = :an_postal_code, an_cellular = :an_cellular, ' +
+        'an_email = :an_email'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id')
+    SQLLock.Strings = (
+      'SELECT * FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :Old_anagraph_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT db_schema_id, anagraph_id, an_name, an_last_name, an_town' +
+        ', an_postal_code, an_cellular, an_email FROM anagraph.anagraphs'
+      'WHERE'
+      '  anagraph_id = :anagraph_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM anagraph.anagraphs'
+      ''
+      ') t')
+    DataTypeMap = <
+      item
+        DBType = 508
+        DBLengthMin = 256
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        DBType = 517
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_cellular'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_last_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_email'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_address_number'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_full_address'
+        FieldType = ftWideString
+        FieldLength = 256
+      end
+      item
+        FieldName = 'an_town'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_state_province'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_postal_code'
+        FieldType = ftWideString
+        FieldLength = 128
+      end
+      item
+        FieldName = 'an_name'
+        FieldType = ftWideString
+        FieldLength = 128
+      end>
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT * from carservice.booking_payment(:p_booking_id)')
+    BeforeOpen = qryBookingPaymentBeforeOpen
+    Left = 704
+    Top = 256
+    ParamData = <
+      item
+        DataType = ftLargeint
+        Name = 'p_booking_id'
+        ParamType = ptInput
+        Value = 166
+      end>
+    object qryBookingPaymentbooking_payment: TCurrencyField
+      FieldName = 'booking_payment'
+      ReadOnly = True
     end
   end
 end

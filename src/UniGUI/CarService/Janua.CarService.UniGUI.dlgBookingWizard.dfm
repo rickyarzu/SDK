@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgDateSelectionPage
+    ActivePage = pgPaymentPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -5893,84 +5893,9 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           0B7ABAE0A20000000049454E44AE426082}
         Transparent = True
       end
-      object edtCardNumber: TUniEdit
-        Left = 144
-        Top = 201
-        Width = 302
-        Height = 27
-        Hint = ''
-        Text = ''
-        ParentFont = False
-        Font.Height = -16
-        Anchors = [akLeft, akTop, akRight]
-        TabOrder = 1
-        EmptyText = '5352 5146 8810 8854'
-        FieldLabel = 'Numero Carta'
-        FieldLabelAlign = laTop
-      end
-      object edtCardHolderName: TUniEdit
-        Left = 144
-        Top = 274
-        Width = 302
-        Height = 27
-        Hint = ''
-        Text = ''
-        ParentFont = False
-        Font.Height = -16
-        Anchors = [akLeft, akTop, akRight]
-        TabOrder = 2
-        EmptyText = 'Es.: Mario Rossi'
-        FieldLabel = 'Titolare della Carta'
-        FieldLabelAlign = laTop
-      end
-      object edtPaymentYear: TUniEdit
-        Left = 144
-        Top = 349
-        Width = 57
-        Height = 27
-        Hint = ''
-        Text = ''
-        ParentFont = False
-        Font.Height = -16
-        Anchors = [akLeft, akTop, akRight]
-        TabOrder = 3
-        EmptyText = '2022'
-        FieldLabel = 'Anno'
-        FieldLabelAlign = laTop
-      end
-      object edtMonth: TUniEdit
-        Left = 227
-        Top = 349
-        Width = 78
-        Height = 27
-        Hint = ''
-        Text = ''
-        ParentFont = False
-        Font.Height = -16
-        Anchors = [akLeft, akTop, akRight]
-        TabOrder = 4
-        EmptyText = '01'
-        FieldLabel = 'Mese'
-        FieldLabelAlign = laTop
-      end
-      object edtPaymentSecurityCode: TUniEdit
-        Left = 329
-        Top = 349
-        Width = 117
-        Height = 27
-        Hint = ''
-        Text = ''
-        ParentFont = False
-        Font.Height = -16
-        Anchors = [akLeft, akTop, akRight]
-        TabOrder = 5
-        EmptyText = '123'
-        FieldLabel = 'Numero'
-        FieldLabelAlign = laTop
-      end
       object lbPaymentAmount: TUniLabel
-        Left = 144
-        Top = 125
+        Left = 152
+        Top = 123
         Width = 211
         Height = 25
         Hint = ''
@@ -5979,10 +5904,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Font.Height = -19
         ParentColor = False
         Color = clBtnFace
-        TabOrder = 6
+        TabOrder = 1
       end
       object lbPaymentAmountEuro: TUniLabel
-        Left = 351
+        Left = 492
         Top = 123
         Width = 144
         Height = 25
@@ -5995,11 +5920,11 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Font.Height = -19
         ParentColor = False
         Color = clBtnFace
-        TabOrder = 7
+        TabOrder = 2
       end
       object btnPayment: TUniFSButton
-        Left = 144
-        Top = 414
+        Left = 188
+        Top = 229
         Width = 416
         Height = 40
         Hint = ''
@@ -6010,7 +5935,66 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         BadgeText.TextStyle = 'bold'
         BadgeText.BackgroundColor = '#D50000'
         Caption = 'Effettua Pagamento'
-        TabOrder = 8
+        TabOrder = 3
+        OnClick = btnPaymentClick
+      end
+      object lbCurrentAccountBalanceDes: TUniLabel
+        Left = 152
+        Top = 174
+        Width = 354
+        Height = 25
+        Hint = ''
+        Caption = 'Importo a Vostra disposizione (Prepagato)'
+        ParentFont = False
+        Font.Height = -19
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 4
+      end
+      object lbCurrentAccountBalance: TUniLabel
+        Left = 533
+        Top = 174
+        Width = 103
+        Height = 25
+        Hint = ''
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = #8364' 85,40'
+        Anchors = [akTop, akRight]
+        ParentFont = False
+        Font.Height = -19
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 5
+      end
+      object lbAccountBalanceAfterDes: TUniLabel
+        Left = 152
+        Top = 296
+        Width = 360
+        Height = 25
+        Hint = ''
+        Caption = 'Importo Saldo Prepagato dopo Pagamento'
+        ParentFont = False
+        Font.Height = -19
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 6
+      end
+      object lbAccountBalanceAfter: TUniLabel
+        Left = 533
+        Top = 296
+        Width = 103
+        Height = 25
+        Hint = ''
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = #8364' 85,40'
+        Anchors = [akTop, akRight]
+        ParentFont = False
+        Font.Height = -19
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 7
       end
     end
   end
@@ -6413,7 +6397,10 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     btnNewBranch = UniFSButton1
     ckbConditiions = ckbConditiions
     btnShowContract = btnShowContract
-    Left = 260
-    Top = 102
+    lbBookingAmount = lbBookingAmount
+    lbBookingVAT = lbBookingVAT
+    lbBookingTotalAmount = lbBookingTotalAmount
+    Left = 444
+    Top = 486
   end
 end

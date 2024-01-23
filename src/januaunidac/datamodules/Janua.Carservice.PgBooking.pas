@@ -371,6 +371,21 @@ type
     qryCustomerVehiclesvehicle_model: TWideStringField;
     qryCustomerVehiclesvehicle_color: TWideStringField;
     qryCustomerVehiclesvehicle_numberplate: TWideStringField;
+    spAccountFunding: TUniStoredProc;
+    spAccountBalance: TUniStoredProc;
+    spBookingAmount: TUniStoredProc;
+    spBookingPayment: TUniStoredProc;
+    qryAccountFunding: TUniQuery;
+    qryAccountFundingaccount_funding: TCurrencyField;
+    qryAccountBalance: TUniQuery;
+    qryAccountBalanceaccount_balance: TCurrencyField;
+    qryBookingAmount: TUniQuery;
+    qryBookingPayment: TUniQuery;
+    qryBookingPaymentbooking_payment: TCurrencyField;
+    qryBookingAmountq: TIntegerField;
+    qryBookingAmountnet_amount: TCurrencyField;
+    qryBookingAmounttax_amount: TCurrencyField;
+    qryBookingAmountfull_amount: TCurrencyField;
     procedure qryPickupBeforePost(DataSet: TDataSet);
     procedure qryDeliveryBeforePost(DataSet: TDataSet);
     procedure qryPickupBeforeOpen(DataSet: TDataSet);
@@ -385,6 +400,9 @@ type
     procedure qryPickupTimeTableBeforeOpen(DataSet: TDataSet);
     procedure qryReturnTimeTableBeforeOpen(DataSet: TDataSet);
     procedure qryCustomerVehiclesBeforeOpen(DataSet: TDataSet);
+    procedure qryBookingAmountBeforeOpen(DataSet: TDataSet);
+    procedure qryAccountBalanceBeforeOpen(DataSet: TDataSet);
+    procedure qryBookingPaymentBeforeOpen(DataSet: TDataSet);
   private
     [weak]
     FUserProfile: IUserProfile;
@@ -406,6 +424,7 @@ type
     FUsersList: IAnagraphViews;
     FBranchesList: IAnagraphViews;
     FLandingMsgBuilder: IJanuaCSBookingLandingMsgBuilder;
+    FConfirmed: Boolean;
     procedure SetUserProfile(const Value: IUserProfile);
     procedure SetUsersession(const Value: IUserSession);
     procedure SetBranchID(const Value: Integer);
@@ -428,6 +447,8 @@ type
     function GetCheckUpSlots: IList<ItimetableSlot>;
     procedure SetLandingMsgBuilder(const Value: IJanuaCSBookingLandingMsgBuilder);
     procedure SetBranchesList(const Value: IAnagraphViews);
+    function GetTotalAmountDue: string;
+    function GetCurrentAccountBalance: string;
     { Private declarations }
   protected
     { Mail Message Builders }
@@ -517,6 +538,9 @@ type
     procedure OnCSDriver2SMSSent(const aMessage, aJson: string);
     // FCSCustomerSMSBuilder: IJanuaCSCustomerSMSBuilder;
     procedure OnCSCustomerSMSSent(const aMessage, aJson: string);
+
+    procedure UpdateAccountBalance;
+    procedure doBookingPayment;
   public
     { Public Properties }
     property PickupList: ItimetableSlots read FPickupList write SetPickuList;
@@ -539,6 +563,9 @@ type
     property LandingMsgBuilder: IJanuaCSBookingLandingMsgBuilder read FLandingMsgBuilder
       write SetLandingMsgBuilder;
     property HasReturn: Boolean read GetHasReturn write SetHasReturn;
+    property TotalAmountDue: string read GetTotalAmountDue;
+    property CurrentAccountBalance: string read GetCurrentAccountBalance;
+    property Confirmed: Boolean read FConfirmed;
   end;
 
   { Ogni prenotazione ha un CustomerID ed un OfficeID l'office ? valorizzato d'ufficio
@@ -639,10 +666,14 @@ end;
 
 procedure TdmPgCarServiceBookingStorage.ConfirmBooking;
 begin
-  // ----------------------------------------------------------------------------------------------------------
-  SendMailBookingConfirmation;
-  SendSMSBookingConfirmation;
-  // ----------------------------------------------------------------------------------------------------------
+  if not FConfirmed then
+  begin
+    // --------------------------------------------------------------------------------------------------------
+    SendMailBookingConfirmation;
+    SendSMSBookingConfirmation;
+    FConfirmed := True;
+    // --------------------------------------------------------------------------------------------------------
+  end;
 end;
 
 constructor TdmPgCarServiceBookingStorage.Create(AOwner: TComponent);
@@ -692,6 +723,8 @@ begin
     inherited;
     // aModel deve gestire
     aModel := TJanuaCarServiceAnagraphModel.Create;
+
+    FConfirmed := False;
 
     FDeliveryList := TtimetableSlots.Create;
     FDeliveryList.Name := 'DeliveryList';
@@ -761,6 +794,12 @@ begin
   end;
 end;
 
+procedure TdmPgCarServiceBookingStorage.doBookingPayment;
+begin
+  qryBookingPayment.Close;
+  qryBookingPayment.Open;
+end;
+
 function TdmPgCarServiceBookingStorage.GenerateBookingSummaryMessage: string;
 var
   aMessage: TLandingMessage;
@@ -788,6 +827,11 @@ end;
 function TdmPgCarServiceBookingStorage.GetCheckUpSlots: IList<ItimetableSlot>;
 begin
   Result := FCheckUpSlots
+end;
+
+function TdmPgCarServiceBookingStorage.GetCurrentAccountBalance: string;
+begin
+  Result := FormatFloat('€ 0.00', qryAccountBalanceaccount_balance.AsFloat);
 end;
 
 function TdmPgCarServiceBookingStorage.GetDeliveryDate: TNullableDate;
@@ -840,6 +884,11 @@ end;
 function TdmPgCarServiceBookingStorage.GetSMSMessageDriver: string;
 begin
 
+end;
+
+function TdmPgCarServiceBookingStorage.GetTotalAmountDue: string;
+begin
+  Result := FormatFloat('€ 0.00', qryBookingAmountfull_amount.AsFloat);
 end;
 
 procedure TdmPgCarServiceBookingStorage.InsertBranchProc(Sender: TObject);
@@ -1197,6 +1246,20 @@ begin
   end;
 end;
 
+procedure TdmPgCarServiceBookingStorage.qryAccountBalanceBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+  { SELECT * from carservice.account_balance(:p_customer_id) }
+  qryAccountBalance.ParamByName('p_customer_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
+end;
+
+procedure TdmPgCarServiceBookingStorage.qryBookingAmountBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+  { SELECT * FROM carservice.booking_amount(:p_booking_id) }
+  qryBookingAmount.ParamByName('p_booking_id').AsLargeInt := FBookingRecord.Id.AsLargeInt;
+end;
+
 procedure TdmPgCarServiceBookingStorage.qryBookingBeforePost(DataSet: TDataSet);
 begin
   inherited;
@@ -1204,8 +1267,15 @@ begin
   if qryBookingstate_id.IsNull then
     qryBookingstate_id.AsInteger := 0;
   qryBookingbranch_id.AsInteger := FUsersession.UserProfile.AnagraphId.AsInteger;
-  qryBookingdb_schema_id.AsInteger := 35;
+  qryBookingdb_schema_id.AsInteger := PgErgoConnection.SchemaID;
   qryBookinguser_insert.AsInteger := FUsersession.UserProfile.Db_user_id.AsInteger;
+end;
+
+procedure TdmPgCarServiceBookingStorage.qryBookingPaymentBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+  { SELECT * from carservice.booking_payment(:p_booking_id) }
+  qryBookingPayment.ParamByName('p_booking_id').AsLargeInt := FBookingRecord.Id.AsLargeInt;
 end;
 
 procedure TdmPgCarServiceBookingStorage.qryBookingPostError(DataSet: TDataSet; E: EDatabaseError;
@@ -1228,7 +1298,7 @@ begin
     where customer_id = :customer_id;
   *)
 
-  qryCustomerVehicles.ParamByName('customer_id').AsInteger := BookingRecord.CustomerId.AsInteger;
+  qryCustomerVehicles.ParamByName('customer_id').AsInteger := BookingRecord.CustomerID.AsInteger;
 end;
 
 procedure TdmPgCarServiceBookingStorage.qryDeliveryBeforeOpen(DataSet: TDataSet);
@@ -1739,6 +1809,12 @@ end;
 procedure TdmPgCarServiceBookingStorage.SetUsersList(const Value: IAnagraphViews);
 begin
   FUsersList := Value;
+end;
+
+procedure TdmPgCarServiceBookingStorage.UpdateAccountBalance;
+begin
+  qryAccountBalance.Close;
+  qryAccountBalance.Open;
 end;
 
 procedure TdmPgCarServiceBookingStorage.UpdateDeliverySlots;

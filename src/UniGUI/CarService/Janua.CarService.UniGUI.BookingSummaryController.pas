@@ -4,7 +4,7 @@ interface
 
 uses
   // RTL
-  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Data.DB,
   // VCL
   Controls, Forms,
   // UniGUI
@@ -37,6 +37,10 @@ type
     FulbPickupTime: TUniLabel;
     FgrpPickupDirection: TUniRadioGroup;
     FhtmlBookingSummary: TUniHTMLFrame;
+    FdsBookingAmount: TDataset;
+    FlbBookingTotalAmount: TUniLabel;
+    FlbBookingVAT: TUniLabel;
+    FlbBookingAmount: TUniLabel;
     procedure SetbtnNewBranch(const Value: TUniFSButton);
     procedure SetbtnShowContract(const Value: TUniFSButton);
     procedure SetcboBranchSelection(const Value: TUniFSComboBox);
@@ -50,6 +54,11 @@ type
     procedure SetulbDeliveryTime(const Value: TUniLabel);
     procedure SetulbPickupDate(const Value: TUniLabel);
     procedure SetulbPickupTime(const Value: TUniLabel);
+
+    procedure SetdsBookingAmount(const Value: TDataset);
+    procedure SetlbBookingAmount(const Value: TUniLabel);
+    procedure SetlbBookingTotalAmount(const Value: TUniLabel);
+    procedure SetlbBookingVAT(const Value: TUniLabel);
   protected
     procedure SetBookingHead(const Value: IBookingHeadView);
     procedure SetHtmlText(const Value: string);
@@ -62,6 +71,7 @@ type
     { Public declarations }
     procedure btnNewBranchClick(Sender: TObject);
     procedure btnShowContractClick(Sender: TObject);
+    procedure Refresh;
   public
     property BookingHead: IBookingHeadView read FBookingHead write SetBookingHead;
     property HtmlText: string read GetHtmlText write SetHtmlText;
@@ -82,6 +92,10 @@ type
     property btnNewBranch: TUniFSButton read FbtnNewBranch write SetbtnNewBranch;
     property ckbConditiions: TUniCheckBox read FckbConditiions write SetckbConditiions;
     property btnShowContract: TUniFSButton read FbtnShowContract write SetbtnShowContract;
+    property dsBookingAmount: TDataset read FdsBookingAmount write SetdsBookingAmount;
+    property lbBookingAmount: TUniLabel read FlbBookingAmount write SetlbBookingAmount;
+    property lbBookingVAT: TUniLabel read FlbBookingVAT write SetlbBookingVAT;
+    property lbBookingTotalAmount: TUniLabel read FlbBookingTotalAmount write SetlbBookingTotalAmount;
   end;
 
 procedure Register;
@@ -145,6 +159,18 @@ begin
   Result := htmlBookingSummary.Html.Text;
 end;
 
+procedure TBookingSummaryUniGUIController.Refresh;
+begin
+  if Assigned(dsBookingAmount) then
+  begin
+    dsBookingAmount.Close;
+    FlbBookingAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('net_amount').AsFloat);
+    FlbBookingTotalAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('tax_amount').AsFloat);
+    FlbBookingVAT.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('full_amount').AsFloat);
+    dsBookingAmount.Open;
+  end;
+end;
+
 procedure TBookingSummaryUniGUIController.AssignBranches(const Value: IAnagraphViews);
 begin
   { TODO : Manage BindToRecordSet for Anagraph View on Summary Controller }
@@ -185,6 +211,21 @@ end;
 procedure TBookingSummaryUniGUIController.SetInsertBranchProc(const Value: TNotifyEvent);
 begin
   FInsertBranchProc := Value;
+end;
+
+procedure TBookingSummaryUniGUIController.SetlbBookingAmount(const Value: TUniLabel);
+begin
+  FlbBookingAmount := Value;
+end;
+
+procedure TBookingSummaryUniGUIController.SetlbBookingTotalAmount(const Value: TUniLabel);
+begin
+  FlbBookingTotalAmount := Value;
+end;
+
+procedure TBookingSummaryUniGUIController.SetlbBookingVAT(const Value: TUniLabel);
+begin
+  FlbBookingVAT := Value;
 end;
 
 procedure TBookingSummaryUniGUIController.SetulbDeliveryDate(const Value: TUniLabel);
@@ -231,6 +272,11 @@ end;
 procedure TBookingSummaryUniGUIController.SetckbConditiions(const Value: TUniCheckBox);
 begin
   FckbConditiions := Value;
+end;
+
+procedure TBookingSummaryUniGUIController.SetdsBookingAmount(const Value: TDataset);
+begin
+  FdsBookingAmount := Value;
 end;
 
 procedure TBookingSummaryUniGUIController.SetgrpDelivery(const Value: TUniGroupBox);

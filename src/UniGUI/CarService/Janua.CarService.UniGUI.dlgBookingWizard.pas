@@ -41,11 +41,6 @@ type
     lbBookingTotalAmount: TUniLabel;
     pgPaymentPage: TUniTabSheet;
     imgCreditCards: TUniImage;
-    edtCardNumber: TUniEdit;
-    edtCardHolderName: TUniEdit;
-    edtPaymentYear: TUniEdit;
-    edtMonth: TUniEdit;
-    edtPaymentSecurityCode: TUniEdit;
     lbPaymentAmount: TUniLabel;
     lbPaymentAmountEuro: TUniLabel;
     btnPayment: TUniFSButton;
@@ -259,6 +254,10 @@ type
     TimeSelectUniGUIController12: TTimeSelectUniGUIController;
     UniContainerPanel23: TUniContainerPanel;
     cntSelectCustomer: TUniContainerPanel;
+    lbCurrentAccountBalanceDes: TUniLabel;
+    lbCurrentAccountBalance: TUniLabel;
+    lbAccountBalanceAfterDes: TUniLabel;
+    lbAccountBalanceAfter: TUniLabel;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);
@@ -268,6 +267,7 @@ type
     procedure UniFormClose(Sender: TObject; var Action: TCloseAction);
     procedure cboPickupReturnClick(Sender: TObject);
     procedure tgHasReturnToggled(const Value: Boolean);
+    procedure btnPaymentClick(Sender: TObject);
   public
     // Calenddar Select
     (*
@@ -475,19 +475,23 @@ begin
           FdmPgCarServiceBooking.UpdatePickup;
         if AddressSelectUniGUICController1.TimeTableDeliveryController.Modified then
           FdmPgCarServiceBooking.UpdateReturn;
-
+        BookingSummaryUniGUIController1.dsBookingAmount := FdmPgCarServiceBooking.qryBookingAmount;
         BookingSummaryUniGUIController1.BookingHead := FdmPgCarServiceBooking.BookingRecord;
         { FdmPgCarServiceBooking.PostRecord(True); }
         BookingSummaryUniGUIController1.InsertBranchProc := FdmPgCarServiceBooking.InsertBranchProc;
         BookingSummaryUniGUIController1.HtmlText := FdmPgCarServiceBooking.GenerateBookingSummaryMessage;
         BookingSummaryUniGUIController1.BranchesList := FdmPgCarServiceBooking.BranchesList;
         BookingSummaryUniGUIController1.HtmlContract := FdmPgCarServiceBooking.GetServiceContract;
+        BookingSummaryUniGUIController1.Refresh;
         PgCBookingSteps.ActivePageIndex := Ord(pgSummary);
       end;
     Ord(pgSummary):
       begin
         if BookingSummaryUniGUIController1.ckbConditiions.Checked then
         begin
+          FdmPgCarServiceBooking.UpdateAccountBalance;
+          lbPaymentAmountEuro.Caption := FdmPgCarServiceBooking.TotalAmountDue;
+          lbCurrentAccountBalance.Caption := FdmPgCarServiceBooking.CurrentAccountBalance;
           PgCBookingSteps.ActivePageIndex := Ord(pgPayment);
           btnNext.Caption := 'Termina';
         end
@@ -514,6 +518,18 @@ begin
       end;
   end;
   btnBack.Visible := not(PgCBookingSteps.ActivePageIndex <= 0);
+end;
+
+procedure TdlgUniGUIBookingWizard.btnPaymentClick(Sender: TObject);
+begin
+  FdmPgCarServiceBooking.doBookingPayment;
+  lbAccountBalanceAfter.Text := FdmPgCarServiceBooking.CurrentAccountBalance;
+  FdmPgCarServiceBooking.ConfirmBooking;
+  ShowMessage('Grazie per Aver prenotato il viaggio');
+  {
+    property TotalAmountDue: string read GetTotalAmountDue;
+    property CurrentAccountBalance: string read GetCurrentAccountBalance;
+  }
 end;
 
 procedure TdlgUniGUIBookingWizard.cboPickupReturnClick(Sender: TObject);
