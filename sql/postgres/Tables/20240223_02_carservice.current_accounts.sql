@@ -1,5 +1,7 @@
 -- 20240223_02_carservice.current_accounts.sql
 
+--drop table carservice.current_accounts cascade
+
 CREATE TABLE carservice.current_accounts
 (
     booking_id bigint,

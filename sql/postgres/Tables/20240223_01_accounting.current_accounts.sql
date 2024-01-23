@@ -1,3 +1,6 @@
+-- 20240223_01_accounting.current_accounts.sql
+-- drop TABLE accounting.current_accounts;
+
 CREATE TABLE accounting.current_accounts
 (
     jguid uuid NOT NULL,
@@ -6,8 +9,8 @@ CREATE TABLE accounting.current_accounts
     description character varying(256),
     accounting_date date,
     value_date date,
-    debit real NOT NULL DEFAULT 0,
-    credit real NOT NULL,
+    debit money NOT NULL DEFAULT 0,
+    credit money NOT NULL,
     CONSTRAINT current_account_pk PRIMARY KEY (id),
     CONSTRAINT current_account_uid_uk UNIQUE (jguid),
     CONSTRAINT current_account_anagraphs_fk FOREIGN KEY (anagraph_id)
