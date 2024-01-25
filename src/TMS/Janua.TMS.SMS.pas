@@ -25,7 +25,7 @@ begin
   // At Least Conf Name must be set to properly Run Configuration
   Key := 'AC221a150df22723daef8d097a7f76cfcf';
   Secret := 'f3c90112efdccd931b81dea46f74f1da';
-  AppName := '+19498326448' { '+15302036772' };
+  AppName := '+393409111351' { '+15302036772' };
   LoadSystemConf;
 
   {

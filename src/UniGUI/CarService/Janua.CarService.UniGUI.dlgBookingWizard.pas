@@ -225,9 +225,7 @@ type
     btnReturnAddress: TUniFSButton;
     cntBookingSummary: TUniContainerPanel;
     UniFSButton1: TUniFSButton;
-    btnShowContract: TUniFSButton;
     cboBranchSelection: TUniFSComboBox;
-    ckbConditiions: TUniCheckBox;
     grpDelivery: TUniGroupBox;
     grpDeliveryDirection: TUniRadioGroup;
     ulbDeliveryDate: TUniLabel;
@@ -258,6 +256,9 @@ type
     lbCurrentAccountBalance: TUniLabel;
     lbAccountBalanceAfterDes: TUniLabel;
     lbAccountBalanceAfter: TUniLabel;
+    UniContainerPanel24: TUniContainerPanel;
+    ckbConditiions: TUniCheckBox;
+    btnShowContract: TUniFSButton;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);

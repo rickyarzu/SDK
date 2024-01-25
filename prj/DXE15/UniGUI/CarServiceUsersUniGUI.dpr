@@ -40,7 +40,8 @@ uses
   Janua.UniGUI.frameDBUser in '..\..\..\src\UniGUI\Common\Janua.UniGUI.frameDBUser.pas' {frameUniGUIDBUser: TUniFrame},
   Janua.CarService.UniGUI.CalendarSelectController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.CalendarSelectController.pas',
   Janua.UniGUI.Controller in '..\..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas',
-  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm};
+  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm},
+  Janua.Carservice.dmPgService in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgService.pas' {dmPgCarServiceMain: TDataModule};
 
 {$R *.res}
 
@@ -64,6 +65,7 @@ begin
 
   Application.Initialize;
   TUniServerModule.Create(Application);
+  Application.CreateForm(TdmPgCarServiceMain, dmPgCarServiceMain);
   Application.Run;
 
 end.

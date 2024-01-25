@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   // VCL
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs,
-  // Janua Project
+  // Html Library
   // Januaproject
   Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf,
   Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Bindings.Intf,
@@ -18,6 +18,8 @@ uses
 type
   TfrmVCLMailMessageConfig = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
     FrameVCLMailMessageConfig: TframeVCLMailMessageConfig;
+    procedure FrameVCLMailMessageConfigbtnSendMailToClick(Sender: TObject);
+    procedure FrameVCLMailMessageConfigbtnGenerateMailClick(Sender: TObject);
   private
     { Private declarations }
     FMailMessageBuilder: IJanuaMailMessageBuilder;
@@ -37,6 +39,20 @@ uses Janua.Application.Framework;
 
 {$R *.dfm}
 { TfrmVCLMailMessageConfig }
+
+procedure TfrmVCLMailMessageConfig.FrameVCLMailMessageConfigbtnGenerateMailClick(Sender: TObject);
+begin
+  inherited;
+  FrameVCLMailMessageConfig.btnGenerateMailClick(Sender);
+
+end;
+
+procedure TfrmVCLMailMessageConfig.FrameVCLMailMessageConfigbtnSendMailToClick(Sender: TObject);
+begin
+  inherited;
+  FrameVCLMailMessageConfig.btnSendMailToClick(Sender);
+
+end;
 
 procedure TfrmVCLMailMessageConfig.SetInterface(const IID: TGUID);
 begin

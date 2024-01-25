@@ -466,7 +466,9 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       #39'{00000000-0000-0000-0000-000000000000}'#39', 0'
       
         ', '#39#39'::character varying, '#39#39', '#39#39', '#39#39', '#39#39',  0, 0, '#39#39', '#39#39', '#39#39', '#39#39', ' +
-        #39#39', '#39#39)
+        #39#39', '#39#39
+      'order by an_last_name, an_name'
+      '')
     BeforeOpen = qryLookupUsersBeforeOpen
     Left = 472
     Top = 40
@@ -748,9 +750,10 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
     Top = 240
     ParamData = <
       item
-        DataType = ftUnknown
+        DataType = ftInteger
         Name = 'office_id'
-        Value = nil
+        ParamType = ptInput
+        Value = 253911
       end>
     object qryOfficedb_schema_id: TIntegerField
       FieldName = 'db_schema_id'

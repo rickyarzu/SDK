@@ -4,15 +4,15 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
   ClientHeight = 782
   ClientWidth = 1164
   Font.Height = -12
-  ExplicitWidth = 1166
-  ExplicitHeight = 815
+  ExplicitWidth = 1180
+  ExplicitHeight = 821
   TextHeight = 15
   inherited StatusBar: TStatusBar
     Top = 763
     Width = 1164
     ExplicitLeft = 0
-    ExplicitTop = 757
-    ExplicitWidth = 1150
+    ExplicitTop = 763
+    ExplicitWidth = 1164
   end
   inline FrameVCLMailMessageConfig: TframeVCLMailMessageConfig
     Left = 0
@@ -24,12 +24,13 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
     ExplicitWidth = 1164
     ExplicitHeight = 763
     inherited Label1: TLabel
-      Top = 748
+      Top = 685
       Width = 1164
+      ExplicitTop = 685
     end
     inherited pnlCustomerMail: TPanel
       Width = 1164
-      ExplicitWidth = 1150
+      ExplicitWidth = 1164
       inherited lblMaillMailCustomerBCC: TLabel
         Left = 931
         ExplicitLeft = 945
@@ -46,61 +47,68 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
         Left = 931
         ExplicitLeft = 945
       end
+      inherited btnGenerateMail: TButton
+        OnClick = FrameVCLMailMessageConfigbtnGenerateMailClick
+      end
+      inherited btnSendMailTo: TButton
+        OnClick = FrameVCLMailMessageConfigbtnSendMailToClick
+      end
       inherited edtCustomerFromMail: TEdit
         Width = 364
-        ExplicitWidth = 350
+        ExplicitWidth = 364
       end
       inherited edtCustomerTestRecipients: TEdit
         Left = 753
-        ExplicitLeft = 739
+        ExplicitLeft = 753
       end
       inherited edtlMailCC: TEdit
         Left = 963
-        ExplicitLeft = 949
+        ExplicitLeft = 963
       end
       inherited edtlMailBCC: TEdit
         Left = 963
-        ExplicitLeft = 949
+        ExplicitLeft = 963
       end
       inherited edtMailCustomerTo: TEdit
         Width = 477
-        ExplicitWidth = 463
+        ExplicitWidth = 477
       end
       inherited edtMailSubject: TEdit
         Width = 629
-        ExplicitWidth = 615
+        ExplicitWidth = 629
       end
       inherited edtReplyTo: TEdit
         Left = 753
-        ExplicitLeft = 739
+        ExplicitLeft = 753
       end
     end
     inherited pgcCustomerMail: TPageControl
       Width = 979
-      Height = 591
+      Height = 528
       ExplicitWidth = 979
-      ExplicitHeight = 591
+      ExplicitHeight = 528
       inherited tabEditor: TTabSheet
         ExplicitWidth = 971
-        ExplicitHeight = 561
+        ExplicitHeight = 498
         inherited frameHTMLEditor1: TframeHTMLEditor
           Width = 971
-          Height = 561
+          Height = 498
           ExplicitWidth = 971
-          ExplicitHeight = 561
+          ExplicitHeight = 498
           inherited Splitter1: TSplitter
             Top = 112
-            Height = 427
+            Height = 364
+            ExplicitTop = 112
             ExplicitHeight = 461
           end
           inherited ToolBar1: TToolBar
             Width = 971
-            ExplicitWidth = 957
+            ExplicitWidth = 971
           end
           inherited ToolBar2: TToolBar
             Width = 971
             Height = 56
-            ExplicitWidth = 957
+            ExplicitWidth = 971
             ExplicitHeight = 56
             inherited ToolButton9: TToolButton
               Left = 0
@@ -172,82 +180,70 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
           inherited E: THtmlEditor
             Top = 112
             Width = 693
-            Height = 427
+            Height = 364
             ExplicitTop = 112
-            ExplicitWidth = 679
-            ExplicitHeight = 421
+            ExplicitWidth = 693
+            ExplicitHeight = 364
           end
           inherited pnlFooter: TPanel
-            Top = 539
+            Top = 476
             Width = 971
-            ExplicitTop = 533
-            ExplicitWidth = 957
+            ExplicitTop = 476
+            ExplicitWidth = 971
             inherited TrackBar1: TTrackBar
               Left = 607
-              ExplicitLeft = 593
+              ExplicitLeft = 607
             end
           end
           inherited LeftPages: TPageControl
             Top = 112
-            Height = 427
+            Height = 364
             ExplicitTop = 112
-            ExplicitHeight = 421
+            ExplicitHeight = 364
             inherited tabTag: TTabSheet
-              ExplicitHeight = 399
+              ExplicitHeight = 336
               inherited pnlLists: TPanel
-                Height = 399
-                ExplicitHeight = 393
+                Height = 336
+                ExplicitHeight = 336
               end
             end
           end
         end
       end
       inherited tabCustomerMailPreview: TTabSheet
-        ExplicitHeight = 580
         inherited brwModelMessage: TTMSFNCWebBrowser
-          ExplicitWidth = 1247
+          ExplicitHeight = 502
         end
       end
       inherited tabCustomerTestMail: TTabSheet
-        ExplicitHeight = 580
-        inherited edtMailTestSubject: TEdit
-          ExplicitWidth = 1241
-        end
-        inherited pnlMailTest: TPanel
-          inherited edtTestMailFromName: TEdit
-            ExplicitWidth = 674
-          end
-        end
         inherited pgcTestPreview: TPageControl
-          Height = 510
-          ExplicitWidth = 1247
+          ExplicitHeight = 432
           inherited tabPagePreview: TTabSheet
             inherited brwTestMessage: TTMSFNCWebBrowser
-              ExplicitWidth = 1239
+              ExplicitHeight = 402
             end
           end
           inherited tabHtmlPreview: TTabSheet
             inherited advmMailHtmlPreview: TAdvMemo
-              ExplicitWidth = 1239
+              ExplicitHeight = 402
             end
           end
           inherited tabJsonPreview: TTabSheet
             inherited advmMailJsonPreview: TAdvMemo
-              ExplicitWidth = 1239
+              ExplicitHeight = 402
             end
           end
         end
       end
       inherited tabAdvanced: TTabSheet
-        ExplicitHeight = 580
         inherited pgcAdvanced: TPageControl
-          ExplicitWidth = 829
+          ExplicitHeight = 502
           inherited tabAdvancedHtml: TTabSheet
             inherited advmMailHtml: TAdvMemo
               BorderColor = clGray
               Gutter.BorderColor = clGray
               Gutter.GutterColor = clBtnFace
-              ExplicitWidth = 821
+              ExplicitHeight = 472
             end
           end
           inherited tabAdvancedJson: TTabSheet
@@ -255,7 +251,7 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
               BorderColor = clGray
               Gutter.BorderColor = clGray
               Gutter.GutterColor = clBtnFace
-              ExplicitWidth = 821
+              ExplicitHeight = 472
             end
           end
           inherited tabJsonLog: TTabSheet
@@ -263,7 +259,7 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
               BorderColor = clGray
               Gutter.BorderColor = clGray
               Gutter.GutterColor = clBtnFace
-              ExplicitWidth = 821
+              ExplicitHeight = 472
             end
           end
         end
@@ -271,23 +267,27 @@ inherited frmVCLMailMessageConfig: TfrmVCLMailMessageConfig
     end
     inherited grpURL: TGroupBox
       Width = 1158
-      ExplicitWidth = 1144
+      ExplicitWidth = 1158
       inherited edtCustomerMobileUrl1: TEdit
         Width = 422
-        ExplicitWidth = 408
+        ExplicitWidth = 422
       end
       inherited edtTestTinyUrl: TEdit
         Left = 835
-        ExplicitLeft = 821
+        ExplicitLeft = 835
       end
     end
     inherited pnlLists: TPanel
-      Height = 591
-      ExplicitHeight = 585
+      Height = 528
+      ExplicitHeight = 528
       inherited lst2: TListBox
-        Height = 69
-        ExplicitHeight = 63
+        Height = 6
+        ExplicitHeight = 6
       end
+    end
+    inherited grdMaster: TDBGrid
+      Top = 700
+      Width = 1164
     end
   end
 end

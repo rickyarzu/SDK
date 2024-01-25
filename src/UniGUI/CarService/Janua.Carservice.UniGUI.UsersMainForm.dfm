@@ -2,7 +2,7 @@ object frmUNIMainForm: TfrmUNIMainForm
   Left = 0
   Top = 0
   ClientHeight = 767
-  ClientWidth = 1023
+  ClientWidth = 1107
   Caption = 'Car Service'
   BorderStyle = bsSizeToolWin
   OldCreateOrder = False
@@ -17,7 +17,7 @@ object frmUNIMainForm: TfrmUNIMainForm
   object UCPMain: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 1023
+    Width = 1107
     Height = 767
     Hint = ''
     ParentColor = False
@@ -25,8 +25,9 @@ object frmUNIMainForm: TfrmUNIMainForm
     AutoScroll = True
     TabOrder = 0
     Layout = 'border'
+    ExplicitWidth = 1023
     ScrollHeight = 767
-    ScrollWidth = 1023
+    ScrollWidth = 1107
     object UpnlButtons: TUniPanel
       Left = 0
       Top = 0
@@ -85,6 +86,8 @@ object frmUNIMainForm: TfrmUNIMainForm
             ExpanderFirst = True
             ExpanderOnly = False
             OnClick = tvmSettingsClick
+            ExplicitLeft = 0
+            ExplicitTop = 0
           end
         end
       end
@@ -92,7 +95,7 @@ object frmUNIMainForm: TfrmUNIMainForm
     object UPnlCenter: TUniPanel
       Left = 300
       Top = 0
-      Width = 723
+      Width = 807
       Height = 767
       Hint = ''
       AutoScroll = True
@@ -101,28 +104,33 @@ object frmUNIMainForm: TfrmUNIMainForm
       Caption = ''
       Layout = 'fit'
       LayoutConfig.Region = 'center'
+      ExplicitWidth = 723
       ScrollHeight = 767
-      ScrollWidth = 723
+      ScrollWidth = 807
       object PgcMain: TUniPageControl
         Left = 1
         Top = 1
-        Width = 721
+        Width = 805
         Height = 765
         Hint = ''
-        ActivePage = pgMainMenu
+        ActivePage = tabBalance
         Align = alClient
         LayoutConfig.Height = '100%'
         LayoutConfig.Width = '100%'
         TabOrder = 1
+        ExplicitLeft = 5
+        ExplicitTop = 0
+        ExplicitWidth = 721
         object pgMainMenu: TUniTabSheet
           Hint = ''
           Caption = 'Home Page'
+          ExplicitWidth = 713
           DesignSize = (
-            713
+            797
             737)
           object spbNewBooking: TUniFSButton
-            Left = 151
-            Top = 202
+            Left = 189
+            Top = 203
             Width = 348
             Height = 60
             Hint = ''
@@ -140,7 +148,172 @@ object frmUNIMainForm: TfrmUNIMainForm
             Images = imgl32
             ImageIndex = 18
             OnClick = spbNewBookingClick
+            ExplicitLeft = 151
           end
+        end
+        object tabBookingList: TUniTabSheet
+          Hint = ''
+          Caption = 'Lista Prenotazioni'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 721
+          ExplicitHeight = 765
+          object UniPanel1: TUniPanel
+            Left = 0
+            Top = 0
+            Width = 797
+            Height = 57
+            Hint = ''
+            Align = alTop
+            TabOrder = 0
+            Caption = ''
+            ExplicitTop = -6
+          end
+          object grdBookingList: TUniDBGrid
+            Left = 0
+            Top = 57
+            Width = 797
+            Height = 680
+            Hint = ''
+            DataSource = dsBookingList
+            LoadMask.Message = 'Loading data...'
+            Align = alClient
+            TabOrder = 1
+            ParentColor = False
+            Color = clBtnFace
+            Columns = <
+              item
+                FieldName = 'id'
+                Title.Caption = 'id'
+                Width = 50
+              end
+              item
+                FieldName = 'insert_date'
+                Title.Caption = 'Data Prenotazione'
+                Width = 138
+              end
+              item
+                FieldName = 'vehicle_model'
+                Title.Caption = 'Veicolo'
+                Width = 127
+              end
+              item
+                FieldName = 'vehicle_color'
+                Title.Caption = 'Colore'
+                Width = 131
+              end
+              item
+                FieldName = 'vehicle_numberplate'
+                Title.Caption = 'Targa'
+                Width = 92
+              end
+              item
+                FieldName = 'pickup_day'
+                Title.Caption = 'Data Ritiro'
+                Width = 75
+              end
+              item
+                FieldName = 'pickup_time'
+                Title.Caption = 'Ora'
+                Width = 54
+              end
+              item
+                FieldName = 'return_day'
+                Title.Caption = 'Data Rest.'
+                Width = 76
+              end
+              item
+                FieldName = 'return_time'
+                Title.Caption = 'Ora Rest.'
+                Width = 68
+              end
+              item
+                FieldName = 'cust_first_name'
+                Title.Caption = 'Nome Utente'
+                Width = 93
+              end
+              item
+                FieldName = 'cust_last_name'
+                Title.Caption = 'Cognome Utente'
+                Width = 90
+              end
+              item
+                FieldName = 'pickup_address'
+                Title.Caption = 'Indirizzo Ritiro Vettura'
+                Width = 300
+              end
+              item
+                FieldName = 'return_address'
+                Title.Caption = 'Indirizzo Consegna Vettura (Service)'
+                Width = 225
+              end>
+          end
+        end
+        object tabBalance: TUniTabSheet
+          Hint = ''
+          Caption = 'Ricariche e Pagamenti'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 721
+          ExplicitHeight = 765
+          object UniPanel2: TUniPanel
+            Left = 0
+            Top = 0
+            Width = 797
+            Height = 57
+            Hint = ''
+            Align = alTop
+            TabOrder = 0
+            Caption = ''
+            ExplicitTop = -6
+          end
+          object UniDBGrid1: TUniDBGrid
+            Left = 0
+            Top = 57
+            Width = 797
+            Height = 680
+            Hint = ''
+            DataSource = dsCurrentAccount
+            LoadMask.Message = 'Loading data...'
+            Align = alClient
+            TabOrder = 1
+            ParentColor = False
+            Color = clBtnFace
+            Columns = <
+              item
+                FieldName = 'id'
+                Title.Caption = 'id'
+                Width = 94
+              end
+              item
+                FieldName = 'accounting_date'
+                Title.Caption = 'Data Registrazione'
+                Width = 101
+              end
+              item
+                FieldName = 'description'
+                Title.Caption = 'Descrizione Movimento'
+                Width = 646
+              end
+              item
+                FieldName = 'debit'
+                Title.Caption = 'Dare'
+                Width = 72
+              end
+              item
+                FieldName = 'credit'
+                Title.Caption = 'Avere'
+                Width = 64
+              end>
+          end
+        end
+        object tabCustomersList: TUniTabSheet
+          Hint = ''
+          Caption = 'Lista Clienti'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 721
+          ExplicitHeight = 765
         end
       end
     end
@@ -5464,5 +5637,20 @@ object frmUNIMainForm: TfrmUNIMainForm
       9719639E366242810B2AAA3AA4B7AA1A073C0011F1E1D2DF8AAB493D55E2170E
       225440FC8B0905CF3336EC5CE007817EE3DF55688093D6C5768D000000004945
       4E44AE426082}
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 649
+    Top = 209
+  end
+  object dsBookingList: TDataSource
+    DataSet = dmPgCarServiceMain.qryBookingList
+    Left = 657
+    Top = 273
+  end
+  object dsCurrentAccount: TUniDataSource
+    DataSet = dmPgCarServiceMain.qryCurrentAccount
+    Left = 657
+    Top = 337
   end
 end

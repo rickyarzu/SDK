@@ -166,8 +166,8 @@ begin
     dsBookingAmount.Close;
     dsBookingAmount.Open;
     FlbBookingAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('net_amount').AsFloat);
-    FlbBookingTotalAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('tax_amount').AsFloat);
-    FlbBookingVAT.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('full_amount').AsFloat);
+    FlbBookingTotalAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('full_amount').AsFloat);
+    FlbBookingVAT.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('tax_amount').AsFloat);
   end;
 end;
 
