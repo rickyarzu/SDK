@@ -25,7 +25,6 @@ object frmUNIMainForm: TfrmUNIMainForm
     AutoScroll = True
     TabOrder = 0
     Layout = 'border'
-    ExplicitWidth = 1023
     ScrollHeight = 767
     ScrollWidth = 1107
     object UpnlButtons: TUniPanel
@@ -86,8 +85,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             ExpanderFirst = True
             ExpanderOnly = False
             OnClick = tvmSettingsClick
-            ExplicitLeft = 0
-            ExplicitTop = 0
           end
         end
       end
@@ -104,7 +101,6 @@ object frmUNIMainForm: TfrmUNIMainForm
       Caption = ''
       Layout = 'fit'
       LayoutConfig.Region = 'center'
-      ExplicitWidth = 723
       ScrollHeight = 767
       ScrollWidth = 807
       object PgcMain: TUniPageControl
@@ -113,24 +109,20 @@ object frmUNIMainForm: TfrmUNIMainForm
         Width = 805
         Height = 765
         Hint = ''
-        ActivePage = tabBalance
+        ActivePage = pgMainMenu
         Align = alClient
         LayoutConfig.Height = '100%'
         LayoutConfig.Width = '100%'
         TabOrder = 1
-        ExplicitLeft = 5
-        ExplicitTop = 0
-        ExplicitWidth = 721
         object pgMainMenu: TUniTabSheet
           Hint = ''
           Caption = 'Home Page'
-          ExplicitWidth = 713
           DesignSize = (
             797
             737)
           object spbNewBooking: TUniFSButton
             Left = 189
-            Top = 203
+            Top = 204
             Width = 348
             Height = 60
             Hint = ''
@@ -148,16 +140,11 @@ object frmUNIMainForm: TfrmUNIMainForm
             Images = imgl32
             ImageIndex = 18
             OnClick = spbNewBookingClick
-            ExplicitLeft = 151
           end
         end
         object tabBookingList: TUniTabSheet
           Hint = ''
           Caption = 'Lista Prenotazioni'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 721
-          ExplicitHeight = 765
           object UniPanel1: TUniPanel
             Left = 0
             Top = 0
@@ -167,7 +154,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             Align = alTop
             TabOrder = 0
             Caption = ''
-            ExplicitTop = -6
           end
           object grdBookingList: TUniDBGrid
             Left = 0
@@ -252,10 +238,6 @@ object frmUNIMainForm: TfrmUNIMainForm
         object tabBalance: TUniTabSheet
           Hint = ''
           Caption = 'Ricariche e Pagamenti'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 721
-          ExplicitHeight = 765
           object UniPanel2: TUniPanel
             Left = 0
             Top = 0
@@ -265,7 +247,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             Align = alTop
             TabOrder = 0
             Caption = ''
-            ExplicitTop = -6
           end
           object UniDBGrid1: TUniDBGrid
             Left = 0
@@ -310,10 +291,6 @@ object frmUNIMainForm: TfrmUNIMainForm
         object tabCustomersList: TUniTabSheet
           Hint = ''
           Caption = 'Lista Clienti'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 721
-          ExplicitHeight = 765
         end
       end
     end
@@ -5014,9 +4991,11 @@ object frmUNIMainForm: TfrmUNIMainForm
       Caption = 'Prenotazioni'
       object itmBookingList: TUniMenuItem
         Caption = 'Elenco Prenotazioni'
+        OnClick = itmBookingListClick
       end
       object itmNewBooking2: TUniMenuItem
         Caption = 'Nuova Preotazione'
+        OnClick = spbNewBookingClick
       end
     end
     object itmSettings: TUniMenuItem
@@ -5032,7 +5011,8 @@ object frmUNIMainForm: TfrmUNIMainForm
       Caption = 'Elenco Clienti'
     end
     object itmInvoiceListing: TUniMenuItem
-      Caption = 'Elenco Fatture'
+      Caption = 'Pagamenti e Ricariche'
+      OnClick = itmInvoiceListingClick
     end
   end
   object imgl32: TUniNativeImageList

@@ -53,6 +53,8 @@ type
     procedure UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
     procedure tvmSettingsClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure itmBookingListClick(Sender: TObject);
+    procedure itmInvoiceListingClick(Sender: TObject);
   private
     { Private declarations }
     FCarServiceBookingDM: TdmPgCarServiceBookingStorage;
@@ -87,15 +89,27 @@ begin
   FdmPgCarServiceMain.OfficeID := UniMainModule.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.asinteger;
   FdmPgCarServiceMain.UserSession := UniMainModule.UserSessionVM.CurrentRecord;
   FdmPgCarServiceMain.qryBookingList.Open;
-  dsBookingList.Dataset := FdmPgCarServiceMain.qryBookingList;
+  if FdmPgCarServiceMain.qryBookingList.RecordCount > 0 then
+    dsBookingList.Dataset := FdmPgCarServiceMain.qryBookingList;
   FdmPgCarServiceMain.qryCurrentAccount.Open;
-  dsCurrentAccount.Dataset := FdmPgCarServiceMain.qryCurrentAccount;
+  if FdmPgCarServiceMain.qryCurrentAccount.RecordCount > 0 then
+    dsCurrentAccount.Dataset := FdmPgCarServiceMain.qryCurrentAccount;
 end;
 
 procedure TfrmUNIMainForm.FrameClose(Sender: TObject);
 begin
   // Close and destroy the Container Tabsheet
 
+end;
+
+procedure TfrmUNIMainForm.itmBookingListClick(Sender: TObject);
+begin
+  self.PgcMain.ActivePage := tabBookingList;
+end;
+
+procedure TfrmUNIMainForm.itmInvoiceListingClick(Sender: TObject);
+begin
+  self.PgcMain.ActivePage := tabBalance
 end;
 
 procedure TfrmUNIMainForm.UniFormCreate(Sender: TObject);
@@ -119,6 +133,8 @@ begin
     Fra.Parent := Ts;
     Ts.Data := Fra;
   }
+
+  ActivateDM;
 
 end;
 
@@ -220,7 +236,6 @@ end;
 procedure TfrmUNIMainForm.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
-  ActivateDM
 end;
 
 initialization
