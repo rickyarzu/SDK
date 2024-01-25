@@ -830,7 +830,7 @@ object frameHTMLEditor: TframeHTMLEditor
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 190
-      ItemHeight = 198
+      ItemHeight = 191
       ItemIndex = 0
       TabOrder = 2
       TabStop = False
@@ -977,7 +977,7 @@ object frameHTMLEditor: TframeHTMLEditor
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 190
-      ItemHeight = 198
+      ItemHeight = 191
       ItemIndex = 0
       TabOrder = 3
       TabStop = False

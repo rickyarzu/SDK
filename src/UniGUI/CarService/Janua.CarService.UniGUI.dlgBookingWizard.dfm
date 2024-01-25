@@ -1895,7 +1895,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   Margins.Left = 10
                   Margins.Right = 10
                   AutoSize = False
-                  Caption = 'Luogo di Prelievo Veicolo'
+                  Caption = 'Luogo di Consegna Veicolo'
                   Align = alTop
                   ParentColor = False
                   Color = clBtnFace
@@ -2049,7 +2049,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   Margins.Left = 10
                   Margins.Right = 10
                   AutoSize = False
-                  Caption = 'Luogo di Prelievo Veicolo'
+                  Caption = 'Luogo di Consegna Veicolo'
                   Align = alTop
                   ParentColor = False
                   Color = clBtnFace
@@ -2165,17 +2165,22 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Align = alTop
         TabOrder = 6
         object cntBookingSummary: TUniContainerPanel
-          Left = 0
-          Top = 0
-          Width = 734
-          Height = 366
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 728
+          Height = 310
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 734
+          ExplicitHeight = 281
           DesignSize = (
-            734
-            366)
+            728
+            310)
           object UniFSButton1: TUniFSButton
             Left = 487
             Top = 11
@@ -2192,48 +2197,20 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Caption = 'Nuova Sede'
             TabOrder = 1
           end
-          object btnShowContract: TUniFSButton
-            Left = 556
-            Top = 323
-            Width = 153
-            Height = 28
-            Hint = ''
-            StyleButton = Success
-            BadgeText.Text = '0'
-            BadgeText.TextColor = '#FFFFFF'
-            BadgeText.TextSize = 10
-            BadgeText.TextStyle = 'bold'
-            BadgeText.BackgroundColor = '#D50000'
-            Caption = 'Vedi Condizioni'
-            Anchors = [akTop, akRight]
-            TabOrder = 2
-          end
           object cboBranchSelection: TUniFSComboBox
             Left = 8
             Top = 16
-            Width = 473
+            Width = 467
             Height = 23
             Hint = ''
             Visible = False
             Text = 'Ricerca Branca'
             Anchors = [akLeft, akTop, akRight]
-            TabOrder = 3
+            TabOrder = 2
             AnyMatch = True
             IconItems = <>
             Value = '-1'
-          end
-          object ckbConditiions: TUniCheckBox
-            Left = 25
-            Top = 332
-            Width = 264
-            Height = 17
-            Hint = ''
-            Caption = 'Ho letto e accetto le condizioni contrattuali'
-            TabOrder = 4
-            ClientEvents.ExtEvents.Strings = (
-              
-                'mouseover=function mouseover(sender, eOpts)'#13#10'{'#13#10'  setCls('#39'text-d' +
-                'ecoration:underline'#39');'#13#10'}')
+            ExplicitWidth = 473
           end
           object grpDelivery: TUniGroupBox
             AlignWithMargins = True
@@ -2248,7 +2225,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Bottom = 4
             Visible = False
             Caption = 'Consuntivo Viaggio Rientro (Consegna)'
-            TabOrder = 5
+            TabOrder = 3
             object grpDeliveryDirection: TUniRadioGroup
               Left = 288
               Top = 8
@@ -2303,7 +2280,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Margins.Bottom = 4
             Visible = False
             Caption = 'Consuntivo Viaggio Ritiro'
-            TabOrder = 6
+            TabOrder = 4
             object grpPickupDirection: TUniRadioGroup
               Left = 288
               Top = 8
@@ -2350,12 +2327,61 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             end
           end
           object htmlBookingSummary: TUniHTMLFrame
-            Left = -9
-            Top = 3
-            Width = 740
-            Height = 303
+            Left = 0
+            Top = 0
+            Width = 728
+            Height = 310
             Hint = ''
-            Anchors = [akLeft, akTop, akRight, akBottom]
+            Align = alClient
+            ExplicitLeft = -9
+            ExplicitTop = 2
+            ExplicitWidth = 740
+            ExplicitHeight = 218
+          end
+        end
+        object UniContainerPanel24: TUniContainerPanel
+          Left = 0
+          Top = 316
+          Width = 734
+          Height = 50
+          Hint = ''
+          ParentColor = False
+          Align = alBottom
+          TabOrder = 2
+          ExplicitLeft = 95
+          ExplicitTop = 313
+          ExplicitWidth = 256
+          DesignSize = (
+            734
+            50)
+          object ckbConditiions: TUniCheckBox
+            Left = 19
+            Top = 16
+            Width = 264
+            Height = 17
+            Hint = ''
+            Caption = 'Ho letto e accetto le condizioni contrattuali'
+            TabOrder = 1
+            ClientEvents.ExtEvents.Strings = (
+              
+                'mouseover=function mouseover(sender, eOpts)'#13#10'{'#13#10'  setCls('#39'text-d' +
+                'ecoration:underline'#39');'#13#10'}')
+          end
+          object btnShowContract: TUniFSButton
+            Left = 554
+            Top = 8
+            Width = 153
+            Height = 28
+            Hint = ''
+            StyleButton = Success
+            BadgeText.Text = '0'
+            BadgeText.TextColor = '#FFFFFF'
+            BadgeText.TextSize = 10
+            BadgeText.TextStyle = 'bold'
+            BadgeText.BackgroundColor = '#D50000'
+            Caption = 'Vedi Condizioni'
+            Anchors = [akTop, akRight]
+            TabOrder = 2
           end
         end
       end
@@ -5988,7 +6014,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Hint = ''
         Alignment = taRightJustify
         AutoSize = False
-        Caption = #8364' 85,40'
+        Caption = ''
         Anchors = [akTop, akRight]
         ParentFont = False
         Font.Height = -19
@@ -6396,7 +6422,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     htmlBookingSummary = htmlBookingSummary
     btnNewBranch = UniFSButton1
     ckbConditiions = ckbConditiions
-    btnShowContract = btnShowContract
+    btnShowContract = UniContainerPanel24
     lbBookingAmount = lbBookingAmount
     lbBookingVAT = lbBookingVAT
     lbBookingTotalAmount = lbBookingTotalAmount

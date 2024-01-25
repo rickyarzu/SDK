@@ -538,7 +538,7 @@ type
     procedure OnCSDriver2SMSSent(const aMessage, aJson: string);
     // FCSCustomerSMSBuilder: IJanuaCSCustomerSMSBuilder;
     procedure OnCSCustomerSMSSent(const aMessage, aJson: string);
-
+    procedure SearchBooking(const aGUID: string);
     procedure UpdateAccountBalance;
     procedure doBookingPayment;
   public
@@ -1112,6 +1112,7 @@ begin
       if lTestI > 0 then
       begin
         FBookingRecord.AnagraphClient.Assign(aModel.BookingAnagraph);
+
         if FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger = 0 then
           FBookingRecord.AnagraphClient.MainAddress.Assign(aModel.BookingAnagraph.MainAddress);
 
@@ -1130,11 +1131,15 @@ begin
     else
     begin
       lTestB := aModel.UpdateBookingAnagraph(FBookingRecord.AnagraphClient);
-      { if lTestB and (aModel.BookingAnagraph.AnagraphId.AsInteger > 0) then
-        begin
-        FBookingRecord.AnagraphClient.Assign(aModel.BookingAnagraph);
+
+      if FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger = 0 then
+        FBookingRecord.AnagraphClient.MainAddress.Assign(aModel.BookingAnagraph.MainAddress);
+
+      if FBookingRecord.AnagraphClient.ReturnAddress.AnagraphId.AsInteger = 0 then
         FBookingRecord.AnagraphClient.ReturnAddress.Assign(aModel.BookingAnagraph.ReturnAddress);
-        end; }
+
+      if FBookingRecord.AnagraphClient.ReturnAddress.AnagraphId.AsInteger = 0 then
+        FBookingRecord.AnagraphClient.ReturnAddress.Assign(aModel.BookingAnagraph.MainAddress);
     end;
 
 {$IFDEF DEBUG}
@@ -1485,6 +1490,22 @@ end;
 procedure TdmPgCarServiceBookingStorage.SaveErrorLog;
 begin
   TJanuaLogger.SaveLogToFile(DateFile(Date) + FBookingRecord.GUIDString + '.err');
+end;
+
+procedure TdmPgCarServiceBookingStorage.SearchBooking(const aGUID: string);
+begin
+  var
+  lLog := ', "RecordCount" : ';
+  qryBooking.Close;
+  qryBooking.ParamByName('jguid').AsString := aGUID;
+  qryBooking.Open;
+  lLog := lLog + qryBooking.RecordCount.ToString;
+  if qryBooking.RecordCount > 0 then
+  begin
+    RefreshDetails;
+    if qryBooking.RecordCount > 0 then
+      FBookingRecord.DirectLoadFromDataset(qryBooking);
+  end;
 end;
 
 procedure TdmPgCarServiceBookingStorage.SearchTimetable;

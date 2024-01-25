@@ -3,7 +3,7 @@
         <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
         <MainSource>CarServiceXE15x86.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
@@ -133,6 +133,8 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_RangeChecking>true</DCC_RangeChecking>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -142,8 +144,8 @@
         <UWP_DelphiLogo44>..\..\..\res\CarService\pickup_timer_Logo_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>..\..\..\res\CarService\pickup_timer_Logo_150.png</UWP_DelphiLogo150>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
-        <DCC_RunTimeTypeInfo>true</DCC_RunTimeTypeInfo>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_NXCompat>false</DCC_NXCompat>
         <DCC_DebugInfoInTds>true</DCC_DebugInfoInTds>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
@@ -225,135 +227,104 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas">
             <Form>dlgVCLWaitSpin</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgSettings.pas">
             <Form>dmCarserviceUniPgSettings</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\udmSVGImageList.pas">
             <Form>dmSVGImageList</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uCarServiceProject_x86.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmMailMessageConfig.pas">
             <Form>frmVCLMailMessageConfig</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriverLandingMsgBuilderpas.pas">
             <Form>frmVCLCSDriverLandingMsgBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmBookingNRLandingMsgBuilder.pas">
             <Form>frmVCLCSBookingNRLandingMsgBuilder</Form>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmLandingMessageConfig.pas">
             <Form>frmVCLLandingMessageConfig</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmSMSMessageConfig.pas">
             <Form>frmVCLSMSMessageConfig</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerLandingMessageNR.pas">
             <Form>frmVCLCSCustomerLandingMessageNR</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriverMailBuilder2.pas">
             <Form>frmVCLFCSDriverMailBuilder2</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriverMailBuilder1.pas">
             <Form>frmVCLFCSDriverMailBuilder1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmBookingLandingMessage.pas">
             <Form>frmVCLCSBookingLandingMessage</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustConfirmationNRMsgBuilderlder.pas">
             <Form>frmVCLCSCustConfirmationNRMsgBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriver2SMSBuilder.pas">
             <Form>frmVCLCSDriver2SMSBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriver1SMSBuilder.pas">
             <Form>frmVCLCSDriver1SMSBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerMailBuilderNR.pas">
             <Form>frmVCLFCSCustomerMailBuilderNR</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerMailBuilder.pas">
             <Form>frmVCLFCSCustomerMailBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerSMSBuilder.pas">
             <Form>frmVCLCSCustomerSMSBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerNRSMSBuilder.pas">
             <Form>frmVCLCSCustomerNRSMSBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Forms\Janua.VCL.dlgMobilePreview.pas">
             <Form>dlgVCLMobilePreview</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustConfirmationMsgBuilder.pas">
             <Form>frmVCLCSCustConfirmationMsgBuilder</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmPageNotFound.pas">
             <Form>frmVCLCSPageNotFound</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.dlgPgTablesList.pas">
             <Form>dlgVCLPgTablesList</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmServiceContract.pas">
             <Form>frmVCLCSServiceContract</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriverContract.pas">
             <Form>frmVCLCSDriverContract</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerLandingMessage.pas">
             <Form>frmVCLCSCustomerLandingMessage</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmCustomerContract.pas">
             <Form>frmVCLCCustomerContract</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmAmazonAWSTestSettings.pas">
             <Form>frmVCLAmazonAWSTestSettings</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Framework.JormGenerator.Postgres.pas">
             <Form>dmPgFrameworkJormGenerator</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas">
             <Form>dmJanuaPgAnagraphStorage</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.dlgHtmlEditorAddImage.pas">
             <Form>dlgVCLHtmlEditorAddImage</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.frameHtmlEditor.pas">
             <Form>frameHTMLEditor</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">

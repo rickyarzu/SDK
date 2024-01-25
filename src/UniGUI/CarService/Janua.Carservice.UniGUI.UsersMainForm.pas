@@ -10,7 +10,8 @@ uses
   uniImageList, uniButton, uniBitBtn, uniSpeedButton, uniPanel, uniPageControl,
   // Januaproject
   Janua.Carservice.PgBooking, Janua.Carservice.UniGUI.frameCarBooking, uniLabel, uniImage, uniTreeView,
-  uniTreeMenu, UniFSConfirm, Vcl.Menus, uniMainMenu, UniFSButton;
+  uniTreeMenu, UniFSConfirm, Vcl.Menus, uniMainMenu, UniFSButton, Janua.Carservice.dmPgService, uniBasicGrid,
+  uniDBGrid, Vcl.ExtCtrls, Data.DB, DBAccess, Uni;
 
 type
   TfrmUNIMainForm = class(TUniForm)
@@ -37,14 +38,27 @@ type
     pgMainMenu: TUniTabSheet;
     spbNewBooking: TUniFSButton;
     imgl32: TUniNativeImageList;
+    tabBookingList: TUniTabSheet;
+    tabBalance: TUniTabSheet;
+    tabCustomersList: TUniTabSheet;
+    UniPanel1: TUniPanel;
+    grdBookingList: TUniDBGrid;
+    Timer1: TTimer;
+    dsBookingList: TDataSource;
+    UniPanel2: TUniPanel;
+    dsCurrentAccount: TUniDataSource;
+    UniDBGrid1: TUniDBGrid;
     procedure UniFormCreate(Sender: TObject);
     procedure spbNewBookingClick(Sender: TObject);
     procedure UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
     procedure tvmSettingsClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
     FCarServiceBookingDM: TdmPgCarServiceBookingStorage;
     FCount: Integer;
+    FdmPgCarServiceMain: TdmPgCarServiceMain;
+    procedure ActivateDM;
   public
     { Public declarations }
     procedure FrameClose(Sender: TObject);
@@ -64,6 +78,18 @@ uses
 function frmUNIMainForm: TfrmUNIMainForm;
 begin
   Result := TfrmUNIMainForm(UniMainModule.GetFormInstance(TfrmUNIMainForm));
+end;
+
+procedure TfrmUNIMainForm.ActivateDM;
+begin
+  FdmPgCarServiceMain := TdmPgCarServiceMain.Create(self);
+  // FdmPgCarServiceMain.UserProfile := UniMainModule.UserSessionVM.CurrentRecord.UserProfile;
+  FdmPgCarServiceMain.OfficeID := UniMainModule.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.asinteger;
+  FdmPgCarServiceMain.UserSession := UniMainModule.UserSessionVM.CurrentRecord;
+  FdmPgCarServiceMain.qryBookingList.Open;
+  dsBookingList.Dataset := FdmPgCarServiceMain.qryBookingList;
+  FdmPgCarServiceMain.qryCurrentAccount.Open;
+  dsCurrentAccount.Dataset := FdmPgCarServiceMain.qryCurrentAccount;
 end;
 
 procedure TfrmUNIMainForm.FrameClose(Sender: TObject);
@@ -98,7 +124,7 @@ end;
 
 procedure TfrmUNIMainForm.UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
 begin
-  if AHeight < Self.Height then
+  if AHeight < self.Height then
   begin
     Top := 1;
     Left := 1;
@@ -125,7 +151,7 @@ begin
     begin
       lItem := MenAcesso1.Items.Find(Nd.Text, True);
       if Assigned(lItem) and Assigned(lItem.OnClick) then
-        lItem.OnClick(Self);
+        lItem.OnClick(self);
     end;
   end;
 
@@ -140,7 +166,7 @@ procedure TfrmUNIMainForm.spbNewBookingClick(Sender: TObject);
 var
   lDlgBooking: TdlgUniGUIBookingWizard;
 begin
-  FCarServiceBookingDM := TdmPgCarServiceBookingStorage.Create(Self);
+  FCarServiceBookingDM := TdmPgCarServiceBookingStorage.Create(self);
   FCarServiceBookingDM.UserProfile := UniMainModule.UserSessionVM.CurrentRecord.UserProfile;
   FCarServiceBookingDM.OfficeID := UniMainModule.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.asinteger;
   FCarServiceBookingDM.UserSession := UniMainModule.UserSessionVM.CurrentRecord;
@@ -156,7 +182,12 @@ begin
     begin
       if AResult = mrOK then
       begin
-        Ts := TUniTabSheet.Create(Self);
+
+      end;
+      (*
+        if AResult = mrOK then
+        begin
+        Ts := TUniTabSheet.Create(self);
         Ts.PageControl := PgcMain;
         Ts.AlignmentControl := uniAlignmentClient;
         Ts.Layout := 'fit';
@@ -172,7 +203,7 @@ begin
         // FClassName := 'TUni' + FileNames.Values[Nd.Text];
         // FrC := TUniFrameClass(FindClass(FClassName));
 
-        Fra := TframeCarServiceUniGUIBooking.CreateWithStorage(Self, FCarServiceBookingDM);
+        Fra := TframeCarServiceUniGUIBooking.CreateWithStorage(self, FCarServiceBookingDM);
         Fra.Align := alClient;
         // Ts.LayoutConfig.Width := '100%';
         // Ts.LayoutConfig.Height := '100%';
@@ -180,9 +211,16 @@ begin
         Fra.BookingState := fcsEdit;
         Fra.LoadBooking;
         Ts.Data := Fra;
-      end;
+        end;
+      *)
     end);
 
+end;
+
+procedure TfrmUNIMainForm.Timer1Timer(Sender: TObject);
+begin
+  Timer1.Enabled := False;
+  ActivateDM
 end;
 
 initialization
