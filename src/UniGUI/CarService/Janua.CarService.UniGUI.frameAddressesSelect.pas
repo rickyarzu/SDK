@@ -16,7 +16,7 @@ type
   TframeUniGUICarServiceAddressSelect = class(TUniFrame {TAddressSelectUniGUICController})
     cntAddressSelect: TUniContainerPanel;
     UniContainerPanel1: TUniContainerPanel;
-    cboAddressSelection: TUniComboBox;
+    cboAddressSelection: TUniFSComboBox;
     btnNewBranch: TUniFSButton;
     lbServiceAddress: TUniLabel;
     lbIndirizzoPickup: TUniLabel;

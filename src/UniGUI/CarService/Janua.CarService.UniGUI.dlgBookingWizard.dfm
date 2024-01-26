@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgPaymentPage
+    ActivePage = pgSummaryConfirmationPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -2174,10 +2174,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 734
-          ExplicitHeight = 281
           DesignSize = (
             728
             310)
@@ -2210,7 +2206,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             AnyMatch = True
             IconItems = <>
             Value = '-1'
-            ExplicitWidth = 473
           end
           object grpDelivery: TUniGroupBox
             AlignWithMargins = True
@@ -2333,10 +2328,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Height = 310
             Hint = ''
             Align = alClient
-            ExplicitLeft = -9
-            ExplicitTop = 2
-            ExplicitWidth = 740
-            ExplicitHeight = 218
           end
         end
         object UniContainerPanel24: TUniContainerPanel
@@ -2348,9 +2339,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alBottom
           TabOrder = 2
-          ExplicitLeft = 95
-          ExplicitTop = 313
-          ExplicitWidth = 256
           DesignSize = (
             734
             50)
@@ -6422,7 +6410,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     htmlBookingSummary = htmlBookingSummary
     btnNewBranch = UniFSButton1
     ckbConditiions = ckbConditiions
-    btnShowContract = UniContainerPanel24
+    btnShowContract = btnShowContract
     lbBookingAmount = lbBookingAmount
     lbBookingVAT = lbBookingVAT
     lbBookingTotalAmount = lbBookingTotalAmount

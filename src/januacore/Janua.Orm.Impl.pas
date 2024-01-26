@@ -1917,7 +1917,10 @@ type
     FLazyLoading: Boolean;
     FSyncDataset: IJanuaDBDataset;
     FForceRefresh: Boolean;
-  strict protected
+    FRecordSetState: TRecordSetState;
+  strict private
+    function GetRecordSetState: TRecordSetState;
+  protected
     FRecord: IJanuaRecord;
     FPrefix: string;
     procedure NotifyEvent;
@@ -1987,6 +1990,7 @@ type
     procedure First;
     procedure Last;
     procedure Clear;
+    procedure Cancel;
     function ContentEquals(const aRecord: IJanuaRecordSet): Boolean;
     procedure GoToBookmark(aBoomarkID: Integer);
     function SearchByGUID(aGUID: TGUID): Boolean;
@@ -2034,6 +2038,7 @@ type
   public
     property CurrentRecord: IJanuaRecord read GetCurrentRecord write SetCurrentRecord;
   public
+    property State: TRecordSetState read GetRecordSetState;
     property AsJsonObject: TJsonObject read GetAsJsonObject write SetAsJsonObject;
     property ItemIndex: Integer read GetItemIndex write SetItemIndex;
     property Name: string read GetName write SetName;
@@ -6878,6 +6883,7 @@ begin
   try
     inherited Create;
     FForceRefresh := False;
+    FRecordSetState := TRecordSetState.rsNone;
     FSetSerialization := TJanuaSetSerialization.Create;
     FDelRecords := TCollections.CreateList<IJanuaRecord>;
     FParams := TCollections.CreateList<IJanuaField>;
@@ -6887,6 +6893,11 @@ begin
     on e: exception do
       RaiseException('Create', e, self, LogString);
   end;
+end;
+
+procedure TJanuaRecordSet.Cancel;
+begin
+
 end;
 
 procedure TJanuaRecordSet.Clear;
@@ -7162,6 +7173,11 @@ end;
 function TJanuaRecordSet.GetParameters: TJanuaFields;
 begin
   Result := FParams
+end;
+
+function TJanuaRecordSet.GetRecordSetState: TRecordSetState;
+begin
+  Result := FRecordSetState;
 end;
 
 function TJanuaRecordSet.GetStoreDataset: IJanuaDBDataset;

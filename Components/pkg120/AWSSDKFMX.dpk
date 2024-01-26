@@ -1,7 +1,6 @@
 ﻿package AWSSDKFMX;
 
 {$R *.res}
-{$R '..\..\..\Libraries\aws-sdk\Source\AWSSDKIcons.res'}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -40,3 +39,4 @@ contains
   FMX.Appercept.Cognito.HostedUI in '..\..\..\Libraries\aws-sdk\Source\Components\FMX.Appercept.Cognito.HostedUI.pas';
 
 end.
+

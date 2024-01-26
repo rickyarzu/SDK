@@ -133,7 +133,7 @@ begin
           AssignBranches(FBranchesList);
         end
         else
-          { FBranchesList.Cancel; }
+          {FBranchesList.CancelRecord;}
       end);
   end
   else
@@ -166,7 +166,8 @@ begin
     dsBookingAmount.Close;
     dsBookingAmount.Open;
     FlbBookingAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('net_amount').AsFloat);
-    FlbBookingTotalAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('full_amount').AsFloat);
+    FlbBookingTotalAmount.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('full_amount')
+      .AsFloat);
     FlbBookingVAT.Caption := FormatFloat('€ 0.00', dsBookingAmount.FieldByName('tax_amount').AsFloat);
   end;
 end;
@@ -257,11 +258,13 @@ end;
 procedure TBookingSummaryUniGUIController.SetbtnNewBranch(const Value: TUniFSButton);
 begin
   FbtnNewBranch := Value;
+  FbtnNewBranch.OnClick := btnNewBranchClick;
 end;
 
 procedure TBookingSummaryUniGUIController.SetbtnShowContract(const Value: TUniFSButton);
 begin
   FbtnShowContract := Value;
+  FbtnShowContract.OnClick := btnShowContractClick;
 end;
 
 procedure TBookingSummaryUniGUIController.SetcboBranchSelection(const Value: TUniFSComboBox);

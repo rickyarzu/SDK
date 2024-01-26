@@ -17,8 +17,6 @@ object frmUniGUIHtmlDisclaimer: TfrmUniGUIHtmlDisclaimer
     Align = alBottom
     TabOrder = 0
     Caption = ''
-    ExplicitTop = 503
-    ExplicitWidth = 755
     DesignSize = (
       759
       46)
@@ -38,7 +36,6 @@ object frmUniGUIHtmlDisclaimer: TfrmUniGUIHtmlDisclaimer
       ModalResult = 1
       Anchors = [akTop, akRight]
       TabOrder = 1
-      ExplicitLeft = 620
     end
     object btnCancel: TUniFSButton
       Left = 504
@@ -56,7 +53,6 @@ object frmUniGUIHtmlDisclaimer: TfrmUniGUIHtmlDisclaimer
       ModalResult = 1
       Anchors = [akTop, akRight]
       TabOrder = 2
-      ExplicitLeft = 500
     end
   end
   object scbHtml: TUniScrollBox
@@ -68,8 +64,6 @@ object frmUniGUIHtmlDisclaimer: TfrmUniGUIHtmlDisclaimer
     Hint = ''
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 749
-    ExplicitHeight = 497
     ScrollHeight = 2003
     ScrollWidth = 733
     object htmlFrameText: TUniHTMLFrame

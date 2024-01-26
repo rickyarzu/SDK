@@ -9,7 +9,7 @@ uses
   Spring.Collections, System.Classes, System.JSON, Data.DB, System.SysUtils, System.Bindings.Helper,
   System.RTTI,
 {$ENDIF}
-{$IFDEF FPC}
+{$IFDEF fpc}
   RtlConsts, Classes, SysUtils, Generics.Collections, fpjson, DB, Generics.MemoryExpanders, Generics.Defaults,
   Generics.Helpers, Generics.Strings,
 {$ENDIF}
@@ -1370,6 +1370,7 @@ type
 
   TJanuaRecordProc = procedure(const aRecord: IJanuaRecord);
 {$ENDIF}
+  TRecordSetState = (rsNone, rsAppend, rsEdit, rsDeleting, rsLoading);
 
   IJanuaRecordSet = interface(IJanuaBindable)
     ['{372C849A-DC84-420A-A0D1-8C84F404613E}']
@@ -1410,6 +1411,7 @@ type
     procedure Prev;
     procedure First;
     procedure Last;
+    procedure Cancel;
     function BOF: Boolean;
     function EOF: Boolean;
     procedure Clear;
@@ -1577,6 +1579,10 @@ type
     function GetForceRefresh: Boolean;
     procedure SetForceRefresh(const aValue: Boolean);
     property ForceRefresh: Boolean read GetForceRefresh write SetForceRefresh;
+
+    function GetRecordSetState: TRecordSetState;
+    // <summary> State is important to manage cancel, inserting and posting in a Recordset  </summary>
+    property State: TRecordSetState read GetRecordSetState;
   end;
 
 type

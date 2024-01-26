@@ -3,10 +3,11 @@ unit Janua.UniGUI.dlgHTMLDisclaimer;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, uniGUITypes,
-  uniGUIAbstractClasses, uniGUIClasses, uniGUIForm, uniHTMLFrame, uniGUIBaseClasses, uniPanel, uniButton,
-  uniBitBtn, UniFSButton,
-  uniScrollBox;
+  // RTL
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  // UniGUI
+  uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIForm, uniHTMLFrame, uniGUIBaseClasses, uniPanel,
+  uniButton, uniBitBtn, UniFSButton, uniScrollBox;
 
 type
   TfrmUniGUIHtmlDisclaimer = class(TUniForm)
