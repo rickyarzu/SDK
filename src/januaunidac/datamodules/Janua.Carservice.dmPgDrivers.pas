@@ -58,33 +58,6 @@ type
     qryBookingpickup_day: TDateField;
     qryBookingpickup_slot_id: TSmallintField;
     qryBookingreturn_day: TDateField;
-    qryDriverCalendartitle: TWideStringField;
-    qryDriverCalendarrownum: TLargeintField;
-    qryDriverCalendarjguid: TGuidField;
-    qryDriverCalendarworkingday: TDateField;
-    qryDriverCalendarslot_id: TSmallintField;
-    qryDriverCalendarbooking_id: TLargeintField;
-    qryDriverCalendarfrom_id: TIntegerField;
-    qryDriverCalendarto_id: TIntegerField;
-    qryDriverCalendarstate_id: TSmallintField;
-    qryDriverCalendarslot_des: TWideStringField;
-    qryDriverCalendarbooked: TBooleanField;
-    qryDriverCalendardriver_anagraph_id: TIntegerField;
-    qryDriverCalendaran_cellular: TWideStringField;
-    qryDriverCalendardriver_name: TWideMemoField;
-    qryDriverCalendaran_email: TWideStringField;
-    qryDriverCalendarfrom_latitude: TFloatField;
-    qryDriverCalendarfrom_longitude: TFloatField;
-    qryDriverCalendarfrom_full_address: TWideStringField;
-    qryDriverCalendarto_latitude: TFloatField;
-    qryDriverCalendarto_longitude: TFloatField;
-    qryDriverCalendarto_full_address: TWideStringField;
-    qryDriverCalendarfrom_cellular: TWideStringField;
-    qryDriverCalendarfrom_email: TWideStringField;
-    qryDriverCalendarfrom_name: TWideMemoField;
-    qryDriverCalendarto_cellular: TWideStringField;
-    qryDriverCalendarto_email: TWideStringField;
-    qryDriverCalendarto_name: TWideMemoField;
     qryMessages: TUniQuery;
     qryAlternativeTimeTablepickup_an_id: TIntegerField;
     qryAlternativeTimeTablepickup_first_name: TWideStringField;
@@ -148,6 +121,33 @@ type
     qryMessagesjson: TWideMemoField;
     qryMessagesbooking_jguid: TGuidField;
     qryMessagestimetable_jguid: TGuidField;
+    qryDriverCalendartitle: TWideStringField;
+    qryDriverCalendarrownum: TLargeintField;
+    qryDriverCalendarjguid: TGuidField;
+    qryDriverCalendarworkingday: TDateField;
+    qryDriverCalendarslot_id: TSmallintField;
+    qryDriverCalendarbooking_id: TLargeintField;
+    qryDriverCalendarfrom_id: TIntegerField;
+    qryDriverCalendarto_id: TIntegerField;
+    qryDriverCalendarstate_id: TSmallintField;
+    qryDriverCalendarslot_des: TWideStringField;
+    qryDriverCalendarbooked: TBooleanField;
+    qryDriverCalendardriver_anagraph_id: TIntegerField;
+    qryDriverCalendaran_cellular: TWideStringField;
+    qryDriverCalendardriver_name: TWideStringField;
+    qryDriverCalendaran_email: TWideStringField;
+    qryDriverCalendarfrom_latitude: TFloatField;
+    qryDriverCalendarfrom_longitude: TFloatField;
+    qryDriverCalendarfrom_full_address: TWideStringField;
+    qryDriverCalendarto_latitude: TFloatField;
+    qryDriverCalendarto_longitude: TFloatField;
+    qryDriverCalendarto_full_address: TWideStringField;
+    qryDriverCalendarfrom_cellular: TWideStringField;
+    qryDriverCalendarfrom_email: TWideStringField;
+    qryDriverCalendarfrom_name: TWideStringField;
+    qryDriverCalendarto_cellular: TWideStringField;
+    qryDriverCalendarto_email: TWideStringField;
+    qryDriverCalendarto_name: TWideStringField;
   private
     { Private declarations }
   public
@@ -219,8 +219,7 @@ end;
 function TdmPgCarServiceBookingDrivers.OpenList: Integer;
 begin
   qryDriverCalendar.Close;
-  qryDriverCalendar.Params[0].AsInteger := 253907; //TJanuaApplication.UserSessionVM.CurrentRecord.UserProfile.
-  //  AnagraphID.AsInteger;
+  qryDriverCalendar.Params[0].AsInteger := TJanuaApplication.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.AsInteger;
   qryDriverCalendar.Open;
   Result := qryDriverCalendar.RecordCount
 end;

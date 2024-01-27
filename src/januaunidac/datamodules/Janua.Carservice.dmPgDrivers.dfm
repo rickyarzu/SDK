@@ -568,6 +568,11 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
         FieldName = 'delivery_first_name'
         FieldType = ftWideString
         FieldLength = 128
+      end
+      item
+        DBType = 517
+        FieldType = ftWideString
+        FieldLength = 128
       end>
     Connection = PgErgoConnection
     SQL.Strings = (
@@ -592,7 +597,8 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
       item
         DataType = ftInteger
         Name = 'driver_id'
-        Value = 253907
+        ParamType = ptInput
+        Value = 253911
       end>
     object qryDriverCalendartitle: TWideStringField
       FieldName = 'title'
@@ -638,9 +644,9 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
     object qryDriverCalendaran_cellular: TWideStringField
       FieldName = 'an_cellular'
     end
-    object qryDriverCalendardriver_name: TWideMemoField
+    object qryDriverCalendardriver_name: TWideStringField
       FieldName = 'driver_name'
-      BlobType = ftWideMemo
+      Size = 128
     end
     object qryDriverCalendaran_email: TWideStringField
       FieldName = 'an_email'
@@ -673,9 +679,9 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
       FieldName = 'from_email'
       Size = 256
     end
-    object qryDriverCalendarfrom_name: TWideMemoField
+    object qryDriverCalendarfrom_name: TWideStringField
       FieldName = 'from_name'
-      BlobType = ftWideMemo
+      Size = 128
     end
     object qryDriverCalendarto_cellular: TWideStringField
       FieldName = 'to_cellular'
@@ -684,9 +690,9 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
       FieldName = 'to_email'
       Size = 256
     end
-    object qryDriverCalendarto_name: TWideMemoField
+    object qryDriverCalendarto_name: TWideStringField
       FieldName = 'to_name'
-      BlobType = ftWideMemo
+      Size = 128
     end
   end
   object qryMessages: TUniQuery
