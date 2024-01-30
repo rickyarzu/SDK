@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgSummaryConfirmationPage
+    ActivePage = pgTimeSelection
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -761,7 +761,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           DesignSize = (
             371
             502)
-          object UniLabel2: TUniLabel
+          object ulbReturnDate: TUniLabel
             Left = 0
             Top = 0
             Width = 371
@@ -6189,6 +6189,11 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   end
   object DeliveryTimeSelect: TCarServiceSlotSelectionController
     Enabled = False
+    ulbPickupDate = ulbReturnDate
+    UniDateTimePicker1 = PickupDelivery
+    ulbDate = ulbDateR
+    lbPickup = lbPickupR
+    lbDelivery = lbDeliveryR
     IsTest = False
     frameTimeSelect1 = TimeSelectUniGUIController7
     frameTimeSelect2 = TimeSelectUniGUIController8

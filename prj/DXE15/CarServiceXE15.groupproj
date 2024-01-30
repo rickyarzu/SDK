@@ -964,7 +964,7 @@
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
@@ -1036,13 +1036,13 @@
             <ProjectGuid>{11E90FA0-4876-4056-925F-01B5B68F9CEA}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
@@ -1072,7 +1072,7 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
@@ -1216,13 +1216,13 @@
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>

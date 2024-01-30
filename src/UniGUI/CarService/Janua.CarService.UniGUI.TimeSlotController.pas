@@ -48,6 +48,11 @@ type
     property ulbDeliveryTime: TUniLabel read FulbDeliveryTime write SetulbDeliveryTime;
   end;
 
+type
+  TTimeSlotPickupUniGUIController = class(TJanuaUniGUIController)
+
+  end;
+
 procedure Register;
 
 implementation

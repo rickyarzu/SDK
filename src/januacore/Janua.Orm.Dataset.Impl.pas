@@ -195,7 +195,7 @@ procedure TJanuaDatasetSerialization.BeforeCancel(Dataset: IJanuaDBDataset);
 begin
   if (Dataset.State = TDatasetState.dsInsert) and SyncBookmark then
     // se viene cancellato il record che si stava inserendo allora elimino il record attuale.
-    Self.FRecordSet.Delete;
+    FRecordSet.Delete;
 end;
 
 procedure TJanuaDatasetSerialization.BeforeDelete(Dataset: IJanuaDBDataset);

@@ -127,6 +127,8 @@ end;
 procedure TCarServiceSlotSelectionController.SetBookingDate(const Value: TDate);
 begin
   FBookingDate := Value;
+  if Assigned(UniDateTimePicker1) then
+    UniDateTimePicker1.DateTime := FBookingDate;
 end;
 
 procedure TCarServiceSlotSelectionController.SetframeTimeSelect1(const Value: TTimeSelectUniGUIController);

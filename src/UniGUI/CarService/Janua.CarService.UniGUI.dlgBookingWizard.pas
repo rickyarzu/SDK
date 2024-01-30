@@ -71,7 +71,7 @@ type
     lbPickup: TUniLabel;
     lbDelivery: TUniLabel;
     pnlCarServiceSlotSelection: TUniSimplePanel;
-    UniLabel2: TUniLabel;
+    ulbReturnDate: TUniLabel;
     PickupDelivery: TUniDateTimePicker;
     ulbDateR: TUniLabel;
     lbPickupR: TUniLabel;
