@@ -42,7 +42,6 @@ var
 
 begin
   TJanuaApplication.ServerUserName := 'ergo';
-  TJanuaApplication.ServerAddress := '185.36.74.132';
   TJanuaApplication.ServerSchema := 'ergomercator';
   TJanuaApplication.DBSchemaID := 36;
   TJanuaApplication.ServerPassword := '3rg0m3rc4t0r';
@@ -54,7 +53,7 @@ begin
   // Remote Configuration  {'https://api.pikapp.it/'}
   TJanuaApplication.RestServer := 'https://api.pikapp.it';
   TJanuaApplication.RESTClientConf.Server := 'https://api.pikapp.it';
-  TJanuaApplication.RESTClientConf.Port := 0;
+  TJanuaApplication.RESTClientConf.Port := 0; // usa la porta di Default 443 per https in questo caso
   (*
     // Local Configuration
     TJanuaApplication.RestServer := 'http://127.0.0.1';
