@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Permissions,
   // FMX
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.MediaLibrary.Actions,
+  FMX.Controls.Presentation, FMX.MediaLibrary.Actions, FMX.Platform, FMX.PhoneDialer,
   FMX.Gestures, System.Actions, FMX.ActnList, System.ImageList, FMX.ImgList, FMX.Objects, FMX.Layouts,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
   FMX.WebBrowser, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
@@ -94,6 +94,7 @@ type
     Button9: TButton;
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
+    btnCallClient: TButton;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -111,11 +112,13 @@ type
     procedure tmtMsgsTimer(Sender: TObject);
     procedure lvMessagesItemClick(const Sender: TObject; const AItem: TListViewItem);
     procedure btnMessagesBackClick(Sender: TObject);
+    procedure btnCallClientClick(Sender: TObject);
   private
     FSessionKey: string;
     FAttempt: integer;
     FDriverDM: TdmPgCarServiceBookingDrivers;
     FMonitor: TObject;
+    PhoneDialerService: IFMXPhoneDialerService;
   public
     procedure Login;
     procedure dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -137,6 +140,12 @@ uses
 procedure TTabbedwithNavigationForm.btnBackClick(Sender: TObject);
 begin
   pgHome.TabIndex := 0; // self.tab01DriverList;
+end;
+
+procedure TTabbedwithNavigationForm.btnCallClientClick(Sender: TObject);
+begin
+  if FDriverDM.qryBookingdelivery_cellular.AsString <> '' then
+    PhoneDialerService.Call(FDriverDM.qryBookingdelivery_cellular.AsString)
 end;
 
 procedure TTabbedwithNavigationForm.btnConfirmClick(Sender: TObject);
@@ -194,6 +203,7 @@ begin
   { This defines the default active tab at runtime }
   FMonitor := TObject.Create;
   pgCarHome.ActiveTab := tabHome;
+  TPlatformServices.Current.SupportsPlatformService(IFMXPhoneDialerService, IInterface(PhoneDialerService));
 end;
 
 procedure TTabbedwithNavigationForm.FormDestroy(Sender: TObject);
