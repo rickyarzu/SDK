@@ -115,7 +115,7 @@ begin
   if not CarServiceSlotSelectionController1.Active then
     CarServiceSlotSelectionController1.Activate;
 
-  if Value.Count > 0 then
+  if (Value.Count > 0) and (FBookingDate >= Date()) then
   begin
     CarServiceSlotSelectionController1.TimeTableSlots := Value;
     unhtmlfrm1.Visible := False;

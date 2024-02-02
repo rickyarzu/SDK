@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 530
     Hint = ''
-    ActivePage = pgTimeSelection
+    ActivePage = pgDateSelectionPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -301,6 +301,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             DateFormat = 'dd/MM/yyyy'
             TimeFormat = 'HH:mm:ss'
             TabOrder = 2
+            OnChange = PickupDateChange
           end
           object ulbDate: TUniLabel
             Left = 6

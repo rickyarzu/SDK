@@ -7,34 +7,26 @@ uses
   Janua.Uni.Framework,
   Janua.ViewModels.Framework,
   Janua.FMX.Application,
-  Janua.CarService.FMX.frmTabbedCarService
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas' {TabbedwithNavigationForm} ,
-  Janua.FMX.LoginDialog in '..\..\..\..\src\FMX\Janua.FMX.LoginDialog.pas' {dlgFMXLoginDialogMobile} ,
-  Janua.FMX.frmModel in '..\..\..\..\src\FMX\Janua.FMX.frmModel.pas' {frmFMXModel} ,
-  Janua.CarService.FMX.dlgLoginMobile
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgLoginMobile.pas' {dlgFMXCarserviceLoginDialogMobile} ,
+  Janua.CarService.FMX.frmTabbedCarService in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas' {frmFMXCarServiceDriverMain},
+  Janua.FMX.LoginDialog in '..\..\..\..\src\FMX\Janua.FMX.LoginDialog.pas' {dlgFMXLoginDialogMobile},
+  Janua.FMX.frmModel in '..\..\..\..\src\FMX\Janua.FMX.frmModel.pas' {frmFMXModel},
+  Janua.CarService.FMX.dlgLoginMobile in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgLoginMobile.pas' {dlgFMXCarserviceLoginDialogMobile},
   Janua.CarService.FMX.Application in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.Application.pas',
-  Janua.FMX.frmAccessCamera in '..\..\..\..\src\FMX\Janua.FMX.frmAccessCamera.pas' {AccessCameraAppForm} ,
-  Janua.FMX.frmSignatureCaptureMobile
-    in '..\..\..\..\src\FMX\Janua.FMX.frmSignatureCaptureMobile.pas' {frmFMXSignatureCaptureMobile} ,
-  Janua.CarService.dmPgDrivers
-    in '..\..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgDrivers.pas' {dmPgCarServiceBookingDrivers: TDataModule} ,
-  Janua.FMX.frameUserMobile
-    in '..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas' {frameFMXRegisterMobile: TFrame} ,
-  Janua.CarService.FMX.dmDriverClient
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule} ,
-  Janua.CarService.FMX.frameDriverConfirmation
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame} ,
-  Janua.CarService.FMX.dlgBrowser
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser};
+  Janua.FMX.frmAccessCamera in '..\..\..\..\src\FMX\Janua.FMX.frmAccessCamera.pas' {AccessCameraAppForm},
+  Janua.FMX.frmSignatureCaptureMobile in '..\..\..\..\src\FMX\Janua.FMX.frmSignatureCaptureMobile.pas' {frmFMXSignatureCaptureMobile},
+  Janua.Carservice.dmPgDrivers in '..\..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgDrivers.pas' {dmPgCarServiceBookingDrivers: TDataModule},
+  Janua.FMX.frameUserMobile in '..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas' {frameFMXRegisterMobile: TFrame},
+  Janua.CarService.FMX.dmDriverClient in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule},
+  Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
+  Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser};
 
 {$R *.res}
 
 function GetForm: TForm;
 begin
-  Application.CreateForm(TTabbedwithNavigationForm, TabbedwithNavigationForm);
-  Application.MainForm := TabbedwithNavigationForm;
-  Result := TabbedwithNavigationForm;
+  Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
+  Application.MainForm := frmFMXCarServiceDriverMain;
+  Result := frmFMXCarServiceDriverMain;
 end;
 
 var
@@ -70,9 +62,9 @@ begin
   else
   begin
     TJanuaApplication.UserSessionVM.LoginByKey(FSessionKey);
-    Application.CreateForm(TTabbedwithNavigationForm, TabbedwithNavigationForm);
+    Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
     { Application.CreateForm(TdmCarserviceFMXDriverClient, dmCarserviceFMXDriverClient); }
-    Application.MainForm := TabbedwithNavigationForm;
+    Application.MainForm := frmFMXCarServiceDriverMain;
     Application.Run;
   end;
 
