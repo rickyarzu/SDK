@@ -602,6 +602,7 @@
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.BookingHead.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Orm.Firedac.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.StackTrace.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Components.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -677,7 +678,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\Win64\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>JanuaCore.bpl</RemoteName>
                         <Overwrite>true</Overwrite>

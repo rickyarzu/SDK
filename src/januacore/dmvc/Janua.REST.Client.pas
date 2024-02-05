@@ -88,7 +88,7 @@ type
     property JanuaParams: IJanuaParams read GetJanuaParams write SetJanuaParams;
   end;
 
-  TRESTClientLogin = class(TJanuaRESTClient, IRESTLoginClient)
+  TRESTClientCustomAuthLogin = class(TJanuaRESTClient)
   public
     constructor Create; override;
   private
@@ -99,23 +99,37 @@ type
     function GetLoginResult: string;
     procedure SetPassword(const Value: string);
     procedure SetUsername(const Value: string);
-    function GetPassword: string;
-    function GetUsername: string;
+  protected
+    function GetPassword: string; virtual;
+    function GetUsername: string; virtual;
+  public
+    function GetBaseUrl: string; override;
+    function Login: Boolean; overload;
+    function Login(aUsername, aPassword: string): Boolean; overload;
+    property LoginResult: string read GetLoginResult;
+    property Username: string read GetUsername write SetUsername;
+    property Password: string read GetPassword write SetPassword;
+  end;
+
+  TRESTClientAuth = class(TRESTClientCustomAuthLogin)
+  public
+    constructor Create; override;
+  end;
+
+  TRESTClientLogin = class(TRESTClientCustomAuthLogin, IRESTLoginClient)
+  public
+    constructor Create; override;
   protected const
     CLoginApiURL = '/login';
   strict protected
     procedure SetAuthentication(aRequest: IRequest); override;
     function GetRequest(const aResources: TResources = []): IRequest; override;
   protected
+    function GetPassword: string; override;
+    function GetUsername: string; override;
     function GenerateRequest(const aMethod: TJanuaHttpMethod = jhmGet): IRequest; virtual;
   public
     function GetBaseUrl: string; override;
-    property LoginResult: string read GetLoginResult;
-    property Username: string read GetUsername write SetUsername;
-    property Password: string read GetPassword write SetPassword;
-  public
-    function Login(aUsername, aPassword: string): Boolean; overload;
-    function Login: Boolean; overload;
   end;
 
   TRESTRecordClient = class(TJanuaRESTClient, IRESTRecordClient)
@@ -522,54 +536,46 @@ function TRESTDBClient.UpdateRecord: Boolean;
 begin
 end;
 
-{ TRESTClientLogin }
-constructor TRESTClientLogin.Create;
+{ TRESTClientCustomAuthLogin }
+constructor TRESTClientCustomAuthLogin.Create;
 begin
   inherited;
-  FAPIUrl := CLoginApiURL;
   AuthenticationType := jatBasic
 end;
 
-function TRESTClientLogin.GenerateRequest(const aMethod: TJanuaHttpMethod): IRequest;
-begin
-  Result := GetRequest([]);
-end;
-
-function TRESTClientLogin.GetBaseUrl: string;
-begin
-  Result := inherited;
-end;
-
-function TRESTClientLogin.GetLoginResult: string;
+function TRESTClientCustomAuthLogin.GetLoginResult: string;
 begin
   Result := FLoginResult
 end;
 
-function TRESTClientLogin.GetPassword: string;
+function TRESTClientCustomAuthLogin.GetPassword: string;
 begin
   Result := FPassword
 end;
 
-function TRESTClientLogin.GetRequest(const aResources: TResources = []): IRequest;
-begin
-  Result := inherited;
-  // Test Basic Authentication
-  { if (FUsername <> '') and (FPassword <> '') then    Result.BasicAuthentication(FUsername, FPassword); }
-end;
-
-function TRESTClientLogin.GetUsername: string;
+function TRESTClientCustomAuthLogin.GetUsername: string;
 begin
   Result := FUsername
 end;
 
-function TRESTClientLogin.Login(aUsername, aPassword: string): Boolean;
+procedure TRESTClientCustomAuthLogin.SetPassword(const Value: string);
+begin
+  FPassword := Value
+end;
+
+procedure TRESTClientCustomAuthLogin.SetUsername(const Value: string);
+begin
+  FUsername := Value;
+end;
+
+function TRESTClientCustomAuthLogin.Login(aUsername, aPassword: string): Boolean;
 begin
   Username := aUsername;
   Password := aPassword;
   Result := Login;
 end;
 
-function TRESTClientLogin.Login: Boolean;
+function TRESTClientCustomAuthLogin.Login: Boolean;
 var
   LResponse: IResponse;
   lRequest: IRequest;
@@ -608,21 +614,45 @@ begin
   end;
 end;
 
+{ TRESTClientLogin }
+constructor TRESTClientLogin.Create;
+begin
+  inherited;
+  FAPIUrl := CLoginApiURL;
+end;
+
+function TRESTClientLogin.GenerateRequest(const aMethod: TJanuaHttpMethod): IRequest;
+begin
+  Result := GetRequest([]);
+end;
+
+function TRESTClientLogin.GetBaseUrl: string;
+begin
+  Result := inherited;
+end;
+
+function TRESTClientLogin.GetPassword: string;
+begin
+  Result := inherited
+end;
+
+function TRESTClientLogin.GetRequest(const aResources: TResources = []): IRequest;
+begin
+  Result := inherited;
+  // Test Basic Authentication
+  { if (FUsername <> '') and (FPassword <> '') then    Result.BasicAuthentication(FUsername, FPassword); }
+end;
+
+function TRESTClientLogin.GetUsername: string;
+begin
+  Result := inherited;
+end;
+
 procedure TRESTClientLogin.SetAuthentication(aRequest: IRequest);
 begin
   inherited;
   if (FUsername <> '') and (FPassword <> '') then
     aRequest.BasicAuthentication(FUsername, FPassword);
-end;
-
-procedure TRESTClientLogin.SetPassword(const Value: string);
-begin
-  FPassword := Value
-end;
-
-procedure TRESTClientLogin.SetUsername(const Value: string);
-begin
-  FUsername := Value;
 end;
 
 { TRESTRecordClient }

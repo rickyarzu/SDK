@@ -111,9 +111,6 @@
         <Projects Include="JanuaVCLForms.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="WebREST\DMVCVCLTestClientServer.dproj">
             <Dependencies/>
         </Projects>
@@ -127,9 +124,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="FMX\PhoenixAssoApp.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="WebREST\JWTAuthTestSampleXE14.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\DMVC\sslserver\SSLSample.dproj">
@@ -494,15 +488,6 @@
     <Target Name="JanuaVCLForms:Make">
         <MSBuild Projects="JanuaVCLForms.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaDevIDEXE14x86">
-        <MSBuild Projects="VCL\JanuaDevIDEXE14x86.dproj"/>
-    </Target>
-    <Target Name="JanuaDevIDEXE14x86:Clean">
-        <MSBuild Projects="VCL\JanuaDevIDEXE14x86.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaDevIDEXE14x86:Make">
-        <MSBuild Projects="VCL\JanuaDevIDEXE14x86.dproj" Targets="Make"/>
-    </Target>
     <Target Name="DMVCVCLTestClientServer">
         <MSBuild Projects="WebREST\DMVCVCLTestClientServer.dproj"/>
     </Target>
@@ -547,15 +532,6 @@
     </Target>
     <Target Name="PhoenixAssoApp:Make">
         <MSBuild Projects="FMX\PhoenixAssoApp.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JWTAuthTestSampleXE14">
-        <MSBuild Projects="WebREST\JWTAuthTestSampleXE14.dproj"/>
-    </Target>
-    <Target Name="JWTAuthTestSampleXE14:Clean">
-        <MSBuild Projects="WebREST\JWTAuthTestSampleXE14.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JWTAuthTestSampleXE14:Make">
-        <MSBuild Projects="WebREST\JWTAuthTestSampleXE14.dproj" Targets="Make"/>
     </Target>
     <Target Name="SSLSample">
         <MSBuild Projects="..\..\Samples\DMVC\sslserver\SSLSample.dproj"/>
@@ -648,13 +624,13 @@
         <MSBuild Projects="WebREST\RESTDebuggerClient.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;RestRequestLib;JanuaThirdParty;JanuaThirdPartyVCL;JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaCoreUnitTesting;JanuaDMVC;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;UnifalconXE14;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEUniGUI;JanuaVCLForms;JanuaDevIDEXE14x86;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;JWTAuthTestSampleXE14;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;RestRequestLib;JanuaThirdParty;JanuaThirdPartyVCL;JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaCoreUnitTesting;JanuaDMVC;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;UnifalconXE14;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;RestRequestLib:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaCoreUnitTesting:Clean;JanuaDMVC:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;UnifalconXE14:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;JanuaDevIDEXE14x86:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;JWTAuthTestSampleXE14:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;RestRequestLib:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaCoreUnitTesting:Clean;JanuaDMVC:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;UnifalconXE14:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;RestRequestLib:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaCoreUnitTesting:Make;JanuaDMVC:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;UnifalconXE14:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;JanuaDevIDEXE14x86:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;JWTAuthTestSampleXE14:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;RestRequestLib:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaCoreUnitTesting:Make;JanuaDMVC:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;UnifalconXE14:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -824,18 +800,6 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
@@ -1146,18 +1110,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
             <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
             <Configurations/>
@@ -1464,18 +1416,6 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
@@ -1786,18 +1726,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
             <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2104,18 +2032,6 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
@@ -2426,18 +2342,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
             <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2744,18 +2648,6 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaDevIDEXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JWTAuthTestSampleXE14.dproj">
-            <ProjectGuid>{63AB71B7-DD9B-4BC5-A91C-B3D3FA9E115F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FireDAC\JanuaVCLTestRESTImportExport.dproj">
