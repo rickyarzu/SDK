@@ -400,6 +400,7 @@ contains
   JOrm.Carservice.BookingHead.Impl in '..\..\src\januacore\orm\JOrm.Carservice.BookingHead.Impl.pas',
   JOrm.Carservice.BookingHead.Intf in '..\..\src\januacore\orm\JOrm.Carservice.BookingHead.Intf.pas',
   Janua.Orm.Firedac in '..\..\src\januacore\Janua.Orm.Firedac.pas',
-  Janua.Core.StackTrace in '..\..\src\januacore\Janua.Core.StackTrace.pas';
+  Janua.Core.StackTrace in '..\..\src\januacore\Janua.Core.StackTrace.pas',
+  Janua.REST.Components in '..\..\src\januacore\dmvc\Janua.REST.Components.pas';
 
 end.
