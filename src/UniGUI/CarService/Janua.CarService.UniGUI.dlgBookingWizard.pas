@@ -71,7 +71,7 @@ type
     lbPickup: TUniLabel;
     lbDelivery: TUniLabel;
     pnlCarServiceSlotSelection: TUniSimplePanel;
-    UniLabel2: TUniLabel;
+    ulbReturnDate: TUniLabel;
     PickupDelivery: TUniDateTimePicker;
     ulbDateR: TUniLabel;
     lbPickupR: TUniLabel;
@@ -269,6 +269,7 @@ type
     procedure cboPickupReturnClick(Sender: TObject);
     procedure tgHasReturnToggled(const Value: Boolean);
     procedure btnPaymentClick(Sender: TObject);
+    procedure PickupDateChange(Sender: TObject);
   public
     // Calenddar Select
     (*
@@ -536,6 +537,18 @@ end;
 procedure TdlgUniGUIBookingWizard.cboPickupReturnClick(Sender: TObject);
 begin
   // FdmPgCarServiceBooking.PickupDate :=
+end;
+
+procedure TdlgUniGUIBookingWizard.PickupDateChange(Sender: TObject);
+begin
+  if PickupDate.DateTime <> FdmPgCarServiceBooking.PickupDate then
+  begin
+    PickupSlotTimeSelect.ClearAllFrames;
+    FdmPgCarServiceBooking.PickupDate := PickupDate.DateTime;
+    CalendarSelectPickup.cldPickup1.Date := PickupDate.DateTime;
+    FdmPgCarServiceBooking.UpdatePickupSlots;
+    PickupSlotTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
+  end;
 end;
 
 procedure TdlgUniGUIBookingWizard.SetdmPgCarServiceBooking(const Value: TdmPgCarServiceBookingStorage);

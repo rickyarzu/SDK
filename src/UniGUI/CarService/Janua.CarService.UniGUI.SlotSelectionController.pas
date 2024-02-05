@@ -53,6 +53,7 @@ type
     procedure SetupFrames;
     procedure OnToggleChange(Sender: TObject);
     procedure AfterConstruction; override;
+    procedure ClearAllFrames;
   published
     property BookingDate: TDate read FBookingDate write SetBookingDate;
     property ulbPickupDate: TUniLabel read FulbPickupDate write SetulbPickupDate;
@@ -84,6 +85,23 @@ end;
 procedure TCarServiceSlotSelectionController.AfterConstruction;
 begin
   inherited;
+end;
+
+procedure TCarServiceSlotSelectionController.ClearAllFrames;
+var
+  I: Integer;
+begin
+  if not FUpdating then
+    try
+      FUpdating := True;
+      for I := 0 to Pred(FFRames.Count) do
+      begin
+        FFRames[I].tgSelected.Toggled := False;
+        FTimeTableSlots[I].Booked.AsBoolean := False;
+      end;
+    finally
+      FUpdating := False;
+    end;
 end;
 
 constructor TCarServiceSlotSelectionController.Create(AOwner: TComponent);
@@ -127,6 +145,8 @@ end;
 procedure TCarServiceSlotSelectionController.SetBookingDate(const Value: TDate);
 begin
   FBookingDate := Value;
+  if Assigned(UniDateTimePicker1) then
+    UniDateTimePicker1.DateTime := FBookingDate;
 end;
 
 procedure TCarServiceSlotSelectionController.SetframeTimeSelect1(const Value: TTimeSelectUniGUIController);

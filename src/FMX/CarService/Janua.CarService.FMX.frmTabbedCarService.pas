@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Permissions,
   // FMX
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.MediaLibrary.Actions,
+  FMX.Controls.Presentation, FMX.MediaLibrary.Actions, FMX.Platform, FMX.PhoneDialer,
   FMX.Gestures, System.Actions, FMX.ActnList, System.ImageList, FMX.ImgList, FMX.Objects, FMX.Layouts,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
   FMX.WebBrowser, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
@@ -15,7 +15,7 @@ uses
   Janua.FMX.frameUserMobile;
 
 type
-  TTabbedwithNavigationForm = class(TForm)
+  TfrmFMXCarServiceDriverMain = class(TForm)
     pgCarHome: TTabControl;
     tabHome: TTabItem;
     pgHome: TTabControl;
@@ -94,6 +94,7 @@ type
     Button9: TButton;
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
+    btnCallClient: TButton;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -111,11 +112,13 @@ type
     procedure tmtMsgsTimer(Sender: TObject);
     procedure lvMessagesItemClick(const Sender: TObject; const AItem: TListViewItem);
     procedure btnMessagesBackClick(Sender: TObject);
+    procedure btnCallClientClick(Sender: TObject);
   private
     FSessionKey: string;
     FAttempt: integer;
     FDriverDM: TdmPgCarServiceBookingDrivers;
     FMonitor: TObject;
+    PhoneDialerService: IFMXPhoneDialerService;
   public
     procedure Login;
     procedure dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -123,7 +126,7 @@ type
   end;
 
 var
-  TabbedwithNavigationForm: TTabbedwithNavigationForm;
+  frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain;
 
 implementation
 
@@ -134,12 +137,18 @@ uses
 
 {$R *.fmx}
 
-procedure TTabbedwithNavigationForm.btnBackClick(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.btnBackClick(Sender: TObject);
 begin
   pgHome.TabIndex := 0; // self.tab01DriverList;
 end;
 
-procedure TTabbedwithNavigationForm.btnConfirmClick(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.btnCallClientClick(Sender: TObject);
+begin
+  if FDriverDM.qryBookingdelivery_cellular.AsString <> '' then
+    PhoneDialerService.Call(FDriverDM.qryBookingdelivery_cellular.AsString)
+end;
+
+procedure TfrmFMXCarServiceDriverMain.btnConfirmClick(Sender: TObject);
 begin
   {
     UPDATE carservice.timetable_booking_driver
@@ -160,19 +169,19 @@ begin
   pgHome.TabIndex := 0; // self.tab01DriverList;
 end;
 
-procedure TTabbedwithNavigationForm.btnMessagesBackClick(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.btnMessagesBackClick(Sender: TObject);
 begin
   pgMessages.TabIndex := 0;
 end;
 
-procedure TTabbedwithNavigationForm.btnSignatureClick(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.btnSignatureClick(Sender: TObject);
 begin
   if not Assigned(frmFMXSignatureCaptureMobile) then
     Application.CreateForm(TfrmFMXSignatureCaptureMobile, frmFMXSignatureCaptureMobile);
   frmFMXSignatureCaptureMobile.Show;
 end;
 
-procedure TTabbedwithNavigationForm.Button1Click(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.Button1Click(Sender: TObject);
 begin
   if not Assigned(AccessCameraAppForm) then
     Application.CreateForm(TAccessCameraAppForm, AccessCameraAppForm);
@@ -180,7 +189,7 @@ begin
   AccessCameraAppForm.Show;
 end;
 
-procedure TTabbedwithNavigationForm.dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TfrmFMXCarServiceDriverMain.dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if (Sender as TdlgFMXCarserviceLoginDialogMobile).ModalResult = mrOk then
   begin
@@ -189,19 +198,20 @@ begin
   tmList.Enabled := True;
 end;
 
-procedure TTabbedwithNavigationForm.FormCreate(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.FormCreate(Sender: TObject);
 begin
   { This defines the default active tab at runtime }
   FMonitor := TObject.Create;
   pgCarHome.ActiveTab := tabHome;
+  TPlatformServices.Current.SupportsPlatformService(IFMXPhoneDialerService, IInterface(PhoneDialerService));
 end;
 
-procedure TTabbedwithNavigationForm.FormDestroy(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.FormDestroy(Sender: TObject);
 begin
   FMonitor.Free;
 end;
 
-procedure TTabbedwithNavigationForm.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+procedure TfrmFMXCarServiceDriverMain.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 begin
   if Key = vkHardwareBack then
@@ -214,12 +224,12 @@ begin
   end;
 end;
 
-procedure TTabbedwithNavigationForm.FormShow(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.FormShow(Sender: TObject);
 begin
   tmtStart.Enabled := True;
 end;
 
-procedure TTabbedwithNavigationForm.GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo;
+procedure TfrmFMXCarServiceDriverMain.GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo;
   var Handled: Boolean);
 begin
   case EventInfo.GestureID of
@@ -239,12 +249,13 @@ begin
   end;
 end;
 
-procedure TTabbedwithNavigationForm.Login;
+procedure TfrmFMXCarServiceDriverMain.Login;
 begin
 
 end;
 
-procedure TTabbedwithNavigationForm.lstOperationsItemClick(const Sender: TObject; const AItem: TListViewItem);
+procedure TfrmFMXCarServiceDriverMain.lstOperationsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
 begin
   // ShowMessage(AItem.Tag.ToString);
   if FDriverDM.qryDriverCalendar.Locate('rownum', AItem.Tag, []) then
@@ -265,7 +276,7 @@ begin
 
 end;
 
-procedure TTabbedwithNavigationForm.lvMessagesItemClick(const Sender: TObject; const AItem: TListViewItem);
+procedure TfrmFMXCarServiceDriverMain.lvMessagesItemClick(const Sender: TObject; const AItem: TListViewItem);
 begin
   // ShowMessage(AItem.Tag.ToString);
   if FDriverDM.qryMessages.Locate('rownum', AItem.Tag, []) then
@@ -275,25 +286,27 @@ begin
   end;
 end;
 
-procedure TTabbedwithNavigationForm.SpeedButton1Click(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.SpeedButton1Click(Sender: TObject);
 begin
   pgHome.TabIndex := 0;
 end;
 
-procedure TTabbedwithNavigationForm.TestLogin(const aUsername, aPassword);
+procedure TfrmFMXCarServiceDriverMain.TestLogin(const aUsername, aPassword);
 begin
 
 end;
 
-procedure TTabbedwithNavigationForm.tmtStartTimer(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.tmtStartTimer(Sender: TObject);
 begin
   tmtStart.Enabled := False;
   Login;
   tmList.Enabled := True;
   tmtMsgs.Enabled := True;
+  frameFMXRegisterMobile1.JanuaUserProfile := TJanuaApplication.UserSessionVM.CurrentRecord.UserProfile;
+  frameFMXRegisterMobile1.Active := True;
 end;
 
-procedure TTabbedwithNavigationForm.tmtListTimer(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.tmtListTimer(Sender: TObject);
 begin
   tmList.Enabled := False;
   if not Assigned(FDriverDM) then
@@ -347,7 +360,7 @@ begin
 
 end;
 
-procedure TTabbedwithNavigationForm.tmtMsgsTimer(Sender: TObject);
+procedure TfrmFMXCarServiceDriverMain.tmtMsgsTimer(Sender: TObject);
 begin
   tmtMsgs.Enabled := False;
   if not Assigned(FDriverDM) then

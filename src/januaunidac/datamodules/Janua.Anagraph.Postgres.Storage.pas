@@ -779,10 +779,7 @@ type
     qrySearchAddressjguid: TStringField;
     procedure qryAnagraphsBeforeOpen(DataSet: TDataSet);
     procedure qryGroupsBeforeOpen(DataSet: TDataSet);
-    procedure qrySingleAnagraphOldAfterOpen(DataSet: TDataSet);
     procedure qrySAMainAdressBeforePost(DataSet: TDataSet);
-    procedure qrySingleAnagraphOldAfterPost(DataSet: TDataSet);
-    procedure qrySingleAnagraphOldBeforePost(DataSet: TDataSet);
     procedure PgErgoConnectionBeforeConnect(Sender: TObject);
     procedure qrySingleAnagraphAfterOpen(DataSet: TDataSet);
     procedure qrySingleAnagraphAfterPost(DataSet: TDataSet);
@@ -822,7 +819,7 @@ var
 
 implementation
 
-uses Janua.Core.Types, Janua.Orm.Types, Janua.Application.Framework, Janua.Orm.UniDac;
+uses Janua.Core.Types, Janua.Orm.Types, Janua.Application.Framework, Janua.Orm.Unidac;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -956,20 +953,24 @@ begin
   if qrySingleAnagraphanagraph_id.AsInteger > 0 then
   begin
     qrySAMainAdress.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-    qrySAMainAdress.Open;
-    qryAddresses.Open;
+    qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
+    ServerFunctions.OpenDataset(qrySAMainAdress);
+    ServerFunctions.OpenDataset(qryAddresses);
   end;
 end;
 
 procedure TdmJanuaPgAnagraphStorage.qrySingleAnagraphAfterPost(DataSet: TDataSet);
 begin
   inherited;
-  qrySAMainAdress.Close;
-  qryAddresses.Close;
-  qrySAMainAdress.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-  qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-  qrySAMainAdress.Open;
-  qryAddresses.Open;
+  if qrySAMainAdress.Params[0].AsInteger <> qrySingleAnagraphanagraph_id.AsInteger then
+  begin
+    qrySAMainAdress.Close;
+    qryAddresses.Close;
+    qrySAMainAdress.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
+    qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
+    ServerFunctions.OpenDataset(qrySAMainAdress);
+    ServerFunctions.OpenDataset(qryAddresses);
+  end;
 end;
 
 procedure TdmJanuaPgAnagraphStorage.qrySingleAnagraphBeforePost(DataSet: TDataSet);
@@ -978,42 +979,7 @@ begin
   if qrySingleAnagraphanagraph_id.AsInteger = 0 then
   begin
     qryNextVal.Close;
-    qryNextVal.Open;
-    qrySingleAnagraphanagraph_id.AsInteger := qryNextValid.AsInteger;
-  end;
-end;
-
-procedure TdmJanuaPgAnagraphStorage.qrySingleAnagraphOldAfterOpen(DataSet: TDataSet);
-begin
-  inherited;
-  qrySAMainAdress.Close;
-  qryAddresses.Close;
-  if qrySingleAnagraphanagraph_id.AsInteger > 0 then
-  begin
-    qrySAMainAdress.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-    qrySAMainAdress.Open;
-    qryAddresses.Open;
-  end;
-end;
-
-procedure TdmJanuaPgAnagraphStorage.qrySingleAnagraphOldAfterPost(DataSet: TDataSet);
-begin
-  inherited;
-  qrySAMainAdress.Close;
-  qryAddresses.Close;
-  qrySAMainAdress.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-  qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
-  qrySAMainAdress.Open;
-  qryAddresses.Open;
-end;
-
-procedure TdmJanuaPgAnagraphStorage.qrySingleAnagraphOldBeforePost(DataSet: TDataSet);
-begin
-  inherited;
-  if qrySingleAnagraphanagraph_id.AsInteger = 0 then
-  begin
-    qryNextVal.Close;
-    qryNextVal.Open;
+    ServerFunctions.OpenDataset(qryNextVal);
     qrySingleAnagraphanagraph_id.AsInteger := qryNextValid.AsInteger;
   end;
 end;
@@ -1030,7 +996,7 @@ begin
   if qrySingleAnagraph.RecordCount = 1 then
   begin
     qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.Value;
-    qryAddresses.Open;
+    ServerFunctions.OpenDataset(qryAddresses);
   end;
 
 end;

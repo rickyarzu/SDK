@@ -29,6 +29,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
         Text = 'SPECIFICA ESTINTORE'
         TabOrder = 0
         TabStop = False
@@ -53,6 +54,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 88.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Progr.'
         TabOrder = 2
       end
@@ -64,6 +66,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 93.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Matricola'
         TabOrder = 1
       end
@@ -75,6 +78,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 80.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Anno'
         TabOrder = 0
       end
@@ -200,6 +204,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.Trimming = None
         Text = 'Anno Sostituzione'
         TabOrder = 1
       end
@@ -211,6 +216,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 93.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = '2036'
         TabOrder = 0
       end
@@ -234,6 +240,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 88.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Tipo'
         TabOrder = 0
       end
@@ -334,6 +341,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 88.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Marca'
         TabOrder = 0
       end
@@ -357,6 +365,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 125.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Ultima Revisione'
         TabOrder = 0
       end
@@ -560,6 +569,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 125.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Ultimo Collaudo'
         TabOrder = 0
       end
@@ -686,6 +696,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 125.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Ubicazione'
         TabOrder = 0
       end
@@ -725,6 +736,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 125.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Stato'
         TabOrder = 0
       end
@@ -774,6 +786,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 125.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Note del Tecnico'
         TabOrder = 0
       end

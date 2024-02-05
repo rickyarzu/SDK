@@ -933,6 +933,7 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := TGUID.Empty;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 1;
   spInsertMessage.ExecProc;
@@ -944,7 +945,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := TGUID.Empty;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.CustomerID.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.CustomerID.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 1;
   spInsertMessage.ExecProc;
 end;
@@ -955,7 +957,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := TGUID.Empty;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.CustomerID.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.CustomerID.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 2;
   spInsertMessage.ExecProc;
 end;
@@ -966,7 +969,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := FBookingRecord.PickupDateTime.GUID;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.Driver1Id.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.Driver1Id.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 1;
   spInsertMessage.ExecProc;
 end;
@@ -977,7 +981,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := FBookingRecord.PickupDateTime.GUID;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.Driver1Id.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.Driver1Id.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 2;
   spInsertMessage.ExecProc;
 end;
@@ -988,7 +993,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := FBookingRecord.DeliveryDateTime.GUID;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.Driver2Id.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.Driver2Id.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 1;
   spInsertMessage.ExecProc;
 end;
@@ -999,7 +1005,8 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := FBookingRecord.DeliveryDateTime.GUID;
-  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.Driver2Id.AsInteger;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.Driver2Id.AsInteger;
+  spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 2;
   spInsertMessage.ExecProc;
 end;
@@ -1010,6 +1017,7 @@ begin
   spInsertMessage.ParamByName('p_message').AsString := aMessage;
   spInsertMessage.ParamByName('p_booking_jguid').AsGUID := FBookingRecord.GUID;
   spInsertMessage.ParamByName('p_timetable_jguid').AsGUID := TGUID.Empty;
+  spInsertMessage.ParamByName('p_anagraph_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_user_id').AsInteger := FBookingRecord.OfficeID.AsInteger;
   spInsertMessage.ParamByName('p_msgtype').AsInteger := 2;
   spInsertMessage.ExecProc;

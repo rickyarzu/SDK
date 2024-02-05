@@ -629,9 +629,6 @@ type
     procedure SetName(const Value: String);
     property Name: String read GetName write SetName;
 
-    function GetState: TDatasetState;
-    property State: TDatasetState read GetState;
-
     function GetOrdered: Boolean;
     procedure SetOrdered(const Value: Boolean);
     property Ordered: Boolean read GetOrdered write SetOrdered;
@@ -831,6 +828,9 @@ type
     function RemoteUpdate: Boolean;
     function RemoteAppend: Boolean;
     function RemoteGetMeta: Boolean;
+
+    function GetState: TDatasetState;
+    property State: TDatasetState read GetState;
   end;
 
   /// <summary> Extends IJanuaDBCustomDataset with the ability to create a read only SQL Dataset </summary>
@@ -1370,7 +1370,7 @@ type
 
   TJanuaRecordProc = procedure(const aRecord: IJanuaRecord);
 {$ENDIF}
-  TRecordSetState = (rsNone, rsAppend, rsEdit, rsDeleting, rsLoading);
+
 
   IJanuaRecordSet = interface(IJanuaBindable)
     ['{372C849A-DC84-420A-A0D1-8C84F404613E}']

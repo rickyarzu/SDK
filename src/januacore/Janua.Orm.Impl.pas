@@ -1480,7 +1480,17 @@ type
     property AsBase64Url: string read GetAsBase64Url write SetAsBase64Url;
   end;
 
-  TJanuaRecord = class(TJanuaInterfacedBindableObject, IJanuaRecord, IJanuaInterface)
+  TJanuaCustomRecord = class(TJanuaInterfacedBindableObject, IJanuaInterface)
+  strict protected
+    FIsOldRecord: Boolean;
+  protected
+    procedure InternalCreateRecord; virtual; abstract;
+  public
+    constructor Create; override;
+    constructor CreateAsOldRecord;
+  end;
+
+  TJanuaRecord = class(TJanuaCustomRecord, IJanuaRecord, IJanuaInterface)
   public
     constructor Create; override;
     destructor Destroy; override;
@@ -1494,7 +1504,12 @@ type
     constructor Create(const aName: string; aFields: TJanuaFields; aRecords: IList<IJanuaRecord>;
       aRecordSets: IList<IJanuaRecordSet>; const aEntity: TJanuaEntity = None); overload;
     procedure Clear(const aRecursively: Boolean = True);
+  protected
+    procedure InternalCreateRecord; override;
+
   strict private
+
+    FOldRecord: IJanuaRecord;
     FCalcFields: IList<IJanuaField>;
     FTriggerFields: IList<IJanuaField>;
     FFields: IList<IJanuaField>;
@@ -1918,8 +1933,6 @@ type
     FSyncDataset: IJanuaDBDataset;
     FForceRefresh: Boolean;
     FRecordSetState: TRecordSetState;
-  strict private
-    function GetRecordSetState: TRecordSetState;
   protected
     FRecord: IJanuaRecord;
     FPrefix: string;
@@ -1935,13 +1948,14 @@ type
     function IsSetRemoteStorage: Boolean;
     function FactoryCreateSyncDataset: IJanuaDBDataset;
     function GetSyncDataset: IJanuaDBDataset;
-    property SyncDataset: IJanuaDBDataset read GetSyncDataset;
-  protected
+    function GetRecordSetState: TRecordSetState;
     procedure SetJanuaFields(const aValue: TJanuaFields);
     function GetName: string;
     procedure SetName(const aValue: string);
     /// <summary> Set master Record can be overridden by a descendant to set a custom Record or do some operations </summary>
     procedure SetMasterRecord(const Value: IJanuaRecord); virtual;
+  protected
+    property SyncDataset: IJanuaDBDataset read GetSyncDataset;
   public
     procedure AfterConstruction; override;
     procedure BeforeDestruction; override;
@@ -3064,9 +3078,17 @@ end;
 
 procedure TJanuaIntegerField.Clear;
 begin
-  Default;
-  // Only if EntityKey is set the field can be Null
-  SetIsNull(IsEntityKey);
+  try
+    Default;
+    // Only if EntityKey is set the field can be Null
+    SetIsNull(IsEntityKey);
+  except
+    on e: exception do
+      if Assigned(self) then
+        raise exception.Create('TJanuaIntegerField (' + DBField + ').Clear Error = ' + sl + e.Message)
+      else
+        raise exception.Create('TJanuaIntegerField.Clear Error = Class is nil ' + sl + e.Message);
+  end;
 end;
 
 constructor TJanuaIntegerField.Create(aKey, aField: string; aIsMonitored: Boolean = False);
@@ -5430,9 +5452,17 @@ end;
 
 procedure TJanuaBooleanField.Clear;
 begin
-  FInternalValue := False;
-  // Un Boolean nel sistema non è mai null semmai ha default False
-  SetIsNull(False);
+  try
+    FInternalValue := False;
+    // Un Boolean nel sistema non è mai null semmai ha default False
+    SetIsNull(False);
+  except
+    on e: exception do
+      if Assigned(self) then
+        raise exception.Create('TJanuaBooleanField (' + DBField + ').Clear Error = ' + sl + e.Message)
+      else
+        raise exception.Create('TJanuaBooleanField.Clear Error = Class is nil ' + sl + e.Message);
+  end;
 end;
 
 constructor TJanuaBooleanField.Create(aKey, aField: string; aIsMonitored: Boolean = False);
@@ -5998,8 +6028,16 @@ end;
 
 procedure TJanuaCurrencyField.Clear;
 begin
-  SetIsNull(False);
-  FInternalValue := 0.0
+  try
+    SetIsNull(False);
+    FInternalValue := 0.0
+  except
+    on e: exception do
+      if Assigned(self) then
+        raise exception.Create('TJanuaCurrencyField (' + DBField + ').Clear Error = ' + sl + e.Message)
+      else
+        raise exception.Create('TJanuaCurrencyField.Clear Error = Class is nil ' + sl + e.Message);
+  end;
 end;
 
 constructor TJanuaCurrencyField.Create(aKey, aField: string; aIsMonitored: Boolean = False);
@@ -6795,6 +6833,7 @@ begin
 {$IFDEF JANUA_TEST}
   TJanuaLogger.LogRecord('Append', '___FDataSet.AddRecord(LRecSer) ', self);
 {$ENDIF}
+  FRecordSetState := TRecordSetState.rsInserting;
   FRecord.ItemIndex := FSetSerialization.ItemIndex;
   FRecord.DoCalcFields;
   { AddIndex; }   // AddIndex will be Inserted with a Post.
@@ -6820,8 +6859,6 @@ procedure TJanuaRecordSet.Append(const aRecord: IJanuaRecord);
 begin
   Append;
   FRecord.Assign(aRecord);
-  // aRecord.WriteRecord(FDataSet.CurrentRecord);
-  // FRecord.ReadRecord(FDataSet.CurrentRecord);
   Post;
 end;
 
@@ -7519,6 +7556,7 @@ begin
         Raise exception.Create(ClassName + '.FOnRecordPost ' + e.Message);
     end;
 
+    FRecordSetState := rsNone;
     NotifyEvent;
   except
     on e: exception do
@@ -8153,9 +8191,6 @@ begin
       raise exception.Create(ClassName + '.AddField Key already exists: ' + aField.Key);
   FFields.Add(aField);
   FFields[Pred(FFields.Count)].OnFieldDataChange := DoDataChange;
-  // FOldRecord.AddField(aField);
-  // Guard.CheckTrue(FieldCount = FOldRecord.FieldCount,
-  // 'TJanuaRecord.AddField aField Old FCount not match');
   Result := Pred(FFields.Count)
 end;
 
@@ -8313,6 +8348,23 @@ begin
   Guard.CheckNotNull(aRecord, ClassName + ' Errore Assign aRecord');
   SetState(TJanuaRecordState.jrsAssigning);
   Clear;
+
+  if self.FieldCount = 0 then
+  begin
+    Guard.CheckNotNull(aRecord.Fields, ClassName + '.Create aFields  is nil');
+    if aRecord.Fields.Count > 0 then
+      for I := 0 to Pred(aRecord.Fields.Count) do
+        AddField(aRecord.Fields[I]);
+
+    if Assigned(aRecord.Records) and (aRecord.Records.Count > 0) then
+      for I := 0 to Pred(aRecord.Records.Count) do
+        AddRecordDef(aRecord.Records[I]);
+
+    if Assigned(aRecord.RecordSets) and (aRecord.RecordSets.Count > 0) then
+      for I := 0 to Pred(aRecord.RecordSets.Count) do
+        AddRecordSet(aRecord.RecordSets[I]);
+  end;
+
   if FGUID = GUID_NULL then
     FGUID := aRecord.GUID;
   var
@@ -8550,10 +8602,14 @@ begin
   if aAssign then
   begin
     Create(aRecord.Name, aRecord.Entity);
-    Assign(aRecord)
+    Assign(aRecord);
   end
   else
+  begin
     Create(aRecord.Name, aRecord.Fields, aRecord.Records, aRecord.RecordSets);
+  end;
+  if Assigned(FOldRecord) then
+    FOldRecord.Assign(self as IJanuaRecord)
 end;
 
 constructor TJanuaRecord.Create(const aObject: TJsonObject);
@@ -8575,6 +8631,8 @@ begin
     SetAsMetaData(aObject);
     SetAsJsonObject(aObject);
   end;
+  if Assigned(FOldRecord) then
+    FOldRecord.Assign(self as IJanuaRecord)
 end;
 
 constructor TJanuaRecord.Create(const aName: string; const aEntity: TJanuaEntity = None);
@@ -8583,6 +8641,11 @@ begin
   if aEntity <> TJanuaEntity.None then
     FEntity := aEntity;
   FName := aName;
+  if Assigned(FOldRecord) then
+  begin
+    FOldRecord.Name := aName;
+    FOldRecord.Entity := aEntity;
+  end;
 end;
 
 procedure TJanuaRecord.DirectLoadFromDataset(const aDataset: TDataset; const aRelease: Boolean;
@@ -8591,6 +8654,8 @@ begin
   Guard.CheckNotNull(aDataset, 'TJanuaRecord.DirectLoadFromDataset TDataset is nil');
   AssignDataset(aDataset);
   LoadFromDataset(aRecursively);
+  if Assigned(FOldRecord) then
+    FOldRecord.Assign(self as IJanuaRecord);
   if aRelease then
     UnMapDatasets
 end;
@@ -8599,6 +8664,7 @@ destructor TJanuaRecord.Destroy;
 begin
   try
     FStoreDataset := nil;
+    FOldRecord := nil;
     FRecordSets := nil;
     FRecords := nil;
     FKeyFields := nil;
@@ -8647,6 +8713,9 @@ procedure TJanuaRecord.DoDataChange(const aField: IJanuaField);
 begin
   if FOnChangeActive and aField.IsMonitored then
   begin
+    if Assigned(FOldRecord) and not(FOldRecord.GUID = GUID) then
+      FOldRecord.Assign(self as IJanuaRecord);
+
     DoCalcFields;
     InternalCalcFields(aField);
     if Assigned(FOnRecordChange) then
@@ -8735,22 +8804,6 @@ end;
 constructor TJanuaRecord.Create;
 begin
   inherited;
-  FEntity := TJanuaEntity.None;
-  FOnChangeActive := False;
-  FMappedDataset := nil;
-  FFields := TCollections.CreateList<IJanuaField>;
-  FRecordSets := TCollections.CreateList<IJanuaRecordSet>;
-  FRecords := TCollections.CreateList<IJanuaRecord>;
-  FCalcFields := TCollections.CreateList<IJanuaField>;
-  FTriggerFields := TCollections.CreateList<IJanuaField>;
-  FKeyFields := TCollections.CreateList<IJanuaField>;
-  // Initialize imposta a Default non solo i valori di GUID ed Index ma anche ogni singolo campo
-  InternalInitialize;
-  GUID := GUID_NULL;
-  FMapToDataset := False;
-  FIsNewRecord := False;
-  FState := jrsNone;
-  FNotStored := False;
 end;
 
 function TJanuaRecord.FieldByName(const aName: string): IJanuaField;
@@ -9081,6 +9134,28 @@ procedure TJanuaRecord.InternalCalcFields(const aField: IJanuaField);
 begin
   if not aField.IsMonitored then
     exit;
+end;
+
+procedure TJanuaRecord.InternalCreateRecord;
+begin
+  FEntity := TJanuaEntity.None;
+  FOnChangeActive := False;
+  FMappedDataset := nil;
+  FFields := TCollections.CreateList<IJanuaField>;
+  FRecordSets := TCollections.CreateList<IJanuaRecordSet>;
+  FRecords := TCollections.CreateList<IJanuaRecord>;
+  FCalcFields := TCollections.CreateList<IJanuaField>;
+  FTriggerFields := TCollections.CreateList<IJanuaField>;
+  FKeyFields := TCollections.CreateList<IJanuaField>;
+  // Initialize imposta a Default non solo i valori di GUID ed Index ma anche ogni singolo campo
+  InternalInitialize;
+  GUID := GUID_NULL;
+  FMapToDataset := False;
+  FIsNewRecord := False;
+  FState := jrsNone;
+  FNotStored := False;
+  if not FIsOldRecord then
+    FOldRecord := TJanuaRecord.CreateAsOldRecord;
 end;
 
 procedure TJanuaRecord.LoadFromDataset(const aMainDataset: IJanuaDBDataset;
@@ -13131,8 +13206,16 @@ end;
 
 procedure TJanuaGUIDField.Clear;
 begin
-  FInternalValue := GUID_NULL;
-  SetIsNull(True);
+  try
+    FInternalValue := GUID_NULL;
+    SetIsNull(True);
+  except
+    on e: exception do
+      if Assigned(self) then
+        raise exception.Create('TJanuaCurrencyField (' + DBField + ').Clear Error = ' + sl + e.Message)
+      else
+        raise exception.Create('TJanuaCurrencyField.Clear Error = Class is nil ' + sl + e.Message);
+  end;
 end;
 
 constructor TJanuaGUIDField.Create(aKey, aField: string; aIsMonitored: Boolean = False);
@@ -13982,6 +14065,22 @@ begin
   inherited;
   FEntityType := TJanuaEntity.None;
   FContainerType := TSearchContainerType.jscRadioList;
+end;
+
+{ TJanuaCustomRecord }
+
+constructor TJanuaCustomRecord.Create;
+begin
+  inherited;
+  FIsOldRecord := False;
+  InternalCreateRecord;
+end;
+
+constructor TJanuaCustomRecord.CreateAsOldRecord;
+begin
+  inherited Create;
+  FIsOldRecord := True;
+  InternalCreateRecord;
 end;
 
 initialization

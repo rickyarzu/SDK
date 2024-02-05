@@ -107,45 +107,45 @@ begin
   aCheck := False;
   // Default check to false if not passed or not checked .............................................
 
-  if self.edPersonaNome.Text = '' then
+  if edPersonaNome.Text = '' then
     ShowMessage('Attenzione occorre inserire il proprio Nome')
-  else if self.edPersonaCognome.Text = '' then
+  else if edPersonaCognome.Text = '' then
     ShowMessage('Attenzione occorre inserire il proprio Cognome')
-  else if self.rgGender.ItemIndex = -1 then
+  else if rgGender.ItemIndex = -1 then
     ShowMessage('Attenzione occorre indicare il sesso (M/F)')
-  else if (self.edCodiceFiscale.Text = '') or (Janua.Core.Functions.StringLength(self.edCodiceFiscale.Text) <
-    16) or not VerifyFiscalCode(self.edCodiceFiscale.Text, error) then
+  else if (edCodiceFiscale.Text = '') or (Janua.Core.Functions.StringLength(edCodiceFiscale.Text) < 16) or
+    not VerifyFiscalCode(edCodiceFiscale.Text, error) then
     ShowMessage('Attenzione occorre inserire un codice fiscale Valido')
     {
-      else if (self.edCodiceFiscale.Text = '') or (Length(self.edCodiceFiscale.Text) < 16) or
-      not VerifyFiscalCode(self.edCodiceFiscale.Text, error) then
+      else if (edCodiceFiscale.Text = '') or (Length(edCodiceFiscale.Text) < 16) or
+      not VerifyFiscalCode(edCodiceFiscale.Text, error) then
       ShowMessage('Attenzione occorre inserire un codice fiscale Valido')S.
-      else if self.edIndrizzo.Text = '' then
+      else if edIndrizzo.Text = '' then
       ShowMessage('Attenzione occorre inserire un indirizzo')
       {
-      else if self.edTown.Text = '' then
+      else if edTown.Text = '' then
       ShowMessage('Attenzione occorre inserire il proprio comune di residenza', '', '')
-      else if self.edDataNascita.Date = 0 then
+      else if edDataNascita.Date = 0 then
       ShowMessage('Attenzione occorre inserire una data Valida', '', '')
-      else if self.edLuogoNascita.Text = '' then
+      else if edLuogoNascita.Text = '' then
       ShowMessage('Attenzione occorre inserire un luogo di nascita', '', '')
-      else if self.rgGender.ItemIndex = -1 then
+      else if rgGender.ItemIndex = -1 then
       ShowMessage('Attenzione occorre indicare il sesso (M/F)', '', '')
-      else if not self.DM.JanuaServerHealthBooking1.GeoCoding(self.edIndrizzo.Text + ', ' + self.edCivico.Text +
-      ', ' + self.edTown.Text) then
+      else if not DM.JanuaServerHealthBooking1.GeoCoding(edIndrizzo.Text + ', ' + edCivico.Text +
+      ', ' + edTown.Text) then
       ShowMessage('Attenzione Indirizzo non riconosciuto dal sistema', '', ''
     }
   else
   begin
     aCheck := True;
-    UserProfile.FirstName := self.edPersonaNome.Text;
-    UserProfile.LastName := self.edPersonaCognome.Text;
-    UserProfile.BirthDate := self.edDataNascita.Date;
-    UserProfile.Address.AddressFull := self.edIndrizzo.Text;
+    UserProfile.FirstName := edPersonaNome.Text;
+    UserProfile.LastName := edPersonaCognome.Text;
+    UserProfile.BirthDate := edDataNascita.Date;
+    UserProfile.Address.AddressFull := edIndrizzo.Text;
     {
-      UserProfile.Address.postalcode := self.edPostalCode.Text;
-      UserProfile.Address.Town := self.edTown.Text;
-      UserProfile.Address.Number := self.edCivico.Text;
+      UserProfile.Address.postalcode := edPostalCode.Text;
+      UserProfile.Address.Town := edTown.Text;
+      UserProfile.Address.Number := edCivico.Text;
     }
     UserProfile.FiscalCode := edCodiceFiscale.Text;
     UserProfile.Gender.GenderCode := rgGender.Items[rgGender.ItemIndex].Value;
@@ -156,7 +156,7 @@ begin
     if FJanuaSystemClient.SaveProfile(UserProfile) then
     begin
       ShowMessage('Dati aggiornati con successo');
-      self.IsRegistered := True;
+      IsRegistered := True;
     end
     else
       ShowMessage('Errore di Aggiornamento dati utente: ' + FJanuaSystemClient.ErrorMessage);
@@ -173,55 +173,55 @@ begin
     raise Exception.Create('frameFMXRegisterMobile: FJanuaRESTHealthClient not set');
   aCheck := True;
 
-  if self.edFirstMail.Text = '' then
+  if edFirstMail.Text = '' then
   begin
     ShowMessage('Attenzione occorre inserire un indirizzo Email');
   end
-  else if not Janua.Core.Functions.IsValidEmail(self.edFirstMail.Text) then
+  else if not Janua.Core.Functions.IsValidEmail(edFirstMail.Text) then
   begin
     ShowMessage('Attenzione è stato inserito un indirizzo non valido');
     aCheck := False;
   end
-  else if not(edFirstMail.Text = self.edConfirmMail.Text) then
+  else if not(edFirstMail.Text = edConfirmMail.Text) then
   begin
     ShowMessage('Attenzione la mail inserita non è uguale alla sua conferma');
     aCheck := False;
   end
   else
   begin
-    UserProfile.User.Email := self.edFirstMail.Text;
-    UserProfile.User.Password := self.edPassword.Text;
+    UserProfile.User.Email := edFirstMail.Text;
+    UserProfile.User.Password := edPassword.Text;
     UserProfile.User.IsoLanguageCode := 'it';
     UserProfile.User.IsoCultureCode := 'it_IT';
-    if (self.UserProfile.User.ID = 0) and not FJanuaSystemClient.CheckNewUser(UserProfile) then
+    if (UserProfile.User.ID = 0) and not FJanuaSystemClient.CheckNewUser(UserProfile) then
     begin
       ShowMessage
         ('Attenzione utente già registrato, se non ricordate la password potete recuperarla via Mail');
     end
-    else if self.UserProfile.User.ID = 0 then
+    else if UserProfile.User.ID = 0 then
     begin
-      FJanuaSystemClient.CreateNewUser(self.UserProfile, aCheck);
+      FJanuaSystemClient.CreateNewUser(UserProfile, aCheck);
       if aCheck then
       begin
         // FJanuaSystemClient.Login(UserProfile.User.Email, UserProfile.User.Password);
         ShowMessage('Utente registrato con successo');
-        self.IsRegistered := True;
-        self.TabControlRegister.Next(TTabTransition.Slide)
+        IsRegistered := True;
+        TabControlRegister.Next(TTabTransition.Slide)
       end
       else
       begin
         ShowMessage('Errore di Registrazione utente sul server: ');
-        // self.JanuaPostgresSystem.LastErrorMessage);
+        // JanuaPostgresSystem.LastErrorMessage);
         { TODO : Aggiungere ad ogni procedura una Var con lastErrorMessage }
       end;
     end
-    else if self.UserProfile.User.ID <> 0 then
+    else if UserProfile.User.ID <> 0 then
     begin
       if FJanuaSystemClient.SaveProfile(UserProfile) then
       begin
         ShowMessage('Dati aggiornati con successo');
-        self.IsRegistered := True;
-        self.TabControlRegister.Next(TTabTransition.Slide)
+        IsRegistered := True;
+        TabControlRegister.Next(TTabTransition.Slide)
       end
       else
         ShowMessage('Errore di Aggiornamento dati utente: ' + FJanuaSystemClient.ErrorMessage);
@@ -233,18 +233,18 @@ end;
 
 procedure TframeFMXRegisterMobile.Default;
 begin
-  self.UserProfile.Clear;
-  self.FActive := False;
+  UserProfile.Clear;
+  FActive := False;
 end;
 
 procedure TframeFMXRegisterMobile.edIndrizzoEnter(Sender: TObject);
 begin
-  self.Panel5.Visible := False;
+  Panel5.Visible := False;
 end;
 
 procedure TframeFMXRegisterMobile.edIndrizzoExit(Sender: TObject);
 begin
-  self.Panel5.Visible := True;
+  Panel5.Visible := True;
   Panel5.Position.X := 0;
 end;
 
@@ -255,7 +255,7 @@ end;
 
 procedure TframeFMXRegisterMobile.GoPassword;
 begin
-  self.TabControlRegister.ActiveTab := self.TabItemPassword;
+  TabControlRegister.ActiveTab := TabItemPassword;
   SetupFormManager
 end;
 
@@ -289,9 +289,8 @@ end;
 procedure TframeFMXRegisterMobile.SetActive(const Value: boolean);
 begin
   FActive := Value;
-  if not self.FActive and Value then
-    self.LoadProfile
-
+  if not FActive and Value then
+    LoadProfile
 end;
 
 procedure TframeFMXRegisterMobile.SetIsRegistered(const Value: boolean);
@@ -311,20 +310,20 @@ end;
 
 procedure TframeFMXRegisterMobile.SetupFormManager;
 begin
-  if assigned(self.FJanuaFMXFormManager) then
+  if assigned(FJanuaFMXFormManager) then
   begin
-    if self.TabControlRegister.ActiveTab = self.TabItemPassword then
+    if TabControlRegister.ActiveTab = TabItemPassword then
     begin
       FJanuaFMXFormManager.Active := False;
-      self.FJanuaFMXFormManager.VertScrollBox := self.VertScrollBox1;
-      self.FJanuaFMXFormManager.MainLayout := self.Layout1;
+      FJanuaFMXFormManager.VertScrollBox := VertScrollBox1;
+      FJanuaFMXFormManager.MainLayout := Layout1;
       FJanuaFMXFormManager.Activate;
     end
-    else if self.TabControlRegister.ActiveTab = self.TabItemPersonal then
+    else if TabControlRegister.ActiveTab = TabItemPersonal then
     begin
       FJanuaFMXFormManager.Active := False;
-      self.FJanuaFMXFormManager.VertScrollBox := self.VertScrollBox2;
-      self.FJanuaFMXFormManager.MainLayout := self.Layout2;
+      FJanuaFMXFormManager.VertScrollBox := VertScrollBox2;
+      FJanuaFMXFormManager.MainLayout := Layout2;
       FJanuaFMXFormManager.Activate;
     end;
   end;
@@ -332,12 +331,12 @@ end;
 
 procedure TframeFMXRegisterMobile.SetupProfile;
 begin
-  edFirstMail.Text := FUserProfile.User.Email.AsString;
-  edPassword.Text := FUserProfile.User.Password.AsString;
-  edPersonaNome.Text := FUserProfile.First_name.AsString;
-  edPersonaCognome.Text := FUserProfile.Last_name.AsString;
-  edDataNascita.Date := FUserProfile.Birth_date.AsDateTime;
-  edIndrizzo.Text := FUserProfile.Address_full.AsString;
+  edFirstMail.Text := FUSerProfile.User.Email.AsString;
+  edPassword.Text := FUSerProfile.User.Password.AsString;
+  edPersonaNome.Text := FUSerProfile.First_name.AsString;
+  edPersonaCognome.Text := FUSerProfile.Last_name.AsString;
+  edDataNascita.Date := FUSerProfile.Birth_date.AsDateTime;
+  edIndrizzo.Text := FUSerProfile.Address_full.AsString;
   edCodiceFiscale.Text := UserProfile.FiscalCode;
   rgGender.ItemIndex := UserProfile.Gender.GenderIndex;
 end;
@@ -345,6 +344,8 @@ end;
 procedure TframeFMXRegisterMobile.SetUserProfile(const Value: IUserProfile);
 begin
   FUSerProfile := Value;
+  if assigned(FUSerProfile) then
+    SetupProfile
 end;
 
 procedure TframeFMXRegisterMobile.Switch1Switch(Sender: TObject);

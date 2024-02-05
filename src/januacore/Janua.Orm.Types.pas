@@ -35,6 +35,8 @@ const
     'likeSU', 'likeSL', '>=', '<=');
 
 type
+  TRecordSetState = (rsNone, rsInserting, rsEditing, rsDeleting, rsLoading);
+
   TJanuaEntity = (None,
     // Test Tables -------------------------------------------------------------------------------------------
     TestMaster, TestDetail,
@@ -510,7 +512,7 @@ end;
 
 function TDatasetPagination.GetFromRecord: UInt32;
 begin
-  result := IfThen(Active,  UInt32(Page - 1) * Size, 0);
+  result := IfThen(Active, UInt32(Page - 1) * Size, 0);
 end;
 
 function TDatasetPagination.GetToRecord: UInt32;

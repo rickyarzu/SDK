@@ -17,6 +17,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'NR.'
       TabOrder = 3
     end
@@ -29,6 +30,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'MAT/ANNO'
       TabOrder = 2
     end
@@ -41,6 +43,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       TabOrder = 0
     end
     object lbIntervento: TLabel
@@ -51,6 +54,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'INTERVENTO'
       TabOrder = 1
     end
@@ -70,6 +74,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '1'
       TabOrder = 2
     end
@@ -81,6 +86,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '12346/2018'
       TabOrder = 1
     end
@@ -105,6 +111,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 111.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Ordinario'
       TabOrder = 0
     end
@@ -125,6 +132,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'TIPO'
       TabOrder = 0
     end
@@ -143,6 +151,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 342.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'P634E Estintore Polvere Kg. 06En3'
       TabOrder = 0
     end
@@ -163,6 +172,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'PROSS. REV.'
       TabOrder = 2
     end
@@ -175,6 +185,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'PROSS COLL'
       TabOrder = 1
     end
@@ -187,6 +198,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'ANNO SOST'
       TabOrder = 0
     end
@@ -206,6 +218,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 90.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '08/2021'
       TabOrder = 2
     end
@@ -217,6 +230,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '08/2023'
       TabOrder = 1
     end
@@ -228,6 +242,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '2036'
       TabOrder = 0
     end
@@ -248,6 +263,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'UBICAZIONE'
       TabOrder = 0
     end
@@ -266,6 +282,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 342.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Ingresso Ufficio'
       TabOrder = 0
     end
@@ -287,6 +304,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.PlatformDefault = False
       TabOrder = 11
       GroupName = '1'
+      Text = 'TMSFNCRadioButton'
       Font.Name = 'Segoe UI'
     end
     object ckbRitir: TTMSFNCRadioButton
@@ -299,6 +317,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.PlatformDefault = False
       TabOrder = 10
       GroupName = '1'
+      Text = 'TMSFNCRadioButton'
       Font.Name = 'Segoe UI'
     end
     object ckbSmalt: TTMSFNCRadioButton
@@ -311,6 +330,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
+      Text = 'TMSFNCRadioButton'
       Font.Name = 'Segoe UI'
     end
     object ckbRest: TTMSFNCRadioButton
@@ -323,6 +343,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
+      Text = 'TMSFNCRadioButton'
       Font.Name = 'Segoe UI'
     end
     object ckbNonEseg: TTMSFNCRadioButton
@@ -335,6 +356,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
+      Text = 'TMSFNCRadioButton'
       Font.Name = 'Segoe UI'
     end
   end
@@ -354,6 +376,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'ESEG'
       TabOrder = 4
     end
@@ -365,6 +388,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'RITIR'
       TabOrder = 3
     end
@@ -377,6 +401,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'SMALT'
       TabOrder = 2
     end
@@ -389,6 +414,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'NON ESEG.'
       TabOrder = 1
     end
@@ -401,6 +427,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'REST'
       TabOrder = 0
     end
@@ -421,6 +448,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'ANOMALIA'
       TabOrder = 0
     end
@@ -433,7 +461,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
-    Viewport.Width = 340.000000000000000000
-    Viewport.Height = 38.000000000000000000
+    Viewport.Width = 344.000000000000000000
+    Viewport.Height = 42.000000000000000000
   end
 end

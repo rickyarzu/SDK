@@ -2914,9 +2914,6 @@ inherited dmJanuaPgAnagraphStorage: TdmJanuaPgAnagraphStorage
       'from anagraph.anagraphs_view a'
       'where '
       '(jguid = :jguid) or (anagraph_id = :anagraph_id)')
-    AfterOpen = qrySingleAnagraphOldAfterOpen
-    BeforePost = qrySingleAnagraphOldBeforePost
-    AfterPost = qrySingleAnagraphOldAfterPost
     Left = 632
     Top = 32
     ParamData = <
