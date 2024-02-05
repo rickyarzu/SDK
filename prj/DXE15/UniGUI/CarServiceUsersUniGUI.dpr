@@ -47,8 +47,9 @@ uses
 
 begin
   TJanuaApplication.TestMode := False; // Set this or unset this to enable Test Database connection
-  // le applicazioni locali UniGUI hanno come Home:
+  // le applicazioni locali UniGUI hanno come nome applicativo e come home directory:
   TJanuaCarServiceUniGUIApplication.ApplicationSetup('app.carservice.com');
+  // Parametro per la porta di Ascolto del server di UniGUI
   TJanuacoreOS.WriteParam('UniGUI', 'Port', 8081);
 {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := True;
@@ -58,6 +59,7 @@ begin
   // Verifico quale sia la location del Config File per aggiustarlo eventualmente
   var
   sServer := TJanuaApplication.ServerAddress;
+  // se il server non è configurato va messo a posto il file
 
   Guard.CheckFalse(sConfFile = '', 'sConfFile not set');
   Guard.CheckFalse(sServer = '', 'sServer not set');

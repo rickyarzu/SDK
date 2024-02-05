@@ -17,7 +17,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
         FieldLength = 4096
       end>
     Port = 5432
-    Server = 'pg.januaservers.com'
+    Server = '192.168.182.1'
     SchemaID = 36
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
