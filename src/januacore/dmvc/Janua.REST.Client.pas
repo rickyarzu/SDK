@@ -95,20 +95,29 @@ type
     FLoginResult: string;
     FPassword: string;
     FUsername: string;
+    FHttpMethod: TJanuaHttpMethod;
   private
     function GetLoginResult: string;
     procedure SetPassword(const Value: string);
     procedure SetUsername(const Value: string);
+    function GetHttpMethod: TJanuaHttpMethod;
+    procedure SetHttpMethod(const Value: TJanuaHttpMethod);
   protected
+    FResponseContent: string;
+    FHttpStatus: HTTP_STATUS;
+    Fsc: integer;
+    FToken: string;
+    FExtractTokenProc: TProc;
     function GetPassword: string; virtual;
     function GetUsername: string; virtual;
   public
     function GetBaseUrl: string; override;
-    function Login: Boolean; overload;
+    function Login: Boolean; overload; virtual;
     function Login(aUsername, aPassword: string): Boolean; overload;
     property LoginResult: string read GetLoginResult;
     property Username: string read GetUsername write SetUsername;
     property Password: string read GetPassword write SetPassword;
+    property HttpMethod: TJanuaHttpMethod read GetHttpMethod write SetHttpMethod;
   end;
 
   TRESTClientAuth = class(TRESTClientCustomAuthLogin)
@@ -130,6 +139,7 @@ type
     function GenerateRequest(const aMethod: TJanuaHttpMethod = jhmGet): IRequest; virtual;
   public
     function GetBaseUrl: string; override;
+    function Login: Boolean; overload; override;
   end;
 
   TRESTRecordClient = class(TJanuaRESTClient, IRESTRecordClient)
@@ -540,7 +550,18 @@ end;
 constructor TRESTClientCustomAuthLogin.Create;
 begin
   inherited;
-  AuthenticationType := jatBasic
+  AuthenticationType := jatBasic;
+  FHttpMethod := TJanuaHttpMethod.jhmGet;
+end;
+
+function TRESTClientCustomAuthLogin.GetBaseUrl: string;
+begin
+  Result := inherited;
+end;
+
+function TRESTClientCustomAuthLogin.GetHttpMethod: TJanuaHttpMethod;
+begin
+  Result := FHttpMethod
 end;
 
 function TRESTClientCustomAuthLogin.GetLoginResult: string;
@@ -556,6 +577,11 @@ end;
 function TRESTClientCustomAuthLogin.GetUsername: string;
 begin
   Result := FUsername
+end;
+
+procedure TRESTClientCustomAuthLogin.SetHttpMethod(const Value: TJanuaHttpMethod);
+begin
+  FHttpMethod := Value;
 end;
 
 procedure TRESTClientCustomAuthLogin.SetPassword(const Value: string);
@@ -579,31 +605,22 @@ function TRESTClientCustomAuthLogin.Login: Boolean;
 var
   LResponse: IResponse;
   lRequest: IRequest;
-  lHttpStatus: HTTP_STATUS;
-  sc: integer;
 begin
-  Username := IfThen(Username = '', TJanuaApplication.RestClientConf.Username, Username);
-  Password := IfThen(Password = '', TJanuaApplication.RestClientConf.Password, Password);
   Result := False;
-  sc := -1;
+  Fsc := -1;
   if (Username <> '') and (Password <> '') then
   begin
-    // Login at /api/login
     LResponse := GenerateRequest.Get;
-    sc := LResponse.StatusCode;
-    Result := sc = 200;
+    Fsc := LResponse.StatusCode;
+    Result := Fsc = 200;
+    FResponseContent := LResponse.Content;
     FLoginResult := LResponse.StatusCode.ToString + ' ' + LResponse.StatusText + sl + LResponse.Content;
     if Assigned(AfterExecute) then
-      AfterExecute(FLoginResult);
+      AfterExecute(FResponseContent);
     if Assigned(FLogProc) then
       FLogProc('Login', FLoginResult, self);
-    if Result then
-      TJanuaApplication.RestClientConf.JWT := TJanuaJson.ExtractJWT(LResponse.Content)
-    else
-    begin
-      WriteLocalLog('Login', lHttpStatus.Status[sc] + ' ' + lHttpStatus.Levels[sc] + sl + LResponse.Content);
-      TJanuaApplication.RestClientConf.JWT := '';
-    end;
+    if Result and Assigned(FExtractTokenProc) then
+      FExtractTokenProc;
   end
   else
   begin
@@ -619,6 +636,10 @@ constructor TRESTClientLogin.Create;
 begin
   inherited;
   FAPIUrl := CLoginApiURL;
+  FExtractTokenProc := procedure
+    begin
+      FToken := TJanuaJson.ExtractJWT(FResponseContent)
+    end
 end;
 
 function TRESTClientLogin.GenerateRequest(const aMethod: TJanuaHttpMethod): IRequest;
@@ -633,7 +654,8 @@ end;
 
 function TRESTClientLogin.GetPassword: string;
 begin
-  Result := inherited
+  Result := inherited;
+  Result := IfThen(Result = '', TJanuaApplication.RestClientConf.Password, Result);
 end;
 
 function TRESTClientLogin.GetRequest(const aResources: TResources = []): IRequest;
@@ -646,6 +668,19 @@ end;
 function TRESTClientLogin.GetUsername: string;
 begin
   Result := inherited;
+  Result := IfThen(Result = '', TJanuaApplication.RestClientConf.Username, Result);
+end;
+
+function TRESTClientLogin.Login: Boolean;
+begin
+  Result := inherited;
+  if Result then
+    TJanuaApplication.RestClientConf.JWT := FToken
+  else
+  begin
+    WriteLocalLog('Login', FHttpStatus.Status[Fsc] + ' ' + FHttpStatus.Levels[Fsc] + sl + FResponseContent);
+    TJanuaApplication.RestClientConf.JWT := '';
+  end;
 end;
 
 procedure TRESTClientLogin.SetAuthentication(aRequest: IRequest);
@@ -857,6 +892,14 @@ end;
 
 procedure TRESTProcClient.SetJanuaParams(const Value: IJanuaParams);
 begin
+end;
+
+{ TRESTClientAuth }
+
+constructor TRESTClientAuth.Create;
+begin
+  inherited;
+
 end;
 
 initialization
