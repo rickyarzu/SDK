@@ -1669,13 +1669,16 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
   object qryPickupSlots: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
+      'SELECT * from carservice.timetable_free_places p'
+      '/*'
       
-        'SELECT workingday, p.slot_id,  slot_des, places, booked, free_pl' +
-        'aces, free,'
+        'workingday, p.slot_id,  slot_des, places, booked, free_places, f' +
+        'ree,'
       '                   s.delivery_time, s.slot_delivery'
       #9'FROM carservice.timetable_places p '
       #9#9'JOIN carservice.timetable_slots s on p.slot_id = s.slot_id  '
-      'where workingday = :pickupdate'
+      '*/'
+      'where p.workingday = :pickupdate'
       'ORDER BY  p.slot_id')
     Left = 192
     Top = 56
@@ -1723,14 +1726,18 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
   object qryReturnSlots: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
+      'SELECT * from carservice.timetable_free_places p'
+      '/*'
       
-        'SELECT workingday, p.slot_id,  slot_des, places, booked, free_pl' +
-        'aces, free,'
-      '        s.delivery_time, s.slot_delivery'
+        'workingday, p.slot_id,  slot_des, places, booked, free_places, f' +
+        'ree,'
+      '                   s.delivery_time, s.slot_delivery'
       #9'FROM carservice.timetable_places p '
       #9#9'JOIN carservice.timetable_slots s on p.slot_id = s.slot_id  '
-      'where workingday = :pickupdate'
-      'ORDER BY p.slot_id')
+      '*/'
+      'where p.workingday = :pickupdate'
+      'ORDER BY  p.slot_id'
+      '')
     Left = 344
     Top = 56
     ParamData = <
@@ -1738,7 +1745,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
         DataType = ftDate
         Name = 'pickupdate'
         ParamType = ptInput
-        Value = nil
+        Value = 45324d
       end>
     object qryReturnSlotsworkingday: TDateField
       FieldName = 'workingday'
@@ -1777,13 +1784,9 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
   object qryCheckSlots: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
-      
-        'SELECT workingday, p.slot_id,  slot_des, places, booked, free_pl' +
-        'aces, free'
-      #9'FROM carservice.timetable_places p '
-      #9#9'JOIN carservice.timetable_slots s on p.slot_id = s.slot_id  '
+      'SELECT * from carservice.timetable_free_places'
       'where workingday = :checkdate'
-      'ORDER BY p.slot_id')
+      'ORDER BY slot_id')
     Left = 264
     Top = 160
     ParamData = <
@@ -1791,7 +1794,7 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
         DataType = ftDate
         Name = 'checkdate'
         ParamType = ptInput
-        Value = nil
+        Value = 45324d
       end>
     object qryCheckSlotsworkingday: TDateField
       FieldName = 'workingday'

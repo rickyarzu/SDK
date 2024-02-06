@@ -98,8 +98,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         object lbHasReturn: TUniLabel
           Left = 502
           Top = 15
-          Width = 102
-          Height = 13
+          Width = 105
+          Height = 15
           Hint = ''
           Caption = 'Prevista Riconsegna'
           ParentColor = False

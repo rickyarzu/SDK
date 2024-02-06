@@ -497,6 +497,7 @@ type
     procedure OnDeliveryTimeSlotChange(const aRecord: IJanuaRecord);
     function CheckPickuSlots: Boolean;
     function CheckDeliverySlots: Boolean;
+    function CheckPickupDelivery: Boolean;
     procedure RegisterPickupDeliverySlots;
     procedure ConfirmBooking;
     function GetSMSMessageClient: string;
@@ -632,6 +633,28 @@ begin
   Result := False;
   for lSlot in DeliverySlots do
     Result := Result or lSlot.Booked.AsBoolean;
+end;
+
+function TdmPgCarServiceBookingStorage.CheckPickupDelivery: Boolean;
+var
+  lSlot, lPickup, lReturn: ItimetableSlot;
+begin
+  Result := HasReturn;
+  if not Result then
+  begin
+    for lSlot in PickupSlots do
+      if lSlot.Booked.AsBoolean then
+        lPickup := lSlot;
+
+    for lSlot in DeliverySlots do
+      if lSlot.Booked.AsBoolean then
+        lReturn := lSlot;
+
+    Result := (lReturn.Workingday.AsDateTime > lPickup.Workingday.AsDateTime) or
+      ((lReturn.Workingday = lPickup.Workingday) and (lReturn.SlotId.AsInteger > lPickup.SlotId.AsInteger));
+
+  end;
+
 end;
 
 function TdmPgCarServiceBookingStorage.CheckPickuSlots: Boolean;
@@ -1180,8 +1203,8 @@ begin
           if lTimeTableView.Booked.AsBoolean then
           begin
             // SELECT ergomercator.carservice.carservice_book_jguid(:p_day, :p_slot_id, :p_pickup, :p_jguid)
-            spBookPickup.ParamByName('p_day').AsDate := lTimeTableView.WorkingDay.AsDateTime;
-            spBookPickup.ParamByName('p_slot_id').AsSmallint := lTimeTableView.SlotID.AsSmallint;
+            spBookPickup.ParamByName('p_day').AsDate := lTimeTableView.Workingday.AsDateTime;
+            spBookPickup.ParamByName('p_slot_id').AsSmallint := lTimeTableView.SlotId.AsSmallint;
             spBookPickup.ParamByName('p_pickup').AsBoolean := True;
             spBookPickup.ParamByName('p_jguid').AsString := FBookingRecord.GUIDString;
             spBookPickup.ParamByName('p_from_id').AsInteger := AnagraphClient.MainAddress.Id.AsInteger;
@@ -1204,8 +1227,8 @@ begin
           if lTimeTableView.Booked.AsBoolean then
           begin
             // SELECT ergomercator.carservice.carservice_book_jguid(:p_day, :p_slot_id, :p_pickup, :p_jguid)
-            spBookPickup.ParamByName('p_day').AsDate := lTimeTableView.WorkingDay.AsDateTime;
-            spBookPickup.ParamByName('p_slot_id').AsSmallint := lTimeTableView.SlotID.AsSmallint;
+            spBookPickup.ParamByName('p_day').AsDate := lTimeTableView.Workingday.AsDateTime;
+            spBookPickup.ParamByName('p_slot_id').AsSmallint := lTimeTableView.SlotId.AsSmallint;
             spBookPickup.ParamByName('p_pickup').AsBoolean := False;
             spBookPickup.ParamByName('p_jguid').AsString := FBookingRecord.GUIDString;
             spBookPickup.ParamByName('p_from_id').AsInteger := ServiceAnagraph.MainAddress.Id.AsInteger;
@@ -1584,10 +1607,10 @@ begin
   FBookingRecord := Value;
   if Assigned(FBookingRecord) then
   begin
-    if FBookingRecord.PickupDateTime.WorkingDay.AsFloat = 0.0 then
-      FBookingRecord.PickupDateTime.WorkingDay.AsDateTime := FPickupDate;
-    if FBookingRecord.DeliveryDateTime.WorkingDay.AsFloat = 0.0 then
-      FBookingRecord.DeliveryDateTime.WorkingDay.AsDateTime := FDeliveryDate;
+    if FBookingRecord.PickupDateTime.Workingday.AsFloat = 0.0 then
+      FBookingRecord.PickupDateTime.Workingday.AsDateTime := FPickupDate;
+    if FBookingRecord.DeliveryDateTime.Workingday.AsFloat = 0.0 then
+      FBookingRecord.DeliveryDateTime.Workingday.AsDateTime := FDeliveryDate;
   end;
 end;
 
@@ -1918,8 +1941,8 @@ end;
 
 procedure TdmPgCarServiceBookingStorage.UpdatePickup;
 begin
-  spBookPickup.ParamByName('p_day').AsDate := BookingRecord.PickupDateTime.WorkingDay.AsDateTime;
-  spBookPickup.ParamByName('p_slot_id').AsSmallint := BookingRecord.PickupDateTime.SlotID.AsSmallint;
+  spBookPickup.ParamByName('p_day').AsDate := BookingRecord.PickupDateTime.Workingday.AsDateTime;
+  spBookPickup.ParamByName('p_slot_id').AsSmallint := BookingRecord.PickupDateTime.SlotId.AsSmallint;
   spBookPickup.ParamByName('p_pickup').AsBoolean := True;
   spBookPickup.ParamByName('p_jguid').AsString := FBookingRecord.GUIDString;
   spBookPickup.ParamByName('p_from_id').AsInteger := BookingRecord.PickupDateTime.FromId.AsInteger;
@@ -1961,8 +1984,8 @@ end;
 
 procedure TdmPgCarServiceBookingStorage.UpdateReturn;
 begin
-  spBookPickup.ParamByName('p_day').AsDate := BookingRecord.DeliveryDateTime.WorkingDay.AsDateTime;
-  spBookPickup.ParamByName('p_slot_id').AsSmallint := BookingRecord.DeliveryDateTime.SlotID.AsSmallint;
+  spBookPickup.ParamByName('p_day').AsDate := BookingRecord.DeliveryDateTime.Workingday.AsDateTime;
+  spBookPickup.ParamByName('p_slot_id').AsSmallint := BookingRecord.DeliveryDateTime.SlotId.AsSmallint;
   spBookPickup.ParamByName('p_Return').AsBoolean := True;
   spBookPickup.ParamByName('p_jguid').AsString := FBookingRecord.GUIDString;
   spBookPickup.ParamByName('p_from_id').AsInteger := BookingRecord.DeliveryDateTime.FromId.AsInteger;
