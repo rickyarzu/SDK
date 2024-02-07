@@ -425,6 +425,7 @@ type
     FBranchesList: IAnagraphViews;
     FLandingMsgBuilder: IJanuaCSBookingLandingMsgBuilder;
     FConfirmed: Boolean;
+    procedure SortList(aList: IList<ItimetableSlot>);
     procedure SetUserProfile(const Value: IUserProfile);
     procedure SetUsersession(const Value: IUserSession);
     procedure SetBranchID(const Value: Integer);
@@ -1863,6 +1864,15 @@ begin
   FUsersList := Value;
 end;
 
+procedure TdmPgCarServiceBookingStorage.SortList(aList: IList<ItimetableSlot>);
+begin
+  aList.Sort(
+    function(const L, R: ItimetableSlot): Integer
+    begin
+      Result := L.SlotId.AsInteger - R.SlotId.AsInteger;
+    end)
+end;
+
 procedure TdmPgCarServiceBookingStorage.UpdateAccountBalance;
 begin
   qryAccountBalance.Close;
@@ -1896,6 +1906,7 @@ begin
       FDeliverySlots.Add(lTimeTableView);
       FDeliveryList.Next;
     end;
+    SortList(FDeliverySlots);
   end;
 
 end;
@@ -1979,6 +1990,7 @@ begin
       FPickupSlots.Add(lTimeTableView);
       FPickupList.Next;
     end;
+    SortList(FPickupSlots);
   end;
 end;
 
