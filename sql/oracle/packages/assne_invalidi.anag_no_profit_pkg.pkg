@@ -1,0 +1,136 @@
+CREATE OR REPLACE PACKAGE assne_invalidi.anag_no_profit_pkg
+  IS
+--
+-- To modify this template, edit file PKGSPEC.TXT in TEMPLATE
+-- directory of SQL Navigator
+--
+-- Purpose: Briefly explain the functionality of the package
+--
+-- MODIFICATION HISTORY
+-- Person      Date    Comments
+-- ---------   ------  ------------------------------------------
+   -- Enter package declarations as shown below
+
+   PROCEDURE renew_membership
+    ( p_payment_type IN char,
+      p_anagraph_id IN integer,
+      p_amount IN number,
+      p_esercizio_cod in varchar,
+      p_check_number in varchar);
+
+END; -- Package spec
+/
+CREATE OR REPLACE PACKAGE BODY assne_invalidi.anag_no_profit_pkg
+IS
+--
+-- To modify this template, edit file PKGBODY.TXT in TEMPLATE
+-- directory of SQL Navigator
+--
+-- Purpose: Briefly explain the functionality of the package body
+--
+-- MODIFICATION HISTORY
+-- Person      Date    Comments
+-- ---------   ------  ------------------------------------------
+   -- Enter procedure, function bodies as shown below
+
+   /* Formatted on 08-feb-2024 12:17:50 (QP5 v5.336) */
+PROCEDURE renew_membership (p_payment_type    IN CHAR,
+                            p_anagraph_id     IN INTEGER,
+                            p_amount          IN NUMBER,
+                            p_esercizio_cod   IN VARCHAR,
+                            p_check_number    IN VARCHAR)
+IS
+    -- Enter the procedure variables here. As shown below
+    v_text      ac_prima_nota.descrizione%TYPE;
+    v_cash_id   ac_prima_nota.prima_nota_id%TYPE;
+    r_cash      ac_prima_nota%ROWTYPE;
+BEGIN
+    SELECT prima_nota_seq.NEXTVAL INTO v_cash_id FROM DUAL;
+
+    r_cash.data := TRUNC (SYSDATE);
+    r_cash.assegno := p_check_number;
+    r_cash.anagrafica_id := p_anagraph_id;
+
+
+   /*
+     ('Cassa', 'Assegno', 'Bonifico', 'POS');
+     ('C', 'A', 'B', 'P');
+   */
+
+    r_cash.cassa_dare := 0;
+    r_cash.cassa_avere := 0;
+    r_cash.conto_dare := 0;
+    r_cash.conto_avere := 0;
+    r_cash.crediti_dare := 0;
+    r_cash.crediti_avere := 0;
+    r_cash.conto2_dare := 0;
+    r_cash.conto2_avere := 0;
+
+    r_cash.pn_anno := to_number(to_char(r_cash.data, 'yyyy'));
+    r_cash.pn_mese := to_number(to_char(r_cash.data, 'mm'));
+
+    CASE p_payment_type
+      WHEN 'C' THEN
+        r_cash.cassa_dare := p_amount;
+        r_cash.descrizione := 'Rinnovo Tessera numero ' || p_anagraph_id || ' versamento in contanti';
+      WHEN 'A' THEN
+        r_cash.conto_dare := p_amount;
+        r_cash.descrizione := 'Rinnovo Tessera numero ' || p_anagraph_id || ' versamento Assegno N° ' || p_check_number;
+      WHEN 'B' THEN
+        r_cash.conto_dare := p_amount;
+        r_cash.descrizione := 'Rinnovo Tessera numero ' || p_anagraph_id || ' pagamento a mezzo bonifico';
+      WHEN 'P' THEN
+        r_cash.conto_dare := p_amount;
+        r_cash.descrizione := 'Rinnovo Tessera numero ' || p_anagraph_id || ' versamento tramite POS';
+    END CASE;
+
+    INSERT INTO ac_prima_nota (prima_nota_id,
+                               documento_id,
+                               data,
+                               descrizione,
+                               cassa_dare,
+                               cassa_avere,
+                               conto_dare,
+                               conto_avere,
+                               crediti_dare,
+                               crediti_avere,
+                               assegno,
+                               pn_stato,
+                               pn_mese,
+                               pn_anno,
+                               pn_pos,
+                               mod_pagamento_id,
+                               conto2_dare,
+                               conto2_avere,
+                               prima_nota_check,
+                               anagrafica_id)
+                        VALUES (r_cash.prima_nota_id,
+                                r_cash.documento_id,
+                                r_cash.data,
+                                r_cash.descrizione,
+                                r_cash.cassa_dare,
+                                r_cash.cassa_avere,
+                                r_cash.conto_dare,
+                                r_cash.conto_avere,
+                                r_cash.crediti_dare,
+                                r_cash.crediti_avere,
+                                r_cash.assegno,
+                                r_cash.pn_stato,
+                                r_cash.pn_mese,
+                                r_cash.pn_anno,
+                                r_cash.pn_pos,
+                                r_cash.mod_pagamento_id,
+                                r_cash.conto2_dare,
+                                r_cash.conto2_avere,
+                                r_cash.prima_nota_check,
+                                r_cash.anagrafica_id);
+EXCEPTION
+    WHEN OTHERS
+    THEN
+        RAISE;
+END;
+
+-- Enter further code below as specified in the Package spec.
+
+END;
+/
