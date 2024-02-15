@@ -1,10 +1,10 @@
 object dmWpJson: TdmWpJson
-  OldCreateOrder = False
   Height = 243
   Width = 338
   object RESTClient1: TRESTClient
     Authenticator = OAuth2Authenticator1
     Params = <>
+    SynchronizedEvents = False
     Left = 88
     Top = 72
   end

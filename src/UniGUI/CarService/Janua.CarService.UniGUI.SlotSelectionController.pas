@@ -204,6 +204,13 @@ begin
   FTimeTableSlots := Value;
   SetupFrames;
 
+  for I := 0 to FFRames.Count - 1 do
+  begin
+    FFRames[I].TimeTableSlot := nil;
+    FFRames[I].tgSelected.Toggled := False;
+    FFRames[I].imgBooked.Visible := False;
+  end;
+
   if Assigned(FTimeTableSlots) then
     for I := 0 to FTimeTableSlots.Count - 1 do
     begin
