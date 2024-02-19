@@ -199,7 +199,7 @@ end;
 class procedure TJanuaVCLApplication.Initialize;
 begin
   try
-    // TdlgVCLInputNumber = class(TJanuaVCLFormModel, IJanuaLoginDialogIntegerForm)
+    // TdlgVCLInputNumber = class(TJanuaVCLFormModel, IJanuaDlgIntegerForm)
     TJanuaApplicationFactory.RegisterComponent(IJanuaDlgIntegerForm, TdlgVCLInputNumber);
     TJanuaApplicationFactory.RegisterClass(IJanuaDialogText, TJanuaVCLDialogText);
     // TJanuaVCLDialog = class(TJanuaCustomDialog, IJanuaDialog)

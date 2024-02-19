@@ -86,11 +86,11 @@ begin
   Application.Initialize;
   errorManager := TJanuaTmsExceptionHandler.Create(Application);
   errorManager.Activate;
-  TStyleManager.TrySetStyle('Win10IDE_Light');
   // Inizializzazione TAilor Made Logistic Application
   // Viene impostato l'albero delle finestre ed il menu principale
   TCarServiceProjectApplication.ApplicationSetup('desktop.carservice.com');
   TJanuaApplication.Title := 'Car Service Main Application';
+  TStyleManager.TrySetStyle('Sky');
   Application.Title := 'Car Service Main Application';
   Application.MainFormOnTaskbar := True;
 {$IFDEF DEBUG}

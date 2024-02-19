@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Classes, System.Json, REST.Types, REST.Client, REST.Authenticator.OAuth,
   Data.Bind.Components,
-  Data.Bind.ObjectScope;
+  Data.Bind.ObjectScope, REST.Authenticator.OAuth.WebForm.Win;
 
 type
   TdmWpJson = class(TDataModule)

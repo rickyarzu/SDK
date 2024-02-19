@@ -130,22 +130,25 @@
         <DCCReference Include="vclwinx.dcp"/>
         <DCCReference Include="VclSmp.dcp"/>
         <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="officeXPrt.dcp"/>
+        <DCCReference Include="IndyIPClient.dcp"/>
         <DCCReference Include="CustomIPTransport.dcp"/>
         <DCCReference Include="FireDACCommon.dcp"/>
         <DCCReference Include="FireDACCommonDriver.dcp"/>
         <DCCReference Include="FireDAC.dcp"/>
         <DCCReference Include="FireDACSqliteDriver.dcp"/>
+        <DCCReference Include="IndyIPCommon.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="DbxCommonDriver.dcp"/>
         <DCCReference Include="dac290.dcp"/>
         <DCCReference Include="unidac290.dcp"/>
         <DCCReference Include="crcontrols290.dcp"/>
         <DCCReference Include="msprovider290.dcp"/>
-        <DCCReference Include="officeXPrt.dcp"/>
         <DCCReference Include="jcl.dcp"/>
         <DCCReference Include="JvStdCtrls.dcp"/>
         <DCCReference Include="JvDB.dcp"/>
         <DCCReference Include="JvSystem.dcp"/>
         <DCCReference Include="JvCore.dcp"/>
-        <DCCReference Include="IndyIPClient.dcp"/>
         <DCCReference Include="FlexCel_Core.dcp"/>
         <DCCReference Include="VCL_FlexCel_Core.dcp"/>
         <DCCReference Include="VCLTMSFNCCorePkg.dcp"/>
@@ -162,9 +165,6 @@
         <DCCReference Include="JanuaUniDACComponents.dcp"/>
         <DCCReference Include="JanuaCoreComponents.dcp"/>
         <DCCReference Include="Spring.Base.dcp"/>
-        <DCCReference Include="IndyIPCommon.dcp"/>
-        <DCCReference Include="RESTComponents.dcp"/>
-        <DCCReference Include="DbxCommonDriver.dcp"/>
         <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLForm.pas">
             <Form>JanuaVCLFormModel</Form>
         </DCCReference>
