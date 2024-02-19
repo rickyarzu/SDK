@@ -47,7 +47,10 @@ contains
   LoggerPro.Proxy in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Proxy.pas',
   LoggerPro.RESTAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.RESTAppender.pas',
   LoggerPro.UDPSyslogAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.UDPSyslogAppender.pas',
+  LoggerPro.Utils in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Utils.pas',
   ThreadSafeQueueU in '..\..\..\lib\delphimvcframework\lib\loggerpro\ThreadSafeQueueU.pas',
-  LoggerPro.OutputDebugStringAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas';
+  LoggerPro.OutputDebugStringAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas',
+  LoggerPro.Renderers in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Renderers.pas',
+  LoggerPro.ConsoleAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ConsoleAppender.pas';
 
 end.

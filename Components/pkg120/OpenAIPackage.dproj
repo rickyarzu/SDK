@@ -1,13 +1,13 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-        <MainSource>loggerproRT.dpk</MainSource>
+        <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+        <MainSource>OpenAIPackage.dpk</MainSource>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>131</TargetedPlatforms>
+        <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Package</AppType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
@@ -44,8 +44,8 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -56,29 +56,21 @@
         <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_Description>Logger Pro Runtime Package</DCC_Description>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <SanitizedProjectName>loggerproRT</SanitizedProjectName>
-        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
-        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
+        <SanitizedProjectName>OpenAIPackage</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <DCC_UsePackage>rtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -87,6 +79,8 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -97,34 +91,40 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
-    <Import Project="\\vmware-host\Shared Folders\GitHub\SDK\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('\\vmware-host\Shared Folders\GitHub\SDK\prj\DXE15\JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="IndySystem.dcp"/>
-        <DCCReference Include="IndyProtocols.dcp"/>
-        <DCCReference Include="IndyCore.dcp"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ElasticSearchAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.EMailAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.GlobalLogger.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.MemoryAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.NSQAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Proxy.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.RESTAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.UDPSyslogAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Utils.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\ThreadSafeQueueU.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Renderers.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ConsoleAppender.pas"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.API.Params.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.API.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Audio.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.Samples.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Completions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Chat.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Reg.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Edits.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Embeddings.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Engines.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Errors.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Files.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.FineTunes.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.FineTuning.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Images.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Models.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Moderations.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ChatHistory.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Functions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Assistants.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Types.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.Base64.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ObjectHolder.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -140,21 +140,8 @@
         <Borland.ProjectType>Package</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\sgcWebSockets280.bpl">ESeGeCe Web Sockets</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCoreComponents280.bpl">Janua Core Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaVCLComponents280.bpl">Janua VCL Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaUnidacComponents280.bpl">Janua Unidac Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaTmsControls280.bpl">Janua TMS Controls</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaFMXControls280.bpl">Janua FMX Controls Sidney</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaVCLMVVM280.bpl">Janua Model View View Model Library Sidney</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">loggerproRT.dpk</Source>
+                    <Source Name="MainSource">OpenAIPackage.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
@@ -173,7 +160,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\loggerproRT270.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\OpenAIPackage.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>OpenAIPackage.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
@@ -1021,7 +1013,6 @@
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
@@ -1030,9 +1021,9 @@
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Linux64">True</Platform>
+                <Platform value="Linux64">False</Platform>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">True</Platform>
+                <Platform value="Win64">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

@@ -1,5 +1,5 @@
 ﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2022 by Embarcadero Technologies, Inc.
+// Copyright (c) 1995, 2023 by Embarcadero Technologies, Inc.
 // All rights reserved
 
 // (DO NOT EDIT: machine generated header) 'dclsgcWebSockets.dpk' rev: 36.00 (Windows)
@@ -129,15 +129,21 @@
 #include <IdAuthenticationSSPI.hpp>	// (IndyProtocols)
 #include <IdAuthenticationDigest.hpp>	// (IndyProtocols)
 #include <IdHMAC.hpp>	// (IndyProtocols)
+#include <sgcBase_Helpers.hpp>	// (sgcWebSockets)
+#include <sgcWebSocket_Helpers.hpp>	// (sgcWebSockets)
+#include <sgcBase_Classes.hpp>	// (sgcWebSockets)
 #include <IdLogBase.hpp>	// (IndyCore)
+#include <sgcWebSocket_Classes.hpp>	// (sgcWebSockets)
 #include <sgcSSL_WinSSPI.hpp>	// (sgcWebSockets)
 #include <sgcSSL_SChannel.hpp>	// (sgcWebSockets)
 #include <sgcJSON.hpp>	// (sgcWebSockets)
+#include <sgcHTTP_JWT_Classes.hpp>	// (sgcWebSockets)
 #include <System.NetEncoding.hpp>	// (rtl)
 #include <sgcWebSocket_HTTPResponse.hpp>	// (sgcWebSockets)
 #include <sgcWebSocket_Protocol_Base_Server.hpp>	// (sgcWebSockets)
 #include <sgcWebSocket_Client_WinHTTP.hpp>	// (sgcWebSockets)
 #include <sgcLib_Telegram.hpp>	// (sgcWebSockets)
+#include <sgcLib_Telegram_Client.hpp>	// (sgcWebSockets)
 #include <sgcWebSocket_API_Bitmex.hpp>	// (sgcWebSockets)
 #include <sgcWebSocket_Server_API_SocketIO.hpp>	// (sgcWebSockets)
 // SO_SFX: 290

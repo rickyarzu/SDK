@@ -1,0 +1,64 @@
+﻿package OpenAIPackage;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  RESTComponents;
+
+contains
+  OpenAI.API.Params in '..\..\..\lib\DelphiOpenAI\OpenAI.API.Params.pas',
+  OpenAI.API in '..\..\..\lib\DelphiOpenAI\OpenAI.API.pas',
+  OpenAI.Audio in '..\..\..\lib\DelphiOpenAI\OpenAI.Audio.pas',
+  OpenAI.Chat.Functions in '..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.pas',
+  OpenAI.Chat.Functions.Samples in '..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.Samples.pas',
+  OpenAI.Chat in '..\..\..\lib\DelphiOpenAI\OpenAI.Chat.pas',
+  OpenAI.Completions in '..\..\..\lib\DelphiOpenAI\OpenAI.Completions.pas',
+  OpenAI.Component.Chat in '..\..\..\lib\DelphiOpenAI\OpenAI.Component.Chat.pas',
+  OpenAI.Component.Reg in '..\..\..\lib\DelphiOpenAI\OpenAI.Component.Reg.pas',
+  OpenAI.Edits in '..\..\..\lib\DelphiOpenAI\OpenAI.Edits.pas',
+  OpenAI.Embeddings in '..\..\..\lib\DelphiOpenAI\OpenAI.Embeddings.pas',
+  OpenAI.Engines in '..\..\..\lib\DelphiOpenAI\OpenAI.Engines.pas',
+  OpenAI.Errors in '..\..\..\lib\DelphiOpenAI\OpenAI.Errors.pas',
+  OpenAI.Files in '..\..\..\lib\DelphiOpenAI\OpenAI.Files.pas',
+  OpenAI.FineTunes in '..\..\..\lib\DelphiOpenAI\OpenAI.FineTunes.pas',
+  OpenAI.FineTuning in '..\..\..\lib\DelphiOpenAI\OpenAI.FineTuning.pas',
+  OpenAI.Images in '..\..\..\lib\DelphiOpenAI\OpenAI.Images.pas',
+  OpenAI.Models in '..\..\..\lib\DelphiOpenAI\OpenAI.Models.pas',
+  OpenAI.Moderations in '..\..\..\lib\DelphiOpenAI\OpenAI.Moderations.pas',
+  OpenAI in '..\..\..\lib\DelphiOpenAI\OpenAI.pas',
+  OpenAI.Utils.ChatHistory in '..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ChatHistory.pas',
+  OpenAI.Component.Functions in '..\..\..\lib\DelphiOpenAI\OpenAI.Component.Functions.pas',
+  OpenAI.Assistants in '..\..\..\lib\DelphiOpenAI\OpenAI.Assistants.pas',
+  OpenAI.Types in '..\..\..\lib\DelphiOpenAI\OpenAI.Types.pas',
+  OpenAI.Utils.Base64 in '..\..\..\lib\DelphiOpenAI\OpenAI.Utils.Base64.pas',
+  OpenAI.Utils.ObjectHolder in '..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ObjectHolder.pas';
+
+end.
+
+
