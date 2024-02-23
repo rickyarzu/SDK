@@ -417,6 +417,11 @@ begin
           ShowMessage('Occorre selezionare una data/ora di Ritiro')
         else if FdmPgCarServiceBooking.HasReturn and not FdmPgCarServiceBooking.CheckDeliverySlots then
           ShowMessage('Occorre selezionare una data/ora di Riconsegna')
+        else if DeliveryTimeSelect.BookingDate < PickupSlotTimeSelect.BookingDate then
+          ShowMessage('Data di riconsegna  anteriore alla data di Ritiro Veicolo')
+        else if (DeliveryTimeSelect.BookingDate = PickupSlotTimeSelect.BookingDate) and
+          (DeliveryTimeSelect.SlotID <= PickupSlotTimeSelect.SlotID) then
+          ShowMessage('Ora di riconsegna  anteriore all''Ora di Ritiro Veicolo')
         else
         begin
           CarBookingClientController1.CarBooking := FdmPgCarServiceBooking.BookingRecord;
