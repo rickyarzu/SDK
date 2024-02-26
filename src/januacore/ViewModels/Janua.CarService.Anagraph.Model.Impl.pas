@@ -153,7 +153,7 @@ var
   end;
 
 begin
-    FBookingAnagraphRecord := aAnagraph;
+  FBookingAnagraphRecord := aAnagraph;
   tmpAnagraphRecord := TBookingAnagraphView.Create('anagraphview');
   var
   lID := FBookingAnagraphRecord.ReturnAddress.Id.AsInteger;

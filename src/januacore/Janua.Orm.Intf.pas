@@ -1279,6 +1279,11 @@ type
     procedure SetRemoteClient(const Value: IRemoteRecordClient);
     /// <summary> Remote Client connects Record with a Remote Server managaing the CRUD Matrix </summary>
     property RemoteClient: IRemoteRecordClient read GetRemoteClient write SetRemoteClient;
+
+    procedure SetCheckDataset(const Value: Boolean);
+    function GetCheckDataset: Boolean;
+    /// <summary> Set True by Default checks if a Record can be Saved to a Dataset e.g. if Dataset is assigned </summary>
+    property DoCheckDataset: boolean read GetCheckDataset write SetCheckDataset;
   end;
 
   IJanuaRecordEnumerator = interface
