@@ -98,6 +98,7 @@ begin
   if not FUpdating then
     try
       FUpdating := True;
+      ClearAllSlots;
       for I := 0 to Pred(FFRames.Count) do
       begin
         FFRames[I].tgSelected.Toggled := False;

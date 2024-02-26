@@ -8388,11 +8388,15 @@ begin
         raise exception.Create('TJanuaRecord.Assign FFields[' + I.ToString + ']=' + FFields[I].DBField + '.' +
           sLineBreak + e.Message);
     end;
-    Guard.CheckTrue(aRecord.RecordCount = RecordCount, 'RecordCount Error');
+    // A 'Wider' Record can assign a 'smaller' Record (The Wider one is an extension of the Smaller);
+    Guard.CheckTrue(aRecord.RecordCount <= RecordCount, 'RecordCount Error');
 
     try
-      for I := 0 to Pred(RecordCount) do
+      for I := 0 to Min(Pred(RecordCount), Pred(aRecord.RecordCount)) do
+      begin
         FRecords[I].Assign(aRecord.Records[I]);
+        FRecords[I].Post;
+      end;
     except
       on e: exception do
         raise exception.Create('TJanuaRecord.Assign FRecords[' + I.ToString + ']=' + FRecords[I].Name + '.' +
@@ -9528,6 +9532,7 @@ end;
 procedure TJanuaRecord.SaveToDataset(Force, aRecursive: Boolean);
 var
   I: Integer;
+  lRecord: IJanuaRecord;
 
   function LocateRecord: Boolean;
   begin
@@ -9568,8 +9573,12 @@ begin
     raise exception.Create('TJanuaRecord.SaveToDataset FStoreDataset and FDBDataset are null');
 
   if aRecursive then
+    for lRecord in FRecords do
+      lRecord.SaveToDataset(Force, aRecursive);
+  {
     for I := 0 to Pred(FRecords.Count) do
-      FRecords[I].SaveToDataset(Force);
+    FRecords[I].SaveToDataset(Force, aRecursive);
+  }
 
   if aRecursive then
     for I := 0 to Pred(FRecordSets.Count) do
@@ -10100,7 +10109,7 @@ begin
     if Length(aDatasets) > FRecords.Count then
       bDatasets := Copy(aDatasets, Pred(FRecordSets.Count), Length(aDatasets) - FRecords.Count);
 
-    for I := Low(aDatasets) to min(High(aDatasets), Pred(FRecords.Count)) do
+    for I := Low(aDatasets) to Min(High(aDatasets), Pred(FRecords.Count)) do
     begin
       { TODO : LoadFromDataset funziona solo se i dataset sono in perfetto "ordine" e non gestisce bene i sotto-livelli }
       if I <= Pred(FRecords.Count) then
@@ -10587,7 +10596,7 @@ begin
         FGUIDDict.Add(FRecords[I].GUID, I);
       end;
     // se ho cancellato l'ultimo record allora ItemIndex = .1
-    FItemIndex := min(j, k);
+    FItemIndex := Min(j, k);
   end;
 
 end;

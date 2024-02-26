@@ -270,6 +270,7 @@ type
     procedure tgHasReturnToggled(const Value: Boolean);
     procedure btnPaymentClick(Sender: TObject);
     procedure PickupDateChange(Sender: TObject);
+    procedure PickupDeliveryChange(Sender: TObject);
   public
     // Calenddar Select
     (*
@@ -368,6 +369,7 @@ end;
 procedure TdlgUniGUIBookingWizard.btnNextClick(Sender: TObject);
 var
   lMessageDlg: TfrmUniGUIHtmlMessage;
+  PickupDate, DeliveryDate: TDate;
 begin
   // pgSelectDate, pgSelectSlot, pgCustomer, pgSummary
   case PgCBookingSteps.TabIndex of
@@ -413,13 +415,15 @@ begin
       end;
     Ord(pgSelectSlot):
       begin
+        PickupDate := FdmPgCarServiceBooking.PickupDate;
+        DeliveryDate := FdmPgCarServiceBooking.DeliveryDate;
         if not FdmPgCarServiceBooking.CheckPickuSlots then
           ShowMessage('Occorre selezionare una data/ora di Ritiro')
         else if FdmPgCarServiceBooking.HasReturn and not FdmPgCarServiceBooking.CheckDeliverySlots then
           ShowMessage('Occorre selezionare una data/ora di Riconsegna')
-        else if DeliveryTimeSelect.BookingDate < PickupSlotTimeSelect.BookingDate then
+        else if FdmPgCarServiceBooking.HasReturn and (PickupDate > DeliveryDate) then
           ShowMessage('Data di riconsegna  anteriore alla data di Ritiro Veicolo')
-        else if (DeliveryTimeSelect.BookingDate = PickupSlotTimeSelect.BookingDate) and
+        else if FdmPgCarServiceBooking.HasReturn and (PickupDate = DeliveryDate) and
           (DeliveryTimeSelect.SlotID <= PickupSlotTimeSelect.SlotID) then
           ShowMessage('Ora di riconsegna  anteriore all''Ora di Ritiro Veicolo')
         else
@@ -553,6 +557,18 @@ begin
     CalendarSelectPickup.cldPickup1.Date := PickupDate.DateTime;
     FdmPgCarServiceBooking.UpdatePickupSlots;
     PickupSlotTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
+  end;
+end;
+
+procedure TdlgUniGUIBookingWizard.PickupDeliveryChange(Sender: TObject);
+begin
+  if PickupDelivery.DateTime <> FdmPgCarServiceBooking.DeliveryDate then
+  begin
+    DeliveryTimeSelect.ClearAllFrames;
+    FdmPgCarServiceBooking.DeliveryDate := PickupDelivery.DateTime;
+    CalendarSelectDelivery.cldPickup1.Date := PickupDelivery.DateTime;
+    FdmPgCarServiceBooking.UpdateDeliverySlots;
+    DeliveryTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.DeliverySlots;
   end;
 end;
 

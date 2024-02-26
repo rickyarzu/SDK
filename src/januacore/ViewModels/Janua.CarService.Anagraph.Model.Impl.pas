@@ -135,28 +135,64 @@ end;
 
 function TJanuaCarServiceAnagraphModel.UpdateBookingAnagraph(const aAnagraph: IBookingAnagraphView): Boolean;
 var
-  tmpAnagraphRecord: IAnagraphView;
-begin
-  FBookingAnagraphRecord := aAnagraph;
-  tmpAnagraphRecord := TAnagraphView.Create('anagraphview');
+  tmpAnagraphRecord: IBookingAnagraphView;
 
-  with FBookingAnagraphRecord do
+  procedure AddReturnAddress;
   begin
-    if (ReturnAddress.FullAddress.AsString <> '') and not ReturnAddress.FullAddress.EqualsField
-      (MainAddress.FullAddress) then
+    with FBookingAnagraphRecord do
     begin
-      ReturnAddress.Post;
-      Addresses.Append(ReturnAddress);
-      tmpAnagraphRecord.Addresses.Post;
+      if Addresses.RecordCount = 1 then
+        Addresses.Append(ReturnAddress)
+      else
+      begin
+        Addresses.Last;
+        Addresses.CurrentRecord.Assign(ReturnAddress);
+      end;
+      Addresses.Post;
     end;
   end;
 
+begin
+    FBookingAnagraphRecord := aAnagraph;
+  tmpAnagraphRecord := TBookingAnagraphView.Create('anagraphview');
+  var
+  lID := FBookingAnagraphRecord.ReturnAddress.Id.AsInteger;
+  var
+  lAS := FBookingAnagraphRecord.ReturnAddress.FullAddress.AsString;
+
+  with FBookingAnagraphRecord do
+  begin
+    // Se non è stato inserito un indirizzo di ritorno gli assegno lo stesso dell'andata
+    if (lAS = '') and (MainAddress.FullAddress.AsString > '') and not ReturnAddress.FullAddress.EqualsField
+      (MainAddress.FullAddress) then
+    begin
+      ReturnAddress.Assign(MainAddress);
+      ReturnAddress.Pos.AsInteger := 2;
+
+      lID := ReturnAddress.Id.AsInteger;
+      lAS := ReturnAddress.FullAddress.AsString;
+    end;
+  end;
+  // Se è stato inserito un indirizzo di ritorno lo salvo nella lista degli indirizzi
+  AddReturnAddress;
+  // Terminato il ciclo assegno al record temporaneo il record da Elaborare.
   tmpAnagraphRecord.Assign(FBookingAnagraphRecord);
-  Result := UpdateAnagraph(tmpAnagraphRecord);
 {$IFDEF DEBUG}
   var
+  ltAS := tmpAnagraphRecord.ReturnAddress.FullAddress.AsString;
+  Guard.CheckTrue(lAS = ltAS, 'Indirizzo non Copiato correttamente ' + lAS);
+  lID := tmpAnagraphRecord.ReturnAddress.Id.AsInteger;
+  lID := tmpAnagraphRecord.MainAddress.Id.AsInteger;
+  lID := tmpAnagraphRecord.Addresses.RecordCount;
+{$ENDIF}
+  // Eseguo l'aggiornamento sul Record Temporaneo
+  Result := UpdateAnagraph(tmpAnagraphRecord);
+{$IFDEF DEBUG}
   lID := FBookingAnagraphRecord.AnagraphID.AsInteger;
   lID := tmpAnagraphRecord.AnagraphID.AsInteger;
+  lID := tmpAnagraphRecord.ReturnAddress.Id.AsInteger;
+  lID := tmpAnagraphRecord.MainAddress.Id.AsInteger;
+  lID := tmpAnagraphRecord.Addresses.RecordCount;
 {$ENDIF}
   if Result then
     RefreshBookingAnagraph(tmpAnagraphRecord);

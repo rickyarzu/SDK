@@ -468,6 +468,8 @@ begin
   // I Must Filter the Dataset before posting to it
   FAnagraphDataModule.jdsSingleAnagraph.ParamByName('anagraph_id').Clear;
   Result := FAnagraphDataModule.jdsSingleAnagraph.SearchRecord(aGUID);
+  if Result then
+    aAnagraph.LoadFromDataset;
 end;
 
 function TJanuaDBAnagraphModel.TryGetAnagraphByID(out aAnagraph: IAnagraphView; const aID: Integer): boolean;
@@ -498,10 +500,20 @@ begin
   AssignDatasets(aAnagraph);
 
   if Result then
+  begin
     aAnagraph.SaveToDataset(True);
+    if aAnagraph.Addresses.RecordCount > 0 then
+    begin
+      aAnagraph.Addresses.First;
+      aAnagraph.MainAddress.Assign(aAnagraph.Addresses.CurrentRecord);
+    end;
+
+  end;
 {$IFDEF DEBUG}
   var
-  lID := aAnagraph.AnagraphID.AsInteger
+  lID := aAnagraph.AnagraphID.AsInteger;
+  var
+  lMID := aAnagraph.MainAddress.ID.AsInteger;
 {$ENDIF}
 end;
 
