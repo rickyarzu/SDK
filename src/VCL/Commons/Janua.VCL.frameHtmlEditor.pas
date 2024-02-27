@@ -15,7 +15,7 @@ uses
 {$IFDEF ADDICT}
   htAddict, ad3ThesaurusBase, ad3Thesaurus, ad3SpellBase, ad4Live,
 {$ENDIF}
-  hteditactions, htrtf, htclasses, htmlani, htsvg, htDefScriptAdapter, htxml, hthints, htimage,
+  hteditactions, htrtf, htclasses, htmlani, htsvg, htDefScriptAdapter, htxml, hthints,{ htimage,}
   htfontawesome, Actions, System.ImageList, VCL.Buttons;
 
 type
