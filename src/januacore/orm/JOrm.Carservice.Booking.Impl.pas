@@ -572,6 +572,8 @@ constructor TBookingAnagraphView.Create;
 begin
   inherited;
   FReturnAddress := TAnAddress.Create;
+  // Tells the system not to Store the Return Address to the DB
+  FReturnAddress.DoCheckDataset := False;
   AddRecordDef(FReturnAddress as IJanuaRecord);
   FReturnAddress.Name := 'return_address';
 end;
