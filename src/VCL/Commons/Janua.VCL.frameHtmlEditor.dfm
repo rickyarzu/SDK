@@ -284,11 +284,11 @@ object frameHTMLEditor: TframeHTMLEditor
       Left = 241
       Top = 30
       Width = 112
-      Height = 24
+      Height = 22
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 200
-      ItemHeight = 108
+      ItemHeight = 110
       ItemIndex = 0
       TabOrder = 0
       Text = 'Z'
@@ -408,7 +408,7 @@ object frameHTMLEditor: TframeHTMLEditor
       Left = 577
       Top = 30
       Width = 56
-      Height = 24
+      Height = 22
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 400
@@ -826,11 +826,11 @@ object frameHTMLEditor: TframeHTMLEditor
       Left = 419
       Top = 0
       Width = 66
-      Height = 24
+      Height = 22
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 190
-      ItemHeight = 191
+      ItemHeight = 198
       ItemIndex = 0
       TabOrder = 2
       TabStop = False
@@ -973,11 +973,11 @@ object frameHTMLEditor: TframeHTMLEditor
       Left = 485
       Top = 0
       Width = 63
-      Height = 24
+      Height = 22
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 190
-      ItemHeight = 191
+      ItemHeight = 198
       ItemIndex = 0
       TabOrder = 3
       TabStop = False
@@ -1117,7 +1117,7 @@ object frameHTMLEditor: TframeHTMLEditor
       Left = 548
       Top = 0
       Width = 60
-      Height = 24
+      Height = 22
       Style = csOwnerDrawVariable
       DropDownCount = 30
       DropDownWidth = 400
@@ -1921,8 +1921,6 @@ object frameHTMLEditor: TframeHTMLEditor
       '')
     TouchScroll = False
     HighlightTextColor = 0
-    ScaleMin = 10.000000000000000000
-    ScaleMax = 1000.000000000000000000
     OnCaretMoved = OnCaretMoved
     SpellChecking = True
     WordCorrection = True
@@ -1933,6 +1931,7 @@ object frameHTMLEditor: TframeHTMLEditor
     Options = [eoCaretVisible, eoEmbedDroppedImages, eoEmbedPastedImages]
     DefaultParaTag = 'p'
     IsControl = True
+    ExplicitTop = 107
   end
   object pnlFooter: TPanel
     Left = 0
@@ -1983,8 +1982,6 @@ object frameHTMLEditor: TframeHTMLEditor
           'a {text-decoration: none; color: #903050} a:hover {border: solid' +
           ' red 1px}')
       HighlightTextColor = 0
-      ScaleMin = 10.000000000000000000
-      ScaleMax = 1000.000000000000000000
       Editor = E
       SelectionColor = '#FF207020'
     end
@@ -2044,9 +2041,6 @@ object frameHTMLEditor: TframeHTMLEditor
           '')
         VerticalScrollBar = hsbAlways
         HighlightTextColor = 0
-        ScaleMin = 10.000000000000000000
-        ScaleMax = 1000.000000000000000000
-        ExplicitHeight = 504
       end
     end
     object TabSheet2: TTabSheet
@@ -2106,9 +2100,6 @@ object frameHTMLEditor: TframeHTMLEditor
           'span {color: #A09000; font-weight: bold}')
         VerticalScrollBar = hsbAlways
         HighlightTextColor = 0
-        ScaleMin = 10.000000000000000000
-        ScaleMax = 1000.000000000000000000
-        ExplicitHeight = 476
       end
     end
     object tabTag: TTabSheet
