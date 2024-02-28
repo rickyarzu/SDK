@@ -7,7 +7,7 @@ uses
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIRegClasses, uniGUIForm, uniGUIBaseClasses,
   uniTabControl, uniPageControl, uniLabel, uniButton, uniBitBtn, UniFSButton, uniPanel, uniMemo, uniHTMLMemo,
-  uniGUIFrame, Janua.Carservice.UniGUI.frameTimeSlot, uniHTMLFrame, uniImage, uniImageList, UniSFButton,
+  uniGUIFrame, Janua.Carservice.UniGUI.frameTimeSlot, uniHTMLFrame, uniImage, uniImageList,
   // Janua
   // JOrm.Documents.Impl Booking
   Janua.Cloud.Intf, JOrm.Carservice.Booking.Intf, Janua.Orm.Types, JOrm.Anagraph.Intf,
@@ -22,7 +22,6 @@ type
     pgConfirmatioin: TUniTabSheet;
     btnConfirmation: TUniFSButton;
     btnUndoConfirmation: TUniFSButton;
-    framePickup: TframeTimeCalendarSelect;
     ulbTitle: TUniLabel;
     ulbRitiro: TUniLabel;
     unhtmlfrm1: TUniHTMLFrame;
@@ -30,8 +29,7 @@ type
     imgTop: TUniImage;
     tabList: TUniTabSheet;
     tabTravel: TUniTabSheet;
-    frameCSUniGuiCalendarList1: TframeCSUniGuiCalendarList;
-    btnCalendarList: TUniSFButton;
+    {btnCalendarList: TUniSFButton;}
     lbBookingChecked: TUniLabel;
     htmlFrameConfirmed: TUniHTMLFrame;
     tabNotFound: TUniTabSheet;

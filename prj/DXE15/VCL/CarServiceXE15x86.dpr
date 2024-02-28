@@ -65,7 +65,8 @@ uses
   Janua.Framework.JormGenerator.Postgres in '..\..\..\src\januaunidac\datamodules\Janua.Framework.JormGenerator.Postgres.pas' {dmPgFrameworkJormGenerator: TDataModule},
   Janua.Anagraph.Postgres.Storage in '..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmJanuaPgAnagraphStorage: TDataModule},
   Janua.VCL.dlgHtmlEditorAddImage in '..\..\..\src\VCL\Commons\Janua.VCL.dlgHtmlEditorAddImage.pas' {dlgVCLHtmlEditorAddImage},
-  Janua.VCL.frameHtmlEditor in '..\..\..\src\VCL\Commons\Janua.VCL.frameHtmlEditor.pas' {frameHTMLEditor: TFrame};
+  Janua.VCL.frameHtmlEditor in '..\..\..\src\VCL\Commons\Janua.VCL.frameHtmlEditor.pas' {frameHTMLEditor: TFrame},
+  Planner in '..\..\..\..\tmssoftware\TMS VCL UI Pack\Planner.pas';
 
 {$R *.res}
 
@@ -114,9 +115,9 @@ begin
   begin
     TCarServiceProjectApplication.LoadMenu;
     Application.CreateForm(TfrmCarserviceMain, frmCarserviceMain);
-    Application.CreateForm(TdmJanuaPgAnagraphStorage, dmJanuaPgAnagraphStorage);
-    Application.CreateForm(TdlgVCLHtmlEditorAddImage, dlgVCLHtmlEditorAddImage);
-    Application.Run;
+  Application.CreateForm(TdmJanuaPgAnagraphStorage, dmJanuaPgAnagraphStorage);
+  Application.CreateForm(TdlgVCLHtmlEditorAddImage, dlgVCLHtmlEditorAddImage);
+  Application.Run;
   end
   else
     Application.Terminate;

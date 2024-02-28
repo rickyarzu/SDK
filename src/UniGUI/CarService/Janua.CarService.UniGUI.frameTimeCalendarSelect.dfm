@@ -19,7 +19,6 @@ object frameTimeCalendarSelect: TframeTimeCalendarSelect
     ParentColor = False
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 0
     object ulbDate: TUniLabel
       Left = 56
       Top = 4

@@ -3,7 +3,7 @@
         <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
         <MainSource>CarServiceXE15x86.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
@@ -327,6 +327,7 @@
             <Form>frameHTMLEditor</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\..\tmssoftware\TMS VCL UI Pack\Planner.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
@@ -397,13 +398,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceXE15x86.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="c:\januaproject\bin\CarService\CarServiceXE15x86.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>CarServiceXE15x86.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\CarServiceXE15x86.exe" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceXE15x86.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>CarServiceXE15x86.exe</RemoteName>
                         <Overwrite>true</Overwrite>

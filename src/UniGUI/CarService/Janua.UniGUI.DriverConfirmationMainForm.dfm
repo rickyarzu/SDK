@@ -19,7 +19,7 @@ object MainForm: TMainForm
     Width = 316
     Height = 387
     Hint = ''
-    ActivePage = pgMainPage
+    ActivePage = pgConfirmatioin
     TabBarVisible = False
     Align = alClient
     TabOrder = 0
@@ -29,7 +29,7 @@ object MainForm: TMainForm
       object btnConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 283
+        Top = 245
         Width = 302
         Height = 28
         Hint = ''
@@ -47,7 +47,7 @@ object MainForm: TMainForm
       object btnUndoConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 317
+        Top = 279
         Width = 302
         Height = 28
         Hint = ''
@@ -60,40 +60,6 @@ object MainForm: TMainForm
         Caption = 'Annulla Conferma'
         Align = alTop
         TabOrder = 1
-      end
-      inline framePickup: TframeTimeCalendarSelect
-        AlignWithMargins = True
-        Left = 3
-        Top = 245
-        Width = 302
-        Height = 32
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 2
-        Background.Picture.Data = {00}
-        ExplicitLeft = 3
-        ExplicitTop = 245
-        ExplicitWidth = 302
-        inherited UniContainerPanel1: TUniContainerPanel
-          Width = 302
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 302
-          ExplicitHeight = 32
-          inherited ulbDate: TUniLabel
-            Font.Style = [fsBold]
-          end
-          inherited ulbTime: TUniLabel
-            Width = 51
-            Font.Style = [fsBold]
-            ExplicitWidth = 51
-          end
-          inherited imgBooked: TUniImage
-            Top = 0
-            ExplicitTop = 0
-          end
-        end
       end
       object ulbTitle: TUniLabel
         AlignWithMargins = True
@@ -112,7 +78,7 @@ object MainForm: TMainForm
         Font.Style = [fsBold]
         ParentColor = False
         Color = clBtnFace
-        TabOrder = 3
+        TabOrder = 2
       end
       object ulbRitiro: TUniLabel
         AlignWithMargins = True
@@ -146,20 +112,6 @@ object MainForm: TMainForm
     object pgConfirmatioin: TUniTabSheet
       Hint = ''
       Caption = 'Confirmation'
-      object btnCalendarList: TUniSFButton
-        Left = 0
-        Top = 204
-        Width = 308
-        Height = 35
-        Hint = ''
-        Caption = 'Vedi Lista Viaggi'
-        Align = alTop
-        TabOrder = 0
-        FAIcon.Icon = fa_none
-        FAIcon.Size = fs_16
-        FAIcon.Color = fc_white
-        ButtonStyles = bs_default
-      end
       object lbBookingChecked: TUniLabel
         AlignWithMargins = True
         Left = 3
@@ -192,18 +144,6 @@ object MainForm: TMainForm
     object tabList: TUniTabSheet
       Hint = ''
       Caption = 'Calendar List'
-      inline frameCSUniGuiCalendarList1: TframeCSUniGuiCalendarList
-        Left = 0
-        Top = 0
-        Width = 308
-        Height = 426
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 0
-        Background.Picture.Data = {00}
-        ExplicitWidth = 308
-      end
     end
     object tabTravel: TUniTabSheet
       Hint = ''

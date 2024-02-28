@@ -2,7 +2,7 @@ unit Janua.TMS.SMS;
 
 interface
 
-uses System.Classes, System.SysUtils, Janua.Cloud.SMS.Intf, Janua.Cloud.SMS.Impl;
+uses System.Classes, System.SysUtils, Janua.Cloud.SMS.Intf, Janua.Cloud.SMS.Impl, Janua.Cloud.Types;
 
 type
   TSMSTwilioSender = class(TCustomSMSSender, IJanuaSMSSender, IJanuaSMSTwilio)
@@ -25,7 +25,8 @@ begin
   // At Least Conf Name must be set to properly Run Configuration
   Key := 'AC221a150df22723daef8d097a7f76cfcf';
   Secret := 'f3c90112efdccd931b81dea46f74f1da';
-  AppName := '+393409111351' { '+15302036772' };
+  AppName := '+393513535778' { '+15302036772' };
+  FMessageType := jmtWhatsApp;
   LoadSystemConf;
 
   {
@@ -60,11 +61,16 @@ begin
 
     if GetRecipients.Count = 0 then
       if lLogProc then
-        FLogProc('SendSMS', '{"level" : "ERROR", "message" : "no recipients for SMS ' + lSMS + '"', self);
+        FLogProc('SendSMS', '{"level" : "ERROR", "message" : "no recipients for Message ' + lSMS + '"', self);
 
     for var I := 0 to Pred(GetRecipients.Count) do
       try
-        if AdvTwilio.SendSMS(Recipients[I], lSMS) then
+        var
+        lRecipient := Recipients[I];
+        if FMessageType = jmtWhatsApp then
+          lRecipient := 'whatsapp:' + lRecipient;
+
+        if AdvTwilio.SendSMS(lRecipient, lSMS) then
         begin
           if Assigned(aUpdateProc) then
             aUpdateProc(I, Recipients[I]);

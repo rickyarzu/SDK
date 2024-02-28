@@ -13,9 +13,11 @@ type
   TJanuaSSLVersions = set of TJanuaSSLVersion;
   TIJanuaSSLMode = (sslmUnassigned, sslmClient, sslmServer, sslmBoth);
   TJanuaMailServerType = (jsmNotSet, jmsIndySMTP, jmsSendGrid);
+  TJanuaMessageType = (jmtSMS, jmtTelegram, jmtWhatsApp);
 
 const
   CCloudPath: array [TCloudPath] of string = ('documents', 'workflows');
+  CMessageType: array[TJanuaMessageType] of string = ('SMS', 'Telegram', 'WhatsApp');
 
 
 type

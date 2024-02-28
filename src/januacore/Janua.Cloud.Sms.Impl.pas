@@ -77,9 +77,11 @@ type
     FRecipients: TStrings;
     FSenderConf: TSMSSenderConf;
     FSMSMessage: string;
+    function GetLogProc: TMessageLogProc;
   protected
     FConfName: string;
     FLogProc: TMessageLogProc;
+    FMessageType: TJanuaMessageType;
     function GetKey: string;
     function GetSecret: string;
     function GetRecipients: TStrings;
@@ -93,6 +95,8 @@ type
     procedure SetSMSMessage(const Value: string);
     procedure SetAsJsonConf(const Value: string);
     procedure SetLogProc(const Value: TMessageLogProc); override;
+    function GetMessageType: TJanuaMessageType;
+    procedure SetMessageType(const Value: TJanuaMessageType);
   public
     property SMSMessage: string read GetSMSMessage write SetSMSMessage;
     property Recipients: TStrings read GetRecipients write SetRecipients;
@@ -114,6 +118,7 @@ type
     procedure SendSMS(aMesage: TSMSMessage; aUpdateProc: TUpdateProc; aErrorProc: TExceptionProc;
       aFinishProc: TProc); overload;
     property LogProc: TMessageLogProc read GetLogProc write SetLogProc;
+    property MessageType: TJanuaMessageType read GetMessageType write SetMessageType;
   end;
 
 implementation
@@ -139,6 +144,7 @@ begin
   inherited;
   FRecipients := TStringList.Create;
   FSenderConf := TSMSSenderConf.Create;
+  FMessageType := jmtWhatsApp;
 end;
 
 destructor TCustomSMSSender.Destroy;
@@ -149,7 +155,20 @@ end;
 
 function TCustomSMSSender.GetAppName: string;
 begin
-  Result := FSenderConf.RestAppName
+  case FMessageType of
+    jmtSMS:
+      begin
+        Result := FSenderConf.RestAppName
+      end;
+    jmtTelegram:
+      begin
+        Result := FSenderConf.RestAppName
+      end;
+    jmtWhatsApp:
+      begin
+        Result := 'whatsapp:' + FSenderConf.RestAppName
+      end;
+  end;
 end;
 
 function TCustomSMSSender.GetAsJsonConf: string;
@@ -160,6 +179,16 @@ end;
 function TCustomSMSSender.GetKey: string;
 begin
   Result := FSenderConf.RestKey
+end;
+
+function TCustomSMSSender.GetLogProc: TMessageLogProc;
+begin
+  Result := FLogProc;
+end;
+
+function TCustomSMSSender.GetMessageType: TJanuaMessageType;
+begin
+  Result := FMessageType
 end;
 
 function TCustomSMSSender.GetRecipients: TStrings;
@@ -225,6 +254,11 @@ procedure TCustomSMSSender.SetLogProc(const Value: TMessageLogProc);
 begin
   inherited;
   FSenderConf.LogProc := FLogProc;
+end;
+
+procedure TCustomSMSSender.SetMessageType(const Value: TJanuaMessageType);
+begin
+  FMessageType := Value;
 end;
 
 procedure TCustomSMSSender.SetRecipients(const Value: TStrings);
