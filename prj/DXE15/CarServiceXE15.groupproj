@@ -2569,7 +2569,7 @@
         <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUI.dproj">
             <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
@@ -2672,7 +2672,7 @@
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\dclUniFalcon.dproj">
             <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
@@ -2683,7 +2683,7 @@
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
@@ -2754,20 +2754,20 @@
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUIService.dproj">
             <ProjectGuid>{F8693131-D419-4E78-9D0B-BBD2C7A6F566}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
             <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">

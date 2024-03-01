@@ -1,6 +1,19 @@
 program CarServiceXE15x86;
 
 uses
+  {$IFDEF EurekaLog}
+  EMemLeaks,
+  EResLeaks,
+  EDebugJCL,
+  EDebugExports,
+  EFixSafeCallException,
+  EMapWin32,
+  EAppVCL,
+  EDialogWinAPIMSClassic,
+  EDialogWinAPIEurekaLogDetailed,
+  EDialogWinAPIStepsToReproduce,
+  ExceptionLog7,
+  {$ENDIF EurekaLog}
   System.SysUtils,
   Vcl.Forms,
   Vcl.Graphics,
@@ -126,3 +139,4 @@ begin
   FreeAndNil(errorManager);
 
 end.
+

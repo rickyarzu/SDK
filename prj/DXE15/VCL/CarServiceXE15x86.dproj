@@ -75,9 +75,11 @@
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <Custom_Styles>&quot;Iceberg Classico|VCLSTYLE|$(BDSCOMMONDIR)\Styles\IcebergClassico.vsf&quot;;Sky|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Sky.vsf;&quot;Slate Classico|VCLSTYLE|$(BDSCOMMONDIR)\Styles\SlateClassico.vsf&quot;;&quot;Windows10 Blue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Blue.vsf&quot;;&quot;Windows10 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Dark.vsf&quot;;&quot;Windows10 Green|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Green.vsf&quot;;&quot;Windows10 Purple|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Purple.vsf&quot;;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;;&quot;Windows11 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Dark.vsf&quot;;&quot;Windows11 Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Light.vsf&quot;;&quot;Windows11 Modern Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Dark.vsf&quot;;&quot;Windows11 Modern Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Light.vsf&quot;;&quot;Metropolis UI Black|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIBlack.vsf&quot;;&quot;Metropolis UI Blue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIBlue.vsf&quot;;&quot;Metropolis UI Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIDark.vsf&quot;;&quot;Metropolis UI Green|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIGreen.vsf&quot;;&quot;Windows10 IDE Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WindowsIDEDark.vsf&quot;;Glossy|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Glossy.vsf;Win10IDE_Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_DARK.vsf;Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf</Custom_Styles>
-        <DCC_Define>JANUASERVER;$(DCC_Define)</DCC_Define>
+        <DCC_Define>JANUASERVER;EUREKALOG_VER7;EUREKALOG;$(DCC_Define)</DCC_Define>
         <DCC_ExeOutput>c:\januaproject\bin\CarService\</DCC_ExeOutput>
         <DCC_UseMSBuildExternally>false</DCC_UseMSBuildExternally>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <CfgDependentOn>..\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
