@@ -10,8 +10,8 @@ uses
   uniGUIFrame, uniHTMLFrame, uniImageList, uniImage,
   // JOrm.Documents.Impl Booking
   Janua.Carservice.Intf, JOrm.Carservice.Booking.Intf, Janua.Orm.Types, JOrm.Anagraph.Intf,
-  Janua.UniGUI.TextConfirmation, Janua.Carservice.PgCustomers, Janua.Carservice.UniGUI.frameTimeSlot,
-  Janua.Cloud.Types;
+  Janua.UniGUI.TextConfirmation, Janua.Carservice.PgCustomers, {Janua.Carservice.UniGUI.frameTimeSlot,}
+  Janua.Cloud.Types, UniFSToggle, UnimFSToggle;
 
 type
   TMainCustConfForm = class(TUniForm)
@@ -19,10 +19,6 @@ type
     tsBookingConfirmation: TUniTabSheet;
     btnConfirmation: TUniFSButton;
     btnUndoConfirmation: TUniFSButton;
-    frameDelivery: TframeTimeSelect;
-    framePickup: TframeTimeSelect;
-    frameInsurance: TframeUniGUITextConfirmation;
-    frameOverhaulCar: TframeUniGUITextConfirmation;
     ulbTitle: TUniLabel;
     ulbRitiro: TUniLabel;
     unhtmlfrm1: TUniHTMLFrame;
@@ -37,6 +33,26 @@ type
     imgTop: TUniImage;
     UniHTMLFrame2: TUniHTMLFrame;
     UniHTMLFrame3: TUniHTMLFrame;
+    cntPickup: TUniContainerPanel;
+    lbPickupDAte: TUniLabel;
+    lbPickupTime: TUniLabel;
+    tgPickupSelected: TUnimFSToggle;
+    cntDelivery: TUniContainerPanel;
+    lbDeliveryDate: TUniLabel;
+    lbDeliveryTime: TUniLabel;
+    UnimFSToggle1: TUnimFSToggle;
+    cntInsurance: TUniContainerPanel;
+    UniLabel3: TUniLabel;
+    tgInsuranceSelected: TUnimFSToggle;
+    cntOverHaul: TUniContainerPanel;
+    lbRevisione: TUniLabel;
+    tgOverhaulCarSelected: TUnimFSToggle;
+    {
+      frameDelivery: TframeTimeSelect;
+      framePickup: TframeTimeSelect;
+      frameInsurance: TframeUniGUITextConfirmation;
+      frameOverhaulCar: TframeUniGUITextConfirmation;
+    }
     procedure UniFormCreate(Sender: TObject);
     procedure UniFormShow(Sender: TObject);
     procedure btnConfirmationClick(Sender: TObject);
@@ -89,8 +105,7 @@ procedure TMainCustConfForm.btnConfirmationClick(Sender: TObject);
   end;
 
 begin
-  if framePickup.tgSelected.Toggled and frameInsurance.tgSelected.Toggled and frameOverhaulCar.tgSelected.Toggled
-  then
+  if tgPickupSelected.Toggled and tgInsuranceSelected.Toggled and tgOverhaulCarSelected.Toggled then
   begin
     SetCustConfirmationMsgBuilder;
     FCSCustomerConfMsgBuilder.Dataset := FDM.qryBooking;
@@ -196,21 +211,19 @@ begin
     FDeliverySlot.Booked.AsBoolean := False;
     FDeliverySlot.IsFree.AsBoolean := True;
 
-    if Assigned(framePickup) then
-    begin
-      framePickup.IsTest := False;
-      framePickup.TimeTableSlot := FPickupSlot;
-    end;
+    { framePickup.TimeTableSlot := FPickupSlot; }
+
+    lbPickupDate.Caption := FPickupSlot.Workingday.AsString;
+    lbPickupTime.Caption := FPickupSlot.SlotDes.AsString;
 
     // A Booking can be One Way Pickup or have a Delivery (Return) Slot if not then
-    if Assigned(frameDelivery) then
+    if FBookingRecord.HasReturn then
     begin
-      frameDelivery.IsTest := False;
-      if FBookingRecord.HasReturn then
-        frameDelivery.TimeTableSlot := FDeliverySlot
-      else
-        frameDelivery.Visible := False;
-    end;
+      lbDeliveryDate.Caption := FDeliverySlot.Workingday.AsString;
+      lbDeliveryTime.Caption := FDeliverySlot.SlotDes.AsString;
+    end
+    else
+      cntDelivery.Visible := False;
 
     pgConfirmation.ActivePageIndex := 0;
   end;

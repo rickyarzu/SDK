@@ -11,15 +11,18 @@ object frameTimeCalendarSelect: TframeTimeCalendarSelect
   Font.Style = []
   TextHeight = 15
   object UniContainerPanel1: TUniContainerPanel
-    Left = 0
-    Top = 0
-    Width = 294
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 288
     Height = 28
     Hint = ''
     ParentColor = False
-    Align = alClient
+    Align = alTop
     TabOrder = 0
-    ExplicitHeight = 0
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 294
     object ulbDate: TUniLabel
       Left = 56
       Top = 4

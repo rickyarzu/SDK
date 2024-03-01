@@ -269,6 +269,22 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       FieldName = 'return_jguid'
       Size = 38
     end
+    object qryBookingpickup2_address: TWideMemoField
+      FieldName = 'pickup2_address'
+      BlobType = ftWideMemo
+    end
+    object qryBookingreturn2_address: TWideMemoField
+      FieldName = 'return2_address'
+      BlobType = ftWideMemo
+    end
+    object qryBookingpickup_slot_delivery: TWideStringField
+      FieldName = 'pickup_slot_delivery'
+      Size = 12
+    end
+    object qryBookingreturn_slot_delivery: TWideStringField
+      FieldName = 'return_slot_delivery'
+      Size = 12
+    end
   end
   object qryPickup: TUniQuery
     SQLInsert.Strings = (

@@ -100,6 +100,10 @@ type
     qryBookingdriver2_cellular: TWideStringField;
     qryBookingpickup_jguid: TGuidField;
     qryBookingreturn_jguid: TGuidField;
+    qryBookingpickup2_address: TWideMemoField;
+    qryBookingreturn2_address: TWideMemoField;
+    qryBookingpickup_slot_delivery: TWideStringField;
+    qryBookingreturn_slot_delivery: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     FBookingRecord: IBookingHeadView;
