@@ -374,6 +374,40 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       ReadOnly = True
       Size = 38
     end
+    object qryPickupdriver_anagraph_id: TIntegerField
+      FieldName = 'driver_anagraph_id'
+    end
+    object qryPickupan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryPickupan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryPickupfrom_latitude: TFloatField
+      FieldName = 'from_latitude'
+    end
+    object qryPickupfrom_longitude: TFloatField
+      FieldName = 'from_longitude'
+    end
+    object qryPickupfrom_full_address: TWideStringField
+      FieldName = 'from_full_address'
+      Size = 256
+    end
+    object qryPickupto_latitude: TFloatField
+      FieldName = 'to_latitude'
+    end
+    object qryPickupto_longitude: TFloatField
+      FieldName = 'to_longitude'
+    end
+    object qryPickupto_full_address: TWideStringField
+      FieldName = 'to_full_address'
+      Size = 256
+    end
+    object qryPickupslot_delivery: TWideStringField
+      FieldName = 'slot_delivery'
+      Size = 12
+    end
   end
   object qryDelivery: TUniQuery
     SQLInsert.Strings = (
@@ -471,6 +505,40 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       ReadOnly = True
       Size = 38
     end
+    object qryDeliverydriver_anagraph_id: TIntegerField
+      FieldName = 'driver_anagraph_id'
+    end
+    object qryDeliveryan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryDeliveryan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryDeliveryfrom_latitude: TFloatField
+      FieldName = 'from_latitude'
+    end
+    object qryDeliveryfrom_longitude: TFloatField
+      FieldName = 'from_longitude'
+    end
+    object qryDeliveryfrom_full_address: TWideStringField
+      FieldName = 'from_full_address'
+      Size = 256
+    end
+    object qryDeliveryto_latitude: TFloatField
+      FieldName = 'to_latitude'
+    end
+    object qryDeliveryto_longitude: TFloatField
+      FieldName = 'to_longitude'
+    end
+    object qryDeliveryto_full_address: TWideStringField
+      FieldName = 'to_full_address'
+      Size = 256
+    end
+    object qryDeliveryslot_delivery: TWideStringField
+      FieldName = 'slot_delivery'
+      Size = 12
+    end
   end
   object qryTimeTable: TUniQuery
     SQLInsert.Strings = (
@@ -557,6 +625,40 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       FieldName = 'jguid'
       ReadOnly = True
       Size = 38
+    end
+    object qryTimeTabledriver_anagraph_id: TIntegerField
+      FieldName = 'driver_anagraph_id'
+    end
+    object qryTimeTablean_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryTimeTablean_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryTimeTablefrom_latitude: TFloatField
+      FieldName = 'from_latitude'
+    end
+    object qryTimeTablefrom_longitude: TFloatField
+      FieldName = 'from_longitude'
+    end
+    object qryTimeTablefrom_full_address: TWideStringField
+      FieldName = 'from_full_address'
+      Size = 256
+    end
+    object qryTimeTableto_latitude: TFloatField
+      FieldName = 'to_latitude'
+    end
+    object qryTimeTableto_longitude: TFloatField
+      FieldName = 'to_longitude'
+    end
+    object qryTimeTableto_full_address: TWideStringField
+      FieldName = 'to_full_address'
+      Size = 256
+    end
+    object qryTimeTableslot_delivery: TWideStringField
+      FieldName = 'slot_delivery'
+      Size = 12
     end
   end
 end
