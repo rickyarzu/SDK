@@ -9,18 +9,12 @@ inherited frmCarserviceMain: TfrmCarserviceMain
   inherited StatusBar: TStatusBar
     Top = 555
     Width = 886
-    ExplicitLeft = 0
     ExplicitTop = 555
     ExplicitWidth = 886
   end
   inherited Panel4: TPanel
     Width = 886
     ExplicitWidth = 886
-    inherited MenuButtonToolbar: TToolBar
-      inherited ToolButton1: TToolButton
-        ExplicitWidth = 8
-      end
-    end
     inherited ToolBarTopRight: TToolBar
       Left = 847
       ExplicitLeft = 847
