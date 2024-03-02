@@ -44,6 +44,9 @@ type
     function GetLogProc: TMessageLogProc;
     procedure SetLogProc(const Value: TMessageLogProc);
     property LogProc: TMessageLogProc read GetLogProc write SetLogProc;
+    function GetMessageType: TJanuaMessageType;
+    procedure SetMessageType(const Value: TJanuaMessageType);
+    property MessageType: TJanuaMessageType read GetMessageType write SetMessageType;
   end;
 
   IJanuaWASender = interface

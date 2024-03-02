@@ -829,6 +829,7 @@ var
   aMessage: TLandingMessage;
 begin
   try
+    FLandingMsgBuilder.Dataset := qryBooking;
     FLandingMsgBuilder.LoadSettings;
     RefreshBooking;
     aMessage := FLandingMsgBuilder.GenerateLandingMessage;
