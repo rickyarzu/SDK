@@ -112,7 +112,8 @@ contains
   MVCFramework.Middleware.StaticFiles in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Middleware.StaticFiles.pas',
   MVCFramework.DotEnv.Parser in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.Parser.pas',
   MVCFramework.DotEnv in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas',
-  MVCFramework.REPLCommandsHandlerU in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.REPLCommandsHandlerU.pas';
+  MVCFramework.REPLCommandsHandlerU in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.REPLCommandsHandlerU.pas',
+  MVCFramework.Serializer.Text in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas';
 
 end.
 
