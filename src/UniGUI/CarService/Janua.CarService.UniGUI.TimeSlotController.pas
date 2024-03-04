@@ -22,6 +22,8 @@ type
     FulbDeliveryTime: TUniLabel;
     FulbTime: TUniLabel;
     FimgBooked: TUniImage;
+    FClearAllSlots: TProc;
+    procedure SetClearAllSlots(const Value: TProc);
   protected
     procedure SetTimeTableSlot(const Value: ItimetableSlot);
     procedure SetOnToggledChange(const Value: TNotifyEvent);
@@ -35,6 +37,7 @@ type
     { Private declarations }
   public
     constructor Create(AOwner: TComponent); override;
+    property ClearAllSlots: TProc read FClearAllSlots write SetClearAllSlots;
     procedure tgSelectedToggled(const Value: Boolean);
     property TimeTableSlot: ItimetableSlot read FTimeTableSlot write SetTimeTableSlot;
   published
@@ -66,6 +69,11 @@ constructor TTimeSelectUniGUIController.Create(AOwner: TComponent);
 begin
   inherited;
   FIsTest := False;
+end;
+
+procedure TTimeSelectUniGUIController.SetClearAllSlots(const Value: TProc);
+begin
+  FClearAllSlots := Value;
 end;
 
 procedure TTimeSelectUniGUIController.SetimgBooked(const Value: TUniImage);
@@ -149,6 +157,10 @@ end;
 
 procedure TTimeSelectUniGUIController.tgSelectedToggled(const Value: Boolean);
 begin
+  // per prima cosa chiama il controller centrale ed azzera tutti i Frames
+  if Assigned(ClearAllSlots) then
+    ClearAllSlots;
+  // poi reimposta come Toggled Se stesso
   FTimeTableSlot.Booked.AsBoolean := tgSelected.Toggled;
   if Assigned(FOnToggledChange) then
     FOnToggledChange(self);

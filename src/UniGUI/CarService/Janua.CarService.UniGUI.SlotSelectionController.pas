@@ -30,6 +30,8 @@ type
     FulbDate: TUniLabel;
     FUniDateTimePicker1: TUniDateTimePicker;
     FBookingDate: TDate;
+    FSlotID: Integer;
+    function GetSlotID: Integer;
   protected
     procedure SetTimeTableSlots(const Value: IList<ItimetableSlot>);
     procedure SetIsTest(const Value: Boolean);
@@ -54,6 +56,7 @@ type
     procedure OnToggleChange(Sender: TObject);
     procedure AfterConstruction; override;
     procedure ClearAllFrames;
+    procedure ClearAllSlots;
   published
     property BookingDate: TDate read FBookingDate write SetBookingDate;
     property ulbPickupDate: TUniLabel read FulbPickupDate write SetulbPickupDate;
@@ -64,6 +67,7 @@ type
     property IsTest: Boolean read FIsTest write SetIsTest;
   public
     property TimeTableSlots: IList<ItimetableSlot> read FTimeTableSlots write SetTimeTableSlots;
+    property SlotID: Integer read GetSlotID;
   published
     property frameTimeSelect1: TTimeSelectUniGUIController read FframeTimeSelect1 write SetframeTimeSelect1;
     property frameTimeSelect2: TTimeSelectUniGUIController read FframeTimeSelect2 write SetframeTimeSelect2;
@@ -94,6 +98,7 @@ begin
   if not FUpdating then
     try
       FUpdating := True;
+      ClearAllSlots;
       for I := 0 to Pred(FFRames.Count) do
       begin
         FFRames[I].tgSelected.Toggled := False;
@@ -104,11 +109,25 @@ begin
     end;
 end;
 
+procedure TCarServiceSlotSelectionController.ClearAllSlots;
+var
+  lSlot: ItimetableSlot;
+begin
+  for lSlot in FTimeTableSlots do
+    lSlot.Booked.AsBoolean := False;
+end;
+
 constructor TCarServiceSlotSelectionController.Create(AOwner: TComponent);
 begin
   inherited;
   FFRames := Spring.Collections.TCollections.CreateList<TTimeSelectUniGUIController>;
   FUpdating := False;
+  FSlotID := -1;
+end;
+
+function TCarServiceSlotSelectionController.GetSlotID: Integer;
+begin
+  Result := FSlotID
 end;
 
 function TCarServiceSlotSelectionController.InternalActivate: Boolean;
@@ -136,7 +155,11 @@ begin
     try
       FUpdating := True;
       for I := 0 to Pred(FFRames.Count) do
+      begin
         FFRames[I].tgSelected.Toggled := FTimeTableSlots[I].Booked.AsBoolean;
+        if FTimeTableSlots[I].Booked.AsBoolean then
+          FSlotID := FTimeTableSlots[I].SlotID.AsInteger;
+      end;
     finally
       FUpdating := False;
     end;
@@ -216,6 +239,7 @@ begin
     begin
       FFRames[I].TimeTableSlot := FTimeTableSlots[I];
       FFRames[I].OnToggledChange := OnToggleChange;
+      FFRames[I].ClearAllSlots := ClearAllSlots;
     end;
 end;
 

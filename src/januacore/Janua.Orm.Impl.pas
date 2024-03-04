@@ -1532,10 +1532,11 @@ type
     FDBSchemaField: IJanuaField;
     FNotStored: Boolean;
     procedure CheckMasterFields;
-  strict protected
+  protected
     FPrefix: string;
     FItemIndex: Integer;
     FMappedDataset: TDataset;
+    function GetCheckDataset: Boolean;
     procedure InternalDoNewRecord; virtual;
   private
     procedure DoNewRecord;
@@ -1624,7 +1625,11 @@ type
     /// <summary> Check if a DAtaset is Mapped or not comparing the objects
     /// <returns> Boolean: True if it's mapped and false else </returns> </summary>
     function IsMappedDataset(const aDataset: TDataset): Boolean;
-  strict protected
+  strict private
+    FCheckDataset: Boolean;
+    FAfterLoadRecord: TProc;
+  protected
+    procedure SetCheckDataset(const Value: Boolean);
     procedure AddRecordDef(const aRecordDef: IJanuaRecord);
     function AddRecordIntf(const aRecordIntf: TGUID; const aName: string): IJanuaRecord;
     procedure SetIsNewRecord(const Value: Boolean);
@@ -1632,8 +1637,6 @@ type
     procedure SetEditing(const Value: Boolean);
     procedure AfterPost; virtual;
     procedure BeforePost; virtual;
-  strict private
-    FAfterLoadRecord: TProc;
     procedure SetAfterLoadRecord(const Value: TProc);
   protected
     procedure InternalInitialize;
@@ -1783,6 +1786,7 @@ type
     property asJson: string read GetJson write SetJson;
     property NotStored: Boolean read GetNotStored write SetNotStored;
     property AsJsonWithMeta: string read GetAsJsonWithMeta write SetAsJsonWithMeta;
+    property DoCheckDataset: Boolean read GetCheckDataset write SetCheckDataset;
   private
     FRemoteClient: IRemoteRecordClient;
   protected
@@ -2671,7 +2675,10 @@ begin
       // if Dataset changed some informations about the dataset so dataset must be refreshed from
       // Record But Details Dataset must be preserved
       if not aRecord.EqualsDataset(aDataset) then
-        aRecord.DirectLoadFromDataset(aDataset, False, False);
+      begin
+        aRecord.LoadRecord(False);
+        { aRecord.DirectLoadFromDataset(aDataset, False, False); }
+      end;
     end;
 
   except
@@ -8327,8 +8334,8 @@ begin
     if (FDBDataset.RecordCount > 1) and (FDBDataset.FieldByName('jguid').AsString = GUIDString) then
       LoadFromDataset;
   end
-  else
-    raise exception.Create('TJanuaRecord.AppendToDataset Dataset is null');
+  else if DoCheckDataset then
+    raise exception.Create(ClassName + '.AppendToDataset(' + Name + ') Dataset is null');
 end;
 
 procedure TJanuaRecord.ApplyLocalUpdates;
@@ -8388,11 +8395,15 @@ begin
         raise exception.Create('TJanuaRecord.Assign FFields[' + I.ToString + ']=' + FFields[I].DBField + '.' +
           sLineBreak + e.Message);
     end;
-    Guard.CheckTrue(aRecord.RecordCount = RecordCount, 'RecordCount Error');
+    // A 'Wider' Record can assign a 'smaller' Record (The Wider one is an extension of the Smaller);
+    Guard.CheckTrue(aRecord.RecordCount <= RecordCount, 'RecordCount Error');
 
     try
-      for I := 0 to Pred(RecordCount) do
+      for I := 0 to Min(Pred(RecordCount), Pred(aRecord.RecordCount)) do
+      begin
         FRecords[I].Assign(aRecord.Records[I]);
+        FRecords[I].Post;
+      end;
     except
       on e: exception do
         raise exception.Create('TJanuaRecord.Assign FRecords[' + I.ToString + ']=' + FRecords[I].Name + '.' +
@@ -8804,6 +8815,7 @@ end;
 constructor TJanuaRecord.Create;
 begin
   inherited;
+  FCheckDataset := True;
 end;
 
 function TJanuaRecord.FieldByName(const aName: string): IJanuaField;
@@ -8908,6 +8920,11 @@ begin
       RSArr.AddElement(FRecordSets[I].AsMetadata);
   Janua.Core.Json.JsonPair(Result, 'recordsets', RSArr);
 
+end;
+
+function TJanuaRecord.GetCheckDataset: Boolean;
+begin
+  Result := FCheckDataset;
 end;
 
 function TJanuaRecord.GetGUID: TGUID;
@@ -9171,7 +9188,7 @@ procedure TJanuaRecord.LoadFromDataset(const aMainDataset: IJanuaDBDataset; aMap
 begin
   // StoreDataset := aMainDataset;
   SetupDataset(aMainDataset, [], aMapToDataset);
-  LoadFromDataset;
+  LoadFromDataset(aRecursively);
 end;
 
 procedure TJanuaRecord.LoadFromDataset(const aRecursively: Boolean);
@@ -9240,70 +9257,73 @@ begin
     try
       SetState(jrsDatabaseLoading);
       // 2020-05-16 if FStoreDataset is Assigned and FDBDataset is not stores FStoreDataset.Dataset to be Loaded
-      try
-        if not Assigned(FDBDataset) and Assigned(FStoreDataset) then
-          FDBDataset := FStoreDataset.Dataset;
+
+      if not Assigned(FDBDataset) and Assigned(FStoreDataset) then
+        FDBDataset := FStoreDataset.Dataset;
+      if FCheckDataset then
         Guard.CheckNotNull(FDBDataset, ClassName + '.LoadRecord FDBDataset is null');
 
-        if FDBDataset.Active and (FDBDataset.RecordCount > 0) then
-          try
-            Clear(aRecursively);
+      if Assigned(FDBDataset) then
+        try
+          if FDBDataset.Active and (FDBDataset.RecordCount > 0) then
+            try
+              Clear(aRecursively);
 
-            if Assigned(FStoreDataset) then
-              FGUID := FStoreDataset.GUID
-            else if Assigned(FGUIDField) then
-              FGUID := FGUIDField.AsGUID
-            else
-              ReadGUIDField;
-
-            if Janua.Core.Functions.GetFieldByName(FDBDataset, 'deleted', aField) then
-              IsDeleted := aField.AsBoolean
-            else if Janua.Core.Functions.GetFieldByName(FDBDataset, FPrefix + '_deleted', aField) then
-              IsDeleted := aField.AsBoolean;
-
-            for lField in FFields do
-            begin
-{$IFDEF DEBUG} Guard.CheckNotNull(lField, 'FFields is nil'); {$ENDIF}
-              lField.ReadFromDataset(FDBDataset);
-            end;
-
-            if aRecursively then
-            begin
-              for lRecord in FRecords do
-              begin
-{$IFDEF DEBUG} Guard.CheckNotNull(lRecord, 'lRecord is nil'); {$ENDIF}
-                if Assigned(lRecord.DBDataset) then
-                  lRecord.LoadRecord;
-              end;
-
-              for lRecordSet in FRecordSets do
-              begin
-                if Assigned(lRecordSet) and Assigned(lRecordSet.CurrentRecord.DBDataset) then
-                  lRecordSet.LoadFromDataset;
-              end;
-            end;
-
-          except
-            on e: exception do
-            begin
-              if Assigned(FDBDataset.Owner) then
-                tmp := FDBDataset.Owner.Name + '.' + FDBDataset.Name
+              if Assigned(FStoreDataset) then
+                FGUID := FStoreDataset.GUID
+              else if Assigned(FGUIDField) then
+                FGUID := FGUIDField.AsGUID
               else
-                tmp := FDBDataset.Name;
+                ReadGUIDField;
 
-              if Assigned(lField) then
-                tmp := tmp + '[' + lField.DBField + ']';
+              if Janua.Core.Functions.GetFieldByName(FDBDataset, 'deleted', aField) then
+                IsDeleted := aField.AsBoolean
+              else if Janua.Core.Functions.GetFieldByName(FDBDataset, FPrefix + '_deleted', aField) then
+                IsDeleted := aField.AsBoolean;
 
-              Raise exception.Create(tmp + ': ' + e.Message);
+              for lField in FFields do
+              begin
+{$IFDEF DEBUG} Guard.CheckNotNull(lField, 'FFields is nil'); {$ENDIF}
+                lField.ReadFromDataset(FDBDataset);
+              end;
+
+              if aRecursively then
+              begin
+                for lRecord in FRecords do
+                begin
+{$IFDEF DEBUG} Guard.CheckNotNull(lRecord, 'lRecord is nil'); {$ENDIF}
+                  if Assigned(lRecord.DBDataset) then
+                    lRecord.LoadRecord;
+                end;
+
+                for lRecordSet in FRecordSets do
+                begin
+                  if Assigned(lRecordSet) and Assigned(lRecordSet.CurrentRecord.DBDataset) then
+                    lRecordSet.LoadFromDataset;
+                end;
+              end;
+
+            except
+              on e: exception do
+              begin
+                if Assigned(FDBDataset.Owner) then
+                  tmp := FDBDataset.Owner.Name + '.' + FDBDataset.Name
+                else
+                  tmp := FDBDataset.Name;
+
+                if Assigned(lField) then
+                  tmp := tmp + '[' + lField.DBField + ']';
+
+                Raise exception.Create(tmp + ': ' + e.Message);
+              end;
             end;
-          end;
 
-        if Assigned(FAfterLoadRecord) then
-          FAfterLoadRecord;
+          if Assigned(FAfterLoadRecord) then
+            FAfterLoadRecord;
 
-      finally
-        SetState(jrsNone);
-      end;
+        finally
+          SetState(jrsNone);
+        end;
     finally
       MonitorExit(self);
     end;
@@ -9319,14 +9339,27 @@ procedure TJanuaRecord.MapDataset(const aDataset: TDataset);
 var
   aField: IJanuaField;
 begin
-  for aField in Fields do
-    aField.MapDataset(aDataset);
+  if Assigned(aDataset) then
+  begin
+    for aField in Fields do
+      aField.MapDataset(aDataset);
 
-  FGUIDField := aDataset.FindField('jguid');
-  if not Assigned(FGUIDField) then
-    FGUIDField := aDataset.FindField(PrefixGUIDField);
+    FGUIDField := aDataset.FindField('jguid');
+    if not Assigned(FGUIDField) then
+      FGUIDField := aDataset.FindField(PrefixGUIDField);
 
-  FMappedDataset := aDataset;
+    FMappedDataset := aDataset;
+    // if Mapped Dataset is set then MapToDataset is set to True
+    FMapToDataset := True;
+  end
+  else
+  begin
+    for aField in Fields do
+      aField.MappedField := nil;
+    FGUIDField := nil;
+    FMappedDataset := nil;
+    FMapToDataset := False;
+  end;
 end;
 
 procedure TJanuaRecord.MapDataset(const aMainDataset: IJanuaDBDataset);
@@ -9528,6 +9561,7 @@ end;
 procedure TJanuaRecord.SaveToDataset(Force, aRecursive: Boolean);
 var
   I: Integer;
+  lRecord: IJanuaRecord;
 
   function LocateRecord: Boolean;
   begin
@@ -9564,12 +9598,16 @@ begin
     else
       AppendToDataset;
   end
-  else
-    raise exception.Create('TJanuaRecord.SaveToDataset FStoreDataset and FDBDataset are null');
+  else if FCheckDataset then
+    raise exception.Create(ClassName + '.SaveToDataset(' + Name + ') FStoreDataset and FDBDataset are null');
 
   if aRecursive then
+    for lRecord in FRecords do
+      lRecord.SaveToDataset(Force, aRecursive);
+  {
     for I := 0 to Pred(FRecords.Count) do
-      FRecords[I].SaveToDataset(Force);
+    FRecords[I].SaveToDataset(Force, aRecursive);
+  }
 
   if aRecursive then
     for I := 0 to Pred(FRecordSets.Count) do
@@ -9691,6 +9729,11 @@ begin
       RaiseException('SetAsMetaData', e, self, TJanuaLogger.TailLog);
   end;
 
+end;
+
+procedure TJanuaRecord.SetCheckDataset(const Value: Boolean);
+begin
+  FCheckDataset := Value;
 end;
 
 procedure TJanuaRecord.SetDataset(const aValue: TDataset);
@@ -10100,7 +10143,7 @@ begin
     if Length(aDatasets) > FRecords.Count then
       bDatasets := Copy(aDatasets, Pred(FRecordSets.Count), Length(aDatasets) - FRecords.Count);
 
-    for I := Low(aDatasets) to min(High(aDatasets), Pred(FRecords.Count)) do
+    for I := Low(aDatasets) to Min(High(aDatasets), Pred(FRecords.Count)) do
     begin
       { TODO : LoadFromDataset funziona solo se i dataset sono in perfetto "ordine" e non gestisce bene i sotto-livelli }
       if I <= Pred(FRecords.Count) then
@@ -10587,7 +10630,7 @@ begin
         FGUIDDict.Add(FRecords[I].GUID, I);
       end;
     // se ho cancellato l'ultimo record allora ItemIndex = .1
-    FItemIndex := min(j, k);
+    FItemIndex := Min(j, k);
   end;
 
 end;

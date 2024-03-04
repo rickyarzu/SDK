@@ -9,6 +9,7 @@ object MainCustConfForm: TMainCustConfForm
   WindowState = wsMaximized
   OldCreateOrder = False
   MonitoredKeys.Keys = <>
+  Visible = True
   Font.Height = -12
   OnCreate = UniFormCreate
   OnDestroy = UniFormDestroy
@@ -20,7 +21,6 @@ object MainCustConfForm: TMainCustConfForm
     Height = 569
     Hint = ''
     ActivePage = tsBookingConfirmation
-    TabBarVisible = False
     Align = alClient
     TabOrder = 0
     object tsBookingConfirmation: TUniTabSheet
@@ -29,7 +29,7 @@ object MainCustConfForm: TMainCustConfForm
       object btnConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 482
+        Top = 490
         Width = 302
         Height = 28
         Hint = ''
@@ -41,13 +41,13 @@ object MainCustConfForm: TMainCustConfForm
         BadgeText.BackgroundColor = '#D50000'
         Caption = 'Conferma '
         Align = alTop
-        TabOrder = 6
+        TabOrder = 5
         OnClick = btnConfirmationClick
       end
       object btnUndoConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 516
+        Top = 524
         Width = 302
         Height = 28
         Hint = ''
@@ -59,112 +59,7 @@ object MainCustConfForm: TMainCustConfForm
         BadgeText.BackgroundColor = '#D50000'
         Caption = 'Contatta il Servizio'
         Align = alTop
-        TabOrder = 1
-      end
-      inline frameDelivery: TframeTimeSelect
-        AlignWithMargins = True
-        Left = 2
-        Top = 415
-        Width = 304
-        Height = 28
-        Margins.Left = 2
-        Margins.Top = 2
-        Margins.Right = 2
-        Margins.Bottom = 2
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 2
-        Background.Picture.Data = {00}
-        ExplicitLeft = 2
-        ExplicitTop = 415
-        ExplicitWidth = 304
-        ExplicitHeight = 28
-        inherited tgSelected: TUniFSToggle
-          Left = 237
-          Width = 60
-          Anchors = [akTop, akRight]
-          ExplicitLeft = 237
-          ExplicitWidth = 60
-        end
-        inherited ulbTime: TUniLabel
-          Top = 7
-          Width = 51
-          Height = 17
-          ParentFont = False
-          Font.Height = -13
-          Font.Style = [fsBold]
-          ExplicitTop = 7
-          ExplicitWidth = 51
-          ExplicitHeight = 17
-        end
-        inherited ulbDate: TUniLabel
-          ParentFont = False
-          Font.Height = -13
-          Font.Style = [fsBold]
-        end
-        inherited imgBooked: TUniImage
-          Left = 284
-          Top = 0
-          Width = 17
-          Anchors = [akTop, akRight]
-          ExplicitLeft = 284
-          ExplicitTop = 0
-          ExplicitWidth = 17
-        end
-      end
-      inline framePickup: TframeTimeSelect
-        AlignWithMargins = True
-        Left = 2
-        Top = 379
-        Width = 304
-        Height = 32
-        Margins.Left = 2
-        Margins.Top = 2
-        Margins.Right = 2
-        Margins.Bottom = 2
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 3
-        Background.Picture.Data = {00}
-        ExplicitLeft = 2
-        ExplicitTop = 379
-        ExplicitWidth = 304
-        inherited tgSelected: TUniFSToggle
-          Left = 237
-          Width = 60
-          Anchors = [akTop, akRight]
-          ExplicitLeft = 237
-          ExplicitWidth = 60
-        end
-        inherited ulbTime: TUniLabel
-          Top = 6
-          Width = 51
-          Height = 17
-          ParentFont = False
-          Font.Height = -13
-          Font.Style = [fsBold]
-          ExplicitTop = 6
-          ExplicitWidth = 51
-          ExplicitHeight = 17
-        end
-        inherited ulbDate: TUniLabel
-          Top = 7
-          ParentFont = False
-          Font.Height = -13
-          Font.Style = [fsBold]
-          ExplicitTop = 7
-        end
-        inherited imgBooked: TUniImage
-          Left = 284
-          Top = 3
-          Width = 13
-          Anchors = [akTop, akRight]
-          ExplicitLeft = 284
-          ExplicitTop = 3
-          ExplicitWidth = 13
-        end
+        TabOrder = 0
       end
       object ulbTitle: TUniLabel
         AlignWithMargins = True
@@ -182,12 +77,12 @@ object MainCustConfForm: TMainCustConfForm
         Font.Height = -16
         ParentColor = False
         Color = clBtnFace
-        TabOrder = 4
+        TabOrder = 1
       end
       object ulbRitiro: TUniLabel
         AlignWithMargins = True
         Left = 3
-        Top = 354
+        Top = 362
         Width = 302
         Height = 20
         Hint = ''
@@ -200,7 +95,7 @@ object MainCustConfForm: TMainCustConfForm
         Font.Height = -16
         ParentColor = False
         Color = clBtnFace
-        TabOrder = 5
+        TabOrder = 2
       end
       object unhtmlfrm1: TUniHTMLFrame
         AlignWithMargins = True
@@ -238,72 +133,10 @@ object MainCustConfForm: TMainCustConfForm
         Color = clBtnFace
         TabOrder = 7
       end
-      inline frameInsurance: TframeUniGUITextConfirmation
-        Left = 0
-        Top = 291
-        Width = 308
-        Height = 28
-        Margins.Left = 2
-        Margins.Top = 2
-        Margins.Right = 2
-        Margins.Bottom = 2
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 9
-        Background.Picture.Data = {00}
-        ExplicitTop = 291
-        ExplicitWidth = 308
-        ExplicitHeight = 28
-        inherited tgSelected: TUniFSToggle
-          Left = 237
-          Width = 60
-          ExplicitLeft = 237
-          ExplicitWidth = 60
-        end
-        inherited ulbTime: TUniLabel
-          Left = -3
-          Width = 234
-          Caption = 'Assicurazione in periodo di Validit'#224
-          ExplicitLeft = -3
-          ExplicitWidth = 234
-        end
-      end
-      inline frameOverhaulCar: TframeUniGUITextConfirmation
-        AlignWithMargins = True
-        Left = 2
-        Top = 321
-        Width = 304
-        Height = 28
-        Margins.Left = 2
-        Margins.Top = 2
-        Margins.Right = 2
-        Margins.Bottom = 2
-        Align = alTop
-        Anchors = [akLeft, akTop, akRight]
-        Font.Height = -12
-        TabOrder = 0
-        Background.Picture.Data = {00}
-        ExplicitLeft = 2
-        ExplicitTop = 321
-        ExplicitWidth = 304
-        ExplicitHeight = 28
-        inherited tgSelected: TUniFSToggle
-          Left = 235
-          Width = 60
-          ExplicitLeft = 235
-          ExplicitWidth = 60
-        end
-        inherited ulbTime: TUniLabel
-          Width = 215
-          Caption = 'Veicolo in Regola con Revisione'
-          ExplicitWidth = 215
-        end
-      end
       object btnViewContract: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 448
+        Top = 456
         Width = 302
         Height = 28
         Hint = ''
@@ -315,7 +148,7 @@ object MainCustConfForm: TMainCustConfForm
         BadgeText.BackgroundColor = '#D50000'
         Caption = 'Vedi Condizioni Contrattuali'
         Align = alTop
-        TabOrder = 10
+        TabOrder = 3
         OnClick = btnViewContractClick
       end
       object imgTop: TUniImage
@@ -328,6 +161,186 @@ object MainCustConfForm: TMainCustConfForm
         Align = alTop
         Images = imgltop
         ImageIndex = 0
+      end
+      object cntPickup: TUniContainerPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 388
+        Width = 302
+        Height = 28
+        Hint = ''
+        ParentColor = False
+        Align = alTop
+        TabOrder = 8
+        object lbPickupDAte: TUniLabel
+          Left = 56
+          Top = 4
+          Width = 81
+          Height = 15
+          Hint = ''
+          AutoSize = False
+          Caption = 'ulbDate'
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 1
+        end
+        object lbPickupTime: TUniLabel
+          Left = 160
+          Top = 4
+          Width = 46
+          Height = 17
+          Hint = ''
+          Caption = 'ulbTime'
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 2
+        end
+        object tgPickupSelected: TUnimFSToggle
+          Left = 232
+          Top = 0
+          Width = 70
+          Height = 28
+          Hint = ''
+          ThemeOn = Success
+          ThemeOff = Gray
+          TitleOn = 'ON'
+          TitleOff = 'OFF'
+          Align = alRight
+        end
+      end
+      object cntDelivery: TUniContainerPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 422
+        Width = 302
+        Height = 28
+        Hint = ''
+        ParentColor = False
+        Align = alTop
+        TabOrder = 9
+        object lbDeliveryDate: TUniLabel
+          Left = 56
+          Top = 4
+          Width = 81
+          Height = 15
+          Hint = ''
+          AutoSize = False
+          Caption = 'ulbDate'
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 1
+        end
+        object lbDeliveryTime: TUniLabel
+          Left = 160
+          Top = 4
+          Width = 46
+          Height = 17
+          Hint = ''
+          Caption = 'ulbTime'
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 2
+        end
+        object UnimFSToggle1: TUnimFSToggle
+          Left = 232
+          Top = 0
+          Width = 70
+          Height = 28
+          Hint = ''
+          ThemeOn = Success
+          ThemeOff = Gray
+          TitleOn = 'ON'
+          TitleOff = 'OFF'
+          Align = alRight
+        end
+      end
+      object cntInsurance: TUniContainerPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 328
+        Width = 302
+        Height = 28
+        Hint = ''
+        ParentColor = False
+        Align = alTop
+        TabOrder = 10
+        object UniLabel3: TUniLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 5
+          Width = 226
+          Height = 20
+          Hint = ''
+          Margins.Top = 5
+          AutoSize = False
+          Caption = 'Assicurazione in periodo di validit'#224
+          Align = alClient
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 1
+        end
+        object tgInsuranceSelected: TUnimFSToggle
+          Left = 232
+          Top = 0
+          Width = 70
+          Height = 28
+          Hint = ''
+          ThemeOn = Success
+          ThemeOff = Gray
+          TitleOn = 'ON'
+          TitleOff = 'OFF'
+          Align = alRight
+        end
+      end
+      object cntOverHaul: TUniContainerPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 294
+        Width = 302
+        Height = 28
+        Hint = ''
+        ParentColor = False
+        Align = alTop
+        TabOrder = 11
+        object lbRevisione: TUniLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 5
+          Width = 226
+          Height = 20
+          Hint = ''
+          Margins.Top = 5
+          AutoSize = False
+          Caption = 'Veicolo in Regola con Revisione'
+          Align = alClient
+          ParentFont = False
+          Font.Height = -13
+          ParentColor = False
+          Color = clBtnFace
+          TabOrder = 1
+        end
+        object tgOverhaulCarSelected: TUnimFSToggle
+          Left = 232
+          Top = 0
+          Width = 70
+          Height = 28
+          Hint = ''
+          ThemeOn = Success
+          ThemeOff = Gray
+          TitleOn = 'ON'
+          TitleOff = 'OFF'
+          Align = alRight
+        end
       end
     end
     object pgOK: TUniTabSheet

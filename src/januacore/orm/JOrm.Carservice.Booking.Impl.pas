@@ -15,7 +15,7 @@ uses
 // ------------------------------------------ Impl object interface ----------------------------------
 type
   /// <summary> Anagraph View is here extended by addying a Return Address rigth along with Booking Record </summary>
-  TBookingAnagraphView = class(TAnagraphView, IBookingAnagraphView)
+  TBookingAnagraphView = class(TAnagraphView, IBookingAnagraphView, IAnagraphView)
   private
     FReturnAddress: IAnAddress;
   protected
@@ -572,6 +572,10 @@ constructor TBookingAnagraphView.Create;
 begin
   inherited;
   FReturnAddress := TAnAddress.Create;
+  // Tells the system not to Store the Return Address to the DB
+  FReturnAddress.DoCheckDataset := False;
+  AddRecordDef(FReturnAddress as IJanuaRecord);
+  FReturnAddress.Name := 'return_address';
 end;
 
 function TBookingAnagraphView.GetReturnAddress: IAnAddress;

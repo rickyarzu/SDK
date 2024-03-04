@@ -458,9 +458,9 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
       'from '
       '  anagraph.anagraphs'
       'where '
-      '  an_office_id = :office_id'
-      '  and'
-      '  an_main_group_id = 28'
+      ' an_office_id = :office_id'
+      ' -- and'
+      ' -- an_main_group_id = 28'
       'union '
       'select '
       #39'{00000000-0000-0000-0000-000000000000}'#39', 0'
@@ -474,10 +474,9 @@ inherited dmPgCarServiceBookingStorage: TdmPgCarServiceBookingStorage
     Top = 40
     ParamData = <
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'office_id'
-        ParamType = ptInput
-        Value = 253911
+        Value = nil
       end>
     object qryLookupUsersjguid: TGuidField
       FieldName = 'jguid'

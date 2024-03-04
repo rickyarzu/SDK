@@ -331,6 +331,7 @@ begin
   AddRecordSet(FAddresses as IJanuaRecordSet);
   FAddresses.CurrentRecord.AddMasterField(AnagraphId, FAddresses.AnagraphId);
   FMainAddress := TAnAddress.Create;
+  FMainAddress.Name := 'main_address';
   AddRecordDef(FMainAddress as IJanuaRecord);
   // AddMasterField(aMaster, aDetail: IJanuaField);
   FMainAddress.AddMasterField(AnagraphId, FMainAddress.AnagraphId);

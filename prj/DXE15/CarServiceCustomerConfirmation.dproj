@@ -148,10 +148,6 @@
             <Form>UniServerModule</Form>
             <DesignClass>TUniGUIServerModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameTimeCalendarSelect.pas">
-            <Form>frameTimeCalendarSelect</Form>
-            <DesignClass>TUniFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas"/>
         <DCCReference Include="..\..\src\UniGUI\CarService\Janua.UniGUI.mainFormCustConfirmation.pas">
             <Form>MainCustConfForm</Form>

@@ -152,7 +152,7 @@ begin
   edtTestTinyUrl.Text := lMsg.TinyUrl;
   ldlgVCLMobilePreview := TdlgVCLMobilePreview.Create(self);
   try
-    ldlgVCLMobilePreview.NavigateToUrl(edtTestTinyUrl.Text) ;
+    ldlgVCLMobilePreview.NavigateToUrl(edtTestTinyUrl.Text);
     ldlgVCLMobilePreview.ShowModal;
   finally
     ldlgVCLMobilePreview.Free;
@@ -192,6 +192,16 @@ begin
       FSMSConf.SMSSendingEngine := jseSMS;
     1:
       FSMSConf.SMSSendingEngine := jseWhatsapp;
+  end;
+  { jmtSMS, jmtTelegram, jmtWhatsApp }
+  if Assigned(FSMSSender) then
+  begin
+    case rgEngine.ItemIndex of
+      0:
+        FSMSSender.MessageType := jmtSMS;
+      1:
+        FSMSSender.MessageType := jmtWhatsApp;
+    end;
   end;
 end;
 
@@ -242,9 +252,13 @@ procedure TframeVCLSMSMessageConfig.UpdatedFrame;
 begin
   case FSMSConf.SMSMessageConf.SMSSendingEngine of
     jseSMS:
-      rgEngine.ItemIndex := 0;
+      begin
+        rgEngine.ItemIndex := 0;
+      end;
     jseWhatsapp:
-      rgEngine.ItemIndex := 1;
+      begin
+        rgEngine.ItemIndex := 1;
+      end;
   end;
   lbKey.Caption := FSMSConf.Key;
   edPhoneCustomerTo.Text := FSMSConf.MsgTo;

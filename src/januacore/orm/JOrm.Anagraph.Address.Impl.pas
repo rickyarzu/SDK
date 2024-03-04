@@ -214,17 +214,17 @@ constructor TAddress.Create;
 begin
   inherited;
   FPrefix := 'ndd';
-  FPos := AddCreateField(TJanuaFieldType.jptSmallInt, 'pos', 'pos');
-  FMapsJson := AddCreateField(TJanuaFieldType.jptText, 'map_json', 'map_json');
-  FDbSchemaId := AddCreateField(TJanuaFieldType.jptInteger, 'db_schema_id', 'db_schema_id');
-  FId := AddCreateField(TJanuaFieldType.jptLargeint, 'id', 'id');
-  FAddressName := AddCreateField(TJanuaFieldType.jptString, 'address_name', 'address_name');
-  FPostalCode := AddCreateField(TJanuaFieldType.jptString, 'postal_code', 'postal_code');
-  FStateProvince := AddCreateField(TJanuaFieldType.jptString, 'state_province', 'state_province');
-  FTownName := AddCreateField(TJanuaFieldType.jptString, 'town_name', 'town_name');
-  FTownCode := AddCreateField(TJanuaFieldType.jptString, 'town_code', 'town_code');
-  FAddress := AddCreateField(TJanuaFieldType.jptString, 'address', 'address');
-  FAddressNumber := AddCreateField(TJanuaFieldType.jptString, 'address_number', 'address_number');
+  FPos := AddCreateField(TJanuaFieldType.jptSmallInt, 'pos', 'pos');   // 0
+  FMapsJson := AddCreateField(TJanuaFieldType.jptText, 'map_json', 'map_json'); // 1
+  FDbSchemaId := AddCreateField(TJanuaFieldType.jptInteger, 'db_schema_id', 'db_schema_id'); // 2
+  FId := AddCreateField(TJanuaFieldType.jptLargeint, 'id', 'id'); // 3
+  FAddressName := AddCreateField(TJanuaFieldType.jptString, 'address_name', 'address_name'); // 4
+  FPostalCode := AddCreateField(TJanuaFieldType.jptString, 'postal_code', 'postal_code'); // 5
+  FStateProvince := AddCreateField(TJanuaFieldType.jptString, 'state_province', 'state_province'); // 6
+  FTownName := AddCreateField(TJanuaFieldType.jptString, 'town_name', 'town_name'); // 7
+  FTownCode := AddCreateField(TJanuaFieldType.jptString, 'town_code', 'town_code'); // 8
+  FAddress := AddCreateField(TJanuaFieldType.jptString, 'address', 'address'); // 9
+  FAddressNumber := AddCreateField(TJanuaFieldType.jptString, 'address_number', 'address_number'); // 10
   FPhone := AddCreateField(TJanuaFieldType.jptString, 'phone', 'phone');
   FFullAddress := AddCreateField(TJanuaFieldType.jptString, 'full_address', 'full_address');
   FInsertDate := AddCreateField(TJanuaFieldType.jptDateTime, 'insert_date', 'insert_date');

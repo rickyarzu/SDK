@@ -44,6 +44,13 @@ type
     function GetLogProc: TMessageLogProc;
     procedure SetLogProc(const Value: TMessageLogProc);
     property LogProc: TMessageLogProc read GetLogProc write SetLogProc;
+    function GetMessageType: TJanuaMessageType;
+    procedure SetMessageType(const Value: TJanuaMessageType);
+    property MessageType: TJanuaMessageType read GetMessageType write SetMessageType;
+  end;
+
+  IJanuaWASender = interface
+    ['{2E3BE01F-8A29-48D6-A30F-2B976C1C5308}']
   end;
 
   IJanuaSMSBuilder = interface(IJanuaMessageBuilder)
@@ -93,6 +100,10 @@ type
 
   IJanuaSMSTwilio = interface(IJanuaSMSSender)
     ['{7FFAA8ED-B1A1-4E00-B054-46205C074936}']
+  end;
+
+  IJanuaWATwilio = interface(IJanuaSMSSender)
+    ['{1FC60586-C26C-4ED7-83D1-BCEE2DDE6895}']
   end;
 
   IJanuaSMSEsendex = interface(IJanuaSMSSender)

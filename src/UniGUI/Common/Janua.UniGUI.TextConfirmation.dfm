@@ -1,12 +1,18 @@
 object frameUniGUITextConfirmation: TframeUniGUITextConfirmation
   Left = 0
   Top = 0
-  Width = 296
-  Height = 24
-  TabOrder = 0
+  ClientHeight = 0
+  ClientWidth = 280
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
   DesignSize = (
-    296
-    24)
+    280
+    0)
+  TextHeight = 15
   object tgSelected: TUniFSToggle
     Left = 245
     Top = 0

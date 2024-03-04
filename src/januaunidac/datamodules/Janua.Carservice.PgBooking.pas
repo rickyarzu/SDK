@@ -829,6 +829,7 @@ var
   aMessage: TLandingMessage;
 begin
   try
+    FLandingMsgBuilder.Dataset := qryBooking;
     FLandingMsgBuilder.LoadSettings;
     RefreshBooking;
     aMessage := FLandingMsgBuilder.GenerateLandingMessage;
@@ -1144,6 +1145,7 @@ begin
       if lTestI > 0 then
       begin
         FBookingRecord.AnagraphClient.Assign(aModel.BookingAnagraph);
+        FBookingRecord.CustomerID.AsInteger := FBookingRecord.AnagraphClient.AnagraphId.AsInteger;
 
         if FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger = 0 then
           FBookingRecord.AnagraphClient.MainAddress.Assign(aModel.BookingAnagraph.MainAddress);
@@ -1162,6 +1164,15 @@ begin
     end
     else
     begin
+       FBookingRecord.CustomerID.AsInteger := FBookingRecord.AnagraphClient.AnagraphId.AsInteger;
+{$IFDEF DEBUG}
+      var
+      lMainID := FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger;
+      var
+      lRetID := FBookingRecord.AnagraphClient.ReturnAddress.Id.AsInteger;
+      var
+      lAddCount := FBookingRecord.AnagraphClient.Addresses.RecordCount;
+{$ENDIF DEBUG}
       lTestB := aModel.UpdateBookingAnagraph(FBookingRecord.AnagraphClient);
 
       if FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger = 0 then

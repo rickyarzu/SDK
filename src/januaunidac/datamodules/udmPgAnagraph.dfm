@@ -2371,18 +2371,64 @@ inherited dmPgAnagraph: TdmPgAnagraph
     end
   end
   object qryAdressess: TUniQuery
-    Connection = PgErgoConnection
-    SQL.Strings = (
+    SQLInsert.Strings = (
+      'INSERT INTO anagraph.an_addresses'
+      
+        '  (db_schema_id, id, address_name, postal_code, state_province, ' +
+        'town_name, town_code, address, address_number, phone, full_addre' +
+        'ss, insert_date, update_date, upd_id, ins_id, user_insert, user_' +
+        'update, local, deleted, jguid, country_code, email, anagraph_id,' +
+        ' maps_json, pos, longitude, latitude)'
+      'VALUES'
+      
+        '  (:db_schema_id, :id, :address_name, :postal_code, :state_provi' +
+        'nce, :town_name, :town_code, :address, :address_number, :phone, ' +
+        ':full_address, :insert_date, :update_date, :upd_id, :ins_id, :us' +
+        'er_insert, :user_update, :local, :deleted, :jguid, :country_code' +
+        ', :email, :anagraph_id, :maps_json, :pos, :longitude, :latitude)')
+    SQLDelete.Strings = (
+      'DELETE FROM anagraph.an_addresses'
+      'WHERE'
+      '  id = :Old_id')
+    SQLUpdate.Strings = (
+      'UPDATE anagraph.an_addresses'
+      'SET'
+      
+        '  db_schema_id = :db_schema_id, id = :id, address_name = :addres' +
+        's_name, postal_code = :postal_code, state_province = :state_prov' +
+        'ince, town_name = :town_name, town_code = :town_code, address = ' +
+        ':address, address_number = :address_number, phone = :phone, full' +
+        '_address = :full_address, insert_date = :insert_date, update_dat' +
+        'e = :update_date, upd_id = :upd_id, ins_id = :ins_id, user_inser' +
+        't = :user_insert, user_update = :user_update, local = :local, de' +
+        'leted = :deleted, jguid = :jguid, country_code = :country_code, ' +
+        'email = :email, anagraph_id = :anagraph_id, maps_json = :maps_js' +
+        'on, pos = :pos, longitude = :longitude, latitude = :latitude'
+      'WHERE'
+      '  id = :Old_id')
+    SQLLock.Strings = (
+      'SELECT * FROM anagraph.an_addresses'
+      'WHERE'
+      '  id = :Old_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
       
         'SELECT db_schema_id, id, address_name, postal_code, state_provin' +
-        'ce, town_name, town_code, '
-      '       address, address_number, phone, full_address, '
-      
-        '       insert_date, update_date, upd_id, ins_id, user_insert, us' +
-        'er_update, local, deleted, jguid, '
-      
-        '       country_code, email, anagraph_id, maps_json, pos, longitu' +
-        'de, latitude'
+        'ce, town_name, town_code, address, address_number, phone, full_a' +
+        'ddress, insert_date, update_date, upd_id, ins_id, user_insert, u' +
+        'ser_update, local, deleted, jguid, country_code, email, anagraph' +
+        '_id, maps_json, pos, longitude, latitude FROM anagraph.an_addres' +
+        'ses'
+      'WHERE'
+      '  id = :id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM anagraph.an_addresses'
+      ''
+      ') t')
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT *'
       'FROM '
       '    anagraph.an_addresses'
       'WHERE'
@@ -2396,5 +2442,110 @@ inherited dmPgAnagraph: TdmPgAnagraph
         Name = 'anagraph_id'
         Value = nil
       end>
+    object qryAdressessdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+      Required = True
+    end
+    object qryAdressessid: TLargeintField
+      FieldName = 'id'
+      Required = True
+    end
+    object qryAdressessaddress_name: TWideStringField
+      FieldName = 'address_name'
+      Size = 128
+    end
+    object qryAdressesspostal_code: TWideStringField
+      FieldName = 'postal_code'
+      Size = 30
+    end
+    object qryAdressessstate_province: TWideStringField
+      FieldName = 'state_province'
+      Size = 30
+    end
+    object qryAdressesstown_name: TWideStringField
+      FieldName = 'town_name'
+      Size = 128
+    end
+    object qryAdressesstown_code: TWideStringField
+      FieldName = 'town_code'
+    end
+    object qryAdressessaddress: TWideStringField
+      FieldName = 'address'
+      Required = True
+      Size = 256
+    end
+    object qryAdressessaddress_number: TWideStringField
+      FieldName = 'address_number'
+    end
+    object qryAdressessphone: TWideStringField
+      FieldName = 'phone'
+      Size = 30
+    end
+    object qryAdressessfull_address: TWideStringField
+      FieldName = 'full_address'
+      Size = 512
+    end
+    object qryAdressessinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryAdressessupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryAdressessupd_id: TLargeintField
+      FieldName = 'upd_id'
+    end
+    object qryAdressessins_id: TLargeintField
+      FieldName = 'ins_id'
+    end
+    object qryAdressessuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryAdressessuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryAdressesslocal: TBooleanField
+      FieldName = 'local'
+    end
+    object qryAdressessdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryAdressessjguid: TGuidField
+      FieldName = 'jguid'
+      Required = True
+      Size = 38
+    end
+    object qryAdressesscountry_code: TWideStringField
+      FieldName = 'country_code'
+      FixedChar = True
+      Size = 2
+    end
+    object qryAdressessemail: TWideStringField
+      FieldName = 'email'
+      Size = 128
+    end
+    object qryAdressessanagraph_id: TIntegerField
+      FieldName = 'anagraph_id'
+      Required = True
+    end
+    object qryAdressessmaps_json: TWideMemoField
+      FieldName = 'maps_json'
+      BlobType = ftWideMemo
+    end
+    object qryAdressesspos: TSmallintField
+      FieldName = 'pos'
+    end
+    object qryAdressesslongitude: TFloatField
+      FieldName = 'longitude'
+    end
+    object qryAdressesslatitude: TFloatField
+      FieldName = 'latitude'
+    end
+    object qryAdressessmaster_jguid: TGuidField
+      FieldName = 'master_jguid'
+      Required = True
+      Size = 38
+    end
   end
 end

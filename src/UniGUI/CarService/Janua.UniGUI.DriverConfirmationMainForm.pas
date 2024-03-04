@@ -7,13 +7,13 @@ uses
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIRegClasses, uniGUIForm, uniGUIBaseClasses,
   uniTabControl, uniPageControl, uniLabel, uniButton, uniBitBtn, UniFSButton, uniPanel, uniMemo, uniHTMLMemo,
-  uniGUIFrame, Janua.Carservice.UniGUI.frameTimeSlot, uniHTMLFrame, uniImage, uniImageList, UniSFButton,
+  {Janua.Carservice.UniGUI.frameTimeSlot,} uniHTMLFrame, uniImage, uniImageList, {UniSFButton,}
   // Janua
   // JOrm.Documents.Impl Booking
   Janua.Cloud.Intf, JOrm.Carservice.Booking.Intf, Janua.Orm.Types, JOrm.Anagraph.Intf,
-  Janua.Carservice.dmPgDrivers, Janua.Carservice.Intf, Janua.Cloud.Types,
-  // Janua UniGUI
-  Janua.Carservice.UniGUI.frameTimeCalendarSelect,  Janua.Carservice.UniGUI.frameCalendarList;
+  Janua.Carservice.dmPgDrivers, Janua.Carservice.Intf, Janua.Cloud.Types, UniFSToggle, UnimFSToggle;
+// Janua UniGUI
+{ Janua.Carservice.UniGUI.frameTimeCalendarSelect,  Janua.Carservice.UniGUI.frameCalendarList; }
 
 type
   TMainForm = class(TUniForm)
@@ -22,7 +22,7 @@ type
     pgConfirmatioin: TUniTabSheet;
     btnConfirmation: TUniFSButton;
     btnUndoConfirmation: TUniFSButton;
-    framePickup: TframeTimeCalendarSelect;
+
     ulbTitle: TUniLabel;
     ulbRitiro: TUniLabel;
     unhtmlfrm1: TUniHTMLFrame;
@@ -30,12 +30,19 @@ type
     imgTop: TUniImage;
     tabList: TUniTabSheet;
     tabTravel: TUniTabSheet;
-    frameCSUniGuiCalendarList1: TframeCSUniGuiCalendarList;
-    btnCalendarList: TUniSFButton;
+    // Frames
+
+    { frameCSUniGuiCalendarList1: TframeCSUniGuiCalendarList;
+      framePickup: TframeTimeCalendarSelect; }
+    { btnCalendarList: TUniSFButton; }
     lbBookingChecked: TUniLabel;
     htmlFrameConfirmed: TUniHTMLFrame;
     tabNotFound: TUniTabSheet;
     UniHTMLFrame1: TUniHTMLFrame;
+    cntPickup: TUniContainerPanel;
+    lbPickupDAte: TUniLabel;
+    lbPickupTime: TUniLabel;
+    tgPickupSelected: TUnimFSToggle;
     procedure UniFormCreate(Sender: TObject);
     procedure UniFormShow(Sender: TObject);
     procedure btnConfirmationClick(Sender: TObject);
@@ -126,6 +133,7 @@ begin
   begin
     TJanuaApplicationFactory.TryGetInterface(IJanuaCSDriverLandingMsgBuilder, FCSDriverLandingMsgBuilder);
     FCSDriverLandingMsgBuilder.Dataset := FDM.qryBooking;
+    // Carica dal Server il modello aggiornato di messaggio.
     FCSDriverLandingMsgBuilder.LoadSettings;
     FMessage := FCSDriverLandingMsgBuilder.GenerateLandingMessage;
     unhtmlfrm1.HTML.Add('<html><body>');
@@ -146,6 +154,7 @@ procedure TMainForm.UniFormDestroy(Sender: TObject);
 begin
   FCSDriverLandingMsgBuilder := nil;
   FDM.Free;
+  FDM := nil;
 end;
 
 procedure TMainForm.UniFormShow(Sender: TObject);
