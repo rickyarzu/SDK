@@ -9,7 +9,6 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.Direct=True')
     Username = 'SVG_BATCH'
     Server = 'dbCSDS100.generali.it:1626:sn=CSDS1.generali.it'
-    Connected = True
     AfterConnect = UniConnection1AfterConnect
     Left = 72
     Top = 104
