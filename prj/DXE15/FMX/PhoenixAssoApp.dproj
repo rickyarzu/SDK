@@ -401,11 +401,6 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\datamodule\Janua.Phoenix.dmReportRemoteModel.dfm">
-            <Form>dmPhoenixReportRemoteModel</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSmokeDetection.pas">
             <Form>frameFMXPhoenixReportListSmokeDetection</Form>
             <FormType>fmx</FormType>
@@ -568,12 +563,6 @@
                 </DeployFile>
                 <DeployFile LocalName="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Debug" Class="AndroidGDBServer">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\src\januacore\datamodule\Janua.Phoenix.dmReportRemoteModel.dfm" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

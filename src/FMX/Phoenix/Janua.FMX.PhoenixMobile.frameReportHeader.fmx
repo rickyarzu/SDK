@@ -12,6 +12,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
     Size.Width = 348.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Trimming = None
     Text = 'Programmazione'
     TabOrder = 0
   end
@@ -69,6 +70,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
+        TextSettings.Trimming = None
         object TMSFMXImage1: TTMSFMXImage
           Align = Fit
           ClipChildren = True
@@ -101,6 +103,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        TextSettings.Trimming = None
         object TMSFMXImage2: TTMSFMXImage
           Align = Fit
           ClipChildren = True
@@ -133,6 +136,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
+        TextSettings.Trimming = None
         object TMSFMXImage3: TTMSFMXImage
           Align = Fit
           ClipChildren = True
@@ -165,6 +169,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         Size.Width = 239.000000000000000000
         Size.Height = 29.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
         Text = 'Dati Rapportino'
         TabOrder = 0
       end
@@ -179,6 +184,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Width = 348.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Informazioni Appuntamento (Note)'
       TabOrder = 0
     end
@@ -304,6 +310,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'ANAGRAFICA'
       TabOrder = 3
     end
@@ -314,6 +321,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'FATTURE'
       TabOrder = 2
     end
@@ -379,6 +387,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
     Size.Width = 354.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Trimming = None
     Text = 'CONTROLLI ORDINARI'
     TabOrder = 6
   end
@@ -437,6 +446,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Estintori'
           TabOrder = 1
         end
@@ -451,6 +461,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '8'
           TabOrder = 0
         end
@@ -473,6 +484,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '3'
           TabOrder = 0
         end
@@ -486,6 +498,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Porte'
           TabOrder = 1
         end
@@ -508,6 +521,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '1'
           TabOrder = 0
         end
@@ -521,6 +535,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Idranti'
           TabOrder = 1
         end
@@ -543,6 +558,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '3'
           TabOrder = 0
         end
@@ -556,6 +572,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Luci em. '
           TabOrder = 1
         end
@@ -584,6 +601,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '0'
           TabOrder = 0
         end
@@ -597,6 +615,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Sprinkler'
           TabOrder = 1
         end
@@ -619,6 +638,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '0'
           TabOrder = 0
         end
@@ -632,6 +652,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Gruppi'
           TabOrder = 1
         end
@@ -654,6 +675,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '0'
           TabOrder = 0
         end
@@ -667,6 +689,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Ril. Fumo'
           TabOrder = 1
         end
@@ -689,6 +712,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.HorzAlign = Trailing
+          TextSettings.Trimming = None
           Text = '0'
           TabOrder = 0
         end
@@ -702,6 +726,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Trimming = None
           Text = 'Imp. elettrici'
           TabOrder = 1
         end
@@ -1031,6 +1056,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'Invia ad un altro tecnico'
       TabOrder = 3
     end
@@ -1041,6 +1067,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'Inserisci nuova categoria'
       TabOrder = 2
     end
@@ -1057,6 +1084,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
     Size.Height = 36.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
+    TextSettings.Trimming = None
     object rctTerminate: TRectangle
       Align = Client
       Fill.Color = claForestgreen
@@ -1071,6 +1099,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         Size.PlatformDefault = False
         TextSettings.FontColor = claWhite
         TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
         Text = 'CONCLUSIONE INTERVENTO'
         TabOrder = 0
       end

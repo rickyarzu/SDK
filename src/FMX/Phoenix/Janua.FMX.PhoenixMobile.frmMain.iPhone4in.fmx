@@ -272,7 +272,7 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
           inherited rctTerminate: TRectangle
             Size.Width = 316.000000000000000000
             inherited Label2: TLabel
-              Size.Width = 316.000000000000000000
+              Size.Width = 315.999938964843800000
             end
           end
         end
