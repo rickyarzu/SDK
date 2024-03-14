@@ -9,7 +9,7 @@ uses
   FMX.Layouts, FMX.TMSBaseControl, FMX.TMSDateTimeEdit, FMX.Ani, FMX.Objects, FMX.TMSBitmap, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.TMSHTMLText,
   // Janua
-  Janua.Core.Commons, Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
+  Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
 
 type
   TframeFMXPhoenixMobileReportHeader = class(TFrame)
