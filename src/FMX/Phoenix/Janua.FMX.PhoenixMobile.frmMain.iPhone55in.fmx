@@ -262,6 +262,9 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
           TabOrder = 9
           inherited rctTerminate: TRectangle
             Size.Width = 410.000000000000000000
+            inherited Label2: TLabel
+              Size.Width = 357.882263183593800000
+            end
           end
         end
       end

@@ -15,8 +15,8 @@ uses
 type
 
   TdlgFMXLoginDialogMobile = class(TForm)
-    Layout1: TLayout;
-    Image1: TImage;
+    layoutLogin: TLayout;
+    imgLoginLogo: TImage;
     edtUserName: TEdit;
     lbUsername: TLabel;
     lbPassword: TLabel;

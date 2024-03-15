@@ -11,13 +11,13 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
   OnCreate = FormCreate
   OnShow = FormShow
   DesignerMasterStyle = 2
-  object Layout1: TLayout
+  object layoutLogin: TLayout
     Align = Client
     Size.Width = 318.000000000000000000
     Size.Height = 464.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object Image1: TImage
+    object imgLoginLogo: TImage
       MultiResBitmap = <
         item
         end>
@@ -50,6 +50,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       Size.Width = 298.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Nome Utente'
       TabOrder = 6
     end
@@ -63,6 +64,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       Size.Width = 298.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Password'
       TabOrder = 4
     end
@@ -94,6 +96,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       Size.PlatformDefault = False
       TabOrder = 8
       Text = 'Login'
+      TextSettings.Trimming = None
       OnClick = btnLoginClick
     end
     object btnCancel: TButton
@@ -110,6 +113,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       StyleLookup = 'deletetoolbutton'
       TabOrder = 7
       Text = 'Annulla Login'
+      TextSettings.Trimming = None
     end
     object lbRemember: TLabel
       Align = Top
@@ -121,6 +125,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       Size.Width = 298.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Remember Password'
       TabOrder = 9
       object swRemember: TSwitch
@@ -146,6 +151,7 @@ object dlgFMXLoginDialogMobile: TdlgFMXLoginDialogMobile
       Size.Height = 41.000000000000000000
       Size.PlatformDefault = False
       TextSettings.FontColor = claRed
+      TextSettings.Trimming = None
       Text = 'Errore di Connessione'
       Visible = False
       TabOrder = 5

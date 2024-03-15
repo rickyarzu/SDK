@@ -9801,7 +9801,10 @@ end;
 
 procedure TJanuaRecord.ReadFromJson(const aJsonObject: TJsonObject);
 begin
-  SetAsJsonObject(Janua.Core.Json.JsonObject(FName, aJsonObject));
+  var
+  lJsonObject := Janua.Core.Json.JsonObject(FName, aJsonObject);
+  if Assigned(lJsonObject) then
+    SetAsJsonObject(lJsonObject);
 end;
 
 procedure TJanuaRecord.ReadRecord(aDataList: IRecSerialization);

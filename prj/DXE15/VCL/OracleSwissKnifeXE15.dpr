@@ -1,4 +1,4 @@
-program OracleSwissKnifeXE14;
+program OracleSwissKnifeXE15;
 
 uses
   Vcl.Forms,

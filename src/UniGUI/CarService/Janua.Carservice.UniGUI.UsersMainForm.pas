@@ -11,7 +11,7 @@ uses
   // Januaproject
   Janua.Carservice.PgBooking, Janua.Carservice.UniGUI.frameCarBooking, uniLabel, uniImage, uniTreeView,
   uniTreeMenu, UniFSConfirm, Vcl.Menus, uniMainMenu, UniFSButton, Janua.Carservice.dmPgService, uniBasicGrid,
-  uniDBGrid, Vcl.ExtCtrls, Data.DB, DBAccess, Uni;
+  uniDBGrid, Vcl.ExtCtrls, Data.DB, DBAccess, Uni, Vcl.Imaging.pngimage;
 
 type
   TfrmUNIMainForm = class(TUniForm)
@@ -36,7 +36,6 @@ type
     itmCustomersList: TUniMenuItem;
     itmInvoiceListing: TUniMenuItem;
     pgMainMenu: TUniTabSheet;
-    spbNewBooking: TUniFSButton;
     imgl32: TUniNativeImageList;
     tabBookingList: TUniTabSheet;
     tabBalance: TUniTabSheet;
@@ -48,6 +47,15 @@ type
     UniPanel2: TUniPanel;
     dsCurrentAccount: TUniDataSource;
     UniDBGrid1: TUniDBGrid;
+    cntMain: TUniContainerPanel;
+    imgLogo: TUniImage;
+    cntButtons: TUniContainerPanel;
+    UniContainerPanel3: TUniContainerPanel;
+    UniContainerPanel1: TUniContainerPanel;
+    spbNewBooking: TUniFSButton;
+    UniFSButton1: TUniFSButton;
+    UniFSButton2: TUniFSButton;
+    UniFSButton3: TUniFSButton;
     procedure UniFormCreate(Sender: TObject);
     procedure spbNewBookingClick(Sender: TObject);
     procedure UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
