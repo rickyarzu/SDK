@@ -3,14 +3,13 @@ unit Janua.Core.RESTCloudDatamodule;
 interface
 
 uses
-  System.SysUtils, System.Classes, REST.Client, REST.Response.Adapter, REST.Authenticator.OAuth,
-  REST.Authenticator.Basic, Data.Bind.Components, Data.Bind.ObjectScope, Data.DB,
+  System.Json, REST.Json, System.SysUtils, System.Classes, REST.Client, REST.Response.Adapter, Data.DB,
+  REST.Authenticator.OAuth, REST.Authenticator.Basic, Data.Bind.Components, Data.Bind.ObjectScope, REST.Types,
+
   // Januaproject
   Janua.Core.Classes, Janua.Core.Classes.Social, Janua.Core.Functions, Janua.Core.Types,
-  System.Json, REST.Json,
-  REST.Types, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TJanuaRestCloudDataModule = class(TDataModule)
@@ -28,6 +27,10 @@ type
     RESTClient: TRESTClient;
 
     FDMemTable1: TFDMemTable;
+    OAuth2_Wordpress: TOAuth2Authenticator;
+    RESTClient1: TRESTClient;
+    RESTResponse1: TRESTResponse;
+    RESTRequest1: TRESTRequest;
     procedure DataModuleCreate(Sender: TObject);
     procedure RESTRequestAfterExecute(Sender: TCustomRESTRequest);
     procedure ClearMemos;
@@ -52,6 +55,7 @@ type
   public
     procedure ResetRESTComponentsToDefaults;
     procedure FacebookFetchData;
+    function CreateWordpessPost(const aToken, aTitle, aText: string): TJsonObject;
   public
     { Public declarations }
     property Facebook_BaseURL: string read FFacebook_BaseURL write SetFacebook_BaseURL;
@@ -77,6 +81,20 @@ procedure TJanuaRestCloudDataModule.ClearMemos;
 begin
   self.FResponseData := '';
   self.FStatusLabel := '';
+end;
+
+function TJanuaRestCloudDataModule.CreateWordpessPost(const aToken, aTitle, aText: string): TJsonObject;
+begin
+  OAuth2_Wordpress.AccessToken := aToken;
+  RESTRequest1.Accept := 'application/json';
+  RESTClient1.Accept := 'application/json';
+  RESTClient1.BaseURL :=
+    'http://lnd.ergomercator.com/index.php/wp-json/wp/v2/posts/';
+  RESTRequest1.Method := TRestRequestMethod.rmPOST;
+  RESTRequest1.Params.Clear;
+  RESTRequest1.Resource := '{"title":"' + 'aTitle' + '"}';
+  RESTRequest1.Execute;
+  Result := RESTResponse1.JSONValue as TJsonObject;
 end;
 
 procedure TJanuaRestCloudDataModule.DataModuleCreate(Sender: TObject);

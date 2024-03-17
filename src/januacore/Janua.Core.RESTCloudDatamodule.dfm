@@ -1,8 +1,7 @@
 object JanuaRestCloudDataModule: TJanuaRestCloudDataModule
-  OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 317
-  Width = 605
+  Height = 634
+  Width = 608
   object DataSource: TDataSource
     DataSet = FDMemTable1
     Left = 116
@@ -83,6 +82,7 @@ object JanuaRestCloudDataModule: TJanuaRestCloudDataModule
     Authenticator = OAuth1_FitBit
     Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
     Params = <>
+    SynchronizedEvents = False
     Left = 32
     Top = 12
   end
@@ -96,5 +96,30 @@ object JanuaRestCloudDataModule: TJanuaRestCloudDataModule
     UpdateOptions.AutoCommitUpdates = True
     Left = 112
     Top = 152
+  end
+  object OAuth2_Wordpress: TOAuth2Authenticator
+    TokenType = ttBEARER
+    Left = 442
+    Top = 411
+  end
+  object RESTClient1: TRESTClient
+    Authenticator = OAuth2_Wordpress
+    Params = <>
+    SynchronizedEvents = False
+    Left = 306
+    Top = 443
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 306
+    Top = 507
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Method = rmPOST
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 306
+    Top = 371
   end
 end

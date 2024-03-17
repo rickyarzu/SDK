@@ -58,6 +58,7 @@ contains
   Clipper.Engine in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Engine.pas',
   Clipper.Minkowski in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Minkowski.pas',
   Clipper.Offset in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Offset.pas',
-  Clipper.RectClip in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.RectClip.pas';
+  Clipper.RectClip in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.RectClip.pas',
+  Img32.Fmt.BMP in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.Fmt.BMP.pas';
 
 end.

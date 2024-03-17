@@ -1,4 +1,4 @@
-package UniFalcon;
+package TUniFalcon;
 
 {$R *.res}
 {$R '..\..\..\libraries\UniFalcon\Packages\TUniFalcon.res'}
