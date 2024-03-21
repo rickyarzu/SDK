@@ -3,11 +3,14 @@ unit Janua.TMS.Error;
 interface
 
 uses
-  System.SysUtils, WinTypes, WinProcs, WinAPI.Messages, System.Classes, VCL.Graphics, VCL.Controls,
-  VCL.Forms, VCL.Dialogs, Data.DB, VCL.Menus, VCL.Grids, VCL.Printers, Janua.Core.System,
+  System.SysUtils, WinTypes, WinProcs, WinAPI.Messages, System.Classes,
+  // VCL
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, Data.DB, VCL.Menus, VCL.Grids, VCL.Printers,
+  // TMS
   TaskDialogEx, TaskDialog,
-  Janua.VCL.Error, Janua.Core.Exceptions;
-// TaskDialog, TaskDialogEx;
+  // Janua
+  Janua.Core.System, Janua.VCL.Error, Janua.Core.Exceptions;
+
 
 type
   TJanuaTmsExceptionHandler = class(TJanuaExceptionHandler)

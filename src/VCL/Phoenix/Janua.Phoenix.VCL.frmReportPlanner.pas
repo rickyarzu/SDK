@@ -8,13 +8,15 @@ uses
   // Win
   Winapi.Windows, Winapi.Messages,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, VCL.Grids, VCL.DBGrids,
-  // DB - UniDAC
-  CRGrid, ActnList, MemDS, Data.DB,
-  // Janua
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab, VCL.StdCtrls,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, VCL.Grids, VCL.DBGrids, VCL.StdCtrls,
   VCL.Buttons, VCL.Mask, JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit, JvExControls,
-  JvDBLookup, DBAccess, Uni, VCL.Menus;
+  JvDBLookup, VCL.Menus,
+  // DB - UniDAC
+  CRGrid, ActnList, MemDS, Data.DB, DBAccess, Uni,
+  // ZLibraries
+  Globale,
+  // Janua
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -51,8 +53,11 @@ type
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
+    FQRY_GENERIC: TpFIBQuery;
+    procedure SetQRY_GENERIC(const Value: TpFIBQuery);
   public
     { Public declarations }
+    property QRY_GENERIC: TpFIBQuery read FQRY_GENERIC write SetQRY_GENERIC;
   end;
 
 var
@@ -212,6 +217,11 @@ begin
       FontStyles { Column.Font.Style } , FontColor { Column.Font.Color } , backgroundColor { Column.Color } )
   end;
 
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.SetQRY_GENERIC(const Value: TpFIBQuery);
+begin
+  FQRY_GENERIC := Value;
 end;
 
 end.
