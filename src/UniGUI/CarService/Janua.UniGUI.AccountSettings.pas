@@ -1,24 +1,16 @@
-unit Janua.UniGUI.frameSettings;
+unit Janua.UniGUI.AccountSettings;
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniGUIBaseClasses, uniPageControl, uniPanel,
-  uniCheckBox, uniEdit, uniLabel, uniButton, uniBitBtn, UniFSButton, uniGroupBox,
-  // Janua.VCL.Anagraph
-  Janua.UniGUI.Interposers, Janua.Core.Classes, Janua.Core.Types, Janua.Anagraph.Types,
-{ Janua.Anagraph.UniGUI.frameSimpleAnagraph, }
-{ Janua.Anagraph.UniGUI.frameAccountingInfo, }
-{ Janua.UniGUI.frameDBUser; }
-
-  JOrm.Anagraph.Intf, Janua.Core.Commons, Janua.UniGUI.Controller,
-  Janua.CarService.UniGUI.SimpleAnagraphController, uniImageList;
-
-
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIForm, uniPanel, uniGUIBaseClasses, uniImageList, uniEdit, uniLabel, uniButton,
+  uniBitBtn, UniFSButton, uniGroupBox, uniPageControl, Janua.Core.Commons, Janua.UniGUI.Controller,
+  Janua.CarService.UniGUI.SimpleAnagraphController;
 
 type
-  TframeUniGUIAccountSettings = class(TUniFrame)
+  TUniForm4 = class(TUniForm)
     AccountingInfoController: TAccountingInfoController;
     pgcSettings: TUniPageControl;
     pgAnagraphSettings: TUniTabSheet;
@@ -134,53 +126,19 @@ type
     edtFiscalCode: TUniEdit;
     SimpleAnagraphController: TSimpleAnagraphController;
     UniNativeImageList1: TUniNativeImageList;
-    procedure btnSaveAccountInfoClick(Sender: TObject);
+    pnlBottom: TUniPanel;
   private
-    FAnagraph: IAnagraphView;
-    procedure SetAnagraph(const Value: IAnagraphView);
-  public
-    procedure NewAnagraph;
-    procedure SaveAnagraph;
-    procedure RefreshAnagraph;
+    { Private declarations }
   public
     { Public declarations }
-    property Anagraph: IAnagraphView read FAnagraph write SetAnagraph;
   end;
 
 implementation
 
 uses
-  System.Math, System.StrUtils, Janua.Core.Functions, Janua.Application.Framework, uniGUIApplication;
+  uniGUIApplication;
 
 {$R *.dfm}
-{ TframeUniGUIAccountSettings }
 
-procedure TframeUniGUIAccountSettings.btnSaveAccountInfoClick(Sender: TObject);
-begin
-  AccountingInfoController.SaveAnagraph;
-end;
-
-procedure TframeUniGUIAccountSettings.NewAnagraph;
-begin
-  Anagraph.Clear;
-  Anagraph.AnagraphID.AsInteger := 0;
-  Anagraph.DbSchemaId.AsInteger := TJanuaApplication.DbSchemaId;
-end;
-
-procedure TframeUniGUIAccountSettings.RefreshAnagraph;
-begin
-  AccountingInfoController.Anagraph := FAnagraph;
-  SimpleAnagraphController.Anagraph := FAnagraph;
-end;
-
-procedure TframeUniGUIAccountSettings.SaveAnagraph;
-begin
-
-end;
-
-procedure TframeUniGUIAccountSettings.SetAnagraph(const Value: IAnagraphView);
-begin
-  FAnagraph := Value;
-end;
 
 end.

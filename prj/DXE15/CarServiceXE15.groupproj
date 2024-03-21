@@ -159,6 +159,12 @@
         <Projects Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -635,14 +641,32 @@
     <Target Name="dclsgcWebSockets:Make">
         <MSBuild Projects="..\..\components\pkg110\dclsgcWebSockets.dproj" Targets="Make"/>
     </Target>
+    <Target Name="FSPopup">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSPopup.dproj"/>
+    </Target>
+    <Target Name="FSPopup:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSPopup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FSPopup:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSPopup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FSConfirm">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSConfirm.dproj"/>
+    </Target>
+    <Target Name="FSConfirm:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSConfirm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FSConfirm:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\FSConfirm.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;CarServiceBackOffice;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets"/>
+        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;CarServiceBackOffice;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;CarServiceBackOffice:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean"/>
+        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;CarServiceBackOffice:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;CarServiceBackOffice:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make"/>
+        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;CarServiceBackOffice:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -850,6 +874,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -877,6 +907,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1164,6 +1200,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1191,6 +1233,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1478,6 +1526,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1505,6 +1559,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1792,6 +1852,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1819,6 +1885,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2106,6 +2178,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2133,6 +2211,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2420,6 +2504,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2447,6 +2537,12 @@
         <BuildGroupProject Include="VCL\CarServiceXE15x86.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2734,6 +2830,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
+            <ProjectGuid>{FFDD3AC2-E4D4-4EBA-A31C-7BB0D4569E66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations/>
@@ -2762,6 +2864,12 @@
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
+            <ProjectGuid>{52383B42-FE8E-45CA-B9BC-36AA6735A2E1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">

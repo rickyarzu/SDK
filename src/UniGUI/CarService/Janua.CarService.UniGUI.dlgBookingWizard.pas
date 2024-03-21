@@ -19,7 +19,7 @@ uses
   {Janua.CarService.UniGUI.frameBookingSummary   ->} Janua.CarService.UniGUI.BookingSummaryController,
   {Janua.CarService.UniGUI.frameTimeTable        ->} Janua.CarService.UniGUI.TimeTableSelectController,
   Janua.CarService.UniGUI.SlotSelectionController,
-  Janua.CarService.PgBooking, Janua.UniGUI.Interposers;
+  Janua.CarService.PgBooking, Janua.UniGUI.Interposers, uniMemo;
 
 type
   TBookingPageEnum = (pgSelectDate, pgSelectSlot, pgCustomer, pgLocations, pgSummary, pgPayment);
@@ -259,6 +259,7 @@ type
     UniContainerPanel24: TUniContainerPanel;
     ckbConditiions: TUniCheckBox;
     btnShowContract: TUniFSButton;
+    memoLog: TUniMemo;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);

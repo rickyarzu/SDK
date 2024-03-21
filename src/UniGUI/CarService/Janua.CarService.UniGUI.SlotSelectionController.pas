@@ -6,7 +6,7 @@ uses
   SysUtils, Variants, Classes, Spring.Collections,
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniGUIBaseClasses, uniCalendar, uniLabel,
-  uniButton, uniGUIForm, uniGUIApplication, UniFSToggle, uniImage, uniDateTimePicker,
+  uniButton, uniGUIForm, uniGUIApplication, UniFSToggle, uniImage, uniDateTimePicker, uniMemo,
   // Januaproject
   Janua.CarService.UniGUI.TimeSlotController, Janua.UniGUI.Controller, JOrm.CarService.Booking.Intf;
 
@@ -31,7 +31,9 @@ type
     FUniDateTimePicker1: TUniDateTimePicker;
     FBookingDate: TDate;
     FSlotID: Integer;
+    FmemoLog: TUniMemo;
     function GetSlotID: Integer;
+    procedure SetmemoLog(const Value: TUniMemo);
   protected
     procedure SetTimeTableSlots(const Value: IList<ItimetableSlot>);
     procedure SetIsTest(const Value: Boolean);
@@ -69,6 +71,7 @@ type
     property TimeTableSlots: IList<ItimetableSlot> read FTimeTableSlots write SetTimeTableSlots;
     property SlotID: Integer read GetSlotID;
   published
+    property memoLog: TUniMemo read FmemoLog write SetmemoLog;
     property frameTimeSelect1: TTimeSelectUniGUIController read FframeTimeSelect1 write SetframeTimeSelect1;
     property frameTimeSelect2: TTimeSelectUniGUIController read FframeTimeSelect2 write SetframeTimeSelect2;
     property frameTimeSelect3: TTimeSelectUniGUIController read FframeTimeSelect3 write SetframeTimeSelect3;
@@ -101,8 +104,10 @@ begin
       ClearAllSlots;
       for I := 0 to Pred(FFRames.Count) do
       begin
-        FFRames[I].tgSelected.Toggled := False;
-        FTimeTableSlots[I].Booked.AsBoolean := False;
+        if FFRames[I].tgSelected.Toggled then
+          FFRames[I].tgSelected.Toggled := False;
+        if FTimeTableSlots[I].Booked.AsBoolean then
+          FTimeTableSlots[I].Booked.AsBoolean := False;
       end;
     finally
       FUpdating := False;
@@ -149,17 +154,29 @@ end;
 
 procedure TCarServiceSlotSelectionController.OnToggleChange(Sender: TObject);
 var
-  I: Integer;
+  I, J: Integer;
 begin
   if not FUpdating then
     try
       FUpdating := True;
+      J := -1;
       for I := 0 to Pred(FFRames.Count) do
       begin
-        FFRames[I].tgSelected.Toggled := FTimeTableSlots[I].Booked.AsBoolean;
+        if FFRames[I].tgSelected.Toggled <> FTimeTableSlots[I].Booked.AsBoolean then
+          FFRames[I].tgSelected.Toggled := FTimeTableSlots[I].Booked.AsBoolean;
         if FTimeTableSlots[I].Booked.AsBoolean then
+        begin
           FSlotID := FTimeTableSlots[I].SlotID.AsInteger;
+          J := I;
+        end;
       end;
+      if Assigned(FmemoLog) and (J > -1) then
+      begin
+        var
+        sLog := FTimeTableSlots[J].SlotDes.AsString + ' - ' + FTimeTableSlots[J].Workingday.AsString;
+        FmemoLog.Text := sLog;
+      end;
+
     finally
       FUpdating := False;
     end;
@@ -218,6 +235,11 @@ end;
 procedure TCarServiceSlotSelectionController.SetlbPickup(const Value: TUniLabel);
 begin
   FlbPickup := Value;
+end;
+
+procedure TCarServiceSlotSelectionController.SetmemoLog(const Value: TUniMemo);
+begin
+  FmemoLog := Value;
 end;
 
 procedure TCarServiceSlotSelectionController.SetTimeTableSlots(const Value: IList<ItimetableSlot>);

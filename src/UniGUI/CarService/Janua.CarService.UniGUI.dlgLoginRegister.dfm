@@ -31,7 +31,7 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
     Height = 430
     Hint = ''
     Margins.Top = 0
-    ActivePage = tsLogin
+    ActivePage = tsRegister
     TabBarVisible = False
     TabOrder = 0
     object tsLogin: TUniTabSheet
@@ -40,7 +40,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
       Font.Height = -13
       Font.Name = 'Arial'
       ParentFont = False
-      ExplicitHeight = 390
       object ledUserName: TUniEdit
         Left = 56
         Top = 109
@@ -94,7 +93,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
       Hint = ''
       TabVisible = False
       Caption = ''
-      ExplicitHeight = 390
       object ledProfileEmail: TUniEdit
         Left = 38
         Top = 50
@@ -204,28 +202,27 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
       Hint = ''
       TabVisible = False
       Caption = ''
-      ExplicitHeight = 390
       DesignSize = (
         530
         399)
       object ledProfileAddress: TUniEdit
         Left = 29
         Top = 80
-        Width = 376
+        Width = 395
         Height = 29
         Hint = ''
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        ExplicitWidth = 332
       end
       object ledAddressNumber: TUniEdit
-        Left = 382
+        Left = 430
         Top = 80
         Width = 79
         Height = 29
         Hint = ''
         Text = ''
+        Anchors = [akTop, akRight]
         TabOrder = 1
       end
       object ledAddressCode: TUniEdit
@@ -240,13 +237,12 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
       object ledTown: TUniEdit
         Left = 104
         Top = 134
-        Width = 349
+        Width = 361
         Height = 29
         Hint = ''
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 3
-        ExplicitWidth = 305
       end
       object ledFiscalCode: TUniEdit
         Left = 29
@@ -257,7 +253,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
-        ExplicitWidth = 436
       end
       object ledPhone: TUniEdit
         Left = 29
@@ -268,7 +263,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 4
-        ExplicitWidth = 436
       end
       object ledVATCode: TUniEdit
         Left = 29
@@ -279,7 +273,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
-        ExplicitWidth = 436
       end
       object ledCellularPhone: TUniEdit
         Left = 29
@@ -290,7 +283,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 7
-        ExplicitWidth = 436
       end
       object lbProfileAddress: TUniLabel
         Left = 29
@@ -302,12 +294,13 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         TabOrder = 8
       end
       object lbAddressNumber: TUniLabel
-        Left = 382
+        Left = 430
         Top = 64
         Width = 36
         Height = 16
         Hint = ''
         Caption = 'N'#176'/ Int'
+        Anchors = [akTop, akRight]
         TabOrder = 9
       end
       object lbAddressCode: TUniLabel
@@ -365,21 +358,23 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         TabOrder = 15
       end
       object edtStateProvince: TUniEdit
-        Left = 423
+        Left = 471
         Top = 134
         Width = 38
         Height = 29
         Hint = ''
         Text = ''
+        Anchors = [akTop, akRight]
         TabOrder = 16
       end
       object lbProv: TUniLabel
-        Left = 423
+        Left = 471
         Top = 115
         Width = 28
         Height = 16
         Hint = ''
         Caption = 'Prov.'
+        Anchors = [akTop, akRight]
         ParentColor = False
         Color = clBtnFace
         TabOrder = 17
@@ -387,14 +382,13 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
       object edtFullAddress: TUniEdit
         Left = 29
         Top = 30
-        Width = 398
+        Width = 413
         Height = 29
         Hint = ''
         Text = ''
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 18
         OnExit = btnGoogleSearchClick
-        ExplicitWidth = 354
       end
       object lbAddressFull: TUniLabel
         Left = 29
@@ -408,7 +402,7 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         TabOrder = 19
       end
       object btnGoogleSearch: TUniFSButton
-        Left = 400
+        Left = 448
         Top = 30
         Width = 61
         Height = 29
@@ -420,6 +414,7 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         BadgeText.TextStyle = 'bold'
         BadgeText.BackgroundColor = '#D50000'
         Caption = 'Cerca'
+        Anchors = [akTop, akRight]
         ParentFont = False
         Font.Color = clWhite
         Font.Height = -15
@@ -431,7 +426,7 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         OnClick = btnGoogleSearchClick
       end
       object lbLongitude: TUniLabel
-        Left = 403
+        Left = 424
         Top = 8
         Width = 18
         Height = 16
@@ -443,7 +438,7 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
         TabOrder = 21
       end
       object lbLatitude: TUniLabel
-        Left = 327
+        Left = 354
         Top = 8
         Width = 18
         Height = 16
@@ -482,9 +477,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
     ScreenMask.WaitData = True
     ScreenMask.Message = 'Autenticando...'
     OnClick = btnRegisterClick
-    ExplicitLeft = 8
-    ExplicitTop = 565
-    ExplicitWidth = 494
   end
   object btnLogin: TUniFSButton
     AlignWithMargins = True
@@ -513,9 +505,6 @@ object frmCarServiceUniGUILoginRegister: TfrmCarServiceUniGUILoginRegister
     ScreenMask.WaitData = True
     ScreenMask.Message = 'Processando, por favor aguarde...'
     OnClick = btnLoginClick
-    ExplicitLeft = 8
-    ExplicitTop = 605
-    ExplicitWidth = 494
   end
   object UniContainerPanel1: TUniContainerPanel
     Left = 0

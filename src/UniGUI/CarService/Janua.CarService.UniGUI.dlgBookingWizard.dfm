@@ -1,7 +1,7 @@
 object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   Left = 0
   Top = 0
-  ClientHeight = 587
+  ClientHeight = 622
   ClientWidth = 748
   Caption = 'Nuova Prenotazione'
   OnShow = UniFormShow
@@ -14,7 +14,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
   TextHeight = 15
   object pnlBottom: TUniSimplePanel
     Left = 0
-    Top = 530
+    Top = 565
     Width = 748
     Height = 57
     Hint = ''
@@ -64,9 +64,9 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Left = 0
     Top = 0
     Width = 748
-    Height = 530
+    Height = 520
     Hint = ''
-    ActivePage = pgSummaryConfirmationPage
+    ActivePage = pgDateSelectionPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -111,7 +111,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Left = 0
         Top = 41
         Width = 740
-        Height = 461
+        Height = 451
         Hint = ''
         ParentColor = False
         Align = alClient
@@ -120,7 +120,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 0
           Top = 0
           Width = 369
-          Height = 461
+          Height = 451
           Hint = ''
           ParentColor = False
           Align = alLeft
@@ -187,7 +187,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 369
           Top = 0
           Width = 371
-          Height = 461
+          Height = 451
           Hint = ''
           ParentColor = False
           Align = alClient
@@ -259,7 +259,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Left = 0
         Top = 0
         Width = 740
-        Height = 502
+        Height = 492
         Hint = ''
         ParentColor = False
         Align = alClient
@@ -268,14 +268,14 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 0
           Top = 0
           Width = 369
-          Height = 502
+          Height = 492
           Hint = ''
           ParentColor = False
           Align = alLeft
           TabOrder = 1
           DesignSize = (
             369
-            502)
+            492)
           object ulbPickupDate: TUniLabel
             Left = 0
             Top = 0
@@ -343,7 +343,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Left = 3
             Top = 104
             Width = 360
-            Height = 284
+            Height = 274
             Hint = ''
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
@@ -754,14 +754,14 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 369
           Top = 0
           Width = 371
-          Height = 502
+          Height = 492
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 2
           DesignSize = (
             371
-            502)
+            492)
           object ulbReturnDate: TUniLabel
             Left = 0
             Top = 0
@@ -828,7 +828,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             Left = 6
             Top = 107
             Width = 360
-            Height = 286
+            Height = 276
             Hint = ''
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
@@ -1245,7 +1245,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Left = 3
         Top = 3
         Width = 734
-        Height = 496
+        Height = 486
         Hint = ''
         ParentColor = False
         Align = alClient
@@ -1254,7 +1254,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 0
           Top = 0
           Width = 734
-          Height = 496
+          Height = 486
           Hint = ''
           ParentColor = False
           Align = alClient
@@ -1647,7 +1647,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Left = 3
         Top = 3
         Width = 734
-        Height = 496
+        Height = 486
         Hint = ''
         ParentColor = False
         Align = alClient
@@ -1656,7 +1656,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Left = 0
           Top = 0
           Width = 734
-          Height = 496
+          Height = 486
           Hint = ''
           ParentColor = False
           Align = alClient
@@ -2067,7 +2067,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       Caption = 'pgSummaryConfirmation'
       DesignSize = (
         740
-        502)
+        492)
       object lbAmount: TUniLabel
         Left = 174
         Top = 382
@@ -2380,7 +2380,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       Caption = 'pgPayment'
       DesignSize = (
         740
-        502)
+        492)
       object imgCreditCards: TUniImage
         Left = 152
         Top = 31
@@ -6013,6 +6013,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       end
     end
   end
+  object memoLog: TUniMemo
+    Left = 0
+    Top = 520
+    Width = 748
+    Height = 45
+    Hint = ''
+    Lines.Strings = (
+      'memoLog')
+    Align = alBottom
+    TabOrder = 2
+  end
   object CalendarSelectPickup: TUNIControllerCalendarSelect
     Enabled = False
     IsPickup = True
@@ -6037,6 +6048,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     lbPickup = lbPickup
     lbDelivery = lbDelivery
     IsTest = False
+    memoLog = memoLog
     frameTimeSelect1 = TimeSelectUniGUIController1
     frameTimeSelect2 = TimeSelectUniGUIController2
     frameTimeSelect3 = TimeSelectUniGUIController3
@@ -6196,6 +6208,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     lbPickup = lbPickupR
     lbDelivery = lbDeliveryR
     IsTest = False
+    memoLog = memoLog
     frameTimeSelect1 = TimeSelectUniGUIController7
     frameTimeSelect2 = TimeSelectUniGUIController8
     frameTimeSelect3 = TimeSelectUniGUIController9
