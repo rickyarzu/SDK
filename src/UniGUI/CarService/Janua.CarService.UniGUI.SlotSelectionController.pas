@@ -262,6 +262,12 @@ begin
       FFRames[I].TimeTableSlot := FTimeTableSlots[I];
       FFRames[I].OnToggledChange := OnToggleChange;
       FFRames[I].ClearAllSlots := ClearAllSlots;
+{$IFDEF DEBUG}
+      var
+      iSlotID := FFRames[I].TimeTableSlot.SlotID.AsInteger;
+      var
+      sName := FFRames[I].Name;
+{$ENDIF}
     end;
 end;
 

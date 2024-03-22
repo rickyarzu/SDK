@@ -3817,9 +3817,17 @@ begin
       Result := MonitorEnter(LockObject);
       if Result then
         try
-          TFile.AppendAllText(IncludeTrailingPathDelimiter(TJanuaApplication.LogFileDir) +
-            TJanuaApplication.LogFileRoot + aFileName, FlogRecords.LogString);
-          FlogRecords.Clear;
+          try
+            TFile.AppendAllText(IncludeTrailingPathDelimiter(TJanuaApplication.LogFileDir) +
+              TJanuaApplication.LogFileRoot + aFileName, FlogRecords.LogString);
+            FlogRecords.Clear;
+          except
+            on e: Exception do
+            begin
+              Result := false;
+              FlogRecords.Clear;
+            end;
+          end;
         finally
           MonitorExit(LockObject);
         end;
@@ -4006,4 +4014,3 @@ except
 end;
 
 end.
-

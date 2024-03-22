@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 520
     Hint = ''
-    ActivePage = pgDateSelectionPage
+    ActivePage = pgTimeSelection
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -357,7 +357,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               ParentColor = False
               Align = alTop
               TabOrder = 1
-              object pnlTimeSelect1: TUniSimplePanel
+              object pnlPickup1: TUniSimplePanel
                 Left = 0
                 Top = 0
                 Width = 360
@@ -366,6 +366,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 ParentColor = False
                 Align = alTop
                 TabOrder = 1
+                ExplicitTop = -1
                 object imgBooked1: TUniImage
                   Left = 238
                   Top = 1
@@ -422,15 +423,16 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   TabOrder = 5
                 end
               end
-              object pnlTimeSelect5: TUniSimplePanel
+              object pnlPickup5: TUniSimplePanel
                 Left = 0
-                Top = 64
+                Top = 128
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 2
+                ExplicitTop = 130
                 object ulbDate5: TUniLabel
                   Left = 3
                   Top = 11
@@ -487,15 +489,16 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object pnlTimeSelect4: TUniSimplePanel
+              object pnlPickup4: TUniSimplePanel
                 Left = 0
-                Top = 128
+                Top = 96
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 3
+                ExplicitTop = 128
                 object ulbDate4: TUniLabel
                   Left = 3
                   Top = 11
@@ -552,15 +555,16 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object pnlTimeSelect3: TUniSimplePanel
+              object pnlPickup3: TUniSimplePanel
                 Left = 0
-                Top = 96
+                Top = 64
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 4
+                ExplicitTop = 96
                 object ulbDate3: TUniLabel
                   Left = 3
                   Top = 11
@@ -617,7 +621,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object pnlTimeSelect2: TUniSimplePanel
+              object pnlPickup2: TUniSimplePanel
                 Left = 0
                 Top = 32
                 Width = 360
@@ -682,7 +686,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object pnlTimeSelect6: TUniSimplePanel
+              object pnlPickup6: TUniSimplePanel
                 Left = 0
                 Top = 160
                 Width = 360
@@ -842,7 +846,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               ParentColor = False
               Align = alTop
               TabOrder = 1
-              object UniSimplePanel3: TUniSimplePanel
+              object pnlReturn1: TUniSimplePanel
                 Left = 0
                 Top = 0
                 Width = 360
@@ -872,7 +876,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   TitleOn = 'ON'
                   TitleOff = 'OFF'
                 end
-                object UniLabel6: TUniLabel
+                object lbDateReturn01: TUniLabel
                   Left = 3
                   Top = 8
                   Width = 86
@@ -907,16 +911,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   TabOrder = 5
                 end
               end
-              object UniSimplePanel4: TUniSimplePanel
+              object pnlReturn3: TUniSimplePanel
                 Left = 0
-                Top = 64
+                Top = 128
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 2
-                object UniLabel9: TUniLabel
+                ExplicitTop = 100
+                object lbDateReturn05: TUniLabel
                   Left = 3
                   Top = 11
                   Width = 86
@@ -972,16 +977,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object UniSimplePanel5: TUniSimplePanel
+              object pnlReturn5: TUniSimplePanel
                 Left = 0
-                Top = 128
+                Top = 96
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 3
-                object UniLabel12: TUniLabel
+                ExplicitTop = 70
+                object lbDateReturn04: TUniLabel
                   Left = 3
                   Top = 11
                   Width = 86
@@ -1037,16 +1043,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object UniSimplePanel6: TUniSimplePanel
+              object pnlReturn4: TUniSimplePanel
                 Left = 0
-                Top = 96
+                Top = 64
                 Width = 360
                 Height = 32
                 Hint = ''
                 ParentColor = False
                 Align = alTop
                 TabOrder = 4
-                object UniLabel15: TUniLabel
+                ExplicitTop = 96
+                object lbDateReturn03: TUniLabel
                   Left = 3
                   Top = 11
                   Width = 86
@@ -1102,7 +1109,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object UniSimplePanel7: TUniSimplePanel
+              object pnlReturn2: TUniSimplePanel
                 Left = 0
                 Top = 32
                 Width = 360
@@ -1111,7 +1118,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 ParentColor = False
                 Align = alTop
                 TabOrder = 5
-                object UniLabel18: TUniLabel
+                object lbDateReturn02: TUniLabel
                   Left = 3
                   Top = 11
                   Width = 86
@@ -1167,7 +1174,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   ImageIndex = 0
                 end
               end
-              object UniSimplePanel8: TUniSimplePanel
+              object pnlReturn6: TUniSimplePanel
                 Left = 0
                 Top = 160
                 Width = 360
@@ -1176,7 +1183,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 ParentColor = False
                 Align = alTop
                 TabOrder = 6
-                object UniLabel21: TUniLabel
+                object lbDateReturn06: TUniLabel
                   Left = 3
                   Top = 8
                   Width = 86
@@ -6300,7 +6307,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle1
     imgBooked = UniImage1
     ulbTime = UniLabel8
-    ulbDate = UniLabel6
+    ulbDate = lbDateReturn01
     ulbDeliveryTime = UniLabel7
     Left = 624
     Top = 136
@@ -6311,7 +6318,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle5
     imgBooked = UniImage5
     ulbTime = UniLabel19
-    ulbDate = UniLabel18
+    ulbDate = lbDateReturn02
     ulbDeliveryTime = UniLabel20
     Left = 624
     Top = 168
@@ -6322,7 +6329,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle4
     imgBooked = UniImage4
     ulbTime = UniLabel16
-    ulbDate = UniLabel15
+    ulbDate = lbDateReturn03
     ulbDeliveryTime = UniLabel17
     Left = 624
     Top = 200
@@ -6333,7 +6340,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle3
     imgBooked = UniImage3
     ulbTime = UniLabel13
-    ulbDate = UniLabel12
+    ulbDate = lbDateReturn04
     ulbDeliveryTime = UniLabel14
     Left = 624
     Top = 232
@@ -6344,7 +6351,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle2
     imgBooked = UniImage2
     ulbTime = UniLabel10
-    ulbDate = UniLabel9
+    ulbDate = lbDateReturn05
     ulbDeliveryTime = UniLabel11
     Left = 624
     Top = 264
@@ -6355,7 +6362,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     tgSelected = UniFSToggle6
     imgBooked = UniImage6
     ulbTime = UniLabel22
-    ulbDate = UniLabel21
+    ulbDate = lbDateReturn06
     ulbDeliveryTime = UniLabel23
     Left = 624
     Top = 304
@@ -6370,8 +6377,8 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     lbIndirizzoReturn = lbIndirizzoReturn
     TimeTablePickupController = TimeTablePickupController
     TimeTableDeliveryController = TimeTableDeliveryController
-    Left = 443
-    Top = 111
+    Left = 291
+    Top = 55
   end
   object TimeTableDeliveryController: TTimeTableUniGUIController
     Enabled = False
