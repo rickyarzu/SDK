@@ -676,16 +676,22 @@ procedure TdmPgCarServiceBookingStorage.CloseErrBooking;
 begin
   var
   logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
-  logTitle := StringReplace(FBookingRecord.GUIDString, '{', '', []);
-  TJanuaLogger.SaveLogToFile(DateFile(Date) + logTitle + 'err.json');
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'err.json');
 end;
 
 procedure TdmPgCarServiceBookingStorage.CloseLogBooking;
 begin
   var
   logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
-  logTitle := StringReplace(FBookingRecord.GUIDString, '{', '', []);
-  TJanuaLogger.SaveLogToFile(DateFile(Date) + logTitle + 'log.json');
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'log.json');
 end;
 
 procedure TdmPgCarServiceBookingStorage.ConfirmBooking;

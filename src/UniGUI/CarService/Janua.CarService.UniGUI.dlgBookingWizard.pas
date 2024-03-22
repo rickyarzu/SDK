@@ -161,7 +161,7 @@ type
     UniLabel23: TUniLabel;
     UniFSToggle6: TUniFSToggle;
     UniImage6: TUniImage;
-
+    memoLog: TUniMemo;
     CalendarSelectPickup: TUNIControllerCalendarSelect;
     CalendarSelectDelivery: TUNIControllerCalendarSelect;
     cntAddressSelect: TUniContainerPanel;
@@ -198,27 +198,27 @@ type
     cntCarBookingClient: TUniContainerPanel;
     dblcbAnagraphCustomers: TUniFSComboBox;
     lbSelectCustomer: TUniLabel;
-    UniContainerPanel8: TUniContainerPanel;
+    cnt02CustomerName: TUniContainerPanel;
     UniContainerPanel9: TUniContainerPanel;
     edFirstName: TUniEdit;
     UniContainerPanel10: TUniContainerPanel;
     EdLastName: TUniEdit;
-    UniContainerPanel11: TUniContainerPanel;
+    cnt03CustomerFullAddress: TUniContainerPanel;
     UniContainerPanel12: TUniContainerPanel;
     btnSearch: TUniFSButton;
     UniContainerPanel13: TUniContainerPanel;
     EdFullAddress: TUniEdit;
-    UniContainerPanel14: TUniContainerPanel;
+    cnt04CellularMail: TUniContainerPanel;
     UniContainerPanel15: TUniContainerPanel;
     EdCustomerPhone: TUniEdit;
     UniContainerPanel16: TUniContainerPanel;
     edCustomerEmail: TUniEdit;
-    UniContainerPanel17: TUniContainerPanel;
+    cnt06CarNumberPlate: TUniContainerPanel;
     UniContainerPanel18: TUniContainerPanel;
     edCarNumberPlate: TUniEdit;
     UniContainerPanel19: TUniContainerPanel;
     edCarColor: TUniEdit;
-    UniContainerPanel20: TUniContainerPanel;
+    cnt07ReturnAddress: TUniContainerPanel;
     UniContainerPanel21: TUniContainerPanel;
     edReturnAddress: TUniEdit;
     UniContainerPanel22: TUniContainerPanel;
@@ -250,8 +250,8 @@ type
     TimeSelectUniGUIController10: TTimeSelectUniGUIController;
     TimeSelectUniGUIController11: TTimeSelectUniGUIController;
     TimeSelectUniGUIController12: TTimeSelectUniGUIController;
-    UniContainerPanel23: TUniContainerPanel;
-    cntSelectCustomer: TUniContainerPanel;
+    cnt05CarModel: TUniContainerPanel;
+    cnt01SelectCustomer: TUniContainerPanel;
     lbCurrentAccountBalanceDes: TUniLabel;
     lbCurrentAccountBalance: TUniLabel;
     lbAccountBalanceAfterDes: TUniLabel;
@@ -259,7 +259,12 @@ type
     UniContainerPanel24: TUniContainerPanel;
     ckbConditiions: TUniCheckBox;
     btnShowContract: TUniFSButton;
-    memoLog: TUniMemo;
+    UniContainerPanel25: TUniContainerPanel;
+    UniImage7: TUniImage;
+    UniContainerPanel26: TUniContainerPanel;
+    UniImage8: TUniImage;
+    UniContainerPanel27: TUniContainerPanel;
+    UniImage9: TUniImage;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);

@@ -122,7 +122,7 @@ object frmUNIMainForm: TfrmUNIMainForm
             691)
           object cntMain: TUniContainerPanel
             Left = 64
-            Top = 19
+            Top = 20
             Width = 600
             Height = 465
             Hint = ''
@@ -2378,7 +2378,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             Align = alTop
             TabOrder = 0
             Caption = ''
-            ExplicitTop = -6
           end
           object UniDBGrid1: TUniDBGrid
             Left = 0
@@ -2432,7 +2431,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             Align = alTop
             TabOrder = 0
             Caption = ''
-            ExplicitTop = 8
           end
           object UniDBGrid2: TUniDBGrid
             Left = 0
@@ -7282,35 +7280,39 @@ object frmUNIMainForm: TfrmUNIMainForm
     Left = 840
     Top = 440
     object itmNewBooking: TUniMenuItem
-      Caption = 'Nuova Prenotazione'
+      Caption = '<i class="fas fa-calendar-check"></i> Nuova Prenotazione'
       OnClick = spbNewBookingClick
     end
     object ActSistema1: TUniMenuItem
-      Caption = 'Prenotazioni'
+      Caption = '<i class="fa fa-calendar" aria-hidden="true"></i> Prenotazioni'
       object itmBookingList: TUniMenuItem
-        Caption = 'Elenco Prenotazioni'
+        Caption = 
+          '<i class="fa fa-list-alt" aria-hidden="true"></i> Elenco Prenota' +
+          'zioni'
         OnClick = itmBookingListClick
       end
       object itmNewBooking2: TUniMenuItem
-        Caption = 'Nuova Preotazione'
+        Caption = '<i class="far fa-calendar-check"></i> Nuova Preotazione'
         OnClick = spbNewBookingClick
       end
     end
     object itmSettings: TUniMenuItem
-      Caption = 'Impostazioni'
+      Caption = '<i class="fa fa-cog" aria-hidden="true"></i>  Impostazioni'
       object itmCompanyInfo: TUniMenuItem
-        Caption = 'Dati Aziendali'
+        Caption = '<i class="far fa-building"></i> Dati Aziendali'
       end
       object itmUserData: TUniMenuItem
-        Caption = 'Credenziali Utente'
+        Caption = '<span class="fa fa-user"></span> Credenziali Utente'
       end
     end
     object itmCustomersList: TUniMenuItem
-      Caption = 'Elenco Clienti'
+      Caption = '<i class="fa fa-users" aria-hidden="true"></i> Elenco Clienti'
       OnClick = itmCustomersListClick
     end
     object itmInvoiceListing: TUniMenuItem
-      Caption = 'Pagamenti e Ricariche'
+      Caption = 
+        '<i class="fa fa-credit-card" aria-hidden="true"></i>  Pagamenti ' +
+        'e Ricariche'
       OnClick = itmInvoiceListingClick
     end
   end

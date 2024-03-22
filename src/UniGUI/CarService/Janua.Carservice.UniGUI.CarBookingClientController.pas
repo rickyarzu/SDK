@@ -297,6 +297,14 @@ begin
     FCarBooking.AnagraphClient.AnLastName.AsString := EdLastName.Text;
   end;
 
+  var
+  lPhone := Trim(EdCustomerPhone.Text);
+  var
+  lChar := Copy(lPhone, 1, 1);
+
+  if not (lChar = '+') then
+    lPhone := '+39' + lPhone;
+
   FCarBooking.CustCellular.AsString := EdCustomerPhone.Text;
   FCarBooking.AnagraphClient.AnCellular.AsString := EdCustomerPhone.Text;
 
