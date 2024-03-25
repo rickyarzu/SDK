@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{15F78226-161F-44FD-A923-FE1C9D2F6D32}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Samples\Intraweb\Delphi\DataTables_template\DataTablesTemplate.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DataTablesTemplate">
+        <MSBuild Projects="..\..\Samples\Intraweb\Delphi\DataTables_template\DataTablesTemplate.dproj"/>
+    </Target>
+    <Target Name="DataTablesTemplate:Clean">
+        <MSBuild Projects="..\..\Samples\Intraweb\Delphi\DataTables_template\DataTablesTemplate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DataTablesTemplate:Make">
+        <MSBuild Projects="..\..\Samples\Intraweb\Delphi\DataTables_template\DataTablesTemplate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DataTablesTemplate"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DataTablesTemplate:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DataTablesTemplate:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
