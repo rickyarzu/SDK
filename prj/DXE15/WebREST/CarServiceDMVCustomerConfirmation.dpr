@@ -51,13 +51,14 @@ begin
     LServer.Free;
   end;
 end;
+
 begin
   try
     ReportMemoryLeaksOnShutdown := True;
     IsMultiThread := True;
     // Januaproject Settings
     TJanuaApplication.TestMode := False; // Set this or unset this to enable Test Database connection
-    TJanuaApplication.RestServerConf.Port := 9010;
+    TJanuaApplication.RestServerConf.Port := 9012;
     // le applicazioni locali UniGUI hanno come Home:
     TJanuaCarserviceDMVCServerApplication.ApplicationSetup('custconf.pikapp.it');
 {$IFDEF DEBUG}
@@ -70,6 +71,9 @@ begin
     sServer := TJanuaApplication.ServerAddress;
     Guard.CheckFalse(sConfFile = '', 'sConfFile not set');
     Guard.CheckFalse(sServer = '', 'sServer not set ' + sConfFile);
+
+    var
+    sHtDocsDir := TJanuacoreOS.GetAppWebFilesPath;
 {$ENDIF}
     // DMVCFramework Specific Configuration
     // When MVCSerializeNulls = True empty nullables and nil are serialized as json null.
