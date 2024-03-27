@@ -168,7 +168,12 @@ end;
 
 procedure TJanuaCustomDMVCSrvController.Index;
 begin
-  Model.jdsDataset.Open;
+  { we are going to produce simple text.
+    let's inform the client about the format
+    of the body response format }
+  ContentType := TMVCMediaType.TEXT_PLAIN;
+  { Render a simple string }
+  Render('It Works!')
 end;
 
 procedure TJanuaCustomDMVCSrvController.Liveness;
