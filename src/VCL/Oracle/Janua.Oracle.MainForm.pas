@@ -13,37 +13,27 @@ type
     pnlToolBar: TPanel;
     btnLogin: TButton;
     UniConnectDialog1: TUniConnectDialog;
-    pgcOracle: TPageControl;
-    tabControlFile: TTabSheet;
-    tabViewConrolFile: TTabSheet;
-    tabQueryControlFile: TTabSheet;
     dsSchemas: TDataSource;
-    CRDBGrid1: TCRDBGrid;
     dsTables: TDataSource;
-    Panel1: TPanel;
-    Panel2: TPanel;
-    CRDBGrid2: TCRDBGrid;
     AdvSQLMemoStyler: TAdvSQLMemoStyler;
-    btnGenerateTableControl: TButton;
-    btnViewTAbleFields: TButton;
-    DBGrid1: TDBGrid;
     dsTableFields: TDataSource;
     dsViews: TDataSource;
-    Panel3: TPanel;
-    Panel4: TPanel;
-    Button1: TButton;
-    btnOpenViewFields: TButton;
-    AdvMemo2: TAdvMemo;
-    GroupBox1: TGroupBox;
-    DBGrid2: TDBGrid;
     Panel5: TPanel;
     lbSchemaSelection: TLabel;
-    JvDBLookupCombo1: TJvDBLookupCombo;
+    lkpSchema: TJvDBLookupCombo;
     dsViewFields: TDataSource;
-    cboOperation: TComboBox;
+    PageControl1: TPageControl;
+    tabOracleControlFile: TTabSheet;
+    grpSqlLoaderControlFile: TGroupBox;
     lbOperation: TLabel;
-    edDestinationViewTeble: TEdit;
     Label1: TLabel;
+    lbTerminatedBy: TLabel;
+    lbEnclosedBy: TLabel;
+    lbNlsNumericChar: TLabel;
+    lbDateTimeFormat: TLabel;
+    lbTimeStamp: TLabel;
+    cboOperation: TComboBox;
+    edDestinationViewTeble: TEdit;
     ckbINFILE: TCheckBox;
     edtInFile: TEdit;
     edtBadFile: TEdit;
@@ -51,36 +41,62 @@ type
     edtDiscardFile: TEdit;
     ckbDiscardFile: TCheckBox;
     ckbTrailingNullCols: TCheckBox;
-    lbTerminatedBy: TLabel;
     edTerminatedBy: TEdit;
     ckbOptionally: TCheckBox;
-    lbEnclosedBy: TLabel;
     edEnclosedBy: TEdit;
-    lbNlsNumericChar: TLabel;
     edNlsNumericChar: TEdit;
-    lbDateTimeFormat: TLabel;
     edDateTimeConversion: TEdit;
-    grpOptions: TGroupBox;
+    ckbNumerics: TCheckBox;
+    edtTimeStamp: TEdit;
+    grpSqlLoaderControlFileOptions: TGroupBox;
     ckbSkip: TCheckBox;
     AdvSpinEdit1: TAdvSpinEdit;
-    ckbNumerics: TCheckBox;
     ckbParallel: TCheckBox;
     ckbMultiThreading: TCheckBox;
     ckbOptions: TCheckBox;
-    lbTimeStamp: TLabel;
-    edtTimeStamp: TEdit;
+    pgcSqlLoaderControlFile: TPageControl;
+    tabControlFile: TTabSheet;
+    CRDBGrid1: TCRDBGrid;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnGenerateTableControl: TButton;
+    btnViewTAbleFields: TButton;
     btnGenerateCSV: TButton;
+    DBGrid1: TDBGrid;
     pgcTableControlExport: TPageControl;
     tabControl: TTabSheet;
-    tabExportCode: TTabSheet;
-    TabSheet3: TTabSheet;
     memTableCtrlFile: TAdvMemo;
+    tabExportCode: TTabSheet;
     advMemTableCSV: TAdvMemo;
+    TabSheet3: TTabSheet;
+    tabViewConrolFile: TTabSheet;
+    CRDBGrid2: TCRDBGrid;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Button1: TButton;
+    btnOpenViewFields: TButton;
+    AdvMemo2: TAdvMemo;
+    DBGrid2: TDBGrid;
+    tabQueryControlFile: TTabSheet;
+    pgcMaterializedViews: TTabSheet;
+    pnlMViews: TPanel;
+    dsMviews: TDataSource;
+    Panel6: TPanel;
+    btnOpenMViews: TButton;
+    grdMviews: TCRDBGrid;
+    btnGenerateTableDDL: TButton;
+    Panel7: TPanel;
+    CRDBGrid3: TCRDBGrid;
+    dsMviewFields: TDataSource;
+    memDDLMViews: TAdvMemo;
+    AdvSQLMemoStyler1: TAdvSQLMemoStyler;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
     procedure btnGenerateTableControlClick(Sender: TObject);
     procedure btnGenerateCSVClick(Sender: TObject);
+    procedure btnOpenMViewsClick(Sender: TObject);
+    procedure btnGenerateTableDDLClick(Sender: TObject);
   private
     { Private declarations }
     FTable: string;
@@ -116,14 +132,25 @@ begin
   memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
 end;
 
+procedure TfrmOracleSwissMilitaryMain.btnGenerateTableDDLClick(Sender: TObject);
+begin
+  memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDL;
+end;
+
 procedure TfrmOracleSwissMilitaryMain.btnLoginClick(Sender: TObject);
 begin
   dmOracleSchema.UniConnection1.ConnectDialog := self.UniConnectDialog1;
   dmOracleSchema.UniConnection1.Connect;
   if dmOracleSchema.UniConnection1.Connected then
   begin
-
+     lkpSchema.Value := dmOracleSchema.UniConnection1.Username;
+     {lkpSchema.Text := dmOracleSchema.UniConnection1.Username;}
   end;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnOpenMViewsClick(Sender: TObject);
+begin
+  dmOracleSchema.qryMaterializedView.Open;
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnOpenViewFieldsClick(Sender: TObject);
