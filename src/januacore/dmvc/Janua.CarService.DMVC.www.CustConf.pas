@@ -42,19 +42,28 @@ implementation
 procedure TPikappCustConfWWWController.Index;
 var
   aPair: System.Generics.Collections.TPair<string, string>;
+  lResponse: string;
 begin
-  inherited;
+  // Completely override inhterited behaviour
+  // inherited;
   var
-  lParams := Context.Request.QueryString;
-  var
-  lResponse := '<html><body>';
-  lResponse := 'QueryString = <br />' + lParams + '<br />';
-  lResponse := lResponse + '<table>';
-  lResponse := lResponse + '<tr><th>Parametro </th><th>Valore</th></tr>';
-  for aPair in Context.Request.ContentFields do
-    lResponse := lResponse + '<tr><th>' + aPair.Key + '</th><th>' + aPair.Value + '</th></tr>';
-  lResponse := lResponse + '</table>';
-  lResponse := '</body></html>';
+  aBuilder := TStringBuilder.Create;
+  try
+    var
+    lParams := Context.Request.QueryString;
+
+    aBuilder.Append('<html><body>') // body
+      .Append('QueryString = <br />' + lParams + '<br />') // QueryString
+      .Append('<table>') // table
+      .Append('<tr><th>Parametro </th><th>Valore</th></tr>'); // table header
+    for aPair in Context.Request.ContentFields do
+      aBuilder.Append('<tr><th>' + aPair.Key + '</th><th>' + aPair.Value + '</th></tr>');
+    aBuilder.Append('</table>');
+    aBuilder.Append('</body></html>');
+    lResponse := aBuilder.ToString;
+  finally
+    aBuilder.Free;
+  end;
 
   { we are going to produce simple text.
     let's inform the client about the format

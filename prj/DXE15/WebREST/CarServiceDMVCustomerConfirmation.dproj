@@ -164,8 +164,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.WebModule.pas">
-            <Form>MyWebModule</Form>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas">
+            <Form>CarServiceCustConfWebModule</Form>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>

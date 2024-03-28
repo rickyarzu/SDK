@@ -2193,11 +2193,11 @@ begin
   /// 3 - Tutti gli altri casi (iOS/Android/MacOS/Windows Desktop ad esempio) si usa la directory base sys/user
   if not GetUseCurrentDir then
   begin
-    Result := tpl(GetAppHomePath) + 'conf';
+    Result := tpl(GetAppHomePath) + 'htdocs';
   end
   else
   begin
-    Result := tpl(getCurrentPath) + 'conf';
+    Result := tpl(getCurrentPath) + 'htdocs';
   end;
 end;
 

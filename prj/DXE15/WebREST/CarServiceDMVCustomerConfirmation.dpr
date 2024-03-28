@@ -14,7 +14,7 @@ uses
   Spring,
   Janua.Application.Framework,
   Janua.TMS.SMS,
-  Janua.Carservice.DMVC.WebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.WebModule.pas' {MyWebModule: TWebModule},
+  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule},
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
