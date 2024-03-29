@@ -10,6 +10,7 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.Direct=True')
     Username = 'GTIT'
     Server = 'glsdbx01-scan.generali.it:1521:sn=GLSRX1_VIS'
+    Connected = True
     AfterConnect = UniConnection1AfterConnect
     Left = 72
     Top = 120
@@ -545,5 +546,233 @@ object dmOracleSchema: TdmOracleSchema
     DataSet = qryMaterializedView
     Left = 360
     Top = 256
+  end
+  object qryMViewConsFields: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT col.*, cons.*'
+      '  FROM all_cons_columns col'
+      
+        '  JOIN ALL_CONSTRAINTS cons ON col.CONSTRAINT_NAME = cons.CONSTR' +
+        'AINT_NAME'
+      ''
+      ''
+      'WHERE col.owner = :OWNER'
+      'AND col.table_name = :OBJECT_NAME'
+      'AND cons.owner = :OWNER'
+      'AND cons.table_name = :OBJECT_NAME'
+      '')
+    MasterSource = dsMViews
+    Left = 360
+    Top = 384
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'OWNER'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OBJECT_NAME'
+        Value = nil
+      end>
+    object qryMViewConsFieldsOWNER: TWideStringField
+      FieldName = 'OWNER'
+      Required = True
+      Size = 30
+    end
+    object qryMViewConsFieldsCONSTRAINT_NAME: TWideStringField
+      FieldName = 'CONSTRAINT_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMViewConsFieldsTABLE_NAME: TWideStringField
+      FieldName = 'TABLE_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMViewConsFieldsCOLUMN_NAME: TWideStringField
+      FieldName = 'COLUMN_NAME'
+      Size = 4000
+    end
+    object qryMViewConsFieldsPOSITION: TFloatField
+      FieldName = 'POSITION'
+    end
+    object qryMViewConsFieldsCONSTRAINT_NAME_1: TWideStringField
+      FieldName = 'CONSTRAINT_NAME_1'
+      Required = True
+      Size = 30
+    end
+    object qryMViewConsFieldsCONSTRAINT_TYPE: TWideStringField
+      FieldName = 'CONSTRAINT_TYPE'
+      Size = 1
+    end
+    object qryMViewConsFieldsSEARCH_CONDITION: TWideMemoField
+      FieldName = 'SEARCH_CONDITION'
+      BlobType = ftWideMemo
+    end
+    object qryMViewConsFieldsR_OWNER: TWideStringField
+      FieldName = 'R_OWNER'
+      Size = 30
+    end
+    object qryMViewConsFieldsR_CONSTRAINT_NAME: TWideStringField
+      FieldName = 'R_CONSTRAINT_NAME'
+      Size = 30
+    end
+    object qryMViewConsFieldsDELETE_RULE: TWideStringField
+      FieldName = 'DELETE_RULE'
+      Size = 9
+    end
+    object qryMViewConsFieldsSTATUS: TWideStringField
+      FieldName = 'STATUS'
+      Size = 8
+    end
+    object qryMViewConsFieldsDEFERRABLE: TWideStringField
+      FieldName = 'DEFERRABLE'
+      Size = 14
+    end
+    object qryMViewConsFieldsDEFERRED: TWideStringField
+      FieldName = 'DEFERRED'
+      Size = 9
+    end
+    object qryMViewConsFieldsVALIDATED: TWideStringField
+      FieldName = 'VALIDATED'
+      Size = 13
+    end
+    object qryMViewConsFieldsGENERATED: TWideStringField
+      FieldName = 'GENERATED'
+      Size = 14
+    end
+    object qryMViewConsFieldsBAD: TWideStringField
+      FieldName = 'BAD'
+      Size = 3
+    end
+    object qryMViewConsFieldsRELY: TWideStringField
+      FieldName = 'RELY'
+      Size = 4
+    end
+    object qryMViewConsFieldsLAST_CHANGE: TDateTimeField
+      FieldName = 'LAST_CHANGE'
+    end
+    object qryMViewConsFieldsINDEX_OWNER: TWideStringField
+      FieldName = 'INDEX_OWNER'
+      Size = 30
+    end
+    object qryMViewConsFieldsINDEX_NAME: TWideStringField
+      FieldName = 'INDEX_NAME'
+      Size = 30
+    end
+    object qryMViewConsFieldsINVALID: TWideStringField
+      FieldName = 'INVALID'
+      Size = 7
+    end
+    object qryMViewConsFieldsVIEW_RELATED: TWideStringField
+      FieldName = 'VIEW_RELATED'
+      Size = 14
+    end
+  end
+  object qryMviewConstraints: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT *'
+      '  FROM ALL_CONSTRAINTS '
+      'WHERE owner = :OWNER'
+      'AND table_name = :OBJECT_NAME'
+      '')
+    MasterSource = dsMViews
+    Left = 360
+    Top = 456
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'OWNER'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OBJECT_NAME'
+        Value = nil
+      end>
+    object qryMviewConstraintsOWNER: TWideStringField
+      FieldName = 'OWNER'
+      Size = 30
+    end
+    object qryMviewConstraintsCONSTRAINT_NAME: TWideStringField
+      FieldName = 'CONSTRAINT_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMviewConstraintsCONSTRAINT_TYPE: TWideStringField
+      FieldName = 'CONSTRAINT_TYPE'
+      Size = 1
+    end
+    object qryMviewConstraintsTABLE_NAME: TWideStringField
+      FieldName = 'TABLE_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMviewConstraintsSEARCH_CONDITION: TWideMemoField
+      FieldName = 'SEARCH_CONDITION'
+      BlobType = ftWideMemo
+    end
+    object qryMviewConstraintsR_OWNER: TWideStringField
+      FieldName = 'R_OWNER'
+      Size = 30
+    end
+    object qryMviewConstraintsR_CONSTRAINT_NAME: TWideStringField
+      FieldName = 'R_CONSTRAINT_NAME'
+      Size = 30
+    end
+    object qryMviewConstraintsDELETE_RULE: TWideStringField
+      FieldName = 'DELETE_RULE'
+      Size = 9
+    end
+    object qryMviewConstraintsSTATUS: TWideStringField
+      FieldName = 'STATUS'
+      Size = 8
+    end
+    object qryMviewConstraintsDEFERRABLE: TWideStringField
+      FieldName = 'DEFERRABLE'
+      Size = 14
+    end
+    object qryMviewConstraintsDEFERRED: TWideStringField
+      FieldName = 'DEFERRED'
+      Size = 9
+    end
+    object qryMviewConstraintsVALIDATED: TWideStringField
+      FieldName = 'VALIDATED'
+      Size = 13
+    end
+    object qryMviewConstraintsGENERATED: TWideStringField
+      FieldName = 'GENERATED'
+      Size = 14
+    end
+    object qryMviewConstraintsBAD: TWideStringField
+      FieldName = 'BAD'
+      Size = 3
+    end
+    object qryMviewConstraintsRELY: TWideStringField
+      FieldName = 'RELY'
+      Size = 4
+    end
+    object qryMviewConstraintsLAST_CHANGE: TDateTimeField
+      FieldName = 'LAST_CHANGE'
+    end
+    object qryMviewConstraintsINDEX_OWNER: TWideStringField
+      FieldName = 'INDEX_OWNER'
+      Size = 30
+    end
+    object qryMviewConstraintsINDEX_NAME: TWideStringField
+      FieldName = 'INDEX_NAME'
+      Size = 30
+    end
+    object qryMviewConstraintsINVALID: TWideStringField
+      FieldName = 'INVALID'
+      Size = 7
+    end
+    object qryMviewConstraintsVIEW_RELATED: TWideStringField
+      FieldName = 'VIEW_RELATED'
+      Size = 14
+    end
   end
 end

@@ -86,10 +86,14 @@ type
     grdMviews: TCRDBGrid;
     btnGenerateTableDDL: TButton;
     Panel7: TPanel;
-    CRDBGrid3: TCRDBGrid;
+    grdMViewConsFields: TCRDBGrid;
     dsMviewFields: TDataSource;
     memDDLMViews: TAdvMemo;
     AdvSQLMemoStyler1: TAdvSQLMemoStyler;
+    CRDBGrid4: TCRDBGrid;
+    dsMViewConsFields: TDataSource;
+    grdMViewConstraints: TCRDBGrid;
+    dsMViewConstraints: TDataSource;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);

@@ -84,8 +84,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Align = alTop
         Caption = 'Control File Coonfiguration'
         TabOrder = 0
-        ExplicitTop = 55
-        ExplicitWidth = 1267
         object lbOperation: TLabel
           Left = 24
           Top = 24
@@ -296,8 +294,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Align = alTop
         Caption = 'Options'
         TabOrder = 1
-        ExplicitTop = 190
-        ExplicitWidth = 1267
         object ckbSkip: TCheckBox
           Left = 144
           Top = 32
@@ -371,9 +367,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         ActivePage = tabControlFile
         Align = alClient
         TabOrder = 2
-        ExplicitTop = 301
-        ExplicitWidth = 1273
-        ExplicitHeight = 411
         object tabControlFile: TTabSheet
           Caption = 'Table Control File'
           object CRDBGrid1: TCRDBGrid
@@ -406,8 +399,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Height = 351
             Align = alClient
             TabOrder = 1
-            ExplicitWidth = 1008
-            ExplicitHeight = 381
             object Panel2: TPanel
               Left = 1
               Top = 1
@@ -506,8 +497,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               ActivePage = tabControl
               Align = alClient
               TabOrder = 2
-              ExplicitWidth = 536
-              ExplicitHeight = 338
               object tabControl: TTabSheet
                 Caption = 'Control Code'
                 object memTableCtrlFile: TAdvMemo
@@ -571,7 +560,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -584,8 +572,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -628,8 +615,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   UseStyler = True
                   Version = '3.9.0.1'
                   WordWrap = wwNone
-                  ExplicitWidth = 528
-                  ExplicitHeight = 308
                 end
               end
               object tabExportCode: TTabSheet
@@ -696,7 +681,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -709,8 +693,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -753,8 +736,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   UseStyler = True
                   Version = '3.9.0.1'
                   WordWrap = wwNone
-                  ExplicitWidth = 528
-                  ExplicitHeight = 308
                 end
               end
               object TabSheet3: TTabSheet
@@ -797,8 +778,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Height = 351
             Align = alClient
             TabOrder = 1
-            ExplicitWidth = 1008
-            ExplicitHeight = 381
             object Panel4: TPanel
               Left = 1
               Top = 1
@@ -887,7 +866,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                 BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                 BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                 25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-              BorderColor = 10724259
               BorderStyle = bsSingle
               ClipboardFormats = [cfText]
               CodeFolding.Enabled = False
@@ -900,8 +878,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               Gutter.Font.Height = -13
               Gutter.Font.Name = 'Courier New'
               Gutter.Font.Style = []
-              Gutter.BorderColor = 10724259
-              Gutter.GutterColor = clWhite
+              Gutter.GutterColorTo = clBtnFace
               Gutter.LineNumberTextColor = clWindowText
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clBlack
@@ -944,8 +921,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               UseStyler = True
               Version = '3.9.0.1'
               WordWrap = wwNone
-              ExplicitWidth = 670
-              ExplicitHeight = 338
             end
             object DBGrid2: TDBGrid
               Left = 1
@@ -1046,15 +1021,16 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Align = alLeft
         Caption = 'Panel7'
         TabOrder = 2
-        object CRDBGrid3: TCRDBGrid
+        ExplicitLeft = 254
+        object grdMViewConsFields: TCRDBGrid
           Left = 1
-          Top = 1
+          Top = 230
           Width = 222
-          Height = 550
-          OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
-          Align = alClient
-          DataSource = dsMviewFields
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          Height = 194
+          Filtered = False
+          Align = alBottom
+          DataSource = dsMViewConsFields
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -1065,7 +1041,56 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             item
               Expanded = False
               FieldName = 'COLUMN_NAME'
-              Width = 212
+              Title.Caption = 'Constrained Column'
+              Width = 180
+              Visible = True
+            end>
+        end
+        object CRDBGrid4: TCRDBGrid
+          Left = 1
+          Top = 1
+          Width = 222
+          Height = 229
+          OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
+          Align = alClient
+          DataSource = dsMviewFields
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 1
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'COLUMN_NAME'
+              Title.Caption = 'Column Name'
+              Width = 180
+              Visible = True
+            end>
+        end
+        object grdMViewConstraints: TCRDBGrid
+          Left = 1
+          Top = 424
+          Width = 222
+          Height = 127
+          Filtered = False
+          Align = alBottom
+          DataSource = dsMViewConstraints
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 2
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'CONSTRAINT_NAME'
+              Title.Caption = 'Constraint Name'
+              Width = 184
               Visible = True
             end>
         end
@@ -1087,6 +1112,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         AutoCompletion.StartToken = '(.'
         AutoCorrect.Active = True
         AutoHintParameterPosition = hpBelowCode
+        BkColor = clWindow
         BookmarkGlyph.Data = {
           36050000424D3605000000000000360400002800000010000000100000000100
           0800000000000001000000000000000000000001000000000000000000000000
@@ -1130,7 +1156,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -1143,9 +1168,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
-        Gutter.LineNumberTextColor = 3881787
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -1156,7 +1180,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -1166,8 +1190,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         PrintOptions.PrintLineNumbers = False
         RightMarginColor = 14869218
         ScrollHint = False
-        SelColor = clWhite
-        SelBkColor = clNavy
+        SelColor = clHighlightText
+        SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
         SyntaxStyles = AdvSQLMemoStyler
@@ -1188,10 +1212,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         UseStyler = True
         Version = '3.9.0.1'
         WordWrap = wwNone
-        ExplicitLeft = 712
-        ExplicitTop = 160
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
   end
@@ -1206,17 +1226,17 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
     ConnectButton = 'Connect'
     CancelButton = 'Cancel'
     Left = 136
-    Top = 568
+    Top = 624
   end
   object dsSchemas: TDataSource
     DataSet = dmOracleSchema.qrySchemas
     Left = 44
-    Top = 411
+    Top = 395
   end
   object dsTables: TDataSource
     DataSet = dmOracleSchema.qrySchemaTables
-    Left = 140
-    Top = 419
+    Left = 132
+    Top = 491
   end
   object AdvSQLMemoStyler: TAdvSQLMemoStyler
     AutoCompletion.Strings = (
@@ -1334,32 +1354,32 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
     StylerName = 'SQL'
     Extensions = 'sql'
     Left = 45
-    Top = 603
+    Top = 587
   end
   object dsTableFields: TDataSource
     DataSet = dmOracleSchema.qryTableFields
     Left = 44
-    Top = 467
+    Top = 459
   end
   object dsViews: TDataSource
     DataSet = dmOracleSchema.qrySchemaViews
-    Left = 140
-    Top = 491
+    Left = 132
+    Top = 555
   end
   object dsViewFields: TDataSource
     DataSet = dmOracleSchema.qryViewFields
     Left = 44
-    Top = 531
+    Top = 523
   end
   object dsMviews: TDataSource
     DataSet = dmOracleSchema.qryMaterializedView
-    Left = 52
+    Left = 44
     Top = 331
   end
   object dsMviewFields: TDataSource
     DataSet = dmOracleSchema.qryMviewFields
-    Left = 148
-    Top = 347
+    Left = 132
+    Top = 427
   end
   object AdvSQLMemoStyler1: TAdvSQLMemoStyler
     AutoCompletion.Strings = (
@@ -1490,7 +1510,17 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
     DefaultExtension = '.sql'
     StylerName = 'SQL'
     Extensions = 'sql'
-    Left = 356
+    Left = 60
+    Top = 227
+  end
+  object dsMViewConsFields: TDataSource
+    DataSet = dmOracleSchema.qryMviewFields
+    Left = 140
+    Top = 299
+  end
+  object dsMViewConstraints: TDataSource
+    DataSet = dmOracleSchema.qryMviewConstraints
+    Left = 132
     Top = 363
   end
 end
