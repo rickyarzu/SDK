@@ -13,13 +13,13 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
   object lbVATCode: TUniLabel
     Left = 13
     Top = 377
-    Width = 50
-    Height = 13
+    Width = 52
+    Height = 15
     Hint = ''
     Caption = 'Partita Iva'
     TabOrder = 0
   end
-  object UniContainerPanel01: TUniContainerPanel
+  object cnt00Name: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 3
@@ -89,7 +89,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       end
     end
   end
-  object UniContainerPanel02: TUniContainerPanel
+  object cnt01FullAddress: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 60
@@ -103,8 +103,8 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 385
-      Height = 13
+      Width = 394
+      Height = 15
       Hint = ''
       Caption = 
         'Indirizzo Completo (digitare l'#39'indirizzo verr'#224' eseguita la ricer' +
@@ -113,18 +113,16 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       ParentColor = False
       Color = clBtnFace
       TabOrder = 1
-      ExplicitWidth = 394
     end
-    object UniContainerPanel3: TUniContainerPanel
+    object cntFullAddress: TUniContainerPanel
       Left = 0
-      Top = 19
+      Top = 21
       Width = 491
       Height = 30
       Hint = ''
       ParentColor = False
       Align = alTop
       TabOrder = 2
-      ExplicitTop = 21
       object edtProfileAddress: TUniEdit
         AlignWithMargins = True
         Left = 3
@@ -162,7 +160,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       end
     end
   end
-  object UniContainerPanel04: TUniContainerPanel
+  object cnt06AddressTown: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 208
@@ -172,7 +170,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
     ParentColor = False
     Align = alTop
     TabOrder = 3
-    object UniContainerPanel5: TUniContainerPanel
+    object cntAdddressTownLabels: TUniContainerPanel
       Left = 0
       Top = 0
       Width = 491
@@ -220,7 +218,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
         TabOrder = 3
       end
     end
-    object UniContainerPanel6: TUniContainerPanel
+    object cntAddressTown: TUniContainerPanel
       Left = 0
       Top = 25
       Width = 491
@@ -264,7 +262,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       end
     end
   end
-  object UniContainerPanel09: TUniContainerPanel
+  object cnt07Email: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 271
@@ -300,7 +298,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       TabOrder = 2
     end
   end
-  object UniContainerPanel10: TUniContainerPanel
+  object cnt05Address: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 147
@@ -310,7 +308,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
     ParentColor = False
     Align = alTop
     TabOrder = 5
-    object UniContainerPanel11: TUniContainerPanel
+    object cntAddress: TUniContainerPanel
       Left = 0
       Top = 25
       Width = 491
@@ -342,7 +340,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
         TabOrder = 2
       end
     end
-    object UniContainerPanel12: TUniContainerPanel
+    object cntAddressLabels: TUniContainerPanel
       Left = 0
       Top = 0
       Width = 491
@@ -381,7 +379,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       end
     end
   end
-  object UniContainerPanel13: TUniContainerPanel
+  object cnt03Coordinates: TUniContainerPanel
     Left = 0
     Top = 119
     Width = 497
@@ -453,7 +451,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       TabOrder = 4
     end
   end
-  object UniContainerPanel1: TUniContainerPanel
+  object cnt08VatCode: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 334
@@ -463,7 +461,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
     ParentColor = False
     Align = alTop
     TabOrder = 7
-    object UniContainerPanel2: TUniContainerPanel
+    object cntVatCode: TUniContainerPanel
       Left = 0
       Top = 25
       Width = 491
@@ -495,7 +493,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
         TabOrder = 2
       end
     end
-    object UniContainerPanel4: TUniContainerPanel
+    object cntVatCodeLabels: TUniContainerPanel
       Left = 0
       Top = 0
       Width = 491
@@ -534,7 +532,7 @@ object frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo
       end
     end
   end
-  object UniContainerPanel7: TUniContainerPanel
+  object cnt09FiscalCode: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 395

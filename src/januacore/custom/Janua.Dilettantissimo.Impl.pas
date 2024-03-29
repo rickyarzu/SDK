@@ -111,7 +111,7 @@ var
 begin
   p := TMetro5PageFactory.CreateMetro510Page;
   p.BackGroundColor := '#3E5062;';
-  o := self.GetFootballMenu;
+  o := GetFootballMenu;
   // p.Body.Insert(0, aFrame);
   // p.ContentHeader.AddStyle(THtmlStyle.BackGround, '#214a8d !important' );
   p.ContentHeader.HeaderTop.AddStyle(THtmlStyle.Position, 'static !important'); // margin-top:140px;

@@ -149,7 +149,6 @@ type
     qryUsersan_email: TWideStringField;
     qryUsersan_main_group_id: TIntegerField;
     qryUsersan_office_id: TSmallintField;
-    qryUsersan_address_1: TWideMemoField;
     qryUsersan_address_number: TWideStringField;
     qryUsersan_full_address: TWideStringField;
     qryUsersan_town: TWideStringField;
@@ -224,8 +223,16 @@ type
     qryCurrentAccountdebit: TCurrencyField;
     qryCurrentAccountcredit: TCurrencyField;
     qryCurrentAccountbooking_id: TLargeintField;
+    qryUsersVehicles: TUniQuery;
+    qryUsersVehiclesvehicle_model: TWideStringField;
+    qryUsersVehiclesvehicle_color: TWideStringField;
+    qryUsersVehiclesvehicle_numberplate: TWideStringField;
+    dsUsers: TUniDataSource;
+    qryUsersVehiclescustomer_id: TIntegerField;
     procedure qryBookingListBeforeOpen(DataSet: TDataSet);
     procedure qryCurrentAccountBeforeOpen(DataSet: TDataSet);
+    procedure qryUsersBeforeOpen(DataSet: TDataSet);
+    procedure qryUsersAfterOpen(DataSet: TDataSet);
   private
     [weak]
     FUserProfile: IUserProfile;
@@ -282,6 +289,18 @@ procedure TdmPgCarServiceMain.qryCurrentAccountBeforeOpen(DataSet: TDataSet);
 begin
   inherited;
   qryCurrentAccount.ParamByName('office_id').AsInteger := FOfficeID;
+end;
+
+procedure TdmPgCarServiceMain.qryUsersAfterOpen(DataSet: TDataSet);
+begin
+  inherited;
+  qryUsersVehicles.Open;
+end;
+
+procedure TdmPgCarServiceMain.qryUsersBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+  qryUsers.ParamByName('office_id').AsInteger := FOfficeID;
 end;
 
 procedure TdmPgCarServiceMain.SetBookingRecord(const Value: IBookingHeadView);

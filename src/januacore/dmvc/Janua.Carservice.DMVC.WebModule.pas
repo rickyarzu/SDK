@@ -71,14 +71,12 @@ begin
       // Max request size in bytes
       Config[TMVCConfigKey.MaxRequestSize] := IntToStr(TMVCConstants.DEFAULT_MAX_REQUEST_SIZE);
     end);
-  // Firedac Testing - Janua.Test.Firedac.DMVC
-  // FMVC.AddController(TFDacTestController);
-  // Firedac Testing - Janua.Test.Firedac.DMVC
-  // FMVC.AddController(TFDacTestController);
+  // [MVCPath('/')] TPikappCustConfWWWController = class(TJanuaCustomDMVCSrvController)
   // [MVCPath('/driver')]  TCSDriverController
   FMVC.AddController(TCSDriverController);
   // [MVCPath('/session')] TSystemSessionMVCController
   FMVC.AddController(TSystemSessionMVCController);
+
 
   var
 lConfigClaims:

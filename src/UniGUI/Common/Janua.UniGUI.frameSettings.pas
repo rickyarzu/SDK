@@ -19,24 +19,13 @@ uses
 
 type
   TframeUniGUIAccountSettings = class(TUniFrame)
-    // Replaced by Controllers
-    { frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph;  -> SimpleAnagraphController}
-    { frameUniGUIAnagAccountingInfo: TframeUniGUIAnagAccountingInfo; -> TAccountingInfoController }
-    { frameUniGUIDBUser1: TframeUniGUIDBUser; }
+    AccountingInfoController: TAccountingInfoController;
     pgcSettings: TUniPageControl;
     pgAnagraphSettings: TUniTabSheet;
-    pgUserNamePassword: TUniTabSheet;
     cntAnagraphSettings: TUniContainerPanel;
     grpAnagraphData: TUniGroupBox;
-    grpAccoutingInformations: TUniGroupBox;
     UniContainerPanel2: TUniContainerPanel;
     btnSaveAnagraph: TUniFSButton;
-    UniContainerPanel3: TUniContainerPanel;
-    UniFSButton1: TUniFSButton;
-    grpDBUser: TUniGroupBox;
-    UniContainerPanel4: TUniContainerPanel;
-    btnUpdateDBUser: TUniFSButton;
-    tbAddresses: TUniTabSheet;
     cntSimpleAnagraph: TUniContainerPanel;
     cntTop: TUniContainerPanel;
     UniContainerPanel01: TUniContainerPanel;
@@ -78,8 +67,25 @@ type
     edtAddressCode: TUniEdit;
     edtStateProvinceCode: TUniEdit;
     edtTown: TUniEdit;
-    UniNativeImageList1: TUniNativeImageList;
-    SimpleAnagraphController: TSimpleAnagraphController;
+    pgUserNamePassword: TUniTabSheet;
+    grpDBUser: TUniGroupBox;
+    UniContainerPanel4: TUniContainerPanel;
+    btnUpdateDBUser: TUniFSButton;
+    ledFirstName: TUniEdit;
+    lbProfileFirstName: TUniLabel;
+    lbLastName: TUniLabel;
+    ledLastName: TUniEdit;
+    lbProfilePasswordRepeat: TUniLabel;
+    ledProfilePasswordRepeat: TUniEdit;
+    lbProfilePassword: TUniLabel;
+    ledProfilePassword: TUniEdit;
+    lbProfileEmail: TUniLabel;
+    ledProfileEmail: TUniEdit;
+    tbAddresses: TUniTabSheet;
+    tabAccountingInfo: TUniTabSheet;
+    grpAccoutingInformations: TUniGroupBox;
+    UniContainerPanel3: TUniContainerPanel;
+    UniFSButton1: TUniFSButton;
     cntAccountSimpleAnagraph: TUniContainerPanel;
     lbVATCode: TUniLabel;
     UniContainerPanel1: TUniContainerPanel;
@@ -126,8 +132,8 @@ type
     UniContainerPanel23: TUniContainerPanel;
     lbFiscalCode: TUniLabel;
     edtFiscalCode: TUniEdit;
-    AccountingInfoController: TAccountingInfoController;
-    UniNativeImageList2: TUniNativeImageList;
+    SimpleAnagraphController: TSimpleAnagraphController;
+    UniNativeImageList1: TUniNativeImageList;
     procedure btnSaveAccountInfoClick(Sender: TObject);
   private
     FAnagraph: IAnagraphView;

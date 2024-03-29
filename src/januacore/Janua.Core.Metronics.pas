@@ -2681,9 +2681,9 @@ begin
   aList := TStringList.Create;
   aList.Clear;
   aClass := '';
-  aClass := System.StrUtils.ifThen(self.SimpleCss <> '', ' class="' + self.SimpleCss + '"', '');
+  aClass := System.StrUtils.ifThen(SimpleCss <> '', ' class="' + SimpleCss + '"', '');
   aStyle := '';
-  aStyle := System.StrUtils.ifThen(self.SimpleStyle <> '', ' style="' + self.SimpleStyle + '"', '');
+  aStyle := System.StrUtils.ifThen(SimpleStyle <> '', ' style="' + SimpleStyle + '"', '');
 
   if aClass = '' then
     aClass := System.StrUtils.ifThen(self.Style <> jbtsNone, ' class="' + BoostrapStyle[self.Style] + '"');
@@ -2789,10 +2789,10 @@ end;
 
 procedure TJanuaMetroTable.AddHeader(aRow: TJanuaMetroTableRow);
 begin
-  self.HeaderIndex := Length(self.Headers);
-  SetLength(self.Headers, Succ(self.HeaderIndex));
-  aRow.Level := self.Level + 3;
-  self.Headers[self.HeaderIndex] := aRow;
+  HeaderIndex := Length(Headers);
+  SetLength(Headers, Succ(HeaderIndex));
+  Level := Level + 3;
+  Headers[HeaderIndex] := aRow;
 end;
 
 function TJanuaMetroTable.AsHtml: string;
@@ -2803,9 +2803,9 @@ var
 
 begin
   sClasses := '';
-  sClasses := sClasses + System.StrUtils.ifThen(self.Bordered, 'table-bordered');
-  sClasses := sClasses + System.StrUtils.ifThen(self.Striped, ' table-striped');
-  sClasses := sClasses + System.StrUtils.ifThen(self.Hover, ' table-hover');
+  sClasses := sClasses + System.StrUtils.ifThen(Bordered, 'table-bordered');
+  sClasses := sClasses + System.StrUtils.ifThen(Striped, ' table-striped');
+  sClasses := sClasses + System.StrUtils.ifThen(Hover, ' table-hover');
 
   aList := TStringList.Create;
   try
@@ -2818,16 +2818,16 @@ begin
         aItem.Level := self.Level + 1;
         aList.Add(aItem.AsHtml);
       end;
-      aList.Add(self.Indent + '</thead>');
+      aList.Add(Indent + '</thead>');
     end;
-    aList.Add(self.Indent + '<tbody>');
-    for aItem in self.Values do
+    aList.Add(Indent + '<tbody>');
+    for aItem in Values do
     begin
-      aItem.Level := self.Level + 1;
+      aItem.Level := Level + 1;
       aList.Add(aItem.AsHtml);
     end;
-    aList.Add(self.Indent + '</tbody>');
-    aList.Add(self.Indent + '</table>');
+    aList.Add(Indent + '</tbody>');
+    aList.Add(Indent + '</table>');
     Result := aList.Text;
   finally
     aList.Free
@@ -2837,7 +2837,7 @@ end;
 
 function TJanuaMetroTable.Count: integer;
 begin
-  Result := Length(self.Values);
+  Result := Length(Values);
 end;
 
 constructor TJanuaMetroTable.Create(aHeader: boolean);

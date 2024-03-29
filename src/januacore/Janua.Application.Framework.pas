@@ -586,6 +586,7 @@ type
     class function GetAppHomePath: string; static;
     class function GetAppLogPath: string; static;
     class function GetAppConfPath: string; static;
+    class function GetAppWebFilesPath: string; static;
     class function GetErgoHomePath: string; static;
     class function GetErgoTempPath: string; static;
     class function GetCachePath: string; static;
@@ -2184,6 +2185,22 @@ begin
   // WriteLog('AppLogPath:' + Result);
 end;
 
+class function TJanuaCoreOS.GetAppWebFilesPath: string;
+begin
+  /// distinguo 3 differenti casistiche
+  /// 1 - Custom Server: la directory è definita a design time e può anche non coincidere con il percorso eseguibile
+  /// 2 - Current Directory: si assume come 'home' il punto in cui è posizionato l'eseguibile o da cui è eseguito.
+  /// 3 - Tutti gli altri casi (iOS/Android/MacOS/Windows Desktop ad esempio) si usa la directory base sys/user
+  if not GetUseCurrentDir then
+  begin
+    Result := tpl(GetAppHomePath) + 'htdocs';
+  end
+  else
+  begin
+    Result := tpl(getCurrentPath) + 'htdocs';
+  end;
+end;
+
 class function TJanuaCoreOS.GetCachePath: string;
 begin
 {$IFDEF delphixe} Result := TPath.GetCachePath; {$ENDIF}
@@ -2848,6 +2865,9 @@ begin
 
     if not DirectoryExists(GetAppTempPath) then
       CreateDir(GetAppTempPath);
+
+    if not DirectoryExists(GetAppWebFilesPath) then
+      CreateDir(GetAppWebFilesPath);
 
     if (Trim(GetAppName) <> '') then
       GetJanuaConfiguration.Initialize(GetConfigFileName)
@@ -3817,9 +3837,17 @@ begin
       Result := MonitorEnter(LockObject);
       if Result then
         try
-          TFile.AppendAllText(IncludeTrailingPathDelimiter(TJanuaApplication.LogFileDir) +
-            TJanuaApplication.LogFileRoot + aFileName, FlogRecords.LogString);
-          FlogRecords.Clear;
+          try
+            TFile.AppendAllText(IncludeTrailingPathDelimiter(TJanuaApplication.LogFileDir) +
+              TJanuaApplication.LogFileRoot + aFileName, FlogRecords.LogString);
+            FlogRecords.Clear;
+          except
+            on e: Exception do
+            begin
+              Result := false;
+              FlogRecords.Clear;
+            end;
+          end;
         finally
           MonitorExit(LockObject);
         end;
@@ -4006,4 +4034,3 @@ except
 end;
 
 end.
-

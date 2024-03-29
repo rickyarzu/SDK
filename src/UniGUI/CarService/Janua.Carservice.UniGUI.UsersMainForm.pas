@@ -4,14 +4,15 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, System.Generics.Collections, System.ImageList,
-  Controls, Forms,
+  Controls, Forms, Data.DB, DBAccess, Uni,
+  // VCL
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.Menus,
   // UniGUI
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIRegClasses, uniGUIForm, uniGUIBaseClasses,
-  uniImageList, uniButton, uniBitBtn, uniSpeedButton, uniPanel, uniPageControl,
+  uniImageList, uniButton, uniBitBtn, uniSpeedButton, uniPanel, uniPageControl, uniTimer, uniDBGrid,
+  uniLabel, uniImage, uniTreeView, uniBasicGrid, uniTreeMenu, UniFSConfirm, uniMainMenu, UniFSButton,
   // Januaproject
-  Janua.Carservice.PgBooking, Janua.Carservice.UniGUI.frameCarBooking, uniLabel, uniImage, uniTreeView,
-  uniTreeMenu, UniFSConfirm, Vcl.Menus, uniMainMenu, UniFSButton, Janua.Carservice.dmPgService, uniBasicGrid,
-  uniDBGrid, Vcl.ExtCtrls, Data.DB, DBAccess, Uni, Vcl.Imaging.pngimage;
+  Janua.Carservice.PgBooking, Janua.Carservice.UniGUI.frameCarBooking, Janua.Carservice.dmPgService;
 
 type
   TfrmUNIMainForm = class(TUniForm)
@@ -42,7 +43,6 @@ type
     tabCustomersList: TUniTabSheet;
     UniPanel1: TUniPanel;
     grdBookingList: TUniDBGrid;
-    Timer1: TTimer;
     dsBookingList: TDataSource;
     UniPanel2: TUniPanel;
     dsCurrentAccount: TUniDataSource;
@@ -54,15 +54,27 @@ type
     UniContainerPanel1: TUniContainerPanel;
     spbNewBooking: TUniFSButton;
     UniFSButton1: TUniFSButton;
+    btnBookingList: TUniFSButton;
+    btnTransactions: TUniFSButton;
+    img64: TUniNativeImageList;
+    UniTimer1: TUniTimer;
+    pnlMenuPrincipal: TUniPanel;
+    btnSair: TUniFSButton;
     UniFSButton2: TUniFSButton;
-    UniFSButton3: TUniFSButton;
+    UniPanel3: TUniPanel;
+    UniDBGrid2: TUniDBGrid;
+    dsUsers: TDataSource;
+    UniDBGrid3: TUniDBGrid;
+    dsUsersVehicles: TDataSource;
     procedure UniFormCreate(Sender: TObject);
     procedure spbNewBookingClick(Sender: TObject);
     procedure UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
     procedure tvmSettingsClick(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
     procedure itmBookingListClick(Sender: TObject);
     procedure itmInvoiceListingClick(Sender: TObject);
+    procedure UniTimer1Timer(Sender: TObject);
+    procedure itmCustomersListClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
   private
     { Private declarations }
     FCarServiceBookingDM: TdmPgCarServiceBookingStorage;
@@ -92,7 +104,6 @@ end;
 
 procedure TfrmUNIMainForm.ActivateDM;
 begin
-  FdmPgCarServiceMain := TdmPgCarServiceMain.Create(self);
   // FdmPgCarServiceMain.UserProfile := UniMainModule.UserSessionVM.CurrentRecord.UserProfile;
   FdmPgCarServiceMain.OfficeID := UniMainModule.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.asinteger;
   FdmPgCarServiceMain.UserSession := UniMainModule.UserSessionVM.CurrentRecord;
@@ -102,6 +113,25 @@ begin
   FdmPgCarServiceMain.qryCurrentAccount.Open;
   if FdmPgCarServiceMain.qryCurrentAccount.RecordCount > 0 then
     dsCurrentAccount.Dataset := FdmPgCarServiceMain.qryCurrentAccount;
+  FdmPgCarServiceMain.qryUsers.Open;
+  dsUsers.Dataset := FdmPgCarServiceMain.qryUsers;
+  dsUsersVehicles.Dataset := FdmPgCarServiceMain.qryUsersVehicles;
+end;
+
+procedure TfrmUNIMainForm.btnSairClick(Sender: TObject);
+begin
+  Confirm.Question('Attenzione', 'Siete sicuro di voler uscire dall''applicazione?', 'far fa-question-circle',
+    TTypeColor.Red, TTheme.modern,
+    procedure(Button: TConfirmButton)
+    begin
+      if Button = Yes then
+      begin
+        UniApplication.Restart;
+        // Confirm.Alert('Congratulations !!!', ' ', 'far fa-thumbs-up', TTypeColor.green, TTheme.modern);
+      end;
+      if Button = No then
+        Confirm.Alert('Annullato', ' ', 'fas fa-exclamation-circle', TTypeColor.orange, TTheme.modern);
+    end);
 end;
 
 procedure TfrmUNIMainForm.FrameClose(Sender: TObject);
@@ -112,12 +142,17 @@ end;
 
 procedure TfrmUNIMainForm.itmBookingListClick(Sender: TObject);
 begin
-  self.PgcMain.ActivePage := tabBookingList;
+  PgcMain.ActivePage := tabBookingList;
+end;
+
+procedure TfrmUNIMainForm.itmCustomersListClick(Sender: TObject);
+begin
+  PgcMain.ActivePage := tabCustomersList
 end;
 
 procedure TfrmUNIMainForm.itmInvoiceListingClick(Sender: TObject);
 begin
-  self.PgcMain.ActivePage := tabBalance
+  PgcMain.ActivePage := tabBalance
 end;
 
 procedure TfrmUNIMainForm.UniFormCreate(Sender: TObject);
@@ -141,9 +176,7 @@ begin
     Fra.Parent := Ts;
     Ts.Data := Fra;
   }
-
-  ActivateDM;
-
+  FdmPgCarServiceMain := TdmPgCarServiceMain.Create(self);
 end;
 
 procedure TfrmUNIMainForm.UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
@@ -155,6 +188,12 @@ begin
   end;
   Height := AHeight;
   Width := AWidth;
+end;
+
+procedure TfrmUNIMainForm.UniTimer1Timer(Sender: TObject);
+begin
+  UniTimer1.Enabled := False;
+  ActivateDM;
 end;
 
 procedure TfrmUNIMainForm.tvmSettingsClick(Sender: TObject);
@@ -239,11 +278,6 @@ begin
       *)
     end);
 
-end;
-
-procedure TfrmUNIMainForm.Timer1Timer(Sender: TObject);
-begin
-  Timer1.Enabled := False;
 end;
 
 initialization

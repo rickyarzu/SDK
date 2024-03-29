@@ -41,7 +41,8 @@ uses
   Janua.CarService.UniGUI.CalendarSelectController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.CalendarSelectController.pas',
   Janua.UniGUI.Controller in '..\..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas',
   Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm},
-  Janua.Carservice.dmPgService in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgService.pas' {dmPgCarServiceMain: TDataModule};
+  Janua.Carservice.dmPgService in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgService.pas' {dmPgCarServiceMain: TDataModule},
+  Janua.UniGUI.AccountSettings in '..\..\..\src\UniGUI\CarService\Janua.UniGUI.AccountSettings.pas' {UniForm4: TUniForm};
 
 {$R *.res}
 

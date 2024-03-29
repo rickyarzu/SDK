@@ -33,6 +33,8 @@ package TUniFalcon;
 requires
   vcl,
   uniGUI29,
+  uniGUI29m,
+  uniGUI29mCore,
   IndyCore,
   IndySystem,
   IndyProtocols;

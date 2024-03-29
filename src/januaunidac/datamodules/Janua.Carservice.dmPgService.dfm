@@ -1,6 +1,6 @@
 inherited dmPgCarServiceMain: TdmPgCarServiceMain
-  Height = 420
-  Width = 495
+  Height = 469
+  Width = 481
   inherited PgErgoConnection: TJanuaUniConnection
     Port = 5432
     Server = 'pg.januaservers.com'
@@ -761,18 +761,14 @@ inherited dmPgCarServiceMain: TdmPgCarServiceMain
       '  anagraph.anagraphs'
       'where '
       '  an_office_id = :office_id'
-      '  and'
-      '  an_main_group_id = 28'
-      'union '
-      'select '
-      #39'{00000000-0000-0000-0000-000000000000}'#39', 0'
-      
-        ', '#39#39'::character varying, '#39#39', '#39#39', '#39#39', '#39#39',  0, 0, '#39#39', '#39#39', '#39#39', '#39#39', ' +
-        #39#39', '#39#39
+      '--  and'
+      '--  an_main_group_id = 28'
       'order by an_last_name, an_name'
       '')
-    Left = 72
-    Top = 272
+    BeforeOpen = qryUsersBeforeOpen
+    AfterOpen = qryUsersAfterOpen
+    Left = 200
+    Top = 240
     ParamData = <
       item
         DataType = ftInteger
@@ -815,11 +811,6 @@ inherited dmPgCarServiceMain: TdmPgCarServiceMain
     end
     object qryUsersan_office_id: TSmallintField
       FieldName = 'an_office_id'
-    end
-    object qryUsersan_address_1: TWideMemoField
-      FieldName = 'an_address_1'
-      ReadOnly = True
-      BlobType = ftWideMemo
     end
     object qryUsersan_address_number: TWideStringField
       FieldName = 'an_address_number'
@@ -940,7 +931,7 @@ inherited dmPgCarServiceMain: TdmPgCarServiceMain
       '')
     BeforeOpen = qryBookingListBeforeOpen
     Left = 72
-    Top = 336
+    Top = 280
     ParamData = <
       item
         DataType = ftInteger
@@ -1450,5 +1441,45 @@ inherited dmPgCarServiceMain: TdmPgCarServiceMain
       FieldName = 'account_balance'
       ReadOnly = True
     end
+  end
+  object qryUsersVehicles: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      
+        'select distinct customer_id , vehicle_model, vehicle_color, vehi' +
+        'cle_numberplate'
+      'from carservice.booking_head_view '
+      'where customer_id = :anagraph_id; ')
+    MasterSource = dsUsers
+    MasterFields = 'anagraph_id'
+    DetailFields = 'customer_id'
+    Left = 201
+    Top = 368
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'anagraph_id'
+        Value = nil
+      end>
+    object qryUsersVehiclesvehicle_model: TWideStringField
+      FieldName = 'vehicle_model'
+      Size = 128
+    end
+    object qryUsersVehiclesvehicle_color: TWideStringField
+      FieldName = 'vehicle_color'
+      Size = 64
+    end
+    object qryUsersVehiclesvehicle_numberplate: TWideStringField
+      FieldName = 'vehicle_numberplate'
+      Size = 24
+    end
+    object qryUsersVehiclescustomer_id: TIntegerField
+      FieldName = 'customer_id'
+    end
+  end
+  object dsUsers: TUniDataSource
+    DataSet = qryUsers
+    Left = 200
+    Top = 304
   end
 end
