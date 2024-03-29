@@ -584,7 +584,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                     '')
                   MarkerList.UseDefaultMarkerImageIndex = False
                   MarkerList.DefaultMarkerImageIndex = -1
-                  MarkerList.ImageTransparentColor = -16776961
+                  MarkerList.ImageTransparentColor = 33554432
                   OleDropTarget = []
                   PrintOptions.MarginLeft = 0
                   PrintOptions.MarginRight = 0
@@ -705,7 +705,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                     '')
                   MarkerList.UseDefaultMarkerImageIndex = False
                   MarkerList.DefaultMarkerImageIndex = -1
-                  MarkerList.ImageTransparentColor = -16776961
+                  MarkerList.ImageTransparentColor = 33554432
                   OleDropTarget = []
                   PrintOptions.MarginLeft = 0
                   PrintOptions.MarginRight = 0
@@ -890,7 +890,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                 '')
               MarkerList.UseDefaultMarkerImageIndex = False
               MarkerList.DefaultMarkerImageIndex = -1
-              MarkerList.ImageTransparentColor = -16776961
+              MarkerList.ImageTransparentColor = 33554432
               OleDropTarget = []
               PrintOptions.MarginLeft = 0
               PrintOptions.MarginRight = 0
@@ -970,6 +970,15 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           TabOrder = 0
           OnClick = btnGenerateTableDDLClick
         end
+        object btnTableListDDL: TButton
+          Left = 240
+          Top = 32
+          Width = 201
+          Height = 25
+          Caption = 'Generate Table List DDL'
+          TabOrder = 1
+          OnClick = btnTableListDDLClick
+        end
       end
       object Panel6: TPanel
         Left = 0
@@ -1021,12 +1030,11 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Align = alLeft
         Caption = 'Panel7'
         TabOrder = 2
-        ExplicitLeft = 254
         object grdMViewConsFields: TCRDBGrid
           Left = 1
-          Top = 230
+          Top = 272
           Width = 222
-          Height = 194
+          Height = 152
           Filtered = False
           Align = alBottom
           DataSource = dsMViewConsFields
@@ -1050,7 +1058,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 1
           Width = 222
-          Height = 229
+          Height = 271
           OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
           Align = alClient
           DataSource = dsMviewFields
@@ -1096,9 +1104,9 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         end
       end
       object memDDLMViews: TAdvMemo
-        Left = 473
+        Left = 705
         Top = 81
-        Width = 792
+        Width = 560
         Height = 552
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
@@ -1180,7 +1188,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -16776961
+        MarkerList.ImageTransparentColor = 33554432
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -1212,6 +1220,17 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         UseStyler = True
         Version = '3.9.0.1'
         WordWrap = wwNone
+        ExplicitLeft = 473
+        ExplicitWidth = 792
+      end
+      object lstMViews: TListBox
+        Left = 473
+        Top = 81
+        Width = 232
+        Height = 552
+        Align = alLeft
+        ItemHeight = 15
+        TabOrder = 4
       end
     end
   end

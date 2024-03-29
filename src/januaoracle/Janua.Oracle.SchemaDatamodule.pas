@@ -127,7 +127,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function GenerateMVDDL: string;
+    function GenerateMVDDL(const aAddedRows: string = ''): string;
   end;
 
 var
@@ -138,18 +138,28 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-function TdmOracleSchema.GenerateMVDDL: string;
+function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string = ''): string;
 var
   aList: TStringList;
 begin
   aList := TStringList.Create;
   try
+    aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' +
+      qryMaterializedViewOBJECT_NAME.AsString);
+    aList.Add('(');
+
     qryMviewFields.First;
     While not qryMviewFields.Eof do
     begin
       aList.Add(qryMviewFieldsCOLUMN_DDL.AsString);
       qryMviewFields.Next;
     end;
+
+    if aAddedRows > '' then
+      aList.Add(aAddedRows);
+
+    aList.Add(');');
+
     Result := aList.Text;
   finally
     aList.Free;
