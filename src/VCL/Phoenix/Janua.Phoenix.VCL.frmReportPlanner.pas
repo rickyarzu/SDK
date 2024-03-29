@@ -14,7 +14,7 @@ uses
   // DB - UniDAC
   CRGrid, ActnList, MemDS, Data.DB, DBAccess, Uni,
   // ZLibraries
-  Globale,
+  Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab;
 
@@ -41,8 +41,10 @@ type
     lkpCAP: TJvDBLookupCombo;
     PopupMenu1: TPopupMenu;
     Modifica1: TMenuItem;
-    N1: TMenuItem;
     AnnullaAppuntamento1: TMenuItem;
+    N2: TMenuItem;
+    ModificaStatino1: TMenuItem;
+    VisualizzaContratto1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -50,14 +52,13 @@ type
     procedure btnSearchClick(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
     procedure AnnullaAppuntamento1Click(Sender: TObject);
+    procedure ModificaStatino1Click(Sender: TObject);
+    procedure VisualizzaContratto1Click(Sender: TObject);
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
-    FQRY_GENERIC: TpFIBQuery;
-    procedure SetQRY_GENERIC(const Value: TpFIBQuery);
   public
     { Public declarations }
-    property QRY_GENERIC: TpFIBQuery read FQRY_GENERIC write SetQRY_GENERIC;
   end;
 
 var
@@ -67,8 +68,12 @@ implementation
 
 {$R *.dfm}
 
-uses Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, udmSVGImageList, Janua.Core.AsyncTask,
-  Janua.Phoenix.VCL.dlgEditReportTimetable;
+uses
+  // Janua
+  udmSVGImageList, Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
+  Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
+  // Phoenix
+  DlgShowContratto, DlgNuovoStatino;
 
 procedure TfrmPhoenixVCLReportPlanner.AnnullaAppuntamento1Click(Sender: TObject);
 begin
@@ -219,9 +224,35 @@ begin
 
 end;
 
-procedure TfrmPhoenixVCLReportPlanner.SetQRY_GENERIC(const Value: TpFIBQuery);
+procedure TfrmPhoenixVCLReportPlanner.ModificaStatino1Click(Sender: TObject);
+var
+  ADialog: TDLG_STATINO;
 begin
-  FQRY_GENERIC := Value;
+  ADialog := TDLG_STATINO.Create(Nil);
+  try
+    ADialog.Init(TFiBConfig.QRY_GENERIC, dmPhoenixIBPlanner.qryReportPlannerCHIAVE.AsInteger);
+    if ADialog.ShowModal = mrOK then
+    begin
+      ADialog.NodoStatino.Registra(spsRegistra);
+      // FStatinoModificato := True;
+    end;
+  finally
+    ADialog.Free;
+  end;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);
+var
+  lDlg: TDLG_SHOW_CONTRATTO;
+begin
+  lDlg := TDLG_SHOW_CONTRATTO.Create(Nil);
+  try
+    lDlg.Init(TFiBConfig.QRY_GENERIC, dmPhoenixIBPlanner.qryReportPlannerCLIENTE.AsInteger);
+    lDlg.ShowModal;
+    TFiBConfig.QRY_GENERIC.Sql.Clear;
+  finally
+    lDlg.Free;
+  end;
 end;
 
 end.

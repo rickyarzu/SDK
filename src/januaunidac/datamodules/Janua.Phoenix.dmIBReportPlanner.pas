@@ -84,6 +84,7 @@ type
     qryTechNOME_TECNICO: TStringField;
     qryCAP: TUniQuery;
     qryCAPCAP: TStringField;
+    qryReportPlannerAMMINISTRATORE: TIntegerField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
   private

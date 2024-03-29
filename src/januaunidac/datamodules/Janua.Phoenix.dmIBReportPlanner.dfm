@@ -5,6 +5,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   inherited JanuaUniConnection1: TJanuaUniConnection
     Database = '/opt/firebird/db/phoenix.fdb'
     Server = 'sait.pasolutions.ru'
+    Connected = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   object qryReportPlanner: TUniQuery
@@ -59,15 +60,14 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT S.chiave, C.descrizione_scheda,'
+      'SELECT S.chiave, C.descrizione_scheda, C.AMMINISTRATORE, '
       
         '       S.CLIENTE, F.NOME, F.PROVINCIA, F.CAP, F.INDIRIZZO, F.TEL' +
         'EFONO, F.NOTE, F.ORARIO_APERTURA_DAL1, F.ORARIO_APERTURA_DAL2,'
       
         '       F.ORARIO_APERTURA_AL1, F.ORARIO_APERTURA_AL2, F.CHIUSURA,' +
         ' F.CELLULARE, F.EMAIL, F.ESCLUDI_DA_GENERAZIONE, F.SEDE, F.ID,'
-      '       F.REF_TELEFONO, F.REF_CELLULARE, F.COMUNE,'
-      '       S.FATTURA,'
+      '       F.REF_TELEFONO, F.REF_CELLULARE, F.COMUNE, S.FATTURA,'
       
         '       S.DATA_INTERVENTO , S.GENERAZIONE_AUTOMATICA , S.TECNICO_' +
         'INTERVENTO , S.SCANSIONE , S.REGISTRO , S.NOTE_PER_IL_TECNICO , ' +
@@ -91,14 +91,31 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       
         '       V.ordinari, V.straordinari, V.interventi, T.descrizione a' +
         's NOME_TECNICO, '
-      '       S.APPUNTAMENTO_DATA, S.APPUNTAMENTO_ORA, S.STATO, I.*'
+      
+        '       S.APPUNTAMENTO_DATA, S.APPUNTAMENTO_ORA, S.STATO,I.STATIN' +
+        'O, '
+      '       COALESCE(I.ESTINTORI_ORDINARIO, 0) ESTINTORI_ORDINARIO,'
+      
+        '       COALESCE(I.ESTINTORI_STRAORDINARIO, 0) ESTINTORI_STRAORDI' +
+        'NARIO,'
+      '       COALESCE(I.GRUPPI_ELETTR, 0) GRUPPI_ELETTR,'
+      '       COALESCE(I.FUMI, 0) FUMI,'
+      '       COALESCE(I.LUCI, 0) LUCI,'
+      '       COALESCE(I.IDRANTI, 0) IDRANTI,'
+      '       COALESCE(I.SPRINKLER, 0) SPRINKLER,'
+      '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL'
       'FROM FILIALI_CLIENTI F '
       'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
       'JOIN STATINI S ON F.chiave = S.filiale'
-      'JOIN INTERVENTI_STRAORDINARI_VIEW V ON S.chiave = V.statino'
+      
+        'LEFT OUTER JOIN INTERVENTI_STRAORDINARI_VIEW V ON S.chiave = V.s' +
+        'tatino'
       'JOIN TECNICI T ON T.chiave = S.responsabile'
-      'JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = I.statino'
+      
+        'LEFT OUTER JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = ' +
+        'I.statino'
       'WHERE S.STATO > -1 AND S.STATO < 9'
+      'AND S.CHIAVE = 2100103'
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
     BeforePost = qryReportPlannerBeforePost
@@ -385,6 +402,10 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     end
     object qryReportPlannerIMPIANTI_EL: TLargeintField
       FieldName = 'IMPIANTI_EL'
+      ReadOnly = True
+    end
+    object qryReportPlannerAMMINISTRATORE: TIntegerField
+      FieldName = 'AMMINISTRATORE'
       ReadOnly = True
     end
   end
