@@ -5,7 +5,6 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   inherited JanuaUniConnection1: TJanuaUniConnection
     Database = '/opt/firebird/db/phoenix.fdb'
     Server = 'sait.pasolutions.ru'
-    Connected = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   object qryReportPlanner: TUniQuery
@@ -115,7 +114,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
         'LEFT OUTER JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = ' +
         'I.statino'
       'WHERE S.STATO > -1 AND S.STATO < 9'
-      'AND S.CHIAVE = 2100103'
+      '--AND S.CHIAVE = 2100103'
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
     BeforePost = qryReportPlannerBeforePost
