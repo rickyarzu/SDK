@@ -94,6 +94,8 @@ type
     dsMViewConsFields: TDataSource;
     grdMViewConstraints: TCRDBGrid;
     dsMViewConstraints: TDataSource;
+    btnTableListDDL: TButton;
+    lstMViews: TListBox;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
@@ -101,6 +103,7 @@ type
     procedure btnGenerateCSVClick(Sender: TObject);
     procedure btnOpenMViewsClick(Sender: TObject);
     procedure btnGenerateTableDDLClick(Sender: TObject);
+    procedure btnTableListDDLClick(Sender: TObject);
   private
     { Private declarations }
     FTable: string;
@@ -160,6 +163,18 @@ end;
 procedure TfrmOracleSwissMilitaryMain.btnOpenViewFieldsClick(Sender: TObject);
 begin
   dmOracleSchema.qryViewFields.Open;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnTableListDDLClick(Sender: TObject);
+var
+  I : integer;
+begin
+  // lstMViews
+  for I := 0 to lstMViews.Items.Count - 1 do
+  begin
+
+  end;
+
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnViewTAbleFieldsClick(Sender: TObject);

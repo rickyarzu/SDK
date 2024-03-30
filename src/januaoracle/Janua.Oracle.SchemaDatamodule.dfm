@@ -1,6 +1,6 @@
 object dmOracleSchema: TdmOracleSchema
-  Height = 632
-  Width = 674
+  Height = 529
+  Width = 482
   object UniConnection1: TUniConnection
     AutoCommit = False
     ProviderName = 'Oracle'
@@ -10,7 +10,6 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.Direct=True')
     Username = 'GTIT'
     Server = 'glsdbx01-scan.generali.it:1521:sn=GLSRX1_VIS'
-    Connected = True
     AfterConnect = UniConnection1AfterConnect
     Left = 72
     Top = 120

@@ -436,12 +436,20 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       Caption = 'Modifica'
       OnClick = frameVCLCRDBGridCRDBGridDblClick
     end
-    object N1: TMenuItem
-      Caption = '-'
-    end
     object AnnullaAppuntamento1: TMenuItem
       Caption = 'Annulla Appuntamento'
       OnClick = AnnullaAppuntamento1Click
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object ModificaStatino1: TMenuItem
+      Caption = 'Modifica Statino'
+      OnClick = ModificaStatino1Click
+    end
+    object VisualizzaContratto1: TMenuItem
+      Caption = 'Visualizza Contratto'
+      OnClick = VisualizzaContratto1Click
     end
   end
 end
