@@ -1,0 +1,61 @@
+CREATE TABLE ergo_system.db_users
+(
+    email character varying(256) COLLATE pg_catalog."default" NOT NULL,
+    user_password character varying(128) COLLATE pg_catalog."default" NOT NULL,
+    username character varying(128) COLLATE pg_catalog."default" NOT NULL,
+    oauth_id character varying(256) COLLATE pg_catalog."default",
+	oauth_authority character varying(32) COLLATE pg_catalog."default",
+    oauth_token character varying(256) COLLATE pg_catalog."default" NOT NULL,
+	isactive boolean NOT NULL,
+    verified boolean NOT NULL,
+    default_schema_id integer,
+    ispublic boolean,
+    default_role_id smallint,
+    search_name character varying(256) COLLATE pg_catalog."default",
+    reverse_search character varying(256) COLLATE pg_catalog."default",
+    country_id smallint,
+    iso_language_code character(2) COLLATE pg_catalog."default",
+    iso_culture_code character(5) COLLATE pg_catalog."default",
+    image_id bigint,
+    image_url character varying(2048) COLLATE pg_catalog."default",
+    first_name character varying(256) COLLATE pg_catalog."default",
+    family_name character varying(256) COLLATE pg_catalog."default",
+    emailsent boolean,
+    emailconfirmed boolean,
+    emaildate timestamp with time zone,
+    payment boolean DEFAULT false,
+    payment_expiration_date date,
+    CONSTRAINT db_users_pk PRIMARY KEY (id),
+    CONSTRAINT db_users_uid_uk UNIQUE (jguid)
+)
+    INHERITS (ergo_public.table_template)
+WITH (
+    OIDS = FALSE
+);
+
+COMMENT ON COLUMN ergo_system.db_users.default_schema_id
+    IS 'This is the Default Schema of the User';
+
+COMMENT ON COLUMN ergo_system.db_users.ispublic
+    IS 'This columns tell us if this user is just made to create a public connection';
+
+COMMENT ON COLUMN ergo_system.db_users.payment
+    IS 'payment received';
+
+COMMENT ON COLUMN ergo_system.db_users.payment_expiration_date
+    IS 'payment expiration date. Usually a date with an alarm that is 365 Days for yearly abonement';
+
+COMMENT ON COLUMN ergo_system.db_users.oauth_id
+    IS 'Main Social ID - External authentication can be facebook google apple ';
+
+COMMENT ON COLUMN ergo_system.db_users.oauth_authority
+    IS 'Social Identifier or OAuth authority for user logged in with oAuth from Social. ';
+
+ALTER TABLE IF EXISTS ergo_system.db_users
+    OWNER to ergo;
+	
+CREATE TRIGGER db_users_defaults_trg
+    BEFORE INSERT OR UPDATE 
+    ON ergo_system.db_users
+    FOR EACH ROW
+    EXECUTE PROCEDURE ergo_public.insert_defaults_trg();
