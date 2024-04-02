@@ -5,7 +5,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, udmPgStorage, UniProvider, PostgreSQLUniProvider, DBAccess, Uni,
-  MemDS, Data.DB;
+  MemDS, Data.DB, Janua.Unidac.Connection;
 
 type
   TdmPgPlannerStorage = class(TdmPgStorage)
