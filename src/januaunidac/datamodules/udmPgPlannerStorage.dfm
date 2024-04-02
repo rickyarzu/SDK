@@ -1,5 +1,4 @@
 inherited dmPgPlannerStorage: TdmPgPlannerStorage
-  OldCreateOrder = True
   Height = 301
   Width = 413
   inherited PgErgoConnection: TJanuaUniConnection

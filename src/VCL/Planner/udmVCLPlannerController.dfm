@@ -1,8 +1,7 @@
 object dmVCLPlannerController: TdmVCLPlannerController
   OnCreate = DataModuleCreate
-  Height = 267
-  Width = 277
-  PixelsPerInch = 96
+  Height = 300
+  Width = 338
   object SVGIconImageList1: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5281,8 +5280,8 @@ object dmVCLPlannerController: TdmVCLPlannerController
     end
   end
   object PrinterSetupDialog1: TPrinterSetupDialog
-    Left = 48
-    Top = 152
+    Left = 152
+    Top = 120
   end
   object AdvGCalendar1: TAdvGCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -5305,8 +5304,8 @@ object dmVCLPlannerController: TdmVCLPlannerController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 44573.000000000000000000
-    Left = 152
-    Top = 184
+    DateFrom = 45384.000000000000000000
+    Left = 120
+    Top = 200
   end
 end

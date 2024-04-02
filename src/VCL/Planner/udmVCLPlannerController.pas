@@ -87,7 +87,7 @@ uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPla
 
 procedure TdmVCLPlannerController.DataModuleCreate(Sender: TObject);
 begin
-  Self.JanuaPlannerController1.Timetable := PlannerEvent
+  JanuaPlannerController1.Timetable := PlannerEvent
 end;
 
 procedure TdmVCLPlannerController.ActionAddActivityExecute(Sender: TObject);

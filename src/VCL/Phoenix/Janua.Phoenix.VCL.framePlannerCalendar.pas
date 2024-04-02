@@ -1,0 +1,50 @@
+unit Janua.Phoenix.VCL.framePlannerCalendar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, PictureContainer, Vcl.Menus, System.ImageList,
+  Vcl.ImgList, Data.DB, DBPlanner, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBCGrids, Vcl.Samples.Spin,
+  Vcl.ComCtrls, AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner;
+
+type
+  TframePhoenixPlannerCalendar = class(TFrame)
+    lbGiorni: TLabel;
+    lbSearch: TLabel;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    MonthCalendar1: TMonthCalendar;
+    SpinEdit1: TSpinEdit;
+    edMeeting: TEdit;
+    DoFilter: TCheckBox;
+    grdAnagraph: TDBCtrlGrid;
+    DBText1: TDBText;
+    Panel1: TPanel;
+    btnAppuntamento: TButton;
+    Button1: TButton;
+    btnSearchMeeting: TButton;
+    btnAddPerson: TButton;
+    btnActivities: TButton;
+    btnExport: TButton;
+    btnSend: TButton;
+    btnPrint: TButton;
+    DBDaySource1: TDBDaySource;
+    DataSource1: TDataSource;
+    ImageList1: TImageList;
+    ColorDialog1: TColorDialog;
+    ItemPopup: TPopupMenu;
+    Color1: TMenuItem;
+    Caption1: TMenuItem;
+    PictureContainer1: TPictureContainer;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -4,7 +4,9 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider,
-  InterBaseUniProvider, Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, MemDS;
+  InterBaseUniProvider, Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, MemDS, System.ImageList,
+  Vcl.ImgList, Vcl.Controls, SVGIconImageListBase, SVGIconImageList, Vcl.Dialogs, CloudBase, CloudBaseWin,
+  CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, System.Actions, Vcl.ActnList;
 
 type
   TdmPhoenixIBPlanner = class(TdmPhoenixIBModel)
@@ -85,6 +87,18 @@ type
     qryCAP: TUniQuery;
     qryCAPCAP: TStringField;
     qryReportPlannerAMMINISTRATORE: TIntegerField;
+    ActionList1: TActionList;
+    ActionAddMeeting: TAction;
+    ActionUndoMeeting: TAction;
+    ActionSearchMeeting: TAction;
+    ActionAddUser: TAction;
+    ActionAddActivity: TAction;
+    ActionExport: TAction;
+    ActionSendShare: TAction;
+    ActionPrint: TAction;
+    AdvGCalendar1: TAdvGCalendar;
+    PrinterSetupDialog1: TPrinterSetupDialog;
+    SVGIconImageList1: TSVGIconImageList;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
   private
