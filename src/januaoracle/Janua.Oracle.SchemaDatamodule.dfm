@@ -1,6 +1,8 @@
 object dmOracleSchema: TdmOracleSchema
-  Height = 529
-  Width = 482
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 539
+  Width = 659
   object UniConnection1: TUniConnection
     AutoCommit = False
     ProviderName = 'Oracle'
@@ -10,6 +12,7 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.Direct=True')
     Username = 'GTIT'
     Server = 'glsdbx01-scan.generali.it:1521:sn=GLSRX1_VIS'
+    Connected = True
     AfterConnect = UniConnection1AfterConnect
     Left = 72
     Top = 120
@@ -348,11 +351,12 @@ object dmOracleSchema: TdmOracleSchema
     Top = 96
   end
   object qryMaterializedView: TUniQuery
+    KeyFields = 'OBJECT_NAME'
     Connection = UniConnection1
     SQL.Strings = (
       'select * from sys.all_objects '
       'where object_type ='#39'MATERIALIZED VIEW'#39' and OWNER = :SCHEMA_NAME'
-      'order by 1')
+      'order by OBJECT_NAME')
     MasterSource = dsSchemas
     AfterOpen = qryMaterializedViewAfterOpen
     Left = 360
@@ -554,8 +558,6 @@ object dmOracleSchema: TdmOracleSchema
       
         '  JOIN ALL_CONSTRAINTS cons ON col.CONSTRAINT_NAME = cons.CONSTR' +
         'AINT_NAME'
-      ''
-      ''
       'WHERE col.owner = :OWNER'
       'AND col.table_name = :OBJECT_NAME'
       'AND cons.owner = :OWNER'
@@ -677,10 +679,12 @@ object dmOracleSchema: TdmOracleSchema
       '  FROM ALL_CONSTRAINTS '
       'WHERE owner = :OWNER'
       'AND table_name = :OBJECT_NAME'
+      'AND CONSTRAINT_TYPE != '#39'C'#39
       '')
     MasterSource = dsMViews
+    AfterScroll = qryMviewConstraintsAfterScroll
     Left = 360
-    Top = 456
+    Top = 448
     ParamData = <
       item
         DataType = ftUnknown
@@ -772,6 +776,33 @@ object dmOracleSchema: TdmOracleSchema
     object qryMviewConstraintsVIEW_RELATED: TWideStringField
       FieldName = 'VIEW_RELATED'
       Size = 14
+    end
+  end
+  object qryConstraintDDL: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT DBMS_METADATA.get_ddl '
+      '('#39'CONSTRAINT'#39', :CONSTRAINT_NAME, :OWNER) AS METADATA FROM DUAL')
+    AfterOpen = qryConstraintDDLAfterOpen
+    Left = 488
+    Top = 216
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'constraint_name'
+        ParamType = ptInput
+        Value = 'PK_PREVI_MOVIMENTI'
+      end
+      item
+        DataType = ftString
+        Name = 'owner'
+        ParamType = ptInput
+        Value = 'GTIT'
+      end>
+    object qryConstraintDDLMETADATA: TWideMemoField
+      FieldName = 'METADATA'
+      ReadOnly = True
+      BlobType = ftOraClob
     end
   end
 end

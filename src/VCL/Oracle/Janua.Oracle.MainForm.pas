@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, DBAccess, UniDacVcl, Vcl.ComCtrls,
   JvExStdCtrls, JvCombobox, JvDBCombobox, Data.DB, JvExControls, JvDBLookup, Vcl.Grids, Vcl.DBGrids, CRGrid,
-  AdvMemo, AdvmSQLS, Vcl.Mask, AdvSpin, Janua.Oracle.ControlFileGenerator;
+  AdvMemo, AdvmSQLS, Vcl.Mask, AdvSpin, Janua.Oracle.ControlFileGenerator, DBAdvMemo;
 
 type
   TfrmOracleSwissMilitaryMain = class(TForm)
@@ -88,14 +88,22 @@ type
     Panel7: TPanel;
     grdMViewConsFields: TCRDBGrid;
     dsMviewFields: TDataSource;
-    memDDLMViews: TAdvMemo;
     AdvSQLMemoStyler1: TAdvSQLMemoStyler;
-    CRDBGrid4: TCRDBGrid;
+    grdMViewColumns: TCRDBGrid;
     dsMViewConsFields: TDataSource;
     grdMViewConstraints: TCRDBGrid;
     dsMViewConstraints: TDataSource;
     btnTableListDDL: TButton;
-    lstMViews: TListBox;
+    pnlList: TPanel;
+    memVMList: TMemo;
+    memVMDiscardedList: TMemo;
+    edlAddRow: TLabeledEdit;
+    edSuffix: TLabeledEdit;
+    Panel8: TPanel;
+    memDDLMViews: TAdvMemo;
+    CRDBGrid3: TCRDBGrid;
+    DBAdvMemo1: TDBAdvMemo;
+    dsMviewConsDDL: TDataSource;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
@@ -166,14 +174,9 @@ begin
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnTableListDDLClick(Sender: TObject);
-var
-  I : integer;
 begin
   // lstMViews
-  for I := 0 to lstMViews.Items.Count - 1 do
-  begin
-
-  end;
+  memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDLFromList(memVMList.Lines, edlAddRow.Text);
 
 end;
 

@@ -211,9 +211,6 @@ Coordinates=518,810,119,36
 [dsMviewFields]
 Coordinates=261,548,99,36
 
-[memDDLMViews]
-Coordinates=395,810,113,36
-
 [edDateTimeConversion]
 Coordinates=1579,674,149,58
 
@@ -280,16 +277,16 @@ Coordinates=261,10,240,498
 [dsMViewConsFields]
 Coordinates=610,1177,131,36
 
-[CRDBGrid4]
-Coordinates=1590,742,82,36
-
 [dmOracleSchema.qryMViewConsFields]
 Coordinates=10,10,241,564
 
 []
-Coordinates=1544,1,91,36
+Coordinates=395,810,113,36
 
 [grdMViewConstraints]
 Coordinates=1682,742,82,36
 Visible=True
+
+[grdMViewColumns]
+Coordinates=1590,742,82,36
 
