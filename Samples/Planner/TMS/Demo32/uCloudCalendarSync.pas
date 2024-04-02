@@ -1,0 +1,213 @@
+unit uCloudCalendarSync;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Planner, CloudBase, CloudLiveWin, CloudLiveCalendar,
+  {PlanExLiveCalendar,} CloudGoogleWin, CloudGCalendar, {PlanExGCalendar,} Menus,
+  CloudCustomGoogle, CloudCustomGCalendar, CloudBaseWin, CloudCustomLive,
+  CloudCustomLiveCalendar, PlanExLiveCalendar, PlanExGCalendar;
+
+type
+  TCloudCalendar = (ccWinLive, ccGoogle);
+
+  TForm4 = class(TForm)
+    AdvLiveCalendar1: TAdvLiveCalendar;
+    Planner1: TPlanner;
+    Button1: TButton;
+    ListBox1: TListBox;
+    Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button4: TButton;
+    AdvGCalendar1: TAdvGCalendar;
+    PopupMenu1: TPopupMenu;
+    Createnewitem1: TMenuItem;
+    PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
+    PlannerGCalendarExchange1: TPlannerGCalendarExchange;
+    procedure Button1Click(Sender: TObject);
+    procedure AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Createnewitem1Click(Sender: TObject);
+  private
+    { Private declarations }
+    FCloudCalendar: TCloudCalendar;
+  public
+    { Public declarations }
+    procedure GetGCalendarList;
+    procedure GetLiveCalendarList;
+    property CloudCalendar: TCloudCalendar read FCloudCalendar write FCloudCalendar;
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+{$I APPIDS.INC}
+
+procedure TForm4.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+begin
+  AdvGCalendar1.SaveTokens;
+  GetGCalendarList;
+end;
+
+procedure TForm4.AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
+begin
+  AdvLiveCalendar1.SaveTokens;
+  GetLiveCalendarList;
+end;
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+  if not AdvLiveCalendar1.TestTokens then
+  begin
+    AdvLiveCalendar1.RefreshAccess;
+    if not AdvLiveCalendar1.TestTokens then
+      AdvLiveCalendar1.DoAuth
+    else
+      GetLiveCalendarList;
+  end
+  else
+    GetLiveCalendarList;
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);
+var
+  id: string;
+  i: integer;
+begin
+  // mark all for export
+
+  for i := 0 to Planner1.Items.Count - 1 do
+    Planner1.Items[i].DoExport := true;
+
+  if CloudCalendar = ccWinLive then
+  begin
+
+      PlannerLiveCalendarExchange1.LiveCalendarName := listbox1.Items[listbox1.ItemIndex];
+      PlannerLiveCalendarExchange1.GetCalendarID;
+      PlannerLiveCalendarExchange1.DoExport;
+
+  end
+  else
+  begin
+
+      PlannerGCalendarExchange1.GCalendarName := listbox1.Items[listbox1.ItemIndex];
+      PlannerGCalendarExchange1.GetCalendarID;
+      PlannerGCalendarExchange1.DoExport;
+
+  end;
+
+end;
+
+procedure TForm4.Button3Click(Sender: TObject);
+var
+  id: string;
+begin
+  if CloudCalendar = ccWinLive then
+  begin
+    (*
+      PlannerLiveCalendarExchange1.LiveCalendarName := listbox1.Items[listbox1.ItemIndex];
+      PlannerLiveCalendarExchange1.GetCalendarID;
+      PlannerLiveCalendarExchange1.DoImport;
+    *)
+  end
+  else
+  begin
+    (*
+      PlannerGCalendarExchange1.GCalendarName := listbox1.Items[listbox1.ItemIndex];
+      PlannerGCalendarExchange1.GetCalendarID;
+      PlannerGCalendarExchange1.DoImport;
+    *)
+  end;
+
+end;
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+  if not AdvGCalendar1.TestTokens then
+  begin
+    AdvGCalendar1.RefreshAccess;
+    if not AdvGCalendar1.TestTokens then
+    begin
+      AdvGCalendar1.DoAuth
+    end
+    else
+      GetGCalendarList;
+  end
+  else
+    GetGCalendarList;
+end;
+
+procedure TForm4.Createnewitem1Click(Sender: TObject);
+begin
+  Planner1.CreateItemAtSelection;
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+var
+  i: integer;
+begin
+  AdvLiveCalendar1.App.Key := LiveAppKey;
+  AdvLiveCalendar1.App.Secret := LiveAppSecret;
+
+  AdvGCalendar1.App.Key := GAppKey;
+  AdvGCalendar1.App.Secret := GAppSecret;
+
+  AdvLiveCalendar1.PersistTokens.Key := '.\livecal.ini';
+  AdvLiveCalendar1.PersistTokens.Section := 'winlive';
+  AdvLiveCalendar1.PersistTokens.Location := plIniFile;
+
+  AdvGCalendar1.PersistTokens.Key := '.\livecal.ini';
+  AdvGCalendar1.PersistTokens.Section := 'google';
+  AdvGCalendar1.PersistTokens.Location := plIniFile;
+
+  AdvLiveCalendar1.LoadTokens;
+  AdvGCalendar1.LoadTokens;
+
+  Planner1.Positions := 7;
+  Planner1.Header.Captions.Clear;
+  Planner1.Header.Captions.Add('');
+  for i := 0 to 6 do
+    Planner1.Header.Captions.Add(datetostr(Now + i));
+end;
+
+procedure TForm4.GetGCalendarList;
+var
+  i: integer;
+begin
+  CloudCalendar := ccGoogle;
+  AdvGCalendar1.GetCalendars;
+  ListBox1.Items.Clear;
+  for i := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    ListBox1.Items.Add(AdvGCalendar1.Calendars[i].Summary);
+  end;
+  ListBox1.ItemIndex := 0;
+end;
+
+procedure TForm4.GetLiveCalendarList;
+var
+  i: integer;
+begin
+  CloudCalendar := ccWinLive;
+  AdvLiveCalendar1.GetCalendars;
+  ListBox1.Items.Clear;
+  for i := 0 to AdvLiveCalendar1.Calendars.Count - 1 do
+  begin
+    ListBox1.Items.Add(AdvLiveCalendar1.Calendars[i].Summary);
+  end;
+
+  ListBox1.ItemIndex := 0;
+end;
+
+end.

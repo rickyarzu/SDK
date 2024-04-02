@@ -3,7 +3,7 @@
         <ProjectGuid>{7DE66621-3C10-4A9B-8F1C-BCBB7842D61F}</ProjectGuid>
         <MainSource>OracleSwissKnifeXE15.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>693379</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>

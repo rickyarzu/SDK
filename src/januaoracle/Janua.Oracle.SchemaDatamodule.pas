@@ -120,14 +120,25 @@ type
     qryMViewConsFieldsINDEX_NAME: TWideStringField;
     qryMViewConsFieldsINVALID: TWideStringField;
     qryMViewConsFieldsVIEW_RELATED: TWideStringField;
+    qryConstraintDDL: TUniQuery;
+    qryConstraintDDLMETADATA: TWideMemoField;
     procedure UniConnection1AfterConnect(Sender: TObject);
     procedure qrySchemasAfterOpen(DataSet: TDataSet);
     procedure qryMaterializedViewAfterOpen(DataSet: TDataSet);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
+    procedure qryConstraintDDLAfterOpen(DataSet: TDataSet);
+    procedure qryMviewConstraintsAfterScroll(DataSet: TDataSet);
   private
+    FDiscardedList: TStrings;
+    procedure SetDiscardedList(const Value: TStrings);
     { Private declarations }
   public
     { Public declarations }
-    function GenerateMVDDL(const aAddedRows: string = ''): string;
+    function GenerateMVDDL(const aAddedRows: string = ''; const aSuffix: string = ''): string;
+    function GenerateMVDDLFromList(const aList: TStrings; const aAddedRows: string = '';
+      const aSuffix: string = ''): string;
+    property DiscardedList: TStrings read FDiscardedList write SetDiscardedList;
   end;
 
 var
@@ -138,14 +149,24 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string = ''): string;
+procedure TdmOracleSchema.DataModuleCreate(Sender: TObject);
+begin
+  FDiscardedList := TStringList.Create;
+end;
+
+procedure TdmOracleSchema.DataModuleDestroy(Sender: TObject);
+begin
+  FDiscardedList.Free;
+end;
+
+function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string; const aSuffix: string): string;
 var
   aList: TStringList;
 begin
   aList := TStringList.Create;
   try
     aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' +
-      qryMaterializedViewOBJECT_NAME.AsString);
+      qryMaterializedViewOBJECT_NAME.AsString + aSuffix);
     aList.Add('(');
 
     qryMviewFields.First;
@@ -159,11 +180,61 @@ begin
       aList.Add(aAddedRows);
 
     aList.Add(');');
+    aList.Add('');
+    aList.Add('');
+
+    if qryConstraintDDL.RecordCount > 0 then
+    begin
+      var
+      tmpList := TStringList.Create;
+      try
+        tmpList.Text := qryConstraintDDLMETADATA.AsString;
+        if tmpList.Count > 0 then
+        begin
+          aList.Add(tmpList[1] + ';');
+          aList.Add('');
+          aList.Add('');
+        end;
+      finally
+        tmpList.Free;
+      end;
+    end;
 
     Result := aList.Text;
   finally
     aList.Free;
   end;
+end;
+
+function TdmOracleSchema.GenerateMVDDLFromList(const aList: TStrings; const aAddedRows: string;
+  const aSuffix: string): string;
+begin
+  var
+  I := 0;
+  var
+  lList := TStringList.Create;
+  DiscardedList.Clear;
+  try
+    for I := 0 to aList.Count - 1 do
+    begin
+      var
+      lTableName := aList[I].Trim;
+      if qryMaterializedView.Locate('OBJECT_NAME', lTableName, []) then
+      begin
+        lList.Add(GenerateMVDDL(aAddedRows, aSuffix));
+      end
+      else
+        DiscardedList.Add(lTableName);
+    end;
+    Result := lList.Text;
+  finally
+    lList.Free;
+  end;
+end;
+
+procedure TdmOracleSchema.qryConstraintDDLAfterOpen(DataSet: TDataSet);
+begin
+  qryConstraintDDL.Open;
 end;
 
 procedure TdmOracleSchema.qryMaterializedViewAfterOpen(DataSet: TDataSet);
@@ -173,10 +244,29 @@ begin
   qryMviewConstraints.Open;
 end;
 
+procedure TdmOracleSchema.qryMviewConstraintsAfterScroll(DataSet: TDataSet);
+begin
+  qryConstraintDDL.Close;
+  if qryMviewConstraints.RecordCount > 0 then
+  begin
+    qryConstraintDDL.ParambyName('OWNER').AsString := qryMviewConstraintsOWNER.AsString;
+    qryConstraintDDL.ParambyName('CONSTRAINT_NAME').AsString := qryMviewConstraintsCONSTRAINT_NAME.AsString;
+    qryConstraintDDL.Open;
+  end;
+
+end;
+
 procedure TdmOracleSchema.qrySchemasAfterOpen(DataSet: TDataSet);
 begin
   qrySchemaTables.Open;
   qrySchemaViews.Open;
+end;
+
+procedure TdmOracleSchema.SetDiscardedList(
+
+  const Value: TStrings);
+begin
+  FDiscardedList := Value;
 end;
 
 procedure TdmOracleSchema.UniConnection1AfterConnect(Sender: TObject);

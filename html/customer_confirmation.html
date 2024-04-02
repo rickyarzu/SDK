@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conferma Prenotazione </title>
     <script src="https://kit.fontawesome.com/face0a2964.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.januaservers.com/jquery.showmessage/assets/css/showMessage.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
-  <body>
-    
+  <body>    
     
     <div class="modal fade" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog">
@@ -51,8 +52,9 @@
         </div>
         <!-- Fine Contenitore dell'immagine del Logo e Test -->
         
-        <!-- Inizio Input Form -->
-        <form>
+        <!-- Inizio Input Form frmCheckConfirmation -->
+        <form id="frmCheckConfirmation">
+          <!-- Hidden Input che Ritorna il valore della GUID ricevuta  -->
           <input type="hidden" id="guid" value="$$jguid$$">
           <div class="row justify-content-center">
             <div class="col col-md-7 align-self-center">
@@ -64,7 +66,7 @@
               
                 <div class="row justify-content-center mt-2">
                   <div class="col-10 col-md-8 align-self-center">
-                    Assicurazione in periodo di Validità
+                    <div id="myDiv">Assicurazione in periodo di Validità</div>
                   </div>
                   <div class="col col-md-2 align-self-center">
                     <div class="form-check form-switch">
@@ -116,12 +118,12 @@
                 <!-- Bottoni di conferma -->
                 <div class="row justify-content-center mt-4">
                   <div class="col col-md-4 align-self-center">
-                    <button type="submit" class="btn btn-success w-100" >
+                    <button class="btn btn-success w-100" id="btnContract" >
                       Vedi Contratto
                     </button>
                   </div>
                   <div class="col col-md-4 align-self-center">
-                    <button type="submit" class="btn btn-primary w-100">
+                    <button type="submit" class="btn btn-primary w-100" id="btnConfirm">
                       Conferma
                     </button>
                   </div>
@@ -143,6 +145,113 @@
         
       </div>
     </div>
+    
+    
+    <script src="https://cdn.januaservers.com/jquery.showmessage/assets/js/prettify/prettify.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.januaservers.com/jquery.showmessage/assets/js/jquery.showMessage.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      
+      var message1=['Hey! Something bit me!'];
+      jQuery(document).ready(function() {
+        
+        //prettyPrint();
+        jQuery('a[rel="tooltip"]').tooltip();
+        
+        // ClickMe Code Sample
+        jQuery('#clickMe').click(function() {
+          $('body').showMessage({thisMessage: ['Hey! Something bit me!'], zIndex: 1031});
+          return false;
+        });
+        
+        jQuery('#frmCheckConfirmation').on('submit', function() {
+          
+          var rMessage = [],rClass='success';
+          
+          if($('input[name="ckbPickup"]').is(':checked') && $('input[name="ckbDelivery"]').is(':checked') )
+            {
+              // checked
+              rMessage.push('Tutto OK');
+            }
+          else
+            {
+              // unchecked
+              rMessage.push('Attenzione Occorre confermare i requisiti necessari e le date di Ritiro$$Restituzione$$ ');
+              rClass='fail'
+            }
+          
+        
+          jQuery('body').showMessage({thisMessage: rMessage, zIndex: 1031, className: rClass});
+          return false;
+        });
+
+        
+        jQuery('a.sMtooltip').mouseenter(function() {
+          returnMessage = [jQuery(this).attr('title')];
+          $.showMessage({
+            thisMessage: returnMessage,
+            className: 'success',
+            opacity: .95,
+            displayNavigation: false,
+            autoClose: true,
+            delayTime: 3000,
+            zIndex: 1031
+          });
+          return false;
+        }).click(function() {return false;});
+        
+      });
+    </script>
+    
+
+    
+    <script>
+      // Attach a submit handler to the form
+      //var aForm =  $('#frmCheckConfirmation'); 
+  
+
+      //aForm.on("submit", function( event ) {
+        
+        // Stop form from submitting normally
+        //event.preventDefault();
+        
+        
+        // Get some values from elements on the page:
+        /*
+        var $form = $( this ),
+        term = $form.find( "input[name='s']" ).val(),
+        url = $form.attr( "action" );
+        */
+        
+        
+        /*
+        var rMessage = [],rClass='success';
+        
+        if($('input[name="ckbPickup"]').is(':checked') && $('input[name="ckbDelivery"]').is(':checked') )
+          {
+            // checked
+            rMessage.push('Tutto OK');
+          }
+        else
+          {
+            // unchecked
+            rMessage.push('Non ci siamo');
+          }
+        */
+        
+        // Send the data using post
+        // var posting = $.post( url, { s: term } );
+        
+        // Put the results in a div
+        /*
+        posting.done(function( data ) {
+          var content = $( data ).find( "#content" );
+          $( "#result" ).empty().append( content );
+        } );
+          
+      } );
+      */
+
+    </script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

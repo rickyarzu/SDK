@@ -48,10 +48,10 @@
         <Projects Include="JanuaVCLMVVM.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj">
+        <Projects Include="..\..\Samples\TMS\AdvMemoMainDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj">
+        <Projects Include="..\..\Samples\TMS\AdvMemoMultiFileDemo.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="VCL\OracleSwissKnifeXE15.dproj">
@@ -201,22 +201,22 @@
         <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
     </Target>
     <Target Name="AdvMemoMainDemo">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMainDemo.dproj"/>
     </Target>
     <Target Name="AdvMemoMainDemo:Clean">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMainDemo.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AdvMemoMainDemo:Make">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMainDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="AdvMemoMultiFileDemo">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMultiFileDemo.dproj"/>
     </Target>
     <Target Name="AdvMemoMultiFileDemo:Clean">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMultiFileDemo.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AdvMemoMultiFileDemo:Make">
-        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Samples\TMS\AdvMemoMultiFileDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="OracleSwissKnifeXE15">
         <MSBuild Projects="VCL\OracleSwissKnifeXE15.dproj"/>
@@ -286,14 +286,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -322,7 +322,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\TMS\AdvMemoMultiFileDemo.dproj">
             <ProjectGuid>{A13BE805-5D2C-43FB-9682-5ABDD10509A2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -334,7 +334,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\TMS\AdvMemoMainDemo.dproj">
             <ProjectGuid>{170D82F5-3860-4F7C-B931-6F6AC12A5690}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
