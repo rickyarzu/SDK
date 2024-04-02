@@ -165,19 +165,41 @@
         
         jQuery('#frmCheckConfirmation').on('submit', function() {
           
+          var vCount = 0;
+          
           var rMessage = [],rClass='success';
           
-          if($('input[name="ckbPickup"]').is(':checked') && $('input[name="ckbDelivery"]').is(':checked') )
+          var vMessageText = '';
+          
+          if ($('input[name="ckbInspection"]').is(':checked'))  {vCount++} else {vMessageText = 'Occorre confermare che il veicolo sia in regola con la revisione'} 
+          
+          if ($('input[name="ckbPickup"]').is(':checked'))  {vCount++} else {vMessageText = vMessageText + ' Occorre confermare data/ora ritiro veicolo'} 
+          
+          if ($('input[name="ckbDelivery"]').is(':checked'))  {vCount++} else {vMessageText = vMessageText + 'Occorre confermare data/ora restituzione veicolo'} 
+          
+          if(vCount == 3 ) //
             {
               // checked
-              rMessage.push('Tutto OK');
+              rMessage.push('Grazie della Conferma');
+              
+              // Get some values from elements on the page:
+              
+              var $form = $( this ),
+              term = $form.find( "input[name='s']" ).val(),
+              url = $form.attr( "action" );
+              
+              // Send the data using post
+              var posting = $.post( url, { s: term } );
             }
           else
             {
               // unchecked
-              rMessage.push('Attenzione Occorre confermare i requisiti necessari e le date di Ritiro$$Restituzione$$ ');
+              rMessage.push(vMessageText);
               rClass='fail'
             }
+          
+          
+          
           
         
           jQuery('body').showMessage({thisMessage: rMessage, zIndex: 1031, className: rClass});
