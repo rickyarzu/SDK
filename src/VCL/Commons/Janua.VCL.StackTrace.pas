@@ -18,8 +18,13 @@ var
 begin
   LLines := TStringList.Create;
   try
-    JclLastExceptStackListToStrings(LLines, True, True, True, True);
-    LText := LLines.Text;
+    try
+      JclLastExceptStackListToStrings(LLines, True, True, True, True);
+      LText := LLines.Text;
+    except
+      on e: exception do
+        LText := '';
+    end;
     LResult := StrAlloc(Length(LText));
     StrCopy(LResult, PChar(LText));
     Result := LResult;
@@ -44,9 +49,9 @@ begin
   // stack trace provider.
   if JclStartExceptionTracking then
   begin
-    System.SysUtils.Exception.GetExceptionStackInfoProc := GetExceptionStackInfoProc;
-    System.SysUtils.Exception.GetStackInfoStringProc := GetStackInfoStringProc;
-    System.SysUtils.Exception.CleanUpStackInfoProc := CleanUpStackInfoProc;
+    System.SysUtils.exception.GetExceptionStackInfoProc := GetExceptionStackInfoProc;
+    System.SysUtils.exception.GetStackInfoStringProc := GetStackInfoStringProc;
+    System.SysUtils.exception.CleanUpStackInfoProc := CleanUpStackInfoProc;
     JclDebug.JclStackTrackingOptions := [stStack, stRawMode]; // I added this hoping it would help.
   end;
 
@@ -57,9 +62,9 @@ begin
   // Stop Jcl exception tracking and unregister our provider.
   if JclExceptionTrackingActive then
   begin
-    System.SysUtils.Exception.GetExceptionStackInfoProc := nil;
-    System.SysUtils.Exception.GetStackInfoStringProc := nil;
-    System.SysUtils.Exception.CleanUpStackInfoProc := nil;
+    System.SysUtils.exception.GetExceptionStackInfoProc := nil;
+    System.SysUtils.exception.GetStackInfoStringProc := nil;
+    System.SysUtils.exception.CleanUpStackInfoProc := nil;
     JclStopExceptionTracking;
   end;
 end;

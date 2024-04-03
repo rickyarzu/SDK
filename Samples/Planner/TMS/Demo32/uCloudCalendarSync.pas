@@ -26,8 +26,6 @@ type
     AdvGCalendar1: TAdvGCalendar;
     PopupMenu1: TPopupMenu;
     Createnewitem1: TMenuItem;
-    PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
-    PlannerGCalendarExchange1: TPlannerGCalendarExchange;
     procedure Button1Click(Sender: TObject);
     procedure AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
     procedure FormCreate(Sender: TObject);

@@ -12,9 +12,7 @@ object Form4: TForm4
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 504
@@ -140,7 +138,7 @@ object Form4: TForm4
     Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -159,7 +157,7 @@ object Form4: TForm4
     Footer.Font.Style = []
     GridPopup = PopupMenu1
     GridLeftCol = 1
-    GridLineColor = 16504504
+    GridLineColor = clSilver
     GridTopRow = 0
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
@@ -231,7 +229,7 @@ object Form4: TForm4
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.5.5.3'
+    Version = '3.6.1.3'
     TMSStyle = 0
   end
   object Button1: TButton
@@ -320,19 +318,5 @@ object Form4: TForm4
       Caption = 'Create new item'
       OnClick = Createnewitem1Click
     end
-  end
-  object PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange
-    Planner = Planner1
-    AdvLiveCalendar = AdvLiveCalendar1
-    EmptyText = 'Untitled'
-    Left = 800
-    Top = 328
-  end
-  object PlannerGCalendarExchange1: TPlannerGCalendarExchange
-    Planner = Planner1
-    AdvGCalendar = AdvGCalendar1
-    EmptyText = 'Untitled'
-    Left = 800
-    Top = 496
   end
 end
