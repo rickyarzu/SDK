@@ -90,7 +90,7 @@ type
     dsMviewFields: TDataSource;
     AdvSQLMemoStyler1: TAdvSQLMemoStyler;
     grdMViewColumns: TCRDBGrid;
-    dsMViewConsFields: TDataSource;
+    dsMViewIndexes: TDataSource;
     grdMViewConstraints: TCRDBGrid;
     dsMViewConstraints: TDataSource;
     btnTableListDDL: TButton;
@@ -104,6 +104,8 @@ type
     CRDBGrid3: TCRDBGrid;
     DBAdvMemo1: TDBAdvMemo;
     dsMviewConsDDL: TDataSource;
+    memIndexesDDL: TDBAdvMemo;
+    dsIndexesDDL: TDataSource;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);

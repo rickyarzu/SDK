@@ -274,9 +274,6 @@ Coordinates=476,1196,132,36
 [dmOracleSchema.qryMviewConstraints]
 Coordinates=261,10,240,498
 
-[dsMViewConsFields]
-Coordinates=610,1177,131,36
-
 [dmOracleSchema.qryMViewConsFields]
 Coordinates=10,10,241,564
 
@@ -289,4 +286,7 @@ Visible=True
 
 [grdMViewColumns]
 Coordinates=1590,742,82,36
+
+[dsMViewIndexes]
+Coordinates=610,1177,131,36
 
