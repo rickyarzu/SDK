@@ -160,8 +160,8 @@ begin
   dmOracleSchema.UniConnection1.Connect;
   if dmOracleSchema.UniConnection1.Connected then
   begin
-     lkpSchema.Value := dmOracleSchema.UniConnection1.Username;
-     {lkpSchema.Text := dmOracleSchema.UniConnection1.Username;}
+    lkpSchema.Value := dmOracleSchema.UniConnection1.Username;
+    { lkpSchema.Text := dmOracleSchema.UniConnection1.Username; }
   end;
 end;
 
@@ -178,7 +178,8 @@ end;
 procedure TfrmOracleSwissMilitaryMain.btnTableListDDLClick(Sender: TObject);
 begin
   // lstMViews
-  memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDLFromList(memVMList.Lines, edlAddRow.Text);
+  memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDLFromList(memVMList.Lines, edlAddRow.Text,
+    edSuffix.Text);
 
 end;
 
@@ -204,7 +205,7 @@ begin
   FControlFileConf.EnclosedBy := edEnclosedBy.Text;
   FControlFileConf.NlsNumericChar := edNlsNumericChar.Text;
   FControlFileConf.DateTimeFormat := edDateTimeConversion.Text;
-  //edtTimeStamp
+  // edtTimeStamp
   FControlFileConf.TimeStampFormat := edtTimeStamp.Text;
   FControlFileConf.UseGenerateNumericFormatting := ckbNumerics.Checked;
 end;

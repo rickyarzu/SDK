@@ -2,9 +2,14 @@ unit Janua.ViewModels.Intf;
 
 interface
 
-uses System.SysUtils, System.Classes, Spring.Collections, Janua.Core.Classes.Intf, Janua.Orm.Intf, Data.DB,
-  Janua.Controls.Forms.Intf, JOrm.System.Settings.Intf, Janua.Core.DB.Intf, Janua.Core.Types,
-  Janua.Rest.Types, Janua.Core.DB.Types;
+uses
+  // RTL
+  System.SysUtils, System.Classes, Spring.Collections, Data.DB,
+  // Janua Types
+  Janua.Core.Types, Janua.Rest.Types, Janua.Core.DB.Types,
+  // Janua Interfaces
+  Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Forms.Intf, JOrm.System.Settings.Intf,
+  Janua.Core.DB.Intf;
 
 type
   /// <summary> Is the state of the model itself (according to the contained Dataset, Record or other features).</summary>
@@ -49,6 +54,31 @@ type
     property Params: TJanuaVariantArray read GetParams write SetParams;
     function SearchByGUID(const aGuid: TGUID): boolean;
     function SearchText(const aText: string; const aLimit: Word = 0; const aOffset: Word = 0): integer;
+  end;
+
+  IJanuaSingleRecordModel = interface(IJanuaBaseModel)
+    ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
+    // ---------- Sub RecordSet Management --------------------------------------------------------------
+    function GetDetailModels: IList<IJanuaRecordSetModel>;
+    property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
+    procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
+    function ModelCount: integer;
+    procedure GenerateSubModels;
+    procedure RemoveSubModels;
+    function GetCurrentRecord: IJanuaRecord;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+    // Search by GUID should be performed against
+    function GetjdsRecordDataset: IJanuaDBDataset;
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsRecordDataset: IJanuaDBDataset read GetjdsRecordDataset;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+    function GetjdsDetail: IJanuaDBDataset;
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsDetail: IJanuaDBDataset read GetjdsDetail;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
+    function GetDataSource: TDataSource;
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property DataSource: TDataSource read GetDataSource;
   end;
 
   IJanuaClientModel = interface(IJanuaBaseModel)

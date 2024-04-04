@@ -46,6 +46,11 @@ type
     property SelectedSchema: Integer read GetSelectedSchema write SetSelectedSchema;
   end;
 
+type
+  TJanuaSingleRecordTemplate = class(TJanuaStorage, IJanuaSingleRecordModel, IJanuaBaseModel, IJanuaStorage)
+
+  end;
+
   TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
   public
     constructor Create; override;
@@ -2611,7 +2616,7 @@ end;
 function TJanuaRESTModelTemplate.GetRecordClientFullUrl(const aGuid: TGUID): string;
 begin
   FRESTRecordClient.GUID := aGuid;
-  REsult := FRESTRecordClient.GetFullUrl;
+  Result := FRESTRecordClient.GetFullUrl;
 end;
 
 function TJanuaRESTModelTemplate.GetRestAPIEndpoint: string;

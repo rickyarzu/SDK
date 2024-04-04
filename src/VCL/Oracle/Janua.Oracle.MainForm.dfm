@@ -1132,7 +1132,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Height = 552
         Align = alLeft
         TabOrder = 3
-        ExplicitLeft = 478
         object memVMList: TMemo
           Left = 1
           Top = 1
@@ -1140,10 +1139,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Height = 461
           Align = alClient
           TabOrder = 0
-          ExplicitLeft = 40
-          ExplicitTop = 56
-          ExplicitWidth = 185
-          ExplicitHeight = 89
         end
         object memVMDiscardedList: TMemo
           Left = 1
@@ -1152,7 +1147,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Height = 89
           Align = alBottom
           TabOrder = 1
-          ExplicitLeft = 5
         end
       end
       object Panel8: TPanel
@@ -1163,7 +1157,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Align = alClient
         Caption = 'Panel8'
         TabOrder = 4
-        ExplicitLeft = 663
         object memDDLMViews: TAdvMemo
           Left = 1
           Top = 1
@@ -1225,7 +1218,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
             25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-          BorderColor = 10724259
           BorderStyle = bsSingle
           ClipboardFormats = [cfText]
           CodeFolding.Enabled = False
@@ -1238,8 +1230,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Gutter.Font.Height = -13
           Gutter.Font.Name = 'Courier New'
           Gutter.Font.Style = []
-          Gutter.BorderColor = 10724259
-          Gutter.GutterColor = clWhite
           Gutter.GutterColorTo = clBtnFace
           Gutter.LineNumberTextColor = clWindowText
           Font.Charset = DEFAULT_CHARSET
@@ -1284,9 +1274,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           UseStyler = True
           Version = '3.9.0.1'
           WordWrap = wwNone
-          ExplicitLeft = 5
-          ExplicitTop = -5
-          ExplicitHeight = 359
         end
         object CRDBGrid3: TCRDBGrid
           Left = 1
@@ -1430,6 +1417,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           AutoCompletion.StartToken = '(.'
           AutoCorrect.Active = True
           AutoHintParameterPosition = hpBelowCode
+          BkColor = clWindow
           BookmarkGlyph.Data = {
             36050000424D3605000000000000360400002800000010000000100000000100
             0800000000000001000000000000000000000001000000000000000000000000
@@ -1473,7 +1461,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
             25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-          BorderColor = 10724259
           BorderStyle = bsSingle
           ClipboardFormats = [cfText]
           CodeFolding.Enabled = False
@@ -1486,18 +1473,19 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Gutter.Font.Height = -13
           Gutter.Font.Name = 'Courier New'
           Gutter.Font.Style = []
-          Gutter.BorderColor = 10724259
-          Gutter.GutterColor = clWhite
-          Gutter.LineNumberTextColor = 3881787
+          Gutter.GutterColorTo = clBtnFace
+          Gutter.LineNumberTextColor = clWindowText
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'COURIER NEW'
           Font.Style = []
           HiddenCaret = False
+          Lines.Strings = (
+            '')
           MarkerList.UseDefaultMarkerImageIndex = False
           MarkerList.DefaultMarkerImageIndex = -1
-          MarkerList.ImageTransparentColor = -1
+          MarkerList.ImageTransparentColor = -16776961
           OleDropTarget = []
           PrintOptions.MarginLeft = 0
           PrintOptions.MarginRight = 0
@@ -1508,8 +1496,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           ReadOnly = False
           RightMarginColor = 14869218
           ScrollHint = False
-          SelColor = clWhite
-          SelBkColor = clNavy
+          SelColor = clHighlightText
+          SelBkColor = clHighlight
           ShowRightMargin = True
           SmartTabs = False
           SyntaxStyles = AdvSQLMemoStyler
@@ -1532,7 +1520,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           WordWrap = wwNone
           DataField = 'METADATA'
           DataSource = dsMviewConsDDL
-          ExplicitLeft = 5
         end
         object memIndexesDDL: TDBAdvMemo
           Left = 1
@@ -1551,6 +1538,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           AutoCompletion.StartToken = '(.'
           AutoCorrect.Active = True
           AutoHintParameterPosition = hpBelowCode
+          BkColor = clWindow
           BookmarkGlyph.Data = {
             36050000424D3605000000000000360400002800000010000000100000000100
             0800000000000001000000000000000000000001000000000000000000000000
@@ -1594,7 +1582,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
             25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-          BorderColor = 10724259
           BorderStyle = bsSingle
           ClipboardFormats = [cfText]
           CodeFolding.Enabled = False
@@ -1607,9 +1594,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Gutter.Font.Height = -13
           Gutter.Font.Name = 'Courier New'
           Gutter.Font.Style = []
-          Gutter.BorderColor = 10724259
-          Gutter.GutterColor = clWhite
-          Gutter.LineNumberTextColor = 3881787
+          Gutter.GutterColorTo = clBtnFace
+          Gutter.LineNumberTextColor = clWindowText
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
@@ -1631,8 +1617,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           ReadOnly = False
           RightMarginColor = 14869218
           ScrollHint = False
-          SelColor = clWhite
-          SelBkColor = clNavy
+          SelColor = clHighlightText
+          SelBkColor = clHighlight
           ShowRightMargin = True
           SmartTabs = False
           SyntaxStyles = AdvSQLMemoStyler
@@ -1655,8 +1641,6 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           WordWrap = wwNone
           DataField = 'METADATA'
           DataSource = dsIndexesDDL
-          ExplicitLeft = 5
-          ExplicitTop = 448
         end
       end
     end

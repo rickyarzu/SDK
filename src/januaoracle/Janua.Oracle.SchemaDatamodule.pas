@@ -223,13 +223,15 @@ begin
 end;
 
 function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string; const aSuffix: string): string;
-var
-  aList: TStringList;
 begin
+
+  var
+  aTable := qryMaterializedViewOBJECT_NAME.AsString;
+
+  var
   aList := TStringList.Create;
   try
-    aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' +
-      qryMaterializedViewOBJECT_NAME.AsString + aSuffix);
+    aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' + aTable + aSuffix);
     aList.Add('(');
 
     qryMviewFields.First;
@@ -251,7 +253,9 @@ begin
       var
       tmpList := TStringList.Create;
       try
-        tmpList.Text := qryConstraintDDLMETADATA.AsString;
+        tmpList.Text := StringReplace(qryConstraintDDLMETADATA.AsString, aTable, aTable + aSuffix,
+          [rfIgnoreCase, rfReplaceAll]);
+
         if tmpList.Count > 0 then
         begin
           aList.Add(tmpList[1] + ';');
@@ -273,7 +277,8 @@ begin
           var
           tmp2List := TStringList.Create;
           try
-            tmp2List.Text := qryIndexDDLMETADATA.AsString;
+            tmp2List.Text := StringReplace(qryIndexDDLMETADATA.AsString, aTable, aTable + aSuffix,
+              [rfIgnoreCase, rfReplaceAll]);
             if tmp2List.Count > 0 then
             begin
               aList.Add(tmp2List[1] + ';');
