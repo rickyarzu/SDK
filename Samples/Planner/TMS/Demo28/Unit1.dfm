@@ -10,9 +10,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object DBPlanner1: TDBPlanner
     Left = 16
@@ -35,6 +33,8 @@ object Form1: TForm1
     Caption.Font.Height = -13
     Caption.Font.Name = 'Verdana'
     Caption.Font.Style = []
+    Caption.Background = 16575452
+    Caption.BackgroundTo = 16571329
     DayNames.Strings = (
       'Sun'
       'Mon'
@@ -105,8 +105,11 @@ object Form1: TForm1
     Display.ActiveEnd = 40
     Display.CurrentPosFrom = 38727
     Display.CurrentPosTo = 38727
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
+    Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -131,7 +134,10 @@ object Form1: TForm1
     Footer.Font.Name = 'MS Sans Serif'
     Footer.Font.Style = []
     GridLeftCol = 1
+    GridLineColor = clSilver
     GridTopRow = 11
+    Header.ActiveColor = 16575452
+    Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
       ''
       '12/30/1899'
@@ -141,6 +147,8 @@ object Form1: TForm1
       '01/03/1900'
       '01/04/1900'
       '01/05/1900')
+    Header.Color = 16645114
+    Header.ColorTo = 16643051
     Header.CustomGroups = <>
     Header.Font.Charset = DEFAULT_CHARSET
     Header.Font.Color = clWindowText
@@ -170,6 +178,10 @@ object Form1: TForm1
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2006
     Mode.Day = 11
+    Sidebar.ActiveColor = 16575452
+    Sidebar.ActiveColorTo = 16571329
+    Sidebar.Background = 16645114
+    Sidebar.BackgroundTo = 16643051
     Sidebar.Font.Charset = DEFAULT_CHARSET
     Sidebar.Font.Color = clWindowText
     Sidebar.Font.Height = -11
@@ -198,7 +210,7 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.4.5.0'
+    Version = '3.4.6.0'
     ItemSource = DBDaySource1
     TMSStyle = 0
   end
@@ -207,7 +219,7 @@ object Form1: TForm1
     Top = 383
     Width = 197
     Height = 160
-    Date = 42912.851863761570000000
+    Date = 42912.000000000000000000
     TabOrder = 1
     OnClick = MonthCalendar1Click
   end
@@ -228,8 +240,8 @@ object Form1: TForm1
     AutoHeaderUpdate = True
     DateFormat = 'mm/dd/yyyy'
     Mode = dmMultiDay
-    Left = 224
-    Top = 384
+    Left = 392
+    Top = 464
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
@@ -237,8 +249,8 @@ object Form1: TForm1
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM Schedules')
-    Left = 312
-    Top = 384
+    Left = 464
+    Top = 408
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1

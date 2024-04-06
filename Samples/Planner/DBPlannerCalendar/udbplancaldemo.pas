@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, DBTables, ExtCtrls, PlannerCal, DBPlannerCal, Grids, DBGrids,
+  Dialogs, DB, ExtCtrls, PlannerCal, DBPlannerCal, Grids, DBGrids,
   ADODB;
 
 type
