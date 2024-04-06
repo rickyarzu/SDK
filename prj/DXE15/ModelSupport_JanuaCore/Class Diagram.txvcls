@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="0u2coqwdebh2c77wo_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Class Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,20,245,142" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.GetjdsRecordDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.jdsRecordDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.jdsDetail" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,40,251,397" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetInternalRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.InternalRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.AddNewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.AppendRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.PostRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.UndoChanges()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.DeleteRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.BeginScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.EndScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.LoadRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.RefreshRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetMainSearchParams()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.MainSearchParams" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SearchByParams(Janua.Orm.Intf.IJanuaParams)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetjdsDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.jdsDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetParams()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SetParams(TArray`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.Params" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SearchByGUID(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SearchText(System.string,System.Word,System.Word)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,240,264,248" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetjdsDetail(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.jdsDetail" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetDetailDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetDetailDatasets(IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.DetailDatasets" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetLazyLoading()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetLazyLoading(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.LazyLoading" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.StartSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.RefreshDetails()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.RestGetDataset(System.string,System.string)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel:Janua.ViewModels.Intf.IJanuaModel">
+        <property name="sourceAnchor" value="162,240" />
+        <property name="targetAnchor" value="162,162" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="380,20,255,353" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.SetLastErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetRestAPIEndpoint()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetServerUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.SetRestAPIEndpoint(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.SetServerUrl(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetBaseUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetPort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.SetPort(System.Word)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.LastErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.ServerUrl" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.RestAPIEndpoint" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.ServerPort" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetDBClientFullUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetRecordClientFullUrl(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetClientFullUrl()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.SetRestFormat(Janua.Core.DB.Types.TRestFormat)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.GetRestFormat()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel.RestFormat" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRESTModel:Janua.ViewModels.Intf.IJanuaBaseModel">
+        <property name="sourceAnchor" value="635,206" />
+        <property name="targetAnchor" value="740,206" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,520,277,141" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestGetDataset(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestGetRecord(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestPostRecord(ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestUpdateRecord(ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestDelRecord(System.string)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel:Janua.ViewModels.Intf.IJanuaBaseModel">
+        <property name="sourceAnchor" value="865,520" />
+        <property name="targetAnchor" value="865,437" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="380,400,299,278" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GetDetailModels()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.DetailModels" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.AddDetailModel(Janua.ViewModels.Intf.IJanuaRecordSetModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.ModelCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GenerateSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.RemoveSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GetjdsRecordDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.jdsRecordDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.jdsDetail" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.GetDataSource()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel.DataSource" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordModel:Janua.ViewModels.Intf.IJanuaBaseModel">
+        <property name="sourceAnchor" value="679,418" />
+        <property name="targetAnchor" value="740,418" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

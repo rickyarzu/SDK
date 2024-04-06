@@ -223,9 +223,9 @@ begin
   lRecord := TJanuaOrmFactory.CreateRecord('tmp', Context.Request.Body);
   if Model.SearchByGUID(lRecord.GUID) then
   begin
-
+    Model.InternalRecord.Assign(lRecord);
+    Model.PostRecord
   end;
-
 end;
 
 { TCustomMVVMSrvController }

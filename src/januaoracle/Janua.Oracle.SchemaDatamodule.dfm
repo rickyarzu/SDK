@@ -805,4 +805,277 @@ object dmOracleSchema: TdmOracleSchema
       BlobType = ftOraClob
     end
   end
+  object qryMviewIndexes: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT '
+      
+        'dbms_metadata.get_ddl('#39'INDEX'#39','#39'IDX_TITOLI_01'#39','#39'GTIT'#39') AS INDEX_D' +
+        'DL, '
+      'I.*'
+      'FROM all_indexes I '
+      'WHERE owner = :OWNER'
+      'AND table_name = :OBJECT_NAME'
+      'AND I.INDEX_NAME NOT LIKE '#39'%PK%'#39';'
+      '')
+    MasterSource = dsMViews
+    AfterScroll = qryMviewIndexesAfterScroll
+    Left = 488
+    Top = 280
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'OWNER'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OBJECT_NAME'
+        Value = nil
+      end>
+    object qryMviewIndexesINDEX_DDL: TWideMemoField
+      FieldName = 'INDEX_DDL'
+      ReadOnly = True
+      BlobType = ftOraClob
+    end
+    object qryMviewIndexesOWNER: TWideStringField
+      FieldName = 'OWNER'
+      Required = True
+      Size = 30
+    end
+    object qryMviewIndexesINDEX_NAME: TWideStringField
+      FieldName = 'INDEX_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMviewIndexesINDEX_TYPE: TWideStringField
+      FieldName = 'INDEX_TYPE'
+      Size = 27
+    end
+    object qryMviewIndexesTABLE_OWNER: TWideStringField
+      FieldName = 'TABLE_OWNER'
+      Required = True
+      Size = 30
+    end
+    object qryMviewIndexesTABLE_NAME: TWideStringField
+      FieldName = 'TABLE_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryMviewIndexesTABLE_TYPE: TWideStringField
+      FieldName = 'TABLE_TYPE'
+      FixedChar = True
+      Size = 5
+    end
+    object qryMviewIndexesUNIQUENESS: TWideStringField
+      FieldName = 'UNIQUENESS'
+      Size = 9
+    end
+    object qryMviewIndexesCOMPRESSION: TWideStringField
+      FieldName = 'COMPRESSION'
+      Size = 8
+    end
+    object qryMviewIndexesPREFIX_LENGTH: TFloatField
+      FieldName = 'PREFIX_LENGTH'
+    end
+    object qryMviewIndexesTABLESPACE_NAME: TWideStringField
+      FieldName = 'TABLESPACE_NAME'
+      Size = 30
+    end
+    object qryMviewIndexesINI_TRANS: TFloatField
+      FieldName = 'INI_TRANS'
+    end
+    object qryMviewIndexesMAX_TRANS: TFloatField
+      FieldName = 'MAX_TRANS'
+    end
+    object qryMviewIndexesINITIAL_EXTENT: TFloatField
+      FieldName = 'INITIAL_EXTENT'
+    end
+    object qryMviewIndexesNEXT_EXTENT: TFloatField
+      FieldName = 'NEXT_EXTENT'
+    end
+    object qryMviewIndexesMIN_EXTENTS: TFloatField
+      FieldName = 'MIN_EXTENTS'
+    end
+    object qryMviewIndexesMAX_EXTENTS: TFloatField
+      FieldName = 'MAX_EXTENTS'
+    end
+    object qryMviewIndexesPCT_INCREASE: TFloatField
+      FieldName = 'PCT_INCREASE'
+    end
+    object qryMviewIndexesPCT_THRESHOLD: TFloatField
+      FieldName = 'PCT_THRESHOLD'
+    end
+    object qryMviewIndexesINCLUDE_COLUMN: TFloatField
+      FieldName = 'INCLUDE_COLUMN'
+    end
+    object qryMviewIndexesFREELISTS: TFloatField
+      FieldName = 'FREELISTS'
+    end
+    object qryMviewIndexesFREELIST_GROUPS: TFloatField
+      FieldName = 'FREELIST_GROUPS'
+    end
+    object qryMviewIndexesPCT_FREE: TFloatField
+      FieldName = 'PCT_FREE'
+    end
+    object qryMviewIndexesLOGGING: TWideStringField
+      FieldName = 'LOGGING'
+      Size = 3
+    end
+    object qryMviewIndexesBLEVEL: TFloatField
+      FieldName = 'BLEVEL'
+    end
+    object qryMviewIndexesLEAF_BLOCKS: TFloatField
+      FieldName = 'LEAF_BLOCKS'
+    end
+    object qryMviewIndexesDISTINCT_KEYS: TFloatField
+      FieldName = 'DISTINCT_KEYS'
+    end
+    object qryMviewIndexesAVG_LEAF_BLOCKS_PER_KEY: TFloatField
+      FieldName = 'AVG_LEAF_BLOCKS_PER_KEY'
+    end
+    object qryMviewIndexesAVG_DATA_BLOCKS_PER_KEY: TFloatField
+      FieldName = 'AVG_DATA_BLOCKS_PER_KEY'
+    end
+    object qryMviewIndexesCLUSTERING_FACTOR: TFloatField
+      FieldName = 'CLUSTERING_FACTOR'
+    end
+    object qryMviewIndexesSTATUS: TWideStringField
+      FieldName = 'STATUS'
+      Size = 8
+    end
+    object qryMviewIndexesNUM_ROWS: TFloatField
+      FieldName = 'NUM_ROWS'
+    end
+    object qryMviewIndexesSAMPLE_SIZE: TFloatField
+      FieldName = 'SAMPLE_SIZE'
+    end
+    object qryMviewIndexesLAST_ANALYZED: TDateTimeField
+      FieldName = 'LAST_ANALYZED'
+    end
+    object qryMviewIndexesDEGREE: TWideStringField
+      FieldName = 'DEGREE'
+      Size = 40
+    end
+    object qryMviewIndexesINSTANCES: TWideStringField
+      FieldName = 'INSTANCES'
+      Size = 40
+    end
+    object qryMviewIndexesPARTITIONED: TWideStringField
+      FieldName = 'PARTITIONED'
+      Size = 3
+    end
+    object qryMviewIndexesTEMPORARY: TWideStringField
+      FieldName = 'TEMPORARY'
+      Size = 1
+    end
+    object qryMviewIndexesGENERATED: TWideStringField
+      FieldName = 'GENERATED'
+      Size = 1
+    end
+    object qryMviewIndexesSECONDARY: TWideStringField
+      FieldName = 'SECONDARY'
+      Size = 1
+    end
+    object qryMviewIndexesBUFFER_POOL: TWideStringField
+      FieldName = 'BUFFER_POOL'
+      Size = 7
+    end
+    object qryMviewIndexesFLASH_CACHE: TWideStringField
+      FieldName = 'FLASH_CACHE'
+      Size = 7
+    end
+    object qryMviewIndexesCELL_FLASH_CACHE: TWideStringField
+      FieldName = 'CELL_FLASH_CACHE'
+      Size = 7
+    end
+    object qryMviewIndexesUSER_STATS: TWideStringField
+      FieldName = 'USER_STATS'
+      Size = 3
+    end
+    object qryMviewIndexesDURATION: TWideStringField
+      FieldName = 'DURATION'
+      Size = 15
+    end
+    object qryMviewIndexesPCT_DIRECT_ACCESS: TFloatField
+      FieldName = 'PCT_DIRECT_ACCESS'
+    end
+    object qryMviewIndexesITYP_OWNER: TWideStringField
+      FieldName = 'ITYP_OWNER'
+      Size = 30
+    end
+    object qryMviewIndexesITYP_NAME: TWideStringField
+      FieldName = 'ITYP_NAME'
+      Size = 30
+    end
+    object qryMviewIndexesPARAMETERS: TWideStringField
+      FieldName = 'PARAMETERS'
+      Size = 1000
+    end
+    object qryMviewIndexesGLOBAL_STATS: TWideStringField
+      FieldName = 'GLOBAL_STATS'
+      Size = 3
+    end
+    object qryMviewIndexesDOMIDX_STATUS: TWideStringField
+      FieldName = 'DOMIDX_STATUS'
+      Size = 12
+    end
+    object qryMviewIndexesDOMIDX_OPSTATUS: TWideStringField
+      FieldName = 'DOMIDX_OPSTATUS'
+      Size = 6
+    end
+    object qryMviewIndexesFUNCIDX_STATUS: TWideStringField
+      FieldName = 'FUNCIDX_STATUS'
+      Size = 8
+    end
+    object qryMviewIndexesJOIN_INDEX: TWideStringField
+      FieldName = 'JOIN_INDEX'
+      Size = 3
+    end
+    object qryMviewIndexesIOT_REDUNDANT_PKEY_ELIM: TWideStringField
+      FieldName = 'IOT_REDUNDANT_PKEY_ELIM'
+      Size = 3
+    end
+    object qryMviewIndexesDROPPED: TWideStringField
+      FieldName = 'DROPPED'
+      Size = 3
+    end
+    object qryMviewIndexesVISIBILITY: TWideStringField
+      FieldName = 'VISIBILITY'
+      Size = 9
+    end
+    object qryMviewIndexesDOMIDX_MANAGEMENT: TWideStringField
+      FieldName = 'DOMIDX_MANAGEMENT'
+      Size = 14
+    end
+    object qryMviewIndexesSEGMENT_CREATED: TWideStringField
+      FieldName = 'SEGMENT_CREATED'
+      Size = 3
+    end
+  end
+  object qryIndexDDL: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT DBMS_METADATA.get_ddl '
+      '('#39'INDEX'#39', :INDEX_NAME, :OWNER) AS METADATA FROM DUAL')
+    AfterOpen = qryConstraintDDLAfterOpen
+    Left = 488
+    Top = 352
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'INDEX_NAME'
+        Value = Null
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OWNER'
+        Value = Null
+      end>
+    object qryIndexDDLMETADATA: TWideMemoField
+      FieldName = 'METADATA'
+      ReadOnly = True
+      BlobType = ftOraClob
+    end
+  end
 end

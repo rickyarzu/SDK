@@ -49,21 +49,6 @@ type
     qryViewFieldsCOLUMN_DDL: TWideStringField;
     qryMaterializedView: TUniQuery;
     qryMviewFields: TUniQuery;
-    qryMaterializedViewOWNER: TWideStringField;
-    qryMaterializedViewOBJECT_NAME: TWideStringField;
-    qryMaterializedViewSUBOBJECT_NAME: TWideStringField;
-    qryMaterializedViewOBJECT_ID: TFloatField;
-    qryMaterializedViewDATA_OBJECT_ID: TFloatField;
-    qryMaterializedViewOBJECT_TYPE: TWideStringField;
-    qryMaterializedViewCREATED: TDateTimeField;
-    qryMaterializedViewLAST_DDL_TIME: TDateTimeField;
-    qryMaterializedViewTIMESTAMP: TWideStringField;
-    qryMaterializedViewSTATUS: TWideStringField;
-    qryMaterializedViewTEMPORARY: TWideStringField;
-    qryMaterializedViewGENERATED: TWideStringField;
-    qryMaterializedViewSECONDARY: TWideStringField;
-    qryMaterializedViewNAMESPACE: TFloatField;
-    qryMaterializedViewEDITION_NAME: TWideStringField;
     dsMViews: TUniDataSource;
     qryMviewFieldsCOLUMN_ID: TFloatField;
     qryMviewFieldsSCHEMA_NAME: TWideStringField;
@@ -122,6 +107,83 @@ type
     qryMViewConsFieldsVIEW_RELATED: TWideStringField;
     qryConstraintDDL: TUniQuery;
     qryConstraintDDLMETADATA: TWideMemoField;
+    qryMviewIndexes: TUniQuery;
+    qryMaterializedViewOWNER: TWideStringField;
+    qryMaterializedViewOBJECT_NAME: TWideStringField;
+    qryMaterializedViewSUBOBJECT_NAME: TWideStringField;
+    qryMaterializedViewOBJECT_ID: TFloatField;
+    qryMaterializedViewDATA_OBJECT_ID: TFloatField;
+    qryMaterializedViewOBJECT_TYPE: TWideStringField;
+    qryMaterializedViewCREATED: TDateTimeField;
+    qryMaterializedViewLAST_DDL_TIME: TDateTimeField;
+    qryMaterializedViewTIMESTAMP: TWideStringField;
+    qryMaterializedViewSTATUS: TWideStringField;
+    qryMaterializedViewTEMPORARY: TWideStringField;
+    qryMaterializedViewGENERATED: TWideStringField;
+    qryMaterializedViewSECONDARY: TWideStringField;
+    qryMaterializedViewNAMESPACE: TFloatField;
+    qryMaterializedViewEDITION_NAME: TWideStringField;
+    qryMviewIndexesINDEX_DDL: TWideMemoField;
+    qryMviewIndexesOWNER: TWideStringField;
+    qryMviewIndexesINDEX_NAME: TWideStringField;
+    qryMviewIndexesINDEX_TYPE: TWideStringField;
+    qryMviewIndexesTABLE_OWNER: TWideStringField;
+    qryMviewIndexesTABLE_NAME: TWideStringField;
+    qryMviewIndexesTABLE_TYPE: TWideStringField;
+    qryMviewIndexesUNIQUENESS: TWideStringField;
+    qryMviewIndexesCOMPRESSION: TWideStringField;
+    qryMviewIndexesPREFIX_LENGTH: TFloatField;
+    qryMviewIndexesTABLESPACE_NAME: TWideStringField;
+    qryMviewIndexesINI_TRANS: TFloatField;
+    qryMviewIndexesMAX_TRANS: TFloatField;
+    qryMviewIndexesINITIAL_EXTENT: TFloatField;
+    qryMviewIndexesNEXT_EXTENT: TFloatField;
+    qryMviewIndexesMIN_EXTENTS: TFloatField;
+    qryMviewIndexesMAX_EXTENTS: TFloatField;
+    qryMviewIndexesPCT_INCREASE: TFloatField;
+    qryMviewIndexesPCT_THRESHOLD: TFloatField;
+    qryMviewIndexesINCLUDE_COLUMN: TFloatField;
+    qryMviewIndexesFREELISTS: TFloatField;
+    qryMviewIndexesFREELIST_GROUPS: TFloatField;
+    qryMviewIndexesPCT_FREE: TFloatField;
+    qryMviewIndexesLOGGING: TWideStringField;
+    qryMviewIndexesBLEVEL: TFloatField;
+    qryMviewIndexesLEAF_BLOCKS: TFloatField;
+    qryMviewIndexesDISTINCT_KEYS: TFloatField;
+    qryMviewIndexesAVG_LEAF_BLOCKS_PER_KEY: TFloatField;
+    qryMviewIndexesAVG_DATA_BLOCKS_PER_KEY: TFloatField;
+    qryMviewIndexesCLUSTERING_FACTOR: TFloatField;
+    qryMviewIndexesSTATUS: TWideStringField;
+    qryMviewIndexesNUM_ROWS: TFloatField;
+    qryMviewIndexesSAMPLE_SIZE: TFloatField;
+    qryMviewIndexesLAST_ANALYZED: TDateTimeField;
+    qryMviewIndexesDEGREE: TWideStringField;
+    qryMviewIndexesINSTANCES: TWideStringField;
+    qryMviewIndexesPARTITIONED: TWideStringField;
+    qryMviewIndexesTEMPORARY: TWideStringField;
+    qryMviewIndexesGENERATED: TWideStringField;
+    qryMviewIndexesSECONDARY: TWideStringField;
+    qryMviewIndexesBUFFER_POOL: TWideStringField;
+    qryMviewIndexesFLASH_CACHE: TWideStringField;
+    qryMviewIndexesCELL_FLASH_CACHE: TWideStringField;
+    qryMviewIndexesUSER_STATS: TWideStringField;
+    qryMviewIndexesDURATION: TWideStringField;
+    qryMviewIndexesPCT_DIRECT_ACCESS: TFloatField;
+    qryMviewIndexesITYP_OWNER: TWideStringField;
+    qryMviewIndexesITYP_NAME: TWideStringField;
+    qryMviewIndexesPARAMETERS: TWideStringField;
+    qryMviewIndexesGLOBAL_STATS: TWideStringField;
+    qryMviewIndexesDOMIDX_STATUS: TWideStringField;
+    qryMviewIndexesDOMIDX_OPSTATUS: TWideStringField;
+    qryMviewIndexesFUNCIDX_STATUS: TWideStringField;
+    qryMviewIndexesJOIN_INDEX: TWideStringField;
+    qryMviewIndexesIOT_REDUNDANT_PKEY_ELIM: TWideStringField;
+    qryMviewIndexesDROPPED: TWideStringField;
+    qryMviewIndexesVISIBILITY: TWideStringField;
+    qryMviewIndexesDOMIDX_MANAGEMENT: TWideStringField;
+    qryMviewIndexesSEGMENT_CREATED: TWideStringField;
+    qryIndexDDL: TUniQuery;
+    qryIndexDDLMETADATA: TWideMemoField;
     procedure UniConnection1AfterConnect(Sender: TObject);
     procedure qrySchemasAfterOpen(DataSet: TDataSet);
     procedure qryMaterializedViewAfterOpen(DataSet: TDataSet);
@@ -129,6 +191,7 @@ type
     procedure DataModuleDestroy(Sender: TObject);
     procedure qryConstraintDDLAfterOpen(DataSet: TDataSet);
     procedure qryMviewConstraintsAfterScroll(DataSet: TDataSet);
+    procedure qryMviewIndexesAfterScroll(DataSet: TDataSet);
   private
     FDiscardedList: TStrings;
     procedure SetDiscardedList(const Value: TStrings);
@@ -160,13 +223,15 @@ begin
 end;
 
 function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string; const aSuffix: string): string;
-var
-  aList: TStringList;
 begin
+
+  var
+  aTable := qryMaterializedViewOBJECT_NAME.AsString;
+
+  var
   aList := TStringList.Create;
   try
-    aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' +
-      qryMaterializedViewOBJECT_NAME.AsString + aSuffix);
+    aList.Add('CREATE TABLE ' + qryMaterializedViewOWNER.AsString + '.' + aTable + aSuffix);
     aList.Add('(');
 
     qryMviewFields.First;
@@ -188,7 +253,9 @@ begin
       var
       tmpList := TStringList.Create;
       try
-        tmpList.Text := qryConstraintDDLMETADATA.AsString;
+        tmpList.Text := StringReplace(qryConstraintDDLMETADATA.AsString, aTable, aTable + aSuffix,
+          [rfIgnoreCase, rfReplaceAll]);
+
         if tmpList.Count > 0 then
         begin
           aList.Add(tmpList[1] + ';');
@@ -197,6 +264,32 @@ begin
         end;
       finally
         tmpList.Free;
+      end;
+    end;
+
+    if qryMviewIndexes.RecordCount > 0 then
+    begin
+      qryMviewIndexes.First;
+      while not qryMviewIndexes.Eof do
+      begin
+        if qryIndexDDL.RecordCount > 0 then
+        begin
+          var
+          tmp2List := TStringList.Create;
+          try
+            tmp2List.Text := StringReplace(qryIndexDDLMETADATA.AsString, aTable, aTable + aSuffix,
+              [rfIgnoreCase, rfReplaceAll]);
+            if tmp2List.Count > 0 then
+            begin
+              aList.Add(tmp2List[1] + ';');
+              aList.Add('');
+              aList.Add('');
+            end;
+          finally
+            tmp2List.Free;
+          end;
+        end;
+        qryMviewIndexes.Next;
       end;
     end;
 
@@ -242,6 +335,7 @@ begin
   qryMviewFields.Open;
   qryMViewConsFields.Open;
   qryMviewConstraints.Open;
+  qryMviewIndexes.Open;
 end;
 
 procedure TdmOracleSchema.qryMviewConstraintsAfterScroll(DataSet: TDataSet);
@@ -254,6 +348,17 @@ begin
     qryConstraintDDL.Open;
   end;
 
+end;
+
+procedure TdmOracleSchema.qryMviewIndexesAfterScroll(DataSet: TDataSet);
+begin
+  qryIndexDDL.Close;
+  if qryMviewIndexes.RecordCount > 0 then
+  begin
+    qryIndexDDL.ParambyName('OWNER').AsString := qryMviewIndexesOWNER.AsString;
+    qryIndexDDL.ParambyName('Index_NAME').AsString := qryMviewIndexesINDEX_NAME.AsString;
+    qryIndexDDL.Open;
+  end;
 end;
 
 procedure TdmOracleSchema.qrySchemasAfterOpen(DataSet: TDataSet);

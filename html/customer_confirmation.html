@@ -52,8 +52,8 @@
         </div>
         <!-- Fine Contenitore dell'immagine del Logo e Test -->
         
-        <!-- Inizio Input Form frmCheckConfirmation -->
-        <form id="frmCheckConfirmation">
+        <!-- Inizio Input Form frmCheckConfirmation action actual points to the same page-->
+        <form id="frmCheckConfirmation" action="/">
           <!-- Hidden Input che Ritorna il valore della GUID ricevuta  -->
           <input type="hidden" id="guid" value="$$jguid$$">
           <div class="row justify-content-center">
@@ -151,7 +151,6 @@
     <script src="https://cdn.januaservers.com/jquery.showmessage/assets/js/jquery.showMessage.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       
-      var message1=['Hey! Something bit me!'];
       jQuery(document).ready(function() {
         
         //prettyPrint();
@@ -167,7 +166,7 @@
           
           var vCount = 0;
           
-          var rMessage = [],rClass='success';
+          var rMessage = [], rClass='success';
           
           var vMessageText = '';
           
@@ -180,16 +179,31 @@
           if(vCount == 3 ) //
             {
               // checked
-              rMessage.push('Grazie della Conferma');
+              rMessage.push('Grazie della Conferma');   
               
               // Get some values from elements on the page:
-              
+              // Form is extactly the 'caller' of the function 
               var $form = $( this ),
-              term = $form.find( "input[name='s']" ).val(),
+              // Term is the guid input 
+              term = $form.find( "input[name='guid']" ).val(),
+              // Url is the Form Action
               url = $form.attr( "action" );
               
+              console.log( url ); 
+              console.log( term ); 
+              
               // Send the data using post
-              var posting = $.post( url, { s: term } );
+              var posting = $.post( url, { jguid: term } );
+              
+              // Put the results in a div
+              posting.done(function( data ) {
+                var content = $( data ).find( "#content" );
+                console.log( data.jguid ); // same guid sent
+                console.log( data.result ); // result of function true expected
+              } );
+
+              // checked
+              rMessage.push('Grazie della Conferma');            
             }
           else
             {
