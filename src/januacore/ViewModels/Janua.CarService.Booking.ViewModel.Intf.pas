@@ -10,7 +10,6 @@ uses System.SysUtils, Data.DB,
   // Framework
   Janua.Search.ViewModels.Engines.Intf, Janua.Documents.ViewModel.Intf;
 
-implementation
 
 type
   IJanuaCarServiceBookingDataModule = interface(IJanuaDataModuleContainer)
@@ -40,7 +39,9 @@ type
     procedure SetUsersession(const Value: IUserSession);
     procedure SetBookingRecord(const Value: IBookingHeadView);
 
+    // External Objects (weak)
     property UserProfile: IUserProfile read GetUserProfile write SetUserProfile;
+    // External Obeject (weak)
     property UserSession: IUserSession read GetUsersession write SetUsersession;
     property BookingRecord: IBookingHeadView read GetBookingRecord write SetBookingRecord;
     // Getters Setters
@@ -121,5 +122,8 @@ type
     function GetjdsMessageLog: IJanuaDBDataset;
     property jdsMessageLog: IJanuaDBDataset read GetjdsMessageLog;
   end;
+
+
+implementation
 
 end.

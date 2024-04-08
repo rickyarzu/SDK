@@ -596,6 +596,7 @@ type
     class function GetAppDownloadsPath: string; static;
     class function GetConfigFileName: string; static;
     class function getCurrentPath: string; static;
+    class function ReadWebFile(const aFileName: string): string; static;
   public
     class procedure Deactivate;
     { Public declarations }
@@ -3139,6 +3140,11 @@ begin
   LValue := EncryptDES3(aDefault);
   LValue := ReadRegistry(Machine, aName, aKey, LValue);
   Result := DecryptDES3(LValue);
+end;
+
+class function TJanuaCoreOS.ReadWebFile(const aFileName: string): string;
+begin
+  Result := TFile.ReadAllText(TPath.Combine(TJanuaCoreOS.GetAppWebFilesPath, aFileName));
 end;
 
 class function TJanuaCoreOS.RegistryNextVal(table: string): int64;

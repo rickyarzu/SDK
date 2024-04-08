@@ -47,8 +47,47 @@ type
   end;
 
 type
-  TJanuaSingleRecordTemplate = class(TJanuaStorage, IJanuaSingleRecordModel, IJanuaBaseModel, IJanuaStorage)
-
+  TJanuaSingleRecordDBModel = class(TJanuaStorage, IJanuaSingleRecordDBModel, IJanuaStorage)
+  public
+    constructor Create; override;
+    procedure AfterConstruction; override;
+    procedure BeforeDestruction; override;
+    destructor Destroy; override;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+  private
+    [weak]
+    FCurrentRecord: IJanuaRecord;
+    [weak]
+    FDataModule: IJanuaDataModuleContainer;
+  strict private
+    procedure SetCurrentRecord(const aRecord: IJanuaRecord);
+  protected
+    // Search by GUID should be performed against
+    function GetjdsRecordDataset: IJanuaDBDataset;
+    function GetjdsDetail: IJanuaDBDataset;
+    function GetCurrentRecord: IJanuaRecord;
+  public
+    function SearchByGUID(const aGuid: TGUID): Boolean;
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord; overload;
+    procedure AddNewRecord(const aRecord: IJanuaRecord); overload;
+    procedure AddNewRecord(const aJson: string); overload;
+    procedure AppendRecord; overload;
+    procedure AppendRecord(const aRecord: IJanuaRecord); overload;
+    procedure AppendRecord(const aJson: string); overload;
+    procedure DeleteRecord; overload;
+    procedure DeleteRecord(const aGUID: string); overload;
+    procedure PostRecord;
+    procedure UndoChanges;
+    procedure LoadRecord;
+    procedure RefreshRecord;
+  public
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsRecordDataset: IJanuaDBDataset read GetjdsRecordDataset;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsDetail: IJanuaDBDataset read GetjdsDetail;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
   end;
 
   TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
@@ -2777,6 +2816,123 @@ end;
 procedure TJanuaRESTModelTemplate.UndoChanges;
 begin
   GetInternalRecord.UndoUpdates;
+end;
+
+{ TJanuaSingleRecordDBModel }
+
+procedure TJanuaSingleRecordDBModel.AddNewRecord;
+begin
+  Self.CurrentRecord.Append;
+end;
+
+procedure TJanuaSingleRecordDBModel.AddNewRecord(const aRecord: IJanuaRecord);
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.AddNewRecord(const aJson: string);
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.AfterConstruction;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaSingleRecordDBModel.AppendRecord(const aRecord: IJanuaRecord);
+begin
+  CurrentRecord.Append;
+  CurrentRecord.Assign(aRecord)
+end;
+
+procedure TJanuaSingleRecordDBModel.AppendRecord(const aJson: string);
+begin
+  CurrentRecord.Append;
+  CurrentRecord.asJson := aJson;
+end;
+
+procedure TJanuaSingleRecordDBModel.AppendRecord;
+begin
+  CurrentRecord.Append;
+end;
+
+procedure TJanuaSingleRecordDBModel.BeforeDestruction;
+begin
+  inherited;
+
+end;
+
+constructor TJanuaSingleRecordDBModel.Create;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaSingleRecordDBModel.DeleteRecord;
+begin
+  // Code to be inserteed Here
+end;
+
+procedure TJanuaSingleRecordDBModel.DeleteRecord(const aGUID: string);
+begin
+  if SearchByGUID(TGUID.Create(aGUID)) then
+  begin
+
+  end;
+end;
+
+destructor TJanuaSingleRecordDBModel.Destroy;
+begin
+  FCurrentRecord := nil;
+  inherited;
+end;
+
+function TJanuaSingleRecordDBModel.GetCurrentRecord: IJanuaRecord;
+begin
+
+end;
+
+function TJanuaSingleRecordDBModel.GetjdsDetail: IJanuaDBDataset;
+begin
+
+end;
+
+function TJanuaSingleRecordDBModel.GetjdsRecordDataset: IJanuaDBDataset;
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.LoadRecord;
+begin
+ if self. then
+
+end;
+
+procedure TJanuaSingleRecordDBModel.PostRecord;
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.RefreshRecord;
+begin
+
+end;
+
+function TJanuaSingleRecordDBModel.SearchByGUID(const aGuid: TGUID): Boolean;
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.SetCurrentRecord(const aRecord: IJanuaRecord);
+begin
+
+end;
+
+procedure TJanuaSingleRecordDBModel.UndoChanges;
+begin
+
 end;
 
 end.
