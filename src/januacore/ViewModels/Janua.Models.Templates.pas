@@ -57,6 +57,8 @@ type
   private
     [weak]
     FCurrentRecord: IJanuaRecord;
+    [weak]
+    FDataModule: IJanuaDataModuleContainer;
   strict private
     procedure SetCurrentRecord(const aRecord: IJanuaRecord);
   protected
@@ -66,6 +68,19 @@ type
     function GetCurrentRecord: IJanuaRecord;
   public
     function SearchByGUID(const aGuid: TGUID): Boolean;
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord; overload;
+    procedure AddNewRecord(const aRecord: IJanuaRecord); overload;
+    procedure AddNewRecord(const aJson: string); overload;
+    procedure AppendRecord; overload;
+    procedure AppendRecord(const aRecord: IJanuaRecord); overload;
+    procedure AppendRecord(const aJson: string); overload;
+    procedure DeleteRecord; overload;
+    procedure DeleteRecord(const aGUID: string); overload;
+    procedure PostRecord;
+    procedure UndoChanges;
+    procedure LoadRecord;
+    procedure RefreshRecord;
   public
     /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
     property jdsRecordDataset: IJanuaDBDataset read GetjdsRecordDataset;
@@ -2805,10 +2820,42 @@ end;
 
 { TJanuaSingleRecordSrvModel }
 
+procedure TJanuaSingleRecordSrvModel.AddNewRecord;
+begin
+  Self.CurrentRecord.Append;
+end;
+
+procedure TJanuaSingleRecordSrvModel.AddNewRecord(const aRecord: IJanuaRecord);
+begin
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.AddNewRecord(const aJson: string);
+begin
+
+end;
+
 procedure TJanuaSingleRecordSrvModel.AfterConstruction;
 begin
   inherited;
 
+end;
+
+procedure TJanuaSingleRecordSrvModel.AppendRecord(const aRecord: IJanuaRecord);
+begin
+  CurrentRecord.Append;
+  CurrentRecord.Assign(aRecord)
+end;
+
+procedure TJanuaSingleRecordSrvModel.AppendRecord(const aJson: string);
+begin
+  CurrentRecord.Append;
+  CurrentRecord.asJson := aJson;
+end;
+
+procedure TJanuaSingleRecordSrvModel.AppendRecord;
+begin
+  CurrentRecord.Append;
 end;
 
 procedure TJanuaSingleRecordSrvModel.BeforeDestruction;
@@ -2823,9 +2870,22 @@ begin
 
 end;
 
+procedure TJanuaSingleRecordSrvModel.DeleteRecord;
+begin
+  // Code to be inserteed Here
+end;
+
+procedure TJanuaSingleRecordSrvModel.DeleteRecord(const aGUID: string);
+begin
+  if SearchByGUID(TGUID.Create(aGUID)) then
+  begin
+
+  end;
+end;
+
 destructor TJanuaSingleRecordSrvModel.Destroy;
 begin
-
+  FCurrentRecord := nil;
   inherited;
 end;
 
@@ -2844,12 +2904,32 @@ begin
 
 end;
 
+procedure TJanuaSingleRecordSrvModel.LoadRecord;
+begin
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.PostRecord;
+begin
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.RefreshRecord;
+begin
+
+end;
+
 function TJanuaSingleRecordSrvModel.SearchByGUID(const aGuid: TGUID): Boolean;
 begin
 
 end;
 
 procedure TJanuaSingleRecordSrvModel.SetCurrentRecord(const aRecord: IJanuaRecord);
+begin
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.UndoChanges;
 begin
 
 end;

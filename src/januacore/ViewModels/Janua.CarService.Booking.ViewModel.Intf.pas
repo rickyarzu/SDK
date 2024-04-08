@@ -10,7 +10,6 @@ uses System.SysUtils, Data.DB,
   // Framework
   Janua.Search.ViewModels.Engines.Intf, Janua.Documents.ViewModel.Intf;
 
-implementation
 
 type
   IJanuaCarServiceBookingDataModule = interface(IJanuaDataModuleContainer)
@@ -121,5 +120,8 @@ type
     function GetjdsMessageLog: IJanuaDBDataset;
     property jdsMessageLog: IJanuaDBDataset read GetjdsMessageLog;
   end;
+
+
+implementation
 
 end.
