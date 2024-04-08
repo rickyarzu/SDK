@@ -39,7 +39,9 @@ type
     procedure SetUsersession(const Value: IUserSession);
     procedure SetBookingRecord(const Value: IBookingHeadView);
 
+    // External Objects (weak)
     property UserProfile: IUserProfile read GetUserProfile write SetUserProfile;
+    // External Obeject (weak)
     property UserSession: IUserSession read GetUsersession write SetUsersession;
     property BookingRecord: IBookingHeadView read GetBookingRecord write SetBookingRecord;
     // Getters Setters

@@ -47,7 +47,7 @@ type
   end;
 
 type
-  TJanuaSingleRecordSrvModel = class(TJanuaStorage, IJanuaSingleRecordSrvModel, IJanuaStorage)
+  TJanuaSingleRecordDBModel = class(TJanuaStorage, IJanuaSingleRecordDBModel, IJanuaStorage)
   public
     constructor Create; override;
     procedure AfterConstruction; override;
@@ -2818,64 +2818,64 @@ begin
   GetInternalRecord.UndoUpdates;
 end;
 
-{ TJanuaSingleRecordSrvModel }
+{ TJanuaSingleRecordDBModel }
 
-procedure TJanuaSingleRecordSrvModel.AddNewRecord;
+procedure TJanuaSingleRecordDBModel.AddNewRecord;
 begin
   Self.CurrentRecord.Append;
 end;
 
-procedure TJanuaSingleRecordSrvModel.AddNewRecord(const aRecord: IJanuaRecord);
+procedure TJanuaSingleRecordDBModel.AddNewRecord(const aRecord: IJanuaRecord);
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.AddNewRecord(const aJson: string);
+procedure TJanuaSingleRecordDBModel.AddNewRecord(const aJson: string);
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.AfterConstruction;
+procedure TJanuaSingleRecordDBModel.AfterConstruction;
 begin
   inherited;
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.AppendRecord(const aRecord: IJanuaRecord);
+procedure TJanuaSingleRecordDBModel.AppendRecord(const aRecord: IJanuaRecord);
 begin
   CurrentRecord.Append;
   CurrentRecord.Assign(aRecord)
 end;
 
-procedure TJanuaSingleRecordSrvModel.AppendRecord(const aJson: string);
+procedure TJanuaSingleRecordDBModel.AppendRecord(const aJson: string);
 begin
   CurrentRecord.Append;
   CurrentRecord.asJson := aJson;
 end;
 
-procedure TJanuaSingleRecordSrvModel.AppendRecord;
+procedure TJanuaSingleRecordDBModel.AppendRecord;
 begin
   CurrentRecord.Append;
 end;
 
-procedure TJanuaSingleRecordSrvModel.BeforeDestruction;
+procedure TJanuaSingleRecordDBModel.BeforeDestruction;
 begin
   inherited;
 
 end;
 
-constructor TJanuaSingleRecordSrvModel.Create;
+constructor TJanuaSingleRecordDBModel.Create;
 begin
   inherited;
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.DeleteRecord;
+procedure TJanuaSingleRecordDBModel.DeleteRecord;
 begin
   // Code to be inserteed Here
 end;
 
-procedure TJanuaSingleRecordSrvModel.DeleteRecord(const aGUID: string);
+procedure TJanuaSingleRecordDBModel.DeleteRecord(const aGUID: string);
 begin
   if SearchByGUID(TGUID.Create(aGUID)) then
   begin
@@ -2883,53 +2883,54 @@ begin
   end;
 end;
 
-destructor TJanuaSingleRecordSrvModel.Destroy;
+destructor TJanuaSingleRecordDBModel.Destroy;
 begin
   FCurrentRecord := nil;
   inherited;
 end;
 
-function TJanuaSingleRecordSrvModel.GetCurrentRecord: IJanuaRecord;
+function TJanuaSingleRecordDBModel.GetCurrentRecord: IJanuaRecord;
 begin
 
 end;
 
-function TJanuaSingleRecordSrvModel.GetjdsDetail: IJanuaDBDataset;
+function TJanuaSingleRecordDBModel.GetjdsDetail: IJanuaDBDataset;
 begin
 
 end;
 
-function TJanuaSingleRecordSrvModel.GetjdsRecordDataset: IJanuaDBDataset;
+function TJanuaSingleRecordDBModel.GetjdsRecordDataset: IJanuaDBDataset;
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.LoadRecord;
+procedure TJanuaSingleRecordDBModel.LoadRecord;
+begin
+ if self. then
+
+end;
+
+procedure TJanuaSingleRecordDBModel.PostRecord;
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.PostRecord;
+procedure TJanuaSingleRecordDBModel.RefreshRecord;
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.RefreshRecord;
+function TJanuaSingleRecordDBModel.SearchByGUID(const aGuid: TGUID): Boolean;
 begin
 
 end;
 
-function TJanuaSingleRecordSrvModel.SearchByGUID(const aGuid: TGUID): Boolean;
+procedure TJanuaSingleRecordDBModel.SetCurrentRecord(const aRecord: IJanuaRecord);
 begin
 
 end;
 
-procedure TJanuaSingleRecordSrvModel.SetCurrentRecord(const aRecord: IJanuaRecord);
-begin
-
-end;
-
-procedure TJanuaSingleRecordSrvModel.UndoChanges;
+procedure TJanuaSingleRecordDBModel.UndoChanges;
 begin
 
 end;
