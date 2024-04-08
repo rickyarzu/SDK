@@ -56,7 +56,7 @@ type
     function SearchText(const aText: string; const aLimit: Word = 0; const aOffset: Word = 0): integer;
   end;
 
-  IJanuaSingleRecordSrvModel = interface(IJanuaBaseModel)
+  IJanuaSingleRecordSrvModel = interface(IJanuaStorage)
     ['{BA163075-70C0-4A0D-85D8-CC34D43C6FAF}']
     // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
     // Search by GUID should be performed against

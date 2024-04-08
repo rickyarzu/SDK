@@ -47,8 +47,32 @@ type
   end;
 
 type
-  TJanuaSingleRecordTemplate = class(TJanuaStorage, IJanuaSingleRecordModel, IJanuaBaseModel, IJanuaStorage)
-
+  TJanuaSingleRecordSrvModel = class(TJanuaStorage, IJanuaSingleRecordSrvModel, IJanuaStorage)
+  public
+    constructor Create; override;
+    procedure AfterConstruction; override;
+    procedure BeforeDestruction; override;
+    destructor Destroy; override;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+  private
+    [weak]
+    FCurrentRecord: IJanuaRecord;
+  strict private
+    procedure SetCurrentRecord(const aRecord: IJanuaRecord);
+  protected
+    // Search by GUID should be performed against
+    function GetjdsRecordDataset: IJanuaDBDataset;
+    function GetjdsDetail: IJanuaDBDataset;
+    function GetCurrentRecord: IJanuaRecord;
+  public
+    function SearchByGUID(const aGuid: TGUID): Boolean;
+  public
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsRecordDataset: IJanuaDBDataset read GetjdsRecordDataset;
+    // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
+    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
+    property jdsDetail: IJanuaDBDataset read GetjdsDetail;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
   end;
 
   TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
@@ -2777,6 +2801,57 @@ end;
 procedure TJanuaRESTModelTemplate.UndoChanges;
 begin
   GetInternalRecord.UndoUpdates;
+end;
+
+{ TJanuaSingleRecordSrvModel }
+
+procedure TJanuaSingleRecordSrvModel.AfterConstruction;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.BeforeDestruction;
+begin
+  inherited;
+
+end;
+
+constructor TJanuaSingleRecordSrvModel.Create;
+begin
+  inherited;
+
+end;
+
+destructor TJanuaSingleRecordSrvModel.Destroy;
+begin
+
+  inherited;
+end;
+
+function TJanuaSingleRecordSrvModel.GetCurrentRecord: IJanuaRecord;
+begin
+
+end;
+
+function TJanuaSingleRecordSrvModel.GetjdsDetail: IJanuaDBDataset;
+begin
+
+end;
+
+function TJanuaSingleRecordSrvModel.GetjdsRecordDataset: IJanuaDBDataset;
+begin
+
+end;
+
+function TJanuaSingleRecordSrvModel.SearchByGUID(const aGuid: TGUID): Boolean;
+begin
+
+end;
+
+procedure TJanuaSingleRecordSrvModel.SetCurrentRecord(const aRecord: IJanuaRecord);
+begin
+
 end;
 
 end.
