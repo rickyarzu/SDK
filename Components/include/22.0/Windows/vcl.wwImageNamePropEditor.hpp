@@ -1,5 +1,5 @@
 ﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2022 by Embarcadero Technologies, Inc.
+// Copyright (c) 1995, 2024 by Embarcadero Technologies, Inc.
 // All rights reserved
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwImageNamePropEditor.pas' rev: 36.00 (Windows)
@@ -56,14 +56,14 @@ public:
 	virtual Designintf::TPropertyAttributes __fastcall GetAttributes();
 	virtual void __fastcall SetValue(const System::UnicodeString Value)/* overload */;
 	virtual void __fastcall GetValues(System::Classes::TGetStrProc Proc);
-	int __fastcall GetPropDrawImageWidth(const System::Types::TRect &ARect);
+	int __fastcall GetPropDrawImageWidth(const Winapi::Windows::TRect &ARect);
 	void __fastcall ListMeasureWidth(const System::UnicodeString Value, Vcl::Graphics::TCanvas* ACanvas, int &AWidth);
 	void __fastcall ListMeasureHeight(const System::UnicodeString Value, Vcl::Graphics::TCanvas* ACanvas, int &AHeight);
-	void __fastcall ListDrawValue(const System::UnicodeString Value, Vcl::Graphics::TCanvas* ACanvas, const System::Types::TRect &ARect, bool ASelected);
-	void __fastcall PropDrawName(Vcl::Graphics::TCanvas* ACanvas, const System::Types::TRect &ARect, bool ASelected);
-	void __fastcall PropDrawValue(Vcl::Graphics::TCanvas* ACanvas, const System::Types::TRect &ARect, bool ASelected);
-	System::Types::TRect __fastcall PropDrawNameRect(const System::Types::TRect &ARect);
-	System::Types::TRect __fastcall PropDrawValueRect(const System::Types::TRect &ARect);
+	void __fastcall ListDrawValue(const System::UnicodeString Value, Vcl::Graphics::TCanvas* ACanvas, const Winapi::Windows::TRect &ARect, bool ASelected);
+	void __fastcall PropDrawName(Vcl::Graphics::TCanvas* ACanvas, const Winapi::Windows::TRect &ARect, bool ASelected);
+	void __fastcall PropDrawValue(Vcl::Graphics::TCanvas* ACanvas, const Winapi::Windows::TRect &ARect, bool ASelected);
+	Winapi::Windows::TRect __fastcall PropDrawNameRect(const Winapi::Windows::TRect &ARect);
+	Winapi::Windows::TRect __fastcall PropDrawValueRect(const Winapi::Windows::TRect &ARect);
 public:
 	/* TPropertyEditor.Create */ inline __fastcall virtual TwwImageNameProperty(const Designintf::_di_IDesigner ADesigner, int APropCount) : Designeditors::TStringProperty(ADesigner, APropCount) { }
 	/* TPropertyEditor.Destroy */ inline __fastcall virtual ~TwwImageNameProperty() { }

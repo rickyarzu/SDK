@@ -85,7 +85,7 @@ type
     procedure RefreshRecord;
   end;
 
-  IJanuaSingleRecordClientModel = interface(IJanuaSingleRecordSrvModel)
+  IJanuaSingleRecordClientModel = interface(IJanuaStorage)
     ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
     // ---------- Sub RecordSet Management --------------------------------------------------------------
     procedure RemoveSubModels;
@@ -94,9 +94,21 @@ type
     procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
     function ModelCount: integer;
     procedure GenerateSubModels;
-    function GetDataSource: TDataSource;
-    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
-    property DataSource: TDataSource read GetDataSource;
+    function GetCurrentRecord: IJanuaRecord;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord; overload;
+    procedure AddNewRecord(const aRecord: IJanuaRecord); overload;
+    procedure AddNewRecord(const aJson: string); overload;
+    procedure AppendRecord; overload;
+    procedure AppendRecord(const aRecord: IJanuaRecord); overload;
+    procedure AppendRecord(const aJson: string); overload;
+    procedure PostRecord; overload;
+    procedure UndoChanges;
+    procedure DeleteRecord; overload;
+    procedure DeleteRecord(const aGUID: string); overload;
+    procedure LoadRecord;
+    procedure RefreshRecord;
   end;
 
 

@@ -59,12 +59,19 @@ type
     FCurrentRecord: IJanuaRecord;
     [weak]
     FDataModule: IJanuaDataModuleContainer;
+    [weak]
+    FjdsRecordDataset: IJanuaDBDataset;
+    [weak]
+    FjdsDetailDataset: IJanuaDBDataset;
+    FGUID: TGUID;
   strict private
     procedure SetCurrentRecord(const aRecord: IJanuaRecord);
+    procedure SetjdsRecordDataset(const aDataset: IJanuaDBDataset);
+    procedure SetjdsDetail(const aDataset: IJanuaDBDataset);
   protected
     // Search by GUID should be performed against
-    function GetjdsRecordDataset: IJanuaDBDataset;
-    function GetjdsDetail: IJanuaDBDataset;
+    function GetjdsRecordDataset: IJanuaDBDataset; virtual;
+    function GetjdsDetail: IJanuaDBDataset; virtual;
     function GetCurrentRecord: IJanuaRecord;
   public
     function SearchByGUID(const aGuid: TGUID): Boolean;
@@ -76,7 +83,7 @@ type
     procedure AppendRecord(const aRecord: IJanuaRecord); overload;
     procedure AppendRecord(const aJson: string); overload;
     procedure DeleteRecord; overload;
-    procedure DeleteRecord(const aGUID: string); overload;
+    procedure DeleteRecord(const aGuid: string); overload;
     procedure PostRecord;
     procedure UndoChanges;
     procedure LoadRecord;
@@ -2875,9 +2882,9 @@ begin
   // Code to be inserteed Here
 end;
 
-procedure TJanuaSingleRecordDBModel.DeleteRecord(const aGUID: string);
+procedure TJanuaSingleRecordDBModel.DeleteRecord(const aGuid: string);
 begin
-  if SearchByGUID(TGUID.Create(aGUID)) then
+  if SearchByGUID(TGUID.Create(aGuid)) then
   begin
 
   end;
@@ -2906,33 +2913,50 @@ end;
 
 procedure TJanuaSingleRecordDBModel.LoadRecord;
 begin
- if self. then
-
+  if Assigned(CurrentRecord) and Assigned(jdsRecordDataset) then
+    if SearchByGUID(FGUID) then
+      CurrentRecord.LoadFromDataset
+    else
+      CurrentRecord.Clear(True { Recursively } );
 end;
 
 procedure TJanuaSingleRecordDBModel.PostRecord;
 begin
-
+  if Assigned(CurrentRecord) and Assigned(jdsRecordDataset) then
+    CurrentRecord.SaveToDataset;
 end;
 
 procedure TJanuaSingleRecordDBModel.RefreshRecord;
 begin
-
+  if jdsRecordDataset.Active and (jdsRecordDataset.GUID <> FGUID) then
+    jdsRecordDataset.SearchRecord(FGUID);
+  jdsRecordDataset.Refresh;
 end;
 
 function TJanuaSingleRecordDBModel.SearchByGUID(const aGuid: TGUID): Boolean;
 begin
-
+  FGUID := aGuid;
+  Result := jdsRecordDataset.SearchRecord(FGUID)
 end;
 
 procedure TJanuaSingleRecordDBModel.SetCurrentRecord(const aRecord: IJanuaRecord);
+begin
+  FCurrentRecord := aRecord
+end;
+
+procedure TJanuaSingleRecordDBModel.SetjdsDetail(const aDataset: IJanuaDBDataset);
+begin
+  FjdsDetailDataset := aDataset
+end;
+
+procedure TJanuaSingleRecordDBModel.SetjdsRecordDataset(const aDataset: IJanuaDBDataset);
 begin
 
 end;
 
 procedure TJanuaSingleRecordDBModel.UndoChanges;
 begin
-
+  FCurrentRecord.UndoUpdates
 end;
 
 end.
