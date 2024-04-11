@@ -275,6 +275,20 @@ type
       aWidth: integer = 0);
   end;
 
+  TRecordUnits = class;
+
+  TRecordUnitFile = class
+    DatasetName: string;
+    PluralName: string;
+    FileName: string;
+    Text: string;
+  end;
+
+  TRecordUnits = class
+    IntfFile: TRecordUnitFile;
+    ImplFile: TRecordUnitFile;
+  end;
+
 function IsEntityInSet(const ANumber: TJanuaEntity; const AArray: TJanuaEntities): Boolean;
 procedure AddEntityToSet(const ANumber: TJanuaEntity; var AArray: TJanuaEntities);
 

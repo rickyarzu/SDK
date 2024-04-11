@@ -4,7 +4,7 @@ interface
 
 uses
   // System
-  Janua.Core.Types,
+  Janua.Core.Types, Janua.Orm.Intf, Janua.Orm.Types,
   // DB, RTL, .....
   Data.DB;
 
@@ -23,14 +23,13 @@ uses
 /// <param name="Si"> Single Name for Record Class (if empty uses Schema+Dataset </param>
 /// <param name="Pl"> Plural Name for RecordSet Class (if empty uses Schema+Dataset + 's') </param>
 /// <param name="aCustom">Bool True if Custom parent class is requested</param>
-function GenerateRecordSet(out aIntf, aImpl, aSCustom: string; aDataset: TDataset; const aName, aSchema, aAbbr: string;
-  out aFileIntf, aFileImpl: string; Si, Pl: string; const aCustom: Boolean = False): string;
+function GenerateRecordSet(out aIntf, aImpl, aSCustom: string; aDataset: TDataset;
+  const aName, aSchema, aAbbr: string; out aFileIntf, aFileImpl: string; Si, Pl: string;
+  const aCustom: Boolean = True): string;
 
 function GenerateServer(out aIntf, aImpl, aCustom: string; const aName, aSchema, aAbbr: string;
   Si, Pl, St: string): string;
 
-function Capitalize(aStr: string): string;
-function GetName(const aStr: string): string;
 
 implementation
 
@@ -39,32 +38,6 @@ uses
   System.SysUtils, System.Math, System.StrUtils,
   // Janua Framework
   Janua.Core.Functions, System.Classes;
-
-function Capitalize(aStr: string): string;
-var
-  s: Char;
-begin
-  Result := aStr;
-  if Result <> '' then
-  begin
-    s := Result[1];
-    s := UpCase(s);
-    Result[1] := UpCase(s);
-  end;
-end;
-
-function GetName(const aStr: string): string;
-var
-  i: integer;
-begin
-  Result := Capitalize(aStr); // Class Name for Dataset.
-  i := Pos('_', Result); // check if underscore separator is in dataset name string.
-  while i > 0 do
-  begin
-    Result := Copy(Result, 1, i - 1) + Capitalize(Copy(Result, i + 1, Length(Result) - i + 1));
-    i := Pos('_', Result);
-  end;
-end;
 
 function GenerateServer(out aIntf, aImpl, aCustom: string; const aName, aSchema, aAbbr: string;
   Si, Pl, St: string): string;
@@ -77,11 +50,11 @@ begin
   if Si <> '' then
     sClass := Si
   else
-    sClass := GetName(aName);
+    sClass := CamelCase(aName);
 
   sSet := IfThen(Pl = '', sClass + 's', Pl);
 
-  sSchema := GetName(aSchema);
+  sSchema := CamelCase(aSchema);
 
   aFileIntf := 'JOrm.' + sSchema + '.' + sClass + '.Intf';
   aFileImpl := 'JOrm.' + sSchema + '.' + sClass + '.Impl';
@@ -98,8 +71,8 @@ begin
     aList.Add('// Storage');
     aList.Add('function Get' + sSet + 'Storage: IJanuaRecordSetStorage;');
     aList.Add('procedure Set' + sSet + 'Storage(const Value: IJanuaRecordSetStorage);');
-    aList.Add('property ' + sSet + 'Storage: IJanuaRecordSetStorage read Get' + sSet + 'Storage write Set' + sSet +
-      'Storage;');
+    aList.Add('property ' + sSet + 'Storage: IJanuaRecordSetStorage read Get' + sSet + 'Storage write Set' +
+      sSet + 'Storage;');
     aList.Add('');
 
     { // DB Storage }
@@ -114,7 +87,8 @@ begin
     aList.Add('strict private');
     aList.Add('{Server_Recordset_Storage}');
     aList.Add('FLocalAnagraphsStorage: IJanuaRecordSetStorage; // Questa è una classe di Database.');
-    aList.Add('FRemoteAnagraphsStorage: IJanuaRecordSetStorage; // remote è usualmente una classe REST Storage');
+    aList.Add(
+      'FRemoteAnagraphsStorage: IJanuaRecordSetStorage; // remote è usualmente una classe REST Storage');
     aList.Add('strict protected');
     aList.Add('function Get' + sSet + ': I' + sSet + ';');
     aList.Add('procedure Set' + sSet + '(const Value: I' + sSet + ');');
@@ -146,8 +120,8 @@ begin
     aList.Add('//Storage');
     aList.Add('function Get' + sSet + 'Storage: IJanuaRecordSetStorage;');
     aList.Add('procedure Set' + sSet + 'Storage(const Value: IJanuaRecordSetStorage);');
-    aList.Add('property ' + sSet + 'Storage: IJanuaRecordSetStorage read Get' + sSet + 'Storage write Set' + sSet +
-      'Storage;');
+    aList.Add('property ' + sSet + 'Storage: IJanuaRecordSetStorage read Get' + sSet + 'Storage write Set' +
+      sSet + 'Storage;');
     aList.Add('');
 
     aList.Add('//Server');
@@ -225,8 +199,9 @@ begin
 
 end;
 
-function GenerateRecordSet(out aIntf, aImpl, aSCustom: string; aDataset: TDataset; const aName, aSchema, aAbbr: string;
-  out aFileIntf, aFileImpl: string; Si, Pl: string; const aCustom: Boolean): string;
+function GenerateRecordSet(out aIntf, aImpl, aSCustom: string; aDataset: TDataset;
+  const aName, aSchema, aAbbr: string; out aFileIntf, aFileImpl: string; Si, Pl: string;
+  const aCustom: Boolean): string;
 
   function ind(l: integer): string;
   begin
@@ -250,7 +225,7 @@ begin
   if Si <> '' then
     sClass := Si
   else
-    sClass := GetName(aName);
+    sClass := CamelCase(aName);
 
   sSchema := GetName(aSchema);
 
@@ -289,7 +264,8 @@ begin
         sName := GetName(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
-        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' + sName + ';');
+        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
       end;
     end;
 
@@ -318,14 +294,16 @@ begin
         sName := GetName(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
-        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' + sName + ';');
+        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
       end;
     end;
 
     // Generazione della proprietà di accesso alla classe record all'interno del record-set
     aList.Add(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
     aList.Add(ind(2) + 'procedure Set' + sClass + '(const Value: I' + sClass + ');');
-    aList.Add(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ' write Set' + sClass + ';');
+    aList.Add(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ' write Set' +
+      sClass + ';');
 
     aList.Add('');
     aList.Add(ind(1) + 'end;');
@@ -348,7 +326,8 @@ begin
     aList.Add('uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, ' + aFileIntf + ';');
     aList.Add('');
 
-    aList.Add('//------------------------------------------ Impl object interface ----------------------------------');
+    aList.Add(
+      '//------------------------------------------ Impl object interface ----------------------------------');
 
     aList.Add('');
     aList.Add('type');
@@ -393,7 +372,8 @@ begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
         sName := GetName(aDataset.Fields[i].FieldName);
-        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' + sName + ';');
+        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
       end;
     end;
 
@@ -442,13 +422,15 @@ begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
         sName := GetName(aDataset.Fields[i].FieldName);
-        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' + sName + ';');
+        aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
       end;
     end;
 
     // Infine inserisco la property che punta al Record di definizione del RecordSet
     // property TestNestedRecord: IJanuaTestNestedRecord read GetNestedRecord write SetNestedRecord;
-    aList.Add(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ' write Set' + sClass + ';');
+    aList.Add(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ' write Set' +
+      sClass + ';');
 
     // Termino la Classe
     aList.Add(ind(1) + 'end;');
@@ -475,7 +457,8 @@ begin
 
     // ------------------------- Record Implementation ------------------------------------------------------------------
 
-    aList.Add('//------------------------------------------ Impl ' + 'T' + sClass + ' -------------------------------');
+    aList.Add('//------------------------------------------ Impl ' + 'T' + sClass +
+      ' -------------------------------');
     aList.Add('');
     aList.Add('{' + sClassType + '}');
 
@@ -513,11 +496,13 @@ begin
         case aDataset.Fields[i].DataType of
           TFieldType.ftFloat:
             begin
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptFloat, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptFloat, ' +
+                sField + ');');
             end;
           TFieldType.ftString, TFieldType.ftWideString:
             begin
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptString, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptString, ' +
+                sField + ');');
               // FString := self.AddField(TJanuaOrmFactory.CreateStringField('str', 'StringField'));
             end;
           // ftWideMemo { 20 jptText }
@@ -528,35 +513,42 @@ begin
             end;
           TFieldType.ftInteger:
             begin
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptInteger, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptInteger, ' +
+                sField + ');');
               // FInteger := self.AddField(TJanuaOrmFactory.CreateIntegerField('int', 'IntField'));
             end;
           TFieldType.ftBoolean:
             begin
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptBoolean, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptBoolean, ' +
+                sField + ');');
               // FBoolean := self.AddField(TJanuaOrmFactory.CreateBoolField('boo', 'BoolField'));
             end;
           TFieldType.ftGuid:
             begin
               lTmp := TJanuaFieldType.jptGUID;
-              if not (aDataset.Fields[i].FieldName.ToLower = 'jguid') then // Managed by jguid identifier on class
-                aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptGUID, ' + sField + ');');
+              if not(aDataset.Fields[i].FieldName.ToLower = 'jguid') then
+              // Managed by jguid identifier on class
+                aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptGUID, ' +
+                  sField + ');');
             end;
           TFieldType.ftVariant:
             begin
               lTmp := TJanuaFieldType.jptVariant;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptVariant, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptVariant, ' +
+                sField + ');');
             end;
           TFieldType.ftCurrency:
             begin
               lTmp := TJanuaFieldType.jptCurrency;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptCurrency, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptCurrency, ' +
+                sField + ');');
               // FBoolean := self.AddField(TJanuaOrmFactory.CreateBoolField('boo', 'BoolField'));
             end;
           TFieldType.ftDateTime, TFieldType.ftTimeStamp, TFieldType.ftTime:
             begin
               lTmp := TJanuaFieldType.jptDateTime;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptDateTime, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptDateTime, ' +
+                sField + ');');
               // FDateTime := self.AddField(TJanuaOrmFactory.CreateDateTimeField('dat', 'dat'));
             end;
           TFieldType.ftDate:
@@ -568,18 +560,21 @@ begin
           TFieldType.ftExtended:
             begin
               lTmp := TJanuaFieldType.jptExtended;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptExtended, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptExtended, ' +
+                sField + ');');
               // class function CreateExtentedField(aKey, aField: string): IJanuaField;
             end;
           TFieldType.ftSmallint:
             begin
               lTmp := TJanuaFieldType.jptSmallint;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptSmallint, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptSmallint, ' +
+                sField + ');');
             end;
           TFieldType.ftLargeInt:
             begin
               lTmp := TJanuaFieldType.jptLargeInt;
-              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptLargeint, ' + sField + ');');
+              aList.Add(ind(2) + 'F' + sName + ':= AddCreateField(TJanuaFieldType.jptLargeint, ' +
+                sField + ');');
             end;
           TFieldType.ftBlob:
             begin
@@ -609,7 +604,8 @@ begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
         sName := GetName(aDataset.Fields[i].FieldName);
-        if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted')) then
+        if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted'))
+        then
         begin
           aList.Add(ind(1) + 'function ' + sClassType + '.Get' + sName + ': IJanuaField;');
           aList.Add(ind(1) + 'begin');
@@ -662,7 +658,8 @@ begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
         sName := GetName(aDataset.Fields[i].FieldName);
-        if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted')) then
+        if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted'))
+        then
         begin
           aList.Add(ind(1) + 'function ' + sSetType + '.Get' + sName + ': IJanuaField;');
           aList.Add(ind(1) + 'begin');
@@ -704,14 +701,15 @@ begin
     aList.Add(ind(1) + '{ T' + sClass + 'Factory }');
     aList.Add('');
     // Record Factory
-    aList.Add(ind(1) + 'class function T' + sClass + 'Factory.CreateRecord(const aKey: string): I' + sClass + ';');
+    aList.Add(ind(1) + 'class function T' + sClass + 'Factory.CreateRecord(const aKey: string): I' +
+      sClass + ';');
     aList.Add(ind(1) + 'begin');
     aList.Add(ind(2) + 'Result := ' + sClassType + '.Create;');
     aList.Add(ind(1) + 'end;');
     aList.Add('');
     aList.Add(ind(1) + 'class function T' + sClass +
-      'Factory.CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I' +
-      sSet + ';');
+      'Factory.CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
+      + sSet + ';');
     aList.Add(ind(1) + 'begin');
     aList.Add(ind(2) + 'Result := ' + sSetType + '.Create(aName, aLocalStorage, aRemoteStorage);');
     aList.Add(ind(1) + 'end;');

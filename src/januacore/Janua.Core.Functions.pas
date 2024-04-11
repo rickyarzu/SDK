@@ -342,6 +342,8 @@ function MakeXML(DataSet: TDataset): string;
 // String Manipulation functions
 
 { String Related Functions *********************************************************************** }
+function Capitalize(AStr: string): string; inline;
+function CamelCase(const aStr: string): string; inline;
 procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: string); inline;
 function ConvertFloatToString(const Value: Double; const digits: integer): string; inline;
 function CompareStringLists(List1, List2: TStringList): boolean; inline;
@@ -2632,9 +2634,7 @@ begin
 
 end;
 
-procedure ReplaceStringPos(
-
-  var text: TStringList; searchstr: string; newstr: string);
+procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: string);
 var
   locazione: integer;
 begin
@@ -2646,6 +2646,32 @@ begin
     text.Insert(locazione, newstr);
   end;
   // end if locazione
+end;
+
+function Capitalize(AStr: string): string;
+var
+  S: char;
+begin
+  Result := AStr;
+  if Result <> '' then
+  begin
+    S := Result[1];
+    S := UpCase(S);
+    Result[1] := UpCase(S);
+  end;
+end;
+
+function CamelCase(const aStr: string): string;
+var
+  i: integer;
+begin
+  Result := Capitalize(aStr); // Class Name for Dataset.
+  i := Pos('_', Result); // check if underscore separator is in dataset name string.
+  while i > 0 do
+  begin
+    Result := Copy(Result, 1, i - 1) + Capitalize(Copy(Result, i + 1, Length(Result) - i + 1));
+    i := Pos('_', Result);
+  end;
 end;
 
 procedure CopyRecord(DataSet, dataclone: TDataset);
