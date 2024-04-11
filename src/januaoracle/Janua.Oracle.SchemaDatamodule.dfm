@@ -2,7 +2,7 @@ object dmOracleSchema: TdmOracleSchema
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
   Height = 539
-  Width = 659
+  Width = 864
   object UniConnection1: TUniConnection
     AutoCommit = False
     ProviderName = 'Oracle'
@@ -12,15 +12,14 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.Direct=True')
     Username = 'GTIT'
     Server = 'glsdbx01-scan.generali.it:1521:sn=GLSRX1_VIS'
-    Connected = True
     AfterConnect = UniConnection1AfterConnect
-    Left = 72
-    Top = 120
+    Left = 56
+    Top = 32
     EncryptedPassword = '98FF8BFF96FFCEFFCDFFCCFFCBFF'
   end
   object OracleUniProvider1: TOracleUniProvider
-    Left = 168
-    Top = 80
+    Left = 144
+    Top = 64
   end
   object qrySchemas: TUniQuery
     Connection = UniConnection1
@@ -29,8 +28,8 @@ object dmOracleSchema: TdmOracleSchema
       'from sys.all_users'
       'order by username;')
     AfterOpen = qrySchemasAfterOpen
-    Left = 208
-    Top = 168
+    Left = 232
+    Top = 112
     object qrySchemasSCHEMA_NAME: TWideStringField
       FieldName = 'SCHEMA_NAME'
       Required = True
@@ -343,12 +342,12 @@ object dmOracleSchema: TdmOracleSchema
   object FDConnection1: TFDConnection
     Params.Strings = (
       'DriverID=Ora')
-    Left = 280
-    Top = 56
+    Left = 248
+    Top = 32
   end
   object FDPhysOracleDriverLink1: TFDPhysOracleDriverLink
-    Left = 368
-    Top = 96
+    Left = 336
+    Top = 64
   end
   object qryMaterializedView: TUniQuery
     KeyFields = 'OBJECT_NAME'
@@ -1077,5 +1076,224 @@ object dmOracleSchema: TdmOracleSchema
       ReadOnly = True
       BlobType = ftOraClob
     end
+  end
+  object qryMviewDDL: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT DBMS_METADATA.get_ddl '
+      '('#39'MATERIALIZED_VIEW'#39', :MVIEW_NAME, :OWNER) AS METADATA FROM DUAL')
+    AfterOpen = qryConstraintDDLAfterOpen
+    Left = 488
+    Top = 424
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'MVIEW_NAME'
+        ParamType = ptInput
+        Value = 'ANAGRAFICA_GELSO'
+      end
+      item
+        DataType = ftString
+        Name = 'owner'
+        ParamType = ptInput
+        Value = 'GTIT'
+      end>
+    object qryMviewDDLMETADATA: TWideMemoField
+      FieldName = 'METADATA'
+      ReadOnly = True
+      BlobType = ftOraClob
+    end
+  end
+  object qryViewDDL: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT DBMS_METADATA.get_ddl '
+      '('#39'MATERIALIZED_VIEW'#39', :MVIEW_NAME, :OWNER) AS METADATA FROM DUAL')
+    AfterOpen = qryConstraintDDLAfterOpen
+    Left = 208
+    Top = 432
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'MVIEW_NAME'
+        ParamType = ptInput
+        Value = 'ANAGRAFICA_GELSO'
+      end
+      item
+        DataType = ftString
+        Name = 'owner'
+        ParamType = ptInput
+        Value = 'GTIT'
+      end>
+    object qryViewDDLMETADATA: TWideMemoField
+      FieldName = 'METADATA'
+      ReadOnly = True
+      BlobType = ftOraClob
+    end
+  end
+  object qryTargetTable: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'SELECT owner as schema_name, table_name '
+      'FROM all_tables '
+      'WHERE owner = :schema_name and table_name = :table_name')
+    MasterSource = dsSchemas
+    Left = 624
+    Top = 248
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'schema_name'
+        ParamType = ptInput
+        Value = 'AADAS'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'table_name'
+        Value = nil
+      end>
+    object qryTargetTableSCHEMA_NAME: TWideStringField
+      FieldName = 'SCHEMA_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryTargetTableTABLE_NAME: TWideStringField
+      FieldName = 'TABLE_NAME'
+      Required = True
+      Size = 30
+    end
+  end
+  object qryTargetTableFields: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select col.column_id, '
+      '       col.owner as schema_name,'
+      '       col.table_name, '
+      '       col.column_name, '
+      '       col.data_type, '
+      '       col.data_length, '
+      '       col.data_precision, '
+      '       col.data_scale, '
+      '       col.nullable,'
+      '       CASE col.column_id WHEN  1 THEN '#39'  '#39' ELSE '#39' ,'#39' END'
+      '    || RTRIM (col.column_name)'
+      '    || '#39' '#39
+      '    || RTRIM (data_type)'
+      '    || RTRIM ('
+      '         CASE col.data_type'
+      '           WHEN '#39'DATE'#39
+      '           THEN'
+      '             NULL'
+      '           WHEN '#39'CHAR'#39
+      '           THEN'
+      '             '#39'('#39' || col.data_length || '#39')'#39
+      '           WHEN '#39'VARCHAR2'#39
+      '           THEN'
+      '             '#39'('#39' || col.data_length || '#39')'#39
+      '           WHEN '#39'NUMBER'#39
+      '           THEN'
+      '             CASE coalesce( col.data_precision, -1)'
+      '               WHEN -1'
+      '               THEN'
+      '                 NULL'
+      '               ELSE'
+      '                 '#39'('#39' || TO_CHAR( col.data_precision ) ||  '
+      
+        '                 DECODE(COALESCE( col.data_scale, 0), 0, '#39#39', '#39' ,' +
+        ' '#39' || TO_CHAR( COALESCE( col.data_scale, 0))) '
+      '                 || '#39')'#39
+      '             END'
+      '           WHEN '#39'LONG'#39
+      '           THEN'
+      '             NULL'
+      '           ELSE'
+      '             '#39'******ERROR'#39
+      '         END )'
+      '    || '#39' '#39
+      
+        '    || RTRIM (CASE col.nullable WHEN '#39'N'#39' THEN '#39'NOT NULL'#39' ELSE NU' +
+        'LL END) AS COLUMN_DDL'
+      ''
+      'FROM sys.all_tab_columns col'
+      'INNER JOIN sys.all_tables t on col.owner = t.owner '
+      '                              AND col.table_name = t.table_name'
+      'WHERE col.owner = :SCHEMA_NAME'
+      'AND col.table_name = :TABLE_NAME'
+      'ORDER BY col.column_id;')
+    MasterSource = dsTargetTable
+    DetailFields = 'SCHEMA_NAME;TABLE_NAME'
+    Left = 624
+    Top = 376
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'SCHEMA_NAME'
+        ParamType = ptInput
+        Value = 'AADAS'
+      end
+      item
+        DataType = ftString
+        Name = 'TABLE_NAME'
+        ParamType = ptInput
+        Value = 'AC_ANNIMESI'
+      end>
+    object qryTargetTableFieldsCOLUMN_ID: TFloatField
+      FieldName = 'COLUMN_ID'
+    end
+    object qryTargetTableFieldsSCHEMA_NAME: TWideStringField
+      FieldName = 'SCHEMA_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryTargetTableFieldsTABLE_NAME: TWideStringField
+      FieldName = 'TABLE_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryTargetTableFieldsCOLUMN_NAME: TWideStringField
+      FieldName = 'COLUMN_NAME'
+      Required = True
+      Size = 30
+    end
+    object qryTargetTableFieldsDATA_TYPE: TWideStringField
+      FieldName = 'DATA_TYPE'
+      Size = 106
+    end
+    object qryTargetTableFieldsDATA_LENGTH: TFloatField
+      FieldName = 'DATA_LENGTH'
+      Required = True
+    end
+    object qryTargetTableFieldsDATA_PRECISION: TFloatField
+      FieldName = 'DATA_PRECISION'
+    end
+    object qryTargetTableFieldsDATA_SCALE: TFloatField
+      FieldName = 'DATA_SCALE'
+    end
+    object qryTargetTableFieldsNULLABLE: TWideStringField
+      FieldName = 'NULLABLE'
+      Size = 1
+    end
+    object qryTargetTableFieldsCOLUMN_DDL: TWideStringField
+      FieldName = 'COLUMN_DDL'
+      ReadOnly = True
+      Size = 233
+    end
+  end
+  object dsTargetTable: TUniDataSource
+    DataSet = qryTargetTable
+    Left = 624
+    Top = 312
+  end
+  object vtSchemas: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'SCHEMA_NAME'
+        Attributes = [faRequired]
+        DataType = ftWideString
+        Size = 128
+      end>
+    Left = 48
+    Top = 116
+    Data = {040001000B00534348454D415F4E414D451800800000000000000000000000}
   end
 end

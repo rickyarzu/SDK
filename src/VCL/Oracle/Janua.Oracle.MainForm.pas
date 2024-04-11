@@ -97,8 +97,6 @@ type
     pnlList: TPanel;
     memVMList: TMemo;
     memVMDiscardedList: TMemo;
-    edlAddRow: TLabeledEdit;
-    edSuffix: TLabeledEdit;
     Panel8: TPanel;
     memDDLMViews: TAdvMemo;
     CRDBGrid3: TCRDBGrid;
@@ -106,6 +104,33 @@ type
     dsMviewConsDDL: TDataSource;
     memIndexesDDL: TDBAdvMemo;
     dsIndexesDDL: TDataSource;
+    btnGenerateMViewCode: TButton;
+    tabViewIInsertDDL: TTabSheet;
+    edlAddRow: TLabeledEdit;
+    edSuffix: TLabeledEdit;
+    edReplace: TLabeledEdit;
+    Panel9: TPanel;
+    Button4: TButton;
+    Panel10: TPanel;
+    Button2: TButton;
+    CRDBGrid4: TCRDBGrid;
+    Panel11: TPanel;
+    Panel12: TPanel;
+    btnGenerateViewCode: TButton;
+    Button5: TButton;
+    memViewCode: TAdvMemo;
+    DBGrid3: TDBGrid;
+    Panel13: TPanel;
+    Memo1: TMemo;
+    Memo2: TMemo;
+    DBGrid4: TDBGrid;
+    dsTargetFields: TDataSource;
+    btnTestTarget: TButton;
+    cboTargetSchema: TJvDBLookupCombo;
+    lbTargetSchema: TLabel;
+    lbTargetTable: TLabel;
+    lbTargetSchemaDest: TLabel;
+    Label4: TLabel;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
@@ -114,6 +139,9 @@ type
     procedure btnOpenMViewsClick(Sender: TObject);
     procedure btnGenerateTableDDLClick(Sender: TObject);
     procedure btnTableListDDLClick(Sender: TObject);
+    procedure btnGenerateMViewCodeClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure btnGenerateViewCodeClick(Sender: TObject);
   private
     { Private declarations }
     FTable: string;
@@ -139,6 +167,11 @@ begin
   SetupControlFileConf;
   dmOracleControlFile.ControlFileConf := FControlFileConf;
   advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenerateMViewCodeClick(Sender: TObject);
+begin
+  memDDLMViews.Lines.Text := dmOracleSchema.GenerateViewCode(edlAddRow.Text, edSuffix.Text, edReplace.Text);
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnGenerateTableControlClick(Sender: TObject);
@@ -172,7 +205,18 @@ end;
 
 procedure TfrmOracleSwissMilitaryMain.btnOpenViewFieldsClick(Sender: TObject);
 begin
-  dmOracleSchema.qryViewFields.Open;
+  { property TargetSchema: string read FTargetSchema write SetTargetSchema;
+    property Suffix: string read FSuffix write SetSuffix;
+    property Prefix: string read FPrefix write SetPrefix;
+    property Replace: string read FReplace write SetReplace;
+  }
+  dmOracleSchema.TargetSchema := cboTargetSchema.Value;
+  dmOracleSchema.Suffix := edSuffix.Text;
+  dmOracleSchema.Replace := edReplace.Text;
+  self.lbTargetTable.Caption := dmOracleSchema.GetTargetTable;
+  self.lbTargetSchemaDest.Caption := dmOracleSchema.GetTargetSchema;
+  dmOracleSchema.OpenTargetTable;
+  memViewCode.Lines.Text := dmOracleSchema.GenerateTargetFields;
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnTableListDDLClick(Sender: TObject);
@@ -180,12 +224,21 @@ begin
   // lstMViews
   memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDLFromList(memVMList.Lines, edlAddRow.Text,
     edSuffix.Text);
-
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnViewTAbleFieldsClick(Sender: TObject);
 begin
   dmOracleSchema.qryTableFields.Open;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.Button2Click(Sender: TObject);
+begin
+  dmOracleSchema.qrySchemaViews.Open;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenerateViewCodeClick(Sender: TObject);
+begin
+  memViewCode.Lines.Text := dmOracleSchema.GenerateViewCode(edlAddRow.Text, edSuffix.Text, edReplace.Text);
 end;
 
 procedure TfrmOracleSwissMilitaryMain.SetupControlFileConf;

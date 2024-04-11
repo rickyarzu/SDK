@@ -29,13 +29,13 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   loggerproRT,
   SwagDoc,
   JanuaCore,
   rtl;
 
-contains
+ocontains
   Janua.Logistic.AWB.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Logistic.AWB.ViewModel.Intf.pas',
   Janua.ViewModels.Application in '..\..\src\januacore\ViewModels\Janua.ViewModels.Application.pas',
   Janua.Anagraph.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Anagraph.Model.Impl.pas',
@@ -95,4 +95,4 @@ contains
   Janua.Carservice.Driver.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Impl.pas',
   Janua.Carservice.Driver.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.Model.Impl.pas';
 
-end.
+d.

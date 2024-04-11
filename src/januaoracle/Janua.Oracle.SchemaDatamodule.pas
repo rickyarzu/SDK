@@ -3,10 +3,13 @@ unit Janua.Oracle.SchemaDatamodule;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, UniProvider, OracleUniProvider, MemDS,
+  System.SysUtils, System.Classes, System.Math, System.StrUtils,
+  // UniDAC
+  Data.DB, DBAccess, Uni, UniProvider, OracleUniProvider, MemDS,
+  // FireDAC
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.Oracle,
-  FireDAC.Phys.OracleDef, FireDAC.VCLUI.Wait, FireDAC.Comp.Client;
+  FireDAC.Phys.OracleDef, FireDAC.VCLUI.Wait, FireDAC.Comp.Client, VirtualTable;
 
 type
   TdmOracleSchema = class(TDataModule)
@@ -184,6 +187,26 @@ type
     qryMviewIndexesSEGMENT_CREATED: TWideStringField;
     qryIndexDDL: TUniQuery;
     qryIndexDDLMETADATA: TWideMemoField;
+    qryMviewDDL: TUniQuery;
+    qryMviewDDLMETADATA: TWideMemoField;
+    qryViewDDL: TUniQuery;
+    qryTargetTable: TUniQuery;
+    qryTargetTableFields: TUniQuery;
+    dsTargetTable: TUniDataSource;
+    qryTargetTableFieldsCOLUMN_ID: TFloatField;
+    qryTargetTableFieldsSCHEMA_NAME: TWideStringField;
+    qryTargetTableFieldsTABLE_NAME: TWideStringField;
+    qryTargetTableFieldsCOLUMN_NAME: TWideStringField;
+    qryTargetTableFieldsDATA_TYPE: TWideStringField;
+    qryTargetTableFieldsDATA_LENGTH: TFloatField;
+    qryTargetTableFieldsDATA_PRECISION: TFloatField;
+    qryTargetTableFieldsDATA_SCALE: TFloatField;
+    qryTargetTableFieldsNULLABLE: TWideStringField;
+    qryTargetTableFieldsCOLUMN_DDL: TWideStringField;
+    qryTargetTableSCHEMA_NAME: TWideStringField;
+    qryTargetTableTABLE_NAME: TWideStringField;
+    qryViewDDLMETADATA: TWideMemoField;
+    vtSchemas: TVirtualTable;
     procedure UniConnection1AfterConnect(Sender: TObject);
     procedure qrySchemasAfterOpen(DataSet: TDataSet);
     procedure qryMaterializedViewAfterOpen(DataSet: TDataSet);
@@ -194,14 +217,33 @@ type
     procedure qryMviewIndexesAfterScroll(DataSet: TDataSet);
   private
     FDiscardedList: TStrings;
+    FTargetSchema: string;
+    FPrefix: string;
+    FSuffix: string;
+    FReplace: string;
     procedure SetDiscardedList(const Value: TStrings);
+    procedure SetTargetSchema(const Value: string);
+    procedure SetPrefix(const Value: string);
+    procedure SetSuffix(const Value: string);
+    procedure SetReplace(const Value: string);
     { Private declarations }
   public
+    function GetTargetTable: string;
+    function GetTargetSchema: string;
+    procedure OpenTargetTable;
+    function GenerateTargetFields: string;
+  public
     { Public declarations }
+    function GenerateViewCode(const aAddedRows: string = ''; const aSuffix: string = '';
+      const aReplace: string = ''): string;
     function GenerateMVDDL(const aAddedRows: string = ''; const aSuffix: string = ''): string;
     function GenerateMVDDLFromList(const aList: TStrings; const aAddedRows: string = '';
       const aSuffix: string = ''): string;
     property DiscardedList: TStrings read FDiscardedList write SetDiscardedList;
+    property TargetSchema: string read FTargetSchema write SetTargetSchema;
+    property Suffix: string read FSuffix write SetSuffix;
+    property Prefix: string read FPrefix write SetPrefix;
+    property Replace: string read FReplace write SetReplace;
   end;
 
 var
@@ -220,6 +262,79 @@ end;
 procedure TdmOracleSchema.DataModuleDestroy(Sender: TObject);
 begin
   FDiscardedList.Free;
+end;
+
+function TdmOracleSchema.GenerateViewCode(const aAddedRows, aSuffix, aReplace: string): string;
+begin
+
+  { function GetTargetTable: string;
+    function GetTargetSchema: string; }
+
+  if aReplace <> '' then
+    FReplace := aReplace;
+
+  if aSuffix <> '' then
+    FSuffix := aSuffix;
+
+  var
+  aTarget := GetTargetTable;
+
+  var
+  aSchema := GetTargetSchema;
+
+  var
+  aList := TStringList.Create;
+  try
+
+    aList.Add('PROCEDURE INSERT_' + aTarget { TITOLI_DELTA } + ' (P_CODICE_COMPAGNIA_PVG IN CHAR)');
+    aList.Add('IS');
+    aList.Add('BEGIN');
+    aList.Add('INSERT INTO ' + { TITOLI_DELTA } aSchema + '.');
+
+    var
+    tmpList := TStringList.Create;
+    try
+      tmpList.Text := qryViewDDLMETADATA.AsString;
+      // StringReplace(qryMviewDDLMETADATA.AsString, aTable, aTable + aSuffix,  [rfIgnoreCase, rfReplaceAll]);
+      if tmpList.Count > 0 then
+      begin
+        aList.Add(tmpList.Text);
+        aList.Add('');
+        aList.Add('');
+      end;
+    finally
+      tmpList.Free;
+    end;
+
+  finally
+    aList.Free;
+  end;
+
+end;
+
+function TdmOracleSchema.GetTargetSchema: string;
+begin
+  Result := IfThen(FTargetSchema.IsEmpty, qrySchemasSCHEMA_NAME.AsWideString, FTargetSchema);
+end;
+
+function TdmOracleSchema.GetTargetTable: string;
+begin
+  var
+  aTable := qrySchemaViewsVIEW_NAME.AsString;
+
+  Result := aTable;
+
+  if FReplace <> '' then
+    Result := StringReplace(Result, FReplace, FSuffix, [rfIgnoreCase]);
+end;
+
+procedure TdmOracleSchema.OpenTargetTable;
+begin
+  qryTargetTable.Close;
+  { :schema_name and table_name = :table_name }
+  qryTargetTable.ParamByName('schema_name').AsString := GetTargetSchema;
+  qryTargetTable.ParamByName('table_name').AsString := GetTargetTable;
+  qryTargetTable.Open;
 end;
 
 function TdmOracleSchema.GenerateMVDDL(const aAddedRows: string; const aSuffix: string): string;
@@ -325,6 +440,22 @@ begin
   end;
 end;
 
+function TdmOracleSchema.GenerateTargetFields: string;
+begin
+  if not qryTargetTableFields.Active then
+    qryTargetTableFields.Open;
+
+  if qryTargetTableFields.RecordCount > 0 then
+  begin
+    qryTargetTableFields.First;
+    While not qryTargetTableFields.Eof do
+    begin
+      Result := Result + IfThen(Result.IsEmpty, '', ', ') + '"' + qryTargetTableFieldsCOLUMN_NAME.AsString + '"';
+      qryTargetTableFields.Next;
+    end;
+  end;
+end;
+
 procedure TdmOracleSchema.qryConstraintDDLAfterOpen(DataSet: TDataSet);
 begin
   qryConstraintDDL.Open;
@@ -343,8 +474,8 @@ begin
   qryConstraintDDL.Close;
   if qryMviewConstraints.RecordCount > 0 then
   begin
-    qryConstraintDDL.ParambyName('OWNER').AsString := qryMviewConstraintsOWNER.AsString;
-    qryConstraintDDL.ParambyName('CONSTRAINT_NAME').AsString := qryMviewConstraintsCONSTRAINT_NAME.AsString;
+    qryConstraintDDL.ParamByName('OWNER').AsString := qryMviewConstraintsOWNER.AsString;
+    qryConstraintDDL.ParamByName('CONSTRAINT_NAME').AsString := qryMviewConstraintsCONSTRAINT_NAME.AsString;
     qryConstraintDDL.Open;
   end;
 
@@ -355,8 +486,8 @@ begin
   qryIndexDDL.Close;
   if qryMviewIndexes.RecordCount > 0 then
   begin
-    qryIndexDDL.ParambyName('OWNER').AsString := qryMviewIndexesOWNER.AsString;
-    qryIndexDDL.ParambyName('Index_NAME').AsString := qryMviewIndexesINDEX_NAME.AsString;
+    qryIndexDDL.ParamByName('OWNER').AsString := qryMviewIndexesOWNER.AsString;
+    qryIndexDDL.ParamByName('Index_NAME').AsString := qryMviewIndexesINDEX_NAME.AsString;
     qryIndexDDL.Open;
   end;
 end;
@@ -374,9 +505,33 @@ begin
   FDiscardedList := Value;
 end;
 
+procedure TdmOracleSchema.SetPrefix(const Value: string);
+begin
+  FPrefix := Value;
+end;
+
+procedure TdmOracleSchema.SetReplace(const Value: string);
+begin
+  FReplace := Value;
+end;
+
+procedure TdmOracleSchema.SetSuffix(const Value: string);
+begin
+  FSuffix := Value;
+end;
+
+procedure TdmOracleSchema.SetTargetSchema(const Value: string);
+begin
+  FTargetSchema := Value;
+end;
+
 procedure TdmOracleSchema.UniConnection1AfterConnect(Sender: TObject);
 begin
   qrySchemas.Open;
+  vtSchemas.Assign(qrySchemas);
+  if not vtSchemas.Active then
+    vtSchemas.Open;
+
   qrySchemas.Locate('SCHEMA_NAME', UniConnection1.Username, []);
 end;
 
