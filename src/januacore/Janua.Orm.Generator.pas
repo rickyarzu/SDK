@@ -227,7 +227,7 @@ begin
   else
     sClass := CamelCase(aName);
 
-  sSchema := GetName(aSchema);
+  sSchema := CamelCase(aSchema);
 
   aFileIntf := 'JOrm.' + sSchema + '.' + sClass + '.Intf';
   aFileImpl := 'JOrm.' + sSchema + '.' + sClass + IfThen(aCustom, '.Custom', '') + '.Impl';
@@ -261,7 +261,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
         aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
@@ -291,7 +291,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
         aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
@@ -342,7 +342,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         // F<FieldName> is the index of the field in the field list
         aList.Add(ind(2) + 'F' + sName + ': IJanuaField;');
         { 2020-08-15 Eliminato il campo 'Index' }
@@ -356,7 +356,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
       end;
@@ -371,7 +371,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
           sName + ';');
       end;
@@ -402,7 +402,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'function Get' + sName + ': IJanuaField;');
         aList.Add(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
       end;
@@ -421,7 +421,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         aList.Add(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
           sName + ';');
       end;
@@ -487,7 +487,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         sKey := aDataset.Fields[i].FieldName.ToLower;
         bTest := True;
         sField := QuotedStr(sKey) + ', ' + QuotedStr(sKey);
@@ -603,7 +603,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted'))
         then
         begin
@@ -657,7 +657,7 @@ begin
     begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
-        sName := GetName(aDataset.Fields[i].FieldName);
+        sName := CamelCase(aDataset.Fields[i].FieldName);
         if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted'))
         then
         begin
