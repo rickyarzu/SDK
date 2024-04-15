@@ -52,4 +52,8 @@ object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
     Left = 144
     Top = 320
   end
+  object InterBaseUniProvider1: TInterBaseUniProvider
+    Left = 48
+    Top = 64
+  end
 end

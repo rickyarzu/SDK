@@ -16,12 +16,22 @@ type
     tabImpl: TTabSheet;
     tbDataModuleContainer: TTabSheet;
     pnlMain: TPanel;
-    AdvDirectoryEdit1: TAdvDirectoryEdit;
+    adeSourceDirectory: TAdvDirectoryEdit;
     pnlTabList: TPanel;
     CRDBGrid1: TCRDBGrid;
     CheckListBox1: TCheckListBox;
     memCustoIntf: TAdvMemo;
     memCustoImpl: TAdvMemo;
+    btnOpenTables: TButton;
+    ckbOnlyCustom: TCheckBox;
+    edSchema: TEdit;
+    btnGenerate: TButton;
+    tabDetails: TTabSheet;
+    tabModelIntf: TTabSheet;
+    edMemIntf: TAdvMemo;
+    edMemImpl: TAdvMemo;
+    procedure btnOpenTablesClick(Sender: TObject);
+    procedure btnGenerateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,5 +46,17 @@ implementation
 {$R *.dfm}
 
 uses UdmFirebirdOrmGenerator;
+
+procedure TfrmVCLFirebirdGenerator.btnGenerateClick(Sender: TObject);
+begin
+  dmFirebirdOrmGenerator.SchemaName := edSchema.Text;
+  dmFirebirdOrmGenerator.TargetDirectory := adeSourceDirectory.Text;
+  dmFirebirdOrmGenerator.Generate;
+end;
+
+procedure TfrmVCLFirebirdGenerator.btnOpenTablesClick(Sender: TObject);
+begin
+  dmFirebirdOrmGenerator.qryTables.Open;
+end;
 
 end.

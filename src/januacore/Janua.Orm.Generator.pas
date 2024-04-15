@@ -243,8 +243,7 @@ begin
     aList.Add('');
     aList.Add('type');
     aList.Add('');
-    // after  := stringreplace(before, ' a ', ' THE ',
-    // [rfReplaceAll, rfIgnoreCase]);
+
     // Generazione Interfaccia della Classe Record .....................................................................
     aList.Add(ind(1) + 'I' + sClass + ' = interface(IJanuaRecord)');
     if CreateGUID(MyGuid0) <> 0 then
@@ -271,6 +270,9 @@ begin
 
     aList.Add(ind(1) + 'end;');
     aList.Add('');
+
+
+
     // Generazione Interfaccia della Classe RecordSet ..................................................................
     sSet := IfThen(Pl = '', sClass + 's', Pl);
     // Il Type può essere Custom quindi implementabile in un discendente lasciando al gestore automatico il Custom

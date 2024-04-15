@@ -277,16 +277,55 @@ type
 
   TRecordUnits = class;
 
+  TRecordUnitConf = class
+  private
+    FDatasetName: string;
+    FPluralName: string;
+    FTargetDir: string;
+    FSchemaName: string;
+    FDataset: TDataset;
+    procedure SetDatasetName(const Value: string);
+    procedure SetPluralName(const Value: string);
+    procedure SetTargetDir(const Value: string);
+    procedure SetSchemaName(const Value: string);
+    procedure SetDataset(const Value: TDataset);
+  published
+    property DatasetName: string read FDatasetName write SetDatasetName;
+    property PluralName: string read FPluralName write SetPluralName;
+    property TargetDir: string read FTargetDir write SetTargetDir;
+    property SchemaName: string read FSchemaName write SetSchemaName;
+    property Dataset: TDataset read FDataset write SetDataset;
+  end;
+
   TRecordUnitFile = class
-    DatasetName: string;
-    PluralName: string;
-    FileName: string;
-    Text: string;
+  private
+    FFileName: string;
+    FText: string;
+    FConf: TRecordUnitConf;
+    procedure SetFileName(const Value: string);
+    procedure SetText(const Value: string);
+    procedure SetConf(const Value: TRecordUnitConf);
+  published
+    property Conf: TRecordUnitConf read FConf write SetConf;
+    property FileName: string read FFileName write SetFileName;
+    property Text: string read FText write SetText;
   end;
 
   TRecordUnits = class
-    IntfFile: TRecordUnitFile;
-    ImplFile: TRecordUnitFile;
+  public
+    constructor Create; overload;
+    destructor Destroy; override;
+  private
+    FImplFile: TRecordUnitFile;
+    FIntfFile: TRecordUnitFile;
+    FConf: TRecordUnitConf;
+    procedure SetImplFile(const Value: TRecordUnitFile);
+    procedure SetIntfFile(const Value: TRecordUnitFile);
+    procedure SetConf(const Value: TRecordUnitConf);
+  published
+    property IntfFile: TRecordUnitFile read FIntfFile write SetIntfFile;
+    property ImplFile: TRecordUnitFile read FImplFile write SetImplFile;
+    property Conf: TRecordUnitConf read FConf write SetConf;
   end;
 
 function IsEntityInSet(const ANumber: TJanuaEntity; const AArray: TJanuaEntities): Boolean;
@@ -538,6 +577,82 @@ procedure TDatasetPagination.SetAsJsonValue(const aJson: TJsonValue);
 begin
   // TJanuaJson.DeserializeSimple<T>(const AValue: TJSONValue): T;
   self := TJanuaJson.DeserializeSimple<TDatasetPagination>(aJson)
+end;
+
+{ TRecordUnitConf }
+
+procedure TRecordUnitConf.SetDataset(const Value: TDataset);
+begin
+  FDataset := Value;
+end;
+
+procedure TRecordUnitConf.SetDatasetName(const Value: string);
+begin
+  FDatasetName := Value;
+end;
+
+procedure TRecordUnitConf.SetPluralName(const Value: string);
+begin
+  FPluralName := Value;
+end;
+
+procedure TRecordUnitConf.SetSchemaName(const Value: string);
+begin
+  FSchemaName := Value;
+end;
+
+procedure TRecordUnitConf.SetTargetDir(const Value: string);
+begin
+  FTargetDir := Value;
+end;
+
+{ TRecordUnitFile }
+
+procedure TRecordUnitFile.SetConf(const Value: TRecordUnitConf);
+begin
+  FConf := Value;
+end;
+
+procedure TRecordUnitFile.SetFileName(const Value: string);
+begin
+  FFileName := Value;
+end;
+
+procedure TRecordUnitFile.SetText(const Value: string);
+begin
+  FText := Value;
+end;
+
+{ TRecordUnits }
+
+constructor TRecordUnits.Create;
+begin
+  FImplFile := TRecordUnitFile.Create;
+  FIntfFile := TRecordUnitFile.Create;
+  FConf := TRecordUnitConf.Create;
+end;
+
+destructor TRecordUnits.Destroy;
+begin
+  FImplFile.Free;
+  FIntfFile.Free;
+  FConf.Free;
+  inherited;
+end;
+
+procedure TRecordUnits.SetConf(const Value: TRecordUnitConf);
+begin
+  FConf := Value;
+end;
+
+procedure TRecordUnits.SetImplFile(const Value: TRecordUnitFile);
+begin
+  FImplFile := Value;
+end;
+
+procedure TRecordUnits.SetIntfFile(const Value: TRecordUnitFile);
+begin
+  FIntfFile := Value;
 end;
 
 end.

@@ -1597,8 +1597,6 @@ Type
     function CreateField(aKey, aDBField: string; aType: TJanuaFieldType): IJanuaField;
   end;
 
-
-
   IRecordCodeGen = Interface
     ['{29C06822-C02C-4953-92FA-13B16C4C5802}']
 
@@ -1614,18 +1612,20 @@ Type
     procedure SetTableName(const aValue: string);
     property TableName: string read GetTableName write SetTableName;
 
-    function GenerateCustomIntfFromDataset(const aDataset: TDataSet): string;
-    function GenerateCustomImplFromDataset(const aDataset: TDataSet): string;
-
-    function GetMasterDataset: IJanuaRecord;
-    procedure SetMasterDataset(const Value: IJanuaRecord);
-    property MasterDataset: IJanuaRecord read GetMasterDataset write SetMasterDataset;
-
     function GetCustomMasterFiles: TRecordUnits;
     property CustomMasterFiles: TRecordUnits read GetCustomMasterFiles;
 
     function GetMasterFiles: TRecordUnits;
     property CustomMasterImpl: TRecordUnits read GetMasterFiles;
+
+    function GetMasterClassConf: TRecordUnitConf;
+    property MasterClassConf: TRecordUnitConf read GetMasterClassConf;
+
+    procedure SetDataset(const Value: TDataset);
+    function GetDataset: TDataset;
+    property Dataset: TDataset read GetDataset write SetDataset;
+
+    procedure Generate;
 
   End;
 
