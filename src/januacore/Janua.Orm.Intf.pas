@@ -1616,7 +1616,7 @@ Type
     property CustomMasterFiles: TRecordUnits read GetCustomMasterFiles;
 
     function GetMasterFiles: TRecordUnits;
-    property CustomMasterImpl: TRecordUnits read GetMasterFiles;
+    property MasterImpl: TRecordUnits read GetMasterFiles;
 
     function GetMasterClassConf: TRecordUnitConf;
     property MasterClassConf: TRecordUnitConf read GetMasterClassConf;

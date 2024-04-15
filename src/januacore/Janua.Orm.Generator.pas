@@ -387,15 +387,6 @@ begin
     aList.Add(ind(1) + sSetType + ' = class(TJanuaRecordSet, IJanuaRecordSet, I' + sSet + ')');
     // aList.Add(ind(1) + 'private');
 
-    // Deprecato
-    {
-      for i := 0 to Pred(aDataset.FieldCount) do
-      begin
-      sName := GetName(aDataset.Fields[i].FieldName);
-      // F<FieldName> is the index of the field in the field list
-      aList.Add(ind(2) + 'F' + sName + ': Integer;');
-      end;
-    }
 
     // aggiungo una seconda sezione private per i metodi Setter e Getter delle procedure in questione.
     aList.Add(ind(1) + 'private');
@@ -416,8 +407,6 @@ begin
     // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
     aList.Add(ind(1) + 'public');
     aList.Add(ind(2) + 'constructor Create; override;');
-    // aList.Add(ind(2) + 'Constructor Create(aName, aTableName: string); overload;');
-    // aList.Add(ind(2) + 'Constructor Create(const aName: string; aRecord: IJanuaRecord); override;');
 
     for i := 0 to Pred(aDataset.FieldCount) do
     begin

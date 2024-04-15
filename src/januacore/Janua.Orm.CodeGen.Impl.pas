@@ -31,7 +31,7 @@ type
     FMasterRecord: IJanuaRecord;
     FMasterClassConf: TRecordUnitConf;
     FCustomMasterFiles: TRecordUnits;
-    FCustomMasterImpl: TRecordUnits;
+    FMasterFiles: TRecordUnits;
     function ind(l: integer): string;
     procedure SetCustomImplString(const Value: string);
     procedure SetCustomIntfString(const Value: string);
@@ -71,7 +71,7 @@ type
     property TableName: string read GetTableName write SetTableName;
     property Dataset: TDataset read GetDataset write SetDataset;
     property CustomMasterFiles: TRecordUnits read GetCustomMasterFiles;
-    property CustomMasterImpl: TRecordUnits read GetMasterFiles;
+    property MasterFiles: TRecordUnits read GetMasterFiles;
     property CustomIntfString: string read GetCustomIntfString write SetCustomIntfString;
     property CustomImplString: string read GetCustomImplString write SetCustomImplString;
     property IntfString: string read GetIntfString;
@@ -109,12 +109,12 @@ begin
   FMasterRecord := TJanuaRecord.Create;
   FMasterClassConf := TRecordUnitConf.Create;
   FCustomMasterFiles := TRecordUnits.Create;
-  FCustomMasterImpl := TRecordUnits.Create;
+  FMasterFiles := TRecordUnits.Create;
 end;
 
 procedure TRecordCodeGen.Generate;
 begin
-  FCustomMasterFiles.IntfFile.Text := GenerateCustomIntfFromDataset();
+  FCustomMasterFiles.IntfFile.Text := GenerateCustomIntfFromDataset(FDataset, FCustomMasterFiles);
 end;
 
 function TRecordCodeGen.GenerateCustomImplFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
@@ -125,6 +125,140 @@ var
   bTest: Boolean;
 begin
 
+  // Impl ..........................................................................................................
+  var
+  aBuilder := TStringBuilder.Create;
+  try
+    aBuilder.Append('unit ' + aUnit.ImplFile.FileName + ';');
+    aBuilder.Append('');
+    aBuilder.Append('interface');
+    aBuilder.Append('');
+    aBuilder.Append('uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, ' +
+      aUnit.IntfFile.FileName + ';');
+    aBuilder.Append('');
+
+    aBuilder.Append
+      ('//------------------------------------------ Impl object interface ----------------------------------');
+
+    aBuilder.Append('');
+    aBuilder.Append('type');
+
+    sClassType := 'TCustom' + sClass;
+
+    // Generazione Implementazione della Classe Record .....................................................................
+    aBuilder.Append(ind(1) + sClassType + ' = class(TJanuaRecord, I' + sClass + ')');
+    aBuilder.Append(ind(1) + 'private');
+
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      if CheckGUID(aDataset.Fields[i].FieldName) then
+      begin
+        var
+        sName := CamelCase(aDataset.Fields[i].FieldName);
+        // F<FieldName> is the index of the field in the field list
+        aBuilder.Append(ind(2) + 'F' + sName + ': IJanuaField;');
+        { 2020-08-15 Eliminato il campo 'Index' }
+        // aBuilder.Append(ind(2) + 'F' + sName + 'Index : Integer;');
+      end;
+    end;
+
+    // aggiungo una seconda sezione private per i metodi Setter e Getter delle procedure in questione.
+    aBuilder.Append(ind(1) + 'private');
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      if CheckGUID(aDataset.Fields[i].FieldName) then
+      begin
+        var
+        sName := CamelCase(aDataset.Fields[i].FieldName);
+        aBuilder.Append(ind(2) + 'function Get' + sName + ': IJanuaField;');
+        aBuilder.Append(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
+      end;
+    end;
+
+    // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
+    aBuilder.Append(ind(1) + 'public');
+    aBuilder.Append(ind(2) + 'constructor Create; override;');
+    // aBuilder.Append(ind(2) + 'Constructor Create(aName: string); overload; override;');
+
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      if CheckGUID(aDataset.Fields[i].FieldName) then
+      begin
+        var
+        sName := CamelCase(aDataset.Fields[i].FieldName);
+        aBuilder.Append(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
+      end;
+    end;
+
+    aBuilder.Append('');
+    aBuilder.Append(ind(1) + 'end;');
+    aBuilder.Append('');
+
+    // ----------------------- RecordSet Type Interface ------------------------------------------------------
+
+    // Generazione Interfaccia della Classe RecordSet ..................................................................
+    aBuilder.Append(ind(1) + sSetType + ' = class(TJanuaRecordSet, IJanuaRecordSet, I' + sSet + ')');
+    // aBuilder.Append(ind(1) + 'private');
+
+    // aggiungo una seconda sezione private per i metodi Setter e Getter delle procedure in questione.
+    aBuilder.Append(ind(1) + 'private');
+    // Getters and Setters of Field
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      if CheckGUID(aDataset.Fields[i].FieldName) then
+      begin
+        var
+        sName := CamelCase(aDataset.Fields[i].FieldName);
+        aBuilder.Append(ind(2) + 'function Get' + sName + ': IJanuaField;');
+        aBuilder.Append(ind(2) + 'procedure Set' + sName + '(const Value: IJanuaField);');
+      end;
+    end;
+    // Getter and Setter of Record ..................................................
+    aBuilder.Append(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
+    aBuilder.Append(ind(2) + 'procedure Set' + sClass + '(const Value: I' + sClass + ');');
+
+    // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
+    aBuilder.Append(ind(1) + 'public');
+    aBuilder.Append(ind(2) + 'constructor Create; override;');
+
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      if CheckGUID(aDataset.Fields[i].FieldName) then
+      begin
+        var
+        sName := CamelCase(aDataset.Fields[i].FieldName);
+        aBuilder.Append(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ' write Set' +
+          sName + ';');
+      end;
+    end;
+
+    // Infine inserisco la property che punta al Record di definizione del RecordSet
+    // property TestNestedRecord: IJanuaTestNestedRecord read GetNestedRecord write SetNestedRecord;
+    aBuilder.Append(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ' write Set' +
+      sClass + ';');
+
+    // Termino la Classe
+    aBuilder.Append(ind(1) + 'end;');
+    aBuilder.Append('');
+
+
+    // Factory Interface ...............................................................................................
+
+    aBuilder.Append(ind(1) + 'T' + sClass + 'Factory = class');
+    // Record Factory
+    aBuilder.Append(ind(2) + 'class function CreateRecord(const aKey: string): I' + sClass + '; overload;');
+    // RecordSet Factory Model
+    // CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage):' +
+    aBuilder.Append(ind(2) +
+      'class function CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
+      + sSet + '; overload;');
+    aBuilder.Append(ind(1) + 'end;');
+
+  finally
+    aBuilder.Free;
+  end;
+
 end;
 
 function TRecordCodeGen.GenerateCustomIntfFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
@@ -134,15 +268,14 @@ var
   bTest: Boolean;
   MyGuid0, MyGuid1: TGUID;
 begin
-  sPlural := ifThen(aUnit.Conf.PluralName.IsEmpty, CamelCase(aUnit.Conf.DatasetName),
+  sPlural := IfThen(aUnit.Conf.PluralName.IsEmpty, CamelCase(aUnit.Conf.DatasetName),
     CamelCase(aUnit.Conf.PluralName));
 
   sSchema := CamelCase(aUnit.Conf.SchemaName);
 
   aUnit.IntfFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Intf';
 
-  var
-  aFileImpl := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Impl';
+  aUnit.ImplFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Impl';
 
   var
   aBuilder := TStringBuilder.Create;
@@ -185,7 +318,7 @@ begin
     aBuilder.Append('');
 
     // Generazione Interfaccia della Classe RecordSet ..................................................................
-    sSet := 'Custom' + ifThen(sPlural.IsEmpty, sClass + 's', sPlural);
+    sSet := 'Custom' + IfThen(sPlural.IsEmpty, sClass + 's', sPlural);
     // Il Type può essere Custom quindi implementabile in un discendente lasciando al gestore automatico il Custom
     sSetType := 'TCustom' + sSet;
 
@@ -265,12 +398,12 @@ end;
 
 function TRecordCodeGen.GetImplString: string;
 begin
-
+  Result := FCustomMasterFiles.ImplFile.Text
 end;
 
 function TRecordCodeGen.GetIntfString: string;
 begin
-
+  Result := FCustomMasterFiles.IntfFile.Text;
 end;
 
 function TRecordCodeGen.GetMasterClassConf: TRecordUnitConf;
