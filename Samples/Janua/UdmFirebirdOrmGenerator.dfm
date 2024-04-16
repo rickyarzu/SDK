@@ -1,4 +1,5 @@
 object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
+  OnCreate = DataModuleCreate
   Height = 480
   Width = 640
   object UniConnection1: TUniConnection

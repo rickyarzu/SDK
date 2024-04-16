@@ -454,15 +454,6 @@ begin
     aList.Add('{' + sClassType + '}');
 
     // Metodo Create (aName) ...........................................................................................
-    (*
-      aList.Add(ind(1) + 'constructor ' + 'T' + sClass + '.Create(aName: string);');
-      aList.Add(ind(1) + 'begin');
-      aList.Add(ind(2) + 'Create;');
-      aList.Add(ind(2) + 'self.Name := ''' + aName + ''';');
-      // aList.Add(ind(2) + 'self.Name := aName;');
-      aList.Add(ind(2) + 'self.FPrefix := ''' + aAbbr + ''';');
-      aList.Add(ind(1) + 'end;');
-    *)
     aList.Add('');
     // Generazione Metodo Create della Classe Record ...................................................................
     // constructor TJanuaTestNestedRecord.Create; begin inherited;
@@ -471,8 +462,6 @@ begin
     // inherited;
     aList.Add(ind(2) + 'inherited;');
     aList.Add(ind(2) + 'FPrefix := ''' + aAbbr + ''';');
-    // FInteger := self.AddField(TJanuaOrmFactory.CreateIntegerField('int', 'IntField'));
-    // aList.Add('');
     // Create Fields List As Interface Implementations .......................................................
     for i := 0 to Pred(aDataset.FieldCount) do
     begin
@@ -579,10 +568,6 @@ begin
             bTest := False;
           end;
         end;
-        (*
-          if bTest then
-          aList.Add(ind(2) + 'F' + sName + 'Index := ' + 'AddField(' + 'F' + sName + ');');
-        *)
       end;
     end;
     aList.Add(ind(1) + 'end;');
@@ -595,7 +580,7 @@ begin
       if CheckGUID(aDataset.Fields[i].FieldName) then
       begin
         sName := CamelCase(aDataset.Fields[i].FieldName);
-        if not((aName.ToLower = aAbbr.ToLower + '_jguid') or (aName.ToLower = aAbbr.ToLower + '_deleted'))
+        if not((aName.ToLower = 'jguid') or (aName.ToLower = 'deleted'))
         then
         begin
           aList.Add(ind(1) + 'function ' + sClassType + '.Get' + sName + ': IJanuaField;');

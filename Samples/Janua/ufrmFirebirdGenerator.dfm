@@ -106,7 +106,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -120,6 +120,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
+        SyntaxStyles = AdvPascalMemoStyler1
         TabOrder = 0
         TabStop = True
         TrimTrailingSpaces = False
@@ -137,10 +138,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 144
-        ExplicitTop = 80
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object tabCustomImpl: TTabSheet
@@ -231,7 +228,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -245,6 +242,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
+        SyntaxStyles = AdvPascalMemoStyler1
         TabOrder = 0
         TabStop = True
         TrimTrailingSpaces = False
@@ -262,10 +260,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 144
-        ExplicitTop = 56
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object tabIntf: TTabSheet
@@ -332,7 +326,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -345,8 +338,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
         Gutter.GutterColorTo = clBtnFace
         Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
@@ -373,6 +364,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
+        SyntaxStyles = AdvPascalMemoStyler1
         TabOrder = 0
         TabStop = True
         TrimTrailingSpaces = False
@@ -390,10 +382,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 144
-        ExplicitTop = 56
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object tabImpl: TTabSheet
@@ -460,7 +448,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -473,8 +460,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
         Gutter.GutterColorTo = clBtnFace
         Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
@@ -501,6 +486,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
+        SyntaxStyles = AdvPascalMemoStyler1
         TabOrder = 0
         TabStop = True
         TrimTrailingSpaces = False
@@ -518,10 +504,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 144
-        ExplicitTop = 56
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object tbDataModuleContainer: TTabSheet
@@ -660,9 +642,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
     Height = 768
     Align = alLeft
     TabOrder = 2
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 738
     object CRDBGrid1: TCRDBGrid
       Left = 1
       Top = 26
@@ -692,8 +671,6 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
       Align = alClient
       ItemHeight = 17
       TabOrder = 1
-      ExplicitTop = 473
-      ExplicitHeight = 264
     end
     object btnOpenTables: TButton
       Left = 1
@@ -704,8 +681,279 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
       Caption = 'Apri Tabelle'
       TabOrder = 2
       OnClick = btnOpenTablesClick
-      ExplicitLeft = -23
-      ExplicitTop = -15
     end
+  end
+  object AdvPascalMemoStyler1: TAdvPascalMemoStyler
+    AutoBlockEnd = True
+    BlockStart = 'begin,try,case,class,record,interface,implementation'
+    BlockEnd = 'end'
+    LineComment = '//'
+    MultiCommentLeft = '{'
+    MultiCommentRight = '}'
+    CommentStyle.TextColor = clNavy
+    CommentStyle.BkColor = clNone
+    CommentStyle.Style = [fsItalic]
+    NumberStyle.TextColor = clFuchsia
+    NumberStyle.BkColor = clNone
+    NumberStyle.Style = [fsBold]
+    HighlightStyle.TextColor = clWhite
+    HighlightStyle.BkColor = clRed
+    HighlightStyle.Style = [fsBold]
+    AllStyles = <
+      item
+        KeyWords.Strings = (
+          'UNIT'
+          'INTERFACE'
+          'IMPLEMENTATION'
+          'USES'
+          'CONST'
+          'PROGRAM'
+          'PRIVATE'
+          'PUBLIC'
+          'PUBLISHED'
+          'PROTECTED'
+          'PROPERTY'
+          'FUNCTION'
+          'FINALISE'
+          'INITIALISE'
+          'VAR'
+          'BEGIN'
+          'WITH'
+          'END'
+          'FOR'
+          'TO'
+          'DO'
+          'NOT'
+          'IF'
+          'THEN'
+          'ELSE'
+          'TYPE'
+          'WHILE'
+          'REPEAT'
+          'UNTIL'
+          'BREAK'
+          'CONTINUE'
+          'VIRTUAL'
+          'OVERRIDE'
+          'DEFAULT'
+          'CLASS'
+          'STORED'
+          'INHERITED'
+          'PROCEDURE'
+          'CONSTRUCTOR'
+          'DESTRUCTOR'
+          'FINALLY'
+          'RAISE'
+          'STRING'
+          'TRY'
+          'EXCEPT'
+          'STDCALL'
+          'CDECL'
+          'PASCAL'
+          'NIL'
+          'CASE'
+          'REINTRODUCE'
+          'PACKED'
+          'RECORD'
+          'MESSAGE'
+          'IN'
+          'IS'
+          'SHL'
+          'SHR'
+          'MOD'
+          'DIV'
+          'XOR'
+          'OR'
+          'AND'
+          'OF'
+          'SET'
+          'DOWNTO'
+          'EXPORTS'
+          'LIBRARY'
+          'AS'
+          'ASM'
+          'DYNAMIC'
+          'OBJECT'
+          'THREADVAR'
+          'FILE'
+          'ABSTRACT'
+          'OVERLOAD'
+          'ASSEMBLER'
+          'ABSOLUTE'
+          'AUTOMATED'
+          'EXTERNAL'
+          'REGISTER'
+          'DISPINTERFACE'
+          'RESOURCESTRING'
+          'NEAR'
+          'FAR'
+          'LABEL'
+          'OUT'
+          'SAFECALL'
+          'DISPID'
+          'ARRAY'
+          'INLINE'
+          'FORWARD'
+          'PLATFORM'
+          'DEPRECATED')
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGreen
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = [fsBold]
+        BGColor = clNone
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'Pascal Standard Default'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stBracket
+        BracketStart = #39
+        BracketEnd = #39
+        Info = 'Simple Quote'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stBracket
+        BracketStart = '"'
+        BracketEnd = '"'
+        Info = 'Double Quote'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stSymbol
+        BracketStart = #0
+        BracketEnd = #0
+        Symbols = ' ,;:.(){}[]=+-*/^%<>#'#13#10
+        Info = 'Symbols Delimiters'
+      end
+      item
+        CommentLeft = '(*'
+        CommentRight = '*)'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = [fsItalic]
+        BGColor = clNone
+        StyleType = stComment
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'Multi line comment'
+      end>
+    AutoCompletion.Strings = (
+      'ShowMessage'
+      'MessageDlg')
+    HintParameter.TextColor = clBlack
+    HintParameter.BkColor = clInfoBk
+    HintParameter.HintCharStart = '('
+    HintParameter.HintCharEnd = ')'
+    HintParameter.HintCharDelimiter = ';'
+    HintParameter.HintClassDelimiter = '.'
+    HintParameter.HintCharWriteDelimiter = ','
+    HintParameter.Parameters.Strings = (
+      'ShowMessage(const Msg: string);'
+      
+        'MessageDlg(const Msg: string; DlgType: TMsgDlgType; Buttons: TMs' +
+        'gDlgButtons; HelpCtx: Longint): Integer);')
+    HexIdentifier = '$'
+    Description = 'Pascal'
+    Filter = 'Pascal Files (*.pas,*.dpr,*.dpk,*.inc)|*.pas;*.dpr;*.dpk;*.inc'
+    DefaultExtension = '.pas'
+    StylerName = 'Pascal'
+    Extensions = 'pas;dpr;dpk;inc'
+    RegionDefinitions = <
+      item
+        Identifier = 'procedure'
+        RegionStart = 'begin'
+        RegionEnd = 'end'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = 'procedure'
+        RegionEnd = 'forward'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = 'constructor'
+        RegionStart = 'begin'
+        RegionEnd = 'end'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = 'destructor'
+        RegionStart = 'begin'
+        RegionEnd = 'end'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = 'interface'
+        RegionStart = 'interface'
+        RegionType = rtOpen
+        ShowComments = False
+      end
+      item
+        Identifier = 'unit'
+        RegionStart = 'unit'
+        RegionType = rtFile
+        ShowComments = False
+      end
+      item
+        Identifier = 'implementation'
+        RegionStart = 'implementation'
+        RegionType = rtOpen
+        ShowComments = False
+      end
+      item
+        Identifier = 'case'
+        RegionStart = 'case'
+        RegionEnd = 'end'
+        RegionType = rtIgnore
+        ShowComments = False
+      end
+      item
+        Identifier = 'try'
+        RegionStart = 'try'
+        RegionEnd = 'end'
+        RegionType = rtIgnore
+        ShowComments = False
+      end
+      item
+        Identifier = 'function'
+        RegionStart = 'begin'
+        RegionEnd = 'end'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '{$region'
+        RegionStart = '{$region'
+        RegionEnd = '{$endregion'
+        RegionType = rtClosed
+        ShowComments = False
+      end>
+    Left = 597
+    Top = 295
   end
 end

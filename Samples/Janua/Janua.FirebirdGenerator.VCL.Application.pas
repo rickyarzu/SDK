@@ -1,11 +1,11 @@
-unit Janua.Phoenix.VCL.DesktopApplication;
+unit Janua.FirebirdGenerator.VCL.Application;
 
 interface
 
 uses System.Classes, System.SysUtils, Janua.Core.Types, Janua.Bindings.Impl, Janua.VCL.Application;
 
 type
-  TJanuaPhoenixVCLApplication = class(TJanuaVCLCustomApplication)
+  TJanuaFirebirdVCLApplication = class(TJanuaVCLCustomApplication)
   private
     class var FTMLogisticRegistered: Boolean;
   public
@@ -44,33 +44,33 @@ uses System.Types,
   // Test Prototypes
   Janua.Test.VCL.frmDatasetOrmSync, ufrmGridsTestings, Janua.Test.VCLTestFilters, ufrmVCLOutlookOLEAutomation;
 
-{ TJanuaPhoenixVCLApplication }
+{ TJanuaFirebirdVCLApplication }
 
-class procedure TJanuaPhoenixVCLApplication.ApplicationSetup(const aAppname: string);
+class procedure TJanuaFirebirdVCLApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
 
 end;
 
-class procedure TJanuaPhoenixVCLApplication.ApplicationTearDown;
+class procedure TJanuaFirebirdVCLApplication.ApplicationTearDown;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaPhoenixVCLApplication.ConnectionSetup;
+class procedure TJanuaFirebirdVCLApplication.ConnectionSetup;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaPhoenixVCLApplication.LoadMenu;
+class procedure TJanuaFirebirdVCLApplication.LoadMenu;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaPhoenixVCLApplication.RegisterForms;
+class procedure TJanuaFirebirdVCLApplication.RegisterForms;
 begin
   inherited;
 

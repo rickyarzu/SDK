@@ -284,14 +284,17 @@ type
     FTargetDir: string;
     FSchemaName: string;
     FDataset: TDataset;
+    FSingularName: string;
     procedure SetDatasetName(const Value: string);
     procedure SetPluralName(const Value: string);
     procedure SetTargetDir(const Value: string);
     procedure SetSchemaName(const Value: string);
     procedure SetDataset(const Value: TDataset);
+    procedure SetSingularName(const Value: string);
   published
     property DatasetName: string read FDatasetName write SetDatasetName;
     property PluralName: string read FPluralName write SetPluralName;
+    property SingularName: string read FSingularName write SetSingularName;
     property TargetDir: string read FTargetDir write SetTargetDir;
     property SchemaName: string read FSchemaName write SetSchemaName;
     property Dataset: TDataset read FDataset write SetDataset;
@@ -313,7 +316,7 @@ type
 
   TRecordUnits = class
   public
-    constructor Create; overload;
+    constructor Create(const aConf: TRecordUnitConf); overload;
     destructor Destroy; override;
   private
     FImplFile: TRecordUnitFile;
@@ -601,6 +604,11 @@ begin
   FSchemaName := Value;
 end;
 
+procedure TRecordUnitConf.SetSingularName(const Value: string);
+begin
+  FSingularName := Value;
+end;
+
 procedure TRecordUnitConf.SetTargetDir(const Value: string);
 begin
   FTargetDir := Value;
@@ -625,11 +633,11 @@ end;
 
 { TRecordUnits }
 
-constructor TRecordUnits.Create;
+constructor TRecordUnits.Create(const aConf: TRecordUnitConf);
 begin
   FImplFile := TRecordUnitFile.Create;
   FIntfFile := TRecordUnitFile.Create;
-  FConf := TRecordUnitConf.Create;
+  FConf := aConf;
 end;
 
 destructor TRecordUnits.Destroy;

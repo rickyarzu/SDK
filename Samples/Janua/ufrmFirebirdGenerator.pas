@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids, CRGrid, Vcl.ComCtrls, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.CheckLst, AdvEdit, AdvEdBtn, AdvDirectoryEdit, AdvMemo;
+  Vcl.StdCtrls, Vcl.CheckLst, AdvEdit, AdvEdBtn, AdvDirectoryEdit, AdvMemo, AdvmPS;
 
 type
   TfrmVCLFirebirdGenerator = class(TForm)
@@ -30,6 +30,7 @@ type
     tabModelIntf: TTabSheet;
     edMemIntf: TAdvMemo;
     edMemImpl: TAdvMemo;
+    AdvPascalMemoStyler1: TAdvPascalMemoStyler;
     procedure btnOpenTablesClick(Sender: TObject);
     procedure btnGenerateClick(Sender: TObject);
   private
@@ -52,6 +53,8 @@ begin
   dmFirebirdOrmGenerator.SchemaName := edSchema.Text;
   dmFirebirdOrmGenerator.TargetDirectory := adeSourceDirectory.Text;
   dmFirebirdOrmGenerator.Generate;
+  memCustoIntf.Lines.Text := dmFirebirdOrmGenerator.CustomMasterIntf;
+  memCustoImpl.Lines.Text := dmFirebirdOrmGenerator.CustomMasterImpl;
 end;
 
 procedure TfrmVCLFirebirdGenerator.btnOpenTablesClick(Sender: TObject);

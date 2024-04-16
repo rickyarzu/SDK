@@ -1616,7 +1616,7 @@ Type
     property CustomMasterFiles: TRecordUnits read GetCustomMasterFiles;
 
     function GetMasterFiles: TRecordUnits;
-    property MasterImpl: TRecordUnits read GetMasterFiles;
+    property MasterFiles: TRecordUnits read GetMasterFiles;
 
     function GetMasterClassConf: TRecordUnitConf;
     property MasterClassConf: TRecordUnitConf read GetMasterClassConf;
@@ -1624,6 +1624,11 @@ Type
     procedure SetDataset(const Value: TDataset);
     function GetDataset: TDataset;
     property Dataset: TDataset read GetDataset write SetDataset;
+
+
+    procedure SetAskPlurals(const Value: Boolean);
+    function GetAskPlurals: Boolean;
+    property AskPlurals: Boolean read GetAskPlurals write SetAskPlurals;
 
     procedure Generate;
 
