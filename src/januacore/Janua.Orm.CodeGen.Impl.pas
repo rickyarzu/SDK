@@ -436,7 +436,7 @@ begin
     // Generazione Implementazione della Classe Getters and Setters .................................................
     for i := 0 to Pred(aDataset.FieldCount) do
     begin
-      if CheckGUID(aDataset.Fields[i].FieldName) then
+      if CheckGUID(aDataset.Fields[i].FieldName.ToLower) then
       begin
         var
         sName := CamelCase(aDataset.Fields[i].FieldName.ToLower);
@@ -629,7 +629,120 @@ begin
 end;
 
 function TRecordCodeGen.GenerateIntfFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
+var
+  i: integer;
+  lTmp: TJanuaFieldType;
+  sMyGuid: string;
+  bTest: Boolean;
+  MyGuid0, MyGuid1: TGUID;
 begin
+
+  var
+  sClass := aUnit.Conf.SingularName;
+
+  var
+  sPlural := aUnit.Conf.PluralName;
+
+  sSchema := CamelCase(aUnit.Conf.SchemaName);
+
+  var
+  aAncestorIntf := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Intf';
+
+  var
+  aAncestorImpl := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Impl';
+
+  aUnit.IntfFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Intf';
+
+  aUnit.ImplFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Impl';
+
+  var
+  aBuilder := TStringBuilder.Create;
+  try
+    // Intf ............................................................................................................
+    aBuilder.AppendLine('unit ' + aUnit.IntfFile.FileName + ';');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('interface');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('uses ' + aAncestorIntf + ', Janua.Orm.Intf;');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('type');
+    aBuilder.AppendLine('');
+
+    // Generazione Interfaccia della Classe Record .....................................................................
+    aBuilder.AppendLine(ind(1) + 'I' + sClass + ' = interface(ICustom' + sClass + ')');
+    if CreateGUID(MyGuid0) <> 0 then
+      aBuilder.AppendLine('Creating GUID failed!')
+    else
+    begin
+      var
+      sMyGuid := stringreplace(GUIDToString(MyGuid0), '{', '[''{', [rfReplaceAll, rfIgnoreCase]);
+      sMyGuid := stringreplace(sMyGuid, '}', '}'']', [rfReplaceAll, rfIgnoreCase]);
+      aBuilder.AppendLine(ind(1) + sMyGuid);
+    end;
+
+    // Generazione Getter - Setter - Properties ........................................................................
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      var
+      sName := aDataset.Fields[i].FieldName.ToLower;
+      if CheckGUID(sName) then
+      begin
+        sName := CamelCase(sName);
+        aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
+        aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
+      end;
+    end;
+
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    // Generazione Interfaccia della Classe RecordSet ..................................................................
+    sSet := 'Custom' + IfThen(sPlural.IsEmpty, sClass + 's', sPlural);
+    // Il Type può essere Custom quindi implementabile in un discendente lasciando al gestore automatico il Custom
+    sSetType := 'T' + sSet;
+
+    aBuilder.AppendLine(ind(1) + 'I' + sSet + ' = interface(IJanuaRecordSet)');
+    if CreateGUID(MyGuid1) <> 0 then
+      aBuilder.AppendLine('Creating GUID failed!')
+    else
+    begin
+      var
+      sMyGuid := stringreplace(GUIDToString(MyGuid1), '{', '[''{', [rfReplaceAll, rfIgnoreCase]);
+      sMyGuid := stringreplace(sMyGuid, '}', '}'']', [rfReplaceAll, rfIgnoreCase]);
+      aBuilder.AppendLine(ind(1) + sMyGuid);
+    end;
+
+    // Generazione Getter - Setter - Properties ........................................................................
+    for i := 0 to Pred(aDataset.FieldCount) do
+    begin
+      var
+      sName := aDataset.Fields[i].FieldName.ToLower;
+      if CheckGUID(sName) then
+      begin
+        sName := CamelCase(sName);
+        aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
+        aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
+      end;
+    end;
+
+    // Generazione della proprietà di accesso alla classe record all'interno del record-set
+    aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
+    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ':I' + sClass + ';');
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('implementation');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('end.');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('');
+
+    Result := aBuilder.ToString;
+
+  finally
+    aBuilder.Free;
+  end;
 
 end;
 
