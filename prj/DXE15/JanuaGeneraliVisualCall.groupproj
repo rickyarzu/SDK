@@ -57,6 +57,9 @@
         <Projects Include="VCL\OracleSwissKnifeXE15.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="VCL\GeneraliVisualCall.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -227,14 +230,23 @@
     <Target Name="OracleSwissKnifeXE15:Make">
         <MSBuild Projects="VCL\OracleSwissKnifeXE15.dproj" Targets="Make"/>
     </Target>
+    <Target Name="GeneraliVisualCall">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj"/>
+    </Target>
+    <Target Name="GeneraliVisualCall:Clean">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GeneraliVisualCall:Make">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Spring_Base;Spring_Core;RestRequestLib;Neon;JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;AdvMemoMainDemo;AdvMemoMultiFileDemo;OracleSwissKnifeXE15"/>
+        <CallTarget Targets="Spring_Base;Spring_Core;RestRequestLib;Neon;JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;AdvMemoMainDemo;AdvMemoMultiFileDemo;OracleSwissKnifeXE15;GeneraliVisualCall"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;RestRequestLib:Clean;Neon:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean;OracleSwissKnifeXE15:Clean"/>
+        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;RestRequestLib:Clean;Neon:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean;OracleSwissKnifeXE15:Clean;GeneraliVisualCall:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;RestRequestLib:Make;Neon:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make;OracleSwissKnifeXE15:Make"/>
+        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;RestRequestLib:Make;Neon:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make;OracleSwissKnifeXE15:Make;GeneraliVisualCall:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
@@ -286,14 +298,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -302,6 +314,12 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\GeneraliVisualCall.dproj">
+            <ProjectGuid>{D2567D54-EF9F-42FB-BE31-7C5B1DD5ED07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Core.dproj">

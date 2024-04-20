@@ -2010,11 +2010,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             item
               Expanded = False
               FieldName = 'TABLE_NAME'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'DATA_TYPE'
+              Width = 64
               Visible = True
             end
             item
@@ -2035,11 +2037,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             item
               Expanded = False
               FieldName = 'NULLABLE'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'COLUMN_DDL'
+              Width = 64
               Visible = True
             end>
         end
@@ -2061,7 +2065,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
   end
   object dsSchemas: TDataSource
     DataSet = dmOracleSchema.qrySchemas
-    Left = 44
+    Left = 36
     Top = 395
   end
   object dsTables: TDataSource
