@@ -64,9 +64,6 @@ Coordinates=1052,892,168,36
 [pnlToolBar]
 Coordinates=1738,674,77,58
 
-[TabSheet3]
-Coordinates=10,856,77,36
-
 [AdvMemo2]
 Coordinates=1789,810,79,36
 
@@ -289,4 +286,7 @@ Coordinates=1590,742,82,36
 
 [dsMViewIndexes]
 Coordinates=610,1177,131,36
+
+[tabTemplate]
+Coordinates=10,856,77,36
 

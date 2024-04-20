@@ -63,17 +63,9 @@ begin
   aList := TStringList.Create;
   try
     rCtl := FControlFileConf;
-    aList.Text := generateHeader(rCtl);
+    {aList.Text := generateHeader(rCtl);}
     aList.Add('(');
-    {
-      col.column_id,
-      col.column_name,
-      col.data_type,
-      col.data_length,
-      col.data_precision,
-      col.data_scale,
-      col.nullable,
-    }
+
     aFieldsList.First;
     while not aFieldsList.Eof do
     begin
@@ -113,7 +105,7 @@ begin
       aFieldsList.Next;
       if not aFieldsList.Eof then
         lFieldText := lFieldText + ',';
-      aList.Add(lFieldText);
+      aList.Add('   ' +  lFieldText);
     end;
     aList.Add(')');
     Result := aList.Text;
@@ -161,7 +153,7 @@ begin
       aList.Add(lFieldText);
     end;
     aList.Add('FROM');
-    aList.Add(dmOracleSchema.qrySchemasSCHEMA_NAME.AsString + '.' +
+    aList.Add({dmOracleSchema.qrySchemasSCHEMA_NAME.AsString +} '$SCHEMA$.' +
       dmOracleSchema.qrySchemaTablesTABLE_NAME.AsString);
 
     Result := aList.Text;
