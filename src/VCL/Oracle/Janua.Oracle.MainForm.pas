@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, DBAccess, UniDacVcl, Vcl.ComCtrls,
   JvExStdCtrls, JvCombobox, JvDBCombobox, Data.DB, JvExControls, JvDBLookup, Vcl.Grids, Vcl.DBGrids, CRGrid,
   AdvMemo, AdvmSQLS, Vcl.Mask, AdvSpin, Janua.Oracle.ControlFileGenerator, DBAdvMemo, AdvEdit, AdvEdBtn,
-  AdvDirectoryEdit, Vcl.Samples.Spin;
+  AdvDirectoryEdit, Vcl.Samples.Spin, Janua.Vcl.EnhCRDBGrid, Vcl.Buttons, Vcl.DBCtrls;
 
 type
   TfrmOracleSwissMilitaryMain = class(TForm)
@@ -63,7 +63,6 @@ type
     btnGenerateTableControl: TButton;
     btnViewTAbleFields: TButton;
     btnGenerateCSV: TButton;
-    DBGrid1: TDBGrid;
     pgcTableControlExport: TPageControl;
     tabControl: TTabSheet;
     memTableCtrlFile: TAdvMemo;
@@ -78,7 +77,7 @@ type
     btnOpenViewFields: TButton;
     AdvMemo2: TAdvMemo;
     DBGrid2: TDBGrid;
-    tabQueryControlFile: TTabSheet;
+    tabDynamicCode: TTabSheet;
     pgcMaterializedViews: TTabSheet;
     pnlMViews: TPanel;
     dsMviews: TDataSource;
@@ -135,8 +134,8 @@ type
     pgControlTemplates: TPageControl;
     tabExportTemplate: TTabSheet;
     tabControlTemplate: TTabSheet;
-    memTemplateSQL: TAdvMemo;
-    memCtlTemplate: TAdvMemo;
+    memTemplateCSV: TAdvMemo;
+    memTemplateCtl: TAdvMemo;
     tabOutput: TTabSheet;
     btnGenerateAllCtl: TButton;
     dirGenerate: TAdvDirectoryEdit;
@@ -167,6 +166,49 @@ type
     ctlGTIT: TAdvMemo;
     edtExportNumber: TSpinEdit;
     btnGenerateAllSQL: TButton;
+    tabSQL: TTabSheet;
+    tabOutputInsert: TPageControl;
+    tabUnloadCSV: TTabSheet;
+    memUnloadCSV: TAdvMemo;
+    tabMerge: TTabSheet;
+    memTemplateMerge: TAdvMemo;
+    tabMergeCode: TTabSheet;
+    memMergeCode: TAdvMemo;
+    btnGenerateMerge: TButton;
+    tabMergeOutput: TTabSheet;
+    memMergeOutput: TAdvMemo;
+    PageControl8: TPageControl;
+    tabFields: TTabSheet;
+    DBGrid1: TDBGrid;
+    tabFileList: TTabSheet;
+    btnGenerateTR: TButton;
+    tabTemplateTruncate: TTabSheet;
+    memTemplateTruncate: TAdvMemo;
+    tabTruncate: TTabSheet;
+    memTruncateOutput: TAdvMemo;
+    btnGenerateExtract: TButton;
+    tabExtractTemplate: TTabSheet;
+    memTemplateExtract: TAdvMemo;
+    tabInsert: TTabSheet;
+    memTemplateInsert: TAdvMemo;
+    tbnGenInsert: TButton;
+    tabInsertOutput: TTabSheet;
+    memInsertOutput: TAdvMemo;
+    tabExtractOutput: TTabSheet;
+    memExtractOutput: TAdvMemo;
+    btnGenAll: TButton;
+    Panel14: TPanel;
+    DBNavigator1: TDBNavigator;
+    dsFileList: TDataSource;
+    grdFiles: TEnhCRDBGrid;
+    tabLog: TTabSheet;
+    memLog: TAdvMemo;
+    tabProcCode: TTabSheet;
+    memCodeOutput: TAdvMemo;
+    btnGenCode: TButton;
+    Panel15: TPanel;
+    DBNavigator2: TDBNavigator;
+    CRDBGrid5: TCRDBGrid;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
@@ -180,6 +222,11 @@ type
     procedure btnGenerateViewCodeClick(Sender: TObject);
     procedure btnGenerateAllCtlClick(Sender: TObject);
     procedure btnGenerateAllSQLClick(Sender: TObject);
+    procedure btnGenerateMergeClick(Sender: TObject);
+    procedure btnGenerateTRClick(Sender: TObject);
+    procedure btnGenerateExtractClick(Sender: TObject);
+    procedure tbnGenInsertClick(Sender: TObject);
+    procedure btnGenAllClick(Sender: TObject);
   private
     { Private declarations }
     FTable: string;
@@ -187,6 +234,13 @@ type
     procedure SetupControlFileConf;
   public
     { Public declarations }
+    procedure GenerateAllCtl(const aFileName: string = '');
+    procedure GenerateTruncate(const aFileName: string = '');
+    procedure GenerateCsv(const aFileName: string = '');
+    procedure GenerateExtract(const aFileName: string = '');
+    procedure GenerateInsert(const aFileName: string = '');
+    procedure GenerateMerge(const aFileName: string = '');
+    procedure GenerateCtl(const aFileName: string = '');
   end;
 
 var
@@ -196,101 +250,63 @@ implementation
 
 {$R *.dfm}
 
-uses Janua.Oracle.SchemaDatamodule, System.StrUtils;
+uses Janua.Oracle.SchemaDatamodule, System.StrUtils, System.IOUtils;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenAllClick(Sender: TObject);
+begin
+  dmOracleSchema.qryListFiles.First;
+  While not dmOracleSchema.qryListFiles.Eof do
+  begin
+    edtExportNumber.Value := dmOracleSchema.qryListFilesID.AsInteger;
+
+    var
+    vTableName := dmOracleSchema.qryListFilesDELTA_TABLE.AsWideString;
+
+    if vTableName = '' then
+      vTableName := dmOracleSchema.qryListFilesMAIN_TABLE.AsWideString;
+
+    var
+    vFileName := dmOracleSchema.qryListFilesFILENAME.AsWideString;
+
+    if dmOracleSchema.qrySchemaTables.Locate('TABLE_NAME', vTableName, []) then
+    begin
+      try
+        var
+        vOperation := dmOracleSchema.qryListFilesOPERATION_TYPE.AsWideString;
+        if vOperation = 'MER' then
+          GenerateMerge(vFileName)
+        else if vOperation = 'TR' then
+          GenerateTruncate(vFileName)
+        else if vOperation = 'INS' then
+          GenerateInsert(vFileName)
+        else if vOperation = 'CTL' then
+          GenerateAllCtl()
+        else if vOperation = 'UNL' then
+          GenerateCsv(vFileName)
+        else if vOperation = 'EXT' then
+          GenerateExtract(vFileName);
+        memLog.Lines.Add(edtExportNumber.Text + ') ' + vTableName + ' Generato:' + vFileName);
+      except
+        on e: exception do
+          memLog.Lines.Add(edtExportNumber.Text + ') ' + vTableName + ' Error:');
+      end;
+    end
+    else
+      memLog.Lines.Add(edtExportNumber.Text + ') ' + vTableName + ' not Found');
+
+    dmOracleSchema.qryListFiles.Next;
+
+  end;
+end;
 
 procedure TfrmOracleSwissMilitaryMain.btnGenerateAllCtlClick(Sender: TObject);
 begin
-  dmOracleSchema.qryTableFields.Open;
-  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
-  SetupControlFileConf;
-  // CSV -----------------------------------------------------------------------------------------------------
-  dmOracleControlFile.ControlFileConf := FControlFileConf;
-  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
-  // Ctl -----------------------------------------------------------------------------------------------------
-  dmOracleControlFile.ControlFileConf := FControlFileConf;
-  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
-
-  // Templates -----------------------------------------------------------------------------------------------
-  var
-  vTemplate := memTemplateSQL.Lines.Text;
-  var
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIA', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIA.Lines.Text := vGTI;
-  ctlGTIA.Lines.Add(memTableCtrlFile.Lines.Text);
-  var
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_A.ctl';
-  ctlGTIA.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIG', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIG.Lines.Text := vGTI;
-  ctlGTIG.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_G.ctl';
-  ctlGTIG.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIL', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIL.Lines.Text := vGTI;
-  ctlGTIL.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_L.ctl';
-  ctlGTIL.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIT', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIT.Lines.Text := vGTI;
-  ctlGTIT.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_T.ctl';
-  ctlGTIT.Lines.SaveToFile(vFileName);
-
+  GenerateAllCtl();
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnGenerateAllSQLClick(Sender: TObject);
 begin
-  dmOracleSchema.qryTableFields.Open;
-  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
-  SetupControlFileConf;
-  // CSV -----------------------------------------------------------------------------------------------------
-  dmOracleControlFile.ControlFileConf := FControlFileConf;
-  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
-  // Ctl -----------------------------------------------------------------------------------------------------
-  dmOracleControlFile.ControlFileConf := FControlFileConf;
-  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
-
-  // Templates -----------------------------------------------------------------------------------------------
-  var
-  vTemplate := memCtlTemplate.Lines.Text;
-  var
-  vGTI := StringReplace(vTemplate, '$CODE$', advMemTableCSV.Lines.Text, []);
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIA', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIA.Lines.Text := vGTI;
-  ctlGTIA.Lines.Add(memTableCtrlFile.Lines.Text);
-  var
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_A.ctl';
-  ctlGTIA.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIG', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIG.Lines.Text := vGTI;
-  ctlGTIG.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_G.ctl';
-  ctlGTIG.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIL', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIL.Lines.Text := vGTI;
-  ctlGTIL.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_L.ctl';
-  ctlGTIL.Lines.SaveToFile(vFileName);
-
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIT', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
-  ctlGTIT.Lines.Text := vGTI;
-  ctlGTIT.Lines.Add(memTableCtrlFile.Lines.Text);
-  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_T.ctl';
-  ctlGTIT.Lines.SaveToFile(vFileName);
-
+  self.GenerateCsv();
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnGenerateCSVClick(Sender: TObject);
@@ -300,6 +316,20 @@ begin
   SetupControlFileConf;
   dmOracleControlFile.ControlFileConf := FControlFileConf;
   advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenerateExtractClick(Sender: TObject);
+begin
+  // VESVSCUNLOAD_2_INSERT_TITOLI_DELTA
+  GenerateExtract()
+
+  // VESVSCUNLOAD_2_INSERT_TITOLI_DELTA
+
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenerateMergeClick(Sender: TObject);
+begin
+  self.GenerateMerge();
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnGenerateMViewCodeClick(Sender: TObject);
@@ -318,6 +348,11 @@ end;
 procedure TfrmOracleSwissMilitaryMain.btnGenerateTableDDLClick(Sender: TObject);
 begin
   memDDLMViews.Lines.Text := dmOracleSchema.GenerateMVDDL;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.btnGenerateTRClick(Sender: TObject);
+begin
+  GenerateTruncate();
 end;
 
 procedure TfrmOracleSwissMilitaryMain.btnLoginClick(Sender: TObject);
@@ -369,6 +404,213 @@ begin
   dmOracleSchema.qrySchemaViews.Open;
 end;
 
+procedure TfrmOracleSwissMilitaryMain.GenerateAllCtl(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateCtl.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIA', []);
+  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  ctlGTIA.Lines.Text := vGTI;
+  ctlGTIA.Lines.Add(memTableCtrlFile.Lines.Text);
+  var
+  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_A.ctl';
+  ctlGTIA.Lines.SaveToFile(vFileName);
+
+  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIG', []);
+  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  ctlGTIG.Lines.Text := vGTI;
+  ctlGTIG.Lines.Add(memTableCtrlFile.Lines.Text);
+  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_G.ctl';
+  ctlGTIG.Lines.SaveToFile(vFileName);
+
+  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIL', []);
+  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  ctlGTIL.Lines.Text := vGTI;
+  ctlGTIL.Lines.Add(memTableCtrlFile.Lines.Text);
+  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_L.ctl';
+  ctlGTIL.Lines.SaveToFile(vFileName);
+
+  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIT', []);
+  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  ctlGTIT.Lines.Text := vGTI;
+  ctlGTIT.Lines.Add(memTableCtrlFile.Lines.Text);
+  vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_T.ctl';
+  ctlGTIT.Lines.SaveToFile(vFileName);
+
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateCsv(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateCSV.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$SELECT$', advMemTableCSV.Lines.Text, []);
+  memUnloadCSV.Lines.Text := vGTI;
+
+  var
+  vFileName := '';
+
+  if aFileName = '' then
+    vFileName := dirGenerate.Text + '\VESVSCUNLOAD_' + edtExportNumber.Text + '_' + FTable + '.sql'
+  else
+    vFileName := dirGenerate.Text + '\' + aFileName;
+
+  memUnloadCSV.Lines.SaveToFile(vFileName);
+
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateCtl(const aFileName: string);
+begin
+
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateExtract(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateExtract.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+
+  memExtractOutput.Lines.Text := vGTI;
+
+  var
+    // VESVSCUNLOAD_2_INSERT_TITOLI_DELTA
+  vFileName := '';
+
+  if aFileName = '' then
+    vFileName := dirGenerate.Text + '\VESVSCUNLOAD_' + edtExportNumber.Text + '_ESTRAI_' + FTable + '.sql'
+  else
+    vFileName := dirGenerate.Text + '\' + aFileName;
+
+  memExtractOutput.Lines.SaveToFile(vFileName);
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateInsert(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateInsert.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+
+  memInsertOutput.Lines.Text := vGTI;
+
+  var
+    // VESVSCUNLOAD_2_INSERT_TITOLI_DELTA
+  vFileName := '';
+
+  if aFileName = '' then
+    vFileName := dirGenerate.Text + '\VESVSCUNLOAD_' + edtExportNumber.Text + '_INSERT_' + FTable + '.sql'
+  else
+    vFileName := dirGenerate.Text + '\' + aFileName;
+
+  memInsertOutput.Lines.SaveToFile(vFileName);
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateMerge(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+  // memMergeCode --------------------------------------------------------------------------------------------
+  memMergeCode.Lines.Text := dmOracleControlFile.GenerateMergefromMetadata(dsTableFields.DataSet);
+
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateMerge.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$CODE$', memMergeCode.Lines.Text, []);
+
+  memMergeOutput.Lines.Text := vGTI;
+
+  var
+  vFileName := '';
+  // VESVSCLOAD_12_MERGE_POL_TRANCHE_DELTA
+
+  if aFileName = '' then
+    vFileName := dirGenerate.Text + '\VESVSCUNLOAD_' + edtExportNumber.Text + '_MERGE_' + FTable + '.sql'
+  else
+    vFileName := dirGenerate.Text + '\' + aFileName;
+
+  memMergeOutput.Lines.SaveToFile(vFileName);
+end;
+
+procedure TfrmOracleSwissMilitaryMain.GenerateTruncate(const aFileName: string);
+begin
+  dmOracleSchema.qryTableFields.Open;
+  FTable := dsTables.DataSet.FieldByName('TABLE_NAME').AsString;
+  SetupControlFileConf;
+  dmOracleControlFile.ControlFileConf := FControlFileConf;
+  // CSV -----------------------------------------------------------------------------------------------------
+  advMemTableCSV.Lines.Text := dmOracleControlFile.GenerateCSVSelectfromMetadata(dsTableFields.DataSet);
+  // Ctl -----------------------------------------------------------------------------------------------------
+  memTableCtrlFile.Lines.Text := dmOracleControlFile.GenerateControlFileFromMetadata(dsTableFields.DataSet);
+  // Templates -----------------------------------------------------------------------------------------------
+  var
+  vTemplate := memTemplateTruncate.Lines.Text;
+  var
+  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+
+  memTruncateOutput.Lines.Text := vGTI;
+
+  var
+    // VESVSCLOAD_12_MERGE_POL_TRANCHE_DELTA
+  vFileName := '';
+
+  if aFileName = '' then
+    vFileName := dirGenerate.Text + '\VESVSCUNLOAD_' + edtExportNumber.Text + '_TR_' + FTable + '.sql'
+  else
+    vFileName := dirGenerate.Text + '\' + aFileName;
+
+  memTruncateOutput.Lines.SaveToFile(vFileName);
+
+end;
+
 procedure TfrmOracleSwissMilitaryMain.btnGenerateViewCodeClick(Sender: TObject);
 begin
   memViewCode.Lines.Text := dmOracleSchema.GenerateViewCode(edlAddRow.Text, edSuffix.Text, edReplace.Text);
@@ -394,6 +636,12 @@ begin
   // edtTimeStamp
   FControlFileConf.TimeStampFormat := edtTimeStamp.Text;
   FControlFileConf.UseGenerateNumericFormatting := ckbNumerics.Checked;
+end;
+
+procedure TfrmOracleSwissMilitaryMain.tbnGenInsertClick(Sender: TObject);
+begin
+  // VESVSCUNLOAD_2_INSERT_TITOLI_DELTA
+  GenerateInsert()
 end;
 
 end.
