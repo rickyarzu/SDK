@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, DBAccess, UniDacVcl, Vcl.ComCtrls,
   JvExStdCtrls, JvCombobox, JvDBCombobox, Data.DB, JvExControls, JvDBLookup, Vcl.Grids, Vcl.DBGrids, CRGrid,
   AdvMemo, AdvmSQLS, Vcl.Mask, AdvSpin, Janua.Oracle.ControlFileGenerator, DBAdvMemo, AdvEdit, AdvEdBtn,
-  AdvDirectoryEdit, Vcl.Samples.Spin, Janua.Vcl.EnhCRDBGrid, Vcl.Buttons, Vcl.DBCtrls;
+  AdvDirectoryEdit, Vcl.Samples.Spin, Janua.Vcl.EnhCRDBGrid, Vcl.Buttons, Vcl.DBCtrls, AdvSplitter;
 
 type
   TfrmOracleSwissMilitaryMain = class(TForm)
@@ -209,6 +209,18 @@ type
     Panel15: TPanel;
     DBNavigator2: TDBNavigator;
     CRDBGrid5: TCRDBGrid;
+    PageControl7: TPageControl;
+    tabPackageCode: TTabSheet;
+    memCode: TDBAdvMemo;
+    tabTestCode: TTabSheet;
+    pnlTestParams: TPanel;
+    edSchema: TLabeledEdit;
+    edCompagnia: TLabeledEdit;
+    btnTestCode: TButton;
+    memTestCode: TAdvMemo;
+    AdvSplitter1: TAdvSplitter;
+    btnCommit: TButton;
+    btnOpen: TButton;
     procedure btnLoginClick(Sender: TObject);
     procedure btnViewTAbleFieldsClick(Sender: TObject);
     procedure btnOpenViewFieldsClick(Sender: TObject);
@@ -227,6 +239,8 @@ type
     procedure btnGenerateExtractClick(Sender: TObject);
     procedure tbnGenInsertClick(Sender: TObject);
     procedure btnGenAllClick(Sender: TObject);
+    procedure btnTestCodeClick(Sender: TObject);
+    procedure btnOpenClick(Sender: TObject);
   private
     { Private declarations }
     FTable: string;
@@ -366,6 +380,11 @@ begin
   end;
 end;
 
+procedure TfrmOracleSwissMilitaryMain.btnOpenClick(Sender: TObject);
+begin
+  dsFileList.DataSet.Open
+end;
+
 procedure TfrmOracleSwissMilitaryMain.btnOpenMViewsClick(Sender: TObject);
 begin
   dmOracleSchema.qryMaterializedView.Open;
@@ -394,6 +413,17 @@ begin
     edSuffix.Text);
 end;
 
+procedure TfrmOracleSwissMilitaryMain.btnTestCodeClick(Sender: TObject);
+begin
+  var
+  vTest := memCode.Lines.Text;
+
+  vTest := stringReplace(vTest, '$SCHEMA$', edSchema.Text, [rfReplaceAll]);
+  vTest := stringReplace(vTest, '$P_COD$', edCompagnia.Text, [rfReplaceAll]);
+
+  memTestCode.Lines.Text := vTest;
+end;
+
 procedure TfrmOracleSwissMilitaryMain.btnViewTAbleFieldsClick(Sender: TObject);
 begin
   dmOracleSchema.qryTableFields.Open;
@@ -420,30 +450,30 @@ begin
   var
   vTemplate := memTemplateCtl.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIA', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$SCHEMA$', 'GTIA', []);
+  vGTI := stringReplace(vGTI, '$TABLE$', FTable, []);
   ctlGTIA.Lines.Text := vGTI;
   ctlGTIA.Lines.Add(memTableCtrlFile.Lines.Text);
   var
   vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_A.ctl';
   ctlGTIA.Lines.SaveToFile(vFileName);
 
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIG', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$SCHEMA$', 'GTIG', []);
+  vGTI := stringReplace(vGTI, '$TABLE$', FTable, []);
   ctlGTIG.Lines.Text := vGTI;
   ctlGTIG.Lines.Add(memTableCtrlFile.Lines.Text);
   vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_G.ctl';
   ctlGTIG.Lines.SaveToFile(vFileName);
 
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIL', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$SCHEMA$', 'GTIL', []);
+  vGTI := stringReplace(vGTI, '$TABLE$', FTable, []);
   ctlGTIL.Lines.Text := vGTI;
   ctlGTIL.Lines.Add(memTableCtrlFile.Lines.Text);
   vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_L.ctl';
   ctlGTIL.Lines.SaveToFile(vFileName);
 
-  vGTI := StringReplace(vTemplate, '$SCHEMA$', 'GTIT', []);
-  vGTI := StringReplace(vGTI, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$SCHEMA$', 'GTIT', []);
+  vGTI := stringReplace(vGTI, '$TABLE$', FTable, []);
   ctlGTIT.Lines.Text := vGTI;
   ctlGTIT.Lines.Add(memTableCtrlFile.Lines.Text);
   vFileName := dirGenerate.Text + '\VESVSCLOAD_' + edtExportNumber.Text + '_CTL_' + FTable + '_T.ctl';
@@ -467,7 +497,7 @@ begin
   var
   vTemplate := memTemplateCSV.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$SELECT$', advMemTableCSV.Lines.Text, []);
+  vGTI := stringReplace(vTemplate, '$SELECT$', advMemTableCSV.Lines.Text, []);
   memUnloadCSV.Lines.Text := vGTI;
 
   var
@@ -501,7 +531,7 @@ begin
   var
   vTemplate := memTemplateExtract.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$TABLE$', FTable, []);
 
   memExtractOutput.Lines.Text := vGTI;
 
@@ -531,7 +561,7 @@ begin
   var
   vTemplate := memTemplateInsert.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$TABLE$', FTable, []);
 
   memInsertOutput.Lines.Text := vGTI;
 
@@ -564,7 +594,7 @@ begin
   var
   vTemplate := memTemplateMerge.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$CODE$', memMergeCode.Lines.Text, []);
+  vGTI := stringReplace(vTemplate, '$CODE$', memMergeCode.Lines.Text, []);
 
   memMergeOutput.Lines.Text := vGTI;
 
@@ -594,7 +624,7 @@ begin
   var
   vTemplate := memTemplateTruncate.Lines.Text;
   var
-  vGTI := StringReplace(vTemplate, '$TABLE$', FTable, []);
+  vGTI := stringReplace(vTemplate, '$TABLE$', FTable, []);
 
   memTruncateOutput.Lines.Text := vGTI;
 

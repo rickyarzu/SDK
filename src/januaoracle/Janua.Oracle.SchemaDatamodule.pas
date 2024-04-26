@@ -222,6 +222,7 @@ type
     qryDevCodeID: TSmallintField;
     qryDevCodeCODE: TWideMemoField;
     qryDevCodeDESCRIPTION: TWideStringField;
+    UniQuery1: TUniQuery;
     procedure UniConnection1AfterConnect(Sender: TObject);
     procedure qrySchemasAfterOpen(DataSet: TDataSet);
     procedure qryMaterializedViewAfterOpen(DataSet: TDataSet);
@@ -230,6 +231,8 @@ type
     procedure qryConstraintDDLAfterOpen(DataSet: TDataSet);
     procedure qryMviewConstraintsAfterScroll(DataSet: TDataSet);
     procedure qryMviewIndexesAfterScroll(DataSet: TDataSet);
+    procedure qryDevCodeAfterPost(DataSet: TDataSet);
+    procedure qryListFilesAfterPost(DataSet: TDataSet);
   private
     FDiscardedList: TStrings;
     FTargetSchema: string;
@@ -474,6 +477,16 @@ end;
 procedure TdmOracleSchema.qryConstraintDDLAfterOpen(DataSet: TDataSet);
 begin
   qryConstraintDDL.Open;
+end;
+
+procedure TdmOracleSchema.qryDevCodeAfterPost(DataSet: TDataSet);
+begin
+  UniConnection2.Commit;
+end;
+
+procedure TdmOracleSchema.qryListFilesAfterPost(DataSet: TDataSet);
+begin
+  UniConnection2.Commit;
 end;
 
 procedure TdmOracleSchema.qryMaterializedViewAfterOpen(DataSet: TDataSet);
