@@ -10,13 +10,15 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   TextHeight = 15
   object PageControl1: TPageControl
     Left = 337
     Top = 61
     Width = 805
     Height = 768
-    ActivePage = tabCustomIntf
+    ActivePage = tabDetails
     Align = alClient
     TabOrder = 0
     object tabCustomIntf: TTabSheet
@@ -506,13 +508,21 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
         WordWrap = wwNone
       end
     end
+    object tabDetails: TTabSheet
+      Caption = 'Details'
+      ImageIndex = 3
+      object pgcDetails: TPageControl
+        Left = 0
+        Top = 0
+        Width = 797
+        Height = 738
+        Align = alClient
+        TabOrder = 0
+      end
+    end
     object tbDataModuleContainer: TTabSheet
       Caption = 'Datamodule Container'
       ImageIndex = 4
-    end
-    object tabDetails: TTabSheet
-      Caption = 'Details'
-      ImageIndex = 5
     end
     object tabModelIntf: TTabSheet
       Caption = 'Model Intf'
@@ -628,7 +638,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
     object btnGenerate: TButton
       Left = 856
       Top = 18
-      Width = 233
+      Width = 121
       Height = 25
       Caption = 'Generate Orm'
       TabOrder = 3
@@ -646,7 +656,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
       Left = 1
       Top = 26
       Width = 335
-      Height = 472
+      Height = 439
       Align = alTop
       DataSource = dmFirebirdOrmGenerator.dsTables
       TabOrder = 0
@@ -665,12 +675,14 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
     end
     object CheckListBox1: TCheckListBox
       Left = 1
-      Top = 498
+      Top = 497
       Width = 335
-      Height = 269
+      Height = 270
       Align = alClient
       ItemHeight = 17
       TabOrder = 1
+      ExplicitTop = 498
+      ExplicitHeight = 269
     end
     object btnOpenTables: TButton
       Left = 1
@@ -681,6 +693,16 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
       Caption = 'Apri Tabelle'
       TabOrder = 2
       OnClick = btnOpenTablesClick
+    end
+    object btnDetailTables: TButton
+      Left = 1
+      Top = 465
+      Width = 335
+      Height = 32
+      Align = alTop
+      Caption = 'Add Detail Tables'
+      TabOrder = 3
+      OnClick = btnDetailTablesClick
     end
   end
   object AdvPascalMemoStyler1: TAdvPascalMemoStyler

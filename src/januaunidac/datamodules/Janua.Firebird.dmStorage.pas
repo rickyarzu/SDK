@@ -1,23 +1,24 @@
-unit udmPgStorage;
+unit Janua.Firebird.dmStorage;
 
 interface
 
 uses
   System.SysUtils, System.Classes,
   // DB Acces
-  Data.DB, DBAccess, MemDS, Uni, UniProvider, PostgreSQLUniProvider,
+  Data.DB, DBAccess, MemDS, Uni, UniProvider, InterBaseUniProvider,
+  // Janua
   Janua.Controls.Forms.Intf, Janua.Core.Classes.Intf, Janua.Bindings.Intf, Janua.Core.DB.Intf, Janua.Uni.Intf,
   // Inherited DataModule
   Janua.Core.DataModule, Janua.Unidac.Connection;
 
 type
-  TdmPgStorage = class(TJanuaCoreDataModule, IJanuaDataModule, IJanuaBindable)
-    PgErgoConnection: TJanuaUniConnection;
-    PgUniProv: TPostgreSQLUniProvider;
+  TdmJanuaFBStorage = class(TJanuaCoreDataModule, IJanuaDataModule, IJanuaBindable)
+    pgErgoConnection: TJanuaUniConnection;
+    IBUniProvider: TInterBaseUniProvider;
     procedure DataModuleDestroy(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
-    procedure PgErgoConnectionError(Sender: TObject; E: EDAError; var Fail: Boolean);
-    procedure PgErgoConnectionBeforeConnect(Sender: TObject);
+    procedure pgErgoConnectionBeforeConnect(Sender: TObject);
+    procedure pgErgoConnectionError(Sender: TObject; E: EDAError; var Fail: Boolean);
   private
     FServerFunctions: IJanuaServerFunctions;
     FDatasetFunctions: IJanuaUniDatasetFunctions;
@@ -38,22 +39,38 @@ type
   end;
 
 var
-  dmPgStorage: TdmPgStorage;
+  dmJanuaFBStorage: TdmJanuaFBStorage;
 
 implementation
 
 uses
-  Janua.Postgres.Impl, Janua.Application.Framework, Janua.Core.Types, Janua.Core.Classes,
+  Janua.Firebird.Impl, Janua.Application.Framework, Janua.Core.Types, Janua.Core.Classes,
   Janua.Core.Functions;
 
+{%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
+{ TdmJanuaFBStorage }
 
-constructor TdmPgStorage.Create(AOwner: TComponent);
+constructor TdmJanuaFBStorage.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
 end;
 
-procedure TdmPgStorage.DataModuleDestroy(Sender: TObject);
+procedure TdmJanuaFBStorage.DataModuleCreate(Sender: TObject);
+var
+  i: integer;
+begin
+  // FIsSetSchema := false;
+  FDatasetFunctions := TFbDatasetFunctions.Create;
+  FDatasetFunctions.Activate(Self);
+  FDatasetFunctions.SetupConnection(pgErgoConnection as TUniConnection);
+  FServerFunctions := TJanuaFirebirdServerFunctions.Create;
+  // Offset := 0;
+  // Limit := 1000;
+  ServerFunctions.Activate(Self);
+end;
+
+procedure TdmJanuaFBStorage.DataModuleDestroy(Sender: TObject);
 begin
   try
     FServerFunctions := nil;
@@ -63,31 +80,17 @@ begin
   end;
 end;
 
-procedure TdmPgStorage.DataModuleCreate(Sender: TObject);
-var
-  i: integer;
-begin
-  // FIsSetSchema := false;
-  FDatasetFunctions := TPgDatasetFunctions.Create;
-  FDatasetFunctions.Activate(Self);
-  FDatasetFunctions.SetupConnection(PgErgoConnection as TUniConnection);
-  FServerFunctions := TJanuaPostgresServerFunctions.Create;
-  // Offset := 0;
-  // Limit := 1000;
-  ServerFunctions.Activate(Self);
-end;
-
-function TdmPgStorage.GetServerFunctions: IJanuaServerFunctions;
+function TdmJanuaFBStorage.GetServerFunctions: IJanuaServerFunctions;
 begin
   Result := FServerFunctions;
 end;
 
-function TdmPgStorage.GetSQLFunctions: IJanuaDatasetFunctions;
+function TdmJanuaFBStorage.GetSQLFunctions: IJanuaDatasetFunctions;
 begin
-  Result := FDatasetFunctions;
+  Result := FDatasetFunctions
 end;
 
-function TdmPgStorage.InternalActivate: Boolean;
+function TdmJanuaFBStorage.INternalActivate: Boolean;
 begin
   Result := Active;
   if not Result then
@@ -103,7 +106,7 @@ begin
     end;
 end;
 
-procedure TdmPgStorage.ParamsDefault(aDataset: TDataset);
+procedure TdmJanuaFBStorage.ParamsDefault(aDataset: TDataset);
 begin
   if (aDataset is TUniQuery) then
     with (aDataset as TUniQuery) do
@@ -112,7 +115,7 @@ begin
     end;
 end;
 
-procedure TdmPgStorage.PgErgoConnectionBeforeConnect(Sender: TObject);
+procedure TdmJanuaFBStorage.pgErgoConnectionBeforeConnect(Sender: TObject);
 var
   i: integer;
   a: TJanuaServerRecordConf;
@@ -120,7 +123,7 @@ var
   s: string;
 begin
   a := TJanuaApplication.JanuaServerConf;
-  E := Self.PgErgoConnection;
+  E := Self.pgErgoConnection;
   try
     E.SchemaID := TJanuaApplication.DBSchemaID;
     E.Server := TJanuaApplication.ServerAddress;
@@ -143,18 +146,18 @@ begin
   end;
 end;
 
-procedure TdmPgStorage.PgErgoConnectionError(Sender: TObject; E: EDAError; var Fail: Boolean);
+procedure TdmJanuaFBStorage.pgErgoConnectionError(Sender: TObject; E: EDAError; var Fail: Boolean);
 begin
   inherited;
   raise exception.Create(TJanuaApplication.AppName + ' ' + ReportConf + sLineBreak + E.Message);
 end;
 
-procedure TdmPgStorage.QueryDefault(aDataset: TDataset; aGUIDField: TField = nil; aDelField: TField = nil);
+procedure TdmJanuaFBStorage.QueryDefault(aDataset: TDataset; aGUIDField, aDelField: TField);
 begin
-  aDataset.FieldByName('db_schema_id').AsInteger := TJanuaApplication.DBSchemaID
+  inherited
 end;
 
-function TdmPgStorage.ReportConf: string;
+function TdmJanuaFBStorage.ReportConf: string;
 begin
   Result := 'Address: ' + PgErgoConnection.Server + sLineBreak;
   Result := Result + 'Port: ' + PgErgoConnection.Port.ToString + sLineBreak;

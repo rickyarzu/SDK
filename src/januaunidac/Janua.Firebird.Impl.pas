@@ -1,4 +1,4 @@
-unit Janua.Postgres.Impl;
+unit Janua.Firebird.Impl;
 
 interface
 
@@ -11,16 +11,17 @@ uses
   Janua.Cms.Types, Janua.Core.Types, Janua.Core.Functions, Janua.Core.DB, Janua.Uni.Impl, Janua.Uni.Intf,
   Janua.Core.Classes, Janua.Core.DB.Intf;
 
+
 type
 
-  TPgDatasetFunctions = class(TUniDatasetFunctions, IJanuaUniDatasetFunctions, IJanuaPgDatasetFunctions)
+  TFbDatasetFunctions = class(TUniDatasetFunctions, IJanuaUniDatasetFunctions, IJanuaFbDatasetFunctions)
   public
     procedure OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil;
       aDoRaise: boolean = true; aCallBackProc: TProc = nil); override;
   end;
 
-  TJanuaPostgresServerFunctions = class(TJanuaUniServerFunctions, IJanuaServerFunctions,
-    IJanuaPgServerFunctions)
+  TJanuaFirebirdServerFunctions = class(TJanuaUniServerFunctions, IJanuaServerFunctions,
+    IJanuaFbServerFunctions)
   public
     procedure OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil;
       aDoRaise: boolean = true; aCallBackProc: TProc = nil); override;
@@ -30,19 +31,17 @@ implementation
 
 uses System.StrUtils, Janua.Application.Framework, Janua.Core.AsyncTask;
 
+{ TJanuaFirebirdServerFunctions }
 
-{ TJanuaPostgresServerFunctions }
-
-procedure TJanuaPostgresServerFunctions.OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource;
+procedure TJanuaFirebirdServerFunctions.OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource;
   aDoRaise: boolean; aCallBackProc: TProc);
 begin
-  inherited;
-
+  inherited
 end;
 
-{ TPgDatasetFunctions }
+{ TFbDatasetFunctions }
 
-procedure TPgDatasetFunctions.OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource;
+procedure TFbDatasetFunctions.OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource;
   aDoRaise: boolean; aCallBackProc: TProc);
 begin
   if Assigned(aDataset) then
@@ -76,15 +75,16 @@ begin
         RaiseException('OpenThreadedDataset (' + aDataset.Name + ')', Ex, nil)
       end);
 
+
 end;
 
 initialization
 
 try
   // TPgDatasetFunctions = class(  IJanuaPgDatasetFunctions)
-  TJanuaApplicationFactory.RegisterClass(IJanuaPgDatasetFunctions, TPgDatasetFunctions);
+  TJanuaApplicationFactory.RegisterClass(IJanuaFbDatasetFunctions, TFbDatasetFunctions);
   // TJanuaPostgresServerFunctions = class(IJanuaPgServerFunctions)
-  TJanuaApplicationFactory.RegisterClass(IJanuaPgServerFunctions, TJanuaPostgresServerFunctions);
+  TJanuaApplicationFactory.RegisterClass(IJanuaFbServerFunctions, TJanuaFirebirdServerFunctions);
 except
   on E: Exception do
     raise Exception.Create('Janua.Uni.Impl.initialization ' + E.Message);
