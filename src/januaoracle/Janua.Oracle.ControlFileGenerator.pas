@@ -36,6 +36,8 @@ type
     function generateHeader(const aControlFileConf: TControlFileConfig): string;
     function GenerateControlFileFromMetadata(const aFieldsList: TDataset): string;
     function GenerateCSVSelectfromMetadata(const aFieldsList: TDataset): string;
+    function GenerateTRfromMetadata(const aFieldsList: TDataset): string;
+    function GenerateMergefromMetadata(const aFieldsList: TDataset): string;
   public
     property ControlFileConf: TControlFileConfig read FControlFileConf write SetControlFileConf;
   end;
@@ -63,17 +65,9 @@ begin
   aList := TStringList.Create;
   try
     rCtl := FControlFileConf;
-    aList.Text := generateHeader(rCtl);
+    { aList.Text := generateHeader(rCtl); }
     aList.Add('(');
-    {
-      col.column_id,
-      col.column_name,
-      col.data_type,
-      col.data_length,
-      col.data_precision,
-      col.data_scale,
-      col.nullable,
-    }
+
     aFieldsList.First;
     while not aFieldsList.Eof do
     begin
@@ -113,7 +107,7 @@ begin
       aFieldsList.Next;
       if not aFieldsList.Eof then
         lFieldText := lFieldText + ',';
-      aList.Add(lFieldText);
+      aList.Add('   ' + lFieldText);
     end;
     aList.Add(')');
     Result := aList.Text;
@@ -157,11 +151,11 @@ begin
 
       aFieldsList.Next;
       if not aFieldsList.Eof then
-        lFieldText := lFieldText + '||' + QuotedStr(';') + '||';
+        lFieldText := lFieldText + ' || ' + QuotedStr(';') + ' || ';
       aList.Add(lFieldText);
     end;
     aList.Add('FROM');
-    aList.Add(dmOracleSchema.qrySchemasSCHEMA_NAME.AsString + '.' +
+    aList.Add( { dmOracleSchema.qrySchemasSCHEMA_NAME.AsString + } '"&GTI".' +
       dmOracleSchema.qrySchemaTablesTABLE_NAME.AsString);
 
     Result := aList.Text;
@@ -201,6 +195,60 @@ begin
   finally
     aList.Free;
   end;
+end;
+
+function TdmOracleControlFile.GenerateMergefromMetadata(const aFieldsList: TDataset): string;
+var
+  aList: TStringList;
+  lFieldText, lField: string;
+  rCtl: TControlFileConfig;
+  sNum: string;
+  iScale, iPrec: integer;
+begin
+  aList := TStringList.Create;
+  try
+    rCtl := FControlFileConf;
+    var
+    aTable := dmOracleSchema.qrySchemaTablesTABLE_NAME.AsString;
+    // DELETE "&GTI".POL_TRANCHE
+    var
+    aDestination := StringReplace(aTable, '_DELTA', '', [rfReplaceAll]);
+
+    var
+    aDelete := 'DELETE "&GTI".' + aDestination;
+
+    aList.Add(aDelete);
+
+    var
+    aWhere := 'WHERE NUM_POLIZZA IN (SELECT NUM_POLIZZA FROM "&GTI".' + aTable + ');';
+    aList.Add(aWhere);
+
+    // INSERT INTO "&GTI".POL_TRANCHE
+    var
+    aInsert := 'INSERT INTO "&GTI".' + aDestination;
+    aList.Add(aInsert);
+    aList.Add('(');
+    aFieldsList.First;
+    while not aFieldsList.Eof do
+    begin
+      lField := aFieldsList.FieldByName('column_name').AsString;
+      aFieldsList.Next;
+      lFieldText := lField + IfThen(aFieldsList.Eof, '', ',');
+      aList.Add(lFieldText);
+    end;
+    aList.Add(')');
+    aList.Add('SELECT * FROM "&GTI".' + aTable + ';');
+
+    Result := aList.Text;
+  finally
+    aList.Free;
+  end;
+
+end;
+
+function TdmOracleControlFile.GenerateTRfromMetadata(const aFieldsList: TDataset): string;
+begin
+
 end;
 
 procedure TdmOracleControlFile.SetControlFileConf(const Value: TControlFileConfig);

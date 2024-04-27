@@ -2,7 +2,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
   Left = 0
   Top = 0
   Caption = 'Oracle Swiss Military'
-  ClientHeight = 712
+  ClientHeight = 774
   ClientWidth = 1273
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -122,8 +122,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
     Left = 0
     Top = 49
     Width = 1273
-    Height = 663
-    ActivePage = tabViewIInsertDDL
+    Height = 725
+    ActivePage = tabOracleControlFile
     Align = alClient
     TabOrder = 1
     object tabOracleControlFile: TTabSheet
@@ -326,6 +326,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Width = 138
           Height = 17
           Caption = 'Numeric Formatting'
+          Checked = True
+          State = cbChecked
           TabOrder = 14
         end
         object edtTimeStamp: TEdit
@@ -343,7 +345,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 3
         Top = 141
         Width = 1259
-        Height = 105
+        Height = 68
         Margins.Top = 0
         Margins.Bottom = 6
         Align = alTop
@@ -413,13 +415,21 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Caption = 'Use Options'
           TabOrder = 4
         end
+        object btnCommit: TButton
+          Left = 498
+          Top = 24
+          Width = 127
+          Height = 33
+          Caption = 'Commit'
+          TabOrder = 5
+        end
       end
       object pgcSqlLoaderControlFile: TPageControl
         Left = 0
-        Top = 252
+        Top = 215
         Width = 1265
-        Height = 381
-        ActivePage = tabViewConrolFile
+        Height = 480
+        ActivePage = tabControlFile
         Align = alClient
         TabOrder = 2
         object tabControlFile: TTabSheet
@@ -428,7 +438,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Left = 0
             Top = 0
             Width = 257
-            Height = 351
+            Height = 450
             OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
             Align = alLeft
             DataSource = dsTables
@@ -451,9 +461,22 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Left = 257
             Top = 0
             Width = 1000
-            Height = 351
+            Height = 450
             Align = alClient
             TabOrder = 1
+            object AdvSplitter1: TAdvSplitter
+              Left = 537
+              Top = 42
+              Width = 4
+              Height = 407
+              Appearance.BorderColor = clNone
+              Appearance.BorderColorHot = clNone
+              Appearance.Color = 12895944
+              Appearance.ColorTo = 12895944
+              Appearance.ColorHot = 15917525
+              Appearance.ColorHotTo = 15917525
+              GripStyle = sgDots
+            end
             object Panel2: TPanel
               Left = 1
               Top = 1
@@ -461,20 +484,23 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               Height = 41
               Align = alTop
               TabOrder = 0
+              DesignSize = (
+                998
+                41)
               object btnGenerateTableControl: TButton
-                Left = 105
+                Left = 65
                 Top = 1
-                Width = 104
+                Width = 34
                 Height = 39
                 Align = alLeft
-                Caption = 'Generate'
+                Caption = 'Ctl'
                 TabOrder = 0
                 OnClick = btnGenerateTableControlClick
               end
               object btnViewTAbleFields: TButton
                 Left = 1
                 Top = 1
-                Width = 104
+                Width = 64
                 Height = 39
                 Align = alLeft
                 Caption = 'View Fields'
@@ -482,83 +508,220 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                 OnClick = btnViewTAbleFieldsClick
               end
               object btnGenerateCSV: TButton
-                Left = 209
+                Left = 99
                 Top = 1
-                Width = 145
+                Width = 28
                 Height = 39
                 Align = alLeft
-                Caption = 'Generate CSV Code'
+                Caption = 'CSV'
                 TabOrder = 2
                 OnClick = btnGenerateCSVClick
               end
-            end
-            object DBGrid1: TDBGrid
-              Left = 1
-              Top = 42
-              Width = 470
-              Height = 308
-              Align = alLeft
-              DataSource = dsTableFields
-              Options = [dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-              TabOrder = 1
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clWindowText
-              TitleFont.Height = -12
-              TitleFont.Name = 'Segoe UI'
-              TitleFont.Style = []
-              Columns = <
-                item
-                  Expanded = False
-                  FieldName = 'COLUMN_NAME'
-                  Width = 160
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DATA_TYPE'
-                  Width = 120
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DATA_LENGTH'
-                  Title.Caption = 'Length'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DATA_PRECISION'
-                  Title.Caption = 'Precision'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DATA_SCALE'
-                  Title.Caption = 'Scale'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'COLUMN_DDL'
-                  Width = 260
-                  Visible = True
-                end>
+              object btnGenerateAllCtl: TButton
+                Left = 127
+                Top = 1
+                Width = 56
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen. Ctl'
+                TabOrder = 3
+                OnClick = btnGenerateAllCtlClick
+              end
+              object dirGenerate: TAdvDirectoryEdit
+                Left = 632
+                Top = 12
+                Width = 306
+                Height = 23
+                BorderColor = 11250603
+                EmptyTextStyle = []
+                FlatLineColor = 11250603
+                FocusColor = clWindow
+                FocusFontColor = 3881787
+                LabelFont.Charset = DEFAULT_CHARSET
+                LabelFont.Color = clWindowText
+                LabelFont.Height = -12
+                LabelFont.Name = 'Segoe UI'
+                LabelFont.Style = []
+                Lookup.Font.Charset = DEFAULT_CHARSET
+                Lookup.Font.Color = clWindowText
+                Lookup.Font.Height = -11
+                Lookup.Font.Name = 'Segoe UI'
+                Lookup.Font.Style = []
+                Lookup.Separator = ';'
+                Anchors = [akLeft, akTop, akRight]
+                Color = clWindow
+                ShortCut = 0
+                TabOrder = 4
+                Text = 'Z:\GitHub\Generali\Oracle\Visual Call\Export'
+                Visible = True
+                Version = '1.7.1.3'
+                ButtonStyle = bsButton
+                ButtonWidth = 18
+                Flat = False
+                Etched = False
+                Glyph.Data = {
+                  36050000424D3605000000000000360400002800000010000000100000000100
+                  0800000000000001000000000000000000000001000000000000000000000000
+                  80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                  A6000020400000206000002080000020A0000020C0000020E000004000000040
+                  20000040400000406000004080000040A0000040C0000040E000006000000060
+                  20000060400000606000006080000060A0000060C0000060E000008000000080
+                  20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                  200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                  200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                  200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                  20004000400040006000400080004000A0004000C0004000E000402000004020
+                  20004020400040206000402080004020A0004020C0004020E000404000004040
+                  20004040400040406000404080004040A0004040C0004040E000406000004060
+                  20004060400040606000406080004060A0004060C0004060E000408000004080
+                  20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                  200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                  200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                  200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                  20008000400080006000800080008000A0008000C0008000E000802000008020
+                  20008020400080206000802080008020A0008020C0008020E000804000008040
+                  20008040400080406000804080008040A0008040C0008040E000806000008060
+                  20008060400080606000806080008060A0008060C0008060E000808000008080
+                  20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                  200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                  200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                  200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                  2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                  2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                  2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                  2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                  2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                  2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                  2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFDFDFDFDFD
+                  FDFDFDFDFDFDFDFDFDFDB7B76F67676767676767676767B7FDFD6FFDBFBFBFBF
+                  BFBFBFBFBFB7FD6FFDFD6FFDBFBFBFBFBF7F7F7F7777FD6FFDFD6FFDBFBFBFBF
+                  BFBFBFBF7F7FFD6FFDFD6FFDFDFDBFBFBFBFBFBFBF7FFD6FFDFD6FFDFDFDFDFD
+                  BFBFBFBFBFBFFD6FFDFD6FFDB76F6FAFFDFDFDFDFDFDFD6FFDFD6FFDBFBFBFB7
+                  6F6F6F6F6F6F6F6F525277FDBFBFBFBFFD9BF79B52F75AA49B4977FDFDFDFDFD
+                  FD9BF5A35B6D9BF5A35177B7B7B7B7B7779BF5F7A4089BEDF75AFDFDFDFDFDFD
+                  FD9B9B5252A452525249FDFDFDFDFDFDFDF75AED9BA39AF75AA4FDFDFDFDFDFD
+                  FDFD9BA352A452A452FDFDFDFDFDFDFDFDFDFDA39B089B9BFDFD}
+                ReadOnly = False
+                ButtonColor = clWhite
+                ButtonColorHot = 15917525
+                ButtonColorDown = 14925219
+                ButtonTextColor = 4474440
+                ButtonTextColorHot = 2303013
+                ButtonTextColorDown = 2303013
+                BrowseDialogText = 'Select Directory'
+              end
+              object edtExportNumber: TSpinEdit
+                Left = 944
+                Top = 11
+                Width = 40
+                Height = 24
+                Anchors = [akTop, akRight]
+                MaxValue = 0
+                MinValue = 0
+                TabOrder = 5
+                Value = 5
+              end
+              object btnGenerateAllSQL: TButton
+                Left = 183
+                Top = 1
+                Width = 50
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen Csv'
+                TabOrder = 6
+                OnClick = btnGenerateAllSQLClick
+              end
+              object btnGenerateMerge: TButton
+                Left = 233
+                Top = 1
+                Width = 79
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen. Merge'
+                TabOrder = 7
+                OnClick = btnGenerateMergeClick
+              end
+              object btnGenerateTR: TButton
+                Left = 312
+                Top = 1
+                Width = 52
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen. TR'
+                TabOrder = 8
+                OnClick = btnGenerateTRClick
+              end
+              object btnGenerateExtract: TButton
+                Left = 364
+                Top = 1
+                Width = 80
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen. Extract'
+                TabOrder = 9
+                OnClick = btnGenerateExtractClick
+              end
+              object tbnGenInsert: TButton
+                Left = 444
+                Top = 1
+                Width = 74
+                Height = 39
+                Align = alLeft
+                Caption = 'Gen. Insert'
+                TabOrder = 10
+                OnClick = tbnGenInsertClick
+              end
+              object btnGenAll: TButton
+                Left = 555
+                Top = 1
+                Width = 37
+                Height = 39
+                Align = alLeft
+                Caption = 'All'
+                TabOrder = 11
+                OnClick = btnGenAllClick
+                ExplicitLeft = 561
+                ExplicitTop = -4
+              end
+              object btnGenCode: TButton
+                Left = 518
+                Top = 1
+                Width = 37
+                Height = 39
+                Align = alLeft
+                Caption = 'Code'
+                TabOrder = 12
+                OnClick = tbnGenInsertClick
+              end
+              object btnOpen: TButton
+                Left = 592
+                Top = 1
+                Width = 37
+                Height = 39
+                Align = alLeft
+                Caption = 'Open'
+                TabOrder = 13
+                OnClick = btnOpenClick
+                ExplicitLeft = 604
+                ExplicitTop = -4
+              end
             end
             object pgcTableControlExport: TPageControl
-              Left = 471
+              Left = 541
               Top = 42
-              Width = 528
-              Height = 308
-              ActivePage = tabControl
+              Width = 458
+              Height = 407
+              ActivePage = tabLog
               Align = alClient
-              TabOrder = 2
+              TabOrder = 1
               object tabControl: TTabSheet
                 Caption = 'Control Code'
                 object memTableCtrlFile: TAdvMemo
                   Left = 0
                   Top = 0
-                  Width = 520
-                  Height = 278
+                  Width = 450
+                  Height = 377
                   Cursor = crIBeam
                   ActiveLineSettings.ShowActiveLine = False
                   ActiveLineSettings.ShowActiveLineIndicator = False
@@ -653,6 +816,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   SelBkColor = clHighlight
                   ShowRightMargin = True
                   SmartTabs = False
+                  SyntaxStyles = AdvSQLMemoStyler
                   TabOrder = 0
                   TabStop = True
                   TrimTrailingSpaces = False
@@ -678,8 +842,8 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                 object advMemTableCSV: TAdvMemo
                   Left = 0
                   Top = 0
-                  Width = 520
-                  Height = 278
+                  Width = 450
+                  Height = 377
                   Cursor = crIBeam
                   ActiveLineSettings.ShowActiveLine = False
                   ActiveLineSettings.ShowActiveLineIndicator = False
@@ -774,6 +938,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   SelBkColor = clHighlight
                   ShowRightMargin = True
                   SmartTabs = False
+                  SyntaxStyles = AdvSQLMemoStyler
                   TabOrder = 0
                   TabStop = True
                   TrimTrailingSpaces = False
@@ -793,9 +958,3025 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
                   WordWrap = wwNone
                 end
               end
-              object TabSheet3: TTabSheet
-                Caption = 'TabSheet3'
+              object tabMergeCode: TTabSheet
+                Caption = 'Merge Code'
+                ImageIndex = 4
+                object memMergeCode: TAdvMemo
+                  Left = 0
+                  Top = 0
+                  Width = 450
+                  Height = 377
+                  Cursor = crIBeam
+                  ActiveLineSettings.ShowActiveLine = False
+                  ActiveLineSettings.ShowActiveLineIndicator = False
+                  Align = alClient
+                  AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                  AutoCompletion.Font.Color = clWindowText
+                  AutoCompletion.Font.Height = -12
+                  AutoCompletion.Font.Name = 'Segoe UI'
+                  AutoCompletion.Font.Style = []
+                  AutoCompletion.StartToken = '(.'
+                  AutoCorrect.Active = True
+                  AutoHintParameterPosition = hpBelowCode
+                  BkColor = clWindow
+                  BookmarkGlyph.Data = {
+                    36050000424D3605000000000000360400002800000010000000100000000100
+                    0800000000000001000000000000000000000001000000000000000000000000
+                    80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                    A6000020400000206000002080000020A0000020C0000020E000004000000040
+                    20000040400000406000004080000040A0000040C0000040E000006000000060
+                    20000060400000606000006080000060A0000060C0000060E000008000000080
+                    20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                    200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                    200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                    200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                    20004000400040006000400080004000A0004000C0004000E000402000004020
+                    20004020400040206000402080004020A0004020C0004020E000404000004040
+                    20004040400040406000404080004040A0004040C0004040E000406000004060
+                    20004060400040606000406080004060A0004060C0004060E000408000004080
+                    20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                    200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                    200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                    200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                    20008000400080006000800080008000A0008000C0008000E000802000008020
+                    20008020400080206000802080008020A0008020C0008020E000804000008040
+                    20008040400080406000804080008040A0008040C0008040E000806000008060
+                    20008060400080606000806080008060A0008060C0008060E000808000008080
+                    20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                    200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                    200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                    200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                    2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                    2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                    2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                    2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                    2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                    2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                    2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                    FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                    2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                    2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                    B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                    B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                    BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                    BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                    BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                    25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                  BorderStyle = bsSingle
+                  ClipboardFormats = [cfText]
+                  CodeFolding.Enabled = False
+                  CodeFolding.LineColor = clGray
+                  Ctl3D = False
+                  DelErase = True
+                  EnhancedHomeKey = False
+                  Gutter.Font.Charset = DEFAULT_CHARSET
+                  Gutter.Font.Color = clWindowText
+                  Gutter.Font.Height = -13
+                  Gutter.Font.Name = 'Courier New'
+                  Gutter.Font.Style = []
+                  Gutter.GutterColorTo = clBtnFace
+                  Gutter.LineNumberTextColor = clWindowText
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -13
+                  Font.Name = 'COURIER NEW'
+                  Font.Style = []
+                  HiddenCaret = False
+                  Lines.Strings = (
+                    '')
+                  MarkerList.UseDefaultMarkerImageIndex = False
+                  MarkerList.DefaultMarkerImageIndex = -1
+                  MarkerList.ImageTransparentColor = 33554432
+                  OleDropTarget = []
+                  PrintOptions.MarginLeft = 0
+                  PrintOptions.MarginRight = 0
+                  PrintOptions.MarginTop = 0
+                  PrintOptions.MarginBottom = 0
+                  PrintOptions.PageNr = False
+                  PrintOptions.PrintLineNumbers = False
+                  RightMarginColor = 14869218
+                  ScrollHint = False
+                  SelColor = clHighlightText
+                  SelBkColor = clHighlight
+                  ShowRightMargin = True
+                  SmartTabs = False
+                  SyntaxStyles = AdvSQLMemoStyler
+                  TabOrder = 0
+                  TabStop = True
+                  TrimTrailingSpaces = False
+                  UILanguage.ScrollHint = 'Row'
+                  UILanguage.Undo = 'Undo'
+                  UILanguage.Redo = 'Redo'
+                  UILanguage.Copy = 'Copy'
+                  UILanguage.Cut = 'Cut'
+                  UILanguage.Paste = 'Paste'
+                  UILanguage.Delete = 'Delete'
+                  UILanguage.SelectAll = 'Select All'
+                  UrlStyle.TextColor = clBlue
+                  UrlStyle.BkColor = clWhite
+                  UrlStyle.Style = [fsUnderline]
+                  UseStyler = True
+                  Version = '3.9.0.1'
+                  WordWrap = wwNone
+                end
+              end
+              object tabTemplate: TTabSheet
+                Caption = 'Template'
                 ImageIndex = 2
+                object pgControlTemplates: TPageControl
+                  Left = 0
+                  Top = 0
+                  Width = 450
+                  Height = 377
+                  ActivePage = tabExtractTemplate
+                  Align = alClient
+                  TabOrder = 0
+                  object tabExportTemplate: TTabSheet
+                    Caption = 'Export'
+                    object memTemplateCSV: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'SET echo OFF'
+                        'SET newpage 0'
+                        'SET SPACE 0'
+                        'SET pagesize 0'
+                        'SET feed OFF'
+                        'SET head OFF'
+                        'SET trimspool ON'
+                        'SET linesize 4000'
+                        '--SET wrap off'
+                        'SET term off'
+                        'set ver OFF'
+                        'set arraysize 5000'
+                        '-- usa separatore decimale '#39'.'#39
+                        'def CMPG1='#39'&1'#39
+                        'def FILESPOOL='#39'&2'#39
+                        'ALTER SESSION SET NLS_NUMERIC_CHARACTERS = '#39'.,'#39';'
+                        'ALTER SESSION SET NLS_DATE_FORMAT = '#39'YYYYMMDD'#39';'
+                        'spool '#39'&FILESPOOL'#39
+                        '$SELECT$ '
+                        'WHERE COD_COMPAGNIA ='#39'&CMPG1'#39';'
+                        'spool off'
+                        'exit                ')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                  object tabControlTemplate: TTabSheet
+                    Caption = 'Import Ctl'
+                    ImageIndex = 1
+                    object memTemplateCtl: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'OPTIONS (ERRORS=0)'
+                        'LOAD DATA'
+                        'INFILE '#39'PATHINPUT'#39
+                        'BADFILE '#39'PATHBAD'#39
+                        'DISCARDMAX 0'
+                        'APPEND'
+                        'INTO TABLE $SCHEMA$.$TABLE$'
+                        'FIELDS TERMINATED BY '#39';'#39
+                        'OPTIONALLY ENCLOSED BY '#39'"'#39
+                        'TRAILING NULLCOLS   ')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                  object tabMerge: TTabSheet
+                    Caption = 'Merge'
+                    ImageIndex = 2
+                    object memTemplateMerge: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'SET echo OFF'
+                        'SET newpage 0'
+                        'SET SPACE 0'
+                        'SET pagesize 0'
+                        'SET feed OFF'
+                        'SET head OFF'
+                        'SET trimspool ON'
+                        'SET linesize 4000'
+                        '--SET wrap off'
+                        'SET term off'
+                        'set ver OFF'
+                        'set arraysize 5000'
+                        '-- usa separatore decimale '#39'.'#39
+                        'def CMPG1='#39'&1'#39
+                        'def FILESPOOL='#39'&2'#39
+                        'def GTI='#39'&3'#39
+                        'ALTER SESSION SET NLS_NUMERIC_CHARACTERS = '#39'.,'#39';'
+                        'ALTER SESSION SET NLS_DATE_FORMAT = '#39'YYYYMMDD'#39';'
+                        'spool '#39'&FILESPOOL'#39
+                        '$CODE$'
+                        'spool off'
+                        'exit')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                  object tabTemplateTruncate: TTabSheet
+                    Caption = 'Truncate'
+                    ImageIndex = 3
+                    object memTemplateTruncate: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'SET echo OFF'
+                        'SET newpage 0'
+                        'SET SPACE 0'
+                        'SET pagesize 0'
+                        'SET feed OFF'
+                        'SET head OFF'
+                        'SET trimspool ON'
+                        'SET linesize 4000'
+                        '--SET wrap off'
+                        'SET term off'
+                        'set ver OFF'
+                        'set arraysize 5000'
+                        '-- usa separatore decimale '#39'.'#39
+                        'def CMPG1='#39'&1'#39
+                        'def FILESPOOL='#39'&2'#39
+                        'def GTI='#39'&3'#39
+                        'ALTER SESSION SET NLS_NUMERIC_CHARACTERS = '#39'.,'#39';'
+                        'ALTER SESSION SET NLS_DATE_FORMAT = '#39'YYYYMMDD'#39';'
+                        'spool '#39'&FILESPOOL'#39
+                        'TRUNCATE TABLE "&GTI".$TABLE$;'
+                        'spool off'
+                        'exit')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                  object tabExtractTemplate: TTabSheet
+                    Caption = 'Extract'
+                    ImageIndex = 4
+                    object memTemplateExtract: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'SET echo OFF'
+                        'SET newpage 0'
+                        'SET SPACE 0'
+                        'SET pagesize 0'
+                        'SET feed OFF'
+                        'SET head OFF'
+                        'SET trimspool ON'
+                        'SET linesize 4000'
+                        '--SET wrap off'
+                        'SET term off'
+                        'set ver OFF'
+                        'set arraysize 5000'
+                        '-- usa separatore decimale '#39'.'#39
+                        'def CMPG1='#39'&1'#39
+                        'def FILESPOOL='#39'&2'#39
+                        'ALTER SESSION SET NLS_NUMERIC_CHARACTERS = '#39'.,'#39';'
+                        'ALTER SESSION SET NLS_DATE_FORMAT = '#39'YYYYMMDD'#39';'
+                        'spool '#39'&FILESPOOL'#39
+                        'exec DBMS_OUTPUT.PUT_LINE('#39'Refresh gruppo 5 in parallelo'#39');'
+                        'exec SVG_DEV.BAT_EXPORT_VISUALCALL.ESTRAI_$TABLE$('#39'&CMPG1'#39');'
+                        'spool off                  '
+                        'exit')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                  object tabInsert: TTabSheet
+                    Caption = 'Insert'
+                    ImageIndex = 5
+                    object memTemplateInsert: TAdvMemo
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      Cursor = crIBeam
+                      ActiveLineSettings.ShowActiveLine = False
+                      ActiveLineSettings.ShowActiveLineIndicator = False
+                      Align = alClient
+                      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                      AutoCompletion.Font.Color = clWindowText
+                      AutoCompletion.Font.Height = -12
+                      AutoCompletion.Font.Name = 'Segoe UI'
+                      AutoCompletion.Font.Style = []
+                      AutoCompletion.StartToken = '(.'
+                      AutoCorrect.Active = True
+                      AutoHintParameterPosition = hpBelowCode
+                      BkColor = clWindow
+                      BookmarkGlyph.Data = {
+                        36050000424D3605000000000000360400002800000010000000100000000100
+                        0800000000000001000000000000000000000001000000000000000000000000
+                        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                        A6000020400000206000002080000020A0000020C0000020E000004000000040
+                        20000040400000406000004080000040A0000040C0000040E000006000000060
+                        20000060400000606000006080000060A0000060C0000060E000008000000080
+                        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                        20004000400040006000400080004000A0004000C0004000E000402000004020
+                        20004020400040206000402080004020A0004020C0004020E000404000004040
+                        20004040400040406000404080004040A0004040C0004040E000406000004060
+                        20004060400040606000406080004060A0004060C0004060E000408000004080
+                        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                        20008000400080006000800080008000A0008000C0008000E000802000008020
+                        20008020400080206000802080008020A0008020C0008020E000804000008040
+                        20008040400080406000804080008040A0008040C0008040E000806000008060
+                        20008060400080606000806080008060A0008060C0008060E000808000008080
+                        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                      BorderStyle = bsSingle
+                      ClipboardFormats = [cfText]
+                      CodeFolding.Enabled = False
+                      CodeFolding.LineColor = clGray
+                      Ctl3D = False
+                      DelErase = True
+                      EnhancedHomeKey = False
+                      Gutter.Font.Charset = DEFAULT_CHARSET
+                      Gutter.Font.Color = clWindowText
+                      Gutter.Font.Height = -13
+                      Gutter.Font.Name = 'Courier New'
+                      Gutter.Font.Style = []
+                      Gutter.GutterColorTo = clBtnFace
+                      Gutter.LineNumberTextColor = clWindowText
+                      Font.Charset = DEFAULT_CHARSET
+                      Font.Color = clBlack
+                      Font.Height = -13
+                      Font.Name = 'COURIER NEW'
+                      Font.Style = []
+                      HiddenCaret = False
+                      Lines.Strings = (
+                        'SET echo OFF'
+                        'SET newpage 0'
+                        'SET SPACE 0'
+                        'SET pagesize 0'
+                        'SET feed OFF'
+                        'SET head OFF'
+                        'SET trimspool ON'
+                        'SET linesize 4000'
+                        '--SET wrap off'
+                        'SET term off'
+                        'set ver OFF'
+                        'set arraysize 5000'
+                        '-- usa separatore decimale '#39'.'#39
+                        'def CMPG1='#39'&1'#39
+                        'def FILESPOOL='#39'&2'#39
+                        'ALTER SESSION SET NLS_NUMERIC_CHARACTERS = '#39'.,'#39';'
+                        'ALTER SESSION SET NLS_DATE_FORMAT = '#39'YYYYMMDD'#39';'
+                        'spool '#39'&FILESPOOL'#39
+                        'exec DBMS_OUTPUT.PUT_LINE('#39'Refresh gruppo 5 in parallelo'#39');'
+                        'exec SVG_DEV.BAT_EXPORT_VISUALCALL.INSERT_$TABLE$('#39'&CMPG1'#39');'
+                        'spool off'
+                        'exit')
+                      MarkerList.UseDefaultMarkerImageIndex = False
+                      MarkerList.DefaultMarkerImageIndex = -1
+                      MarkerList.ImageTransparentColor = 33554432
+                      OleDropTarget = []
+                      PrintOptions.MarginLeft = 0
+                      PrintOptions.MarginRight = 0
+                      PrintOptions.MarginTop = 0
+                      PrintOptions.MarginBottom = 0
+                      PrintOptions.PageNr = False
+                      PrintOptions.PrintLineNumbers = False
+                      RightMarginColor = 14869218
+                      ScrollHint = False
+                      SelColor = clHighlightText
+                      SelBkColor = clHighlight
+                      ShowRightMargin = True
+                      SmartTabs = False
+                      SyntaxStyles = AdvSQLMemoStyler
+                      TabOrder = 0
+                      TabStop = True
+                      TrimTrailingSpaces = False
+                      UILanguage.ScrollHint = 'Row'
+                      UILanguage.Undo = 'Undo'
+                      UILanguage.Redo = 'Redo'
+                      UILanguage.Copy = 'Copy'
+                      UILanguage.Cut = 'Cut'
+                      UILanguage.Paste = 'Paste'
+                      UILanguage.Delete = 'Delete'
+                      UILanguage.SelectAll = 'Select All'
+                      UrlStyle.TextColor = clBlue
+                      UrlStyle.BkColor = clWhite
+                      UrlStyle.Style = [fsUnderline]
+                      UseStyler = True
+                      Version = '3.9.0.1'
+                      WordWrap = wwNone
+                    end
+                  end
+                end
+              end
+              object tabOutput: TTabSheet
+                Caption = 'Output'
+                ImageIndex = 3
+                object PageControl2: TPageControl
+                  Left = 0
+                  Top = 0
+                  Width = 450
+                  Height = 377
+                  ActivePage = tabSQL
+                  Align = alClient
+                  TabOrder = 0
+                  object tabGTIA: TTabSheet
+                    Caption = 'GTIA'
+                    object PageControl3: TPageControl
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      ActivePage = TabSheet1
+                      Align = alClient
+                      TabOrder = 0
+                      object TabSheet1: TTabSheet
+                        Caption = 'Export'
+                        object AdvMemo3: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object TabSheet2: TTabSheet
+                        Caption = 'Import Ctl'
+                        ImageIndex = 1
+                        object ctlGTIA: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                    end
+                  end
+                  object tabGTIG: TTabSheet
+                    Caption = 'GTIG'
+                    ImageIndex = 1
+                    object PageControl4: TPageControl
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      ActivePage = TabSheet4
+                      Align = alClient
+                      TabOrder = 0
+                      object TabSheet3: TTabSheet
+                        Caption = 'Export'
+                        object AdvMemo5: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object TabSheet4: TTabSheet
+                        Caption = 'Import Ctl'
+                        ImageIndex = 1
+                        object ctlGTIG: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                    end
+                  end
+                  object tabGTIL: TTabSheet
+                    Caption = 'GTIL'
+                    ImageIndex = 2
+                    object PageControl5: TPageControl
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      ActivePage = TabSheet6
+                      Align = alClient
+                      TabOrder = 0
+                      object TabSheet5: TTabSheet
+                        Caption = 'Export'
+                        object AdvMemo7: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object TabSheet6: TTabSheet
+                        Caption = 'Import Ctl'
+                        ImageIndex = 1
+                        object ctlGTIL: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                    end
+                  end
+                  object tabGTIT: TTabSheet
+                    Caption = 'GTIT'
+                    ImageIndex = 3
+                    object PageControl6: TPageControl
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      ActivePage = TabSheet8
+                      Align = alClient
+                      TabOrder = 0
+                      object TabSheet7: TTabSheet
+                        Caption = 'Export'
+                        object AdvMemo9: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object TabSheet8: TTabSheet
+                        Caption = 'Import Ctl'
+                        ImageIndex = 1
+                        object ctlGTIT: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                    end
+                  end
+                  object tabSQL: TTabSheet
+                    Caption = 'SQL'
+                    ImageIndex = 4
+                    object tabOutputInsert: TPageControl
+                      Left = 0
+                      Top = 0
+                      Width = 442
+                      Height = 347
+                      ActivePage = tabProcCode
+                      Align = alClient
+                      TabOrder = 0
+                      object tabUnloadCSV: TTabSheet
+                        Caption = 'Unload CSV'
+                        object memUnloadCSV: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object tabMergeOutput: TTabSheet
+                        Caption = 'Merge SQL'
+                        ImageIndex = 1
+                        object memMergeOutput: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object tabTruncate: TTabSheet
+                        Caption = 'Truncate SQL'
+                        ImageIndex = 2
+                        object memTruncateOutput: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object tabInsertOutput: TTabSheet
+                        Caption = 'Insert SQL'
+                        ImageIndex = 3
+                        object memInsertOutput: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object tabExtractOutput: TTabSheet
+                        Caption = 'Extract SQL'
+                        ImageIndex = 4
+                        object memExtractOutput: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                      object tabProcCode: TTabSheet
+                        Caption = 'Proc. Code'
+                        ImageIndex = 5
+                        object memCodeOutput: TAdvMemo
+                          Left = 0
+                          Top = 0
+                          Width = 434
+                          Height = 317
+                          Cursor = crIBeam
+                          ActiveLineSettings.ShowActiveLine = False
+                          ActiveLineSettings.ShowActiveLineIndicator = False
+                          Align = alClient
+                          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                          AutoCompletion.Font.Color = clWindowText
+                          AutoCompletion.Font.Height = -12
+                          AutoCompletion.Font.Name = 'Segoe UI'
+                          AutoCompletion.Font.Style = []
+                          AutoCompletion.StartToken = '(.'
+                          AutoCorrect.Active = True
+                          AutoHintParameterPosition = hpBelowCode
+                          BkColor = clWindow
+                          BookmarkGlyph.Data = {
+                            36050000424D3605000000000000360400002800000010000000100000000100
+                            0800000000000001000000000000000000000001000000000000000000000000
+                            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                            A6000020400000206000002080000020A0000020C0000020E000004000000040
+                            20000040400000406000004080000040A0000040C0000040E000006000000060
+                            20000060400000606000006080000060A0000060C0000060E000008000000080
+                            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                            20004000400040006000400080004000A0004000C0004000E000402000004020
+                            20004020400040206000402080004020A0004020C0004020E000404000004040
+                            20004040400040406000404080004040A0004040C0004040E000406000004060
+                            20004060400040606000406080004060A0004060C0004060E000408000004080
+                            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                            20008000400080006000800080008000A0008000C0008000E000802000008020
+                            20008020400080206000802080008020A0008020C0008020E000804000008040
+                            20008040400080406000804080008040A0008040C0008040E000806000008060
+                            20008060400080606000806080008060A0008060C0008060E000808000008080
+                            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                          BorderStyle = bsSingle
+                          ClipboardFormats = [cfText]
+                          CodeFolding.Enabled = False
+                          CodeFolding.LineColor = clGray
+                          Ctl3D = False
+                          DelErase = True
+                          EnhancedHomeKey = False
+                          Gutter.Font.Charset = DEFAULT_CHARSET
+                          Gutter.Font.Color = clWindowText
+                          Gutter.Font.Height = -13
+                          Gutter.Font.Name = 'Courier New'
+                          Gutter.Font.Style = []
+                          Gutter.GutterColorTo = clBtnFace
+                          Gutter.LineNumberTextColor = clWindowText
+                          Font.Charset = DEFAULT_CHARSET
+                          Font.Color = clBlack
+                          Font.Height = -13
+                          Font.Name = 'COURIER NEW'
+                          Font.Style = []
+                          HiddenCaret = False
+                          Lines.Strings = (
+                            '')
+                          MarkerList.UseDefaultMarkerImageIndex = False
+                          MarkerList.DefaultMarkerImageIndex = -1
+                          MarkerList.ImageTransparentColor = 33554432
+                          OleDropTarget = []
+                          PrintOptions.MarginLeft = 0
+                          PrintOptions.MarginRight = 0
+                          PrintOptions.MarginTop = 0
+                          PrintOptions.MarginBottom = 0
+                          PrintOptions.PageNr = False
+                          PrintOptions.PrintLineNumbers = False
+                          RightMarginColor = 14869218
+                          ScrollHint = False
+                          SelColor = clHighlightText
+                          SelBkColor = clHighlight
+                          ShowRightMargin = True
+                          SmartTabs = False
+                          SyntaxStyles = AdvSQLMemoStyler
+                          TabOrder = 0
+                          TabStop = True
+                          TrimTrailingSpaces = False
+                          UILanguage.ScrollHint = 'Row'
+                          UILanguage.Undo = 'Undo'
+                          UILanguage.Redo = 'Redo'
+                          UILanguage.Copy = 'Copy'
+                          UILanguage.Cut = 'Cut'
+                          UILanguage.Paste = 'Paste'
+                          UILanguage.Delete = 'Delete'
+                          UILanguage.SelectAll = 'Select All'
+                          UrlStyle.TextColor = clBlue
+                          UrlStyle.BkColor = clWhite
+                          UrlStyle.Style = [fsUnderline]
+                          UseStyler = True
+                          Version = '3.9.0.1'
+                          WordWrap = wwNone
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+              object tabLog: TTabSheet
+                Caption = 'Log'
+                ImageIndex = 5
+                object memLog: TAdvMemo
+                  Left = 0
+                  Top = 0
+                  Width = 450
+                  Height = 377
+                  Cursor = crIBeam
+                  ActiveLineSettings.ShowActiveLine = False
+                  ActiveLineSettings.ShowActiveLineIndicator = False
+                  Align = alClient
+                  AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                  AutoCompletion.Font.Color = clWindowText
+                  AutoCompletion.Font.Height = -12
+                  AutoCompletion.Font.Name = 'Segoe UI'
+                  AutoCompletion.Font.Style = []
+                  AutoCompletion.StartToken = '(.'
+                  AutoCorrect.Active = True
+                  AutoHintParameterPosition = hpBelowCode
+                  BkColor = clWindow
+                  BookmarkGlyph.Data = {
+                    36050000424D3605000000000000360400002800000010000000100000000100
+                    0800000000000001000000000000000000000001000000000000000000000000
+                    80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                    A6000020400000206000002080000020A0000020C0000020E000004000000040
+                    20000040400000406000004080000040A0000040C0000040E000006000000060
+                    20000060400000606000006080000060A0000060C0000060E000008000000080
+                    20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                    200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                    200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                    200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                    20004000400040006000400080004000A0004000C0004000E000402000004020
+                    20004020400040206000402080004020A0004020C0004020E000404000004040
+                    20004040400040406000404080004040A0004040C0004040E000406000004060
+                    20004060400040606000406080004060A0004060C0004060E000408000004080
+                    20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                    200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                    200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                    200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                    20008000400080006000800080008000A0008000C0008000E000802000008020
+                    20008020400080206000802080008020A0008020C0008020E000804000008040
+                    20008040400080406000804080008040A0008040C0008040E000806000008060
+                    20008060400080606000806080008060A0008060C0008060E000808000008080
+                    20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                    200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                    200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                    200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                    2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                    2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                    2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                    2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                    2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                    2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                    2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                    FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                    2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                    2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                    B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                    B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                    BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                    BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                    BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                    25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                  BorderStyle = bsSingle
+                  ClipboardFormats = [cfText]
+                  CodeFolding.Enabled = False
+                  CodeFolding.LineColor = clGray
+                  Ctl3D = False
+                  DelErase = True
+                  EnhancedHomeKey = False
+                  Gutter.Font.Charset = DEFAULT_CHARSET
+                  Gutter.Font.Color = clWindowText
+                  Gutter.Font.Height = -13
+                  Gutter.Font.Name = 'Courier New'
+                  Gutter.Font.Style = []
+                  Gutter.GutterColorTo = clBtnFace
+                  Gutter.LineNumberTextColor = clWindowText
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -13
+                  Font.Name = 'COURIER NEW'
+                  Font.Style = []
+                  HiddenCaret = False
+                  Lines.Strings = (
+                    '')
+                  MarkerList.UseDefaultMarkerImageIndex = False
+                  MarkerList.DefaultMarkerImageIndex = -1
+                  MarkerList.ImageTransparentColor = 33554432
+                  OleDropTarget = []
+                  PrintOptions.MarginLeft = 0
+                  PrintOptions.MarginRight = 0
+                  PrintOptions.MarginTop = 0
+                  PrintOptions.MarginBottom = 0
+                  PrintOptions.PageNr = False
+                  PrintOptions.PrintLineNumbers = False
+                  RightMarginColor = 14869218
+                  ScrollHint = False
+                  SelColor = clHighlightText
+                  SelBkColor = clHighlight
+                  ShowRightMargin = True
+                  SmartTabs = False
+                  SyntaxStyles = AdvSQLMemoStyler
+                  TabOrder = 0
+                  TabStop = True
+                  TrimTrailingSpaces = False
+                  UILanguage.ScrollHint = 'Row'
+                  UILanguage.Undo = 'Undo'
+                  UILanguage.Redo = 'Redo'
+                  UILanguage.Copy = 'Copy'
+                  UILanguage.Cut = 'Cut'
+                  UILanguage.Paste = 'Paste'
+                  UILanguage.Delete = 'Delete'
+                  UILanguage.SelectAll = 'Select All'
+                  UrlStyle.TextColor = clBlue
+                  UrlStyle.BkColor = clWhite
+                  UrlStyle.Style = [fsUnderline]
+                  UseStyler = True
+                  Version = '3.9.0.1'
+                  WordWrap = wwNone
+                end
+              end
+            end
+            object PageControl8: TPageControl
+              Left = 1
+              Top = 42
+              Width = 536
+              Height = 407
+              ActivePage = tabFileList
+              Align = alLeft
+              TabOrder = 2
+              object tabFields: TTabSheet
+                Caption = 'Fields'
+                object DBGrid1: TDBGrid
+                  Left = 0
+                  Top = 0
+                  Width = 528
+                  Height = 377
+                  Align = alClient
+                  DataSource = dsTableFields
+                  Options = [dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+                  TabOrder = 0
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -12
+                  TitleFont.Name = 'Segoe UI'
+                  TitleFont.Style = []
+                  Columns = <
+                    item
+                      Expanded = False
+                      FieldName = 'COLUMN_NAME'
+                      Width = 160
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DATA_TYPE'
+                      Width = 120
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DATA_LENGTH'
+                      Title.Caption = 'Length'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DATA_PRECISION'
+                      Title.Caption = 'Precision'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DATA_SCALE'
+                      Title.Caption = 'Scale'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'COLUMN_DDL'
+                      Width = 260
+                      Visible = True
+                    end>
+                end
+              end
+              object tabFileList: TTabSheet
+                Caption = 'File List'
+                ImageIndex = 1
+                object Panel14: TPanel
+                  Left = 0
+                  Top = 0
+                  Width = 528
+                  Height = 41
+                  Align = alTop
+                  TabOrder = 0
+                  object DBNavigator1: TDBNavigator
+                    Left = 1
+                    Top = 1
+                    Width = 248
+                    Height = 39
+                    DataSource = dsFileList
+                    Align = alLeft
+                    TabOrder = 0
+                  end
+                end
+                object grdFiles: TEnhCRDBGrid
+                  Left = 0
+                  Top = 41
+                  Width = 528
+                  Height = 336
+                  Align = alClient
+                  DataSource = dsFileList
+                  TabOrder = 1
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -12
+                  TitleFont.Name = 'Segoe UI'
+                  TitleFont.Style = []
+                  HighlightBGColor = clBlack
+                  HighlightFont.Charset = DEFAULT_CHARSET
+                  HighlightFont.Color = clWindowText
+                  HighlightFont.Height = -12
+                  HighlightFont.Name = 'Segoe UI'
+                  HighlightFont.Style = []
+                  Columns = <
+                    item
+                      Expanded = False
+                      FieldName = 'GROUP_NAME'
+                      Width = 100
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'ID'
+                      Width = 29
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'FILENAME'
+                      Width = 309
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'OPERATION_TYPE'
+                      Title.Caption = 'OpT'
+                      Width = 50
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DELTA_TABLE'
+                      Width = 184
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'MAIN_TABLE'
+                      Width = 184
+                      Visible = True
+                    end>
+                end
               end
             end
           end
@@ -807,7 +3988,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Left = 0
             Top = 0
             Width = 257
-            Height = 351
+            Height = 450
             OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
             Align = alLeft
             DataSource = dsViews
@@ -830,7 +4011,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             Left = 257
             Top = 0
             Width = 1000
-            Height = 351
+            Height = 450
             Align = alClient
             TabOrder = 1
             object Panel4: TPanel
@@ -864,7 +4045,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               Left = 337
               Top = 42
               Width = 662
-              Height = 308
+              Height = 407
               Cursor = crIBeam
               ActiveLineSettings.ShowActiveLine = False
               ActiveLineSettings.ShowActiveLineIndicator = False
@@ -981,7 +4162,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
               Left = 1
               Top = 42
               Width = 336
-              Height = 308
+              Height = 407
               Align = alLeft
               DataSource = dsViewFields
               Options = [dgEditing, dgColumnResize, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -1000,9 +4181,387 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             end
           end
         end
-        object tabQueryControlFile: TTabSheet
-          Caption = 'QueryControlFile'
+        object tabDynamicCode: TTabSheet
+          Caption = 'Dynamic Code'
           ImageIndex = 2
+          object Panel15: TPanel
+            Left = 0
+            Top = 0
+            Width = 585
+            Height = 450
+            Align = alLeft
+            Caption = 'Panel15'
+            TabOrder = 0
+            object DBNavigator2: TDBNavigator
+              Left = 1
+              Top = 1
+              Width = 583
+              Height = 40
+              DataSource = dmOracleSchema.dsDevCode
+              Align = alTop
+              TabOrder = 0
+            end
+            object CRDBGrid5: TCRDBGrid
+              Left = 1
+              Top = 41
+              Width = 583
+              Height = 408
+              Align = alClient
+              DataSource = dmOracleSchema.dsDevCode
+              TabOrder = 1
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -12
+              TitleFont.Name = 'Segoe UI'
+              TitleFont.Style = []
+              Columns = <
+                item
+                  Expanded = False
+                  FieldName = 'PROJECT'
+                  Width = 70
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'ID'
+                  Width = 64
+                  Visible = True
+                  SortOrder = soAsc
+                end
+                item
+                  Expanded = False
+                  FieldName = 'DESCRIPTION'
+                  Width = 407
+                  Visible = True
+                end>
+            end
+          end
+          object PageControl7: TPageControl
+            Left = 585
+            Top = 0
+            Width = 672
+            Height = 450
+            ActivePage = tabPackageCode
+            Align = alClient
+            TabOrder = 1
+            object tabPackageCode: TTabSheet
+              Caption = 'Code'
+              object memCode: TDBAdvMemo
+                Left = 0
+                Top = 0
+                Width = 664
+                Height = 420
+                Cursor = crIBeam
+                ActiveLineSettings.ShowActiveLine = False
+                ActiveLineSettings.ShowActiveLineIndicator = False
+                Align = alClient
+                AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                AutoCompletion.Font.Color = clWindowText
+                AutoCompletion.Font.Height = -12
+                AutoCompletion.Font.Name = 'Segoe UI'
+                AutoCompletion.Font.Style = []
+                AutoCompletion.StartToken = '(.'
+                AutoCorrect.Active = True
+                AutoHintParameterPosition = hpBelowCode
+                BkColor = clWindow
+                BookmarkGlyph.Data = {
+                  36050000424D3605000000000000360400002800000010000000100000000100
+                  0800000000000001000000000000000000000001000000000000000000000000
+                  80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                  A6000020400000206000002080000020A0000020C0000020E000004000000040
+                  20000040400000406000004080000040A0000040C0000040E000006000000060
+                  20000060400000606000006080000060A0000060C0000060E000008000000080
+                  20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                  200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                  200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                  200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                  20004000400040006000400080004000A0004000C0004000E000402000004020
+                  20004020400040206000402080004020A0004020C0004020E000404000004040
+                  20004040400040406000404080004040A0004040C0004040E000406000004060
+                  20004060400040606000406080004060A0004060C0004060E000408000004080
+                  20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                  200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                  200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                  200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                  20008000400080006000800080008000A0008000C0008000E000802000008020
+                  20008020400080206000802080008020A0008020C0008020E000804000008040
+                  20008040400080406000804080008040A0008040C0008040E000806000008060
+                  20008060400080606000806080008060A0008060C0008060E000808000008080
+                  20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                  200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                  200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                  200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                  2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                  2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                  2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                  2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                  2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                  2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                  2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                  2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                  2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                  B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                  B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                  BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                  BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                  BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                  25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                BorderStyle = bsSingle
+                ClipboardFormats = [cfText]
+                CodeFolding.Enabled = False
+                CodeFolding.LineColor = clGray
+                Ctl3D = False
+                DelErase = True
+                EnhancedHomeKey = False
+                Gutter.Font.Charset = DEFAULT_CHARSET
+                Gutter.Font.Color = clWindowText
+                Gutter.Font.Height = -13
+                Gutter.Font.Name = 'Courier New'
+                Gutter.Font.Style = []
+                Gutter.GutterColorTo = clBtnFace
+                Gutter.LineNumberTextColor = clWindowText
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'COURIER NEW'
+                Font.Style = []
+                HiddenCaret = False
+                Lines.Strings = (
+                  'BEGIN'
+                  'DELETE $SCHEMA$.ANAGRAFICA                      ;'
+                  'DELETE $SCHEMA$.ANA_INDIR_DELTA                 ;'
+                  'DELETE $SCHEMA$.COMUNI_SAG                      ;'
+                  'DELETE $SCHEMA$.CONTRATTI_GTLIFE_DELTA          ;'
+                  'DELETE $SCHEMA$.POL_BENEFICIARI_NOMINALI_DELTA  ;'
+                  'DELETE $SCHEMA$.POL_GARANZIE_DELTA              ;'
+                  'DELETE $SCHEMA$.POLIZZE_DELTA                   ;'
+                  'DELETE $SCHEMA$.POL_TRANCHE_DELTA               ;'
+                  'DELETE $SCHEMA$.PREVI_ANAGRAFICA                ;'
+                  'DELETE $SCHEMA$.PREVI_VALORE_QUOTE              ;'
+                  'DELETE $SCHEMA$.PROPOSTE_DELTA                  ;'
+                  'DELETE $SCHEMA$.QUOTE_PRECALC                   ;'
+                  'DELETE $SCHEMA$.TAB_AGENZIE                     ;'
+                  'DELETE $SCHEMA$.TAB_ANA_FONDI                   ;'
+                  'DELETE $SCHEMA$.TAB_ANA_PRODOTTI                ;'
+                  'DELETE $SCHEMA$.TAB_ANA_PROD_TARIF              ;'
+                  'DELETE $SCHEMA$.TAB_ANA_TARIFFE                 ;'
+                  'DELETE $SCHEMA$.TAB_CONTRAENTE_TITOLARI         ;'
+                  'DELETE $SCHEMA$.TAB_ENTVINC                     ;'
+                  'DELETE $SCHEMA$.TAB_FONDI                       ;'
+                  'DELETE $SCHEMA$.TAB_FONDI_CONTABILI_DELTA       ;'
+                  'DELETE $SCHEMA$.TAB_POL_TESTO_BENEF_DELTA       ;'
+                  'DELETE $SCHEMA$.TAB_PREMI_NONDED_DELTA          ;'
+                  'DELETE $SCHEMA$.TAB_PRODOTTI                    ;'
+                  'DELETE $SCHEMA$.TAB_RETI                        ;'
+                  'DELETE $SCHEMA$.TAB_TARIFFE                     ;'
+                  'DELETE $SCHEMA$.TIT_GARANZIE_DELTA              ;'
+                  'DELETE $SCHEMA$.TITOLI_DELTA                    ;'
+                  'DELETE $SCHEMA$.TRASCOD_TAB_AGENZIE             ;'
+                  'DELETE $SCHEMA$.TRASC_POL_VISUAL_CALL           ;'
+                  'DELETE $SCHEMA$.TRASC_PRODOTTO                  ;'
+                  'END;')
+                MarkerList.UseDefaultMarkerImageIndex = False
+                MarkerList.DefaultMarkerImageIndex = -1
+                MarkerList.ImageTransparentColor = -16776961
+                OleDropTarget = []
+                PrintOptions.MarginLeft = 0
+                PrintOptions.MarginRight = 0
+                PrintOptions.MarginTop = 0
+                PrintOptions.MarginBottom = 0
+                PrintOptions.PageNr = False
+                PrintOptions.PrintLineNumbers = False
+                ReadOnly = False
+                RightMarginColor = 14869218
+                ScrollHint = False
+                SelColor = clHighlightText
+                SelBkColor = clHighlight
+                ShowRightMargin = True
+                SmartTabs = False
+                SyntaxStyles = AdvSQLMemoStyler
+                TabOrder = 0
+                TabStop = True
+                TrimTrailingSpaces = False
+                UILanguage.ScrollHint = 'Row'
+                UILanguage.Undo = 'Undo'
+                UILanguage.Redo = 'Redo'
+                UILanguage.Copy = 'Copy'
+                UILanguage.Cut = 'Cut'
+                UILanguage.Paste = 'Paste'
+                UILanguage.Delete = 'Delete'
+                UILanguage.SelectAll = 'Select All'
+                UrlStyle.TextColor = clBlue
+                UrlStyle.BkColor = clWhite
+                UrlStyle.Style = [fsUnderline]
+                UseStyler = True
+                Version = '3.9.0.1'
+                WordWrap = wwNone
+                DataField = 'CODE'
+                DataSource = dmOracleSchema.dsDevCode
+              end
+            end
+            object tabTestCode: TTabSheet
+              Caption = 'Test Code'
+              ImageIndex = 1
+              object pnlTestParams: TPanel
+                Left = 0
+                Top = 0
+                Width = 664
+                Height = 57
+                Align = alTop
+                TabOrder = 0
+                object edSchema: TLabeledEdit
+                  Left = 16
+                  Top = 28
+                  Width = 129
+                  Height = 23
+                  EditLabel.Width = 42
+                  EditLabel.Height = 15
+                  EditLabel.Caption = 'Schema'
+                  TabOrder = 0
+                  Text = 'GTIT'
+                end
+                object edCompagnia: TLabeledEdit
+                  Left = 151
+                  Top = 28
+                  Width = 129
+                  Height = 23
+                  EditLabel.Width = 62
+                  EditLabel.Height = 15
+                  EditLabel.Caption = 'Compagnia'
+                  TabOrder = 1
+                  Text = 'T'
+                end
+                object btnTestCode: TButton
+                  Left = 296
+                  Top = 26
+                  Width = 161
+                  Height = 25
+                  Caption = 'Test Code'
+                  TabOrder = 2
+                  OnClick = btnTestCodeClick
+                end
+              end
+              object memTestCode: TAdvMemo
+                Left = 0
+                Top = 57
+                Width = 664
+                Height = 363
+                Cursor = crIBeam
+                ActiveLineSettings.ShowActiveLine = False
+                ActiveLineSettings.ShowActiveLineIndicator = False
+                Align = alClient
+                AutoCompletion.Font.Charset = DEFAULT_CHARSET
+                AutoCompletion.Font.Color = clWindowText
+                AutoCompletion.Font.Height = -12
+                AutoCompletion.Font.Name = 'Segoe UI'
+                AutoCompletion.Font.Style = []
+                AutoCompletion.StartToken = '(.'
+                AutoCorrect.Active = True
+                AutoHintParameterPosition = hpBelowCode
+                BkColor = clWindow
+                BookmarkGlyph.Data = {
+                  36050000424D3605000000000000360400002800000010000000100000000100
+                  0800000000000001000000000000000000000001000000000000000000000000
+                  80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                  A6000020400000206000002080000020A0000020C0000020E000004000000040
+                  20000040400000406000004080000040A0000040C0000040E000006000000060
+                  20000060400000606000006080000060A0000060C0000060E000008000000080
+                  20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                  200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                  200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                  200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                  20004000400040006000400080004000A0004000C0004000E000402000004020
+                  20004020400040206000402080004020A0004020C0004020E000404000004040
+                  20004040400040406000404080004040A0004040C0004040E000406000004060
+                  20004060400040606000406080004060A0004060C0004060E000408000004080
+                  20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                  200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                  200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                  200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                  20008000400080006000800080008000A0008000C0008000E000802000008020
+                  20008020400080206000802080008020A0008020C0008020E000804000008040
+                  20008040400080406000804080008040A0008040C0008040E000806000008060
+                  20008060400080606000806080008060A0008060C0008060E000808000008080
+                  20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                  200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                  200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                  200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                  2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                  2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                  2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                  2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                  2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                  2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                  2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+                  2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+                  2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+                  B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+                  B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+                  BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+                  BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+                  BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+                  25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+                BorderStyle = bsSingle
+                ClipboardFormats = [cfText]
+                CodeFolding.Enabled = False
+                CodeFolding.LineColor = clGray
+                Ctl3D = False
+                DelErase = True
+                EnhancedHomeKey = False
+                Gutter.Font.Charset = DEFAULT_CHARSET
+                Gutter.Font.Color = clWindowText
+                Gutter.Font.Height = -13
+                Gutter.Font.Name = 'Courier New'
+                Gutter.Font.Style = []
+                Gutter.GutterColorTo = clBtnFace
+                Gutter.LineNumberTextColor = clWindowText
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'COURIER NEW'
+                Font.Style = []
+                HiddenCaret = False
+                Lines.Strings = (
+                  '')
+                MarkerList.UseDefaultMarkerImageIndex = False
+                MarkerList.DefaultMarkerImageIndex = -1
+                MarkerList.ImageTransparentColor = 33554432
+                OleDropTarget = []
+                PrintOptions.MarginLeft = 0
+                PrintOptions.MarginRight = 0
+                PrintOptions.MarginTop = 0
+                PrintOptions.MarginBottom = 0
+                PrintOptions.PageNr = False
+                PrintOptions.PrintLineNumbers = False
+                RightMarginColor = 14869218
+                ScrollHint = False
+                SelColor = clHighlightText
+                SelBkColor = clHighlight
+                ShowRightMargin = True
+                SmartTabs = False
+                SyntaxStyles = AdvSQLMemoStyler
+                TabOrder = 1
+                TabStop = True
+                TrimTrailingSpaces = False
+                UILanguage.ScrollHint = 'Row'
+                UILanguage.Undo = 'Undo'
+                UILanguage.Redo = 'Redo'
+                UILanguage.Copy = 'Copy'
+                UILanguage.Cut = 'Cut'
+                UILanguage.Paste = 'Paste'
+                UILanguage.Delete = 'Delete'
+                UILanguage.SelectAll = 'Select All'
+                UrlStyle.TextColor = clBlue
+                UrlStyle.BkColor = clWhite
+                UrlStyle.Style = [fsUnderline]
+                UseStyler = True
+                Version = '3.9.0.1'
+                WordWrap = wwNone
+              end
+            end
+          end
         end
       end
     end
@@ -1048,7 +4607,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 0
         Top = 49
         Width = 249
-        Height = 584
+        Height = 646
         Align = alLeft
         Caption = 'Panel6'
         TabOrder = 1
@@ -1066,7 +4625,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 33
           Width = 247
-          Height = 550
+          Height = 612
           OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
           Align = alClient
           DataSource = dsMviews
@@ -1090,13 +4649,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 249
         Top = 49
         Width = 224
-        Height = 584
+        Height = 646
         Align = alLeft
         Caption = 'Panel7'
         TabOrder = 2
         object grdMViewConsFields: TCRDBGrid
           Left = 1
-          Top = 304
+          Top = 366
           Width = 222
           Height = 152
           Filtered = False
@@ -1122,7 +4681,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 1
           Width = 222
-          Height = 303
+          Height = 365
           OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
           Align = alClient
           DataSource = dsMviewFields
@@ -1144,7 +4703,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         end
         object grdMViewConstraints: TCRDBGrid
           Left = 1
-          Top = 456
+          Top = 518
           Width = 222
           Height = 127
           Filtered = False
@@ -1171,20 +4730,20 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 473
         Top = 49
         Width = 185
-        Height = 584
+        Height = 646
         Align = alLeft
         TabOrder = 3
         object memVMList: TMemo
           Left = 1
           Top = 1
           Width = 183
-          Height = 423
+          Height = 485
           Align = alClient
           TabOrder = 0
         end
         object memVMDiscardedList: TMemo
           Left = 1
-          Top = 424
+          Top = 486
           Width = 183
           Height = 159
           Align = alBottom
@@ -1195,7 +4754,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 658
         Top = 49
         Width = 607
-        Height = 584
+        Height = 646
         Align = alClient
         Caption = 'Panel8'
         TabOrder = 4
@@ -1203,7 +4762,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 1
           Width = 605
-          Height = 288
+          Height = 350
           Cursor = crIBeam
           ActiveLineSettings.ShowActiveLine = False
           ActiveLineSettings.ShowActiveLineIndicator = False
@@ -1319,7 +4878,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         end
         object CRDBGrid3: TCRDBGrid
           Left = 1
-          Top = 392
+          Top = 454
           Width = 605
           Height = 88
           Filtered = False
@@ -1444,7 +5003,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         end
         object DBAdvMemo1: TDBAdvMemo
           Left = 1
-          Top = 480
+          Top = 542
           Width = 605
           Height = 103
           Cursor = crIBeam
@@ -1565,7 +5124,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         end
         object memIndexesDDL: TDBAdvMemo
           Left = 1
-          Top = 289
+          Top = 351
           Width = 605
           Height = 103
           Cursor = crIBeam
@@ -1731,7 +5290,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 0
         Top = 49
         Width = 249
-        Height = 584
+        Height = 646
         Align = alLeft
         Caption = 'Panel6'
         TabOrder = 1
@@ -1749,7 +5308,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 33
           Width = 247
-          Height = 550
+          Height = 612
           OptionsEx = [dgeEnableSort, dgeFilterBar, dgeLocalFilter, dgeLocalSorting, dgeRecordCount, dgeSearchBar]
           Align = alClient
           DataSource = dsViews
@@ -1773,7 +5332,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
         Left = 249
         Top = 49
         Width = 1016
-        Height = 584
+        Height = 646
         Align = alClient
         TabOrder = 2
         object Panel12: TPanel
@@ -1818,7 +5377,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 395
           Top = 42
           Width = 411
-          Height = 541
+          Height = 603
           Cursor = crIBeam
           ActiveLineSettings.ShowActiveLine = False
           ActiveLineSettings.ShowActiveLineIndicator = False
@@ -1935,7 +5494,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 806
           Top = 42
           Width = 209
-          Height = 541
+          Height = 603
           Align = alRight
           DataSource = dsTargetFields
           Options = [dgEditing, dgColumnResize, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -1956,20 +5515,20 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 210
           Top = 42
           Width = 185
-          Height = 541
+          Height = 603
           Align = alLeft
           TabOrder = 3
           object Memo1: TMemo
             Left = 1
             Top = 1
             Width = 183
-            Height = 380
+            Height = 442
             Align = alClient
             TabOrder = 0
           end
           object Memo2: TMemo
             Left = 1
-            Top = 381
+            Top = 443
             Width = 183
             Height = 159
             Align = alBottom
@@ -1980,7 +5539,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
           Left = 1
           Top = 42
           Width = 209
-          Height = 541
+          Height = 603
           Align = alLeft
           DataSource = dsViewFields
           Options = [dgEditing, dgColumnResize, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2010,11 +5569,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             item
               Expanded = False
               FieldName = 'TABLE_NAME'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'DATA_TYPE'
+              Width = 64
               Visible = True
             end
             item
@@ -2035,11 +5596,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
             item
               Expanded = False
               FieldName = 'NULLABLE'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'COLUMN_DDL'
+              Width = 64
               Visible = True
             end>
         end
@@ -2061,7 +5624,7 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
   end
   object dsSchemas: TDataSource
     DataSet = dmOracleSchema.qrySchemas
-    Left = 44
+    Left = 36
     Top = 395
   end
   object dsTables: TDataSource
@@ -2341,13 +5904,13 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
     DefaultExtension = '.sql'
     StylerName = 'SQL'
     Extensions = 'sql'
-    Left = 60
-    Top = 227
+    Left = 212
+    Top = 459
   end
   object dsMViewIndexes: TDataSource
     DataSet = dmOracleSchema.qryMviewIndexes
-    Left = 148
-    Top = 291
+    Left = 228
+    Top = 651
   end
   object dsMViewConstraints: TDataSource
     DataSet = dmOracleSchema.qryMviewConstraints
@@ -2356,17 +5919,22 @@ object frmOracleSwissMilitaryMain: TfrmOracleSwissMilitaryMain
   end
   object dsMviewConsDDL: TDataSource
     DataSet = dmOracleSchema.qryConstraintDDL
-    Left = 348
-    Top = 291
+    Left = 204
+    Top = 523
   end
   object dsIndexesDDL: TDataSource
     DataSet = dmOracleSchema.qryIndexDDL
-    Left = 340
-    Top = 371
+    Left = 196
+    Top = 579
   end
   object dsTargetFields: TDataSource
     DataSet = dmOracleSchema.qryIndexDDL
-    Left = 340
-    Top = 467
+    Left = 44
+    Top = 667
+  end
+  object dsFileList: TDataSource
+    DataSet = dmOracleSchema.qryListFiles
+    Left = 238
+    Top = 392
   end
 end
