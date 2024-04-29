@@ -165,6 +165,18 @@
         <Projects Include="..\..\Samples\UniGUI\FSConfirm.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -659,14 +671,50 @@
     <Target Name="FSConfirm:Make">
         <MSBuild Projects="..\..\Samples\UniGUI\FSConfirm.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TestPostGet">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\TestPostGet.dproj"/>
+    </Target>
+    <Target Name="TestPostGet:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\TestPostGet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestPostGet:Make">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\TestPostGet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Make">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;CarServiceBackOffice;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm"/>
+        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;JanuaCoreThirdParty;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceXE15x86;CarServiceBackOffice;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm;TestPostGet;CarServiceWebBrokerCustConfVCL;CarServiceWebBrokerCustConfConsole;CarServiceWebBrokerCustConfService"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;CarServiceBackOffice:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean"/>
+        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE15x86:Clean;CarServiceBackOffice:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean;TestPostGet:Clean;CarServiceWebBrokerCustConfVCL:Clean;CarServiceWebBrokerCustConfConsole:Clean;CarServiceWebBrokerCustConfService:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;CarServiceBackOffice:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make"/>
+        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE15x86:Make;CarServiceBackOffice:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make;TestPostGet:Make;CarServiceWebBrokerCustConfVCL:Make;CarServiceWebBrokerCustConfConsole:Make;CarServiceWebBrokerCustConfService:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -772,6 +820,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -806,6 +860,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -870,6 +930,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -974,6 +1040,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -1098,6 +1170,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1132,6 +1210,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -1196,6 +1280,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1300,6 +1390,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -1424,6 +1520,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1457,6 +1559,12 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1522,6 +1630,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1626,6 +1740,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -1750,6 +1870,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1784,6 +1910,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -1850,6 +1982,12 @@
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
@@ -1952,6 +2090,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -2076,6 +2220,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2110,6 +2260,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -2176,6 +2332,12 @@
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSConfirm.dproj">
@@ -2278,6 +2440,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -2402,6 +2570,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2435,6 +2609,12 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2500,6 +2680,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2604,6 +2790,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -2728,6 +2920,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <ProjectGuid>{2B51062E-D7F2-47EB-9FFF-3B6BEFAB6AED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations/>
@@ -2762,6 +2960,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -2826,6 +3030,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
+            <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2930,6 +3140,12 @@
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
