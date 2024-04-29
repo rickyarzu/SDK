@@ -1,8 +1,8 @@
 inherited dmPgStorage: TdmPgStorage
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 196
-  Width = 190
+  Height = 220
+  Width = 214
   object PgErgoConnection: TJanuaUniConnection
     DataTypeMap = <
       item

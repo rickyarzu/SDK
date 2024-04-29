@@ -132,6 +132,16 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas">
+            <Form>dmJanuaFBStorage</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\UniDAC\udmTestFireBirdStorage.pas">
+            <Form>dmTestFireBirdStorage</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

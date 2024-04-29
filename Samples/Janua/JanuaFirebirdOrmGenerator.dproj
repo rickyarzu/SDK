@@ -132,6 +132,10 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Janua.FirebirdGenerator.VCL.Application.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Custom.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Custom.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Intf.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

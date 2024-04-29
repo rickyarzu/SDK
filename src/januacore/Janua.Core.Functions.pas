@@ -343,7 +343,7 @@ function MakeXML(DataSet: TDataset): string;
 
 { String Related Functions *********************************************************************** }
 function Capitalize(AStr: string): string; inline;
-function CamelCase(const aStr: string): string; inline;
+function CamelCase(const AStr: string): string; inline;
 procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: string); inline;
 function ConvertFloatToString(const Value: Double; const digits: integer): string; inline;
 function CompareStringLists(List1, List2: TStringList): boolean; inline;
@@ -2661,11 +2661,11 @@ begin
   end;
 end;
 
-function CamelCase(const aStr: string): string;
+function CamelCase(const AStr: string): string;
 var
   i: integer;
 begin
-  Result := Capitalize(aStr); // Class Name for Dataset.
+  Result := Capitalize(AStr); // Class Name for Dataset.
   i := Pos('_', Result); // check if underscore separator is in dataset name string.
   while i > 0 do
   begin

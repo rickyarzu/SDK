@@ -151,7 +151,7 @@ begin
 
       aFieldsList.Next;
       if not aFieldsList.Eof then
-        lFieldText := lFieldText + '||' + QuotedStr(';') + '||';
+        lFieldText := lFieldText + ' || ' + QuotedStr(';') + ' || ';
       aList.Add(lFieldText);
     end;
     aList.Add('FROM');
@@ -233,8 +233,7 @@ begin
     begin
       lField := aFieldsList.FieldByName('column_name').AsString;
       aFieldsList.Next;
-      if not aFieldsList.Eof then
-        lFieldText := lField + ',';
+      lFieldText := lField + IfThen(aFieldsList.Eof, '', ',');
       aList.Add(lFieldText);
     end;
     aList.Add(')');

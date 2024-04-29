@@ -41,7 +41,8 @@ requires
   JanuaCore,
   JanuaCoreComponents,
   JanuaMVVM,
-  JanuaUnidacComponentsD;
+  JanuaUnidacComponentsD,
+  ibprovider290;
 
 contains
   Janua.System.FDacDM in '..\..\src\januacore\datamodule\Janua.System.FDacDM.pas' {dmFDacMemSystemServer: TDataModule},
@@ -168,6 +169,8 @@ contains
   Janua.Carservice.PgSettings in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgSettings.pas' {dmPgSettings: TDataModule},
   Janua.CarService.PgRemoteDrivers in '..\..\src\januaunidac\datamodules\Janua.CarService.PgRemoteDrivers.pas' {dmCarServicePgRemoteDrivers: TDataModule},
   Janua.Carservice.PgCustomers in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCustomers: TDataModule},
-  Janua.Carservice.PgBookingList in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgBookingList.pas' {PgPgBookingList: TDataModule};
+  Janua.Carservice.PgBookingList in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgBookingList.pas' {PgPgBookingList: TDataModule},
+  Janua.Firebird.dmStorage in '..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas' {dmJanuaFBStorage: TDataModule},
+  Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas';
 
 end.

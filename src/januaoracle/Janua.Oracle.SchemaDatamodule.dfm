@@ -10,6 +10,8 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.UseUnicode=True'
       'Oracle.HomeName=OraHome'
       'Oracle.Direct=True')
+    Options.DisconnectedMode = True
+    Pooling = True
     Username = 'GTIT'
     Server = 'glsdbx01-scan.generali.it:1521:sn=GLSRX1_VIS'
     AfterConnect = UniConnection1AfterConnect
@@ -1304,12 +1306,11 @@ object dmOracleSchema: TdmOracleSchema
       'Oracle.HomeName=OraHome'
       'Oracle.Direct=True')
     Username = 'SVG_DEV'
-    Server = 'dbCSDK100.generali.it:1807:sn=CSDK1.generali.it'
-    Connected = True
+    Server = 'dbCSDS100.generali.it:1803:sn=CSDS1.generali.it'
     LoginPrompt = False
     AfterConnect = UniConnection1AfterConnect
-    Left = 712
-    Top = 56
+    Left = 656
+    Top = 48
     EncryptedPassword = 'ACFFA9FFB8FFA0FFBBFFBAFFA9FF'
   end
   object qryListFiles: TUniQuery
@@ -1319,9 +1320,9 @@ object dmOracleSchema: TdmOracleSchema
       'FROM vis.dev_table'
       'ORDER BY id')
     MasterSource = dsSchemas
-    Active = True
-    Left = 672
-    Top = 136
+    AfterPost = qryListFilesAfterPost
+    Left = 600
+    Top = 144
     object qryListFilesGROUP_NAME: TWideStringField
       DisplayWidth = 13
       FieldName = 'GROUP_NAME'
@@ -1386,8 +1387,8 @@ object dmOracleSchema: TdmOracleSchema
         DataType = ftWideString
         Size = 30
       end>
-    Left = 584
-    Top = 88
+    Left = 528
+    Top = 64
     Data = {
       040006000A0047524F55505F4E414D4518001400000000000200494406000000
       00000000080046494C454E414D4518008000000000000E004F5045524154494F
@@ -1844,8 +1845,10 @@ object dmOracleSchema: TdmOracleSchema
       'FROM vis.dev_code'
       'ORDER BY id')
     MasterSource = dsSchemas
-    Left = 768
-    Top = 136
+    Active = True
+    AfterPost = qryDevCodeAfterPost
+    Left = 688
+    Top = 112
     object qryDevCodePROJECT: TWideStringField
       FieldName = 'PROJECT'
       Required = True
@@ -1868,5 +1871,10 @@ object dmOracleSchema: TdmOracleSchema
     DataSet = qryDevCode
     Left = 768
     Top = 208
+  end
+  object UniQuery1: TUniQuery
+    Connection = UniConnection2
+    Left = 776
+    Top = 136
   end
 end

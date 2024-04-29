@@ -43,7 +43,7 @@ type
     function GetImplString: string;
     function GetIntfString: string;
   private
-    sKey, sClassType, sSet, sSetType, sSchema, sField: string;
+    sKey, sSet, sSetType, sSchema, sField: string;
     FDataset: TDataset;
   protected
     function GetMasterRecord: IJanuaRecord;
@@ -121,6 +121,8 @@ procedure TRecordCodeGen.Generate;
 begin
   FCustomMasterFiles.IntfFile.Text := GenerateCustomIntfFromDataset(FDataset, FCustomMasterFiles);
   FCustomMasterFiles.ImplFile.Text := GenerateCustomImplFromDataset(FDataset, FCustomMasterFiles);
+  FMasterFiles.IntfFile.Text := GenerateIntfFromDataset(FDataset, FMasterFiles);
+  FMasterFiles.ImplFile.Text := GenerateImplFromDataset(FDataset, FMasterFiles);
 end;
 
 function TRecordCodeGen.GenerateCustomImplFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
@@ -152,6 +154,7 @@ begin
     var
     sClass := aUnit.Conf.SingularName;
 
+    var
     sClassType := 'TCustom' + sClass;
 
     // Generazione Implementazione della Classe Record .....................................................................
@@ -218,8 +221,10 @@ begin
     end;
     aBuilder.AppendLine(ind(1) + 'protected');
     // Getter and Setter of Record ..................................................
-    aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
-    aBuilder.AppendLine(ind(2) + 'procedure Set' + sClass + '(const Value: I' + sClass + ');');
+    aBuilder.AppendLine(ind(2) + 'function GetCustom' + sClass + ': ICustom' + sClass + ';');
+    // Infine inserisco la property che punta al Record di definizione del RecordSet
+    aBuilder.AppendLine(ind(2) + 'property Custom' + sClass + ': ICustom' + sClass + ' read GetCustom' +
+      sClass + ';');
 
     // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
     aBuilder.AppendLine(ind(1) + 'public');
@@ -235,27 +240,10 @@ begin
       end;
     end;
 
-    // Infine inserisco la property che punta al Record di definizione del RecordSet
-    // property TestNestedRecord: IJanuaTestNestedRecord read GetNestedRecord write SetNestedRecord;
-    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ';');
-
     // Termino la Classe
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
 
-
-    // Factory Interface ...............................................................................................
-
-    aBuilder.AppendLine(ind(1) + 'T' + sClass + 'Factory = class');
-    // Record Factory
-    aBuilder.AppendLine(ind(2) + 'class function CreateRecord(const aKey: string): I' + sClass +
-      '; overload;');
-    // RecordSet Factory Model
-    // CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage):' +
-    aBuilder.AppendLine
-      (ind(2) + 'class function CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
-      + sSet + '; overload;');
-    aBuilder.AppendLine(ind(1) + 'end;');
 
     // Implementation Code --------------------------------------------------------------------------------------
 
@@ -408,12 +396,6 @@ begin
           aBuilder.AppendLine(ind(2) + 'Result := F' + sName + ';');
           aBuilder.AppendLine(ind(1) + 'end;');
           aBuilder.AppendLine('');
-          aBuilder.AppendLine(ind(1) + 'procedure ' + sClassType + '.Set' + sName +
-            '(const Value: IJanuaField);');
-          aBuilder.AppendLine(ind(1) + 'begin');
-          aBuilder.AppendLine(ind(2) + 'F' + sName + ' := Value;');
-          aBuilder.AppendLine(ind(1) + 'end;');
-          aBuilder.AppendLine('');
         end;
       end;
     end;
@@ -427,9 +409,6 @@ begin
     aBuilder.AppendLine(ind(1) + 'constructor ' + sSetType + '.Create;');
     aBuilder.AppendLine(ind(1) + 'begin');
     aBuilder.AppendLine(ind(2) + 'inherited;');
-    // self.FRecord := TUserProfileFactory.CreateRecord('UserProfile')
-    aBuilder.AppendLine(ind(2) + 'self.FRecord := T' + sClass + 'Factory.CreateRecord(' +
-      QuotedStr(sClass) + ');');
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
 
@@ -444,7 +423,7 @@ begin
         begin
           aBuilder.AppendLine(ind(1) + 'function ' + sSetType + '.Get' + sName + ': IJanuaField;');
           aBuilder.AppendLine(ind(1) + 'begin');
-          aBuilder.AppendLine(ind(2) + 'Result := self.' + sClass + '.' + sName + ';');
+          aBuilder.AppendLine(ind(2) + 'Result := self.Custom' + sClass + '.' + sName + ';');
           aBuilder.AppendLine(ind(1) + 'end;');
           aBuilder.AppendLine('');
         end;
@@ -452,38 +431,12 @@ begin
     end;
 
     // Generazione Getter & Setter del Record ..........................................................................
-    aBuilder.AppendLine(ind(1) + 'function ' + sSetType + '.Get' + sClass + ': I' + sClass + ';');
+    aBuilder.AppendLine(ind(1) + 'function ' + sSetType + '.GetCustom' + sClass + ': ICustom' + sClass + ';');
     aBuilder.AppendLine(ind(1) + 'begin');
-    aBuilder.AppendLine(ind(2) + 'Result := self.FRecord as I' + sClass + ';');
-    aBuilder.AppendLine(ind(1) + 'end;');
-    aBuilder.AppendLine('');
-    aBuilder.AppendLine(ind(1) + 'procedure ' + sSetType + '.Set' + sClass + '(const Value: I' +
-      sClass + ');');
-    aBuilder.AppendLine(ind(1) + 'begin');
-    aBuilder.AppendLine(ind(2) + 'self.FRecord := Value;');
+    aBuilder.AppendLine(ind(2) + 'Result := FRecord as ICustom' + sClass + ';');
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
 
-
-
-    // Factory Implementation ...................................................................................
-
-    aBuilder.AppendLine(ind(1) + '{ T' + sClass + 'Factory }');
-    aBuilder.AppendLine('');
-    // Record Factory
-    aBuilder.AppendLine(ind(1) + 'class function T' + sClass + 'Factory.CreateRecord(const aKey: string): I' +
-      sClass + ';');
-    aBuilder.AppendLine(ind(1) + 'begin');
-    aBuilder.AppendLine(ind(2) + 'Result := ' + sClassType + '.Create;');
-    aBuilder.AppendLine(ind(1) + 'end;');
-    aBuilder.AppendLine('');
-    aBuilder.AppendLine(ind(1) + 'class function T' + sClass +
-      'Factory.CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
-      + sSet + ';');
-    aBuilder.AppendLine(ind(1) + 'begin');
-    aBuilder.AppendLine(ind(2) + 'Result := ' + sSetType + '.Create(aName, aLocalStorage, aRemoteStorage);');
-    aBuilder.AppendLine(ind(1) + 'end;');
-    aBuilder.AppendLine('');
     aBuilder.AppendLine('end.');
     Result := aBuilder.ToString;
 
@@ -602,10 +555,6 @@ begin
       end;
     end;
 
-    // Generazione della proprietà di accesso alla classe record all'interno del record-set
-    aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
-    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ':I' + sClass + ';');
-
     aBuilder.AppendLine('');
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
@@ -624,7 +573,206 @@ begin
 end;
 
 function TRecordCodeGen.GenerateImplFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
+var
+  i: integer;
+  lTmp: TJanuaFieldType;
+  sMyGuid: string;
+  bTest: Boolean;
 begin
+
+  var
+  sClass := aUnit.Conf.SingularName;
+
+  var
+  sClassType := 'T' + sClass;
+
+  var
+  sPlural := aUnit.Conf.PluralName;
+
+  sSchema := CamelCase(aUnit.Conf.SchemaName);
+
+  var
+  sAncestorType := 'TCustom' + sClass;
+
+  var
+  aAncestorIntf := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Intf';
+
+  var
+  aAncestorImpl := 'JOrm.' + sSchema + '.' + sPlural + '.Custom.Impl';
+
+  aUnit.IntfFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Intf';
+
+  aUnit.ImplFile.FileName := 'JOrm.' + sSchema + '.' + sPlural + '.Impl';
+
+  // Impl ..........................................................................................................
+  var
+  aBuilder := TStringBuilder.Create;
+  try
+    aBuilder.AppendLine('unit ' + aUnit.ImplFile.FileName + ';');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('interface');
+    aBuilder.AppendLine('');
+    // Note Uses (in Intf Section) include both Custom Implementation and Final Interface
+    aBuilder.AppendLine('uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, ' + aUnit.IntfFile.FileName +
+      ', ' + aAncestorImpl + ';');
+    aBuilder.AppendLine('');
+
+    aBuilder.AppendLine
+      ('//------------------------------------------ Impl Record interface ----------------------------------');
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('type');
+
+    // Generazione Implementazione della Classe Record .....................................................................
+    aBuilder.AppendLine(ind(1) + sClassType + ' = class(' + sAncestorType + ', I' + sClass + ')');
+    aBuilder.AppendLine(ind(1) + 'private');
+
+    // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
+    aBuilder.AppendLine(ind(1) + 'public');
+    aBuilder.AppendLine(ind(2) + 'constructor Create; override;');
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    // ----------------------- RecordSet Type Interface ------------------------------------------------------
+
+    var
+    sSetType := 'T' + sPlural;
+    var
+    sAncestorSetType := 'TCustom' + sPlural;
+
+    // Generazione Interfaccia della Classe RecordSet ..................................................................
+    aBuilder.AppendLine(ind(1) + sSetType + ' = class(' + sAncestorSetType + ', IJanuaRecordSet, I' +
+      sPlural + ')');
+
+    // aggiungo una seconda sezione private per i metodi Setter e Getter delle procedure in questione.
+    aBuilder.AppendLine(ind(1) + 'protected');
+    // Getter and Setter of Record ..................................................
+    aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
+
+    // aggiungo una seconda sezione public per le proprietà dei campi definiti, conforme con interfaccia
+    aBuilder.AppendLine(ind(1) + 'public');
+    aBuilder.AppendLine(ind(2) + 'constructor Create; override;');
+
+    // Infine inserisco la property che punta al Record di definizione del RecordSet
+    // property TestNestedRecord: IJanuaTestNestedRecord read GetNestedRecord write SetNestedRecord;
+    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ':I' + sClass + ' read Get' + sClass + ';');
+
+    // Termino la Classe
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+
+    // Factory Interface ...............................................................................................
+
+    aBuilder.AppendLine(ind(1) + 'T' + sClass + 'Factory = class');
+    // Record Factory
+    aBuilder.AppendLine(ind(2) + 'class function CreateRecord(const aKey: string): I' + sClass +
+      '; overload;');
+    // RecordSet Factory Model
+    // CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage):' +
+    aBuilder.AppendLine
+      (ind(2) + 'class function CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
+      + sSet + '; overload;');
+
+    aBuilder.AppendLine(ind(2) + 'class function CreateRecordset(const aName: string): I' + sSet +
+      '; overload;');
+
+    aBuilder.AppendLine(ind(1) + 'end;');
+
+    // Implementation Code --------------------------------------------------------------------------------------
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('implementation');
+    aBuilder.AppendLine('');
+
+    // ------------------------- Record Implementation ------------------------------------------------------------------
+
+    aBuilder.AppendLine('//------------------------------------------ Impl ' + 'T' + sClass +
+      ' -------------------------------');
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine('{' + sClassType + '}');
+
+    // Metodo Create (aName) ...........................................................................................
+    aBuilder.AppendLine('');
+    // Generazione Metodo Create della Classe Record ...................................................................
+    // constructor TJanuaTestNestedRecord.Create; begin inherited;
+    aBuilder.AppendLine(ind(1) + 'constructor ' + sClassType + '.Create;');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    // inherited;
+    aBuilder.AppendLine(ind(2) + 'inherited;');
+    aBuilder.AppendLine(ind(1) + 'end;');
+
+    aBuilder.AppendLine('');
+
+    // RecordSet Implementation .....................................................................................
+
+    aBuilder.AppendLine(ind(1) + '{ ' + sSetType + ' }');
+
+    (*
+      constructor TtimetableViews.Create;
+      begin
+      inherited;
+      FRecord := TtimetableView.Create('TimetableView') // TTimetableViewFactory.CreateRecord();
+      end;
+
+      function TtimetableViews.GetTimeTableView: ItimetableView;
+      begin
+      Result := CurrentRecord as ItimetableView
+      end;
+    *)
+
+    // Metodo Create ................................................................................................
+    aBuilder.AppendLine(ind(1) + 'constructor ' + sSetType + '.Create;');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    aBuilder.AppendLine(ind(2) + 'inherited;');
+    aBuilder.AppendLine(ind(2) + 'FRecord := T' + sClass + 'Factory.CreateRecord(' +
+      QuotedStr(sClass) + ');');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    // Generazione Getter & Setter del Record ..........................................................................
+    aBuilder.AppendLine(ind(1) + 'function ' + sSetType + '.Get' + sClass + ': I' + sClass + ';');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    aBuilder.AppendLine(ind(2) + 'Result := FRecord as I' + sClass + ';');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    // Factory Implementation ...................................................................................
+
+    aBuilder.AppendLine(ind(1) + '{ T' + sClass + 'Factory }');
+    aBuilder.AppendLine('');
+    // Record Factory
+    aBuilder.AppendLine(ind(1) + 'class function T' + sClass + 'Factory.CreateRecord(const aKey: string): I' +
+      sClass + ';');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    aBuilder.AppendLine(ind(2) + 'Result := ' + sClassType + '.Create(aKey);');
+    aBuilder.AppendLine(ind(1) + 'end;');
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine(ind(1) + 'class function T' + sClass +
+      'Factory.CreateRecordset(const aName: string; const aLocalStorage, aRemoteStorage: IJanuaRecordSetStorage): I'
+      + sSet + ';');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    aBuilder.AppendLine(ind(2) + 'Result := ' + sSetType + '.Create(aName, aLocalStorage, aRemoteStorage);');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    aBuilder.AppendLine('');
+    aBuilder.AppendLine(ind(1) + 'class function T' + sClass +
+      'Factory.CreateRecordset(const aName: string): I' + sSet + ';');
+    aBuilder.AppendLine(ind(1) + 'begin');
+    aBuilder.AppendLine(ind(2) + 'Result := ' + sSetType + '.Create(aName);');
+    aBuilder.AppendLine(ind(1) + 'end;');
+    aBuilder.AppendLine('');
+
+    aBuilder.AppendLine('end.');
+    Result := aBuilder.ToString;
+
+  finally
+    aBuilder.Free;
+  end;
 
 end;
 
@@ -674,30 +822,31 @@ begin
       aBuilder.AppendLine('Creating GUID failed!')
     else
     begin
-      var
       sMyGuid := stringreplace(GUIDToString(MyGuid0), '{', '[''{', [rfReplaceAll, rfIgnoreCase]);
       sMyGuid := stringreplace(sMyGuid, '}', '}'']', [rfReplaceAll, rfIgnoreCase]);
       aBuilder.AppendLine(ind(1) + sMyGuid);
     end;
 
     // Generazione Getter - Setter - Properties ........................................................................
-    for i := 0 to Pred(aDataset.FieldCount) do
-    begin
+    (*
+      for i := 0 to Pred(aDataset.FieldCount) do
+      begin
       var
       sName := aDataset.Fields[i].FieldName.ToLower;
       if CheckGUID(sName) then
       begin
-        sName := CamelCase(sName);
-        aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
-        aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
+      sName := CamelCase(sName);
+      aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
+      aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
       end;
-    end;
+      end;
+    *)
 
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
 
     // Generazione Interfaccia della Classe RecordSet ..................................................................
-    sSet := 'Custom' + IfThen(sPlural.IsEmpty, sClass + 's', sPlural);
+    sSet := { 'Custom' + } IfThen(sPlural.IsEmpty, sClass + 's', sPlural);
     // Il Type può essere Custom quindi implementabile in un discendente lasciando al gestore automatico il Custom
     sSetType := 'T' + sSet;
 
@@ -706,28 +855,29 @@ begin
       aBuilder.AppendLine('Creating GUID failed!')
     else
     begin
-      var
       sMyGuid := stringreplace(GUIDToString(MyGuid1), '{', '[''{', [rfReplaceAll, rfIgnoreCase]);
       sMyGuid := stringreplace(sMyGuid, '}', '}'']', [rfReplaceAll, rfIgnoreCase]);
       aBuilder.AppendLine(ind(1) + sMyGuid);
     end;
 
     // Generazione Getter - Setter - Properties ........................................................................
-    for i := 0 to Pred(aDataset.FieldCount) do
-    begin
+    (*
+      for i := 0 to Pred(aDataset.FieldCount) do
+      begin
       var
       sName := aDataset.Fields[i].FieldName.ToLower;
       if CheckGUID(sName) then
       begin
-        sName := CamelCase(sName);
-        aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
-        aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
+      sName := CamelCase(sName);
+      aBuilder.AppendLine(ind(2) + 'function Get' + sName + ': IJanuaField;');
+      aBuilder.AppendLine(ind(2) + 'property ' + sName + ': IJanuaField read Get' + sName + ';');
       end;
-    end;
+      end;
+    *)
 
     // Generazione della proprietà di accesso alla classe record all'interno del record-set
     aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
-    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ':I' + sClass + ';');
+    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ': I' + sClass + ' read Get' + sClass +  ';');
 
     aBuilder.AppendLine('');
     aBuilder.AppendLine(ind(1) + 'end;');
@@ -788,7 +938,7 @@ end;
 
 function TRecordCodeGen.GetMasterFiles: TRecordUnits;
 begin
-  Result := FCustomMasterFiles
+  Result := FMasterFiles
 end;
 
 function TRecordCodeGen.GetMasterRecord: IJanuaRecord;
