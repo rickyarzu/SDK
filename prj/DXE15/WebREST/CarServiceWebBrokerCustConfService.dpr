@@ -2,6 +2,8 @@ program CarServiceWebBrokerCustConfService;
 
 uses
   Vcl.SvcMgr,
+  Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
+  Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
   Janua.CarService.CustConfWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas' {Service3: TService};
 
 {$R *.RES}

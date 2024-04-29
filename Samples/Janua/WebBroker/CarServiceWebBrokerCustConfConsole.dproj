@@ -161,6 +161,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.dlgWebBrokerCustConfirmation.pas">
             <Form>Form1</Form>
         </DCCReference>

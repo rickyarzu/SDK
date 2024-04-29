@@ -4,8 +4,8 @@
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>CarServiceWebBrokerCustConfService.dpr</MainSource>
@@ -92,6 +92,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -104,6 +105,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>CarServiceWebBrokerCustConfService</SanitizedProjectName>
+        <CfgDependentOn>..\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>bindengine;IndyIPCommon;dbxcds;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;rtl;DBXSqliteDriver;FireDAC;xmlrtl;ibxpress;dsnap;bindcompfmx;ibmonitor;DataSnapCommon;fmxase;DBXInterBaseDriver;DataSnapClient;emsclientfiredac;FireDACDSDriver;tethering;sbridge;CloudService;soapserver;FireDACIBDriver;fmx;DbxCommonDriver;emsclient;IndyProtocols;FmxTeeUI;FireDACSqliteDriver;DbxClientDriver;soapmidas;IndySystem;ibxbindings;FireDACCommon;bindcompdbx;DataSnapFireDAC;DataSnapNativeClient;FireDACCommonDriver;IndyIPClient;TMSCloudPkg;fmxFireDAC;dbrtl;bindcomp;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;FMXTee;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
@@ -179,6 +181,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas">
             <Form>Service3</Form>
             <FormType>dfm</FormType>
@@ -186,6 +190,7 @@
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>

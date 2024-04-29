@@ -37,9 +37,9 @@ implementation
 
 uses
 {$IFDEF MSWINDOWS}
-  WinApi.Windows, Winapi.ShellApi,
+  Winapi.Windows, Winapi.ShellApi,
 {$ENDIF}
-  System.Generics.Collections;
+  System.Generics.Collections, Janua.Application.Framework;
 
 procedure TForm1.ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
 begin
@@ -57,9 +57,7 @@ begin
   StartServer;
 {$IFDEF MSWINDOWS}
   LURL := Format('http://localhost:%s', [EditPort.Text]);
-  ShellExecute(0,
-        nil,
-        PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
+  ShellExecute(0, nil, PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
 {$ENDIF}
 end;
 
@@ -77,6 +75,9 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   FServer := TIdHTTPWebBrokerBridge.Create(Self);
+  var
+  lPort := TJanuacoreOS.ReadParam('UniGUI', 'Port', 8077);
+  EditPort.Text := lPort.ToString;
 end;
 
 procedure TForm1.StartServer;
