@@ -3,90 +3,30 @@ program CarServiceWebBrokerCustConfConsole;
 
 uses
   System.SysUtils,
+  System.StrUtils,
   System.Types,
   IPPeerServer,
   IPPeerAPI,
   IdHTTPWebBrokerBridge,
   Web.WebReq,
   Web.WebBroker,
-  Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
-  Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
-  Janua.CarService.dlgWebBrokerCustConfirmation in '..\..\..\src\VCL\CarService\Janua.CarService.dlgWebBrokerCustConfirmation.pas' {Form1},
-  Janua.CarService.WebModuleCustomerConfirmation in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {WebModule1: TWebModule};
-
+  Janua.Application.Framework,
+  Janua.WebBroker.ServerConst,
+  Janua.Core.Types,
+  Janua.Core.WebServer,
+  Janua.WebBroker.UniDACApplication
+    in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
+  Janua.Carservice.WebBroker.UniDACApplication
+    in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
+  Janua.Carservice.dlgWebBrokerCustConfirmation
+    in '..\..\..\src\VCL\CarService\Janua.CarService.dlgWebBrokerCustConfirmation.pas' {Form1} ,
+  Janua.Carservice.WebModuleCustomerConfirmation
+    in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {WebModule1: TWebModule};
 
 {$R *.res}
 
-function BindPort(APort: Integer): Boolean;
 var
-  LTestServer: IIPTestServer;
-begin
-  Result := True;
-  try
-    LTestServer := PeerFactory.CreatePeer('', IIPTestServer) as IIPTestServer;
-    LTestServer.TestOpenPort(APort, nil);
-  except
-    Result := False;
-  end;
-end;
-
-function CheckPort(APort: Integer): Integer;
-begin
-  if BindPort(APort) then
-    Result := APort
-  else
-    Result := 0;
-end;
-
-procedure SetPort(const AServer: TIdHTTPWebBrokerBridge; APort: String);
-begin
-  if not AServer.Active then
-  begin
-    APort := APort.Replace(cCommandSetPort, '').Trim;
-    if CheckPort(APort.ToInteger) > 0 then
-    begin
-      AServer.DefaultPort := APort.ToInteger;
-      Writeln(Format(sPortSet, [APort]));
-    end
-    else
-      Writeln(Format(sPortInUse, [APort]));
-  end
-  else
-    Writeln(sServerRunning);
-  Write(cArrow);
-end;
-
-procedure StartServer(const AServer: TIdHTTPWebBrokerBridge);
-begin
-  if not AServer.Active then
-  begin
-    if CheckPort(AServer.DefaultPort) > 0 then
-    begin
-      Writeln(Format(sStartingServer, [AServer.DefaultPort]));
-      AServer.Bindings.Clear;
-      AServer.Active := True;
-    end
-    else
-      Writeln(Format(sPortInUse, [AServer.DefaultPort.ToString]));
-  end
-  else
-    Writeln(sServerRunning);
-  Write(cArrow);
-end;
-
-procedure StopServer(const AServer: TIdHTTPWebBrokerBridge);
-begin
-  if AServer.Active then
-  begin
-    Writeln(sStoppingServer);
-    AServer.Active := False;
-    AServer.Bindings.Clear;
-    Writeln(sServerStopped);
-  end
-  else
-    Writeln(sServerNotRunning);
-  Write(cArrow);
-end;
+  Server: TJanuaWebServer;
 
 procedure WriteCommands;
 begin
@@ -96,40 +36,35 @@ end;
 
 procedure WriteStatus(const AServer: TIdHTTPWebBrokerBridge);
 begin
-  Writeln(sIndyVersion + AServer.SessionList.Version);
-  Writeln(sActive + AServer.Active.ToString(TUseBoolStrs.True));
-  Writeln(sPort + AServer.DefaultPort.ToString);
-  Writeln(sSessionID + AServer.SessionIDCookieName);
-  Write(cArrow);
+
 end;
 
 procedure RunServer(APort: Integer);
 var
-  LServer: TIdHTTPWebBrokerBridge;
   LResponse: string;
 begin
   WriteCommands;
-  LServer := TIdHTTPWebBrokerBridge.Create(nil);
+  Server := TJanuaWebServerFactory.CreateWebServer;
   try
-    LServer.DefaultPort := APort;
+    Server.Port := APort;
     while True do
     begin
       Readln(LResponse);
       LResponse := LowerCase(LResponse);
       if LResponse.StartsWith(cCommandSetPort) then
-        SetPort(LServer, LResponse)
+        Server.Port := StrToInt(StringReplace(LResponse, cCommandSetPort, '', [rfIgnoreCase]).Trim)
       else if sametext(LResponse, cCommandStart) then
-        StartServer(LServer)
+        Server.StartServer
       else if sametext(LResponse, cCommandStatus) then
-        WriteStatus(LServer)
+        Server.WriteStatus
       else if sametext(LResponse, cCommandStop) then
-        StopServer(LServer)
+        Server.StopServer
       else if sametext(LResponse, cCommandHelp) then
         WriteCommands
       else if sametext(LResponse, cCommandExit) then
-        if LServer.Active then
+        if Server.IsActive then
         begin
-          StopServer(LServer);
+          Server.StopServer;
           break
         end
         else
@@ -140,18 +75,24 @@ begin
         Write(cArrow);
       end;
     end;
+
   finally
-    LServer.Free;
+    Server.Free;
   end;
 end;
 
 begin
+  TJanuaApplication.ApplicationType := jatConsoleSrv;
+  var
+  lPort := TJanuaWebServer.GetPort(8084);
+  TJanuaCarserviceWebBrokerUniDACApplication.ApplicationSetup('customerconf.pikapp.it');
   try
-  if WebRequestHandler <> nil then
-    WebRequestHandler.WebModuleClass := WebModuleClass;
-    RunServer(8097);
+    if WebRequestHandler <> nil then
+      WebRequestHandler.WebModuleClass := WebModuleClass;
+    RunServer(lPort);
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
   end
+
 end.

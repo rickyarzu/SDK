@@ -69,13 +69,6 @@ end;
 
 procedure TPickappAPIService.ServiceStart(Sender: TService; var Started: Boolean);
 begin
-  {
-    FServer := TIdHTTPWebBrokerBridge.Create(nil);
-    FServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
-    FServer.DefaultPort := 8101;
-    FServer.Active := True;
-  }
-
   (*
     FCustomHandler :=
     function(const Value: String; const Server: TIdHTTPWebBrokerBridge; out Handled: Boolean): THandleCommandResult
@@ -110,7 +103,6 @@ begin
     http://www.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=TIdCustomTCPServer_ListenQueue.html }
   FServer.ListenQueue := 200;
   { required if you use JWT middleware }
-  FServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
   FServer.Active := True;
 end;
 

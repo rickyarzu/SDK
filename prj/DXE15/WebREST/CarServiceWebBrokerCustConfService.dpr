@@ -2,9 +2,10 @@ program CarServiceWebBrokerCustConfService;
 
 uses
   Vcl.SvcMgr,
+  Janua.Application.Framework,
   Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
   Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
-  Janua.CarService.CustConfWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas' {Service3: TService};
+  Janua.CarService.CustConfWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas' {JanuaCarServiceCustConfWebBrokerService: TService};
 
 {$R *.RES}
 
@@ -25,6 +26,6 @@ begin
   //
   if not Application.DelayInitialize or Application.Installing then
     Application.Initialize;
-  Application.CreateForm(TService3, Service3);
+  Application.CreateForm(TJanuaCarServiceCustConfWebBrokerService, JanuaCarServiceCustConfWebBrokerService);
   Application.Run;
 end.

@@ -164,7 +164,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="ServerConstTestPostGet.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\..\prj\DXE15\JanuaeExeDXE15.optset</DependentOn>

@@ -42,7 +42,7 @@ end;
 class procedure TJanuaCarserviceUniGUIApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited ApplicationSetup(aAppname);
-  TGooglePlaces.ApiKey := 'AIzaSyA31qLl7gwlbLbBIQD5l5Tha09XFP9NpDY';
+  TGooglePlaces.GetConfAPIKey('AIzaSyA31qLl7gwlbLbBIQD5l5Tha09XFP9NpDY');
 end;
 
 class procedure TJanuaCarserviceUniGUIApplication.ApplicationTearDown;

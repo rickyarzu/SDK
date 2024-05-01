@@ -7,16 +7,17 @@ uses
   {Vcl.Graphics,} {Vcl.Controls,} Vcl.SvcMgr {, Vcl.Dialogs};
 
 type
-  TService3 = class(TService)
+  TJanuaCarServiceCustConfWebBrokerService = class(TService)
   private
     { Private declarations }
+  protected
   public
     function GetServiceController: TServiceController; override;
     { Public declarations }
   end;
 
 var
-  Service3: TService3;
+  JanuaCarServiceCustConfWebBrokerService: TJanuaCarServiceCustConfWebBrokerService;
 
 implementation
 
@@ -24,10 +25,10 @@ implementation
 
 procedure ServiceController(CtrlCode: DWord); stdcall;
 begin
-  Service3.Controller(CtrlCode);
+  JanuaCarServiceCustConfWebBrokerService.Controller(CtrlCode);
 end;
 
-function TService3.GetServiceController: TServiceController;
+function TJanuaCarServiceCustConfWebBrokerService.GetServiceController: TServiceController;
 begin
   Result := ServiceController;
 end;

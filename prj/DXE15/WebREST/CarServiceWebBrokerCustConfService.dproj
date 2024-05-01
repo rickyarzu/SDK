@@ -184,7 +184,7 @@
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas">
-            <Form>Service3</Form>
+            <Form>JanuaCarServiceCustConfWebBrokerService</Form>
             <FormType>dfm</FormType>
             <DesignClass>TService</DesignClass>
         </DCCReference>

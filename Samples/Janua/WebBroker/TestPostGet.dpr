@@ -10,7 +10,7 @@ uses
   Web.WebReq,
   Web.WebBroker,
   WebModuleUnitTestPostGet in 'WebModuleUnitTestPostGet.pas' {WebModuleTestPostGet: TWebModule},
-  ServerConstTestPostGet in 'ServerConstTestPostGet.pas';
+  Janua.WebBroker.ServerConst in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas';
 
 {$R *.res}
 

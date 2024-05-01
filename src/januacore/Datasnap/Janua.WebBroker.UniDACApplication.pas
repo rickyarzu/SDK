@@ -27,6 +27,8 @@ implementation
 uses System.Types, System.StrUtils,
   // Janua Janua.VCL.Anagraph
   Janua.Anagraph.ViewModel.Intf,
+  // WebBroker
+  Janua.WebBroker.Server,
   // Test.VCL
   Janua.Test.ViewModel.Intf,
   // Janua Core & DB
@@ -44,6 +46,7 @@ end;
 class procedure TJanuaWebBrokerUniDACApplication.ApplicationSetup(const aAppname: string);
 begin
   TJanuaApplication.CustomServer := True;
+  TJanuaWebServerFactory.WebServerClass := TJanuaWebBrokerServer;
   inherited ApplicationSetup(aAppname);
   // Uso il Framework UniGUI il Framework TMS per la comunicazioni non lo uso ancora
   // Per ultimo viene inizializzato il Model View View Model Framework che si 'appoggia' agli altri.

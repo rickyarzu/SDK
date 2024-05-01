@@ -254,7 +254,7 @@
         <DCCReference Include="..\..\src\januacore\Janua.Core.System.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.University.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Users.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.WebServices.pas"/>
+        <DCCReference Include="..\..\src\januacore\Janua.Cloud.WebServices.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Ads.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Backup.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Books.pas"/>
@@ -604,6 +604,7 @@
         <DCCReference Include="..\..\src\januacore\Janua.Orm.Firedac.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.StackTrace.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Components.pas"/>
+        <DCCReference Include="..\..\src\januacore\Janua.Core.WebServer.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <BuildConfiguration Include="Base">
