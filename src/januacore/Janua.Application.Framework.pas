@@ -36,8 +36,8 @@ uses
   // Januaproject Core Framework
   Janua.Http.Types, Janua.Core.Types, Janua.Core.Commons, Janua.Core.AsyncTask, Janua.Application.Intf,
   Janua.Bindings.Intf,
-  // Januaproject DB Framework - REST Framework
-  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types,
+  // Januaproject DB Framework - REST Framework - Http(s) Framework
+  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types, Janua.Core.WebServer,
   // Janua Orm Framework
   Janua.Orm.Intf, Janua.Orm.Types, Janua.Orm.Dataset.Intf, JOrm.Anagraph.Intf,
   // Januaproject Search Framework
@@ -448,6 +448,15 @@ type
   public
     class property UserSessionVM: IJanuaSystemUserSessionViewModel read GetUserSessionVM;
     class property SchemaID: Integer read GetSchemaID;
+  end;
+
+  TJanuaWebServerFactory = class
+  private
+    class var FWebServerClass: TJanuaWebServerClass;
+  public
+    class function CreateWebServer: TJanuaWebServer;
+  public
+    class property WebServerClass: TJanuaWebServerClass read FWebServerClass write FWebServerClass;
   end;
 
   TJanuaLogger = class
@@ -4004,6 +4013,14 @@ begin
     FUsername := Value;
     TJanuaApplication.WriteParamEncryptString(LoginKeySection, LoginKeyLocalUserName, FUsername);
   end;
+end;
+
+{ TJanuaWebServerFactory }
+
+class function TJanuaWebServerFactory.CreateWebServer: TJanuaWebServer;
+begin
+  if Assigned(FWebServerClass) then
+    Result := FWebServerClass.Create;
 end;
 
 initialization

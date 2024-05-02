@@ -137,8 +137,8 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas">
-            <Form>CarServiceCustConfWebModule</Form>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas">
+            <Form>JanuaDMVCCustomWebModule</Form>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>

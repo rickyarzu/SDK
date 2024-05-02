@@ -1,4 +1,4 @@
-unit Janua.Core.WebServices;
+unit Janua.Cloud.WebServices;
 
 interface
 
