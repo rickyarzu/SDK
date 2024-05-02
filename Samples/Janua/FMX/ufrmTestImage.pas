@@ -5,19 +5,27 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects, FMX.TabControl,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.TMSFNCTypes, FMX.TMSFNCUtils, FMX.TMSFNCGraphics,
+  FMX.TMSFNCGraphicsTypes, FMX.TMSFNCWXJSONFormatter, FMX.TMSFNCCustomControl, FMX.TMSFNCWebBrowser,
+  FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo;
 
 type
   TForm3 = class(TForm)
-    Panel1: TPanel;
+    tabImage: TTabControl;
+    pgImage: TTabItem;
+    TabItem2: TTabItem;
+    TabItem3: TTabItem;
+    Panel2: TPanel;
     imgCar: TImage;
     PaintBox2: TPaintBox;
-    Panel2: TPanel;
+    TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo;
+    TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
     xold, yold: Single;
@@ -33,6 +41,11 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm3.FormResize(Sender: TObject);
+begin
+  imgCar.Height := self.Width * (330/540)
+end;
 
 procedure TForm3.FormShow(Sender: TObject);
 begin
@@ -65,7 +78,7 @@ procedure TForm3.PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift
 begin
   Drawing := True;
   xold := X;
-  yold := Y + Panel1.Position.Y;
+  yold := Y + imgCar.Position.Y;
 end;
 
 procedure TForm3.PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
@@ -80,13 +93,13 @@ begin
       xpre := xold;
       ypre := yold; // fetch previous position
       xold := X;
-      yold := Y + Panel1.Position.Y; // store current position for next event
+      yold := Y + imgCar.Position.Y; // store current position for next event
 
       Canvas.Stroke.Thickness := 10;
       Canvas.Stroke.Cap := TStrokeCap.Round;
       Canvas.Stroke.Color := TAlphaColorRec.Red;
 
-      Canvas.DrawLine(PointF(xpre, ypre), PointF(X, Y + Panel1.Position.Y), 1); // draw line from prev pos to current
+      Canvas.DrawLine(PointF(xpre, ypre), PointF(X, Y + imgCar.Position.Y), 1); // draw line from prev pos to current
     finally
       Canvas.EndScene;
     end;

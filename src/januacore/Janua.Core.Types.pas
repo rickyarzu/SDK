@@ -21,12 +21,26 @@ type
   TJanuaPoint = record
     X: Single;
     Y: Single;
+    constructor Create(aX, aY: Single);
   end;
 
+  /// <summary>Draw is simply a Collection of Points (NOTE: it uses relative coordinates) </summary>
   TJanuaDraw = record
     Points: Tarray<TJanuaPoint>;
-    procedure AddPoint(aPoint: TJanuaPoint);
+    constructor Create(aX, aY: Single);
+    procedure AddPoint(aPoint: TJanuaPoint); overload;
+    procedure AddPoint(aX, aY: Single); overload;
     procedure DelPoint;
+  end;
+
+  /// <summary>This is not only a collection of Draws it contains (also) relative image Dimensions </summary>
+  TJanuaImageDraws = record
+    Width: Single;
+    Heigth: Single;
+    Items: Tarray<TJanuaDraw>;
+    constructor Create(aWidth, aHeigth: Single);
+    procedure AdDraw(aDraw: TJanuaDraw);
+    procedure DelDraw;
     function Serialize: string;
     procedure DeSerialize(const aJson: string);
   end;
@@ -5110,19 +5124,36 @@ begin
   Points[Length(Points) - 1] := aPoint;
 end;
 
+procedure TJanuaDraw.AddPoint(aX, aY: Single);
+begin
+  var
+  aPoint := TJanuaPoint.Create(aX, aY);
+  var
+  lP := Length(Points);
+  SetLength(self.Points, lP + 1);
+  Points[lP] := aPoint;
+end;
+
+constructor TJanuaDraw.Create(aX, aY: Single);
+begin
+
+end;
+
 procedure TJanuaDraw.DelPoint;
 begin
   SetLength(Points, Length(Points) - 1);
 end;
 
-procedure TJanuaDraw.DeSerialize(const aJson: string);
+{ TJanuaImageDraws }
+
+procedure TJanuaImageDraws.DeSerialize(const aJson: string);
 begin
- self := TJanuaJson.DeserializeSimple<TJanuaDraw>(aJson);
+  self := TJanuaJson.DeserializeSimple<TJanuaImageDraws>(aJson);
 end;
 
-function TJanuaDraw.Serialize: string;
+function TJanuaImageDraws.Serialize: string;
 begin
-  Result := TJanuaJson.SerializeSimple<TJanuaDraw>(self);
+  Result := TJanuaJson.SerializeSimple<TJanuaImageDraws>(self);
 end;
 
 initialization
