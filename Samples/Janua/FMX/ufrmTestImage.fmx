@@ -2,20 +2,21 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 651
-  ClientWidth = 762
+  ClientHeight = 645
+  ClientWidth = 539
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object Panel1: TPanel
     Align = Bottom
-    Position.Y = 322.000000000000000000
-    Size.Width = 762.000000000000000000
+    Position.Y = 316.000000000000000000
+    Size.Width = 539.000000000000000000
     Size.Height = 329.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object Image1: TImage
+    object imgCar: TImage
       MultiResBitmap.Height = 383
       MultiResBitmap.Width = 637
       MultiResBitmap = <
@@ -7721,13 +7722,13 @@ object Form3: TForm3
             'e\Immagini\Vehicle-Hire-Forms-700x990.png'
         end>
       Align = Client
-      Size.Width = 762.000000000000000000
+      Size.Width = 539.000000000000000000
       Size.Height = 329.000000000000000000
       Size.PlatformDefault = False
-      OnMouseDown = Image1MouseDown
+      OnMouseDown = imgCarMouseDown
       object PaintBox2: TPaintBox
         Align = Client
-        Size.Width = 762.000000000000000000
+        Size.Width = 539.000000000000000000
         Size.Height = 329.000000000000000000
         Size.PlatformDefault = False
         OnMouseDown = PaintBox1MouseDown
@@ -7738,10 +7739,10 @@ object Form3: TForm3
   end
   object Panel2: TPanel
     Align = Bottom
-    Position.Y = 264.000000000000000000
-    Size.Width = 762.000000000000000000
+    Position.Y = 258.000000000000000000
+    Size.Width = 539.000000000000000000
     Size.Height = 58.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
+    TabOrder = 1
   end
 end

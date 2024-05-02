@@ -18,6 +18,20 @@ uses
 {$ENDIF}
 
 type
+  TJanuaPoint = record
+    X: Single;
+    Y: Single;
+  end;
+
+  TJanuaDraw = record
+    Points: Tarray<TJanuaPoint>;
+    procedure AddPoint(aPoint: TJanuaPoint);
+    procedure DelPoint;
+    function Serialize: string;
+    procedure DeSerialize(const aJson: string);
+  end;
+
+type
   TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird,
     jdbTmsRemoteDB, jdbMSAccess);
 
@@ -37,15 +51,15 @@ type
     function GetItems(Index: Integer): T;
     procedure SetItems(Index: Integer; Value: T);
   public
-    FArray: TArray<T>;
+    FArray: Tarray<T>;
     property ItemArray[Index: Integer]: T read GetItems { write SetItems }; default;
     property Count: Integer read GetCount;
     property HasValues: Boolean read GetHasValues;
-    property Items: TArray<T> read FArray;
+    property Items: Tarray<T> read FArray;
     function Inc: Integer;
     procedure Clear;
   public
-    constructor Create(aArray: TArray<T>);
+    constructor Create(aArray: Tarray<T>);
     procedure Assign(aArray: TJanuaArray<T>);
     procedure Remove(Index: Integer);
   end;
@@ -56,7 +70,7 @@ type
     constructor Create(const aField, aValue: string);
   end;
 
-  TStringArray = TArray<string>;
+  TStringArray = Tarray<string>;
   TJanuaIntegerArray = TJanuaArray<Integer>;
   TJanuaStringArray = TJanuaArray<string>;
 
@@ -221,9 +235,9 @@ type
   end;
 
 type
-  TKeyFields = TArray<string>;
-  TJanuaVariantArray = TArray<variant>;
-  TValueArray = TArray<TValue>;
+  TKeyFields = Tarray<string>;
+  TJanuaVariantArray = Tarray<variant>;
+  TValueArray = Tarray<TValue>;
 
   /// <summary>
   /// This are the possibile Types of properties managed by The System.
@@ -716,7 +730,7 @@ type
     property Align: TJanuaRecAlign read FAlign write SetAlign;
   end;
 
-  TRecFieldDefArray = TArray<TRecFieldDef>;
+  TRecFieldDefArray = Tarray<TRecFieldDef>;
 
   TRecFieldDefList = record
   private
@@ -5017,7 +5031,7 @@ begin
   SetLength(FArray, 0)
 end;
 
-constructor TJanuaArray<T>.Create(aArray: TArray<T>);
+constructor TJanuaArray<T>.Create(aArray: Tarray<T>);
 begin
   FArray := aArray
 end;
@@ -5086,6 +5100,29 @@ constructor TJanuaConfCustomField.Create(const aField, aValue: string);
 begin
   Key := aField;
   Value := aValue;
+end;
+
+{ TJanuaDraw }
+
+procedure TJanuaDraw.AddPoint(aPoint: TJanuaPoint);
+begin
+  SetLength(Points, Length(Points) + 1);
+  Points[Length(Points) - 1] := aPoint;
+end;
+
+procedure TJanuaDraw.DelPoint;
+begin
+  SetLength(Points, Length(Points) - 1);
+end;
+
+procedure TJanuaDraw.DeSerialize(const aJson: string);
+begin
+ self := TJanuaJson.DeserializeSimple<TJanuaDraw>(aJson);
+end;
+
+function TJanuaDraw.Serialize: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaDraw>(self);
 end;
 
 initialization

@@ -77,7 +77,7 @@ type
     Switch2: TSwitch;
     btnConfirm: TButton;
     btnConfCancel: TButton;
-    Image7: TImage;
+    imgCar: TImage;
     tmList: TTimer;
     pgMessages: TTabControl;
     TabItem1: TTabItem;

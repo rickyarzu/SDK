@@ -10,13 +10,14 @@ uses
 type
   TForm3 = class(TForm)
     Panel1: TPanel;
-    Image1: TImage;
+    imgCar: TImage;
     PaintBox2: TPaintBox;
     Panel2: TPanel;
-    procedure Image1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     xold, yold: Single;
@@ -33,7 +34,12 @@ implementation
 
 {$R *.fmx}
 
-procedure TForm3.Image1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TForm3.FormShow(Sender: TObject);
+begin
+  imgCar.Height := self.Width * (330/540)
+end;
+
+procedure TForm3.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 var
   MyRect: TRectF;
   Point: TPointF;
@@ -42,17 +48,17 @@ begin
   Caption := X.ToString + ',' + Y.ToString;
   Point := TPointF.Create(X, Y);
   // Point:=ClientToScreen(Point);
-  Point := Image1.AbsoluteToLocal(Point);
+  Point := imgCar.AbsoluteToLocal(Point);
   TRectF.Create(Point, 5, 5);
 
-  Image1.Bitmap.Canvas.Stroke.Thickness := 10;
-  Image1.Bitmap.Canvas.Stroke.Cap := TStrokeCap.Round;
-  Image1.Bitmap.Canvas.Stroke.Color := TAlphaColorRec.Red;
+  imgCar.Bitmap.Canvas.Stroke.Thickness := 10;
+  imgCar.Bitmap.Canvas.Stroke.Cap := TStrokeCap.Round;
+  imgCar.Bitmap.Canvas.Stroke.Color := TAlphaColorRec.Red;
 
   // draws the ellipse on the canvas
-  Image1.Bitmap.Canvas.BeginScene;
-  Image1.Bitmap.Canvas.DrawEllipse(MyRect, 20);
-  Image1.Bitmap.Canvas.EndScene;
+  imgCar.Bitmap.Canvas.BeginScene;
+  imgCar.Bitmap.Canvas.DrawEllipse(MyRect, 20);
+  imgCar.Bitmap.Canvas.EndScene;
 end;
 
 procedure TForm3.PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
