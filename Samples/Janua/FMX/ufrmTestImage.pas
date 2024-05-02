@@ -4,10 +4,13 @@ interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  // FMX
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects, FMX.TabControl,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.TMSFNCTypes, FMX.TMSFNCUtils, FMX.TMSFNCGraphics,
   FMX.TMSFNCGraphicsTypes, FMX.TMSFNCWXJSONFormatter, FMX.TMSFNCCustomControl, FMX.TMSFNCWebBrowser,
-  FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo;
+  FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
+  // Janua
+  Janua.Core.Types;
 
 type
   TForm3 = class(TForm)
@@ -17,22 +20,29 @@ type
     TabItem3: TTabItem;
     Panel2: TPanel;
     imgCar: TImage;
-    PaintBox2: TPaintBox;
     TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo;
     TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter;
+    btnClear: TButton;
+    btnRedraw: TButton;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-    procedure PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-    procedure PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
-    procedure PaintBox1MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-    procedure FormShow(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
+    procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    procedure pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
+    procedure pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    procedure btnRedrawClick(Sender: TObject);
   private
     { Private declarations }
-    xold, yold: Single;
     Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
-
+    ImgDrawings: TJanuaImageDraws;
+    LastDraw: TJanuaDraw;
+  protected
+    pntBoxCar: TPaintBox;
+    procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
   public
     { Public declarations }
+    procedure CreatePaintBox;
   end;
 
 var
@@ -42,14 +52,71 @@ implementation
 
 {$R *.fmx}
 
-procedure TForm3.FormResize(Sender: TObject);
+procedure TForm3.btnClearClick(Sender: TObject);
 begin
-  imgCar.Height := self.Width * (330/540)
+  pntBoxCar.Free;
+  CreatePaintBox;
+  // pntBoxCar.Canvas.Clear(TAlphaColorRec.Alpha);
 end;
 
-procedure TForm3.FormShow(Sender: TObject);
+procedure TForm3.btnRedrawClick(Sender: TObject);
+var
+  I, J: integer;
+  xpre, ypre, X, Y, Offset: Single;
 begin
-  imgCar.Height := self.Width * (330/540)
+  Offset := imgCar.Position.Y;
+  for I := 0 to Pred(Length(ImgDrawings.Items)) do
+  begin
+    var
+    Drawing := ImgDrawings[I];
+    xpre := Points[0].X;
+    ypre := Points[0].Y;
+
+    for J := 1 to Pred(Length(ImgDrawings.Items)) do
+    begin
+
+    end;
+
+  end;
+
+end;
+
+procedure TForm3.CreatePaintBox;
+begin
+  pntBoxCar := TPaintBox.Create(imgCar);
+  pntBoxCar.OnMouseDown := pntBoxCarMouseDown;
+  pntBoxCar.OnMouseMove := pntBoxCarMouseMove;
+  pntBoxCar.OnMouseUp := pntBoxCarMouseUp;
+  pntBoxCar.Align := TAlignLayout.Client;
+  pntBoxCar.Parent := imgCar;
+  pntBoxCar.Visible := True;
+end;
+
+procedure TForm3.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
+begin
+  pntBoxCar.Canvas.BeginScene;
+  try
+    pntBoxCar.Canvas.Stroke.Thickness := 10;
+    pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
+    pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
+
+    pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + Offset), PointF(X, Y + Offset), 1);
+    // draw line from prev pos to current
+  finally
+    pntBoxCar.Canvas.EndScene;
+  end;
+end;
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+  imgCar.Height := self.Width * (330 / 540);
+  ImgDrawings := TJanuaImageDraws.Create(imgCar.Width, imgCar.Height);
+  CreatePaintBox;
+end;
+
+procedure TForm3.FormResize(Sender: TObject);
+begin
+  imgCar.Height := self.Width * (330 / 540)
 end;
 
 procedure TForm3.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -74,41 +141,33 @@ begin
   imgCar.Bitmap.Canvas.EndScene;
 end;
 
-procedure TForm3.PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TForm3.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 begin
   Drawing := True;
-  xold := X;
-  yold := Y + imgCar.Position.Y;
+  LastDraw := TJanuaDraw.Create(X, Y);
 end;
 
-procedure TForm3.PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
+procedure TForm3.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
 var
   xpre, ypre: Single;
   PointO, PointN: TPointF;
 begin
   if Drawing then
   begin
-    Canvas.BeginScene;
-    try
-      xpre := xold;
-      ypre := yold; // fetch previous position
-      xold := X;
-      yold := Y + imgCar.Position.Y; // store current position for next event
+    // fetch previous position
+    xpre := LastDraw.ActualX;
+    ypre := LastDraw.ActualY;
+    // store current position for next event
+    LastDraw.AddPoint(X, Y);
 
-      Canvas.Stroke.Thickness := 10;
-      Canvas.Stroke.Cap := TStrokeCap.Round;
-      Canvas.Stroke.Color := TAlphaColorRec.Red;
-
-      Canvas.DrawLine(PointF(xpre, ypre), PointF(X, Y + imgCar.Position.Y), 1); // draw line from prev pos to current
-    finally
-      Canvas.EndScene;
-    end;
+    DrawCanvas(xpre, ypre, X, Y, imgCar.Position.Y);
   end;
 
 end;
 
-procedure TForm3.PaintBox1MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TForm3.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 begin
+  ImgDrawings.AddDraw(LastDraw);
   Drawing := False;
 end;
 

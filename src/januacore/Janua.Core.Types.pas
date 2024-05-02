@@ -31,6 +31,8 @@ type
     procedure AddPoint(aPoint: TJanuaPoint); overload;
     procedure AddPoint(aX, aY: Single); overload;
     procedure DelPoint;
+    function ActualX: Single;
+    function ActualY: Single;
   end;
 
   /// <summary>This is not only a collection of Draws it contains (also) relative image Dimensions </summary>
@@ -39,7 +41,7 @@ type
     Heigth: Single;
     Items: Tarray<TJanuaDraw>;
     constructor Create(aWidth, aHeigth: Single);
-    procedure AdDraw(aDraw: TJanuaDraw);
+    procedure AddDraw(aDraw: TJanuaDraw);
     procedure DelDraw;
     function Serialize: string;
     procedure DeSerialize(const aJson: string);
@@ -5124,6 +5126,16 @@ begin
   Points[Length(Points) - 1] := aPoint;
 end;
 
+function TJanuaDraw.ActualX: Single;
+begin
+  Result := Points[Length(Points) - 1].X
+end;
+
+function TJanuaDraw.ActualY: Single;
+begin
+  Result := Points[Length(Points) - 1].Y
+end;
+
 procedure TJanuaDraw.AddPoint(aX, aY: Single);
 begin
   var
@@ -5136,7 +5148,7 @@ end;
 
 constructor TJanuaDraw.Create(aX, aY: Single);
 begin
-
+  self.AddPoint(aX, aY)
 end;
 
 procedure TJanuaDraw.DelPoint;
@@ -5146,6 +5158,22 @@ end;
 
 { TJanuaImageDraws }
 
+procedure TJanuaImageDraws.AddDraw(aDraw: TJanuaDraw);
+begin
+  SetLength(Items, Length(Items) + 1)
+end;
+
+constructor TJanuaImageDraws.Create(aWidth, aHeigth: Single);
+begin
+  Width := aWidth;
+  Heigth := aHeigth;
+end;
+
+procedure TJanuaImageDraws.DelDraw;
+begin
+  SetLength(Items, Length(Items) - 1)
+end;
+
 procedure TJanuaImageDraws.DeSerialize(const aJson: string);
 begin
   self := TJanuaJson.DeserializeSimple<TJanuaImageDraws>(aJson);
@@ -5154,6 +5182,14 @@ end;
 function TJanuaImageDraws.Serialize: string;
 begin
   Result := TJanuaJson.SerializeSimple<TJanuaImageDraws>(self);
+end;
+
+{ TJanuaPoint }
+
+constructor TJanuaPoint.Create(aX, aY: Single);
+begin
+  X := aX;
+  Y := aY;
 end;
 
 initialization
