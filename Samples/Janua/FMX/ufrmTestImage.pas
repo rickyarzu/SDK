@@ -12,6 +12,7 @@ type
     Panel1: TPanel;
     Image1: TImage;
     PaintBox2: TPaintBox;
+    Panel2: TPanel;
     procedure Image1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure PaintBox1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);

@@ -7736,4 +7736,12 @@ object Form3: TForm3
       end
     end
   end
+  object Panel2: TPanel
+    Align = Bottom
+    Position.Y = 264.000000000000000000
+    Size.Width = 762.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+  end
 end
