@@ -24,6 +24,9 @@ type
     TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter;
     btnClear: TButton;
     btnRedraw: TButton;
+    btnJson: TButton;
+    lbCount: TLabel;
+    lbCoordinates: TLabel;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -32,6 +35,7 @@ type
     procedure pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     procedure pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure btnRedrawClick(Sender: TObject);
+    procedure btnJsonClick(Sender: TObject);
   private
     { Private declarations }
     Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
@@ -59,24 +63,23 @@ begin
   // pntBoxCar.Canvas.Clear(TAlphaColorRec.Alpha);
 end;
 
+procedure TForm3.btnJsonClick(Sender: TObject);
+begin
+  TMSFNCWXJSONFormatter1.Json.Text := ImgDrawings.Serialize
+end;
+
 procedure TForm3.btnRedrawClick(Sender: TObject);
 var
   I, J: integer;
-  xpre, ypre, X, Y, Offset: Single;
 begin
+  var
   Offset := imgCar.Position.Y;
-  for I := 0 to Pred(Length(ImgDrawings.Items)) do
+  for I := 0 to Pred(ImgDrawings.Count) do
   begin
     var
     Drawing := ImgDrawings[I];
-    xpre := Points[0].X;
-    ypre := Points[0].Y;
-
-    for J := 1 to Pred(Length(ImgDrawings.Items)) do
-    begin
-
-    end;
-
+    for J := 1 to Pred(Drawing.Count) do
+      DrawCanvas(Drawing[Pred(J)].X, Drawing[Pred(J)].Y, Drawing[J].X, Drawing[J].Y, imgCar.Position.Y);
   end;
 
 end;
@@ -145,6 +148,8 @@ procedure TForm3.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift
 begin
   Drawing := True;
   LastDraw := TJanuaDraw.Create(X, Y);
+  lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
+
 end;
 
 procedure TForm3.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
@@ -159,8 +164,10 @@ begin
     ypre := LastDraw.ActualY;
     // store current position for next event
     LastDraw.AddPoint(X, Y);
-
+    lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
+    // Coord: 0,0
     DrawCanvas(xpre, ypre, X, Y, imgCar.Position.Y);
+    lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
   end;
 
 end;
@@ -168,6 +175,8 @@ end;
 procedure TForm3.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 begin
   ImgDrawings.AddDraw(LastDraw);
+  lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
+  lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
   Drawing := False;
 end;
 

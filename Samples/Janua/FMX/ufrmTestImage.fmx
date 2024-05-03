@@ -37,6 +37,8 @@ object Form3: TForm3
       StyleLookup = ''
       TabOrder = 0
       Text = 'Immagine'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object Panel2: TPanel
         Align = Top
         Size.Width = 541.000000000000000000
@@ -48,7 +50,7 @@ object Form3: TForm3
           Size.Width = 121.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 2
           Text = 'Clear '
           TextSettings.Trimming = None
           OnClick = btnClearClick
@@ -59,10 +61,35 @@ object Form3: TForm3
           Size.Width = 121.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
+          TabOrder = 1
           Text = 'Redraw'
           TextSettings.Trimming = None
           OnClick = btnRedrawClick
+        end
+        object btnJson: TButton
+          Align = Left
+          Position.X = 242.000000000000000000
+          Size.Width = 121.000000000000000000
+          Size.Height = 58.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Json'
+          TextSettings.Trimming = None
+          OnClick = btnJsonClick
+        end
+        object lbCount: TLabel
+          Position.X = 384.000000000000000000
+          Position.Y = 8.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Count:'
+          TabOrder = 4
+        end
+        object lbCoordinates: TLabel
+          Position.X = 384.000000000000000000
+          Position.Y = 33.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Coord: 0,0'
+          TabOrder = 3
         end
       end
       object imgCar: TImage
@@ -7778,6 +7805,7 @@ object Form3: TForm3
         OnMouseDown = imgCarMouseDown
       end
       object TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo
+        Color = x000000FF
         Align = Client
         Size.Width = 541.000000000000000000
         Size.Height = 472.000000000000000000
@@ -7810,6 +7838,8 @@ object Form3: TForm3
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
     end
     object TabItem3: TTabItem
       CustomIcon = <
@@ -7823,6 +7853,8 @@ object Form3: TForm3
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem3'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
     end
   end
 end
