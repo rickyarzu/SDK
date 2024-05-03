@@ -20,7 +20,8 @@ uses
   Janua.DMVC.UniDacApplication in '..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
   Janua.CarService.DMVC.Driver in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
   Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Carservice.DMVC.WindowsService in '..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas' {PickappAPIService: TService};
+  Carservice.DMVC.WindowsService in '..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas' {PickappAPIService: TService},
+  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule};
 
 {$R *.RES}
 
