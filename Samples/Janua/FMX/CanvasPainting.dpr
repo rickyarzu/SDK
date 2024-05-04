@@ -3,7 +3,7 @@ program CanvasPainting;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  ufrmTestImage in 'ufrmTestImage.pas' {Form3};
+  ufrmJanuaFMXTestImage in 'ufrmJanuaFMXTestImage.pas' {Form3};
 
 {$R *.res}
 

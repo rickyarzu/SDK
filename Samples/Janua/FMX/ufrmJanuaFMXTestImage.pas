@@ -1,4 +1,4 @@
-unit ufrmTestImage;
+unit ufrmJanuaFMXTestImage;
 
 interface
 
