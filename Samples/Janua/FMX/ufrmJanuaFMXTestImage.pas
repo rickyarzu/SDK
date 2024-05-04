@@ -10,7 +10,7 @@ uses
   FMX.TMSFNCGraphicsTypes, FMX.TMSFNCWXJSONFormatter, FMX.TMSFNCCustomControl, FMX.TMSFNCWebBrowser,
   FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
   // Janua
-  Janua.Core.Types;
+  Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles;
 
 type
   TForm3 = class(TForm)
@@ -20,13 +20,14 @@ type
     TabItem3: TTabItem;
     Panel2: TPanel;
     imgCar: TImage;
-    TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo;
-    TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter;
     btnClear: TButton;
     btnRedraw: TButton;
     btnJson: TButton;
     lbCount: TLabel;
     lbCoordinates: TLabel;
+    Layout1: TLayout;
+    TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
+    memJson: TTMSFMXMemo;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -65,7 +66,7 @@ end;
 
 procedure TForm3.btnJsonClick(Sender: TObject);
 begin
-  TMSFNCWXJSONFormatter1.Json.Text := ImgDrawings.Serialize
+  memJson.Lines.Text := ImgDrawings.Serialize
 end;
 
 procedure TForm3.btnRedrawClick(Sender: TObject);
@@ -74,12 +75,19 @@ var
 begin
   var
   Offset := imgCar.Position.Y;
+  var
+  RX := imgCar.Width / ImgDrawings.Width;
+
+  var
+  RY := imgCar.Height / ImgDrawings.Heigth;
+
   for I := 0 to Pred(ImgDrawings.Count) do
   begin
     var
     Drawing := ImgDrawings[I];
     for J := 1 to Pred(Drawing.Count) do
-      DrawCanvas(Drawing[Pred(J)].X, Drawing[Pred(J)].Y, Drawing[J].X, Drawing[J].Y, imgCar.Position.Y);
+      DrawCanvas(Drawing[Pred(J)].X * RX, Drawing[Pred(J)].Y * RY, Drawing[J].X * RX, Drawing[J].Y * RY,
+        imgCar.Position.Y);
   end;
 
 end;

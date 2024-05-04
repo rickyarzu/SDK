@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 857
-  ClientWidth = 541
+  ClientHeight = 859
+  ClientWidth = 840
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -12,19 +12,19 @@ object Form3: TForm3
   DesignerMasterStyle = 0
   object tabImage: TTabControl
     Align = Client
-    Size.Width = 541.000000000000000000
-    Size.Height = 857.000000000000000000
+    Size.Width = 840.000000000000000000
+    Size.Height = 859.000000000000000000
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 0
     TabPosition = None
     Sizes = (
-      541s
-      857s
-      541s
-      857s
-      541s
-      857s)
+      840s
+      859s
+      840s
+      859s
+      840s
+      859s)
     object pgImage: TTabItem
       CustomIcon = <
         item
@@ -41,7 +41,7 @@ object Form3: TForm3
       ExplicitSize.cy = 8.000000000000000000
       object Panel2: TPanel
         Align = Top
-        Size.Width = 541.000000000000000000
+        Size.Width = 840.000000000000000000
         Size.Height = 58.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -7799,30 +7799,39 @@ object Form3: TForm3
           end>
         Align = Top
         Position.Y = 58.000000000000000000
-        Size.Width = 541.000000000000000000
-        Size.Height = 327.000000000000000000
+        Size.Width = 840.000000000000000000
+        Size.Height = 503.000000000000000000
         Size.PlatformDefault = False
         OnMouseDown = imgCarMouseDown
       end
-      object TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo
-        Color = x000000FF
+      object Layout1: TLayout
         Align = Client
-        Size.Width = 541.000000000000000000
-        Size.Height = 472.000000000000000000
+        Size.Width = 840.000000000000000000
+        Size.Height = 298.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        object TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter
-          Position.X = 24.000000000000000000
-          Position.Y = 72.000000000000000000
-          Size.Width = 500.000000000000000000
-          Size.Height = 350.000000000000000000
+        object memJson: TTMSFMXMemo
+          Align = Client
+          Cursor = crIBeam
+          DisableFocusEffect = False
+          TabOrder = 2
+          Size.Width = 840.000000000000000000
+          Size.Height = 298.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
-          JSON.Strings = (
-            '{"age":24}')
-          Theme = ftLight
-          OpenAtDepth = 10.000000000000000000
-          Appearance.FontName = 'Arial'
+          ActiveLineSettings.ShowActiveLine = False
+          ActiveLineSettings.ShowActiveLineIndicator = False
+          ActiveLineSettings.ActiveLineAtCursor = True
+          AutoCompletion.StartToken = '.'
+          CaseSensitive = False
+          Font.Family = 'Courier New'
+          Gutter.Font.Family = 'Courier New'
+          KeyboardType = Default
+          ReadOnly = False
+          SyntaxStyles = TMSFMXMemoJavaScriptStyler1
+          TabSize = 4
+          TrimTrailingSpaces = False
+          UseStyler = True
+          Version = '1.6.0.1'
         end
       end
     end
@@ -7856,5 +7865,113 @@ object Form3: TForm3
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
     end
+  end
+  object TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler
+    BlockStart = '{'
+    BlockEnd = '}'
+    EscapeChar = '\'
+    LineComment = '//'
+    MultiCommentLeft = '<!--'
+    MultiCommentRight = '-->'
+    CommentStyle.TextColor = claSilver
+    CommentStyle.BkColor = claNull
+    CommentStyle.Style = [fsItalic]
+    NumberStyle.TextColor = claNavy
+    NumberStyle.BkColor = claNull
+    NumberStyle.Style = [fsBold]
+    AllStyles = <
+      item
+        KeyWords.Strings = (
+          'SCRIPT'
+          'OBJECT'
+          'FOR'
+          'IF'
+          'THEN'
+          'THIS'
+          'DO'
+          'WHILE'
+          'BREAK'
+          '{'
+          '}'
+          '('
+          ')'
+          'SWITCH'
+          'ELSE'
+          'FUNCTION'
+          'WINDOW'
+          'DOCUMENT'
+          ';'
+          'RETURN'
+          'STYLE'
+          'VAR'
+          'WINDOW'
+          'LOCATION')
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        Font.StyleExt = {00070000000000000004000000}
+        FontColor = claFuchsia
+        BGColor = claNull
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'Script Standard Default'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claGreen
+        BGColor = claNull
+        StyleType = stBracket
+        BracketStart = #39
+        BracketEnd = #39
+        Info = 'Simple Quote'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claTeal
+        BGColor = claNull
+        StyleType = stBracket
+        BracketStart = '"'
+        BracketEnd = '"'
+        Info = 'Double Quote'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claTeal
+        BGColor = claNull
+        StyleType = stSymbol
+        BracketStart = #0
+        BracketEnd = #0
+        Symbols = ' ,;:.()[]=-*/^%<>#'#13#10
+        Info = 'Symbols Delimiters'
+      end
+      item
+        KeyWords.Strings = (
+          'alert'
+          'confirm'
+          'prompt'
+          'indexOf'
+          'select'
+          'write'
+          'focus')
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        Font.StyleExt = {00070000000000000004000000}
+        FontColor = claGreen
+        BGColor = claNull
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'JavaScript Functions'
+      end>
+    Description = 'JavaScript'
+    Filter = 'Javascript Files (*.js)|*.js'
+    DefaultExtension = '.js'
+    StylerName = 'JavaScript'
+    Extensions = 'js'
+    Left = 448
+    Top = 680
   end
 end
