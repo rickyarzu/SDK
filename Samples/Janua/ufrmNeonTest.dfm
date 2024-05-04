@@ -57,6 +57,7 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
         AutoCompletion.StartToken = '(.'
         AutoCorrect.Active = True
         AutoHintParameterPosition = hpBelowCode
+        BkColor = clWindow
         BookmarkGlyph.Data = {
           36050000424D3605000000000000360400002800000010000000100000000100
           0800000000000001000000000000000000000001000000000000000000000000
@@ -100,7 +101,6 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -113,9 +113,8 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
-        Gutter.LineNumberTextColor = 3881787
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -126,7 +125,7 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -136,8 +135,8 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
         PrintOptions.PrintLineNumbers = False
         RightMarginColor = 14869218
         ScrollHint = False
-        SelColor = clWhite
-        SelBkColor = clNavy
+        SelColor = clHighlightText
+        SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
         SyntaxStyles = AdvJSONMemoStyler1
@@ -158,10 +157,6 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
         UseStyler = True
         Version = '3.9.0.1'
         WordWrap = wwNone
-        ExplicitLeft = 184
-        ExplicitTop = 128
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object tbFNCMemo: TTabSheet
@@ -176,10 +171,6 @@ object frmVCLJanuaNeonTest: TfrmVCLJanuaNeonTest
         ParentDoubleBuffered = False
         DoubleBuffered = True
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 32
-        ExplicitWidth = 500
-        ExplicitHeight = 350
       end
       object TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter
         Left = 0

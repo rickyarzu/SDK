@@ -13,7 +13,7 @@ uses
   Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles;
 
 type
-  TForm3 = class(TForm)
+  TfrmFMXTestImageDraw = class(TForm)
     tabImage: TTabControl;
     pgImage: TTabItem;
     TabItem2: TTabItem;
@@ -28,6 +28,7 @@ type
     Layout1: TLayout;
     TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
     memJson: TTMSFMXMemo;
+    btnDelLast: TButton;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -37,6 +38,7 @@ type
     procedure pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure btnRedrawClick(Sender: TObject);
     procedure btnJsonClick(Sender: TObject);
+    procedure btnDelLastClick(Sender: TObject);
   private
     { Private declarations }
     Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
@@ -48,51 +50,47 @@ type
   public
     { Public declarations }
     procedure CreatePaintBox;
+    procedure Redraw;
+    procedure ClearBox;
+    procedure DelLastDraw;
   end;
 
 var
-  Form3: TForm3;
+  frmFMXTestImageDraw: TfrmFMXTestImageDraw;
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm3.btnClearClick(Sender: TObject);
+procedure TfrmFMXTestImageDraw.btnClearClick(Sender: TObject);
+begin
+  ClearBox
+end;
+
+procedure TfrmFMXTestImageDraw.btnDelLastClick(Sender: TObject);
+begin
+   ClearBox;
+   ImgDrawings.DelDraw;
+end;
+
+procedure TfrmFMXTestImageDraw.btnJsonClick(Sender: TObject);
+begin
+  memJson.Lines.Text := ImgDrawings.Serialize
+end;
+
+procedure TfrmFMXTestImageDraw.btnRedrawClick(Sender: TObject);
+begin
+   Redraw;
+end;
+
+procedure TfrmFMXTestImageDraw.ClearBox;
 begin
   pntBoxCar.Free;
   CreatePaintBox;
   // pntBoxCar.Canvas.Clear(TAlphaColorRec.Alpha);
 end;
 
-procedure TForm3.btnJsonClick(Sender: TObject);
-begin
-  memJson.Lines.Text := ImgDrawings.Serialize
-end;
-
-procedure TForm3.btnRedrawClick(Sender: TObject);
-var
-  I, J: integer;
-begin
-  var
-  Offset := imgCar.Position.Y;
-  var
-  RX := imgCar.Width / ImgDrawings.Width;
-
-  var
-  RY := imgCar.Height / ImgDrawings.Heigth;
-
-  for I := 0 to Pred(ImgDrawings.Count) do
-  begin
-    var
-    Drawing := ImgDrawings[I];
-    for J := 1 to Pred(Drawing.Count) do
-      DrawCanvas(Drawing[Pred(J)].X * RX, Drawing[Pred(J)].Y * RY, Drawing[J].X * RX, Drawing[J].Y * RY,
-        imgCar.Position.Y);
-  end;
-
-end;
-
-procedure TForm3.CreatePaintBox;
+procedure TfrmFMXTestImageDraw.CreatePaintBox;
 begin
   pntBoxCar := TPaintBox.Create(imgCar);
   pntBoxCar.OnMouseDown := pntBoxCarMouseDown;
@@ -103,7 +101,7 @@ begin
   pntBoxCar.Visible := True;
 end;
 
-procedure TForm3.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
+procedure TfrmFMXTestImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
 begin
   pntBoxCar.Canvas.BeginScene;
   try
@@ -118,19 +116,20 @@ begin
   end;
 end;
 
-procedure TForm3.FormCreate(Sender: TObject);
+procedure TfrmFMXTestImageDraw.FormCreate(Sender: TObject);
 begin
   imgCar.Height := self.Width * (330 / 540);
   ImgDrawings := TJanuaImageDraws.Create(imgCar.Width, imgCar.Height);
   CreatePaintBox;
 end;
 
-procedure TForm3.FormResize(Sender: TObject);
+procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);
 begin
   imgCar.Height := self.Width * (330 / 540)
 end;
 
-procedure TForm3.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TfrmFMXTestImageDraw.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
 var
   MyRect: TRectF;
   Point: TPointF;
@@ -152,7 +151,8 @@ begin
   imgCar.Bitmap.Canvas.EndScene;
 end;
 
-procedure TForm3.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TfrmFMXTestImageDraw.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
 begin
   Drawing := True;
   LastDraw := TJanuaDraw.Create(X, Y);
@@ -160,7 +160,7 @@ begin
 
 end;
 
-procedure TForm3.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
+procedure TfrmFMXTestImageDraw.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
 var
   xpre, ypre: Single;
   PointO, PointN: TPointF;
@@ -180,12 +180,33 @@ begin
 
 end;
 
-procedure TForm3.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+procedure TfrmFMXTestImageDraw.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
 begin
   ImgDrawings.AddDraw(LastDraw);
   lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
   lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
   Drawing := False;
+end;
+
+procedure TfrmFMXTestImageDraw.Redraw;
+begin
+  var
+  Offset := imgCar.Position.Y;
+  var
+  RX := imgCar.Width / ImgDrawings.Width;
+
+  var
+  RY := imgCar.Height / ImgDrawings.Heigth;
+
+  for I := 0 to Pred(ImgDrawings.Count) do
+  begin
+    var
+    Drawing := ImgDrawings[I];
+    for J := 1 to Pred(Drawing.Count) do
+      DrawCanvas(Drawing[Pred(J)].X * RX, Drawing[Pred(J)].Y * RY, Drawing[J].X * RX, Drawing[J].Y * RY,
+        imgCar.Position.Y);
+  end;
 end;
 
 end.

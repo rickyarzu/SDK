@@ -1,7 +1,7 @@
-object Form3: TForm3
+object frmFMXTestImageDraw: TfrmFMXTestImageDraw
   Left = 0
   Top = 0
-  Caption = 'Form3'
+  Caption = 'Test Image Draw'
   ClientHeight = 859
   ClientWidth = 840
   FormFactor.Width = 320
@@ -47,32 +47,32 @@ object Form3: TForm3
         TabOrder = 1
         object btnClear: TButton
           Align = Left
-          Size.Width = 121.000000000000000000
+          Size.Width = 81.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 2
+          TabOrder = 3
           Text = 'Clear '
           TextSettings.Trimming = None
           OnClick = btnClearClick
         end
         object btnRedraw: TButton
           Align = Left
-          Position.X = 121.000000000000000000
-          Size.Width = 121.000000000000000000
+          Position.X = 81.000000000000000000
+          Size.Width = 80.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 2
           Text = 'Redraw'
           TextSettings.Trimming = None
           OnClick = btnRedrawClick
         end
         object btnJson: TButton
           Align = Left
-          Position.X = 242.000000000000000000
-          Size.Width = 121.000000000000000000
+          Position.X = 161.000000000000000000
+          Size.Width = 80.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
+          TabOrder = 1
           Text = 'Json'
           TextSettings.Trimming = None
           OnClick = btnJsonClick
@@ -82,14 +82,25 @@ object Form3: TForm3
           Position.Y = 8.000000000000000000
           TextSettings.Trimming = None
           Text = 'Count:'
-          TabOrder = 4
+          TabOrder = 5
         end
         object lbCoordinates: TLabel
           Position.X = 384.000000000000000000
           Position.Y = 33.000000000000000000
           TextSettings.Trimming = None
           Text = 'Coord: 0,0'
-          TabOrder = 3
+          TabOrder = 4
+        end
+        object btnDelLast: TButton
+          Align = Left
+          Position.X = 241.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 58.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Del. Last'
+          TextSettings.Trimming = None
+          OnClick = btnDelLastClick
         end
       end
       object imgCar: TImage
