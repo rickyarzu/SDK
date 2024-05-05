@@ -69,8 +69,7 @@ end;
 
 procedure TfrmFMXTestImageDraw.btnDelLastClick(Sender: TObject);
 begin
-   ClearBox;
-   ImgDrawings.DelDraw;
+  DelLastDraw
 end;
 
 procedure TfrmFMXTestImageDraw.btnJsonClick(Sender: TObject);
@@ -80,7 +79,7 @@ end;
 
 procedure TfrmFMXTestImageDraw.btnRedrawClick(Sender: TObject);
 begin
-   Redraw;
+  Redraw;
 end;
 
 procedure TfrmFMXTestImageDraw.ClearBox;
@@ -99,6 +98,15 @@ begin
   pntBoxCar.Align := TAlignLayout.Client;
   pntBoxCar.Parent := imgCar;
   pntBoxCar.Visible := True;
+end;
+
+procedure TfrmFMXTestImageDraw.DelLastDraw;
+begin
+  if Drawing then
+   LastDraw := TJanuaDraw.Create(0.0, 0.0)
+  else
+   ImgDrawings.DelDraw;
+  Redraw;
 end;
 
 procedure TfrmFMXTestImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
@@ -199,11 +207,11 @@ begin
   var
   RY := imgCar.Height / ImgDrawings.Heigth;
 
-  for I := 0 to Pred(ImgDrawings.Count) do
+  for var I := 0 to Pred(ImgDrawings.Count) do
   begin
     var
     Drawing := ImgDrawings[I];
-    for J := 1 to Pred(Drawing.Count) do
+    for var J := 1 to Pred(Drawing.Count) do
       DrawCanvas(Drawing[Pred(J)].X * RX, Drawing[Pred(J)].Y * RY, Drawing[J].X * RX, Drawing[J].Y * RY,
         imgCar.Position.Y);
   end;
