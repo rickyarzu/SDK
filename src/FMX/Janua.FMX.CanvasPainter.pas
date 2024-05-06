@@ -2,7 +2,10 @@ unit Janua.FMX.CanvasPainter;
 
 interface
 
-uses FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects, FMX.StdCtrls,
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  // FMX
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects, FMX.StdCtrls,
   // Janua
   Janua.Core.Types;
 
@@ -29,8 +32,7 @@ type
     procedure pntBoxMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
   published
     property Control: TControl read FControl write SetControl;
-    property
-  end;
+    property end;
 
 implementation
 
@@ -56,9 +58,9 @@ end;
 procedure TJanuaFMXCanvasPainter.DelLastDraw;
 begin
   if Drawing then
-   LastDraw := TJanuaDraw.Create(0.0, 0.0)
+    LastDraw := TJanuaDraw.Create(0.0, 0.0)
   else
-   ImgDrawings.DelDraw;
+    ImgDrawings.DelDraw;
   Redraw;
 end;
 
@@ -67,8 +69,8 @@ begin
 
 end;
 
-procedure TJanuaFMXCanvasPainter.pntBoxMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
-  Y: Single);
+procedure TJanuaFMXCanvasPainter.pntBoxMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
 begin
 
 end;
@@ -78,8 +80,8 @@ begin
 
 end;
 
-procedure TJanuaFMXCanvasPainter.pntBoxMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
-  Y: Single);
+procedure TJanuaFMXCanvasPainter.pntBoxMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
 begin
 
 end;
@@ -90,10 +92,10 @@ begin
 end;
 
 procedure TJanuaFMXCanvasPainter.SetControl(const Value: TControl);
- procedure CalulateTop;
- begin
+  procedure CalulateTop;
+  begin
 
- end;
+  end;
 
 begin
   FControl := Value;

@@ -267,6 +267,7 @@
         <DCCReference Include="..\..\src\FMX\Janua.FMX.Application.pas"/>
         <DCCReference Include="..\..\src\FMX\Janua.FMX.Interposers.pas"/>
         <DCCReference Include="..\..\src\FMX\Janua.FMX.Register.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.CanvasPainter.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

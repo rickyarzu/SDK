@@ -29,6 +29,7 @@ type
     TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
     memJson: TTMSFMXMemo;
     btnDelLast: TButton;
+    Panel1: TPanel;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -44,6 +45,9 @@ type
     Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
     ImgDrawings: TJanuaImageDraws;
     LastDraw: TJanuaDraw;
+    FOffset: Single;
+    FCanvasControl: TControl;
+    procedure SetCanvasControl(const Value: TControl);
   protected
     pntBoxCar: TPaintBox;
     procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
@@ -53,6 +57,7 @@ type
     procedure Redraw;
     procedure ClearBox;
     procedure DelLastDraw;
+    property CanvasControl: TControl read FCanvasControl write SetCanvasControl;
   end;
 
 var
@@ -86,26 +91,27 @@ procedure TfrmFMXTestImageDraw.ClearBox;
 begin
   pntBoxCar.Free;
   CreatePaintBox;
-  // pntBoxCar.Canvas.Clear(TAlphaColorRec.Alpha);
 end;
 
 procedure TfrmFMXTestImageDraw.CreatePaintBox;
 begin
-  pntBoxCar := TPaintBox.Create(imgCar);
+  pntBoxCar := TPaintBox.Create(FCanvasControl);
   pntBoxCar.OnMouseDown := pntBoxCarMouseDown;
   pntBoxCar.OnMouseMove := pntBoxCarMouseMove;
   pntBoxCar.OnMouseUp := pntBoxCarMouseUp;
   pntBoxCar.Align := TAlignLayout.Client;
-  pntBoxCar.Parent := imgCar;
+  pntBoxCar.Parent := FCanvasControl;
   pntBoxCar.Visible := True;
 end;
 
 procedure TfrmFMXTestImageDraw.DelLastDraw;
 begin
   if Drawing then
-   LastDraw := TJanuaDraw.Create(0.0, 0.0)
+    LastDraw := TJanuaDraw.Create(0.0, 0.0)
   else
-   ImgDrawings.DelDraw;
+    ImgDrawings.DelDraw;
+  ClearBox;
+  Sleep(100);
   Redraw;
 end;
 
@@ -126,9 +132,8 @@ end;
 
 procedure TfrmFMXTestImageDraw.FormCreate(Sender: TObject);
 begin
-  imgCar.Height := self.Width * (330 / 540);
-  ImgDrawings := TJanuaImageDraws.Create(imgCar.Width, imgCar.Height);
-  CreatePaintBox;
+  imgCar.Height := Width * (330 / 540);
+  SetCanvasControl(imgCar);
 end;
 
 procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);
@@ -182,7 +187,7 @@ begin
     LastDraw.AddPoint(X, Y);
     lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
     // Coord: 0,0
-    DrawCanvas(xpre, ypre, X, Y, imgCar.Position.Y);
+    DrawCanvas(xpre, ypre, X, Y, FOffset);
     lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
   end;
 
@@ -200,20 +205,58 @@ end;
 procedure TfrmFMXTestImageDraw.Redraw;
 begin
   var
-  Offset := imgCar.Position.Y;
-  var
-  RX := imgCar.Width / ImgDrawings.Width;
+  RX := Round(pntBoxCar.Width / ImgDrawings.Width);
 
   var
-  RY := imgCar.Height / ImgDrawings.Heigth;
+  RY := Round(pntBoxCar.Height / ImgDrawings.Heigth);
 
   for var I := 0 to Pred(ImgDrawings.Count) do
   begin
     var
     Drawing := ImgDrawings[I];
+
     for var J := 1 to Pred(Drawing.Count) do
-      DrawCanvas(Drawing[Pred(J)].X * RX, Drawing[Pred(J)].Y * RY, Drawing[J].X * RX, Drawing[J].Y * RY,
-        imgCar.Position.Y);
+    begin
+      var
+      xpre := Drawing[Pred(J)].X * RX;
+      var
+      ypre := Drawing[Pred(J)].Y * RY;
+      var
+      lX := Drawing[J].X * RX;
+      var
+      lY := Drawing[J].Y * RY;
+
+      DrawCanvas(xpre, ypre, lX, lY, FOffset);
+    end;
+  end;
+end;
+
+procedure TfrmFMXTestImageDraw.SetCanvasControl(const Value: TControl);
+  procedure SetOffset(const aControl: TControl);
+  begin
+    var
+    aClassName := aControl.ClassName;
+    if (aControl.Position.Y > 0) and (aControl.Position.Y <> 65535) and not(aClassName = 'TTabControlContent')
+    then
+      FOffset := FOffset + aControl.Position.Y;
+    if Assigned(aControl.Parent) and (aControl.Parent is TControl) then
+      SetOffset(TControl(aControl.Parent));
+  end;
+
+begin
+  FCanvasControl := Value;
+  FOffset := 0.0;
+  if Assigned(FCanvasControl) then
+  begin
+    SetOffset(FCanvasControl);
+    CreatePaintBox;
+    if ImgDrawings.Width = 0.0 then
+      ImgDrawings := TJanuaImageDraws.Create(FCanvasControl.Width, FCanvasControl.Height);
+  end
+  else if Assigned(pntBoxCar) then
+  begin
+    pntBoxCar.Free;
+    pntBoxCar := nil;
   end;
 end;
 
