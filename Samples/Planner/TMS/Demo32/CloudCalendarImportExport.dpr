@@ -1,9 +1,8 @@
-TStyleManager.TrySetStyle('Cyan Night');
-  program CloudCalendarImportExport;
+program CloudCalendarImportExport;
 
 uses
   Forms,
-  uCloudCalendarSync in 'uCloudCalendarSync.pas' {frmCalendarCloudSync},
+  uCloudCalendarSync in 'uCloudCalendarSync.pas' {frmCalendarCloudSync} ,
   Vcl.Themes,
   Vcl.Styles;
 
@@ -11,7 +10,9 @@ uses
 
 begin
   Application.Initialize;
+  TStyleManager.TrySetStyle('Sky');
   Application.MainFormOnTaskbar := True;
-  AApplication.CreateForm(TForm4, Form4);
-  pplication.Run;
+  Application.CreateForm(TfrmCalendarCloudSync, frmCalendarCloudSync);
+  Application.Run;
+
 end.
