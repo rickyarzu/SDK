@@ -15073,7 +15073,7 @@
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
