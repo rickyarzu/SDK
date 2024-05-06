@@ -14,10 +14,10 @@ uses
 
 type
   TfrmFMXTestImageDraw = class(TForm)
-    tabImage: TTabControl;
+    tabTestComponent: TTabControl;
     pgImage: TTabItem;
-    TabItem2: TTabItem;
-    TabItem3: TTabItem;
+    pgCode: TTabItem;
+    PgTestComponent: TTabItem;
     Panel2: TPanel;
     imgCar: TImage;
     btnClear: TButton;
@@ -30,6 +30,19 @@ type
     memJson: TTMSFMXMemo;
     btnDelLast: TButton;
     Panel1: TPanel;
+    btnPgImage: TButton;
+    btnPgCode: TButton;
+    btnPgTestComponent: TButton;
+    imgTestComponent: TImage;
+    Layout2: TLayout;
+    memTestJson: TTMSFMXMemo;
+    pntTestComponentButtons: TPanel;
+    btnTestClear: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Button4: TButton;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -40,9 +53,10 @@ type
     procedure btnRedrawClick(Sender: TObject);
     procedure btnJsonClick(Sender: TObject);
     procedure btnDelLastClick(Sender: TObject);
+    procedure btnPgImageClick(Sender: TObject);
   private
     { Private declarations }
-    Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
+    FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
     ImgDrawings: TJanuaImageDraws;
     LastDraw: TJanuaDraw;
     FOffset: Single;
@@ -82,6 +96,11 @@ begin
   memJson.Lines.Text := ImgDrawings.Serialize
 end;
 
+procedure TfrmFMXTestImageDraw.btnPgImageClick(Sender: TObject);
+begin
+  tabTestComponent.ActiveTab := pgImage
+end;
+
 procedure TfrmFMXTestImageDraw.btnRedrawClick(Sender: TObject);
 begin
   Redraw;
@@ -106,7 +125,7 @@ end;
 
 procedure TfrmFMXTestImageDraw.DelLastDraw;
 begin
-  if Drawing then
+  if FDrawing then
     LastDraw := TJanuaDraw.Create(0.0, 0.0)
   else
     ImgDrawings.DelDraw;
@@ -117,17 +136,12 @@ end;
 
 procedure TfrmFMXTestImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
 begin
-  pntBoxCar.Canvas.BeginScene;
-  try
-    pntBoxCar.Canvas.Stroke.Thickness := 10;
-    pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
-    pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
+  pntBoxCar.Canvas.Stroke.Thickness := 10;
+  pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
+  pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
 
-    pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + Offset), PointF(X, Y + Offset), 1);
-    // draw line from prev pos to current
-  finally
-    pntBoxCar.Canvas.EndScene;
-  end;
+  pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + Offset), PointF(X, Y + Offset), 1);
+  // draw line from prev pos to current
 end;
 
 procedure TfrmFMXTestImageDraw.FormCreate(Sender: TObject);
@@ -167,7 +181,9 @@ end;
 procedure TfrmFMXTestImageDraw.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
   X, Y: Single);
 begin
-  Drawing := True;
+  FDrawing := True;
+  if Assigned(pntBoxCar) then
+    pntBoxCar.Canvas.BeginScene;
   LastDraw := TJanuaDraw.Create(X, Y);
   lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
 
@@ -178,7 +194,7 @@ var
   xpre, ypre: Single;
   PointO, PointN: TPointF;
 begin
-  if Drawing then
+  if FDrawing then
   begin
     // fetch previous position
     xpre := LastDraw.ActualX;
@@ -196,39 +212,50 @@ end;
 procedure TfrmFMXTestImageDraw.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
   X, Y: Single);
 begin
-  ImgDrawings.AddDraw(LastDraw);
-  lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
-  lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
-  Drawing := False;
+  try
+    ImgDrawings.AddDraw(LastDraw);
+    lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
+    lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
+  finally
+    if Assigned(pntBoxCar) then
+      pntBoxCar.Canvas.EndScene;
+    FDrawing := False;
+  end;
+
 end;
 
 procedure TfrmFMXTestImageDraw.Redraw;
 begin
-  var
-  RX := Round(pntBoxCar.Width / ImgDrawings.Width);
-
-  var
-  RY := Round(pntBoxCar.Height / ImgDrawings.Heigth);
-
-  for var I := 0 to Pred(ImgDrawings.Count) do
-  begin
-    var
-    Drawing := ImgDrawings[I];
-
-    for var J := 1 to Pred(Drawing.Count) do
-    begin
+  if Assigned(pntBoxCar) then
+    try
+      pntBoxCar.Canvas.BeginScene;
       var
-      xpre := Drawing[Pred(J)].X * RX;
-      var
-      ypre := Drawing[Pred(J)].Y * RY;
-      var
-      lX := Drawing[J].X * RX;
-      var
-      lY := Drawing[J].Y * RY;
+      RX := pntBoxCar.Width / ImgDrawings.Width;
 
-      DrawCanvas(xpre, ypre, lX, lY, FOffset);
+      var
+      RY := pntBoxCar.Height / ImgDrawings.Heigth;
+
+      for var I := 0 to Pred(ImgDrawings.Count) do
+      begin
+        var
+        FDrawing := ImgDrawings[I];
+        for var J := 1 to Pred(FDrawing.Count) do
+        begin
+          var
+          xpre := FDrawing[Pred(J)].X * RX;
+          var
+          ypre := FDrawing[Pred(J)].Y * RY;
+          var
+          lX := FDrawing[J].X * RX;
+          var
+          lY := FDrawing[J].Y * RY;
+
+          DrawCanvas(xpre, ypre, lX, lY, FOffset);
+        end;
+      end;
+    finally
+      pntBoxCar.Canvas.EndScene;
     end;
-  end;
 end;
 
 procedure TfrmFMXTestImageDraw.SetCanvasControl(const Value: TControl);

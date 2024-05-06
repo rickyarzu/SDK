@@ -12,10 +12,11 @@ uses
 type
   TJanuaFMXCanvasPainter = class(TComponent)
   private
-    Drawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
+    FDrawing: boolean; // to indicate that we should be drawing in the `OnMouseMove` event
     ImgDrawings: TJanuaImageDraws;
     LastDraw: TJanuaDraw;
     FControl: TControl;
+    FOffset: Single;
     procedure SetControl(const Value: TControl);
   protected
     FPaintBox: TPaintBox;
@@ -32,7 +33,7 @@ type
     procedure pntBoxMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
   published
     property Control: TControl read FControl write SetControl;
-    property end;
+  end;
 
 implementation
 
@@ -40,19 +41,23 @@ implementation
 
 procedure TJanuaFMXCanvasPainter.ClearBox;
 begin
-  pntBoxCar.Free;
+  if Assigned(FPaintBox) then
+    FPaintBox.Free;
   CreatePaintBox;
 end;
 
 procedure TJanuaFMXCanvasPainter.CreatePaintBox;
 begin
-  FPaintBox := TPaintBox.Create(imgCar);
-  FPaintBox.OnMouseDown := pntBoxCarMouseDown;
-  FPaintBox.OnMouseMove := pntBoxCarMouseMove;
-  FPaintBox.OnMouseUp := pntBoxCarMouseUp;
-  FPaintBox.Align := TAlignLayout.Client;
-  FPaintBox.Parent := imgCar;
-  FPaintBox.Visible := True;
+  if Assigned(FControl) and not(csDesigning in ComponentState) then
+  begin
+    FPaintBox := TPaintBox.Create(FControl);
+    FPaintBox.OnMouseDown := pntBoxMouseDown;
+    FPaintBox.OnMouseMove := pntBoxMouseMove;
+    FPaintBox.OnMouseUp := pntBoxMouseUp;
+    FPaintBox.Align := TAlignLayout.Client;
+    FPaintBox.Parent := FControl;
+    FPaintBox.Visible := True;
+  end;
 end;
 
 procedure TJanuaFMXCanvasPainter.DelLastDraw;
@@ -92,9 +97,15 @@ begin
 end;
 
 procedure TJanuaFMXCanvasPainter.SetControl(const Value: TControl);
-  procedure CalulateTop;
+  procedure SetOffset(const aControl: TControl);
   begin
-
+    var
+    aClassName := aControl.ClassName;
+    if (aControl.Position.Y > 0) and (aControl.Position.Y <> 65535) and not(aClassName = 'TTabControlContent')
+    then
+      FOffset := FOffset + aControl.Position.Y;
+    if Assigned(aControl.Parent) and (aControl.Parent is TControl) then
+      SetOffset(TControl(aControl.Parent));
   end;
 
 begin
