@@ -300,8 +300,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="ufrmJanuaFMXTestImage.pas">
-            <Form>frmFMXTestImageDraw</Form>
+        <DCCReference Include="uframeJanuaFMXTestImage.pas">
+            <Form>framFMXImageDraw</Form>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

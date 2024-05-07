@@ -7813,7 +7813,6 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         Size.Width = 840.000000000000000000
         Size.Height = 503.000000000000000000
         Size.PlatformDefault = False
-        OnMouseDown = imgCarMouseDown
       end
       object Layout1: TLayout
         Align = Client

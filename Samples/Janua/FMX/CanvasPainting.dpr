@@ -3,12 +3,12 @@ program CanvasPainting;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  ufrmJanuaFMXTestImage in 'ufrmJanuaFMXTestImage.pas' {frmFMXTestImageDraw};
+  uframeJanuaFMXTestImage in 'uframeJanuaFMXTestImage.pas' {framFMXImageDraw};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmFMXTestImageDraw, frmFMXTestImageDraw);
+  Application.CreateForm(TframFMXImageDraw, framFMXImageDraw);
   Application.Run;
 end.
