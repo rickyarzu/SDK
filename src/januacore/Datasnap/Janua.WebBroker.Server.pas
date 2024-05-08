@@ -92,7 +92,7 @@ begin
     begin
       AServer.DefaultPort := APort;
       if Assigned(LogProc) then
-        LogProc('SetServerPort', Format(sPortSet, [APort]), self);
+        LogProc('SetServerPort', Format(sPortSet, [APort.ToString]), self);
     end
     else
     begin
@@ -142,16 +142,26 @@ end;
 
 procedure TJanuaWebBrokerServer.WriteStatus;
 begin
-  LogProc('Status', sIndyVersion + FServer.SessionList.Version, self);
-  LogProc('Status', sActive + FServer.Active.ToString(TUseBoolStrs.True), self);
-  LogProc('Status', sPort + FServer.DefaultPort.ToString, self);
-  LogProc('Status', sSessionID + FServer.SessionIDCookieName, self);
+  if Assigned(FServer) then
+  begin
+    LogProc('Status', sIndyVersion + FServer.SessionList.Version, self);
+    LogProc('Status', sActive + FServer.Active.ToString(TUseBoolStrs.True), self);
+    LogProc('Status', sPort + FServer.DefaultPort.ToString, self);
+    LogProc('Status', sSessionID + FServer.SessionIDCookieName, self);
+  end
+  else
+  begin
+    LogProc('Status', 'Server Status not available', self);
+  end;
 end;
 
 procedure TJanuaWebBrokerServer.StopServer(const AServer: TIdHTTPWebBrokerBridge);
 begin
-  AServer.Active := False;
-  AServer.Bindings.Clear;
+  if Assigned(AServer) then
+  begin
+    AServer.Active := False;
+    AServer.Bindings.Clear;
+  end;
 end;
 
 end.
