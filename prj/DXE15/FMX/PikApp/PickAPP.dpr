@@ -18,14 +18,16 @@ uses
   Janua.FMX.frameUserMobile in '..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas' {frameFMXRegisterMobile: TFrame},
   Janua.CarService.FMX.dmDriverClient in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule},
   Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
-  Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser};
+  Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser},
+  Jaua.FMX.CanvasPaintImage in '..\..\..\..\src\FMX\Jaua.FMX.CanvasPaintImage.pas' {framFMXImageDraw: TFrame};
 
 {$R *.res}
 
 function GetForm: TForm;
 begin
-  Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
-  Application.MainForm := frmFMXCarServiceDriverMain;
+  AApplication.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
+  Application.CreateForm(TframFMXImageDraw, framFMXImageDraw);
+  pplication.MainForm := frmFMXCarServiceDriverMain;
   Result := frmFMXCarServiceDriverMain;
 end;
 

@@ -1,4 +1,4 @@
-unit ufrmJanuaFMXTestImage;
+unit Jaua.FMX.CanvasPaintImage;
 
 interface
 
@@ -10,46 +10,16 @@ uses
   FMX.TMSFNCGraphicsTypes, FMX.TMSFNCWXJSONFormatter, FMX.TMSFNCCustomControl, FMX.TMSFNCWebBrowser,
   FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
   // Janua
-  Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles, uframeJanuaFMXTestImage,
-  Jaua.FMX.CanvasPaintImage;
+  Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles;
 
 type
-  TfrmFMXTestImageDraw = class(TForm)
-    tabTestComponent: TTabControl;
-    pgImage: TTabItem;
-    pgCode: TTabItem;
-    PgTestComponent: TTabItem;
+  TframFMXImageDraw = class(TFrame)
     Panel2: TPanel;
-    imgCar: TImage;
     btnClear: TButton;
     btnRedraw: TButton;
-    btnJson: TButton;
-    lbCount: TLabel;
-    lbCoordinates: TLabel;
-    Layout1: TLayout;
-    TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
-    memJson: TTMSFMXMemo;
     btnDelLast: TButton;
-    Panel1: TPanel;
-    btnPgImage: TButton;
-    btnPgCode: TButton;
-    btnPgTestComponent: TButton;
-    imgTestComponent: TImage;
-    Layout2: TLayout;
-    memTestJson: TTMSFMXMemo;
-    pntTestComponentButtons: TPanel;
-    btnTestClear: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Label1: TLabel;
-    Label2: TLabel;
-    Button4: TButton;
-    btnFrame: TButton;
-    pgFrame: TTabItem;
-    framFMXImageDraw1: TframFMXImageDraw;
-    procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    imgCar: TImage;
     procedure FormResize(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
@@ -57,8 +27,6 @@ type
     procedure btnRedrawClick(Sender: TObject);
     procedure btnJsonClick(Sender: TObject);
     procedure btnDelLastClick(Sender: TObject);
-    procedure btnPgImageClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
@@ -66,58 +34,70 @@ type
     LastDraw: TJanuaDraw;
     FOffset: Single;
     FCanvasControl: TControl;
+    FCoordCaption: string;
     procedure SetCanvasControl(const Value: TControl);
+    procedure SetCoordCaption(const Value: string);
   protected
     pntBoxCar: TPaintBox;
     procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
   public
     { Public declarations }
+    procedure Activate;
+    procedure AfterConstruction; override;
     procedure CreatePaintBox;
     procedure Redraw;
     procedure ClearBox;
     procedure DelLastDraw;
     property CanvasControl: TControl read FCanvasControl write SetCanvasControl;
+    property CoordCaption: string read FCoordCaption write SetCoordCaption;
   end;
 
 var
-  frmFMXTestImageDraw: TfrmFMXTestImageDraw;
+  framFMXImageDraw: TframFMXImageDraw;
 
 implementation
 
 {$R *.fmx}
 
-procedure TfrmFMXTestImageDraw.btnClearClick(Sender: TObject);
+procedure TframFMXImageDraw.Activate;
+begin
+  imgCar.Height := Width * (330 / 540);
+  SetCanvasControl(imgCar);
+end;
+
+procedure TframFMXImageDraw.AfterConstruction;
+begin
+  inherited;
+
+end;
+
+procedure TframFMXImageDraw.btnClearClick(Sender: TObject);
 begin
   ClearBox
 end;
 
-procedure TfrmFMXTestImageDraw.btnDelLastClick(Sender: TObject);
+procedure TframFMXImageDraw.btnDelLastClick(Sender: TObject);
 begin
   DelLastDraw
 end;
 
-procedure TfrmFMXTestImageDraw.btnJsonClick(Sender: TObject);
+procedure TframFMXImageDraw.btnJsonClick(Sender: TObject);
 begin
   memJson.Lines.Text := ImgDrawings.Serialize
 end;
 
-procedure TfrmFMXTestImageDraw.btnPgImageClick(Sender: TObject);
-begin
-  tabTestComponent.ActiveTab := pgImage
-end;
-
-procedure TfrmFMXTestImageDraw.btnRedrawClick(Sender: TObject);
+procedure TframFMXImageDraw.btnRedrawClick(Sender: TObject);
 begin
   Redraw;
 end;
 
-procedure TfrmFMXTestImageDraw.ClearBox;
+procedure TframFMXImageDraw.ClearBox;
 begin
   pntBoxCar.Free;
   CreatePaintBox;
 end;
 
-procedure TfrmFMXTestImageDraw.CreatePaintBox;
+procedure TframFMXImageDraw.CreatePaintBox;
 begin
   pntBoxCar := TPaintBox.Create(FCanvasControl);
   pntBoxCar.OnMouseDown := pntBoxCarMouseDown;
@@ -128,7 +108,7 @@ begin
   pntBoxCar.Visible := True;
 end;
 
-procedure TfrmFMXTestImageDraw.DelLastDraw;
+procedure TframFMXImageDraw.DelLastDraw;
 begin
   if FDrawing then
     LastDraw := TJanuaDraw.Create(0.0, 0.0)
@@ -139,73 +119,40 @@ begin
   Redraw;
 end;
 
-procedure TfrmFMXTestImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
+procedure TframFMXImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
 begin
-  if Assigned(pntBoxCar) then
-  begin
-    pntBoxCar.Canvas.BeginScene;
-    try
-      pntBoxCar.Canvas.Stroke.Thickness := 10;
-      pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
-      pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
+  pntBoxCar.Canvas.BeginScene;
+  try
+    pntBoxCar.Canvas.Stroke.Thickness := 5;
+    pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
+    pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
+    var
+    lOffset := Offset + self.Position.Y;
 
-      pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + Offset), PointF(X, Y + Offset), 1);
-    finally
-      pntBoxCar.Canvas.EndScene;
-    end;
-    // draw line from prev pos to current
+    pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + lOffset), PointF(X, Y + lOffset), 1);
+  finally
+    pntBoxCar.Canvas.EndScene;
   end;
+  // draw line from prev pos to current
 end;
 
-procedure TfrmFMXTestImageDraw.FormCreate(Sender: TObject);
-begin
-  imgCar.Height := Width * (330 / 540);
-  SetCanvasControl(imgCar);
-end;
-
-procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);
+procedure TframFMXImageDraw.FormResize(Sender: TObject);
 begin
   imgCar.Height := self.Width * (330 / 540)
 end;
 
-procedure TfrmFMXTestImageDraw.FormShow(Sender: TObject);
-begin
-  framFMXImageDraw1.Activate;
-end;
-
-procedure TfrmFMXTestImageDraw.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
-  X, Y: Single);
-var
-  MyRect: TRectF;
-  Point: TPointF;
-begin
-  // sets the circumscribed rectangle of the ellipse
-  Caption := X.ToString + ',' + Y.ToString;
-  Point := TPointF.Create(X, Y);
-  // Point:=ClientToScreen(Point);
-  Point := imgCar.AbsoluteToLocal(Point);
-  TRectF.Create(Point, 5, 5);
-
-  imgCar.Bitmap.Canvas.Stroke.Thickness := 10;
-  imgCar.Bitmap.Canvas.Stroke.Cap := TStrokeCap.Round;
-  imgCar.Bitmap.Canvas.Stroke.Color := TAlphaColorRec.Red;
-
-  // draws the ellipse on the canvas
-  imgCar.Bitmap.Canvas.BeginScene;
-  imgCar.Bitmap.Canvas.DrawEllipse(MyRect, 20);
-  imgCar.Bitmap.Canvas.EndScene;
-end;
-
-procedure TfrmFMXTestImageDraw.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+procedure TframFMXImageDraw.pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
   X, Y: Single);
 begin
   FDrawing := True;
+  { if Assigned(pntBoxCar) then
+    pntBoxCar.Canvas.BeginScene; }
   LastDraw := TJanuaDraw.Create(X, Y);
   lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
 
 end;
 
-procedure TfrmFMXTestImageDraw.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
+procedure TframFMXImageDraw.pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
 var
   xpre, ypre: Single;
   PointO, PointN: TPointF;
@@ -225,7 +172,7 @@ begin
 
 end;
 
-procedure TfrmFMXTestImageDraw.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+procedure TframFMXImageDraw.pntBoxCarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
   X, Y: Single);
 begin
   try
@@ -233,14 +180,14 @@ begin
     lbCount.Text := 'Count: ' + LastDraw.Count.ToString;
     lbCoordinates.Text := 'Coordinates: ' + LastDraw.ActualX.ToString + ' , ' + LastDraw.ActualY.ToString;
   finally
-    if Assigned(pntBoxCar) then
-      pntBoxCar.Canvas.EndScene;
+    { if Assigned(pntBoxCar) then
+      pntBoxCar.Canvas.EndScene; }
     FDrawing := False;
   end;
 
 end;
 
-procedure TfrmFMXTestImageDraw.Redraw;
+procedure TframFMXImageDraw.Redraw;
 begin
   if Assigned(pntBoxCar) then
     try
@@ -254,17 +201,17 @@ begin
       for var I := 0 to Pred(ImgDrawings.Count) do
       begin
         var
-        FDrawing := ImgDrawings[I];
-        for var J := 1 to Pred(FDrawing.Count) do
+        lDrawing := ImgDrawings[I];
+        for var J := 1 to Pred(lDrawing.Count) do
         begin
           var
-          xpre := FDrawing[Pred(J)].X * RX;
+          xpre := lDrawing[Pred(J)].X * RX;
           var
-          ypre := FDrawing[Pred(J)].Y * RY;
+          ypre := lDrawing[Pred(J)].Y * RY;
           var
-          lX := FDrawing[J].X * RX;
+          lX := lDrawing[J].X * RX;
           var
-          lY := FDrawing[J].Y * RY;
+          lY := lDrawing[J].Y * RY;
 
           DrawCanvas(xpre, ypre, lX, lY, FOffset);
         end;
@@ -274,7 +221,7 @@ begin
     end;
 end;
 
-procedure TfrmFMXTestImageDraw.SetCanvasControl(const Value: TControl);
+procedure TframFMXImageDraw.SetCanvasControl(const Value: TControl);
   procedure SetOffset(const aControl: TControl);
   begin
     var
@@ -301,6 +248,11 @@ begin
     pntBoxCar.Free;
     pntBoxCar := nil;
   end;
+end;
+
+procedure TframFMXImageDraw.SetCoordCaption(const Value: string);
+begin
+  FCoordCaption := Value;
 end;
 
 end.

@@ -13,7 +13,7 @@ uses
   Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles;
 
 type
-  TframFMXImageDraw = class(TForm)
+  TframFMXImageDraw = class(TFrame)
     TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
     Panel2: TPanel;
     btnClear: TButton;
@@ -28,7 +28,6 @@ type
     memJson: TTMSFMXMemo;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure pntBoxCarMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
@@ -50,6 +49,8 @@ type
     procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
   public
     { Public declarations }
+    procedure Activate;
+    procedure AfterConstruction; override;
     procedure CreatePaintBox;
     procedure Redraw;
     procedure ClearBox;
@@ -63,6 +64,18 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TframFMXImageDraw.Activate;
+begin
+  imgCar.Height := Width * (330 / 540);
+  SetCanvasControl(imgCar);
+end;
+
+procedure TframFMXImageDraw.AfterConstruction;
+begin
+  inherited;
+
+end;
 
 procedure TframFMXImageDraw.btnClearClick(Sender: TObject);
 begin
@@ -124,18 +137,14 @@ begin
     pntBoxCar.Canvas.Stroke.Thickness := 5;
     pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
     pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
+    var
+    lOffset := Offset + self.Position.Y;
 
-    pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + Offset), PointF(X, Y + Offset), 1);
+    pntBoxCar.Canvas.DrawLine(PointF(xpre, ypre + lOffset), PointF(X, Y + lOffset), 1);
   finally
     pntBoxCar.Canvas.EndScene;
   end;
   // draw line from prev pos to current
-end;
-
-procedure TframFMXImageDraw.FormCreate(Sender: TObject);
-begin
-  imgCar.Height := Width * (330 / 540);
-  SetCanvasControl(imgCar);
 end;
 
 procedure TframFMXImageDraw.FormResize(Sender: TObject);
@@ -150,7 +159,7 @@ var
   Point: TPointF;
 begin
   // sets the circumscribed rectangle of the ellipse
-  Caption := X.ToString + ',' + Y.ToString;
+  {Caption := X.ToString + ',' + Y.ToString;}
   Point := TPointF.Create(X, Y);
   // Point:=ClientToScreen(Point);
   Point := imgCar.AbsoluteToLocal(Point);

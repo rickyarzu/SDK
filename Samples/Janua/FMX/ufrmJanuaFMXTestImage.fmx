@@ -9,16 +9,19 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
   OnResize = FormResize
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object tabTestComponent: TTabControl
     Align = Client
     Size.Width = 840.000000000000000000
     Size.Height = 826.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 0
     TabPosition = None
     Sizes = (
+      840s
+      826s
       840s
       826s
       840s
@@ -30,7 +33,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -15680,6 +15683,34 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         end
       end
     end
+    object pgFrame: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Frame'
+      inline framFMXImageDraw1: TframFMXImageDraw
+        Align = Client
+        Size.Width = 840.000000000000000000
+        Size.Height = 826.000000000000000000
+        Size.PlatformDefault = False
+        inherited Panel2: TPanel
+          Size.Width = 840.000000000000000000
+        end
+        inherited imgCar: TImage
+          MultiResBitmap.Height = 383
+          MultiResBitmap.Width = 637
+          Size.Width = 840.000000000000000000
+          Size.Height = 768.000000000000000000
+        end
+      end
+    end
   end
   object Panel1: TPanel
     Align = Top
@@ -15692,7 +15723,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 5
       Text = 'Image'
       TextSettings.Trimming = None
       OnClick = btnPgImageClick
@@ -15703,7 +15734,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 4
       Text = 'Code Tab'
       TextSettings.Trimming = None
       OnClick = btnClearClick
@@ -15714,8 +15745,19 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 3
       Text = 'Component'
+      TextSettings.Trimming = None
+      OnClick = btnClearClick
+    end
+    object btnFrame: TButton
+      Align = Left
+      Position.X = 243.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Frame'
       TextSettings.Trimming = None
       OnClick = btnClearClick
     end

@@ -300,8 +300,14 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uframeJanuaFMXTestImage.pas">
+        <DCCReference Include="ufrmJanuaFMXTestImage.pas">
+            <Form>frmFMXTestImageDraw</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Jaua.FMX.CanvasPaintImage.pas">
             <Form>framFMXImageDraw</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -344,6 +350,18 @@
                 <DeployFile LocalName="Win32\Debug\CanvasPainting.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>CanvasPainting.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\CanvasPainting.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>CanvasPainting.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\CanvasPainting.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>CanvasPainting.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
