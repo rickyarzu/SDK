@@ -118,6 +118,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
     BeforePost = qryReportPlannerBeforePost
+    OnCalcFields = qryReportPlannerCalcFields
     Left = 112
     Top = 176
     object qryReportPlannerCHIAVE: TIntegerField
@@ -406,6 +407,11 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object qryReportPlannerAMMINISTRATORE: TIntegerField
       FieldName = 'AMMINISTRATORE'
       ReadOnly = True
+    end
+    object qryReportPlannercalcAppuntamentoDataOra: TDateTimeField
+      FieldKind = fkCalculated
+      FieldName = 'calcAppuntamentoDataOra'
+      Calculated = True
     end
   end
   object spSetStatinoStato: TUniStoredProc

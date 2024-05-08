@@ -285,7 +285,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Left = 944
     Top = 158
     Width = 41
-    Height = 27
+    Height = 24
     MaxValue = 7
     MinValue = 1
     TabOrder = 2
@@ -295,7 +295,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Left = 594
     Top = 160
     Width = 281
-    Height = 25
+    Height = 23
     TabOrder = 3
   end
   object DoFilter: TCheckBox
@@ -318,7 +318,6 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     PanelWidth = 231
     TabOrder = 5
     RowCount = 1
-    ExplicitWidth = 1078
     object DBText1: TDBText
       Left = 8
       Top = 8
