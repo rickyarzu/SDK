@@ -34,7 +34,7 @@ type
 
 implementation
 
-uses Janua.WebBroker.ServerConst, Janua.Application.Framework;
+uses Spring, Janua.WebBroker.ServerConst, Janua.Application.Framework;
 
 { TJanuaWebBrokerServer }
 
@@ -72,7 +72,7 @@ begin
   if not Assigned(FServer) then
   begin
     LServer := TIdHTTPWebBrokerBridge.Create(nil);
-    SetServerPort(FServer, GetPort);
+    SetServerPort(LServer, GetPort);
     FServer := LServer;
   end
   else
@@ -83,15 +83,9 @@ begin
   Write(cArrow);
 end;
 
-procedure TJanuaWebBrokerServer.SetPort(const Value: Integer);
-begin
-  inherited;
-  if Assigned(FServer) then
-    SetServerPort(FServer, Value);
-end;
-
 procedure TJanuaWebBrokerServer.SetServerPort(const AServer: TIdHTTPWebBrokerBridge; APort: Integer);
 begin
+  Guard.CheckNotNull(AServer, 'SetServerPort AServer is null');
   if not AServer.Active then
   begin
     if CheckPort(APort) > 0 then
@@ -111,6 +105,7 @@ procedure TJanuaWebBrokerServer.StartServer(const AServer: TIdHTTPWebBrokerBridg
 begin
   if Assigned(AServer) and not AServer.Active then
   begin
+    AServer.DefaultPort := TJanuaWebBrokerServer.GetPort;
     if CheckPort(AServer.DefaultPort) > 0 then
     begin
       LogProc('StartServer', Format(sStartingServer, [AServer.DefaultPort]), self);
@@ -124,7 +119,7 @@ begin
   else
     LogProc('StartServer', sServerRunning, self);
 
-  if AppType = jatConsoleSrv then
+  if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
     Write(cArrow);
 end;
 

@@ -2197,10 +2197,10 @@ end;
 
 class function TJanuaCoreOS.GetAppWebFilesPath: string;
 begin
-  /// distinguo 3 differenti casistiche
-  /// 1 - Custom Server: la directory è definita a design time e può anche non coincidere con il percorso eseguibile
-  /// 2 - Current Directory: si assume come 'home' il punto in cui è posizionato l'eseguibile o da cui è eseguito.
-  /// 3 - Tutti gli altri casi (iOS/Android/MacOS/Windows Desktop ad esempio) si usa la directory base sys/user
+  /// Framework can manage 3 different cases
+  /// 1 - Custom Server: not the executable directory but c:\januaproject\home or /opt/januaproject/home
+  /// 2 - Current Directory: assumes that home is the current executable directory
+  /// 3 - Default standard home (iOS/Android/MacOS/Windows) usually is sys/user
   if not GetUseCurrentDir then
   begin
     Result := tpl(GetAppHomePath) + 'htdocs';

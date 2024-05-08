@@ -34,10 +34,6 @@ begin
   Write(cArrow);
 end;
 
-procedure WriteStatus(const AServer: TIdHTTPWebBrokerBridge);
-begin
-
-end;
 
 procedure RunServer(APort: Integer);
 var
@@ -83,9 +79,9 @@ end;
 
 begin
   TJanuaApplication.ApplicationType := jatConsoleSrv;
+  TJanuaCarserviceWebBrokerUniDACApplication.ApplicationSetup('customerconf.pikapp.it');
   var
   lPort := TJanuaWebServer.GetPort(8084);
-  TJanuaCarserviceWebBrokerUniDACApplication.ApplicationSetup('customerconf.pikapp.it');
   try
     if WebRequestHandler <> nil then
       WebRequestHandler.WebModuleClass := WebModuleClass;

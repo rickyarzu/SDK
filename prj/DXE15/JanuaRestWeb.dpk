@@ -49,6 +49,7 @@ requires
   rtl,
   bindengine,
   IndyIPServer,
+  Spring.Base,
   JanuaCoreThirdParty,
   JanuaCore,
   JanuaMVVM,
