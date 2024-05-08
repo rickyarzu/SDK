@@ -1,14 +1,111 @@
-object Form3: TForm3
-  Left = 0
-  Top = 0
-  Caption = 'Form3'
-  ClientHeight = 519
-  ClientWidth = 707
-  FormFactor.Width = 320
-  FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
-  object Image1: TImage
+object framFMXImageDraw: TframFMXImageDraw
+  Align = Client
+  Size.Width = 841.000000000000000000
+  Size.Height = 731.000000000000000000
+  Size.PlatformDefault = False
+  OnResize = FormResize
+  object Panel2: TPanel
+    Align = Top
+    Size.Width = 841.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btnClear: TButton
+      Align = Left
+      Size.Width = 81.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Clear '
+      TextSettings.Trimming = None
+      OnClick = btnClearClick
+    end
+    object btnRedraw: TButton
+      Align = Left
+      Position.X = 81.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Redraw'
+      TextSettings.Trimming = None
+      OnClick = btnRedrawClick
+    end
+    object btnJson: TButton
+      Align = Left
+      Position.X = 161.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Json'
+      TextSettings.Trimming = None
+      OnClick = btnJsonClick
+    end
+    object lbCount: TLabel
+      Position.X = 384.000000000000000000
+      Position.Y = 8.000000000000000000
+      TextSettings.Trimming = None
+      Text = 'Count:'
+      TabOrder = 5
+    end
+    object lbCoordinates: TLabel
+      Position.X = 384.000000000000000000
+      Position.Y = 33.000000000000000000
+      TextSettings.Trimming = None
+      Text = 'Coord: 0,0'
+      TabOrder = 4
+    end
+    object btnDelLast: TButton
+      Align = Left
+      Position.X = 241.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Del. Last'
+      TextSettings.Trimming = None
+      OnClick = btnDelLastClick
+    end
+  end
+  object layImage: TLayout
+    Align = Client
+    Size.Width = 841.000000000000000000
+    Size.Height = 170.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Layout1: TLayout
+      Align = Client
+      Size.Width = 841.000000000000000000
+      Size.Height = 170.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object memJson: TTMSFMXMemo
+        Align = Client
+        Cursor = crIBeam
+        DisableFocusEffect = False
+        TabOrder = 2
+        Size.Width = 841.000000000000000000
+        Size.Height = 170.000000000000000000
+        Size.PlatformDefault = False
+        ActiveLineSettings.ShowActiveLine = False
+        ActiveLineSettings.ShowActiveLineIndicator = False
+        ActiveLineSettings.ActiveLineAtCursor = True
+        AutoCompletion.StartToken = '.'
+        CaseSensitive = False
+        Font.Family = 'Courier New'
+        Gutter.Font.Family = 'Courier New'
+        KeyboardType = Default
+        ReadOnly = False
+        SyntaxStyles = TMSFMXMemoJavaScriptStyler1
+        TabSize = 4
+        TrimTrailingSpaces = False
+        UseStyler = True
+        Version = '1.6.0.1'
+      end
+    end
+  end
+  object imgCar: TImage
     MultiResBitmap.Height = 383
     MultiResBitmap.Width = 637
     MultiResBitmap = <
@@ -7713,10 +7810,118 @@ object Form3: TForm3
           'Z:\GitHub\framework\JanuaProject\20 Applications\20.02 CarServic' +
           'e\Immagini\Vehicle-Hire-Forms-700x990.png'
       end>
-    Align = Client
-    Size.Width = 707.000000000000000000
-    Size.Height = 519.000000000000000000
+    Align = Top
+    Position.Y = 58.000000000000000000
+    Size.Width = 841.000000000000000000
+    Size.Height = 503.000000000000000000
     Size.PlatformDefault = False
-    OnMouseDown = Image1MouseDown
+  end
+  object TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler
+    BlockStart = '{'
+    BlockEnd = '}'
+    EscapeChar = '\'
+    LineComment = '//'
+    MultiCommentLeft = '<!--'
+    MultiCommentRight = '-->'
+    CommentStyle.TextColor = claSilver
+    CommentStyle.BkColor = claNull
+    CommentStyle.Style = [fsItalic]
+    NumberStyle.TextColor = claNavy
+    NumberStyle.BkColor = claNull
+    NumberStyle.Style = [fsBold]
+    AllStyles = <
+      item
+        KeyWords.Strings = (
+          'SCRIPT'
+          'OBJECT'
+          'FOR'
+          'IF'
+          'THEN'
+          'THIS'
+          'DO'
+          'WHILE'
+          'BREAK'
+          '{'
+          '}'
+          '('
+          ')'
+          'SWITCH'
+          'ELSE'
+          'FUNCTION'
+          'WINDOW'
+          'DOCUMENT'
+          ';'
+          'RETURN'
+          'STYLE'
+          'VAR'
+          'WINDOW'
+          'LOCATION')
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        Font.StyleExt = {00070000000000000004000000}
+        FontColor = claFuchsia
+        BGColor = claNull
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'Script Standard Default'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claGreen
+        BGColor = claNull
+        StyleType = stBracket
+        BracketStart = #39
+        BracketEnd = #39
+        Info = 'Simple Quote'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claTeal
+        BGColor = claNull
+        StyleType = stBracket
+        BracketStart = '"'
+        BracketEnd = '"'
+        Info = 'Double Quote'
+      end
+      item
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        FontColor = claTeal
+        BGColor = claNull
+        StyleType = stSymbol
+        BracketStart = #0
+        BracketEnd = #0
+        Symbols = ' ,;:.()[]=-*/^%<>#'#13#10
+        Info = 'Symbols Delimiters'
+      end
+      item
+        KeyWords.Strings = (
+          'alert'
+          'confirm'
+          'prompt'
+          'indexOf'
+          'select'
+          'write'
+          'focus')
+        Font.Family = 'Courier New'
+        Font.Size = 8.000000000000000000
+        Font.StyleExt = {00070000000000000004000000}
+        FontColor = claGreen
+        BGColor = claNull
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'JavaScript Functions'
+      end>
+    Description = 'JavaScript'
+    Filter = 'Javascript Files (*.js)|*.js'
+    DefaultExtension = '.js'
+    StylerName = 'JavaScript'
+    Extensions = 'js'
+    Left = 448
+    Top = 680
   end
 end

@@ -361,6 +361,11 @@
             <Form>dlgCarServiceBrowser</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\..\..\src\FMX\Jaua.FMX.CanvasPaintImage.pas">
+            <Form>framFMXImageDraw</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\JanuaLibDXE15.optset</DependentOn>
@@ -716,6 +721,18 @@
                 </DeployFile>
                 <DeployFile LocalName="c:\januaproject\bin\Android64\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles">
                     <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\PickAPP.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>PickAPP.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\PickAPP.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>PickAPP.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

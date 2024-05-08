@@ -1,0 +1,134 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5483D326-1863-4273-9E5E-87A02260EE7A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="GAuthenticator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GoogleOAuth2Authenticator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QAuthenticator\QAuthenticator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Logger\VDLogger.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Etc\VDEtc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AuthTest\AuthTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GAuthenticator">
+        <MSBuild Projects="GAuthenticator.dproj"/>
+    </Target>
+    <Target Name="GAuthenticator:Clean">
+        <MSBuild Projects="GAuthenticator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GAuthenticator:Make">
+        <MSBuild Projects="GAuthenticator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GoogleOAuth2Authenticator">
+        <MSBuild Projects="GoogleOAuth2Authenticator.dproj"/>
+    </Target>
+    <Target Name="GoogleOAuth2Authenticator:Clean">
+        <MSBuild Projects="GoogleOAuth2Authenticator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GoogleOAuth2Authenticator:Make">
+        <MSBuild Projects="GoogleOAuth2Authenticator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QAuthenticator">
+        <MSBuild Projects="QAuthenticator\QAuthenticator.dproj"/>
+    </Target>
+    <Target Name="QAuthenticator:Clean">
+        <MSBuild Projects="QAuthenticator\QAuthenticator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QAuthenticator:Make">
+        <MSBuild Projects="QAuthenticator\QAuthenticator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VDLogger">
+        <MSBuild Projects="Logger\VDLogger.dproj"/>
+    </Target>
+    <Target Name="VDLogger:Clean">
+        <MSBuild Projects="Logger\VDLogger.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VDLogger:Make">
+        <MSBuild Projects="Logger\VDLogger.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VDEtc">
+        <MSBuild Projects="Etc\VDEtc.dproj"/>
+    </Target>
+    <Target Name="VDEtc:Clean">
+        <MSBuild Projects="Etc\VDEtc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VDEtc:Make">
+        <MSBuild Projects="Etc\VDEtc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AuthTest">
+        <MSBuild Projects="AuthTest\AuthTest.dproj"/>
+    </Target>
+    <Target Name="AuthTest:Clean">
+        <MSBuild Projects="AuthTest\AuthTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AuthTest:Make">
+        <MSBuild Projects="AuthTest\AuthTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GAuthenticator;GoogleOAuth2Authenticator;QAuthenticator;VDLogger;VDEtc;AuthTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GAuthenticator:Clean;GoogleOAuth2Authenticator:Clean;QAuthenticator:Clean;VDLogger:Clean;VDEtc:Clean;AuthTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GAuthenticator:Make;GoogleOAuth2Authenticator:Make;QAuthenticator:Make;VDLogger:Make;VDEtc:Make;AuthTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='GeneralHelpers'">
+        <BuildGroupProject Include="GAuthenticator.dproj">
+            <ProjectGuid>{62818A14-E2BA-4EBF-8884-FF656B31B273}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GoogleOAuth2Authenticator.dproj">
+            <ProjectGuid>{D9FF5F52-E65D-4DFF-B46C-EC8410160695}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Logger\VDLogger.dproj">
+            <ProjectGuid>{759F9477-A55A-4A1A-9954-587428843ABD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="QAuthenticator\QAuthenticator.dproj">
+            <ProjectGuid>{D12F46D5-8601-4AAB-A8F8-EEC1D46A5808}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="AuthTest\AuthTest.dproj">
+            <ProjectGuid>{C369F23B-51EF-4EC1-A4D9-380B437850EB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Etc\VDEtc.dproj">
+            <ProjectGuid>{3F5A3230-5D97-4EC9-92F0-BB0E911F3B9B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

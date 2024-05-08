@@ -73,7 +73,7 @@ contains
   Janua.Core.System in '..\..\src\januacore\Janua.Core.System.pas',
   Janua.Core.University in '..\..\src\januacore\Janua.Core.University.pas',
   Janua.Core.Users in '..\..\src\januacore\Janua.Core.Users.pas',
-  Janua.Core.WebServices in '..\..\src\januacore\Janua.Core.WebServices.pas',
+  Janua.Cloud.WebServices in '..\..\src\januacore\Janua.Cloud.WebServices.pas',
   Janua.Core.Ads in '..\..\src\januacore\Janua.Core.Ads.pas',
   Janua.Core.Backup in '..\..\src\januacore\Janua.Core.Backup.pas',
   Janua.Core.Books in '..\..\src\januacore\Janua.Core.Books.pas',
@@ -402,6 +402,7 @@ contains
   Janua.Orm.Firedac in '..\..\src\januacore\Janua.Orm.Firedac.pas',
   Janua.Core.StackTrace in '..\..\src\januacore\Janua.Core.StackTrace.pas',
   Janua.REST.Components in '..\..\src\januacore\dmvc\Janua.REST.Components.pas',
+  Janua.Core.WebServer in '..\..\src\januacore\Janua.Core.WebServer.pas',
   Janua.Orm.CodeGen.Impl in '..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas';
 
 end.

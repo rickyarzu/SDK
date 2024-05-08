@@ -2,13 +2,17 @@ program CloudCalendarImportExport;
 
 uses
   Forms,
-  uCloudCalendarSync in 'uCloudCalendarSync.pas' {Form4};
+  uCloudCalendarSync in 'uCloudCalendarSync.pas' {frmCalendarCloudSync} ,
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  TStyleManager.TrySetStyle('Sky');
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TfrmCalendarCloudSync, frmCalendarCloudSync);
   Application.Run;
+
 end.
