@@ -558,7 +558,6 @@ type
     Class function LogString: string; static;
     Class Procedure Initialize;
     Class procedure Terminate;
-
   private
 {$IFDEF MSWINDOWS}
     {

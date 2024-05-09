@@ -7,8 +7,8 @@ uses
 
 type
   TWebModule1 = class(TWebModule)
-    procedure WebModule1DefaultHandlerAction(Sender: TObject;
-      Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+    procedure WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: Boolean);
   private
     { Private declarations }
   public
@@ -20,18 +20,29 @@ var
 
 implementation
 
-{%CLASSGROUP 'Vcl.Controls.TControl'}
+uses Janua.Application.Framework, Janua.CarService.PgCustomers, Janua.Http.Types;
 
+{%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TWebModule1.WebModule1DefaultHandlerAction(Sender: TObject;
-  Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+procedure TWebModule1.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: Boolean);
+var
+  DM: TdmPgCarServiceCustomers;
 begin
-  Response.Content :=
-    '<html>' +
-    '<head><title>Web Server Application</title></head>' +
-    '<body>Web Server Application</body>' +
-    '</html>';
+  DM := TdmPgCarServiceCustomers.Create(nil);
+  try
+    var
+    sGUID := Request.QueryFields.Values['BookingID'];
+    var
+    lPage := '';
+    var
+    lStatusCode := DM.WebResponse(sGUID, lPage);
+    Response.ContentType := TJanuaMimeString.TEXT_HTML;
+    Response.Content := lPage;
+  finally
+    DM.Free;
+  end;
 end;
 
 end.

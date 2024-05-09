@@ -7,7 +7,8 @@ uses
   // UniDAC
   UniProvider, PostgreSQLUniProvider, Data.DB, DBAccess, Uni, MemDS,
   // JOrm.Documents.Impl Booking
-  JOrm.Carservice.Booking.Intf, Janua.Orm.Types, JOrm.Anagraph.Intf,
+  Janua.Carservice.Intf,
+  JOrm.Carservice.Booking.Intf, Janua.Orm.Types, JOrm.Anagraph.Intf, Janua.Cloud.Types,
   // Januaproject
   // Lookup Interface
   Janua.Orm.Intf, Janua.Search.ViewModels.Engines.Intf, Janua.Search.ViewModels.Intf,
@@ -138,12 +139,23 @@ type
   private
     FBookingRecord: IBookingHeadView;
     FHasReturn: Boolean;
+
+    FNotFound: Boolean;
+    FMessage: TLandingMessage;
+    FCSCustomerLandingMsgBuilder: IJanuaCSCustomerLandingMsgBuilder;
+    FCSCustomerConfMsgBuilder: IJanuaCSCustConfirmationMsgBuilder;
+    FPickupSlot: ITimeTableSlot;
+    FDeliverySlot: ITimeTableSlot;
+
     procedure SetBookingRecord(const Value: IBookingHeadView);
+    function LocalStringToGUID(const aParam: string): TGUID;
     { Private declarations }
   public
     { Public declarations }
     function OpenBooking(const aGUID: TGUID): Boolean;
     procedure RefreshDetails; override;
+    function WebResponse(const aGUID: string; out aPage: string): integer;
+    function WebConfirmation(const aGUID: string; out aPage: string): integer;
   public
     property BookingRecord: IBookingHeadView read FBookingRecord write SetBookingRecord;
   end;
@@ -153,7 +165,7 @@ var
 
 implementation
 
-uses JOrm.Carservice.Booking.Impl, Janua.Orm.Impl, Janua.Application.Framework;
+uses JOrm.Carservice.Booking.Impl, Janua.Orm.Impl, Janua.Application.Framework, System.StrUtils;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -170,6 +182,11 @@ begin
 
   FBookingRecord.PickupDateTime.DBDataset := qryPickup;
   FBookingRecord.DeliveryDateTime.DBDataset := qryDelivery;
+end;
+
+function TdmPgCarServiceCustomers.LocalStringToGUID(const aParam: string): TGUID;
+begin
+  Result := StringToGUID(IfThen(Copy(aParam, 1, 1) = '{', aParam, '{' + aParam + '}'));
 end;
 
 function TdmPgCarServiceCustomers.OpenBooking(const aGUID: TGUID): Boolean;
@@ -225,6 +242,105 @@ end;
 procedure TdmPgCarServiceCustomers.SetBookingRecord(const Value: IBookingHeadView);
 begin
   FBookingRecord := Value;
+end;
+
+function TdmPgCarServiceCustomers.WebConfirmation(const aGUID: string; out aPage: string): integer;
+  procedure SetCustConfirmationMsgBuilder;
+  begin
+    if FBookingRecord.HasReturn then
+      TJanuaApplicationFactory.TryGetInterface(IJanuaCSCustConfirmationMsgBuilder, FCSCustomerConfMsgBuilder)
+    else
+      TJanuaApplicationFactory.TryGetInterface(IJanuaCSCustConfirmationNRMsgBuilder,
+        FCSCustomerConfMsgBuilder);
+  end;
+
+begin
+  SetCustConfirmationMsgBuilder;
+  FCSCustomerConfMsgBuilder.Dataset := qryBooking;
+  FCSCustomerConfMsgBuilder.LoadSettings;
+  var
+  lMessage := FCSCustomerConfMsgBuilder.GenerateLandingMessage;
+  aPage := lMessage.Text;
+end;
+
+function TdmPgCarServiceCustomers.WebResponse(const aGUID: string; out aPage: string): integer;
+  procedure GenerateNotFound;
+  begin
+
+  end;
+
+begin
+  if aGUID <> '' then
+  begin
+    try
+      var
+      lGUID := LocalStringToGUID(aGUID);
+      if OpenBooking(lGUID) then
+      begin
+        Result := 200;
+        aPage := TJanuaCoreOS.ReadWebFile('customer_confirmation.html');
+
+        if FBookingRecord.HasReturn then
+          TJanuaApplicationFactory.TryGetInterface(IJanuaCSCustomerLandingMsgBuilder,
+            FCSCustomerLandingMsgBuilder)
+        else
+          TJanuaApplicationFactory.TryGetInterface(IJanuaCSCustomerLandingMsgNRBuilder,
+            FCSCustomerLandingMsgBuilder);
+
+        FCSCustomerLandingMsgBuilder.Dataset := qryBooking;
+        FCSCustomerLandingMsgBuilder.LoadSettings;
+        FMessage := FCSCustomerLandingMsgBuilder.GenerateLandingMessage;
+
+        aPage.Replace('$$Text$$', FMessage.Text);
+
+        FPickupSlot.Assign(FBookingRecord.PickupDateTime);
+        FDeliverySlot.Assign(FBookingRecord.DeliveryDateTime);
+
+        FPickupSlot.Booked.AsBoolean := False;
+        FPickupSlot.IsFree.AsBoolean := True;
+        FDeliverySlot.Booked.AsBoolean := False;
+        FDeliverySlot.IsFree.AsBoolean := True;
+
+        { framePickup.TimeTableSlot := FPickupSlot; }
+        var
+        lbPickupDate := FPickupSlot.Workingday.AsString;
+        var
+        lbPickupTime := FPickupSlot.SlotDes.AsString;
+
+        // A Booking can be One Way Pickup or have a Delivery (Return) Slot if not then
+        if FBookingRecord.HasReturn then
+        begin
+          var
+          lbDeliveryDate := FDeliverySlot.Workingday.AsString;
+          var
+          lbDeliveryTime := FDeliverySlot.SlotDes.AsString;
+
+          // $$Restituzione$$
+          aPage.Replace('$$Restituzione$$', '/Restituzione');
+          // visually-hidden - $$visibility_restituzione$$
+          aPage.Replace('$$visibility_restituzione$$', '');
+        end
+        else
+        begin
+          aPage.Replace('$$Restituzione$$', '');
+          aPage.Replace('$$visibility_restituzione$$', 'visually-hidden');
+        end
+      end
+      else
+      begin
+        Result := 404;
+        GenerateNotFound;
+      end;
+    except
+      on e: exception do
+      begin
+        Result := 501;
+      end;
+    end;
+  end
+  else
+    GenerateNotFound;
+
 end;
 
 end.

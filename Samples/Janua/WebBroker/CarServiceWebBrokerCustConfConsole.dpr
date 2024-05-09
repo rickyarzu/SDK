@@ -14,14 +14,10 @@ uses
   Janua.WebBroker.ServerConst,
   Janua.Core.Types,
   Janua.Core.WebServer,
-  Janua.WebBroker.UniDACApplication
-    in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
-  Janua.Carservice.WebBroker.UniDACApplication
-    in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
-  Janua.Carservice.dlgWebBrokerCustConfirmation
-    in '..\..\..\src\VCL\CarService\Janua.CarService.dlgWebBrokerCustConfirmation.pas' {Form1} ,
-  Janua.Carservice.WebModuleCustomerConfirmation
-    in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {WebModule1: TWebModule};
+  Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
+  Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
+  Janua.CarService.WebModuleCustomerConfirmation in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {WebModule1: TWebModule},
+  Janua.Carservice.PgCustomers in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCarServiceCustomers: TDataModule};
 
 {$R *.res}
 

@@ -164,12 +164,14 @@
         </DelphiCompile>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas"/>
-        <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.dlgWebBrokerCustConfirmation.pas">
-            <Form>Form1</Form>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas">
             <Form>WebModule1</Form>
             <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas">
+            <Form>dmPgCarServiceCustomers</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -812,9 +814,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
