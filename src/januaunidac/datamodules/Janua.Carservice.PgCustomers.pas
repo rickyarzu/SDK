@@ -319,11 +319,14 @@ begin
           aPage.Replace('$$Restituzione$$', '/Restituzione');
           // visually-hidden - $$visibility_restituzione$$
           aPage.Replace('$$visibility_restituzione$$', '');
+          // not checked by default
+          aPage.Replace('$$checked_return$$', '');
         end
         else
         begin
           aPage.Replace('$$Restituzione$$', '');
           aPage.Replace('$$visibility_restituzione$$', 'visually-hidden');
+          aPage.Replace('$$checked_return$$', 'checked');
         end
       end
       else
