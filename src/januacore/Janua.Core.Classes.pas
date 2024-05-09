@@ -3978,7 +3978,7 @@ end;
 
 procedure TJanuaInterfacedObject.WriteError(const aProcedureName, aLog: string; E: Exception);
 begin
-  TJanuaCoreOS.PublicWriteError(self, aProcedureName, LogString, E)
+  TJanuaLogger.LogError(aProcedureName, aLog, self, E);
 end;
 
 procedure TJanuaInterfacedObject.WriteLocalError(const aProcedureName, aLog: string; E: Exception);
@@ -3993,7 +3993,7 @@ end;
 
 procedure TJanuaInterfacedObject.WriteLog(const aProcedureName, aLog: string);
 begin
-  TJanuaCoreOS.PublicWriteLog(self, aProcedureName, aLog)
+  TJanuaLogger.LogMessage(aProcedureName, aLog, self)
 end;
 
 procedure TJanuaJsonParser.SetAsJsonString(const Value: string);

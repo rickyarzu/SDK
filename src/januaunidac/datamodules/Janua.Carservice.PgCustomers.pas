@@ -149,7 +149,9 @@ type
 
     procedure SetBookingRecord(const Value: IBookingHeadView);
     function LocalStringToGUID(const aParam: string): TGUID;
-    { Private declarations }
+  protected
+    procedure FlushLog;
+    procedure FlushErr;
   public
     { Public declarations }
     function OpenBooking(const aGUID: TGUID): Boolean;
@@ -182,6 +184,28 @@ begin
 
   FBookingRecord.PickupDateTime.DBDataset := qryPickup;
   FBookingRecord.DeliveryDateTime.DBDataset := qryDelivery;
+end;
+
+procedure TdmPgCarServiceCustomers.FlushErr;
+begin
+  var
+  logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'err.json');
+end;
+
+procedure TdmPgCarServiceCustomers.FlushLog;
+begin
+  var
+  logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'log.json');
 end;
 
 function TdmPgCarServiceCustomers.LocalStringToGUID(const aParam: string): TGUID;
@@ -266,7 +290,14 @@ end;
 function TdmPgCarServiceCustomers.WebResponse(const aGUID: string; out aPage: string): integer;
   procedure GenerateNotFound;
   begin
+    aPage := TJanuaCoreOS.ReadWebFile('customer_confirmation_404.html');
+    Result := 404;
+  end;
 
+  procedure GenerateError;
+  begin
+    aPage := TJanuaCoreOS.ReadWebFile('customer_confirmation_503.html');
+    Result := 503;
   end;
 
 begin
@@ -330,14 +361,15 @@ begin
         end
       end
       else
-      begin
-        Result := 404;
         GenerateNotFound;
-      end;
+
+      FlushLog;
     except
       on e: exception do
       begin
-        Result := 501;
+        GenerateError;
+        TJanuaLogger.LogError('WebResponse', e.Message, self);
+        FlushErr;
       end;
     end;
   end
