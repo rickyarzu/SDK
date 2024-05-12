@@ -228,10 +228,6 @@ function TdmPgCarServiceCustomers.OpenBooking(const aGUID: TGUID): Boolean;
   end;
 
 begin
-  { select * from carservice.timetable_view v1
-    where
-    (booked and booking_id = :booking_id and from_id = :from_id)
-  }
   Result := not aGUID.IsEmpty and InternalOpen;
   // if A booking is found then the record is loaded instead it should be cleared to clean dirt :)
   if Result then
@@ -322,7 +318,11 @@ begin
         FCSCustomerLandingMsgBuilder.LoadSettings;
         FMessage := FCSCustomerLandingMsgBuilder.GenerateLandingMessage;
 
-        aPage.Replace('$$Text$$', FMessage.Text);
+        if Pos('$$Text$$', aPage) > 0 then
+          aPage := StringReplace(aPage, '$$Text$$', FMessage.Text, [rfReplaceAll, rfIgnoreCase]);
+
+        FPickupSlot := TTimeTableSlot.Create();
+        FDeliverySlot := TTimeTableSlot.Create();
 
         FPickupSlot.Assign(FBookingRecord.PickupDateTime);
         FDeliverySlot.Assign(FBookingRecord.DeliveryDateTime);
@@ -346,12 +346,15 @@ begin
           var
           lbDeliveryTime := FDeliverySlot.SlotDes.AsString;
 
-          // $$Restituzione$$
-          aPage.Replace('$$Restituzione$$', '/Restituzione');
-          // visually-hidden - $$visibility_restituzione$$
-          aPage.Replace('$$visibility_restituzione$$', '');
+          if Pos('$$Restituzione$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$Restituzione$$', '/Restituzione', [rfReplaceAll, rfIgnoreCase]);
+
+          if Pos('$$visibility_restituzione$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$visibility_restituzione$$', '', [rfReplaceAll, rfIgnoreCase]);
+
           // not checked by default
-          aPage.Replace('$$checked_return$$', '');
+          if Pos('$$checked_return$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$checked_return$$', '', [rfReplaceAll, rfIgnoreCase]);
         end
         else
         begin
@@ -368,8 +371,9 @@ begin
       on e: exception do
       begin
         GenerateError;
-        TJanuaLogger.LogError('WebResponse', e.Message, self);
-        FlushErr;
+        { TJanuaCoreOS.PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;
+          doraise: Boolean = True): TJanuaLogRecord; }
+        TJanuaCoreOS.PublicWriteError(self, 'WebResponse', 'Customer Confirmation' + aGUID, e, False);
       end;
     end;
   end

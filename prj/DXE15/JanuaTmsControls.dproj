@@ -231,7 +231,6 @@
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Forms.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.Interposers.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.SMS.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.dmComponents.pas">
             <Form>dmTmsComponents</Form>
             <DesignClass>TDataModule</DesignClass>
@@ -270,14 +269,20 @@
                 <Platform value="Win64x">False</Platform>
             </Platforms>
             <Deployment Version="4">
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaTmsControls.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaTmsControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>

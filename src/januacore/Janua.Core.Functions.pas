@@ -279,10 +279,14 @@ function ReadParam(parDataset: TDataset; const sKey: string; const sDefault: str
 // Web Json and Html Function ...............................................................
 function EncodeURIComponentIOS(Source: string): string;
 function EncodeURIComponent(const ASrc: string): UTF8String;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: integer); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime); overload;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: integer); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime); overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: string): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: integer): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: Extended): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime): boolean; overload; inline;
 
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: Extended); overload;
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: boolean); overload;
@@ -4117,9 +4121,7 @@ begin
   SetLength(Result, J - 1);
 end;
 
-procedure HtmlReplace(
-
-  var aTemplate: string; aParam: string; aValue: string);
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string);
 begin
   aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue, [rfIgnoreCase, rfReplaceAll]);
 end;
@@ -4132,6 +4134,45 @@ end;
 procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended);
 begin
   aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime);
+begin
+  aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
+    [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: string): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, aParam, aValue, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: integer): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: Extended): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
+      [rfIgnoreCase, rfReplaceAll]);
 end;
 
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: Extended);
@@ -4149,12 +4190,6 @@ begin
   else
     HtmlReplace(aTemplate, aParam, 'false');
 
-end;
-
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime);
-begin
-  aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
-    [rfIgnoreCase, rfReplaceAll]);
 end;
 
 function StripstringHtml(sHtml: UnicodeString): UnicodeString;

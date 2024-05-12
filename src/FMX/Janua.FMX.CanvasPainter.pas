@@ -62,7 +62,7 @@ end;
 
 procedure TJanuaFMXCanvasPainter.DelLastDraw;
 begin
-  if Drawing then
+  if FDrawing then
     LastDraw := TJanuaDraw.Create(0.0, 0.0)
   else
     ImgDrawings.DelDraw;
