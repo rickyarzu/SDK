@@ -1565,12 +1565,12 @@ end;
 
 class function TJanuaApplication.IsClient: Boolean;
 begin
-  Result := Self.FApplicationType in [jatConsoleClient, jatClientWin, jatClientTablet];
+  Result := FApplicationType in [jatConsoleClient, jatClientWin, jatClientTablet];
 end;
 
 class function TJanuaApplication.IsConsole: Boolean;
 begin
-  Result := Self.FApplicationType in [jatConsoleSrv, jatConsoleClient]
+  Result := FApplicationType in [jatConsoleSrv, jatConsoleClient]
 end;
 
 class function TJanuaApplication.IsFMX: Boolean;
@@ -3425,13 +3425,31 @@ begin
       if TJanuaApplication.IsConsole then
         Writeln(LocalLog);
       Result.DateTime := Now();
+
+      var
+      CpHierachy := '';
+
       if Sender <> nil then
       begin
         Result.ClassName := Sender.ClassName;
         Result.OwnerName := '';
-        if (Sender is TComponent) and ((Sender as TComponent).Owner <> nil) then
-          Result.OwnerName := ifThen((Sender as TComponent).Owner <> nil,
-            (Sender as TComponent).Owner.Name, '');
+        if (Sender is TComponent) then
+        begin
+          var
+          Cp := (Sender as TComponent);
+          if (Cp.Owner <> nil) then
+          begin
+            Result.OwnerName := TComponent(Sender as TComponent).Owner.Name;
+            var
+            i := 0;
+            Repeat
+              Inc(i);
+              CpHierachy := ifThen(CpHierachy > '', sl, '') + LPad(' ', i, '-') + Cp.Name;
+              Cp := Cp.Owner;
+            until Cp = nil;
+          end;
+
+        end;
       end;
       Result.ProcedureName := aProcedureName;
 
@@ -3446,30 +3464,33 @@ begin
         if not DirectoryExists(GetAppHomePath) then
           CreateDir(GetAppHomePath);
 
-        vFile := TJanuaApplication.AppName + FormatDateTime('yyyymmddhhnnss', Now()) + '.err.txt';
+        vFile := TJanuaApplication.AppName + '_' + FormatDateTime('yyyymmddhhnnss', Now()) + '.err.txt';
 
-        if (GetAppName > '') then
-        begin
-          ErrTextFileName := IncludeTrailingPathDelimiter(GetAppLogPath) + vFile;
-          // TFileName
-          Assignfile(ErrTextFile, ErrTextFileName);
-          If FileExists(IncludeTrailingPathDelimiter(GetAppLogPath) + vFile) then
-            Append(ErrTextFile)
-          else
-            Rewrite(ErrTextFile);
-          Writeln(ErrTextFile, LocalLog);
-          Writeln(ErrTextFile, '***** Log Stack ***************');
-          Writeln(ErrTextFile, TJanuaApplication.Log);
-          CloseFile(ErrTextFile);
-        end;
+        ErrTextFileName := IncludeTrailingPathDelimiter(GetAppLogPath) + vFile;
+        // TFileName
+        Assignfile(ErrTextFile, ErrTextFileName);
+        If FileExists(IncludeTrailingPathDelimiter(GetAppLogPath) + vFile) then
+          Append(ErrTextFile)
+        else
+          Rewrite(ErrTextFile);
+
+        var
+        FEsteso := 'ore: ' + DateTimeToStr(Now) + sl + 'messaggio: ' + e.Message + sl + 'locazione: "' +
+          ifThen(Result.OwnerName = '', '', Result.OwnerName + '.') + Sender.ClassName + '";';
+
+        FEsteso := FEsteso + sl + e.StackTrace;
+
+        Writeln(ErrTextFile, FEsteso);
+        Writeln(ErrTextFile, LocalLog);
+        Writeln(ErrTextFile, '***** Log Stack ***************');
+        Writeln(ErrTextFile, TJanuaApplication.Log);
+        CloseFile(ErrTextFile);
       end;
       if doraise and not FPublicRaised then
       begin
         FPublicRaised := True;
-        // Sender: TObject; aProcedureName, sMessage: string; e: Exception; doraise: boolean = true
         PublicWriteLog(Sender, aProcedureName, sMessage);
         RaiseException(aProcedureName, e, Sender, LogString);
-        // CreateException(aProcedureName, e, Sender, )  //Exception.Create(LocalLog);
       end
       else
         FPublicRaised := false;

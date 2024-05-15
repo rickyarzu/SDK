@@ -80,7 +80,6 @@ begin
 
   LServer.DefaultPort := APort;
   StartServer(LServer);
-  Write(cArrow);
 end;
 
 procedure TJanuaWebBrokerServer.SetServerPort(const AServer: TIdHTTPWebBrokerBridge; APort: Integer);
@@ -93,6 +92,7 @@ begin
       AServer.DefaultPort := APort;
       if Assigned(LogProc) then
         LogProc('SetServerPort', Format(sPortSet, [APort.ToString]), self);
+      WriteArrow;
     end
     else
     begin
@@ -119,8 +119,7 @@ begin
   else
     LogProc('StartServer', sServerRunning, self);
 
-  if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
-    Write(cArrow);
+  WriteArrow;
 end;
 
 procedure TJanuaWebBrokerServer.StartServer;
@@ -138,6 +137,7 @@ begin
     FServer.Free;
     FServer := nil;
   end;
+  WriteArrow;
 end;
 
 procedure TJanuaWebBrokerServer.WriteStatus;
@@ -148,6 +148,7 @@ begin
     LogProc('Status', sActive + FServer.Active.ToString(TUseBoolStrs.True), self);
     LogProc('Status', sPort + FServer.DefaultPort.ToString, self);
     LogProc('Status', sSessionID + FServer.SessionIDCookieName, self);
+    WriteArrow;
   end
   else
   begin

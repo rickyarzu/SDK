@@ -11,7 +11,8 @@ uses System.SysUtils, System.Classes, System.StrUtils, System.SysConst, System.J
   DB;
 
 type
-  TJanuaNotificationBadgeType = (jbtNotification, jbtCalendar, jbtMessages, jbtToDoList, jbtShoppingCart, jbtNone);
+  TJanuaNotificationBadgeType = (jbtNotification, jbtCalendar, jbtMessages, jbtToDoList,
+    jbtShoppingCart, jbtNone);
 
   TJanuaNotificationType = (jntNotificationSuccess, jntNotificationDanger, jntNotificationWarning,
     jntNotificationInfo, jntNone);
@@ -24,33 +25,34 @@ type
   end;
 
 const
-  NotificationClasses: array [jntNotificationSuccess .. jntNone] of string = ('label label-sm label-icon label-success',
-    'label label-sm label-icon label-danger', 'label label-sm label-icon label-warning',
-    'label label-sm label-icon label-info', '');
+  NotificationClasses: array [jntNotificationSuccess .. jntNone]
+    of string = ('label label-sm label-icon label-success', 'label label-sm label-icon label-danger',
+    'label label-sm label-icon label-warning', 'label label-sm label-icon label-info', '');
 
-  NotificationSlugs: array [jntNotificationSuccess .. jntNone] of string = ('fa fa-plus', 'fa fa-bolt', 'fa fa-bell-o',
-    'fa fa-bullhorn', 'none');
+  NotificationSlugs: array [jntNotificationSuccess .. jntNone] of string = ('fa fa-plus', 'fa fa-bolt',
+    'fa fa-bell-o', 'fa fa-bullhorn', 'none');
 
   NotificationIcons: array [jntNotificationSuccess .. jntNone] of string = ('notifications', 'notifications',
     'notifications', 'notifications', 'none');
 
-  NotificationBadgeID: array [1 .. 5] of TJanuaNotificationBadgeType = (jbtNotification, jbtCalendar, jbtMessages,
-    jbtToDoList, jbtShoppingCart);
+  NotificationBadgeID: array [1 .. 5] of TJanuaNotificationBadgeType = (jbtNotification, jbtCalendar,
+    jbtMessages, jbtToDoList, jbtShoppingCart);
 
-  NotificationBadgeConsts: array [jbtNotification .. jbtNone] of TJanuaNotificationConst = ((Icon: 'icon-bell';
-    Font: 'icon-bell'; slug: 'notification'; id: 1), (Icon: 'icon-calendar'; Font: 'fa fa-calendar-check-o';
-    slug: 'calendar'; id: 2), (Icon: 'icon-envelope'; Font: 'icon-envelope'; slug: 'inbox'; id: 3),
-    (Icon: 'fa fa-list-alt'; Font: 'fa fa-list-alt'; slug: 'todolist'; id: 4), (Icon: 'fa fa-shopping-cart';
-    Font: 'fa fa-shopping-cart'; slug: 'shoppingcart'; id: 5), (Icon: ''; Font: ''; slug: 'none'; id: - 1));
+  NotificationBadgeConsts: array [jbtNotification .. jbtNone] of TJanuaNotificationConst =
+    ((Icon: 'icon-bell'; Font: 'icon-bell'; slug: 'notification'; id: 1), (Icon: 'icon-calendar';
+    Font: 'fa fa-calendar-check-o'; slug: 'calendar'; id: 2), (Icon: 'icon-envelope'; Font: 'icon-envelope';
+    slug: 'inbox'; id: 3), (Icon: 'fa fa-list-alt'; Font: 'fa fa-list-alt'; slug: 'todolist'; id: 4),
+    (Icon: 'fa fa-shopping-cart'; Font: 'fa fa-shopping-cart'; slug: 'shoppingcart'; id: 5), (Icon: '';
+    Font: ''; slug: 'none'; id: - 1));
 
-  NotificationBadgeIcons: array [jbtNotification .. jbtNone] of string = ('icon-bell', 'icon-calendar', 'icon-envelope',
-    'fa fa-list-alt', 'fa fa-shopping-cart', '');
-
-  NotificationBadgeFonts: array [jbtNotification .. jbtNone] of string = ('icon-bell', 'fa fa-calendar-check-o',
+  NotificationBadgeIcons: array [jbtNotification .. jbtNone] of string = ('icon-bell', 'icon-calendar',
     'icon-envelope', 'fa fa-list-alt', 'fa fa-shopping-cart', '');
 
-  NotificationBadgeSlugs: array [jbtNotification .. jbtNone] of string = ('notification', 'tasks', 'inbox', 'todolist',
-    'shoppingcart', 'none');
+  NotificationBadgeFonts: array [jbtNotification .. jbtNone] of string = ('icon-bell',
+    'fa fa-calendar-check-o', 'icon-envelope', 'fa fa-list-alt', 'fa fa-shopping-cart', '');
+
+  NotificationBadgeSlugs: array [jbtNotification .. jbtNone] of string = ('notification', 'tasks', 'inbox',
+    'todolist', 'shoppingcart', 'none');
 
 type
   TJanuaNotification = record
@@ -165,9 +167,9 @@ begin
       aList.Add('</div>');
 
       aList.Add('<div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px;' +
-        'display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px;' +
-        ' border-bottom-left-radius: 7px; background-color: rgb(234, 234, 234); opacity: 0.2; z-index: 90;' +
-        ' right: 1px; background-position: initial initial; background-repeat: initial initial;">');
+        'display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px;'
+        + ' border-bottom-left-radius: 7px; background-color: rgb(234, 234, 234); opacity: 0.2; z-index: 90;'
+        + ' right: 1px; background-position: initial initial; background-repeat: initial initial;">');
       aList.Add('</div>');
       // ---------------------------- fine footer -------------------------------------------------------
 

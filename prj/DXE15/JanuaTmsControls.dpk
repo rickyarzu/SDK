@@ -80,7 +80,6 @@ contains
   Janua.VCL.Forms in '..\..\src\VCL\Commons\Janua.VCL.Forms.pas',
   Janua.TMS.Interposers in '..\..\src\TMS\Janua.TMS.Interposers.pas',
   Janua.TMS.Framework in '..\..\src\TMS\Janua.TMS.Framework.pas',
-  Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas',
   Janua.TMS.dmComponents in '..\..\src\TMS\Janua.TMS.dmComponents.pas' {dmTmsComponents: TDataModule},
   Janua.TMS.Cloud.Mail.VCL in '..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas';
 

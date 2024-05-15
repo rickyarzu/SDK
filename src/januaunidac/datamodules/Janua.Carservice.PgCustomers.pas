@@ -149,7 +149,9 @@ type
 
     procedure SetBookingRecord(const Value: IBookingHeadView);
     function LocalStringToGUID(const aParam: string): TGUID;
-    { Private declarations }
+  protected
+    procedure FlushLog;
+    procedure FlushErr;
   public
     { Public declarations }
     function OpenBooking(const aGUID: TGUID): Boolean;
@@ -184,6 +186,28 @@ begin
   FBookingRecord.DeliveryDateTime.DBDataset := qryDelivery;
 end;
 
+procedure TdmPgCarServiceCustomers.FlushErr;
+begin
+  var
+  logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'err.json');
+end;
+
+procedure TdmPgCarServiceCustomers.FlushLog;
+begin
+  var
+  logTitle := StringReplace(FBookingRecord.GUIDString, '}', '', []);
+  logTitle := StringReplace(logTitle, '{', '', []);
+  var
+  sDate := FormatDateTime('yyyymmddhhnn', Now);
+
+  TJanuaLogger.SaveLogToFile(sDate + '_' + logTitle + 'log.json');
+end;
+
 function TdmPgCarServiceCustomers.LocalStringToGUID(const aParam: string): TGUID;
 begin
   Result := StringToGUID(IfThen(Copy(aParam, 1, 1) = '{', aParam, '{' + aParam + '}'));
@@ -204,10 +228,6 @@ function TdmPgCarServiceCustomers.OpenBooking(const aGUID: TGUID): Boolean;
   end;
 
 begin
-  { select * from carservice.timetable_view v1
-    where
-    (booked and booking_id = :booking_id and from_id = :from_id)
-  }
   Result := not aGUID.IsEmpty and InternalOpen;
   // if A booking is found then the record is loaded instead it should be cleared to clean dirt :)
   if Result then
@@ -266,7 +286,14 @@ end;
 function TdmPgCarServiceCustomers.WebResponse(const aGUID: string; out aPage: string): integer;
   procedure GenerateNotFound;
   begin
+    aPage := TJanuaCoreOS.ReadWebFile('customer_confirmation_404.html');
+    Result := 404;
+  end;
 
+  procedure GenerateError;
+  begin
+    aPage := TJanuaCoreOS.ReadWebFile('customer_confirmation_503.html');
+    Result := 503;
   end;
 
 begin
@@ -291,7 +318,11 @@ begin
         FCSCustomerLandingMsgBuilder.LoadSettings;
         FMessage := FCSCustomerLandingMsgBuilder.GenerateLandingMessage;
 
-        aPage.Replace('$$Text$$', FMessage.Text);
+        if Pos('$$Text$$', aPage) > 0 then
+          aPage := StringReplace(aPage, '$$Text$$', FMessage.Text, [rfReplaceAll, rfIgnoreCase]);
+
+        FPickupSlot := TTimeTableSlot.Create();
+        FDeliverySlot := TTimeTableSlot.Create();
 
         FPickupSlot.Assign(FBookingRecord.PickupDateTime);
         FDeliverySlot.Assign(FBookingRecord.DeliveryDateTime);
@@ -315,12 +346,15 @@ begin
           var
           lbDeliveryTime := FDeliverySlot.SlotDes.AsString;
 
-          // $$Restituzione$$
-          aPage.Replace('$$Restituzione$$', '/Restituzione');
-          // visually-hidden - $$visibility_restituzione$$
-          aPage.Replace('$$visibility_restituzione$$', '');
+          if Pos('$$Restituzione$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$Restituzione$$', '/Restituzione', [rfReplaceAll, rfIgnoreCase]);
+
+          if Pos('$$visibility_restituzione$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$visibility_restituzione$$', '', [rfReplaceAll, rfIgnoreCase]);
+
           // not checked by default
-          aPage.Replace('$$checked_return$$', '');
+          if Pos('$$checked_return$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$checked_return$$', '', [rfReplaceAll, rfIgnoreCase]);
         end
         else
         begin
@@ -330,14 +364,16 @@ begin
         end
       end
       else
-      begin
-        Result := 404;
         GenerateNotFound;
-      end;
+
+      FlushLog;
     except
       on e: exception do
       begin
-        Result := 501;
+        GenerateError;
+        { TJanuaCoreOS.PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;
+          doraise: Boolean = True): TJanuaLogRecord; }
+        TJanuaCoreOS.PublicWriteError(self, 'WebResponse', 'Customer Confirmation' + aGUID, e, False);
       end;
     end;
   end

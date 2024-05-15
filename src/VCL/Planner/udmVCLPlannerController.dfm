@@ -5304,7 +5304,7 @@ object dmVCLPlannerController: TdmVCLPlannerController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45384.000000000000000000
+    DateFrom = 45420.000000000000000000
     Left = 120
     Top = 200
   end

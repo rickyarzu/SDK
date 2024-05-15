@@ -24,7 +24,7 @@ uses System.Types, Janua.Core.Functions, System.StrUtils,
   // Janua Janua.VCL.Anagraph
   Janua.Anagraph.ViewModel.Intf,
   // Janua Core & DB
-  Janua.Core.AsyncTask, Janua.Orm.UniDac,
+  Janua.Core.AsyncTask, Janua.Orm.UniDac, Janua.Core.StackTrace,
   Janua.Application.Framework, Janua.Controls.Forms.Impl, Janua.Uni.Framework, Janua.Uni.Impl, Janua.Orm.Intf,
   {Janua.Mock.Firedac.Framework,}
   Janua.ViewModels.Framework, Janua.ViewModels.Application, Janua.Orm.Register;
@@ -81,10 +81,12 @@ end;
 class procedure TJanuaUniApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
+  Janua.Core.StackTrace.InstallExceptionCallStack;
+  TJanuaApplication.ResolveToFile := True;
   // TJanuaMockFiredacApplication.RegisterClasses;
   // inizializzo UniDAC (temporaneamente per l'avvio di Testing)
   // TJanuaUniVirtualDatasetFactory = class(TJanuaInterfacedObject, IJanuaDBDatasetFactory)
-  {TJanuaApplicationFactory.RegisterClass(IJanuaDBDatasetFactory, TJanuaUniVirtualDatasetFactory);}
+  { TJanuaApplicationFactory.RegisterClass(IJanuaDBDatasetFactory, TJanuaUniVirtualDatasetFactory); }
   Janua.Uni.Framework.TJanuaUniPgApplication.RegisterDataModules;
   TJanuaUniPgApplication.RegisterInterfaces;
 end;

@@ -1479,6 +1479,7 @@ function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; CONS
 
 const
   sl = sLineBreak;
+  cArrow = '->';
 
 implementation
 
