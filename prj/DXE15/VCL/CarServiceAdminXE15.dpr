@@ -1,4 +1,4 @@
-program CarServiceXE15x86;
+program CarServiceAdminXE15;
 
 uses
   {$IFDEF EurekaLog}
@@ -49,7 +49,6 @@ uses
   Janua.VCL.dlgWaitSpin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas' {dlgVCLWaitSpin},
   Janua.Carservice.PgSettings in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgSettings.pas' {dmCarserviceUniPgSettings: TDataModule},
   udmSVGImageList in '..\..\..\src\VCL\Commons\udmSVGImageList.pas' {dmSVGImageList: TDataModule},
-  uCarServiceProject_x86 in 'uCarServiceProject_x86.pas',
   Janua.VCL.Cloud.frmMailMessageConfig in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmMailMessageConfig.pas' {frmVCLMailMessageConfig},
   Janua.CarService.VCL.frmDriverLandingMsgBuilderpas in '..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmDriverLandingMsgBuilderpas.pas' {frmVCLCSDriverLandingMsgBuilder},
   Janua.CarService.VCL.frmBookingNRLandingMsgBuilder in '..\..\..\src\VCL\CarService\Janua.CarService.VCL.frmBookingNRLandingMsgBuilder.pas' {frmVCLCSBookingNRLandingMsgBuilder},
@@ -79,7 +78,8 @@ uses
   Janua.Anagraph.Postgres.Storage in '..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmJanuaPgAnagraphStorage: TDataModule},
   Janua.VCL.dlgHtmlEditorAddImage in '..\..\..\src\VCL\Commons\Janua.VCL.dlgHtmlEditorAddImage.pas' {dlgVCLHtmlEditorAddImage},
   Janua.VCL.frameHtmlEditor in '..\..\..\src\VCL\Commons\Janua.VCL.frameHtmlEditor.pas' {frameHTMLEditor: TFrame},
-  Planner in '..\..\..\..\tmssoftware\TMS VCL UI Pack\Planner.pas';
+  Planner in '..\..\..\..\tmssoftware\TMS VCL UI Pack\Planner.pas',
+  uCarServiceAdmin in 'uCarServiceAdmin.pas';
 
 {$R *.res}
 

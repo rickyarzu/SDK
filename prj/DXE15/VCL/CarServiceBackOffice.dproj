@@ -57,9 +57,8 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -68,8 +67,11 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <VerInfo_Locale>1040</VerInfo_Locale>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <SanitizedProjectName>CarServiceBackOffice</SanitizedProjectName>
+        <CfgDependentOn>..\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>JvNet;FMXTMSFNCUIPackPkg;hclcore_xe120;DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;FMXTMSFNCAppToolsPkg;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;JvAppFrm;JclVcl;Jcl;dbexpress;aseprovider290;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;dbfprovider290;TMSFMXPackPkg;VCLTMSFNCChartPkg;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;bigqueryprovider290;DBXSqliteDriver;FMXTMSFNCChartPkg;DBXSybaseASEDriver;htmledit_xe120;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;VCLTMSFNCUIPackPkg;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;JvCmp;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;FMXTMSFNCMapsPkg;JanuaVCLMVVM;DatasnapConnectorsFreePascal;TMSVCLSecuritySystemPkgCore;SVGIconImageList;Ean;uniGUI29Core;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;JvBands;DCLgtQRExp;ibmonitor;liteprovider290;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;EurekaLogCore;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;VCLTMSFNCWXPackPkg;VCLTMSFNCAppToolsPkg;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;vcldsnap;DBXInterBaseDriver;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;JanuaUnidacComponents;sugarprovider290;JanuaMVVM;zohoprovider290;JanuaVCLComponents;AWSSDKVCL;JvDotNetCtrls;vcl;JvHMI;freshbooksprovider290;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;uniTools29;JanuaCore;TRCGooglePlaces_d;JanuaThirdPartyVCL;bindcompvcl;JvStdCtrls;sbridge;CloudService;JanuaFMXControls;htmleditfm_xe120;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;TMSVCLSecuritySystemPkgUI;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;VCLTMSFNCDashboardPackPkg;emsclient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;magentoprovider290;FmxTeeUI;htmlcompfm_xe120;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;salesforceprovider290;TMSCloudPkgDE;gtDocEng;vquery290;ipstudiowin;JvDB;fmxdae;JvCustom;exacttargetprovider290;dclUniFalcon;JvControls;VCLTMSFNCCloudPackPkg;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;eInvoice4D;unidacfmx290;pgprovider290;JvDlgs;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;FMXTMSFNCCorePkg;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;TMSCloudPkg;FMXTMSFNCCloudPackPkg;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;FMXTMSFNCWXPackPkg;fmxFireDAC;dynamicsprovider290;ibprovider290;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;JanuaThirdParty;FireDACOracleDriver;Skia.Package.FMX;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;quickbooksprovider290;FlexCel_Core;FMXTMSFNCDashboardPackPkg;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;AWSSDKFMX;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;htmlcomp_xe120;dmvcframeworkRT;rsprovider290;htmleditcore_xe120;DBXSybaseASADriver;VCLTMSFNCCorePkg;FMXTee;soaprtl;TUniFalcon;VCLTMSFNCMapsPkg;$(DCC_UsePackage)</DCC_UsePackage>
@@ -105,6 +107,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -129,8 +133,10 @@
             <Form>frmVCLCarServiceBackOfficeMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uCarServiceBackOfficeProject.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -149,11 +155,28 @@
                 <Source>
                     <Source Name="MainSource">CarServiceBackOffice.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\CarServiceBackOffice.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>CarServiceBackOffice.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceBackOffice.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>CarServiceBackOffice.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceBackOffice.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>CarServiceBackOffice.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
