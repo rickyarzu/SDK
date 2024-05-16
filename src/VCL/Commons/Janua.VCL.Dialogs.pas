@@ -136,7 +136,7 @@ type
 type
   TJanuaVCLOpenDialog = class(TJanuaCustomOpenDialog, IJanuaOpenFileDialog)
   public
-    function OpenFile: boolean;  override;
+    function OpenFile: boolean; override;
     function OpenDirectory(const aInitialDir: string = ''): string; override;
   end;
 

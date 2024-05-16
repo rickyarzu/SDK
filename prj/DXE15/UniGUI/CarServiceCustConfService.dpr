@@ -10,7 +10,7 @@ uses
     in '..\..\..\src\UniGUI\Common\Janua.UniGUI.ServerModule.pas' {UniServerModule: TUniGUIServerModule} ,
   Janua.CarService.UniGUI.frameTimeSlot
     in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameTimeSlot.pas' {frameTimeSelect: TUniFrame} ,
-  Janua.CarService.UniGUIApplication in '..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas',
+  Janua.CarService.UniGUIApplication in '..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas',
   Janua.UniGUI.mainFormCustConfirmation
     in '..\..\..\src\UniGUI\CarService\Janua.UniGUI.mainFormCustConfirmation.pas' {MainCustConfForm: TUniForm} ,
   Janua.CarService.PgCustomers

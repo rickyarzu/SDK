@@ -5,14 +5,14 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Planner, CloudBase, CloudLiveWin, CloudLiveCalendar,
-  {PlanExLiveCalendar,} CloudGoogleWin, CloudGCalendar, {PlanExGCalendar,} Menus,
+  PlanExLiveCalendar, CloudGoogleWin, CloudGCalendar, PlanExGCalendar, Menus,
   CloudCustomGoogle, CloudCustomGCalendar, CloudBaseWin, CloudCustomLive,
-  CloudCustomLiveCalendar, PlanExLiveCalendar, PlanExGCalendar;
+  CloudCustomLiveCalendar;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
 
-  TForm4 = class(TForm)
+  TfrmCalendarCloudSync = class(TForm)
     AdvLiveCalendar1: TAdvLiveCalendar;
     Planner1: TPlanner;
     Button1: TButton;
@@ -26,8 +26,8 @@ type
     AdvGCalendar1: TAdvGCalendar;
     PopupMenu1: TPopupMenu;
     Createnewitem1: TMenuItem;
-    PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
     PlannerGCalendarExchange1: TPlannerGCalendarExchange;
+    PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
     procedure Button1Click(Sender: TObject);
     procedure AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -47,26 +47,26 @@ type
   end;
 
 var
-  Form4: TForm4;
+  frmCalendarCloudSync: TfrmCalendarCloudSync;
 
 implementation
 
 {$R *.dfm}
 {$I APPIDS.INC}
 
-procedure TForm4.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+procedure TfrmCalendarCloudSync.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
 begin
   AdvGCalendar1.SaveTokens;
   GetGCalendarList;
 end;
 
-procedure TForm4.AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
+procedure TfrmCalendarCloudSync.AdvLiveCalendar1ReceivedAccessToken(Sender: TObject);
 begin
   AdvLiveCalendar1.SaveTokens;
   GetLiveCalendarList;
 end;
 
-procedure TForm4.Button1Click(Sender: TObject);
+procedure TfrmCalendarCloudSync.Button1Click(Sender: TObject);
 begin
   if not AdvLiveCalendar1.TestTokens then
   begin
@@ -80,7 +80,7 @@ begin
     GetLiveCalendarList;
 end;
 
-procedure TForm4.Button2Click(Sender: TObject);
+procedure TfrmCalendarCloudSync.Button2Click(Sender: TObject);
 var
   id: string;
   i: integer;
@@ -109,30 +109,26 @@ begin
 
 end;
 
-procedure TForm4.Button3Click(Sender: TObject);
+procedure TfrmCalendarCloudSync.Button3Click(Sender: TObject);
 var
   id: string;
 begin
   if CloudCalendar = ccWinLive then
   begin
-    (*
       PlannerLiveCalendarExchange1.LiveCalendarName := listbox1.Items[listbox1.ItemIndex];
       PlannerLiveCalendarExchange1.GetCalendarID;
       PlannerLiveCalendarExchange1.DoImport;
-    *)
   end
   else
   begin
-    (*
       PlannerGCalendarExchange1.GCalendarName := listbox1.Items[listbox1.ItemIndex];
       PlannerGCalendarExchange1.GetCalendarID;
       PlannerGCalendarExchange1.DoImport;
-    *)
   end;
 
 end;
 
-procedure TForm4.Button4Click(Sender: TObject);
+procedure TfrmCalendarCloudSync.Button4Click(Sender: TObject);
 begin
   if not AdvGCalendar1.TestTokens then
   begin
@@ -148,12 +144,12 @@ begin
     GetGCalendarList;
 end;
 
-procedure TForm4.Createnewitem1Click(Sender: TObject);
+procedure TfrmCalendarCloudSync.Createnewitem1Click(Sender: TObject);
 begin
   Planner1.CreateItemAtSelection;
 end;
 
-procedure TForm4.FormCreate(Sender: TObject);
+procedure TfrmCalendarCloudSync.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
@@ -181,7 +177,7 @@ begin
     Planner1.Header.Captions.Add(datetostr(Now + i));
 end;
 
-procedure TForm4.GetGCalendarList;
+procedure TfrmCalendarCloudSync.GetGCalendarList;
 var
   i: integer;
 begin
@@ -195,7 +191,7 @@ begin
   ListBox1.ItemIndex := 0;
 end;
 
-procedure TForm4.GetLiveCalendarList;
+procedure TfrmCalendarCloudSync.GetLiveCalendarList;
 var
   i: integer;
 begin

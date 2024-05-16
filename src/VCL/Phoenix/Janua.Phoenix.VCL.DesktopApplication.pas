@@ -5,7 +5,7 @@ interface
 uses System.Classes, System.SysUtils, Janua.Core.Types, Janua.Bindings.Impl, Janua.VCL.Application;
 
 type
-  TJanuaAnagraphPlannerVCLApplication = class(TJanuaVCLCustomApplication)
+  TJanuaPhoenixVCLApplication = class(TJanuaVCLCustomApplication)
   private
     class var FTMLogisticRegistered: Boolean;
   public
@@ -44,33 +44,33 @@ uses System.Types,
   // Test Prototypes
   Janua.Test.VCL.frmDatasetOrmSync, ufrmGridsTestings, Janua.Test.VCLTestFilters, ufrmVCLOutlookOLEAutomation;
 
-{ TJanuaAnagraphPlannerVCLApplication }
+{ TJanuaPhoenixVCLApplication }
 
-class procedure TJanuaAnagraphPlannerVCLApplication.ApplicationSetup(const aAppname: string);
+class procedure TJanuaPhoenixVCLApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
 
 end;
 
-class procedure TJanuaAnagraphPlannerVCLApplication.ApplicationTearDown;
+class procedure TJanuaPhoenixVCLApplication.ApplicationTearDown;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaAnagraphPlannerVCLApplication.ConnectionSetup;
+class procedure TJanuaPhoenixVCLApplication.ConnectionSetup;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaAnagraphPlannerVCLApplication.LoadMenu;
+class procedure TJanuaPhoenixVCLApplication.LoadMenu;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaAnagraphPlannerVCLApplication.RegisterForms;
+class procedure TJanuaPhoenixVCLApplication.RegisterForms;
 begin
   inherited;
 

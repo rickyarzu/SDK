@@ -1283,7 +1283,7 @@ type
     procedure SetCheckDataset(const Value: Boolean);
     function GetCheckDataset: Boolean;
     /// <summary> Set True by Default checks if a Record can be Saved to a Dataset e.g. if Dataset is assigned </summary>
-    property DoCheckDataset: boolean read GetCheckDataset write SetCheckDataset;
+    property DoCheckDataset: Boolean read GetCheckDataset write SetCheckDataset;
   end;
 
   IJanuaRecordEnumerator = interface
@@ -1375,7 +1375,6 @@ type
 
   TJanuaRecordProc = procedure(const aRecord: IJanuaRecord);
 {$ENDIF}
-
 
   IJanuaRecordSet = interface(IJanuaBindable)
     ['{372C849A-DC84-420A-A0D1-8C84F404613E}']
@@ -1597,6 +1596,43 @@ Type
   IFiedlFactory = interface
     function CreateField(aKey, aDBField: string; aType: TJanuaFieldType): IJanuaField;
   end;
+
+  IRecordCodeGen = Interface
+    ['{29C06822-C02C-4953-92FA-13B16C4C5802}']
+
+    function GetMasterRecord: IJanuaRecord;
+    procedure SetMasterRecord(const Value: IJanuaRecord);
+    property MasterRecord: IJanuaRecord read GetMasterRecord write SetMasterRecord;
+
+    function GetSchemaName: string;
+    procedure SetSchemaName(const aValue: string);
+    property SchemaName: string read GetSchemaName write SetSchemaName;
+
+    function GetTableName: string;
+    procedure SetTableName(const aValue: string);
+    property TableName: string read GetTableName write SetTableName;
+
+    function GetCustomMasterFiles: TRecordUnits;
+    property CustomMasterFiles: TRecordUnits read GetCustomMasterFiles;
+
+    function GetMasterFiles: TRecordUnits;
+    property MasterFiles: TRecordUnits read GetMasterFiles;
+
+    function GetMasterClassConf: TRecordUnitConf;
+    property MasterClassConf: TRecordUnitConf read GetMasterClassConf;
+
+    procedure SetDataset(const Value: TDataset);
+    function GetDataset: TDataset;
+    property Dataset: TDataset read GetDataset write SetDataset;
+
+
+    procedure SetAskPlurals(const Value: Boolean);
+    function GetAskPlurals: Boolean;
+    property AskPlurals: Boolean read GetAskPlurals write SetAskPlurals;
+
+    procedure Generate;
+
+  End;
 
   IJanuaRecordsetBindableComboControl = interface(IJanuaBindableComboControl)
     ['{E9E9994A-42E8-44C1-9DDB-EA18EBA68658}']

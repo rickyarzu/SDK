@@ -56,16 +56,8 @@ type
     function SearchText(const aText: string; const aLimit: Word = 0; const aOffset: Word = 0): integer;
   end;
 
-  IJanuaSingleRecordModel = interface(IJanuaBaseModel)
-    ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
-    // ---------- Sub RecordSet Management --------------------------------------------------------------
-    function GetDetailModels: IList<IJanuaRecordSetModel>;
-    property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
-    procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
-    function ModelCount: integer;
-    procedure GenerateSubModels;
-    procedure RemoveSubModels;
-    function GetCurrentRecord: IJanuaRecord;
+  IJanuaSingleRecordDBModel = interface(IJanuaStorage)
+    ['{BA163075-70C0-4A0D-85D8-CC34D43C6FAF}']
     // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
     // Search by GUID should be performed against
     function GetjdsRecordDataset: IJanuaDBDataset;
@@ -75,11 +67,50 @@ type
     function GetjdsDetail: IJanuaDBDataset;
     /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
     property jdsDetail: IJanuaDBDataset read GetjdsDetail;
+    function GetCurrentRecord: IJanuaRecord;
     property CurrentRecord: IJanuaRecord read GetCurrentRecord;
-    function GetDataSource: TDataSource;
-    /// <summary>  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
-    property DataSource: TDataSource read GetDataSource;
+
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord; overload;
+    procedure AddNewRecord(const aRecord: IJanuaRecord); overload;
+    procedure AddNewRecord(const aJson: string); overload;
+    procedure AppendRecord; overload;
+    procedure AppendRecord(const aRecord: IJanuaRecord); overload;
+    procedure AppendRecord(const aJson: string); overload;
+    procedure PostRecord; overload;
+    procedure UndoChanges;
+    procedure DeleteRecord; overload;
+    procedure DeleteRecord(const aGUID: string); overload;
+    procedure LoadRecord;
+    procedure RefreshRecord;
   end;
+
+  IJanuaSingleRecordClientModel = interface(IJanuaStorage)
+    ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
+    // ---------- Sub RecordSet Management --------------------------------------------------------------
+    procedure RemoveSubModels;
+    function GetDetailModels: IList<IJanuaRecordSetModel>;
+    property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
+    procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
+    function ModelCount: integer;
+    procedure GenerateSubModels;
+    function GetCurrentRecord: IJanuaRecord;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord; overload;
+    procedure AddNewRecord(const aRecord: IJanuaRecord); overload;
+    procedure AddNewRecord(const aJson: string); overload;
+    procedure AppendRecord; overload;
+    procedure AppendRecord(const aRecord: IJanuaRecord); overload;
+    procedure AppendRecord(const aJson: string); overload;
+    procedure PostRecord; overload;
+    procedure UndoChanges;
+    procedure DeleteRecord; overload;
+    procedure DeleteRecord(const aGUID: string); overload;
+    procedure LoadRecord;
+    procedure RefreshRecord;
+  end;
+
 
   IJanuaClientModel = interface(IJanuaBaseModel)
     ['{FA40D114-A948-484E-9230-5DA5E35AFE15}']
@@ -191,6 +222,28 @@ type
     procedure SetRestFormat(const Value: TRestFormat);
     function GetRestFormat: TRestFormat;
     property RestFormat: TRestFormat read GetRestFormat write SetRestFormat;
+  end;
+
+  IJanuaSingleRecordRESTModel = interface(IJanuaRESTModel)
+    ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
+    // ---------- Sub RecordSet Management --------------------------------------------------------------
+    procedure RemoveSubModels;
+    function GetDetailModels: IList<IJanuaRecordSetModel>;
+    property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
+    procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
+    function ModelCount: integer;
+    procedure GenerateSubModels;
+    function SearchByGUID(const aGuid: TGUID): boolean;
+    function GetCurrentRecord: IJanuaRecord;
+    property CurrentRecord: IJanuaRecord read GetCurrentRecord;
+    // ---------- Record Public Procedures --------------------------------------------------------------
+    procedure AddNewRecord;
+    procedure AppendRecord;
+    procedure PostRecord;
+    procedure UndoChanges;
+    procedure DeleteRecord;
+    procedure LoadRecord;
+    procedure RefreshRecord;
   end;
 
   IJanuaModel = interface(IJanuaClientModel)

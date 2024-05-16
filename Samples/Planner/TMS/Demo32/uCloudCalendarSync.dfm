@@ -1,20 +1,22 @@
-object Form4: TForm4
+object frmCalendarCloudSync: TfrmCalendarCloudSync
   Left = 0
   Top = 0
   Caption = 
     'Planner exchange with Windows Live Calendar / Google Calendar de' +
     'mo'
-  ClientHeight = 569
-  ClientWidth = 916
+  ClientHeight = 700
+  ClientWidth = 1027
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
+  StyleName = 'Sky 2'
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  DesignSize = (
+    1027
+    700)
   TextHeight = 13
   object Label1: TLabel
     Left = 504
@@ -31,17 +33,19 @@ object Form4: TForm4
     Caption = 'Label2'
   end
   object Label3: TLabel
-    Left = 704
+    Left = 822
     Top = 70
     Width = 48
     Height = 13
+    Anchors = [akTop, akRight]
     Caption = 'Calendars'
+    ExplicitLeft = 908
   end
   object Planner1: TPlanner
     Left = 8
     Top = 8
-    Width = 681
-    Height = 545
+    Width = 808
+    Height = 684
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -52,6 +56,7 @@ object Form4: TForm4
       8888888880808080888888888080808088888888808080808888888888808080
       8888888888808880888888888888000888888888888888888888}
     AutoInsDel = True
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Caption.Title = 'TMS software <b>TPlanner</b>'
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = clBlack
@@ -140,7 +145,7 @@ object Form4: TForm4
     Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -159,7 +164,7 @@ object Form4: TForm4
     Footer.Font.Style = []
     GridPopup = PopupMenu1
     GridLeftCol = 1
-    GridLineColor = 16504504
+    GridLineColor = clSilver
     GridTopRow = 0
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
@@ -231,52 +236,64 @@ object Form4: TForm4
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.5.5.3'
+    Version = '3.6.1.3'
+    ExplicitWidth = 697
+    ExplicitHeight = 553
     TMSStyle = 0
   end
   object Button1: TButton
-    Left = 704
+    Left = 822
     Top = 8
     Width = 197
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Connect to Windows Live Calendar'
     TabOrder = 1
     OnClick = Button1Click
+    ExplicitLeft = 711
   end
   object ListBox1: TListBox
-    Left = 704
+    Left = 822
     Top = 89
     Width = 197
     Height = 145
+    Anchors = [akTop, akRight]
     ItemHeight = 13
     TabOrder = 2
+    ExplicitLeft = 711
   end
   object Button2: TButton
-    Left = 704
+    Left = 822
     Top = 286
     Width = 197
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Export week to cloud calendar'
     TabOrder = 3
     OnClick = Button2Click
+    ExplicitLeft = 711
   end
   object Button3: TButton
-    Left = 704
+    Left = 822
     Top = 254
     Width = 197
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Import week from cloud calendar'
     TabOrder = 4
     OnClick = Button3Click
+    ExplicitLeft = 711
   end
   object Button4: TButton
-    Left = 704
+    Left = 822
     Top = 39
     Width = 197
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Connect to Google Calendar'
     TabOrder = 5
     OnClick = Button4Click
+    ExplicitLeft = 711
   end
   object AdvLiveCalendar1: TAdvLiveCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -294,8 +311,8 @@ object Form4: TForm4
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 800
-    Top = 440
+    Left = 248
+    Top = 280
   end
   object AdvGCalendar1: TAdvGCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -310,29 +327,29 @@ object Form4: TForm4
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 800
-    Top = 384
+    Left = 168
+    Top = 328
   end
   object PopupMenu1: TPopupMenu
-    Left = 728
-    Top = 352
+    Left = 160
+    Top = 256
     object Createnewitem1: TMenuItem
       Caption = 'Create new item'
       OnClick = Createnewitem1Click
     end
   end
-  object PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange
-    Planner = Planner1
-    AdvLiveCalendar = AdvLiveCalendar1
-    EmptyText = 'Untitled'
-    Left = 800
-    Top = 328
-  end
   object PlannerGCalendarExchange1: TPlannerGCalendarExchange
     Planner = Planner1
     AdvGCalendar = AdvGCalendar1
     EmptyText = 'Untitled'
-    Left = 800
-    Top = 496
+    Left = 192
+    Top = 128
+  end
+  object PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange
+    Planner = Planner1
+    AdvLiveCalendar = AdvLiveCalendar1
+    EmptyText = 'Untitled'
+    Left = 184
+    Top = 192
   end
 end

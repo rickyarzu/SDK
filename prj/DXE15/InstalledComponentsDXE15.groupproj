@@ -303,6 +303,9 @@
         <Projects Include="..\..\Components\pkg120\VisualStyles.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\Components\pkg120\TUniFalcon.dproj">
             <Dependencies/>
         </Projects>
@@ -1280,6 +1283,15 @@
     <Target Name="VisualStyles:Make">
         <MSBuild Projects="..\..\Components\pkg120\VisualStyles.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+    </Target>
     <Target Name="TUniFalcon">
         <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj"/>
     </Target>
@@ -1488,13 +1500,13 @@
         <MSBuild Projects="..\..\Components\pkg120\ZComponentsVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKFMX;AWSSDKVCL;DECCipher;loggerproRT;SwagDoc;dmvcframeworkRT;dmvcframeworkDT;Spring_Base;Spring_Core;Spring_Extensions;Spring_Persistence;eInvoice4D;eMiniInvoice4D;tmsbcl;sparkle;aurelius;xdata;remotedb;dcltmsbcl;dclsparkle;dclaurelius;dclxdata;dclremotedb;QRWRunDXE12_W64;QRWDesignDXE12;Ean;EanEditors;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;FlexCel_Core;SKIA_FlexCel_Core;FlexCel_Pdf;FlexCel_XlsAdapter;FlexCel_Render;FlexCel_Report;FMX_FlexCel_Core;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;VCL_FlexCel_Core;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;TMSCloudPkg;TMSCloudPkgDE;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;ipstudiowin;ipstudiowinclient;ipstudiowinwordxp;dipstudiowin;TMSFMXPackPkg;TMSFMXPackPkgDE;FMXTMSFNCCorePkg;VCLTMSFNCCorePkg;TMSFNCCorePkgDE;VCLTMSFNCUIPackPkg;FMXTMSFNCUIPackPkg;TMSFNCUIPackPkgDE;FMXTMSFNCCloudPackPkg;VCLTMSFNCCloudPackPkg;TMSFNCCloudPackPkgDE;VCLTMSFNCWXPackPkg;FMXTMSFNCWXPackPkg;TMSFNCWXPackPkgDE;FMXTMSFNCDashboardPackPkg;VCLTMSFNCDashboardPackPkg;TMSFNCDashBoardPackPkgDE;FMXTMSFNCChartPkg;VCLTMSFNCChartPkg;TMSFNCChartPkgDE;VCLTMSFNCMapsPkg;FMXTMSFNCMapsPkg;TMSFNCMapsPkgDE;FMXTMSFNCAppToolsPkg;VCLTMSFNCAppToolsPkg;TMSFNCAppToolsPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;StyleControls;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;Neon;NeonCrossPlatform;sgcWebSockets;dclsgcWebSockets;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaThirdParty;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;FIBPlus;FIBPlusEditors;ZipMasterR;ZLibrariesWin;ZComponentsVCL"/>
+        <CallTarget Targets="AWSSDK;AWSSDKFMX;AWSSDKVCL;DECCipher;loggerproRT;SwagDoc;dmvcframeworkRT;dmvcframeworkDT;Spring_Base;Spring_Core;Spring_Extensions;Spring_Persistence;eInvoice4D;eMiniInvoice4D;tmsbcl;sparkle;aurelius;xdata;remotedb;dcltmsbcl;dclsparkle;dclaurelius;dclxdata;dclremotedb;QRWRunDXE12_W64;QRWDesignDXE12;Ean;EanEditors;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;FlexCel_Core;SKIA_FlexCel_Core;FlexCel_Pdf;FlexCel_XlsAdapter;FlexCel_Render;FlexCel_Report;FMX_FlexCel_Core;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;VCL_FlexCel_Core;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;TMSCloudPkg;TMSCloudPkgDE;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;ipstudiowin;ipstudiowinclient;ipstudiowinwordxp;dipstudiowin;TMSFMXPackPkg;TMSFMXPackPkgDE;FMXTMSFNCCorePkg;VCLTMSFNCCorePkg;TMSFNCCorePkgDE;VCLTMSFNCUIPackPkg;FMXTMSFNCUIPackPkg;TMSFNCUIPackPkgDE;FMXTMSFNCCloudPackPkg;VCLTMSFNCCloudPackPkg;TMSFNCCloudPackPkgDE;VCLTMSFNCWXPackPkg;FMXTMSFNCWXPackPkg;TMSFNCWXPackPkgDE;FMXTMSFNCDashboardPackPkg;VCLTMSFNCDashboardPackPkg;TMSFNCDashBoardPackPkgDE;FMXTMSFNCChartPkg;VCLTMSFNCChartPkg;TMSFNCChartPkgDE;VCLTMSFNCMapsPkg;FMXTMSFNCMapsPkg;TMSFNCMapsPkgDE;FMXTMSFNCAppToolsPkg;VCLTMSFNCAppToolsPkg;TMSFNCAppToolsPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;StyleControls;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;Neon;NeonCrossPlatform;sgcWebSockets;dclsgcWebSockets;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaThirdParty;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;FIBPlus;FIBPlusEditors;ZipMasterR;ZLibrariesWin;ZComponentsVCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;DECCipher:Clean;loggerproRT:Clean;SwagDoc:Clean;dmvcframeworkRT:Clean;dmvcframeworkDT:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;tmsbcl:Clean;sparkle:Clean;aurelius:Clean;xdata:Clean;remotedb:Clean;dcltmsbcl:Clean;dclsparkle:Clean;dclaurelius:Clean;dclxdata:Clean;dclremotedb:Clean;QRWRunDXE12_W64:Clean;QRWDesignDXE12:Clean;Ean:Clean;EanEditors:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;FlexCel_Core:Clean;SKIA_FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FMX_FlexCel_Core:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowinwordxp:Clean;dipstudiowin:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;FMXTMSFNCCorePkg:Clean;VCLTMSFNCCorePkg:Clean;TMSFNCCorePkgDE:Clean;VCLTMSFNCUIPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;TMSFNCUIPackPkgDE:Clean;FMXTMSFNCCloudPackPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;TMSFNCCloudPackPkgDE:Clean;VCLTMSFNCWXPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;TMSFNCWXPackPkgDE:Clean;FMXTMSFNCDashboardPackPkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;TMSFNCDashBoardPackPkgDE:Clean;FMXTMSFNCChartPkg:Clean;VCLTMSFNCChartPkg:Clean;TMSFNCChartPkgDE:Clean;VCLTMSFNCMapsPkg:Clean;FMXTMSFNCMapsPkg:Clean;TMSFNCMapsPkgDE:Clean;FMXTMSFNCAppToolsPkg:Clean;VCLTMSFNCAppToolsPkg:Clean;TMSFNCAppToolsPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;StyleControls:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;Neon:Clean;NeonCrossPlatform:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;DECCipher:Clean;loggerproRT:Clean;SwagDoc:Clean;dmvcframeworkRT:Clean;dmvcframeworkDT:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;tmsbcl:Clean;sparkle:Clean;aurelius:Clean;xdata:Clean;remotedb:Clean;dcltmsbcl:Clean;dclsparkle:Clean;dclaurelius:Clean;dclxdata:Clean;dclremotedb:Clean;QRWRunDXE12_W64:Clean;QRWDesignDXE12:Clean;Ean:Clean;EanEditors:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;FlexCel_Core:Clean;SKIA_FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FMX_FlexCel_Core:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowinwordxp:Clean;dipstudiowin:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;FMXTMSFNCCorePkg:Clean;VCLTMSFNCCorePkg:Clean;TMSFNCCorePkgDE:Clean;VCLTMSFNCUIPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;TMSFNCUIPackPkgDE:Clean;FMXTMSFNCCloudPackPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;TMSFNCCloudPackPkgDE:Clean;VCLTMSFNCWXPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;TMSFNCWXPackPkgDE:Clean;FMXTMSFNCDashboardPackPkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;TMSFNCDashBoardPackPkgDE:Clean;FMXTMSFNCChartPkg:Clean;VCLTMSFNCChartPkg:Clean;TMSFNCChartPkgDE:Clean;VCLTMSFNCMapsPkg:Clean;FMXTMSFNCMapsPkg:Clean;TMSFNCMapsPkgDE:Clean;FMXTMSFNCAppToolsPkg:Clean;VCLTMSFNCAppToolsPkg:Clean;TMSFNCAppToolsPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;StyleControls:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;Neon:Clean;NeonCrossPlatform:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;DECCipher:Make;loggerproRT:Make;SwagDoc:Make;dmvcframeworkRT:Make;dmvcframeworkDT:Make;Spring_Base:Make;Spring_Core:Make;Spring_Extensions:Make;Spring_Persistence:Make;eInvoice4D:Make;eMiniInvoice4D:Make;tmsbcl:Make;sparkle:Make;aurelius:Make;xdata:Make;remotedb:Make;dcltmsbcl:Make;dclsparkle:Make;dclaurelius:Make;dclxdata:Make;dclremotedb:Make;QRWRunDXE12_W64:Make;QRWDesignDXE12:Make;Ean:Make;EanEditors:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;FlexCel_Core:Make;SKIA_FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_XlsAdapter:Make;FlexCel_Render:Make;FlexCel_Report:Make;FMX_FlexCel_Core:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowinwordxp:Make;dipstudiowin:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;FMXTMSFNCCorePkg:Make;VCLTMSFNCCorePkg:Make;TMSFNCCorePkgDE:Make;VCLTMSFNCUIPackPkg:Make;FMXTMSFNCUIPackPkg:Make;TMSFNCUIPackPkgDE:Make;FMXTMSFNCCloudPackPkg:Make;VCLTMSFNCCloudPackPkg:Make;TMSFNCCloudPackPkgDE:Make;VCLTMSFNCWXPackPkg:Make;FMXTMSFNCWXPackPkg:Make;TMSFNCWXPackPkgDE:Make;FMXTMSFNCDashboardPackPkg:Make;VCLTMSFNCDashboardPackPkg:Make;TMSFNCDashBoardPackPkgDE:Make;FMXTMSFNCChartPkg:Make;VCLTMSFNCChartPkg:Make;TMSFNCChartPkgDE:Make;VCLTMSFNCMapsPkg:Make;FMXTMSFNCMapsPkg:Make;TMSFNCMapsPkgDE:Make;FMXTMSFNCAppToolsPkg:Make;VCLTMSFNCAppToolsPkg:Make;TMSFNCAppToolsPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;StyleControls:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;Neon:Make;NeonCrossPlatform:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;FIBPlus:Make;FIBPlusEditors:Make;ZipMasterR:Make;ZLibrariesWin:Make;ZComponentsVCL:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;DECCipher:Make;loggerproRT:Make;SwagDoc:Make;dmvcframeworkRT:Make;dmvcframeworkDT:Make;Spring_Base:Make;Spring_Core:Make;Spring_Extensions:Make;Spring_Persistence:Make;eInvoice4D:Make;eMiniInvoice4D:Make;tmsbcl:Make;sparkle:Make;aurelius:Make;xdata:Make;remotedb:Make;dcltmsbcl:Make;dclsparkle:Make;dclaurelius:Make;dclxdata:Make;dclremotedb:Make;QRWRunDXE12_W64:Make;QRWDesignDXE12:Make;Ean:Make;EanEditors:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;FlexCel_Core:Make;SKIA_FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_XlsAdapter:Make;FlexCel_Render:Make;FlexCel_Report:Make;FMX_FlexCel_Core:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowinwordxp:Make;dipstudiowin:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;FMXTMSFNCCorePkg:Make;VCLTMSFNCCorePkg:Make;TMSFNCCorePkgDE:Make;VCLTMSFNCUIPackPkg:Make;FMXTMSFNCUIPackPkg:Make;TMSFNCUIPackPkgDE:Make;FMXTMSFNCCloudPackPkg:Make;VCLTMSFNCCloudPackPkg:Make;TMSFNCCloudPackPkgDE:Make;VCLTMSFNCWXPackPkg:Make;FMXTMSFNCWXPackPkg:Make;TMSFNCWXPackPkgDE:Make;FMXTMSFNCDashboardPackPkg:Make;VCLTMSFNCDashboardPackPkg:Make;TMSFNCDashBoardPackPkgDE:Make;FMXTMSFNCChartPkg:Make;VCLTMSFNCChartPkg:Make;TMSFNCChartPkgDE:Make;VCLTMSFNCMapsPkg:Make;FMXTMSFNCMapsPkg:Make;TMSFNCMapsPkgDE:Make;FMXTMSFNCAppToolsPkg:Make;VCLTMSFNCAppToolsPkg:Make;TMSFNCAppToolsPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;StyleControls:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;Neon:Make;NeonCrossPlatform:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;FIBPlus:Make;FIBPlusEditors:Make;ZipMasterR:Make;ZLibrariesWin:Make;ZComponentsVCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='All iOS'">
@@ -1626,6 +1638,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2370,6 +2388,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -3110,6 +3134,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -3847,6 +3877,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4590,6 +4626,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -5330,6 +5372,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -6066,6 +6114,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6810,6 +6864,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -7546,6 +7606,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -8290,6 +8356,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -9026,6 +9098,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -9770,6 +9848,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -10510,6 +10594,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -11246,6 +11336,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -11990,6 +12086,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -12726,6 +12828,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13470,6 +13578,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
@@ -14210,6 +14324,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -14840,7 +14960,7 @@
             <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
@@ -14870,7 +14990,7 @@
             <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{B0A24C8A-8246-4B12-B8D2-574ABB472E62}</ProjectGuid>
@@ -14950,6 +15070,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -15012,7 +15138,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\eMiniInvoice4D.dproj">
             <ProjectGuid>{74590C31-E257-49BE-AFF1-4F263E49ADCF}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -15108,8 +15234,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
             <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCChartPkgDE.dproj">
@@ -15134,7 +15260,7 @@
             <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclaurelius.dproj">
             <ProjectGuid>{43BF8839-66E5-4778-A462-BC71533FC59E}</ProjectGuid>
@@ -15176,7 +15302,7 @@
             <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\xdata.dproj">
             <ProjectGuid>{CE08A195-96D0-44C8-AF2E-354909FAFDA1}</ProjectGuid>
@@ -15242,7 +15368,7 @@
             <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sparkle.dproj">
             <ProjectGuid>{E7370126-58E7-4FCF-BA10-9C22F9CD8BCE}</ProjectGuid>
@@ -15296,7 +15422,7 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\aurelius.dproj">
             <ProjectGuid>{64BE6FD2-1169-45DB-9673-8BB279386C4C}</ProjectGuid>
@@ -15416,7 +15542,7 @@
             <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\NeonCrossPlatform.dproj">
             <ProjectGuid>{73418B2F-CC19-4EFB-AA13-DDD467DEF533}</ProjectGuid>
@@ -15686,6 +15812,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

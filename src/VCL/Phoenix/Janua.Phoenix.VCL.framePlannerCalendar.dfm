@@ -140,6 +140,17 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
       ''
       ''
       ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       '')
     Footer.CompletionFormat = '%d%%'
     Footer.Completion.Font.Charset = DEFAULT_CHARSET
@@ -158,6 +169,17 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       ''
       ''
       ''
@@ -212,7 +234,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Sidebar.HourFontRatio = 1.800000000000000000
     Sidebar.Width = 48
     PlannerImages = ImageList1
-    Positions = 5
+    Positions = 16
     PositionProps = <>
     PrintOptions.LineWidth = 0
     PrintOptions.FooterFont.Charset = DEFAULT_CHARSET
@@ -236,6 +258,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
+    OnItemCreated = DBPlanner1ItemCreated
     ItemSource = DBDaySource1
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
@@ -285,7 +308,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Left = 944
     Top = 158
     Width = 41
-    Height = 27
+    Height = 24
     MaxValue = 7
     MinValue = 1
     TabOrder = 2
@@ -295,7 +318,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     Left = 594
     Top = 160
     Width = 281
-    Height = 25
+    Height = 23
     TabOrder = 3
   end
   object DoFilter: TCheckBox
@@ -318,7 +341,6 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     PanelWidth = 231
     TabOrder = 5
     RowCount = 1
-    ExplicitWidth = 1078
     object DBText1: TDBText
       Left = 8
       Top = 8
@@ -382,6 +404,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
       Height = 110
       Action = dmVCLPlannerController.ActionAddUser
       Align = alLeft
+      Caption = 'Aggiungi Tecnico'
       ImageAlignment = iaTop
       ImageMargins.Top = 6
       Images = dmVCLPlannerController.SVGIconImageList1
@@ -452,7 +475,7 @@ object framePhoenixPlannerCalendar: TframePhoenixPlannerCalendar
     NotesField = 'notes'
     UpdateByQuery = False
     DateFormat = 'dd/mm/yyyy'
-    Mode = dmMultiDay
+    Mode = dmMultiDayRes
     NumberOfDays = 6
     Left = 912
     Top = 480

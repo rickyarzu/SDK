@@ -90,9 +90,6 @@
         <Projects Include="JanuaVCLControls.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaDMVC.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaVCLComponents.dproj">
             <Dependencies/>
         </Projects>
@@ -223,6 +220,24 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -493,15 +508,6 @@
     </Target>
     <Target Name="JanuaVCLControls:Make">
         <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaDMVC">
-        <MSBuild Projects="JanuaDMVC.dproj"/>
-    </Target>
-    <Target Name="JanuaDMVC:Clean">
-        <MSBuild Projects="JanuaDMVC.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaDMVC:Make">
-        <MSBuild Projects="JanuaDMVC.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaVCLComponents">
         <MSBuild Projects="JanuaVCLComponents.dproj"/>
@@ -899,17 +905,77 @@
     <Target Name="MatchingDemo:Make">
         <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CanvasPainting">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj"/>
+    </Target>
+    <Target Name="CanvasPainting:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CanvasPainting:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaJsonSerializeNeonTest">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj"/>
+    </Target>
+    <Target Name="JanuaJsonSerializeNeonTest:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaJsonSerializeNeonTest:Make">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SamplPlannerVCL">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj"/>
+    </Target>
+    <Target Name="SamplPlannerVCL:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SamplPlannerVCL:Make">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CloudCalendarImportExport">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj"/>
+    </Target>
+    <Target Name="CloudCalendarImportExport:Clean">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CloudCalendarImportExport:Make">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SportmediaTestVCLREST">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj"/>
+    </Target>
+    <Target Name="SportmediaTestVCLREST:Clean">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SportmediaTestVCLREST:Make">
+        <MSBuild Projects="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaDMVC;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceXE15x86;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceXE15x86;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;PlanAddons;SportmediaTestVCLREST"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaDMVC:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceXE15x86:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceXE15x86:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;PlanAddons:Clean;SportmediaTestVCLREST:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaDMVC:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceXE15x86:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceXE15x86:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;PlanAddons:Make;SportmediaTestVCLREST:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1006,6 +1072,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1028,6 +1100,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -1120,6 +1198,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1144,6 +1228,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1164,12 +1254,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -1208,6 +1292,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
@@ -1356,6 +1446,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='RESTRequestLib'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1452,6 +1548,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1474,6 +1576,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -1566,6 +1674,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1590,6 +1704,12 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1613,12 +1733,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
             <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
@@ -1654,6 +1768,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
@@ -1802,6 +1922,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Android64'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1898,6 +2024,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1920,6 +2052,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -2012,6 +2150,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2036,6 +2180,12 @@
             <Platforms>Android;Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2056,12 +2206,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2099,6 +2243,12 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2248,6 +2398,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='DMVC'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2344,6 +2500,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2366,6 +2528,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -2458,6 +2626,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2482,6 +2656,12 @@
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2504,12 +2684,6 @@
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
@@ -2546,6 +2720,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
@@ -2694,6 +2874,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2790,6 +2976,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2812,6 +3004,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -2904,6 +3102,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2928,6 +3132,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2948,12 +3158,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2993,6 +3197,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
@@ -3140,6 +3350,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs Linux'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3236,6 +3452,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3258,6 +3480,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -3350,6 +3578,12 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3374,6 +3608,12 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3394,12 +3634,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
@@ -3437,6 +3671,12 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3586,6 +3826,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='AWS'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3682,6 +3928,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3704,6 +3956,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -3796,6 +4054,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3820,6 +4084,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3840,12 +4110,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3884,6 +4148,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
@@ -4032,6 +4302,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs 64bit'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4128,6 +4404,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4150,6 +4432,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -4242,6 +4530,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4266,6 +4560,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4286,12 +4586,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4331,6 +4625,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
@@ -4478,6 +4778,12 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='All Apps'">
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
+            <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
             <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations/>
@@ -4574,6 +4880,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4596,6 +4908,12 @@
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
+            <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -4688,6 +5006,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4712,6 +5036,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
+            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4732,12 +5062,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4776,6 +5100,12 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Projects\WebBroker\prj\Sportmedia\SportmediaTestVCLREST.dproj">
+            <ProjectGuid>{D38AAD7A-6110-4FB5-AEEC-ACFB3178647A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">

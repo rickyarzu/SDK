@@ -45,9 +45,6 @@ type
     function GetDbSchemaId: IJanuaField;
     procedure SetDbSchemaId(const Value: IJanuaField);
     property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
-    function GetTmtJguid: IJanuaField;
-    procedure SetTmtJguid(const Value: IJanuaField);
-    property TmtJguid: IJanuaField read GetTmtJguid write SetTmtJguid;
   end;
 
   ICustomTimetables = interface(IJanuaRecordSet)
@@ -88,9 +85,6 @@ type
     function GetDbSchemaId: IJanuaField;
     procedure SetDbSchemaId(const Value: IJanuaField);
     property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
-    function GetTmtJguid: IJanuaField;
-    procedure SetTmtJguid(const Value: IJanuaField);
-    property TmtJguid: IJanuaField read GetTmtJguid write SetTmtJguid;
   end;
 
 implementation

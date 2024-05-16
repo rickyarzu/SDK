@@ -279,10 +279,14 @@ function ReadParam(parDataset: TDataset; const sKey: string; const sDefault: str
 // Web Json and Html Function ...............................................................
 function EncodeURIComponentIOS(Source: string): string;
 function EncodeURIComponent(const ASrc: string): UTF8String;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: integer); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended); overload;
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime); overload;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: integer); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended); overload; inline;
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime); overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: string): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: integer): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: Extended): boolean; overload; inline;
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime): boolean; overload; inline;
 
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: Extended); overload;
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: boolean); overload;
@@ -342,6 +346,8 @@ function MakeXML(DataSet: TDataset): string;
 // String Manipulation functions
 
 { String Related Functions *********************************************************************** }
+function Capitalize(AStr: string): string; inline;
+function CamelCase(const AStr: string): string; inline;
 procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: string); inline;
 function ConvertFloatToString(const Value: Double; const digits: integer): string; inline;
 function CompareStringLists(List1, List2: TStringList): boolean; inline;
@@ -2632,9 +2638,7 @@ begin
 
 end;
 
-procedure ReplaceStringPos(
-
-  var text: TStringList; searchstr: string; newstr: string);
+procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: string);
 var
   locazione: integer;
 begin
@@ -2646,6 +2650,32 @@ begin
     text.Insert(locazione, newstr);
   end;
   // end if locazione
+end;
+
+function Capitalize(AStr: string): string;
+var
+  S: char;
+begin
+  Result := AStr;
+  if Result <> '' then
+  begin
+    S := Result[1];
+    S := UpCase(S);
+    Result[1] := UpCase(S);
+  end;
+end;
+
+function CamelCase(const AStr: string): string;
+var
+  i: integer;
+begin
+  Result := Capitalize(AStr); // Class Name for Dataset.
+  i := Pos('_', Result); // check if underscore separator is in dataset name string.
+  while i > 0 do
+  begin
+    Result := Copy(Result, 1, i - 1) + Capitalize(Copy(Result, i + 1, Length(Result) - i + 1));
+    i := Pos('_', Result);
+  end;
 end;
 
 procedure CopyRecord(DataSet, dataclone: TDataset);
@@ -4091,9 +4121,7 @@ begin
   SetLength(Result, J - 1);
 end;
 
-procedure HtmlReplace(
-
-  var aTemplate: string; aParam: string; aValue: string);
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: string);
 begin
   aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue, [rfIgnoreCase, rfReplaceAll]);
 end;
@@ -4106,6 +4134,45 @@ end;
 procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: Extended);
 begin
   aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime);
+begin
+  aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
+    [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: string): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, aParam, aValue, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: integer): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: Extended): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', aValue.ToString, [rfIgnoreCase, rfReplaceAll]);
+end;
+
+function TryHtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime): boolean;
+begin
+  aParam := '$' + aParam + '$';
+  Result := Pos(aParam, aTemplate) > 0;
+  if Result then
+    aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
+      [rfIgnoreCase, rfReplaceAll]);
 end;
 
 procedure JavascriptReplace(var aTemplate: string; aParam: string; aValue: Extended);
@@ -4123,12 +4190,6 @@ begin
   else
     HtmlReplace(aTemplate, aParam, 'false');
 
-end;
-
-procedure HtmlReplace(var aTemplate: string; aParam: string; aValue: TDateTime);
-begin
-  aTemplate := StringReplace(aTemplate, '$' + aParam + '$', DateTimeToStr(aValue),
-    [rfIgnoreCase, rfReplaceAll]);
 end;
 
 function StripstringHtml(sHtml: UnicodeString): UnicodeString;

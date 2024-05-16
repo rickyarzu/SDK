@@ -22,7 +22,6 @@ type
     FActivityGroupJguid: IJanuaField;
     FActivityJguid: IJanuaField;
     FDbSchemaId: IJanuaField;
-    FTmtJguid: IJanuaField;
   protected
     function GetJguid: IJanuaField;
     procedure SetJguid(const Value: IJanuaField);
@@ -48,8 +47,6 @@ type
     procedure SetActivityJguid(const Value: IJanuaField);
     function GetDbSchemaId: IJanuaField;
     procedure SetDbSchemaId(const Value: IJanuaField);
-    function GetTmtJguid: IJanuaField;
-    procedure SetTmtJguid(const Value: IJanuaField);
   public
     constructor Create; override;
     property Jguid: IJanuaField read GetJguid write SetJguid;
@@ -64,8 +61,6 @@ type
     property ActivityGroupJguid: IJanuaField read GetActivityGroupJguid write SetActivityGroupJguid;
     property ActivityJguid: IJanuaField read GetActivityJguid write SetActivityJguid;
     property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
-    property TmtJguid: IJanuaField read GetTmtJguid write SetTmtJguid;
-
   end;
 
   TCustomTimetables = class(TJanuaRecordSet, IJanuaRecordSet, ICustomTimetables)
@@ -100,9 +95,6 @@ type
     procedure SetActivityJguid(const Value: IJanuaField);
     function GetDbSchemaId: IJanuaField;
     procedure SetDbSchemaId(const Value: IJanuaField);
-    function GetTmtJguid: IJanuaField;
-    procedure SetTmtJguid(const Value: IJanuaField);
-
   public
     constructor Create; override;
     property Jguid: IJanuaField read GetJguid write SetJguid;
@@ -117,7 +109,6 @@ type
     property ActivityGroupJguid: IJanuaField read GetActivityGroupJguid write SetActivityGroupJguid;
     property ActivityJguid: IJanuaField read GetActivityJguid write SetActivityJguid;
     property DbSchemaId: IJanuaField read GetDbSchemaId write SetDbSchemaId;
-    property TmtJguid: IJanuaField read GetTmtJguid write SetTmtJguid;
   end;
 
   TCustomTimetableFactory = class
@@ -151,7 +142,6 @@ begin
   FActivityJguid := AddCreateField(TJanuaFieldType.jptGUID, 'activity_jguid', 'activity_jguid');
   FActivityGroupJguid := AddCreateField(jptGUID, 'activity_group_jguid', 'activity_group_jguid');
   FDbSchemaId := AddCreateField(TJanuaFieldType.jptInteger, 'db_schema_id', 'db_schema_id');
-  FTmtJguid := AddCreateField(TJanuaFieldType.jptString, 'tmt_jguid', 'tmt_jguid');
 end;
 
 function TCustomTimetable.GetJguid: IJanuaField;
@@ -272,16 +262,6 @@ end;
 procedure TCustomTimetable.SetDbSchemaId(const Value: IJanuaField);
 begin
   FDbSchemaId := Value;
-end;
-
-function TCustomTimetable.GetTmtJguid: IJanuaField;
-begin
-  Result := FTmtJguid;
-end;
-
-procedure TCustomTimetable.SetTmtJguid(const Value: IJanuaField);
-begin
-  FTmtJguid := Value;
 end;
 
 { TCustomTimetables }
@@ -408,16 +388,6 @@ end;
 procedure TCustomTimetables.SetDbSchemaId(const Value: IJanuaField);
 begin
   self.Timetable.DbSchemaId := Value;
-end;
-
-function TCustomTimetables.GetTmtJguid: IJanuaField;
-begin
-  Result := self.Timetable.TmtJguid;
-end;
-
-procedure TCustomTimetables.SetTmtJguid(const Value: IJanuaField);
-begin
-  self.Timetable.TmtJguid := Value;
 end;
 
 function TCustomTimetables.GetTimetable: ICustomTimetable;

@@ -36,18 +36,13 @@
       <!-- Contenitore dell'immagine del Logo e Test -->
       <div class="row justify-content-center">
         <div class="col col-md-7 align-self-center">
-          <img src="https://cdn.januaservers.com/pikapp/pikapp_logo6.png" class="img-fluid" alt="Pikapp Logo">
+          <img src="https://cdn.januaservers.com/images/pikapp_logo5.png" class="img-fluid" alt="Pikapp Logo">
           <p>&nbsp;</p>
           <h3 style="text-align:center; color: rgb(0, 0, 128); font-size: 20px;">
             Informazioni Prenotazione Ritiro Veicolo 
           </h3>
           <p style="text-align:justify;">
-            <span style="font-family:Arial;">
-              Confermate prenotazione ritiro veicolo targato </span><b><span style="color: #548dd4"><span style="font-family:Arial;">SM123FF</span></span></b>
-            <span style="font-family:Arial;"> presso <span style="color: #00b050"><b>Viale Ortles, 5, 20139 Milano MI, Italia</b></span> in data </span><span style="color: #ff0000"><b><span style="font-family:Arial;">26/03/2024</span></b></span><span style="font-family: 'Arial'"><span style="font-family: 'Arial'"> alle ore <b><span style="color: #ff0000">10:30</span></b> </span><span style="font-family: 'Arial'"> con riconsegna in data</span></span><span style="color: #ff0000"><b><span style="font-family: 'Arial'"> 27/03/2024 </span></b><span style="color: #000000"><span style="font-family: 'Arial'">alle</span><b><span style="font-family: 'Arial'"> </span></b><span style="font-family: 'Arial'">ore</span></span><b><span style="font-family: 'Arial'"> 15:30&nbsp; </span></b></span><span style="font-family:Arial;">presso <b><span style="color: #00b050">Viale Ortles, 5, 20139 Milano MI, Italia</span></b><span style="color: #ff0000">
-              </span>. 
-                Il Ritiro sarà effettuato per conto dell'azienda <b><span style="color: #00b050">Carrozzeria Majno</span></b>. Per confermare selezionate le date di ritiro e consegna e premete il pulsante in basso.
-              </span>
+            $Text$
           </p>
         </div>
         <!-- Fine Contenitore dell'immagine del Logo e Test -->
@@ -55,7 +50,7 @@
         <!-- Inizio Input Form frmCheckConfirmation action actual points to the same page-->
         <form id="frmCheckConfirmation" action="/">
           <!-- Hidden Input che Ritorna il valore della GUID ricevuta  -->
-          <input type="hidden" id="guid" value="$$jguid$$">
+          <input type="hidden" id="guid" value="$jguid$">
           <div class="row justify-content-center">
             <div class="col col-md-7 align-self-center">
                 <div class="row justify-content-center">
@@ -86,27 +81,27 @@
                   </div> 
                 </div>
               
-                <div class="row justify-content-center mt-4">
+                <div class="row justify-content-center">
                   <h3 style="text-align:center; color: rgb(0, 0, 128); font-size: 18px;">
-                    Conferma Ritiro$$Restituzione$$
+                    Conferma Ritiro$Restituzione$
                   </h3>
                 </div>
               
-                <div class="row justify-content-center mt-2">
+                <div class="row justify-content-center mt-2 $visibility_restituzione$">
                   <div class="col-10 col-md-8 align-self-center">
-                    Conferma Ritiro Veicolo 26/03/24 - 10:30
+                    Conferma Ritiro $pickup_date$ - $pickup_time$
                   </div>
                   <div class="col-2 align-self-center">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" style="transform: scale(1.8);" type="checkbox" role="switch" id="ckbPickup">
+                      <input class="form-check-input" style="transform: scale(1.8);" type="checkbox" role="switch" id="ckbPickup" $checked_return$>
                     </div>
                   </div>
                 </div>
                 
                 <!-- Box restituzione potrebbe essere invisibile -->
-                <div class="row $$return_visible$$ justify-content-center mt-2">
+                <div class="row $return_visible$ justify-content-center mt-2">
                   <div class="col-10 col-md-8 align-self-center">
-                    Conferma Restituzione Veicolo 27/03/24 - 15:30
+                    Conferma Restituzione Veicolo $return_date$ - $return_time$
                   </div>
                   <div class="col-2 align-self-center">
                     <div class="form-check form-switch">

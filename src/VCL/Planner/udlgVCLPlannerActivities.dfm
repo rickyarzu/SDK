@@ -11,9 +11,7 @@ object dlgVCLPlannerActivities: TdlgVCLPlannerActivities
   Font.Height = -13
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 17
   object DBNavigator1: TDBNavigator
     Left = 0

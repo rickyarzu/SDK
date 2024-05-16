@@ -3,7 +3,7 @@ unit Janua.Cloud.GoogleAPIs;
 interface
 
 uses
-  Janua.Core.Entities,
+  Janua.Core.Entities, Janua.Core.Types,
 {$IFDEF FPC}
   Classes, SysUtils, fpHTTPClient, fpjson, jsonparser;
 {$ELSE}
@@ -22,18 +22,20 @@ type
   private
     class var FApiKey: string;
     class procedure SetApiKey(const Value: string); static;
+    class function GetAPIKey: string; static;
   public
     class function GetPlaceDetails(const aPlaceId, aLanguage: string; var jSonOut: string)
       : TJanuaRecordAddress;
     class function PopulateAddressList(const aInput, aLanguage: string; var aJsonOut: string)
       : TGooglePredictions;
+    class Function GetConfAPIKey(const aDefault: string): string;
   public
-    class property ApiKey: string read FApiKey write SetApiKey;
+    class property ApiKey: string read GetApiKey write SetApiKey;
   end;
 
 implementation
 
-uses Janua.Core.Functions, Janua.Core.JSON;
+uses Janua.Core.Functions, Janua.Core.JSON, Janua.Application.Framework;
 
 const
   CComma: TFormatSettings = (DecimalSeparator: ',');
@@ -124,6 +126,25 @@ begin
     restResponse.Free;
   end;
 {$ENDIF}
+end;
+
+class function TGooglePlaces.GetAPIKey: string;
+begin
+  if FApiKey = '' then
+    FApiKey := TJanuacoreOS.ReadParam('GooglePlaces', 'APIKey', '');
+  Result := FApiKey;
+end;
+
+class function TGooglePlaces.GetConfAPIKey(const aDefault: string): string;
+begin
+  if FApiKey = '' then
+    FApiKey := TJanuacoreOS.ReadParam('GooglePlaces', 'APIKey', aDefault);
+  Result := FApiKey;
+  var
+  lLogMessage := 'GooglePlaces APIkey: ' + FApiKey;
+  if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
+    Writeln(lLogMessage);
+  TJanuaLogger.LogMessage('GetConfAPIKey', lLogMessage, nil);
 end;
 
 class function TGooglePlaces.GetPlaceDetails(const aPlaceId, aLanguage: string; var jSonOut: string)

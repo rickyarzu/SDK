@@ -36,8 +36,8 @@ uses
   // Januaproject Core Framework
   Janua.Http.Types, Janua.Core.Types, Janua.Core.Commons, Janua.Core.AsyncTask, Janua.Application.Intf,
   Janua.Bindings.Intf,
-  // Januaproject DB Framework - REST Framework
-  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types,
+  // Januaproject DB Framework - REST Framework - Http(s) Framework
+  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types, Janua.Core.WebServer,
   // Janua Orm Framework
   Janua.Orm.Intf, Janua.Orm.Types, Janua.Orm.Dataset.Intf, JOrm.Anagraph.Intf,
   // Januaproject Search Framework
@@ -450,6 +450,15 @@ type
     class property SchemaID: Integer read GetSchemaID;
   end;
 
+  TJanuaWebServerFactory = class
+  private
+    class var FWebServerClass: TJanuaWebServerClass;
+  public
+    class function CreateWebServer: TJanuaWebServer;
+  public
+    class property WebServerClass: TJanuaWebServerClass read FWebServerClass write FWebServerClass;
+  end;
+
   TJanuaLogger = class
   private
     class var FlogRecords: TJanuaLogRecords;
@@ -465,7 +474,8 @@ type
   public
     class procedure Startup;
     class property Calendar: TJanuaLogRecords read GetLogRecords write SetlogRecords;
-    class procedure LogRecord(const aProcedure, aMessage: string; aClass: TObject);
+    class procedure LogRecord(const aRecord: TJanuaLogRecord); overload;
+    class procedure LogRecord(const aProcedure, aMessage: string; aClass: TObject); overload;
     class procedure LogError(const aProcedure, aMessage: string; aClass: TObject; e: Exception); overload;
     class procedure LogError(const aProcedure, aMessage: string; aClass: TObject); overload;
     class Procedure LogWarning(const aProcedure, aMessage: string; aClass: TObject);
@@ -549,7 +559,6 @@ type
     Class function LogString: string; static;
     Class Procedure Initialize;
     Class procedure Terminate;
-
   private
 {$IFDEF MSWINDOWS}
     {
@@ -596,6 +605,7 @@ type
     class function GetAppDownloadsPath: string; static;
     class function GetConfigFileName: string; static;
     class function getCurrentPath: string; static;
+    class function ReadWebFile(const aFileName: string): string; static;
   public
     class procedure Deactivate;
     { Public declarations }
@@ -1556,12 +1566,12 @@ end;
 
 class function TJanuaApplication.IsClient: Boolean;
 begin
-  Result := Self.FApplicationType in [jatConsoleClient, jatClientWin, jatClientTablet];
+  Result := FApplicationType in [jatConsoleClient, jatClientWin, jatClientTablet];
 end;
 
 class function TJanuaApplication.IsConsole: Boolean;
 begin
-  Result := Self.FApplicationType in [jatConsoleSrv, jatConsoleClient]
+  Result := FApplicationType in [jatConsoleSrv, jatConsoleClient]
 end;
 
 class function TJanuaApplication.IsFMX: Boolean;
@@ -2187,10 +2197,10 @@ end;
 
 class function TJanuaCoreOS.GetAppWebFilesPath: string;
 begin
-  /// distinguo 3 differenti casistiche
-  /// 1 - Custom Server: la directory è definita a design time e può anche non coincidere con il percorso eseguibile
-  /// 2 - Current Directory: si assume come 'home' il punto in cui è posizionato l'eseguibile o da cui è eseguito.
-  /// 3 - Tutti gli altri casi (iOS/Android/MacOS/Windows Desktop ad esempio) si usa la directory base sys/user
+  /// Framework can manage 3 different cases
+  /// 1 - Custom Server: not the executable directory but c:\januaproject\home or /opt/januaproject/home
+  /// 2 - Current Directory: assumes that home is the current executable directory
+  /// 3 - Default standard home (iOS/Android/MacOS/Windows) usually is sys/user
   if not GetUseCurrentDir then
   begin
     Result := tpl(GetAppHomePath) + 'htdocs';
@@ -3141,6 +3151,11 @@ begin
   Result := DecryptDES3(LValue);
 end;
 
+class function TJanuaCoreOS.ReadWebFile(const aFileName: string): string;
+begin
+  Result := TFile.ReadAllText(TPath.Combine(TJanuaCoreOS.GetAppWebFilesPath, aFileName));
+end;
+
 class function TJanuaCoreOS.RegistryNextVal(table: string): int64;
 {$IF Defined(MSWINDOWS) and not Defined(JANUASERVER)}
 var
@@ -3411,13 +3426,31 @@ begin
       if TJanuaApplication.IsConsole then
         Writeln(LocalLog);
       Result.DateTime := Now();
+
+      var
+      CpHierachy := '';
+
       if Sender <> nil then
       begin
         Result.ClassName := Sender.ClassName;
         Result.OwnerName := '';
-        if (Sender is TComponent) and ((Sender as TComponent).Owner <> nil) then
-          Result.OwnerName := ifThen((Sender as TComponent).Owner <> nil,
-            (Sender as TComponent).Owner.Name, '');
+        if (Sender is TComponent) then
+        begin
+          var
+          Cp := (Sender as TComponent);
+          if (Cp.Owner <> nil) then
+          begin
+            Result.OwnerName := TComponent(Sender as TComponent).Owner.Name;
+            var
+            i := 0;
+            Repeat
+              Inc(i);
+              CpHierachy := ifThen(CpHierachy > '', sl, '') + LPad(' ', i, '-') + Cp.Name;
+              Cp := Cp.Owner;
+            until Cp = nil;
+          end;
+
+        end;
       end;
       Result.ProcedureName := aProcedureName;
 
@@ -3432,30 +3465,33 @@ begin
         if not DirectoryExists(GetAppHomePath) then
           CreateDir(GetAppHomePath);
 
-        vFile := TJanuaApplication.AppName + FormatDateTime('yyyymmddhhnnss', Now()) + '.err.txt';
+        vFile := TJanuaApplication.AppName + '_' + FormatDateTime('yyyymmddhhnnss', Now()) + '.err.txt';
 
-        if (GetAppName > '') then
-        begin
-          ErrTextFileName := IncludeTrailingPathDelimiter(GetAppLogPath) + vFile;
-          // TFileName
-          Assignfile(ErrTextFile, ErrTextFileName);
-          If FileExists(IncludeTrailingPathDelimiter(GetAppLogPath) + vFile) then
-            Append(ErrTextFile)
-          else
-            Rewrite(ErrTextFile);
-          Writeln(ErrTextFile, LocalLog);
-          Writeln(ErrTextFile, '***** Log Stack ***************');
-          Writeln(ErrTextFile, TJanuaApplication.Log);
-          CloseFile(ErrTextFile);
-        end;
+        ErrTextFileName := IncludeTrailingPathDelimiter(GetAppLogPath) + vFile;
+        // TFileName
+        Assignfile(ErrTextFile, ErrTextFileName);
+        If FileExists(IncludeTrailingPathDelimiter(GetAppLogPath) + vFile) then
+          Append(ErrTextFile)
+        else
+          Rewrite(ErrTextFile);
+
+        var
+        FEsteso := 'ore: ' + DateTimeToStr(Now) + sl + 'messaggio: ' + e.Message + sl + 'locazione: "' +
+          ifThen(Result.OwnerName = '', '', Result.OwnerName + '.') + Sender.ClassName + '";';
+
+        FEsteso := FEsteso + sl + e.StackTrace;
+
+        Writeln(ErrTextFile, FEsteso);
+        Writeln(ErrTextFile, LocalLog);
+        Writeln(ErrTextFile, '***** Log Stack ***************');
+        Writeln(ErrTextFile, TJanuaApplication.Log);
+        CloseFile(ErrTextFile);
       end;
       if doraise and not FPublicRaised then
       begin
         FPublicRaised := True;
-        // Sender: TObject; aProcedureName, sMessage: string; e: Exception; doraise: boolean = true
         PublicWriteLog(Sender, aProcedureName, sMessage);
         RaiseException(aProcedureName, e, Sender, LogString);
-        // CreateException(aProcedureName, e, Sender, )  //Exception.Create(LocalLog);
       end
       else
         FPublicRaised := false;
@@ -3485,6 +3521,7 @@ begin
 
     if TJanuaApplication.ApplicationType = TJanuaApplicationType.jatConsoleSrv then
       Writeln(Result.LogText);
+
     TJanuaApplication.AddLog(Result.LogText);
   finally
     LogCriticalSection.Release;
@@ -3816,6 +3853,31 @@ begin
     end);
 end;
 
+class procedure TJanuaLogger.LogRecord(const aRecord: TJanuaLogRecord);
+begin
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      Result := MonitorEnter(LockObject);
+      if Result then
+        try
+          FlogRecords.Add(aRecord);
+          if Assigned(FOutputLogger) then
+            FOutputLogger.OutputLog(aRecord);
+        finally
+          MonitorExit(LockObject);
+        end;
+    end,
+    procedure(const aResult: Boolean)
+    begin
+      // per ora non ci faccio nulla :)
+    end,
+    procedure(const Ex: Exception)
+    begin
+      JShowError(Ex.Message);
+    end);
+end;
+
 class procedure TJanuaLogger.ResetWatch;
 begin
   FlogRecords.ResetWatch
@@ -3998,6 +4060,14 @@ begin
     FUsername := Value;
     TJanuaApplication.WriteParamEncryptString(LoginKeySection, LoginKeyLocalUserName, FUsername);
   end;
+end;
+
+{ TJanuaWebServerFactory }
+
+class function TJanuaWebServerFactory.CreateWebServer: TJanuaWebServer;
+begin
+  if Assigned(FWebServerClass) then
+    Result := FWebServerClass.Create;
 end;
 
 initialization

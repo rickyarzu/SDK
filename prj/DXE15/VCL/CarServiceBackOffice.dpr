@@ -14,7 +14,8 @@ uses
   Vcl.Styles,
   Spring,
   ufrmMDIRibbonToolbar in '..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas' {frmMDIRibbonToolbar},
-  Janua.Carservice.VCL.frmBackOfficeMain in '..\..\..\src\VCL\CarService\Janua.Carservice.VCL.frmBackOfficeMain.pas' {frmVCLCarServiceBackOfficeMain};
+  Janua.Carservice.VCL.frmBackOfficeMain in '..\..\..\src\VCL\CarService\Janua.Carservice.VCL.frmBackOfficeMain.pas' {frmVCLCarServiceBackOfficeMain},
+  uCarServiceBackOfficeProject in 'uCarServiceBackOfficeProject.pas';
 
 {$R *.res}
 

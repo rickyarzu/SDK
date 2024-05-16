@@ -66,6 +66,7 @@ contains
   Janua.FMX.Cloud in '..\..\src\FMX\Janua.FMX.Cloud.pas',
   Janua.FMX.Application in '..\..\src\FMX\Janua.FMX.Application.pas',
   Janua.FMX.Interposers in '..\..\src\FMX\Janua.FMX.Interposers.pas',
-  Janua.FMX.Register in '..\..\src\FMX\Janua.FMX.Register.pas';
+  Janua.FMX.Register in '..\..\src\FMX\Janua.FMX.Register.pas',
+  Janua.FMX.CanvasPainter in '..\..\src\FMX\Janua.FMX.CanvasPainter.pas';
 
 end.

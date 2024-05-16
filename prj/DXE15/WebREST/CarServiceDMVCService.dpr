@@ -11,7 +11,7 @@ uses
   Janua.Application.Framework,
   Janua.TMS.SMS,
   Janua.Carservice.DMVC.JsonRPC in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas',
-  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule},
+  Janua.DMVC.CustomWebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas' {JanuaDMVCCustomWebModule: TWebModule},
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
@@ -20,7 +20,8 @@ uses
   Janua.DMVC.UniDacApplication in '..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
   Janua.CarService.DMVC.Driver in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
   Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Carservice.DMVC.WindowsService in '..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas' {PickappAPIService: TService};
+  Carservice.DMVC.WindowsService in '..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas' {PickappAPIService: TService},
+  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule};
 
 {$R *.RES}
 
@@ -56,7 +57,7 @@ begin
   //
   if not Application.DelayInitialize or Application.Installing then
     Application.Initialize;
-  AApplication.CreateForm(TPickappApiService, PickappApiService);
-  pplication.Run;
+  Application.CreateForm(TPickappApiService, PickappApiService);
+  Application.Run;
 
 end.

@@ -9,7 +9,7 @@ uses
   System.Bindings.Expression, System.Bindings.Helper,
   // DB, RTL, .....
   Data.DB,
-  // OS specific
+  // OS specifi
   // Third Party Libs
   Spring, Spring.Collections,
   // Janua Types

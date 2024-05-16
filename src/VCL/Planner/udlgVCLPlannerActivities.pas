@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, Vcl.Buttons;
 
 type
   TdlgVCLPlannerActivities = class(TForm)

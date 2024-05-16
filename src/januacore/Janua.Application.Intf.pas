@@ -2,7 +2,7 @@ unit Janua.Application.Intf;
 
 interface
 
-uses Janua.Core.Classes.Intf, Janua.Orm.Intf;
+uses Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Core.Types;
 
 type
   /// <summary>Data Module Containing a Dictionary List of all ORM Datasets with their definitions an properties</summary>
@@ -26,6 +26,7 @@ type
     // TMessageLogProc = TProc<string { aProcName } , string { aLogMessage } , TObject { aObject } >;
     procedure OutputLog(aProcName: string; aLogMessage: string; aObject: TObject); overload;
     procedure OutputLog(const aLog: string); overload;
+    procedure OutputLog(const aLog: TJanuaLogRecord); overload;
   end;
 
 implementation

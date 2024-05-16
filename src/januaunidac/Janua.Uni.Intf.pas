@@ -44,6 +44,11 @@ type
   end;
 
 type
+  IJanuaFbSessionSource = interface(IJanuaUniSessionSource)
+    ['{F99E09F0-2B35-4D1B-B5F6-8D3200275BD6}']
+  end;
+
+type
   IJanuaUniDatasetFunctions = interface(IJanuaDatasetFunctions)
     ['{4B9D5AE7-5C01-4A54-927B-03D7D35419FC}']
     procedure SetupConnection(const aConnection: TUniConnection);
@@ -57,6 +62,10 @@ type
     ['{73942606-4A0C-42D4-9627-400F36FFA8AE}']
   end;
 
+  IJanuaFbDatasetFunctions = interface(IJanuaUniDatasetFunctions)
+    ['{A7954DB8-643B-4DCE-9F9F-1EBC0160CA61}']
+  end;
+
 type
   IJanuaUniServerFunctions = interface(IJanuaServerFunctions)
     ['{9FD149D1-0141-4C58-AB7A-E961E50D4364}']
@@ -64,6 +73,10 @@ type
 
   IJanuaPgServerFunctions = interface(IJanuaServerFunctions)
     ['{9776E831-568D-439E-9F59-EAE35E949398}']
+  end;
+
+  IJanuaFbServerFunctions = interface(IJanuaServerFunctions)
+    ['{DB9E8F59-73DF-48CA-9AE6-2FECEB838E89}']
   end;
 
   IJanuaOraServerFunctions = interface(IJanuaServerFunctions)

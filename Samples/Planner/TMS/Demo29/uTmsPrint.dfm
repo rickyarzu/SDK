@@ -11,9 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 8
@@ -448,6 +446,8 @@ object Form1: TForm1
     Caption.Font.Height = -13
     Caption.Font.Name = 'Verdana'
     Caption.Font.Style = []
+    Caption.Background = 16575452
+    Caption.BackgroundTo = 16571329
     DayNames.Strings = (
       'Sun'
       'Mon'
@@ -516,8 +516,11 @@ object Form1: TForm1
       5E5E5E5EAFAF56165E07070DA7A7675F5F5E5E5E5E5E56165E07EDAF0D0D0D0D
       0D0D0D0D0D0D0D0D5EECD9ED070707070707070707070707EDD1}
     Display.ActiveEnd = 40
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
+    Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Verdana'
     Font.Style = []
@@ -533,7 +536,12 @@ object Form1: TForm1
     Footer.Font.Name = 'Tahoma'
     Footer.Font.Style = []
     GridLeftCol = 1
+    GridLineColor = clSilver
     GridTopRow = 0
+    Header.ActiveColor = 16575452
+    Header.ActiveColorTo = 16571329
+    Header.Color = 16645114
+    Header.ColorTo = 16643051
     Header.CustomGroups = <>
     Header.Font.Charset = DEFAULT_CHARSET
     Header.Font.Color = clWindowText
@@ -563,6 +571,10 @@ object Form1: TForm1
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2010
     Mode.Day = 5
+    Sidebar.ActiveColor = 16575452
+    Sidebar.ActiveColorTo = 16571329
+    Sidebar.Background = 16645114
+    Sidebar.BackgroundTo = 16643051
     Sidebar.Font.Charset = DEFAULT_CHARSET
     Sidebar.Font.Color = clWindowText
     Sidebar.Font.Height = -11
@@ -591,7 +603,7 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.5.5.3'
+    Version = '3.6.1.3'
     OnPrintHeader = Planner1PrintHeader
     TMSStyle = 0
   end
@@ -605,7 +617,7 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object PrinterSetupDialog1: TPrinterSetupDialog
-    Left = 432
-    Top = 40
+    Left = 248
+    Top = 72
   end
 end

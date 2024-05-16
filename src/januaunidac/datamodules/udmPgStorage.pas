@@ -83,13 +83,11 @@ begin
 end;
 
 function TdmPgStorage.GetSQLFunctions: IJanuaDatasetFunctions;
-var
-  LServerFunctions: IJanuaUniDatasetFunctions;
 begin
-
+  Result := FDatasetFunctions;
 end;
 
-function TdmPgStorage.INternalActivate: Boolean;
+function TdmPgStorage.InternalActivate: Boolean;
 begin
   Result := Active;
   if not Result then
@@ -148,7 +146,7 @@ end;
 procedure TdmPgStorage.PgErgoConnectionError(Sender: TObject; E: EDAError; var Fail: Boolean);
 begin
   inherited;
-    raise exception.Create(TJanuaApplication.AppName + ' ' + ReportConf + sLineBreak + E.Message);
+  raise exception.Create(TJanuaApplication.AppName + ' ' + ReportConf + sLineBreak + E.Message);
 end;
 
 procedure TdmPgStorage.QueryDefault(aDataset: TDataset; aGUIDField: TField = nil; aDelField: TField = nil);

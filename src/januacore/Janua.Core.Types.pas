@@ -18,6 +18,52 @@ uses
 {$ENDIF}
 
 type
+  TJanuaPoint = record
+    X: Single;
+    Y: Single;
+    constructor Create(aX, aY: Single);
+  end;
+
+  /// <summary>Draw is simply a Collection of Points (NOTE: it uses relative coordinates) </summary>
+  TJanuaDraw = record
+  private
+    function GetItem(Index: Integer): TJanuaPoint;
+    procedure SetItem(Index: Integer; Value: TJanuaPoint);
+    function GetCount: Integer;
+  public
+    Points: Tarray<TJanuaPoint>;
+    property Count: Integer read GetCount;
+    property Items[Index: Integer]: TJanuaPoint read GetItem write SetItem; default;
+  public
+    constructor Create(aX, aY: Single);
+    procedure AddPoint(aPoint: TJanuaPoint); overload;
+    procedure AddPoint(aX, aY: Single); overload;
+    procedure DelPoint;
+    function ActualX: Single;
+    function ActualY: Single;
+  end;
+
+  /// <summary>This is not only a collection of Draws it contains (also) relative image Dimensions </summary>
+  TJanuaImageDraws = record
+  private
+    function GetItem(Index: Integer): TJanuaDraw;
+    procedure SetItem(Index: Integer; Value: TJanuaDraw);
+    function GetCount: Integer;
+  public
+    Draws: Tarray<TJanuaDraw>;
+    Width: Single;
+    Heigth: Single;
+    property Count: Integer read GetCount;
+    property Items[Index: Integer]: TJanuaDraw read GetItem write SetItem; default;
+  public
+    constructor Create(aWidth, aHeigth: Single);
+    procedure AddDraw(aDraw: TJanuaDraw);
+    procedure DelDraw;
+    function Serialize: string;
+    procedure DeSerialize(const aJson: string);
+  end;
+
+type
   TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird,
     jdbTmsRemoteDB, jdbMSAccess);
 
@@ -37,15 +83,15 @@ type
     function GetItems(Index: Integer): T;
     procedure SetItems(Index: Integer; Value: T);
   public
-    FArray: TArray<T>;
+    FArray: Tarray<T>;
     property ItemArray[Index: Integer]: T read GetItems { write SetItems }; default;
     property Count: Integer read GetCount;
     property HasValues: Boolean read GetHasValues;
-    property Items: TArray<T> read FArray;
+    property Items: Tarray<T> read FArray;
     function Inc: Integer;
     procedure Clear;
   public
-    constructor Create(aArray: TArray<T>);
+    constructor Create(aArray: Tarray<T>);
     procedure Assign(aArray: TJanuaArray<T>);
     procedure Remove(Index: Integer);
   end;
@@ -56,7 +102,7 @@ type
     constructor Create(const aField, aValue: string);
   end;
 
-  TStringArray = TArray<string>;
+  TStringArray = Tarray<string>;
   TJanuaIntegerArray = TJanuaArray<Integer>;
   TJanuaStringArray = TJanuaArray<string>;
 
@@ -221,9 +267,9 @@ type
   end;
 
 type
-  TKeyFields = TArray<string>;
-  TJanuaVariantArray = TArray<variant>;
-  TValueArray = TArray<TValue>;
+  TKeyFields = Tarray<string>;
+  TJanuaVariantArray = Tarray<variant>;
+  TValueArray = Tarray<TValue>;
 
   /// <summary>
   /// This are the possibile Types of properties managed by The System.
@@ -716,7 +762,7 @@ type
     property Align: TJanuaRecAlign read FAlign write SetAlign;
   end;
 
-  TRecFieldDefArray = TArray<TRecFieldDef>;
+  TRecFieldDefArray = Tarray<TRecFieldDef>;
 
   TRecFieldDefList = record
   private
@@ -1433,6 +1479,7 @@ function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; CONS
 
 const
   sl = sLineBreak;
+  cArrow = '->';
 
 implementation
 
@@ -5017,7 +5064,7 @@ begin
   SetLength(FArray, 0)
 end;
 
-constructor TJanuaArray<T>.Create(aArray: TArray<T>);
+constructor TJanuaArray<T>.Create(aArray: Tarray<T>);
 begin
   FArray := aArray
 end;
@@ -5086,6 +5133,125 @@ constructor TJanuaConfCustomField.Create(const aField, aValue: string);
 begin
   Key := aField;
   Value := aValue;
+end;
+
+{ TJanuaDraw }
+
+procedure TJanuaDraw.AddPoint(aPoint: TJanuaPoint);
+begin
+  SetLength(Points, Length(Points) + 1);
+  Points[Length(Points) - 1] := aPoint;
+end;
+
+function TJanuaDraw.ActualX: Single;
+begin
+  Result := Points[Length(Points) - 1].X
+end;
+
+function TJanuaDraw.ActualY: Single;
+begin
+  Result := Points[Length(Points) - 1].Y
+end;
+
+procedure TJanuaDraw.AddPoint(aX, aY: Single);
+begin
+  var
+  aPoint := TJanuaPoint.Create(aX, aY);
+  var
+  lP := Length(Points);
+  SetLength(self.Points, lP + 1);
+  Points[lP] := aPoint;
+end;
+
+constructor TJanuaDraw.Create(aX, aY: Single);
+begin
+  self.AddPoint(aX, aY)
+end;
+
+procedure TJanuaDraw.DelPoint;
+begin
+  SetLength(Points, Length(Points) - 1);
+end;
+
+function TJanuaDraw.GetCount: Integer;
+begin
+  Result := Length(Points);
+end;
+
+function TJanuaDraw.GetItem(Index: Integer): TJanuaPoint;
+begin
+  if (Index >= 0) and (Index < Length(Points)) then
+    Result := Points[Index]
+  else
+    raise EListError.Create('Index out of bounds');
+end;
+
+procedure TJanuaDraw.SetItem(Index: Integer; Value: TJanuaPoint);
+begin
+  if (Index >= 0) and (Index < Length(Points)) then
+    Points[Index] := Value
+  else
+    raise EListError.Create('Index out of bounds');
+end;
+
+{ TJanuaImageDraws }
+
+procedure TJanuaImageDraws.AddDraw(aDraw: TJanuaDraw);
+begin
+  var
+  I := Length(Draws);
+  SetLength(Draws, I + 1);
+  Draws[I] := aDraw;
+end;
+
+constructor TJanuaImageDraws.Create(aWidth, aHeigth: Single);
+begin
+  Width := aWidth;
+  Heigth := aHeigth;
+end;
+
+procedure TJanuaImageDraws.DelDraw;
+begin
+  SetLength(Draws, Length(Draws) - 1)
+end;
+
+procedure TJanuaImageDraws.DeSerialize(const aJson: string);
+begin
+  self := TJanuaJson.DeserializeSimple<TJanuaImageDraws>(aJson);
+end;
+
+function TJanuaImageDraws.GetCount: Integer;
+begin
+  Result := Length(Draws);
+end;
+
+function TJanuaImageDraws.GetItem(Index: Integer): TJanuaDraw;
+begin
+  if (Index >= 0) and (Index < Length(Draws)) then
+    Result := Draws[Index]
+  else
+    raise EListError.Create('Index out of bounds');
+end;
+
+function TJanuaImageDraws.Serialize: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaImageDraws>(self);
+end;
+
+procedure TJanuaImageDraws.SetItem(Index: Integer; Value: TJanuaDraw);
+begin
+  if (Index >= 0) and (Index < Length(Draws)) then
+    Draws[Index] := Value
+  else
+    raise EListError.Create('Index out of bounds');
+end;
+
+{ TJanuaPoint }
+
+constructor TJanuaPoint.Create(aX, aY: Single);
+begin
+  X := aX;
+  Y := aY;
 end;
 
 initialization

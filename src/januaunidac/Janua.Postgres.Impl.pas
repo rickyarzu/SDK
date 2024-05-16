@@ -30,15 +30,6 @@ implementation
 
 uses System.StrUtils, Janua.Application.Framework, Janua.Core.AsyncTask;
 
-{ ************************** qryCountries Server Functions *********************
-  select * from  jpublic.countries
-  where
-  (country_id = :country_id or :country_id = 0)
-  and
-  (iso_country_code = :country_code or :country_code = '*')
-  and
-  (Upper(country_name) = Upper(:country_name) or :country_name = '*')
-}
 
 { TJanuaPostgresServerFunctions }
 

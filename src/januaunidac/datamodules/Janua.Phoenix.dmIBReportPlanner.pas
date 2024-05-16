@@ -99,8 +99,10 @@ type
     AdvGCalendar1: TAdvGCalendar;
     PrinterSetupDialog1: TPrinterSetupDialog;
     SVGIconImageList1: TSVGIconImageList;
+    qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
+    procedure qryReportPlannerCalcFields(DataSet: TDataSet);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -272,6 +274,14 @@ begin
       qryReportPlannerSTATO.AsInteger := 0;
     end;
   end
+end;
+
+procedure TdmPhoenixIBPlanner.qryReportPlannerCalcFields(DataSet: TDataSet);
+begin
+  inherited;
+  qryReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+     qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
+     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 end;
 
 procedure TdmPhoenixIBPlanner.SetCAP(const Value: String);

@@ -1,5 +1,5 @@
 ﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2022 by Embarcadero Technologies, Inc.
+// Copyright (c) 1995, 2024 by Embarcadero Technologies, Inc.
 // All rights reserved
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwdbnavedt.pas' rev: 36.00 (Windows)
@@ -109,10 +109,10 @@ public:
 #pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
-static const System::Int8 WW_ADD_BUTTON = System::Int8(0x0);
-static const System::Int8 WW_ADD_INFOPOWERDIALOGS = System::Int8(0x1);
-static const System::Int8 WW_SELECT_ALL = System::Int8(0x2);
-static const System::Int8 WW_VERB_COUNT = System::Int8(0x3);
+static _DELPHI_CONST System::Int8 WW_ADD_BUTTON = System::Int8(0x0);
+static _DELPHI_CONST System::Int8 WW_ADD_INFOPOWERDIALOGS = System::Int8(0x1);
+static _DELPHI_CONST System::Int8 WW_SELECT_ALL = System::Int8(0x2);
+static _DELPHI_CONST System::Int8 WW_VERB_COUNT = System::Int8(0x3);
 }	/* namespace Wwdbnavedt */
 }	/* namespace Vcl */
 #if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_VCL_WWDBNAVEDT)

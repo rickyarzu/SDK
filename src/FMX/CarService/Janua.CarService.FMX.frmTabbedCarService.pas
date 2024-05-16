@@ -12,7 +12,7 @@ uses
   FMX.WebBrowser, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
   // Januaproject
   Janua.FMX.FormControls, Janua.Core.Commons, Janua.Core.Classes, Janua.CarService.dmPgDrivers,
-  Janua.FMX.frameUserMobile;
+  Janua.FMX.frameUserMobile, Jaua.FMX.CanvasPaintImage;
 
 type
   TfrmFMXCarServiceDriverMain = class(TForm)
@@ -77,7 +77,6 @@ type
     Switch2: TSwitch;
     btnConfirm: TButton;
     btnConfCancel: TButton;
-    Image7: TImage;
     tmList: TTimer;
     pgMessages: TTabControl;
     TabItem1: TTabItem;
@@ -95,6 +94,7 @@ type
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
     btnCallClient: TButton;
+    framFMXImageDraw1: TframFMXImageDraw;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);

@@ -1,7 +1,7 @@
 inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   OnCreate = DataModuleCreate
-  Height = 354
-  Width = 597
+  Height = 332
+  Width = 634
   inherited JanuaUniConnection1: TJanuaUniConnection
     Database = '/opt/firebird/db/phoenix.fdb'
     Server = 'sait.pasolutions.ru'
@@ -118,6 +118,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
     BeforePost = qryReportPlannerBeforePost
+    OnCalcFields = qryReportPlannerCalcFields
     Left = 112
     Top = 176
     object qryReportPlannerCHIAVE: TIntegerField
@@ -406,6 +407,11 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object qryReportPlannerAMMINISTRATORE: TIntegerField
       FieldName = 'AMMINISTRATORE'
       ReadOnly = True
+    end
+    object qryReportPlannercalcAppuntamentoDataOra: TDateTimeField
+      FieldKind = fkCalculated
+      FieldName = 'calcAppuntamentoDataOra'
+      Calculated = True
     end
   end
   object spSetStatinoStato: TUniStoredProc

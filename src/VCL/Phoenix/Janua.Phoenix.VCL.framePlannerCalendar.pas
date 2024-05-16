@@ -37,6 +37,7 @@ type
     Color1: TMenuItem;
     Caption1: TMenuItem;
     PictureContainer1: TPictureContainer;
+    procedure DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
   private
     { Private declarations }
   public
@@ -46,5 +47,10 @@ type
 implementation
 
 {$R *.dfm}
+
+procedure TframePhoenixPlannerCalendar.DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
+begin
+  // Code for DBPlannerItemCreated (from here we can launch the Display Setup Dialog);
+end;
 
 end.

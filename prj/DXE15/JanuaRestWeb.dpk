@@ -1,0 +1,67 @@
+package JanuaRestWeb;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dmvcframeworkRT,
+  DECCipher,
+  Neon,
+  Spring.Base,
+  loggerproRT,
+  SwagDoc,
+  FireDACCommon,
+  FireDACCommonDriver,
+  FireDAC,
+  RESTComponents,
+  IndyCore,
+  IndyProtocols,
+  IndySystem,
+  inet,
+  dbrtl,
+  soaprtl,
+  xmlrtl,
+  rtl,
+  bindengine,
+  IndyIPServer,
+  Spring.Base,
+  JanuaCoreThirdParty,
+  JanuaCore,
+  JanuaMVVM,
+  IndyIPServer;
+
+contains
+  Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
+  Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
+  Janua.DMVC.Srv.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
+  Janua.CarService.DMVC.Driver in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
+  Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
+  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
+  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
+
+end.
