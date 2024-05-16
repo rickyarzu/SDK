@@ -167,7 +167,8 @@ var
 
 implementation
 
-uses JOrm.Carservice.Booking.Impl, Janua.Orm.Impl, Janua.Application.Framework, System.StrUtils;
+uses JOrm.Carservice.Booking.Impl, Janua.Orm.Impl, Janua.Application.Framework, Janua.Core.Functions,
+  System.StrUtils;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -318,8 +319,8 @@ begin
         FCSCustomerLandingMsgBuilder.LoadSettings;
         FMessage := FCSCustomerLandingMsgBuilder.GenerateLandingMessage;
 
-        if Pos('$$Text$$', aPage) > 0 then
-          aPage := StringReplace(aPage, '$$Text$$', FMessage.Text, [rfReplaceAll, rfIgnoreCase]);
+        if not TryHtmlReplace(aPage, 'Text', FMessage.Text) then
+          raise Exception.Create('Error Message');
 
         FPickupSlot := TTimeTableSlot.Create();
         FDeliverySlot := TTimeTableSlot.Create();
@@ -368,7 +369,7 @@ begin
 
       FlushLog;
     except
-      on e: exception do
+      on e: Exception do
       begin
         GenerateError;
         { TJanuaCoreOS.PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;

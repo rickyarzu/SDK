@@ -3146,9 +3146,7 @@ begin
     Result := ('0000000000000');
 end;
 
-function TryStrToFloat(const S: string;
-
-  var Value: Double): boolean;
+function TryStrToFloat(const S: string;  var Value: Double): boolean;
 begin
   Result := true;
   try
