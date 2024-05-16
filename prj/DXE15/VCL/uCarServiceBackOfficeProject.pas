@@ -153,76 +153,8 @@ begin
 
   TJanuaFormsApplication.RegisterApplication(lAppSettingsContract);
 
-  // ********** Messages ********************************************************************************
-  lAppMessages := TJanuaApplicationRecord.Create('Messaggi', 'Messaggi', 272, nil);
-
-  // ---- Landings --------------------------------------------------------------------------------------
-  lAppSettingsLanding := TJanuaApplicationRecord.Create('Pagine', 'Pagine', 1, nil);
-
-  lAppSettingsLanding.AddForm(TJanuaFormRecord.Create('Pag. Cliente A/R', lAppCarService.Name, 299,
-    TfrmVCLCSCustomerLandingMessage, GUID_NULL));
-  lAppSettingsLanding.AddForm(TJanuaFormRecord.Create('Pag. Cliente A', lAppCarService.Name, 300,
-    TfrmVCLCSCustomerLandingMessageNR, GUID_NULL));
-  lAppSettingsLanding.AddForm(TJanuaFormRecord.Create('Pagina Driver', lAppCarService.Name, 297,
-    TfrmVCLCSDriverLandingMsgBuilder, GUID_NULL));
-  lAppSettingsLanding.AddForm(TJanuaFormRecord.Create('Pag.Booking A/R', lAppCarService.Name, 302,
-    TfrmVCLCSBookingLandingMessage, GUID_NULL));
-  lAppSettingsLanding.AddForm(TJanuaFormRecord.Create('Pag.Booking A', lAppCarService.Name, 302,
-    TfrmVCLCSBookingNRLandingMsgBuilder, GUID_NULL));
-  lAppMessages.AddApplication(lAppSettingsLanding);
-
-  // ---- Mail --------------------------------------------------------------------------------------
-  lAppSettingsMail := TJanuaApplicationRecord.Create('E-Mail', 'E-Mail', 1, nil);
-  lAppSettingsMail.AddForm(TJanuaFormRecord.Create('Mail Cliente A/R ', lAppCarService.Name, 357,
-    TfrmVCLFCSCustomerMailBuilder, GUID_NULL));
-  lAppSettingsMail.AddForm(TJanuaFormRecord.Create('Mail Cliente Pk ', lAppCarService.Name, 354,
-    TfrmVCLFCSCustomerMailBuilderNR, GUID_NULL));
-  lAppSettingsMail.AddForm(TJanuaFormRecord.Create('Mail Driver Pk ', lAppCarService.Name, 359,
-    TfrmVCLFCSDriverMailBuilder1, GUID_NULL));
-  lAppSettingsMail.AddForm(TJanuaFormRecord.Create('Mail Driver Rt ', lAppCarService.Name, 353,
-    TfrmVCLFCSDriverMailBuilder2, GUID_NULL));
-  lAppMessages.AddApplication(lAppSettingsMail);
-
-  // ---- SMS ---------------------------------------------------------------------------------------
-  lAppSettingsSMS := TJanuaApplicationRecord.Create('SMS', 'SMS', 1, nil);
-  lAppSettingsSMS.AddForm(TJanuaFormRecord.Create('SMS Cliente A/R', lAppCarService.Name, 343,
-    TfrmVCLCSCustomerSMSBuilder, GUID_NULL));
-  lAppSettingsSMS.AddForm(TJanuaFormRecord.Create('SMS Cliente A', lAppCarService.Name, 349,
-    TfrmVCLCSCustomerNRSMSBuilder, GUID_NULL));
-  lAppSettingsSMS.AddForm(TJanuaFormRecord.Create('SMS Driver Pk', lAppCarService.Name, 363,
-    TfrmVCLCSDriver1SMSBuilder, GUID_NULL));
-  lAppSettingsSMS.AddForm(TJanuaFormRecord.Create('SMS Driver Rt', lAppCarService.Name, 364,
-    TfrmVCLCSDriver2SMSBuilder, GUID_NULL));
-  lAppMessages.AddApplication(lAppSettingsSMS);
-
-  // ---- Confirmation ------------------------------------------------------------------------------
-
-  lAppSettingsConf := TJanuaApplicationRecord.Create('Confirmation', 'Confirmation', 1, nil);
-  lAppSettingsConf.AddForm(TJanuaFormRecord.Create('Cliente Conf. A/R', lAppCarService.Name, 366,
-    TfrmVCLCSCustConfirmationMsgBuilder, GUID_NULL));
-  lAppSettingsConf.AddForm(TJanuaFormRecord.Create('Cliente Conf. A', lAppCarService.Name, 365,
-    TfrmVCLCSCustConfirmationNRMsgBuilder, GUID_NULL));
-  lAppSettingsConf.AddForm(TJanuaFormRecord.Create('Page Not Found', lAppCarService.Name, 371,
-    TfrmVCLCSPageNotFound, GUID_NULL));
-  lAppMessages.AddApplication(lAppSettingsConf);
-
   // ---- Registration app Messages -------------------------------------------------------------------
   TJanuaFormsApplication.RegisterApplication(lAppMessages);
-
-
-
-  // ********** Settings ******************************************************************************
-
-  lAppSettings := TJanuaApplicationRecord.Create('Impostazioni', 'Impostazioni', 229, nil);
-  lAppSettingsDB := TJanuaApplicationRecord.Create('Impostazioni', 'Impostazioni', 1, nil);
-  // ConfirmPreInvoice
-  lAppSettingsDB.AddForm(TJanuaFormRecord.Create('ORM Generator', lAppCarService.Name, 103,
-    TfrmVCLPgJormGenerator, GUID_NULL));
-  // TfrmVCLCarServiceSettings
-  lAppSettingsDB.AddForm(TJanuaFormRecord.Create('Messages', lAppCarService.Name, 103,
-    TfrmVCLCarServiceSettings, GUID_NULL));
-  lAppSettings.AddApplication(lAppSettingsDB);
-  TJanuaFormsApplication.RegisterApplication(lAppSettings);
 
   // ********** Directory ******************************************************************************
   lAppDirectory := TJanuaApplicationRecord.Create('Directory', 'Directory', 29, nil);
