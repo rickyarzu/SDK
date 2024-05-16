@@ -1,556 +1,7 @@
-inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
+object dmTMSCustomPlannerController: TdmTMSCustomPlannerController
   OnCreate = DataModuleCreate
-  Height = 332
-  Width = 634
-  inherited JanuaUniConnection1: TJanuaUniConnection
-    Database = '/opt/firebird/db/phoenix.fdb'
-    Server = 'sait.pasolutions.ru'
-    EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
-  end
-  object qryReportPlanner: TUniQuery
-    SQLInsert.Strings = (
-      'INSERT INTO STATINI'
-      
-        '  (NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, APPUNTAMENTO_ORA, STA' +
-        'TO)'
-      'VALUES'
-      
-        '  (:NOTE_PER_IL_TECNICO, :APPUNTAMENTO_DATA, :APPUNTAMENTO_ORA, ' +
-        ':STATO)')
-    SQLDelete.Strings = (
-      'DELETE FROM STATINI'
-      'WHERE'
-      '  CHIAVE = :Old_CHIAVE')
-    SQLUpdate.Strings = (
-      'UPDATE STATINI'
-      'SET'
-      
-        '  NOTE_PER_IL_TECNICO = :NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA ' +
-        '= :APPUNTAMENTO_DATA, APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STAT' +
-        'O = :STATO'
-      'WHERE'
-      '  CHIAVE = :Old_CHIAVE')
-    SQLLock.Strings = (
-      'SELECT NULL FROM STATINI'
-      'WHERE'
-      'CHIAVE = :Old_CHIAVE'
-      'FOR UPDATE WITH LOCK')
-    SQLRefresh.Strings = (
-      
-        'SELECT NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, APPUNTAMENTO_ORA,' +
-        ' STATO FROM STATINI'
-      'WHERE'
-      '  CHIAVE = :CHIAVE')
-    SQLRecCount.Strings = (
-      'SELECT COUNT(*) FROM ('
-      'SELECT 1 AS C  FROM STATINI'
-      ''
-      ') q')
-    DataTypeMap = <
-      item
-        DBType = 416
-        FieldType = ftWideString
-        FieldLength = 2048
-      end
-      item
-        FieldName = 'NOTE_PER_IL_TECNICO'
-        FieldType = ftWideString
-        FieldLength = 1024
-      end>
-    Connection = JanuaUniConnection1
-    SQL.Strings = (
-      'SELECT S.chiave, C.descrizione_scheda, C.AMMINISTRATORE, '
-      
-        '       S.CLIENTE, F.NOME, F.PROVINCIA, F.CAP, F.INDIRIZZO, F.TEL' +
-        'EFONO, F.NOTE, F.ORARIO_APERTURA_DAL1, F.ORARIO_APERTURA_DAL2,'
-      
-        '       F.ORARIO_APERTURA_AL1, F.ORARIO_APERTURA_AL2, F.CHIUSURA,' +
-        ' F.CELLULARE, F.EMAIL, F.ESCLUDI_DA_GENERAZIONE, F.SEDE, F.ID,'
-      '       F.REF_TELEFONO, F.REF_CELLULARE, F.COMUNE, S.FATTURA,'
-      
-        '       S.DATA_INTERVENTO , S.GENERAZIONE_AUTOMATICA , S.TECNICO_' +
-        'INTERVENTO , S.SCANSIONE , S.REGISTRO , S.NOTE_PER_IL_TECNICO , ' +
-        'S.SOSPESO,'
-      
-        '       S.DA_ESPORTARE_SUL_WEB , S.RESPONSABILE , S.ESPORTATO_SU_' +
-        'MOBILE , S.NOTE_DAL_TECNICO ,'
-      
-        '       S.VERBALE_PROVA_DINAMICA , S.VERBALE_MANICHETTE , S.PREVE' +
-        'NTIVO , S.IGNORA_EVIDENZIAZIONE,'
-      
-        '       S.ANNULLATO_DA_TABLET , S.MOBILEWARN_NUOVA_ATTREZZATURA ,' +
-        ' S.MOBILEWARN_ORDINARIA_RITIRATA,'
-      
-        '       S.MOBILEWARN_N_ORDIN_CONTROLLATA , S.MOBILEWARN_SMALTIMEN' +
-        'TO , S.STATO_LAVORAZIONE , S.DATA_CHIUSURA_DA_SERVER , S.CHIUSUR' +
-        'A_EXT,'
-      
-        '       S.CHIUSURA_STATINO , S.MOBILEWARN_NON_ESEGUITI , S.PRESA_' +
-        'IN_CARICO , S.FORNITURA,'
-      
-        '       V.ordinari, V.straordinari, V.interventi, T.descrizione a' +
-        's NOME_TECNICO, '
-      
-        '       S.APPUNTAMENTO_DATA, S.APPUNTAMENTO_ORA, S.STATO,I.STATIN' +
-        'O, '
-      '       COALESCE(I.ESTINTORI_ORDINARIO, 0) ESTINTORI_ORDINARIO,'
-      
-        '       COALESCE(I.ESTINTORI_STRAORDINARIO, 0) ESTINTORI_STRAORDI' +
-        'NARIO,'
-      '       COALESCE(I.GRUPPI_ELETTR, 0) GRUPPI_ELETTR,'
-      '       COALESCE(I.FUMI, 0) FUMI,'
-      '       COALESCE(I.LUCI, 0) LUCI,'
-      '       COALESCE(I.IDRANTI, 0) IDRANTI,'
-      '       COALESCE(I.SPRINKLER, 0) SPRINKLER,'
-      '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL'
-      'FROM FILIALI_CLIENTI F '
-      'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
-      'JOIN STATINI S ON F.chiave = S.filiale'
-      
-        'LEFT OUTER JOIN INTERVENTI_STRAORDINARI_VIEW V ON S.chiave = V.s' +
-        'tatino'
-      'JOIN TECNICI T ON T.chiave = S.responsabile'
-      
-        'LEFT OUTER JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = ' +
-        'I.statino'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
-      '--AND S.CHIAVE = 2100103'
-      'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
-      ';')
-    BeforePost = qryReportPlannerBeforePost
-    OnCalcFields = qryReportPlannerCalcFields
-    Left = 112
-    Top = 176
-    object qryReportPlannerCHIAVE: TIntegerField
-      FieldName = 'CHIAVE'
-      Required = True
-    end
-    object qryReportPlannerDESCRIZIONE_SCHEDA: TStringField
-      FieldName = 'DESCRIZIONE_SCHEDA'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerCLIENTE: TIntegerField
-      FieldName = 'CLIENTE'
-    end
-    object qryReportPlannerNOME: TStringField
-      FieldName = 'NOME'
-      ReadOnly = True
-      Required = True
-      Size = 100
-    end
-    object qryReportPlannerPROVINCIA: TStringField
-      FieldName = 'PROVINCIA'
-      ReadOnly = True
-      FixedChar = True
-      Size = 2
-    end
-    object qryReportPlannerCAP: TStringField
-      FieldName = 'CAP'
-      ReadOnly = True
-      Size = 10
-    end
-    object qryReportPlannerINDIRIZZO: TStringField
-      FieldName = 'INDIRIZZO'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerTELEFONO: TStringField
-      FieldName = 'TELEFONO'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerNOTE: TBlobField
-      FieldName = 'NOTE'
-      ReadOnly = True
-    end
-    object qryReportPlannerORARIO_APERTURA_DAL1: TTimeField
-      FieldName = 'ORARIO_APERTURA_DAL1'
-      ReadOnly = True
-    end
-    object qryReportPlannerORARIO_APERTURA_DAL2: TTimeField
-      FieldName = 'ORARIO_APERTURA_DAL2'
-      ReadOnly = True
-    end
-    object qryReportPlannerORARIO_APERTURA_AL1: TTimeField
-      FieldName = 'ORARIO_APERTURA_AL1'
-      ReadOnly = True
-    end
-    object qryReportPlannerORARIO_APERTURA_AL2: TTimeField
-      FieldName = 'ORARIO_APERTURA_AL2'
-      ReadOnly = True
-    end
-    object qryReportPlannerCHIUSURA: TStringField
-      FieldName = 'CHIUSURA'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerCELLULARE: TStringField
-      FieldName = 'CELLULARE'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerEMAIL: TStringField
-      FieldName = 'EMAIL'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerESCLUDI_DA_GENERAZIONE: TStringField
-      FieldName = 'ESCLUDI_DA_GENERAZIONE'
-      ReadOnly = True
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerSEDE: TStringField
-      FieldName = 'SEDE'
-      ReadOnly = True
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerID: TStringField
-      FieldName = 'ID'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerREF_TELEFONO: TStringField
-      FieldName = 'REF_TELEFONO'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerREF_CELLULARE: TStringField
-      FieldName = 'REF_CELLULARE'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerCOMUNE: TStringField
-      FieldName = 'COMUNE'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerFATTURA: TIntegerField
-      FieldName = 'FATTURA'
-    end
-    object qryReportPlannerDATA_INTERVENTO: TDateField
-      FieldName = 'DATA_INTERVENTO'
-    end
-    object qryReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField
-      FieldName = 'GENERAZIONE_AUTOMATICA'
-    end
-    object qryReportPlannerTECNICO_INTERVENTO: TIntegerField
-      FieldName = 'TECNICO_INTERVENTO'
-    end
-    object qryReportPlannerSCANSIONE: TWideStringField
-      FieldName = 'SCANSIONE'
-      Size = 2048
-    end
-    object qryReportPlannerREGISTRO: TWideStringField
-      FieldName = 'REGISTRO'
-      Size = 2048
-    end
-    object qryReportPlannerNOTE_PER_IL_TECNICO: TWideStringField
-      FieldName = 'NOTE_PER_IL_TECNICO'
-      Size = 1024
-    end
-    object qryReportPlannerSOSPESO: TStringField
-      FieldName = 'SOSPESO'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerDA_ESPORTARE_SUL_WEB: TStringField
-      FieldName = 'DA_ESPORTARE_SUL_WEB'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerRESPONSABILE: TIntegerField
-      FieldName = 'RESPONSABILE'
-    end
-    object qryReportPlannerESPORTATO_SU_MOBILE: TStringField
-      FieldName = 'ESPORTATO_SU_MOBILE'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerNOTE_DAL_TECNICO: TBlobField
-      FieldName = 'NOTE_DAL_TECNICO'
-    end
-    object qryReportPlannerVERBALE_PROVA_DINAMICA: TBlobField
-      FieldName = 'VERBALE_PROVA_DINAMICA'
-    end
-    object qryReportPlannerVERBALE_MANICHETTE: TBlobField
-      FieldName = 'VERBALE_MANICHETTE'
-    end
-    object qryReportPlannerPREVENTIVO: TIntegerField
-      FieldName = 'PREVENTIVO'
-    end
-    object qryReportPlannerIGNORA_EVIDENZIAZIONE: TStringField
-      FieldName = 'IGNORA_EVIDENZIAZIONE'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerANNULLATO_DA_TABLET: TStringField
-      FieldName = 'ANNULLATO_DA_TABLET'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
-      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField
-      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
-      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerMOBILEWARN_SMALTIMENTO: TStringField
-      FieldName = 'MOBILEWARN_SMALTIMENTO'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerSTATO_LAVORAZIONE: TStringField
-      FieldName = 'STATO_LAVORAZIONE'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField
-      FieldName = 'DATA_CHIUSURA_DA_SERVER'
-    end
-    object qryReportPlannerCHIUSURA_EXT: TStringField
-      FieldName = 'CHIUSURA_EXT'
-      Size = 50
-    end
-    object qryReportPlannerCHIUSURA_STATINO: TWideStringField
-      FieldName = 'CHIUSURA_STATINO'
-      Size = 2048
-    end
-    object qryReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
-      FieldName = 'MOBILEWARN_NON_ESEGUITI'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerPRESA_IN_CARICO: TStringField
-      FieldName = 'PRESA_IN_CARICO'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerFORNITURA: TStringField
-      FieldName = 'FORNITURA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryReportPlannerORDINARI: TLargeintField
-      FieldName = 'ORDINARI'
-      ReadOnly = True
-    end
-    object qryReportPlannerSTRAORDINARI: TLargeintField
-      FieldName = 'STRAORDINARI'
-      ReadOnly = True
-    end
-    object qryReportPlannerINTERVENTI: TLargeintField
-      FieldName = 'INTERVENTI'
-      ReadOnly = True
-    end
-    object qryReportPlannerNOME_TECNICO: TStringField
-      FieldName = 'NOME_TECNICO'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryReportPlannerAPPUNTAMENTO_DATA: TDateField
-      FieldName = 'APPUNTAMENTO_DATA'
-    end
-    object qryReportPlannerAPPUNTAMENTO_ORA: TTimeField
-      FieldName = 'APPUNTAMENTO_ORA'
-    end
-    object qryReportPlannerSTATO: TSmallintField
-      FieldName = 'STATO'
-    end
-    object qryReportPlannerSTATINO: TIntegerField
-      FieldName = 'STATINO'
-      ReadOnly = True
-    end
-    object qryReportPlannerESTINTORI_ORDINARIO: TLargeintField
-      FieldName = 'ESTINTORI_ORDINARIO'
-      ReadOnly = True
-    end
-    object qryReportPlannerESTINTORI_STRAORDINARIO: TLargeintField
-      FieldName = 'ESTINTORI_STRAORDINARIO'
-      ReadOnly = True
-    end
-    object qryReportPlannerGRUPPI_ELETTR: TLargeintField
-      FieldName = 'GRUPPI_ELETTR'
-      ReadOnly = True
-    end
-    object qryReportPlannerFUMI: TLargeintField
-      FieldName = 'FUMI'
-      ReadOnly = True
-    end
-    object qryReportPlannerLUCI: TLargeintField
-      FieldName = 'LUCI'
-      ReadOnly = True
-    end
-    object qryReportPlannerIDRANTI: TLargeintField
-      FieldName = 'IDRANTI'
-      ReadOnly = True
-    end
-    object qryReportPlannerSPRINKLER: TLargeintField
-      FieldName = 'SPRINKLER'
-      ReadOnly = True
-    end
-    object qryReportPlannerIMPIANTI_EL: TLargeintField
-      FieldName = 'IMPIANTI_EL'
-      ReadOnly = True
-    end
-    object qryReportPlannerAMMINISTRATORE: TIntegerField
-      FieldName = 'AMMINISTRATORE'
-      ReadOnly = True
-    end
-    object qryReportPlannercalcAppuntamentoDataOra: TDateTimeField
-      FieldKind = fkCalculated
-      FieldName = 'calcAppuntamentoDataOra'
-      Calculated = True
-    end
-  end
-  object spSetStatinoStato: TUniStoredProc
-    StoredProcName = 'SET_STATINI_STATO'
-    SQL.Strings = (
-      'EXECUTE PROCEDURE SET_STATINI_STATO')
-    Connection = JanuaUniConnection1
-    Left = 112
-    Top = 248
-    CommandStoredProcName = 'SET_STATINI_STATO'
-  end
-  object qryCustomers: TUniQuery
-    Connection = JanuaUniConnection1
-    SQL.Strings = (
-      'SELECT DISTINCT C.chiave, C.descrizione_scheda'
-      'FROM FILIALI_CLIENTI F '
-      'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
-      'JOIN STATINI S ON F.chiave = S.filiale'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY TRIM(C.DESCRIZIONE_SCHEDA)'
-      ';')
-    Left = 240
-    Top = 64
-    object qryCustomersCHIAVE: TIntegerField
-      FieldName = 'CHIAVE'
-      Required = True
-    end
-    object qryCustomersDESCRIZIONE_SCHEDA: TStringField
-      FieldName = 'DESCRIZIONE_SCHEDA'
-      Size = 255
-    end
-  end
-  object qryTech: TUniQuery
-    Connection = JanuaUniConnection1
-    SQL.Strings = (
-      'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
-      'FROM STATINI s'
-      'JOIN TECNICI T ON T.chiave = S.responsabile'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY T.descrizione'
-      ';')
-    Left = 240
-    Top = 144
-    object qryTechRESPONSABILE: TIntegerField
-      FieldName = 'RESPONSABILE'
-    end
-    object qryTechNOME_TECNICO: TStringField
-      FieldName = 'NOME_TECNICO'
-      ReadOnly = True
-      Size = 255
-    end
-  end
-  object qryCAP: TUniQuery
-    Connection = JanuaUniConnection1
-    SQL.Strings = (
-      'SELECT DISTINCT S.CAP'
-      'FROM STATINI s'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY  S.CAP'
-      ';')
-    Left = 240
-    Top = 216
-    object qryCAPCAP: TStringField
-      FieldName = 'CAP'
-      Size = 10
-    end
-  end
-  object ActionList1: TActionList
-    Images = SVGIconImageList1
-    Left = 384
-    Top = 64
-    object ActionAddMeeting: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Appuntamento'
-      ImageIndex = 31
-      ImageName = '032-calendar'
-    end
-    object ActionUndoMeeting: TAction
-      Category = 'Meetings'
-      Caption = 'Annulla Appuntamento'
-      ImageIndex = 1
-      ImageName = '002-time'
-    end
-    object ActionSearchMeeting: TAction
-      Category = 'Meetings'
-      Caption = 'Cerca Appuntamento'
-      ImageIndex = 45
-      ImageName = '046-search'
-    end
-    object ActionAddUser: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Dipendente'
-      ImageIndex = 2
-      ImageName = '003-employee'
-    end
-    object ActionAddActivity: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Una Attivit'#224
-      ImageIndex = 35
-      ImageName = '036-planner'
-    end
-    object ActionExport: TAction
-      Category = 'Meetings'
-      Caption = 'Esporta (Excel, Pdf, Csv)'
-      ImageIndex = 24
-      ImageName = '025-planning'
-    end
-    object ActionSendShare: TAction
-      Category = 'Meetings'
-      Caption = 'Invia (Mail) Condividi'
-      ImageIndex = 8
-      ImageName = '009-email'
-    end
-    object ActionPrint: TAction
-      Category = 'Meetings'
-      Caption = 'Stampa / Anteprima'
-      ImageIndex = 57
-      ImageName = '008-printer'
-    end
-  end
-  object AdvGCalendar1: TAdvGCalendar
-    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
-    App.CallBackURL = 'http://127.0.0.1:8888/'
-    App.CallBackPort = 8888
-    PersistTokens.Location = plIniFile
-    Scopes.Strings = (
-      'https://www.googleapis.com/auth/calendar')
-    AuthFormSettings.Caption = 'Authorize'
-    AuthFormSettings.Width = 900
-    AuthFormSettings.Height = 600
-    Calendars = <>
-    Items = <>
-    Left = 491
-    Top = 95
-  end
-  object PrinterSetupDialog1: TPrinterSetupDialog
-    Left = 488
-    Top = 160
-  end
+  Height = 300
+  Width = 338
   object SVGIconImageList1: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5766,9 +5217,137 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
           '.229h-37.589c-7.963 0-14.418-6.455-14.418-14.418 0-7.963 6.455-1' +
           '4.418 14.418-14.418h37.589c7.963 0 14.418 6.455 14.418 14.418 0 ' +
           '7.963-6.455 14.418-14.418 14.418z" fill="#e94444"/></g></svg>'
+      end
+      item
+        IconName = 'google-calendar'
+        SVGText = 
+          '<svg id="Capa_1" enable-background="new 0 0 512 512" height="512' +
+          '" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/200' +
+          '0/svg"><g><path id="Path_15_" d="m176.539 330.307c-10.072-6.804-' +
+          '17.044-16.741-20.851-29.878l23.377-9.634c2.122 8.084 5.827 14.34' +
+          '9 11.116 18.796 5.255 4.446 11.655 6.636 19.133 6.636 7.646 0 14' +
+          '.215-2.324 19.705-6.973 5.491-4.648 8.253-10.577 8.253-17.752 0-' +
+          '7.343-2.897-13.339-8.691-17.987s-13.069-6.973-21.76-6.973h-13.50' +
+          '7v-23.141h12.126c7.478 0 13.777-2.021 18.897-6.063s7.68-9.566 7.' +
+          '68-16.606c0-6.265-2.291-11.251-6.872-14.989-4.581-3.739-10.375-5' +
+          '.625-17.415-5.625-6.872 0-12.328 1.819-16.371 5.491-4.042 3.672-' +
+          '6.973 8.185-8.825 13.507l-23.141-9.634c3.065-8.691 8.691-16.371 ' +
+          '16.943-23.006 8.253-6.636 18.796-9.971 31.596-9.971 9.465 0 17.9' +
+          '87 1.819 25.533 5.491 7.545 3.672 13.474 8.758 17.752 15.225 4.2' +
+          '78 6.501 6.4 13.777 6.4 21.861 0 8.253-1.987 15.225-5.962 20.952' +
+          '-3.975 5.726-8.859 10.105-14.653 13.171v1.381c7.646 3.2 13.878 8' +
+          '.084 18.796 14.653 4.884 6.568 7.343 14.417 7.343 23.579s-2.324 ' +
+          '17.347-6.973 24.522c-4.648 7.175-11.082 12.834-19.234 16.943-8.1' +
+          '85 4.109-17.381 6.198-27.587 6.198-11.823.033-22.736-3.369-32.80' +
+          '8-10.174z" fill="#0085f7"/><path id="Path_14_" d="m320.135 214.2' +
+          '99-25.668 18.56-12.833-19.47 46.046-33.212h17.651v156.665h-25.19' +
+          '6z" fill="#0085f7"/><path id="Path_3_" d="m390.737 390.737h-269.' +
+          '474l-38.574 56.837 38.574 64.426h269.474l31.868-68.546z" fill="#' +
+          '00a94b"/><path id="Path_4_" d="m390.737 0h-350.316c-22.333 0-40.' +
+          '421 18.088-40.421 40.421v350.316l60.632 43.103 60.632-43.103v-26' +
+          '9.474h269.474l41.482-60.632z" fill="#0085f7"/><path id="Path_5_"' +
+          ' d="m0 390.737v80.842c0 22.333 18.088 40.421 40.421 40.421h80.84' +
+          '2v-121.263z" fill="#00802e"/><path id="Path_6_" d="m512 121.263-' +
+          '60.632-39.014-60.631 39.014v269.474l54.529 28.463 66.734-28.463z' +
+          '" fill="#ffbc00"/><path id="Path_2_" d="m512 121.263v-80.842c0-2' +
+          '2.333-18.088-40.421-40.421-40.421h-80.842v121.263z" fill="#0067d' +
+          '5"/><path id="Path_1_" d="m390.737 512 121.263-121.263h-121.263z' +
+          '" fill="#ff4131"/></g></svg>'
       end>
     Scaled = True
-    Left = 384
+    Left = 96
+    Top = 96
+  end
+  object actListPlanner: TActionList
+    Images = SVGIconImageList1
+    Left = 96
+    Top = 32
+    object ActionAddMeeting: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiungi Appuntamento'
+      ImageIndex = 31
+      ImageName = '032-calendar'
+      OnExecute = ActionAddMeetingExecute
+    end
+    object ActionUndoMeeting: TAction
+      Category = 'Meetings'
+      Caption = 'Annulla Appuntamento'
+      ImageIndex = 1
+      ImageName = '002-time'
+    end
+    object ActionSearchMeeting: TAction
+      Category = 'Meetings'
+      Caption = 'Cerca Appuntamento'
+      ImageIndex = 45
+      ImageName = '046-search'
+    end
+    object ActionAddUser: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiungi Dipendente'
+      ImageIndex = 2
+      ImageName = '003-employee'
+      OnExecute = ActionAddUserExecute
+    end
+    object ActionAddActivity: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiungi Una Attivit'#224
+      ImageIndex = 35
+      ImageName = '036-planner'
+    end
+    object ActionExport: TAction
+      Category = 'Meetings'
+      Caption = 'Esporta (Excel,     Pdf, Csv)'
+      ImageIndex = 24
+      ImageName = '025-planning'
+    end
+    object ActionSendShare: TAction
+      Category = 'Meetings'
+      Caption = 'Invia (Mail) Condividi'
+      ImageIndex = 8
+      ImageName = '009-email'
+    end
+    object ActionPrint: TAction
+      Category = 'Meetings'
+      Caption = 'Stampa / Anteprima'
+      ImageIndex = 57
+      ImageName = '008-printer'
+      OnExecute = ActionPrintExecute
+    end
+    object ActionGoogleCalendarSync: TAction
+      Category = 'Meetings'
+      Caption = 'Google Calendar Sync'
+      Hint = 'Sync with Google Calendar'
+      ImageIndex = 58
+      ImageName = 'google-calendar'
+    end
+  end
+  object PrinterSetupDialog1: TPrinterSetupDialog
+    Left = 200
     Top = 128
+  end
+  object AdvGCalendar1: TAdvGCalendar
+    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
+    App.CallBackURL = 'http://127.0.0.1:8888/'
+    App.CallBackPort = 8888
+    PersistTokens.Location = plIniFile
+    Scopes.Strings = (
+      'https://www.googleapis.com/auth/calendar')
+    AuthFormSettings.Caption = 'Authorize'
+    AuthFormSettings.Width = 900
+    AuthFormSettings.Height = 600
+    Calendars = <>
+    Items = <>
+    Left = 203
+    Top = 63
+  end
+  object JanuaPlannerController1: TJanuaPlannerController
+    Enabled = True
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
+    DateFrom = 45426.000000000000000000
+    Left = 96
+    Top = 168
   end
 end

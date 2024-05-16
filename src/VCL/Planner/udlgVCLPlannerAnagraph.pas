@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Janua.VCL.EnhDBGrid, Vcl.StdCtrls, Vcl.Mask;
+  Janua.VCL.EnhDBGrid, Vcl.StdCtrls, Vcl.Mask, Vcl.Buttons;
 
 type
   TdlgVCLPlannerAnagraph = class(TForm)
