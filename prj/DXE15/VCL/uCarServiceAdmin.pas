@@ -1,4 +1,4 @@
-unit uCarServiceProject_x86;
+unit uCarServiceAdmin;
 
 interface
 

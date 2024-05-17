@@ -474,7 +474,8 @@ type
   public
     class procedure Startup;
     class property Calendar: TJanuaLogRecords read GetLogRecords write SetlogRecords;
-    class procedure LogRecord(const aProcedure, aMessage: string; aClass: TObject);
+    class procedure LogRecord(const aRecord: TJanuaLogRecord); overload;
+    class procedure LogRecord(const aProcedure, aMessage: string; aClass: TObject); overload;
     class procedure LogError(const aProcedure, aMessage: string; aClass: TObject; e: Exception); overload;
     class procedure LogError(const aProcedure, aMessage: string; aClass: TObject); overload;
     class Procedure LogWarning(const aProcedure, aMessage: string; aClass: TObject);
@@ -3525,6 +3526,7 @@ begin
 
     if TJanuaApplication.ApplicationType = TJanuaApplicationType.jatConsoleSrv then
       Writeln(Result.LogText);
+
     TJanuaApplication.AddLog(Result.LogText);
   finally
     LogCriticalSection.Release;
@@ -3842,6 +3844,31 @@ begin
           FlogRecords.Add(aProcedure, aMessage, aClass);
           if Assigned(FOutputLogger) then
             FOutputLogger.OutputLog(aProcedure, aMessage, aClass);
+        finally
+          MonitorExit(LockObject);
+        end;
+    end,
+    procedure(const aResult: Boolean)
+    begin
+      // per ora non ci faccio nulla :)
+    end,
+    procedure(const Ex: Exception)
+    begin
+      JShowError(Ex.Message);
+    end);
+end;
+
+class procedure TJanuaLogger.LogRecord(const aRecord: TJanuaLogRecord);
+begin
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      Result := MonitorEnter(LockObject);
+      if Result then
+        try
+          FlogRecords.Add(aRecord);
+          if Assigned(FOutputLogger) then
+            FOutputLogger.OutputLog(aRecord);
         finally
           MonitorExit(LockObject);
         end;

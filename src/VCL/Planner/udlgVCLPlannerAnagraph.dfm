@@ -11,9 +11,7 @@ object dlgVCLPlannerAnagraph: TdlgVCLPlannerAnagraph
   Font.Height = -13
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 17
   object lbNome: TLabel
     Left = 32
