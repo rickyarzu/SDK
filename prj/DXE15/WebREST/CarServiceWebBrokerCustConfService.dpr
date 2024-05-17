@@ -2,9 +2,12 @@ program CarServiceWebBrokerCustConfService;
 
 uses
   Vcl.SvcMgr,
+  Janua.Core.Types,
   Janua.Application.Framework,
   Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
   Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
+  Janua.CarService.WebModuleCustomerConfirmation in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {wmCarserviceCustomerConfirmation: TWebModule},
+  Janua.Carservice.PgCustomers in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCarServiceCustomers: TDataModule},
   Janua.CarService.CustConfWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas' {JanuaCarServiceCustConfWebBrokerService: TService};
 
 {$R *.RES}
@@ -26,6 +29,10 @@ begin
   //
   if not Application.DelayInitialize or Application.Installing then
     Application.Initialize;
+
+  TJanuaApplication.ApplicationType := TJanuaApplicationType.jatWinService;
+  TJanuaCarserviceWebBrokerUniDACApplication.ApplicationSetup('customerconf.pikapp.it');
+
   Application.CreateForm(TJanuaCarServiceCustConfWebBrokerService, JanuaCarServiceCustConfWebBrokerService);
   Application.Run;
 end.

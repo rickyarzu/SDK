@@ -183,9 +183,16 @@
         </DelphiCompile>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas">
+            <Form>wmCarserviceCustomerConfirmation</Form>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas">
+            <Form>dmPgCarServiceCustomers</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.CarService.CustConfWebBrokerService.pas">
             <Form>JanuaCarServiceCustConfWebBrokerService</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TService</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">

@@ -3,9 +3,17 @@ unit Janua.CarService.dlgWebBrokerCustConfirmation;
 interface
 
 uses
-  Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.AppEvnts, Vcl.StdCtrls, IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;
+  Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.Types,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.AppEvnts, Vcl.StdCtrls,
+  IdHTTPWebBrokerBridge,
+  Web.WebReq,
+  Web.WebBroker,
+  Janua.WebBroker.ServerConst,
+  Janua.Core.Types,
+  Janua.Core.WebServer,
+  Janua.CarService.WebModuleCustomerConfirmation;
+
+// IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;
 
 type
   TForm1 = class(TForm)
@@ -16,13 +24,15 @@ type
     ApplicationEvents1: TApplicationEvents;
     ButtonOpenBrowser: TButton;
     procedure FormCreate(Sender: TObject);
-    procedure ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
     procedure ButtonStartClick(Sender: TObject);
     procedure ButtonStopClick(Sender: TObject);
     procedure ButtonOpenBrowserClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
-    FServer: TIdHTTPWebBrokerBridge;
+    FServer: TJanuaWebServer;
     procedure StartServer;
+    procedure StopServer;
+    procedure RefreshButtons;
     { Private declarations }
   public
     { Public declarations }
@@ -40,13 +50,6 @@ uses
   Winapi.Windows, Winapi.ShellApi,
 {$ENDIF}
   System.Generics.Collections, Janua.Application.Framework;
-
-procedure TForm1.ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
-begin
-  ButtonStart.Enabled := not FServer.Active;
-  ButtonStop.Enabled := FServer.Active;
-  EditPort.Enabled := not FServer.Active;
-end;
 
 procedure TForm1.ButtonOpenBrowserClick(Sender: TObject);
 {$IFDEF MSWINDOWS}
@@ -68,26 +71,43 @@ end;
 
 procedure TForm1.ButtonStopClick(Sender: TObject);
 begin
-  FServer.Active := False;
-  FServer.Bindings.Clear;
+  StopServer;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  FServer := TIdHTTPWebBrokerBridge.Create(Self);
-  var
-  lPort := TJanuacoreOS.ReadParam('UniGUI', 'Port', 8077);
-  EditPort.Text := lPort.ToString;
+  if WebRequestHandler <> nil then
+    WebRequestHandler.WebModuleClass := WebModuleClass;
+  FServer := TJanuaWebServerFactory.CreateWebServer;
+  FServer.Port := TJanuaWebServer.GetPort(8084);
+  EditPort.Text := FServer.Port.ToString;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  FServer.Free;
+end;
+
+procedure TForm1.RefreshButtons;
+begin
+  ButtonStart.Enabled := not FServer.IsActive;
+  ButtonStop.Enabled := FServer.IsActive;
+  EditPort.Enabled := not FServer.IsActive;
 end;
 
 procedure TForm1.StartServer;
 begin
-  if not FServer.Active then
+  if not FServer.IsActive then
   begin
-    FServer.Bindings.Clear;
-    FServer.DefaultPort := StrToInt(EditPort.Text);
-    FServer.Active := True;
+    FServer.Port := StrToInt(EditPort.Text);
+    FServer.StartServer;
   end;
+end;
+
+procedure TForm1.StopServer;
+begin
+  FServer.StopServer;
+    FServer.IsActive := False;
 end;
 
 end.

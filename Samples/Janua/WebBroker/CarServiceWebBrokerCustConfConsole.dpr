@@ -5,8 +5,6 @@ uses
   System.SysUtils,
   System.StrUtils,
   System.Types,
-  IPPeerServer,
-  IPPeerAPI,
   IdHTTPWebBrokerBridge,
   Web.WebReq,
   Web.WebBroker,
@@ -16,7 +14,7 @@ uses
   Janua.Core.WebServer,
   Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
   Janua.Carservice.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.Carservice.WebBroker.UniDACApplication.pas',
-  Janua.CarService.WebModuleCustomerConfirmation in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {WebModule1: TWebModule},
+  Janua.CarService.WebModuleCustomerConfirmation in '..\..\..\src\januacore\Datasnap\Janua.CarService.WebModuleCustomerConfirmation.pas' {wmCarserviceCustomerConfirmation: TWebModule},
   Janua.Carservice.PgCustomers in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCarServiceCustomers: TDataModule};
 
 {$R *.res}
@@ -74,7 +72,7 @@ begin
 end;
 
 begin
-  TJanuaApplication.ApplicationType := jatConsoleSrv;
+  TJanuaApplication.ApplicationType := TJanuaApplicationType.jatConsoleSrv;
   TJanuaCarserviceWebBrokerUniDACApplication.ApplicationSetup('customerconf.pikapp.it');
   var
   lPort := TJanuaWebServer.GetPort(8084);

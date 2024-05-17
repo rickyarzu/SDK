@@ -61,7 +61,7 @@ end;
 
 function TJanuaWebBrokerServer.GetIsActive: Boolean;
 begin
-  Result := FServer.Active;
+  Result := Assigned(FServer) and FServer.Active;
 end;
 
 procedure TJanuaWebBrokerServer.RunServer(APort: Integer);

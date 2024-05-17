@@ -157,7 +157,7 @@ type
     function OpenBooking(const aGUID: TGUID): Boolean;
     procedure RefreshDetails; override;
     function WebResponse(const aGUID: string; out aPage: string): integer;
-    function WebConfirmation(const aGUID: string; out aPage: string): integer;
+    function WebConfirmation(const aParams: TStrings; out aPage: string): integer;
   public
     property BookingRecord: IBookingHeadView read FBookingRecord write SetBookingRecord;
   end;
@@ -168,7 +168,7 @@ var
 implementation
 
 uses JOrm.Carservice.Booking.Impl, Janua.Orm.Impl, Janua.Application.Framework, Janua.Core.Functions,
-  System.StrUtils;
+  System.StrUtils, Janua.Core.Html;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -215,7 +215,9 @@ begin
 end;
 
 function TdmPgCarServiceCustomers.OpenBooking(const aGUID: TGUID): Boolean;
-  function InternalOpen: Boolean;
+begin
+  Result := not aGUID.IsEmpty;
+  if Result then
   begin
     qryBooking.Close;
     qryBooking.Params[0].AsGuid := aGUID;
@@ -228,8 +230,6 @@ function TdmPgCarServiceCustomers.OpenBooking(const aGUID: TGUID): Boolean;
     end;
   end;
 
-begin
-  Result := not aGUID.IsEmpty and InternalOpen;
   // if A booking is found then the record is loaded instead it should be cleared to clean dirt :)
   if Result then
   begin
@@ -265,7 +265,7 @@ begin
   FBookingRecord := Value;
 end;
 
-function TdmPgCarServiceCustomers.WebConfirmation(const aGUID: string; out aPage: string): integer;
+function TdmPgCarServiceCustomers.WebConfirmation(const aParams: TStrings; out aPage: string): integer;
   procedure SetCustConfirmationMsgBuilder;
   begin
     if FBookingRecord.HasReturn then
@@ -276,12 +276,22 @@ function TdmPgCarServiceCustomers.WebConfirmation(const aGUID: string; out aPage
   end;
 
 begin
-  SetCustConfirmationMsgBuilder;
-  FCSCustomerConfMsgBuilder.Dataset := qryBooking;
-  FCSCustomerConfMsgBuilder.LoadSettings;
   var
-  lMessage := FCSCustomerConfMsgBuilder.GenerateLandingMessage;
-  aPage := lMessage.Text;
+  sGUID := aParams.Values['guid'];
+  if (sGUID <> '') then
+  begin
+    var
+    aGUID := LocalStringToGUID(sGUID);
+    if OpenBooking(aGUID) then
+    begin
+      SetCustConfirmationMsgBuilder;
+      FCSCustomerConfMsgBuilder.Dataset := qryBooking;
+      FCSCustomerConfMsgBuilder.LoadSettings;
+      var
+      lMessage := FCSCustomerConfMsgBuilder.GenerateLandingMessage;
+      aPage := lMessage.Text;
+    end;
+  end;
 end;
 
 function TdmPgCarServiceCustomers.WebResponse(const aGUID: string; out aPage: string): integer;
@@ -322,6 +332,8 @@ begin
         if not TryHtmlReplace(aPage, 'Text', FMessage.Text) then
           raise Exception.Create('Error Message');
 
+        HtmlReplace(aPage, 'jguid', aGUID);
+
         FPickupSlot := TTimeTableSlot.Create();
         FDeliverySlot := TTimeTableSlot.Create();
 
@@ -339,6 +351,9 @@ begin
         var
         lbPickupTime := FPickupSlot.SlotDes.AsString;
 
+        HtmlReplace(aPage, 'pickup_date', lbPickupDate);
+        HtmlReplace(aPage, 'pickup_time', lbPickupTime);
+
         // A Booking can be One Way Pickup or have a Delivery (Return) Slot if not then
         if FBookingRecord.HasReturn then
         begin
@@ -347,21 +362,32 @@ begin
           var
           lbDeliveryTime := FDeliverySlot.SlotDes.AsString;
 
-          if Pos('$$Restituzione$$', aPage) > 0 then
-            aPage := StringReplace(aPage, '$$Restituzione$$', '/Restituzione', [rfReplaceAll, rfIgnoreCase]);
+          HtmlReplace(aPage, 'return_date', lbPickupDate);
+          HtmlReplace(aPage, 'return_time', lbPickupTime);
 
-          if Pos('$$visibility_restituzione$$', aPage) > 0 then
+          HtmlReplace(aPage, 'Restituzione', '/Restituzione');
+          HtmlReplace(aPage, 'visibility_restituzione', '');
+          HtmlReplace(aPage, 'checked_return', '');
+
+          { if Pos('$$Restituzione$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$Restituzione$$', '/Restituzione', [rfReplaceAll, rfIgnoreCase ]);
+
+            if Pos('$$visibility_restituzione$$', aPage) > 0 then
             aPage := StringReplace(aPage, '$$visibility_restituzione$$', '', [rfReplaceAll, rfIgnoreCase]);
 
-          // not checked by default
-          if Pos('$$checked_return$$', aPage) > 0 then
-            aPage := StringReplace(aPage, '$$checked_return$$', '', [rfReplaceAll, rfIgnoreCase]);
+            // not checked by default
+            if Pos('$$checked_return$$', aPage) > 0 then
+            aPage := StringReplace(aPage, '$$checked_return$$', 'checked', [rfReplaceAll, rfIgnoreCase]); }
         end
         else
         begin
-          aPage.Replace('$$Restituzione$$', '');
-          aPage.Replace('$$visibility_restituzione$$', 'visually-hidden');
-          aPage.Replace('$$checked_return$$', 'checked');
+          HtmlReplace(aPage, 'Restituzione', '');
+          HtmlReplace(aPage, 'visibility_restituzione', 'visually-hidden');
+          HtmlReplace(aPage, 'checked_return', 'checked');
+
+          { aPage.Replace('$$Restituzione$$', '');
+            aPage.Replace('$$visibility_restituzione$$', 'visually-hidden');
+            aPage.Replace('$$checked_return$$', 'checked'); }
         end
       end
       else

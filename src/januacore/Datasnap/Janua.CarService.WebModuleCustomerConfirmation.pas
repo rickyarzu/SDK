@@ -6,9 +6,11 @@ uses
   System.SysUtils, System.Classes, Web.HTTPApp;
 
 type
-  TWebModule1 = class(TWebModule)
+  TwmCarserviceCustomerConfirmation = class(TWebModule)
     procedure WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
       var Handled: Boolean);
+    procedure wmCarserviceCustomerConfirmationPostHandlerAction(Sender: TObject; Request: TWebRequest;
+      Response: TWebResponse; var Handled: Boolean);
   private
     { Private declarations }
   public
@@ -16,17 +18,17 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = TWebModule1;
+  WebModuleClass: TComponentClass = TwmCarserviceCustomerConfirmation;
 
 implementation
 
-uses Janua.Application.Framework, Janua.CarService.PgCustomers, Janua.Http.Types;
+uses Janua.Application.Framework, Janua.CarService.PgCustomers, Janua.Http.Types, Janua.Core.Http;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TWebModule1.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
-  Response: TWebResponse; var Handled: Boolean);
+procedure TwmCarserviceCustomerConfirmation.WebModule1DefaultHandlerAction(Sender: TObject;
+  Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 var
   DM: TdmPgCarServiceCustomers;
 begin
@@ -39,8 +41,27 @@ begin
     lPage := '';
     var
     lStatusCode := DM.WebResponse(sGUID, lPage);
-    Response.ContentType := TJanuaMimeString.TEXT_HTML;
-    Response.Content := lPage;
+    EncodeUTF8Response(Response, lPage, TJanuaMimeString.TEXT_HTML);
+    Handled := True;
+  finally
+    DM.Free;
+  end;
+end;
+
+procedure TwmCarserviceCustomerConfirmation.wmCarserviceCustomerConfirmationPostHandlerAction(Sender: TObject;
+  Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+var
+  DM: TdmPgCarServiceCustomers;
+begin
+  DM := TdmPgCarServiceCustomers.Create(nil);
+  try
+    var
+    vTest := Request.ContentFields.Text;
+    var
+    lPage := '';
+    DM.WebConfirmation(Request.ContentFields, lPage);
+    EncodeUTF8Response(Response, lPage, TJanuaMimeString.TEXT_HTML);
+    Handled := True;
   finally
     DM.Free;
   end;

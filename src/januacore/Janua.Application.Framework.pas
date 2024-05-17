@@ -5,7 +5,7 @@ interface
 {$I januacore.inc}
 
 uses
-  System.Classes, System.SysUtils, System.SyncObjs,
+  System.Classes, System.SysUtils, System.SyncObjs, System.Generics.Collections,
   // Posix MacOS - iOS - Linux
 {$IF Defined(Posix)}
   Posix.Stdlib,
@@ -509,8 +509,8 @@ type
     class var FConfigDataset: IJanuaDBDataset;
     class var ErrTextFileName: TFileName;
     class var FDirectory: TFileName;
-
     class var FDialog: IJanuaDialog;
+    class var FHtmlCache: TDictionary<string, string>;
 
     // Mac OS Variables for Exec Command on MacOS
 {$IF Defined(MACOS)}
@@ -2296,6 +2296,7 @@ begin
   Task := nil;
 {$ENDIF IOS}
 {$ENDIF}
+  FHtmlCache := TDictionary<string, string>.Create;
 end;
 
 class procedure TJanuaCoreOS.CreateConfigDataset;
@@ -3152,7 +3153,11 @@ end;
 
 class function TJanuaCoreOS.ReadWebFile(const aFileName: string): string;
 begin
-  Result := TFile.ReadAllText(TPath.Combine(TJanuaCoreOS.GetAppWebFilesPath, aFileName));
+  if not FHtmlCache.TryGetValue(aFileName, Result) then
+  begin
+    Result := TFile.ReadAllText(TPath.Combine(TJanuaCoreOS.GetAppWebFilesPath, aFileName));
+    FHtmlCache.Add(aFileName, Result)
+  end;
 end;
 
 class function TJanuaCoreOS.RegistryNextVal(table: string): int64;

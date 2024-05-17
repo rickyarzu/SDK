@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   TextHeight = 13
   object Label1: TLabel
     Left = 24
@@ -55,8 +56,7 @@ object Form1: TForm1
     OnClick = ButtonOpenBrowserClick
   end
   object ApplicationEvents1: TApplicationEvents
-    OnIdle = ApplicationEvents1Idle
-    Left = 288
-    Top = 24
+    Left = 280
+    Top = 128
   end
 end

@@ -17,7 +17,7 @@ Type
     FLogProc: TMessageLogProc;
   protected
     function GetIsActive: Boolean; virtual;
-        procedure WriteArrow;
+    procedure WriteArrow;
     procedure SetIsActive(const Value: Boolean); virtual; abstract;
     procedure SetLogProc(const Value: TMessageLogProc);
     procedure InternalLogProc(aProcName: string; aLogMessage: string; aObject: TObject);
