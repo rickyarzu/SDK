@@ -66,6 +66,8 @@ type
     dsUsers: TDataSource;
     UniDBGrid3: TUniDBGrid;
     dsUsersVehicles: TDataSource;
+    btnEditBooking: TUniButton;
+    btnEditCustomer: TUniButton;
     procedure UniFormCreate(Sender: TObject);
     procedure spbNewBookingClick(Sender: TObject);
     procedure UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);
@@ -75,6 +77,7 @@ type
     procedure UniTimer1Timer(Sender: TObject);
     procedure itmCustomersListClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
+    procedure btnEditCustomerClick(Sender: TObject);
   private
     { Private declarations }
     FCarServiceBookingDM: TdmPgCarServiceBookingStorage;
@@ -116,6 +119,33 @@ begin
   FdmPgCarServiceMain.qryUsers.Open;
   dsUsers.Dataset := FdmPgCarServiceMain.qryUsers;
   dsUsersVehicles.Dataset := FdmPgCarServiceMain.qryUsersVehicles;
+end;
+
+procedure TfrmUNIMainForm.btnEditCustomerClick(Sender: TObject);
+var
+  lDialog: TdlgUniGUISimpleAnagraph;
+begin
+  lDialog := TdlgUniGUISimpleAnagraph.Create(UniApplication);
+  lDialog.Anagraph := FBranchesList.AnagraphView;
+  lDialog.ShowModal(
+    procedure(Sender: TComponent; AResult: Integer)
+    begin
+      if (AResult = mrOK) then
+      begin
+        { FBranchesList.Post;
+          if Assigned(FInsertBranchProc) then
+          InsertBranchProc(Self)
+          else if Assigned(FBranchesList.CurrentRecord.DBDataset) then
+          FBranchesList.SaveToDataset;
+          AssignBranches(FBranchesList); }
+      end
+      else
+        { FBranchesList.CancelRecord; }
+    end);
+end
+else
+  MessageDlg('Errore Office List not set', TMsgDlgType.mtError, [mbOk]);
+
 end;
 
 procedure TfrmUNIMainForm.btnSairClick(Sender: TObject);
