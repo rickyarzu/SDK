@@ -362,7 +362,7 @@
         <DCCReference Include="..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas">
             <Form>dlgCarServiceBrowser</Form>
         </DCCReference>
-        <DCCReference Include="..\..\..\..\src\FMX\Jaua.FMX.frameCanvasPaintImage.pas">
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas">
             <Form>frameFMXImageDraw</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

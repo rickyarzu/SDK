@@ -11,7 +11,7 @@ uses
   FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
   // Janua
   Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles, uframeJanuaFMXTestImage,
-  Jaua.FMX.CanvasPaintImage, Jaua.FMX.frameCanvasPaintImage;
+  Janua.FMX.frameCanvasPaintImage;
 
 type
   TfrmFMXTestImageDraw = class(TForm)

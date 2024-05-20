@@ -12,7 +12,7 @@ uses
   FMX.WebBrowser, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
   // Januaproject
   Janua.FMX.FormControls, Janua.Core.Commons, Janua.Core.Classes, Janua.CarService.dmPgDrivers,
-  Janua.FMX.frameUserMobile, Jaua.FMX.CanvasPaintImage;
+  Janua.FMX.frameUserMobile, Janua.FMX.frameCanvasPaintImage;
 
 type
   TfrmFMXCarServiceDriverMain = class(TForm)

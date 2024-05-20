@@ -304,7 +304,7 @@
             <Form>frmFMXTestImageDraw</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\FMX\Jaua.FMX.frameCanvasPaintImage.pas">
+        <DCCReference Include="..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas">
             <Form>frameFMXImageDraw</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>

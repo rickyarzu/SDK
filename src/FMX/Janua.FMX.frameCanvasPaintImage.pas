@@ -1,4 +1,4 @@
-unit Jaua.FMX.frameCanvasPaintImage;
+unit Janua.FMX.frameCanvasPaintImage;
 
 interface
 

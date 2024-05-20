@@ -20,7 +20,7 @@ uses
   Janua.CarService.FMX.dmDriverClient in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule},
   Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
   Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser},
-  Jaua.FMX.frameCanvasPaintImage in '..\..\..\..\src\FMX\Jaua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame};
+  Janua.FMX.frameCanvasPaintImage in '..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame};
 
 {$R *.res}
 

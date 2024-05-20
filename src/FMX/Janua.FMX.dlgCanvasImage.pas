@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls, FMX.Objects,
   FMX.Controls.Presentation,
   // Janua
-  Janua.Core.Types,  Jaua.FMX.frameCanvasPaintImage;
+  Janua.Core.Types,  Janua.FMX.frameCanvasPaintImage;
 
 type
   TdlgFMXCanvasImage = class(TForm)
