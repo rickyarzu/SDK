@@ -19,7 +19,7 @@ type
     pgCarHome: TTabControl;
     tabHome: TTabItem;
     pgHome: TTabControl;
-    tab03DriverTask: TTabItem;
+    tab01DriverList: TTabItem;
     ToolBar1: TToolBar;
     tab02NDriverConf: TTabItem;
     ToolBar2: TToolBar;
@@ -41,9 +41,9 @@ type
     Image4: TImage;
     JanuaFmxBadge1: TJanuaFmxBadge;
     tmtStart: TTimer;
-    tab01DriverList: TTabItem;
+    tab03DriverTask: TTabItem;
     Image5: TImage;
-    ToolBar6: TToolBar;
+    toolBarDriverTask: TToolBar;
     Image6: TImage;
     Layout1: TLayout;
     Layout2: TLayout;
@@ -94,7 +94,7 @@ type
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
     btnCallClient: TButton;
-    framFMXImageDraw1: TframFMXImageDraw;
+    frameFMXImageDraw1: TframeFMXImageDraw;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -357,7 +357,7 @@ begin
       Raise Exception.Create('Error qryDriverCalendar' + Ex.Message);
     end);
   JanuaFmxBadge1.Badge := FDriverDM.qryBooking.RecordCount;
-
+  frameFMXImageDraw1.Activate(frameFMXImageDraw1.Position.Y + toolBarDriverTask.Height);
 end;
 
 procedure TfrmFMXCarServiceDriverMain.tmtMsgsTimer(Sender: TObject);

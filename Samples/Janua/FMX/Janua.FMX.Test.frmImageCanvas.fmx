@@ -15695,7 +15695,9 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       StyleLookup = ''
       TabOrder = 0
       Text = 'Frame'
-      inline framFMXImageDraw1: TframFMXImageDraw
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inline framFMXImageDraw1: TframeFMXImageDraw
         Align = Client
         Size.Width = 840.000000000000000000
         Size.Height = 826.000000000000000000
@@ -15723,7 +15725,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 6
       Text = 'Image'
       TextSettings.Trimming = None
       OnClick = btnPgImageClick
@@ -15734,7 +15736,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 5
       Text = 'Code Tab'
       TextSettings.Trimming = None
       OnClick = btnClearClick
@@ -15745,7 +15747,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 4
       Text = 'Component'
       TextSettings.Trimming = None
       OnClick = btnClearClick
@@ -15756,10 +15758,21 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 3
       Text = 'Frame'
       TextSettings.Trimming = None
-      OnClick = btnClearClick
+      OnClick = btnFrameClick
+    end
+    object btnDialog: TButton
+      Align = Left
+      Position.X = 324.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Dialog'
+      TextSettings.Trimming = None
+      OnClick = btnDialogClick
     end
   end
   object TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler

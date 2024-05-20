@@ -77,12 +77,6 @@ Coordinates=370,78,85,36
 [tab02NDriverConf]
 Coordinates=229,192,69,36
 
-[tab01DriverList]
-Coordinates=144,78,69,36
-
-[tab03DriverTask]
-Coordinates=73,192,69,36
-
 [pgHome]
 Coordinates=308,192,85,36
 
@@ -91,4 +85,10 @@ Coordinates=10,146,79,36
 
 [tmtStart]
 Coordinates=185,247,55,36
+
+[tab03DriverTask]
+Coordinates=144,78,69,36
+
+[tab01DriverList]
+Coordinates=73,192,69,36
 

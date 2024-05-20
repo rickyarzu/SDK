@@ -1,12 +1,12 @@
-object framFMXImageDraw: TframFMXImageDraw
+object frameFMXImageDraw: TframeFMXImageDraw
   Align = Client
-  Size.Width = 451.000000000000000000
-  Size.Height = 586.000000000000000000
+  Size.Width = 464.000000000000000000
+  Size.Height = 337.000000000000000000
   Size.PlatformDefault = False
   OnResize = FormResize
   object Panel2: TPanel
     Align = Top
-    Size.Width = 451.000000000000000000
+    Size.Width = 464.000000000000000000
     Size.Height = 58.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
@@ -15,7 +15,7 @@ object framFMXImageDraw: TframFMXImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 3
       Text = 'Clear '
       TextSettings.Trimming = None
       OnClick = btnClearClick
@@ -26,7 +26,7 @@ object framFMXImageDraw: TframFMXImageDraw
       Size.Width = 80.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
+      TabOrder = 2
       Text = 'Redraw'
       TextSettings.Trimming = None
       OnClick = btnRedrawClick
@@ -37,10 +37,21 @@ object framFMXImageDraw: TframFMXImageDraw
       Size.Width = 80.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 1
       Text = 'Del. Last'
       TextSettings.Trimming = None
       OnClick = btnDelLastClick
+    end
+    object btnAddNotes: TButton
+      Align = Left
+      Position.X = 241.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Add Notes'
+      TextSettings.Trimming = None
+      OnClick = btnAddNotesClick
     end
   end
   object imgCar: TImage
@@ -7749,8 +7760,8 @@ object framFMXImageDraw: TframFMXImageDraw
           'e\Immagini\Vehicle-Hire-Forms-700x990.png'
       end>
     Align = Client
-    Size.Width = 451.000000000000000000
-    Size.Height = 528.000000000000000000
+    Size.Width = 464.000000000000000000
+    Size.Height = 279.000000000000000000
     Size.PlatformDefault = False
   end
 end

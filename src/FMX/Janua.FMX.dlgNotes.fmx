@@ -1,0 +1,49 @@
+object dlgFMXNotes: TdlgFMXNotes
+  Left = 0
+  Top = 0
+  Caption = 'Notes'
+  ClientHeight = 334
+  ClientWidth = 275
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 296.000000000000000000
+    Size.Width = 275.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnOK: TSpeedButton
+      Align = Right
+      Position.X = 136.000000000000000000
+      Size.Width = 139.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'OK'
+      TextSettings.Trimming = None
+      OnClick = btnOKClick
+    end
+    object btnCancel: TSpeedButton
+      Align = Client
+      Size.Width = 136.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Annulla'
+      TextSettings.Trimming = None
+    end
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 275.000000000000000000
+    Size.Height = 296.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 271.000000000000000000
+    Viewport.Height = 292.000000000000000000
+  end
+end
