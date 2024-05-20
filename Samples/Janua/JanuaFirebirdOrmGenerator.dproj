@@ -136,6 +136,12 @@
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Custom.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Phoenix.Statini.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\datamodule\Janua.Core.CodeGenDataModule.pas">
+            <Form>TJanuaCoreCodeGenDataModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

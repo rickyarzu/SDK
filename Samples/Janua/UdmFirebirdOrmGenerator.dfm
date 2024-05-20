@@ -1,6 +1,5 @@
 object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
   OnCreate = DataModuleCreate
-  OnDestroy = DataModuleDestroy
   Height = 406
   Width = 503
   object UniConnection1: TUniConnection
@@ -53,8 +52,8 @@ object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
     TableName = 'AMMINISTRATORI'
     Connection = UniConnection1
     FilterSQL = '1=2'
-    Left = 144
-    Top = 320
+    Left = 232
+    Top = 128
   end
   object InterBaseUniProvider1: TInterBaseUniProvider
     Left = 48
@@ -98,8 +97,8 @@ object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
       '      AND RC.RDB$CONSTRAINT_TYPE = '#39'FOREIGN KEY'#39
       ' ORDER BY s.RDB$FIELD_POSITION')
     MasterSource = dsTables
-    Left = 248
-    Top = 128
+    Left = 144
+    Top = 312
     ParamData = <
       item
         DataType = ftWideString
