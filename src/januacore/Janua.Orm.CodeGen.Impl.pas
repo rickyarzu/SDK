@@ -33,6 +33,7 @@ type
     FCustomMasterFiles: TRecordUnits;
     FMasterFiles: TRecordUnits;
     FAskPlurals: Boolean;
+    FDetailGens: IDictionary<string, IRecordCodeGen>;
     function ind(l: integer): string;
     procedure SetCustomImplString(const Value: string);
     procedure SetCustomIntfString(const Value: string);
@@ -45,6 +46,8 @@ type
   private
     sKey, sSet, sSetType, sSchema, sField: string;
     FDataset: TDataset;
+    FIsMaster: boolean;
+    function GetDetails(Index: string): IRecordCodeGen;
   protected
     function GetMasterRecord: IJanuaRecord;
     procedure SetMasterRecord(const Value: IJanuaRecord);
@@ -59,6 +62,9 @@ type
     function GetDataset: TDataset;
     procedure SetAskPlurals(const Value: Boolean);
     function GetAskPlurals: Boolean;
+    procedure SetIsMaster(const Value: Boolean);
+    function GetIsMaster: Boolean;
+    function GetDetailGens: IDictionary<string, IRecordCodeGen>;
   strict protected
     function GenerateCustomIntfFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
     function GenerateCustomImplFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
@@ -66,7 +72,7 @@ type
     function GenerateImplFromDataset(const aDataset: TDataset; aUnit: TRecordUnits): string;
   public
     procedure Generate;
-    procedure AddDetailDataset(const aDataset: TDataset; aSingular, aPlural: string);
+    procedure AddDetailDataset(const aDataset: TDataset; aTableName, aSchemaName: string);
   public
     property AskPlurals: Boolean read GetAskPlurals write SetAskPlurals;
     property MasterClassConf: TRecordUnitConf read GetMasterClassConf;
@@ -80,6 +86,9 @@ type
     property CustomImplString: string read GetCustomImplString write SetCustomImplString;
     property IntfString: string read GetIntfString;
     property ImplString: string read GetImplString;
+    property IsMaster: Boolean read GetIsMaster write SetIsMaster;
+    property DetailGens: IDictionary<string, IRecordCodeGen> read GetDetailGens;
+    property Details[Index: string]: IRecordCodeGen read GetDetails;
   End;
 
 implementation
@@ -102,9 +111,16 @@ end;
 
 { TRecordCodeGen }
 
-procedure TRecordCodeGen.AddDetailDataset(const aDataset: TDataset; aSingular, aPlural: string);
+procedure TRecordCodeGen.AddDetailDataset(const aDataset: TDataset; aTableName, aSchemaName: string);
+var
+  aRecordGen: IRecordCodeGen;
 begin
-
+  aRecordGen := TRecordCodeGen.Create;
+  aDataset.Name := 'tb' + aTableName;
+  aRecordGen.Dataset := aDataset;
+  aRecordGen.SchemaName := aSchemaName;
+  aRecordGen.AskPlurals := True;
+  FDetailGens.Add(aTableName, aRecordGen);
 end;
 
 constructor TRecordCodeGen.Create;
@@ -115,6 +131,7 @@ begin
   FCustomMasterFiles := TRecordUnits.Create(FMasterClassConf);
   FMasterFiles := TRecordUnits.Create(FMasterClassConf);
   FMasterRecord := TJanuaRecord.Create;
+  FDetailGens := TCollections.CreateDictionary<string, IRecordCodeGen>;
 end;
 
 procedure TRecordCodeGen.Generate;
@@ -877,7 +894,7 @@ begin
 
     // Generazione della proprietà di accesso alla classe record all'interno del record-set
     aBuilder.AppendLine(ind(2) + 'function Get' + sClass + ': I' + sClass + ';');
-    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ': I' + sClass + ' read Get' + sClass +  ';');
+    aBuilder.AppendLine(ind(2) + 'property ' + sClass + ': I' + sClass + ' read Get' + sClass + ';');
 
     aBuilder.AppendLine('');
     aBuilder.AppendLine(ind(1) + 'end;');
@@ -921,6 +938,23 @@ begin
   Result := FDataset;
 end;
 
+function TRecordCodeGen.GetDetailGens: IDictionary<string, IRecordCodeGen>;
+begin
+{$IFDEF DEBUG}
+  Guard.CheckNotNull(FDetailGens, 'FDetailGens');
+{$ENDIF}
+  Result := FDetailGens;
+end;
+
+function TRecordCodeGen.GetDetails(Index: string): IRecordCodeGen;
+begin
+{$IFDEF DEBUG}
+  Guard.CheckNotNull(FDetailGens, 'FDetailGens');
+{$ENDIF}
+  if not FDetailGens.TryGetValue(Index, Result) then
+    raise Exception.Create('TRecordCodeGen.GetDetails(' + Index + ') not found');
+end;
+
 function TRecordCodeGen.GetImplString: string;
 begin
   Result := FCustomMasterFiles.ImplFile.Text
@@ -929,6 +963,11 @@ end;
 function TRecordCodeGen.GetIntfString: string;
 begin
   Result := FCustomMasterFiles.IntfFile.Text;
+end;
+
+function TRecordCodeGen.GetIsMaster: Boolean;
+begin
+
 end;
 
 function TRecordCodeGen.GetMasterClassConf: TRecordUnitConf;
@@ -989,6 +1028,11 @@ end;
 procedure TRecordCodeGen.SetIntfString(const Value: string);
 begin
   FIntfString := Value;
+end;
+
+procedure TRecordCodeGen.SetIsMaster(const Value: Boolean);
+begin
+  FIsMaster := Value;
 end;
 
 procedure TRecordCodeGen.SetMasterRecord(const Value: IJanuaRecord);

@@ -7,11 +7,11 @@ uses JOrm.Phoenix.Statini.Custom.Intf, Janua.Orm.Intf;
 type
 
   IStatino = interface(ICustomStatino)
-  ['{0CB1749C-EB22-4452-9433-CD75C9FE9CA8}']
+  ['{937F530F-B526-4B8F-836C-E3F103387040}']
   end;
 
   IStatini = interface(IJanuaRecordSet)
-  ['{8DE32259-6C7E-4670-9153-8DEDACDB4509}']
+  ['{6543A2CC-35DC-4AF8-A249-986A85438EAE}']
     function GetStatino: IStatino;
     property Statino: IStatino read GetStatino;
 
