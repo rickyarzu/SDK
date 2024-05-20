@@ -1,4 +1,4 @@
-unit ufrmJanuaFMXTestImage;
+unit Janua.FMX.Test.frmImageCanvas;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
   // Janua
   Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles, uframeJanuaFMXTestImage,
-  Jaua.FMX.CanvasPaintImage;
+  Jaua.FMX.CanvasPaintImage, Jaua.FMX.frameCanvasPaintImage;
 
 type
   TfrmFMXTestImageDraw = class(TForm)
@@ -46,7 +46,8 @@ type
     Button4: TButton;
     btnFrame: TButton;
     pgFrame: TTabItem;
-    framFMXImageDraw1: TframFMXImageDraw;
+    framFMXImageDraw1: TframeFMXImageDraw;
+    btnDialog: TButton;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -59,6 +60,8 @@ type
     procedure btnDelLastClick(Sender: TObject);
     procedure btnPgImageClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnFrameClick(Sender: TObject);
+    procedure btnDialogClick(Sender: TObject);
   private
     { Private declarations }
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
@@ -86,6 +89,8 @@ implementation
 
 {$R *.fmx}
 
+uses Janua.FMX.dlgCanvasImage;
+
 procedure TfrmFMXTestImageDraw.btnClearClick(Sender: TObject);
 begin
   ClearBox
@@ -94,6 +99,22 @@ end;
 procedure TfrmFMXTestImageDraw.btnDelLastClick(Sender: TObject);
 begin
   DelLastDraw
+end;
+
+procedure TfrmFMXTestImageDraw.btnDialogClick(Sender: TObject);
+begin
+  var
+  dlgFMXCanvasImage := TdlgFMXCanvasImage.Create(Self);
+  try
+    dlgFMXCanvasImage.ShowModal;
+  finally
+    dlgFMXCanvasImage.Free;
+  end;
+end;
+
+procedure TfrmFMXTestImageDraw.btnFrameClick(Sender: TObject);
+begin
+  tabTestComponent.ActiveTab := pgFrame
 end;
 
 procedure TfrmFMXTestImageDraw.btnJsonClick(Sender: TObject);
@@ -165,7 +186,7 @@ end;
 
 procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);
 begin
-  imgCar.Height := self.Width * (330 / 540)
+  imgCar.Height := Self.Width * (330 / 540)
 end;
 
 procedure TfrmFMXTestImageDraw.FormShow(Sender: TObject);
@@ -244,7 +265,7 @@ procedure TfrmFMXTestImageDraw.Redraw;
 begin
   if Assigned(pntBoxCar) then
     try
-      {pntBoxCar.Canvas.BeginScene;}
+      { pntBoxCar.Canvas.BeginScene; }
       var
       RX := pntBoxCar.Width / ImgDrawings.Width;
 
@@ -270,7 +291,7 @@ begin
         end;
       end;
     finally
-      {pntBoxCar.Canvas.EndScene;}
+      { pntBoxCar.Canvas.EndScene; }
     end;
 end;
 

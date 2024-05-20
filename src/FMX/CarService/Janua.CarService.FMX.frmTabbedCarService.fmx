@@ -72,7 +72,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           753s
           443s
           753s)
-        object tab03DriverTask: TTabItem
+        object tab01DriverList: TTabItem
           CustomIcon = <
             item
             end>
@@ -10678,7 +10678,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             end
           end
         end
-        object tab01DriverList: TTabItem
+        object tab03DriverTask: TTabItem
           CustomIcon = <
             item
             end>
@@ -10691,7 +10691,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           TabOrder = 0
           ExplicitSize.cx = 8.000000000000000000
           ExplicitSize.cy = 8.000000000000000000
-          object ToolBar6: TToolBar
+          object toolBarDriverTask: TToolBar
             Size.Width = 443.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
@@ -16053,9 +16053,9 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                 Align = Right
                 Images = ImageList1
                 ImageIndex = 18
-                Position.X = 262.000000000000000000
+                Position.X = -22.888671875000000000
                 Size.Width = 168.000000000000000000
-                Size.Height = 30.000000000000000000
+                Size.Height = 31.921875000000000000
                 Size.PlatformDefault = False
                 TabOrder = 0
                 Text = 'Chiama Utente'
@@ -16063,13 +16063,32 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                 OnClick = btnCallClientClick
               end
             end
-            inline framFMXImageDraw1: TframFMXImageDraw
+            inline frameFMXImageDraw1: TframeFMXImageDraw
               Align = Client
               Size.Width = 443.000000000000000000
               Size.Height = 331.000000000000000000
               Size.PlatformDefault = False
               inherited Panel2: TPanel
                 Size.Width = 443.000000000000000000
+                inherited btnClear: TButton
+                  Size.Width = 89.000000000000000000
+                  Text = 'Pulisci'
+                end
+                inherited btnRedraw: TButton
+                  Position.X = 89.000000000000000000
+                  Size.Width = 96.000000000000000000
+                  Text = 'Aggiorna'
+                end
+                inherited btnDelLast: TButton
+                  Position.X = 185.000000000000000000
+                  Size.Width = 105.000000000000000000
+                  Text = 'Cancella'
+                end
+                inherited btnAddNotes: TButton
+                  Position.X = 290.000000000000000000
+                  Size.Width = 103.000000000000000000
+                  Text = 'Note'
+                end
               end
               inherited imgCar: TImage
                 MultiResBitmap.Height = 383
@@ -37042,8 +37061,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             443s
             705s)
           inherited TabItemPassword: TTabItem
-            Size.Width = 11.000000000000000000
-            Size.Height = 11.000000000000000000
             ExplicitSize.cx = 8.000000000000000000
             ExplicitSize.cy = 8.000000000000000000
             inherited VertScrollBox1: TVertScrollBox
@@ -37054,8 +37071,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             end
           end
           inherited TabItemPersonal: TTabItem
-            Size.Width = 11.000000000000000000
-            Size.Height = 11.000000000000000000
             ExplicitSize.cx = 8.000000000000000000
             ExplicitSize.cy = 8.000000000000000000
             inherited VertScrollBox2: TVertScrollBox

@@ -27,13 +27,16 @@ type
   /// <summary>Draw is simply a Collection of Points (NOTE: it uses relative coordinates) </summary>
   TJanuaDraw = record
   private
+    FNotes: string;
     function GetItem(Index: Integer): TJanuaPoint;
     procedure SetItem(Index: Integer; Value: TJanuaPoint);
     function GetCount: Integer;
+    procedure SetNotes(const Value: string);
   public
     Points: Tarray<TJanuaPoint>;
     property Count: Integer read GetCount;
     property Items[Index: Integer]: TJanuaPoint read GetItem write SetItem; default;
+    property Notes: string read FNotes write SetNotes;
   public
     constructor Create(aX, aY: Single);
     procedure AddPoint(aPoint: TJanuaPoint); overload;
@@ -53,6 +56,7 @@ type
     Draws: Tarray<TJanuaDraw>;
     Width: Single;
     Heigth: Single;
+    Notes: string;
     property Count: Integer read GetCount;
     property Items[Index: Integer]: TJanuaDraw read GetItem write SetItem; default;
   public
@@ -5194,14 +5198,19 @@ begin
     raise EListError.Create('Index out of bounds');
 end;
 
+procedure TJanuaDraw.SetNotes(const Value: string);
+begin
+  FNotes := Value;
+end;
+
 { TJanuaImageDraws }
 
 procedure TJanuaImageDraws.AddDraw(aDraw: TJanuaDraw);
 begin
   var
-  I := Length(Draws);
-  SetLength(Draws, I + 1);
-  Draws[I] := aDraw;
+  i := Length(Draws);
+  SetLength(Draws, i + 1);
+  Draws[i] := aDraw;
 end;
 
 constructor TJanuaImageDraws.Create(aWidth, aHeigth: Single);
@@ -5212,7 +5221,8 @@ end;
 
 procedure TJanuaImageDraws.DelDraw;
 begin
-  SetLength(Draws, Length(Draws) - 1)
+  if Length(Draws) > 0 then
+    SetLength(Draws, Length(Draws) - 1)
 end;
 
 procedure TJanuaImageDraws.DeSerialize(const aJson: string);
