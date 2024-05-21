@@ -98,7 +98,7 @@ implementation
 
 uses
   uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Carservice.UniGUI.dlgBookingWizard,
-  Janua.Carservice.UniGUI.frameUserMenu;
+  Janua.Carservice.UniGUI.frameUserMenu, Janua.Anagraph.UniGUI.dlgSimpleAnagraph;
 
 function frmUNIMainForm: TfrmUNIMainForm;
 begin
@@ -126,7 +126,7 @@ var
   lDialog: TdlgUniGUISimpleAnagraph;
 begin
   lDialog := TdlgUniGUISimpleAnagraph.Create(UniApplication);
-  lDialog.Anagraph := FBranchesList.AnagraphView;
+  lDialog.Anagraph := nil; { FBranchesList.AnagraphView };
   lDialog.ShowModal(
     procedure(Sender: TComponent; AResult: Integer)
     begin
@@ -141,10 +141,7 @@ begin
       end
       else
         { FBranchesList.CancelRecord; }
-    end);
-end
-else
-  MessageDlg('Errore Office List not set', TMsgDlgType.mtError, [mbOk]);
+    end)
 
 end;
 
