@@ -11,7 +11,7 @@ uses
   FMX.TMSFNCCustomWEBControl, FMX.TMSFNCWXHTMLMemo,
   // Janua
   Janua.Core.Types, FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles, uframeJanuaFMXTestImage,
-  Janua.FMX.frameCanvasPaintImage;
+  Janua.FMX.frameCanvasPaintImage, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
   TfrmFMXTestImageDraw = class(TForm)
@@ -30,7 +30,7 @@ type
     TMSFMXMemoJavaScriptStyler1: TTMSFMXMemoJavaScriptStyler;
     memJson: TTMSFMXMemo;
     btnDelLast: TButton;
-    Panel1: TPanel;
+    pnlTabsButtons: TPanel;
     btnPgImage: TButton;
     btnPgCode: TButton;
     btnPgTestComponent: TButton;
@@ -46,8 +46,9 @@ type
     Button4: TButton;
     btnFrame: TButton;
     pgFrame: TTabItem;
-    framFMXImageDraw1: TframeFMXImageDraw;
     btnDialog: TButton;
+    frameFMXImageDraw1: TframeFMXImageDraw;
+    Memo1: TMemo;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -186,12 +187,13 @@ end;
 
 procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);
 begin
-  imgCar.Height := Self.Width * (330 / 540)
+  imgCar.Height := Self.Width * (330 / 540);
+  Self.frameFMXImageDraw1.UpdateSize;
 end;
 
 procedure TfrmFMXTestImageDraw.FormShow(Sender: TObject);
 begin
-  framFMXImageDraw1.Activate;
+  frameFMXImageDraw1.Activate;
 end;
 
 procedure TfrmFMXTestImageDraw.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;

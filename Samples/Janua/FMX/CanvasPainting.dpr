@@ -13,7 +13,5 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfrmFMXTestImageDraw, frmFMXTestImageDraw);
-  Application.CreateForm(TdlgFMXNotes, dlgFMXNotes);
-  Application.CreateForm(TdlgFMXCanvasImage, dlgFMXCanvasImage);
   Application.Run;
 end.
