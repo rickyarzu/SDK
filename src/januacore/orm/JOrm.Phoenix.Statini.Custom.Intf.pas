@@ -7,7 +7,7 @@ uses Janua.Orm.Intf;
 type
 
   ICustomStatino = interface(IJanuaRecord)
-    ['{8F638B73-0CDE-4409-917B-FA1EF5B4F2B4}']
+  ['{5F489A72-FC37-4A42-AEE2-DA091E92A8CE}']
     function GetChiave: IJanuaField;
     property Chiave: IJanuaField read GetChiave;
     function GetCliente: IJanuaField;
@@ -113,7 +113,7 @@ type
   end;
 
   ICustomStatini = interface(IJanuaRecordSet)
-    ['{AB2910A6-D0FF-4C7B-A45F-46346AFDAC83}']
+  ['{F2AB4F08-B69A-4BCC-9DF1-602C501E1A50}']
     function GetChiave: IJanuaField;
     property Chiave: IJanuaField read GetChiave;
     function GetCliente: IJanuaField;
@@ -222,3 +222,5 @@ type
 implementation
 
 end.
+
+

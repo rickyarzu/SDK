@@ -7,6 +7,7 @@ uses
   Janua.Uni.Framework,
   Janua.ViewModels.Framework,
   Janua.FMX.Application,
+  Janua.FMX.dlgNotes in '..\..\..\..\src\FMX\Janua.FMX.dlgNotes.pas' {dlgFMXNotes},
   Janua.CarService.FMX.frmTabbedCarService in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas' {frmFMXCarServiceDriverMain},
   Janua.FMX.LoginDialog in '..\..\..\..\src\FMX\Janua.FMX.LoginDialog.pas' {dlgFMXLoginDialogMobile},
   Janua.FMX.frmModel in '..\..\..\..\src\FMX\Janua.FMX.frmModel.pas' {frmFMXModel},
@@ -19,15 +20,15 @@ uses
   Janua.CarService.FMX.dmDriverClient in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule},
   Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
   Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser},
-  Jaua.FMX.CanvasPaintImage in '..\..\..\..\src\FMX\Jaua.FMX.CanvasPaintImage.pas' {framFMXImageDraw: TFrame};
+  Janua.FMX.frameCanvasPaintImage in '..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame};
 
 {$R *.res}
 
 function GetForm: TForm;
 begin
-  AApplication.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
-  Application.CreateForm(TframFMXImageDraw, framFMXImageDraw);
-  pplication.MainForm := frmFMXCarServiceDriverMain;
+  Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
+  Application.CreateForm(TframeFMXImageDraw, frameFMXImageDraw);
+  Application.MainForm := frmFMXCarServiceDriverMain;
   Result := frmFMXCarServiceDriverMain;
 end;
 

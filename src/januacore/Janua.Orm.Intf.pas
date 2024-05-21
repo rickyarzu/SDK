@@ -1621,14 +1621,20 @@ Type
     function GetMasterClassConf: TRecordUnitConf;
     property MasterClassConf: TRecordUnitConf read GetMasterClassConf;
 
-    procedure SetDataset(const Value: TDataset);
-    function GetDataset: TDataset;
-    property Dataset: TDataset read GetDataset write SetDataset;
-
+    procedure SetDataset(const Value: TDataSet);
+    function GetDataset: TDataSet;
+    property Dataset: TDataSet read GetDataset write SetDataset;
 
     procedure SetAskPlurals(const Value: Boolean);
     function GetAskPlurals: Boolean;
     property AskPlurals: Boolean read GetAskPlurals write SetAskPlurals;
+
+    procedure SetIsMaster(const Value: Boolean);
+    function GetIsMaster: Boolean;
+    property IsMaster: Boolean read GetIsMaster write SetIsMaster;
+
+    function GetDetailGens: IDictionary<string, IRecordCodeGen>;
+    property DetailGens: IDictionary<string, IRecordCodeGen> read GetDetailGens;
 
     procedure Generate;
 

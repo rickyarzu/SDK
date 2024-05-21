@@ -4,11 +4,12 @@
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>693267</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>PickAPP.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">PickAPP</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -99,7 +100,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\JanuaLibDXE15.optset')"/>
+    <Import Project="..\..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -118,7 +119,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>PickAPP</SanitizedProjectName>
-        <CfgDependentOn>..\..\JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>..\..\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>FireDACIBDriver;FMXTMSFNCUIPackPkg;fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;aurelius;FMX_FlexCel_Components;IndyProtocols;dbxcds;FMXTMSFNCAppToolsPkg;Skia.Package.RTL;FmxTeeUI;FlexCel_Pdf;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;tmsbcl;CustomIPTransport;IndySystem;ibxbindings;sgcWebSockets;FireDACCommon;FlexCel_Render;bindcompdbx;rtl;remotedb;DBXSqliteDriver;FMXTMSFNCChartPkg;DataSnapFireDAC;FireDAC;xmlrtl;ibxpress;dsnap;xdata;DataSnapNativeClient;FMXTMSFNCMapsPkg;FMXTMSFNCCorePkg;FlexCel_Report;sparkle;FireDACCommonDriver;IndyIPClient;TMSCloudPkg;FMXTMSFNCCloudPackPkg;bindcompfmx;ibmonitor;fmxFireDAC;DataSnapCommon;AWSSDK;fmxase;dbrtl;Skia.Package.FMX;FlexCel_XlsAdapter;DBXInterBaseDriver;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;tdsprovider280;AWSSDKFMX;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;FMXTee;soaprtl;soapserver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -315,10 +316,14 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>PickAPP_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
+    <Import Project="..\..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.dlgNotes.pas">
+            <Form>dlgFMXNotes</Form>
+        </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas">
             <Form>frmFMXCarServiceDriverMain</Form>
         </DCCReference>
@@ -344,31 +349,26 @@
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas">
             <Form>frameFMXRegisterMobile</Form>
-            <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas">
             <Form>dmCarserviceFMXDriverClient</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas">
             <Form>frameFMXCarServiceDriverConfirmation</Form>
-            <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas">
             <Form>dlgCarServiceBrowser</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\..\src\FMX\Jaua.FMX.CanvasPaintImage.pas">
-            <Form>framFMXImageDraw</Form>
-            <FormType>fmx</FormType>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas">
+            <Form>frameFMXImageDraw</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\..\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -1402,6 +1402,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1694,6 +1697,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Android">True</Platform>

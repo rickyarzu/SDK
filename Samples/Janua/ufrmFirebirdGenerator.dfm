@@ -679,10 +679,7 @@ object frmVCLFirebirdGenerator: TfrmVCLFirebirdGenerator
       Width = 335
       Height = 270
       Align = alClient
-      ItemHeight = 17
       TabOrder = 1
-      ExplicitTop = 498
-      ExplicitHeight = 269
     end
     object btnOpenTables: TButton
       Left = 1

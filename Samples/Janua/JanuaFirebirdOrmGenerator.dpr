@@ -8,7 +8,9 @@ uses
   JOrm.Phoenix.Statini.Custom.Impl in '..\..\src\januacore\orm\JOrm.Phoenix.Statini.Custom.Impl.pas',
   JOrm.Phoenix.Statini.Custom.Intf in '..\..\src\januacore\orm\JOrm.Phoenix.Statini.Custom.Intf.pas',
   JOrm.Phoenix.Statini.Impl in '..\..\src\januacore\orm\JOrm.Phoenix.Statini.Impl.pas',
-  JOrm.Phoenix.Statini.Intf in '..\..\src\januacore\orm\JOrm.Phoenix.Statini.Intf.pas';
+  JOrm.Phoenix.Statini.Intf in '..\..\src\januacore\orm\JOrm.Phoenix.Statini.Intf.pas',
+  Janua.Orm.CodeGen.Impl in '..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas',
+  Janua.Core.CodeGenDataModule in '..\..\src\januacore\datamodule\Janua.Core.CodeGenDataModule.pas' {TJanuaCoreCodeGenDataModule: TDataModule};
 
 {$R *.res}
 
@@ -23,5 +25,6 @@ begin
 
   Application.CreateForm(TfrmVCLFirebirdGenerator, frmVCLFirebirdGenerator);
   Application.CreateForm(TdmFirebirdOrmGenerator, dmFirebirdOrmGenerator);
+  Application.CreateForm(TTJanuaCoreCodeGenDataModule, TJanuaCoreCodeGenDataModule);
   Application.Run;
 end.
