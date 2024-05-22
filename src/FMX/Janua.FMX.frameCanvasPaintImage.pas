@@ -15,12 +15,14 @@ uses
 
 type
   TframeFMXImageDraw = class(TFrame)
-    Panel2: TPanel;
+    pnlButtons: TPanel;
     btnClear: TButton;
     btnRedraw: TButton;
     btnDelLast: TButton;
-    imgCar: TImage;
     btnAddNotes: TButton;
+    LayoutImage: TLayout;
+    imgCar: TImage;
+    Timer1: TTimer;
     procedure FormResize(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -29,6 +31,7 @@ type
     procedure btnRedrawClick(Sender: TObject);
     procedure btnDelLastClick(Sender: TObject);
     procedure btnAddNotesClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
@@ -52,6 +55,7 @@ type
     procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
   public
     { Public declarations }
+    procedure UpdateSize;
     procedure btnNoteOKClick(Sender: TObject);
     procedure btnNoteCancelClick(Sender: TObject);
     procedure FreeNotes;
@@ -86,11 +90,23 @@ begin
     SetOffset(TControl(aControl.Parent));
 end;
 
+procedure TframeFMXImageDraw.Timer1Timer(Sender: TObject);
+begin
+  Timer1.Enabled := False;
+  Redraw;
+end;
+
+procedure TframeFMXImageDraw.UpdateSize;
+begin
+  self.Height := pnlButtons.Height + Trunc(Width * (330 / 540));
+  LayoutImage.Height := Trunc(Width * (330 / 540));
+end;
+
 procedure TframeFMXImageDraw.Activate(const aOffset: Single = 0.0);
 begin
-  imgCar.Height := Width * (330 / 540);
   FOffset := aOffset;
   SetCanvasControl(imgCar);
+  self.Timer1.Enabled := True;
 end;
 
 procedure TframeFMXImageDraw.AfterConstruction;
@@ -125,7 +141,7 @@ end;
 
 procedure TframeFMXImageDraw.btnNoteCancelClick(Sender: TObject);
 begin
-  // FreeNotes;
+  FreeNotes;
 end;
 
 procedure TframeFMXImageDraw.btnNoteOKClick(Sender: TObject);
@@ -133,7 +149,7 @@ begin
   if Assigned(FdlgFMXNotes) then
   begin
     FImgDrawings.Notes := FdlgFMXNotes.Memo1.Lines.Text;
-    // FreeNotes;
+    FreeNotes;
   end;
 end;
 
