@@ -5,14 +5,16 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Permissions,
   // FMX
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.MediaLibrary.Actions, FMX.Platform, FMX.PhoneDialer,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl, FMX.StdCtrls, FMX.Memo,
+  FMX.Controls.Presentation, FMX.MediaLibrary.Actions, FMX.Platform, FMX.PhoneDialer, FMX.Memo.Types,
   FMX.Gestures, System.Actions, FMX.ActnList, System.ImageList, FMX.ImgList, FMX.Objects, FMX.Layouts,
-  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
-  FMX.WebBrowser, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView, FMX.ScrollBox,
+  FMX.WebBrowser,
   // Januaproject
-  Janua.FMX.FormControls, Janua.Core.Commons, Janua.Core.Classes, Janua.CarService.dmPgDrivers,
-  Janua.FMX.frameUserMobile, Janua.FMX.frameCanvasPaintImage;
+  Janua.Core.Types, Janua.Core.Commons, Janua.Core.Classes, Janua.CarService.dmPgDrivers,
+  // Janua FMX
+  Janua.FMX.FormControls, Janua.FMX.frameUserMobile, Janua.FMX.frameCanvasPaintImage, Janua.FMX.dlgNotes,
+  Janua.FMX.dlgCanvasImage;
 
 type
   TfrmFMXCarServiceDriverMain = class(TForm)
@@ -94,7 +96,11 @@ type
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
     btnCallClient: TButton;
-    frameFMXImageDraw1: TframeFMXImageDraw;
+    btnVehicleCamera: TSpeedButton;
+    btnNotes: TSpeedButton;
+    btnCheckVehicleState: TSpeedButton;
+    TimerNote: TTimer;
+    TimerCanvas: TTimer;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -113,16 +119,27 @@ type
     procedure lvMessagesItemClick(const Sender: TObject; const AItem: TListViewItem);
     procedure btnMessagesBackClick(Sender: TObject);
     procedure btnCallClientClick(Sender: TObject);
+    procedure btnNotesClick(Sender: TObject);
+    procedure TimerNoteTimer(Sender: TObject);
+    procedure btnCheckVehicleStateClick(Sender: TObject);
   private
     FSessionKey: string;
+    FdlgFMXNotes: TdlgFMXNotes;
+    FdlgFMXCanvasImage: TdlgFMXCanvasImage;
+    FImgDrawings: TJanuaImageDraws;
     FAttempt: integer;
     FDriverDM: TdmPgCarServiceBookingDrivers;
     FMonitor: TObject;
     PhoneDialerService: IFMXPhoneDialerService;
+    procedure FreeNotes(aResult: TModalResult);
+    procedure FreeCanvasEdit(aResult: TModalResult);
   public
     procedure Login;
     procedure dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure TestLogin(const aUsername, aPassword);
+    procedure btnNoteOKClick(Sender: TObject);
+    procedure btnNoteCancelClick(Sender: TObject);
+    procedure CanvasImageDlgClose(Sender: TObject);
   end;
 
 var
@@ -148,16 +165,21 @@ begin
     PhoneDialerService.Call(FDriverDM.qryBookingdelivery_cellular.AsString)
 end;
 
+procedure TfrmFMXCarServiceDriverMain.btnCheckVehicleStateClick(Sender: TObject);
+begin
+  // FdlgFMXCanvasImage:  TdlgFMXCanvasImage;
+  if not Assigned(FdlgFMXCanvasImage) then
+    FdlgFMXCanvasImage := TdlgFMXCanvasImage.Create(self);
+  FdlgFMXCanvasImage.ImageDrawings := self.FImgDrawings;
+  FdlgFMXCanvasImage.OnCloseDialog := self.CanvasImageDlgClose;
+{$IFNDEF MSWINDOWS}
+  FdlgFMXCanvasImage.WindowState := wsMaximized;
+{$ENDIF}
+  FdlgFMXCanvasImage.ShowModal(FreeCanvasEdit);
+end;
+
 procedure TfrmFMXCarServiceDriverMain.btnConfirmClick(Sender: TObject);
 begin
-  {
-    UPDATE carservice.timetable_booking_driver
-    SET
-    state_id = :state_id
-    WHERE
-    jguid = :jguid
-  }
-
   if FDriverDM.qryDriverCalendarstate_id.AsInteger = 0 then
   begin
     FDriverDM.spUpdateCalendar.Params[1].AsInteger := 1;
@@ -174,6 +196,30 @@ begin
   pgMessages.TabIndex := 0;
 end;
 
+procedure TfrmFMXCarServiceDriverMain.btnNoteCancelClick(Sender: TObject);
+begin
+  // do something ...
+end;
+
+procedure TfrmFMXCarServiceDriverMain.btnNoteOKClick(Sender: TObject);
+begin
+  if Assigned(FdlgFMXNotes) then
+    FImgDrawings.Notes := FdlgFMXNotes.Memo1.Lines.Text;
+end;
+
+procedure TfrmFMXCarServiceDriverMain.btnNotesClick(Sender: TObject);
+begin
+  if not Assigned(FdlgFMXNotes) then
+    FdlgFMXNotes := TdlgFMXNotes.Create(self);
+  FdlgFMXNotes.Memo1.Lines.Text := FImgDrawings.Notes;
+  FdlgFMXNotes.OkEvent := self.btnNoteOKClick;
+  FdlgFMXNotes.CancelEvent := self.btnNoteCancelClick;
+{$IFNDEF MSWINDOWS}
+  FdlgFMXNotes.WindowState := wsMaximized;
+{$ENDIF}
+  FdlgFMXNotes.ShowModal(FreeNotes);
+end;
+
 procedure TfrmFMXCarServiceDriverMain.btnSignatureClick(Sender: TObject);
 begin
   if not Assigned(frmFMXSignatureCaptureMobile) then
@@ -187,6 +233,15 @@ begin
     Application.CreateForm(TAccessCameraAppForm, AccessCameraAppForm);
 
   AccessCameraAppForm.Show;
+end;
+
+procedure TfrmFMXCarServiceDriverMain.CanvasImageDlgClose(Sender: TObject);
+begin
+  if Assigned(FdlgFMXCanvasImage) then
+  begin
+    self.FImgDrawings := FdlgFMXCanvasImage.ImageDrawings;
+    FImgDrawings.Notes := FdlgFMXCanvasImage.Memo1.Lines.Text;
+  end;
 end;
 
 procedure TfrmFMXCarServiceDriverMain.dlgFormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -227,6 +282,16 @@ end;
 procedure TfrmFMXCarServiceDriverMain.FormShow(Sender: TObject);
 begin
   tmtStart.Enabled := True;
+end;
+
+procedure TfrmFMXCarServiceDriverMain.FreeCanvasEdit(aResult: TModalResult);
+begin
+  TimerCanvas.Enabled := True;
+end;
+
+procedure TfrmFMXCarServiceDriverMain.FreeNotes(aResult: TModalResult);
+begin
+  TimerNote.Enabled := True;
 end;
 
 procedure TfrmFMXCarServiceDriverMain.GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo;
@@ -296,6 +361,16 @@ begin
 
 end;
 
+procedure TfrmFMXCarServiceDriverMain.TimerNoteTimer(Sender: TObject);
+begin
+  TimerNote.Enabled := False;
+  if Assigned(FdlgFMXNotes) then
+  begin
+    FdlgFMXNotes.Free;
+    FdlgFMXNotes := nil;
+  end;
+end;
+
 procedure TfrmFMXCarServiceDriverMain.tmtStartTimer(Sender: TObject);
 begin
   tmtStart.Enabled := False;
@@ -318,11 +393,6 @@ begin
       TMonitor.Enter(FMonitor);
       try
         Result := FDriverDM.OpenList > 0;
-        {
-          FDriverDM.qryDriverCalendar.Close;
-          FDriverDM.qryDriverCalendar.Open;
-          Result := FDriverDM.qryDriverCalendar.RecordCount > 0;
-        }
       finally
         TMonitor.Exit(FMonitor);
       end;
@@ -357,7 +427,6 @@ begin
       Raise Exception.Create('Error qryDriverCalendar' + Ex.Message);
     end);
   JanuaFmxBadge1.Badge := FDriverDM.qryBooking.RecordCount;
-  frameFMXImageDraw1.Activate(frameFMXImageDraw1.Position.Y + toolBarDriverTask.Height);
 end;
 
 procedure TfrmFMXCarServiceDriverMain.tmtMsgsTimer(Sender: TObject);

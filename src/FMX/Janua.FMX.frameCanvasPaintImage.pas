@@ -22,6 +22,7 @@ type
     btnAddNotes: TButton;
     LayoutImage: TLayout;
     imgCar: TImage;
+    Timer1: TTimer;
     procedure FormResize(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -30,6 +31,7 @@ type
     procedure btnRedrawClick(Sender: TObject);
     procedure btnDelLastClick(Sender: TObject);
     procedure btnAddNotesClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
@@ -88,6 +90,12 @@ begin
     SetOffset(TControl(aControl.Parent));
 end;
 
+procedure TframeFMXImageDraw.Timer1Timer(Sender: TObject);
+begin
+  Timer1.Enabled := False;
+  Redraw;
+end;
+
 procedure TframeFMXImageDraw.UpdateSize;
 begin
   self.Height := pnlButtons.Height + Trunc(Width * (330 / 540));
@@ -98,6 +106,7 @@ procedure TframeFMXImageDraw.Activate(const aOffset: Single = 0.0);
 begin
   FOffset := aOffset;
   SetCanvasControl(imgCar);
+  self.Timer1.Enabled := True;
 end;
 
 procedure TframeFMXImageDraw.AfterConstruction;
@@ -132,7 +141,7 @@ end;
 
 procedure TframeFMXImageDraw.btnNoteCancelClick(Sender: TObject);
 begin
-  // FreeNotes;
+  FreeNotes;
 end;
 
 procedure TframeFMXImageDraw.btnNoteOKClick(Sender: TObject);
@@ -140,7 +149,7 @@ begin
   if Assigned(FdlgFMXNotes) then
   begin
     FImgDrawings.Notes := FdlgFMXNotes.Memo1.Lines.Text;
-    // FreeNotes;
+    FreeNotes;
   end;
 end;
 

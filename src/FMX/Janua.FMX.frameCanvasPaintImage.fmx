@@ -7771,4 +7771,11 @@ object frameFMXImageDraw: TframeFMXImageDraw
       Size.PlatformDefault = False
     end
   end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 300
+    OnTimer = Timer1Timer
+    Left = 304
+    Top = 146
+  end
 end
