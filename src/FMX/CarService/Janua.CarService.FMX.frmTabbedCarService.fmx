@@ -37186,6 +37186,19 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     Left = 208
     Top = 192
   end
+  object TimerNote: TTimer
+    Enabled = False
+    Interval = 300
+    OnTimer = TimerNoteTimer
+    Left = 285
+    Top = 214
+  end
+  object TimerCanvas: TTimer
+    Enabled = False
+    Interval = 300
+    Left = 285
+    Top = 275
+  end
   object GestureManager1: TGestureManager
     Sensitivity = 80.000000000000000000
     Left = 200
@@ -37202,6 +37215,10 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           end>
       end
       item
+        Control = pgMessages
+        Collection = <>
+      end
+      item
         Control = pgHome
         Collection = <
           item
@@ -37210,10 +37227,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           item
             GestureID = sgiRight
           end>
-      end
-      item
-        Control = pgMessages
-        Collection = <>
       end>
   end
   object ActionList1: TActionList
@@ -47941,18 +47954,5 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     VPadding = 0
     Left = 80
     Top = 312
-  end
-  object TimerNote: TTimer
-    Enabled = False
-    Interval = 300
-    OnTimer = TimerNoteTimer
-    Left = 285
-    Top = 214
-  end
-  object TimerCanvas: TTimer
-    Enabled = False
-    Interval = 300
-    Left = 285
-    Top = 275
   end
 end
