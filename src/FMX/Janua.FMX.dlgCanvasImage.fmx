@@ -2,11 +2,12 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
   Left = 0
   Top = 0
   Caption = 'Modifica Immagine'
-  ClientHeight = 418
+  ClientHeight = 654
   ClientWidth = 370
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnResize = FormResize
   OnShow = FormShow
   DesignerMasterStyle = 0
   object toolBarDriverTask: TToolBar
@@ -5193,6 +5194,7 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
       StyleLookup = 'backtoolbutton'
       Text = ' '
       TextSettings.Trimming = None
+      OnClick = SpeedButton1Click
     end
     object Button1: TButton
       Align = Right
@@ -5209,18 +5211,47 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
     end
   end
   inline frameFMXImageDraw1: TframeFMXImageDraw
+    Align = Top
+    Position.Y = 48.000000000000000000
+    Size.Width = 370.000000000000000000
+    Size.Height = 292.000000000000000000
+    Size.PlatformDefault = False
+    inherited pnlButtons: TPanel
+      Size.Width = 370.000000000000000000
+      inherited btnRedraw: TButton
+        OnClick = frameFMXImageDraw1btnRedrawClick
+      end
+    end
+    inherited LayoutImage: TLayout
+      Size.Width = 370.000000000000000000
+      Size.Height = 234.000000000000000000
+      inherited imgCar: TImage
+        MultiResBitmap.Height = 383
+        MultiResBitmap.Width = 637
+        Size.Width = 370.000000000000000000
+        Size.Height = 234.000000000000000000
+      end
+    end
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
     Align = Client
     Size.Width = 370.000000000000000000
-    Size.Height = 370.000000000000000000
+    Size.Height = 297.000000000000000000
     Size.PlatformDefault = False
-    inherited Panel2: TPanel
-      Size.Width = 370.000000000000000000
-    end
-    inherited imgCar: TImage
-      MultiResBitmap.Height = 383
-      MultiResBitmap.Width = 637
-      Size.Width = 370.000000000000000000
-      Size.Height = 312.000000000000000000
-    end
+    TabOrder = 2
+    Viewport.Width = 366.000000000000000000
+    Viewport.Height = 293.000000000000000000
+  end
+  object Label1: TLabel
+    Align = Top
+    Position.Y = 340.000000000000000000
+    Size.Width = 370.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    Text = 'Note ed Annotazioni'
+    TabOrder = 3
   end
 end
