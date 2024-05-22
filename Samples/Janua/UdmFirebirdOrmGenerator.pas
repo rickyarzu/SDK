@@ -62,13 +62,12 @@ begin
   aTable.FilterSQL := '1=2';
   aTable.TableName := RecordCodeGen.TableName;
   Queries.Add(aTable);
-
 end;
 
 procedure TdmFirebirdOrmGenerator.DataModuleCreate(Sender: TObject);
 begin
   MasterDataset := qryTables;
-  QueryDataset := qryForeignKeys;
+  ForeignKeyDataset := qryForeignKeys;
   FieldsDataset := tbFields;
 end;
 

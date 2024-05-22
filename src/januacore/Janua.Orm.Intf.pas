@@ -1636,6 +1636,9 @@ Type
     function GetDetailGens: IDictionary<string, IRecordCodeGen>;
     property DetailGens: IDictionary<string, IRecordCodeGen> read GetDetailGens;
 
+    function GetDetails(Index: string): IRecordCodeGen;
+    property Details[Index: string]: IRecordCodeGen read GetDetails;
+
     procedure Generate;
 
   End;

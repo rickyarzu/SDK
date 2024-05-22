@@ -66,7 +66,7 @@ implementation
 
   class function TStatinoFactory.CreateRecordset(const aName: string): IStatini;
   begin
-    Result := TStatini.Create(aName);
+    Result := TStatini.Create(aName, nil, nil);
   end;
 
 end.

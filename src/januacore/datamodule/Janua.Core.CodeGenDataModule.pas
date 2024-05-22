@@ -20,15 +20,14 @@ type
     FSchemaName: string;
     FDetailTables: TStrings;
     FMasterDataset: TDataset;
-    FQueryDataset: TDataset;
+    FForeignKeyDataset: TDataset;
     FFieldsDataset: TDataset;
-    procedure SetQueryDataset(const Value: TDataset);
+    procedure SetForeignKeyDataset(const Value: TDataset);
     procedure SetFieldsDataset(const Value: TDataset);
   protected
     property Queries: TObjectlist<TDataset> read FQueries;
     procedure SetMasterDataset(const Value: TDataset);
     procedure SetTargetDirectory(const Value: string);
-    procedure SetRecordCodeGen(const Value: IRecordCodeGen);
     procedure SetSchemaName(const Value: string);
     function GetMasterImpl: string;
     function GetMasterIntf: string;
@@ -37,7 +36,7 @@ type
     procedure SetDetailTables(const Value: TStrings);
     function GetDetailGen(Index: string): IRecordCodeGen;
     property MasterDataset: TDataset read FMasterDataset write SetMasterDataset;
-    property QueryDataset: TDataset read FQueryDataset write SetQueryDataset;
+    property ForeignKeyDataset: TDataset read FForeignKeyDataset write SetForeignKeyDataset;
     property FieldsDataset: TDataset read FFieldsDataset write SetFieldsDataset;
   public
     procedure Generate;
@@ -46,7 +45,7 @@ type
     function GetDetailList: string; virtual; abstract;
     procedure SaveAllFiles;
     property TargetDirectory: string read FTargetDirectory write SetTargetDirectory;
-    property RecordCodeGen: IRecordCodeGen read FRecordCodeGen write SetRecordCodeGen;
+    property RecordCodeGen: IRecordCodeGen read FRecordCodeGen;
     property DetailGens[Index: string]: IRecordCodeGen read GetDetailGen;
     property SchemaName: string read FSchemaName write SetSchemaName;
     property MasterIntf: string read GetMasterIntf;
@@ -73,7 +72,6 @@ end;
 
 procedure TTJanuaCoreCodeGenDataModule.DataModuleCreate(Sender: TObject);
 begin
-  FRecordCodeGen := TRecordCodeGen.Create;
   FQueries := TObjectlist<TDataset>.Create;
   FQueries.OwnsObjects := True;
 end;
@@ -86,14 +84,21 @@ end;
 
 procedure TTJanuaCoreCodeGenDataModule.Generate;
 begin
-  RecordCodeGen.TableName := FMasterDataset.FieldByName('TABLE_NAME').AsString;
-  RecordCodeGen.SchemaName := FSchemaName;
-  RecordCodeGen.AskPlurals := True;
-  RecordCodeGen.Dataset := FFieldsDataset;
-  OpenFields(RecordCodeGen.TableName);
+  FRecordCodeGen := TRecordCodeGen.Create;
+{$IFDEF DEBUG}
+  Guard.CheckNotNull(FMasterDataset, 'FMasterDataset');
+  Guard.CheckNotNull(FFieldsDataset, 'FFieldsDataset');
+  // FRecordCodeGen
+  Guard.CheckNotNull(FRecordCodeGen, 'FRecordCodeGen');
+{$ENDIF}
+  FRecordCodeGen.TableName := FMasterDataset.FieldByName('TABLE_NAME').AsString;
+  FRecordCodeGen.SchemaName := FSchemaName;
+  FRecordCodeGen.AskPlurals := True;
+  FRecordCodeGen.Dataset := FFieldsDataset;
+  OpenFields(FRecordCodeGen.TableName);
   FFieldsDataset.Open;
   try
-    RecordCodeGen.Generate;
+    FRecordCodeGen.Generate;
   finally
     FFieldsDataset.Close;
   end;
@@ -111,8 +116,7 @@ end;
 
 function TTJanuaCoreCodeGenDataModule.GetDetailGen(Index: string): IRecordCodeGen;
 begin
-  // if not TryGetValue then
-
+  Result := FRecordCodeGen.Details[Index];
 end;
 
 function TTJanuaCoreCodeGenDataModule.GetMasterImpl: string;
@@ -127,7 +131,9 @@ end;
 
 procedure TTJanuaCoreCodeGenDataModule.OpenFields(const aFieldsTable: string);
 begin
-
+{$IFDEF DEBUG}
+  Guard.CheckNotNull(FFieldsDataset, 'FFieldsDataset');
+{$ENDIF}
 end;
 
 procedure TTJanuaCoreCodeGenDataModule.SaveAllFiles;
@@ -174,17 +180,12 @@ end;
 
 procedure TTJanuaCoreCodeGenDataModule.SetMasterDataset(const Value: TDataset);
 begin
-
+  FMasterDataset := Value;
 end;
 
-procedure TTJanuaCoreCodeGenDataModule.SetQueryDataset(const Value: TDataset);
+procedure TTJanuaCoreCodeGenDataModule.SetForeignKeyDataset(const Value: TDataset);
 begin
-  FQueryDataset := Value;
-end;
-
-procedure TTJanuaCoreCodeGenDataModule.SetRecordCodeGen(const Value: IRecordCodeGen);
-begin
-  FRecordCodeGen := Value;
+  FForeignKeyDataset := Value;
 end;
 
 procedure TTJanuaCoreCodeGenDataModule.SetSchemaName(const Value: string);

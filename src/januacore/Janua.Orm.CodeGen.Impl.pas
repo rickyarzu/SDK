@@ -780,7 +780,7 @@ begin
     aBuilder.AppendLine(ind(1) + 'class function T' + sClass +
       'Factory.CreateRecordset(const aName: string): I' + sSet + ';');
     aBuilder.AppendLine(ind(1) + 'begin');
-    aBuilder.AppendLine(ind(2) + 'Result := ' + sSetType + '.Create(aName);');
+    aBuilder.AppendLine(ind(2) + 'Result := ' + sSetType + '.Create(aName,  nil, nil);');
     aBuilder.AppendLine(ind(1) + 'end;');
     aBuilder.AppendLine('');
 

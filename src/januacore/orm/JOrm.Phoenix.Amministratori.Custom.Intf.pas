@@ -1,0 +1,190 @@
+unit JOrm.Phoenix.Amministratori.Custom.Intf;
+
+interface
+
+uses Janua.Orm.Intf;
+
+type
+
+  ICustomAmministratore = interface(IJanuaRecord)
+  ['{2CC418F1-5D8C-4DA9-B34C-B232644CBA00}']
+    function GetChiave: IJanuaField;
+    property Chiave: IJanuaField read GetChiave;
+    function GetRagioneSociale: IJanuaField;
+    property RagioneSociale: IJanuaField read GetRagioneSociale;
+    function GetPartitaIva: IJanuaField;
+    property PartitaIva: IJanuaField read GetPartitaIva;
+    function GetCodiceFiscale: IJanuaField;
+    property CodiceFiscale: IJanuaField read GetCodiceFiscale;
+    function GetEmail: IJanuaField;
+    property Email: IJanuaField read GetEmail;
+    function GetIndirizzoSpedizione: IJanuaField;
+    property IndirizzoSpedizione: IJanuaField read GetIndirizzoSpedizione;
+    function GetCapSpedizione: IJanuaField;
+    property CapSpedizione: IJanuaField read GetCapSpedizione;
+    function GetProvinciaSpedizione: IJanuaField;
+    property ProvinciaSpedizione: IJanuaField read GetProvinciaSpedizione;
+    function GetTitolo: IJanuaField;
+    property Titolo: IJanuaField read GetTitolo;
+    function GetAmministratoreCondominio: IJanuaField;
+    property AmministratoreCondominio: IJanuaField read GetAmministratoreCondominio;
+    function GetIndirizzoFatturazione: IJanuaField;
+    property IndirizzoFatturazione: IJanuaField read GetIndirizzoFatturazione;
+    function GetCapFatturazione: IJanuaField;
+    property CapFatturazione: IJanuaField read GetCapFatturazione;
+    function GetProvinciaFatturazione: IJanuaField;
+    property ProvinciaFatturazione: IJanuaField read GetProvinciaFatturazione;
+    function GetCondPagamento: IJanuaField;
+    property CondPagamento: IJanuaField read GetCondPagamento;
+    function GetEsenteIva: IJanuaField;
+    property EsenteIva: IJanuaField read GetEsenteIva;
+    function GetSospeso: IJanuaField;
+    property Sospeso: IJanuaField read GetSospeso;
+    function GetEsportaSulWeb: IJanuaField;
+    property EsportaSulWeb: IJanuaField read GetEsportaSulWeb;
+    function GetDaEsportareSulWeb: IJanuaField;
+    property DaEsportareSulWeb: IJanuaField read GetDaEsportareSulWeb;
+    function GetPec: IJanuaField;
+    property Pec: IJanuaField read GetPec;
+    function GetFatturaElettronica: IJanuaField;
+    property FatturaElettronica: IJanuaField read GetFatturaElettronica;
+    function GetCodEnteSdi: IJanuaField;
+    property CodEnteSdi: IJanuaField read GetCodEnteSdi;
+    function GetNazioneFatturazione: IJanuaField;
+    property NazioneFatturazione: IJanuaField read GetNazioneFatturazione;
+    function GetNazioneEmPiva: IJanuaField;
+    property NazioneEmPiva: IJanuaField read GetNazioneEmPiva;
+    function GetEsigibilitaIva: IJanuaField;
+    property EsigibilitaIva: IJanuaField read GetEsigibilitaIva;
+    function GetNoteInFattura: IJanuaField;
+    property NoteInFattura: IJanuaField read GetNoteInFattura;
+    function GetAttivo: IJanuaField;
+    property Attivo: IJanuaField read GetAttivo;
+    function GetEntePubblico: IJanuaField;
+    property EntePubblico: IJanuaField read GetEntePubblico;
+    function GetIdWebApplication: IJanuaField;
+    property IdWebApplication: IJanuaField read GetIdWebApplication;
+    function GetEmail2: IJanuaField;
+    property Email2: IJanuaField read GetEmail2;
+    function GetEmail3: IJanuaField;
+    property Email3: IJanuaField read GetEmail3;
+    function GetEmail4: IJanuaField;
+    property Email4: IJanuaField read GetEmail4;
+    function GetNaturaIva: IJanuaField;
+    property NaturaIva: IJanuaField read GetNaturaIva;
+    function GetComuneFatturazione: IJanuaField;
+    property ComuneFatturazione: IJanuaField read GetComuneFatturazione;
+    function GetTelefono1: IJanuaField;
+    property Telefono1: IJanuaField read GetTelefono1;
+    function GetCellulare: IJanuaField;
+    property Cellulare: IJanuaField read GetCellulare;
+    function GetTelefono2: IJanuaField;
+    property Telefono2: IJanuaField read GetTelefono2;
+    function GetFax: IJanuaField;
+    property Fax: IJanuaField read GetFax;
+    function GetComuneSpedizione: IJanuaField;
+    property ComuneSpedizione: IJanuaField read GetComuneSpedizione;
+    function GetBancaAppoggio: IJanuaField;
+    property BancaAppoggio: IJanuaField read GetBancaAppoggio;
+    function GetAbi: IJanuaField;
+    property Abi: IJanuaField read GetAbi;
+    function GetCab: IJanuaField;
+    property Cab: IJanuaField read GetCab;
+    function GetNrCivico: IJanuaField;
+    property NrCivico: IJanuaField read GetNrCivico;
+  end;
+
+  ICustomAmministratori = interface(IJanuaRecordSet)
+  ['{727D1657-93ED-45C7-8E44-D62A9D8FF992}']
+    function GetChiave: IJanuaField;
+    property Chiave: IJanuaField read GetChiave;
+    function GetRagioneSociale: IJanuaField;
+    property RagioneSociale: IJanuaField read GetRagioneSociale;
+    function GetPartitaIva: IJanuaField;
+    property PartitaIva: IJanuaField read GetPartitaIva;
+    function GetCodiceFiscale: IJanuaField;
+    property CodiceFiscale: IJanuaField read GetCodiceFiscale;
+    function GetEmail: IJanuaField;
+    property Email: IJanuaField read GetEmail;
+    function GetIndirizzoSpedizione: IJanuaField;
+    property IndirizzoSpedizione: IJanuaField read GetIndirizzoSpedizione;
+    function GetCapSpedizione: IJanuaField;
+    property CapSpedizione: IJanuaField read GetCapSpedizione;
+    function GetProvinciaSpedizione: IJanuaField;
+    property ProvinciaSpedizione: IJanuaField read GetProvinciaSpedizione;
+    function GetTitolo: IJanuaField;
+    property Titolo: IJanuaField read GetTitolo;
+    function GetAmministratoreCondominio: IJanuaField;
+    property AmministratoreCondominio: IJanuaField read GetAmministratoreCondominio;
+    function GetIndirizzoFatturazione: IJanuaField;
+    property IndirizzoFatturazione: IJanuaField read GetIndirizzoFatturazione;
+    function GetCapFatturazione: IJanuaField;
+    property CapFatturazione: IJanuaField read GetCapFatturazione;
+    function GetProvinciaFatturazione: IJanuaField;
+    property ProvinciaFatturazione: IJanuaField read GetProvinciaFatturazione;
+    function GetCondPagamento: IJanuaField;
+    property CondPagamento: IJanuaField read GetCondPagamento;
+    function GetEsenteIva: IJanuaField;
+    property EsenteIva: IJanuaField read GetEsenteIva;
+    function GetSospeso: IJanuaField;
+    property Sospeso: IJanuaField read GetSospeso;
+    function GetEsportaSulWeb: IJanuaField;
+    property EsportaSulWeb: IJanuaField read GetEsportaSulWeb;
+    function GetDaEsportareSulWeb: IJanuaField;
+    property DaEsportareSulWeb: IJanuaField read GetDaEsportareSulWeb;
+    function GetPec: IJanuaField;
+    property Pec: IJanuaField read GetPec;
+    function GetFatturaElettronica: IJanuaField;
+    property FatturaElettronica: IJanuaField read GetFatturaElettronica;
+    function GetCodEnteSdi: IJanuaField;
+    property CodEnteSdi: IJanuaField read GetCodEnteSdi;
+    function GetNazioneFatturazione: IJanuaField;
+    property NazioneFatturazione: IJanuaField read GetNazioneFatturazione;
+    function GetNazioneEmPiva: IJanuaField;
+    property NazioneEmPiva: IJanuaField read GetNazioneEmPiva;
+    function GetEsigibilitaIva: IJanuaField;
+    property EsigibilitaIva: IJanuaField read GetEsigibilitaIva;
+    function GetNoteInFattura: IJanuaField;
+    property NoteInFattura: IJanuaField read GetNoteInFattura;
+    function GetAttivo: IJanuaField;
+    property Attivo: IJanuaField read GetAttivo;
+    function GetEntePubblico: IJanuaField;
+    property EntePubblico: IJanuaField read GetEntePubblico;
+    function GetIdWebApplication: IJanuaField;
+    property IdWebApplication: IJanuaField read GetIdWebApplication;
+    function GetEmail2: IJanuaField;
+    property Email2: IJanuaField read GetEmail2;
+    function GetEmail3: IJanuaField;
+    property Email3: IJanuaField read GetEmail3;
+    function GetEmail4: IJanuaField;
+    property Email4: IJanuaField read GetEmail4;
+    function GetNaturaIva: IJanuaField;
+    property NaturaIva: IJanuaField read GetNaturaIva;
+    function GetComuneFatturazione: IJanuaField;
+    property ComuneFatturazione: IJanuaField read GetComuneFatturazione;
+    function GetTelefono1: IJanuaField;
+    property Telefono1: IJanuaField read GetTelefono1;
+    function GetCellulare: IJanuaField;
+    property Cellulare: IJanuaField read GetCellulare;
+    function GetTelefono2: IJanuaField;
+    property Telefono2: IJanuaField read GetTelefono2;
+    function GetFax: IJanuaField;
+    property Fax: IJanuaField read GetFax;
+    function GetComuneSpedizione: IJanuaField;
+    property ComuneSpedizione: IJanuaField read GetComuneSpedizione;
+    function GetBancaAppoggio: IJanuaField;
+    property BancaAppoggio: IJanuaField read GetBancaAppoggio;
+    function GetAbi: IJanuaField;
+    property Abi: IJanuaField read GetAbi;
+    function GetCab: IJanuaField;
+    property Cab: IJanuaField read GetCab;
+    function GetNrCivico: IJanuaField;
+    property NrCivico: IJanuaField read GetNrCivico;
+
+  end;
+
+implementation
+
+end.
+
+
