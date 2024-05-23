@@ -835,7 +835,7 @@ var
   aMessage: TLandingMessage;
 begin
   try
-    FLandingMsgBuilder.Dataset := qryBooking;
+    FLandingMsgBuilder.DataSet := qryBooking;
     FLandingMsgBuilder.LoadSettings;
     RefreshBooking;
     aMessage := FLandingMsgBuilder.GenerateLandingMessage;
@@ -1170,7 +1170,7 @@ begin
     end
     else
     begin
-       FBookingRecord.CustomerID.AsInteger := FBookingRecord.AnagraphClient.AnagraphId.AsInteger;
+      FBookingRecord.CustomerID.AsInteger := FBookingRecord.AnagraphClient.AnagraphId.AsInteger;
 {$IFDEF DEBUG}
       var
       lMainID := FBookingRecord.AnagraphClient.MainAddress.Id.AsInteger;
@@ -1799,6 +1799,7 @@ end;
 procedure TdmPgCarServiceBookingStorage.SetupSMSBookingConfirmation;
 begin
   // ---------------------------------------------------------------------------------------------------------
+  // By Default it uses Twilio Sender (note whene more senders will be supported this should be a case choice)
   if not Assigned(FCSSMSSender) then
     TJanuaApplicationFactory.TryGetInterface(IJanuaSMSTwilio, FCSSMSSender, True);
 
@@ -1809,6 +1810,7 @@ begin
     FCSCustomerSMSBuilder.LogProc := LogProc;
     FCSCustomerSMSBuilder.SMSSender := FCSSMSSender;
     FCSCustomerSMSBuilder.LoadSettings;
+    // Note for production Remote the JANUATEST Compiler Directive ......
 {$IFDEF JANUATEST}FCSCustomerSMSBuilder.sTo := '+393409111351'; {$ENDIF}
   end;
 
@@ -1820,6 +1822,7 @@ begin
     FCSDriverSMSBuilder1.LogProc := LogProc;
     FCSDriverSMSBuilder1.SMSSender := FCSSMSSender;
     FCSDriverSMSBuilder1.LoadSettings;
+    // Note for production Remote the JANUATEST Compiler Directive ......
 {$IFDEF JANUATEST}FCSDriverSMSBuilder1.sTo := '+393409111351'; {$ENDIF}
   end;
 
@@ -1831,6 +1834,7 @@ begin
     FCSDriverSMSBuilder2.LogProc := LogProc;
     FCSDriverSMSBuilder2.SMSSender := FCSSMSSender;
     FCSDriverSMSBuilder2.LoadSettings;
+    // Note for production Remote the JANUATEST Compiler Directive ......
 {$IFDEF JANUATEST}FCSDriverSMSBuilder2.sTo := '+393409111351'; {$ENDIF}
   end;
 

@@ -278,7 +278,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       UrlStyle.BkColor = clWhite
       UrlStyle.Style = [fsUnderline]
       UseStyler = True
-      Version = '3.9.0.1'
+      Version = '3.9.1.1'
       WordWrap = wwNone
     end
     object btnSaveConfig: TButton
@@ -333,6 +333,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       Height = 49
       Caption = 'Engine'
       Columns = 2
+      ItemIndex = 1
       Items.Strings = (
         'SMS'
         'WhatsApp')
@@ -504,7 +505,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwClientWidth
       end
       object advmJson: TAdvMemo
@@ -626,7 +627,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwClientWidth
       end
     end

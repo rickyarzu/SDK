@@ -182,6 +182,9 @@ procedure TUniDatasetFunctions.OpenDataset(const aDataset: TDataset; DoRaise: bo
   end;
 
 begin
+{$IFDEF DEBUG}
+  Guard.CheckNotNull(aDataset, 'TUniDatasetFunctions.OpenDataset(aDataset)');
+{$ENDIF}
   if not aDataset.Active then
     if (aDataset is TUniQuery) then
       try

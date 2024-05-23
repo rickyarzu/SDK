@@ -17,6 +17,7 @@ Service from Pikapp Company
 
 History:
 --------
+May 23, 2024 : - v0.9.9. Added procedure to change
 Dec 16, 2023 : - v0.9.8 Introduced Controllers over Frames
                  Mapped Frames to Controllers
                  TSimpleAnagraphController -> TframeUniGUISimpleAnagraph

@@ -144,6 +144,7 @@ begin
   inherited;
   FRecipients := TStringList.Create;
   FSenderConf := TSMSSenderConf.Create;
+  // By Default Messages are Snt using WhatsApp Channel
   FMessageType := jmtWhatsApp;
 end;
 
