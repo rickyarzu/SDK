@@ -124,7 +124,7 @@ begin
 {$IFDEF MSWINDOWS}
   FdlgFMXNotes.ShowModal;
 {$ELSE}
-  FdlgFMXNotes.WindowState := wsMaximized;
+  FdlgFMXNotes.WindowState := TWindowState.wsMaximized;
   FdlgFMXNotes.ShowModal;
 {$ENDIF}
 end;

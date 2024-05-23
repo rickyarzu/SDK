@@ -37205,6 +37205,10 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     Top = 313
     GestureData = <
       item
+        Control = pgMessages
+        Collection = <>
+      end
+      item
         Control = pgCarHome
         Collection = <
           item
@@ -37213,10 +37217,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           item
             GestureID = sgiRight
           end>
-      end
-      item
-        Control = pgMessages
-        Collection = <>
       end
       item
         Control = pgHome
