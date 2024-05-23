@@ -83,7 +83,6 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       'select * from carservice.booking_head_view'
       'where jguid = :jguid'
       '')
-    Active = True
     Left = 184
     Top = 48
     ParamData = <
@@ -464,7 +463,7 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
         DataType = ftLargeint
         Name = 'booking_id'
         ParamType = ptInput
-        Value = 40
+        Value = 212
       end
       item
         DataType = ftBoolean
@@ -584,6 +583,7 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
       'select * from carservice.timetable_view v1'
       'where '
       ' booking_id = :id')
+    Active = True
     Left = 184
     Top = 128
     ParamData = <
@@ -591,7 +591,7 @@ inherited dmPgCarServiceCustomers: TdmPgCarServiceCustomers
         DataType = ftLargeint
         Name = 'id'
         ParamType = ptInput
-        Value = 40
+        Value = 253911
       end>
     object DateField1: TDateField
       FieldName = 'workingday'

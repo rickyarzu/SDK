@@ -108,7 +108,7 @@ begin
   begin
     ulbTime.Caption := FTimeTableSlot.SlotDes.AsString;
     ulbDate.Caption := FTimeTableSlot.Workingday.AsString;
-    ulbDeliveryTime.Caption := FTimeTableSlot.GetSlotDelivery.AsString;
+    ulbDeliveryTime.Caption := FTimeTableSlot.SlotDelivery.AsString;
     tgSelected.Toggled := FTimeTableSlot.Booked.AsBoolean;
     { tgSelected.BindToField(FTimeTableSlot.Booked); }
     if not FTimeTableSlot.IsFree.AsBoolean then

@@ -288,7 +288,7 @@ begin
   if Assigned(lbTimetableDAte) then
     lbTimetableDAte.Caption := FTimeTableView.Workingday.AsString;
   if Assigned(lbDeliveryTime) then
-    lbDeliveryTime.Caption := FTimeTableView.SlotDes;
+    lbDeliveryTime.Caption := FTimeTableView.SlotDes.AsString;
 
 end;
 

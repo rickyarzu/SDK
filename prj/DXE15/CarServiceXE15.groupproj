@@ -105,6 +105,15 @@
         <Projects Include="UniGUI\CarServiceCustConfService.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="UniGUI\mod_cscustomersmobile.dproj">
             <Dependencies/>
         </Projects>
@@ -175,15 +184,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="WebREST\CarServiceDMVCService.dproj">
@@ -506,6 +506,33 @@
     <Target Name="CarServiceCustConfService:Make">
         <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Make">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
+    </Target>
     <Target Name="mod_cscustomersmobile">
         <MSBuild Projects="UniGUI\mod_cscustomersmobile.dproj"/>
     </Target>
@@ -722,33 +749,6 @@
     <Target Name="TestPostGet:Make">
         <MSBuild Projects="..\..\Samples\Janua\WebBroker\TestPostGet.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole:Clean">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole:Make">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService:Clean">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService:Make">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CarServiceDMVCService">
         <MSBuild Projects="WebREST\CarServiceDMVCService.dproj"/>
     </Target>
@@ -768,13 +768,13 @@
         <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaRestWeb;JanuaTmsCore;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceBackOffice;CarServiceAdminXE15;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm;TestPostGet;CarServiceWebBrokerCustConfConsole;CarServiceWebBrokerCustConfVCL;CarServiceWebBrokerCustConfService;CarServiceDMVCService;dmvcframeworkRT"/>
+        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaRestWeb;JanuaTmsCore;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceBackOffice;CarServiceAdminXE15;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;CarServiceWebBrokerCustConfConsole;CarServiceWebBrokerCustConfVCL;CarServiceWebBrokerCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm;TestPostGet;CarServiceDMVCService;dmvcframeworkRT"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaRestWeb:Clean;JanuaTmsCore:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceBackOffice:Clean;CarServiceAdminXE15:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean;TestPostGet:Clean;CarServiceWebBrokerCustConfConsole:Clean;CarServiceWebBrokerCustConfVCL:Clean;CarServiceWebBrokerCustConfService:Clean;CarServiceDMVCService:Clean;dmvcframeworkRT:Clean"/>
+        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaRestWeb:Clean;JanuaTmsCore:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceBackOffice:Clean;CarServiceAdminXE15:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;CarServiceWebBrokerCustConfConsole:Clean;CarServiceWebBrokerCustConfVCL:Clean;CarServiceWebBrokerCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean;TestPostGet:Clean;CarServiceDMVCService:Clean;dmvcframeworkRT:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaRestWeb:Make;JanuaTmsCore:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceBackOffice:Make;CarServiceAdminXE15:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make;TestPostGet:Make;CarServiceWebBrokerCustConfConsole:Make;CarServiceWebBrokerCustConfVCL:Make;CarServiceWebBrokerCustConfService:Make;CarServiceDMVCService:Make;dmvcframeworkRT:Make"/>
+        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaRestWeb:Make;JanuaTmsCore:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceBackOffice:Make;CarServiceAdminXE15:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;CarServiceWebBrokerCustConfConsole:Make;CarServiceWebBrokerCustConfVCL:Make;CarServiceWebBrokerCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make;TestPostGet:Make;CarServiceDMVCService:Make;dmvcframeworkRT:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">

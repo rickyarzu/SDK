@@ -360,10 +360,10 @@ begin
           var
           lbDeliveryDate := FDeliverySlot.Workingday.AsString;
           var
-          lbDeliveryTime := FDeliverySlot.SlotDes.AsString;
+          lbDeliveryTime := FDeliverySlot.SlotDelivery.AsString;
 
-          HtmlReplace(aPage, 'return_date', lbPickupDate);
-          HtmlReplace(aPage, 'return_time', lbPickupTime);
+          HtmlReplace(aPage, 'return_date', lbDeliveryDate);
+          HtmlReplace(aPage, 'return_time', lbDeliveryTime);
 
           HtmlReplace(aPage, 'Restituzione', '/Restituzione');
           HtmlReplace(aPage, 'visibility_restituzione', '');

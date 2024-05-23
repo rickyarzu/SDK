@@ -22,6 +22,7 @@ type
     function GetFree: IJanuaField;
     property IsFree: IJanuaField read GetFree;
     function GetSlotDelivery: IJanuaField;
+    property SlotDelivery: IJanuaField read GetSlotDelivery;
   end;
 
   ICustomTimetableSlots = interface(IJanuaRecordSet)
@@ -42,6 +43,7 @@ type
     function GetBookedPlaces: IJanuaField;
     property BookedPlaces: IJanuaField read GetBookedPlaces;
     function GetSlotDelivery: IJanuaField;
+    property SlotDelivery: IJanuaField read GetSlotDelivery;
   end;
 
   ICustomTimetableView = interface(IJanuaRecord)
@@ -94,8 +96,9 @@ type
     function GetImagesDelivery: IJanuaField;
     /// <summary> images_delivery json, </summary>
     property ImagesDelivery: IJanuaField read GetImagesDelivery;
-    function GetSlotDelivery: IJanuaField;
 
+    function GetSlotDelivery: IJanuaField;
+    property SlotDelivery: IJanuaField read GetSlotDelivery;
   end;
 
   ICustomTimetableViews = interface(IJanuaRecordSet)
@@ -122,6 +125,7 @@ type
     procedure SetSlotDes(const Value: IJanuaField);
     property SlotDes: IJanuaField read GetSlotDes write SetSlotDes;
     function GetSlotDelivery: IJanuaField;
+    property SlotDelivery: IJanuaField read GetSlotDelivery;
 
     function GetBooked: IJanuaField;
     procedure SetBooked(const Value: IJanuaField);
