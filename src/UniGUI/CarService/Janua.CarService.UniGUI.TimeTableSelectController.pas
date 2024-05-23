@@ -285,6 +285,11 @@ end;
 procedure TTimeTableUniGUIController.SetTimeTableView(const Value: ItimetableView);
 begin
   FTimeTableView := Value;
+  if Assigned(lbTimetableDAte) then
+    lbTimetableDAte.Caption := FTimeTableView.Workingday.AsString;
+  if Assigned(lbDeliveryTime) then
+    lbDeliveryTime.Caption := FTimeTableView.SlotDes;
+
 end;
 
 end.
