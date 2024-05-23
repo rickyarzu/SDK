@@ -173,7 +173,7 @@ begin
   FdlgFMXCanvasImage.ImageDrawings := self.FImgDrawings;
   FdlgFMXCanvasImage.OnCloseDialog := self.CanvasImageDlgClose;
 {$IFNDEF MSWINDOWS}
-  FdlgFMXCanvasImage.WindowState := wsMaximized;
+  FdlgFMXCanvasImage.WindowState := TWindowState.wsMaximized;
 {$ENDIF}
   FdlgFMXCanvasImage.ShowModal(FreeCanvasEdit);
 end;
@@ -215,7 +215,7 @@ begin
   FdlgFMXNotes.OkEvent := self.btnNoteOKClick;
   FdlgFMXNotes.CancelEvent := self.btnNoteCancelClick;
 {$IFNDEF MSWINDOWS}
-  FdlgFMXNotes.WindowState := wsMaximized;
+  FdlgFMXNotes.WindowState := TWindowState.wsMaximized;
 {$ENDIF}
   FdlgFMXNotes.ShowModal(FreeNotes);
 end;
