@@ -15705,11 +15705,15 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         inherited pnlButtons: TPanel
           Size.Width = 896.000000000000000000
         end
-        inherited imgCar: TImage
-          MultiResBitmap.Height = 383
-          MultiResBitmap.Width = 637
+        inherited LayoutImage: TLayout
           Size.Width = 896.000000000000000000
           Size.Height = 542.000000000000000000
+          inherited imgCar: TImage
+            MultiResBitmap.Height = 383
+            MultiResBitmap.Width = 637
+            Size.Width = 896.000000000000000000
+            Size.Height = 542.000000000000000000
+          end
         end
       end
       object Memo1: TMemo
