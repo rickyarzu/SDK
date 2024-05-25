@@ -9,37 +9,37 @@ package TMSFNCDashBoardPackPkgDE;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS ON}
+{$LOCALSYMBOLS OFF}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION OFF}
+{$OPTIMIZATION ON}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO ON}
+{$REFERENCEINFO OFF}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES ON}
+{$STACKFRAMES OFF}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE DEBUG}
+{$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS FNC Dashboard Pack for FMX/VCL Designtime'}
 {$LIBSUFFIX AUTO}
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   designide,
   FMXTMSFNCDashboardPackPkg,
   VCLTMSFNCDashboardPackPkg;
 
-contains
+ocontains
   FMX.TMSFNCDashboardDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardDE.pas',
   FMX.TMSFNCDashboardRegDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardRegDE.pas',
   VCL.TMSFNCDashboardDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardDE.pas',
   VCL.TMSFNCDashboardRegDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardRegDE.pas';
 
-end.
+d.
