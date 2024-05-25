@@ -508,7 +508,6 @@ type
   private
     FBlob: TBytes;
     FIsUnicode: Boolean;
-    FAsByteDynArray: TByteDynArray;
     function GetAsBytes: TBytes;
     function GetEncoded64: string;
     procedure SetEncoded64(const Value: string);
@@ -544,7 +543,7 @@ type
     property AsSmallInt: Smallint read GetAsSmallint write SetAsSmallint;
     property AsLargeInt: Largeint read GetAsLargeint write SetAsLargeint;
     property AsBytes: TBytes read GetAsBytes write SetAsBytes;
-    property AsByteDynArray: TByteDynArray read FAsByteDynArray write SetAsByteDynArray;
+    property AsByteDynArray: TByteDynArray read GetAsByteDynArray write SetAsByteDynArray;
     property AsBoolean: Boolean read GetAsBoolean write SetAsBoolean;
   end;
 
@@ -3027,7 +3026,7 @@ end;
 
 procedure TJanuaBlob.SetAsByteDynArray(const Value: TByteDynArray);
 begin
-  FAsByteDynArray := Value;
+  FBlob := Value;
 end;
 
 procedure TJanuaBlob.SetAsBytes(const Value: TBytes);
@@ -3050,12 +3049,14 @@ end;
 
 procedure TJanuaBlob.SetAsLargeint(const Value: Largeint);
 begin
-
+  SetLength(FBlob, SizeOf(Largeint));
+  Move(Value, FBlob[0], SizeOf(Largeint));
 end;
 
 procedure TJanuaBlob.SetAsSmallint(const Value: Smallint);
 begin
-
+  SetLength(FBlob, SizeOf(Smallint));
+  Move(Value, FBlob[0], SizeOf(Smallint));
 end;
 
 procedure TJanuaBlob.SetEncoded64(const Value: string);

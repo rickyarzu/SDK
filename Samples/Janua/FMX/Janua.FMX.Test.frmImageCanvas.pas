@@ -49,6 +49,17 @@ type
     btnDialog: TButton;
     frameFMXImageDraw1: TframeFMXImageDraw;
     Memo1: TMemo;
+    btnImageX: TButton;
+    tabImageX: TTabItem;
+    Panel1: TPanel;
+    btnLoadImage: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Label3: TLabel;
+    Label4: TLabel;
+    Button7: TButton;
+    ImageCarX: TImage;
+    Button8: TButton;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -70,6 +81,7 @@ type
     LastDraw: TJanuaDraw;
     FOffset: Single;
     FCanvasControl: TControl;
+    FJanuaBlob: TJanuaBlob;
     procedure SetCanvasControl(const Value: TControl);
   protected
     pntBoxCar: TPaintBox;
@@ -183,6 +195,17 @@ procedure TfrmFMXTestImageDraw.FormCreate(Sender: TObject);
 begin
   imgCar.Height := Width * (330 / 540);
   SetCanvasControl(imgCar);
+  if Assigned(ImageCarX.Bitmap) then
+  begin
+    var
+    aStream := TMemoryStream.Create;
+    try
+      ImageCarX.Bitmap.SaveToStream(aStream);
+      FJanuaBlob.LoadFromStream(aStream);
+    finally
+      aStream.Free;
+    end;
+  end;
 end;
 
 procedure TfrmFMXTestImageDraw.FormResize(Sender: TObject);

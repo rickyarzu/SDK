@@ -39,7 +39,6 @@ implementation
 uses
 {$IFDEF ANDROID}
   Androidapi.JNI.GraphicsContentViewText,
-  Androidapi.JNI.GraphicsContentViewText,
   Androidapi.Helpers,
   Androidapi.JNI.JavaTypes,
   Androidapi.JNI.Net,

@@ -91,11 +91,14 @@ function PwdComplexity(aPwd: string): boolean;
 function tpl(aValue: string): string;
 
 // Straming Management Functions .............................................................................
-procedure StreamBytes(Stream: TStream; const Bytes: TBytes);
-procedure StreamBytes2(Stream: TStream; const Bytes: TBytes);
-procedure StreamUTF8Str(Stream: TStream; const S: UTF8String);
-procedure StreamUTF8Str2(Stream: TStream; const S: UTF8String);
+procedure StreamBytes(Stream: TStream; const Bytes: TBytes); inline;
+procedure StreamBytes2(Stream: TStream; const Bytes: TBytes); inline;
+procedure StreamUTF8Str(Stream: TStream; const S: UTF8String); inline;
+procedure StreamUTF8Str2(Stream: TStream; const S: UTF8String); inline;
 procedure StreamDoubles(Stream: TStream; const Data: array of Double);
+procedure Int64ToBytes(Value: Int64; var Bytes: TBytes); inline;
+function BytesToInt64(const Bytes: TBytes): Int64; inline;
+
 
 // File and Steam Procedures and Functions
 
@@ -1126,7 +1129,25 @@ end;
 
 procedure StreamUTF8Str2(Stream: TStream; const S: UTF8String);
 begin
-{$IFNDEF NEXTGEN} Stream.Write(PAnsiChar(S)^, Length(S)); {$ENDIF}
+{$IFNDEF NEXTGEN}
+  Stream.Write(PAnsiChar(S)^, Length(S));
+{$ELSE}
+  if Length(S) <> 0 then
+    Stream.Write(S[1], Length(S));
+{$ENDIF}
+end;
+
+procedure Int64ToBytes(Value: Int64; var Bytes: TBytes);
+begin
+  SetLength(Bytes, SizeOf(Int64));
+  Move(Value, Bytes[0], SizeOf(Int64));
+end;
+
+function BytesToInt64(const Bytes: TBytes): Int64;
+begin
+  if Length(Bytes) <> SizeOf(Int64) then
+    raise Exception.Create('Invalid byte array size');
+  Move(Bytes[0], Result, SizeOf(Int64));
 end;
 
 { Another thing to keep in mind is that the Count parameter of Read and friends is in terms of bytes.
@@ -3146,7 +3167,7 @@ begin
     Result := ('0000000000000');
 end;
 
-function TryStrToFloat(const S: string;  var Value: Double): boolean;
+function TryStrToFloat(const S: string; var Value: Double): boolean;
 begin
   Result := true;
   try
