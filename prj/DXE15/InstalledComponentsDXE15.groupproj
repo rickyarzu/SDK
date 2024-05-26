@@ -5328,7 +5328,7 @@
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
@@ -5550,7 +5550,7 @@
             <ProjectGuid>{1C973352-058B-407F-92FC-3C962EE1C319}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
@@ -5574,7 +5574,7 @@
             <ProjectGuid>{47E39625-4F6A-43A7-AA3E-03B14731B72F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
