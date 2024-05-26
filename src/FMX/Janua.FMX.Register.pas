@@ -14,7 +14,8 @@ procedure Register;
 implementation
 
 uses
-  Windows, System.SysUtils, System.Actions, System.UITypes, System.Math, System.RTLConsts, System.UIConsts,
+{$IFDEF MSWINDOWS}  Windows, {$ENDIF MSWINDOWS}
+  System.SysUtils, System.Actions, System.UITypes, System.Math, System.RTLConsts, System.UIConsts,
   // Janua
   Janua.FMX.FormControls, {Janua.FMX.Dialogs,} Janua.FMX.Geocoding,
   Janua.FMX.MapStandardControls, Janua.FMX.Forms,
