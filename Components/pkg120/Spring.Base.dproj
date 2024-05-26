@@ -4,11 +4,11 @@
         <MainSource>Spring.Base.dpk</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <TargetedPlatforms>32899</TargetedPlatforms>
+        <TargetedPlatforms>131</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.1</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">Spring.Base</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
@@ -218,6 +218,7 @@
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Events.Base.pas"/>
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Helpers.pas"/>
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.pas"/>
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.Base.pas"/>
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Controller.pas"/>
         <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Extensions.pas"/>
@@ -315,7 +316,7 @@
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Android">False</Platform>
-                <Platform value="Android64">True</Platform>
+                <Platform value="Android64">False</Platform>
                 <Platform value="iOSDevice64">False</Platform>
                 <Platform value="iOSSimARM64">False</Platform>
                 <Platform value="Linux64">True</Platform>
@@ -341,12 +342,6 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Spring.Base.Delphi11.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\Spring.Base290.bpl" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>Spring_Base.bpl</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
