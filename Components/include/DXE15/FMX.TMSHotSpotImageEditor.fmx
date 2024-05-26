@@ -1,0 +1,1207 @@
+object TMSFMXHotSpotImageEditorForm: TTMSFMXHotSpotImageEditorForm
+  Left = 0
+  Top = 0
+  Caption = 'HotspotImage editor'
+  ClientHeight = 628
+  ClientWidth = 847
+  Position = poScreenCenter
+  FormFactor.Width = 1920
+  FormFactor.Height = 1200
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  object ToolBar1: TToolBar
+    Height = 33.000000000000000000
+    TabOrder = 0
+    Width = 847.000000000000000000
+    object btRect: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      GroupName = 'Group1'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 31.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      OnClick = btRectClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'rectangles.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 0
+    end
+    object btZoomRST: TTMSFMXSpeedButton
+      Align = alLeft
+      CanFocus = True
+      GroupName = ''
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 499.000000000000000000
+      Text = 'Zoom Reset'
+      Width = 76.000000000000000000
+      OnClick = btZoomRSTClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'Arrow.png'
+      ShowImage = True
+      Version = '1.5.0.0'
+      TabOrder = 1
+    end
+    object btZoomOut: TTMSFMXSpeedButton
+      Align = alLeft
+      CanFocus = True
+      GroupName = ''
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 431.000000000000000000
+      Text = 'Zoom Out'
+      Width = 68.000000000000000000
+      OnClick = btZoomOutClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'Arrow.png'
+      ShowImage = True
+      Version = '1.5.0.0'
+      TabOrder = 2
+    end
+    object btZoomIn: TTMSFMXSpeedButton
+      Align = alLeft
+      CanFocus = True
+      GroupName = ''
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 367.000000000000000000
+      Text = 'Zoom In'
+      Width = 64.000000000000000000
+      OnClick = btZoomInClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'Arrow.png'
+      ShowImage = True
+      Version = '1.5.0.0'
+      TabOrder = 3
+    end
+    object TMSFMXSpeedButton6: TTMSFMXSpeedButton
+      Align = alLeft
+      CanFocus = True
+      GroupName = ''
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 336.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      OnClick = SpeedButton1Click
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'cancel.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 4
+    end
+    object btDelLine: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      Enabled = False
+      GroupName = 'Group2'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 305.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'cutclear.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 5
+    end
+    object btDelPoint: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      Enabled = False
+      GroupName = 'Group2'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 274.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'pointermi.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 6
+    end
+    object btAddPoint: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      Enabled = False
+      GroupName = 'Group2'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 243.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'pointerplus.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 7
+    end
+    object btDelete: TTMSFMXSpeedButton
+      Align = alLeft
+      CanFocus = True
+      Enabled = False
+      GroupName = ''
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 155.000000000000000000
+      Text = 'Delete Hotspot'
+      Width = 88.000000000000000000
+      OnClick = btDeleteClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'Arrow.png'
+      ShowImage = True
+      Version = '1.5.0.0'
+      TabOrder = 8
+    end
+    object btWand: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      GroupName = 'Group1'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 124.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      OnClick = btWandClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'wand.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 9
+    end
+    object btPoly: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      GroupName = 'Group1'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 93.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      OnClick = btPolyClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'poly.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 10
+    end
+    object btEllipse: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      GroupName = 'Group1'
+      Height = 33.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 62.000000000000000000
+      Text = 'TMSFMXSpeedButton1'
+      Width = 31.000000000000000000
+      OnClick = btEllipseClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'circular.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      TabOrder = 11
+    end
+    object btNormal: TTMSFMXSpeedButton
+      StaysPressed = True
+      Align = alLeft
+      CanFocus = True
+      GroupName = 'Group1'
+      Height = 33.000000000000000000
+      IsPressed = True
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Text = 'btNormal'
+      Width = 31.000000000000000000
+      OnClick = btNormalClick
+      BitmapContainer = TMSFMXBitmapContainer1
+      BitmapName = 'Arrow.png'
+      ShowImage = True
+      ShowText = False
+      Version = '1.5.0.0'
+      IsChecked = True
+      TabOrder = 12
+    end
+  end
+  object Panel1: TPanel
+    Align = alBottom
+    Height = 38.000000000000000000
+    Position.Y = 590.000000000000000000
+    Width = 847.000000000000000000
+    TabOrder = 1
+    object Button2: TButton
+      Height = 22.000000000000000000
+      ModalResult = 1
+      Position.X = 600.000000000000000000
+      Position.Y = 8.000000000000000000
+      TabOrder = 0
+      Text = 'OK'
+      Width = 80.000000000000000000
+      OnClick = Button2Click
+    end
+    object trTol: TTrackBar
+      Height = 20.000000000000000000
+      Orientation = orHorizontal
+      Position.X = 264.000000000000000000
+      Position.Y = 13.000000000000000000
+      TabOrder = 1
+      Value = 50.000000000000000000
+      Width = 100.000000000000000000
+      OnChange = trTolChange
+    end
+    object lbWTolerance: TLabel
+      AutoSize = True
+      Height = 19.000000000000000000
+      Position.X = 208.000000000000000000
+      Position.Y = 12.000000000000000000
+      Text = 'Tolerance:'
+      Width = 53.000000000000000000
+      WordWrap = False
+    end
+    object lbWDensity: TLabel
+      AutoSize = True
+      Height = 19.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 12.000000000000000000
+      Text = 'Wand accuracy:'
+      Width = 80.000000000000000000
+      WordWrap = False
+    end
+    object trDensity: TTrackBar
+      Height = 20.000000000000000000
+      Orientation = orHorizontal
+      Position.X = 96.000000000000000000
+      Position.Y = 13.000000000000000000
+      TabOrder = 4
+      Value = 10.000000000000000000
+      Width = 100.000000000000000000
+      OnChange = trDensityChange
+    end
+    object Label3: TLabel
+      AutoSize = True
+      Height = 19.000000000000000000
+      Position.X = 376.000000000000000000
+      Position.Y = 12.000000000000000000
+      Text = 'Zoom ratio:'
+      Width = 60.000000000000000000
+      WordWrap = False
+    end
+    object seZoomRatio: TSpinBox
+      TabOrder = 6
+      Cursor = crIBeam
+      Min = 1.000000000000000000
+      Max = 10.000000000000000000
+      Value = 10.000000000000000000
+      KeyboardType = vktDefault
+      Position.X = 448.000000000000000000
+      Position.Y = 8.000000000000000000
+      Width = 73.000000000000000000
+      Height = 22.000000000000000000
+    end
+    object Button1: TButton
+      Height = 22.000000000000000000
+      ModalResult = 2
+      Position.X = 688.000000000000000000
+      Position.Y = 8.000000000000000000
+      TabOrder = 7
+      Text = 'Cancel'
+      Width = 80.000000000000000000
+    end
+  end
+  object pnBackground: TPanel
+    Align = alLeft
+    Height = 557.000000000000000000
+    Position.Y = 33.000000000000000000
+    Width = 355.000000000000000000
+    TabOrder = 2
+    object pnLoadBack: TPanel
+      Align = alBottom
+      Height = 41.000000000000000000
+      Position.Y = 516.000000000000000000
+      Width = 355.000000000000000000
+      TabOrder = 0
+      object lbPozy: TLabel
+        AutoSize = True
+        Height = 19.000000000000000000
+        Position.X = 19.000000000000000000
+        Position.Y = 23.000000000000000000
+        Text = '0'
+        Width = 10.000000000000000000
+        WordWrap = False
+      end
+      object lbnX: TLabel
+        AutoSize = True
+        Height = 19.000000000000000000
+        Position.X = 7.000000000000000000
+        Position.Y = 5.000000000000000000
+        Text = 'X:'
+        Width = 13.000000000000000000
+        WordWrap = False
+      end
+      object lbnY: TLabel
+        AutoSize = True
+        Height = 19.000000000000000000
+        Position.X = 7.000000000000000000
+        Position.Y = 23.000000000000000000
+        Text = 'Y:'
+        Width = 12.000000000000000000
+        WordWrap = False
+      end
+      object lbNPoints: TLabel
+        AutoSize = True
+        Height = 13.000000000000000000
+        Position.X = 46.000000000000000000
+        Position.Y = 5.000000000000000000
+        Visible = False
+        Width = 3.000000000000000000
+      end
+      object btBackImage: TButton
+        Align = alRight
+        Height = 41.000000000000000000
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 5.000000000000000000
+        Padding.Right = 5.000000000000000000
+        Padding.Bottom = 5.000000000000000000
+        Position.X = 206.000000000000000000
+        TabOrder = 4
+        Text = 'Load background picture...'
+        Width = 149.000000000000000000
+        OnClick = btBackImageClick
+      end
+      object lbPozx: TLabel
+        AutoSize = True
+        Height = 19.000000000000000000
+        Position.X = 19.000000000000000000
+        Position.Y = 5.000000000000000000
+        Text = '0'
+        Width = 10.000000000000000000
+        WordWrap = False
+      end
+    end
+    object ScrollBox1: TScrollBox
+      Align = alClient
+      Height = 516.000000000000000000
+      TabOrder = 1
+      Width = 355.000000000000000000
+      object PB: TPaintBox
+        Height = 350.000000000000000000
+        Width = 290.000000000000000000
+        OnMouseDown = PBMouseDown
+        OnMouseMove = PBMouseMove
+        OnMouseUp = PBMouseUp
+        OnPaint = PBPaint
+      end
+    end
+  end
+  object pnContainer: TPanel
+    Align = alClient
+    Height = 557.000000000000000000
+    Width = 487.000000000000000000
+    TabOrder = 3
+    object pnProperties: TPanel
+      Align = alClient
+      Enabled = False
+      Height = 557.000000000000000000
+      Width = 487.000000000000000000
+      TabOrder = 0
+      object pnlTitle: TLabel
+        Align = alTop
+        Font.Size = 16.000000000000000000
+        Height = 25.000000000000000000
+        Text = 'Hotspot properties'
+        TextAlign = taCenter
+        Width = 487.000000000000000000
+      end
+      object TabControl1: TTabControl
+        Align = alClient
+        Height = 428.000000000000000000
+        Padding.Left = 10.000000000000000000
+        Padding.Top = 120.000000000000000000
+        Padding.Right = 10.000000000000000000
+        Padding.Bottom = 10.000000000000000000
+        TabHeight = 20.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        Width = 487.000000000000000000
+        object TabItem1: TTabItem
+          WordWrap = False
+          Height = 20.000000000000000000
+          IsSelected = True
+          Position.X = 1.000000000000000000
+          TabOrder = 0
+          Text = 'Click'
+          Width = 43.000000000000000000
+          object btLoadClick: TButton
+            Height = 22.000000000000000000
+            Position.X = 288.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 0
+            Text = 'Load'
+            Width = 80.000000000000000000
+            OnClick = btLoadClickClick
+          end
+          object btClearClick: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 1
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearClickClick
+          end
+          object imgClick: TImageControl
+            Height = 361.000000000000000000
+            Position.X = 8.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 2
+            Width = 273.000000000000000000
+          end
+          object cmb_ClickImgIndex: TComboBox
+            DisableFocusEffect = False
+            Height = 22.000000000000000000
+            ListBoxResource = 'transparentlistboxstyle'
+            Position.X = 376.000000000000000000
+            Position.Y = 44.000000000000000000
+            TabOrder = 3
+            Width = 81.000000000000000000
+            OnChange = cmb_ClickImgIndexChange
+          end
+          object Label10: TLabel
+            AutoSize = True
+            Height = 19.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 46.000000000000000000
+            Text = 'BitmapName:'
+            Width = 70.000000000000000000
+            WordWrap = False
+          end
+          object Label11: TLabel
+            AutoSize = True
+            Height = 19.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 80.000000000000000000
+            Text = 'Fill:'
+            Width = 20.000000000000000000
+            WordWrap = False
+          end
+          object bt_ClearClickColor: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 76.000000000000000000
+            TabOrder = 6
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = bt_ClearClickColorClick
+          end
+          object ColorPanel1: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 104.000000000000000000
+            TabOrder = 7
+            Width = 161.000000000000000000
+          end
+          object Button3: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 228.000000000000000000
+            TabOrder = 8
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = Button3Click
+          end
+          object ColorPanel5: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 256.000000000000000000
+            TabOrder = 9
+            Width = 161.000000000000000000
+          end
+          object Label1: TLabel
+            AutoSize = True
+            Height = 19.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 232.000000000000000000
+            Text = 'Stroke:'
+            Width = 37.000000000000000000
+            WordWrap = False
+          end
+        end
+        object TabItem2: TTabItem
+          WordWrap = False
+          Height = 20.000000000000000000
+          IsSelected = False
+          Position.X = 44.000000000000000000
+          TabOrder = 1
+          Text = 'Hover'
+          Width = 49.000000000000000000
+          object btLoadHover: TButton
+            Height = 22.000000000000000000
+            Position.X = 288.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 0
+            Text = 'Load'
+            Width = 80.000000000000000000
+            OnClick = btLoadHoverClick
+          end
+          object btClearHover: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 1
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearHoverClick
+          end
+          object btClearHoverColor: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 76.000000000000000000
+            TabOrder = 2
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearHoverColorClick
+          end
+          object cmb_HoverImgIndex: TComboBox
+            DisableFocusEffect = False
+            Height = 22.000000000000000000
+            ListBoxResource = 'transparentlistboxstyle'
+            Position.X = 376.000000000000000000
+            Position.Y = 44.000000000000000000
+            TabOrder = 3
+            Width = 81.000000000000000000
+            OnChange = cmb_HoverImgIndexChange
+          end
+          object ColorPanel2: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 104.000000000000000000
+            TabOrder = 4
+            Width = 161.000000000000000000
+          end
+          object ImgHover: TImageControl
+            Height = 361.000000000000000000
+            Position.X = 8.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 5
+            Width = 273.000000000000000000
+          end
+          object Label12: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 46.000000000000000000
+            Text = 'BitmapName:'
+            Width = 73.469718933105470000
+            WordWrap = False
+          end
+          object Label13: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 80.000000000000000000
+            Text = 'Fill:'
+            Width = 22.052244186401370000
+            WordWrap = False
+          end
+          object Button4: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 228.000000000000000000
+            TabOrder = 8
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = Button4Click
+          end
+          object ColorPanel6: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 256.000000000000000000
+            TabOrder = 9
+            Width = 161.000000000000000000
+          end
+          object Label2: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 232.000000000000000000
+            Text = 'Stroke:'
+            Width = 40.281734466552730000
+            WordWrap = False
+          end
+        end
+        object TabItem3: TTabItem
+          WordWrap = False
+          Height = 20.000000000000000000
+          IsSelected = False
+          Position.X = 93.000000000000000000
+          TabOrder = 2
+          Text = 'Selected'
+          Width = 61.000000000000000000
+          object Btn_Selected: TButton
+            Height = 22.000000000000000000
+            Position.X = 288.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 0
+            Text = 'Load'
+            Width = 80.000000000000000000
+            OnClick = Btn_SelectedClick
+          end
+          object btClearSelected: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 1
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearSelectedClick
+          end
+          object btClearSelectedColor: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 76.000000000000000000
+            TabOrder = 2
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearSelectedColorClick
+          end
+          object cmb_SelectImgIndex: TComboBox
+            DisableFocusEffect = False
+            Height = 22.000000000000000000
+            ListBoxResource = 'transparentlistboxstyle'
+            Position.X = 376.000000000000000000
+            Position.Y = 44.000000000000000000
+            TabOrder = 3
+            Width = 81.000000000000000000
+            OnChange = cmb_SelectImgIndexChange
+          end
+          object ColorPanel3: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 104.000000000000000000
+            TabOrder = 4
+            Width = 161.000000000000000000
+          end
+          object Img_Selected: TImageControl
+            Height = 361.000000000000000000
+            Position.X = 8.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 5
+            Width = 273.000000000000000000
+          end
+          object Label14: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 46.000000000000000000
+            Text = 'BitmapName:'
+            Width = 73.469718933105470000
+            WordWrap = False
+          end
+          object Label15: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 80.000000000000000000
+            Text = 'Fill:'
+            Width = 22.052244186401370000
+            WordWrap = False
+          end
+          object Button5: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 228.000000000000000000
+            TabOrder = 8
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = Button5Click
+          end
+          object ColorPanel7: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 256.000000000000000000
+            TabOrder = 9
+            Width = 161.000000000000000000
+          end
+          object Label4: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 232.000000000000000000
+            Text = 'Stroke:'
+            Width = 40.281734466552730000
+            WordWrap = False
+          end
+        end
+        object TabItem4: TTabItem
+          WordWrap = False
+          Height = 20.000000000000000000
+          IsSelected = False
+          Position.X = 154.000000000000000000
+          TabOrder = 3
+          Text = 'Blink'
+          Width = 43.000000000000000000
+          object Btn_Blink: TButton
+            Height = 22.000000000000000000
+            Position.X = 288.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 0
+            Text = 'Load'
+            Width = 80.000000000000000000
+            OnClick = Btn_BlinkClick
+          end
+          object btClearBlink: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 1
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = btClearBlinkClick
+          end
+          object bt_ClearBlinkColor: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 76.000000000000000000
+            TabOrder = 2
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = bt_ClearBlinkColorClick
+          end
+          object cmb_BlinkImgIndex: TComboBox
+            DisableFocusEffect = False
+            Height = 22.000000000000000000
+            ListBoxResource = 'transparentlistboxstyle'
+            Position.X = 376.000000000000000000
+            Position.Y = 44.000000000000000000
+            TabOrder = 3
+            Width = 81.000000000000000000
+            OnChange = cmb_BlinkImgIndexChange
+          end
+          object ColorPanel4: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 104.000000000000000000
+            TabOrder = 4
+            Width = 161.000000000000000000
+          end
+          object Img_Blink: TImageControl
+            Height = 361.000000000000000000
+            Position.X = 8.000000000000000000
+            Position.Y = 8.000000000000000000
+            TabOrder = 5
+            Width = 273.000000000000000000
+          end
+          object Label16: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 46.000000000000000000
+            Text = 'BitmapName:'
+            Width = 73.469718933105470000
+            WordWrap = False
+          end
+          object Label17: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 80.000000000000000000
+            Text = 'Fill:'
+            Width = 22.052244186401370000
+            WordWrap = False
+          end
+          object Button6: TButton
+            Height = 22.000000000000000000
+            Position.X = 376.000000000000000000
+            Position.Y = 228.000000000000000000
+            TabOrder = 8
+            Text = 'Clear'
+            Width = 80.000000000000000000
+            OnClick = Button6Click
+          end
+          object ColorPanel8: TColorPanel
+            Color = claWhite
+            Height = 118.000000000000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 256.000000000000000000
+            TabOrder = 9
+            Width = 161.000000000000000000
+          end
+          object Label18: TLabel
+            AutoSize = True
+            Height = 18.630859375000000000
+            Position.X = 296.000000000000000000
+            Position.Y = 232.000000000000000000
+            Text = 'Stroke:'
+            Width = 40.281734466552730000
+            WordWrap = False
+          end
+        end
+      end
+      object Panel2: TPanel
+        Align = alTop
+        Height = 104.000000000000000000
+        Position.Y = 25.000000000000000000
+        Width = 487.000000000000000000
+        TabOrder = 2
+        object Label5: TLabel
+          AutoSize = True
+          Height = 19.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 16.000000000000000000
+          Text = 'Name:'
+          Width = 35.000000000000000000
+          WordWrap = False
+        end
+        object edtName: TEdit
+          TabOrder = 1
+          Position.X = 58.000000000000000000
+          Position.Y = 13.000000000000000000
+          Width = 100.000000000000000000
+          Height = 22.000000000000000000
+          KillFocusByReturn = False
+          OnMouseUp = edtNameMouseUp
+        end
+        object Label6: TLabel
+          AutoSize = True
+          Height = 19.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 48.000000000000000000
+          Text = 'ID:'
+          Width = 17.000000000000000000
+          WordWrap = False
+        end
+        object edtID: TEdit
+          TabOrder = 3
+          Position.X = 58.000000000000000000
+          Position.Y = 45.000000000000000000
+          Width = 100.000000000000000000
+          Height = 22.000000000000000000
+          KillFocusByReturn = False
+          OnKeyDown = edtIDKeyDown
+          OnMouseUp = edtIDMouseUp
+        end
+        object Label7: TLabel
+          AutoSize = True
+          Height = 19.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 77.000000000000000000
+          Text = 'Angle:'
+          Width = 35.000000000000000000
+          WordWrap = False
+        end
+        object spAngle: TSpinBox
+          TabOrder = 5
+          Cursor = crIBeam
+          Min = -180.000000000000000000
+          Max = 180.000000000000000000
+          KeyboardType = vktDefault
+          Position.X = 58.000000000000000000
+          Position.Y = 74.000000000000000000
+          Width = 100.000000000000000000
+          Height = 22.000000000000000000
+          OnChange = spAngleChange
+        end
+        object chk_Blink: TCheckBox
+          Height = 19.000000000000000000
+          Position.X = 184.000000000000000000
+          Position.Y = 77.000000000000000000
+          TabOrder = 6
+          Text = 'Blink'
+          Width = 65.000000000000000000
+          OnChange = chk_BlinkChange
+        end
+        object Label8: TLabel
+          AutoSize = True
+          Height = 19.000000000000000000
+          Position.X = 184.000000000000000000
+          Position.Y = 48.000000000000000000
+          Text = 'Offset Y:'
+          Width = 45.000000000000000000
+          WordWrap = False
+        end
+        object Label9: TLabel
+          AutoSize = True
+          Height = 19.000000000000000000
+          Position.X = 184.000000000000000000
+          Position.Y = 16.000000000000000000
+          Text = 'Offset X:'
+          Width = 45.000000000000000000
+          WordWrap = False
+        end
+        object se_OffsetX: TSpinBox
+          TabOrder = 9
+          Cursor = crIBeam
+          Min = -180.000000000000000000
+          Max = 180.000000000000000000
+          Value = 4.000000000000000000
+          KeyboardType = vktDefault
+          Position.X = 248.000000000000000000
+          Position.Y = 13.000000000000000000
+          Width = 100.000000000000000000
+          Height = 22.000000000000000000
+          OnChange = se_OffsetXChange
+        end
+        object se_OffsetY: TSpinBox
+          TabOrder = 10
+          Cursor = crIBeam
+          Min = -180.000000000000000000
+          Max = 180.000000000000000000
+          Value = 4.000000000000000000
+          KeyboardType = vktDefault
+          Position.X = 248.000000000000000000
+          Position.Y = 45.000000000000000000
+          Width = 100.000000000000000000
+          Height = 22.000000000000000000
+          OnChange = se_OffsetYChange
+        end
+        object ckClip: TCheckBox
+          Height = 19.000000000000000000
+          IsChecked = True
+          Position.X = 256.000000000000000000
+          Position.Y = 77.000000000000000000
+          TabOrder = 11
+          Text = 'Clipped'
+          Width = 65.000000000000000000
+          OnChange = ckClipChange
+        end
+        object ckSelectable: TCheckBox
+          Height = 19.000000000000000000
+          IsChecked = True
+          Position.X = 336.000000000000000000
+          Position.Y = 77.000000000000000000
+          TabOrder = 12
+          Text = 'Selectable'
+          Width = 73.000000000000000000
+          OnChange = ckSelectableChange
+        end
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Align = alLeft
+    Cursor = crHSplit
+    Height = 557.000000000000000000
+    MinSize = 20.000000000000000000
+    Position.X = 355.000000000000000000
+    Position.Y = 33.000000000000000000
+    Width = 5.000000000000000000
+  end
+  object OPD: TOpenDialog
+    Filter = 
+      'All (*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.ico;*.emf;*.w' +
+      'mf)|*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.ico;*.emf;*.wm' +
+      'f|GIF Image (*.gif)|*.gif|Portable Network Graphics (*.png)|*.pn' +
+      'g|JPEG Image File (*.jpg)|*.jpg|JPEG Image File (*.jpeg)|*.jpeg|' +
+      'Bitmaps (*.bmp)|*.bmp|TIFF Images (*.tif)|*.tif|TIFF Images (*.t' +
+      'iff)|*.tiff|Icons (*.ico)|*.ico|Enhanced Metafiles (*.emf)|*.emf' +
+      '|Metafiles (*.wmf)|*.wmf'
+    Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    Title = 'Select picture'
+    Left = 8
+    Top = 48
+  end
+  object pmHotSpot: TPopupMenu
+    Left = 48
+    Top = 48
+    object miDelete: TMenuItem
+      Text = 'Delete'
+      OnClick = miDeleteClick
+    end
+    object miSaveHSImage: TMenuItem
+      Text = 'Save hotspot image...'
+      OnClick = miSaveHSImageClick
+    end
+  end
+  object SPD: TSaveDialog
+    Filter = 
+      'All (*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.ico;*.emf;*.w' +
+      'mf)|*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.ico;*.emf;*.wm' +
+      'f|GIF Image (*.gif)|*.gif|Portable Network Graphics (*.png)|*.pn' +
+      'g|JPEG Image File (*.jpg)|*.jpg|JPEG Image File (*.jpeg)|*.jpeg|' +
+      'Bitmaps (*.bmp)|*.bmp|TIFF Images (*.tif)|*.tif|TIFF Images (*.t' +
+      'iff)|*.tiff|Icons (*.ico)|*.ico|Enhanced Metafiles (*.emf)|*.emf' +
+      '|Metafiles (*.wmf)|*.wmf'
+    Title = 'Save hotspot image'
+    Left = 88
+    Top = 48
+  end
+  object TMSFMXBitmapContainer1: TTMSFMXBitmapContainer
+    Items = <
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000140000001408060000008D891D
+          0D000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          007749444154384FD5924B0EC0200844A1F7BF33752C2EDA880EA41B5F424C34
+          3EC68F1C897995B87C7C61D67D25E95408AAD250082AD2A51064A55B21C84829
+          2160A5B41030525AA8AABD9C509A4AD88071D49450F8494433DB318E33D6DAD5
+          3D53DE60D9254A988FE6B01BE994D947F915440CBFCB2988DCFB6E2A0AAEF948
+          200000000049454E44AE426082}
+        Name = 'Arrow.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+          61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          00BB49444154384FA591311282400C45172A2C296DBD01F73F8437B0B5C40E3B
+          CC5B1326647755C637934976F9F90990FE6699D24AE8F130BDE66CA4E521FAD3
+          35755AFF6CE27545F320D139538F69FCD09D7015C14332265E043C7B4A8EF7C5
+          24A62024CE2AAE4D368A0BB849C3281913B6A96D64542FE1AE53691E1BCDB0FD
+          460F1B6899B7F0E7486160E245826F408696C9B6DA2C82596BB884B5CD20DEE7
+          43748F22A36652BC42AB19EC991FB833F8D46C4493AF0D2DDE0629BD00A5C24B
+          AACCEA2D190000000049454E44AE426082}
+        Name = 'cancel.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000140000001408060000008D891D
+          0D000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          005749444154384F6318F480114AE302FFA1343A20A40F03800CC26518081092
+          8703A21542015EF5A418840EE07A99A034D50125AE8301B0195477E1A881D405
+          833B1DC200C826525C4AB47A420A71CAD3ADF81A2C808101000CF517FB703DAF
+          380000000049454E44AE426082}
+        Name = 'circular.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000120000000F0806000000E9869F
+          12000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          006849444154384FDD91510AC0300843DDEE7FE76D0533426752E9E71E14B1C6
+          D46234B8F2B480786EE0DC9A1D19018B476DCE25AAD836003B13F11D787D4611
+          87E1BC32A87A244A8CBBA5911370CD1AFDC084D76F5F78E0F573DF87CE345273
+          66EC6027D9F95A41C40D9ACB2AE7AE03D87A0000000049454E44AE426082}
+        Name = 'cutclear.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D494844520000000F0000000F08060000003BD695
+          4A000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          005849444154384FAD91510A00200843ADFBDFB91014CC9C06F67E16C25C2D02
+          2CD19429FA0D4D2DD387A8854D3C5755CA653E35357C7BB34D41E703941C7571
+          81CCE95B11DE942E6915F6FA8F61077E182D80E5B5AEDD30136D431B1106F92C
+          38DA0000000049454E44AE426082}
+        Name = 'pointermi.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D494844520000000F0000000F08060000003BD695
+          4A000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          005B49444154384FA590510E00100C43C7FDEF4C2423C5DA84BD9FCA662D3342
+          739554D717A4F16CB24BABFE923C86D0F832C7262AB26A3F7F0EC11476DE60C9
+          C555C286699AE21C9226A985E1DF544AB883B31819D0E5A59E9D1836EB104215
+          0150DAD3C00000000049454E44AE426082}
+        Name = 'pointerplus.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000130000000F08060000000644F4
+          2C000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          005449444154384F632012FC87D214039841141B886E00D906E2D248B2818434
+          106D20B10A09AA23D50B38D5936A100C50CD4014F54C509A668058D761A8A3B9
+          CB408090EBB0CA53D5658C501A1BC0E73A2CFA1818009AA115F3B3381B090000
+          000049454E44AE426082}
+        Name = 'poly.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000140000001408060000008D891D
+          0D000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          006749444154384FD552010A0021085BF7FF3F57424299172C0C6A1021B5E596
+          0940AE8B85F07EC10A2EEF7F6D0F835AB616D8AE07BE475E09DAB3A10EB77C2C
+          43167D66C2B77F308179E46C86B6F550F482BB96F31B63A390D6B566F37479AC
+          88870732BC7DB08102D3691808087DCC8D0000000049454E44AE426082}
+        Name = 'rectangles.png'
+        Tag = 0
+      end
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D49484452000000100000000E0806000000262F9C
+          8A000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          004E49444154384FB58F5B0A00200804EDFE872E16147A28B952F3A33F33A838
+          749D34BB580A9944CBB310ED29CA17805D2A45C0B31030F95FA4E9BC31CB8B93
+          0D0037C204C0116103207C8741232203EE5516F2133427710000000049454E44
+          AE426082}
+        Name = 'wand.png'
+        Tag = 0
+      end>
+    Version = '1.5.0.0'
+    Left = 744
+    Top = 40
+  end
+end

@@ -14,6 +14,8 @@ uses
   Janua.Core.Types, Janua.FMX.dlgNotes;
 
 type
+  TJanuaLayterType = (jltLayer, jltImage, jltBitmap);
+
   TframeFMXImageDraw = class(TFrame)
     pnlButtons: TPanel;
     btnClear: TButton;
@@ -44,14 +46,17 @@ type
     FdlgFMXNotes: TdlgFMXNotes;
     FCount: string;
     FImageDrawings: TJanuaImageDraws;
+    FLayerType: TJanuaLayterType;
     procedure SetCanvasControl(const Value: TControl);
     procedure SetCoordCaption(const Value: string);
     procedure SetCoordinates(const Value: string);
     procedure SetCount(const Value: string);
     procedure SetOffset(const aControl: TControl);
     procedure SetImageDrawings(const Value: TJanuaImageDraws);
+    procedure SetLayerType(const Value: TJanuaLayterType);
   protected
     pntBoxCar: TPaintBox;
+    FJanuaBlob: TJanuaBlob;
     procedure DrawCanvas(xpre, ypre, X, Y, Offset: Single);
   public
     { Public declarations }
@@ -70,6 +75,7 @@ type
     property Count: string read FCount write SetCount;
     property Coordinates: string read FCoordinates write SetCoordinates;
     property ImageDrawings: TJanuaImageDraws read FImageDrawings write SetImageDrawings;
+    property LayerType: TJanuaLayterType read FLayerType write SetLayerType;
   end;
 
 var
@@ -112,7 +118,17 @@ end;
 procedure TframeFMXImageDraw.AfterConstruction;
 begin
   inherited;
-
+  if Assigned(imgCar.Bitmap) then
+  begin
+    var
+    aStream := TMemoryStream.Create;
+    try
+      imgCar.Bitmap.SaveToStream(aStream);
+      FJanuaBlob.LoadFromStream(aStream);
+    finally
+      aStream.Free;
+    end;
+  end;
 end;
 
 procedure TframeFMXImageDraw.btnAddNotesClick(Sender: TObject);
@@ -160,8 +176,23 @@ end;
 
 procedure TframeFMXImageDraw.ClearBox;
 begin
-  pntBoxCar.Free;
-  CreatePaintBox;
+  if FLayerType = jltLayer then
+  begin
+    pntBoxCar.Free;
+    CreatePaintBox;
+  end
+  else
+  begin
+    var
+    aStream := TMemoryStream.Create;
+    try
+      FJanuaBlob.SaveToStream(aStream);
+      aStream.Position := 0;
+      imgCar.Bitmap.LoadFromStream(aStream);
+    finally
+      aStream.Free;
+    end;
+  end;
 end;
 
 procedure TframeFMXImageDraw.CreatePaintBox;
@@ -188,9 +219,24 @@ end;
 
 procedure TframeFMXImageDraw.DrawCanvas(xpre, ypre, X, Y, Offset: Single);
 begin
-  pntBoxCar.Canvas.BeginScene;
+  var
+  aCanvas := CanvasControl.Canvas;
+
+  case FLayerType of
+    jltLayer:
+      begin
+        aCanvas := pntBoxCar.Canvas
+      end;
+    jltBitmap:
+      begin
+        if CanvasControl is TImage then
+          aCanvas := TImage(CanvasControl).Canvas
+      end;
+  end;
+
+  aCanvas.BeginScene;
   try
-    pntBoxCar.Canvas.Stroke.Thickness := 5;
+    aCanvas.Stroke.Thickness := 5;
     pntBoxCar.Canvas.Stroke.Cap := TStrokeCap.Round;
     pntBoxCar.Canvas.Stroke.Color := TAlphaColorRec.Red;
     var
@@ -306,7 +352,8 @@ begin
   begin
     if FOffset = 0.0 then
       SetOffset(FCanvasControl);
-    CreatePaintBox;
+    if FLayerType = jltLayer then
+      CreatePaintBox;
     if FImgDrawings.Width = 0.0 then
       FImgDrawings := TJanuaImageDraws.Create(FCanvasControl.Width, FCanvasControl.Height);
   end
@@ -335,6 +382,11 @@ end;
 procedure TframeFMXImageDraw.SetImageDrawings(const Value: TJanuaImageDraws);
 begin
   FImageDrawings := Value;
+end;
+
+procedure TframeFMXImageDraw.SetLayerType(const Value: TJanuaLayterType);
+begin
+  FLayerType := Value;
 end;
 
 end.

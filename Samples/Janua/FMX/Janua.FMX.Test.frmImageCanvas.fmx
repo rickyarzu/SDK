@@ -14,22 +14,22 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
   object tabTestComponent: TTabControl
     Align = Client
     Size.Width = 896.000000000000000000
-    Size.Height = 826.000000000000000000
+    Size.Height = 827.000000000000000000
     Size.PlatformDefault = False
     TabIndex = 4
     TabOrder = 0
     TabPosition = None
     Sizes = (
       896s
-      826s
+      827s
       896s
-      826s
+      827s
       896s
-      826s
+      827s
       896s
-      826s
+      827s
       896s
-      826s)
+      827s)
     object pgImage: TTabItem
       CustomIcon = <
         item
@@ -7822,7 +7822,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       object Layout1: TLayout
         Align = Client
         Size.Width = 896.000000000000000000
-        Size.Height = 265.000000000000000000
+        Size.Height = 266.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         object memJson: TTMSFMXMemo
@@ -7831,7 +7831,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
           DisableFocusEffect = False
           TabOrder = 2
           Size.Width = 896.000000000000000000
-          Size.Height = 265.000000000000000000
+          Size.Height = 266.000000000000000000
           Size.PlatformDefault = False
           ActiveLineSettings.ShowActiveLine = False
           ActiveLineSettings.ShowActiveLineIndicator = False
@@ -15594,7 +15594,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       object Layout2: TLayout
         Align = Client
         Size.Width = 896.000000000000000000
-        Size.Height = 265.000000000000000000
+        Size.Height = 266.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         object memTestJson: TTMSFMXMemo
@@ -15603,7 +15603,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
           DisableFocusEffect = False
           TabOrder = 2
           Size.Width = 896.000000000000000000
-          Size.Height = 265.000000000000000000
+          Size.Height = 266.000000000000000000
           Size.PlatformDefault = False
           ActiveLineSettings.ShowActiveLine = False
           ActiveLineSettings.ShowActiveLineIndicator = False
@@ -15723,11 +15723,11 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         DataDetectorTypes = []
         Align = Client
         Size.Width = 896.000000000000000000
-        Size.Height = 226.000000000000000000
+        Size.Height = 227.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Viewport.Width = 892.000000000000000000
-        Viewport.Height = 222.000000000000000000
+        Viewport.Height = 223.000000000000000000
       end
     end
     object tabImageX: TTabItem
@@ -15742,20 +15742,23 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       StyleLookup = ''
       TabOrder = 0
       Text = 'Image X'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object Panel1: TPanel
         Align = Top
         Size.Width = 896.000000000000000000
         Size.Height = 58.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        object btnLoadImage: TButton
+        object btnTestX: TButton
           Align = Left
           Size.Width = 81.000000000000000000
           Size.Height = 58.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
-          Text = 'Load'
+          Text = 'Test X'
           TextSettings.Trimming = None
+          OnClick = btnTestXClick
         end
         object Button5: TButton
           Align = Left
@@ -15810,6 +15813,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
           TabOrder = 3
           Text = 'Clear '
           TextSettings.Trimming = None
+          OnClick = Button8Click
         end
       end
       object ImageCarX: TImage
@@ -23522,19 +23526,20 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
         Size.Width = 896.000000000000000000
         Size.Height = 503.000000000000000000
         Size.PlatformDefault = False
+        OnMouseDown = ImageCarXMouseDown
       end
     end
   end
   object pnlTabsButtons: TPanel
     Align = Top
     Size.Width = 896.000000000000000000
-    Size.Height = 33.000000000000000000
+    Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object btnPgImage: TButton
       Align = Left
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 7
       Text = 'Image'
@@ -23545,7 +23550,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Align = Left
       Position.X = 81.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
       Text = 'Code Tab'
@@ -23556,7 +23561,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Align = Left
       Position.X = 162.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 5
       Text = 'Component'
@@ -23567,7 +23572,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Align = Left
       Position.X = 243.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
       Text = 'Frame'
@@ -23578,7 +23583,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Align = Left
       Position.X = 324.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
       Text = 'Dialog'
@@ -23589,7 +23594,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
       Align = Left
       Position.X = 405.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'ImageX'

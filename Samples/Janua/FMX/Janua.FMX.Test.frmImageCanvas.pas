@@ -52,7 +52,7 @@ type
     btnImageX: TButton;
     tabImageX: TTabItem;
     Panel1: TPanel;
-    btnLoadImage: TButton;
+    btnTestX: TButton;
     Button5: TButton;
     Button6: TButton;
     Label3: TLabel;
@@ -74,6 +74,9 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnFrameClick(Sender: TObject);
     procedure btnDialogClick(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure btnTestXClick(Sender: TObject);
+    procedure ImageCarXMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
   private
     { Private declarations }
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
@@ -143,6 +146,51 @@ end;
 procedure TfrmFMXTestImageDraw.btnRedrawClick(Sender: TObject);
 begin
   Redraw;
+end;
+
+procedure TfrmFMXTestImageDraw.btnTestXClick(Sender: TObject);
+var
+  XPos, YPos: Single;
+begin
+  // Set up the canvas for drawing
+  with ImageCarX.Bitmap.Canvas do
+  begin
+    BeginScene;
+    try
+      // Set the font properties
+      Font.Size := 100; // Adjust the size as needed
+      Font.Family := 'Arial'; // You can choose any font family
+      Fill.Color := TAlphaColors.Red;
+      var
+      aW := TextWidth('X');
+      var
+      aH := TextHeight('X');
+
+      // Calculate position to center the text
+      XPos := (ImageCarX.Width / 2) - aW;
+      YPos := (ImageCarX.Height / 2) - aH;
+
+      // Draw the character 'X'
+      FillText(RectF(XPos, YPos, XPos + aW, YPos + aH), 'X', False, 1.0, [], TTextAlign.Leading,
+        TTextAlign.Leading);
+    finally
+      EndScene;
+    end;
+  end;
+
+end;
+
+procedure TfrmFMXTestImageDraw.Button8Click(Sender: TObject);
+begin
+  var
+  aStream := TMemoryStream.Create;
+  try
+    FJanuaBlob.SaveToStream(aStream);
+    aStream.Position := 0;
+    ImageCarX.Bitmap.LoadFromStream(aStream);
+  finally
+    aStream.Free;
+  end;
 end;
 
 procedure TfrmFMXTestImageDraw.ClearBox;
@@ -217,6 +265,55 @@ end;
 procedure TfrmFMXTestImageDraw.FormShow(Sender: TObject);
 begin
   frameFMXImageDraw1.Activate;
+end;
+
+procedure TfrmFMXTestImageDraw.ImageCarXMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+  X, Y: Single);
+var
+  XPos, YPos: Single;
+  MyRect: TRectF;
+  Point: TPointF;
+begin
+  var
+  Offset := 90;
+
+  Point := TPointF.Create(X, Y + 2 * Offset);
+  // Point:=ClientToScreen(Point);
+  Point := ImageCarX.AbsoluteToLocal(Point);
+  MyRect := TRectF.Create(Point, 5, 5);
+
+  // Set up the canvas for drawing
+  with ImageCarX.{ Bitmap. } Canvas do
+  begin
+    BeginScene;
+    try
+      Stroke.Thickness := 5;
+      Stroke.Cap := TStrokeCap.Round;
+      Stroke.Color := TAlphaColorRec.Red;
+      (*
+        // Set the font properties
+        Font.Size := 100; // Adjust the size as needed
+        Font.Family := 'Arial'; // You can choose any font family
+        Fill.Color := TAlphaColors.Red;
+        var
+        aW := TextWidth('X');
+        var
+        aH := TextHeight('X');
+
+        // Calculate position to center the text
+        XPos := { (ImageCarX.Width / 2) } X - aW { / 2 };
+        YPos := { (ImageCarX.Height / 2) } Y - aH { / 2 };
+
+        // Draw the character 'X'
+        FillText(RectF(XPos, YPos, XPos + aW, YPos + aH), 'X', False, 1.0, [], TTextAlign.Leading,
+        TTextAlign.Leading);
+      *)
+      { ImageCarX.Canvas. } DrawEllipse(MyRect, 30);
+    finally
+      EndScene;
+    end;
+  end;
+
 end;
 
 procedure TfrmFMXTestImageDraw.imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
