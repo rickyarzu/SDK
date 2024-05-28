@@ -30,16 +30,16 @@ package TMSFNCDashBoardPackPkgDE;
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   designide,
   FMXTMSFNCDashboardPackPkg,
   VCLTMSFNCDashboardPackPkg;
 
-ocontains
+contains
   FMX.TMSFNCDashboardDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardDE.pas',
   FMX.TMSFNCDashboardRegDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardRegDE.pas',
   VCL.TMSFNCDashboardDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardDE.pas',
   VCL.TMSFNCDashboardRegDE in '..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardRegDE.pas';
 
-d.
+end.
