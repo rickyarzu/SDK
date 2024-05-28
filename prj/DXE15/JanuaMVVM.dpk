@@ -30,7 +30,6 @@
 {$IMPLICITBUILD OFF}
 
 requires
-  loggerproRT,
   SwagDoc,
   JanuaCore,
   rtl;
