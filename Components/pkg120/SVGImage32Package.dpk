@@ -37,6 +37,7 @@ requires
 
 contains
   Img32 in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.pas',
+  Img32.Fmt.BMP in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.Fmt.BMP.pas',
   Img32.Panels in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.Panels.pas',
   Img32.Fmt.PNG in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.Fmt.PNG.pas',
   Img32.CQ in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.CQ.pas',
@@ -58,7 +59,5 @@ contains
   Clipper.Engine in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Engine.pas',
   Clipper.Minkowski in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Minkowski.pas',
   Clipper.Offset in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Offset.pas',
-  Clipper.RectClip in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.RectClip.pas',
-  Img32.Fmt.BMP in '..\..\..\Lib\SVGIconImageList\Image32\source\Img32.Fmt.BMP.pas';
-
+  Clipper.RectClip in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.RectClip.pas';
 end.
