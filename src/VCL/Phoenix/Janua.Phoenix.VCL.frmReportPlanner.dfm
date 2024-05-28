@@ -835,7 +835,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Sidebar.OccupiedFontColor = 3881787
         Sidebar.SeparatorLineColor = 16444643
         Sidebar.Width = 48
-        Positions = 16
+        Positions = 12
         PositionProps = <>
         PrintOptions.LineWidth = 0
         PrintOptions.FooterFont.Charset = DEFAULT_CHARSET
@@ -861,6 +861,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
+        ItemSource = DBDaySource1
+        ExplicitLeft = -72
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 656
@@ -1220,25 +1222,43 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       000000000000}
   end
   object dsDayCalendar: TDataSource
+    DataSet = dmPhoenixIBPlanner.qryPlannerCalendar
     Left = 752
     Top = 216
   end
   object DBDaySource1: TDBDaySource
-    AutoIncKey = False
+    Active = False
+    AutoIncKey = True
     DataSource = dsDayCalendar
+    ResourceDataSource.DataSource = dsTechCalendar
+    ResourceDataSource.ResourceIDField = 'RESPONSABILE'
+    ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
     ResourceMap = <>
-    StartTimeField = 'starttime'
-    EndTimeField = 'endtime'
-    KeyField = 'tmt_jguid'
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
     ReadOnly = False
-    SubjectField = 'subject'
-    NotesField = 'notes'
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'SUBJECT'
     UpdateByQuery = False
+    AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
+    Day = 45444.000000000000000000
     Mode = dmMultiDayRes
-    NumberOfDays = 6
-    NumberOfResources = 4
+    NumberOfDays = 2
+    NumberOfResources = 6
     Left = 856
     Top = 216
+  end
+  object dsTech: TDataSource
+    DataSet = dmPhoenixIBPlanner.qryPlannerCalendar
+    Left = 664
+    Top = 256
+  end
+  object dsTechCalendar: TDataSource
+    DataSet = dmPhoenixIBPlanner.qryTechPlanned
+    Left = 743
+    Top = 382
   end
 end

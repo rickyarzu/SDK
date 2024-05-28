@@ -3,8 +3,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   Height = 384
   Width = 683
   inherited JanuaUniConnection1: TJanuaUniConnection
-    Database = '/opt/firebird/db/phoenix.fdb'
-    Server = 'sait.pasolutions.ru'
+    Connected = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   object qryReportPlanner: TUniQuery
@@ -450,7 +449,6 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
       'FROM STATINI s'
       'JOIN TECNICI T ON T.chiave = S.responsabile'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
       'ORDER BY T.descrizione'
       ';')
     Left = 240
@@ -488,6 +486,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Caption = 'Aggiungi Appuntamento'
       ImageIndex = 31
       ImageName = '032-calendar'
+      OnExecute = ActionAddMeetingExecute
     end
     object ActionUndoMeeting: TAction
       Category = 'Meetings'
@@ -11055,21 +11054,99 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   object qryPlannerCalendar: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT DISTINCT C.chiave, C.descrizione_scheda'
-      'FROM FILIALI_CLIENTI F '
-      'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
-      'JOIN STATINI S ON F.chiave = S.filiale'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY TRIM(C.DESCRIZIONE_SCHEDA)'
+      'SELECT * FROM CALENDARIO '
+      'where '
+      'DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'DALLE_ORE <= :DATA_AL'
       ';')
     Left = 384
     Top = 272
-    object IntegerField1: TIntegerField
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45437d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATA_AL'
+        ParamType = ptInput
+        Value = 45473d
+      end>
+    object qryPlannerCalendarCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
+    object qryPlannerCalendarSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryPlannerCalendarTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerCalendarDALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object qryPlannerCalendarALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object qryPlannerCalendarNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object qryPlannerCalendarSUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 128
+    end
+    object qryPlannerCalendarTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendarCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendarJGUID: TBytesField
+      FieldName = 'JGUID'
+    end
+    object qryPlannerCalendarICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+  end
+  object qryTechPlanned: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
+      'FROM STATINI s'
+      'JOIN TECNICI T ON T.chiave = S.responsabile'
+      'WHERE S.STATO > -1 AND S.STATO < 9'
+      '        AND S.APPUNTAMENTO_DATA >= :DATA_DAL'
+      '        AND S.APPUNTAMENTO_DATA <= :DATA_AL'
+      'ORDER BY T.descrizione'
+      ';')
+    Left = 496
+    Top = 232
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45413d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATA_AL'
+        ParamType = ptInput
+        Value = 45473d
+      end>
+    object IntegerField1: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
     object StringField1: TStringField
-      FieldName = 'DESCRIZIONE_SCHEDA'
+      FieldName = 'NOME_TECNICO'
+      ReadOnly = True
       Size = 255
     end
   end

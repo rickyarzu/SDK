@@ -74,6 +74,8 @@ type
     ImageList1: TImageList;
     dsDayCalendar: TDataSource;
     DBDaySource1: TDBDaySource;
+    dsTech: TDataSource;
+    dsTechCalendar: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -197,8 +199,10 @@ begin
       edDateFrom.Date := Date() - 2;
       edDateTo.Date := EndOfTheMonth(IncMonth(Date(), 1));
     end;
-
   end;
+
+  DBDaySource1.NumberOfResources := dmPhoenixIBPlanner.OpenCalendar(edDateFrom.Date, edDateTo.Date);
+  DBDaySource1.Active := True;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);

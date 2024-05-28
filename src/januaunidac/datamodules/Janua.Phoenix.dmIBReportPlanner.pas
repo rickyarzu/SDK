@@ -103,11 +103,24 @@ type
     SVGIconImageList16: TSVGIconImageList;
     ActionGoogleCalendar: TAction;
     qryPlannerCalendar: TUniQuery;
+    qryPlannerCalendarCHIAVE: TIntegerField;
+    qryPlannerCalendarSTATINO: TIntegerField;
+    qryPlannerCalendarTECNICO: TIntegerField;
+    qryPlannerCalendarDALLE_ORE: TDateTimeField;
+    qryPlannerCalendarALLE_ORE: TDateTimeField;
+    qryPlannerCalendarNOTE: TBlobField;
+    qryPlannerCalendarSUBJECT: TStringField;
+    qryPlannerCalendarTECNICO_SIGLA: TStringField;
+    qryPlannerCalendarCOLORE: TIntegerField;
+    qryPlannerCalendarJGUID: TBytesField;
+    qryPlannerCalendarICONA: TSmallintField;
+    qryTechPlanned: TUniQuery;
     IntegerField1: TIntegerField;
     StringField1: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
+    procedure ActionAddMeetingExecute(Sender: TObject);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -129,10 +142,17 @@ type
     procedure SetStateFilter(const Value: Integer);
     { Private declarations }
   public
-    { Public declarations }
+    // Public Procedures (better if Actions)
+    /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
+    /// <remarks>   If fails throws an exception and rollbacks dataset posts </remarks>
+    procedure EditEvent;
+    /// <summary> Tries to Add an Event using ITimetable interface. </summary>
+    /// <remarks> If fails throws an exception and rollbacks dataset posts </remarks>
+    procedure AddEvent;
     procedure Setup;
     procedure Filter;
     procedure UndoMeeting;
+    function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
     property CustomerID: Int64 read FCustomerID write SetCustomerID;
     property TechID: Int64 read FTechID write SetTechID;
     property CustomerFilter: Boolean read FCustomerFilter write SetCustomerFilter;
@@ -152,6 +172,17 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
+procedure TdmPhoenixIBPlanner.ActionAddMeetingExecute(Sender: TObject);
+begin
+  inherited;
+  AddEvent
+end;
+
+procedure TdmPhoenixIBPlanner.AddEvent;
+begin
+
+end;
+
 procedure TdmPhoenixIBPlanner.DataModuleCreate(Sender: TObject);
 begin
   inherited;
@@ -162,6 +193,11 @@ begin
   FCustomerFilter := True;
   FStateFilter := -1;
   FCAPFilter := False;
+end;
+
+procedure TdmPhoenixIBPlanner.EditEvent;
+begin
+
 end;
 
 procedure TdmPhoenixIBPlanner.Filter;
@@ -243,6 +279,21 @@ begin
   end;
 end;
 
+function TdmPhoenixIBPlanner.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
+begin
+  qryTechPlanned.Close;
+  qryTechPlanned.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
+  qryTechPlanned.ParamByName('DATA_AL').AsDateTime := aDateTo;
+  qryTechPlanned.Open;
+
+  qryPlannerCalendar.Close;
+  qryPlannerCalendar.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
+  qryPlannerCalendar.ParamByName('DATA_AL').AsDateTime := aDateTo;
+  qryPlannerCalendar.Open;
+
+  Result := qryTechPlanned.RecordCount;
+end;
+
 procedure TdmPhoenixIBPlanner.qryReportPlannerBeforePost(DataSet: TDataSet);
 begin
   inherited;
@@ -284,9 +335,8 @@ end;
 procedure TdmPhoenixIBPlanner.qryReportPlannerCalcFields(DataSet: TDataSet);
 begin
   inherited;
-  qryReportPlannercalcAppuntamentoDataOra.AsDateTime :=
-     qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
-     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+  qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
+    qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 end;
 
 procedure TdmPhoenixIBPlanner.SetCAP(const Value: String);
