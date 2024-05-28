@@ -98,8 +98,13 @@ type
     ActionPrint: TAction;
     AdvGCalendar1: TAdvGCalendar;
     PrinterSetupDialog1: TPrinterSetupDialog;
-    SVGIconImageList1: TSVGIconImageList;
+    SVGIconImageList48: TSVGIconImageList;
     qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
+    SVGIconImageList16: TSVGIconImageList;
+    ActionGoogleCalendar: TAction;
+    qryPlannerCalendar: TUniQuery;
+    IntegerField1: TIntegerField;
+    StringField1: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);

@@ -4,7 +4,7 @@ interface
 
 uses
   // RTL
-  System.SysUtils, System.Variants, System.Classes, System.Actions, System.UITypes,
+  System.SysUtils, System.Variants, System.Classes, System.Actions, System.UITypes, System.DateUtils,
   // Win
   Winapi.Windows, Winapi.Messages,
   // VCL
@@ -16,16 +16,16 @@ uses
   // ZLibraries
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab;
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab, VCL.ComCtrls,
+  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, System.ImageList, VCL.ImgList;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
+    PageControl1: TPageControl;
+    tabTicketsList: TTabSheet;
+    tabPlannerCalendar: TTabSheet;
     pnlTop: TPanel;
-    pnlBottom: TPanel;
-    frameVCLCRDBGrid: TframeVCLCRDBGrid;
     btnUpdate: TBitBtn;
-    dsTechnicians: TUniDataSource;
-    dsCustomers: TUniDataSource;
     pnlSearch: TPanel;
     edDateFilter: TJvDatePickerEdit;
     ckbFilterDate: TCheckBox;
@@ -34,17 +34,46 @@ type
     lkpCustomer: TJvDBLookupCombo;
     ckbFilterCustomer: TCheckBox;
     btnSearch: TBitBtn;
-    lbFilter: TLabel;
     ckbCAP: TCheckBox;
     grpStato: TRadioGroup;
-    dsCAP: TUniDataSource;
     lkpCAP: TJvDBLookupCombo;
+    frameVCLCRDBGrid: TframeVCLCRDBGrid;
+    pnlBottom: TPanel;
+    lbFilter: TLabel;
+    dsTechnicians: TUniDataSource;
+    dsCustomers: TUniDataSource;
+    dsCAP: TUniDataSource;
     PopupMenu1: TPopupMenu;
     Modifica1: TMenuItem;
     AnnullaAppuntamento1: TMenuItem;
     N2: TMenuItem;
     ModificaStatino1: TMenuItem;
     VisualizzaContratto1: TMenuItem;
+    pnlPlanner: TPanel;
+    pnlPlannerDateSelection: TPanel;
+    edDateFrom: TJvDatePickerEdit;
+    edDateTo: TJvDatePickerEdit;
+    lbDayFrom: TLabel;
+    lbDayTo: TLabel;
+    pnlPlannerButtons: TPanel;
+    btnAppuntamento: TButton;
+    Button1: TButton;
+    btnSearchMeeting: TButton;
+    btnAddPerson: TButton;
+    btnActivities: TButton;
+    btnExport: TButton;
+    btnSend: TButton;
+    btnPrint: TButton;
+    btnGoogleCalSync: TButton;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    ColorDialog1: TColorDialog;
+    ItemPopup: TPopupMenu;
+    Color1: TMenuItem;
+    Caption1: TMenuItem;
+    ImageList1: TImageList;
+    dsDayCalendar: TDataSource;
+    DBDaySource1: TDBDaySource;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -144,6 +173,32 @@ begin
     Application.CreateForm(TdmPhoenixIBPlanner, dmPhoenixIBPlanner);
   dmPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
+  // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
+  // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
+  var
+  vTest1 := Trunc(Date - StartOfTheMonth(Date()));
+  var
+  vTest2 := EndOfTheMonth(Date()) - Date;
+
+  if (vTest1 >= 3) and (vTest2 >= 5) then
+  begin
+    edDateFrom.Date := StartOfTheMonth(Date());
+    edDateTo.Date := EndOfTheMonth(Date());
+  end
+  else
+  begin
+    if vTest1 <= 3 then
+    begin
+      edDateFrom.Date := Date() - 5;
+      edDateTo.Date := EndOfTheMonth(Date());
+    end
+    else
+    begin
+      edDateFrom.Date := Date() - 2;
+      edDateTo.Date := EndOfTheMonth(IncMonth(Date(), 1));
+    end;
+
+  end;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
