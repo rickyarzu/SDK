@@ -180,6 +180,14 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="designide.dcp"/>
+        <DCCReference Include="FMXTMSFNCDashboardPackPkg.dcp"/>
+        <DCCReference Include="VCLTMSFNCDashboardPackPkg.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardDE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\FMX.TMSFNCDashboardRegDE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardDE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Dashboard Pack\VCL.TMSFNCDashboardRegDE.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
