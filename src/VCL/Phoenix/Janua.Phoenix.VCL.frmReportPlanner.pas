@@ -4,7 +4,7 @@ interface
 
 uses
   // RTL
-  System.SysUtils, System.Variants, System.Classes, System.Actions, System.UITypes,
+  System.SysUtils, System.Variants, System.Classes, System.Actions, System.UITypes, System.DateUtils,
   // Win
   Winapi.Windows, Winapi.Messages,
   // VCL
@@ -16,16 +16,16 @@ uses
   // ZLibraries
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab;
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab, VCL.ComCtrls,
+  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, System.ImageList, VCL.ImgList;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
+    PageControl1: TPageControl;
+    tabTicketsList: TTabSheet;
+    tabPlannerCalendar: TTabSheet;
     pnlTop: TPanel;
-    pnlBottom: TPanel;
-    frameVCLCRDBGrid: TframeVCLCRDBGrid;
     btnUpdate: TBitBtn;
-    dsTechnicians: TUniDataSource;
-    dsCustomers: TUniDataSource;
     pnlSearch: TPanel;
     edDateFilter: TJvDatePickerEdit;
     ckbFilterDate: TCheckBox;
@@ -34,17 +34,49 @@ type
     lkpCustomer: TJvDBLookupCombo;
     ckbFilterCustomer: TCheckBox;
     btnSearch: TBitBtn;
-    lbFilter: TLabel;
     ckbCAP: TCheckBox;
     grpStato: TRadioGroup;
-    dsCAP: TUniDataSource;
     lkpCAP: TJvDBLookupCombo;
+    frameVCLCRDBGrid: TframeVCLCRDBGrid;
+    pnlBottom: TPanel;
+    lbFilter: TLabel;
+    dsTechnicians: TUniDataSource;
+    dsCustomers: TUniDataSource;
+    dsCAP: TUniDataSource;
     PopupMenu1: TPopupMenu;
     Modifica1: TMenuItem;
     AnnullaAppuntamento1: TMenuItem;
     N2: TMenuItem;
     ModificaStatino1: TMenuItem;
     VisualizzaContratto1: TMenuItem;
+    pnlPlanner: TPanel;
+    pnlPlannerDateSelection: TPanel;
+    edDateFrom: TJvDatePickerEdit;
+    edDateTo: TJvDatePickerEdit;
+    lbDayFrom: TLabel;
+    lbDayTo: TLabel;
+    pnlPlannerButtons: TPanel;
+    btnAppuntamento: TButton;
+    Button1: TButton;
+    btnSearchMeeting: TButton;
+    btnAddPerson: TButton;
+    btnActivities: TButton;
+    btnExport: TButton;
+    btnSend: TButton;
+    btnPrint: TButton;
+    btnGoogleCalSync: TButton;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    ColorDialog1: TColorDialog;
+    ItemPopup: TPopupMenu;
+    Color1: TMenuItem;
+    Caption1: TMenuItem;
+    ImageList1: TImageList;
+    dsDayCalendar: TDataSource;
+    DBDaySource1: TDBDaySource;
+    dsTech: TDataSource;
+    dsTechCalendar: TDataSource;
+    N1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -54,6 +86,11 @@ type
     procedure AnnullaAppuntamento1Click(Sender: TObject);
     procedure ModificaStatino1Click(Sender: TObject);
     procedure VisualizzaContratto1Click(Sender: TObject);
+    procedure Color1Click(Sender: TObject);
+    procedure Caption1Click(Sender: TObject);
+    procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure DBDaySource1SetFilter(Sender: TObject);
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
@@ -138,12 +175,110 @@ begin
   dmPhoenixIBPlanner.Setup;
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.Caption1Click(Sender: TObject);
+begin
+  if DBPlanner1.PopupPlannerItem.CaptionType = ctTime then
+    DBPlanner1.PopupPlannerItem.CaptionType := ctNone
+  else
+    DBPlanner1.PopupPlannerItem.CaptionType := ctTime;
+
+  DBPlanner1.PopupPlannerItem.Update;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.Color1Click(Sender: TObject);
+begin
+  if DBPlanner1.PopupPlannerItem.CaptionType = ctTime then
+    DBPlanner1.PopupPlannerItem.CaptionType := ctNone
+  else
+    DBPlanner1.PopupPlannerItem.CaptionType := ctTime;
+
+  DBPlanner1.PopupPlannerItem.Update;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
+  Item: TPlannerItem);
+begin
+  { The FieldsToItem event is called when records are read from the database
+    and extra properties are set from database fields. With this code, any
+    field from the database can be connected in a custom way to planner item
+    properties.
+  }
+  Item.Color := TColor(Fields.FieldByName('COLOR').AsInteger);
+  Item.CaptionBkg := Item.Color;
+  Item.ImageID := Fields.FieldByName('IMAGE').AsInteger;
+  if Fields.FieldByName('CAPTION').AsBoolean then
+    Item.CaptionType := ctTime
+  else
+    Item.CaptionType := ctNone;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
+  Item: TPlannerItem);
+begin
+  { The ItemToFields event is called when items are written to the database
+    and extra properties are stored in database fields. With this code, any
+    property of the item can be saved into any field of the database in
+    a custom way to be retrieved later with the inverse event FieldsToItem
+  }
+
+  Fields.FieldByName('COLOR').AsInteger := Integer(Item.Color);
+  Fields.FieldByName('CAPTION').AsBoolean := Item.CaptionType = ctTime;
+  Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.DBDaySource1SetFilter(Sender: TObject);
+var
+  sd1, sd2: string;
+begin
+  { Before the planner needs to be reloaded with records from the database
+    a custom filter can be applied to minimize the nr. of records the planner
+    must check to load into the planner.
+  }
+  sd1 := DateToStr(DBDaySource1.Day);
+  sd1 := #39 + sd1 + #39;
+
+  sd2 := DateToStr(DBDaySource1.Day + 7);
+  sd2 := #39 + sd2 + #39;
+  (*
+    PlannerTable.Filter:=  'STARTTIME > '+sd1+' AND ENDTIME < '+sd2;
+    PlannerTable.Filtered := DoFilter.Checked;
+  *)
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
   if not Assigned(dmPhoenixIBPlanner) then
     Application.CreateForm(TdmPhoenixIBPlanner, dmPhoenixIBPlanner);
   dmPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
+  // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
+  // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
+  var
+  vTest1 := Trunc(Date - StartOfTheMonth(Date()));
+  var
+  vTest2 := EndOfTheMonth(Date()) - Date;
+
+  if (vTest1 >= 3) and (vTest2 >= 5) then
+  begin
+    edDateFrom.Date := StartOfTheMonth(Date());
+    edDateTo.Date := EndOfTheMonth(Date());
+  end
+  else
+  begin
+    if vTest1 <= 3 then
+    begin
+      edDateFrom.Date := Date() - 5;
+      edDateTo.Date := EndOfTheMonth(Date());
+    end
+    else
+    begin
+      edDateFrom.Date := Date() - 2;
+      edDateTo.Date := EndOfTheMonth(IncMonth(Date(), 1));
+    end;
+  end;
+
+  DBDaySource1.NumberOfResources := dmPhoenixIBPlanner.OpenCalendar(edDateFrom.Date, edDateTo.Date);
+  DBDaySource1.Active := True;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);

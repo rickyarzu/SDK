@@ -475,7 +475,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Images = dmVCLPlannerController.SVGIconImageList1
       TabOrder = 8
       WordWrap = True
-      ExplicitLeft = 812
     end
   end
   object DBDaySource1: TDBDaySource
@@ -774,8 +773,8 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       000000000000}
   end
   object ColorDialog1: TColorDialog
-    Left = 824
-    Top = 584
+    Left = 880
+    Top = 560
   end
   object ItemPopup: TPopupMenu
     Left = 720

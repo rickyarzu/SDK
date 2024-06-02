@@ -1,15 +1,14 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{58DB2D50-F4E2-455E-9FB3-F2EE40560050}</ProjectGuid>
-        <MainSource>VCLTMSFNCMapsPkg.dpk</MainSource>
+        <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
-        <AppType>Package</AppType>
-        <ProjectName Condition="'$(ProjectName)'==''">VCLTMSFNCMapsPkg</ProjectName>
+        <AppType>Application</AppType>
+        <MainSource>JanuaVCLUITestIDEXE15.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -35,43 +34,64 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\DXE14\JanuaLibDXE14.optset" Condition="'$(Base)'!='' And Exists('..\..\DXE14\JanuaLibDXE14.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <GenPackage>true</GenPackage>
-        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <SanitizedProjectName>VCLTMSFNCMapsPkg</SanitizedProjectName>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <GenDll>true</GenDll>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
-        <VerInfo_Locale>1040</VerInfo_Locale>
         <DCC_K>false</DCC_K>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <SanitizedProjectName>JanuaVCLUITestIDEXE15</SanitizedProjectName>
+        <Custom_Styles>Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10.vsf;&quot;Windows10 Blue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Blue.vsf&quot;;&quot;Windows10 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Dark.vsf&quot;;&quot;Windows10 Green|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Green.vsf&quot;;&quot;Windows10 Purple|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Purple.vsf&quot;;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;;&quot;Metropolis UI Black|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIBlack.vsf&quot;;&quot;Metropolis UI Blue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIBlue.vsf&quot;;&quot;Metropolis UI Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIDark.vsf&quot;;&quot;Metropolis UI Green|VCLSTYLE|$(BDSCOMMONDIR)\Styles\MetropolisUIGreen.vsf&quot;;Win10IDE_Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_DARK.vsf;Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf;&quot;Windows10 BlackPearl|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10 Black Pearl.vsf&quot;;&quot;Windows10 Blue Whale|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhale.vsf&quot;;&quot;Windows10 Blue Whale LE|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhaleLE.vsf&quot;;&quot;Windows10 Clear Day|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10ClearDay.vsf&quot;;&quot;Windows10 IDE Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WindowsIDEDark.vsf&quot;;&quot;Windows10 Malibu|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Malibu.vsf&quot;;&quot;Windows10 OxfordBlue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10 Oxford Blue.vsf&quot;;Glossy|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Glossy.vsf</Custom_Styles>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Hints>false</DCC_Hints>
+        <CfgDependentOn>..\..\DXE14\JanuaLibDXE14.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;TMSVCLUIPackPkgWizDXE14;vclactnband;Janua.SVGIconImageList;vclFireDAC;tethering;Janua.Spring.Base;FireDACADSDriver;cxLibraryRS27;JvPluginSystem;dxRibbonCustomizationFormRS27;FireDACMSSQLDriver;vcltouch;JvBands;vcldb;SKIA_FlexCel_Core;svn;dxPScxExtCommonRS27;JvJans;FlexCel_Report;cxTreeListRS27;dxPScxSchedulerLnkRS27;loggerproRT;JvDotNetCtrls;JanuaVCLControls;VCL_FlexCel_Components;JanuaCore;tdsprovider270;dxRichEditDocumentModelRS27;dxPsPrVwAdvRS27;FireDACDBXDriver;vclx;dxPSdxFCLnkRS27;dxSpellCheckerRS27;dxPDFViewerRS27;RESTBackendComponents;VCLRESTComponents;dxWizardControlRS27;cxSchedulerTreeBrowserRS27;JanuaUnidac;vclie;bindengine;CloudService;dxBarExtDBItemsRS27;JvHMI;FireDACMySQLDriver;cxExportRS27;DataSnapClient;cxSchedulerWebServiceStorageRS27;TMSVCLUIPackPkgXlsDXE14;bindcompdbx;IndyIPServer;DBXSybaseASEDriver;dxPScxPCProdRS27;sparkle;tmsbcl;IndySystem;dxHttpIndyRequestRS27;IconFontsImageListFMX;dac270;dxFlowChartRS27;dsnapcon;TMSVCLUIPackPkgExDXE14;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxmdsRS27;dxPSPrVwRibbonRS27;Jcl;FlexCel_XlsAdapter;dxCoreRS27;emshosting;Janua.SVGIconImageListFMX;DBXOdbcDriver;FireDACTDataDriver;cxSchedulerRibbonStyleEventEditorRS27;soaprtl;DbxCommonDriver;dxRichEditCoreRS27;JvManagedThreads;odbcprovider270;dxCloudServiceLibraryRS27;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;JvTimeFramework;rtl;emsserverresource;DbxClientDriver;dxdbtrRS27;DBXSybaseASADriver;dxdborRS27;unidacvcl270;JvSystem;JvStdCtrls;TMSWebGMapsPkgDXE13;appanalytics;dxRichEditControlCoreRS27;dxSpreadSheetCoreRS27;gtDocEng;dxGDIPlusRS27;IndyIPClient;dxFireDACServerModeRS27;dxFlowChartAdvancedCustomizeFormRS27;bindcompvcl;dxServerModeRS27;JanuaFMXControls;dxPSLnksRS27;dxorgcRS27;FMX_FlexCel_Components;JvDocking;JvPascalInterpreter;VclSmp;JanuaTmsControls;dxDBXServerModeRS27;FireDACODBCDriver;JclVcl;DataSnapIndy10ServerTransport;liteprovider270;DataSnapProviderClient;cxGridRS27;FireDACMongoDBDriver;dxFireDACEMFRS27;JvControls;JvPrintPreview;dxtrmdRS27;dxSpreadSheetCoreConditionalFormattingDialogsRS27;RESTComponents;DataSnapServerMidas;DBXInterBaseDriver;dxSpreadSheetConditionalFormattingDialogsRS27;FlexCel_Pdf;FMX_FlexCel_Core;dxGaugeControlRS27;dxSpreadSheetReportDesignerRS27;QRWRunDXE10_4_W64;dxSpreadSheetRS27;bindcompvclsmp;emsclientfiredac;DataSnapFireDAC;svnui;cxPivotGridOLAPRS27;dxPSRichEditControlLnkRS27;dxBarDBNavRS27;JvGlobus;DBXMSSQLDriver;cxPivotGridRS27;dxADOServerModeRS27;JvMM;DatasnapConnectorsFreePascal;unidac270;IconFontsImageList;bindcompfmx;pgprovider270;crcontrols270;DBXOracleDriver;JvNet;inetdb;JvAppFrm;dxFlowChartDesignerRS27;emsedge;fmx;FireDACIBDriver;fmxdae;accessprovider270;vcledge;JvWizards;dbexpress;IndyCore;dxRibbonRS27;JvPageComps;dsnap;emsclient;DataSnapCommon;FireDACCommon;JvDB;dxTileControlRS27;dxBarExtItemsRS27;DataSnapConnectors;cxSchedulerRS27;soapserver;TMSVCLUIPackPkgDXE14;dxRichEditControlRS27;JclDeveloperTools;dacfmx270;dxPScxTLLnkRS27;FireDACOracleDriver;DBXMySQLDriver;dxFlowChartLayoutsRS27;dxPSCoreRS27;dxADOEMFRS27;DBXFirebirdDriver;JvCmp;FireDACCommonODBC;FireDACCommonDriver;dxPScxPivotGridLnkRS27;inet;cxPivotGridChartRS27;IndyIPCommon;dxPSdxOCLnkRS27;JvCustom;vcl;JvXPCtrls;dacvcl270;vquery270;FireDACDb2Driver;dxMapControlRS27;dxPSdxDBOCLnkRS27;dxComnRS27;dxPSdxGaugeControlLnkRS27;unidacfmx270;dxEMFRS27;dxPSdxPDFViewerLnkRS27;FireDAC;cxTreeListdxBarPopupMenuRS27;dxPScxVGridLnkRS27;JvCore;dxPSdxSpreadSheetLnkRS27;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;dxSpreadSheetCoreDialogsRS27;dxSpreadSheetInplaceRichEditRS27;dxTabbedMDIRS27;JvDlgs;JvRuntimeDesign;FlexCel_Core;DataSnapServer;vclwinx;FireDACDSDriver;dxPScxCommonRS27;dxRichEditInplaceRS27;TMSWebGMapsPkgDEDXE13;CustomIPTransport;vcldsnap;dxSkinsCoreRS27;dxPScxGridLnkRS27;bindcomp;myprovider270;DBXInformixDriver;cxSchedulerGridRS27;cxVerticalGridRS27;oraprovider270;officeXPrt;Janua.SVGIconPackage;dxDockingRS27;dxNavBarRS27;dmvcframeworkRT;vclribbon;dbxcds;VCL_FlexCel_Core;adortl;FlexCel_Render;ibprovider270;dmvcframeworkDT;TMSFMXWebGMapsPkgDXE13;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;dxBarRS27;dxPSdxLCLnkRS27;dxPSdxMapControlLnkRS27;JclContainers;dxPSdxDBTVLnkRS27;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_UsePackage>rtl;vcl;vclimg;VclSmp;VCLTMSFNCCorePkgDXE11;VCLTMSFNCCorePkgDXE15;VCLTMSFNCCorePkg;$(DCC_UsePackage)</DCC_UsePackage>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;vclactnband;vclFireDAC;tethering;Janua.Spring.Base;FireDACADSDriver;cxLibraryRS27;dxRibbonCustomizationFormRS27;FireDACMSSQLDriver;vcltouch;vcldb;dxPScxExtCommonRS27;FlexCel_Report;cxTreeListRS27;dxPScxSchedulerLnkRS27;JanuaVCLControls;VCL_FlexCel_Components;JanuaCore;tdsprovider270;dxRichEditDocumentModelRS27;dxPsPrVwAdvRS27;FireDACDBXDriver;vclx;dxPSdxFCLnkRS27;dxSpellCheckerRS27;dxPDFViewerRS27;RESTBackendComponents;VCLRESTComponents;dxWizardControlRS27;cxSchedulerTreeBrowserRS27;JanuaUnidac;vclie;bindengine;CloudService;dxBarExtDBItemsRS27;FireDACMySQLDriver;cxExportRS27;DataSnapClient;cxSchedulerWebServiceStorageRS27;bindcompdbx;IndyIPServer;DBXSybaseASEDriver;dxPScxPCProdRS27;sparkle;tmsbcl;IndySystem;dxHttpIndyRequestRS27;dac270;dxFlowChartRS27;dsnapcon;TMSVCLUIPackPkgExDXE14;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxmdsRS27;dxPSPrVwRibbonRS27;FlexCel_XlsAdapter;dxCoreRS27;emshosting;DBXOdbcDriver;FireDACTDataDriver;cxSchedulerRibbonStyleEventEditorRS27;soaprtl;DbxCommonDriver;dxRichEditCoreRS27;odbcprovider270;dxCloudServiceLibraryRS27;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;rtl;emsserverresource;DbxClientDriver;dxdbtrRS27;DBXSybaseASADriver;dxdborRS27;unidacvcl270;appanalytics;dxRichEditControlCoreRS27;dxSpreadSheetCoreRS27;dxGDIPlusRS27;IndyIPClient;dxFireDACServerModeRS27;dxFlowChartAdvancedCustomizeFormRS27;bindcompvcl;dxServerModeRS27;JanuaFMXControls;dxPSLnksRS27;dxorgcRS27;FMX_FlexCel_Components;VclSmp;dxDBXServerModeRS27;FireDACODBCDriver;DataSnapIndy10ServerTransport;liteprovider270;DataSnapProviderClient;cxGridRS27;FireDACMongoDBDriver;dxFireDACEMFRS27;dxtrmdRS27;dxSpreadSheetCoreConditionalFormattingDialogsRS27;RESTComponents;DataSnapServerMidas;DBXInterBaseDriver;dxSpreadSheetConditionalFormattingDialogsRS27;FlexCel_Pdf;FMX_FlexCel_Core;dxGaugeControlRS27;dxSpreadSheetReportDesignerRS27;QRWRunDXE10_4_W64;dxSpreadSheetRS27;bindcompvclsmp;emsclientfiredac;DataSnapFireDAC;cxPivotGridOLAPRS27;dxPSRichEditControlLnkRS27;dxBarDBNavRS27;DBXMSSQLDriver;cxPivotGridRS27;dxADOServerModeRS27;DatasnapConnectorsFreePascal;unidac270;bindcompfmx;pgprovider270;crcontrols270;DBXOracleDriver;inetdb;dxFlowChartDesignerRS27;emsedge;fmx;FireDACIBDriver;fmxdae;accessprovider270;vcledge;dbexpress;IndyCore;dxRibbonRS27;dsnap;emsclient;DataSnapCommon;FireDACCommon;dxTileControlRS27;dxBarExtItemsRS27;DataSnapConnectors;cxSchedulerRS27;soapserver;TMSVCLUIPackPkgDXE14;dxRichEditControlRS27;dacfmx270;dxPScxTLLnkRS27;FireDACOracleDriver;DBXMySQLDriver;dxFlowChartLayoutsRS27;dxPSCoreRS27;dxADOEMFRS27;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;dxPScxPivotGridLnkRS27;inet;cxPivotGridChartRS27;IndyIPCommon;dxPSdxOCLnkRS27;vcl;dacvcl270;vquery270;FireDACDb2Driver;dxMapControlRS27;dxPSdxDBOCLnkRS27;dxComnRS27;dxPSdxGaugeControlLnkRS27;unidacfmx270;dxEMFRS27;dxPSdxPDFViewerLnkRS27;FireDAC;cxTreeListdxBarPopupMenuRS27;dxPScxVGridLnkRS27;dxPSdxSpreadSheetLnkRS27;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;dxSpreadSheetCoreDialogsRS27;dxSpreadSheetInplaceRichEditRS27;dxTabbedMDIRS27;FlexCel_Core;DataSnapServer;vclwinx;FireDACDSDriver;dxPScxCommonRS27;dxRichEditInplaceRS27;CustomIPTransport;vcldsnap;dxSkinsCoreRS27;dxPScxGridLnkRS27;bindcomp;myprovider270;DBXInformixDriver;cxSchedulerGridRS27;cxVerticalGridRS27;oraprovider270;officeXPrt;dxDockingRS27;dxNavBarRS27;vclribbon;dbxcds;VCL_FlexCel_Core;adortl;FlexCel_Render;ibprovider270;TMSFMXWebGMapsPkgDXE13;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;dxBarRS27;dxPSdxLCLnkRS27;dxPSdxMapControlLnkRS27;dxPSdxDBTVLnkRS27;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_UsePackage>rtl;vcl;vclimg;VclSmp;VCLTMSFNCCorePkgDXE11;VCLTMSFNCCorePkgDXE15;VCLTMSFNCCorePkg;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -82,10 +102,17 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DCC_Description>TMS FNC Maps for VCL</DCC_Description>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -93,87 +120,71 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE14\JanuaLibDXE14.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE14\JanuaLibDXE14.optset')"/>
+    <Import Project="..\..\..\Projects\projectsXE13.optset" Condition="'$(Base)'!='' And Exists('..\..\..\Projects\projectsXE13.optset')"/>
+    <Import Project="..\..\prj\DXE13\JanuaLibDXE13.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE13\JanuaLibDXE13.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="vcl.dcp"/>
-        <DCCReference Include="vclimg.dcp"/>
-        <DCCReference Include="VclSmp.dcp"/>
-        <DCCReference Include="VCLTMSFNCCorePkg.dcp"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.Azure.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.Bing.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.MapBox.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.TomTom.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.Azure.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.Bing.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.MapBox.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.TomTom.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGoogleMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCLocation.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCLocation.IPStack.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCLocation.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.AzureMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.BingMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.GoogleMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.OpenLayers.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.TomTom.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMapsCommonTypes.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMapsReg.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.MapBox.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMapBox.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTomTom.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCElevation.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCElevation.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMaps.MapKit.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCOpenLayers.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMapKit.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCElevation.MapQuest.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCElevation.AirMap.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCMapsImage.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.Azure.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.Bing.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.MapBox.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCStaticMap.TomTom.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTollCost.PTVxServer.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTollCost.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTollCost.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTimeZone.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTimeZone.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTimeZone.Azure.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTimeZone.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCTimeZone.Bing.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCRouteCalculator.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.OpenStreetMap.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.OpenRouteService.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.OpenRouteService.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCDirections.GeoApify.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGeocoding.GeoApify.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.Google.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.Here.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.GeoApify.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.Azure.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCPlaces.Bing.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCGooglePlaces.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCBingMaps.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCHere.pas"/>
-        <DCCReference Include="..\..\..\tmssoftware\TMS FNC Maps\VCL.TMSFNCHereDirections.pas"/>
+        <DCCReference Include="..\..\..\Testing\src\ufrmTest.pas">
+            <Form>frmTest</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\ufrmTest2.pas">
+            <Form>frmTest2</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\ufrmTest3.pas">
+            <Form>frmTest3</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\uframeTest.pas">
+            <Form>frameTest</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\uApplicationSetup.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyInformations.pas">
+            <Form>FrameVCLCompanyAnagraph</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\ufrmUnitTestJanuaVCLComponents.pas">
+            <Form>Form15</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\uTestORM.pas"/>
+        <DCCReference Include="..\..\..\Testing\prj\TestJormDatasnapREST\ServerConstDatsnapRESTServer.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Anagraph\Janua.AnagraphPlanner.VCLApplication.pas"/>
+        <DCCReference Include="..\..\..\Testing\prj\TestJormDatasnapREST\ServerMethodsJormCms.pas">
+            <Form>ServerMethods1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Samples\VCL\GridsTesting\ufrmGridsTestings.pas">
+            <Form>frmVCLTestGrids</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Samples\VCL\ViewModel\Janua.Test.VCL.frmTestFilters.pas">
+            <Form>frmVCLTestFilters</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Testing\src\udlgTestPgTablesList.pas">
+            <Form>dlgVCLTestPgTablesList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\..\DXE14\JanuaLibDXE14.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -186,29 +197,40 @@
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>Package</Borland.ProjectType>
+        <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">VCLTMSFNCMapsPkg.dpk</Source>
+                    <Source Name="MainSource">JanuaVCLUITestIDEXE15.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
             <Deployment Version="4">
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule"/>
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule"/>
-                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\VCLTMSFNCMapsPkg.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\VCLTMSFNCMapsPkg280.bpl" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>VCLTMSFNCMapsPkg.bpl</RemoteName>
+                <DeployFile LocalName="..\..\..\..\bin\Win64\Debug\JanuaVCLUITestDXE14.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Januaproject\bin\Win64\Release\JanuaVCLUITestDXE14.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\JanuaVCLUITestDXE14.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Release\JanuaVCLUITestDXE14.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\JanuaVCLUITestIDEXE15.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>JanuaVCLUITestIDEXE15.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -628,6 +650,7 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -636,14 +659,17 @@
                 </DeployClass>
                 <DeployClass Name="DependencyFramework">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
@@ -652,15 +678,30 @@
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -683,14 +724,17 @@
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -716,12 +760,15 @@
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -736,9 +783,44 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectOSXDebug"/>
-                <DeployClass Name="ProjectOSXEntitlements"/>
-                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -775,12 +857,15 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -815,9 +900,41 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSEntitlements"/>
-                <DeployClass Name="ProjectiOSInfoPList"/>
-                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectiOSResource">
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
@@ -1056,17 +1173,12 @@
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
-            <Platforms>
-                <Platform value="Win32">True</Platform>
-                <Platform value="Win64">True</Platform>
-            </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
