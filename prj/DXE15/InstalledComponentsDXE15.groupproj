@@ -372,6 +372,12 @@
         <Projects Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -1487,26 +1493,44 @@
     <Target Name="ZComponentsVCL:Make">
         <MSBuild Projects="..\..\Components\pkg120\ZComponentsVCL.dproj" Targets="Make"/>
     </Target>
+    <Target Name="sbridge">
+        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
+    </Target>
+    <Target Name="sbridge:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sbridge:Make">
+        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclsbridge">
+        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj"/>
+    </Target>
+    <Target Name="dclsbridge:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclsbridge:Make">
+        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKFMX;AWSSDKVCL;DECCipher;loggerproRT;SwagDoc;dmvcframeworkRT;dmvcframeworkDT;Spring_Base;Spring_Core;Spring_Extensions;Spring_Persistence;eInvoice4D;eMiniInvoice4D;tmsbcl;sparkle;aurelius;xdata;remotedb;dcltmsbcl;dclsparkle;dclaurelius;dclxdata;dclremotedb;QRWRunDXE12_W64;QRWDesignDXE12;Ean;EanEditors;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;FlexCel_Core;SKIA_FlexCel_Core;FlexCel_Pdf;FlexCel_XlsAdapter;FlexCel_Render;FlexCel_Report;FMX_FlexCel_Core;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;VCL_FlexCel_Core;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;TMSCloudPkg;TMSCloudPkgDE;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;ipstudiowin;ipstudiowinclient;ipstudiowinwordxp;dipstudiowin;TMSFMXPackPkg;TMSFMXPackPkgDE;FMXTMSFNCCorePkg;VCLTMSFNCCorePkg;TMSFNCCorePkgDE;VCLTMSFNCUIPackPkg;FMXTMSFNCUIPackPkg;TMSFNCUIPackPkgDE;FMXTMSFNCCloudPackPkg;VCLTMSFNCCloudPackPkg;TMSFNCCloudPackPkgDE;VCLTMSFNCWXPackPkg;FMXTMSFNCWXPackPkg;TMSFNCWXPackPkgDE;FMXTMSFNCDashboardPackPkg;VCLTMSFNCDashboardPackPkg;TMSFNCDashBoardPackPkgDE;FMXTMSFNCChartPkg;VCLTMSFNCChartPkg;TMSFNCChartPkgDE;VCLTMSFNCMapsPkg;FMXTMSFNCMapsPkg;TMSFNCMapsPkgDE;FMXTMSFNCAppToolsPkg;VCLTMSFNCAppToolsPkg;TMSFNCAppToolsPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;StyleControls;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;Neon;NeonCrossPlatform;sgcWebSockets;dclsgcWebSockets;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;FIBPlus;FIBPlusEditors;ZipMasterR;ZLibrariesWin;ZComponentsVCL"/>
+        <CallTarget Targets="AWSSDK;AWSSDKFMX;AWSSDKVCL;DECCipher;loggerproRT;SwagDoc;dmvcframeworkRT;dmvcframeworkDT;Spring_Base;Spring_Core;Spring_Extensions;Spring_Persistence;eInvoice4D;eMiniInvoice4D;tmsbcl;sparkle;aurelius;xdata;remotedb;dcltmsbcl;dclsparkle;dclaurelius;dclxdata;dclremotedb;QRWRunDXE12_W64;QRWDesignDXE12;Ean;EanEditors;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;FlexCel_Core;SKIA_FlexCel_Core;FlexCel_Pdf;FlexCel_XlsAdapter;FlexCel_Render;FlexCel_Report;FMX_FlexCel_Core;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;VCL_FlexCel_Core;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;TMSCloudPkg;TMSCloudPkgDE;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;ipstudiowin;ipstudiowinclient;ipstudiowinwordxp;dipstudiowin;TMSFMXPackPkg;TMSFMXPackPkgDE;FMXTMSFNCCorePkg;VCLTMSFNCCorePkg;TMSFNCCorePkgDE;VCLTMSFNCUIPackPkg;FMXTMSFNCUIPackPkg;TMSFNCUIPackPkgDE;FMXTMSFNCCloudPackPkg;VCLTMSFNCCloudPackPkg;TMSFNCCloudPackPkgDE;VCLTMSFNCWXPackPkg;FMXTMSFNCWXPackPkg;TMSFNCWXPackPkgDE;FMXTMSFNCDashboardPackPkg;VCLTMSFNCDashboardPackPkg;TMSFNCDashBoardPackPkgDE;FMXTMSFNCChartPkg;VCLTMSFNCChartPkg;TMSFNCChartPkgDE;VCLTMSFNCMapsPkg;FMXTMSFNCMapsPkg;TMSFNCMapsPkgDE;FMXTMSFNCAppToolsPkg;VCLTMSFNCAppToolsPkg;TMSFNCAppToolsPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;StyleControls;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;Neon;NeonCrossPlatform;sgcWebSockets;dclsgcWebSockets;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;FIBPlus;FIBPlusEditors;ZipMasterR;ZLibrariesWin;ZComponentsVCL;sbridge;dclsbridge"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;DECCipher:Clean;loggerproRT:Clean;SwagDoc:Clean;dmvcframeworkRT:Clean;dmvcframeworkDT:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;tmsbcl:Clean;sparkle:Clean;aurelius:Clean;xdata:Clean;remotedb:Clean;dcltmsbcl:Clean;dclsparkle:Clean;dclaurelius:Clean;dclxdata:Clean;dclremotedb:Clean;QRWRunDXE12_W64:Clean;QRWDesignDXE12:Clean;Ean:Clean;EanEditors:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;FlexCel_Core:Clean;SKIA_FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FMX_FlexCel_Core:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowinwordxp:Clean;dipstudiowin:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;FMXTMSFNCCorePkg:Clean;VCLTMSFNCCorePkg:Clean;TMSFNCCorePkgDE:Clean;VCLTMSFNCUIPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;TMSFNCUIPackPkgDE:Clean;FMXTMSFNCCloudPackPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;TMSFNCCloudPackPkgDE:Clean;VCLTMSFNCWXPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;TMSFNCWXPackPkgDE:Clean;FMXTMSFNCDashboardPackPkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;TMSFNCDashBoardPackPkgDE:Clean;FMXTMSFNCChartPkg:Clean;VCLTMSFNCChartPkg:Clean;TMSFNCChartPkgDE:Clean;VCLTMSFNCMapsPkg:Clean;FMXTMSFNCMapsPkg:Clean;TMSFNCMapsPkgDE:Clean;FMXTMSFNCAppToolsPkg:Clean;VCLTMSFNCAppToolsPkg:Clean;TMSFNCAppToolsPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;StyleControls:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;Neon:Clean;NeonCrossPlatform:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;DECCipher:Clean;loggerproRT:Clean;SwagDoc:Clean;dmvcframeworkRT:Clean;dmvcframeworkDT:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;tmsbcl:Clean;sparkle:Clean;aurelius:Clean;xdata:Clean;remotedb:Clean;dcltmsbcl:Clean;dclsparkle:Clean;dclaurelius:Clean;dclxdata:Clean;dclremotedb:Clean;QRWRunDXE12_W64:Clean;QRWDesignDXE12:Clean;Ean:Clean;EanEditors:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;FlexCel_Core:Clean;SKIA_FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_XlsAdapter:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FMX_FlexCel_Core:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowinwordxp:Clean;dipstudiowin:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;FMXTMSFNCCorePkg:Clean;VCLTMSFNCCorePkg:Clean;TMSFNCCorePkgDE:Clean;VCLTMSFNCUIPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;TMSFNCUIPackPkgDE:Clean;FMXTMSFNCCloudPackPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;TMSFNCCloudPackPkgDE:Clean;VCLTMSFNCWXPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;TMSFNCWXPackPkgDE:Clean;FMXTMSFNCDashboardPackPkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;TMSFNCDashBoardPackPkgDE:Clean;FMXTMSFNCChartPkg:Clean;VCLTMSFNCChartPkg:Clean;TMSFNCChartPkgDE:Clean;VCLTMSFNCMapsPkg:Clean;FMXTMSFNCMapsPkg:Clean;TMSFNCMapsPkgDE:Clean;FMXTMSFNCAppToolsPkg:Clean;VCLTMSFNCAppToolsPkg:Clean;TMSFNCAppToolsPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;StyleControls:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;Neon:Clean;NeonCrossPlatform:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean;sbridge:Clean;dclsbridge:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;DECCipher:Make;loggerproRT:Make;SwagDoc:Make;dmvcframeworkRT:Make;dmvcframeworkDT:Make;Spring_Base:Make;Spring_Core:Make;Spring_Extensions:Make;Spring_Persistence:Make;eInvoice4D:Make;eMiniInvoice4D:Make;tmsbcl:Make;sparkle:Make;aurelius:Make;xdata:Make;remotedb:Make;dcltmsbcl:Make;dclsparkle:Make;dclaurelius:Make;dclxdata:Make;dclremotedb:Make;QRWRunDXE12_W64:Make;QRWDesignDXE12:Make;Ean:Make;EanEditors:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;FlexCel_Core:Make;SKIA_FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_XlsAdapter:Make;FlexCel_Render:Make;FlexCel_Report:Make;FMX_FlexCel_Core:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowinwordxp:Make;dipstudiowin:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;FMXTMSFNCCorePkg:Make;VCLTMSFNCCorePkg:Make;TMSFNCCorePkgDE:Make;VCLTMSFNCUIPackPkg:Make;FMXTMSFNCUIPackPkg:Make;TMSFNCUIPackPkgDE:Make;FMXTMSFNCCloudPackPkg:Make;VCLTMSFNCCloudPackPkg:Make;TMSFNCCloudPackPkgDE:Make;VCLTMSFNCWXPackPkg:Make;FMXTMSFNCWXPackPkg:Make;TMSFNCWXPackPkgDE:Make;FMXTMSFNCDashboardPackPkg:Make;VCLTMSFNCDashboardPackPkg:Make;TMSFNCDashBoardPackPkgDE:Make;FMXTMSFNCChartPkg:Make;VCLTMSFNCChartPkg:Make;TMSFNCChartPkgDE:Make;VCLTMSFNCMapsPkg:Make;FMXTMSFNCMapsPkg:Make;TMSFNCMapsPkgDE:Make;FMXTMSFNCAppToolsPkg:Make;VCLTMSFNCAppToolsPkg:Make;TMSFNCAppToolsPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;StyleControls:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;Neon:Make;NeonCrossPlatform:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;FIBPlus:Make;FIBPlusEditors:Make;ZipMasterR:Make;ZLibrariesWin:Make;ZComponentsVCL:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;DECCipher:Make;loggerproRT:Make;SwagDoc:Make;dmvcframeworkRT:Make;dmvcframeworkDT:Make;Spring_Base:Make;Spring_Core:Make;Spring_Extensions:Make;Spring_Persistence:Make;eInvoice4D:Make;eMiniInvoice4D:Make;tmsbcl:Make;sparkle:Make;aurelius:Make;xdata:Make;remotedb:Make;dcltmsbcl:Make;dclsparkle:Make;dclaurelius:Make;dclxdata:Make;dclremotedb:Make;QRWRunDXE12_W64:Make;QRWDesignDXE12:Make;Ean:Make;EanEditors:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;FlexCel_Core:Make;SKIA_FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_XlsAdapter:Make;FlexCel_Render:Make;FlexCel_Report:Make;FMX_FlexCel_Core:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowinwordxp:Make;dipstudiowin:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;FMXTMSFNCCorePkg:Make;VCLTMSFNCCorePkg:Make;TMSFNCCorePkgDE:Make;VCLTMSFNCUIPackPkg:Make;FMXTMSFNCUIPackPkg:Make;TMSFNCUIPackPkgDE:Make;FMXTMSFNCCloudPackPkg:Make;VCLTMSFNCCloudPackPkg:Make;TMSFNCCloudPackPkgDE:Make;VCLTMSFNCWXPackPkg:Make;FMXTMSFNCWXPackPkg:Make;TMSFNCWXPackPkgDE:Make;FMXTMSFNCDashboardPackPkg:Make;VCLTMSFNCDashboardPackPkg:Make;TMSFNCDashBoardPackPkgDE:Make;FMXTMSFNCChartPkg:Make;VCLTMSFNCChartPkg:Make;TMSFNCChartPkgDE:Make;VCLTMSFNCMapsPkg:Make;FMXTMSFNCMapsPkg:Make;TMSFNCMapsPkgDE:Make;FMXTMSFNCAppToolsPkg:Make;VCLTMSFNCAppToolsPkg:Make;TMSFNCAppToolsPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;StyleControls:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;Neon:Make;NeonCrossPlatform:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;FIBPlus:Make;FIBPlusEditors:Make;ZipMasterR:Make;ZLibrariesWin:Make;ZComponentsVCL:Make;sbridge:Make;dclsbridge:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='All iOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1804,8 +1828,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1936,20 +1972,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1957,6 +1981,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2070,6 +2100,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2238,16 +2274,16 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Buld All Win64'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -2544,10 +2580,22 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations/>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
@@ -2676,20 +2724,8 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations/>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -2699,6 +2735,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
@@ -2813,6 +2855,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
             <ProjectGuid>{0096A129-18FF-41E6-BFED-D0C0D9FE5FF4}</ProjectGuid>
@@ -2978,16 +3026,16 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All MacOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -3284,10 +3332,22 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
@@ -3416,26 +3476,20 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -3552,6 +3606,12 @@
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
@@ -3718,15 +3778,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='EseGeCE'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4024,9 +4084,21 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4156,26 +4228,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4291,6 +4357,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4458,15 +4530,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Fast Report'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4764,9 +4836,21 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4896,26 +4980,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5031,6 +5109,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5198,14 +5282,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All Android'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -5504,10 +5588,22 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
@@ -5636,26 +5732,20 @@
             <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -5772,6 +5862,12 @@
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
@@ -5938,14 +6034,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Flexcel'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6244,8 +6340,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6376,26 +6484,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6510,6 +6612,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6678,14 +6786,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Gnostice'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6984,8 +7092,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7116,26 +7236,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7250,6 +7364,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7417,15 +7537,15 @@
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='InfoPower W2W'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='Quick Reporting'">
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7444,9 +7564,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -7504,7 +7624,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7522,9 +7642,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -7540,9 +7660,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
@@ -7594,7 +7714,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7642,9 +7762,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
@@ -7654,9 +7774,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
@@ -7678,7 +7798,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7724,14 +7844,32 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7744,15 +7882,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
-            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Core.dproj">
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
@@ -7816,26 +7948,26 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
             <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
@@ -7856,26 +7988,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
             <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7966,9 +8092,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
@@ -7994,6 +8120,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
             <ProjectGuid>{0096A129-18FF-41E6-BFED-D0C0D9FE5FF4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -8008,7 +8140,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -8062,9 +8194,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
@@ -8074,9 +8206,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
@@ -8098,9 +8230,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -8134,9 +8266,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
@@ -8158,16 +8290,16 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All iOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -8464,10 +8596,22 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
@@ -8596,26 +8740,20 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -8732,6 +8870,12 @@
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
@@ -8897,15 +9041,15 @@
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='Quick Reporting'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='InfoPower W2W'">
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -8924,9 +9068,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -8984,7 +9128,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9002,9 +9146,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -9020,9 +9164,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
@@ -9074,7 +9218,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9122,9 +9266,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
@@ -9134,9 +9278,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
@@ -9158,7 +9302,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9204,20 +9348,26 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
-            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -9230,9 +9380,15 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Core.dproj">
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
@@ -9296,26 +9452,26 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
-            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
@@ -9336,26 +9492,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -9446,9 +9596,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
@@ -9474,6 +9624,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
             <ProjectGuid>{0096A129-18FF-41E6-BFED-D0C0D9FE5FF4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -9488,7 +9644,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9542,9 +9698,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
@@ -9554,9 +9710,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
@@ -9578,9 +9734,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -9614,9 +9770,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
@@ -9638,14 +9794,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Cloud Maps'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -9944,8 +10100,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -10076,14 +10244,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
-            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -10093,12 +10261,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
@@ -10210,6 +10372,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -10378,15 +10546,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Tms Security'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -10684,9 +10852,21 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -10816,26 +10996,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -10951,6 +11125,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -11118,17 +11298,17 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Open Source'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
             <ProjectGuid>{020A5013-642E-41CA-818D-1423079016AE}</ProjectGuid>
@@ -11424,8 +11604,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -11556,26 +11748,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -11690,6 +11876,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -11858,14 +12050,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS VCL'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12164,8 +12356,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12296,26 +12500,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12430,6 +12628,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12598,14 +12802,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='SVG'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12904,8 +13108,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13036,26 +13252,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13170,6 +13380,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13338,14 +13554,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Buisiness'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13644,8 +13860,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13776,26 +14004,20 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13910,6 +14132,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -14078,15 +14306,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='All Android'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -14384,9 +14612,21 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -14516,20 +14756,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -14537,6 +14765,12 @@
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -14650,6 +14884,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -14818,14 +15058,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All Win'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -15124,9 +15364,21 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -15256,20 +15508,8 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -15278,6 +15518,12 @@
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
@@ -15392,6 +15638,12 @@
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
@@ -15558,14 +15810,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -15864,8 +16116,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
+            <ProjectGuid>{2D1D6E80-D3CD-4513-A3FD-16134EF91106}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -15996,26 +16260,20 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
-            <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
-            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
+            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
-            <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -16130,6 +16388,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

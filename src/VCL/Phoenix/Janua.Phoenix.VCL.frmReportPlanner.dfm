@@ -862,7 +862,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
         ItemSource = DBDaySource1
-        ExplicitLeft = -72
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 656
@@ -940,10 +939,15 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Left = 744
     Top = 312
     object Color1: TMenuItem
-      Caption = 'Color'
+      Caption = '++'
+      OnClick = Color1Click
     end
     object Caption1: TMenuItem
       Caption = 'Caption'
+      OnClick = Caption1Click
+    end
+    object N1: TMenuItem
+      Caption = '-'
     end
   end
   object ImageList1: TImageList
@@ -1228,6 +1232,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object DBDaySource1: TDBDaySource
     Active = False
+    OnSetFilter = DBDaySource1SetFilter
     AutoIncKey = True
     DataSource = dsDayCalendar
     ResourceDataSource.DataSource = dsTechCalendar
@@ -1242,6 +1247,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     SubjectField = 'SUBJECT'
     NotesField = 'SUBJECT'
     UpdateByQuery = False
+    OnFieldsToItem = DBDaySource1FieldsToItem
+    OnItemToFields = DBDaySource1ItemToFields
     AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000
