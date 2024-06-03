@@ -11,8 +11,8 @@ procedure Register;
 implementation
 
 uses
-  // Cloud
-  Janua.TMS.Cloud, Janua.TMS.SMS, Janua.VCL.TmsStyles, Janua.VCL.Geocoding, Janua.VCL.Users,
+  // Cloud   {Janua.TMS.SMS,}
+  Janua.TMS.Cloud, Janua.VCL.TmsStyles, Janua.VCL.Geocoding, Janua.VCL.Users,
   // Forms
   Janua.VCL.dlgServer, Janua.VCL.Forms, {Janua.VCL.Dialogs,}
   // Janua.Legacy

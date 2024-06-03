@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, ADODB, DBPlanner, Planner, StdCtrls, Grids, DBGrids, DebugUtil, ComObj, ActiveX;
+  Dialogs, DB, ADODB, DBPlanner, Planner, StdCtrls, Grids, DBGrids, {DebugUtil,} ComObj, ActiveX;
 
 const
   numres = 200;
