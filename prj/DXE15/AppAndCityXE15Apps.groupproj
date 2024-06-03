@@ -24,6 +24,9 @@
         <Projects Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\Components\pkg120\SwagDoc.dproj">
             <Dependencies/>
         </Projects>
@@ -43,9 +46,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\components\pkg120\AWSSDKVCL.dproj">
@@ -138,25 +138,10 @@
         <Projects Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="WebREST\CarServiceDMVCService.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="UniGUI\CarServiceUsersUniGUI.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="FMX\PikApp\PickAPP.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="UniGUI\CarServiceApache.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="CarServiceCustomerConfirmation.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="UniGUI\CarServiceCustConfService.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
@@ -165,31 +150,10 @@
         <Projects Include="UniGUI\mod_csdriversmersmobile.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="UniGUI\CarServiceDriverConfService.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="FMX\CarServiceDriverApp.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Samples\TMS\TmsTwilio.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
@@ -201,9 +165,6 @@
         <Projects Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <Dependencies/>
         </Projects>
@@ -213,34 +174,13 @@
         <Projects Include="FMX\EuroFloraApp.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="WebREST\RESTDebuggerClient.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -314,6 +254,15 @@
     <Target Name="TRCGooglePlacesRuntime:Make">
         <MSBuild Projects="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+    </Target>
     <Target Name="SwagDoc">
         <MSBuild Projects="..\..\Components\pkg120\SwagDoc.dproj"/>
     </Target>
@@ -376,15 +325,6 @@
     </Target>
     <Target Name="AWSSDKFMX:Make">
         <MSBuild Projects="..\..\components\pkg120\AWSSDKFMX.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="PlanAddons">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
-    </Target>
-    <Target Name="PlanAddons:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="PlanAddons:Make">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
     </Target>
     <Target Name="AWSSDKVCL">
         <MSBuild Projects="..\..\components\pkg120\AWSSDKVCL.dproj"/>
@@ -656,15 +596,6 @@
     <Target Name="CarServiceDMVCustomerConfirmation:Make">
         <MSBuild Projects="WebREST\CarServiceDMVCustomerConfirmation.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CarServiceDMVCService">
-        <MSBuild Projects="WebREST\CarServiceDMVCService.dproj"/>
-    </Target>
-    <Target Name="CarServiceDMVCService:Clean">
-        <MSBuild Projects="WebREST\CarServiceDMVCService.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceDMVCService:Make">
-        <MSBuild Projects="WebREST\CarServiceDMVCService.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CarServiceUsersUniGUI">
         <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj"/>
     </Target>
@@ -682,42 +613,6 @@
     </Target>
     <Target Name="PickAPP:Make">
         <MSBuild Projects="FMX\PikApp\PickAPP.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceApache">
-        <MSBuild Projects="UniGUI\CarServiceApache.dproj"/>
-    </Target>
-    <Target Name="CarServiceApache:Clean">
-        <MSBuild Projects="UniGUI\CarServiceApache.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceApache:Make">
-        <MSBuild Projects="UniGUI\CarServiceApache.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceBackOfficeUniGUI">
-        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj"/>
-    </Target>
-    <Target Name="CarServiceBackOfficeUniGUI:Clean">
-        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceBackOfficeUniGUI:Make">
-        <MSBuild Projects="UniGUI\CarServiceBackOfficeUniGUI.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceCustomerConfirmation">
-        <MSBuild Projects="CarServiceCustomerConfirmation.dproj"/>
-    </Target>
-    <Target Name="CarServiceCustomerConfirmation:Clean">
-        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceCustomerConfirmation:Make">
-        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceCustConfService">
-        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj"/>
-    </Target>
-    <Target Name="CarServiceCustConfService:Clean">
-        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceCustConfService:Make">
-        <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Make"/>
     </Target>
     <Target Name="TGooglePlacesTest">
         <MSBuild Projects="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj"/>
@@ -737,33 +632,6 @@
     <Target Name="mod_csdriversmersmobile:Make">
         <MSBuild Projects="UniGUI\mod_csdriversmersmobile.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CarServiceDriverConfirmation">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj"/>
-    </Target>
-    <Target Name="CarServiceDriverConfirmation:Clean">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceDriverConfirmation:Make">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfirmation.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceDriverConfService">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj"/>
-    </Target>
-    <Target Name="CarServiceDriverConfService:Clean">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceDriverConfService:Make">
-        <MSBuild Projects="UniGUI\CarServiceDriverConfService.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceUnitTesting">
-        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj"/>
-    </Target>
-    <Target Name="CarServiceUnitTesting:Clean">
-        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceUnitTesting:Make">
-        <MSBuild Projects="..\..\Testing\prj\CarServiceUnitTesting.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CarServiceDriverApp">
         <MSBuild Projects="FMX\CarServiceDriverApp.dproj"/>
     </Target>
@@ -773,24 +641,6 @@
     <Target Name="CarServiceDriverApp:Make">
         <MSBuild Projects="FMX\CarServiceDriverApp.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Archive">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj"/>
-    </Target>
-    <Target Name="Archive:Clean">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Archive:Make">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Review">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj"/>
-    </Target>
-    <Target Name="Review:Clean">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Review:Make">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj" Targets="Make"/>
-    </Target>
     <Target Name="TmsTwilio">
         <MSBuild Projects="..\..\Samples\TMS\TmsTwilio.dproj"/>
     </Target>
@@ -799,24 +649,6 @@
     </Target>
     <Target Name="TmsTwilio:Make">
         <MSBuild Projects="..\..\Samples\TMS\TmsTwilio.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="mod_uniparams">
-        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj"/>
-    </Target>
-    <Target Name="mod_uniparams:Clean">
-        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="mod_uniparams:Make">
-        <MSBuild Projects="..\..\Samples\UniGUI\Params\mod_uniparams.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FSTheme">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj"/>
-    </Target>
-    <Target Name="FSTheme:Clean">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FSTheme:Make">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj" Targets="Make"/>
     </Target>
     <Target Name="FSThemeApache">
         <MSBuild Projects="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj"/>
@@ -845,15 +677,6 @@
     <Target Name="UniMobileDemo:Make">
         <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="UniGuiTouch">
-        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj"/>
-    </Target>
-    <Target Name="UniGuiTouch:Clean">
-        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="UniGuiTouch:Make">
-        <MSBuild Projects="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj" Targets="Make"/>
-    </Target>
     <Target Name="NeonMainDemo">
         <MSBuild Projects="..\..\Samples\Json\NeonMainDemo.dproj"/>
     </Target>
@@ -881,33 +704,6 @@
     <Target Name="EuroFloraApp:Make">
         <MSBuild Projects="FMX\EuroFloraApp.dproj" Targets="Make"/>
     </Target>
-    <Target Name="TestGoogleVCL">
-        <MSBuild Projects="..\..\Samples\VCL\Google\TestGoogleVCL.dproj"/>
-    </Target>
-    <Target Name="TestGoogleVCL:Clean">
-        <MSBuild Projects="..\..\Samples\VCL\Google\TestGoogleVCL.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TestGoogleVCL:Make">
-        <MSBuild Projects="..\..\Samples\VCL\Google\TestGoogleVCL.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FSMap">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj"/>
-    </Target>
-    <Target Name="FSMap:Clean">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FSMap:Make">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Cipher_FMX">
-        <MSBuild Projects="..\..\Samples\FMx\Cipher_FMX.dproj"/>
-    </Target>
-    <Target Name="Cipher_FMX:Clean">
-        <MSBuild Projects="..\..\Samples\FMx\Cipher_FMX.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Cipher_FMX:Make">
-        <MSBuild Projects="..\..\Samples\FMx\Cipher_FMX.dproj" Targets="Make"/>
-    </Target>
     <Target Name="RESTDebuggerClient">
         <MSBuild Projects="WebREST\RESTDebuggerClient.dproj"/>
     </Target>
@@ -916,33 +712,6 @@
     </Target>
     <Target Name="RESTDebuggerClient:Make">
         <MSBuild Projects="WebREST\RESTDebuggerClient.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="WebMocksBasic">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj"/>
-    </Target>
-    <Target Name="WebMocksBasic:Clean">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="WebMocksBasic:Make">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="MatchingDemo">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj"/>
-    </Target>
-    <Target Name="MatchingDemo:Clean">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="MatchingDemo:Make">
-        <MSBuild Projects="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CanvasPainting">
-        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj"/>
-    </Target>
-    <Target Name="CanvasPainting:Clean">
-        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CanvasPainting:Make">
-        <MSBuild Projects="..\..\Samples\Janua\FMX\CanvasPainting.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaJsonSerializeNeonTest">
         <MSBuild Projects="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj"/>
@@ -962,34 +731,19 @@
     <Target Name="SamplPlannerVCL:Make">
         <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CloudCalendarImportExport">
-        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj"/>
-    </Target>
-    <Target Name="CloudCalendarImportExport:Clean">
-        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CloudCalendarImportExport:Make">
-        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="FMXTMSFNCCorePkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport"/>
+        <CallTarget Targets="FMXTMSFNCCorePkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;sbridge;dclsbridge;TRCGooglePlacesRuntime;PlanAddons;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceUsersUniGUI;PickAPP;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverApp;TmsTwilio;FSThemeApache;ButtonStyle;UniMobileDemo;NeonMainDemo;JanuaAllDemos;EuroFloraApp;RESTDebuggerClient;JanuaJsonSerializeNeonTest;SamplPlannerVCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean"/>
+        <CallTarget Targets="FMXTMSFNCCorePkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;PlanAddons:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverApp:Clean;TmsTwilio:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;RESTDebuggerClient:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make"/>
+        <CallTarget Targets="FMXTMSFNCCorePkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;PlanAddons:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverApp:Make;TmsTwilio:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;RESTDebuggerClient:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
         <BuildGroupProject Include="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj">
             <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1036,12 +790,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1052,12 +800,6 @@
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
@@ -1090,28 +832,16 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -1170,12 +900,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
             <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1210,12 +934,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1226,7 +944,7 @@
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
@@ -1240,21 +958,9 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1270,12 +976,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1286,18 +986,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -1324,12 +1012,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1338,24 +1020,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1370,7 +1034,7 @@
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
@@ -1394,7 +1058,7 @@
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaMVVMCoreTesting.dproj">
             <ProjectGuid>{6111318E-79C0-4F35-AEBF-7D5ADFD28B0F}</ProjectGuid>
@@ -1402,28 +1066,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
@@ -1436,12 +1082,6 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
@@ -1468,12 +1108,6 @@
             <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
@@ -1518,12 +1152,6 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1532,12 +1160,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -1572,12 +1194,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1588,12 +1204,6 @@
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -1656,12 +1266,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1692,12 +1296,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1722,22 +1320,10 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
@@ -1752,12 +1338,6 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1769,18 +1349,6 @@
             <Configurations>Release</Configurations>
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -1806,12 +1374,6 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1821,24 +1383,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1884,29 +1428,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
@@ -1919,12 +1445,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -1950,12 +1470,6 @@
             <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
@@ -2000,12 +1514,6 @@
             <Platforms>Android;Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2016,12 +1524,6 @@
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
@@ -2054,12 +1556,6 @@
             <Platforms>Android;Android64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations/>
@@ -2069,12 +1565,6 @@
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2134,12 +1624,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
             <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2174,12 +1658,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2204,21 +1682,9 @@
             <Platforms>Android64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2234,12 +1700,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2250,18 +1710,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -2288,12 +1736,6 @@
             <Platforms>Android;Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2303,24 +1745,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2366,29 +1790,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
@@ -2401,12 +1807,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -2432,12 +1832,6 @@
             <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
@@ -2482,12 +1876,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2503,12 +1891,6 @@
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2542,20 +1924,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -2616,12 +1986,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
             <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -2656,12 +2020,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2686,22 +2044,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
@@ -2716,12 +2062,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2732,18 +2072,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -2770,12 +2098,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2785,24 +2107,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2848,18 +2152,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2872,21 +2164,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2914,12 +2194,6 @@
             <ProjectGuid>{B2C8196A-AA91-40BF-BC19-7F3C12A49266}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
@@ -2964,12 +2238,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2978,12 +2246,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -3018,12 +2280,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3032,12 +2288,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -3100,12 +2350,6 @@
             <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
@@ -3138,12 +2382,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3168,22 +2406,10 @@
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
@@ -3198,12 +2424,6 @@
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3214,18 +2434,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -3252,12 +2460,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3267,24 +2469,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3330,18 +2514,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3354,22 +2526,10 @@
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
@@ -3398,12 +2558,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3446,12 +2600,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3463,12 +2611,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
             <ProjectGuid>{C2741F11-6423-4488-900D-E6A8EA8B7EC6}</ProjectGuid>
@@ -3500,12 +2642,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3516,12 +2652,6 @@
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -3584,12 +2714,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3620,12 +2744,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3650,21 +2768,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3680,12 +2786,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3697,18 +2797,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -3734,12 +2822,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3748,24 +2830,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3812,28 +2876,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
@@ -3846,12 +2892,6 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
@@ -3880,12 +2920,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3928,12 +2962,6 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3944,12 +2972,6 @@
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
@@ -3982,12 +3004,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3998,12 +3014,6 @@
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -4066,12 +3076,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4102,12 +3106,6 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4132,21 +3130,9 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4162,12 +3148,6 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4179,18 +3159,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -4216,12 +3184,6 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4230,24 +3192,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4294,29 +3238,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
@@ -4329,12 +3255,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -4362,12 +3282,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4410,12 +3324,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4424,12 +3332,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -4464,12 +3366,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4480,12 +3376,6 @@
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -4548,12 +3438,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4584,12 +3468,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4614,22 +3492,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
@@ -4644,12 +3510,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4660,18 +3520,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -4698,12 +3546,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4713,24 +3555,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4776,28 +3600,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
@@ -4809,12 +3615,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4844,12 +3644,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4892,12 +3686,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4908,12 +3696,6 @@
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
@@ -4946,12 +3728,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4962,12 +3738,6 @@
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
@@ -5030,12 +3800,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5066,12 +3830,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5096,21 +3854,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5126,12 +3872,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -5143,18 +3883,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -5180,12 +3908,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5194,24 +3916,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5258,27 +3962,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5292,12 +3978,6 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
@@ -5326,12 +4006,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniGuiTouch.dproj">
-            <ProjectGuid>{5FE6369A-0DAD-494B-9869-5841CF2ACA17}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Json\NeonMainDemo.dproj">
             <ProjectGuid>{F9FFFB8A-8DD0-4212-BDA6-3D93DA044B95}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -5374,12 +4048,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
-            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
             <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
             <Configurations/>
@@ -5391,12 +4059,6 @@
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
-            <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
             <ProjectGuid>{C2741F11-6423-4488-900D-E6A8EA8B7EC6}</ProjectGuid>
@@ -5428,12 +4090,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
-            <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5445,12 +4101,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
-            <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
@@ -5512,12 +4162,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
-            <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5548,12 +4192,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
-            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5578,21 +4216,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
-            <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
-            <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5608,12 +4234,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
-            <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations/>
@@ -5624,18 +4244,6 @@
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
-            <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceCustConfService.dproj">
-            <ProjectGuid>{905FEB40-CD05-45DB-9236-B9D37815748C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
@@ -5662,12 +4270,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
-            <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations/>
@@ -5677,24 +4279,6 @@
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceDriverConfService.dproj">
-            <ProjectGuid>{8D12C36E-7F25-4B8B-B7CA-1ED0A920DB36}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Matching\MatchingDemo.dproj">
-            <ProjectGuid>{55588877-0AE4-43EA-A5FF-E87E86DB6E99}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\Delphi-WebMocks-Demos-main\Basic\WebMocksBasic.dproj">
-            <ProjectGuid>{1274D42D-04BC-4AC0-BF2F-5026057BFDD6}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5740,29 +4324,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
-            <ProjectGuid>{FFF12802-A589-4C7A-8DA7-B2D9EBB3677C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
-            <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
-            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
@@ -5774,12 +4340,6 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
-            <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
