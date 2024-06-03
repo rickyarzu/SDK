@@ -1076,13 +1076,13 @@
             <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -1224,9 +1224,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
@@ -1310,7 +1310,7 @@
             <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
@@ -1368,9 +1368,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
@@ -1392,9 +1392,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaMVVMCoreTesting.dproj">
             <ProjectGuid>{6111318E-79C0-4F35-AEBF-7D5ADFD28B0F}</ProjectGuid>
@@ -1448,7 +1448,7 @@
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
