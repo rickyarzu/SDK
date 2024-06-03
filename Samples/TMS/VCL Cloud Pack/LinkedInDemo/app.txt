@@ -1,0 +1,24 @@
+Application Details
+Company:
+
+tmssoftware
+
+Application Name:
+
+tmssoftware
+
+API Key:
+
+01m4pu86exlh
+
+Secret Key:
+
+bUV188PA4elxPuop
+
+OAuth User Token:
+
+d2cba3e1-b3de-4f4b-81e8-658dc06239d4
+
+OAuth User Secret:
+
+163facf7-e6b7-428e-92dc-458fb9860a70
