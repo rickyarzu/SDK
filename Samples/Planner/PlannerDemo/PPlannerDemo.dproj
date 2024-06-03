@@ -41,6 +41,7 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <SanitizedProjectName>PPlannerDemo</SanitizedProjectName>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
@@ -52,6 +53,8 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
+        <Custom_Styles>Sky|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Sky.vsf</Custom_Styles>
+        <CfgDependentOn>..\..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
@@ -74,6 +77,7 @@
         <Manifest_File>(None)</Manifest_File>
         <VerInfo_Locale>2067</VerInfo_Locale>
         <BT_BuildType>Debug</BT_BuildType>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -90,6 +94,7 @@
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -138,10 +143,9 @@
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k240.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp240.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k240.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp240.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">

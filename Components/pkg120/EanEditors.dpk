@@ -1,5 +1,4 @@
-﻿package EanEditors;
-
+package EanEditors;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -10,34 +9,30 @@
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
-{$DESCRIPTION 'EAN Barcode Library Editors'}
+{$DESCRIPTION 'Quickreport EAN Code Editors'}
 {$LIBSUFFIX AUTO}
+{$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
-  RTL,
-  vcl,
+  rtl,
   designide,
-  vclwinx,
-  dbrtl,
-  vcldb,
-  QRWRunDXE12_W64,
   Ean;
 
 contains
@@ -47,5 +42,3 @@ contains
   DesignerTypes in 'C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignerTypes.pas';
 
 end.
-
-
