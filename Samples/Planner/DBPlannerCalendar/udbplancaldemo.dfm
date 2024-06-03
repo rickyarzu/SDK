@@ -121,8 +121,9 @@ object Form1: TForm1
   end
   object ADOTable1: TADOTable
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\sample.mdb;Persis' +
-      't Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Januaproject\bin' +
+      '\Demos\sample.mdb;Persist Security Info=False'
+    CursorType = ctStatic
     TableName = 'RESERVATIONS'
     Left = 400
     Top = 152
