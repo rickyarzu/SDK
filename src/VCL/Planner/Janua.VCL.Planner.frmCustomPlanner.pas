@@ -1,4 +1,4 @@
-unit ufrmVCLAnagraphPlanner;
+unit Janua.VCL.Planner.frmCustomPlanner;
 
 interface
 
@@ -52,6 +52,7 @@ type
     btnSend: TButton;
     btnPrint: TButton;
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    btnCalendarSync: TButton;
     procedure Caption1Click(Sender: TObject);
     procedure Color1Click(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);

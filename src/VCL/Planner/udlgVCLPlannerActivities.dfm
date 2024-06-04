@@ -57,7 +57,7 @@ object dlgVCLPlannerActivities: TdlgVCLPlannerActivities
     Left = 0
     Top = 201
     Width = 421
-    Height = 152
+    Height = 174
     Align = alTop
     DataSource = dmPgPlannerStorage.dsActivities
     TabOrder = 3
@@ -76,8 +76,8 @@ object dlgVCLPlannerActivities: TdlgVCLPlannerActivities
       end>
   end
   object Button1: TButton
-    Left = 304
-    Top = 368
+    Left = 312
+    Top = 381
     Width = 91
     Height = 33
     Caption = 'OK'

@@ -1,4 +1,4 @@
-unit udlgVCLPlannerEvent;
+unit Janua.VCL.Planner.dlgCustomEvent;
 
 interface
 
@@ -6,13 +6,13 @@ uses
   // System
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Data.DB,
   // VCL
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ComCtrls, JvExMask, JvToolEdit, JvDBLookup, JvExControls,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, System.ImageList, VCL.ImgList, VCL.StdCtrls, VCL.Mask,
+  VCL.ComCtrls, JvExMask, JvToolEdit, JvDBLookup, JvExControls,
   // Januaproject
-  JOrm.Planner.Timetable.Intf, Janua.Vcl.Interposers;
+  JOrm.Planner.Timetable.Intf, Janua.VCL.Interposers;
 
 type
-  TdlgVCLPlannerEvent = class(TForm)
+  TdlgVCLCustomPlannerEvent = class(TForm)
     DataSource1: TDataSource;
     ColorDialog1: TColorDialog;
     ImageList1: TImageList;
@@ -43,25 +43,37 @@ type
     FEvent: ITimetable;
     FDateFrom: TDate;
     FDateTo: TDate;
+    FtbActivitiesGroups: TDataset;
+    FGroupNameField: string;
+    FtbActivities: TDataset;
+    FActivityNameField: string;
     procedure SetEvent(const Value: ITimetable);
+    procedure SettbActivitiesGroups(const Value: TDataset);
+    procedure SetGroupNameField(const Value: string);
+    procedure SettbActivities(const Value: TDataset);
+    procedure SetActivityNameField(const Value: string);
   protected
     { function IsTouchPropertyStored(AProperty: TTouchProperty): Boolean; override; }
     { Private declarations }
   public
     { Public declarations }
     property Event: ITimetable read FEvent write SetEvent;
+    property tbActivitiesGroups: TDataset read FtbActivitiesGroups write SettbActivitiesGroups;
+    property tbActivities: TDataset read FtbActivities write SettbActivities;
+    property GroupNameField: string read FGroupNameField write SetGroupNameField;
+    property ActivityNameField : string read FActivityNameField write SetActivityNameField;
   end;
 
 var
-  dlgVCLPlannerEvent: TdlgVCLPlannerEvent;
+  dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent;
 
 implementation
 
-uses Spring, System.StrUtils, udmPgPlannerStorage, udmVCLPlannerController, Janua.Components.Planner;
+uses Spring, System.StrUtils, Janua.Components.Planner;
 
 {$R *.dfm}
 
-procedure TdlgVCLPlannerEvent.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TdlgVCLCustomPlannerEvent.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FEvent.ActivityGroupJguid.AsString := lkpGroups.Value;
   FEvent.ActivityJguid.AsString := lkpActivities.Value;
@@ -72,12 +84,17 @@ end;
 
   end; }
 
-procedure TdlgVCLPlannerEvent.lkpGroupsChange(Sender: TObject);
+procedure TdlgVCLCustomPlannerEvent.lkpGroupsChange(Sender: TObject);
 begin
   // lkpGroups.NotifyControls();
 end;
 
-procedure TdlgVCLPlannerEvent.SetEvent(const Value: ITimetable);
+procedure TdlgVCLCustomPlannerEvent.SetActivityNameField(const Value: string);
+begin
+  FActivityNameField := Value;
+end;
+
+procedure TdlgVCLCustomPlannerEvent.SetEvent(const Value: ITimetable);
 var
   I: Integer;
 begin
@@ -117,18 +134,34 @@ begin
     Value.Notes.Bind('AsString', Memo1, 'Text');
 
     lkpGroups.Value := Value.ActivityGroupJguid.AsString;
-    if dmPgPlannerStorage.qryActivitiesGroups.Locate('tjguid', Value.ActivityGroupJguid.AsString, [loCaseInsensitive])
-    then
-      lkpGroups.DisplayValue := dmPgPlannerStorage.qryActivitiesGroupsname.AsWideString;
+    if FtbActivitiesGroups.Locate('jguid', Value.ActivityGroupJguid.AsString,
+      [loCaseInsensitive]) then
+      lkpGroups.DisplayValue := FtbActivitiesGroups[FGroupNameField].AsWideString;
 
     // Value.ActivityGroupJguid.Bind('AsString', lkpGroups, 'Value');
 
     lkpActivities.Value := Value.ActivityJguid.AsString;
-    if dmPgPlannerStorage.qryActivities.Locate('tjguid', Value.ActivityJguid.AsString, [loCaseInsensitive]) then
-      lkpActivities.DisplayValue := dmPgPlannerStorage.qryActivitiesname.AsWideString;
+    if FtbActivities.Locate('jguid', Value.ActivityJguid.AsString, [loCaseInsensitive])
+    then
+      lkpActivities.DisplayValue := FtbActivities [FActivityNameField].AsWideString;
     // Value.ActivityGroupJguid.Bind('AsString', lkpActivities, 'Value');
   end;
   FEvent := Value;
+end;
+
+procedure TdlgVCLCustomPlannerEvent.SetGroupNameField(const Value: string);
+begin
+  FGroupNameField := Value;
+end;
+
+procedure TdlgVCLCustomPlannerEvent.SettbActivities(const Value: TDataset);
+begin
+  FtbActivities := Value;
+end;
+
+procedure TdlgVCLCustomPlannerEvent.SettbActivitiesGroups(const Value: TDataset);
+begin
+  FtbActivitiesGroups := Value;
 end;
 
 end.

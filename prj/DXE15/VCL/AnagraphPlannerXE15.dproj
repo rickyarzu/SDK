@@ -323,12 +323,12 @@
             <Form>dlgVCLWaitSpin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Planner\ufrmVCLAnagraphPlanner.pas">
+        <DCCReference Include="..\..\..\src\VCL\Planner\Janua.VCL.Planner.frmCustomPlanner.pas">
             <Form>frmVCLAnagraphPlanner</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Planner\udmVCLPlannerController.pas">
-            <Form>dmVCLPlannerController</Form>
+        <DCCReference Include="..\..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas">
+            <Form>dmVCLPlannerCustomController</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -340,8 +340,8 @@
             <Form>dlgVCLPlannerAnagraph</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Planner\udlgVCLPlannerEvent.pas">
-            <Form>dlgVCLPlannerEvent</Form>
+        <DCCReference Include="..\..\..\src\VCL\Planner\Janua.VCL.Planner.dlgCustomEvent.pas">
+            <Form>dlgVCLCustomPlannerEvent</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\Win\udmWinMainApplication.pas">

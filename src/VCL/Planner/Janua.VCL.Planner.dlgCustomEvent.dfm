@@ -1,10 +1,10 @@
-object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
+object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
   Left = 0
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Inserimento Appuntamento'
-  ClientHeight = 439
-  ClientWidth = 743
+  ClientHeight = 462
+  ClientWidth = 720
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,27 +13,32 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
   Font.Style = []
   Position = poScreenCenter
   OnClose = FormClose
+  DesignSize = (
+    720
+    462)
   TextHeight = 17
   object Area: TLabel
-    Left = 328
-    Top = 19
+    Left = 312
+    Top = 9
     Width = 27
     Height = 17
     Caption = 'Area'
   end
   object lbActivity: TLabel
-    Left = 328
-    Top = 81
+    Left = 312
+    Top = 62
     Width = 39
     Height = 17
     Caption = 'Attivit'#224
   end
   object lbNote: TLabel
-    Left = 24
-    Top = 169
+    Left = 8
+    Top = 199
     Width = 29
     Height = 17
+    Anchors = [akLeft, akBottom]
     Caption = 'Note'
+    ExplicitTop = 179
   end
   object grdDateTime: TGroupBox
     Left = 24
@@ -236,52 +241,65 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
     end
   end
   object btnOk: TButton
-    Left = 608
-    Top = 384
+    Left = 621
+    Top = 421
     Width = 91
     Height = 33
+    Anchors = [akRight, akBottom]
     Caption = 'Ok'
     ModalResult = 1
     TabOrder = 1
+    ExplicitLeft = 644
+    ExplicitTop = 423
   end
   object btnCancel: TButton
-    Left = 504
-    Top = 384
+    Left = 517
+    Top = 421
     Width = 91
     Height = 33
+    Anchors = [akRight, akBottom]
     Caption = 'Annulla'
     ModalResult = 2
     TabOrder = 2
+    ExplicitLeft = 540
+    ExplicitTop = 423
   end
   object Memo1: TMemo
-    Left = 24
-    Top = 192
-    Width = 675
-    Height = 186
+    Left = 8
+    Top = 222
+    Width = 704
+    Height = 193
+    Anchors = [akLeft, akRight, akBottom]
     Lines.Strings = (
       'Memo1')
     TabOrder = 3
+    ExplicitTop = 202
+    ExplicitWidth = 694
   end
   object lkpGroups: TJvDBLookupCombo
-    Left = 328
-    Top = 42
-    Width = 337
+    Left = 312
+    Top = 32
+    Width = 398
     Height = 24
+    Anchors = [akLeft, akTop, akRight]
     LookupField = 'tjguid'
     LookupDisplay = 'name'
     LookupSource = dmPgPlannerStorage.dsActivitiesGroups
     TabOrder = 4
     OnChange = lkpGroupsChange
+    ExplicitWidth = 387
   end
   object lkpActivities: TJvDBLookupCombo
-    Left = 328
-    Top = 104
-    Width = 337
+    Left = 312
+    Top = 85
+    Width = 398
     Height = 24
+    Anchors = [akLeft, akTop, akRight]
     LookupField = 'tjguid'
     LookupDisplay = 'name'
     LookupSource = dmPgPlannerStorage.dsActivities
     TabOrder = 5
+    ExplicitWidth = 387
   end
   object DataSource1: TDataSource
     Left = 113

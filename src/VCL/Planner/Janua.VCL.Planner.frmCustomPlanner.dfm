@@ -352,7 +352,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
   object Panel1: TPanel
     Left = 264
     Top = 44
-    Width = 812
+    Width = 935
     Height = 110
     BevelOuter = bvNone
     TabOrder = 6
@@ -374,7 +374,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionAddActivity
+      Action = dmVCLPlannerCustomController.ActionUndoMeeting
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
@@ -459,6 +459,21 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 7
       WordWrap = True
+    end
+    object btnCalendarSync: TButton
+      Left = 800
+      Top = 0
+      Width = 100
+      Height = 110
+      Action = dmVCLPlannerCustomController.ActionPrint
+      Align = alLeft
+      ImageAlignment = iaTop
+      ImageMargins.Top = 6
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
+      TabOrder = 8
+      WordWrap = True
+      ExplicitLeft = 828
+      ExplicitTop = -2
     end
   end
   object DBDaySource1: TDBDaySource

@@ -49,11 +49,11 @@ uses
   Janua.Anagraph.ViewModel.Intf in '..\..\..\src\januacore\ViewModels\Janua.Anagraph.ViewModel.Intf.pas',
   Janua.TMS.frmMDIContainer in '..\..\..\src\TMS\Janua.TMS.frmMDIContainer.pas' {frmVCLJanuaMDIContainer},
   Janua.VCL.dlgWaitSpin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas' {dlgVCLWaitSpin},
-  ufrmVCLAnagraphPlanner in '..\..\..\src\VCL\Planner\ufrmVCLAnagraphPlanner.pas' {frmVCLAnagraphPlanner},
-  udmVCLPlannerController in '..\..\..\src\VCL\Planner\udmVCLPlannerController.pas' {dmVCLPlannerController: TDataModule},
+  Janua.VCL.Planner.frmCustomPlanner in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frmCustomPlanner.pas' {frmVCLAnagraphPlanner},
+  Janua.VCL.Planner.dmCustomController in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas' {dmVCLPlannerCustomController: TDataModule},
   udlgVCLPlannerActivities in '..\..\..\src\VCL\Planner\udlgVCLPlannerActivities.pas' {dlgVCLPlannerActivities},
   udlgVCLPlannerAnagraph in '..\..\..\src\VCL\Planner\udlgVCLPlannerAnagraph.pas' {dlgVCLPlannerAnagraph},
-  udlgVCLPlannerEvent in '..\..\..\src\VCL\Planner\udlgVCLPlannerEvent.pas' {dlgVCLPlannerEvent},
+  Janua.VCL.Planner.dlgCustomEvent in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dlgCustomEvent.pas' {dlgVCLCustomPlannerEvent},
   udmWinMainApplication in '..\..\..\src\Win\udmWinMainApplication.pas' {dmWinMainApplication: TDataModule};
 
 {$R *.res}

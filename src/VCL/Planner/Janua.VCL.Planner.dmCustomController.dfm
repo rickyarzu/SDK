@@ -1,4 +1,4 @@
-object dmVCLPlannerController: TdmVCLPlannerController
+object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   Height = 284
   Width = 530
@@ -5275,13 +5275,13 @@ object dmVCLPlannerController: TdmVCLPlannerController
           '.81h-.98v-4.79l-.94.51-.21-.82 1.37-.71z"/></g></svg>'
       end>
     Scaled = True
-    Left = 48
-    Top = 88
+    Left = 64
+    Top = 48
   end
   object ActionList1: TActionList
     Images = SVGIconImageList1
-    Left = 136
-    Top = 128
+    Left = 64
+    Top = 120
     object ActionAddMeeting: TAction
       Category = 'Meetings'
       Caption = 'Aggiungi Appuntamento'
@@ -5334,10 +5334,16 @@ object dmVCLPlannerController: TdmVCLPlannerController
       ImageName = '008-printer'
       OnExecute = ActionPrintExecute
     end
+    object ActionCalendarSync: TAction
+      Category = 'Meetings'
+      Caption = 'Sincro Calendario'
+      ImageIndex = 26
+      ImageName = '027-tasks'
+    end
   end
   object PrinterSetupDialog1: TPrinterSetupDialog
     Left = 416
-    Top = 88
+    Top = 168
   end
   object AdvGCalendar1: TAdvGCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -5351,8 +5357,8 @@ object dmVCLPlannerController: TdmVCLPlannerController
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 195
-    Top = 31
+    Left = 163
+    Top = 23
   end
   object JanuaPlannerController1: TJanuaPlannerController
     Enabled = True
@@ -5361,7 +5367,46 @@ object dmVCLPlannerController: TdmVCLPlannerController
     Language = jlaNone
     TestMode = False
     DateFrom = 45447.000000000000000000
-    Left = 256
-    Top = 208
+    Left = 416
+    Top = 112
+  end
+  object AdvLiveCalendar1: TAdvLiveCalendar
+    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
+    App.CallBackPort = 80
+    PersistTokens.Location = plIniFile
+    Scopes.Strings = (
+      'https://outlook.office.com/calendars.read'
+      'wl.basic'
+      'wl.calendars'
+      'wl.calendars_update'
+      'wl.contacts_calendars'
+      'wl.offline_access')
+    AuthFormSettings.Caption = 'Authorize'
+    AuthFormSettings.Width = 900
+    AuthFormSettings.Height = 600
+    Calendars = <>
+    Items = <>
+    Left = 160
+    Top = 88
+  end
+  object iCloudCalendar1: TiCloudCalendar
+    ForceSynchronize = True
+    Url = 'https://caldav.icloud.com'
+    IgnoreCertificateError = True
+    Active = False
+    Left = 160
+    Top = 152
+  end
+  object AdvvCalendar1: TAdvvCalendar
+    vEvents = <>
+    Version = '1.3.0.2'
+    Left = 160
+    Top = 224
+  end
+  object PlannerGCalendarExchange1: TPlannerGCalendarExchange
+    AdvGCalendar = AdvGCalendar1
+    EmptyText = 'Untitled'
+    Left = 272
+    Top = 56
   end
 end
