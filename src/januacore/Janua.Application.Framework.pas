@@ -37,7 +37,7 @@ uses
   Janua.Http.Types, Janua.Core.Types, Janua.Core.Commons, Janua.Core.AsyncTask, Janua.Application.Intf,
   Janua.Bindings.Intf,
   // Januaproject DB Framework - REST Framework - Http(s) Framework
-  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types, Janua.Core.WebServer,
+  Janua.Core.DB.Types, Janua.Core.DB.Intf, Janua.REST.Types, Janua.Core.WebServer, Janua.Cloud.Types,
   // Janua Orm Framework
   Janua.Orm.Intf, Janua.Orm.Types, Janua.Orm.Dataset.Intf, JOrm.Anagraph.Intf,
   // Januaproject Search Framework
@@ -174,6 +174,7 @@ type
     class var FMainAnagraphVM: IJanuaDBAnagraphViewModel;
     class var FAnagraphProfile: IAnagraph;
     class var FLogProc: TMessageLogProc;
+    class var FCloudConf: TJanuaCloudConf;
     class procedure SetUseClassicUpdate(const Value: Boolean); static;
     class procedure SetDBEngine(const Value: TJanuaDBEngine); static;
   protected
@@ -187,6 +188,7 @@ type
     class property UseClassicUpdate: Boolean read FUseClassicUpdate write SetUseClassicUpdate;
     class property RESTClientConf: TRestClientConf read FRESTClientConf;
     class property RestServerConf: TRestServerConf read FRestServerConf;
+    class property CloudConf: TJanuaCloudConf read FCloudConf;
   public
     class procedure WriteParamBool(const aSection, aKey: string; const aParam: Boolean);
     class procedure WriteParamString(const aSection, aKey: string; const aParam: String);
@@ -1035,6 +1037,8 @@ end;
 class function TJanuaApplicationFactory.GetObjClasses: IDictionary<TGUID, TJanuaCoreInterfacedObjectClass>;
 begin
   try
+    if not Assigned(FObjClasses) then
+      FObjClasses := TCollections.CreateDictionary<TGUID, TJanuaCoreInterfacedObjectClass>;
     Result := FObjClasses;
   except
     on e: Exception do
@@ -1312,6 +1316,7 @@ begin
     FDBEngine := jdbPostgres;
     FRESTClientConf := TRestClientConf.Create;
     FRestServerConf := TRestServerConf.Create;
+    FCloudConf := TJanuaCloudConf.Create;
 
     FLogProc := procedure(aProcedure, aMessage: string; aClass: TObject)
       begin

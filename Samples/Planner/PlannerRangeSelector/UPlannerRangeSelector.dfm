@@ -2,7 +2,7 @@ object Form92: TForm92
   Left = 0
   Top = 0
   Caption = 'PlannerRangeSelector Demo'
-  ClientHeight = 302
+  ClientHeight = 324
   ClientWidth = 448
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,21 +10,23 @@ object Form92: TForm92
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  DesignSize = (
+    448
+    324)
   TextHeight = 13
   object Label1: TLabel
-    Left = 247
-    Top = 281
-    Width = 134
+    Left = 8
+    Top = 303
+    Width = 424
     Height = 13
+    Anchors = [akLeft, akBottom]
     Caption = 'Selected timespan: 1 day(s)'
   end
   object Label2: TLabel
     Left = 247
     Top = 46
-    Width = 186
-    Height = 59
+    Width = 185
+    Height = 39
     Caption = 
       'Drag select to select range of dates or left click on start date' +
       ' and right-click on end date.'
@@ -36,7 +38,15 @@ object Form92: TForm92
     Width = 169
     Height = 21
     Color = clWindow
+    DefaultHandling = True
     Enabled = True
+    EditMask = ''
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     Text = '25/02/2014'
     Visible = True
@@ -50,7 +60,6 @@ object Form92: TForm92
     FocusFontColor = clBlack
     LabelAlwaysEnabled = False
     LabelPosition = lpLeftTop
-    LabelMargin = 4
     LabelTransparent = False
     LabelFont.Charset = DEFAULT_CHARSET
     LabelFont.Color = clWindowText
@@ -59,7 +68,7 @@ object Form92: TForm92
     LabelFont.Style = []
     ModifiedColor = clRed
     SelectFirstChar = False
-    Version = '1.0.0.0'
+    Version = '1.0.1.0'
     OnChange = PlannerRangeSelector1Change
     OnClick = PlannerRangeSelector1Click
     ButtonStyle = bsButton
@@ -92,7 +101,7 @@ object Form92: TForm92
     OnClickBtn = PlannerRangeSelector1ClickBtn
     Calendar = mcal1_.Owner
     DateStart = 41695.000000000000000000
-    DateEnd = 41695.000000000000000000
+    DateEnd = 45447.000000000000000000
     HideCalendarAfterSelection = False
     OnRangeSelect = PlannerRangeSelector1RangeSelect
     object mcal1_: TPlannerCalendar
@@ -109,65 +118,67 @@ object Form92: TForm92
       EventMarkerColor = clYellow
       EventMarkerShape = evsCircle
       BackgroundPosition = bpTiled
-      BevelOuter = bvNone
       BorderWidth = 1
-      Look = lookFlat
+      CaptionColor = clNone
+      CaptionTextColor = clBlack
       DateDownColor = clNone
       DateHoverColor = clNone
+      DateSelectColor = 15917525
+      DateSelectBorderColor = 15917525
       DayFont.Charset = DEFAULT_CHARSET
       DayFont.Color = clWindowText
       DayFont.Height = -11
       DayFont.Name = 'Tahoma'
       DayFont.Style = []
+      FocusColor = clHighlight
+      HeaderColor = clNone
+      InActiveColor = clGray
+      InversColor = clTeal
+      LineColor = clGray
+      Line3D = True
+      Look = lookFlat
+      NameOfDays.Monday = 'lun'
+      NameOfDays.Tuesday = 'mar'
+      NameOfDays.Wednesday = 'mer'
+      NameOfDays.Thursday = 'gio'
+      NameOfDays.Friday = 'ven'
+      NameOfDays.Saturday = 'sab'
+      NameOfDays.Sunday = 'dom'
+      NameOfMonths.January = 'gen'
+      NameOfMonths.February = 'feb'
+      NameOfMonths.March = 'mar'
+      NameOfMonths.April = 'apr'
+      NameOfMonths.May = 'mag'
+      NameOfMonths.June = 'giu'
+      NameOfMonths.July = 'lug'
+      NameOfMonths.August = 'ago'
+      NameOfMonths.September = 'set'
+      NameOfMonths.October = 'ott'
+      NameOfMonths.November = 'nov'
+      NameOfMonths.December = 'dic'
+      NameOfMonths.UseIntlNames = True
       WeekFont.Charset = DEFAULT_CHARSET
       WeekFont.Color = clWindowText
       WeekFont.Height = -11
       WeekFont.Name = 'Tahoma'
       WeekFont.Style = []
       WeekName = 'Wk'
-      TextColor = clBlack
       SelectColor = clTeal
       SelectFontColor = clWhite
-      InActiveColor = clGray
-      HeaderColor = clNone
-      FocusColor = clHighlight
-      InversColor = clTeal
-      WeekendColor = clRed
-      NameOfDays.Monday = 'ma'
-      NameOfDays.Tuesday = 'di'
-      NameOfDays.Wednesday = 'wo'
-      NameOfDays.Thursday = 'do'
-      NameOfDays.Friday = 'vr'
-      NameOfDays.Saturday = 'za'
-      NameOfDays.Sunday = 'zo'
-      NameOfMonths.January = 'jan'
-      NameOfMonths.February = 'feb'
-      NameOfMonths.March = 'mrt'
-      NameOfMonths.April = 'apr'
-      NameOfMonths.May = 'mei'
-      NameOfMonths.June = 'jun'
-      NameOfMonths.July = 'jul'
-      NameOfMonths.August = 'aug'
-      NameOfMonths.September = 'sep'
-      NameOfMonths.October = 'okt'
-      NameOfMonths.November = 'nov'
-      NameOfMonths.December = 'dec'
-      NameOfMonths.UseIntlNames = True
       StartDay = 7
+      TextColor = clBlack
       TodayFormat = '"Today" DDD/mm, YYYY'
+      WeekendColor = clRed
       Day = 25
       Month = 2
       Year = 2014
-      TabOrder = 0
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      CaptionColor = clNone
-      CaptionTextColor = clBlack
-      LineColor = clGray
-      Line3D = True
+      ParentFont = False
+      TabOrder = 0
       GradientStartColor = clWhite
       GradientEndColor = clBtnFace
       GradientDirection = gdVertical
@@ -178,23 +189,25 @@ object Form92: TForm92
       HintPrevMonth = 'Previous Month'
       HintNextMonth = 'Next Month'
       HintNextYear = 'Next Year'
-      Version = '2.1.0.0'
+      Version = '2.4.4.1'
+      TMSStyle = 8
     end
   end
-  object Button1: TButton
+  object btnEnd5Days: TButton
     Left = 8
     Top = 41
     Width = 129
     Height = 25
     Caption = 'End 5 days from start'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = btnEnd5DaysClick
   end
   object ListBox1: TListBox
     Left = 8
-    Top = 72
-    Width = 217
-    Height = 222
+    Top = 96
+    Width = 424
+    Height = 198
+    Anchors = [akLeft, akTop, akRight, akBottom]
     ItemHeight = 13
     PopupMenu = PopupMenu1
     TabOrder = 2

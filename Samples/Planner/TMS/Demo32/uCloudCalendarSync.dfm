@@ -237,8 +237,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.6.1.3'
-    ExplicitWidth = 697
-    ExplicitHeight = 553
     TMSStyle = 0
   end
   object Button1: TButton
@@ -250,7 +248,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Connect to Windows Live Calendar'
     TabOrder = 1
     OnClick = Button1Click
-    ExplicitLeft = 711
   end
   object ListBox1: TListBox
     Left = 822
@@ -260,7 +257,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Anchors = [akTop, akRight]
     ItemHeight = 13
     TabOrder = 2
-    ExplicitLeft = 711
   end
   object Button2: TButton
     Left = 822
@@ -271,7 +267,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Export week to cloud calendar'
     TabOrder = 3
     OnClick = Button2Click
-    ExplicitLeft = 711
   end
   object Button3: TButton
     Left = 822
@@ -282,7 +277,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Import week from cloud calendar'
     TabOrder = 4
     OnClick = Button3Click
-    ExplicitLeft = 711
   end
   object Button4: TButton
     Left = 822
@@ -293,7 +287,6 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Connect to Google Calendar'
     TabOrder = 5
     OnClick = Button4Click
-    ExplicitLeft = 711
   end
   object AdvLiveCalendar1: TAdvLiveCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'

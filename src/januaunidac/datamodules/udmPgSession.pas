@@ -3,9 +3,10 @@ unit udmPgSession;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, janualogger,
-  Datasnap.DBClient, MemDS, januacustomsession, JanuaPgSession, JanuaOS,
-  januamailcomponents, CloudBase, CloudGDrive;
+  System.SysUtils, System.Classes, Data.DB, DBAccess, Uni,
+  Datasnap.DBClient, MemDS,  JanuaPgSession,
+  CloudBase, CloudGDrive, CloudBaseWin, CloudCustomGDrive, Janua.Core.Commons,
+  Janua.Core.Classes, Janua.Components.Mail, Janua.Legacy.Logger, Janua.Unidac.Connection;
 
 type
   TdmPgSession = class(TDataModule)
@@ -34,9 +35,7 @@ type
     tbIsoCountriescountry_year: TSmallintField;
     tbIsoCountriescountry_name: TWideStringField;
     tbIsoCountriesiso_currency_id: TSmallintField;
-    JanuaOS1: TJanuaOS;
     pgRegisterUser: TUniStoredProc;
-    JanuaPgSession1: TJanuaPgSession;
     JanuaLogger1: TJanuaLogger;
     JanuaMailSender1: TJanuaMailSender;
     spUserTest: TUniStoredProc;

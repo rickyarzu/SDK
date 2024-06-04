@@ -1,20 +1,20 @@
-{***************************************************************************}
-{ TMS Cloud Pack                                                            }
-{ for Delphi & C++Builder                                                   }
-{                                                                           }
-{ written by TMS Software                                                   }
-{            copyright © 2012 - 2016                                        }
-{            Email : info@tmssoftware.com                                   }
-{            Web : http://www.tmssoftware.com                               }
-{                                                                           }
-{ The source code is given as is. The author is not responsible             }
-{ for any possible damage done due to the use of this code.                 }
-{ The component can be freely used in any application. The complete         }
-{ source code remains property of the author and may not be distributed,    }
-{ published, given or sold in any form as such. No parts of the source      }
-{ code can be included in any other component or application without        }
-{ written authorization of the author.                                      }
-{***************************************************************************}
+{ *************************************************************************** }
+{ TMS Cloud Pack }
+{ for Delphi & C++Builder }
+{ }
+{ written by TMS Software }
+{ copyright © 2012 - 2016 }
+{ Email : info@tmssoftware.com }
+{ Web : http://www.tmssoftware.com }
+{ }
+{ The source code is given as is. The author is not responsible }
+{ for any possible damage done due to the use of this code. }
+{ The component can be freely used in any application. The complete }
+{ source code remains property of the author and may not be distributed, }
+{ published, given or sold in any form as such. No parts of the source }
+{ code can be included in any other component or application without }
+{ written authorization of the author. }
+{ *************************************************************************** }
 unit ufrmTMSAdvCalendarDemo;
 
 interface
@@ -117,8 +117,7 @@ type
     procedure ListReminders(Item: TGCalendarItem);
     procedure FormCreate(Sender: TObject);
     procedure btUpdateClick(Sender: TObject);
-    procedure ListView1Change(Sender: TObject; Item: TListItem;
-      Change: TItemChange);
+    procedure ListView1Change(Sender: TObject; Item: TListItem; Change: TItemChange);
     procedure cbAlldayClick(Sender: TObject);
     procedure ComboBox1Click(Sender: TObject);
     procedure btRemoveClick(Sender: TObject);
@@ -142,16 +141,14 @@ var
 
 implementation
 
+uses Janua.Application.Framework;
+
 {$R *.dfm}
 
 // PLEASE USE A VALID INCLUDE FILE THAT CONTAINS THE APPLICATION KEY & SECRET
 // FOR THE CLOUD STORAGE SERVICES YOU WANT TO USE
 // STRUCTURE OF THIS .INC FILE SHOULD BE
 //
-// const
-//  GAppkey = 'xxxxxxxxx';
-//  GAppSecret = 'yyyyyyyy';
-
 {$I tmsAPPIDS.INC}
 
 procedure TfrmTMSAdvCalendarDemo.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
@@ -190,14 +187,14 @@ var
 begin
   if ComboBox1.ItemIndex >= 0 then
   begin
-      gcal := (ComboBox1.Items.Objects[ComboBox1.ItemIndex] as TGCalendar);
-      gcal.Summary := edCalendarName.Text;
-      gcal.Description := edCalendarDescription.Text;
-      gcal.Location := edCalendarLocation.Text;
-      gcal.TimeZone := edCalendarTimeZone.Text;
-      AdvGCalendar1.UpdateCalendar(gcal);
-      FillCalendars;
-      FillCalendarItems;
+    gcal := (ComboBox1.Items.Objects[ComboBox1.ItemIndex] as TGCalendar);
+    gcal.Summary := edCalendarName.Text;
+    gcal.Description := edCalendarDescription.Text;
+    gcal.Location := edCalendarLocation.Text;
+    gcal.TimeZone := edCalendarTimeZone.Text;
+    AdvGCalendar1.UpdateCalendar(gcal);
+    FillCalendars;
+    FillCalendarItems;
   end;
 end;
 
@@ -210,8 +207,8 @@ procedure TfrmTMSAdvCalendarDemo.Button1Click(Sender: TObject);
 begin
   AdvGCalendar1.Logging := true;
   AdvGCalendar1.LogLevel := llDetail;
-  AdvGCalendar1.App.Key := GAppkey;
-  AdvGCalendar1.App.Secret := GAppSecret;
+  AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
+  AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
 
   if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.RefreshAccess;
@@ -226,7 +223,7 @@ procedure TfrmTMSAdvCalendarDemo.Button5Click(Sender: TObject);
 var
   li: TGCalendarItem;
 begin
-  if not (Inserting) then
+  if not(Inserting) then
   begin
     ClearControls;
     Edit3.SetFocus;
@@ -255,7 +252,8 @@ var
 begin
   if ListView1.ItemIndex >= 0 then
   begin
-    buttonSelected := MessageDlg('Are you sure you want to delete the selected Event?', mtConfirmation, mbOKCancel, 0);
+    buttonSelected := MessageDlg('Are you sure you want to delete the selected Event?', mtConfirmation,
+      mbOKCancel, 0);
 
     if buttonSelected = mrOk then
     begin
@@ -324,11 +322,11 @@ begin
     rem := li.Reminders.Add;
 
     if cbRemMethod.ItemIndex = 0 then
-        rem.Method := rmPopup
+      rem.Method := rmPopup
     else if cbRemMethod.ItemIndex = 1 then
-        rem.Method := rmEmail
+      rem.Method := rmEmail
     else if cbRemMethod.ItemIndex = 2 then
-        rem.Method := rmSMS;
+      rem.Method := rmSMS;
 
     rem.Minutes := StrToInt(EditRemMinutes.Text);
     ListReminders(li);
@@ -343,7 +341,9 @@ var
 begin
   if ComboBox1.ItemIndex >= 0 then
   begin
-    buttonSelected := MessageDlg('Are you sure you want to delete the selected Calendar and all of it''s events?', mtConfirmation, mbOKCancel, 0);
+    buttonSelected :=
+      MessageDlg('Are you sure you want to delete the selected Calendar and all of it''s events?',
+      mtConfirmation, mbOKCancel, 0);
 
     if buttonSelected = mrOk then
     begin
@@ -428,7 +428,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.FillCalendarItems;
 var
-  I: Integer;
+  I: integer;
   gcal: TGCalendar;
   li: TListItem;
   rem: string;
@@ -443,14 +443,17 @@ begin
     edCalendarLocation.Text := gcal.Location;
     edCalendarTimeZone.Text := gcal.TimeZone;
 
-    //Default Reminders
+    // Default Reminders
     cbDefaultReminders.Items.Clear;
     for I := 0 to gcal.DefaultReminders.Count - 1 do
     begin
       case gcal.DefaultReminders[I].Method of
-        rmPopup: rem := 'popup';
-        rmEmail: rem := 'email';
-        rmSMS: rem := 'sms';
+        rmPopup:
+          rem := 'popup';
+        rmEmail:
+          rem := 'email';
+        rmSMS:
+          rem := 'sms';
       end;
       cbDefaultReminders.Items.Add(rem + ' ' + IntToStr(gcal.DefaultReminders[I].Minutes) + ' minutes')
     end;
@@ -475,7 +478,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.FillCalendars;
 var
-  I: Integer;
+  I: integer;
   isPrimary: string;
 begin
   AdvGCalendar1.GetCalendars();
@@ -522,7 +525,6 @@ begin
   ToggleReminders;
 end;
 
-
 procedure TfrmTMSAdvCalendarDemo.Init;
 begin
   Connected := true;
@@ -535,7 +537,7 @@ end;
 procedure TfrmTMSAdvCalendarDemo.FillCalendarItemDetails();
 var
   li: TGCalendarItem;
-  I: Integer;
+  I: integer;
 begin
   Screen.Cursor := crHourGlass;
   if ListView1.ItemIndex >= 0 then
@@ -569,8 +571,7 @@ begin
   Screen.Cursor := crDefault;
 end;
 
-procedure TfrmTMSAdvCalendarDemo.ListView1Change(Sender: TObject; Item: TListItem;
-  Change: TItemChange);
+procedure TfrmTMSAdvCalendarDemo.ListView1Change(Sender: TObject; Item: TListItem; Change: TItemChange);
 begin
   FillCalendarItemDetails;
 end;
@@ -578,7 +579,7 @@ end;
 procedure TfrmTMSAdvCalendarDemo.ListAttendees(Item: TGCalendarItem);
 var
   att: string;
-  I: Integer;
+  I: integer;
   li: TListItem;
 begin
   att := '';
@@ -586,10 +587,14 @@ begin
   for I := 0 to Item.Attendees.Count - 1 do
   begin
     case Item.Attendees[I].Status of
-      rsNeedsAction: att := 'needs action';
-      rsDeclined: att := 'declined';
-      rsTentative: att := 'tentative';
-      rsAccepted: att := 'accpeted';
+      rsNeedsAction:
+        att := 'needs action';
+      rsDeclined:
+        att := 'declined';
+      rsTentative:
+        att := 'tentative';
+      rsAccepted:
+        att := 'accpeted';
     end;
 
     li := lvAtt.Items.Add;
@@ -602,7 +607,7 @@ end;
 procedure TfrmTMSAdvCalendarDemo.ListReminders(Item: TGCalendarItem);
 var
   rem: string;
-  I: Integer;
+  I: integer;
   li: TListItem;
 begin
   rem := '';
@@ -613,9 +618,12 @@ begin
   for I := 0 to Item.Reminders.Count - 1 do
   begin
     case Item.Reminders[I].Method of
-      rmPopup: rem := 'popup';
-      rmEmail: rem := 'email';
-      rmSMS: rem := 'sms';
+      rmPopup:
+        rem := 'popup';
+      rmEmail:
+        rem := 'email';
+      rmSMS:
+        rem := 'sms';
     end;
 
     li := lvRem.Items.Add;
@@ -629,33 +637,37 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.SetCalendarItem(Item: TGCalendarItem);
 begin
-    Item.Summary := Edit3.Text;
-    Item.Description := Memo1.Lines.Text;
-    Item.Location := Edit5.Text;
-    if cbColors.ItemIndex >= 0 then
-      Item.Color := TGItemColor(cbColors.ItemIndex)
-    else
-      Item.Color := icDefault;
+  Item.Summary := Edit3.Text;
+  Item.Description := Memo1.Lines.Text;
+  Item.Location := Edit5.Text;
+  if cbColors.ItemIndex >= 0 then
+    Item.Color := TGItemColor(cbColors.ItemIndex)
+  else
+    Item.Color := icDefault;
 
-    if cbAllday.Checked then
-    begin
-      Item.StartTime := EncodeDateTime(YearOf(StartDate.Date), MonthOf(StartDate.Date), DayOf(StartDate.Date), 0, 0, 0, 0);
-      Item.EndTime := EncodeDateTime(YearOf(EndDate.Date), MonthOf(EndDate.Date), DayOf(EndDate.Date), 0, 0, 0, 0);
-      Item.IsAllDay := true;
-    end
-    else
-    begin
-      Item.StartTime := EncodeDateTime(YearOf(StartDate.Date), MonthOf(StartDate.Date), DayOf(StartDate.Date), HourOf(StartTime.Time), MinuteOf(StartTime.Time), SecondOf(StartTime.Time),0);
-      Item.EndTime := EncodeDateTime(YearOf(EndDate.Date), MonthOf(EndDate.Date), DayOf(EndDate.Date), HourOf(EndTime.Time), MinuteOf(EndTime.Time), SecondOf(EndTime.Time),0);
-      Item.IsAllDay := false;
-    end;
+  if cbAllday.Checked then
+  begin
+    Item.StartTime := EncodeDateTime(YearOf(StartDate.Date), MonthOf(StartDate.Date), DayOf(StartDate.Date),
+      0, 0, 0, 0);
+    Item.EndTime := EncodeDateTime(YearOf(EndDate.Date), MonthOf(EndDate.Date), DayOf(EndDate.Date),
+      0, 0, 0, 0);
+    Item.IsAllDay := true;
+  end
+  else
+  begin
+    Item.StartTime := EncodeDateTime(YearOf(StartDate.Date), MonthOf(StartDate.Date), DayOf(StartDate.Date),
+      HourOf(StartTime.Time), MinuteOf(StartTime.Time), SecondOf(StartTime.Time), 0);
+    Item.EndTime := EncodeDateTime(YearOf(EndDate.Date), MonthOf(EndDate.Date), DayOf(EndDate.Date),
+      HourOf(EndTime.Time), MinuteOf(EndTime.Time), SecondOf(EndTime.Time), 0);
+    Item.IsAllDay := false;
+  end;
 
-    Item.Visibility := TVisibility(cbVisibility.ItemIndex);
+  Item.Visibility := TVisibility(cbVisibility.ItemIndex);
 end;
 
 procedure TfrmTMSAdvCalendarDemo.SetColor;
 var
-  I: Integer;
+  I: integer;
   gcal: TGCalendar;
   bg: TColor;
   fg: TColor;
@@ -690,7 +702,7 @@ begin
     end
   end;
 
-  panelcolor.Color := bg;
+  panelColor.Color := bg;
   panelColor.Font.Color := fg;
 end;
 

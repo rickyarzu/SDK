@@ -84,7 +84,7 @@
         <Projects Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
+        <Projects Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Planner\PlannerDemo\PPlannerDemo.dproj">
@@ -94,6 +94,15 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -348,13 +357,13 @@
         <MSBuild Projects="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="PlannerRangeSelectorDemo">
-        <MSBuild Projects="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj"/>
+        <MSBuild Projects="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj"/>
     </Target>
     <Target Name="PlannerRangeSelectorDemo:Clean">
-        <MSBuild Projects="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj" Targets="Clean"/>
     </Target>
     <Target Name="PlannerRangeSelectorDemo:Make">
-        <MSBuild Projects="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="PPlannerDemo">
         <MSBuild Projects="..\..\Samples\Planner\PlannerDemo\PPlannerDemo.dproj"/>
@@ -383,14 +392,41 @@
     <Target Name="planforms:Make">
         <MSBuild Projects="..\..\Samples\Planner\TMS\Demo3\planforms.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CloudCalendarImportExport">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj"/>
+    </Target>
+    <Target Name="CloudCalendarImportExport:Clean">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CloudCalendarImportExport:Make">
+        <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GCalendarDemo">
+        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj"/>
+    </Target>
+    <Target Name="GCalendarDemo:Clean">
+        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GCalendarDemo:Make">
+        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GContactsDemo">
+        <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj"/>
+    </Target>
+    <Target Name="GContactsDemo:Clean">
+        <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GContactsDemo:Make">
+        <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms"/>
+        <CallTarget Targets="sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;GCalendarDemo;GContactsDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean"/>
+        <CallTarget Targets="sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;GCalendarDemo:Clean;GContactsDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make"/>
+        <CallTarget Targets="sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;GCalendarDemo:Make;GContactsDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
@@ -411,6 +447,78 @@
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
+            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
@@ -442,39 +550,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
-            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLForms.dproj">
-            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLComponents.dproj">
-            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
-            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
-            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -484,26 +562,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
-            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
+            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
-            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
-            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -514,23 +580,11 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
-            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
+            <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
@@ -544,6 +598,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -552,12 +612,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVirtual.dproj">
             <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidac.dproj">
-            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
@@ -600,6 +654,78 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
+            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -630,39 +756,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
-            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLForms.dproj">
-            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLComponents.dproj">
-            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
-            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
-            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -672,26 +768,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
-            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
+            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
-            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
-            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -702,22 +786,10 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
-            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
+            <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -732,6 +804,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -740,12 +818,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVirtual.dproj">
             <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidac.dproj">
-            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -788,6 +860,78 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
+            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -818,39 +962,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
-            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLForms.dproj">
-            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLComponents.dproj">
-            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
-            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
-            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -860,26 +974,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
-            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
+            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
-            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
-            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -890,22 +992,10 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
-            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
+            <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -920,6 +1010,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -928,12 +1024,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVirtual.dproj">
             <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidac.dproj">
-            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -976,6 +1066,78 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
+            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1006,39 +1168,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
-            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLForms.dproj">
-            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLComponents.dproj">
-            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
-            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
-            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1048,26 +1180,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
-            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
+            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
-            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
-            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1078,22 +1198,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
-            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
+            <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -1108,6 +1216,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1116,12 +1230,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVirtual.dproj">
             <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidac.dproj">
-            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
@@ -1164,6 +1272,78 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
+            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\PlannerRangeSelectorDemo.dproj">
+            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1194,39 +1374,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
-            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLForms.dproj">
-            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaVCLComponents.dproj">
-            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo3\planforms.dproj">
-            <ProjectGuid>{4C446181-457D-4D60-8A1B-4FD1DE35C48A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\PlannerRangeSelector\PlannerRangeSelectorDemo.dproj">
-            <ProjectGuid>{F7B98A78-431A-4575-A6E1-2B17A97BF536}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1236,26 +1386,14 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
-            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
+            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
-            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
-            <ProjectGuid>{B80974FB-1753-4490-81FE-9BB5905B3A33}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+            <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1266,22 +1404,10 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
-            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
+            <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -1296,6 +1422,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
+            <ProjectGuid>{EE3AA2D0-D050-4190-B9C5-3E60CBFBC286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1304,12 +1436,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVirtual.dproj">
             <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUnidac.dproj">
-            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>

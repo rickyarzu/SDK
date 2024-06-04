@@ -46,11 +46,6 @@ begin
   System.ReportMemoryLeaksOnShutdown := True;
 {$ENDIF}
   uApplicationSetup.ApplicationSetup;
-  // frmUnitTestJanuaVCLComponents: TfrmUnitTestJanuaVCLComponents
   Application.CreateForm(TfrmUnitTestJanuaVCLComponents, frmUnitTestJanuaVCLComponents);
-  { Application.CreateForm(TfrmTestVCLDatasetOrmSync, frmTestVCLDatasetOrmSync);
- Application.CreateForm(TfrmVCLTestGrids, frmVCLTestGrids);
-    Application.CreateForm(TfrmVCLTestFilters, frmVCLTestFilters);
-    Application.CreateForm(TdlgVCLTestPgTablesList, dlgVCLTestPgTablesList); }
   errorManager.Free;
 end.

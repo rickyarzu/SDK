@@ -20,8 +20,8 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
     Align = alTop
     TabOrder = 0
     object Image1: TImage
-      Left = 721
-      Top = 7
+      Left = 725
+      Top = 11
       Width = 24
       Height = 24
       Picture.Data = {
@@ -704,6 +704,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
     App.CallBackURL = 'http://127.0.0.1:8888/'
     App.CallBackPort = 8888
     PersistTokens.Location = plIniFile
+    PersistTokens.Section = 'GCalendar'
     Scopes.Strings = (
       'https://www.googleapis.com/auth/calendar')
     OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
@@ -712,7 +713,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 648
-    Top = 8
+    Left = 456
+    Top = 232
   end
 end

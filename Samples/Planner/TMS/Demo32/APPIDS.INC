@@ -2,8 +2,8 @@
 // and Microsoft Live app key/secret here?
 
 const
-  LiveAppkey = ;
-  LiveAppSecret = ;
+  LiveAppkey = '';
+  LiveAppSecret = '';
 
-  GAppkey = ;
-  GAppSecret = ;
+  GAppkey = '';
+  GAppSecret = '';
