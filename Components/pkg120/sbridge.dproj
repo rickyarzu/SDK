@@ -10,7 +10,7 @@
         <Base>True</Base>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>38035</TargetedPlatforms>
         <ProjectName Condition="'$(ProjectName)'==''">sbridge</ProjectName>
     </PropertyGroup>
@@ -27,6 +27,11 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
         <Base_Win64x>true</Base_Win64x>
         <CfgParent>Base</CfgParent>
@@ -35,6 +40,12 @@
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_Release)'!=''">
         <Cfg_Release>true</Cfg_Release>
         <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_Release)'=='true') or '$(Cfg_Release_Win64)'!=''">
+        <Cfg_Release_Win64>true</Cfg_Release_Win64>
+        <CfgParent>Cfg_Release</CfgParent>
+        <Cfg_Release>true</Cfg_Release>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_Debug)'!=''">
@@ -84,6 +95,12 @@
         <Cfg_Debug>true</Cfg_Debug>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_Debug)'=='true') or '$(Cfg_Debug_Win64)'!=''">
+        <Cfg_Debug_Win64>true</Cfg_Debug_Win64>
+        <CfgParent>Cfg_Debug</CfgParent>
+        <Cfg_Debug>true</Cfg_Debug>
+        <Base>true</Base>
+    </PropertyGroup>
     <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -118,6 +135,9 @@
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Locale>1040</VerInfo_Locale>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64x)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -125,11 +145,14 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_Release)'!=''">
-        <DCC_DebugInformation>False</DCC_DebugInformation>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
         <DCC_WriteableConstants>True</DCC_WriteableConstants>
         <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_Release_Win64)'!=''">
+        <VerInfo_Locale>1040</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_Debug)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -153,6 +176,9 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_Debug_Win32)'!=''">
+        <VerInfo_Locale>1040</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_Debug_Win64)'!=''">
         <VerInfo_Locale>1040</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
@@ -295,7 +321,9 @@
                     <Source Name="MainSource">sbridge.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaUniGUI290.bpl">Janua UniGUI Library</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

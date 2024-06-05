@@ -14,5 +14,4 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmCalendarCloudSync, frmCalendarCloudSync);
   Application.Run;
-
 end.

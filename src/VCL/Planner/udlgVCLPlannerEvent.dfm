@@ -11,28 +11,33 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
   Font.Height = -13
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
-  PixelsPerInch = 96
   TextHeight = 17
   object Area: TLabel
-    Left = 352
-    Top = 41
+    Left = 328
+    Top = 19
     Width = 27
     Height = 17
     Caption = 'Area'
   end
   object lbActivity: TLabel
-    Left = 352
-    Top = 105
+    Left = 328
+    Top = 81
     Width = 39
     Height = 17
     Caption = 'Attivit'#224
   end
+  object lbNote: TLabel
+    Left = 24
+    Top = 169
+    Width = 29
+    Height = 17
+    Caption = 'Note'
+  end
   object grdDateTime: TGroupBox
     Left = 24
-    Top = 24
+    Top = 8
     Width = 273
     Height = 145
     Caption = 'Data ed Ora di Calendario'
@@ -220,15 +225,15 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
       Time = 0.723429768520873000
       TabOrder = 4
     end
-  end
-  object edEventDateTo: TDateTimePicker
-    Left = 40
-    Top = 127
-    Width = 129
-    Height = 25
-    Date = 44090.000000000000000000
-    Time = 0.723429768520873000
-    TabOrder = 1
+    object edEventDateTo: TDateTimePicker
+      Left = 16
+      Top = 103
+      Width = 129
+      Height = 25
+      Date = 44090.000000000000000000
+      Time = 0.723429768520873000
+      TabOrder = 5
+    end
   end
   object btnOk: TButton
     Left = 608
@@ -237,7 +242,7 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
     Height = 33
     Caption = 'Ok'
     ModalResult = 1
-    TabOrder = 2
+    TabOrder = 1
   end
   object btnCancel: TButton
     Left = 504
@@ -246,37 +251,37 @@ object dlgVCLPlannerEvent: TdlgVCLPlannerEvent
     Height = 33
     Caption = 'Annulla'
     ModalResult = 2
-    TabOrder = 3
+    TabOrder = 2
   end
   object Memo1: TMemo
     Left = 24
-    Top = 175
+    Top = 192
     Width = 675
     Height = 186
     Lines.Strings = (
       'Memo1')
-    TabOrder = 4
+    TabOrder = 3
   end
   object lkpGroups: TJvDBLookupCombo
-    Left = 352
-    Top = 64
+    Left = 328
+    Top = 42
     Width = 337
     Height = 24
     LookupField = 'tjguid'
     LookupDisplay = 'name'
     LookupSource = dmPgPlannerStorage.dsActivitiesGroups
-    TabOrder = 5
+    TabOrder = 4
     OnChange = lkpGroupsChange
   end
   object lkpActivities: TJvDBLookupCombo
-    Left = 352
-    Top = 128
+    Left = 328
+    Top = 104
     Width = 337
     Height = 24
     LookupField = 'tjguid'
     LookupDisplay = 'name'
     LookupSource = dmPgPlannerStorage.dsActivities
-    TabOrder = 6
+    TabOrder = 5
   end
   object DataSource1: TDataSource
     Left = 113

@@ -19,7 +19,8 @@ uses
   Janua.Bindings.Intf, Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf,
   // Interposers
   Janua.Vcl.Interposers, Janua.TMS.Interposers, Janua.Vcl.EnhCRDBGrid, Janua.Vcl.EnhDBGrid,
-  AdvCustomComponent, AdvPDFIO, PictureContainer, DBPlanner, AdvPlannerPDFIO;
+  AdvCustomComponent, AdvPDFIO, PictureContainer, DBPlanner, AdvPlannerPDFIO,
+  Janua.VCL.Planner.dmCustomController;
 
 type
   // TJanuaVCLFormModel = class(TForm, IJanuaForm, IJanuaContainer, IJanuaControl, IJanuaBindable)
@@ -42,7 +43,7 @@ type
     DBText1: TDBText;
     Panel1: TPanel;
     btnAppuntamento: TButton;
-    Button1: TButton;
+    btnUndoMeeting: TButton;
     btnSearchMeeting: TButton;
     btnAddPerson: TButton;
     btnActivities: TButton;

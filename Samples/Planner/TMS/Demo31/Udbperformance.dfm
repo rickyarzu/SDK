@@ -5,21 +5,22 @@ object Form1: TForm1
     'Demo shows performance of TDBPlanner to load views with 1200 eve' +
     'nts for 200 resources'
   ClientHeight = 712
-  ClientWidth = 860
+  ClientWidth = 1044
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  DesignSize = (
+    1044
+    712)
   TextHeight = 13
   object DBPlanner1: TDBPlanner
     Left = 8
     Top = 8
-    Width = 763
+    Width = 947
     Height = 696
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
@@ -30,12 +31,15 @@ object Form1: TForm1
       8888888880808080888888888080808088888888808080808888888880808080
       8888888880808080888888888080808088888888808080808888888888808080
       8888888888808880888888888888000888888888888888888888}
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Caption.Title = 'TMS software <b>TDBPlanner</b>'
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = clWhite
     Caption.Font.Height = -13
     Caption.Font.Name = 'Verdana'
     Caption.Font.Style = []
+    Caption.Background = 16575452
+    Caption.BackgroundTo = 16571329
     DayNames.Strings = (
       'Sun'
       'Mon'
@@ -106,8 +110,11 @@ object Form1: TForm1
     Display.ActiveEnd = 40
     Display.DisplayEnd = 14
     Display.DisplayScale = 100
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
+    Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -325,7 +332,10 @@ object Form1: TForm1
     Footer.Font.Name = 'Tahoma'
     Footer.Font.Style = []
     GridLeftCol = 0
+    GridLineColor = clSilver
     GridTopRow = 1
+    Header.ActiveColor = 16575452
+    Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
       ''
       ''
@@ -528,6 +538,8 @@ object Form1: TForm1
       ''
       ''
       '')
+    Header.Color = 16645114
+    Header.ColorTo = 16643051
     Header.CustomGroups = <>
     Header.Font.Charset = DEFAULT_CHARSET
     Header.Font.Color = clWindowText
@@ -558,6 +570,10 @@ object Form1: TForm1
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2007
     Mode.Day = 5
+    Sidebar.ActiveColor = 16575452
+    Sidebar.ActiveColorTo = 16571329
+    Sidebar.Background = 16645114
+    Sidebar.BackgroundTo = 16643051
     Sidebar.Font.Charset = DEFAULT_CHARSET
     Sidebar.Font.Color = clWindowText
     Sidebar.Font.Height = -11
@@ -588,36 +604,43 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.4.5.3'
+    Version = '3.4.6.0'
     ItemSource = DBPeriodSource1
+    ExplicitWidth = 763
     TMSStyle = 0
   end
   object Button1: TButton
-    Left = 777
+    Left = 961
     Top = 8
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Prev'
     TabOrder = 1
     OnClick = Button1Click
+    ExplicitLeft = 777
   end
   object Button2: TButton
-    Left = 777
+    Left = 961
     Top = 39
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Next'
     TabOrder = 2
     OnClick = Button2Click
+    ExplicitLeft = 777
   end
   object Button3: TButton
-    Left = 777
+    Left = 961
     Top = 184
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Fill'
     TabOrder = 3
     OnClick = Button3Click
+    ExplicitLeft = 777
   end
   object DBPeriodSource1: TDBPeriodSource
     Active = False
@@ -646,8 +669,8 @@ object Form1: TForm1
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\dbplanner.mdb;Per' +
-      'sist Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Januaproject\bin' +
+      '\Demos\dbplanner.mdb;Persist Security Info=False'
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

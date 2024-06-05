@@ -170,6 +170,12 @@
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule"/>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\EanEditors270.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\EanEditors290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>EanEditors.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\januaproject\bpl\Win32\EanEditors.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
@@ -1049,9 +1055,12 @@
         <DCCReference Include="vclwinx.dcp"/>
         <DCCReference Include="dbrtl.dcp"/>
         <DCCReference Include="vcldb.dcp"/>
-        <DCCReference Include="QRWRunDXE11_w64.dcp"/>
+        <DCCReference Include="QRWRunDXE12_W64.dcp"/>
         <DCCReference Include="Ean.dcp"/>
         <DCCReference Include="..\..\..\Libraries\Ean50XE10\EanRegEditors.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignIntf.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignEditors.pas"/>
+        <DCCReference Include="C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignerTypes.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>

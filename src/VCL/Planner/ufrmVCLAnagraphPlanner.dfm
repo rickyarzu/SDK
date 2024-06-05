@@ -3,7 +3,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
   Top = 0
   Caption = 'Gestione Calendari Appuntamenti'
   ClientHeight = 860
-  ClientWidth = 1084
+  ClientWidth = 1207
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,7 +13,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
   OnCreate = FormCreate
   OnResize = FormResize
   DesignSize = (
-    1084
+    1207
     860)
   TextHeight = 17
   object lbGiorni: TLabel
@@ -33,7 +33,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
   object DBPlanner1: TDBPlanner
     Left = 8
     Top = 200
-    Width = 1058
+    Width = 1181
     Height = 660
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
@@ -253,6 +253,7 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
     OnPlannerNext = DBPlanner1PlannerNext
     OnPlannerPrev = DBPlanner1PlannerPrev
     ItemSource = DBDaySource1
+    ExplicitWidth = 1058
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
       Left = 528
@@ -328,22 +329,24 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 1078
+    Width = 1201
     Height = 33
     Align = alTop
     ColCount = 5
     PanelHeight = 33
-    PanelWidth = 212
+    PanelWidth = 236
     TabOrder = 5
     RowCount = 1
     OnClick = grdAnagraphClick
+    ExplicitWidth = 1078
     object DBText1: TDBText
       Left = 8
       Top = 8
-      Width = 201
+      Width = 225
       Height = 17
       Anchors = [akLeft, akTop, akRight]
       DataField = 'an_full_name'
+      ExplicitWidth = 201
     end
   end
   object Panel1: TPanel
@@ -358,24 +361,24 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionAddMeeting
+      Action = dmVCLPlannerCustomController.ActionAddMeeting
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 0
       WordWrap = True
     end
-    object Button1: TButton
+    object btnUndoMeeting: TButton
       Left = 100
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionUndoMeeting
+      Action = dmVCLPlannerCustomController.ActionAddActivity
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 1
       WordWrap = True
     end
@@ -384,11 +387,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionSearchMeeting
+      Action = dmVCLPlannerCustomController.ActionAddMeeting
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 2
       WordWrap = True
     end
@@ -397,11 +400,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionAddUser
+      Action = dmVCLPlannerCustomController.ActionAddUser
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 3
       WordWrap = True
     end
@@ -410,11 +413,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionAddActivity
+      Action = dmVCLPlannerCustomController.ActionAddActivity
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 4
       WordWrap = True
     end
@@ -423,11 +426,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionExport
+      Action = dmVCLPlannerCustomController.ActionExport
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 5
       WordWrap = True
     end
@@ -436,11 +439,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionSendShare
+      Action = dmVCLPlannerCustomController.ActionSendShare
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 6
       WordWrap = True
     end
@@ -449,11 +452,11 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionPrint
+      Action = dmVCLPlannerCustomController.ActionPrint
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 7
       WordWrap = True
     end

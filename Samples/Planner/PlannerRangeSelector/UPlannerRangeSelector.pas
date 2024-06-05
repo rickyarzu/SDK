@@ -11,14 +11,14 @@ uses
 type
   TForm92 = class(TForm)
     PlannerRangeSelector1: TPlannerRangeSelector;
-    Button1: TButton;
+    btnEnd5Days: TButton;
     Label1: TLabel;
     ListBox1: TListBox;
     PopupMenu1: TPopupMenu;
     Clear1: TMenuItem;
     CheckBox1: TCheckBox;
     Label2: TLabel;
-    procedure Button1Click(Sender: TObject);
+    procedure btnEnd5DaysClick(Sender: TObject);
     procedure PlannerRangeSelector1RangeSelect(Sender: TObject; StartDate,
       EndDate: TDateTime);
     procedure PlannerRangeSelector1Change(Sender: TObject);
@@ -39,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm92.Button1Click(Sender: TObject);
+procedure TForm92.btnEnd5DaysClick(Sender: TObject);
 begin
   PlannerRangeSelector1.DateEnd := IncDay(PlannerRangeSelector1.DateStart, 5);
 end;

@@ -1,0 +1,2 @@
+Please note that the TCloudAdvTreeViewAdapter is only included with the registered version of the TMS VCL Cloud Pack, it is not available in the trial version.
+The component needs to be installed separately because it depends on the TAdvTreeView component from the TMS Component Pack.

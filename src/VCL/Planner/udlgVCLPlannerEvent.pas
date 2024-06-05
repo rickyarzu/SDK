@@ -28,7 +28,6 @@ type
     cboMinsTo: TComboBox;
     Label2: TLabel;
     edEventDateFrom: TDateTimePicker;
-    edEventDateTo: TDateTimePicker;
     btnOk: TButton;
     btnCancel: TButton;
     Memo1: TMemo;
@@ -36,6 +35,8 @@ type
     lkpActivities: TJvDBLookupCombo;
     Area: TLabel;
     lbActivity: TLabel;
+    edEventDateTo: TDateTimePicker;
+    lbNote: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure lkpGroupsChange(Sender: TObject);
   private
