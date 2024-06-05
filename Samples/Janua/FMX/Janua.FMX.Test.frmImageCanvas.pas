@@ -55,11 +55,15 @@ type
     btnTestX: TButton;
     Button5: TButton;
     Button6: TButton;
-    Label3: TLabel;
-    Label4: TLabel;
+    lbImageWidth: TLabel;
+    lbCoord: TLabel;
     Button7: TButton;
-    ImageCarX: TImage;
     Button8: TButton;
+    memCoord: TMemo;
+    ckbAbsoluteLocal: TCheckBox;
+    ckbCtoS: TCheckBox;
+    ImageCarX: TImage;
+    ScrollBox1: TScrollBox;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -265,6 +269,7 @@ end;
 procedure TfrmFMXTestImageDraw.FormShow(Sender: TObject);
 begin
   frameFMXImageDraw1.Activate;
+  // ImageCarX.Bitmap.SetSize(Round(ImageCarX.Width), Round(ImageCarX.Height));
 end;
 
 procedure TfrmFMXTestImageDraw.ImageCarXMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
@@ -275,19 +280,29 @@ var
   Point: TPointF;
 begin
   var
-  Offset := 90;
+  YO := 0;
+  var
+  XO := -0;
 
-  Point := TPointF.Create(X, Y + 2 * Offset);
-  // Point:=ClientToScreen(Point);
-  Point := ImageCarX.AbsoluteToLocal(Point);
-  MyRect := TRectF.Create(Point, 5, 5);
+  lbImageWidth.Text := ' W: ' + ImageCarX.Width.ToString + ', H: ' + ImageCarX.Height.ToString;
+  lbCoord.Text := ' X: ' + X.ToString + ', Y: ' + Y.ToString;
+  memCoord.Lines.Add(' X: ' + X.ToString + ', Y: ' + Y.ToString);
+
+  Point := TPointF.Create(X, Y + YO);
+  if ckbCtoS.IsChecked then
+    Point := ClientToScreen(Point);
+  memCoord.Lines.Add(' X: ' + X.ToString + ', Y: ' + Y.ToString + ', PX: ' + Point.X.ToString + ', PY: ' +
+    Point.Y.ToString);
+  if ckbAbsoluteLocal.IsChecked then
+    Point := ImageCarX.AbsoluteToLocal(Point);
+  MyRect := TRectF.Create(Point, 10, 10);
 
   // Set up the canvas for drawing
-  with ImageCarX.{ Bitmap. } Canvas do
+  with ImageCarX.Bitmap.Canvas do
   begin
     BeginScene;
     try
-      Stroke.Thickness := 5;
+      Stroke.Thickness := 2;
       Stroke.Cap := TStrokeCap.Round;
       Stroke.Color := TAlphaColorRec.Red;
       (*
@@ -308,7 +323,7 @@ begin
         FillText(RectF(XPos, YPos, XPos + aW, YPos + aH), 'X', False, 1.0, [], TTextAlign.Leading,
         TTextAlign.Leading);
       *)
-      { ImageCarX.Canvas. } DrawEllipse(MyRect, 30);
+      ImageCarX.Bitmap.Canvas.DrawEllipse(MyRect, 30);
     finally
       EndScene;
     end;
