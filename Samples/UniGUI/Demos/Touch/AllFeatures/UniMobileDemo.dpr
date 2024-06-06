@@ -114,7 +114,7 @@ uses
   ChartsHybridChart in 'units\ChartsHybridChart.pas' {UniChartsHybridChart: TUniFrame},
   ThemesChangeTheme in 'units\ThemesChangeTheme.pas' {UniThemesChangeTheme: TUniFrame},
   MiscellaneousBodyMassIndexCalculator in 'units\MiscellaneousBodyMassIndexCalculator.pas' {UniMiscellaneousBodyMassIndexCalculator: TUniFrame},
-  Janua.Carservice.UniGUIApplication in '..\..\..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas';
+  Janua.AppCity.UniGUIApplication in '..\..\..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUIApplication.pas';
 
 {$R *.res}
 

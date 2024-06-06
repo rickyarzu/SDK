@@ -142,7 +142,7 @@
             <Form>frameTimeCalendarSelect</Form>
             <DesignClass>TUniFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas"/>
+        <DCCReference Include="..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUIApplication.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaUNIGUIXE15.optset</DependentOn>
