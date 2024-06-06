@@ -1,6 +1,6 @@
 object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
-  Height = 284
+  Height = 313
   Width = 530
   object SVGIconImageList1: TSVGIconImageList
     Size = 48
@@ -5276,12 +5276,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       end>
     Scaled = True
     Left = 64
-    Top = 48
+    Top = 64
   end
   object ActionList1: TActionList
     Images = SVGIconImageList1
     Left = 64
-    Top = 120
+    Top = 136
     object ActionAddMeeting: TAction
       Category = 'Meetings'
       Caption = 'Aggiungi Appuntamento'
@@ -5343,7 +5343,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   end
   object PrinterSetupDialog1: TPrinterSetupDialog
     Left = 416
-    Top = 168
+    Top = 184
   end
   object AdvGCalendar1: TAdvGCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -5358,7 +5358,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Calendars = <>
     Items = <>
     Left = 163
-    Top = 23
+    Top = 39
   end
   object JanuaPlannerController1: TJanuaPlannerController
     Enabled = True
@@ -5366,9 +5366,9 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45447.000000000000000000
+    DateFrom = 45449.000000000000000000
     Left = 416
-    Top = 112
+    Top = 128
   end
   object AdvLiveCalendar1: TAdvLiveCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
@@ -5387,7 +5387,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Calendars = <>
     Items = <>
     Left = 160
-    Top = 88
+    Top = 104
   end
   object iCloudCalendar1: TiCloudCalendar
     ForceSynchronize = True
@@ -5395,18 +5395,24 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     IgnoreCertificateError = True
     Active = False
     Left = 160
-    Top = 152
+    Top = 168
   end
   object AdvvCalendar1: TAdvvCalendar
     vEvents = <>
     Version = '1.3.0.2'
     Left = 160
-    Top = 224
+    Top = 240
   end
   object PlannerGCalendarExchange1: TPlannerGCalendarExchange
     AdvGCalendar = AdvGCalendar1
     EmptyText = 'Untitled'
     Left = 272
-    Top = 56
+    Top = 8
+  end
+  object PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange
+    AdvLiveCalendar = AdvLiveCalendar1
+    EmptyText = 'Untitled'
+    Left = 272
+    Top = 72
   end
 end

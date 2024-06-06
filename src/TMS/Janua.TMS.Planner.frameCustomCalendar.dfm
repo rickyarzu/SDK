@@ -367,7 +367,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 0
       WordWrap = True
     end
@@ -380,7 +380,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 1
       WordWrap = True
     end
@@ -393,7 +393,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 2
       WordWrap = True
     end
@@ -406,7 +406,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 3
       WordWrap = True
     end
@@ -419,7 +419,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 4
       WordWrap = True
     end
@@ -432,7 +432,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 5
       WordWrap = True
     end
@@ -445,7 +445,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 6
       WordWrap = True
     end
@@ -458,7 +458,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 7
       WordWrap = True
     end
@@ -467,12 +467,12 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerController.ActionPrint
+      Action = dmVCLPlannerCustomController.ActionPrint
       Align = alLeft
       Caption = 'Google Calendar Sync'
       ImageAlignment = iaTop
       ImageMargins.Top = 6
-      Images = dmVCLPlannerController.SVGIconImageList1
+      Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 8
       WordWrap = True
     end

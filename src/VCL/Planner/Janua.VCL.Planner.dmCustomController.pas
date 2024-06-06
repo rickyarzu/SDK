@@ -16,7 +16,7 @@ uses
   // Januaproject
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, PlanExGCalendar;
+  Janua.Components.Planner, Janua.Core.Commons, PlanExGCalendar, PlanExLiveCalendar;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -41,6 +41,7 @@ type
     iCloudCalendar1: TiCloudCalendar;
     AdvvCalendar1: TAdvvCalendar;
     PlannerGCalendarExchange1: TPlannerGCalendarExchange;
+    PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -66,8 +67,6 @@ type
     procedure SetColorField(const Value: TField);
     procedure SetSubjectField(const Value: TField);
   protected
-    procedure GetGCalendarList;
-    procedure GetLiveCalendarList;
     function DialogEvent: boolean;
   public
     property CloudCalendar: TCloudCalendar read FCloudCalendar write SetCloudCalendar;
@@ -83,6 +82,13 @@ type
     /// <summary> Tries to Add an Event using ITimetable interface. </summary>
     /// <remarks> If fails throws an exception and rollbacks dataset posts </remarks>
     procedure AddEvent;
+    // ****************************************** Calendar Sync Procedures ******************************
+  public
+    { Public declarations }
+    procedure GetGCalendarList;
+    procedure GetLiveCalendarList;
+    procedure ConnectLiveCalendar;
+    procedure ConnectGCalendar;
   end;
 
 var
@@ -98,8 +104,32 @@ uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPla
 {$R *.dfm}
 
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
+var
+  i: integer;
 begin
-  JanuaPlannerController1.Timetable := PlannerEvent
+  JanuaPlannerController1.Timetable := PlannerEvent;
+  AdvLiveCalendar1.App.Key := LiveAppKey;
+  AdvLiveCalendar1.App.Secret := LiveAppSecret;
+
+  AdvGCalendar1.App.Key := GAppKey;
+  AdvGCalendar1.App.Secret := GAppSecret;
+
+  AdvLiveCalendar1.PersistTokens.Key := '.\livecal.ini';
+  AdvLiveCalendar1.PersistTokens.Section := 'winlive';
+  AdvLiveCalendar1.PersistTokens.Location := plIniFile;
+
+  AdvGCalendar1.PersistTokens.Key := '.\livecal.ini';
+  AdvGCalendar1.PersistTokens.Section := 'google';
+  AdvGCalendar1.PersistTokens.Location := plIniFile;
+
+  AdvLiveCalendar1.LoadTokens;
+  AdvGCalendar1.LoadTokens;
+
+  Planner1.Positions := 7;
+  Planner1.Header.Captions.Clear;
+  Planner1.Header.Captions.Add('');
+  for i := 0 to 6 do
+    Planner1.Header.Captions.Add(datetostr(Now + i));
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
@@ -151,6 +181,36 @@ begin
   if DialogEvent then
     PostEvent;
   PlannerEvent := nil;
+end;
+
+procedure TdmVCLPlannerCustomController.ConnectGCalendar;
+begin
+  if not AdvGCalendar1.TestTokens then
+  begin
+    AdvGCalendar1.RefreshAccess;
+    if not AdvGCalendar1.TestTokens then
+    begin
+      AdvGCalendar1.DoAuth
+    end
+    else
+      GetGCalendarList;
+  end
+  else
+    GetGCalendarList;
+end;
+
+procedure TdmVCLPlannerCustomController.ConnectLiveCalendar;
+begin
+  if not AdvLiveCalendar1.TestTokens then
+  begin
+    AdvLiveCalendar1.RefreshAccess;
+    if not AdvLiveCalendar1.TestTokens then
+      AdvLiveCalendar1.DoAuth
+    else
+      GetLiveCalendarList;
+  end
+  else
+    GetLiveCalendarList;
 end;
 
 procedure TdmVCLPlannerCustomController.PostEvent;
