@@ -13,10 +13,11 @@ uses
   CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, CloudBase, CloudBaseWin,
   CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, CloudCustomOutlook,
   CloudOutlookWin, CloudCustomOutlookCalendar, CloudOutlookCalendar, CloudWebDav, CloudvCal,
+  PlanExGCalendar, PlanExLiveCalendar,
   // Januaproject
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, PlanExGCalendar, PlanExLiveCalendar;
+  Janua.Components.Planner, Janua.Core.Commons;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -24,7 +25,7 @@ type
 type
   TdmVCLPlannerCustomController = class(TDataModule)
     SVGIconImageList1: TSVGIconImageList;
-    ActionList1: TActionList;
+    MainToolBarActions: TActionList;
     ActionAddMeeting: TAction;
     ActionUndoMeeting: TAction;
     ActionSearchMeeting: TAction;
@@ -42,6 +43,16 @@ type
     AdvvCalendar1: TAdvvCalendar;
     PlannerGCalendarExchange1: TPlannerGCalendarExchange;
     PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
+    ManuButtonActions: TActionList;
+    Action1: TAction;
+    Action2: TAction;
+    Action3: TAction;
+    Action4: TAction;
+    Action5: TAction;
+    Action6: TAction;
+    Action7: TAction;
+    Action8: TAction;
+    Action9: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -108,11 +119,12 @@ var
   i: integer;
 begin
   JanuaPlannerController1.Timetable := PlannerEvent;
-  AdvLiveCalendar1.App.Key := LiveAppKey;
-  AdvLiveCalendar1.App.Secret := LiveAppSecret;
 
-  AdvGCalendar1.App.Key := GAppKey;
-  AdvGCalendar1.App.Secret := GAppSecret;
+  AdvLiveCalendar1.App.Key := TJanuaApplication.CloudConf.WinLiveClientID;
+  AdvLiveCalendar1.App.Secret := TJanuaApplication.CloudConf.WinLiveClientSecret;
+
+  AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
+  AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
 
   AdvLiveCalendar1.PersistTokens.Key := '.\livecal.ini';
   AdvLiveCalendar1.PersistTokens.Section := 'winlive';
@@ -125,11 +137,11 @@ begin
   AdvLiveCalendar1.LoadTokens;
   AdvGCalendar1.LoadTokens;
 
-  Planner1.Positions := 7;
-  Planner1.Header.Captions.Clear;
-  Planner1.Header.Captions.Add('');
+  FPlanner.Positions := 7;
+  FPlanner.Header.Captions.Clear;
+  FPlanner.Header.Captions.Add('');
   for i := 0 to 6 do
-    Planner1.Header.Captions.Add(datetostr(Now + i));
+    FPlanner.Header.Captions.Add(datetostr(Now + i));
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
@@ -185,6 +197,11 @@ end;
 
 procedure TdmVCLPlannerCustomController.ConnectGCalendar;
 begin
+  AdvGCalendar1.Logging := true;
+  AdvGCalendar1.LogLevel := llDetail;
+  AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
+  AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
+
   if not AdvGCalendar1.TestTokens then
   begin
     AdvGCalendar1.RefreshAccess;

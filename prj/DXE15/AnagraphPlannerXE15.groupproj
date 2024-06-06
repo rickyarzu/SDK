@@ -6,6 +6,9 @@
         <Projects Include="..\..\Components\pkg120\sbridge.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
             <Dependencies/>
         </Projects>
@@ -99,7 +102,7 @@
         <Projects Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <Projects Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
@@ -121,6 +124,15 @@
     </Target>
     <Target Name="sbridge:Make">
         <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCloudPkg">
+        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="PlanAddons">
         <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
@@ -401,14 +413,14 @@
     <Target Name="CloudCalendarImportExport:Make">
         <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Make"/>
     </Target>
-    <Target Name="GCalendarDemo">
-        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj"/>
+    <Target Name="JanuaGoogleCalendarDemo">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj"/>
     </Target>
-    <Target Name="GCalendarDemo:Clean">
-        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj" Targets="Clean"/>
+    <Target Name="JanuaGoogleCalendarDemo:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="GCalendarDemo:Make">
-        <MSBuild Projects="..\..\Samples\TMS\prj\GCalendarDemo.dproj" Targets="Make"/>
+    <Target Name="JanuaGoogleCalendarDemo:Make">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="GContactsDemo">
         <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj"/>
@@ -420,13 +432,13 @@
         <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;GCalendarDemo;GContactsDemo"/>
+        <CallTarget Targets="sbridge;TMSCloudPkg;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;JanuaGoogleCalendarDemo;GContactsDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;GCalendarDemo:Clean;GContactsDemo:Clean"/>
+        <CallTarget Targets="sbridge:Clean;TMSCloudPkg:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;JanuaGoogleCalendarDemo:Clean;GContactsDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;GCalendarDemo:Make;GContactsDemo:Make"/>
+        <CallTarget Targets="sbridge:Make;TMSCloudPkg:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;JanuaGoogleCalendarDemo:Make;GContactsDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
@@ -568,7 +580,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -582,6 +594,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -774,7 +792,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -788,6 +806,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -980,7 +1004,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -994,6 +1018,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1186,7 +1216,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1200,6 +1230,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1392,7 +1428,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\TMS\prj\GCalendarDemo.dproj">
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaGoogleCalendarDemo.dproj">
             <ProjectGuid>{31A5BBB0-32C2-4F46-B8CF-6D54312AEBCC}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1406,6 +1442,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

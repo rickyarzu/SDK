@@ -49,7 +49,7 @@ uses
   Janua.Anagraph.ViewModel.Intf in '..\..\..\src\januacore\ViewModels\Janua.Anagraph.ViewModel.Intf.pas',
   Janua.TMS.frmMDIContainer in '..\..\..\src\TMS\Janua.TMS.frmMDIContainer.pas' {frmVCLJanuaMDIContainer},
   Janua.VCL.dlgWaitSpin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas' {dlgVCLWaitSpin},
-  Janua.VCL.Planner.frmCustomPlanner in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frmCustomPlanner.pas' {frmVCLAnagraphPlanner},
+  Janua.VCL.Planner.frameCustomPlanner in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frameCustomPlanner.pas' {frameVCLAnagraphPlanner},
   Janua.VCL.Planner.dmCustomController in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas' {dmVCLPlannerCustomController: TDataModule},
   udlgVCLPlannerActivities in '..\..\..\src\VCL\Planner\udlgVCLPlannerActivities.pas' {dlgVCLPlannerActivities},
   udlgVCLPlannerAnagraph in '..\..\..\src\VCL\Planner\udlgVCLPlannerAnagraph.pas' {dlgVCLPlannerAnagraph},

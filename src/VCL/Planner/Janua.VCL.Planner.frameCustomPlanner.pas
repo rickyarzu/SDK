@@ -1,30 +1,32 @@
-unit Janua.VCL.Planner.frmCustomPlanner;
+unit Janua.VCL.Planner.frameCustomPlanner;
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, System.Actions, Vcl.ActnList,
-  Vcl.ImgList, Vcl.Buttons, Vcl.StdCtrls, Janua.Core.Classes, Janua.Vcl.Actions, Vcl.DBCtrls, Vcl.Menus,
-  Vcl.ToolWin, Vcl.ComCtrls, Janua.Vcl.ViewModel, Vcl.Mask, JvExMask, JvToolEdit, Vcl.Themes,
-  Vcl.DBCGrids, Vcl.Samples.Spin,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, VCL.Graphics,
+  VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, System.Actions, VCL.ActnList,
+  VCL.ImgList, VCL.Buttons, VCL.StdCtrls, Janua.Core.Classes, Janua.VCL.Actions, VCL.DBCtrls, VCL.Menus,
+  VCL.ToolWin, VCL.ComCtrls, Janua.VCL.ViewModel, VCL.Mask, JvExMask, JvToolEdit, VCL.Themes,
+  VCL.DBCGrids, VCL.Samples.Spin,
   // Icon Image List
   System.ImageList, SVGIconImageListBase, SVGIconImageList,
   // TMS
-  Lucombo, AdvSplitter, Planner,
+  Lucombo, AdvSplitter, Planner, AdvCustomComponent, AdvPDFIO, PictureContainer, DBPlanner, AdvPlannerPDFIO,
   // DB Controls
-  Data.DB, Vcl.Grids, Vcl.DBGrids, CRGrid,
+  Data.DB, VCL.Grids, VCL.DBGrids, CRGrid,
   // Januaproject
-  Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
+  Janua.ViewModels.Intf, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
   Janua.Bindings.Intf, Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf,
+  // Controls
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.EnhDBGrid,
+  // Forms
+  uJanuaVCLFrame, Janua.VCL.Planner.dmCustomController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Janua.Vcl.EnhCRDBGrid, Janua.Vcl.EnhDBGrid,
-  AdvCustomComponent, AdvPDFIO, PictureContainer, DBPlanner, AdvPlannerPDFIO,
-  Janua.VCL.Planner.dmCustomController;
+  Janua.VCL.Interposers, Janua.TMS.Interposers, uJanuaVCLForm;
 
 type
   // TJanuaVCLFormModel = class(TForm, IJanuaForm, IJanuaContainer, IJanuaControl, IJanuaBindable)
-  TfrmVCLAnagraphPlanner = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
+  TframeVCLAnagraphPlanner = class(TJanuaVCLFrameModel, IJanuaContainer, IJanuaBindable)
     DBDaySource1: TDBDaySource;
     DataSource1: TDataSource;
     ImageList1: TImageList;
@@ -79,7 +81,7 @@ type
   end;
 
 var
-  frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner;
+  frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner;
 
 implementation
 
@@ -88,7 +90,7 @@ implementation
 uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage,
   udmVCLPlannerController;
 
-procedure TfrmVCLAnagraphPlanner.Caption1Click(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.Caption1Click(Sender: TObject);
 begin
   if DBPlanner1.PopupPlannerItem.CaptionType = ctTime then
     DBPlanner1.PopupPlannerItem.CaptionType := ctNone
@@ -98,7 +100,7 @@ begin
   DBPlanner1.PopupPlannerItem.Update;
 end;
 
-procedure TfrmVCLAnagraphPlanner.Color1Click(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.Color1Click(Sender: TObject);
 begin
   { Sets the planner item color }
   ColorDialog1.Color := DBPlanner1.PopupPlannerItem.Color;
@@ -110,7 +112,7 @@ begin
   end;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
+procedure TframeVCLAnagraphPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
@@ -127,7 +129,7 @@ begin
     Item.CaptionType := ctNone;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
+procedure TframeVCLAnagraphPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
@@ -141,7 +143,7 @@ begin
   Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBDaySource1SetFilter(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.DBDaySource1SetFilter(Sender: TObject);
 var
   sd1, sd2: string;
 begin
@@ -160,12 +162,12 @@ begin
   *)
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);
+procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);
 begin
   dmVCLPlannerController.EditEvent;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
+procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
 begin
   { the Planner.FreeItem call removes the item from the planner and deletes
     its entry from the database
@@ -173,7 +175,7 @@ begin
   DBPlanner1.FreeItem(Item);
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1ItemImageClick(Sender: TObject; Item: TPlannerItem;
+procedure TframeVCLAnagraphPlanner.DBPlanner1ItemImageClick(Sender: TObject; Item: TPlannerItem;
   ImageIndex: Integer);
 begin
   if Item.ImageID < 5 then
@@ -184,7 +186,7 @@ begin
   Item.Update;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1ItemInsert(Sender: TObject;
+procedure TframeVCLAnagraphPlanner.DBPlanner1ItemInsert(Sender: TObject;
   Position, FromSel, FromSelPrecise, ToSel, ToSelPrecise: Integer);
 begin
   { creates an item in the planner at the selected cells which is automatically
@@ -200,7 +202,7 @@ begin
   end;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu;
+procedure TframeVCLAnagraphPlanner.DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu;
   Item: TPlannerItem);
 begin
   { Event is called before the popup menu for a planner item is displayed.
@@ -211,21 +213,21 @@ begin
   ItemPopup.Items[1].Checked := Item.CaptionType = ctTime;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1PlannerNext(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.DBPlanner1PlannerNext(Sender: TObject);
 begin
   { Update the planner headers to set the date shown }
   UpdateHeaders;
   MonthCalendar1.Date := DBDaySource1.Day;
 end;
 
-procedure TfrmVCLAnagraphPlanner.DBPlanner1PlannerPrev(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.DBPlanner1PlannerPrev(Sender: TObject);
 begin
   { Update the planner headers to set the date shown }
   UpdateHeaders;
   MonthCalendar1.Date := DBDaySource1.Day;
 end;
 
-procedure TfrmVCLAnagraphPlanner.FormCreate(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.FormCreate(Sender: TObject);
 begin
   // dmPgPlannerStorage: TdmPgPlannerStorage;
   Application.CreateForm(TdmPgPlannerStorage, dmPgPlannerStorage);
@@ -241,28 +243,28 @@ begin
   UpdateHeaders;
 end;
 
-procedure TfrmVCLAnagraphPlanner.FormResize(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.FormResize(Sender: TObject);
 begin
   grdAnagraph.ColCount := Trunc(Self.Width / 160);
 end;
 
-procedure TfrmVCLAnagraphPlanner.grdAnagraphClick(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.grdAnagraphClick(Sender: TObject);
 begin
   DBPlanner1.Refresh;
 end;
 
-procedure TfrmVCLAnagraphPlanner.MonthCalendar1Click(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.MonthCalendar1Click(Sender: TObject);
 begin
   DBDaySource1.Day := MonthCalendar1.Date;
   UpdateHeaders;
 end;
 
-procedure TfrmVCLAnagraphPlanner.SpinEdit1Change(Sender: TObject);
+procedure TframeVCLAnagraphPlanner.SpinEdit1Change(Sender: TObject);
 begin
   DBDaySource1.NumberOfDays := SpinEdit1.Value;
 end;
 
-procedure TfrmVCLAnagraphPlanner.UpdateHeaders;
+procedure TframeVCLAnagraphPlanner.UpdateHeaders;
 var
   i: Integer;
 begin

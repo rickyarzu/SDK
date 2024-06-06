@@ -51,8 +51,9 @@ var
 
 implementation
 
+uses Janua.Application.Framework;
+
 {$R *.dfm}
-{$I APPIDS.INC}
 
 procedure TfrmCalendarCloudSync.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
 begin
@@ -93,17 +94,17 @@ begin
   if CloudCalendar = ccWinLive then
   begin
 
-      PlannerLiveCalendarExchange1.LiveCalendarName := listbox1.Items[listbox1.ItemIndex];
-      PlannerLiveCalendarExchange1.GetCalendarID;
-      PlannerLiveCalendarExchange1.DoExport;
+    PlannerLiveCalendarExchange1.LiveCalendarName := ListBox1.Items[ListBox1.ItemIndex];
+    PlannerLiveCalendarExchange1.GetCalendarID;
+    PlannerLiveCalendarExchange1.DoExport;
 
   end
   else
   begin
 
-      PlannerGCalendarExchange1.GCalendarName := listbox1.Items[listbox1.ItemIndex];
-      PlannerGCalendarExchange1.GetCalendarID;
-      PlannerGCalendarExchange1.DoExport;
+    PlannerGCalendarExchange1.GCalendarName := ListBox1.Items[ListBox1.ItemIndex];
+    PlannerGCalendarExchange1.GetCalendarID;
+    PlannerGCalendarExchange1.DoExport;
 
   end;
 
@@ -115,21 +116,27 @@ var
 begin
   if CloudCalendar = ccWinLive then
   begin
-      PlannerLiveCalendarExchange1.LiveCalendarName := listbox1.Items[listbox1.ItemIndex];
-      PlannerLiveCalendarExchange1.GetCalendarID;
-      PlannerLiveCalendarExchange1.DoImport;
+    PlannerLiveCalendarExchange1.LiveCalendarName := ListBox1.Items[ListBox1.ItemIndex];
+    PlannerLiveCalendarExchange1.GetCalendarID;
+    PlannerLiveCalendarExchange1.DoImport;
   end
   else
   begin
-      PlannerGCalendarExchange1.GCalendarName := listbox1.Items[listbox1.ItemIndex];
-      PlannerGCalendarExchange1.GetCalendarID;
-      PlannerGCalendarExchange1.DoImport;
+    PlannerGCalendarExchange1.GCalendarName := ListBox1.Items[ListBox1.ItemIndex];
+    PlannerGCalendarExchange1.GetCalendarID;
+    PlannerGCalendarExchange1.DoImport;
   end;
 
 end;
 
 procedure TfrmCalendarCloudSync.Button4Click(Sender: TObject);
 begin
+  AdvLiveCalendar1.App.Key := TJanuaApplication.CloudConf.WinLiveClientID;
+  AdvLiveCalendar1.App.Secret := TJanuaApplication.CloudConf.WinLiveClientSecret;
+
+  AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
+  AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
+
   if not AdvGCalendar1.TestTokens then
   begin
     AdvGCalendar1.RefreshAccess;
@@ -153,12 +160,6 @@ procedure TfrmCalendarCloudSync.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
-  AdvLiveCalendar1.App.Key := LiveAppKey;
-  AdvLiveCalendar1.App.Secret := LiveAppSecret;
-
-  AdvGCalendar1.App.Key := GAppKey;
-  AdvGCalendar1.App.Secret := GAppSecret;
-
   AdvLiveCalendar1.PersistTokens.Key := '.\tokens.ini';
   AdvLiveCalendar1.PersistTokens.Section := 'winlive';
   AdvLiveCalendar1.PersistTokens.Location := plIniFile;
@@ -205,5 +206,6 @@ begin
 
   ListBox1.ItemIndex := 0;
 end;
+
 
 end.

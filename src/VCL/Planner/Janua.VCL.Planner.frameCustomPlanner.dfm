@@ -1,4 +1,4 @@
-object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
+object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
   Left = 0
   Top = 0
   Caption = 'Gestione Calendari Appuntamenti'
@@ -253,10 +253,9 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
     OnPlannerNext = DBPlanner1PlannerNext
     OnPlannerPrev = DBPlanner1PlannerPrev
     ItemSource = DBDaySource1
-    ExplicitWidth = 1058
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
-      Left = 528
+      Left = 530
       Top = 344
       Width = 26
       Height = 26
@@ -338,7 +337,6 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
     TabOrder = 5
     RowCount = 1
     OnClick = grdAnagraphClick
-    ExplicitWidth = 1078
     object DBText1: TDBText
       Left = 8
       Top = 8
@@ -472,8 +470,6 @@ object frmVCLAnagraphPlanner: TfrmVCLAnagraphPlanner
       Images = dmVCLPlannerCustomController.SVGIconImageList1
       TabOrder = 8
       WordWrap = True
-      ExplicitLeft = 828
-      ExplicitTop = -2
     end
   end
   object DBDaySource1: TDBDaySource
