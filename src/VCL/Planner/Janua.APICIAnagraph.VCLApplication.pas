@@ -5,10 +5,10 @@ interface
 uses System.Classes, System.SysUtils, Janua.Core.Types, Janua.VCL.Application;
 
 type
-  TJanuaAPICIAnagraphVCLApplication = class(TJanuaVCLApplication)
+  TJanuaAPICIAnagraphVCLApplication = class(TJanuaVCLCustomApplication)
   public
     class procedure RegisterForms; override;
-    class procedure ApplicationSetup; override;
+    class procedure ApplicationSetup(const aAppname: string); override;
     class procedure ApplicationTearDown; override;
     class procedure ConnectionSetup; override;
   end;
@@ -32,7 +32,7 @@ uses System.Types,
 
 { TJanuaAPICIAnagraphVCLApplication }
 
-class procedure TJanuaAPICIAnagraphVCLApplication.ApplicationSetup;
+class procedure TJanuaAPICIAnagraphVCLApplication.ApplicationSetup(const aAppname: string);
 var
   lAppWHouse: TJanuaApplicationRecord; // Warehouse Application Container
   lAppReceipts: TJanuaApplicationRecord; // SubApplication of Warehouse Application
