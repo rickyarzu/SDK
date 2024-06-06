@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>AppCityInvestorUniGUI.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -143,8 +143,8 @@
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
         <VerInfo_MinorVer>9</VerInfo_MinorVer>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.104;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>104</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.106;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>106</VerInfo_Build>
         <Icon_MainIcon>..\..\..\res\CarService\pikapp_logo_mono_1024.ico</Icon_MainIcon>
         <VerInfo_Release>1</VerInfo_Release>
     </PropertyGroup>
@@ -165,9 +165,9 @@
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
         <Icon_MainIcon>..\..\..\res\CarService\pikapp_logo_mono_1024.ico</Icon_MainIcon>
         <VerInfo_MinorVer>9</VerInfo_MinorVer>
-        <VerInfo_Build>10</VerInfo_Build>
+        <VerInfo_Build>11</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.0.10;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.0.11;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_3)'!=''">
         <DCC_Define>JANUATEST;$(DCC_Define)</DCC_Define>
@@ -188,8 +188,8 @@
             <Form>UniMainModule</Form>
             <DesignClass>TUniGUIMainModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgLoginRegister.pas">
-            <Form>frmCarServiceUniGUILoginRegister</Form>
+        <DCCReference Include="..\..\..\src\UniGUI\AppAndCity\Janua.AppAndCity.UniGUI.dlgLoginRegister.pas">
+            <Form>frmAppAndCityUniGUILoginRegister</Form>
             <DesignClass>TUniLoginForm</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\Common\Janua.UniGUI.UniDacApplication.pas"/>
@@ -234,7 +234,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUIApplication.pas"/>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUI.UsersMainForm.pas">
+        <DCCReference Include="..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUI.InvestorsMainForm.pas">
             <Form>frmUNIMainForm</Form>
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>

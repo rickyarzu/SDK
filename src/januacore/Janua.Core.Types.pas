@@ -67,6 +67,64 @@ type
     procedure DeSerialize(const aJson: string);
   end;
 
+
+  TJanuaCloudConf = class
+  private
+    FHubicCallBack: string;
+    FBoxNetAppKey: string;
+    FDropBoxAppSecret: string;
+    FHubicAppKey: string;
+    FYandexDiskAppKey: string;
+    FHiDriveAppKey: string;
+    FGoogleAppKey: string;
+    FBoxNetAppSecret: string;
+    FDropBoxAppkey: string;
+    FHubicAppSecret: string;
+    FWinLiveClientID: string;
+    FYandexDiskAppSecret: string;
+    FHiDriveAppSecret: string;
+    FWinLiveClientSecret: string;
+    FGoogleAppSecret: string;
+    procedure SetBoxNetAppKey(const Value: string);
+    procedure SetBoxNetAppSecret(const Value: string);
+    procedure SetDropBoxAppkey(const Value: string);
+    procedure SetDropBoxAppSecret(const Value: string);
+    procedure SetGoogleAppKey(const Value: string);
+    procedure SetGoogleAppSecret(const Value: string);
+    procedure SetHiDriveAppKey(const Value: string);
+    procedure SetHiDriveAppSecret(const Value: string);
+    procedure SetHubicAppKey(const Value: string);
+    procedure SetHubicAppSecret(const Value: string);
+    procedure SetHubicCallBack(const Value: string);
+    procedure SetWinLiveClientID(const Value: string);
+    procedure SetWinLiveClientSecret(const Value: string);
+    procedure SetYandexDiskAppKey(const Value: string);
+    procedure SetYandexDiskAppSecret(const Value: string);
+  published
+    property DropBoxAppkey: string read FDropBoxAppkey write SetDropBoxAppkey;
+    property DropBoxAppSecret: string read FDropBoxAppSecret write SetDropBoxAppSecret;
+
+    property WinLiveClientID: string read FWinLiveClientID write SetWinLiveClientID;
+    property WinLiveClientSecret: string read FWinLiveClientSecret write SetWinLiveClientSecret;
+
+    property GoogleAppKey: string read FGoogleAppKey write SetGoogleAppKey;
+    property GoogleAppSecret: string read FGoogleAppSecret write SetGoogleAppSecret;
+
+    property BoxNetAppKey: string read FBoxNetAppKey write SetBoxNetAppKey;
+    property BoxNetAppSecret: string read FBoxNetAppSecret write SetBoxNetAppSecret;
+
+    property HubicAppKey: string read FHubicAppKey write SetHubicAppKey;
+    property HubicAppSecret: string read FHubicAppSecret write SetHubicAppSecret;
+    property HubicCallBack: string read FHubicCallBack write SetHubicCallBack;
+
+    property HiDriveAppKey: string read FHiDriveAppKey write SetHiDriveAppKey;
+    property HiDriveAppSecret: string read FHiDriveAppSecret write SetHiDriveAppSecret;
+
+    property YandexDiskAppKey: string read FYandexDiskAppKey write SetYandexDiskAppKey;
+    property YandexDiskAppSecret: string read FYandexDiskAppSecret write SetYandexDiskAppSecret;
+  end;
+
+
 type
   TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird,
     jdbTmsRemoteDB, jdbMSAccess);
@@ -1602,9 +1660,7 @@ end;
 
 // Function to get the IP Address from a Host
 
-function GetIPFromHost(
-
-  const HostName: String): string;
+function GetIPFromHost(   const HostName: String): string;
 type
   TaPInAddr = array [0 .. 10] of PInAddr;
   PaPInAddr = ^TaPInAddr;
@@ -1768,6 +1824,84 @@ begin
   end;
 
 end;
+
+{ TJanuaCloudConf }
+
+procedure TJanuaCloudConf.SetBoxNetAppKey(const Value: string);
+begin
+  FBoxNetAppKey := Value;
+end;
+
+procedure TJanuaCloudConf.SetBoxNetAppSecret(const Value: string);
+begin
+  FBoxNetAppSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetDropBoxAppkey(const Value: string);
+begin
+  FDropBoxAppkey := Value;
+end;
+
+procedure TJanuaCloudConf.SetDropBoxAppSecret(const Value: string);
+begin
+  FDropBoxAppSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetGoogleAppKey(const Value: string);
+begin
+  FGoogleAppKey := Value;
+end;
+
+procedure TJanuaCloudConf.SetGoogleAppSecret(const Value: string);
+begin
+  FGoogleAppSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetHiDriveAppKey(const Value: string);
+begin
+  FHiDriveAppKey := Value;
+end;
+
+procedure TJanuaCloudConf.SetHiDriveAppSecret(const Value: string);
+begin
+  FHiDriveAppSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetHubicAppKey(const Value: string);
+begin
+  FHubicAppKey := Value;
+end;
+
+procedure TJanuaCloudConf.SetHubicAppSecret(const Value: string);
+begin
+  FHubicAppSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetHubicCallBack(const Value: string);
+begin
+  FHubicCallBack := Value;
+end;
+
+procedure TJanuaCloudConf.SetWinLiveClientID(const Value: string);
+begin
+  FWinLiveClientID := Value;
+end;
+
+procedure TJanuaCloudConf.SetWinLiveClientSecret(const Value: string);
+begin
+  FWinLiveClientSecret := Value;
+end;
+
+procedure TJanuaCloudConf.SetYandexDiskAppKey(const Value: string);
+begin
+  FYandexDiskAppKey := Value;
+end;
+
+procedure TJanuaCloudConf.SetYandexDiskAppSecret(const Value: string);
+begin
+  FYandexDiskAppSecret := Value;
+end;
+
 
 { TJanuaStringBuilder }
 
