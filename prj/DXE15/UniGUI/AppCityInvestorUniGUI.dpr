@@ -7,7 +7,7 @@ uses
   Janua.TMS.SMS,
   Janua.UniGUI.ServerModule in '..\..\..\src\UniGUI\Common\Janua.UniGUI.ServerModule.pas' {UniServerModule: TUniGUIServerModule},
   Janua.UniGUI.MainModule in '..\..\..\src\UniGUI\Common\Janua.UniGUI.MainModule.pas' {UniMainModule: TUniGUIMainModule},
-  Janua.CarService.UniGUI.dlgLoginRegister in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgLoginRegister.pas' {frmCarServiceUniGUILoginRegister: TUniLoginForm},
+  Janua.AppAndCity.UniGUI.dlgLoginRegister in '..\..\..\src\UniGUI\AppAndCity\Janua.AppAndCity.UniGUI.dlgLoginRegister.pas' {frmAppAndCityUniGUILoginRegister: TUniLoginForm},
   Janua.UniGUI.UniDacApplication in '..\..\..\src\UniGUI\Common\Janua.UniGUI.UniDacApplication.pas',
   Janua.CarService.UniGUI.frameCarBooking in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBooking.pas' {frameCarServiceUniGUIBooking: TUniFrame},
   Janua.CarService.UniGUI.dlgBookingWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas' {dlgUniGUIBookingWizard: TUniForm},
@@ -20,7 +20,7 @@ uses
   Janua.CarService.UniGUI.frameBookingSummary in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameBookingSummary.pas' {frameUniGUIBookingSummary: TUniFrame},
   Janua.Carservice.PgBooking in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgBooking.pas' {dmPgCarServiceBookingList: TDataModule},
   Janua.AppCity.UniGUIApplication in '..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUIApplication.pas',
-  Janua.Carservice.UniGUI.UsersMainForm in '..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUI.UsersMainForm.pas' {frmUNIMainForm: TUniForm},
+  Janua.AppCity.UniGUI.InvestorsMainForm in '..\..\..\src\UniGUI\AppAndCity\Janua.AppCity.UniGUI.InvestorsMainForm.pas' {frmUNIMainForm: TUniForm},
   Janua.CarService.UniGUI.frameUserMenu in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameUserMenu.pas' {frameCarServiceUniGUIUserMenu: TUniFrame},
   Janua.CarService.UniGUI.dlgTimetableCheck in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgTimetableCheck.pas' {dlgUniGUICarserviceTimetableCheck: TUniForm},
   Janua.Anagraph.UniGUI.frameSimpleAnagraph in '..\..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.frameSimpleAnagraph.pas' {frameUniGUISimpleAnagraph: TUniFrame},
@@ -50,9 +50,9 @@ uses
 begin
   TJanuaApplication.TestMode := False; // Set this or unset this to enable Test Database connection
   // le applicazioni locali UniGUI hanno come nome applicativo e come home directory:
-  TJanuaCarServiceUniGUIApplication.ApplicationSetup('app.carservice.com');
+  TJanuaAppCityUniGUIApplication.ApplicationSetup('inv.appcity.com');
   // Parametro per la porta di Ascolto del server di UniGUI
-  TJanuacoreOS.WriteParam('UniGUI', 'Port', 8081);
+  TJanuacoreOS.WriteParam('UniGUI', 'Port', 8093);
 {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := True;
   // Verifico quale sia la location del Config File per aggiustarlo eventualmente
@@ -69,7 +69,7 @@ begin
 
   Application.Initialize;
   TUniServerModule.Create(Application);
-  AApplication.CreateForm(TdmPgCarServiceMain, dmPgCarServiceMain);
-  pplication.Run;
+  Application.CreateForm(TdmPgCarServiceMain, dmPgCarServiceMain);
+  Application.Run;
 
 end.

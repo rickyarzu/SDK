@@ -3,21 +3,6 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\dclsbridge.dproj">
             <Dependencies/>
         </Projects>
@@ -191,51 +176,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="FMXTMSFNCCorePkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCCorePkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCCorePkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="sbridge">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
-    </Target>
-    <Target Name="sbridge:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="sbridge:Make">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
-    </Target>
     <Target Name="dclsbridge">
         <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj"/>
     </Target>
@@ -732,13 +672,13 @@
         <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="FMXTMSFNCCorePkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;sbridge;dclsbridge;TRCGooglePlacesRuntime;PlanAddons;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;AppCityInvestorUniGUI;PickAPP;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverApp;TmsTwilio;FSThemeApache;ButtonStyle;UniMobileDemo;NeonMainDemo;JanuaAllDemos;EuroFloraApp;RESTDebuggerClient;JanuaJsonSerializeNeonTest;SamplPlannerVCL"/>
+        <CallTarget Targets="dclsbridge;TRCGooglePlacesRuntime;PlanAddons;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;AppCityInvestorUniGUI;PickAPP;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverApp;TmsTwilio;FSThemeApache;ButtonStyle;UniMobileDemo;NeonMainDemo;JanuaAllDemos;EuroFloraApp;RESTDebuggerClient;JanuaJsonSerializeNeonTest;SamplPlannerVCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;PlanAddons:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;AppCityInvestorUniGUI:Clean;PickAPP:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverApp:Clean;TmsTwilio:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;RESTDebuggerClient:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean"/>
+        <CallTarget Targets="dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;PlanAddons:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;AppCityInvestorUniGUI:Clean;PickAPP:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverApp:Clean;TmsTwilio:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;RESTDebuggerClient:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;PlanAddons:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;AppCityInvestorUniGUI:Make;PickAPP:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverApp:Make;TmsTwilio:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;RESTDebuggerClient:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make"/>
+        <CallTarget Targets="dclsbridge:Make;TRCGooglePlacesRuntime:Make;PlanAddons:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;AppCityInvestorUniGUI:Make;PickAPP:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverApp:Make;TmsTwilio:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;RESTDebuggerClient:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -826,18 +766,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -864,12 +792,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -1054,22 +976,10 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -1188,18 +1098,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1228,12 +1126,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -1416,22 +1308,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -1550,18 +1430,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1590,12 +1458,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -1778,22 +1640,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -1894,10 +1744,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
@@ -1906,22 +1756,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
-            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
             <ProjectGuid>{C2741F11-6423-4488-900D-E6A8EA8B7EC6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
@@ -1952,12 +1790,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -2140,18 +1972,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2274,18 +2094,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2314,12 +2122,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -2502,22 +2304,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -2636,18 +2426,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2677,12 +2455,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
@@ -2864,22 +2636,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -2998,18 +2758,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3037,12 +2785,6 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3226,22 +2968,10 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -3360,18 +3090,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3400,12 +3118,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -3588,22 +3300,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -3722,18 +3422,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3763,12 +3451,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
             <ProjectGuid>{A1E00957-BA39-49E3-9093-73504C30DB51}</ProjectGuid>
@@ -3950,22 +3632,10 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
@@ -4084,18 +3754,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations/>
@@ -4124,12 +3782,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\CarServiceDriverApp.dproj">
@@ -4312,22 +3964,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
