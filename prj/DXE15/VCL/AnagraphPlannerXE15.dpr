@@ -54,7 +54,8 @@ uses
   udlgVCLPlannerActivities in '..\..\..\src\VCL\Planner\udlgVCLPlannerActivities.pas' {dlgVCLPlannerActivities},
   udlgVCLPlannerAnagraph in '..\..\..\src\VCL\Planner\udlgVCLPlannerAnagraph.pas' {dlgVCLPlannerAnagraph},
   Janua.VCL.Planner.dlgCustomEvent in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dlgCustomEvent.pas' {dlgVCLCustomPlannerEvent},
-  udmWinMainApplication in '..\..\..\src\Win\udmWinMainApplication.pas' {dmWinMainApplication: TDataModule};
+  udmWinMainApplication in '..\..\..\src\Win\udmWinMainApplication.pas' {dmWinMainApplication: TDataModule},
+  Janua.VCL.Planner.frameGoogleCalendar in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frameGoogleCalendar.pas' {Frame2: TFrame};
 
 {$R *.res}
 {$IFNDEF EurekaLog}

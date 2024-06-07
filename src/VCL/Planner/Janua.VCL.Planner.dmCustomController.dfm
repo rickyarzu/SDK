@@ -1,6 +1,6 @@
 object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
-  Height = 346
+  Height = 386
   Width = 523
   object SVGIconImageList1: TSVGIconImageList
     Size = 48
@@ -5366,7 +5366,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45449.000000000000000000
+    DateFrom = 45450.000000000000000000
     Left = 416
     Top = 128
   end
@@ -5415,7 +5415,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Left = 272
     Top = 72
   end
-  object ManuButtonActions: TActionList
+  object MenuButtonActions: TActionList
     Images = SVGIconImageList1
     Left = 64
     Top = 208
@@ -5476,6 +5476,15 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       Caption = 'Sincro Calendario'
       ImageIndex = 26
       ImageName = '027-tasks'
+    end
+  end
+  object GCalendarButtons: TActionList
+    Images = SVGIconImageList1
+    Left = 64
+    Top = 280
+    object actConnect: TAction
+      Caption = 'Connetti'
+      OnExecute = actConnectExecute
     end
   end
 end

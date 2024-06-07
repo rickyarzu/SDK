@@ -43,7 +43,7 @@ type
     AdvvCalendar1: TAdvvCalendar;
     PlannerGCalendarExchange1: TPlannerGCalendarExchange;
     PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
-    ManuButtonActions: TActionList;
+    MenuButtonActions: TActionList;
     Action1: TAction;
     Action2: TAction;
     Action3: TAction;
@@ -53,11 +53,14 @@ type
     Action7: TAction;
     Action8: TAction;
     Action9: TAction;
+    GCalendarButtons: TActionList;
+    actConnect: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
     procedure ActionAddActivityExecute(Sender: TObject);
     procedure ActionAddMeetingExecute(Sender: TObject);
+    procedure actConnectExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
     procedure SetPlanner(const Value: TPlanner);
@@ -72,11 +75,15 @@ type
     FPlannerEvent: ITimetable;
     FColorField: TField;
     FSubjectField: TField;
+    FConnected: boolean;
+    FInserting: boolean;
     function GetPlannerEvent: ITimetable;
     procedure SetCloudCalendar(const Value: TCloudCalendar);
     procedure SetPlannerEvent(const Value: ITimetable);
     procedure SetColorField(const Value: TField);
     procedure SetSubjectField(const Value: TField);
+    procedure SetConnected(const Value: boolean);
+    procedure SetInserting(const Value: boolean);
   protected
     function DialogEvent: boolean;
   public
@@ -100,6 +107,18 @@ type
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
+    procedure FillCalendars();
+    procedure FillCalendarItems();
+    procedure FillCalendarItemDetails();
+    procedure FillColors();
+    procedure SetColor();
+    procedure ToggleControls();
+    procedure ToggleReminders();
+    procedure ClearControls();
+    procedure Init();
+  public
+   property Connected: boolean read FConnected write SetConnected;
+   property Inserting: boolean read FInserting write SetInserting;
   end;
 
 var
@@ -142,6 +161,11 @@ begin
   FPlanner.Header.Captions.Add('');
   for i := 0 to 6 do
     FPlanner.Header.Captions.Add(datetostr(Now + i));
+end;
+
+procedure TdmVCLPlannerCustomController.actConnectExecute(Sender: TObject);
+begin
+  ConnectGCalendar
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
@@ -193,6 +217,11 @@ begin
   if DialogEvent then
     PostEvent;
   PlannerEvent := nil;
+end;
+
+procedure TdmVCLPlannerCustomController.ClearControls;
+begin
+
 end;
 
 procedure TdmVCLPlannerCustomController.ConnectGCalendar;
@@ -265,6 +294,26 @@ begin
   PlannerEvent := nil;
 end;
 
+procedure TdmVCLPlannerCustomController.FillCalendarItemDetails;
+begin
+
+end;
+
+procedure TdmVCLPlannerCustomController.FillCalendarItems;
+begin
+
+end;
+
+procedure TdmVCLPlannerCustomController.FillCalendars;
+begin
+
+end;
+
+procedure TdmVCLPlannerCustomController.FillColors;
+begin
+
+end;
+
 procedure TdmVCLPlannerCustomController.GetGCalendarList;
 begin
 
@@ -287,14 +336,34 @@ begin
   Result := FPlannerEvent;
 end;
 
+procedure TdmVCLPlannerCustomController.Init;
+begin
+
+end;
+
 procedure TdmVCLPlannerCustomController.SetCloudCalendar(const Value: TCloudCalendar);
 begin
   FCloudCalendar := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetColor;
+begin
+
+end;
+
 procedure TdmVCLPlannerCustomController.SetColorField(const Value: TField);
 begin
   FColorField := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetConnected(const Value: boolean);
+begin
+  FConnected := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetInserting(const Value: boolean);
+begin
+  FInserting := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetPlanner(const Value: TPlanner);
@@ -310,6 +379,16 @@ end;
 procedure TdmVCLPlannerCustomController.SetSubjectField(const Value: TField);
 begin
   FSubjectField := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.ToggleControls;
+begin
+
+end;
+
+procedure TdmVCLPlannerCustomController.ToggleReminders;
+begin
+
 end;
 
 end.

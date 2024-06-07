@@ -1,24 +1,18 @@
-object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
+object Frame2: TFrame2
   Left = 0
   Top = 0
-  Caption = 'TMS Cloud Pack: TAdvGCalendar Demo'
-  ClientHeight = 782
-  ClientWidth = 751
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
-  OnCreate = FormCreate
-  TextHeight = 13
+  Width = 800
+  Height = 850
+  TabOrder = 0
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 751
+    Width = 800
     Height = 41
     Align = alTop
     TabOrder = 0
+    ExplicitLeft = -185
+    ExplicitWidth = 899
     object Image1: TImage
       Left = 725
       Top = 11
@@ -89,7 +83,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
-      OnClick = btnConnectClick
     end
     object btnRemove: TButton
       Left = 132
@@ -107,207 +100,250 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
-      OnClick = btnRemoveClick
     end
   end
-  object GroupBox2: TGroupBox
+  object GroupBox1: TGroupBox
     AlignWithMargins = True
     Left = 3
-    Top = 212
-    Width = 745
-    Height = 236
+    Top = 44
+    Width = 794
+    Height = 168
     Margins.Bottom = 0
-    Align = alClient
-    Caption = 'Events'
+    Align = alTop
+    Caption = 'Calendars'
     TabOrder = 1
+    ExplicitLeft = 0
+    ExplicitTop = 41
+    ExplicitWidth = 751
     DesignSize = (
-      745
-      236)
-    object Label1: TLabel
-      Left = 17
-      Top = 28
-      Width = 53
-      Height = 13
-      Caption = 'Start date:'
+      794
+      168)
+    object Label17: TLabel
+      Left = 28
+      Top = 25
+      Width = 21
+      Height = 15
+      Caption = 'List:'
     end
-    object Label13: TLabel
-      Left = 16
-      Top = 50
-      Width = 47
-      Height = 13
-      Caption = 'End date:'
+    object Label14: TLabel
+      Left = 376
+      Top = 25
+      Width = 97
+      Height = 15
+      Caption = 'Default reminders:'
     end
-    object ListView1: TListView
-      Left = 16
-      Top = 76
-      Width = 715
-      Height = 142
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      Columns = <
-        item
-          Caption = 'Start time'
-          Width = 110
-        end
-        item
-          Caption = 'End time'
-          Width = 110
-        end
-        item
-          Caption = 'Subject'
-          Width = 180
-        end
-        item
-          Caption = 'Description'
-          Width = 270
-        end
-        item
-          Caption = 'ID'
-          Width = 80
-        end
-        item
-          Caption = 'ETag'
-          Width = 100
-        end
-        item
-          Caption = 'Calendar ID'
-          Width = 120
-        end>
-      ColumnClick = False
-      ReadOnly = True
-      RowSelect = True
-      TabOrder = 0
-      ViewStyle = vsReport
-      OnChange = ListView1Change
-    end
-    object dpCalStartDate: TDateTimePicker
+    object ComboBox1: TComboBox
       Left = 124
       Top = 22
-      Width = 192
-      Height = 21
-      Date = 41153.000000000000000000
-      Time = 0.582957546299439900
+      Width = 246
+      Height = 23
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object GroupBox4: TGroupBox
+      Left = 17
+      Top = 44
+      Width = 759
+      Height = 117
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Details'
       TabOrder = 1
+      DesignSize = (
+        759
+        117)
+      object Label16: TLabel
+        Left = 11
+        Top = 54
+        Width = 63
+        Height = 15
+        Caption = 'Description:'
+      end
+      object Label15: TLabel
+        Left = 12
+        Top = 27
+        Width = 54
+        Height = 15
+        Caption = 'Summary:'
+      end
+      object Label18: TLabel
+        Left = 362
+        Top = 27
+        Width = 49
+        Height = 15
+        Caption = 'Location:'
+      end
+      object Label19: TLabel
+        Left = 362
+        Top = 54
+        Width = 54
+        Height = 15
+        Caption = 'Timezone:'
+      end
+      object edCalendarDescription: TEdit
+        Left = 107
+        Top = 51
+        Width = 246
+        Height = 23
+        TabOrder = 0
+      end
+      object edCalendarName: TEdit
+        Left = 107
+        Top = 22
+        Width = 249
+        Height = 23
+        TabOrder = 1
+      end
+      object btAddCalendar: TButton
+        Left = 12
+        Top = 78
+        Width = 110
+        Height = 25
+        Caption = 'Aggiungi Nuovo'
+        TabOrder = 2
+      end
+      object btDeleteCalendar: TButton
+        Left = 244
+        Top = 78
+        Width = 110
+        Height = 25
+        Caption = 'Elimina'
+        TabOrder = 3
+      end
+      object btUpdateCalendar: TButton
+        Left = 128
+        Top = 78
+        Width = 110
+        Height = 25
+        Caption = 'Aggiorna'
+        TabOrder = 4
+      end
+      object edCalendarLocation: TEdit
+        Left = 457
+        Top = 22
+        Width = 288
+        Height = 23
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 5
+      end
+      object edCalendarTimeZone: TEdit
+        Left = 457
+        Top = 51
+        Width = 288
+        Height = 23
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 6
+      end
     end
-    object dpCalEndDate: TDateTimePicker
-      Left = 124
-      Top = 49
-      Width = 192
-      Height = 21
-      Date = 41274.000000000000000000
-      Time = 0.582957546299439900
+    object cbDefaultReminders: TComboBox
+      Left = 471
+      Top = 22
+      Width = 246
+      Height = 23
+      Style = csDropDownList
       TabOrder = 2
-    end
-    object btUpdate: TButton
-      Left = 620
-      Top = 45
-      Width = 110
-      Height = 25
-      Hint = 'Update time span'
-      Caption = 'Refresh'
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 3
-      OnClick = btUpdateClick
     end
   end
   object GroupBox3: TGroupBox
     AlignWithMargins = True
     Left = 3
-    Top = 451
-    Width = 745
+    Top = 522
+    Width = 794
     Height = 328
+    Margins.Bottom = 0
     Align = alBottom
     Caption = 'Details'
     TabOrder = 2
+    ExplicitTop = 451
+    ExplicitWidth = 745
     DesignSize = (
-      745
+      794
       328)
     object Label4: TLabel
       Left = 16
       Top = 49
-      Width = 57
-      Height = 13
+      Width = 63
+      Height = 15
       Caption = 'Description:'
     end
     object Label5: TLabel
       Left = 16
       Top = 94
-      Width = 44
-      Height = 13
+      Width = 49
+      Height = 15
       Caption = 'Location:'
     end
     object Label6: TLabel
       Left = 16
       Top = 174
-      Width = 51
-      Height = 13
+      Width = 54
+      Height = 15
       Caption = 'Start time:'
     end
     object Label7: TLabel
       Left = 17
       Top = 203
-      Width = 45
-      Height = 13
+      Width = 50
+      Height = 15
       Caption = 'End time:'
     end
     object Label11: TLabel
       Left = 16
       Top = 127
-      Width = 41
-      Height = 13
+      Width = 47
+      Height = 15
       Caption = 'Visibility:'
     end
     object Label10: TLabel
       Left = 16
       Top = 24
-      Width = 31
-      Height = 13
+      Width = 35
+      Height = 15
       Caption = 'Name:'
     end
     object Label9: TLabel
       Left = 16
       Top = 230
-      Width = 29
-      Height = 13
+      Width = 32
+      Height = 15
       Caption = 'Color:'
     end
     object lbID: TLabel
       Left = 368
       Top = 22
-      Width = 15
-      Height = 13
+      Width = 14
+      Height = 15
       Caption = 'ID:'
     end
     object lbEtag: TLabel
-      Left = 382
+      Left = 431
       Top = 22
       Width = 24
-      Height = 13
+      Height = 15
       Anchors = [akTop, akRight]
       Caption = 'ETag'
-      ExplicitLeft = 510
+      ExplicitLeft = 382
     end
     object lbGrp: TLabel
-      Left = 517
+      Left = 566
       Top = 22
-      Width = 17
-      Height = 13
+      Width = 19
+      Height = 15
       Anchors = [akTop, akRight]
       Caption = 'Grp'
-      ExplicitLeft = 645
+      ExplicitLeft = 517
     end
     object Edit3: TEdit
       Left = 87
       Top = 19
       Width = 248
-      Height = 21
+      Height = 23
       TabOrder = 0
     end
     object Edit5: TEdit
       Left = 87
       Top = 91
       Width = 248
-      Height = 21
+      Height = 23
       TabOrder = 2
     end
     object StartDate: TDateTimePicker
@@ -354,7 +390,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Left = 87
       Top = 122
       Width = 121
-      Height = 21
+      Height = 23
       Style = csDropDownList
       ItemIndex = 0
       TabOrder = 3
@@ -371,15 +407,15 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Height = 17
       Caption = 'This is an all day Event'
       TabOrder = 4
-      OnClick = cbAlldayClick
     end
     object Panel2: TPanel
       Left = 2
       Top = 285
-      Width = 741
+      Width = 790
       Height = 41
       Align = alBottom
       TabOrder = 9
+      ExplicitWidth = 741
       object Button6: TButton
         Left = 247
         Top = 8
@@ -390,7 +426,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
-        OnClick = Button6Click
       end
       object Button7: TButton
         Left = 131
@@ -402,7 +437,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
-        OnClick = Button7Click
       end
       object Button5: TButton
         Left = 15
@@ -414,7 +448,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 2
-        OnClick = Button5Click
       end
     end
     object Memo1: TMemo
@@ -436,15 +469,15 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         object Label2: TLabel
           Left = 3
           Top = 146
-          Width = 41
-          Height = 13
+          Width = 46
+          Height = 15
           Caption = 'Minutes:'
         end
         object Label8: TLabel
           Left = 4
           Top = 119
-          Width = 40
-          Height = 13
+          Width = 45
+          Height = 15
           Caption = 'Method:'
         end
         object cbRem: TCheckBox
@@ -456,7 +489,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           Checked = True
           State = cbChecked
           TabOrder = 0
-          OnClick = cbRemClick
         end
         object lvRem: TListView
           Left = 3
@@ -481,7 +513,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           Left = 50
           Top = 146
           Width = 143
-          Height = 21
+          Height = 23
           TabOrder = 2
           Text = '10'
         end
@@ -495,13 +527,12 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
-          OnClick = btAddRemClick
         end
         object cbRemMethod: TComboBox
           Left = 50
           Top = 119
           Width = 145
-          Height = 21
+          Height = 23
           Style = csDropDownList
           ItemIndex = 0
           TabOrder = 4
@@ -521,7 +552,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           ParentShowHint = False
           ShowHint = True
           TabOrder = 5
-          OnClick = btDelRemClick
         end
       end
       object TabSheet2: TTabSheet
@@ -530,15 +560,15 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         object Label3: TLabel
           Left = 3
           Top = 98
-          Width = 31
-          Height = 13
+          Width = 35
+          Height = 15
           Caption = 'Name:'
         end
         object Label12: TLabel
           Left = 3
           Top = 129
-          Width = 28
-          Height = 13
+          Width = 32
+          Height = 15
           Caption = 'Email:'
         end
         object lvAtt: TListView
@@ -560,7 +590,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
               Width = 140
             end>
           ColumnClick = False
-          Items.ItemData = {050000000000000000}
           RowSelect = True
           TabOrder = 0
           ViewStyle = vsReport
@@ -569,14 +598,14 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           Left = 40
           Top = 98
           Width = 316
-          Height = 21
+          Height = 23
           TabOrder = 1
         end
         object EditAttEmail: TEdit
           Left = 40
           Top = 125
           Width = 316
-          Height = 21
+          Height = 23
           TabOrder = 2
         end
         object btInvite: TButton
@@ -589,7 +618,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
-          OnClick = btInviteClick
         end
       end
     end
@@ -597,10 +625,9 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Left = 87
       Top = 226
       Width = 121
-      Height = 21
+      Height = 23
       Style = csDropDownList
       TabOrder = 11
-      OnChange = cbColorsChange
     end
     object panelColor: TPanel
       Left = 214
@@ -613,175 +640,133 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
     object edID: TEdit
       Left = 389
       Top = 19
-      Width = 0
-      Height = 21
+      Width = 49
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 13
+      ExplicitWidth = 0
     end
     object edEtag: TEdit
-      Left = 412
+      Left = 461
       Top = 19
       Width = 99
-      Height = 21
+      Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 14
+      ExplicitLeft = 412
     end
     object edGrp: TEdit
-      Left = 540
+      Left = 589
       Top = 19
       Width = 187
-      Height = 21
+      Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 15
+      ExplicitLeft = 540
     end
   end
-  object GroupBox1: TGroupBox
-    Left = 0
-    Top = 41
-    Width = 751
-    Height = 168
-    Align = alTop
-    Caption = 'Calendars'
+  object GroupBox2: TGroupBox
+    AlignWithMargins = True
+    Left = 3
+    Top = 215
+    Width = 794
+    Height = 304
+    Margins.Bottom = 0
+    Align = alClient
+    Caption = 'Events'
     TabOrder = 3
-    object Label17: TLabel
-      Left = 28
-      Top = 25
-      Width = 20
-      Height = 13
-      Caption = 'List:'
+    ExplicitTop = 212
+    ExplicitWidth = 745
+    ExplicitHeight = 233
+    DesignSize = (
+      794
+      304)
+    object Label1: TLabel
+      Left = 17
+      Top = 28
+      Width = 53
+      Height = 15
+      Caption = 'Start date:'
     end
-    object Label14: TLabel
-      Left = 376
-      Top = 25
-      Width = 89
-      Height = 13
-      Caption = 'Default reminders:'
+    object Label13: TLabel
+      Left = 16
+      Top = 50
+      Width = 49
+      Height = 15
+      Caption = 'End date:'
     end
-    object ComboBox1: TComboBox
+    object ListView1: TListView
+      Left = 16
+      Top = 76
+      Width = 764
+      Height = 210
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Columns = <
+        item
+          Caption = 'Start time'
+          Width = 110
+        end
+        item
+          Caption = 'End time'
+          Width = 110
+        end
+        item
+          Caption = 'Subject'
+          Width = 180
+        end
+        item
+          Caption = 'Description'
+          Width = 270
+        end
+        item
+          Caption = 'ID'
+          Width = 80
+        end
+        item
+          Caption = 'ETag'
+          Width = 100
+        end
+        item
+          Caption = 'Calendar ID'
+          Width = 120
+        end>
+      ColumnClick = False
+      ReadOnly = True
+      RowSelect = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      ExplicitWidth = 715
+      ExplicitHeight = 139
+    end
+    object dpCalStartDate: TDateTimePicker
       Left = 124
       Top = 22
-      Width = 246
+      Width = 192
       Height = 21
-      Style = csDropDownList
-      TabOrder = 0
-      OnChange = ComboBox1Change
-      OnClick = ComboBox1Click
-    end
-    object GroupBox4: TGroupBox
-      Left = 17
-      Top = 44
-      Width = 720
-      Height = 117
-      Caption = 'Details'
+      Date = 41153.000000000000000000
+      Time = 0.582957546299439900
       TabOrder = 1
-      object Label16: TLabel
-        Left = 11
-        Top = 54
-        Width = 57
-        Height = 13
-        Caption = 'Description:'
-      end
-      object Label15: TLabel
-        Left = 12
-        Top = 27
-        Width = 48
-        Height = 13
-        Caption = 'Summary:'
-      end
-      object Label18: TLabel
-        Left = 362
-        Top = 27
-        Width = 44
-        Height = 13
-        Caption = 'Location:'
-      end
-      object Label19: TLabel
-        Left = 362
-        Top = 54
-        Width = 49
-        Height = 13
-        Caption = 'Timezone:'
-      end
-      object edCalendarDescription: TEdit
-        Left = 107
-        Top = 51
-        Width = 246
-        Height = 21
-        TabOrder = 0
-      end
-      object edCalendarName: TEdit
-        Left = 107
-        Top = 24
-        Width = 246
-        Height = 21
-        TabOrder = 1
-      end
-      object btAddCalendar: TButton
-        Left = 12
-        Top = 78
-        Width = 110
-        Height = 25
-        Caption = 'Add'
-        TabOrder = 2
-        OnClick = btAddCalendarClick
-      end
-      object btDeleteCalendar: TButton
-        Left = 244
-        Top = 78
-        Width = 110
-        Height = 25
-        Caption = 'Delete'
-        TabOrder = 3
-        OnClick = btDeleteCalendarClick
-      end
-      object btUpdateCalendar: TButton
-        Left = 128
-        Top = 78
-        Width = 110
-        Height = 25
-        Caption = 'Update'
-        TabOrder = 4
-        OnClick = btUpdateCalendarClick
-      end
-      object edCalendarLocation: TEdit
-        Left = 457
-        Top = 24
-        Width = 246
-        Height = 21
-        TabOrder = 5
-      end
-      object edCalendarTimeZone: TEdit
-        Left = 457
-        Top = 51
-        Width = 246
-        Height = 21
-        TabOrder = 6
-      end
     end
-    object cbDefaultReminders: TComboBox
-      Left = 471
-      Top = 22
-      Width = 246
+    object dpCalEndDate: TDateTimePicker
+      Left = 124
+      Top = 49
+      Width = 192
       Height = 21
-      Style = csDropDownList
+      Date = 41274.000000000000000000
+      Time = 0.582957546299439900
       TabOrder = 2
     end
-  end
-  object AdvGCalendar1: TAdvGCalendar
-    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
-    App.CallBackURL = 'http://127.0.0.1:8888/'
-    App.CallBackPort = 8888
-    PersistTokens.Location = plIniFile
-    PersistTokens.Section = 'GCalendar'
-    Scopes.Strings = (
-      'https://www.googleapis.com/auth/calendar')
-    OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
-    AuthFormSettings.Caption = 'Authorize'
-    AuthFormSettings.Width = 900
-    AuthFormSettings.Height = 600
-    Calendars = <>
-    Items = <>
-    Left = 456
-    Top = 232
+    object btUpdate: TButton
+      Left = 620
+      Top = 45
+      Width = 156
+      Height = 25
+      Hint = 'Update time span'
+      Anchors = [akTop, akRight]
+      Caption = 'Aggiorna'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
   end
 end
