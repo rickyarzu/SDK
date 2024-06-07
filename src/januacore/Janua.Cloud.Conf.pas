@@ -2,7 +2,7 @@ unit Janua.Cloud.Conf;
 
 interface
 
-uses Data.DB, System.StrUtils,
+uses Data.DB, System.StrUtils, System.UITypes,
   // Janua
   Janua.Core.Types, Janua.Core.Classes, Janua.Cloud.Types, Janua.Orm.Intf, Janua.Core.Http.Intf,
   Janua.REST.Types, Janua.Core.System.Types, Janua.Http.Types, Janua.Core.DB.Types;
@@ -134,6 +134,56 @@ type
     // <summary> a message could be sent using an engine such as whatsapp </summary>
     property SMSSendingEngine: TJanuaSendingEngine read FSMSMessageConf.SMSSendingEngine
       write SetSMSSendingEngine;
+  end;
+
+  TJanuaGCalendarColor = (jccBoldBrown, jccBrown, jccBoldRed, jccBoldOrange, jccBoldYellow,
+    jccMediumGreen, jccDarkGreen, jccBoldGreen, jccLimeGreen, jccLightGreen, jccYellow,
+    jccOrange, jccGreen, jccTurquoise, jccBlue, jccBoldBlue, jccBoldPurple, jccPurple,
+    jccGray, jccLightGray, jccBoldGray, jccPink, jccBoldPing, jccDarkPurple);
+
+  TJanuaCalendarRecord = record
+  public
+    GUID: TGUID;
+    OutKey: TGUID;
+    ID: string;
+    Description: string;
+    Location: string;
+    Primary: boolean;
+    Summary: string;
+    TimeZone: string;
+    Color: TJanuaGCalendarColor;
+    BackgroundColor: TColor;
+    ForeGroundColor: TColor;
+  end;
+
+  TJanuaGCalendar = class(TJanuaBindableObject)
+  strict private
+    FCalRecord: TJanuaCalendarRecord;
+  private
+    procedure SetDescription(const Value: string);
+    procedure SetGUID(const Value: TGUID);
+    procedure SetID(const Value: string);
+    procedure SetLocation(const Value: string);
+    procedure SetOutKey(const Value: TGUID);
+    procedure SetPrimary(const Value: boolean);
+    procedure SetSummary(const Value: string);
+    procedure SetTimeZone(const Value: string);
+    function GetAsJson: string;
+    procedure SetAsJson(const Value: string);
+  public
+    property AsJson: string read GetAsJson write SetAsJson;
+  public
+    property GUID: TGUID read FCalRecord.GUID write SetGUID;
+    property OutKey: TGUID read FCalRecord.OutKey write SetOutKey;
+    property ID: string read FCalRecord.ID write SetID;
+    property Description: string read FCalRecord.Description write SetDescription;
+    property Location: string read FCalRecord.Location write SetLocation;
+    property Primary: boolean read FCalRecord.Primary write SetPrimary default false;
+    property Summary: string read FCalRecord.Summary write SetSummary;
+    property TimeZone: string read FCalRecord.TimeZone write SetTimeZone;
+    property Color: TJanuaGCalendarColor read FCalRecord.Color write FCalRecord.Color default jccGray;
+    property BackgroundColor: TColor read FCalRecord.BackgroundColor write FCalRecord.BackgroundColor;
+    property ForeGroundColor: TColor read FCalRecord.ForegroundColor write FCalRecord.ForegroundColor;
   end;
 
 implementation
@@ -433,6 +483,58 @@ end;
 procedure TSMSSenderConf.SetSecret(const Value: string);
 begin
   FRecordConf.Secret := Value;
+end;
+
+{ TJanuaGCalendar }
+
+function TJanuaGCalendar.GetAsJson: string;
+begin
+
+end;
+
+procedure TJanuaGCalendar.SetAsJson(const Value: string);
+begin
+
+end;
+
+procedure TJanuaGCalendar.SetDescription(const Value: string);
+begin
+  FCalRecord.Description := Value;
+end;
+
+procedure TJanuaGCalendar.SetGUID(const Value: TGUID);
+begin
+  FCalRecord.GUID := Value;
+end;
+
+procedure TJanuaGCalendar.SetID(const Value: string);
+begin
+  FCalRecord.ID := Value;
+end;
+
+procedure TJanuaGCalendar.SetLocation(const Value: string);
+begin
+  FCalRecord.Location := Value;
+end;
+
+procedure TJanuaGCalendar.SetOutKey(const Value: TGUID);
+begin
+  FCalRecord.OutKey := Value;
+end;
+
+procedure TJanuaGCalendar.SetPrimary(const Value: boolean);
+begin
+  FCalRecord.Primary := Value;
+end;
+
+procedure TJanuaGCalendar.SetSummary(const Value: string);
+begin
+  FCalRecord.Summary := Value;
+end;
+
+procedure TJanuaGCalendar.SetTimeZone(const Value: string);
+begin
+  FCalRecord.TimeZone := Value;
 end;
 
 end.

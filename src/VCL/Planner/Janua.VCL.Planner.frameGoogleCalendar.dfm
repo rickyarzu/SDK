@@ -1,23 +1,26 @@
 object Frame2: TFrame2
   Left = 0
   Top = 0
-  Width = 800
+  Width = 904
   Height = 850
   TabOrder = 0
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 800
+    Width = 904
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = -185
-    ExplicitWidth = 899
+    ExplicitWidth = 800
+    DesignSize = (
+      904
+      41)
     object Image1: TImage
-      Left = 725
-      Top = 11
+      Left = 863
+      Top = 10
       Width = 24
       Height = 24
+      Anchors = [akTop, akRight]
       Picture.Data = {
         07544269746D617076060000424D760600000000000036040000280000001800
         000018000000010008000000000040020000C40E0000C40E0000000100000001
@@ -74,28 +77,30 @@ object Frame2: TFrame2
         3846}
     end
     object btnConnect: TButton
-      Left = 16
-      Top = 10
-      Width = 110
+      Left = 36
+      Top = 13
+      Width = 114
       Height = 25
-      Hint = 'Connect to Google'
-      Caption = 'Connect'
+      Action = dmVCLPlannerCustomController.actConnect
+      ImageMargins.Left = 2
+      Images = dmVCLPlannerCustomController.SVGIconImageList16
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
     end
     object btnRemove: TButton
-      Left = 132
-      Top = 10
-      Width = 110
+      Left = 156
+      Top = 13
+      Width = 125
       Height = 25
-      Hint = 'Remove access to Google account'
-      Caption = 'Remove access'
+      Action = dmVCLPlannerCustomController.actRemoveAccess
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
+      ImageMargins.Left = 6
+      Images = dmVCLPlannerCustomController.SVGIconImageList16
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
@@ -106,17 +111,15 @@ object Frame2: TFrame2
     AlignWithMargins = True
     Left = 3
     Top = 44
-    Width = 794
+    Width = 898
     Height = 168
     Margins.Bottom = 0
     Align = alTop
     Caption = 'Calendars'
     TabOrder = 1
-    ExplicitLeft = 0
-    ExplicitTop = 41
-    ExplicitWidth = 751
+    ExplicitWidth = 794
     DesignSize = (
-      794
+      898
       168)
     object Label17: TLabel
       Left = 28
@@ -143,13 +146,14 @@ object Frame2: TFrame2
     object GroupBox4: TGroupBox
       Left = 17
       Top = 44
-      Width = 759
+      Width = 863
       Height = 117
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Details'
       TabOrder = 1
+      ExplicitWidth = 759
       DesignSize = (
-        759
+        863
         117)
       object Label16: TLabel
         Left = 11
@@ -195,51 +199,57 @@ object Frame2: TFrame2
       end
       object btAddCalendar: TButton
         Left = 12
-        Top = 78
-        Width = 110
+        Top = 80
+        Width = 141
         Height = 25
-        Caption = 'Aggiungi Nuovo'
+        Action = dmVCLPlannerCustomController.actAddCalendar
+        ImageMargins.Left = 6
+        Images = dmVCLPlannerCustomController.SVGIconImageList16
         TabOrder = 2
       end
       object btDeleteCalendar: TButton
-        Left = 244
-        Top = 78
-        Width = 110
+        Left = 328
+        Top = 80
+        Width = 169
         Height = 25
         Caption = 'Elimina'
+        Images = dmVCLPlannerCustomController.SVGIconImageList16
         TabOrder = 3
       end
       object btUpdateCalendar: TButton
-        Left = 128
-        Top = 78
-        Width = 110
+        Left = 159
+        Top = 80
+        Width = 154
         Height = 25
-        Caption = 'Aggiorna'
+        Action = dmVCLPlannerCustomController.actUpdateCalendar
+        ImageMargins.Left = 6
+        Images = dmVCLPlannerCustomController.SVGIconImageList16
         TabOrder = 4
       end
       object edCalendarLocation: TEdit
-        Left = 457
+        Left = 462
         Top = 22
-        Width = 288
+        Width = 387
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
       end
       object edCalendarTimeZone: TEdit
-        Left = 457
+        Left = 462
         Top = 51
-        Width = 288
+        Width = 387
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
       end
     end
     object cbDefaultReminders: TComboBox
-      Left = 471
+      Left = 479
       Top = 22
-      Width = 246
+      Width = 387
       Height = 23
       Style = csDropDownList
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
     end
   end
@@ -247,16 +257,15 @@ object Frame2: TFrame2
     AlignWithMargins = True
     Left = 3
     Top = 522
-    Width = 794
+    Width = 898
     Height = 328
     Margins.Bottom = 0
     Align = alBottom
     Caption = 'Details'
     TabOrder = 2
-    ExplicitTop = 451
-    ExplicitWidth = 745
+    ExplicitWidth = 794
     DesignSize = (
-      794
+      898
       328)
     object Label4: TLabel
       Left = 16
@@ -315,7 +324,7 @@ object Frame2: TFrame2
       Caption = 'ID:'
     end
     object lbEtag: TLabel
-      Left = 431
+      Left = 535
       Top = 22
       Width = 24
       Height = 15
@@ -324,7 +333,7 @@ object Frame2: TFrame2
       ExplicitLeft = 382
     end
     object lbGrp: TLabel
-      Left = 566
+      Left = 670
       Top = 22
       Width = 19
       Height = 15
@@ -411,11 +420,11 @@ object Frame2: TFrame2
     object Panel2: TPanel
       Left = 2
       Top = 285
-      Width = 790
+      Width = 894
       Height = 41
       Align = alBottom
       TabOrder = 9
-      ExplicitWidth = 741
+      ExplicitWidth = 790
       object Button6: TButton
         Left = 247
         Top = 8
@@ -460,9 +469,10 @@ object Frame2: TFrame2
     object PageControl1: TPageControl
       Left = 360
       Top = 46
-      Width = 499
+      Width = 520
       Height = 233
       ActivePage = TabSheet1
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 10
       object TabSheet1: TTabSheet
         Caption = 'Reminders'
@@ -640,46 +650,44 @@ object Frame2: TFrame2
     object edID: TEdit
       Left = 389
       Top = 19
-      Width = 49
+      Width = 153
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 13
-      ExplicitWidth = 0
+      ExplicitWidth = 49
     end
     object edEtag: TEdit
-      Left = 461
+      Left = 565
       Top = 19
       Width = 99
       Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 14
-      ExplicitLeft = 412
+      ExplicitLeft = 461
     end
     object edGrp: TEdit
-      Left = 589
+      Left = 693
       Top = 19
       Width = 187
       Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 15
-      ExplicitLeft = 540
+      ExplicitLeft = 589
     end
   end
   object GroupBox2: TGroupBox
     AlignWithMargins = True
     Left = 3
     Top = 215
-    Width = 794
+    Width = 898
     Height = 304
     Margins.Bottom = 0
     Align = alClient
     Caption = 'Events'
     TabOrder = 3
-    ExplicitTop = 212
-    ExplicitWidth = 745
-    ExplicitHeight = 233
+    ExplicitWidth = 794
     DesignSize = (
-      794
+      898
       304)
     object Label1: TLabel
       Left = 17
@@ -698,7 +706,7 @@ object Frame2: TFrame2
     object ListView1: TListView
       Left = 16
       Top = 76
-      Width = 764
+      Width = 868
       Height = 210
       Anchors = [akLeft, akTop, akRight, akBottom]
       Columns = <
@@ -735,8 +743,7 @@ object Frame2: TFrame2
       RowSelect = True
       TabOrder = 0
       ViewStyle = vsReport
-      ExplicitWidth = 715
-      ExplicitHeight = 139
+      ExplicitWidth = 764
     end
     object dpCalStartDate: TDateTimePicker
       Left = 124
@@ -757,7 +764,7 @@ object Frame2: TFrame2
       TabOrder = 2
     end
     object btUpdate: TButton
-      Left = 620
+      Left = 724
       Top = 45
       Width = 156
       Height = 25
@@ -767,6 +774,7 @@ object Frame2: TFrame2
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
+      ExplicitLeft = 620
     end
   end
 end

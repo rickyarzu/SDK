@@ -5,10 +5,11 @@ interface
 uses
   // System
   System.SysUtils, System.Classes, System.Actions, System.Bindings.Helper, System.ImageList, Data.DB,
+  System.UITypes, System.DateUtils,
   // VCL
   VCL.ActnList, VCL.ImgList, VCL.Controls, SVGIconImageListBase, SVGIconImageList, VCL.Dialogs,
   // Planner
-  AdvPDFIO, AdvPlannerPDFIO, Planner,
+  AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // Cloud
   CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, CloudBase, CloudBaseWin,
   CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, CloudCustomOutlook,
@@ -17,14 +18,14 @@ uses
   // Januaproject
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons;
+  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
 
 type
   TdmVCLPlannerCustomController = class(TDataModule)
-    SVGIconImageList1: TSVGIconImageList;
+    SVGIconImageList48: TSVGIconImageList;
     MainToolBarActions: TActionList;
     ActionAddMeeting: TAction;
     ActionUndoMeeting: TAction;
@@ -55,20 +56,34 @@ type
     Action9: TAction;
     GCalendarButtons: TActionList;
     actConnect: TAction;
+    SVGIconImageList16: TSVGIconImageList;
+    actRemoveAccess: TAction;
+    actAddCalendar: TAction;
+    actUpdateCalendar: TAction;
+    DBDaySource1: TDBDaySource;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
     procedure ActionAddActivityExecute(Sender: TObject);
     procedure ActionAddMeetingExecute(Sender: TObject);
     procedure actConnectExecute(Sender: TObject);
+    procedure actRemoveAccessExecute(Sender: TObject);
+    procedure actAddCalendarExecute(Sender: TObject);
+    procedure actUpdateCalendarExecute(Sender: TObject);
+    procedure DBDaySource1SetFilter(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
   private
     FPlanner: TPlanner;
+    FDBPlanner: TDBPlanner;
+  protected
+    procedure SetDBPlanner(const Value: TDBPlanner);
     procedure SetPlanner(const Value: TPlanner);
     procedure PostEvent;
     { Private declarations }
   public
     { Public declarations }
     property Planner: TPlanner read FPlanner write SetPlanner;
+    property DBPlanner: TDBPlanner read FDBPlanner write SetDBPlanner;
     // ****************************************** TMS Cloud Calendar ******************************
   private
     FCloudCalendar: TCloudCalendar;
@@ -77,6 +92,10 @@ type
     FSubjectField: TField;
     FConnected: boolean;
     FInserting: boolean;
+    FStartTimeEnabled: boolean;
+    FEndTimeEnabled: boolean;
+    FStartTime: TTime;
+    FEndTime: TTime;
     function GetPlannerEvent: ITimetable;
     procedure SetCloudCalendar(const Value: TCloudCalendar);
     procedure SetPlannerEvent(const Value: ITimetable);
@@ -84,6 +103,10 @@ type
     procedure SetSubjectField(const Value: TField);
     procedure SetConnected(const Value: boolean);
     procedure SetInserting(const Value: boolean);
+    procedure SetStartTimeEnabled(const Value: boolean);
+    procedure SetEndTimeEnabled(const Value: boolean);
+    procedure SetEndTime(const Value: TTime);
+    procedure SetStartTime(const Value: TTime);
   protected
     function DialogEvent: boolean;
   public
@@ -101,6 +124,24 @@ type
     /// <remarks> If fails throws an exception and rollbacks dataset posts </remarks>
     procedure AddEvent;
     // ****************************************** Calendar Sync Procedures ******************************
+    procedure Setup; virtual; abstract;
+    procedure Filter;
+    procedure UndoMeeting;
+  private
+    Fgcal: TGCalendar;
+    Fgrem: TGReminder;
+    FCalendarList: TStrings;
+    FCalendarItemIndex: Integer;
+    FSelectedCalendar: TJanuaGCalendar;
+    FDateTo: TDateTime;
+    FDateFrom: TDateTime;
+    procedure SetCalendarItemIndex(const Value: Integer);
+    procedure SetCalendarList(const Value: TStrings);
+    procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
+    procedure SetDateFrom(const Value: TDateTime);
+    procedure SetDateTo(const Value: TDateTime);
+  protected
+    function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
   public
     { Public declarations }
     procedure GetGCalendarList;
@@ -117,8 +158,17 @@ type
     procedure ClearControls();
     procedure Init();
   public
-   property Connected: boolean read FConnected write SetConnected;
-   property Inserting: boolean read FInserting write SetInserting;
+    property Connected: boolean read FConnected write SetConnected;
+    property Inserting: boolean read FInserting write SetInserting;
+    property StartTimeEnabled: boolean read FStartTimeEnabled write SetStartTimeEnabled;
+    property StartTime: TTime read FStartTime write SetStartTime;
+    property EndTime: TTime read FEndTime write SetEndTime;
+    property EndTimeEnabled: boolean read FEndTimeEnabled write SetEndTimeEnabled;
+    property CalendarItemIndex: Integer read FCalendarItemIndex write SetCalendarItemIndex;
+    property CalendarList: TStrings read FCalendarList write SetCalendarList;
+    property SelectedCalendar: TJanuaGCalendar read FSelectedCalendar write SetSelectedCalendar;
+    property DateFrom: TDateTime read FDateFrom write SetDateFrom;
+    property DateTo: TDateTime read FDateTo write SetDateTo;
   end;
 
 var
@@ -126,18 +176,19 @@ var
 
 implementation
 
-uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage,
-  udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Orm.Impl,
-  Janua.Core.Functions;
+uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage, udmSVGImageList,
+  Janua.VCL.Functions, Janua.Core.AsyncTask, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, Janua.Orm.Impl,
+  udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var
-  i: integer;
+  i: Integer;
 begin
   JanuaPlannerController1.Timetable := PlannerEvent;
+  FCalendarList := TStringList.Create;
 
   AdvLiveCalendar1.App.Key := TJanuaApplication.CloudConf.WinLiveClientID;
   AdvLiveCalendar1.App.Secret := TJanuaApplication.CloudConf.WinLiveClientSecret;
@@ -161,11 +212,97 @@ begin
   FPlanner.Header.Captions.Add('');
   for i := 0 to 6 do
     FPlanner.Header.Captions.Add(datetostr(Now + i));
+
+  CalendarItemIndex := -1;
+
+  var
+  vTest1 := Trunc(Date - StartOfTheMonth(Date()));
+  var
+  vTest2 := EndOfTheMonth(Date()) - Date;
+
+  if (vTest1 >= 3) and (vTest2 >= 5) then
+  begin
+    FDateFrom := StartOfTheMonth(Date());
+    FDateTo := EndOfTheMonth(Date());
+  end
+  else
+  begin
+    if vTest1 <= 3 then
+    begin
+      FDateFrom := Date() - 5;
+      FDateTo := EndOfTheMonth(Date());
+    end
+    else
+    begin
+      FDateFrom := Date() - 2;
+      FDateTo := EndOfTheMonth(IncMonth(Date(), 1));
+    end;
+  end;
+
+  DBDaySource1.NumberOfResources := OpenCalendar(FDateFrom, FDateTo);
+  DBDaySource1.Active := True;
+end;
+
+procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
+begin
+  FCalendarList.Free;
+  FCalendarList := nil;
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySource1SetFilter(Sender: TObject);
+var
+  sd1, sd2: string;
+begin
+  { Before the planner needs to be reloaded with records from the database
+    a custom filter can be applied to minimize the nr. of records the planner
+    must check to load into the planner.
+  }
+  sd1 := datetostr(DBDaySource1.Day);
+  sd1 := #39 + sd1 + #39;
+
+  sd2 := datetostr(DBDaySource1.Day + 7);
+  sd2 := #39 + sd2 + #39;
+  (*
+    PlannerTable.Filter:=  'STARTTIME > '+sd1+' AND ENDTIME < '+sd2;
+    PlannerTable.Filtered := DoFilter.Checked;
+  *)
+end;
+
+procedure TdmVCLPlannerCustomController.actAddCalendarExecute(Sender: TObject);
+begin
+  Fgcal := AdvGCalendar1.Calendars.Add;
+  Fgcal.Summary := SelectedCalendar.Summary;
+  Fgcal.Description := SelectedCalendar.Description;
+  Fgcal.Location := SelectedCalendar.Location;
+  Fgcal.TimeZone := SelectedCalendar.TimeZone;
+
+  Fgrem := Fgcal.DefaultReminders.Add;
+  Fgrem.Method := rmPopup;
+  Fgrem.Minutes := 60;
+
+  AdvGCalendar1.AddCalendar(Fgcal);
+  FillCalendars;
+  FillCalendarItems;
 end;
 
 procedure TdmVCLPlannerCustomController.actConnectExecute(Sender: TObject);
 begin
-  ConnectGCalendar
+  ConnectGCalendar;
+end;
+
+procedure TdmVCLPlannerCustomController.actUpdateCalendarExecute(Sender: TObject);
+begin
+  if CalendarItemIndex >= 0 then
+  begin
+    Fgcal := (FCalendarList.Objects[CalendarItemIndex] as TGCalendar);
+    Fgcal.Summary := SelectedCalendar.Summary;
+    Fgcal.Description := SelectedCalendar.Description;
+    Fgcal.Location := SelectedCalendar.Location;
+    Fgcal.TimeZone := SelectedCalendar.TimeZone;
+    AdvGCalendar1.UpdateCalendar(Fgcal);
+    FillCalendars;
+    FillCalendarItems;
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
@@ -209,6 +346,13 @@ begin
     FPlanner.Print;
 end;
 
+procedure TdmVCLPlannerCustomController.actRemoveAccessExecute(Sender: TObject);
+begin
+  AdvGCalendar1.ClearTokens;
+  Connected := false;
+  ToggleControls;
+end;
+
 procedure TdmVCLPlannerCustomController.AddEvent;
 begin
   // Creates a New Empty Record
@@ -226,7 +370,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.ConnectGCalendar;
 begin
-  AdvGCalendar1.Logging := true;
+  AdvGCalendar1.Logging := True;
   AdvGCalendar1.LogLevel := llDetail;
   AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
   AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
@@ -243,6 +387,8 @@ begin
   end
   else
     GetGCalendarList;
+
+  Init;
 end;
 
 procedure TdmVCLPlannerCustomController.ConnectLiveCalendar;
@@ -314,6 +460,11 @@ begin
 
 end;
 
+procedure TdmVCLPlannerCustomController.Filter;
+begin
+
+end;
+
 procedure TdmVCLPlannerCustomController.GetGCalendarList;
 begin
 
@@ -338,7 +489,21 @@ end;
 
 procedure TdmVCLPlannerCustomController.Init;
 begin
+  Connected := True;
+  FillCalendars;
+  FillCalendarItems;
+  FillColors;
+  ToggleControls;
+end;
 
+procedure TdmVCLPlannerCustomController.SetCalendarItemIndex(const Value: Integer);
+begin
+  FCalendarItemIndex := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarList(const Value: TStrings);
+begin
+  FCalendarList := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetCloudCalendar(const Value: TCloudCalendar);
@@ -361,6 +526,32 @@ begin
   FConnected := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetDateFrom(const Value: TDateTime);
+begin
+  FDateFrom := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetDateTo(const Value: TDateTime);
+begin
+  FDateTo := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetDBPlanner(const Value: TDBPlanner);
+begin
+  FDBPlanner := Value;
+  FPlanner := TPlanner(FDBPlanner);
+end;
+
+procedure TdmVCLPlannerCustomController.SetEndTime(const Value: TTime);
+begin
+  FEndTime := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetEndTimeEnabled(const Value: boolean);
+begin
+  FEndTimeEnabled := Value;
+end;
+
 procedure TdmVCLPlannerCustomController.SetInserting(const Value: boolean);
 begin
   FInserting := Value;
@@ -376,6 +567,21 @@ begin
   FPlannerEvent := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetSelectedCalendar(const Value: TJanuaGCalendar);
+begin
+  FSelectedCalendar := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetStartTime(const Value: TTime);
+begin
+  FStartTime := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetStartTimeEnabled(const Value: boolean);
+begin
+  FStartTimeEnabled := Value;
+end;
+
 procedure TdmVCLPlannerCustomController.SetSubjectField(const Value: TField);
 begin
   FSubjectField := Value;
@@ -387,6 +593,11 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.ToggleReminders;
+begin
+
+end;
+
+procedure TdmVCLPlannerCustomController.UndoMeeting;
 begin
 
 end;

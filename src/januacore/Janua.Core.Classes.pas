@@ -460,7 +460,6 @@ type
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
       jbcEvaluate]);
     // *********************************************************************************************
-
     property AsObject: TObject read GetSelf;
   public
     Constructor Create; overload; virtual;
