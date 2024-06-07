@@ -67,6 +67,7 @@ type
     lbLatitude: TUniLabel;
     UniContainerPanel1: TUniContainerPanel;
     UniImageLogo: TUniImage;
+    UniNativeImageList1: TUniNativeImageList;
     procedure btnLoginClick(Sender: TObject);
     procedure btnRegisterClick(Sender: TObject);
     procedure chkPasswordClick(Sender: TObject);
