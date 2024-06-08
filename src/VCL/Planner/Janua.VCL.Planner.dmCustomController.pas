@@ -61,6 +61,7 @@ type
     actAddCalendar: TAction;
     actUpdateCalendar: TAction;
     DBDaySource1: TDBDaySource;
+    actUpdateEvents: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -72,13 +73,14 @@ type
     procedure actUpdateCalendarExecute(Sender: TObject);
     procedure DBDaySource1SetFilter(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
+    procedure GCalendarButtonsExecute(Action: TBasicAction; var Handled: Boolean);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
   protected
     procedure SetDBPlanner(const Value: TDBPlanner);
     procedure SetPlanner(const Value: TPlanner);
-    procedure PostEvent;
+    procedure PostEvent; Virtual; Abstract;
     { Private declarations }
   public
     { Public declarations }
@@ -109,6 +111,7 @@ type
     procedure SetStartTime(const Value: TTime);
   protected
     function DialogEvent: boolean;
+    procedure RefreshEvent; Virtual; Abstract;
   public
     property CloudCalendar: TCloudCalendar read FCloudCalendar write SetCloudCalendar;
     property PlannerEvent: ITimetable read GetPlannerEvent write SetPlannerEvent;
@@ -142,6 +145,7 @@ type
     procedure SetDateTo(const Value: TDateTime);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
+    procedure AddActivity; virtual; abstract;
   public
     { Public declarations }
     procedure GetGCalendarList;
@@ -176,9 +180,11 @@ var
 
 implementation
 
-uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage, udmSVGImageList,
-  Janua.VCL.Functions, Janua.Core.AsyncTask, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, Janua.Orm.Impl,
+uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
+  Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
+
+{ udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -306,38 +312,48 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
-var
-  lDlg: TdlgVCLPlannerActivities;
 begin
-  lDlg := TdlgVCLPlannerActivities.Create(Self);
-  try
+  AddActivity;
+  (*
+
+    var
+    lDlg: TdlgVCLPlannerActivities;
+    begin
+    lDlg := TdlgVCLPlannerActivities.Create(Self);
+    try
     TJanuaApplication.WindowsManager.ShowOverlay;
     lDlg.ShowModal;
     dmPgPlannerStorage.PostActivities;
     TJanuaApplication.WindowsManager.HideOverlay;
-  finally
+    finally
     FreeAndNil(lDlg);
-  end;
+    end;
+
+  *)
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddMeetingExecute(Sender: TObject);
 begin
-  Self.AddEvent;
+  AddEvent;
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddUserExecute(Sender: TObject);
-var
-  lDlg: TdlgVCLPlannerAnagraph;
 begin
-  lDlg := TdlgVCLPlannerAnagraph.Create(Self);
-  try
+
+  (*
+    var
+    lDlg: TdlgVCLPlannerAnagraph;
+    begin
+    lDlg := TdlgVCLPlannerAnagraph.Create(Self);
+    try
     TJanuaApplication.WindowsManager.ShowOverlay;
     lDlg.ShowModal;
     dmPgPlannerStorage.PostAnagraph;
     TJanuaApplication.WindowsManager.HideOverlay;
-  finally
+    finally
     FreeAndNil(lDlg);
-  end;
+    end;
+  *)
 end;
 
 procedure TdmVCLPlannerCustomController.ActionPrintExecute(Sender: TObject);
@@ -405,19 +421,6 @@ begin
     GetLiveCalendarList;
 end;
 
-procedure TdmVCLPlannerCustomController.PostEvent;
-begin
-  try
-    PlannerEvent.DirectSaveToDataset(dmPgPlannerStorage.qryTimeTable);
-  except
-    on e: Exception do
-    begin
-      dmPgPlannerStorage.qryTimeTable.Cancel;
-      RaiseException('PostEvent', e, Self);
-    end;
-  end;
-end;
-
 function TdmVCLPlannerCustomController.DialogEvent: boolean;
 var
   LdlgPlannerEvent: TdlgVCLPlannerEvent;
@@ -434,7 +437,8 @@ end;
 
 procedure TdmVCLPlannerCustomController.EditEvent;
 begin
-  PlannerEvent.DirectLoadFromDataset(dmPgPlannerStorage.qryTimeTable);
+  RefreshEvent;
+  { PlannerEvent.DirectLoadFromDataset(dmPgPlannerStorage.qryTimeTable); }
   if DialogEvent then
     PostEvent;
   PlannerEvent := nil;
@@ -463,6 +467,11 @@ end;
 procedure TdmVCLPlannerCustomController.Filter;
 begin
 
+end;
+
+procedure TdmVCLPlannerCustomController.GCalendarButtonsExecute(Action: TBasicAction; var Handled: Boolean);
+begin
+  FillCalendarItems;
 end;
 
 procedure TdmVCLPlannerCustomController.GetGCalendarList;

@@ -5367,7 +5367,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45450.000000000000000000
+    DateFrom = 45451.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5481,6 +5481,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   end
   object GCalendarButtons: TActionList
     Images = SVGIconImageList16
+    OnExecute = GCalendarButtonsExecute
     Left = 64
     Top = 280
     object actConnect: TAction
@@ -5506,6 +5507,11 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       ImageIndex = 1
       ImageName = '002-time'
       OnExecute = actUpdateCalendarExecute
+    end
+    object actUpdateEvents: TAction
+      Caption = 'Aggiorna Eventi'
+      ImageIndex = 58
+      ImageName = 'google-calendar'
     end
   end
   object SVGIconImageList16: TSVGIconImageList
