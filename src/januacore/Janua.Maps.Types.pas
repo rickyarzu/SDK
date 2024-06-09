@@ -14,11 +14,12 @@ type
 
 type
   TOSMLocationGroup = (osgUnknown, osgAmenity, osgPubliTransport, osgTourism, osgHigway, osgCraft,
-    osgEmergency, osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osgNotFound);
+    osgEmergency, osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osmSubway, osgNotFound);
 
 const
-  OSMLocationGroups: array [TOSMLocationGroup] of string = ('unknown', 'amenity', 'public_transport', 'tourism',
-    'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure', '');
+  OSMLocationGroups: array [TOSMLocationGroup] of string = ('unknown', 'amenity', 'public_transport',
+    'tourism', 'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure',
+    'subway', '');
 
 type
   TOSMLocationType = (osmUnknown, osmFuel, osmTelephone, osmParking, osmPharmacy, osmPostOffice, osmAtm,
@@ -68,12 +69,6 @@ const
 
 type
   TOSMAddress = record
-    {
-      <tag k="addr:city" v="Genova"/>
-      <tag k="addr:housenumber" v="1"/>
-      <tag k="addr:postcode" v="16167"/>
-      <tag k="addr:street" v="Via Val Cismon"/>
-    }
     city: string;
     housenumber: string;
     postcode: string;
@@ -81,29 +76,39 @@ type
     addressfull: string;
   end;
 
-  TOSMFuel = record
-    { <tag k="payment:cash" v="yes"/>
-      <tag k="payment:mastercard" v="yes"/>
-      <tag k="payment:visa" v="yes"/> }
-
-  end;
-
   TOSMShop = record
     { <tag k="brand" v="EuroSpin"/>
       <tag k="brand:wikidata" v="Q1374674"/>
-      <tag k="name" v="EuroSpin"/>
-      <tag k="opening_hours" v="Mo-Sa 08:30-13:00,15:30-20:00; Su 09:00-13:00"/>
-      <tag k="payment:cash" v="yes"/>
-      <tag k="payment:mastercard" v="yes"/>
-      <tag k="payment:visa" v="yes"/>
-      <tag k="shop" v="supermarket"/>
-      <tag k="website" v="https://www.eurospin.it/"/> }
+      <tag k="ref:vatin" v="IT02074330990"/>
+      <tag k="wheelchair" v="yes"/> }
     shop: string;
     payment_visa: boolean;
     payment_mastercard: boolean;
     payment_cash: boolean;
     payment_amex: boolean;
     opening_hours: string;
+    wheelchair: boolean;
+    VAT: string;
+  end;
+
+  TOSMFuel = record
+    { <tag k="amenity" v="fuel"/>
+      <tag k="automated" v="yes"/>
+      <tag k="brand" v="Tamoil"/>
+      <tag k="fuel:diesel" v="yes"/>
+      <tag k="fuel:octane_95" v="yes"/>
+      <tag k="fuel_service" v="full"/>
+      <tag k="amenity" v="fuel"/>
+      <tag k="brand" v="Agip Eni"/>
+      <tag k="operator" v="Due Esse S.R.L."/>
+      <tag k="ref:mise" v="35223"/> }
+    shop: TOSMShop;
+    LocalOperator: string;
+    HasAutomated: boolean;
+    HasDiesel: boolean;
+    HasOctane95: boolean;
+    HasService: boolean;
+    HasLpg: boolean;
   end;
 
   TOSMTransport = record
@@ -170,7 +175,7 @@ type
     fax: string;
     brand: string;
     cuisine: string;
-    Localoperator: string;
+    LocalOperator: string;
     Location: TOSMLocation;
     Tags: TOSMStringTags;
     IsShop: boolean;
@@ -342,7 +347,7 @@ var
     else if aTag.k = 'brand' then
       brand := aTag.v
     else if aTag.k = 'operator' then
-      Localoperator := aTag.v
+      LocalOperator := aTag.v
       // addr:full
     else if aTag.k = 'addr:full' then
       addressfull := aTag.v
@@ -416,7 +421,7 @@ begin
   aDataset.FieldByName('street').AsWideString := self.Address.street;
   aDataset.FieldByName('AddressFull').AsWideString := self.addressfull;
   aDataset.FieldByName('brand').AsWideString := self.brand;
-  aDataset.FieldByName('operator').AsWideString := self.Localoperator;
+  aDataset.FieldByName('operator').AsWideString := self.LocalOperator;
   tmp := TJanuaStringBuilder.Create;
 
   for aTag in self.Tags do
