@@ -17,7 +17,7 @@ type
     function GetXMLDocument: string;
     procedure SetXMLDocument(Value: string);
     function FindNodes(Group, AddressType: string): TOSMNodeArray; overload;
-    function FindNodes(aAddressType: TOSMAddressType): TOSMNodeArray; overload;
+    function FindNodes(aAddressType: TOSMLocationType): TOSMNodeArray; overload;
     // properties
     property OSMNodeArray: TOSMNodeArray read GetOSMNodeArray write SetOSMNodeArray;
     property XMLDocument: string read GetXMLDocument write SetXMLDocument;

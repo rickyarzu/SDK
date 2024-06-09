@@ -15,7 +15,7 @@ Type
     procedure LoadDocumentFromFile(aDocumentFileName: TFileName);
     function GetOSMNodeArray: TOSMNodeArray;
     function FindNodes(Group, AddressType: string): TOSMNodeArray; overload;
-    function FindNodes(aAddressType: TOSMAddressType): TOSMNodeArray; overload;
+    function FindNodes(aAddressType: TOSMLocationType): TOSMNodeArray; overload;
   private
     procedure AddNode(aNode: TOSMNode);
     procedure SetOSMNodeArray(Value: TOSMNodeArray);
@@ -47,7 +47,7 @@ begin
   Result := FindNodes(Janua.Maps.Types.FindType(Group, AddressType));
 end;
 
-function TOSMXmlParser.FindNodes(aAddressType: TOSMAddressType): TOSMNodeArray;
+function TOSMXmlParser.FindNodes(aAddressType: TOSMLocationType): TOSMNodeArray;
 var
   aNode: TOSMNode;
 begin
