@@ -1,8 +1,8 @@
 object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 386
-  Width = 523
+  Height = 440
+  Width = 557
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5417,66 +5417,23 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Top = 72
   end
   object MenuButtonActions: TActionList
-    Images = SVGIconImageList48
+    Images = SVGIconImageList16
     Left = 64
     Top = 208
-    object Action1: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Appuntamento'
-      ImageIndex = 31
-      ImageName = '032-calendar'
-      OnExecute = ActionAddMeetingExecute
+    object actColor: TAction
+      Caption = 'Colore'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actColorExecute
     end
-    object Action2: TAction
-      Category = 'Meetings'
-      Caption = 'Annulla Appuntamento'
-      ImageIndex = 1
-      ImageName = '002-time'
-    end
-    object Action3: TAction
-      Category = 'Meetings'
-      Caption = 'Cerca Appuntamento'
-      ImageIndex = 45
-      ImageName = '046-search'
-    end
-    object Action4: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Dipendente'
-      ImageIndex = 2
-      ImageName = '003-employee'
-      OnExecute = ActionAddUserExecute
-    end
-    object Action5: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Una Attivit'#224
-      ImageIndex = 35
-      ImageName = '036-planner'
-      OnExecute = ActionAddActivityExecute
-    end
-    object Action6: TAction
-      Category = 'Meetings'
-      Caption = 'Esporta (Excel, Pdf, Csv)'
+    object actCaption: TAction
+      Caption = 'Mostra Titolo'
       ImageIndex = 24
       ImageName = '025-planning'
+      OnExecute = actCaptionExecute
     end
-    object Action7: TAction
-      Category = 'Meetings'
-      Caption = 'Invia (Mail) Condividi'
-      ImageIndex = 8
-      ImageName = '009-email'
-    end
-    object Action8: TAction
-      Category = 'Meetings'
-      Caption = 'Stampa / Anteprima'
-      ImageIndex = 57
-      ImageName = '008-printer'
-      OnExecute = ActionPrintExecute
-    end
-    object Action9: TAction
-      Category = 'Meetings'
-      Caption = 'Sincro Calendario'
-      ImageIndex = 26
-      ImageName = '027-tasks'
+    object Action2: TAction
+      Caption = 'Action2'
     end
   end
   object GCalendarButtons: TActionList
@@ -10917,7 +10874,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Left = 272
     Top = 200
   end
-  object SVGIconImageList1: TSVGIconImageList
+  object SVGIconImageListIt: TSVGIconImageList
     Size = 24
     SVGIconItems = <
       item
@@ -10988,5 +10945,9 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Scaled = True
     Left = 272
     Top = 264
+  end
+  object ColorDialog1: TColorDialog
+    Left = 267
+    Top = 346
   end
 end

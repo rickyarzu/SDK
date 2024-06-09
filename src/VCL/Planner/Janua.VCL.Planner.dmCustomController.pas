@@ -45,15 +45,6 @@ type
     PlannerGCalendarExchange1: TPlannerGCalendarExchange;
     PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange;
     MenuButtonActions: TActionList;
-    Action1: TAction;
-    Action2: TAction;
-    Action3: TAction;
-    Action4: TAction;
-    Action5: TAction;
-    Action6: TAction;
-    Action7: TAction;
-    Action8: TAction;
-    Action9: TAction;
     GCalendarButtons: TActionList;
     actConnect: TAction;
     SVGIconImageList16: TSVGIconImageList;
@@ -63,7 +54,11 @@ type
     DBDaySource1: TDBDaySource;
     actUpdateEvents: TAction;
     PictureContainer1: TPictureContainer;
-    SVGIconImageList1: TSVGIconImageList;
+    SVGIconImageListIt: TSVGIconImageList;
+    ColorDialog1: TColorDialog;
+    actColor: TAction;
+    actCaption: TAction;
+    Action2: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -78,6 +73,12 @@ type
     procedure GCalendarButtonsExecute(Action: TBasicAction; var Handled: Boolean);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure actColorExecute(Sender: TObject);
+    procedure actCaptionExecute(Sender: TObject);
+    procedure PlannerItemDblClick(Sender: TObject; Item: TPlannerItem);
+    procedure PlannerItemInsert(Sender: TObject; Position, FromSel, FromSelPrecise, ToSel,
+      ToSelPrecise: Integer);
+    procedure PlannerItemImageClick(Sender: TObject; Item: TPlannerItem; ImageIndex: Integer); virtual;
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -96,10 +97,10 @@ type
     FPlannerEvent: ITimetable;
     FColorField: TField;
     FSubjectField: TField;
-    FConnected: boolean;
-    FInserting: boolean;
-    FStartTimeEnabled: boolean;
-    FEndTimeEnabled: boolean;
+    FConnected: Boolean;
+    FInserting: Boolean;
+    FStartTimeEnabled: Boolean;
+    FEndTimeEnabled: Boolean;
     FStartTime: TTime;
     FEndTime: TTime;
     function GetPlannerEvent: ITimetable;
@@ -107,14 +108,14 @@ type
     procedure SetPlannerEvent(const Value: ITimetable);
     procedure SetColorField(const Value: TField);
     procedure SetSubjectField(const Value: TField);
-    procedure SetConnected(const Value: boolean);
-    procedure SetInserting(const Value: boolean);
-    procedure SetStartTimeEnabled(const Value: boolean);
-    procedure SetEndTimeEnabled(const Value: boolean);
+    procedure SetConnected(const Value: Boolean);
+    procedure SetInserting(const Value: Boolean);
+    procedure SetStartTimeEnabled(const Value: Boolean);
+    procedure SetEndTimeEnabled(const Value: Boolean);
     procedure SetEndTime(const Value: TTime);
     procedure SetStartTime(const Value: TTime);
   protected
-    function DialogEvent: boolean;
+    function DialogEvent: Boolean;
     procedure RefreshEvent; Virtual; Abstract;
   public
     property CloudCalendar: TCloudCalendar read FCloudCalendar write SetCloudCalendar;
@@ -166,12 +167,12 @@ type
     procedure ClearControls();
     procedure Init();
   public
-    property Connected: boolean read FConnected write SetConnected;
-    property Inserting: boolean read FInserting write SetInserting;
-    property StartTimeEnabled: boolean read FStartTimeEnabled write SetStartTimeEnabled;
+    property Connected: Boolean read FConnected write SetConnected;
+    property Inserting: Boolean read FInserting write SetInserting;
+    property StartTimeEnabled: Boolean read FStartTimeEnabled write SetStartTimeEnabled;
     property StartTime: TTime read FStartTime write SetStartTime;
     property EndTime: TTime read FEndTime write SetEndTime;
-    property EndTimeEnabled: boolean read FEndTimeEnabled write SetEndTimeEnabled;
+    property EndTimeEnabled: Boolean read FEndTimeEnabled write SetEndTimeEnabled;
     property CalendarItemIndex: Integer read FCalendarItemIndex write SetCalendarItemIndex;
     property CalendarList: TStrings read FCalendarList write SetCalendarList;
     property SelectedCalendar: TJanuaGCalendar read FSelectedCalendar write SetSelectedCalendar;
@@ -326,6 +327,28 @@ begin
   FillCalendarItems;
 end;
 
+procedure TdmVCLPlannerCustomController.actCaptionExecute(Sender: TObject);
+begin
+  if FPlanner.PopupPlannerItem.CaptionType = ctTime then
+    FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctNone
+  else
+    FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctTime;
+
+  FPlanner.PopupPlannerItem.Update;
+end;
+
+procedure TdmVCLPlannerCustomController.actColorExecute(Sender: TObject);
+begin
+  { Sets the planner item color }
+  ColorDialog1.Color := FPlanner.PopupPlannerItem.Color;
+  if ColorDialog1.Execute then
+  begin
+    FPlanner.PopupPlannerItem.Color := ColorDialog1.Color;
+    FPlanner.PopupPlannerItem.CaptionBkg := ColorDialog1.Color;
+    FPlanner.PopupPlannerItem.Update;
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.actConnectExecute(Sender: TObject);
 begin
   ConnectGCalendar;
@@ -456,7 +479,7 @@ begin
     GetLiveCalendarList;
 end;
 
-function TdmVCLPlannerCustomController.DialogEvent: boolean;
+function TdmVCLPlannerCustomController.DialogEvent: Boolean;
 var
   LdlgPlannerEvent: TdlgVCLPlannerEvent;
 begin
@@ -540,6 +563,39 @@ begin
   ToggleControls;
 end;
 
+procedure TdmVCLPlannerCustomController.PlannerItemDblClick(Sender: TObject; Item: TPlannerItem);
+begin
+  EditEvent;
+end;
+
+procedure TdmVCLPlannerCustomController.PlannerItemImageClick(Sender: TObject; Item: TPlannerItem;
+  ImageIndex: Integer);
+begin
+  // Virtual Method to Manage the Image Click on The Calendar Planner Item
+  if Item.ImageID < 2 then
+    Item.ImageID := Item.ImageID + 1
+  else
+    Item.ImageID := 0;
+
+  Item.Update;
+end;
+
+procedure TdmVCLPlannerCustomController.PlannerItemInsert(Sender: TObject;
+  Position, FromSel, FromSelPrecise, ToSel, ToSelPrecise: Integer);
+begin
+  { creates an item in the planner at the selected cells which is automatically
+    propagated to the database
+    All planner item settings are taken from the Planner.DefaultItem properties.
+    After changing properties of the planner item, it is necessary to call the
+    item's Update method to make sure that changes are propagated to the database
+  }
+  with Planner.CreateItemAtSelection do
+  begin
+    Text.Text := 'Creato Evento il ' + Formatdatetime('hh:nn dd/mm/yyyy', Now);
+    Update;
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.SetCalendarItemIndex(const Value: Integer);
 begin
   FCalendarItemIndex := Value;
@@ -565,7 +621,7 @@ begin
   FColorField := Value;
 end;
 
-procedure TdmVCLPlannerCustomController.SetConnected(const Value: boolean);
+procedure TdmVCLPlannerCustomController.SetConnected(const Value: Boolean);
 begin
   FConnected := Value;
 end;
@@ -591,12 +647,12 @@ begin
   FEndTime := Value;
 end;
 
-procedure TdmVCLPlannerCustomController.SetEndTimeEnabled(const Value: boolean);
+procedure TdmVCLPlannerCustomController.SetEndTimeEnabled(const Value: Boolean);
 begin
   FEndTimeEnabled := Value;
 end;
 
-procedure TdmVCLPlannerCustomController.SetInserting(const Value: boolean);
+procedure TdmVCLPlannerCustomController.SetInserting(const Value: Boolean);
 begin
   FInserting := Value;
 end;
@@ -621,7 +677,7 @@ begin
   FStartTime := Value;
 end;
 
-procedure TdmVCLPlannerCustomController.SetStartTimeEnabled(const Value: boolean);
+procedure TdmVCLPlannerCustomController.SetStartTimeEnabled(const Value: Boolean);
 begin
   FStartTimeEnabled := Value;
 end;

@@ -28,8 +28,6 @@ type
   // TJanuaVCLFormModel = class(TForm, IJanuaForm, IJanuaContainer, IJanuaControl, IJanuaBindable)
   TframeVCLAnagraphPlanner = class(TJanuaVCLFrameModel, IJanuaContainer, IJanuaBindable)
     DataSource1: TDataSource;
-    ImageList1: TImageList;
-    ColorDialog1: TColorDialog;
     ItemPopup: TPopupMenu;
     Color1: TMenuItem;
     Caption1: TMenuItem;
@@ -51,16 +49,10 @@ type
     btnExport: TButton;
     btnSend: TButton;
     btnPrint: TButton;
-    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     btnCalendarSync: TButton;
     dbtAnagraphName: TDBText;
-    procedure Caption1Click(Sender: TObject);
-    procedure Color1Click(Sender: TObject);
-    procedure DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     procedure DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
-    procedure DBPlanner1ItemImageClick(Sender: TObject; Item: TPlannerItem; ImageIndex: Integer);
-    procedure DBPlanner1ItemInsert(Sender: TObject; Position, FromSel, FromSelPrecise, ToSel,
-      ToSelPrecise: Integer);
     procedure DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu; Item: TPlannerItem);
     procedure DBPlanner1PlannerNext(Sender: TObject);
     procedure DBPlanner1PlannerPrev(Sender: TObject);
@@ -70,10 +62,13 @@ type
     procedure MonthCalendar1Click(Sender: TObject);
     procedure SpinEdit1Change(Sender: TObject);
   private
+    FController: TdmVCLPlannerCustomController;
+    procedure SetController(const Value: TdmVCLPlannerCustomController);
     { Private declarations }
   public
     { Public declarations }
     procedure UpdateHeaders;
+    property Controller: TdmVCLPlannerCustomController read FController write SetController;
   end;
 
 var
@@ -83,35 +78,7 @@ implementation
 
 {$R *.dfm}
 
-uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage,
-  udmVCLPlannerController;
-
-procedure TframeVCLAnagraphPlanner.Caption1Click(Sender: TObject);
-begin
-  if DBPlanner1.PopupPlannerItem.CaptionType = ctTime then
-    DBPlanner1.PopupPlannerItem.CaptionType := ctNone
-  else
-    DBPlanner1.PopupPlannerItem.CaptionType := ctTime;
-
-  DBPlanner1.PopupPlannerItem.Update;
-end;
-
-procedure TframeVCLAnagraphPlanner.Color1Click(Sender: TObject);
-begin
-  { Sets the planner item color }
-  ColorDialog1.Color := DBPlanner1.PopupPlannerItem.Color;
-  if ColorDialog1.Execute then
-  begin
-    DBPlanner1.PopupPlannerItem.Color := ColorDialog1.Color;
-    DBPlanner1.PopupPlannerItem.CaptionBkg := ColorDialog1.Color;
-    DBPlanner1.PopupPlannerItem.Update;
-  end;
-end;
-
-procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);
-begin
-  dmVCLPlannerController.EditEvent;
-end;
+uses Spring, Janua.Application.Framework, Janua.ViewModels.Application;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
 begin
@@ -119,33 +86,6 @@ begin
     its entry from the database
   }
   DBPlanner1.FreeItem(Item);
-end;
-
-procedure TframeVCLAnagraphPlanner.DBPlanner1ItemImageClick(Sender: TObject; Item: TPlannerItem;
-  ImageIndex: Integer);
-begin
-  if Item.ImageID < 5 then
-    Item.ImageID := Item.ImageID + 1
-  else
-    Item.ImageID := 0;
-
-  Item.Update;
-end;
-
-procedure TframeVCLAnagraphPlanner.DBPlanner1ItemInsert(Sender: TObject;
-  Position, FromSel, FromSelPrecise, ToSel, ToSelPrecise: Integer);
-begin
-  { creates an item in the planner at the selected cells which is automatically
-    propagated to the database
-    All planner item settings are taken from the Planner.DefaultItem properties.
-    After changing properties of the planner item, it is necessary to call the
-    item's Update method to make sure that changes are propagated to the database
-  }
-  with DBPlanner1.CreateItemAtSelection do
-  begin
-    Text.Text := 'Creato Evento il ' + Formatdatetime('hh:nn dd/mm/yyyy', Now);
-    Update;
-  end;
 end;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu;
@@ -203,6 +143,17 @@ procedure TframeVCLAnagraphPlanner.MonthCalendar1Click(Sender: TObject);
 begin
   DBDaySource1.Day := MonthCalendar1.Date;
   UpdateHeaders;
+end;
+
+procedure TframeVCLAnagraphPlanner.SetController(const Value: TdmVCLPlannerCustomController);
+begin
+  FController := Value;
+  if Assigned(FController) then
+  begin
+    DBPlanner1.OnItemImageClick := FController.PlannerItemImageClick;
+    DBPlanner1.OnItemInsert := FController.PlannerPlannerItemInsert;
+    DBPlanner1.OnItemDblClick := FController.PlannerItemDblClick;
+  end;
 end;
 
 procedure TframeVCLAnagraphPlanner.SpinEdit1Change(Sender: TObject);
