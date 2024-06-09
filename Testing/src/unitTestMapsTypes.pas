@@ -67,8 +67,8 @@ end;
 
 procedure TTestJanuaMapsTypesObject.TestFindTypes(const group, address: string);
 begin
-  // function FindType(aGroup, aAddressType: string): TOSMAddressType;
-  Assert.IsTrue(FindType(group, address) <> TOSMAddressType.osmNotFound);
+  // function FindType(aGroup, aAddressType: string): TOSMLocationType;
+  Assert.IsTrue(FindType(group, address) <> TOSMLocationType.osmNotFound);
 end;
 
 procedure TTestJanuaMapsTypesObject.TestOSMAddressCode(const expected, number: string);

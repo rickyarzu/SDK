@@ -13,42 +13,49 @@ type
   end;
 
 type
-  TOSMAddressGroup = (osgUnknown, osgAmenity, osgPubliTransport, osgTourism, osgHigway, osgCraft, osgEmergency,
-    osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osgNotFound);
+  TOSMLocationGroup = (osgUnknown, osgAmenity, osgPubliTransport, osgTourism, osgHigway, osgCraft,
+    osgEmergency, osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osgNotFound);
 
 const
-  OSMAddressGroups: array [TOSMAddressGroup] of string = ('unknown', 'amenity', 'public_transport', 'tourism',
+  OSMLocationGroups: array [TOSMLocationGroup] of string = ('unknown', 'amenity', 'public_transport', 'tourism',
     'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure', '');
 
 type
-  TOSMAddressType = (osmUnknown, osmFuel, osmTelephone, osmParking, osmPharmacy, osmPostOffice, osmAtm, osmCrossing,
-    osmHotel, osmBar, osmCafe, osmCarWash, osmCinema, ssmDentist, osmDoctors, osmFastFood, osmIceCream, osmkindergarten,
-    osmnursing_home, osmPolice, osmPub, osmRestaurant, osmSchool, osmToilets, osmVeterinary, osmBank, osmTaxi,
-    osmCommunityCentre, osmDressMaker, osmAmbulanceStation, osmMemorial, osmEstateAgent, osmBusStop, osmRailwayStop,
-    osmBakery, osmBabyGoods, osmbookmaker, butcher, car_repair, clothes, coffee, computer, confectionery, deli,
-    dry_cleaning, electronics, florist, furniture, gardencentre, greengrocer, hairdresser, hardware, hearing_aids,
-    jewelry, leather, mobile_phone, newsagent, optician, outdoor, paint, perfumery, pet, photo, scuba_diving, seafood,
-    stationery, supermarket, tobacco, travel_agency, tyres, wine, information, museum, swimming_pool, osmNotFound);
+  TOSMLocationType = (osmUnknown, osmFuel, osmTelephone, osmParking, osmPharmacy, osmPostOffice, osmAtm,
+    osmCrossing, osmHotel, osmBar, osmCafe, osmCarWash, osmCinema, osmDentist, osmDoctors, osmFastFood,
+    osmIceCream, osmkindergarten, osmnursing_home, osmPolice, osmPub, osmRestaurant, osmSchool, osmToilets,
+    osmVeterinary, osmBank, osmTaxi, osmCommunityCentre, osmDressMaker, osmAmbulanceStation, osmMemorial,
+    osmEstateAgent, osmBusStop, osmRailwayStop, osmBakery, osmBabyGoods, osmbookmaker, osmButcher,
+    osmCarRepair, clothes, coffee, osmComputer, confectionery, deli, dry_cleaning, electronics, florist,
+    furniture, gardencentre, greengrocer, hairdresser, hardware, hearing_aids, jewelry, leather, mobile_phone,
+    newsagent, optician, outdoor, paint, perfumery, pet, photo, scuba_diving, seafood, stationery,
+    osmSupermarket, osmTobacco, travel_agency, tyres, wine, information, museum, swimming_pool, osmPostBox,
+    osmNotFound);
 
 const
-  OSMAddressCodes: array [TOSMAddressType] of string = ('unknown', 'fuel', 'telephone', 'parking', 'pharmacy',
-    'post_office', 'atm', 'crossing', 'hotel', 'bar', 'cafe', 'car_wash', 'cinema', 'dentist', 'doctors', 'fast_food',
-    'ice_cream', 'kindergarten', 'nursing_home', 'police', 'pub', 'restaurant', 'school', 'toilets', 'veterinary',
-    'bank', 'taxi', 'community_centre', 'dressmaker', 'ambulance_station', 'memorial', 'estate_agent', 'bus_stop',
-    'stop', 'bakery', 'baby_goods', 'bookmaker', 'butcher', 'car_repair', 'clothes', 'coffee', 'computer',
-    'confectionery', 'deli', 'dry_cleaning', 'electronics', 'florist', 'furniture', 'garden_centre', 'greengrocer',
-    'hairdresser', 'hardware', 'hearing_aids', 'jewelry', 'leather', 'mobile_phone', 'newsagent', 'optician', 'outdoor',
-    'paint', 'perfumery', 'pet', 'photo', 'scuba_diving', 'seafood', 'stationery', 'supermarket', 'tobacco',
-    'travel_agency', 'tyres', 'wine', 'information', 'museum', 'swimming_pool', '');
+  // Every kind of Location (Address)
+  OSMLocationCodes: array [TOSMLocationType] of string = ('unknown' { osmUnknown } , 'fuel' { osmFuel } ,
+    'telephone' { osmTelephone } , 'parking' { osmTelephone } , 'pharmacy' { osmPharmacy } , 'post_office',
+    'atm' { osmAtm } , 'crossing' { osmCrossing } , 'hotel' { osmHotel } , 'bar' { osmBar } ,
+    'cafe' { osmCafe } , 'car_wash' { osmCarWash } , 'cinema' { osmCinema } , 'dentist' { osmDentist } ,
+    'doctors', 'fast_food', 'ice_cream', 'kindergarten', 'nursing_home', 'police', 'pub', 'restaurant',
+    'school', 'toilets', 'veterinary', 'bank', 'taxi', 'community_centre', 'dressmaker', 'ambulance_station',
+    'memorial', 'estate_agent', 'bus_stop', 'stop', 'bakery', 'baby_goods', 'bookmaker', 'butcher',
+    'car_repair', 'clothes', 'coffee', 'computer', 'confectionery', 'deli', 'dry_cleaning', 'electronics',
+    'florist', 'furniture', 'garden_centre', 'greengrocer', 'hairdresser', 'hardware', 'hearing_aids',
+    'jewelry', 'leather', 'mobile_phone', 'newsagent', 'optician', 'outdoor', 'paint', 'perfumery', 'pet',
+    'photo', 'scuba_diving', 'seafood', 'stationery', 'supermarket', 'tobacco', 'travel_agency', 'tyres',
+    'wine', 'information', 'museum', 'swimming_pool', 'post_box', '');
 
-  OSMAddressGroupTypes: array [TOSMAddressType] of TOSMAddressGroup = (osgUnknown, osgAmenity, osgAmenity, osgAmenity,
-    osgAmenity, osgAmenity, osgAmenity, osgHigway, osgTourism, osgAmenity, osgAmenity, osgAmenity, osgAmenity,
-    osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity,
-    osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgCraft, osgEmergency, osgHistoric,
-    osgOffice, osgPubliTransport, osgPubliTransport, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
-    osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
-    osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
-    osgShop, osgShop, osgShop, osgShop, osgTourism, osgTourism, osgLeisure, osgNotFound);
+  OSMAddressGroupTypes: array [TOSMLocationType] of TOSMLocationGroup = (osgUnknown, osgAmenity, osgAmenity,
+    osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgHigway, osgTourism, osgAmenity, osgAmenity, osgAmenity,
+    osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity,
+    osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgCraft,
+    osgEmergency, osgHistoric, osgOffice, osgPubliTransport, osgPubliTransport, osgShop, osgShop, osgShop,
+    osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
+    osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
+    osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
+    osgShop, osgTourism, osgTourism, osgLeisure, osgAmenity { post_box } , osgNotFound);
 
   { la ricerca dei vari luoghi avviene con questo criterio:
     un 'loop' sulle chiavi presenti nel gruppo AddressGroup, se trovate vanno allora confrontate con i codici presenti
@@ -74,31 +81,74 @@ type
     addressfull: string;
   end;
 
+  TOSMFuel = record
+    { <tag k="payment:cash" v="yes"/>
+      <tag k="payment:mastercard" v="yes"/>
+      <tag k="payment:visa" v="yes"/> }
+
+  end;
+
+  TOSMShop = record
+    { <tag k="brand" v="EuroSpin"/>
+      <tag k="brand:wikidata" v="Q1374674"/>
+      <tag k="name" v="EuroSpin"/>
+      <tag k="opening_hours" v="Mo-Sa 08:30-13:00,15:30-20:00; Su 09:00-13:00"/>
+      <tag k="payment:cash" v="yes"/>
+      <tag k="payment:mastercard" v="yes"/>
+      <tag k="payment:visa" v="yes"/>
+      <tag k="shop" v="supermarket"/>
+      <tag k="website" v="https://www.eurospin.it/"/> }
+    shop: string;
+    payment_visa: boolean;
+    payment_mastercard: boolean;
+    payment_cash: boolean;
+    payment_amex: boolean;
+    opening_hours: string;
+  end;
+
+  TOSMTransport = record
+    { <tag k="name" v="Principe"/>
+      <tag k="operator" v="AMT"/>
+      <tag k="public_transport" v="station"/>
+      <tag k="railway" v="station"/>
+      <tag k="station" v="subway"/>
+      <tag k="subway" v="yes"/>
+      <tag k="wheelchair" v="yes"/>
+      <tag k="wikidata" v="Q3921992"/>
+      <tag k="wikipedia" v="it:Principe (metropolitana di Genova)"/> }
+    toperator: string;
+    railway_type: string;
+    station_type: string;
+    isSubway: boolean;
+  end;
+
 type
   TOSMLocation = record
   private
-    FOSMType: TOSMAddressType;
+    FOSMType: TOSMLocationType;
   private
     FStringValue: string;
     function GetOSMCode: string;
-    function GETOSMType: TOSMAddressType;
+    function GETOSMType: TOSMLocationType;
     procedure SetOSMCode(const Value: string);
-    procedure SetOSMType(const Value: TOSMAddressType);
+    procedure SetOSMType(const Value: TOSMLocationType);
     procedure SetStringValue(const Value: string);
     function GetOsmGroup: string;
   public
-    property OSMType: TOSMAddressType read GETOSMType write SetOSMType;
+    property OSMType: TOSMLocationType read GETOSMType write SetOSMType;
     property OSMCode: string read GetOSMCode write SetOSMCode;
     property StringValue: string read FStringValue write SetStringValue;
     property OSMGroup: string read GetOsmGroup;
   public
     constructor Create(aOSMCode: string); overload;
-    constructor Create(aOSMType: TOSMAddressType); overload;
+    constructor Create(aOSMType: TOSMLocationType); overload;
   end;
 
 type
   TOSMTagsArray = TArray<TOSMLocation>;
   TOSMStringTags = TArray<TOSMStringTag>;
+
+procedure DeleteTag(var A: TOSMTagsArray; const Index: Cardinal);
 
 type
   TOSMNode = record
@@ -123,7 +173,13 @@ type
     Localoperator: string;
     Location: TOSMLocation;
     Tags: TOSMStringTags;
+    IsShop: boolean;
+    shop: TOSMShop;
+    IsFuel: boolean;
+    Fuel: TOSMFuel;
     Address: TOSMAddress;
+    Transport: TOSMTransport;
+    jguid: TGUID;
   public
     procedure AddTags(aTag: TOSMStringTag); overload;
     procedure AddTags(aKey, aValue: string); overload;
@@ -136,32 +192,45 @@ type
 type
   TOSMNodeArray = TArray<TOSMNode>;
 
-function FindType(aGroup, aAddressType: string): TOSMAddressType;
-function FindGroup(aGroup: string): TOSMAddressGroup;
+function FindType(aGroup, aAddressType: string): TOSMLocationType;
+function FindGroup(aGroup: string): TOSMLocationGroup;
 
 implementation
 
 uses Janua.Core.Types, Janua.Core.Functions, System.SysUtils;
 
-function FindGroup(aGroup: string): TOSMAddressGroup;
+procedure DeleteTag(var A: TOSMTagsArray; const Index: Cardinal);
+var
+  ALength: Cardinal;
+  i: Cardinal;
 begin
-  for Result := Low(TOSMAddressGroup) to High(TOSMAddressGroup) do
-    if OSMAddressGroups[Result] = aGroup then
-      Exit;
-
-  Result := TOSMAddressGroup.osgUnknown;
+  ALength := Length(A);
+  Assert(ALength > 0);
+  Assert(Index < ALength);
+  for i := Index + 1 to ALength - 1 do
+    A[i - 1] := A[i];
+  SetLength(A, ALength - 1);
 end;
 
-function FindType(aGroup, aAddressType: string): TOSMAddressType;
+function FindGroup(aGroup: string): TOSMLocationGroup;
+begin
+  for Result := Low(TOSMLocationGroup) to High(TOSMLocationGroup) do
+    if OSMLocationGroups[Result] = aGroup then
+      Exit;
+
+  Result := TOSMLocationGroup.osgNotFound;
+end;
+
+function FindType(aGroup, aAddressType: string): TOSMLocationType;
 var
-  OSMAddressGroup: TOSMAddressGroup;
+  OSMAddressGroup: TOSMLocationGroup;
 begin
   OSMAddressGroup := FindGroup(aGroup);
-  if OSMAddressGroup <> TOSMAddressGroup.osgNotFound then
-    for Result := Low(TOSMAddressType) to High(TOSMAddressType) do
-      if (OSMAddressGroupTypes[Result] = OSMAddressGroup) and (OSMAddressCodes[Result] = aAddressType) then
+  if OSMAddressGroup <> TOSMLocationGroup.osgNotFound then
+    for Result := Low(TOSMLocationType) to High(TOSMLocationType) do
+      if (OSMAddressGroupTypes[Result] = OSMAddressGroup) and (OSMLocationCodes[Result] = aAddressType) then
         Exit();
-  Result := TOSMAddressType.osmNotFound;
+  Result := TOSMLocationType.osmNotFound;
 end;
 
 { OSMTag }
@@ -169,44 +238,43 @@ end;
 constructor TOSMLocation.Create(aOSMCode: string);
 begin
   self := Default (TOSMLocation);
-  self.FOSMType := TOSMAddressType.osmUnknown;
+  self.FOSMType := TOSMLocationType.osmUnknown;
   self.SetOSMCode(aOSMCode);
 end;
 
-constructor TOSMLocation.Create(aOSMType: TOSMAddressType);
+constructor TOSMLocation.Create(aOSMType: TOSMLocationType);
 begin
   self.FOSMType := aOSMType;
 end;
 
 function TOSMLocation.GetOSMCode: string;
 begin
-  Result := OSMAddressCodes[FOSMType]
+  Result := OSMLocationCodes[FOSMType]
 end;
 
 function TOSMLocation.GetOsmGroup: string;
 begin
-  Result := OSMAddressGroups[OSMAddressGroupTypes[self.FOSMType]]
+  Result := OSMLocationGroups[OSMAddressGroupTypes[self.FOSMType]]
 end;
 
-function TOSMLocation.GETOSMType: TOSMAddressType;
+function TOSMLocation.GETOSMType: TOSMLocationType;
 begin
   Result := self.FOSMType
 end;
 
 procedure TOSMLocation.SetOSMCode(const Value: string);
 var
-  aOSMType: TOSMAddressType;
+  aOSMType: TOSMLocationType;
 begin
-  if Value = OSMAddressCodes[FOSMType] then
+  if Value = OSMLocationCodes[FOSMType] then
     Exit;
-  if TEnumConvertor<TOSMAddressType>.TryFromStringArray(Value, OSMAddressCodes, aOSMType) then
-    self.FOSMType := aOSMType
+  if TEnumConvertor<TOSMLocationType>.TryFromStringArray(Value, OSMLocationCodes, aOSMType) then
+    FOSMType := aOSMType
   else
-    self.FOSMType := TOSMAddressType.osmUnknown;
-
+    FOSMType := TOSMLocationType.osmUnknown;
 end;
 
-procedure TOSMLocation.SetOSMType(const Value: TOSMAddressType);
+procedure TOSMLocation.SetOSMType(const Value: TOSMLocationType);
 begin
   self.FOSMType := Value;
 end;
@@ -220,59 +288,76 @@ end;
 
 procedure TOSMNode.AddTags(aTag: TOSMStringTag);
 var
-  aType: TOSMAddressType;
-  aTest: TOSMAddressGroup;
+  aType: TOSMLocationType;
+  aTest: TOSMLocationGroup;
+
+  procedure SetLocation;
+  begin
+    // (a patto che il Tag Appartiene ad un Gruppo di  Location cioè
+    // 'amenity', 'public_transport', 'tourism',
+    // 'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure'
+    if (FindGroup(aTag.k) <> TOSMLocationGroup.osgNotFound) then
+    begin
+      aType := FindType(aTag.k, aTag.v);
+      if aType = TOSMLocationType.osmNotFound then
+        aType := TOSMLocationType.osmUnknown;
+      Location.Create(aType);
+      Location.StringValue := aTag.k + '=' + aTag.v;
+
+    end;
+  end;
+
+  function SetTag: boolean;
+  begin
+    Result := True;
+    if aTag.k = 'addr:city' then
+      Address.city := aTag.v
+    else if aTag.k = 'addr:housenumber' then
+      Address.housenumber := aTag.v
+    else if aTag.k = 'addr:postcode' then
+      Address.postcode := aTag.v
+    else if aTag.k = 'addr:street' then
+      Address.street := aTag.v
+    else if aTag.k = 'operator' then
+      Transport.toperator := aTag.v
+    else if aTag.k = 'email' then
+      email := aTag.v
+      // contact:phone
+    else if aTag.k = 'contact:phone' then
+      phone := aTag.v
+      // phone
+    else if aTag.k = 'phone' then
+      phone := aTag.v
+      // stars
+      // website
+    else if aTag.k = 'website' then
+      website := aTag.v
+      // name
+    else if aTag.k = 'name' then
+      name := aTag.v
+    else if aTag.k = 'description' then
+      description := aTag.v
+    else if aTag.k = 'cuisine' then
+      cuisine := aTag.v
+    else if aTag.k = 'brand' then
+      brand := aTag.v
+    else if aTag.k = 'operator' then
+      Localoperator := aTag.v
+      // addr:full
+    else if aTag.k = 'addr:full' then
+      addressfull := aTag.v
+    else
+      Result := False;
+  end;
+
 begin
   SetLength(Tags, Length(Tags) + 1);
   Tags[Length(Tags) - 1] := aTag;
-  {
-    <tag k="addr:city" v="Genova"/>
-    <tag k="addr:housenumber" v="1"/>
-    <tag k="addr:postcode" v="16167"/>
-    <tag k="addr:street" v="Via Val Cismon"/>
-  }
-  if aTag.k = 'addr:city' then
-    self.Address.city := aTag.v
-  else if aTag.k = 'addr:housenumber' then
-    self.Address.housenumber := aTag.v
-  else if aTag.k = 'addr:postcode' then
-    self.Address.postcode := aTag.v
-  else if aTag.k = 'addr:street' then
-    self.Address.street := aTag.v
-  else if aTag.k = 'email' then
-    self.email := aTag.v
-    // contact:phone
-  else if aTag.k = 'contact:phone' then
-    self.phone := aTag.v
-    // phone
-  else if aTag.k = 'phone' then
-    self.phone := aTag.v
-    // stars
-    // website
-  else if aTag.k = 'website' then
-    self.website := aTag.v
-    // name
-  else if aTag.k = 'name' then
-    self.name := aTag.v
-  else if aTag.k = 'description' then
-    self.description := aTag.v
-  else if aTag.k = 'cuisine' then
-    self.cuisine := aTag.v
-  else if aTag.k = 'brand' then
-    self.brand := aTag.v
-  else if aTag.k = 'operator' then
-    self.Localoperator := aTag.v
-    // addr:full
-  else if aTag.k = 'addr:full' then
-    self.addressfull := aTag.v
-  else if (Location.FOSMType = TOSMAddressType.osmUnknown) and (FindGroup(aTag.k) <> TOSMAddressGroup.osgNotFound) then
-  begin
-    aType := FindType(aTag.k, aTag.v);
-    if aType = TOSMAddressType.osmNotFound then
-      aType := TOSMAddressType.osmUnknown;
-    self.Location.Create(aType);
-    self.Location.StringValue := aTag.k + '=' + aTag.v;
-  end;
+  // Se il Tag esaminato sopra non è un TAG di Attributo potrebbe essere un TAG di Location
+  // in questo caso valorizzo il Record Interno di Location se il Tag Location non fosse già valorizzato
+  if not SetTag and (Location.FOSMType in [TOSMLocationType.osmUnknown, TOSMLocationType.osmNotFound]) then
+    SetLocation;
+
 end;
 
 procedure TOSMNode.AddTags(aKey, aValue: string);
@@ -284,16 +369,16 @@ constructor TOSMNode.Create(aNodes: IDOMNode; aID: Int64);
 var
   i: integer;
 begin
-  self.Create(aID);
-  self.user := aNodes.attributes.getNamedItem('user').nodeValue;
-  self.version := StrToInt(aNodes.attributes.getNamedItem('version').nodeValue);
-  self.lat := Janua.Core.Functions.XMLDouble(aNodes.attributes.getNamedItem('lat').nodeValue);
-  self.lon := Janua.Core.Functions.XMLDouble(aNodes.attributes.getNamedItem('lon').nodeValue);
-  self.visible := Janua.Core.Functions.XMLBool(aNodes.attributes.getNamedItem('visible').nodeValue);
-  self.timestamp := Janua.Core.Functions.XMLDateTime(aNodes.attributes.getNamedItem('timestamp').nodeValue);
-  self.uid := StrToInt64(aNodes.attributes.getNamedItem('uid').nodeValue);
+  Create(aID);
+  user := aNodes.attributes.getNamedItem('user').nodeValue;
+  version := StrToInt(aNodes.attributes.getNamedItem('version').nodeValue);
+  lat := Janua.Core.Functions.XMLDouble(aNodes.attributes.getNamedItem('lat').nodeValue);
+  lon := Janua.Core.Functions.XMLDouble(aNodes.attributes.getNamedItem('lon').nodeValue);
+  visible := Janua.Core.Functions.XMLBool(aNodes.attributes.getNamedItem('visible').nodeValue);
+  timestamp := Janua.Core.Functions.XMLDateTime(aNodes.attributes.getNamedItem('timestamp').nodeValue);
+  uid := StrToInt64(aNodes.attributes.getNamedItem('uid').nodeValue);
   for i := 0 to aNodes.childNodes.Length - 1 do
-    self.AddTags(aNodes.childNodes.item[i].attributes.getNamedItem('k').nodeValue,
+    AddTags(aNodes.childNodes.item[i].attributes.getNamedItem('k').nodeValue,
       aNodes.childNodes.item[i].attributes.getNamedItem('v').nodeValue);
 end;
 
@@ -343,11 +428,11 @@ end;
 procedure TOSMNode.SetupLocation;
 var
   aTag: TOSMStringTag;
-  aType: TOSMAddressType;
+  aType: TOSMLocationType;
 begin
   for aTag in self.Tags do
-    for aType := Low(TOSMAddressType) to High(TOSMAddressType) do
-      if (aTag.k = OSMAddressGroups[OSMAddressGroupTypes[aType]]) and (aTag.v = OSMAddressCodes[aType]) then
+    for aType := Low(TOSMLocationType) to High(TOSMLocationType) do
+      if (aTag.k = OSMLocationGroups[OSMAddressGroupTypes[aType]]) and (aTag.v = OSMLocationCodes[aType]) then
         self.Location.Create(aType);
 
 end;
