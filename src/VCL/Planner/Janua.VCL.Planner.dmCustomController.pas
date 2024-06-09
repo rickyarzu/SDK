@@ -63,6 +63,7 @@ type
     DBDaySource1: TDBDaySource;
     actUpdateEvents: TAction;
     PictureContainer1: TPictureContainer;
+    SVGIconImageList1: TSVGIconImageList;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
