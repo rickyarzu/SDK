@@ -27,7 +27,6 @@ uses
 type
   // TJanuaVCLFormModel = class(TForm, IJanuaForm, IJanuaContainer, IJanuaControl, IJanuaBindable)
   TframeVCLAnagraphPlanner = class(TJanuaVCLFrameModel, IJanuaContainer, IJanuaBindable)
-    DBDaySource1: TDBDaySource;
     DataSource1: TDataSource;
     ImageList1: TImageList;
     ColorDialog1: TColorDialog;
@@ -49,17 +48,14 @@ type
     btnSearchMeeting: TButton;
     btnAddPerson: TButton;
     btnActivities: TButton;
-    PictureContainer1: TPictureContainer;
     btnExport: TButton;
     btnSend: TButton;
     btnPrint: TButton;
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     btnCalendarSync: TButton;
+    dbtAnagraphName: TDBText;
     procedure Caption1Click(Sender: TObject);
     procedure Color1Click(Sender: TObject);
-    procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
-    procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
-    procedure DBDaySource1SetFilter(Sender: TObject);
     procedure DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);
     procedure DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
     procedure DBPlanner1ItemImageClick(Sender: TObject; Item: TPlannerItem; ImageIndex: Integer);
@@ -110,56 +106,6 @@ begin
     DBPlanner1.PopupPlannerItem.CaptionBkg := ColorDialog1.Color;
     DBPlanner1.PopupPlannerItem.Update;
   end;
-end;
-
-procedure TframeVCLAnagraphPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
-  Item: TPlannerItem);
-begin
-  { The FieldsToItem event is called when records are read from the database
-    and extra properties are set from database fields. With this code, any
-    field from the database can be connected in a custom way to planner item
-    properties.
-  }
-  Item.Color := TColor(Fields.FieldByName('COLOR').AsInteger);
-  Item.CaptionBkg := Item.Color;
-  Item.ImageID := Fields.FieldByName('IMAGE').AsInteger;
-  if Fields.FieldByName('CAPTION').AsBoolean then
-    Item.CaptionType := ctTime
-  else
-    Item.CaptionType := ctNone;
-end;
-
-procedure TframeVCLAnagraphPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
-  Item: TPlannerItem);
-begin
-  { The ItemToFields event is called when items are written to the database
-    and extra properties are stored in database fields. With this code, any
-    property of the item can be saved into any field of the database in
-    a custom way to be retrieved later with the inverse event FieldsToItem
-  }
-
-  Fields.FieldByName('COLOR').AsInteger := Integer(Item.Color);
-  Fields.FieldByName('CAPTION').AsBoolean := Item.CaptionType = ctTime;
-  Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
-end;
-
-procedure TframeVCLAnagraphPlanner.DBDaySource1SetFilter(Sender: TObject);
-var
-  sd1, sd2: string;
-begin
-  { Before the planner needs to be reloaded with records from the database
-    a custom filter can be applied to minimize the nr. of records the planner
-    must check to load into the planner.
-  }
-  sd1 := DateToStr(DBDaySource1.Day);
-  sd1 := #39 + sd1 + #39;
-
-  sd2 := DateToStr(DBDaySource1.Day + 7);
-  sd2 := #39 + sd2 + #39;
-  (*
-    PlannerTable.Filter:=  'STARTTIME > '+sd1+' AND ENDTIME < '+sd2;
-    PlannerTable.Filtered := DoFilter.Checked;
-  *)
 end;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDblClick(Sender: TObject; Item: TPlannerItem);

@@ -18,7 +18,7 @@ uses
   // Januaproject
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf;
+  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, PictureContainer;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -62,6 +62,7 @@ type
     actUpdateCalendar: TAction;
     DBDaySource1: TDBDaySource;
     actUpdateEvents: TAction;
+    PictureContainer1: TPictureContainer;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -74,6 +75,8 @@ type
     procedure DBDaySource1SetFilter(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
     procedure GCalendarButtonsExecute(Action: TBasicAction; var Handled: Boolean);
+    procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -253,6 +256,37 @@ procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
 begin
   FCalendarList.Free;
   FCalendarList := nil;
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
+  Item: TPlannerItem);
+begin
+  { The FieldsToItem event is called when records are read from the database
+    and extra properties are set from database fields. With this code, any
+    field from the database can be connected in a custom way to planner item
+    properties.
+  }
+  Item.Color := TColor(Fields.FieldByName('COLOR').AsInteger);
+  Item.CaptionBkg := Item.Color;
+  Item.ImageID := Fields.FieldByName('IMAGE').AsInteger;
+  if Fields.FieldByName('CAPTION').AsBoolean then
+    Item.CaptionType := TCaptionType.ctTime
+  else
+    Item.CaptionType := TCaptionType.ctNone;
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
+  Item: TPlannerItem);
+begin
+  { The ItemToFields event is called when items are written to the database
+    and extra properties are stored in database fields. With this code, any
+    property of the item can be saved into any field of the database in
+    a custom way to be retrieved later with the inverse event FieldsToItem
+  }
+
+  Fields.FieldByName('COLOR').AsInteger := Integer(Item.Color);
+  Fields.FieldByName('CAPTION').AsBoolean := Item.CaptionType = ctTime;
+  Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
 end;
 
 procedure TdmVCLPlannerCustomController.DBDaySource1SetFilter(Sender: TObject);
