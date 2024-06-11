@@ -269,6 +269,7 @@
         <DCCReference Include="..\..\..\Lib\delphimvcframework\sources\MVCFramework.REPLCommandsHandlerU.pas"/>
         <DCCReference Include="..\..\..\Lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas"/>
         <DCCReference Include="..\..\..\Lib\delphimvcframework\sources\MVCFramework.Container.pas"/>
+        <DCCReference Include="..\..\..\Lib\delphimvcframework\sources\sqids.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
