@@ -180,7 +180,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBReportPlanner.pas">
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas">
             <Form>dmPhoenixIBPlanner</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>

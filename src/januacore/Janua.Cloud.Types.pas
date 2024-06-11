@@ -7,7 +7,6 @@ uses Spring.Collections, Janua.Core.Types, Data.DB, Janua.Core.Http.Intf;
 type
   TSendMessageEvent = procedure(const aMessage, aJson: string) of object;
 
-
 type
   TCloudPath = (tcpDocuments, tcpWorflows);
   TJanuaSSLVersion = (sslvSSLv2, sslvSSLv23, sslvSSLv3, sslvTLSv1, sslvTLSv1_1, sslvTLSv1_2);
@@ -281,6 +280,51 @@ type
     class function Base64Decode(const strInput: string): string; static;
   end;
 
+  TJanuaAttendeeStatus = (jrsNeedsAction, rsDeclined, rsTentative, rsAccepted);
+
+  TJanuaCalEventAttendee = record
+    Status: TJanuaAttendeeStatus;
+    EMail: string;
+    Name: string;
+    function GetStatusDescription: string;
+  end;
+
+  TJanuaCalEventAttendees = TArray<TJanuaCalEventAttendee>;
+
+  TJanuaRecCalEventAttendees = record
+    Attendees: TJanuaCalEventAttendees;
+  private
+    function GetAsJson: String;
+    procedure SetAsJson(const aJson: string);
+  public
+    procedure AddAttendee(aMail, aName: string; aStatus: TJanuaAttendeeStatus);
+    function GetCount: integer;
+    procedure RemoveAttendee(aMail: string);
+    procedure Clear;
+    property AsJson: String read GetAsJson write SetAsJson;
+  end;
+
+  TJanuaReminderMethod = (rmPopup, rmEmail, rmSMS);
+
+  TJanuaReminder = record
+    ID: TGUID;
+    Method: TJanuaReminderMethod;
+    Minutes: integer;
+  end;
+
+  TJanuaReminders = record
+    Reminders: TArray<TJanuaReminder>;
+  private
+    function GetAsJson: String;
+    procedure SetAsJson(const aJson: string);
+  public
+    procedure AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
+    procedure RemoveReminder(aNumber: integer);
+    procedure RemoveReminder(aID: TGUID);
+    procedure Clear;
+    property AsJson: String read GetAsJson write SetAsJson;
+  end;
+
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
     aMessage: TJanuaMailMessage) of object;
   TJanuaCloudMailMessageEvent = procedure(Sender: TObject; AErrorMessage: String; aMessage: TJanuaMailMessage)
@@ -294,7 +338,11 @@ uses System.SysUtils, System.StrUtils, Janua.Core.Functions, System.NetEncoding,
   Janua.Application.Framework, Janua.Core.Json, Janua.Core.Commons,
   Janua.Core.DB;
 
-{ TJanuaCloud }
+const
+  JanuaAttendeeStatuses: array [TJanuaAttendeeStatus] of string = ('Necessita Attenzione', 'Rifiutato',
+    'In attesa', 'Accettato');
+
+  { TJanuaCloud }
 class function TJanuaCloud.IconFromExtension(const aExtension: string): integer;
 begin
   Result := FExtensionIcons.GetValueOrDefault(aExtension.ToUpper, 116)
@@ -846,6 +894,95 @@ begin
   Result := Encode64(strFixup);
 end;
 
+{ TJanuaCalEventAttendee }
+
+function TJanuaCalEventAttendee.GetStatusDescription: string;
+begin
+
+end;
+
+{ TJanuaRecCalEventAttendees }
+
+procedure TJanuaRecCalEventAttendees.AddAttendee(aMail, aName: string; aStatus: TJanuaAttendeeStatus);
+begin
+  var
+  i := Length(Attendees);
+  SetLength(Attendees, i + 1);
+  Attendees[i].Status := aStatus;
+  Attendees[i].Name := aName;
+  Attendees[i].EMail := aMail;
+end;
+
+procedure TJanuaRecCalEventAttendees.Clear;
+begin
+  SetLength(Attendees, 0);
+end;
+
+function TJanuaRecCalEventAttendees.GetAsJson: String;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaRecCalEventAttendees>(Self);
+end;
+
+function TJanuaRecCalEventAttendees.GetCount: integer;
+begin
+  Result := Length(Attendees)
+end;
+
+procedure TJanuaRecCalEventAttendees.RemoveAttendee(aMail: string);
+begin
+  var
+  i := 0;
+  var
+  lMail := LowerCase(aMail);
+  for i := 0 to Length(Attendees) do
+    if LowerCase(Attendees[i].EMail) = lMail then
+    begin
+      Delete(Attendees, i, 1);
+      Exit
+    end;
+end;
+
+procedure TJanuaRecCalEventAttendees.SetAsJson(const aJson: string);
+begin
+  Self := TJanuaJson.DeserializeSimple<TJanuaRecCalEventAttendees>(aJson);
+end;
+
+{ TJanuaReminders }
+
+procedure TJanuaReminders.AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
+begin
+  var
+  i := Length(Reminders);
+  SetLength(Reminders, i + 1);
+  Reminders[i].ID := TGUID.NewGuid;
+  Reminders[i].Method := aMethod;
+  Reminders[i].Minutes := aMinutes;
+end;
+
+procedure TJanuaReminders.Clear;
+begin
+  SetLength(Reminders, 0);
+end;
+
+function TJanuaReminders.GetAsJson: String;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaReminders>(Self);
+end;
+
+procedure TJanuaReminders.RemoveReminder(aNumber: integer);
+begin
+  Delete(Reminders, aNumber, 1);
+end;
+
+procedure TJanuaReminders.RemoveReminder(aID: TGUID);
+begin
+
+end;
+
+procedure TJanuaReminders.SetAsJson(const aJson: string);
+begin
+  Self := TJanuaJson.DeserializeSimple<TJanuaReminders>(aJson);
+end;
 
 initialization
 

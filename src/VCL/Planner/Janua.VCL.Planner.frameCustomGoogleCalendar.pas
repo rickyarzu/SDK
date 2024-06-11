@@ -1,14 +1,14 @@
-unit Janua.VCL.Planner.frameGoogleCalendar;
+unit Janua.VCL.Planner.frameCustomGoogleCalendar;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Janua.VCL.Planner.dmCustomController;
+  Janua.VCL.Planner.dmCustomController, Data.DB, Vcl.Grids, Vcl.DBGrids, CRGrid;
 
 type
-  TFrame2 = class(TFrame)
+  TframeVCLCustomGoogleCalendar = class(TFrame)
     Panel1: TPanel;
     Image1: TImage;
     btnConnect: TButton;
@@ -79,10 +79,10 @@ type
     GroupBox2: TGroupBox;
     Label1: TLabel;
     Label13: TLabel;
-    ListView1: TListView;
     dpCalStartDate: TDateTimePicker;
     dpCalEndDate: TDateTimePicker;
     btUpdate: TButton;
+    CRDBGrid1: TCRDBGrid;
   private
     { Private declarations }
   public

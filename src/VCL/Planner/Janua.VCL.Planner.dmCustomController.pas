@@ -3,11 +3,14 @@ unit Janua.VCL.Planner.dmCustomController;
 interface
 
 uses
-  // System
+  // RTL
   System.SysUtils, System.Classes, System.Actions, System.Bindings.Helper, System.ImageList, Data.DB,
-  System.UITypes, System.DateUtils,
+  System.UITypes, System.DateUtils, System.TypInfo, System.StrUtils,
+  // DB
+  PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
   // VCL
   VCL.ActnList, VCL.ImgList, VCL.Controls, SVGIconImageListBase, SVGIconImageList, VCL.Dialogs,
+  PictureContainer,
   // Planner
   AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // Cloud
@@ -18,7 +21,7 @@ uses
   // Januaproject
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, PictureContainer;
+  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -59,6 +62,44 @@ type
     actColor: TAction;
     actCaption: TAction;
     Action2: TAction;
+    JanuaUniConnection1: TJanuaUniConnection;
+    InterBaseUniProvider1: TInterBaseUniProvider;
+    PostgreSQLUniProvider1: TPostgreSQLUniProvider;
+    vtGoogleEvents: TVirtualTable;
+    vtGoogleEventsID: TStringField;
+    vtGoogleEventsETAG: TStringField;
+    vtGoogleEventsSUMMARY: TStringField;
+    vtGoogleEventsDESCRIPTION: TWideMemoField;
+    vtGoogleEventsSTARTTIME: TDateTimeField;
+    vtGoogleEventsENDTIME: TDateTimeField;
+    vtGoogleEventsCREATED: TDateTimeField;
+    vtGoogleEventsUPDATED: TDateTimeField;
+    vtGoogleEventsISALLDAY: TBooleanField;
+    vtGoogleEventsLOCATION: TStringField;
+    vtGoogleEventsSTATUS: TSmallintField;
+    vtGoogleEventsVISIBILITY: TIntegerField;
+    vtGoogleEventsRECURRENCE: TStringField;
+    vtGoogleEventsRECURRINGID: TStringField;
+    vtGoogleEventsSEQUENCE: TIntegerField;
+    vtGoogleEventsCOLOR: TSmallintField;
+    vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField;
+    vtGoogleEventsSENDNOTIFICATIONS: TBooleanField;
+    vtGoogleEventsCALENDARID: TStringField;
+    vtGoogleCalendars: TVirtualTable;
+    vtGoogleCalendarsID: TStringField;
+    vtGoogleCalendarsDESCRIPTION: TBlobField;
+    vtGoogleCalendarsLOCATION: TStringField;
+    vtGoogleCalendarsSUMMARY: TStringField;
+    vtGoogleCalendarsPRIMARY: TBooleanField;
+    vtGoogleCalendarsTIMEZONE: TStringField;
+    vtGoogleCalendarsCOLOR: TSmallintField;
+    vtGoogleCalendarsBACK_COLOR: TIntegerField;
+    vtGoogleCalendarsFORE_COLOR: TIntegerField;
+    actDeleteCalendar: TAction;
+    actAddAttendee: TAction;
+    dsGoogleEvents: TUniDataSource;
+    vtGoogleEventsAttendees: TMemoField;
+    vtGoogleEventsReminders: TMemoField;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -79,6 +120,10 @@ type
     procedure PlannerItemInsert(Sender: TObject; Position, FromSel, FromSelPrecise, ToSel,
       ToSelPrecise: Integer);
     procedure PlannerItemImageClick(Sender: TObject; Item: TPlannerItem; ImageIndex: Integer); virtual;
+    procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+    procedure actDeleteCalendarExecute(Sender: TObject);
+    procedure actAddAttendeeExecute(Sender: TObject);
+    procedure actUpdateEventsExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -103,6 +148,7 @@ type
     FEndTimeEnabled: Boolean;
     FStartTime: TTime;
     FEndTime: TTime;
+    FCalEventsAttendees: TJanuaRecCalEventAttendees;
     function GetPlannerEvent: ITimetable;
     procedure SetCloudCalendar(const Value: TCloudCalendar);
     procedure SetPlannerEvent(const Value: ITimetable);
@@ -127,14 +173,15 @@ type
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
     /// <remarks>   If fails throws an exception and rollbacks dataset posts </remarks>
-    procedure EditEvent;
+    procedure EditEvent; virtual;
     /// <summary> Tries to Add an Event using ITimetable interface. </summary>
     /// <remarks> If fails throws an exception and rollbacks dataset posts </remarks>
-    procedure AddEvent;
+    procedure AddEvent; virtual;
     // ****************************************** Calendar Sync Procedures ******************************
     procedure Setup; virtual; abstract;
-    procedure Filter;
-    procedure UndoMeeting;
+    procedure FilterGoogle; virtual;
+    procedure UndoMeeting; virtual;
+    procedure Filter; virtual; abstract;
   private
     Fgcal: TGCalendar;
     Fgrem: TGReminder;
@@ -143,16 +190,44 @@ type
     FSelectedCalendar: TJanuaGCalendar;
     FDateTo: TDateTime;
     FDateFrom: TDateTime;
+    FCalendarColors: TStrings;
+    FCalendarColorIndex: Integer;
+    FDefaultRemindersList: TStrings;
+    FCalendarDescription: string;
+    FCalendarTimeZone: string;
+    FCalendarLocation: string;
+    FCalendarName: string;
+    FDefaultRemindersIndex: Integer;
+    FCalStartDate: TDateTime;
+    FCalEndDate: TDateTime;
+    FAttName: string;
+    FAttEmail: string;
+    FAttendeesList: TStrings;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
     procedure SetDateFrom(const Value: TDateTime);
     procedure SetDateTo(const Value: TDateTime);
+    procedure SetCalendarColors(const Value: TStrings);
+    procedure SetCalendarColorIndex(const Value: Integer);
+    procedure SetCalendarDescription(const Value: string);
+    procedure SetCalendarLocation(const Value: string);
+    procedure SetCalendarName(const Value: string);
+    procedure SetCalendarTimeZone(const Value: string);
+    procedure SetDefaultRemindersList(const Value: TStrings);
+    procedure SetDefaultRemindersIndex(const Value: Integer);
+    procedure SetCalEndDate(const Value: TDateTime);
+    procedure SetCalStartDate(const Value: TDateTime);
+    procedure SetAttEmail(const Value: string);
+    procedure SetAttendeesList(const Value: TStrings);
+    procedure SetAttName(const Value: string);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     procedure AddActivity; virtual; abstract;
+    procedure AddUser; Virtual; abstract;
   public
     { Public declarations }
+    // Google CAlendar
     procedure GetGCalendarList;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
@@ -166,6 +241,8 @@ type
     procedure ToggleReminders();
     procedure ClearControls();
     procedure Init();
+    procedure ListAttendees(Item: TGCalendarItem);
+    procedure ListReminders(Item: TGCalendarItem);
   public
     property Connected: Boolean read FConnected write SetConnected;
     property Inserting: Boolean read FInserting write SetInserting;
@@ -173,11 +250,29 @@ type
     property StartTime: TTime read FStartTime write SetStartTime;
     property EndTime: TTime read FEndTime write SetEndTime;
     property EndTimeEnabled: Boolean read FEndTimeEnabled write SetEndTimeEnabled;
-    property CalendarItemIndex: Integer read FCalendarItemIndex write SetCalendarItemIndex;
-    property CalendarList: TStrings read FCalendarList write SetCalendarList;
+    property CalendarColors: TStrings read FCalendarColors write SetCalendarColors;
+    property CalendarColorIndex: Integer read FCalendarColorIndex write SetCalendarColorIndex;
     property SelectedCalendar: TJanuaGCalendar read FSelectedCalendar write SetSelectedCalendar;
     property DateFrom: TDateTime read FDateFrom write SetDateFrom;
     property DateTo: TDateTime read FDateTo write SetDateTo;
+    // ******************** Google Calendar Properties *********************************************
+    // Google Calendar
+    property CalendarItemIndex: Integer read FCalendarItemIndex write SetCalendarItemIndex;
+    property CalendarList: TStrings read FCalendarList write SetCalendarList;
+    property CalendarName: string read FCalendarName write SetCalendarName;
+    property CalendarDescription: string read FCalendarDescription write SetCalendarDescription;
+    property CalendarLocation: string read FCalendarLocation write SetCalendarLocation;
+    property CalendarTimeZone: string read FCalendarTimeZone write SetCalendarTimeZone;
+    // Calendar Filters
+    property CalStartDate: TDateTime read FCalStartDate write SetCalStartDate;
+    property CalEndDate: TDateTime read FCalEndDate write SetCalEndDate;
+    // Default Reminders
+    property DefaultRemindersList: TStrings read FDefaultRemindersList write SetDefaultRemindersList;
+    property DefaultRemindersIndex: Integer read FDefaultRemindersIndex write SetDefaultRemindersIndex;
+    // Attendees
+    property AttendeesList: TStrings read FAttendeesList write SetAttendeesList;
+    property AttEmail: string read FAttEmail write SetAttEmail;
+    property AttName: string read FAttName write SetAttName;
   end;
 
 var
@@ -185,7 +280,7 @@ var
 
 implementation
 
-uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
+uses VCL.Forms, Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
   Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
@@ -193,6 +288,10 @@ uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmSVGIm
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
+
+const
+  JanuaAttendeeGoogleStatus: array [TResponseStatus] of TJanuaAttendeeStatus = (jrsNeedsAction, rsDeclined,
+    rsTentative, rsAccepted);
 
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var
@@ -310,6 +409,24 @@ begin
   *)
 end;
 
+procedure TdmVCLPlannerCustomController.actAddAttendeeExecute(Sender: TObject);
+var
+  li: TGCalendarItem;
+  att: TGAttendee;
+begin
+  if vtGoogleEvents.RecordCount > 0 then
+  begin
+    li := AdvGCalendar1.GetItemByID(vtGoogleEventsCALENDARID.AsString, vtGoogleEventsID.AsString);
+    // ListView1.Items[ListView1.ItemIndex].Data;
+    att := li.Attendees.Add;
+    att.Summary := AttName;
+    att.Email := AttEmail;
+    ListAttendees(li);
+    AttEmail := '';
+    AttName := '';
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.actAddCalendarExecute(Sender: TObject);
 begin
   Fgcal := AdvGCalendar1.Calendars.Add;
@@ -354,6 +471,31 @@ begin
   ConnectGCalendar;
 end;
 
+procedure TdmVCLPlannerCustomController.actDeleteCalendarExecute(Sender: TObject);
+var
+  buttonSelected: Integer;
+begin
+  if CalendarItemIndex >= 0 then
+  begin
+    buttonSelected :=
+      MessageDlg('Are you sure you want to delete the selected Calendar and all of it''s events?',
+      mtConfirmation, mbOKCancel, 0);
+
+    if buttonSelected = mrOk then
+    begin
+      AdvGCalendar1.DeleteCalendar((CalendarList.Objects[CalendarItemIndex] as TGCalendar));
+      FillCalendars;
+      FillCalendarItems;
+      ClearControls;
+    end;
+  end
+  else
+  begin
+    ShowMessage('Please select an Event first.');
+  end;
+
+end;
+
 procedure TdmVCLPlannerCustomController.actUpdateCalendarExecute(Sender: TObject);
 begin
   if CalendarItemIndex >= 0 then
@@ -369,25 +511,14 @@ begin
   end;
 end;
 
+procedure TdmVCLPlannerCustomController.actUpdateEventsExecute(Sender: TObject);
+begin
+  FillCalendarItems;
+end;
+
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
 begin
   AddActivity;
-  (*
-
-    var
-    lDlg: TdlgVCLPlannerActivities;
-    begin
-    lDlg := TdlgVCLPlannerActivities.Create(Self);
-    try
-    TJanuaApplication.WindowsManager.ShowOverlay;
-    lDlg.ShowModal;
-    dmPgPlannerStorage.PostActivities;
-    TJanuaApplication.WindowsManager.HideOverlay;
-    finally
-    FreeAndNil(lDlg);
-    end;
-
-  *)
 end;
 
 procedure TdmVCLPlannerCustomController.ActionAddMeetingExecute(Sender: TObject);
@@ -397,21 +528,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.ActionAddUserExecute(Sender: TObject);
 begin
-
-  (*
-    var
-    lDlg: TdlgVCLPlannerAnagraph;
-    begin
-    lDlg := TdlgVCLPlannerAnagraph.Create(Self);
-    try
-    TJanuaApplication.WindowsManager.ShowOverlay;
-    lDlg.ShowModal;
-    dmPgPlannerStorage.PostAnagraph;
-    TJanuaApplication.WindowsManager.HideOverlay;
-    finally
-    FreeAndNil(lDlg);
-    end;
-  *)
+  AddUser;
 end;
 
 procedure TdmVCLPlannerCustomController.ActionPrintExecute(Sender: TObject);
@@ -435,6 +552,12 @@ begin
   if DialogEvent then
     PostEvent;
   PlannerEvent := nil;
+end;
+
+procedure TdmVCLPlannerCustomController.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+begin
+  AdvGCalendar1.SaveTokens;
+  Init;
 end;
 
 procedure TdmVCLPlannerCustomController.ClearControls;
@@ -508,21 +631,103 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.FillCalendarItems;
+var
+  i: Integer;
+  gcal: TGCalendar;
+  rem: string;
 begin
+  Screen.Cursor := crHourGlass;
+  { property CalendarItemIndex: Integer read FCalendarItemIndex write SetCalendarItemIndex;
+    property CalendarList: TStrings read FCalendarList write SetCalendarList; }
 
+  if CalendarItemIndex >= 0 then
+  begin
+    gcal := (CalendarList.Objects[CalendarItemIndex] as TGCalendar);
+
+    CalendarName := gcal.Summary;
+    CalendarDescription := gcal.Description;
+    CalendarLocation := gcal.Location;
+    CalendarTimeZone := gcal.TimeZone;
+
+    // Default Reminders
+    DefaultRemindersList.Clear;
+
+    for i := 0 to gcal.DefaultReminders.Count - 1 do
+    begin
+      case gcal.DefaultReminders[i].Method of
+        rmPopup:
+          rem := 'popup';
+        rmEmail:
+          rem := 'email';
+        rmSMS:
+          rem := 'sms';
+      end;
+      DefaultRemindersList.Add(rem + ' ' + IntToStr(gcal.DefaultReminders[i].Minutes) + ' minutes')
+    end;
+
+    if DefaultRemindersList.Count > 0 then
+      DefaultRemindersIndex := 0;
+
+    AdvGCalendar1.GetCalendar(gcal.ID, CalStartDate, CalEndDate);
+
+    vtGoogleCalendars.Clear;
+    for i := 0 to AdvGCalendar1.Items.Count - 1 do
+    begin
+      vtGoogleEvents.Append;
+      vtGoogleEventsSTARTTIME.AsDateTime := AdvGCalendar1.Items[i].StartTime;
+      vtGoogleEventsENDTIME.AsDateTime := AdvGCalendar1.Items[i].EndTime;
+      vtGoogleEventsSUMMARY.AsString := AdvGCalendar1.Items[i].Summary;
+      vtGoogleEventsDESCRIPTION.AsString := AdvGCalendar1.Items[i].Description;
+      // edID.Text := gcal.ID;    edEtag.Text := gcal.
+      vtGoogleEventsID.AsString := AdvGCalendar1.Items[i].ID;
+      vtGoogleEventsETAG.AsString := AdvGCalendar1.Items[i].ETag;
+      vtGoogleEventsCALENDARID.AsString := AdvGCalendar1.Items[i].CalendarID;
+      vtGoogleEventsCREATED.AsDateTime := AdvGCalendar1.Items[i].Created;
+      vtGoogleEventsUPDATED.AsDateTime := AdvGCalendar1.Items[i].Updated;
+      vtGoogleEventsISALLDAY.AsBoolean := AdvGCalendar1.Items[i].IsAllDay;
+      // IfThen(AdvGCalendar1.Items[i].IsAllDay , 'T', 'F');
+      vtGoogleEventsLOCATION.AsString := AdvGCalendar1.Items[i].Location;
+      vtGoogleEventsSTATUS.AsInteger := Ord(AdvGCalendar1.Items[i].Status);
+      vtGoogleEventsVISIBILITY.AsInteger := Ord(AdvGCalendar1.Items[i].Visibility);
+      vtGoogleEventsRECURRENCE.AsString := AdvGCalendar1.Items[i].Recurrence;
+    end;
+  end;
+  Screen.Cursor := crDefault;
 end;
 
 procedure TdmVCLPlannerCustomController.FillCalendars;
+var
+  i: Integer;
+  isPrimary: string;
 begin
+  AdvGCalendar1.GetCalendars();
 
+  FCalendarList.Clear;
+
+  for i := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    if AdvGCalendar1.Calendars[i].Primary then
+      isPrimary := ' (Primary)'
+    else
+      isPrimary := '';
+    FCalendarList.addObject(AdvGCalendar1.Calendars[i].Summary + isPrimary, AdvGCalendar1.Calendars[i]);
+  end;
+  FCalendarItemIndex := 0;
 end;
 
 procedure TdmVCLPlannerCustomController.FillColors;
+var
+  cl: TGItemColor;
 begin
-
+  AdvGCalendar1.GetColors;
+  FCalendarColors.Clear;
+  for cl := Low(TGItemColor) to High(TGItemColor) do
+    FCalendarColors.Add(StringReplace(GetEnumName(TypeInfo(TGItemColor), Ord(cl)), 'ic', '', []));
+  if FCalendarColors.Count > 0 then
+    FCalendarColorIndex := 0;
 end;
 
-procedure TdmVCLPlannerCustomController.Filter;
+procedure TdmVCLPlannerCustomController.FilterGoogle;
 begin
 
 end;
@@ -563,6 +768,56 @@ begin
   ToggleControls;
 end;
 
+procedure TdmVCLPlannerCustomController.ListAttendees(Item: TGCalendarItem);
+var
+  att: string;
+  i: Integer;
+begin
+  att := '';
+  FCalEventsAttendees.Clear;
+
+  for i := 0 to Item.Attendees.Count - 1 do
+    FCalEventsAttendees.AddAttendee(Item.Attendees[i].Summary, Item.Attendees[i].Email,
+      JanuaAttendeeGoogleStatus[Item.Attendees[i].Status]);
+
+  vtGoogleEvents.Edit;
+  vtGoogleEventsAttendees.AsString := FCalEventsAttendees.AsJson;
+
+end;
+
+procedure TdmVCLPlannerCustomController.ListReminders(Item: TGCalendarItem);
+var
+  rem: string;
+  I: integer;
+  li: TListItem;
+begin
+  rem := '';
+  lvRem.Items.Clear;
+
+  cbRem.Checked := Item.UseDefaultReminders;
+
+  for I := 0 to Item.Reminders.Count - 1 do
+  begin
+    case Item.Reminders[I].Method of
+      rmPopup:
+        rem := 'popup';
+      rmEmail:
+        rem := 'email';
+      rmSMS:
+        rem := 'sms';
+    end;
+
+    li := lvRem.Items.Add;
+    li.Caption := rem;
+    li.SubItems.Add(IntToStr(Item.Reminders[I].Minutes));
+    li.Data := Item.Reminders[I];
+  end;
+
+  ToggleReminders;
+
+
+end;
+
 procedure TdmVCLPlannerCustomController.PlannerItemDblClick(Sender: TObject; Item: TPlannerItem);
 begin
   EditEvent;
@@ -591,9 +846,39 @@ begin
   }
   with Planner.CreateItemAtSelection do
   begin
-    Text.Text := 'Creato Evento il ' + Formatdatetime('hh:nn dd/mm/yyyy', Now);
+    Text.Text := 'Creato Evento il ' + FormatDateTime('hh:nn dd/mm/yyyy', Now);
     Update;
   end;
+end;
+
+procedure TdmVCLPlannerCustomController.SetAttEmail(const Value: string);
+begin
+  FAttEmail := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetAttendeesList(const Value: TStrings);
+begin
+  FAttendeesList := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetAttName(const Value: string);
+begin
+  FAttName := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarColorIndex(const Value: Integer);
+begin
+  FCalendarColorIndex := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarColors(const Value: TStrings);
+begin
+  FCalendarColors := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarDescription(const Value: string);
+begin
+  FCalendarDescription := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetCalendarItemIndex(const Value: Integer);
@@ -604,6 +889,31 @@ end;
 procedure TdmVCLPlannerCustomController.SetCalendarList(const Value: TStrings);
 begin
   FCalendarList := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarLocation(const Value: string);
+begin
+  FCalendarLocation := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarName(const Value: string);
+begin
+  FCalendarName := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalendarTimeZone(const Value: string);
+begin
+  FCalendarTimeZone := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalEndDate(const Value: TDateTime);
+begin
+  FCalEndDate := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCalStartDate(const Value: TDateTime);
+begin
+  FCalStartDate := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetCloudCalendar(const Value: TCloudCalendar);
@@ -640,6 +950,16 @@ procedure TdmVCLPlannerCustomController.SetDBPlanner(const Value: TDBPlanner);
 begin
   FDBPlanner := Value;
   FPlanner := TPlanner(FDBPlanner);
+end;
+
+procedure TdmVCLPlannerCustomController.SetDefaultRemindersIndex(const Value: Integer);
+begin
+  FDefaultRemindersIndex := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetDefaultRemindersList(const Value: TStrings);
+begin
+  FDefaultRemindersList := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetEndTime(const Value: TTime);

@@ -1,4 +1,4 @@
-object Frame2: TFrame2
+object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
   Left = 0
   Top = 0
   Width = 904
@@ -11,7 +11,6 @@ object Frame2: TFrame2
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 800
     DesignSize = (
       904
       41)
@@ -117,7 +116,6 @@ object Frame2: TFrame2
     Align = alTop
     Caption = 'Calendars'
     TabOrder = 1
-    ExplicitWidth = 794
     DesignSize = (
       898
       168)
@@ -151,7 +149,6 @@ object Frame2: TFrame2
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Details'
       TabOrder = 1
-      ExplicitWidth = 759
       DesignSize = (
         863
         117)
@@ -210,9 +207,10 @@ object Frame2: TFrame2
       object btDeleteCalendar: TButton
         Left = 328
         Top = 80
-        Width = 169
+        Width = 154
         Height = 25
-        Caption = 'Elimina'
+        Action = dmVCLPlannerCustomController.actDeleteCalendar
+        ImageMargins.Left = 6
         Images = dmVCLPlannerCustomController.SVGIconImageList16
         TabOrder = 3
       end
@@ -263,7 +261,6 @@ object Frame2: TFrame2
     Align = alBottom
     Caption = 'Details'
     TabOrder = 2
-    ExplicitWidth = 794
     DesignSize = (
       898
       328)
@@ -424,7 +421,6 @@ object Frame2: TFrame2
       Height = 41
       Align = alBottom
       TabOrder = 9
-      ExplicitWidth = 790
       object Button6: TButton
         Left = 247
         Top = 8
@@ -476,6 +472,9 @@ object Frame2: TFrame2
       TabOrder = 10
       object TabSheet1: TTabSheet
         Caption = 'Reminders'
+        DesignSize = (
+          512
+          203)
         object Label2: TLabel
           Left = 3
           Top = 146
@@ -503,8 +502,9 @@ object Frame2: TFrame2
         object lvRem: TListView
           Left = 3
           Top = 3
-          Width = 353
+          Width = 494
           Height = 110
+          Anchors = [akLeft, akTop, akRight]
           Columns = <
             item
               Caption = 'Method'
@@ -621,10 +621,11 @@ object Frame2: TFrame2
         object btInvite: TButton
           Left = 40
           Top = 152
-          Width = 110
+          Width = 169
           Height = 25
-          Hint = 'Add attendee to the Event'
-          Caption = 'Add'
+          Action = dmVCLPlannerCustomController.actAddAttendee
+          ImageMargins.Left = 6
+          Images = dmVCLPlannerCustomController.SVGIconImageList16
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
@@ -654,7 +655,6 @@ object Frame2: TFrame2
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 13
-      ExplicitWidth = 49
     end
     object edEtag: TEdit
       Left = 565
@@ -663,7 +663,6 @@ object Frame2: TFrame2
       Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 14
-      ExplicitLeft = 461
     end
     object edGrp: TEdit
       Left = 693
@@ -672,7 +671,6 @@ object Frame2: TFrame2
       Height = 23
       Anchors = [akTop, akRight]
       TabOrder = 15
-      ExplicitLeft = 589
     end
   end
   object GroupBox2: TGroupBox
@@ -685,7 +683,6 @@ object Frame2: TFrame2
     Align = alClient
     Caption = 'Events'
     TabOrder = 3
-    ExplicitWidth = 794
     DesignSize = (
       898
       304)
@@ -703,48 +700,6 @@ object Frame2: TFrame2
       Height = 15
       Caption = 'End date:'
     end
-    object ListView1: TListView
-      Left = 16
-      Top = 76
-      Width = 868
-      Height = 210
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      Columns = <
-        item
-          Caption = 'Start time'
-          Width = 110
-        end
-        item
-          Caption = 'End time'
-          Width = 110
-        end
-        item
-          Caption = 'Subject'
-          Width = 180
-        end
-        item
-          Caption = 'Description'
-          Width = 270
-        end
-        item
-          Caption = 'ID'
-          Width = 80
-        end
-        item
-          Caption = 'ETag'
-          Width = 100
-        end
-        item
-          Caption = 'Calendar ID'
-          Width = 120
-        end>
-      ColumnClick = False
-      ReadOnly = True
-      RowSelect = True
-      TabOrder = 0
-      ViewStyle = vsReport
-      ExplicitWidth = 764
-    end
     object dpCalStartDate: TDateTimePicker
       Left = 124
       Top = 22
@@ -752,7 +707,7 @@ object Frame2: TFrame2
       Height = 21
       Date = 41153.000000000000000000
       Time = 0.582957546299439900
-      TabOrder = 1
+      TabOrder = 0
     end
     object dpCalEndDate: TDateTimePicker
       Left = 124
@@ -761,20 +716,75 @@ object Frame2: TFrame2
       Height = 21
       Date = 41274.000000000000000000
       Time = 0.582957546299439900
-      TabOrder = 2
+      TabOrder = 1
     end
     object btUpdate: TButton
-      Left = 724
+      Left = 736
       Top = 45
-      Width = 156
+      Width = 144
       Height = 25
-      Hint = 'Update time span'
+      Action = dmVCLPlannerCustomController.actUpdateEvents
       Anchors = [akTop, akRight]
-      Caption = 'Aggiorna'
+      ImageMargins.Left = 6
+      Images = dmVCLPlannerCustomController.SVGIconImageList16
       ParentShowHint = False
       ShowHint = True
+      TabOrder = 2
+    end
+    object CRDBGrid1: TCRDBGrid
+      Left = 16
+      Top = 76
+      Width = 864
+      Height = 225
+      Anchors = [akLeft, akTop, akRight]
+      DataSource = dmVCLPlannerCustomController.dsGoogleEvents
       TabOrder = 3
-      ExplicitLeft = 620
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'STARTTIME'
+          Title.Caption = 'Dalle Ore'
+          Width = 112
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ENDTIME'
+          Title.Caption = 'Alle Ore'
+          Width = 112
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'SUMMARY'
+          Title.Caption = 'Oggetto (Sintesi)'
+          Width = 300
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'LOCATION'
+          Title.Caption = 'Luogo (Indirizzo)'
+          Width = 304
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CALENDARID'
+          Width = 772
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ID'
+          Width = 104
+          Visible = True
+        end>
     end
   end
 end

@@ -106,7 +106,7 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
-    procedure FillCalendars();
+    procedure FillCalendars(); // passed ---------------------
     procedure FillCalendarItems();
     procedure FillCalendarItemDetails();
     procedure FillColors();

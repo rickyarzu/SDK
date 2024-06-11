@@ -429,7 +429,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Top = 46
       Width = 499
       Height = 233
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       TabOrder = 10
       object TabSheet1: TTabSheet
         Caption = 'Reminders'
@@ -560,7 +560,6 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
               Width = 140
             end>
           ColumnClick = False
-          Items.ItemData = {050000000000000000}
           RowSelect = True
           TabOrder = 0
           ViewStyle = vsReport
