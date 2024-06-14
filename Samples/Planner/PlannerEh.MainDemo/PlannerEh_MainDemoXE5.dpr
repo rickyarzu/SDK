@@ -19,7 +19,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Amakrits');
   Application.CreateForm(TToolsDataModule, ToolsDataModule);
   Application.CreateForm(TForm1, Form1);
   Application.Run;

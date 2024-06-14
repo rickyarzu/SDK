@@ -2,8 +2,8 @@ object Form92: TForm92
   Left = 0
   Top = 0
   Caption = 'PlannerRangeSelector Demo'
-  ClientHeight = 324
-  ClientWidth = 448
+  ClientHeight = 562
+  ClientWidth = 785
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,16 +11,17 @@ object Form92: TForm92
   Font.Name = 'Tahoma'
   Font.Style = []
   DesignSize = (
-    448
-    324)
+    785
+    562)
   TextHeight = 13
   object Label1: TLabel
     Left = 8
-    Top = 303
-    Width = 424
+    Top = 541
+    Width = 134
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Selected timespan: 1 day(s)'
+    ExplicitTop = 303
   end
   object Label2: TLabel
     Left = 247
@@ -35,7 +36,7 @@ object Form92: TForm92
   object PlannerRangeSelector1: TPlannerRangeSelector
     Left = 8
     Top = 14
-    Width = 169
+    Width = 233
     Height = 21
     Color = clWindow
     DefaultHandling = True
@@ -101,7 +102,7 @@ object Form92: TForm92
     OnClickBtn = PlannerRangeSelector1ClickBtn
     Calendar = mcal1_.Owner
     DateStart = 41695.000000000000000000
-    DateEnd = 45447.000000000000000000
+    DateEnd = 45456.000000000000000000
     HideCalendarAfterSelection = False
     OnRangeSelect = PlannerRangeSelector1RangeSelect
     object mcal1_: TPlannerCalendar
@@ -205,12 +206,14 @@ object Form92: TForm92
   object ListBox1: TListBox
     Left = 8
     Top = 96
-    Width = 424
-    Height = 198
+    Width = 761
+    Height = 436
     Anchors = [akLeft, akTop, akRight, akBottom]
     ItemHeight = 13
     PopupMenu = PopupMenu1
     TabOrder = 2
+    ExplicitWidth = 424
+    ExplicitHeight = 198
   end
   object CheckBox1: TCheckBox
     Left = 247

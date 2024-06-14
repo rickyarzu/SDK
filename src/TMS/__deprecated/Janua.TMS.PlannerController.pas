@@ -142,14 +142,7 @@ end;
 
 function TdmTMSCustomPlannerController.GetPlannerEvent: ITimetable;
 begin
-  if not Assigned(FPlannerEvent) then
-  begin
-    TJanuaCoreOS.PublicWriteLog(Self, 'EditEvent', 'TryGetRecordIntf(ITimetable)');
-    if not TJanuaOrmFactory.TryGetRecordIntf(ITimetable, FPlannerEvent, 'Event', TJanuaEntity.PlannerTimetable)
-    then
-      raise Exception.Create('TryGetRecordIntf(ITimetable) ITimetable not set');
-  end;
-  Result := FPlannerEvent;
+
 end;
 
 procedure TdmTMSCustomPlannerController.SetCloudCalendar(const Value: TCloudCalendar);

@@ -21,7 +21,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, DB, ADODB, Planner, DBPlanner, PlanRecurrEdit,
-  StdCtrls, ExtCtrls, XPMan, ImgList
+  StdCtrls, ExtCtrls, XPMan, ImgList, System.ImageList
   {$IFDEF VER150}
   , ComCtrls, ImgList, PlanItemEdit
   {$ENDIF}

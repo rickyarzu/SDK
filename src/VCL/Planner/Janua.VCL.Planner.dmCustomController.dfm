@@ -5277,12 +5277,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       end>
     Scaled = True
     Left = 64
-    Top = 64
+    Top = 8
   end
   object MainToolBarActions: TActionList
     Images = SVGIconImageList48
     Left = 64
-    Top = 136
+    Top = 80
     object ActionAddMeeting: TAction
       Category = 'Meetings'
       Caption = 'Aggiungi Appuntamento'
@@ -5368,7 +5368,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45453.000000000000000000
+    DateFrom = 45457.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5388,8 +5388,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 160
-    Top = 104
+    Left = 152
+    Top = 112
   end
   object iCloudCalendar1: TiCloudCalendar
     ForceSynchronize = True
@@ -5397,7 +5397,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     IgnoreCertificateError = True
     Active = False
     Left = 160
-    Top = 168
+    Top = 176
   end
   object AdvvCalendar1: TAdvvCalendar
     vEvents = <>
@@ -5420,7 +5420,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   object MenuButtonActions: TActionList
     Images = SVGIconImageList16
     Left = 64
-    Top = 208
+    Top = 144
     object actColor: TAction
       Caption = 'Colore'
       ImageIndex = 15
@@ -5440,8 +5440,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   object GCalendarButtons: TActionList
     Images = SVGIconImageList16
     OnExecute = GCalendarButtonsExecute
-    Left = 64
-    Top = 280
+    Left = 72
+    Top = 208
     object actConnect: TAction
       Caption = 'Connetti Google'
       ImageIndex = 16
@@ -10757,12 +10757,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
           '.81h-.98v-4.79l-.94.51-.21-.82 1.37-.71z"/></g></svg>'
       end>
     Scaled = True
-    Left = 160
-    Top = 312
+    Left = 72
+    Top = 272
   end
-  object DBDaySource1: TDBDaySource
+  object DBDaySourceCalendar: TDBDaySource
     Active = False
-    OnSetFilter = DBDaySource1SetFilter
+    OnSetFilter = DBDaySourceCalendarSetFilter
     AutoIncKey = True
     ResourceDataSource.ResourceIDField = 'RESPONSABILE'
     ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
@@ -10775,8 +10775,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     SubjectField = 'SUBJECT'
     NotesField = 'SUBJECT'
     UpdateByQuery = False
-    OnFieldsToItem = DBDaySource1FieldsToItem
-    OnItemToFields = DBDaySource1ItemToFields
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
     AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000
@@ -10885,8 +10885,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
         Tag = 0
       end>
     Version = '2.1.1.0'
-    Left = 272
-    Top = 200
+    Left = 160
+    Top = 376
   end
   object SVGIconImageListIt: TSVGIconImageList
     Size = 24
@@ -10957,12 +10957,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
           '1-2.5 2.5-2.5z" fill="#dadada"/></svg>'
       end>
     Scaled = True
-    Left = 272
-    Top = 264
+    Left = 72
+    Top = 344
   end
   object ColorDialog1: TColorDialog
-    Left = 267
-    Top = 346
+    Left = 163
+    Top = 306
   end
   object JanuaUniConnection1: TJanuaUniConnection
     ProviderName = 'InterBase'
@@ -11253,5 +11253,39 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     DataSet = vtGoogleEvents
     Left = 528
     Top = 144
+  end
+  object dsCalendar: TUniDataSource
+    Left = 272
+    Top = 200
+  end
+  object DBDaySourceGCalendar: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    ResourceDataSource.ResourceIDField = 'RESPONSABILE'
+    ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'SUBJECT'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45444.000000000000000000
+    Mode = dmMultiDayRes
+    NumberOfDays = 2
+    NumberOfResources = 6
+    Left = 267
+    Top = 264
+  end
+  object dsGCalendar: TUniDataSource
+    Left = 272
+    Top = 328
   end
 end

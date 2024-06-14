@@ -2,17 +2,18 @@ object Form1: TForm1
   Left = 428
   Top = 205
   Caption = 'TDBPlanner recurrency demo'
-  ClientHeight = 744
-  ClientWidth = 655
+  ClientHeight = 868
+  ClientWidth = 887
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  DesignSize = (
+    887
+    868)
   TextHeight = 13
   object Label1: TLabel
     Left = 144
@@ -28,10 +29,10 @@ object Form1: TForm1
     Caption = 'Views :'
   end
   object DBPlanner1: TDBPlanner
-    Left = 16
-    Top = 40
-    Width = 633
-    Height = 529
+    Left = 8
+    Top = 39
+    Width = 871
+    Height = 662
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -42,12 +43,15 @@ object Form1: TForm1
       8888888880808080888888888080808088888888808080808888888888808080
       8888888888808880888888888888000888888888888888888888}
     AutoInsDel = True
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Caption.Title = 'TDBPlanner'
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = clWhite
     Caption.Font.Height = -13
     Caption.Font.Name = 'MS Sans Serif'
     Caption.Font.Style = [fsBold]
+    Caption.Background = 16575452
+    Caption.BackgroundTo = 16571329
     DayNames.Strings = (
       'Sun'
       'Mon'
@@ -120,10 +124,11 @@ object Form1: TForm1
     Display.ActiveEnd = 56
     Display.CurrentPosFrom = 5
     Display.CurrentPosTo = 5
-    Display.ColorNonActive = clSilver
-    Display.HourLineColor = 7500402
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
+    Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -144,13 +149,17 @@ object Form1: TForm1
     Footer.Font.Name = 'MS Sans Serif'
     Footer.Font.Style = []
     GridLeftCol = 1
-    GridLineColor = 10395294
-    GridTopRow = 26
+    GridLineColor = clSilver
+    GridTopRow = 24
+    Header.ActiveColor = 16575452
+    Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
       ''
       'januari'
       'februari'
       'maart')
+    Header.Color = 16645114
+    Header.ColorTo = 16643051
     Header.CustomGroups = <>
     Header.Font.Charset = DEFAULT_CHARSET
     Header.Font.Color = clWindowText
@@ -181,6 +190,10 @@ object Form1: TForm1
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2004
     Mode.Day = 11
+    Sidebar.ActiveColor = 16575452
+    Sidebar.ActiveColorTo = 16571329
+    Sidebar.Background = 16645114
+    Sidebar.BackgroundTo = 16643051
     Sidebar.DateTimeFormat = 'dd, mmm'
     Sidebar.Font.Charset = DEFAULT_CHARSET
     Sidebar.Font.Color = clWindowText
@@ -211,16 +224,18 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.0.0.3'
+    Version = '3.4.6.0'
     OnPlannerNext = DBPlanner1PlannerNext
     OnPlannerPrev = DBPlanner1PlannerPrev
     ItemSource = DBDaySource1
+    TMSStyle = 0
   end
   object DBGrid1: TDBGrid
-    Left = 16
-    Top = 584
-    Width = 633
+    Left = 8
+    Top = 707
+    Width = 871
     Height = 153
+    Anchors = [akLeft, akBottom]
     DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
@@ -261,13 +276,13 @@ object Form1: TForm1
       'o=False'
     CursorType = ctStatic
     TableName = 'Schedules'
-    Left = 136
-    Top = 512
+    Left = 328
+    Top = 336
   end
   object DataSource1: TDataSource
     DataSet = ADOTable1
-    Left = 136
-    Top = 480
+    Left = 192
+    Top = 336
   end
   object DBDaySource1: TDBDaySource
     AutoIncKey = False
@@ -292,8 +307,8 @@ object Form1: TForm1
     MinTimeField = 'MINTIME'
     MaxTimeField = 'MAXTIME'
     OnGetResourceName = DBDaySource1GetResourceName
-    Left = 160
-    Top = 424
+    Left = 240
+    Top = 208
   end
   object RE: TPlannerRecurrencyEditor
     LanguageSettings.Caption = 'Recurrency'
@@ -348,8 +363,8 @@ object Form1: TForm1
     LanguageSettings.MonthOctober = 'O'
     LanguageSettings.MonthNovember = 'N'
     LanguageSettings.MonthDecember = 'D'
-    Left = 224
-    Top = 424
+    Left = 248
+    Top = 304
   end
   object DBDaySource2: TDBDaySource
     AutoIncKey = False
@@ -374,8 +389,8 @@ object Form1: TForm1
     MinTimeField = 'MINTIME'
     MaxTimeField = 'MAXTIME'
     OnGetResourceName = DBDaySource1GetResourceName
-    Left = 128
-    Top = 424
+    Left = 152
+    Top = 240
   end
   object DBPeriodSource1: TDBPeriodSource
     AutoIncKey = False
@@ -398,14 +413,14 @@ object Form1: TForm1
     MaxTimeField = 'MAXTIME'
     StartDate = 38231.000000000000000000
     EndDate = 38260.000000000000000000
-    Left = 192
-    Top = 424
+    Left = 328
+    Top = 240
   end
   object ImageList1: TImageList
-    Left = 184
-    Top = 480
+    Left = 424
+    Top = 304
     Bitmap = {
-      494C010101000400100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -563,7 +578,7 @@ object Form1: TForm1
     MaxTimeField = 'MAXTIME'
     Month = 10
     Year = 2004
-    Left = 264
-    Top = 424
+    Left = 416
+    Top = 216
   end
 end
