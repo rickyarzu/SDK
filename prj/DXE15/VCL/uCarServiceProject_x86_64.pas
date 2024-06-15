@@ -58,7 +58,7 @@ begin
   lAppExtras := TJanuaApplicationRecord.Create('Extras', 'Extra Applications', 102, nil);
   // -------------- Demos --------------------------------------------------------------------------
   lAppDemos := TJanuaApplicationRecord.Create('Demos', 'Demos Applications', 103, nil);
-  lAppExtras.AddForm(TJanuaFormRecord.Create('Test MVVM', lAppDemos.Name, 33, TfrmTMMigrationMain,
+  lAppDemos.AddForm(TJanuaFormRecord.Create('Test MVVM', lAppDemos.Name, 33, TfrmTMMigrationMain,
     GUID_NULL));
   // -------------- Test ---------------------------------------------------------------------------
   lAppTest := TJanuaApplicationRecord.Create('Test', 'Test Applications', 104, nil);
@@ -79,7 +79,6 @@ begin
     TfrmVCLPgJormGenerator, GUID_NULL));
   // TfrmVCLCarServiceSettings
   lAppSettings.AddApplication(lAppSettingsDB);
-
   TJanuaFormsApplication.RegisterApplication(lAppSettings);
 
 end;

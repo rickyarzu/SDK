@@ -15,7 +15,7 @@ uses
   Janua.TMS.frmMDIContainer in '..\..\..\src\TMS\Janua.TMS.frmMDIContainer.pas' {frmVCLJanuaMDIContainer},
   Janua.Phoenix.VCL.frmReportPlanner in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.frmReportPlanner.pas' {frmPhoenixVCLReportPlanner},
   Janua.Phoenix.dmIBModel in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule},
-  Janua.Phoenix.dmIBReportPlanner in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBReportPlanner.pas' {dmPhoenixIBPlanner: TDataModule};
+  Janua.Phoenix.VCL.dmPlannerController in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas' {dmPhoenixIBPlanner: TDataModule};
 
 {$R *.res}
 

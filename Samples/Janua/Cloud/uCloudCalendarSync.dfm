@@ -4,8 +4,8 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
   Caption = 
     'Planner exchange with Windows Live Calendar / Google Calendar de' +
     'mo'
-  ClientHeight = 700
-  ClientWidth = 1027
+  ClientHeight = 761
+  ClientWidth = 1110
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +15,8 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
   StyleName = 'Sky 2'
   OnCreate = FormCreate
   DesignSize = (
-    1027
-    700)
+    1110
+    761)
   TextHeight = 13
   object Label1: TLabel
     Left = 504
@@ -33,7 +33,7 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Label2'
   end
   object Label3: TLabel
-    Left = 822
+    Left = 905
     Top = 70
     Width = 48
     Height = 13
@@ -44,8 +44,8 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
   object Planner1: TPlanner
     Left = 8
     Top = 8
-    Width = 808
-    Height = 684
+    Width = 891
+    Height = 745
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -237,10 +237,12 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.6.1.3'
+    ExplicitWidth = 808
+    ExplicitHeight = 684
     TMSStyle = 0
   end
   object Button1: TButton
-    Left = 822
+    Left = 905
     Top = 8
     Width = 197
     Height = 25
@@ -248,18 +250,20 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Connect to Windows Live Calendar'
     TabOrder = 1
     OnClick = Button1Click
+    ExplicitLeft = 822
   end
   object ListBox1: TListBox
-    Left = 822
+    Left = 905
     Top = 89
     Width = 197
     Height = 145
     Anchors = [akTop, akRight]
     ItemHeight = 13
     TabOrder = 2
+    ExplicitLeft = 822
   end
   object Button2: TButton
-    Left = 822
+    Left = 905
     Top = 286
     Width = 197
     Height = 25
@@ -267,9 +271,10 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Export week to cloud calendar'
     TabOrder = 3
     OnClick = Button2Click
+    ExplicitLeft = 822
   end
   object Button3: TButton
-    Left = 822
+    Left = 905
     Top = 255
     Width = 197
     Height = 25
@@ -277,9 +282,10 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Import week from cloud calendar'
     TabOrder = 4
     OnClick = Button3Click
+    ExplicitLeft = 822
   end
   object Button4: TButton
-    Left = 822
+    Left = 905
     Top = 39
     Width = 197
     Height = 25
@@ -287,6 +293,7 @@ object frmCalendarCloudSync: TfrmCalendarCloudSync
     Caption = 'Connect to Google Calendar'
     TabOrder = 5
     OnClick = Button4Click
+    ExplicitLeft = 822
   end
   object AdvLiveCalendar1: TAdvLiveCalendar
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'

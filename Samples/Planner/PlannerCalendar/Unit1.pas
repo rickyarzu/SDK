@@ -59,7 +59,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   with PlannerCalendar1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,12);
+    Date := EncodeDate(2024,8,12);
     Hint := 'Hello world';
     FontColor := ClBlue;
     Color := ClYellow;
@@ -68,7 +68,7 @@ begin
 
   with PlannerCalendar1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,5);
+    Date := EncodeDate(2024,8,5);
     Hint := 'Event 2';
     FontColor := ClWhite;
     Color := ClRed;
@@ -77,7 +77,7 @@ begin
 
   with PlannerCalendar1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,25);
+    Date := EncodeDate(2024,8,25);
     Hint := 'Event 3';
     FontColor := ClWhite;
     Color := ClLime;
@@ -86,7 +86,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,9);
+    Date := EncodeDate(2024,8,9);
     Hint := 'Event on August 9';
     FontColor := ClWhite;
     Color := ClGreen;
@@ -94,7 +94,7 @@ begin
   end;
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,25);
+    Date := EncodeDate(2024,8,25);
     Hint := 'Release';
     FontColor := ClBlack;
     Color := ClYellow;
@@ -103,7 +103,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,8,31);
+    Date := EncodeDate(2024,8,31);
     Hint := 'Event on August 31';
     FontColor := ClBlack;
     Color := ClLime;
@@ -112,7 +112,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,7);
+    Date := EncodeDate(2024,9,7);
     Hint := 'Event on September 7';
     FontColor := ClBlack;
 //    Color := clFushia;
@@ -121,7 +121,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,15);
+    Date := EncodeDate(2024,9,15);
     Hint := 'Event on September 15';
     FontColor := ClBlack;
     Color := clRed;
@@ -130,7 +130,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,20);
+    Date := EncodeDate(2024,9,20);
     Hint := 'Event on September 20';
     FontColor := ClWhite;
     Color := clGreen;
@@ -139,7 +139,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,21);
+    Date := EncodeDate(2024,9,21);
     Hint := 'Event on September 21';
     FontColor := ClWhite;
     Color := clGreen;
@@ -148,7 +148,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,22);
+    Date := EncodeDate(2024,9,22);
     Hint := 'Event on September 22';
     FontColor := ClWhite;
     Color := clGreen;
@@ -157,7 +157,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,9,23);
+    Date := EncodeDate(2024,9,23);
     Hint := 'Event on September 23';
     FontColor := ClWhite;
     Color := clGreen;
@@ -166,7 +166,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,10,4);
+    Date := EncodeDate(2024,10,4);
     Hint := 'Event on October 4';
     FontColor := ClWhite;
     Color := clGreen;
@@ -175,7 +175,7 @@ begin
 
   with plannercalendarGroup1.Events.Add do
   begin
-    Date := EncodeDate(2004,10,6);
+    Date := EncodeDate(2024,10,6);
     Hint := 'Event on October 6';
     FontColor := ClWhite;
     Color := clGreen;

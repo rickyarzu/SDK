@@ -1,8 +1,8 @@
 object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 386
-  Width = 523
+  Height = 435
+  Width = 636
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5277,12 +5277,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       end>
     Scaled = True
     Left = 64
-    Top = 64
+    Top = 8
   end
   object MainToolBarActions: TActionList
     Images = SVGIconImageList48
     Left = 64
-    Top = 136
+    Top = 80
     object ActionAddMeeting: TAction
       Category = 'Meetings'
       Caption = 'Aggiungi Appuntamento'
@@ -5353,12 +5353,13 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     PersistTokens.Location = plIniFile
     Scopes.Strings = (
       'https://www.googleapis.com/auth/calendar')
+    OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
     AuthFormSettings.Caption = 'Authorize'
     AuthFormSettings.Width = 900
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 163
+    Left = 155
     Top = 39
   end
   object JanuaPlannerController1: TJanuaPlannerController
@@ -5367,7 +5368,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45450.000000000000000000
+    DateFrom = 45457.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5387,8 +5388,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     AuthFormSettings.Height = 600
     Calendars = <>
     Items = <>
-    Left = 160
-    Top = 104
+    Left = 152
+    Top = 112
   end
   object iCloudCalendar1: TiCloudCalendar
     ForceSynchronize = True
@@ -5396,7 +5397,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     IgnoreCertificateError = True
     Active = False
     Left = 160
-    Top = 168
+    Top = 176
   end
   object AdvvCalendar1: TAdvvCalendar
     vEvents = <>
@@ -5417,72 +5418,30 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Top = 72
   end
   object MenuButtonActions: TActionList
-    Images = SVGIconImageList48
+    Images = SVGIconImageList16
     Left = 64
-    Top = 208
-    object Action1: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Appuntamento'
-      ImageIndex = 31
-      ImageName = '032-calendar'
-      OnExecute = ActionAddMeetingExecute
+    Top = 144
+    object actColor: TAction
+      Caption = 'Colore'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actColorExecute
     end
-    object Action2: TAction
-      Category = 'Meetings'
-      Caption = 'Annulla Appuntamento'
-      ImageIndex = 1
-      ImageName = '002-time'
-    end
-    object Action3: TAction
-      Category = 'Meetings'
-      Caption = 'Cerca Appuntamento'
-      ImageIndex = 45
-      ImageName = '046-search'
-    end
-    object Action4: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Dipendente'
-      ImageIndex = 2
-      ImageName = '003-employee'
-      OnExecute = ActionAddUserExecute
-    end
-    object Action5: TAction
-      Category = 'Meetings'
-      Caption = 'Aggiungi Una Attivit'#224
-      ImageIndex = 35
-      ImageName = '036-planner'
-      OnExecute = ActionAddActivityExecute
-    end
-    object Action6: TAction
-      Category = 'Meetings'
-      Caption = 'Esporta (Excel, Pdf, Csv)'
+    object actCaption: TAction
+      Caption = 'Mostra Titolo'
       ImageIndex = 24
       ImageName = '025-planning'
+      OnExecute = actCaptionExecute
     end
-    object Action7: TAction
-      Category = 'Meetings'
-      Caption = 'Invia (Mail) Condividi'
-      ImageIndex = 8
-      ImageName = '009-email'
-    end
-    object Action8: TAction
-      Category = 'Meetings'
-      Caption = 'Stampa / Anteprima'
-      ImageIndex = 57
-      ImageName = '008-printer'
-      OnExecute = ActionPrintExecute
-    end
-    object Action9: TAction
-      Category = 'Meetings'
-      Caption = 'Sincro Calendario'
-      ImageIndex = 26
-      ImageName = '027-tasks'
+    object Action2: TAction
+      Caption = 'Action2'
     end
   end
   object GCalendarButtons: TActionList
     Images = SVGIconImageList16
-    Left = 64
-    Top = 280
+    OnExecute = GCalendarButtonsExecute
+    Left = 72
+    Top = 208
     object actConnect: TAction
       Caption = 'Connetti Google'
       ImageIndex = 16
@@ -5506,6 +5465,24 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       ImageIndex = 1
       ImageName = '002-time'
       OnExecute = actUpdateCalendarExecute
+    end
+    object actUpdateEvents: TAction
+      Caption = 'Aggiorna Eventi'
+      ImageIndex = 58
+      ImageName = 'google-calendar'
+      OnExecute = actUpdateEventsExecute
+    end
+    object actDeleteCalendar: TAction
+      Caption = 'Elimina Calendario'
+      ImageIndex = 49
+      ImageName = '050-stopwatch'
+      OnExecute = actDeleteCalendarExecute
+    end
+    object actAddAttendee: TAction
+      Caption = 'Aggiungi Partecipante'
+      ImageIndex = 7
+      ImageName = '008-employee'
+      OnExecute = actAddAttendeeExecute
     end
   end
   object SVGIconImageList16: TSVGIconImageList
@@ -10780,12 +10757,12 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
           '.81h-.98v-4.79l-.94.51-.21-.82 1.37-.71z"/></g></svg>'
       end>
     Scaled = True
-    Left = 160
-    Top = 312
+    Left = 72
+    Top = 272
   end
-  object DBDaySource1: TDBDaySource
+  object DBDaySourceCalendar: TDBDaySource
     Active = False
-    OnSetFilter = DBDaySource1SetFilter
+    OnSetFilter = DBDaySourceCalendarSetFilter
     AutoIncKey = True
     ResourceDataSource.ResourceIDField = 'RESPONSABILE'
     ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
@@ -10798,6 +10775,8 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     SubjectField = 'SUBJECT'
     NotesField = 'SUBJECT'
     UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
     AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000
@@ -10806,5 +10785,507 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     NumberOfResources = 6
     Left = 275
     Top = 136
+  end
+  object PictureContainer1: TPictureContainer
+    Items = <
+      item
+        Picture.Stretch = False
+        Picture.Frame = 1
+        Picture.Data = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F80000000473424954080808087C0864880000000970485973000000B1000000
+          B101C62D498D0000001974455874536F667477617265007777772E696E6B7363
+          6170652E6F72679BEE3C1A00000189494441544889ED954D2B445118C77FE7DC
+          6B4623A4211B1A8990EB2D2F1B59A02C2C7C00495622B1252F93B2545616F65E
+          3E804FA0340D9F80F29211B1BA98A15C5DF758C814CD3577C6280BBFED79CEFF
+          7F9EFF793A470C6E0F862CCBD953B613C24190864079205D09405CC0AE06D3BA
+          65397BEAC5A9F2B22B038A148CD8A0A4B29D508EC5930818925E62C91605C5F2
+          B7C43FF83740973A5545EE73F22303BFE627DCB5C05ACF2A6D65ADB935F06B7E
+          163AE730828D9896492C7E99B24ECF567CBE631623D8C8DDF33DCB872B989699
+          B2D6B583DA600D1BFDEB4CB68FA73C7953A98169992C1E84B97ABC763DCCB711
+          09042DC5CD4CB54F00E0D37D9F62598A2E73F374FB9D04A26F6340B92DF684BA
+          19A9194629C551E298CA820A8C6AC3B338A4B983FD5804FBD566AC6E9486C27A
+          8064E65EC4C1C31445AF0ED93ADD41080192B4997FC5D314EDC7229C986724AC
+          04AAC435D1EC0D006E13EF9104F0F4E124F9FB6FD11F309064766B1920E0416A
+          9ABCF82D0305BB322F5FF66A3EED3CC79DC4814D1D66DE000E48832B7EB63AE1
+          0000000049454E44AE426082}
+        Name = '3'
+        Tag = 0
+      end
+      item
+        Picture.Stretch = False
+        Picture.Frame = 1
+        Picture.Data = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F80000000473424954080808087C0864880000000970485973000000B1000000
+          B101C62D498D0000001974455874536F667477617265007777772E696E6B7363
+          6170652E6F72679BEE3C1A000002F54944415448899D964F68146718C67FEF37
+          B3B3D9684212A24D89685A638922480928222A36E0413439D4162A168AE04DBC
+          18BD18D0D81C3C785151447A13BC8825B19B5E5AFF2258483DD4A0544BA3B646
+          4543B31BB399DD9D99EFEB6151CCEECCEEE0731ADEF77D9EE7FD5EBE3F2354C1
+          D4706A9D1673C00B822D8196C620C0E968931CF02FF0181845AB11D9E23E8BD2
+          90B060265DDFED7AC1857CC1AC3465B94F3EAEA068442EE371507AF24FCB93AA
+          A2EB2BCE5026E78FB921E2115018F315B6193737923BAA1ABC1A495E9A99E3B0
+          36E12BAB81068461732BB92FD4E0F5B03338EB9A9D61CC44CB06ACCF7F4577DF
+          C75BFB1CBFEB474CC3DA88D570D2DC4CF6BE0D0894669EC9F963619D3BEDDFE0
+          B60D604C69601D1D1DA584F1B11E7D87FA6F24CC6806B1BA64D3DC0B05E07AC1
+          C53071E534916F3B8C318654FE0ECE832F48DC5D817A710EC426587E1AECA630
+          83464C7014404D0DA7D6B905F3595895DDF625DA8023D3780FF6A2F3AFA0F812
+          EBC921E4CD6F6037A39BB6865101F698ABA976A5D1FD5115384B4A46B3B7CB12
+          0699FDBDF4996C8F62DB58BACFF6B4DE1C711CF09E9EA27E6901EF9F73F3132A
+          8569DE0680E4C623FB43D8660781840E11C078D314FF3E3E3FE82CC65F7E1E53
+          F72932378E64AE451B183A6DADB1A32BE623D1B81A6FCDCF60B780F71AEBE16E
+          40575B417BC549AE86A0F32CD82DC8F42F24EEAD47F213B528DA560A4F073871
+          0C3C6901C0FEEB5B0872712893CAB24C364E2540822C327327AE38C0844A58D6
+          F5B8D5FAEE06ECFB91FBBE12425A2951273EE4668B011F4FFDA45A7BE7C6EA1C
+          F9330E23B7EA2AD9CE745C831FA4C79D54007575D62E25D4BCFE05C0C47A25B2
+          687BF01D07606AC4199871F9BE1633E4452B8746D1271B0B6978EF3D68ED2B0E
+          2D4CA94B71DAAB2A0EFBDF8ACF330058DC97FFBA6121C794AA3DAE1064117A65
+          73E1CCFBC18A93BC687BF1C88205D2559FE48F98BBCB07CE23D64AD954182D4F
+          56D5C8A4EBBB8BBEDFEF07A6C737D2A835CEB28FDEFDB64C6018255057A4C79D
+          8CD2F81FDEB41732013506A00000000049454E44AE426082}
+        Name = '2'
+        Tag = 0
+      end
+      item
+        Picture.Stretch = False
+        Picture.Frame = 1
+        Picture.Data = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F80000000473424954080808087C0864880000000970485973000000B1000000
+          B101C62D498D0000001974455874536F667477617265007777772E696E6B7363
+          6170652E6F72679BEE3C1A0000031E494441544889AD554D68545714FECE7D77
+          66328993CC44D4C5844CEA42924D3011B5CA603A094811D48DED42BA10A188D1
+          1A4AA6AD7FAD6D90109858B098D2BA2A14BA914215B310340D512C26DA202E5A
+          178E7D26D1AE9A449D3833EFDE7B5C6452CCF8DE64887ECB73BEFB7DF79CFBDE
+          3984129848346FD65A76E79913C670B566F6C782810C98264078C8C0A0A571B1
+          72F8D6A49706B905ED78EB0687F8E79C364D5C946B08068AE98608BF0A233F0B
+          0EDDB48B93A238F0685BEBE98C31635917710F08667CA049DDCBB46FDC59D2C0
+          6E6BB9F054EB1306EC5AD9120831D16FCFDA371D763578D4D6F2E573C7EC4199
+          D7F68020C2D94CE2DD5D0B0102E67B9E3166AC9C9BBBBC811B9E92D48D5557EE
+          3C1100A0C0BF2CB32D5EA8364A7C0D006222D1BC396BCC3A375630FE1E423D29
+          58E1C86B390A4720932721366D717520D0FEB9F62D51A18D95F46ABBDCBE03B9
+          FA060452038B4C281C81ECFB0EA2E37D8878C2AB0AA949ED168E469B1763EE4C
+          2F7CCA81F2F910E8FF1E56A416541381EC3B0B8ABD039EB4A17FFAD1EB3808B4
+          83FEDEBA3EA7C07E2F92158E20903A07E5F3433A7944FD12145B0BB6D35047BB
+          C033D39E0600EE0B03F69562E89969E492870A95F8E7C5276DA8E39F2E250E02
+          A2C2635A9481A5CF316084009C52242B1C41A07F008EF4413A79B09D06D5C520
+          7BBF05B97C5D45981296A0594FF19A302AFA07E6FBAF14F29F7F02F54517F89F
+          3428B61632750E54BBB294415A48D0EF5ED9CAEEE3859B3BC8253BA1A6FF03CF
+          4E431DEB02DB0F41753158FB0E78AA13E3B2D55DB7C6CE031FBB11443E07FFAA
+          D5C8F61C832E3C68D827816C167C631814A9851919023F765D074AC0EA240078
+          106FF9EB85318DA56A5D4099B3084CF8217475F4A000800A61ED15A0379BA38B
+          314B8ABF010AE33A3A727B7C85A4AFDED2B433047CB46278ECDFFF0D00A07E64
+          FC7495B42E2CFBB7288833E848D5B5D1CB0B81451BAD61E4CF0F4342F4082C6B
+          EDCC126157E8DAAD815783AFEDE4D8F5F153AB8281C64A21EE96598C62F07992
+          BAA9EAEAE86071B2A4861D6FDD6088930E730783ABB5813F160C641898009066
+          E241CBC84B95437F4C7969BC0438022AA5437048CC0000000049454E44AE4260
+          82}
+        Name = '1'
+        Tag = 0
+      end>
+    Version = '2.1.1.0'
+    Left = 160
+    Top = 376
+  end
+  object SVGIconImageListIt: TSVGIconImageList
+    Size = 24
+    SVGIconItems = <
+      item
+        IconName = 'checked'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm24 2.75c0-1.517-1.233-2.75-2.75-2.75h-18.5c-1.517 0-2.75 1.233-' +
+          '2.75 2.75v18.5c0 1.517 1.233 2.75 2.75 2.75h18.5c1.517 0 2.75-1.' +
+          '233 2.75-2.75z" fill="#4caf50"/><path d="m18.082 8.043c.391.391.' +
+          '391 1.023 0 1.414l-6.5 6.5c-.195.195-.451.293-.707.293s-.512-.09' +
+          '8-.707-.293l-3.25-3.25c-.391-.391-.391-1.024 0-1.414.391-.391 1.' +
+          '023-.391 1.414 0l2.543 2.543 5.793-5.793c.391-.391 1.023-.391 1.' +
+          '414 0z" fill="#fafafa"/><path d="m12 0h-9.25c-1.517 0-2.75 1.233' +
+          '-2.75 2.75v18.5c0 1.517 1.233 2.75 2.75 2.75h9.25v-8.461l-.418.4' +
+          '18c-.195.195-.451.293-.707.293s-.512-.098-.707-.293l-3.25-3.25c-' +
+          '.391-.391-.391-1.024 0-1.414.195-.195.451-.293.707-.293s.512.098' +
+          '.707.293l2.543 2.543 1.125-1.125z" fill="#429846"/><path d="m7.6' +
+          '25 11c-.256 0-.512.098-.707.293-.391.391-.391 1.024 0 1.414l3.25' +
+          ' 3.25c.195.195.451.293.707.293s.512-.098.707-.293l.418-.418v-2.8' +
+          '28l-1.125 1.125-2.543-2.543c-.195-.195-.451-.293-.707-.293z" fil' +
+          'l="#dadada"/></svg>'
+      end
+      item
+        IconName = 'delete'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.38' +
+          '3-12-12-12z" fill="#f44336"/><path d="m16.419 15.006c.391.391.39' +
+          '1 1.023 0 1.414-.195.195-.451.293-.707.293s-.512-.098-.707-.293l' +
+          '-3.005-3.006-3.005 3.006c-.195.195-.451.293-.707.293s-.512-.098-' +
+          '.707-.293c-.391-.391-.391-1.023 0-1.414l3.005-3.006-3.005-3.006c' +
+          '-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0l3.005 3.006 3.0' +
+          '05-3.006c.391-.391 1.023-.391 1.414 0s.391 1.023 0 1.414l-3.005 ' +
+          '3.006z" fill="#fafafa"/><path d="m12 0c-6.617 0-12 5.383-12 12s5' +
+          '.383 12 12 12v-10.586l-3.005 3.006c-.195.195-.451.293-.707.293s-' +
+          '.512-.098-.707-.293c-.391-.391-.391-1.023 0-1.414l3.005-3.006-3.' +
+          '005-3.006c-.391-.391-.391-1.023 0-1.414.195-.195.451-.293.707-.2' +
+          '93s.511.098.707.293l3.005 3.006z" fill="#d43a2f"/><path d="m8.28' +
+          '8 7.287c-.256 0-.512.098-.707.293-.391.391-.391 1.023 0 1.414l3.' +
+          '005 3.006-3.005 3.006c-.391.391-.391 1.023 0 1.414.195.195.451.2' +
+          '93.707.293s.512-.098.707-.293l3.005-3.006v-2.828l-3.005-3.006c-.' +
+          '196-.195-.452-.293-.707-.293z" fill="#dadada"/></svg>'
+      end
+      item
+        IconName = 'faq'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.38' +
+          '3-12-12-12z" fill="#ffc107"/><path d="m12 19c-.553 0-1-.447-1-1s' +
+          '.447-1 1-1 1 .447 1 1-.447 1-1 1z" fill="#eceff1"/><path d="m13.' +
+          '583 12.642c-.354.163-.583.52-.583.909v.449c0 .553-.447 1-1 1s-1-' +
+          '.447-1-1v-.449c0-1.167.685-2.236 1.745-2.726 1.019-.47 1.755-1.7' +
+          '14 1.755-2.325 0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5c0 .5' +
+          '53-.447 1-1 1s-1-.447-1-1c0-2.481 2.019-4.5 4.5-4.5s4.5 2.019 4.' +
+          '5 4.5c0 1.351-1.172 3.338-2.917 4.142z" fill="#fafafa"/><path d=' +
+          '"m12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12v-5c-.553 0-1-.447-' +
+          '1-1s.447-1 1-1v-2c-.553 0-1-.447-1-1v-.449c0-.864.375-1.674 1-2.' +
+          '235v-5.316c-1.379 0-2.5 1.121-2.5 2.5 0 .553-.447 1-1 1s-1-.447-' +
+          '1-1c0-2.481 2.019-4.5 4.5-4.5z" fill="#dea806"/><path d="m12 17c' +
+          '-.553 0-1 .447-1 1s.447 1 1 1z" fill="#cdd0d2"/><path d="m12 11.' +
+          '316c-.625.561-1 1.371-1 2.235v.449c0 .553.447 1 1 1zm0-7.316c-2.' +
+          '481 0-4.5 2.019-4.5 4.5 0 .553.447 1 1 1s1-.447 1-1c0-1.379 1.12' +
+          '1-2.5 2.5-2.5z" fill="#dadada"/></svg>'
+      end>
+    Scaled = True
+    Left = 72
+    Top = 344
+  end
+  object ColorDialog1: TColorDialog
+    Left = 163
+    Top = 306
+  end
+  object JanuaUniConnection1: TJanuaUniConnection
+    ProviderName = 'InterBase'
+    Port = 3050
+    Database = 'C:\PhoenixDB\PHOENIX.FDB'
+    Username = 'SYSDBA'
+    Server = '192.168.1.200'
+    Connected = True
+    LoginPrompt = False
+    SchemaParamKey = 'system.db_schema_id'
+    SchemaParams = <>
+    Left = 416
+    Top = 168
+    EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
+  end
+  object InterBaseUniProvider1: TInterBaseUniProvider
+    Left = 415
+    Top = 232
+  end
+  object PostgreSQLUniProvider1: TPostgreSQLUniProvider
+    Left = 416
+    Top = 296
+  end
+  object vtGoogleEvents: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'ETAG'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftWideMemo
+      end
+      item
+        Name = 'STARTTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ENDTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'CREATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'UPDATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ISALLDAY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'STATUS'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'VISIBILITY'
+        DataType = ftInteger
+      end
+      item
+        Name = 'RECURRENCE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'RECURRINGID'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'SEQUENCE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'USEDEFAULTREMINDERS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'SENDNOTIFICATIONS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'CALENDARID'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 128
+      end>
+    Left = 528
+    Top = 80
+    Data = {
+      0400130002004944010080000000000004004554414701008000000000000700
+      53554D4D41525901000001000000000B004445534352495054494F4E27000000
+      000000000900535441525454494D450B000000000000000700454E4454494D45
+      0B000000000000000700435245415445440B0000000000000007005550444154
+      45440B0000000000000008004953414C4C444159050000000000000008004C4F
+      434154494F4E0100800000000000060053544154555302000000000000000A00
+      5649534942494C49545903000000000000000A00524543555252454E43450100
+      3C00000000000B00524543555252494E47494401003C00000000000800534551
+      55454E434503000000000000000500434F4C4F52020000000000000013005553
+      4544454641554C5452454D494E444552530500000000000000110053454E444E
+      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
+      0100800000000000000000000000}
+    object vtGoogleEventsID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 128
+    end
+    object vtGoogleEventsETAG: TStringField
+      FieldName = 'ETAG'
+      Size = 128
+    end
+    object vtGoogleEventsSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object vtGoogleEventsDESCRIPTION: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object vtGoogleEventsSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object vtGoogleEventsENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object vtGoogleEventsCREATED: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object vtGoogleEventsUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object vtGoogleEventsISALLDAY: TBooleanField
+      FieldName = 'ISALLDAY'
+    end
+    object vtGoogleEventsLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object vtGoogleEventsSTATUS: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object vtGoogleEventsVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object vtGoogleEventsRECURRENCE: TStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object vtGoogleEventsRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object vtGoogleEventsSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object vtGoogleEventsCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField
+      FieldName = 'USEDEFAULTREMINDERS'
+    end
+    object vtGoogleEventsSENDNOTIFICATIONS: TBooleanField
+      FieldName = 'SENDNOTIFICATIONS'
+    end
+    object vtGoogleEventsCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      Required = True
+      Size = 128
+    end
+    object vtGoogleEventsAttendees: TMemoField
+      FieldName = 'Attendees'
+      BlobType = ftMemo
+    end
+    object vtGoogleEventsReminders: TMemoField
+      FieldName = 'Reminders'
+      BlobType = ftMemo
+    end
+  end
+  object vtGoogleCalendars: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftBlob
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'PRIMARY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'TIMEZONE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'BACK_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'FORE_COLOR'
+        DataType = ftInteger
+      end>
+    Left = 527
+    Top = 8
+    Data = {
+      040009000200494401008000000000000B004445534352495054494F4E0F0000
+      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
+      010000010000000007005052494D4152590500000000000000080054494D455A
+      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
+      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
+      0000000000000000}
+    object vtGoogleCalendarsID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 128
+    end
+    object vtGoogleCalendarsDESCRIPTION: TBlobField
+      FieldName = 'DESCRIPTION'
+    end
+    object vtGoogleCalendarsLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object vtGoogleCalendarsSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object vtGoogleCalendarsPRIMARY: TBooleanField
+      FieldName = 'PRIMARY'
+    end
+    object vtGoogleCalendarsTIMEZONE: TStringField
+      FieldName = 'TIMEZONE'
+      Size = 60
+    end
+    object vtGoogleCalendarsCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object vtGoogleCalendarsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object vtGoogleCalendarsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+  end
+  object dsGoogleEvents: TUniDataSource
+    DataSet = vtGoogleEvents
+    Left = 528
+    Top = 144
+  end
+  object dsCalendar: TUniDataSource
+    Left = 272
+    Top = 200
+  end
+  object DBDaySourceGCalendar: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    ResourceDataSource.ResourceIDField = 'RESPONSABILE'
+    ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'SUBJECT'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45444.000000000000000000
+    Mode = dmMultiDayRes
+    NumberOfDays = 2
+    NumberOfResources = 6
+    Left = 267
+    Top = 264
+  end
+  object dsGCalendar: TUniDataSource
+    Left = 272
+    Top = 328
   end
 end

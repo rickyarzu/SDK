@@ -48,9 +48,9 @@ type
     cbAllday: TCheckBox;
     ListView1: TListView;
     Panel2: TPanel;
-    Button6: TButton;
-    Button7: TButton;
-    Button5: TButton;
+    btnGoogleEventDelete: TButton;
+    btnGoogleEventUpdae: TButton;
+    btnGoogleEventNew: TButton;
     Image1: TImage;
     btnRemove: TButton;
     Memo1: TMemo;
@@ -103,10 +103,10 @@ type
     lbGrp: TLabel;
     edGrp: TEdit;
     procedure btnConnectClick(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
-    procedure Button6Click(Sender: TObject);
-    procedure Button7Click(Sender: TObject);
-    procedure FillCalendars();
+    procedure btnGoogleEventNewClick(Sender: TObject);
+    procedure btnGoogleEventDeleteClick(Sender: TObject);
+    procedure btnGoogleEventUpdaeClick(Sender: TObject);
+    procedure FillCalendars(); // passed ---------------------
     procedure FillCalendarItems();
     procedure FillCalendarItemDetails();
     procedure FillColors();
@@ -225,7 +225,7 @@ begin
     Init;
 end;
 
-procedure TfrmTMSAdvCalendarDemo.Button5Click(Sender: TObject);
+procedure TfrmTMSAdvCalendarDemo.btnGoogleEventNewClick(Sender: TObject);
 var
   li: TGCalendarItem;
 begin
@@ -252,7 +252,7 @@ begin
   end;
 end;
 
-procedure TfrmTMSAdvCalendarDemo.Button6Click(Sender: TObject);
+procedure TfrmTMSAdvCalendarDemo.btnGoogleEventDeleteClick(Sender: TObject);
 var
   buttonSelected: integer;
 begin
@@ -274,7 +274,7 @@ begin
   end;
 end;
 
-procedure TfrmTMSAdvCalendarDemo.Button7Click(Sender: TObject);
+procedure TfrmTMSAdvCalendarDemo.btnGoogleEventUpdaeClick(Sender: TObject);
 var
   li: TGCalendarItem;
   SelectedID: string;

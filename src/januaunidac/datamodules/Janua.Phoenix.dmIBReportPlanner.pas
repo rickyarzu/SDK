@@ -3,13 +3,21 @@ unit Janua.Phoenix.dmIBReportPlanner;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider,
-  InterBaseUniProvider, Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, MemDS, System.ImageList,
-  Vcl.ImgList, Vcl.Controls, SVGIconImageListBase, SVGIconImageList, Vcl.Dialogs, CloudBase, CloudBaseWin,
-  CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, System.Actions, Vcl.ActnList;
+  // RTL
+  System.SysUtils, System.Classes, System.ImageList, System.Actions,
+  // UniDac - DB
+  Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS,
+  // VCL
+  SVGIconImageListBase, SVGIconImageList, Vcl.Dialogs, Vcl.ActnList, Vcl.ImgList, Vcl.Controls,
+  // TMS Cloud
+  CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
+  // JanuaProject
+  {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
+  // Janua
+  Janua.Vcl.Planner.dmCustomController, Janua.Phoenix.dmIBModel;
 
 type
-  TdmPhoenixIBPlanner = class(TdmPhoenixIBModel)
+  TdmPhoenixIBPlanner = class(TdmVCLPlannerCustomController) // ()
     qryReportPlanner: TUniQuery;
     spSetStatinoStato: TUniStoredProc;
     qryReportPlannerCHIAVE: TIntegerField;
@@ -87,21 +95,7 @@ type
     qryCAP: TUniQuery;
     qryCAPCAP: TStringField;
     qryReportPlannerAMMINISTRATORE: TIntegerField;
-    ActionList1: TActionList;
-    ActionAddMeeting: TAction;
-    ActionUndoMeeting: TAction;
-    ActionSearchMeeting: TAction;
-    ActionAddUser: TAction;
-    ActionAddActivity: TAction;
-    ActionExport: TAction;
-    ActionSendShare: TAction;
-    ActionPrint: TAction;
-    AdvGCalendar1: TAdvGCalendar;
-    PrinterSetupDialog1: TPrinterSetupDialog;
-    SVGIconImageList48: TSVGIconImageList;
     qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
-    SVGIconImageList16: TSVGIconImageList;
-    ActionGoogleCalendar: TAction;
     qryPlannerCalendar: TUniQuery;
     qryPlannerCalendarCHIAVE: TIntegerField;
     qryPlannerCalendarSTATINO: TIntegerField;
@@ -145,13 +139,15 @@ type
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
     /// <remarks>   If fails throws an exception and rollbacks dataset posts </remarks>
-    procedure EditEvent;
+    procedure EditEvent; override;
     /// <summary> Tries to Add an Event using ITimetable interface. </summary>
     /// <remarks> If fails throws an exception and rollbacks dataset posts </remarks>
-    procedure AddEvent;
-    procedure Setup;
-    procedure Filter;
-    procedure UndoMeeting;
+    procedure AddEvent; override;
+    procedure Setup; override;
+    procedure Filter; override;
+    procedure UndoMeeting; override;
+
+  public
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
     property CustomerID: Int64 read FCustomerID write SetCustomerID;
     property TechID: Int64 read FTechID write SetTechID;

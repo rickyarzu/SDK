@@ -35,7 +35,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
     Height = 49
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1373
     object lbCount: TLabel
       Left = 735
       Top = 24
@@ -99,7 +98,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Text = ''
     end
     object btnExecuteSql: TButton
-      Left = 1308
+      Left = 1304
       Top = 1
       Width = 78
       Height = 47
@@ -112,10 +111,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 4
-      ExplicitLeft = 1294
     end
     object btnSaveGuidGeneratorVTD: TButton
-      Left = 1266
+      Left = 1262
       Top = 1
       Width = 42
       Height = 47
@@ -128,10 +126,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 5
-      ExplicitLeft = 1252
     end
     object Button8: TButton
-      Left = 1184
+      Left = 1180
       Top = 1
       Width = 82
       Height = 47
@@ -144,7 +141,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 6
-      ExplicitLeft = 1170
     end
     object btnSchema: TButton
       Left = 65
@@ -174,7 +170,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Text = ''
     end
     object btnGenerateJorm: TButton
-      Left = 1122
+      Left = 1118
       Top = 1
       Width = 62
       Height = 47
@@ -187,10 +183,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 9
-      ExplicitLeft = 1108
     end
     object btnTriggers: TButton
-      Left = 1069
+      Left = 1065
       Top = 1
       Width = 53
       Height = 47
@@ -203,10 +198,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 10
-      ExplicitLeft = 1055
     end
     object btnTrigger: TButton
-      Left = 1022
+      Left = 1018
       Top = 1
       Width = 47
       Height = 47
@@ -219,10 +213,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 11
-      ExplicitLeft = 1008
     end
     object btnAnalytics: TButton
-      Left = 968
+      Left = 964
       Top = 1
       Width = 54
       Height = 47
@@ -235,7 +228,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 12
-      ExplicitLeft = 954
     end
     object edTableSchema: TJvDBLookupCombo
       Left = 543
@@ -248,7 +240,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       TabOrder = 13
     end
     object btnSchemaAnalytics: TButton
-      Left = 872
+      Left = 868
       Top = 1
       Width = 96
       Height = 47
@@ -261,10 +253,9 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 14
-      ExplicitLeft = 858
     end
     object btnClear: TButton
-      Left = 825
+      Left = 821
       Top = 1
       Width = 47
       Height = 47
@@ -277,7 +268,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       Font.Style = []
       ParentFont = False
       TabOrder = 15
-      ExplicitLeft = 811
     end
   end
   object DBAdvNavigator1: TDBNavigator
@@ -287,7 +277,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
     Height = 25
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 1373
   end
   object grdTAbles: TCRDBGrid
     Left = 0
@@ -331,12 +320,11 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
     Align = alLeft
     Caption = 'Panel4'
     TabOrder = 3
-    ExplicitHeight = 560
     object grdColumns: TDBGrid
       Left = 1
       Top = 121
       Width = 262
-      Height = 324
+      Height = 323
       Align = alClient
       DataSource = dmPgFrameworkJormGenerator.dsColumns
       TabOrder = 0
@@ -376,7 +364,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
     end
     object grdTriggers: TCRDBGrid
       Left = 1
-      Top = 445
+      Top = 444
       Width = 262
       Height = 120
       Align = alBottom
@@ -521,7 +509,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -643,7 +631,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -765,7 +753,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -887,7 +875,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -1009,7 +997,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -1131,7 +1119,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -1253,7 +1241,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -1263,7 +1251,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       object grdAnalysis: TDBAdvGrid
         Left = 0
         Top = 0
-        Width = 650
+        Width = 646
         Height = 201
         Align = alTop
         ColCount = 6
@@ -1308,6 +1296,14 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         ControlLook.DropDownFooter.Font.Style = []
         ControlLook.DropDownFooter.Visible = True
         ControlLook.DropDownFooter.Buttons = <>
+        ControlLook.ToggleSwitch.BackgroundBorderWidth = 1.000000000000000000
+        ControlLook.ToggleSwitch.ButtonBorderWidth = 1.000000000000000000
+        ControlLook.ToggleSwitch.CaptionFont.Charset = DEFAULT_CHARSET
+        ControlLook.ToggleSwitch.CaptionFont.Color = clWindowText
+        ControlLook.ToggleSwitch.CaptionFont.Height = -12
+        ControlLook.ToggleSwitch.CaptionFont.Name = 'Segoe UI'
+        ControlLook.ToggleSwitch.CaptionFont.Style = []
+        ControlLook.ToggleSwitch.Shadow = False
         Filter = <>
         FilterDropDown.Font.Charset = DEFAULT_CHARSET
         FilterDropDown.Font.Color = clWindowText
@@ -1382,7 +1378,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
         SortSettings.HeaderColorTo = clWhite
         SortSettings.HeaderMirrorColor = clWhite
         SortSettings.HeaderMirrorColorTo = clWhite
-        Version = '2.5.1.17'
+        Version = '2.5.1.23'
         AutoCreateColumns = True
         AutoRemoveColumns = True
         Columns = <
@@ -1679,7 +1675,6 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
           80000001C0000003C0000003E0000007F000000FF800001FFC00003FFF0000FF
           FFC003FF}
         ShowUnicode = False
-        ExplicitWidth = 636
         ColWidths = (
           20
           174
@@ -1694,8 +1689,8 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
       object EnhDBGrid1: TDBGrid
         Left = 0
         Top = 201
-        Width = 650
-        Height = 337
+        Width = 646
+        Height = 336
         Align = alClient
         DataSource = dsCsvExport
         TabOrder = 1
@@ -1824,6 +1819,7 @@ object frmVCLPgJormGenerator: TfrmVCLPgJormGenerator
     end
   end
   object AdvHTMLMemoStyler1: TAdvHTMLMemoStyler
+    AutoFormat = False
     LineComment = '//'
     MultiCommentLeft = '<!--'
     MultiCommentRight = '-->'

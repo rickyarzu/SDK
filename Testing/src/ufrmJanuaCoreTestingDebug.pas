@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Janua.core.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Janua.core.Functions, AdvMemo, Advmxml, Vcl.ComCtrls, Data.DB,
-  MemDS, VirtualTable, Vcl.Grids, Vcl.DBGrids, CRGrid, Vcl.DBCtrls, DBAccess, Uni, Janua.Vcl.EnhCRDBGrid;
+  MemDS, VirtualTable, Vcl.Grids, Vcl.DBGrids, CRGrid, Vcl.DBCtrls, DBAccess, Uni, Janua.Vcl.EnhCRDBGrid,
+  UniProvider, PostgreSQLUniProvider, Janua.Unidac.Connection;
 
 type
   TForm12 = class(TForm)
@@ -13,37 +14,12 @@ type
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     Button1: TButton;
-    AdvMemo1: TAdvMemo;
     VirtualTable1: TVirtualTable;
     OpenDialog1: TOpenDialog;
-    VirtualTable1id: TLargeintField;
-    VirtualTable1visible: TBooleanField;
-    VirtualTable1version: TShortintField;
-    VirtualTable1timestamp: TDateTimeField;
-    VirtualTable1uid: TLargeintField;
-    VirtualTable1lat: TFloatField;
-    VirtualTable1lon: TFloatField;
-    VirtualTable1distance: TFloatField;
-    VirtualTable1group: TStringField;
-    VirtualTable1address: TStringField;
-    VirtualTable1value: TStringField;
     DataSource1: TDataSource;
     Button2: TButton;
     SaveDialog1: TSaveDialog;
     Button3: TButton;
-    VirtualTable1AddressFull: TStringField;
-    VirtualTable1Description: TStringField;
-    VirtualTable1email: TStringField;
-    VirtualTable1phone: TStringField;
-    VirtualTable1website: TStringField;
-    VirtualTable1fax: TStringField;
-    VirtualTable1city: TStringField;
-    VirtualTable1number: TStringField;
-    VirtualTable1street: TStringField;
-    VirtualTable1postcode: TStringField;
-    VirtualTable1tags: TStringField;
-    VirtualTable1brand: TStringField;
-    VirtualTable1operator: TStringField;
     PageControl2: TPageControl;
     Tabella: TTabSheet;
     TabSheet3: TTabSheet;
@@ -52,8 +28,6 @@ type
     AdvMemo2: TAdvMemo;
     PgConnection1: TJanuaUniConnection;
     PgTable1: TUniTable;
-    VirtualTable1Name: TStringField;
-    VirtualTable1Cuisine: TStringField;
     Button4: TButton;
     PgTable1id: TLargeintField;
     PgTable1name: TStringField;
@@ -87,6 +61,7 @@ type
     DataSource3: TDataSource;
     Button5: TButton;
     Label1: TLabel;
+    PostgreSQLUniProvider1: TPostgreSQLUniProvider;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -135,7 +110,7 @@ uses udmTestFunctionsDataset, Janua.Maps.Types, Janua.core.Maps, Janua.Maps.Intf
 procedure TForm12.Button1Click(Sender: TObject);
 var
   // vTest: boolean;
-  // vTest: TOSMAddressType;
+  // vTest: TOSMLocationType;
   aParser: IOSMXmlParser;
   aNode: TOSMNode;
 begin

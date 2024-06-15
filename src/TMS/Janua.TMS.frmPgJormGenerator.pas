@@ -20,7 +20,7 @@ uses
   Janua.VCL.EnhCRDBGrid, Janua.VCL.EnhDBGrid, Janua.VCL.Interposers, Janua.TMS.Interposers,
   Janua.VCL.FormController,
   Janua.Components.Grids, Janua.Core.Legacy, Janua.VCL.Geocoding, Janua.Components.Dialogs,
-  Janua.Core.Classes, Janua.Core.Commons;
+  Janua.Core.Classes, Janua.Core.Commons, Vcl.Buttons;
 
 type
   TfrmVCLPgJormGenerator = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)

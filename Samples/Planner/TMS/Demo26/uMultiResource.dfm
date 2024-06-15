@@ -10,9 +10,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object DBPlanner1: TDBPlanner
     Left = 0
@@ -35,6 +33,8 @@ object Form1: TForm1
     Caption.Font.Height = -13
     Caption.Font.Name = 'MS Sans Serif'
     Caption.Font.Style = [fsBold]
+    Caption.Background = 16575452
+    Caption.BackgroundTo = 16571329
     DayNames.Strings = (
       'Sun'
       'Mon'
@@ -108,10 +108,12 @@ object Form1: TForm1
     Display.DisplayEnd = 14
     Display.DisplayScale = 57
     Display.DisplayUnit = 60
-    Display.ColorNonActive = clSilver
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
+    Display.HourLineColor = 13542013
     Display.ScaleToFit = True
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -130,10 +132,15 @@ object Form1: TForm1
     Footer.Font.Name = 'MS Sans Serif'
     Footer.Font.Style = []
     GridLeftCol = 0
+    GridLineColor = clSilver
     GridTopRow = 1
+    Header.ActiveColor = 16575452
+    Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
       ''
       '')
+    Header.Color = 16645114
+    Header.ColorTo = 16643051
     Header.CustomGroups = <>
     Header.Height = 200
     Header.Font.Charset = DEFAULT_CHARSET
@@ -166,6 +173,10 @@ object Form1: TForm1
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2004
     Mode.Day = 11
+    Sidebar.ActiveColor = 16575452
+    Sidebar.ActiveColorTo = 16571329
+    Sidebar.Background = 16645114
+    Sidebar.BackgroundTo = 16643051
     Sidebar.Font.Charset = DEFAULT_CHARSET
     Sidebar.Font.Color = clWindowText
     Sidebar.Font.Height = -11
@@ -197,7 +208,7 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.4.5.0'
+    Version = '3.4.6.0'
     OnItemDelete = DBPlanner1ItemDelete
     OnItemInsert = DBPlanner1ItemInsert
     ItemSource = DBPeriodSource1
@@ -215,8 +226,8 @@ object Form1: TForm1
       Top = 0
       Width = 186
       Height = 22
-      Date = 38049.046246539350000000
-      Time = 38049.046246539350000000
+      Date = 38049.000000000000000000
+      Time = 0.046246539350249800
       TabOrder = 0
       OnCloseUp = DateTimePicker1CloseUp
     end
@@ -228,8 +239,8 @@ object Form1: TForm1
       'lse'
     CursorType = ctStatic
     TableName = 'Schedules'
-    Left = 307
-    Top = 294
+    Left = 427
+    Top = 246
     object ADOTable1KEYFIELD: TWideStringField
       FieldName = 'KEYFIELD'
       Size = 50
@@ -263,18 +274,18 @@ object Form1: TForm1
   end
   object DataSource1: TDataSource
     DataSet = ADOTable1
-    Left = 339
-    Top = 294
+    Left = 435
+    Top = 310
   end
   object ColorDialog1: TColorDialog
-    Left = 339
-    Top = 326
+    Left = 523
+    Top = 342
   end
   object ImageList1: TImageList
-    Left = 371
-    Top = 326
+    Left = 523
+    Top = 278
     Bitmap = {
-      494C0101050009001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010105000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -546,8 +557,8 @@ object Form1: TForm1
       000000000000}
   end
   object ItemPopup: TPopupMenu
-    Left = 307
-    Top = 326
+    Left = 603
+    Top = 302
     object Color1: TMenuItem
       Caption = 'Color'
       OnClick = Color1Click
@@ -564,8 +575,8 @@ object Form1: TForm1
       'lse'
     CursorType = ctStatic
     TableName = 'MeetingRooms'
-    Left = 305
-    Top = 357
+    Left = 441
+    Top = 373
   end
   object DBPeriodSource1: TDBPeriodSource
     AutoIncKey = False
@@ -584,7 +595,7 @@ object Form1: TForm1
     AutoHeaderUpdate = True
     StartDate = 38190.000000000000000000
     EndDate = 38204.000000000000000000
-    Left = 512
-    Top = 277
+    Left = 520
+    Top = 205
   end
 end

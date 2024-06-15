@@ -39,31 +39,28 @@
         <Projects Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg110\RestRequestLib.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="JanuaThirdParty.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaThirdPartyVCL.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="JanuaCore.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="JanuaMVVM.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="JanuaCoreComponents.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Testing\JanuaCoreUnitTesting.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaDMVC.dproj">
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniMVVMTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaUnidacComponentsD.dproj">
@@ -76,9 +73,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="Testing\JanuaUniDACUnitTesting.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="JanuaUniMVVMTesting.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Testing\JanuaDMVCUnitTesting.dproj">
@@ -103,6 +97,9 @@
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\JanuaDevIDEXE15.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\JanuaDevIDEUniGUI.dproj">
@@ -272,24 +269,6 @@
     <Target Name="dmvcframeworkRT:Make">
         <MSBuild Projects="..\..\Components\pkg110\dmvcframeworkRT.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj"/>
-    </Target>
-    <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaThirdParty">
-        <MSBuild Projects="JanuaThirdParty.dproj"/>
-    </Target>
-    <Target Name="JanuaThirdParty:Clean">
-        <MSBuild Projects="JanuaThirdParty.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaThirdParty:Make">
-        <MSBuild Projects="JanuaThirdParty.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaThirdPartyVCL">
         <MSBuild Projects="JanuaThirdPartyVCL.dproj"/>
     </Target>
@@ -308,6 +287,15 @@
     <Target Name="JanuaCoreThirdParty:Make">
         <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RestRequestLib">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj"/>
+    </Target>
+    <Target Name="RestRequestLib:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestRequestLib:Make">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Make"/>
+    </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
     </Target>
@@ -316,24 +304,6 @@
     </Target>
     <Target Name="JanuaCore:Make">
         <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaMVVM">
-        <MSBuild Projects="JanuaMVVM.dproj"/>
-    </Target>
-    <Target Name="JanuaMVVM:Clean">
-        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaMVVM:Make">
-        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaCoreComponents">
-        <MSBuild Projects="JanuaCoreComponents.dproj"/>
-    </Target>
-    <Target Name="JanuaCoreComponents:Clean">
-        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaCoreComponents:Make">
-        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCoreUnitTesting">
         <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj"/>
@@ -344,14 +314,32 @@
     <Target Name="JanuaCoreUnitTesting:Make">
         <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaDMVC">
-        <MSBuild Projects="JanuaDMVC.dproj"/>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
     </Target>
-    <Target Name="JanuaDMVC:Clean">
-        <MSBuild Projects="JanuaDMVC.dproj" Targets="Clean"/>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="JanuaDMVC:Make">
-        <MSBuild Projects="JanuaDMVC.dproj" Targets="Make"/>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting">
+        <MSBuild Projects="JanuaUniMVVMTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Clean">
+        <MSBuild Projects="JanuaUniMVVMTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Make">
+        <MSBuild Projects="JanuaUniMVVMTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaUnidacComponentsD">
         <MSBuild Projects="JanuaUnidacComponentsD.dproj"/>
@@ -388,15 +376,6 @@
     </Target>
     <Target Name="JanuaUniDACUnitTesting:Make">
         <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaUniMVVMTesting">
-        <MSBuild Projects="JanuaUniMVVMTesting.dproj"/>
-    </Target>
-    <Target Name="JanuaUniMVVMTesting:Clean">
-        <MSBuild Projects="JanuaUniMVVMTesting.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaUniMVVMTesting:Make">
-        <MSBuild Projects="JanuaUniMVVMTesting.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaDMVCUnitTesting">
         <MSBuild Projects="Testing\JanuaDMVCUnitTesting.dproj"/>
@@ -469,6 +448,15 @@
     </Target>
     <Target Name="JanuaVCLMVVM:Make">
         <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Clean">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Make">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaDevIDEUniGUI">
         <MSBuild Projects="UniGUI\JanuaDevIDEUniGUI.dproj"/>
@@ -624,13 +612,13 @@
         <MSBuild Projects="WebREST\RESTDebuggerClient.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;RestRequestLib;JanuaThirdParty;JanuaThirdPartyVCL;JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaCoreUnitTesting;JanuaDMVC;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;UnifalconXE14;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;UnifalconXE14;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;RestRequestLib:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaCoreUnitTesting:Clean;JanuaDMVC:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;UnifalconXE14:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;UnifalconXE14:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;RestRequestLib:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaCoreUnitTesting:Make;JanuaDMVC:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;UnifalconXE14:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;UnifalconXE14:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -656,12 +644,6 @@
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
@@ -898,12 +880,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -924,6 +900,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -966,12 +948,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1206,12 +1182,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1233,6 +1203,12 @@
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1274,12 +1250,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1514,12 +1484,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1540,6 +1504,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1582,12 +1552,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1822,12 +1786,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1848,6 +1806,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1890,12 +1854,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2130,12 +2088,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2156,6 +2108,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2198,12 +2156,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2438,12 +2390,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2464,6 +2410,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2504,12 +2456,6 @@
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaDMVC.dproj">
-            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
@@ -2746,12 +2692,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaThirdParty.dproj">
-            <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2774,6 +2714,12 @@
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">

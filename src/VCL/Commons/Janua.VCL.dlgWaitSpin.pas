@@ -32,7 +32,7 @@ begin
 {$IFDEF DEBUG}
   scGPProgressBar1.MaxValue := 5;
 {$ELSE}
-  scGPProgressBar1.MaxValue := 40;
+  scGPProgressBar1.MaxValue := 10;
 {$ENDIF}
   tmrTimer.Enabled := True;
   scActivityIndicator1.Active := True;
