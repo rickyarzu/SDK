@@ -15410,7 +15410,7 @@
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
