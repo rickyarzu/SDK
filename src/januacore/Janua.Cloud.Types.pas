@@ -304,12 +304,13 @@ type
     property AsJson: String read GetAsJson write SetAsJson;
   end;
 
-  TJanuaReminderMethod = (rmPopup, rmEmail, rmSMS);
+  TJanuaReminderMethod = (jrmPopup, jrmEmail, jrmSMS);
 
   TJanuaReminder = record
     ID: TGUID;
     Method: TJanuaReminderMethod;
     Minutes: integer;
+    function GetMethodDescription: string;
   end;
 
   TJanuaReminders = record
@@ -319,8 +320,8 @@ type
     procedure SetAsJson(const aJson: string);
   public
     procedure AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
-    procedure RemoveReminder(aNumber: integer);
-    procedure RemoveReminder(aID: TGUID);
+    procedure RemoveReminder(aNumber: integer); overload;
+    procedure RemoveReminder(aID: TGUID); overload;
     procedure Clear;
     property AsJson: String read GetAsJson write SetAsJson;
   end;
@@ -341,6 +342,7 @@ uses System.SysUtils, System.StrUtils, Janua.Core.Functions, System.NetEncoding,
 const
   JanuaAttendeeStatuses: array [TJanuaAttendeeStatus] of string = ('Necessita Attenzione', 'Rifiutato',
     'In attesa', 'Accettato');
+  JanuaReminderMethods: array [TJanuaReminderMethod] of string = ( { rmPopup: } 'popup', 'email', 'sms');
 
   { TJanuaCloud }
 class function TJanuaCloud.IconFromExtension(const aExtension: string): integer;
@@ -982,6 +984,13 @@ end;
 procedure TJanuaReminders.SetAsJson(const aJson: string);
 begin
   Self := TJanuaJson.DeserializeSimple<TJanuaReminders>(aJson);
+end;
+
+{ TJanuaReminder }
+
+function TJanuaReminder.GetMethodDescription: string;
+begin
+  Result := JanuaReminderMethods[Self.Method];
 end;
 
 initialization

@@ -380,7 +380,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Height = 41
       Align = alBottom
       TabOrder = 9
-      object Button6: TButton
+      object btnGoogleEventDelete: TButton
         Left = 247
         Top = 8
         Width = 110
@@ -390,9 +390,9 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
-        OnClick = Button6Click
+        OnClick = btnGoogleEventDeleteClick
       end
-      object Button7: TButton
+      object btnGoogleEventUpdae: TButton
         Left = 131
         Top = 8
         Width = 110
@@ -402,9 +402,9 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
-        OnClick = Button7Click
+        OnClick = btnGoogleEventUpdaeClick
       end
-      object Button5: TButton
+      object btnGoogleEventNew: TButton
         Left = 15
         Top = 8
         Width = 110
@@ -414,7 +414,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 2
-        OnClick = Button5Click
+        OnClick = btnGoogleEventNewClick
       end
     end
     object Memo1: TMemo

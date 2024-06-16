@@ -1049,13 +1049,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="RTL.dcp"/>
-        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="designide.dcp"/>
-        <DCCReference Include="vclwinx.dcp"/>
-        <DCCReference Include="dbrtl.dcp"/>
-        <DCCReference Include="vcldb.dcp"/>
-        <DCCReference Include="QRWRunDXE12_W64.dcp"/>
         <DCCReference Include="Ean.dcp"/>
         <DCCReference Include="..\..\..\Libraries\Ean50XE10\EanRegEditors.pas"/>
         <DCCReference Include="C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignIntf.pas"/>

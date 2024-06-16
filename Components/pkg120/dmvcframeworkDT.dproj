@@ -183,6 +183,9 @@
         <DCCReference Include="..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.Registration.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\ideexpert\DMVC.Splash.Registration.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.Executor.pas"/>
+        <DCCReference Include="..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.Commons.pas"/>
+        <DCCReference Include="..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.Commands.Templates.pas"/>
+        <DCCReference Include="..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.Commands.pas"/>
         <RcItem Include="..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.NewProject.ico">
             <ResourceType>ICON</ResourceType>
             <ResourceId>DMVCNewProjectIcon</ResourceId>

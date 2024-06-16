@@ -54,7 +54,7 @@ type
     actRemoveAccess: TAction;
     actAddCalendar: TAction;
     actUpdateCalendar: TAction;
-    DBDaySource1: TDBDaySource;
+    DBDaySourceCalendar: TDBDaySource;
     actUpdateEvents: TAction;
     PictureContainer1: TPictureContainer;
     SVGIconImageListIt: TSVGIconImageList;
@@ -100,6 +100,9 @@ type
     dsGoogleEvents: TUniDataSource;
     vtGoogleEventsAttendees: TMemoField;
     vtGoogleEventsReminders: TMemoField;
+    dsCalendar: TUniDataSource;
+    DBDaySourceGCalendar: TDBDaySource;
+    dsGCalendar: TUniDataSource;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -109,11 +112,11 @@ type
     procedure actRemoveAccessExecute(Sender: TObject);
     procedure actAddCalendarExecute(Sender: TObject);
     procedure actUpdateCalendarExecute(Sender: TObject);
-    procedure DBDaySource1SetFilter(Sender: TObject);
+    procedure DBDaySourceCalendarSetFilter(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
     procedure GCalendarButtonsExecute(Action: TBasicAction; var Handled: Boolean);
-    procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
-    procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure DBDaySourceCalendarFieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure DBDaySourceCalendarItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure actColorExecute(Sender: TObject);
     procedure actCaptionExecute(Sender: TObject);
     procedure PlannerItemDblClick(Sender: TObject; Item: TPlannerItem);
@@ -203,6 +206,7 @@ type
     FAttName: string;
     FAttEmail: string;
     FAttendeesList: TStrings;
+    FReminders: TJanuaReminders;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -292,6 +296,8 @@ uses VCL.Forms, Spring, Janua.Application.Framework, Janua.ViewModels.Applicatio
 const
   JanuaAttendeeGoogleStatus: array [TResponseStatus] of TJanuaAttendeeStatus = (jrsNeedsAction, rsDeclined,
     rsTentative, rsAccepted);
+  // FReminders
+  JanuaReminderMethods: array [TReminderMethod] of TJanuaReminderMethod = (jrmPopup, jrmEmail, jrmSMS);
 
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var
@@ -359,7 +365,7 @@ begin
   FCalendarList := nil;
 end;
 
-procedure TdmVCLPlannerCustomController.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarFieldsToItem(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
@@ -376,7 +382,7 @@ begin
     Item.CaptionType := TCaptionType.ctNone;
 end;
 
-procedure TdmVCLPlannerCustomController.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarItemToFields(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
@@ -390,7 +396,7 @@ begin
   Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
 end;
 
-procedure TdmVCLPlannerCustomController.DBDaySource1SetFilter(Sender: TObject);
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarSetFilter(Sender: TObject);
 var
   sd1, sd2: string;
 begin
@@ -738,8 +744,17 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.GetGCalendarList;
+var
+  i: integer;
 begin
-
+  CloudCalendar := ccGoogle;
+  AdvGCalendar1.GetCalendars;
+  CalendarList.Clear;
+  for i := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    CalendarList.Add(AdvGCalendar1.Calendars[i].Summary);
+  end;
+  CalendarItemIndex := 0;
 end;
 
 procedure TdmVCLPlannerCustomController.GetLiveCalendarList;
@@ -788,33 +803,18 @@ end;
 procedure TdmVCLPlannerCustomController.ListReminders(Item: TGCalendarItem);
 var
   rem: string;
-  I: integer;
-  li: TListItem;
+  i: Integer;
 begin
   rem := '';
-  lvRem.Items.Clear;
+  FReminders.Clear;
+  vtGoogleEvents.Edit;
+  vtGoogleEventsUSEDEFAULTREMINDERS.AsBoolean := Item.UseDefaultReminders;
+  vtGoogleEvents.Post;
 
-  cbRem.Checked := Item.UseDefaultReminders;
-
-  for I := 0 to Item.Reminders.Count - 1 do
-  begin
-    case Item.Reminders[I].Method of
-      rmPopup:
-        rem := 'popup';
-      rmEmail:
-        rem := 'email';
-      rmSMS:
-        rem := 'sms';
-    end;
-
-    li := lvRem.Items.Add;
-    li.Caption := rem;
-    li.SubItems.Add(IntToStr(Item.Reminders[I].Minutes));
-    li.Data := Item.Reminders[I];
-  end;
+  for i := 0 to Item.Reminders.Count - 1 do
+    FReminders.AddReminder(Item.Reminders[i].Minutes, JanuaReminderMethods [Item.Reminders[i].Method]);
 
   ToggleReminders;
-
 
 end;
 

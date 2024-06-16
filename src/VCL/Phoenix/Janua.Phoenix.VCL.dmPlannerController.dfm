@@ -1,17 +1,22 @@
 inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
-  Height = 396
+  Height = 523
   Width = 913
   inherited GCalendarButtons: TActionList
     Top = 272
   end
   inherited SVGIconImageList16: TSVGIconImageList
-    Top = 304
+    Top = 352
+  end
+  inherited PictureContainer1: TPictureContainer
+    Top = 400
+  end
+  inherited SVGIconImageListIt: TSVGIconImageList
+    Top = 440
   end
   inherited ColorDialog1: TColorDialog
     Top = 330
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
-    BeforeConnect = nil
     Left = 576
     Top = 80
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
@@ -40,7 +45,22 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
       0100800000000000000000000000}
   end
-  object qryReportPlanner: TUniQuery [21]
+  inherited vtGoogleCalendars: TVirtualTable
+    Left = 791
+    Top = 16
+    Data = {
+      040009000200494401008000000000000B004445534352495054494F4E0F0000
+      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
+      010000010000000007005052494D4152590500000000000000080054494D455A
+      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
+      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
+      0000000000000000}
+  end
+  inherited dsGoogleEvents: TUniDataSource
+    Left = 592
+    Top = 344
+  end
+  object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
       
@@ -447,7 +467,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Calculated = True
     end
   end
-  object spSetStatinoStato: TUniStoredProc [22]
+  object spSetStatinoStato: TUniStoredProc
     StoredProcName = 'SET_STATINI_STATO'
     SQL.Strings = (
       'EXECUTE PROCEDURE SET_STATINI_STATO')
@@ -456,7 +476,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     Top = 280
     CommandStoredProcName = 'SET_STATINI_STATO'
   end
-  object qryCustomers: TUniQuery [23]
+  object qryCustomers: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT C.chiave, C.descrizione_scheda'
@@ -477,7 +497,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Size = 255
     end
   end
-  object qryTech: TUniQuery [24]
+  object qryTech: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
@@ -496,7 +516,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Size = 255
     end
   end
-  object qryCAP: TUniQuery [25]
+  object qryCAP: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT S.CAP'
@@ -511,7 +531,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Size = 10
     end
   end
-  object qryPlannerCalendar: TUniQuery [26]
+  object qryPlannerCalendar: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT * FROM CALENDARIO '
@@ -575,7 +595,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       FieldName = 'ICONA'
     end
   end
-  object qryTechPlanned: TUniQuery [27]
+  object qryTechPlanned: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
@@ -610,7 +630,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Size = 255
     end
   end
-  object tabGoogleCalendars: TUniTable [28]
+  object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
     Connection = JanuaUniConnection1
     Left = 688
@@ -648,7 +668,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       FieldName = 'FORE_COLOR'
     end
   end
-  object tabGoogleEvents: TUniTable [29]
+  object tabGoogleEvents: TUniTable
     TableName = 'GOOGLE_CALENDAR_EVENTS'
     DataTypeMap = <
       item
@@ -725,16 +745,5 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Required = True
       Size = 128
     end
-  end
-  inherited vtGoogleCalendars: TVirtualTable
-    Left = 791
-    Top = 16
-    Data = {
-      040009000200494401008000000000000B004445534352495054494F4E0F0000
-      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
-      010000010000000007005052494D4152590500000000000000080054494D455A
-      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
-      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
-      0000000000000000}
   end
 end

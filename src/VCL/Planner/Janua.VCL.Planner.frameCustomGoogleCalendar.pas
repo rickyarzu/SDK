@@ -5,10 +5,21 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Janua.VCL.Planner.dmCustomController, Data.DB, Vcl.Grids, Vcl.DBGrids, CRGrid;
+  Janua.VCL.Planner.dmCustomController, Data.DB, Vcl.Grids, Vcl.DBGrids, CRGrid, AdvCustomComponent, AdvPDFIO,
+  AdvPlannerPDFIO, Planner, DBPlanner, System.Actions, Vcl.ActnList;
 
 type
   TframeVCLCustomGoogleCalendar = class(TFrame)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label13: TLabel;
+    dpCalStartDate: TDateTimePicker;
+    dpCalEndDate: TDateTimePicker;
+    btUpdate: TButton;
+    CRDBGrid1: TCRDBGrid;
     Panel1: TPanel;
     Image1: TImage;
     btnConnect: TButton;
@@ -30,6 +41,7 @@ type
     edCalendarLocation: TEdit;
     edCalendarTimeZone: TEdit;
     cbDefaultReminders: TComboBox;
+    pnlEventDetail: TPanel;
     GroupBox3: TGroupBox;
     Label4: TLabel;
     Label5: TLabel;
@@ -54,17 +66,9 @@ type
     Button7: TButton;
     Button5: TButton;
     Memo1: TMemo;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    Label2: TLabel;
-    Label8: TLabel;
-    cbRem: TCheckBox;
-    lvRem: TListView;
-    EditRemMinutes: TEdit;
-    btAddRem: TButton;
-    cbRemMethod: TComboBox;
-    btDelRem: TButton;
-    TabSheet2: TTabSheet;
+    PageControl2: TPageControl;
+    tabDettagli: TTabSheet;
+    tabAttendees: TTabSheet;
     Label3: TLabel;
     Label12: TLabel;
     lvAtt: TListView;
@@ -76,13 +80,17 @@ type
     edID: TEdit;
     edEtag: TEdit;
     edGrp: TEdit;
-    GroupBox2: TGroupBox;
-    Label1: TLabel;
-    Label13: TLabel;
-    dpCalStartDate: TDateTimePicker;
-    dpCalEndDate: TDateTimePicker;
-    btUpdate: TButton;
-    CRDBGrid1: TCRDBGrid;
+    lvRem: TListView;
+    Label8: TLabel;
+    cbRemMethod: TComboBox;
+    Label2: TLabel;
+    EditRemMinutes: TEdit;
+    btAddRem: TButton;
+    btDelRem: TButton;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    ActionList1: TActionList;
+    Action1: TAction;
   private
     { Private declarations }
   public

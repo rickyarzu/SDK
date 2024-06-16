@@ -114,7 +114,9 @@ contains
   MVCFramework.DotEnv in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas',
   MVCFramework.REPLCommandsHandlerU in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.REPLCommandsHandlerU.pas',
   MVCFramework.Serializer.Text in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas',
-  MVCFramework.Container in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Container.pas';
+  MVCFramework.Container in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Container.pas',
+  sqids in '..\..\..\Lib\delphimvcframework\sources\sqids.pas';
+
 end.
 
 

@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 325
   Top = 203
   Caption = 'DBPlanner with full SQL implemented update/insert/delete'
-  ClientHeight = 545
-  ClientWidth = 744
+  ClientHeight = 587
+  ClientWidth = 809
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,12 +11,15 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OnCreate = FormCreate
+  DesignSize = (
+    809
+    587)
   TextHeight = 13
   object DBPlanner1: TDBPlanner
-    Left = 16
-    Top = 16
-    Width = 721
-    Height = 361
+    Left = 8
+    Top = 8
+    Width = 786
+    Height = 403
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -27,6 +30,7 @@ object Form1: TForm1
       8888888880808080888888888080808088888888808080808888888888808080
       8888888888808880888888888888000888888888888888888888}
     AutoInsDel = True
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Caption.Title = 'TMS software <b>TDBPlanner</b>'
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = clWhite
@@ -133,9 +137,9 @@ object Form1: TForm1
     Footer.Font.Height = -11
     Footer.Font.Name = 'MS Sans Serif'
     Footer.Font.Style = []
-    GridLeftCol = 1
+    GridLeftCol = 0
     GridLineColor = clSilver
-    GridTopRow = 11
+    GridTopRow = 1
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
@@ -188,6 +192,7 @@ object Form1: TForm1
     Sidebar.Font.Name = 'Arial'
     Sidebar.Font.Style = []
     Sidebar.HourFontRatio = 1.800000000000000000
+    Sidebar.Position = spTop
     Positions = 7
     PositionProps = <>
     PrintOptions.LineWidth = 0
@@ -212,16 +217,20 @@ object Form1: TForm1
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
     ItemSource = DBDaySource1
+    ExplicitWidth = 721
+    ExplicitHeight = 361
     TMSStyle = 0
   end
   object MonthCalendar1: TMonthCalendar
     Left = 8
-    Top = 383
-    Width = 197
+    Top = 425
+    Width = 225
     Height = 160
+    Anchors = [akLeft, akBottom]
     Date = 42912.000000000000000000
     TabOrder = 1
     OnClick = MonthCalendar1Click
+    ExplicitTop = 383
   end
   object DBDaySource1: TDBDaySource
     AutoIncKey = False
@@ -240,8 +249,8 @@ object Form1: TForm1
     AutoHeaderUpdate = True
     DateFormat = 'mm/dd/yyyy'
     Mode = dmMultiDay
-    Left = 392
-    Top = 464
+    Left = 520
+    Top = 512
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
@@ -249,29 +258,29 @@ object Form1: TForm1
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM Schedules')
-    Left = 464
-    Top = 408
+    Left = 592
+    Top = 456
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 256
-    Top = 384
+    Left = 384
+    Top = 432
   end
   object ADOQuery2: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 312
-    Top = 440
+    Left = 440
+    Top = 488
   end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Delphi7\Projects' +
-      '\Demos\DBPlanner\Demos\Demo28\dbplanner.mdb;Persist Security Inf' +
-      'o=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Januaproject\bin' +
+      '\Demos\dbplanner.mdb;Persist Security Info=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 376
-    Top = 384
+    Left = 504
+    Top = 432
   end
 end
