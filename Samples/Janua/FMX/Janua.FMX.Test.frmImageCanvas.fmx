@@ -15840,7 +15840,7 @@ object frmFMXTestImageDraw: TfrmFMXTestImageDraw
           Text = 'C to Screen'
         end
       end
-      object ScrollBox1: TScrollBox
+      object ScrollBoxImage: TScrollBox
         Position.X = 49.000000000000000000
         Position.Y = 89.000000000000000000
         Size.Width = 608.000000000000000000

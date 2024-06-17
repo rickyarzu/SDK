@@ -1,4 +1,4 @@
-object Frame1: TFrame1
+object frameVCLAanagraphAddress: TframeVCLAanagraphAddress
   Left = 0
   Top = 0
   Width = 831
