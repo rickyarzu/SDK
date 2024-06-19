@@ -54,8 +54,5 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
   inherited Panel1: TPanel
     Width = 903
     ExplicitWidth = 903
-    inherited btnAppuntamento: TButton
-      ExplicitLeft = -6
-    end
   end
 end
