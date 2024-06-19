@@ -5368,7 +5368,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45460.000000000000000000
+    DateFrom = 45462.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5440,7 +5440,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   object GCalendarButtons: TActionList
     Images = SVGIconImageList16
     OnExecute = GCalendarButtonsExecute
-    Left = 72
+    Left = 64
     Top = 208
     object actConnect: TAction
       Caption = 'Connetti Google'
@@ -11088,6 +11088,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
         DataType = ftString
         Size = 128
       end>
+    AfterScroll = vtGoogleEventsAfterScroll
     Left = 528
     Top = 80
     Data = {

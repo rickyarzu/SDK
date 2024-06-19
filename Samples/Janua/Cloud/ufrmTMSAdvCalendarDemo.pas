@@ -39,7 +39,7 @@ type
     Label11: TLabel;
     Label10: TLabel;
     edCalendarItemName: TEdit;
-    Edit5: TEdit;
+    edLocation: TEdit;
     StartDate: TDateTimePicker;
     EndDate: TDateTimePicker;
     StartTime: TDateTimePicker;
@@ -231,7 +231,7 @@ begin
   if not(Inserting) then
   begin
     ClearControls;
-    Edit3.SetFocus;
+    edCalendarItemName.SetFocus;
     ListView1.ItemIndex := -1;
     btnGoogleEventNew.Caption := 'Insert';
     btnGoogleEventNew.Hint := 'Insert the new Event';
@@ -559,9 +559,9 @@ begin
   begin
     li := ListView1.Items[ListView1.ItemIndex].Data;
 
-    Edit3.Text := li.Summary;
+    edCalendarItemName.Text := li.Summary;
     Memo1.Lines.Text := li.Description;
-    Edit5.Text := li.Location;
+    edLocation.Text := li.Location;
     StartDate.DateTime := li.StartTime;
     EndDate.DateTime := li.EndTime;
     StartTime.DateTime := li.StartTime;
@@ -655,7 +655,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.SetCalendarItem(Item: TGCalendarItem);
 begin
-  Item.Summary := Edit3.Text;
+  Item.Summary := edCalendarItemName.Text;
   Item.Description := Memo1.Lines.Text;
   Item.Location := Edit5.Text;
   if cbColors.ItemIndex >= 0 then
@@ -737,7 +737,7 @@ begin
   dpCalEndDate.Enabled := Connected;
   btUpdate.Enabled := Connected;
   ListView1.Enabled := Connected;
-  Edit3.Enabled := Connected;
+  edCalendarItemName.Enabled := Connected;
   Edit5.Enabled := Connected;
   Memo1.Enabled := Connected;
   cbVisibility.Enabled := Connected;

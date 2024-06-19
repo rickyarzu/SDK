@@ -131,6 +131,7 @@ type
     procedure actDeleteCalendarExecute(Sender: TObject);
     procedure actAddAttendeeExecute(Sender: TObject);
     procedure actUpdateEventsExecute(Sender: TObject);
+    procedure vtGoogleEventsAfterScroll(DataSet: TDataSet);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -217,6 +218,8 @@ type
     FForegroundColor: TColor;
     FBackgroundColor: TColor;
     FOnSetColor: TNotifyEvent;
+    FItemVisibilityList: TStrings;
+    FItemVisibilityIndex: integer;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -241,6 +244,8 @@ type
     procedure SetBackgroundColor(const Value: TColor);
     procedure SetForegroundColor(const Value: TColor);
     procedure SetOnSetColor(const Value: TNotifyEvent);
+    procedure SetItemVisibilityIndex(const Value: integer);
+    procedure SetItemVisibilityList(const Value: TStrings);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     procedure AddActivity; virtual; abstract;
@@ -301,6 +306,10 @@ type
     property BackgroundColor: TColor read FBackgroundColor write SetBackgroundColor;
     property ForegroundColor: TColor read FForegroundColor write SetForegroundColor;
     property OnSetColor: TNotifyEvent read FOnSetColor write SetOnSetColor;
+    // Calendar Item
+    property ItemVisibilityList: TStrings read FItemVisibilityList write SetItemVisibilityList;
+    property ItemVisibilityIndex: integer read FItemVisibilityIndex write SetItemVisibilityIndex;
+
   end;
 
 var
@@ -381,6 +390,14 @@ begin
 
   DBDaySourceGCalendar.NumberOfResources := OpenCalendar(FDateFrom, FDateTo);
   DBDaySourceGCalendar.Active := True;
+
+  // Gestione Item:
+  // Creo la Lista e la Imposto
+  FItemVisibilityList := TStringList.Create;
+  FItemVisibilityIndex := 0;
+  FItemVisibilityList.Add('Default');
+  FItemVisibilityList.Add('Pubblico');
+  FItemVisibilityList.Add('Privato');
 end;
 
 procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
@@ -1044,6 +1061,16 @@ begin
   FInserting := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetItemVisibilityIndex(const Value: integer);
+begin
+  FItemVisibilityIndex := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemVisibilityList(const Value: TStrings);
+begin
+  FItemVisibilityList := Value;
+end;
+
 procedure TdmVCLPlannerCustomController.SetOnSetColor(const Value: TNotifyEvent);
 begin
   FOnSetColor := Value;
@@ -1120,6 +1147,11 @@ end;
 procedure TdmVCLPlannerCustomController.UndoMeeting;
 begin
 
+end;
+
+procedure TdmVCLPlannerCustomController.vtGoogleEventsAfterScroll(DataSet: TDataSet);
+begin
+  FillCalendarItemDetails;
 end;
 
 end.

@@ -1,4 +1,4 @@
-unit JOrm.Phoenix.GoogleCalendarEvents.Intf;
+unit JOrm.Cloud.GoogleCalendarEvents.Intf;
 
 interface
 

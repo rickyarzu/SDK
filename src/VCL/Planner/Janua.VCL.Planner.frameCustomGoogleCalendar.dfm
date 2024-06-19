@@ -53,7 +53,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         object dpCalEndDate: TDateTimePicker
           Left = 288
           Top = 22
-          Width = 141
+          Width = 105
           Height = 21
           Date = 41274.000000000000000000
           Time = 0.582957546299439900
@@ -411,6 +411,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Height = 41
     Align = alTop
     TabOrder = 1
+    ExplicitTop = -3
     DesignSize = (
       1280
       41)
@@ -507,7 +508,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       TabOrder = 1
     end
   end
-  object GroupBox1: TGroupBox
+  object grpCalendars: TGroupBox
     AlignWithMargins = True
     Left = 3
     Top = 44
@@ -515,28 +516,28 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Height = 168
     Margins.Bottom = 0
     Align = alTop
-    Caption = 'Calendars'
+    Caption = 'Calendari'
     TabOrder = 2
     DesignSize = (
       1274
       168)
-    object Label17: TLabel
+    object lbLists: TLabel
       Left = 28
-      Top = 25
-      Width = 21
+      Top = 23
+      Width = 27
       Height = 15
-      Caption = 'List:'
+      Caption = 'Liste:'
     end
-    object Label14: TLabel
-      Left = 376
-      Top = 25
-      Width = 97
+    object lbDefaultReminders: TLabel
+      Left = 392
+      Top = 23
+      Width = 95
       Height = 15
-      Caption = 'Default reminders:'
+      Caption = 'Allarmi di Default:'
     end
     object cboCalendarsList: TComboBox
       Left = 124
-      Top = 22
+      Top = 20
       Width = 246
       Height = 23
       Style = csDropDownList
@@ -544,13 +545,13 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       OnChange = cboCalendarsListChange
       OnClick = cboCalendarsListClick
     end
-    object GroupBox4: TGroupBox
+    object grpCalendarDetails: TGroupBox
       Left = 17
       Top = 44
       Width = 1123
       Height = 117
       Anchors = [akLeft, akTop, akRight]
-      Caption = 'Details'
+      Caption = 'Dettagli Calendario'
       TabOrder = 1
       DesignSize = (
         1123
@@ -562,38 +563,38 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 15
         Caption = 'Description:'
       end
-      object Label15: TLabel
+      object lbSummary: TLabel
         Left = 12
         Top = 27
-        Width = 54
+        Width = 95
         Height = 15
-        Caption = 'Summary:'
+        Caption = 'Titolo (Riassunto):'
       end
-      object Label18: TLabel
-        Left = 362
+      object lbLocation: TLabel
+        Left = 375
         Top = 27
-        Width = 49
+        Width = 92
         Height = 15
-        Caption = 'Location:'
+        Caption = 'Indirizzo (Luogo):'
       end
       object Label19: TLabel
-        Left = 362
+        Left = 375
         Top = 54
         Width = 54
         Height = 15
         Caption = 'Timezone:'
       end
       object edCalendarDescription: TEdit
-        Left = 107
+        Left = 113
         Top = 51
         Width = 246
         Height = 23
         TabOrder = 0
       end
       object edCalendarName: TEdit
-        Left = 107
+        Left = 113
         Top = 22
-        Width = 249
+        Width = 246
         Height = 23
         TabOrder = 1
       end
@@ -628,26 +629,26 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         TabOrder = 4
       end
       object edCalendarLocation: TEdit
-        Left = 462
+        Left = 488
         Top = 22
-        Width = 647
+        Width = 621
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
       end
       object edCalendarTimeZone: TEdit
-        Left = 462
+        Left = 488
         Top = 51
-        Width = 647
+        Width = 621
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
       end
     end
     object cbDefaultReminders: TComboBox
-      Left = 479
-      Top = 22
-      Width = 647
+      Left = 505
+      Top = 20
+      Width = 621
       Height = 23
       Style = csDropDownList
       Anchors = [akLeft, akTop, akRight]
@@ -662,7 +663,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 3
-    object GroupBox3: TGroupBox
+    object grpItemDetails: TGroupBox
       AlignWithMargins = True
       Left = 3
       Top = 3
@@ -752,7 +753,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 23
         TabOrder = 0
       end
-      object Edit5: TEdit
+      object edCalendarItemLocation: TEdit
         Left = 87
         Top = 136
         Width = 266
@@ -805,9 +806,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Width = 121
         Height = 23
         Style = csDropDownList
-        ItemIndex = 0
         TabOrder = 3
-        Text = 'Default'
         Items.Strings = (
           'Default'
           'Public'
@@ -866,7 +865,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           TabOrder = 2
         end
       end
-      object Memo1: TMemo
+      object edCalendarItemDescription: TMemo
         Left = 87
         Top = 91
         Width = 266

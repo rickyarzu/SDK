@@ -1,4 +1,4 @@
-unit JOrm.Phoenix.GoogleCalendarEvents.Custom.Intf;
+unit JOrm.Cloud.GoogleCalendarEvents.Custom.Intf;
 
 interface
 

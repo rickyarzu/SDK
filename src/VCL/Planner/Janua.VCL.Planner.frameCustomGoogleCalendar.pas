@@ -32,14 +32,14 @@ type
     Image1: TImage;
     btnConnect: TButton;
     btnRemove: TButton;
-    GroupBox1: TGroupBox;
-    Label17: TLabel;
-    Label14: TLabel;
+    grpCalendars: TGroupBox;
+    lbLists: TLabel;
+    lbDefaultReminders: TLabel;
     cboCalendarsList: TComboBox;
-    GroupBox4: TGroupBox;
+    grpCalendarDetails: TGroupBox;
     Label16: TLabel;
-    Label15: TLabel;
-    Label18: TLabel;
+    lbSummary: TLabel;
+    lbLocation: TLabel;
     Label19: TLabel;
     edCalendarDescription: TEdit;
     edCalendarName: TEdit;
@@ -50,7 +50,7 @@ type
     edCalendarTimeZone: TEdit;
     cbDefaultReminders: TComboBox;
     pnlEventDetail: TPanel;
-    GroupBox3: TGroupBox;
+    grpItemDetails: TGroupBox;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -62,7 +62,7 @@ type
     lbEtag: TLabel;
     lbGrp: TLabel;
     edCalendarItemName: TEdit;
-    Edit5: TEdit;
+    edCalendarItemLocation: TEdit;
     StartDate: TDateTimePicker;
     EndDate: TDateTimePicker;
     StartTime: TDateTimePicker;
@@ -73,7 +73,7 @@ type
     btnGoogleEventDelete: TButton;
     btnGoogleEventUpdate: TButton;
     btnGoogleEventNew: TButton;
-    Memo1: TMemo;
+    edCalendarItemDescription: TMemo;
     PageControl2: TPageControl;
     tabDettagli: TTabSheet;
     tabAttendees: TTabSheet;
@@ -124,9 +124,18 @@ implementation
 procedure TframeVCLCustomGoogleCalendar.BindControls;
 begin
   dpCalStartDate.DateTime := FCustomController.DateFrom;
-
+  FCustomController.Bind('DateFrom', dpCalStartDate, 'DateTime');
   dpCalEndDate.DateTime := FCustomController.DateTo;
-  grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents
+  FCustomController.Bind('DateFrom', dpCalEndDate, 'DateTime');
+  grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
+  edCalendarName.Text := FCustomController.CalendarName;
+  FCustomController.Bind('CalendarName', edCalendarName, 'Text');
+  edCalendarDescription.Text := FCustomController.CalendarDescription;
+  FCustomController.Bind('CalendarDescription', edCalendarDescription, 'Text');
+  edCalendarLocation.Text := FCustomController.CalendarLocation;
+  FCustomController.Bind('CalendarLocation', edCalendarLocation, 'Text');
+  edCalendarTimeZone.Text := FCustomController.CalendarTimeZone;
+  FCustomController.Bind('CalendarTimeZone', edCalendarTimeZone, 'Text');
 end;
 
 procedure TframeVCLCustomGoogleCalendar.cboCalendarsListChange(Sender: TObject);
@@ -164,9 +173,9 @@ begin
   var
   Connected := Assigned(FCustomController) and FCustomController.Connected;
   Connected := FCustomController.Connected;
-  GroupBox1.Enabled := Connected;
+  grpCalendars.Enabled := Connected;
   GroupBox2.Enabled := Connected;
-  GroupBox3.Enabled := Connected;
+  grpItemDetails.Enabled := Connected;
   PageControl1.Enabled := Connected;
   Panel2.Enabled := Connected;
   cboCalendarsList.Enabled := Connected;

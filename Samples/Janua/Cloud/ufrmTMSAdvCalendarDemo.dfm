@@ -303,7 +303,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Height = 21
       TabOrder = 0
     end
-    object Edit5: TEdit
+    object edLocation: TEdit
       Left = 87
       Top = 91
       Width = 248

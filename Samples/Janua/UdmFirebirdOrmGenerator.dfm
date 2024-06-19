@@ -1,7 +1,16 @@
 object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
+  Left = 0
+  Top = 0
+  ClientHeight = 367
+  ClientWidth = 487
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
   OnCreate = DataModuleCreate
-  Height = 406
-  Width = 503
+  TextHeight = 15
   object UniConnection1: TUniConnection
     ProviderName = 'InterBase'
     Database = 'C:\PhoenixDB\PHOENIX.FDB'
@@ -50,6 +59,11 @@ object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
   end
   object tbFields: TUniTable
     TableName = 'AMMINISTRATORI'
+    DataTypeMap = <
+      item
+        DBType = 416
+        FieldType = ftWideMemo
+      end>
     Connection = UniConnection1
     FilterSQL = '1=2'
     Left = 232
