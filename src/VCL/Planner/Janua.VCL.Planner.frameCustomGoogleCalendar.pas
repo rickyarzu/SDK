@@ -184,8 +184,8 @@ begin
   btUpdate.Enabled := Connected;
   grdGoogleCalendar.Enabled := Connected;
   edCalendarItemName.Enabled := Connected;
-  Edit5.Enabled := Connected;
-  Memo1.Enabled := Connected;
+  edCalendarItemLocation.Enabled := Connected;
+  edCalendarItemDescription.Enabled := Connected;
   cbVisibility.Enabled := Connected;
   cbAllday.Enabled := Connected;
   StartDate.Enabled := Connected;

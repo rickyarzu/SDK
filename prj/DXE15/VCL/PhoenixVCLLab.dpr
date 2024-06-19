@@ -15,7 +15,7 @@ uses
   Janua.TMS.frmMDIContainer in '..\..\..\src\TMS\Janua.TMS.frmMDIContainer.pas' {frmVCLJanuaMDIContainer},
   Janua.Phoenix.VCL.frmReportPlanner in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.frmReportPlanner.pas' {frmPhoenixVCLReportPlanner},
   Janua.Phoenix.dmIBModel in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule},
-  Janua.Phoenix.VCL.dmPlannerController in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas' {dmPhoenixIBPlanner: TDataModule};
+  Janua.Phoenix.VCL.dmPlannerController in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas' {dmVCLPhoenixIBPlanner: TDataModule};
 
 {$R *.res}
 
@@ -27,7 +27,7 @@ begin
   Application.CreateForm(TfrmVCLJanuaMDIContainer, frmVCLJanuaMDIContainer);
   Application.CreateForm(TfrmPhoenixVCLReportPlanner, frmPhoenixVCLReportPlanner);
   Application.CreateForm(TdmPhoenixIBModel, dmPhoenixIBModel);
-  Application.CreateForm(TdmPhoenixIBPlanner, dmPhoenixIBPlanner);
+  Application.CreateForm(TdmVCLPhoenixIBPlanner, dmVCLPhoenixIBPlanner);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.CreateForm(TdmFDACPhoenixLab, dmFDACPhoenixLab);
   Application.CreateForm(TfrmPhoenixVCLRESTLabClient, frmPhoenixVCLRESTLabClient);

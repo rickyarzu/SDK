@@ -5,21 +5,24 @@ interface
 uses
   // RTL
   System.SysUtils, System.Variants, System.Classes, System.Actions, System.UITypes, System.DateUtils,
+  System.ImageList,
   // Win
   Winapi.Windows, Winapi.Messages,
   // VCL
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, VCL.Grids, VCL.DBGrids, VCL.StdCtrls,
   VCL.Buttons, VCL.Mask, JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit, JvExControls,
-  JvDBLookup, VCL.Menus,
+  JvDBLookup, VCL.Menus, VCL.ComCtrls, VCL.ImgList,
+  // TMS
+  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // DB - UniDAC
   CRGrid, ActnList, MemDS, Data.DB, DBAccess, Uni,
   // ZLibraries
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
-  Janua.TMS.Phoenix.framePlannerCalendar,
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab, VCL.ComCtrls,
-  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, System.ImageList, VCL.ImgList,
-  Janua.TMS.Planner.frameCustomCalendar;
+  Janua.TMS.Phoenix.framePlannerCalendar, Janua.Phoenix.VCL.dmPlannerController,
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
+  Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
+  Janua.VCL.Planner.framePhoenixGoogleCalendar;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -62,6 +65,7 @@ type
     N1: TMenuItem;
     tabGoogleCalendar: TTabSheet;
     frameTMSPhoenixPlannerCalendar1: TframeTMSPhoenixPlannerCalendar;
+    frameVCLPhoenixGoogleCalendar1: TframeVCLPhoenixGoogleCalendar;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -76,6 +80,7 @@ type
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
+    FdmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner;
   public
     { Public declarations }
   end;
@@ -96,41 +101,41 @@ uses
 
 procedure TfrmPhoenixVCLReportPlanner.AnnullaAppuntamento1Click(Sender: TObject);
 begin
-  dmPhoenixIBPlanner.UndoMeeting
+   FdmVCLPhoenixIBPlanner.UndoMeeting
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.btnSearchClick(Sender: TObject);
 begin
-  dmPhoenixIBPlanner.CustomerFilter := ckbFilterCustomer.Checked;
-  dmPhoenixIBPlanner.TechFilter := ckbFilterTecnician.Checked;
-  dmPhoenixIBPlanner.ReportDateFilter := ckbFilterDate.Checked;
-  dmPhoenixIBPlanner.CAPFilter := ckbCAP.Checked;
+   FdmVCLPhoenixIBPlanner.CustomerFilter := ckbFilterCustomer.Checked;
+   FdmVCLPhoenixIBPlanner.TechFilter := ckbFilterTecnician.Checked;
+   FdmVCLPhoenixIBPlanner.ReportDateFilter := ckbFilterDate.Checked;
+   FdmVCLPhoenixIBPlanner.CAPFilter := ckbCAP.Checked;
 
-  if dmPhoenixIBPlanner.TechFilter then
-    dmPhoenixIBPlanner.TechID := lkbTechnicianID.Value.ToInt64
+  if  FdmVCLPhoenixIBPlanner.TechFilter then
+     FdmVCLPhoenixIBPlanner.TechID := lkbTechnicianID.Value.ToInt64
   else
-    dmPhoenixIBPlanner.TechID := -1;
+     FdmVCLPhoenixIBPlanner.TechID := -1;
 
-  if dmPhoenixIBPlanner.CustomerFilter then
-    dmPhoenixIBPlanner.CustomerID := lkpCustomer.Value.ToInt64
+  if  FdmVCLPhoenixIBPlanner.CustomerFilter then
+     FdmVCLPhoenixIBPlanner.CustomerID := lkpCustomer.Value.ToInt64
   else
-    dmPhoenixIBPlanner.CustomerID := -1;
+     FdmVCLPhoenixIBPlanner.CustomerID := -1;
 
-  if dmPhoenixIBPlanner.CAPFilter then
-    dmPhoenixIBPlanner.CAP := lkpCAP.Value
+  if  FdmVCLPhoenixIBPlanner.CAPFilter then
+     FdmVCLPhoenixIBPlanner.CAP := lkpCAP.Value
   else
-    dmPhoenixIBPlanner.CAP := '';
+     FdmVCLPhoenixIBPlanner.CAP := '';
 
-  if dmPhoenixIBPlanner.ReportDateFilter then
-    dmPhoenixIBPlanner.ReportDate := edDateFilter.Date
+  if  FdmVCLPhoenixIBPlanner.ReportDateFilter then
+     FdmVCLPhoenixIBPlanner.ReportDate := edDateFilter.Date
   else
-    dmPhoenixIBPlanner.ReportDate := -1;
+     FdmVCLPhoenixIBPlanner.ReportDate := -1;
 
-  dmPhoenixIBPlanner.StateFilter := grpStato.ItemIndex;
+   FdmVCLPhoenixIBPlanner.StateFilter := grpStato.ItemIndex;
 
-  dmPhoenixIBPlanner.Filter;
+   FdmVCLPhoenixIBPlanner.Filter;
 
-  lbFilter.Caption := dmPhoenixIBPlanner.qryReportPlanner.Filter;
+  lbFilter.Caption :=  FdmVCLPhoenixIBPlanner.qryReportPlanner.Filter;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.btnUpdateClick(Sender: TObject);
@@ -146,19 +151,19 @@ begin
     procedure(const aResult: Boolean)
     begin
       ShowMessage('Terminato Aggiornamento');
-      dmPhoenixIBPlanner.Setup;
+       FdmVCLPhoenixIBPlanner.Setup;
     end,
     procedure(const Ex: Exception)
     begin
       ShowMessage(Ex.Message);
-      dmPhoenixIBPlanner.Setup;
+       FdmVCLPhoenixIBPlanner.Setup;
     end);
 
-  dmPhoenixIBPlanner.Setup;
+   FdmVCLPhoenixIBPlanner.Setup;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
-  Item: TPlannerItem);
+Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
     and extra properties are set from database fields. With this code, any
@@ -175,7 +180,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
-  Item: TPlannerItem);
+Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
     and extra properties are stored in database fields. With this code, any
@@ -190,12 +195,14 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
-  if not Assigned(dmPhoenixIBPlanner) then
-    Application.CreateForm(TdmPhoenixIBPlanner, dmPhoenixIBPlanner);
-  dmPhoenixIBPlanner.Setup;
+  FdmVCLPhoenixIBPlanner := TdmVCLPhoenixIBPlanner.Create(self);
+  { if not Assigned( FdmVCLPhoenixIBPlanner) then
+    Application.CreateForm(T FdmVCLPhoenixIBPlanner,  FdmVCLPhoenixIBPlanner => FdmVCLPhoenixIBPlanner); }
+   FdmVCLPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
   // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
+  { TdmVCLPhoenixIBPlanner }
 
 end;
 
@@ -205,31 +212,31 @@ var
 begin
   lDlg := TdlgPhoenixVCLEditReportTimetable.Create(self);
   try
-    if not dmPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
+    if not  FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
     begin
-      lDlg.edTime.Time := dmPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
-      lDlg.edDate.DateTime := dmPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
+      lDlg.edTime.Time :=  FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+      lDlg.edDate.DateTime :=  FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
     end
     else
     begin
       lDlg.edDate.DateTime := Date();
     end;
 
-    lDlg.edNote.Text := dmPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text;
+    lDlg.edNote.Text :=  FdmVCLPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text;
 
     lDlg.ShowModal;
 
     if lDlg.ModalResult = mrOK then
       try
-        dmPhoenixIBPlanner.qryReportPlanner.Edit;
-        dmPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := lDlg.edTime.Time;
-        dmPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := lDlg.edDate.DateTime;
-        dmPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text := lDlg.edNote.Text;
-        dmPhoenixIBPlanner.qryReportPlanner.Post;
+         FdmVCLPhoenixIBPlanner.qryReportPlanner.Edit;
+         FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := lDlg.edTime.Time;
+         FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := lDlg.edDate.DateTime;
+         FdmVCLPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text := lDlg.edNote.Text;
+         FdmVCLPhoenixIBPlanner.qryReportPlanner.Post;
       except
         on e: Exception do
         begin
-          dmPhoenixIBPlanner.qryReportPlanner.Cancel;
+           FdmVCLPhoenixIBPlanner.qryReportPlanner.Cancel;
           raise
         end;
       end;
@@ -283,7 +290,7 @@ var
 begin
   ADialog := TDLG_STATINO.Create(Nil);
   try
-    ADialog.Init(TFiBConfig.QRY_GENERIC, dmPhoenixIBPlanner.qryReportPlannerCHIAVE.AsInteger);
+    ADialog.Init(TFiBConfig.QRY_GENERIC,  FdmVCLPhoenixIBPlanner.qryReportPlannerCHIAVE.AsInteger);
     if ADialog.ShowModal = mrOK then
     begin
       ADialog.NodoStatino.Registra(spsRegistra);
@@ -300,7 +307,7 @@ var
 begin
   lDlg := TDLG_SHOW_CONTRATTO.Create(Nil);
   try
-    lDlg.Init(TFiBConfig.QRY_GENERIC, dmPhoenixIBPlanner.qryReportPlannerCLIENTE.AsInteger);
+    lDlg.Init(TFiBConfig.QRY_GENERIC,  FdmVCLPhoenixIBPlanner.qryReportPlannerCLIENTE.AsInteger);
     lDlg.ShowModal;
     TFiBConfig.QRY_GENERIC.Sql.Clear;
   finally

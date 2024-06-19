@@ -10,7 +10,7 @@ uses
   PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
   // VCL
   VCL.ActnList, VCL.ImgList, VCL.Controls, SVGIconImageListBase, SVGIconImageList, VCL.Dialogs,
-  PictureContainer, Vcl.Graphics,
+  PictureContainer, VCL.Graphics,
   // Planner
   AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // Cloud
@@ -19,7 +19,7 @@ uses
   CloudOutlookWin, CloudCustomOutlookCalendar, CloudOutlookCalendar, CloudWebDav, CloudvCal,
   PlanExGCalendar, PlanExLiveCalendar,
   // Januaproject
-  Janua.Core.DataModule,
+  Janua.Core.DataModule, JOrm.Cloud.GoogleCalendarEvents.Intf, JOrm.Cloud.GoogleCalendars.Intf,
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
   Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types;
@@ -219,7 +219,8 @@ type
     FBackgroundColor: TColor;
     FOnSetColor: TNotifyEvent;
     FItemVisibilityList: TStrings;
-    FItemVisibilityIndex: integer;
+    FItemVisibilityIndex: Integer;
+    FCurrentGoogleItem: IGoogleCalendarEvent;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -244,8 +245,9 @@ type
     procedure SetBackgroundColor(const Value: TColor);
     procedure SetForegroundColor(const Value: TColor);
     procedure SetOnSetColor(const Value: TNotifyEvent);
-    procedure SetItemVisibilityIndex(const Value: integer);
+    procedure SetItemVisibilityIndex(const Value: Integer);
     procedure SetItemVisibilityList(const Value: TStrings);
+    procedure SetCurrentGoogleItem(const Value: IGoogleCalendarEvent);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     procedure AddActivity; virtual; abstract;
@@ -257,9 +259,9 @@ type
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
-    procedure FillCalendars();
-    procedure FillCalendarItems();
-    procedure FillCalendarItemDetails();
+    procedure FillCalendars(); virtual;
+    procedure FillCalendarItems(); virtual;
+    procedure FillCalendarItemDetails(); virtual;
     procedure FillColors();
     procedure SetColor();
     procedure ToggleControls();
@@ -308,8 +310,8 @@ type
     property OnSetColor: TNotifyEvent read FOnSetColor write SetOnSetColor;
     // Calendar Item
     property ItemVisibilityList: TStrings read FItemVisibilityList write SetItemVisibilityList;
-    property ItemVisibilityIndex: integer read FItemVisibilityIndex write SetItemVisibilityIndex;
-
+    property ItemVisibilityIndex: Integer read FItemVisibilityIndex write SetItemVisibilityIndex;
+    property CurrentGoogleItem: IGoogleCalendarEvent read FCurrentGoogleItem write SetCurrentGoogleItem;
   end;
 
 var
@@ -319,6 +321,8 @@ implementation
 
 uses VCL.Forms, Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
   Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl,
+  // Orm to Manage Google Calendars (not Internal Planner so).
+  JOrm.Cloud.GoogleCalendars.Impl, JOrm.Cloud.GoogleCalendarEvents.Impl,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
 { udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
@@ -336,6 +340,8 @@ procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var
   i: Integer;
 begin
+  FCurrentGoogleItem := TGoogleCalendarEventFactory.CreateRecord('GCalItem');
+
   JanuaPlannerController1.Timetable := PlannerEvent;
   FCalendarList := TStringList.Create;
 
@@ -674,7 +680,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.FillCalendarItemDetails;
 begin
-
+  FCurrentGoogleItem.DirectLoadFromDataset(vtGoogleEvents);
 end;
 
 procedure TdmVCLPlannerCustomController.FillCalendarItems;
@@ -737,6 +743,10 @@ begin
       vtGoogleEventsSTATUS.AsInteger := Ord(AdvGCalendar1.Items[i].Status);
       vtGoogleEventsVISIBILITY.AsInteger := Ord(AdvGCalendar1.Items[i].Visibility);
       vtGoogleEventsRECURRENCE.AsString := AdvGCalendar1.Items[i].Recurrence;
+      { TODO : Gestire gli Attendees in base all'Item Selezionato AdvGCalendar1.Items[i].Attendees; }
+      vtGoogleEventsAttendees.AsString := '';
+      { TODO : Gestire i Reminders in base all'Item Selezionato AdvGCalendar1.Items[i].Reminders; }
+      vtGoogleEventsReminders.AsString := '';
     end;
   end;
   Screen.Cursor := crDefault;
@@ -969,7 +979,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.SetColor;
 var
-  I: integer;
+  i: Integer;
   gcal: TGCalendar;
   bg: TColor;
   fg: TColor;
@@ -988,12 +998,12 @@ begin
     begin
       gcal := (FCalendarList.Objects[FCalendarColorIndex] as TGCalendar);
 
-      for I := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
+      for i := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
       begin
-        if Ord(gcal.Color) = AdvGCalendar1.CalendarColors[I].ID then
+        if Ord(gcal.Color) = AdvGCalendar1.CalendarColors[i].ID then
         begin
-          bg := AdvGCalendar1.CalendarColors[I].BackgroundColor;
-          fg := AdvGCalendar1.CalendarColors[I].ForegroundColor;
+          bg := AdvGCalendar1.CalendarColors[i].BackgroundColor;
+          fg := AdvGCalendar1.CalendarColors[i].ForegroundColor;
         end;
       end;
 
@@ -1013,6 +1023,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetConnected(const Value: Boolean);
 begin
   FConnected := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetCurrentGoogleItem(const Value: IGoogleCalendarEvent);
+begin
+  FCurrentGoogleItem := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetDateFrom(const Value: TDateTime);
@@ -1061,7 +1076,7 @@ begin
   FInserting := Value;
 end;
 
-procedure TdmVCLPlannerCustomController.SetItemVisibilityIndex(const Value: integer);
+procedure TdmVCLPlannerCustomController.SetItemVisibilityIndex(const Value: Integer);
 begin
   FItemVisibilityIndex := Value;
 end;

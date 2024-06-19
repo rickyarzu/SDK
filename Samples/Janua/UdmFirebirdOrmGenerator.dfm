@@ -1,16 +1,6 @@
-object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
-  Left = 0
-  Top = 0
-  ClientHeight = 367
-  ClientWidth = 487
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  OnCreate = DataModuleCreate
-  TextHeight = 15
+inherited dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
+  Height = 435
+  Width = 542
   object UniConnection1: TUniConnection
     ProviderName = 'InterBase'
     Database = 'C:\PhoenixDB\PHOENIX.FDB'

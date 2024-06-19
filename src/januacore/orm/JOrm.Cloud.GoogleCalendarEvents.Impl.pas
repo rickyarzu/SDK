@@ -2,7 +2,7 @@ unit JOrm.Cloud.GoogleCalendarEvents.Impl;
 
 interface
 
-uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, JOrm.Phoenix.GoogleCalendarEvents.Intf, JOrm.Phoenix.GoogleCalendarEvents.Custom.Impl;
+uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, JOrm.Cloud.GoogleCalendarEvents.Intf, JOrm.Cloud.GoogleCalendarEvents.Custom.Impl;
 
 //------------------------------------------ Impl Record interface ----------------------------------
 

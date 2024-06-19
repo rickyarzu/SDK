@@ -1,11 +1,8 @@
-inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
+inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
   Height = 483
   Width = 913
   inherited SVGIconImageList48: TSVGIconImageList
     Top = 280
-  end
-  inherited GCalendarButtons: TActionList
-    Left = 64
   end
   inherited SVGIconImageList16: TSVGIconImageList
     Left = 64

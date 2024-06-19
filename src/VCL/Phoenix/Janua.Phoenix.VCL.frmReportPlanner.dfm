@@ -19,7 +19,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1222
     Height = 754
-    ActivePage = tabGoogleCalendar
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -403,7 +403,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           end
         end
         inherited UniDataSource: TUniDataSource
-          DataSet = dmPhoenixIBPlanner.qryReportPlanner
+          DataSet = dmVCLPhoenixIBPlanner.qryReportPlanner
           Top = 120
         end
       end
@@ -486,20 +486,83 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabGoogleCalendar: TTabSheet
       Caption = 'Google Calendar'
       ImageIndex = 2
+      inline frameVCLPhoenixGoogleCalendar1: TframeVCLPhoenixGoogleCalendar
+        Left = 0
+        Top = 0
+        Width = 1214
+        Height = 724
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = -66
+        ExplicitTop = -344
+        inherited PageControl1: TPageControl
+          Width = 838
+          Height = 512
+          inherited TabSheet1: TTabSheet
+            ExplicitWidth = 830
+            ExplicitHeight = 482
+            inherited GroupBox2: TGroupBox
+              Width = 824
+              Height = 479
+              inherited btUpdate: TButton
+                Left = 651
+              end
+              inherited grdGoogleCalendar: TCRDBGrid
+                Width = 793
+                Height = 412
+              end
+            end
+          end
+          inherited TabSheet2: TTabSheet
+            inherited DBPlanner1: TDBPlanner
+              TMSStyle = 0
+            end
+          end
+        end
+        inherited Panel1: TPanel
+          Width = 1214
+          ExplicitTop = 0
+          inherited Image1: TImage
+            Left = 1177
+          end
+        end
+        inherited grpCalendars: TGroupBox
+          Width = 1208
+          inherited grpCalendarDetails: TGroupBox
+            Width = 1057
+            inherited edCalendarLocation: TEdit
+              Width = 555
+            end
+            inherited edCalendarTimeZone: TEdit
+              Width = 555
+            end
+          end
+          inherited cbDefaultReminders: TComboBox
+            Width = 555
+          end
+        end
+        inherited pnlEventDetail: TPanel
+          Left = 838
+          Height = 512
+          inherited grpItemDetails: TGroupBox
+            Height = 509
+          end
+        end
+      end
     end
   end
   object dsTechnicians: TUniDataSource
-    DataSet = dmPhoenixIBPlanner.qryTech
+    DataSet = dmVCLPhoenixIBPlanner.qryTech
     Left = 168
     Top = 280
   end
   object dsCustomers: TUniDataSource
-    DataSet = dmPhoenixIBPlanner.qryCustomers
+    DataSet = dmVCLPhoenixIBPlanner.qryCustomers
     Left = 88
     Top = 248
   end
   object dsCAP: TUniDataSource
-    DataSet = dmPhoenixIBPlanner.qryCAP
+    DataSet = dmVCLPhoenixIBPlanner.qryCAP
     Left = 168
     Top = 192
   end
@@ -815,17 +878,17 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       000000000000}
   end
   object dsDayCalendar: TDataSource
-    DataSet = dmPhoenixIBPlanner.qryPlannerCalendar
+    DataSet = dmVCLPhoenixIBPlanner.qryPlannerCalendar
     Left = 752
     Top = 216
   end
   object dsTech: TDataSource
-    DataSet = dmPhoenixIBPlanner.qryPlannerCalendar
+    DataSet = dmVCLPhoenixIBPlanner.qryPlannerCalendar
     Left = 664
     Top = 256
   end
   object dsTechCalendar: TDataSource
-    DataSet = dmPhoenixIBPlanner.qryTechPlanned
+    DataSet = dmVCLPhoenixIBPlanner.qryTechPlanned
     Left = 743
     Top = 382
   end

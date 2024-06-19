@@ -7,7 +7,7 @@ inherited frameVCLPhoenixGoogleCalendar: TframeVCLPhoenixGoogleCalendar
     end
   end
   inherited pnlEventDetail: TPanel
-    inherited GroupBox3: TGroupBox
+    inherited grpItemDetails: TGroupBox
       inherited Label4: TLabel
         Caption = 'Descrizione:'
       end

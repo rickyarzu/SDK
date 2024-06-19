@@ -20,7 +20,7 @@ uses
   Janua.Core.Classes;
 
 type
-  TdmPhoenixIBPlanner = class(TdmVCLPlannerCustomController) // ()
+  TdmVCLPhoenixIBPlanner = class(TdmVCLPlannerCustomController) // ()
     qryReportPlanner: TUniQuery;
     spSetStatinoStato: TUniStoredProc;
     qryReportPlannerCHIAVE: TIntegerField;
@@ -199,25 +199,25 @@ type
   end;
 
 var
-  dmPhoenixIBPlanner: TdmPhoenixIBPlanner;
+  dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TdmPhoenixIBPlanner.ActionAddMeetingExecute(Sender: TObject);
+procedure TdmVCLPhoenixIBPlanner.ActionAddMeetingExecute(Sender: TObject);
 begin
   inherited;
   AddEvent
 end;
 
-procedure TdmPhoenixIBPlanner.AddEvent;
+procedure TdmVCLPhoenixIBPlanner.AddEvent;
 begin
 
 end;
 
-procedure TdmPhoenixIBPlanner.DataModuleCreate(Sender: TObject);
+procedure TdmVCLPhoenixIBPlanner.DataModuleCreate(Sender: TObject);
 begin
   inherited;
   FTechFilter := False;
@@ -229,12 +229,12 @@ begin
   FCAPFilter := False;
 end;
 
-procedure TdmPhoenixIBPlanner.EditEvent;
+procedure TdmVCLPhoenixIBPlanner.EditEvent;
 begin
 
 end;
 
-procedure TdmPhoenixIBPlanner.Filter;
+procedure TdmVCLPhoenixIBPlanner.Filter;
   procedure CheckFilter;
   begin
     if qryReportPlanner.Filter > '' then
@@ -313,7 +313,7 @@ begin
   end;
 end;
 
-function TdmPhoenixIBPlanner.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
+function TdmVCLPhoenixIBPlanner.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
 begin
   qryTechPlanned.Close;
   qryTechPlanned.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
@@ -328,7 +328,7 @@ begin
   Result := qryTechPlanned.RecordCount;
 end;
 
-procedure TdmPhoenixIBPlanner.qryReportPlannerBeforePost(DataSet: TDataSet);
+procedure TdmVCLPhoenixIBPlanner.qryReportPlannerBeforePost(DataSet: TDataSet);
 begin
   inherited;
   if qryReportPlannerSTATO.AsInteger = 0 then
@@ -366,59 +366,59 @@ begin
   end
 end;
 
-procedure TdmPhoenixIBPlanner.qryReportPlannerCalcFields(DataSet: TDataSet);
+procedure TdmVCLPhoenixIBPlanner.qryReportPlannerCalcFields(DataSet: TDataSet);
 begin
   inherited;
   qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 end;
 
-procedure TdmPhoenixIBPlanner.SetCAP(const Value: String);
+procedure TdmVCLPhoenixIBPlanner.SetCAP(const Value: String);
 begin
   FCAP := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetCAPFilter(const Value: Boolean);
+procedure TdmVCLPhoenixIBPlanner.SetCAPFilter(const Value: Boolean);
 begin
   FCAPFilter := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetCustomerFilter(const Value: Boolean);
+procedure TdmVCLPhoenixIBPlanner.SetCustomerFilter(const Value: Boolean);
 begin
   FCustomerFilter := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetCustomerID(const Value: Int64);
+procedure TdmVCLPhoenixIBPlanner.SetCustomerID(const Value: Int64);
 begin
   FCustomerID := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetReportDate(const Value: TDateTime);
+procedure TdmVCLPhoenixIBPlanner.SetReportDate(const Value: TDateTime);
 begin
   FReportDate := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetReportDateFilter(const Value: Boolean);
+procedure TdmVCLPhoenixIBPlanner.SetReportDateFilter(const Value: Boolean);
 begin
   FReportDateFilter := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetStateFilter(const Value: Integer);
+procedure TdmVCLPhoenixIBPlanner.SetStateFilter(const Value: Integer);
 begin
   FStateFilter := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetTechFilter(const Value: Boolean);
+procedure TdmVCLPhoenixIBPlanner.SetTechFilter(const Value: Boolean);
 begin
   FTechFilter := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.SetTechID(const Value: Int64);
+procedure TdmVCLPhoenixIBPlanner.SetTechID(const Value: Int64);
 begin
   FTechID := Value;
 end;
 
-procedure TdmPhoenixIBPlanner.Setup;
+procedure TdmVCLPhoenixIBPlanner.Setup;
 begin
   qryReportPlanner.Close;
   qryCustomers.Close;
@@ -430,7 +430,7 @@ begin
   qryCAP.Open;
 end;
 
-procedure TdmPhoenixIBPlanner.UndoMeeting;
+procedure TdmVCLPhoenixIBPlanner.UndoMeeting;
 begin
   if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
