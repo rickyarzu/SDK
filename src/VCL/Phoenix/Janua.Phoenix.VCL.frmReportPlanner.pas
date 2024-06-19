@@ -16,8 +16,10 @@ uses
   // ZLibraries
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
+  Janua.TMS.Phoenix.framePlannerCalendar,
   Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab, VCL.ComCtrls,
-  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, System.ImageList, VCL.ImgList;
+  AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, System.ImageList, VCL.ImgList,
+  Janua.TMS.Planner.frameCustomCalendar;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -49,9 +51,6 @@ type
     N2: TMenuItem;
     ModificaStatino1: TMenuItem;
     VisualizzaContratto1: TMenuItem;
-    pnlPlanner: TPanel;
-    pnlPlannerDateSelection: TPanel;
-    pnlPlannerButtons: TPanel;
     ColorDialog1: TColorDialog;
     ItemPopup: TPopupMenu;
     Color1: TMenuItem;
@@ -62,6 +61,7 @@ type
     dsTechCalendar: TDataSource;
     N1: TMenuItem;
     tabGoogleCalendar: TTabSheet;
+    frameTMSPhoenixPlannerCalendar1: TframeTMSPhoenixPlannerCalendar;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);

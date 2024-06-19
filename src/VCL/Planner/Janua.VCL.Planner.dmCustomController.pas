@@ -10,7 +10,7 @@ uses
   PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
   // VCL
   VCL.ActnList, VCL.ImgList, VCL.Controls, SVGIconImageListBase, SVGIconImageList, VCL.Dialogs,
-  PictureContainer,
+  PictureContainer, Vcl.Graphics,
   // Planner
   AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // Cloud
@@ -19,6 +19,7 @@ uses
   CloudOutlookWin, CloudCustomOutlookCalendar, CloudOutlookCalendar, CloudWebDav, CloudvCal,
   PlanExGCalendar, PlanExLiveCalendar,
   // Januaproject
+  Janua.Core.DataModule,
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
   Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types;
@@ -27,7 +28,7 @@ type
   TCloudCalendar = (ccWinLive, ccGoogle);
 
 type
-  TdmVCLPlannerCustomController = class(TDataModule)
+  TdmVCLPlannerCustomController = class(TJanuaCoreDataModule, IJanuaDataModule, IJanuaBindable)
     SVGIconImageList48: TSVGIconImageList;
     MainToolBarActions: TActionList;
     ActionAddMeeting: TAction;
@@ -103,6 +104,9 @@ type
     dsCalendar: TUniDataSource;
     DBDaySourceGCalendar: TDBDaySource;
     dsGCalendar: TUniDataSource;
+    actGoogleEventNew: TAction;
+    actGoogleEventUpdate: TAction;
+    actGoogleEventDelete: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -207,6 +211,12 @@ type
     FAttEmail: string;
     FAttendeesList: TStrings;
     FReminders: TJanuaReminders;
+    FOnToggleGoogleControls: TNotifyEvent;
+    FUseDefaultReminders: Boolean;
+    FOnToggleGoogleReminders: TNotifyEvent;
+    FForegroundColor: TColor;
+    FBackgroundColor: TColor;
+    FOnSetColor: TNotifyEvent;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -225,6 +235,12 @@ type
     procedure SetAttEmail(const Value: string);
     procedure SetAttendeesList(const Value: TStrings);
     procedure SetAttName(const Value: string);
+    procedure SetOnToggleGoogleControls(const Value: TNotifyEvent);
+    procedure SetUseDefaultReminders(const Value: Boolean);
+    procedure SetOnToggleGoogleReminders(const Value: TNotifyEvent);
+    procedure SetBackgroundColor(const Value: TColor);
+    procedure SetForegroundColor(const Value: TColor);
+    procedure SetOnSetColor(const Value: TNotifyEvent);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     procedure AddActivity; virtual; abstract;
@@ -277,6 +293,14 @@ type
     property AttendeesList: TStrings read FAttendeesList write SetAttendeesList;
     property AttEmail: string read FAttEmail write SetAttEmail;
     property AttName: string read FAttName write SetAttName;
+    property OnToggleGoogleControls: TNotifyEvent read FOnToggleGoogleControls
+      write SetOnToggleGoogleControls;
+    property UseDefaultReminders: Boolean read FUseDefaultReminders write SetUseDefaultReminders;
+    property OnToggleGoogleReminders: TNotifyEvent read FOnToggleGoogleReminders
+      write SetOnToggleGoogleReminders;
+    property BackgroundColor: TColor read FBackgroundColor write SetBackgroundColor;
+    property ForegroundColor: TColor read FForegroundColor write SetForegroundColor;
+    property OnSetColor: TNotifyEvent read FOnSetColor write SetOnSetColor;
   end;
 
 var
@@ -355,8 +379,8 @@ begin
     end;
   end;
 
-  DBDaySource1.NumberOfResources := OpenCalendar(FDateFrom, FDateTo);
-  DBDaySource1.Active := True;
+  DBDaySourceGCalendar.NumberOfResources := OpenCalendar(FDateFrom, FDateTo);
+  DBDaySourceGCalendar.Active := True;
 end;
 
 procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
@@ -404,10 +428,10 @@ begin
     a custom filter can be applied to minimize the nr. of records the planner
     must check to load into the planner.
   }
-  sd1 := datetostr(DBDaySource1.Day);
+  sd1 := datetostr(DBDaySourceGCalendar.Day);
   sd1 := #39 + sd1 + #39;
 
-  sd2 := datetostr(DBDaySource1.Day + 7);
+  sd2 := datetostr(DBDaySourceGCalendar.Day + 7);
   sd2 := #39 + sd2 + #39;
   (*
     PlannerTable.Filter:=  'STARTTIME > '+sd1+' AND ENDTIME < '+sd2;
@@ -745,7 +769,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.GetGCalendarList;
 var
-  i: integer;
+  i: Integer;
 begin
   CloudCalendar := ccGoogle;
   AdvGCalendar1.GetCalendars;
@@ -812,7 +836,7 @@ begin
   vtGoogleEvents.Post;
 
   for i := 0 to Item.Reminders.Count - 1 do
-    FReminders.AddReminder(Item.Reminders[i].Minutes, JanuaReminderMethods [Item.Reminders[i].Method]);
+    FReminders.AddReminder(Item.Reminders[i].Minutes, JanuaReminderMethods[Item.Reminders[i].Method]);
 
   ToggleReminders;
 
@@ -864,6 +888,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetAttName(const Value: string);
 begin
   FAttName := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetBackgroundColor(const Value: TColor);
+begin
+  FBackgroundColor := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetCalendarColorIndex(const Value: Integer);
@@ -922,8 +951,41 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.SetColor;
+var
+  I: integer;
+  gcal: TGCalendar;
+  bg: TColor;
+  fg: TColor;
 begin
+  bg := clBtnFace;
+  fg := clWindowText;
 
+  if FCalendarColorIndex > 0 then
+  begin
+    bg := AdvGCalendar1.ItemColors[FCalendarColorIndex - 1].BackgroundColor;
+    fg := AdvGCalendar1.ItemColors[FCalendarColorIndex - 1].ForegroundColor;
+  end
+  else
+  begin
+    if FCalendarColorIndex >= 0 then
+    begin
+      gcal := (FCalendarList.Objects[FCalendarColorIndex] as TGCalendar);
+
+      for I := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
+      begin
+        if Ord(gcal.Color) = AdvGCalendar1.CalendarColors[I].ID then
+        begin
+          bg := AdvGCalendar1.CalendarColors[I].BackgroundColor;
+          fg := AdvGCalendar1.CalendarColors[I].ForegroundColor;
+        end;
+      end;
+
+      if gcal.BackgroundColor <> clNone then
+        bg := gcal.BackgroundColor;
+      if gcal.ForegroundColor <> clNone then
+        fg := gcal.ForegroundColor;
+    end
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.SetColorField(const Value: TField);
@@ -972,9 +1034,29 @@ begin
   FEndTimeEnabled := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetForegroundColor(const Value: TColor);
+begin
+  FForegroundColor := Value;
+end;
+
 procedure TdmVCLPlannerCustomController.SetInserting(const Value: Boolean);
 begin
   FInserting := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetOnSetColor(const Value: TNotifyEvent);
+begin
+  FOnSetColor := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetOnToggleGoogleControls(const Value: TNotifyEvent);
+begin
+  FOnToggleGoogleControls := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetOnToggleGoogleReminders(const Value: TNotifyEvent);
+begin
+  FOnToggleGoogleReminders := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetPlanner(const Value: TPlanner);
@@ -1007,14 +1089,32 @@ begin
   FSubjectField := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetUseDefaultReminders(const Value: Boolean);
+var
+  li: TGCalendarItem;
+begin
+  FUseDefaultReminders := Value;
+  { TODO : Gestire i Reminders in base all'Item Selezionato (dal Dataset e non dalla ListView tra l'altro) }
+  {
+    if ListView1.ItemIndex >= 0 then
+    begin
+    li := ListView1.Items[ListView1.ItemIndex].Data;
+    li.UseDefaultReminders := cbRem.Checked;
+    end;
+  }
+  ToggleReminders;
+end;
+
 procedure TdmVCLPlannerCustomController.ToggleControls;
 begin
-
+  if Assigned(FOnToggleGoogleControls) then
+    FOnToggleGoogleControls(Self);
 end;
 
 procedure TdmVCLPlannerCustomController.ToggleReminders;
 begin
-
+  if Assigned(FOnToggleGoogleReminders) then
+    FOnToggleGoogleReminders(Self);
 end;
 
 procedure TdmVCLPlannerCustomController.UndoMeeting;

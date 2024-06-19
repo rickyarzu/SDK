@@ -1,20 +1,27 @@
 inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
-  Height = 523
+  Height = 483
   Width = 913
+  inherited SVGIconImageList48: TSVGIconImageList
+    Top = 280
+  end
   inherited GCalendarButtons: TActionList
-    Top = 272
+    Left = 64
   end
   inherited SVGIconImageList16: TSVGIconImageList
-    Top = 352
+    Left = 64
+    Top = 344
+  end
+  inherited DBDaySourceCalendar: TDBDaySource
+    DataSource = dsCalendar
   end
   inherited PictureContainer1: TPictureContainer
-    Top = 400
+    Top = 384
   end
   inherited SVGIconImageListIt: TSVGIconImageList
-    Top = 440
+    Top = 416
   end
   inherited ColorDialog1: TColorDialog
-    Top = 330
+    Top = 314
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
     Left = 576
@@ -57,8 +64,11 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       0000000000000000}
   end
   inherited dsGoogleEvents: TUniDataSource
-    Left = 592
-    Top = 344
+    Left = 272
+    Top = 408
+  end
+  inherited dsCalendar: TUniDataSource
+    DataSet = qryPlannerCalendar
   end
   object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (
@@ -534,7 +544,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   object qryPlannerCalendar: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT * FROM CALENDARIO '
+      'SELECT * FROM CALENDARIO_EVENTI '
       'where '
       'DALLE_ORE >= :DATA_DAL'
       'AND'
@@ -553,7 +563,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
         DataType = ftDate
         Name = 'DATA_AL'
         ParamType = ptInput
-        Value = 45473d
+        Value = 45503d
       end>
     object qryPlannerCalendarCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
@@ -594,6 +604,22 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object qryPlannerCalendarICONA: TSmallintField
       FieldName = 'ICONA'
     end
+    object qryPlannerCalendarGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerCalendarGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendarGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendarCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPlannerCalendarGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
   end
   object qryTechPlanned: TUniQuery
     Connection = JanuaUniConnection1
@@ -619,7 +645,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
         DataType = ftDate
         Name = 'DATA_AL'
         ParamType = ptInput
-        Value = 45473d
+        Value = 45503d
       end>
     object IntegerField1: TIntegerField
       FieldName = 'RESPONSABILE'

@@ -12,7 +12,8 @@ uses
   // TMS
   AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner,
   // Janua
-  Janua.TMS.Planner.frameCustomCalendar, Janua.Phoenix.Vcl.dmPlannerController;
+  Janua.TMS.Planner.frameCustomCalendar, Janua.Phoenix.Vcl.dmPlannerController, Vcl.Mask, AdvEdit, AdvMEdBtn,
+  PlannerRangeSelector;
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)

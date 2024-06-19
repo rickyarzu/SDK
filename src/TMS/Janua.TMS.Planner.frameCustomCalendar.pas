@@ -35,6 +35,9 @@ type
     Caption1: TMenuItem;
     btnGoogleCalSync: TButton;
     DBText2: TDBText;
+    PlannerRangeSelector1: TPlannerRangeSelector;
+    grpMeeting: TGroupBox;
+    Label1: TLabel;
     procedure DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
   private
     { Private declarations }

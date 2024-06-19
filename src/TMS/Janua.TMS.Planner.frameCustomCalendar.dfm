@@ -2,11 +2,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
   Left = 0
   Top = 0
   Width = 1178
-  Height = 876
+  Height = 986
   TabOrder = 0
   DesignSize = (
     1178
-    876)
+    986)
   object lbGiorni: TLabel
     Left = 1060
     Top = 164
@@ -37,11 +37,18 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     ParentFont = False
     StyleElements = [seClient, seBorder]
   end
+  object Label1: TLabel
+    Left = 11
+    Top = 116
+    Width = 182
+    Height = 15
+    Caption = 'Select Date Range for the Calendar'
+  end
   object DBPlanner1: TDBPlanner
     Left = 8
     Top = 184
     Width = 1161
-    Height = 692
+    Height = 689
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -223,6 +230,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     HTMLOptions.CellFontStyle = []
     HTMLOptions.HeaderFontStyle = []
     HTMLOptions.SidebarFontStyle = []
+    ItemPopup = ItemPopup
     Items = <>
     Mode.Month = 12
     Mode.PeriodStartDay = 28
@@ -275,6 +283,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
     OnItemCreated = DBPlanner1ItemCreated
+    ItemSource = dmVCLPlannerCustomController.DBDaySourceCalendar
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
       Left = 528
@@ -321,7 +330,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
   end
   object edMeeting: TEdit
     Left = 743
-    Top = 162
+    Top = 160
     Width = 281
     Height = 23
     Anchors = [akTop, akRight]
@@ -349,13 +358,12 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     TabOrder = 4
     RowCount = 1
     object DBText1: TDBText
-      Left = 8
+      Left = 0
       Top = 8
-      Width = 220
-      Height = 17
+      Width = 231
+      Height = 25
       Anchors = [akLeft, akTop, akRight]
       DataField = 'an_full_name'
-      ExplicitWidth = 201
     end
   end
   object Panel1: TPanel
@@ -498,6 +506,179 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       TabOrder = 8
       WordWrap = True
     end
+  end
+  object PlannerRangeSelector1: TPlannerRangeSelector
+    Left = 11
+    Top = 133
+    Width = 247
+    Height = 21
+    Color = clWindow
+    DefaultHandling = True
+    Enabled = True
+    EditMask = ''
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    Text = '25/02/2014'
+    Visible = True
+    AutoFocus = False
+    BorderColor = 11250603
+    Flat = False
+    FlatLineColor = clBlack
+    FlatParentColor = True
+    ShowModified = False
+    FocusColor = clWindow
+    FocusBorder = False
+    FocusFontColor = clBlack
+    LabelAlwaysEnabled = False
+    LabelPosition = lpLeftTop
+    LabelTransparent = False
+    LabelFont.Charset = DEFAULT_CHARSET
+    LabelFont.Color = clWindowText
+    LabelFont.Height = -11
+    LabelFont.Name = 'Tahoma'
+    LabelFont.Style = []
+    ModifiedColor = clRed
+    SelectFirstChar = False
+    Version = '1.0.1.0'
+    ButtonStyle = bsButton
+    ButtonWidth = 16
+    Etched = False
+    Glyph.Data = {
+      DA020000424DDA0200000000000036000000280000000D0000000D0000000100
+      200000000000A402000000000000000000000000000000000000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F00000000000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000000000000000000000000000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F0000000000000000000000000000000000000000000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F0000000000000000000000000000000
+      0000000000000000000000000000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
+      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000}
+    ButtonColor = clWhite
+    ButtonColorHot = 15917525
+    ButtonColorDown = 14925219
+    ButtonTextColor = 4474440
+    ButtonTextColorHot = 2303013
+    ButtonTextColorDown = 2303013
+    ButtonBorderColor = 11250603
+    Calendar = mcal1_.Owner
+    DateStart = 41695.000000000000000000
+    DateEnd = 45457.000000000000000000
+    HideCalendarAfterSelection = False
+    object mcal1_: TPlannerCalendar
+      Left = 0
+      Top = 0
+      Width = 180
+      Height = 180
+      EventDayColor = clBlack
+      EventFont.Charset = DEFAULT_CHARSET
+      EventFont.Color = clWindowText
+      EventFont.Height = -11
+      EventFont.Name = 'Tahoma'
+      EventFont.Style = [fsBold]
+      EventMarkerColor = clYellow
+      EventMarkerShape = evsCircle
+      BackgroundPosition = bpTiled
+      BorderWidth = 1
+      CaptionColor = clNone
+      CaptionTextColor = clBlack
+      DateDownColor = clNone
+      DateHoverColor = clNone
+      DateSelectColor = 15917525
+      DateSelectBorderColor = 15917525
+      DayFont.Charset = DEFAULT_CHARSET
+      DayFont.Color = clWindowText
+      DayFont.Height = -11
+      DayFont.Name = 'Tahoma'
+      DayFont.Style = []
+      FocusColor = clHighlight
+      HeaderColor = clNone
+      InActiveColor = clGray
+      InversColor = clTeal
+      LineColor = clGray
+      Line3D = True
+      Look = lookFlat
+      NameOfDays.Monday = 'lun'
+      NameOfDays.Tuesday = 'mar'
+      NameOfDays.Wednesday = 'mer'
+      NameOfDays.Thursday = 'gio'
+      NameOfDays.Friday = 'ven'
+      NameOfDays.Saturday = 'sab'
+      NameOfDays.Sunday = 'dom'
+      NameOfMonths.January = 'gen'
+      NameOfMonths.February = 'feb'
+      NameOfMonths.March = 'mar'
+      NameOfMonths.April = 'apr'
+      NameOfMonths.May = 'mag'
+      NameOfMonths.June = 'giu'
+      NameOfMonths.July = 'lug'
+      NameOfMonths.August = 'ago'
+      NameOfMonths.September = 'set'
+      NameOfMonths.October = 'ott'
+      NameOfMonths.November = 'nov'
+      NameOfMonths.December = 'dic'
+      NameOfMonths.UseIntlNames = True
+      WeekFont.Charset = DEFAULT_CHARSET
+      WeekFont.Color = clWindowText
+      WeekFont.Height = -11
+      WeekFont.Name = 'Tahoma'
+      WeekFont.Style = []
+      WeekName = 'Wk'
+      SelectColor = clTeal
+      SelectFontColor = clWhite
+      StartDay = 7
+      TextColor = clBlack
+      TodayFormat = '"Today" DDD/mm, YYYY'
+      WeekendColor = clRed
+      Day = 25
+      Month = 2
+      Year = 2014
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      GradientStartColor = clWhite
+      GradientEndColor = clBtnFace
+      GradientDirection = gdVertical
+      MonthGradientStartColor = clNone
+      MonthGradientEndColor = clNone
+      MonthGradientDirection = gdHorizontal
+      HintPrevYear = 'Previous Year'
+      HintPrevMonth = 'Previous Month'
+      HintNextMonth = 'Next Month'
+      HintNextYear = 'Next Year'
+      Version = '2.4.4.1'
+      TMSStyle = 8
+    end
+  end
+  object grpMeeting: TGroupBox
+    Left = 3
+    Top = 872
+    Width = 1172
+    Height = 111
+    Caption = 'Meeting Details'
+    TabOrder = 7
   end
   object ColorDialog1: TColorDialog
     Left = 880

@@ -38,7 +38,7 @@ type
     Label7: TLabel;
     Label11: TLabel;
     Label10: TLabel;
-    Edit3: TEdit;
+    edCalendarItemName: TEdit;
     Edit5: TEdit;
     StartDate: TDateTimePicker;
     EndDate: TDateTimePicker;
@@ -49,7 +49,7 @@ type
     ListView1: TListView;
     Panel2: TPanel;
     btnGoogleEventDelete: TButton;
-    btnGoogleEventUpdae: TButton;
+    btnGoogleEventUpdate: TButton;
     btnGoogleEventNew: TButton;
     Image1: TImage;
     btnRemove: TButton;
@@ -105,7 +105,7 @@ type
     procedure btnConnectClick(Sender: TObject);
     procedure btnGoogleEventNewClick(Sender: TObject);
     procedure btnGoogleEventDeleteClick(Sender: TObject);
-    procedure btnGoogleEventUpdaeClick(Sender: TObject);
+    procedure btnGoogleEventUpdateClick(Sender: TObject);
     procedure FillCalendars(); // passed ---------------------
     procedure FillCalendarItems();
     procedure FillCalendarItemDetails();
@@ -150,7 +150,6 @@ implementation
 uses Janua.Application.Framework;
 
 {$R *.dfm}
-
 // PLEASE USE A VALID INCLUDE FILE THAT CONTAINS THE APPLICATION KEY & SECRET
 // FOR THE CLOUD STORAGE SERVICES YOU WANT TO USE
 // STRUCTURE OF THIS .INC FILE SHOULD BE
@@ -234,14 +233,14 @@ begin
     ClearControls;
     Edit3.SetFocus;
     ListView1.ItemIndex := -1;
-    Button5.Caption := 'Insert';
-    Button5.Hint := 'Insert the new Event';
+    btnGoogleEventNew.Caption := 'Insert';
+    btnGoogleEventNew.Hint := 'Insert the new Event';
     Inserting := true;
   end
   else
   begin
-    Button5.Caption := 'New';
-    Button5.Hint := 'Create a new Event';
+    btnGoogleEventNew.Caption := 'New';
+    btnGoogleEventNew.Hint := 'Create a new Event';
     li := AdvGCalendar1.Items.Add;
     SetCalendarItem(li);
     li.CalendarID := (ComboBox1.Items.Objects[ComboBox1.ItemIndex] as TGCalendar).ID;
@@ -274,7 +273,7 @@ begin
   end;
 end;
 
-procedure TfrmTMSAdvCalendarDemo.btnGoogleEventUpdaeClick(Sender: TObject);
+procedure TfrmTMSAdvCalendarDemo.btnGoogleEventUpdateClick(Sender: TObject);
 var
   li: TGCalendarItem;
   SelectedID: string;
@@ -408,7 +407,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.ClearControls;
 begin
-  Edit3.Text := '';
+  edCalendarItemName.Text := '';
   Edit5.Text := '';
   Memo1.Lines.Text := '';
   cbVisibility.ItemIndex := 0;
@@ -424,11 +423,13 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.ComboBox1Change(Sender: TObject);
 begin
+  { Codice portato in DataModule Controller }
   FillCalendarItems;
 end;
 
 procedure TfrmTMSAdvCalendarDemo.ComboBox1Click(Sender: TObject);
 begin
+  { Codice portato in DataModule Controller }
   FillCalendarItems;
 end;
 
@@ -439,6 +440,7 @@ var
   li: TListItem;
   rem: string;
 begin
+  { Codice portato in DataModule Controller }
   Screen.Cursor := crHourGlass;
   if ComboBox1.ItemIndex >= 0 then
   begin
@@ -476,7 +478,7 @@ begin
       li.SubItems.Add(FormatDateTime('dd/mm/yyyy hh:nn', AdvGCalendar1.Items[I].EndTime));
       li.SubItems.Add(AdvGCalendar1.Items[I].Summary);
       li.SubItems.Add(AdvGCalendar1.Items[I].Description);
-      //    edID.Text := gcal.ID;    edEtag.Text := gcal.
+      // edID.Text := gcal.ID;    edEtag.Text := gcal.
       li.SubItems.Add(AdvGCalendar1.Items[I].ID);
       li.SubItems.Add(AdvGCalendar1.Items[I].ETag);
       li.SubItems.Add(AdvGCalendar1.Items[I].CalendarID);
@@ -492,6 +494,7 @@ var
   I: integer;
   isPrimary: string;
 begin
+  { Codice portato in DataModule Controller }
   AdvGCalendar1.GetCalendars();
 
   ComboBox1.Items.Clear;
@@ -511,6 +514,7 @@ procedure TfrmTMSAdvCalendarDemo.FillColors;
 var
   cl: TGItemColor;
 begin
+  { Codice portato in DataModule Controller }
   AdvGCalendar1.GetColors;
   cbColors.Items.Clear;
   for cl := Low(TGItemColor) to High(TGItemColor) do
@@ -566,7 +570,7 @@ begin
     EditAttName.Text := '';
     cbColors.ItemIndex := 0;
     edID.Text := li.ID;
-    edETag.Text := li.ETag;
+    edEtag.Text := li.ETag;
     edGrp.Text := li.CalendarID;
 
     for I := 0 to cbColors.Items.Count - 1 do
@@ -722,6 +726,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.ToggleControls;
 begin
+  { Passato in frame e in Data Module }
   GroupBox1.Enabled := Connected;
   GroupBox2.Enabled := Connected;
   GroupBox3.Enabled := Connected;
@@ -745,9 +750,9 @@ begin
   EditAttName.Enabled := Connected;
   EditAttEmail.Enabled := Connected;
   btInvite.Enabled := Connected;
-  Button5.Enabled := Connected;
-  Button6.Enabled := Connected;
-  Button7.Enabled := Connected;
+  btnGoogleEventNew.Enabled := Connected;
+  btnGoogleEventUpdate.Enabled := Connected;
+  btnGoogleEventDelete.Enabled := Connected;
   btnRemove.Enabled := Connected;
   btnConnect.Enabled := not Connected;
   edCalendarDescription.Enabled := Connected;
@@ -761,6 +766,7 @@ end;
 
 procedure TfrmTMSAdvCalendarDemo.ToggleReminders;
 begin
+  { Passato in frame e in Data Module }
   lvRem.Enabled := not cbRem.Checked;
   btAddRem.Enabled := not cbRem.Checked;
   btDelRem.Enabled := not cbRem.Checked;

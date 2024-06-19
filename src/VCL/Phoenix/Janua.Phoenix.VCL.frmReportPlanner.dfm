@@ -2,8 +2,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Left = 0
   Top = 0
   Caption = 'Programmazione Statini'
-  ClientHeight = 662
-  ClientWidth = 1195
+  ClientHeight = 754
+  ClientWidth = 1222
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,9 +17,9 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1195
-    Height = 662
-    ActivePage = tabTicketsList
+    Width = 1222
+    Height = 754
+    ActivePage = tabGoogleCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -27,7 +27,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       object pnlTop: TPanel
         Left = 0
         Top = 0
-        Width = 1187
+        Width = 1214
         Height = 72
         Align = alTop
         TabOrder = 0
@@ -54,7 +54,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         object pnlSearch: TPanel
           Left = 137
           Top = 1
-          Width = 1049
+          Width = 1076
           Height = 70
           Align = alClient
           BevelOuter = bvNone
@@ -174,16 +174,16 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       inline frameVCLCRDBGrid: TframeVCLCRDBGrid
         Left = 0
         Top = 72
-        Width = 1187
-        Height = 519
+        Width = 1214
+        Height = 611
         Align = alClient
         TabOrder = 1
         ExplicitTop = 72
-        ExplicitWidth = 1187
-        ExplicitHeight = 519
+        ExplicitWidth = 1214
+        ExplicitHeight = 611
         inherited CRDBGrid: TEnhCRDBGrid
-          Width = 1187
-          Height = 494
+          Width = 1214
+          Height = 586
           Color = clNone
           Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           ParentFont = False
@@ -337,8 +337,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end>
         end
         inherited Panel1: TPanel
-          Width = 1187
-          ExplicitWidth = 1187
+          Width = 1214
+          ExplicitWidth = 1214
           inherited Panel2: TPanel
             Width = 369
             ExplicitWidth = 369
@@ -367,9 +367,9 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           end
           inherited Panel3: TPanel
             Left = 369
-            Width = 818
+            Width = 845
             ExplicitLeft = 369
-            ExplicitWidth = 818
+            ExplicitWidth = 845
             inherited chkFiltered: TCheckBox
               Caption = 'Filtrato'
               ParentFont = False
@@ -409,8 +409,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       end
       object pnlBottom: TPanel
         Left = 0
-        Top = 591
-        Width = 1187
+        Top = 683
+        Width = 1214
         Height = 41
         Align = alBottom
         TabOrder = 2
@@ -426,31 +426,60 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabPlannerCalendar: TTabSheet
       Caption = 'Calendario / Planner'
       ImageIndex = 1
-      object pnlPlanner: TPanel
+      inline frameTMSPhoenixPlannerCalendar1: TframeTMSPhoenixPlannerCalendar
         Left = 0
         Top = 0
-        Width = 1187
-        Height = 97
-        Align = alTop
-        BevelOuter = bvNone
+        Width = 1214
+        Height = 724
+        Align = alClient
         TabOrder = 0
-        object pnlPlannerDateSelection: TPanel
-          Left = 0
-          Top = 0
-          Width = 209
-          Height = 97
-          Align = alLeft
-          BevelOuter = bvNone
-          TabOrder = 0
+        ExplicitWidth = 1214
+        ExplicitHeight = 724
+        inherited lbGiorni: TLabel
+          Left = 1096
+          ExplicitLeft = 1096
         end
-        object pnlPlannerButtons: TPanel
-          Left = 209
-          Top = 0
-          Width = 978
-          Height = 97
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 1
+        inherited lbSearch: TLabel
+          Left = 623
+          ExplicitLeft = 623
+        end
+        inherited DBText2: TDBText
+          Width = 483
+          ExplicitWidth = 483
+        end
+        inherited DBPlanner1: TDBPlanner
+          Width = 1197
+          Height = 540
+          ExplicitWidth = 1197
+          ExplicitHeight = 540
+          TMSStyle = 0
+        end
+        inherited SpinEdit1: TSpinEdit
+          Left = 1159
+          ExplicitLeft = 1159
+        end
+        inherited edMeeting: TEdit
+          Left = 779
+          ExplicitLeft = 779
+        end
+        inherited DoFilter: TCheckBox
+          Left = 506
+          ExplicitLeft = 506
+        end
+        inherited grdAnagraph: TDBCtrlGrid
+          Width = 1208
+          PanelWidth = 238
+          ExplicitWidth = 1208
+          inherited DBText1: TDBText
+            Width = 238
+            ExplicitWidth = 238
+          end
+        end
+        inherited PlannerRangeSelector1: TPlannerRangeSelector
+          Calendar = mcal1_.Owner
+          inherited mcal1_: TPlannerCalendar
+            TMSStyle = 8
+          end
         end
       end
     end
@@ -466,8 +495,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsCustomers: TUniDataSource
     DataSet = dmPhoenixIBPlanner.qryCustomers
-    Left = 168
-    Top = 112
+    Left = 88
+    Top = 248
   end
   object dsCAP: TUniDataSource
     DataSet = dmPhoenixIBPlanner.qryCAP

@@ -296,7 +296,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Caption = 'Grp'
       ExplicitLeft = 645
     end
-    object Edit3: TEdit
+    object edCalendarItemName: TEdit
       Left = 87
       Top = 19
       Width = 248
@@ -392,7 +392,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         TabOrder = 0
         OnClick = btnGoogleEventDeleteClick
       end
-      object btnGoogleEventUpdae: TButton
+      object btnGoogleEventUpdate: TButton
         Left = 131
         Top = 8
         Width = 110
@@ -402,7 +402,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
-        OnClick = btnGoogleEventUpdaeClick
+        OnClick = btnGoogleEventUpdateClick
       end
       object btnGoogleEventNew: TButton
         Left = 15
@@ -429,7 +429,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Top = 46
       Width = 499
       Height = 233
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       TabOrder = 10
       object TabSheet1: TTabSheet
         Caption = 'Reminders'

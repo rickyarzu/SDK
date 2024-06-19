@@ -5368,7 +5368,7 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45457.000000000000000000
+    DateFrom = 45460.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5483,6 +5483,21 @@ object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       ImageIndex = 7
       ImageName = '008-employee'
       OnExecute = actAddAttendeeExecute
+    end
+    object actGoogleEventNew: TAction
+      Caption = 'Nuovo'
+      ImageIndex = 10
+      ImageName = '011-planner'
+    end
+    object actGoogleEventUpdate: TAction
+      Caption = 'Aggiorna'
+      ImageIndex = 24
+      ImageName = '025-planning'
+    end
+    object actGoogleEventDelete: TAction
+      Caption = 'Elimina'
+      ImageIndex = 49
+      ImageName = '050-stopwatch'
     end
   end
   object SVGIconImageList16: TSVGIconImageList

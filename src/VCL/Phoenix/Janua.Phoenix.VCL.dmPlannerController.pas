@@ -144,6 +144,11 @@ type
     tabGoogleCalendarsCOLOR: TSmallintField;
     tabGoogleCalendarsBACK_COLOR: TIntegerField;
     tabGoogleCalendarsFORE_COLOR: TIntegerField;
+    qryPlannerCalendarGOOGLE_JSON: TBlobField;
+    qryPlannerCalendarGFORECOLOR: TIntegerField;
+    qryPlannerCalendarGBACKCOLOR: TIntegerField;
+    qryPlannerCalendarCALENDARIO: TIntegerField;
+    qryPlannerCalendarGOOGLEID: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);

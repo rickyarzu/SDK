@@ -16,6 +16,7 @@ uses
   Janua.Controls.Forms.Intf, Janua.Search.ViewModels.Engines.Impl,
   // DataModule
   Janua.Core.DataModule,
+  // MVVM
   Janua.Documents.Model.Impl, Janua.Documents.ViewModel.Intf;
 
 type

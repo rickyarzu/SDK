@@ -9,11 +9,9 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Top = 212
     Width = 904
     Height = 856
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 873
-    ExplicitHeight = 638
     object TabSheet1: TTabSheet
       Caption = 'Google Sync'
       object GroupBox2: TGroupBox
@@ -26,8 +24,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Align = alClient
         Caption = 'Events'
         TabOrder = 0
-        ExplicitWidth = 969
-        ExplicitHeight = 363
         DesignSize = (
           890
           823)
@@ -41,7 +37,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         object Label13: TLabel
           Left = 214
           Top = 23
-          Width = 75
+          Width = 49
           Height = 15
           Caption = 'End date:'
         end
@@ -75,9 +71,8 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
-          ExplicitLeft = 686
         end
-        object CRDBGrid1: TCRDBGrid
+        object grdGoogleCalendar: TCRDBGrid
           Left = 13
           Top = 53
           Width = 859
@@ -374,10 +369,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
         ItemSource = dmVCLPlannerCustomController.DBDaySourceCalendar
-        ExplicitLeft = -265
-        ExplicitTop = 134
-        ExplicitWidth = 1161
-        ExplicitHeight = 692
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 528
@@ -420,8 +411,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 8
-    ExplicitWidth = 1020
     DesignSize = (
       1280
       41)
@@ -528,9 +517,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Align = alTop
     Caption = 'Calendars'
     TabOrder = 2
-    ExplicitLeft = 11
-    ExplicitTop = 11
-    ExplicitWidth = 1014
     DesignSize = (
       1274
       168)
@@ -548,13 +534,15 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Height = 15
       Caption = 'Default reminders:'
     end
-    object ComboBox1: TComboBox
+    object cboCalendarsList: TComboBox
       Left = 124
       Top = 22
       Width = 246
       Height = 23
       Style = csDropDownList
       TabOrder = 0
+      OnChange = cboCalendarsListChange
+      OnClick = cboCalendarsListClick
     end
     object GroupBox4: TGroupBox
       Left = 17
@@ -564,7 +552,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Details'
       TabOrder = 1
-      ExplicitWidth = 863
       DesignSize = (
         1123
         117)
@@ -647,7 +634,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
-        ExplicitWidth = 387
       end
       object edCalendarTimeZone: TEdit
         Left = 462
@@ -656,7 +642,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
-        ExplicitWidth = 387
       end
     end
     object cbDefaultReminders: TComboBox
@@ -667,7 +652,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Style = csDropDownList
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
-      ExplicitWidth = 387
     end
   end
   object pnlEventDetail: TPanel
@@ -688,9 +672,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Align = alClient
       Caption = 'Details'
       TabOrder = 0
-      ExplicitTop = 267
-      ExplicitWidth = 969
-      ExplicitHeight = 559
       DesignSize = (
         370
         853)
@@ -764,7 +745,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 15
         Caption = 'Grp'
       end
-      object Edit3: TEdit
+      object edCalendarItemName: TEdit
         Left = 87
         Top = 64
         Width = 266
@@ -848,36 +829,38 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 9
-        ExplicitTop = 516
-        ExplicitWidth = 598
-        object Button6: TButton
+        object btnGoogleEventDelete: TButton
           Left = 247
           Top = 8
           Width = 110
           Height = 25
-          Hint = 'Delete the Event'
-          Caption = 'Delete'
+          Action = dmVCLPlannerCustomController.actGoogleEventDelete
+          ImageMargins.Left = 6
+          Images = dmVCLPlannerCustomController.SVGIconImageList16
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
         end
-        object Button7: TButton
+        object btnGoogleEventUpdate: TButton
           Left = 131
           Top = 8
           Width = 110
           Height = 25
-          Hint = 'Update the Event'
-          Caption = 'Update'
+          Action = dmVCLPlannerCustomController.actGoogleEventUpdate
+          ImageMargins.Left = 6
+          Images = dmVCLPlannerCustomController.SVGIconImageList16
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
         end
-        object Button5: TButton
+        object btnGoogleEventNew: TButton
           Left = 15
           Top = 8
           Width = 110
           Height = 25
-          Action = Action1
+          Action = dmVCLPlannerCustomController.actGoogleEventNew
+          ImageMargins.Left = 6
+          Images = dmVCLPlannerCustomController.SVGIconImageList16
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
@@ -959,7 +942,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           end
           object btAddRem: TButton
             Left = 48
-            Top = 153
+            Top = 175
             Width = 110
             Height = 25
             Hint = 'Add reminder to Event'
@@ -970,7 +953,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           end
           object btDelRem: TButton
             Left = 164
-            Top = 153
+            Top = 175
             Width = 110
             Height = 25
             Hint = 'Delete Reminder from Event'
@@ -978,6 +961,16 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
             ParentShowHint = False
             ShowHint = True
             TabOrder = 4
+          end
+          object cbRem: TCheckBox
+            Left = 56
+            Top = 153
+            Width = 142
+            Height = 17
+            Caption = 'Usa Allarmi di Default'
+            Checked = True
+            State = cbChecked
+            TabOrder = 5
           end
         end
         object tabAttendees: TTabSheet

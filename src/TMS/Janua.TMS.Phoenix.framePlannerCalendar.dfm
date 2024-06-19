@@ -1,12 +1,64 @@
 inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
-  Height = 956
-  ExplicitHeight = 956
+  Height = 976
+  ExplicitHeight = 976
+  DesignSize = (
+    1178
+    976)
   inherited DBPlanner1: TDBPlanner
-    Height = 772
+    Footer.Captions.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      '')
+    Header.Captions.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      '')
     TMSStyle = 0
   end
   inherited Panel1: TPanel
     Width = 903
     ExplicitWidth = 903
+  end
+  inherited PlannerRangeSelector1: TPlannerRangeSelector
+    Calendar = mcal1_.Owner
+    inherited mcal1_: TPlannerCalendar
+      TMSStyle = 8
+    end
   end
 end
