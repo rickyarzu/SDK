@@ -29,7 +29,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   dbrtl,
   IndySystem,
@@ -75,7 +75,7 @@ requires
   JanuaVCLComponents,
   JanuaTmsControls;
 
-contains
+ocontains
   Janua.VCL.ViewModels.Register in '..\..\src\VCL\ViewModels\Janua.VCL.ViewModels.Register.pas',
   Janua.VCL.Actions in '..\..\src\VCL\Commons\Janua.VCL.Actions.pas',
   Janua.VCL.Interposers in '..\..\src\VCL\Commons\Janua.VCL.Interposers.pas',
@@ -107,12 +107,12 @@ contains
   Janua.Documents.dlgVCLDocRows in '..\..\src\VCL\Documents\Janua.Documents.dlgVCLDocRows.pas' {dlgVCLDocumentRow},
   Janua.Anagraph.VCL.frameBankAccount in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameBankAccount.pas',
   Janua.VCL.frameCountrySearch in '..\..\src\VCL\Commons\Janua.VCL.frameCountrySearch.pas' {frameVCLCountrySearch: TFrame},
-  Janua.VCL.frameAddressVAT in '..\..\src\VCL\Commons\Janua.VCL.frameAddressVAT.pas',  {frameVCLAddressVAT: TFrame}
-  Janua.Anagraph.VCL.frameAddress in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameAddress.pas' {Frame1: TFrame},
+  Janua.VCL.frameAddressVAT in '..\..\src\VCL\Commons\Janua.VCL.frameAddressVAT.pas',
+  Janua.Anagraph.VCL.frameAddress in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameAddress.pas' {frameVCLAanagraphAddress: TFrame},
   Janua.Anagraph.VCL.frameCompanyPayments in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyPayments.pas' {frameAnagraphCompanyPayments: TFrame},
   Janua.Anagraph.VCL.frameCompanyInformations in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyInformations.pas' {FrameVCLCompanyAnagraph: TFrame},
   Janua.VCL.frameAddress in '..\..\src\VCL\Commons\Janua.VCL.frameAddress.pas' {frameVCLAddress: TFrame},
   Janua.Anagraph.VCL.dlgEditAnagraph in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.dlgEditAnagraph.pas' {dlgVCLEditAnagraph};
 
-end.
+d.
 

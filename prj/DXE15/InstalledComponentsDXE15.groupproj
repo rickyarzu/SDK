@@ -1498,35 +1498,35 @@
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='All iOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
             <ProjectGuid>{020A5013-642E-41CA-818D-1423079016AE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
             <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -1538,49 +1538,49 @@
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
             <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
             <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{B0A24C8A-8246-4B12-B8D2-574ABB472E62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Core.dproj">
             <ProjectGuid>{37445864-AF9D-4172-8D5D-72668FE43061}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCMapsPkgDE.dproj">
             <ProjectGuid>{50BD3191-AD1D-45C4-A60A-ADEF95E8E4BA}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
@@ -1592,97 +1592,97 @@
             <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Extensions.dproj">
             <ProjectGuid>{25F0D1D4-23C7-4350-A17F-67AE14842F76}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsparkle.dproj">
             <ProjectGuid>{71151688-D9EA-4C0A-B3D2-8BC6898B692B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSVCLSecuritySystemPkgUI.dproj">
             <ProjectGuid>{32BB0518-FEC0-4E72-A92E-2BABF98B9E5F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components_DESIGN.dproj">
             <ProjectGuid>{D338620F-84FD-4B7C-93F0-23A066E851DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
             <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCUIPackPkgDE.dproj">
             <ProjectGuid>{0DF8736A-8603-44FD-BF18-EB95283B6F43}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
@@ -1694,91 +1694,91 @@
             <ProjectGuid>{F7A33BE3-307D-4C73-9F25-B19A6D8CEDC8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\eMiniInvoice4D.dproj">
             <ProjectGuid>{74590C31-E257-49BE-AFF1-4F263E49ADCF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMX_FlexCel_Components_DESIGN.dproj">
             <ProjectGuid>{4B526C2D-4E45-47D6-A4EF-CE12F2164284}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
             <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMX_FlexCel_Components.dproj">
             <ProjectGuid>{66FE8C73-3AA3-4A8D-8C3D-B8F61B0E8E0B}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
             <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclxdata.dproj">
             <ProjectGuid>{54C85531-567B-4567-A172-DD2628CF3A03}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
@@ -1790,43 +1790,43 @@
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
             <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCChartPkgDE.dproj">
             <ProjectGuid>{5FB75DDF-12BD-4C94-9046-3D38FEA0D314}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclaurelius.dproj">
             <ProjectGuid>{43BF8839-66E5-4778-A462-BC71533FC59E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
             <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
@@ -1838,73 +1838,73 @@
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSVCLSecuritySystemPkgUIDE.dproj">
             <ProjectGuid>{83792C15-AC33-43E3-A26F-C3EEC5E42438}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCChartPkg.dproj">
             <ProjectGuid>{1C973352-058B-407F-92FC-3C962EE1C319}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
             <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\xdata.dproj">
             <ProjectGuid>{CE08A195-96D0-44C8-AF2E-354909FAFDA1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{47E39625-4F6A-43A7-AA3E-03B14731B72F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SKIA_FlexCel_Core.dproj">
             <ProjectGuid>{489A1610-F907-4C32-8DDE-AB59B46FCC16}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
             <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
             <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
@@ -1916,67 +1916,67 @@
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
             <ProjectGuid>{092797EF-F908-4592-BF20-F986F1E4A89F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
             <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sparkle.dproj">
             <ProjectGuid>{E7370126-58E7-4FCF-BA10-9C22F9CD8BCE}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
             <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
             <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\eInvoice4D.dproj">
             <ProjectGuid>{A83CFCA6-AC23-463A-BCEE-AAE0BB33C83E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -1988,109 +1988,109 @@
             <ProjectGuid>{64BE6FD2-1169-45DB-9673-8BB279386C4C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Pdf.dproj">
             <ProjectGuid>{E6E2180C-39A2-4604-B0E7-BE2164901BB4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCMapsPkg.dproj">
             <ProjectGuid>{58DB2D50-F4E2-455E-9FB3-F2EE40560050}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclremotedb.dproj">
             <ProjectGuid>{EB2705CA-E70A-4E83-A174-FEBD8A4EE23D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCloudPackPkgDE.dproj">
             <ProjectGuid>{6510DFA2-1479-4961-BDE4-19A351B1103B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
             <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
             <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE12.dproj">
             <ProjectGuid>{8AA4F139-3C83-4870-8F5F-E5339B7B82B5}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\remotedb.dproj">
             <ProjectGuid>{6447D997-6C4D-40F3-B6EC-52CA3F7754B8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
             <ProjectGuid>{0096A129-18FF-41E6-BFED-D0C0D9FE5FF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
@@ -2102,152 +2102,152 @@
             <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\NeonCrossPlatform.dproj">
             <ProjectGuid>{73418B2F-CC19-4EFB-AA13-DDD467DEF533}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCWXPackPkgDE.dproj">
             <ProjectGuid>{D5469973-2F83-4D35-9FB9-BAB6C66368F5}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCDashBoardPackPkgDE.dproj">
             <ProjectGuid>{53BDB9A3-1EAF-4DC1-89CA-15A402A65AE9}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Render.dproj">
             <ProjectGuid>{1ACBC5BB-FF1A-4F3E-9322-08E16B35F8AA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_XlsAdapter.dproj">
             <ProjectGuid>{DB2DD675-3C59-4E1E-A860-01CF651C9BB9}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\tmsbcl.dproj">
             <ProjectGuid>{4283E458-8074-4B5F-96A2-B206A19E711D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCAppToolsPkgDE.dproj">
             <ProjectGuid>{A79EF493-1ED6-4B6C-B9BF-7A5954CA8B19}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSVCLSecuritySystemPkgCore.dproj">
             <ProjectGuid>{5A702E3B-8176-4F3D-B72C-63C903176F9D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCCorePkg.dproj">
             <ProjectGuid>{8CA79B7E-30D4-488A-8748-C4BE93CE462A}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{2A0F3A67-A2CB-4763-8D84-3DCD5A54C84F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Buld All Win64'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -2978,16 +2978,16 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All MacOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -3718,15 +3718,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='EseGeCE'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4458,15 +4458,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Fast Report'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5198,14 +5198,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All Android'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -5938,14 +5938,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Flexcel'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6678,14 +6678,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Gnostice'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7417,15 +7417,15 @@
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='InfoPower W2W'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='Quick Reporting'">
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -7444,9 +7444,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -7504,7 +7504,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7522,9 +7522,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -7540,9 +7540,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
@@ -7594,7 +7594,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7642,9 +7642,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
@@ -7654,9 +7654,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
@@ -7678,7 +7678,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -7736,6 +7736,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclaurelius.dproj">
             <ProjectGuid>{43BF8839-66E5-4778-A462-BC71533FC59E}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -7744,15 +7750,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
-            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Core.dproj">
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
@@ -7816,26 +7816,26 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
             <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
@@ -7858,15 +7858,15 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
             <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
             <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
@@ -7966,9 +7966,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
@@ -8008,7 +8008,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -8062,9 +8062,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
@@ -8074,9 +8074,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
@@ -8098,9 +8098,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -8134,9 +8134,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
@@ -8158,16 +8158,16 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All iOS'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
@@ -8897,15 +8897,15 @@
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='Quick Reporting'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='InfoPower W2W'">
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -8924,9 +8924,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
-            <Configurations>Release</Configurations>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -8984,7 +8984,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9002,9 +9002,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -9020,9 +9020,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
@@ -9074,7 +9074,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9122,9 +9122,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
@@ -9134,9 +9134,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
@@ -9158,7 +9158,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9216,12 +9216,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
-            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclaurelius.dproj">
             <ProjectGuid>{43BF8839-66E5-4778-A462-BC71533FC59E}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -9230,9 +9224,15 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Core.dproj">
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
@@ -9296,26 +9296,26 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
-            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
@@ -9338,15 +9338,15 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
             <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
             <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
@@ -9446,9 +9446,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
@@ -9488,7 +9488,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -9542,9 +9542,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
@@ -9554,9 +9554,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
@@ -9578,9 +9578,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
@@ -9614,9 +9614,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
@@ -9638,14 +9638,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Cloud Maps'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -10378,15 +10378,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Tms Security'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -11118,17 +11118,17 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Open Source'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
             <ProjectGuid>{020A5013-642E-41CA-818D-1423079016AE}</ProjectGuid>
@@ -11858,14 +11858,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS VCL'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -12598,14 +12598,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='SVG'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -13338,14 +13338,14 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TMS Buisiness'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -14078,15 +14078,15 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='All Android'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -14818,23 +14818,23 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All Win'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
             <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Report.dproj">
             <ProjectGuid>{020A5013-642E-41CA-818D-1423079016AE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
             <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
@@ -14846,7 +14846,7 @@
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -14858,13 +14858,13 @@
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
             <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
             <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
@@ -14876,109 +14876,109 @@
             <ProjectGuid>{B0A24C8A-8246-4B12-B8D2-574ABB472E62}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Core.dproj">
             <ProjectGuid>{37445864-AF9D-4172-8D5D-72668FE43061}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCMapsPkgDE.dproj">
             <ProjectGuid>{50BD3191-AD1D-45C4-A60A-ADEF95E8E4BA}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
             <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Extensions.dproj">
             <ProjectGuid>{25F0D1D4-23C7-4350-A17F-67AE14842F76}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
             <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCMapsPkg.dproj">
             <ProjectGuid>{8FE69455-0E84-459B-82C4-95F970EF405D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkgDE.dproj">
             <ProjectGuid>{EB11B21F-722D-451C-B6A2-B1D8730DBA26}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsparkle.dproj">
             <ProjectGuid>{71151688-D9EA-4C0A-B3D2-8BC6898B692B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSVCLSecuritySystemPkgUI.dproj">
             <ProjectGuid>{32BB0518-FEC0-4E72-A92E-2BABF98B9E5F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components_DESIGN.dproj">
             <ProjectGuid>{D338620F-84FD-4B7C-93F0-23A066E851DA}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
@@ -14990,7 +14990,7 @@
             <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
@@ -15002,67 +15002,67 @@
             <ProjectGuid>{0DF8736A-8603-44FD-BF18-EB95283B6F43}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMX_FlexCel_Core.dproj">
             <ProjectGuid>{F7A33BE3-307D-4C73-9F25-B19A6D8CEDC8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\eMiniInvoice4D.dproj">
             <ProjectGuid>{74590C31-E257-49BE-AFF1-4F263E49ADCF}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMX_FlexCel_Components_DESIGN.dproj">
             <ProjectGuid>{4B526C2D-4E45-47D6-A4EF-CE12F2164284}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
             <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMX_FlexCel_Components.dproj">
             <ProjectGuid>{66FE8C73-3AA3-4A8D-8C3D-B8F61B0E8E0B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dcltmsbcl.dproj">
             <ProjectGuid>{337501F3-3AFD-480B-8DA2-0A5D3A22C1D1}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
             <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{E09EB6F5-7407-4732-B913-13EA0646FBE8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
@@ -15074,19 +15074,19 @@
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
             <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
@@ -15098,7 +15098,7 @@
             <ProjectGuid>{54C85531-567B-4567-A172-DD2628CF3A03}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
@@ -15110,31 +15110,31 @@
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
             <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCChartPkgDE.dproj">
             <ProjectGuid>{5FB75DDF-12BD-4C94-9046-3D38FEA0D314}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCorePkgDE.dproj">
             <ProjectGuid>{175A82A9-046F-4E00-A0B8-B2EAE171B4D2}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
             <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
@@ -15146,31 +15146,31 @@
             <ProjectGuid>{43BF8839-66E5-4778-A462-BC71533FC59E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
             <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Core.dproj">
             <ProjectGuid>{16B7AC70-DC67-46E3-8277-9980E435E747}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSVCLSecuritySystemPkgUIDE.dproj">
             <ProjectGuid>{83792C15-AC33-43E3-A26F-C3EEC5E42438}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCChartPkg.dproj">
             <ProjectGuid>{1C973352-058B-407F-92FC-3C962EE1C319}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
@@ -15188,43 +15188,43 @@
             <ProjectGuid>{CE08A195-96D0-44C8-AF2E-354909FAFDA1}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{47E39625-4F6A-43A7-AA3E-03B14731B72F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\SKIA_FlexCel_Core.dproj">
             <ProjectGuid>{489A1610-F907-4C32-8DDE-AB59B46FCC16}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
             <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
             <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
             <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
@@ -15236,13 +15236,13 @@
             <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCL_FlexCel_Components.dproj">
             <ProjectGuid>{092797EF-F908-4592-BF20-F986F1E4A89F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
             <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
@@ -15254,49 +15254,49 @@
             <ProjectGuid>{E7370126-58E7-4FCF-BA10-9C22F9CD8BCE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\EanEditors.dproj">
             <ProjectGuid>{A597417C-54B3-4C09-AEF7-270F7E92350C}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
             <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCChartPkg.dproj">
             <ProjectGuid>{AF63B4C7-DD72-4E1C-A7F1-CCFE24E3B9E0}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\eInvoice4D.dproj">
             <ProjectGuid>{A83CFCA6-AC23-463A-BCEE-AAE0BB33C83E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -15308,103 +15308,103 @@
             <ProjectGuid>{64BE6FD2-1169-45DB-9673-8BB279386C4C}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Pdf.dproj">
             <ProjectGuid>{E6E2180C-39A2-4604-B0E7-BE2164901BB4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCMapsPkg.dproj">
             <ProjectGuid>{58DB2D50-F4E2-455E-9FB3-F2EE40560050}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclremotedb.dproj">
             <ProjectGuid>{EB2705CA-E70A-4E83-A174-FEBD8A4EE23D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCCloudPackPkgDE.dproj">
             <ProjectGuid>{6510DFA2-1479-4961-BDE4-19A351B1103B}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
             <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
             <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
             <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\QR6-RAD-11\src\QRWDesignDXE12.dproj">
             <ProjectGuid>{8AA4F139-3C83-4870-8F5F-E5339B7B82B5}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\remotedb.dproj">
             <ProjectGuid>{6447D997-6C4D-40F3-B6EC-52CA3F7754B8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCUIPackPkg.dproj">
             <ProjectGuid>{301C510B-D976-4EB5-AEC5-7A4EB9052A21}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkgDE.dproj">
             <ProjectGuid>{0096A129-18FF-41E6-BFED-D0C0D9FE5FF4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkDT.dproj">
             <ProjectGuid>{84344511-1DC2-41BA-8689-9F36C1D475BE}</ProjectGuid>
@@ -15416,7 +15416,7 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
             <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
@@ -15428,61 +15428,61 @@
             <ProjectGuid>{73418B2F-CC19-4EFB-AA13-DDD467DEF533}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCWXPackPkgDE.dproj">
             <ProjectGuid>{D5469973-2F83-4D35-9FB9-BAB6C66368F5}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCDashBoardPackPkgDE.dproj">
             <ProjectGuid>{53BDB9A3-1EAF-4DC1-89CA-15A402A65AE9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_Render.dproj">
             <ProjectGuid>{1ACBC5BB-FF1A-4F3E-9322-08E16B35F8AA}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FlexCel_XlsAdapter.dproj">
             <ProjectGuid>{DB2DD675-3C59-4E1E-A860-01CF651C9BB9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
             <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ipstudiowinwordxp.dproj">
             <ProjectGuid>{14A297F5-0151-4E8B-AA6C-842090A6D79F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
@@ -15494,31 +15494,31 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
             <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
             <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\tmsbcl.dproj">
             <ProjectGuid>{4283E458-8074-4B5F-96A2-B206A19E711D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFNCAppToolsPkgDE.dproj">
             <ProjectGuid>{A79EF493-1ED6-4B6C-B9BF-7A5954CA8B19}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
@@ -15530,42 +15530,42 @@
             <ProjectGuid>{5A702E3B-8176-4F3D-B72C-63C903176F9D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCDashboardPackPkg.dproj">
             <ProjectGuid>{C17D05E4-3670-4348-B53A-A367D27114F8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCCorePkg.dproj">
             <ProjectGuid>{8CA79B7E-30D4-488A-8748-C4BE93CE462A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\VCLTMSFNCAppToolsPkg.dproj">
             <ProjectGuid>{2A0F3A67-A2CB-4763-8D84-3DCD5A54C84F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua'">
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
-            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
+            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\QRWRunDXE12_W64.dproj">
-            <ProjectGuid>{8FCE28DD-6E95-48F7-9871-1AFFA88355A3}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Persistence.dproj">
+            <ProjectGuid>{EF4943C0-6445-4C2A-9321-93EC9C8C0BC7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

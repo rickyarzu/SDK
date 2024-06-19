@@ -59,6 +59,11 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
+        <Base_Win64x>true</Base_Win64x>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
@@ -143,6 +148,12 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
@@ -177,23 +188,6 @@
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.Settings.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.JSONName.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Utils.ChatHistory.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Moderations.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Models.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Images.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.FineTunes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Files.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Errors.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Engines.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Embeddings.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Edits.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Completions.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Chat.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Chat.Functions.Samples.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Chat.Functions.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.Audio.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.API.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Config.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Consts.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Export.pas"/>
@@ -202,7 +196,6 @@
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\OpenAI\OpenAI.API.Params.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -242,7 +235,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCoreThirdParty280.bpl" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCoreThirdParty290.bpl" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaCoreThirdParty.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -841,6 +834,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1113,6 +1109,7 @@
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
+                <Platform value="Win64x">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

@@ -63,7 +63,7 @@ type
     ckbAbsoluteLocal: TCheckBox;
     ckbCtoS: TCheckBox;
     ImageCarX: TImage;
-    ScrollBox1: TScrollBox;
+    ScrollBoxImage: TScrollBox;
     procedure imgCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);

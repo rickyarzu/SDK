@@ -29,11 +29,6 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
-        <Base_Win64x>true</Base_Win64x>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
@@ -89,13 +84,6 @@
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;officeXPrt;ipstudiowin;unidac290;dac290;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_DebugInformation>0</DCC_DebugInformation>
@@ -121,156 +109,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="dbrtl.dcp"/>
-        <DCCReference Include="IndySystem.dcp"/>
-        <DCCReference Include="IndyProtocols.dcp"/>
-        <DCCReference Include="IndyCore.dcp"/>
-        <DCCReference Include="bindengine.dcp"/>
-        <DCCReference Include="inet.dcp"/>
-        <DCCReference Include="soaprtl.dcp"/>
-        <DCCReference Include="xmlrtl.dcp"/>
-        <DCCReference Include="bindcomp.dcp"/>
-        <DCCReference Include="VCL.dcp"/>
-        <DCCReference Include="vclactnband.dcp"/>
-        <DCCReference Include="vclx.dcp"/>
-        <DCCReference Include="vclie.dcp"/>
-        <DCCReference Include="vcldb.dcp"/>
-        <DCCReference Include="dac290.dcp"/>
-        <DCCReference Include="crcontrols290.dcp"/>
-        <DCCReference Include="jcl.dcp"/>
-        <DCCReference Include="unidac290.dcp"/>
-        <DCCReference Include="QRWRunDXE12_W64.dcp"/>
-        <DCCReference Include="officeXPrt.dcp"/>
-        <DCCReference Include="JvStdCtrls.dcp"/>
-        <DCCReference Include="JvDB.dcp"/>
-        <DCCReference Include="JvSystem.dcp"/>
-        <DCCReference Include="JvCore.dcp"/>
-        <DCCReference Include="gtDocEng.dcp"/>
-        <DCCReference Include="vclwinx.dcp"/>
-        <DCCReference Include="dsnap.dcp"/>
-        <DCCReference Include="FlexCel_Core.dcp"/>
-        <DCCReference Include="VCL_FlexCel_Core.dcp"/>
-        <DCCReference Include="FlexCel_XlsAdapter.dcp"/>
-        <DCCReference Include="VCLThemeSelector.dcp"/>
-        <DCCReference Include="SVGIconImageList.dcp"/>
-        <DCCReference Include="VclSmp.dcp"/>
-        <DCCReference Include="TMSVCLUIPackPkgDXE15.dcp"/>
-        <DCCReference Include="ipstudiowin.dcp"/>
-        <DCCReference Include="JanuaCore.dcp"/>
-        <DCCReference Include="JanuaUniDAC.dcp"/>
-        <DCCReference Include="JanuaMVVM.dcp"/>
-        <DCCReference Include="JanuaUniDACComponents.dcp"/>
-        <DCCReference Include="JanuaCoreComponents.dcp"/>
-        <DCCReference Include="JanuaVCLControls.dcp"/>
-        <DCCReference Include="JanuaVCLComponents.dcp"/>
-        <DCCReference Include="JanuaTmsControls.dcp"/>
-        <DCCReference Include="..\..\src\VCL\ViewModels\Janua.VCL.ViewModels.Register.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Actions.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Interposers.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.ViewModel.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.ViewModel.Search.pas"/>
-        <DCCReference Include="..\..\src\VCL\ViewModels\Janua.VCL.MVVM.Framework.pas"/>
-        <DCCReference Include="..\..\src\VCL\Logistic\uframeVCLDBReceiptRows.pas">
-            <Form>frameVCLDBReceiptRows</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgViewModelSearch.pas">
-            <Form>dlgViewModelSearch</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas">
-            <Form>dlgVCLCustomLogin</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Lookup.pas"/>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.frameCloudFileNavigation.pas">
-            <Form>frameVCLCloudFileNavigation</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.FormController.pas"/>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.DateSpinSelect.pas">
-            <Form>JanuaVCLFrameDateSpinSelect</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.CustomSelect.pas">
-            <Form>frameVCLLookupSelect</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.FrameSelectModel.pas">
-            <Form>framSelectModel</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.ComboSelect.pas">
-            <Form>frameComboSelect</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.RadioGroup.pas">
-            <Form>framSelectRadioGroup</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.DateSelect.pas">
-            <Form>JanuaVCLFrameDateSelect</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.IntegerSelect.pas">
-            <Form>frameSelectInteger</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.SearchSelect.pas">
-            <Form>frameSearchSelect</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.FloatSelect.pas">
-            <Form>frameSelectFloat</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.BoolSelect.pas">
-            <Form>frameSelectBool</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Controls.StringSelect.pas">
-            <Form>frameSelectString</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Documents\Janua.Documents.dlgVCLAttachments.pas">
-            <Form>dlgVCLDocAttachments</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.LookupLabel.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Application.pas"/>
-        <DCCReference Include="..\..\src\VCL\Documents\Janua.Documents.dlgVCLDocCharges.pas">
-            <Form>dlgVCLDocChargesRow</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Documents\Janua.Documents.frameVCLDocRows.pas">
-            <Form>frameVCLDocRow</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Documents\Janua.Documents.dlgVCLDocRows.pas">
-            <Form>dlgVCLDocumentRow</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameBankAccount.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frameCountrySearch.pas">
-            <Form>frameVCLCountrySearch</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frameAddressVAT.pas"/>
-        <DCCReference Include="..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameAddress.pas">
-            <Form>Frame1</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyPayments.pas">
-            <Form>frameAnagraphCompanyPayments</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyInformations.pas">
-            <Form>FrameVCLCompanyAnagraph</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frameAddress.pas">
-            <Form>frameVCLAddress</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.dlgEditAnagraph.pas">
-            <Form>dlgVCLEditAnagraph</Form>
-        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -303,7 +141,6 @@
                 <Platform value="Linux64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
-                <Platform value="Win64x">False</Platform>
             </Platforms>
             <Deployment Version="4">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaVCLMVVM280.bpl" Configuration="Debug" Class="ProjectOutput"/>
@@ -904,9 +741,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
