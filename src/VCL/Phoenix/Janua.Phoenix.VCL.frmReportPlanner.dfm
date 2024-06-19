@@ -475,12 +475,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 238
           end
         end
-        inherited PlannerRangeSelector1: TPlannerRangeSelector
-          Calendar = mcal1_.Owner
-          inherited mcal1_: TPlannerCalendar
-            TMSStyle = 8
-          end
-        end
       end
     end
     object tabGoogleCalendar: TTabSheet
@@ -493,19 +487,24 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Height = 724
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = -66
-        ExplicitTop = -344
+        ExplicitWidth = 1214
+        ExplicitHeight = 724
         inherited PageControl1: TPageControl
           Width = 838
           Height = 512
+          ExplicitWidth = 838
+          ExplicitHeight = 512
           inherited TabSheet1: TTabSheet
             ExplicitWidth = 830
             ExplicitHeight = 482
             inherited GroupBox2: TGroupBox
               Width = 824
               Height = 479
+              ExplicitWidth = 824
+              ExplicitHeight = 479
               inherited btUpdate: TButton
                 Left = 651
+                ExplicitLeft = 651
               end
               inherited grdGoogleCalendar: TCRDBGrid
                 Width = 793
@@ -521,31 +520,40 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited Panel1: TPanel
           Width = 1214
-          ExplicitTop = 0
+          ExplicitWidth = 1214
           inherited Image1: TImage
             Left = 1177
+            ExplicitLeft = 1177
           end
         end
         inherited grpCalendars: TGroupBox
           Width = 1208
+          ExplicitWidth = 1208
           inherited grpCalendarDetails: TGroupBox
             Width = 1057
+            ExplicitWidth = 1057
             inherited edCalendarLocation: TEdit
               Width = 555
+              ExplicitWidth = 555
             end
             inherited edCalendarTimeZone: TEdit
               Width = 555
+              ExplicitWidth = 555
             end
           end
           inherited cbDefaultReminders: TComboBox
             Width = 555
+            ExplicitWidth = 555
           end
         end
         inherited pnlEventDetail: TPanel
           Left = 838
           Height = 512
+          ExplicitLeft = 838
+          ExplicitHeight = 512
           inherited grpItemDetails: TGroupBox
             Height = 509
+            ExplicitHeight = 509
           end
         end
       end

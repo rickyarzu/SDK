@@ -37,12 +37,12 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     ParentFont = False
     StyleElements = [seClient, seBorder]
   end
-  object Label1: TLabel
+  object lbDateSelector: TLabel
     Left = 11
     Top = 116
-    Width = 182
+    Width = 160
     Height = 15
-    Caption = 'Select Date Range for the Calendar'
+    Caption = 'Selezionare il Periodo e le Date'
   end
   object DBPlanner1: TDBPlanner
     Left = 8
@@ -373,46 +373,41 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Height = 110
     BevelOuter = bvNone
     TabOrder = 5
-    object btnAppuntamento: TButton
+    object btnAddMeeting: TButton
       Left = 0
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionAddMeeting
       Align = alLeft
-      Caption = 'Aggiungi Appuntamento'
       ImageAlignment = iaTop
-      ImageIndex = 31
-      ImageName = '032-calendar'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 0
       WordWrap = True
     end
-    object Button1: TButton
+    object btnUndoMeeting: TButton
       Left = 100
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionUndoMeeting
       Align = alLeft
-      Caption = 'Annulla Appuntamento'
       ImageAlignment = iaTop
-      ImageIndex = 1
-      ImageName = '002-time'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 1
       WordWrap = True
+      ExplicitLeft = 94
     end
     object btnSearchMeeting: TButton
       Left = 200
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionSearchMeeting
       Align = alLeft
-      Caption = 'Cerca Appuntamento'
       ImageAlignment = iaTop
-      ImageIndex = 45
-      ImageName = '046-search'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 2
@@ -423,26 +418,22 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionAddUser
       Align = alLeft
-      Caption = 'Aggiungi Dipendente'
       ImageAlignment = iaTop
-      ImageIndex = 2
-      ImageName = '003-employee'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 3
       WordWrap = True
     end
-    object btnActivities: TButton
+    object btnAddActivity: TButton
       Left = 400
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionAddActivity
       Align = alLeft
-      Caption = 'Aggiungi Una Attivit'#224
       ImageAlignment = iaTop
-      ImageIndex = 35
-      ImageName = '036-planner'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 4
@@ -453,26 +444,23 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionExport
       Align = alLeft
-      Caption = 'Esporta (Excel,     Pdf, Csv)'
       ImageAlignment = iaTop
-      ImageIndex = 24
-      ImageName = '025-planning'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 5
       WordWrap = True
     end
-    object btnSend: TButton
+    object btnSendShare: TButton
       Left = 600
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionSendShare
       Align = alLeft
-      Caption = 'Invia (Mail) Condividi'
+      Caption = 'Invia (Mail-Msg) Condividi'
       ImageAlignment = iaTop
-      ImageIndex = 8
-      ImageName = '009-email'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 6
@@ -483,17 +471,15 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
+      Action = dmVCLPlannerCustomController.ActionPrint
       Align = alLeft
-      Caption = 'Stampa / Anteprima'
       ImageAlignment = iaTop
-      ImageIndex = 57
-      ImageName = '008-printer'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 7
       WordWrap = True
     end
-    object btnGoogleCalSync: TButton
+    object btnCalendarSync: TButton
       Left = 800
       Top = 0
       Width = 100
@@ -507,178 +493,31 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       WordWrap = True
     end
   end
-  object PlannerRangeSelector1: TPlannerRangeSelector
-    Left = 11
-    Top = 133
-    Width = 247
-    Height = 21
-    Color = clWindow
-    DefaultHandling = True
-    Enabled = True
-    EditMask = ''
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 6
-    Text = '25/02/2014'
-    Visible = True
-    AutoFocus = False
-    BorderColor = 11250603
-    Flat = False
-    FlatLineColor = clBlack
-    FlatParentColor = True
-    ShowModified = False
-    FocusColor = clWindow
-    FocusBorder = False
-    FocusFontColor = clBlack
-    LabelAlwaysEnabled = False
-    LabelPosition = lpLeftTop
-    LabelTransparent = False
-    LabelFont.Charset = DEFAULT_CHARSET
-    LabelFont.Color = clWindowText
-    LabelFont.Height = -11
-    LabelFont.Name = 'Tahoma'
-    LabelFont.Style = []
-    ModifiedColor = clRed
-    SelectFirstChar = False
-    Version = '1.0.1.0'
-    ButtonStyle = bsButton
-    ButtonWidth = 16
-    Etched = False
-    Glyph.Data = {
-      DA020000424DDA0200000000000036000000280000000D0000000D0000000100
-      200000000000A402000000000000000000000000000000000000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F00000000000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000000000000000000000000000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F0000000000000000000000000000000000000000000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F0000000000000000000000000000000
-      0000000000000000000000000000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0
-      F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000F0F0F000}
-    ButtonColor = clWhite
-    ButtonColorHot = 15917525
-    ButtonColorDown = 14925219
-    ButtonTextColor = 4474440
-    ButtonTextColorHot = 2303013
-    ButtonTextColorDown = 2303013
-    ButtonBorderColor = 11250603
-    Calendar = mcal1_.Owner
-    DateStart = 41695.000000000000000000
-    DateEnd = 45457.000000000000000000
-    HideCalendarAfterSelection = False
-    object mcal1_: TPlannerCalendar
-      Left = 0
-      Top = 0
-      Width = 180
-      Height = 180
-      EventDayColor = clBlack
-      EventFont.Charset = DEFAULT_CHARSET
-      EventFont.Color = clWindowText
-      EventFont.Height = -11
-      EventFont.Name = 'Tahoma'
-      EventFont.Style = [fsBold]
-      EventMarkerColor = clYellow
-      EventMarkerShape = evsCircle
-      BackgroundPosition = bpTiled
-      BorderWidth = 1
-      CaptionColor = clNone
-      CaptionTextColor = clBlack
-      DateDownColor = clNone
-      DateHoverColor = clNone
-      DateSelectColor = 15917525
-      DateSelectBorderColor = 15917525
-      DayFont.Charset = DEFAULT_CHARSET
-      DayFont.Color = clWindowText
-      DayFont.Height = -11
-      DayFont.Name = 'Tahoma'
-      DayFont.Style = []
-      FocusColor = clHighlight
-      HeaderColor = clNone
-      InActiveColor = clGray
-      InversColor = clTeal
-      LineColor = clGray
-      Line3D = True
-      Look = lookFlat
-      NameOfDays.Monday = 'lun'
-      NameOfDays.Tuesday = 'mar'
-      NameOfDays.Wednesday = 'mer'
-      NameOfDays.Thursday = 'gio'
-      NameOfDays.Friday = 'ven'
-      NameOfDays.Saturday = 'sab'
-      NameOfDays.Sunday = 'dom'
-      NameOfMonths.January = 'gen'
-      NameOfMonths.February = 'feb'
-      NameOfMonths.March = 'mar'
-      NameOfMonths.April = 'apr'
-      NameOfMonths.May = 'mag'
-      NameOfMonths.June = 'giu'
-      NameOfMonths.July = 'lug'
-      NameOfMonths.August = 'ago'
-      NameOfMonths.September = 'set'
-      NameOfMonths.October = 'ott'
-      NameOfMonths.November = 'nov'
-      NameOfMonths.December = 'dic'
-      NameOfMonths.UseIntlNames = True
-      WeekFont.Charset = DEFAULT_CHARSET
-      WeekFont.Color = clWindowText
-      WeekFont.Height = -11
-      WeekFont.Name = 'Tahoma'
-      WeekFont.Style = []
-      WeekName = 'Wk'
-      SelectColor = clTeal
-      SelectFontColor = clWhite
-      StartDay = 7
-      TextColor = clBlack
-      TodayFormat = '"Today" DDD/mm, YYYY'
-      WeekendColor = clRed
-      Day = 25
-      Month = 2
-      Year = 2014
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      GradientStartColor = clWhite
-      GradientEndColor = clBtnFace
-      GradientDirection = gdVertical
-      MonthGradientStartColor = clNone
-      MonthGradientEndColor = clNone
-      MonthGradientDirection = gdHorizontal
-      HintPrevYear = 'Previous Year'
-      HintPrevMonth = 'Previous Month'
-      HintNextMonth = 'Next Month'
-      HintNextYear = 'Next Year'
-      Version = '2.4.4.1'
-      TMSStyle = 8
-    end
-  end
   object grpMeeting: TGroupBox
     Left = 3
     Top = 872
     Width = 1172
     Height = 111
     Caption = 'Meeting Details'
+    TabOrder = 6
+  end
+  object edPlannerDateFrom: TDateTimePicker
+    Left = 11
+    Top = 131
+    Width = 110
+    Height = 23
+    Date = 45462.000000000000000000
+    Time = 0.538302731481962800
     TabOrder = 7
+  end
+  object edPlannerDateTo: TDateTimePicker
+    Left = 137
+    Top = 131
+    Width = 112
+    Height = 23
+    Date = 45462.000000000000000000
+    Time = 0.538302731481962800
+    TabOrder = 8
   end
   object ColorDialog1: TColorDialog
     Left = 880

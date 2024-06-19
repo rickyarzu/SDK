@@ -54,11 +54,8 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
   inherited Panel1: TPanel
     Width = 903
     ExplicitWidth = 903
-  end
-  inherited PlannerRangeSelector1: TPlannerRangeSelector
-    Calendar = mcal1_.Owner
-    inherited mcal1_: TPlannerCalendar
-      TMSStyle = 8
+    inherited btnAppuntamento: TButton
+      ExplicitLeft = -6
     end
   end
 end

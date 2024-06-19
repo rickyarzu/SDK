@@ -1,8 +1,6 @@
-object dmVCLPlannerCustomController: TdmVCLPlannerCustomController
+inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 435
-  Width = 636
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <

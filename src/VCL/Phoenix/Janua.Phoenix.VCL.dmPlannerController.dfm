@@ -1,6 +1,5 @@
 inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
-  Height = 483
-  Width = 913
+  TextHeight = 15
   inherited SVGIconImageList48: TSVGIconImageList
     Top = 280
   end
