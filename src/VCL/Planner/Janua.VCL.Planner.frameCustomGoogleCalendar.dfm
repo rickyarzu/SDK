@@ -411,7 +411,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitTop = -3
     DesignSize = (
       1280
       41)
@@ -536,7 +535,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Caption = 'Allarmi di Default:'
     end
     object cboCalendarsList: TComboBox
-      Left = 124
+      Left = 130
       Top = 20
       Width = 246
       Height = 23

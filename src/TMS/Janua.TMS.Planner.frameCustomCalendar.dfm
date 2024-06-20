@@ -44,6 +44,18 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Height = 15
     Caption = 'Selezionare il Periodo e le Date'
   end
+  object lbCalendarList: TLabel
+    AlignWithMargins = True
+    Left = 3
+    Top = 0
+    Width = 1172
+    Height = 15
+    Margins.Top = 0
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Selezione Calendari Attivi'
+    ExplicitTop = -3
+  end
   object DBPlanner1: TDBPlanner
     Left = 8
     Top = 184
@@ -345,34 +357,13 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Caption = 'Applica Filtro'
     TabOrder = 3
   end
-  object grdAnagraph: TDBCtrlGrid
-    AlignWithMargins = True
-    Left = 3
-    Top = 3
-    Width = 1172
-    Height = 33
-    Align = alTop
-    ColCount = 5
-    PanelHeight = 33
-    PanelWidth = 231
-    TabOrder = 4
-    RowCount = 1
-    object DBText1: TDBText
-      Left = 0
-      Top = 8
-      Width = 231
-      Height = 25
-      Anchors = [akLeft, akTop, akRight]
-      DataField = 'an_full_name'
-    end
-  end
   object Panel1: TPanel
     Left = 264
     Top = 44
     Width = 911
     Height = 110
     BevelOuter = bvNone
-    TabOrder = 5
+    TabOrder = 4
     object btnAddMeeting: TButton
       Left = 0
       Top = 0
@@ -398,7 +389,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 1
       WordWrap = True
-      ExplicitLeft = 94
     end
     object btnSearchMeeting: TButton
       Left = 200
@@ -459,7 +449,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Height = 110
       Action = dmVCLPlannerCustomController.ActionSendShare
       Align = alLeft
-      Caption = 'Invia (Mail-Msg) Condividi'
       ImageAlignment = iaTop
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
@@ -499,7 +488,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Width = 1172
     Height = 111
     Caption = 'Meeting Details'
-    TabOrder = 6
+    TabOrder = 5
   end
   object edPlannerDateFrom: TDateTimePicker
     Left = 11
@@ -508,7 +497,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Height = 23
     Date = 45462.000000000000000000
     Time = 0.538302731481962800
-    TabOrder = 7
+    TabOrder = 6
   end
   object edPlannerDateTo: TDateTimePicker
     Left = 137
@@ -517,7 +506,57 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Height = 23
     Date = 45462.000000000000000000
     Time = 0.538302731481962800
+    TabOrder = 7
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 18
+    Width = 1178
+    Height = 24
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Panel2'
     TabOrder = 8
+    object ckbAll: TCheckBox
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 53
+      Height = 18
+      Align = alLeft
+      Caption = 'Tutti'
+      TabOrder = 0
+      ExplicitLeft = 4
+      ExplicitTop = 4
+      ExplicitHeight = 16
+    end
+    object ckbCalendarList: TCheckListBox
+      Left = 59
+      Top = 0
+      Width = 1119
+      Height = 24
+      Align = alClient
+      Columns = 12
+      Items.Strings = (
+        'uno'
+        'due'
+        'tre'
+        'quattro'
+        'cinque '
+        'sei '
+        'sette'
+        'otto'
+        'nove'
+        'dieci'
+        'undici'
+        'dodici')
+      TabOrder = 1
+      OnClickCheck = ckbCalendarListClickCheck
+      ExplicitLeft = 1
+      ExplicitTop = -1
+      ExplicitWidth = 1176
+      ExplicitHeight = 25
+    end
   end
   object ColorDialog1: TColorDialog
     Left = 880

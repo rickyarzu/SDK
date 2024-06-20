@@ -13,7 +13,7 @@ uses
   AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner,
   // Janua
   Janua.TMS.Planner.frameCustomCalendar, Janua.Phoenix.Vcl.dmPlannerController, Vcl.Mask, AdvEdit, AdvMEdBtn,
-  PlannerRangeSelector;
+  PlannerRangeSelector, Vcl.CheckLst;
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)

@@ -123,10 +123,10 @@ implementation
 
 procedure TframeVCLCustomGoogleCalendar.BindControls;
 begin
-  dpCalStartDate.DateTime := FCustomController.DateFrom;
-  FCustomController.Bind('DateFrom', dpCalStartDate, 'DateTime');
-  dpCalEndDate.DateTime := FCustomController.DateTo;
-  FCustomController.Bind('DateFrom', dpCalEndDate, 'DateTime');
+  dpCalStartDate.DateTime := FCustomController.GCalStartDate;
+  FCustomController.Bind('GCalStartDate', dpCalStartDate, 'DateTime');
+  dpCalEndDate.DateTime := FCustomController.GCalEndDate;
+  FCustomController.Bind('GCalEndDate', dpCalEndDate, 'DateTime');
   grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
   edCalendarName.Text := FCustomController.CalendarName;
   FCustomController.Bind('CalendarName', edCalendarName, 'Text');
@@ -136,6 +136,9 @@ begin
   FCustomController.Bind('CalendarLocation', edCalendarLocation, 'Text');
   edCalendarTimeZone.Text := FCustomController.CalendarTimeZone;
   FCustomController.Bind('CalendarTimeZone', edCalendarTimeZone, 'Text');
+  grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
+  // Bind Controls to Current Record in Calendar Client.
+
 end;
 
 procedure TframeVCLCustomGoogleCalendar.cboCalendarsListChange(Sender: TObject);

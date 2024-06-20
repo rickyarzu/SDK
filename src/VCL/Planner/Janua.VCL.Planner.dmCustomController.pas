@@ -291,8 +291,8 @@ type
     property CalendarLocation: string read FCalendarLocation write SetCalendarLocation;
     property CalendarTimeZone: string read FCalendarTimeZone write SetCalendarTimeZone;
     // Calendar Filters
-    property CalStartDate: TDateTime read FCalStartDate write SetCalStartDate;
-    property CalEndDate: TDateTime read FCalEndDate write SetCalEndDate;
+    property GCalStartDate: TDateTime read FCalStartDate write SetCalStartDate;
+    property GCalEndDate: TDateTime read FCalEndDate write SetCalEndDate;
     // Default Reminders
     property DefaultRemindersList: TStrings read FDefaultRemindersList write SetDefaultRemindersList;
     property DefaultRemindersIndex: Integer read FDefaultRemindersIndex write SetDefaultRemindersIndex;
@@ -721,7 +721,7 @@ begin
     if DefaultRemindersList.Count > 0 then
       DefaultRemindersIndex := 0;
 
-    AdvGCalendar1.GetCalendar(gcal.ID, CalStartDate, CalEndDate);
+    AdvGCalendar1.GetCalendar(gcal.ID, GCalStartDate, GCalEndDate);
 
     vtGoogleCalendars.Clear;
     for i := 0 to AdvGCalendar1.Items.Count - 1 do

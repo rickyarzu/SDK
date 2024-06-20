@@ -1,6 +1,8 @@
 inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
+  Height = 464
+  Width = 925
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5366,7 +5368,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45462.000000000000000000
+    DateFrom = 45463.000000000000000000
     Left = 416
     Top = 40
   end

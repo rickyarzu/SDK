@@ -3,12 +3,16 @@ unit Janua.TMS.Planner.frameCustomCalendar;
 interface
 
 uses
-  // .SVGIconImageList48
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, PictureContainer, Vcl.Menus, System.ImageList,
-  Vcl.ImgList, Data.DB, DBPlanner, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBCGrids, Vcl.Samples.Spin,
-  Vcl.ComCtrls, AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, Janua.Vcl.Planner.dmCustomController,
-  Vcl.Mask, AdvEdit, AdvMEdBtn, PlannerRangeSelector;
+  // RTL
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.ImageList,
+  Data.DB,
+  // VCL
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, PictureContainer, Vcl.Menus, Vcl.ComCtrls, Vcl.Mask,
+  Vcl.CheckLst, Vcl.ImgList, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBCGrids, Vcl.Samples.Spin,
+  // TMS
+  DBPlanner, AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, AdvEdit, AdvMEdBtn, PlannerRangeSelector,
+  // Janua
+  Janua.Vcl.Planner.dmCustomController;
 
 type
   TframeTMSCustomPlannerCalendar = class(TFrame)
@@ -19,8 +23,6 @@ type
     SpinEdit1: TSpinEdit;
     edMeeting: TEdit;
     DoFilter: TCheckBox;
-    grdAnagraph: TDBCtrlGrid;
-    DBText1: TDBText;
     Panel1: TPanel;
     btnAddMeeting: TButton;
     btnUndoMeeting: TButton;
@@ -40,9 +42,15 @@ type
     lbDateSelector: TLabel;
     edPlannerDateFrom: TDateTimePicker;
     edPlannerDateTo: TDateTimePicker;
+    lbCalendarList: TLabel;
+    Panel2: TPanel;
+    ckbAll: TCheckBox;
+    ckbCalendarList: TCheckListBox;
     procedure DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
+    procedure ckbCalendarListClickCheck(Sender: TObject);
   private
     FCustomController: TdmVCLPlannerCustomController;
+    FSelectedList: TStrings;
     procedure SetCustomController(const Value: TdmVCLPlannerCustomController);
     { Private declarations }
   public
@@ -53,6 +61,22 @@ type
 implementation
 
 {$R *.dfm}
+
+procedure TframeTMSCustomPlannerCalendar.ckbCalendarListClickCheck(Sender: TObject);
+begin
+  var
+  I := 0;
+  var
+  aList := TStringList.Create;
+  try
+    for I := 0 to ckbCalendarList.Count - 1 do
+      if ckbCalendarList.Checked[I] then // Check if the item at index I is checked
+        aList.Add(ckbCalendarList.Items[I]); // Add the checked item to the memo
+  finally
+    aList.Free;
+  end;
+
+end;
 
 procedure TframeTMSCustomPlannerCalendar.DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
 begin
