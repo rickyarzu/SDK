@@ -12,7 +12,9 @@ uses
   // TMS
   DBPlanner, AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, AdvEdit, AdvMEdBtn, PlannerRangeSelector,
   // Janua
-  Janua.Vcl.Planner.dmCustomController;
+  Janua.Vcl.Planner.dmCustomController,
+  // Interposers
+  Janua.Vcl.Interposers, Janua.TMS.Interposers;
 
 type
   TframeTMSCustomPlannerCalendar = class(TFrame)
@@ -97,6 +99,22 @@ begin
     btnSendShare.Action := FCustomController.ActionSendShare;
     btnPrint.Action := FCustomController.ActionPrint;
     btnCalendarSync.Action := FCustomController.ActionCalendarSync;
+    DBPlanner1.PictureContainer := FCustomController.PictureContainer1;
+    DBPlanner1.ItemSource := FCustomController.DBDaySourceCalendar;
+    btnAddMeeting.Images := FCustomController.SVGIconImageList48;
+    btnUndoMeeting.Images := FCustomController.SVGIconImageList48;
+    btnSearchMeeting.Images := FCustomController.SVGIconImageList48;
+    btnAddPerson.Images := FCustomController.SVGIconImageList48;
+    btnAddActivity.Images := FCustomController.SVGIconImageList48;
+    btnExport.Images := FCustomController.SVGIconImageList48;
+    btnSendShare.Images := FCustomController.SVGIconImageList48;
+    btnPrint.Images := FCustomController.SVGIconImageList48;
+    btnCalendarSync.Images := FCustomController.SVGIconImageList48;
+    ckbAll.Checked := FCustomController.CalendarsFilter;
+    FCustomController.Bind('CalendarsFilter', ckbAll, 'Checked');
+    ckbCalendarList.Items.Text := FCustomController.CalendarsList.Text;
+    FCustomController.PlannerPDFIO := AdvPlannerPDFIO1;
+    FCustomController.ActivateCalendar;
   end;
 end;
 

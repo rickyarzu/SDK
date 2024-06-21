@@ -5321,6 +5321,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       Caption = 'Esporta (Excel, Pdf, Csv)'
       ImageIndex = 24
       ImageName = '025-planning'
+      OnExecute = ActionExportExecute
     end
     object ActionSendShare: TAction
       Category = 'Meetings'
@@ -5368,7 +5369,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45463.000000000000000000
+    DateFrom = 45464.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5404,18 +5405,6 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Version = '1.3.0.2'
     Left = 160
     Top = 240
-  end
-  object PlannerGCalendarExchange1: TPlannerGCalendarExchange
-    AdvGCalendar = AdvGCalendar1
-    EmptyText = 'Untitled'
-    Left = 272
-    Top = 8
-  end
-  object PlannerLiveCalendarExchange1: TPlannerLiveCalendarExchange
-    AdvLiveCalendar = AdvLiveCalendar1
-    EmptyText = 'Untitled'
-    Left = 272
-    Top = 72
   end
   object MenuButtonActions: TActionList
     Images = SVGIconImageList16
@@ -10775,32 +10764,6 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Left = 72
     Top = 272
   end
-  object DBDaySourceCalendar: TDBDaySource
-    Active = False
-    OnSetFilter = DBDaySourceCalendarSetFilter
-    AutoIncKey = True
-    ResourceDataSource.ResourceIDField = 'RESPONSABILE'
-    ResourceDataSource.ResourceNameField = 'NOME_TECNICO'
-    ResourceMap = <>
-    StartTimeField = 'DALLE_ORE'
-    EndTimeField = 'ALLE_ORE'
-    KeyField = 'JGUID'
-    ReadOnly = False
-    ResourceField = 'TECNICO'
-    SubjectField = 'SUBJECT'
-    NotesField = 'SUBJECT'
-    UpdateByQuery = False
-    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
-    OnItemToFields = DBDaySourceCalendarItemToFields
-    AutoHeaderUpdate = True
-    DateFormat = 'dd/mm/yyyy'
-    Day = 45444.000000000000000000
-    Mode = dmMultiDayRes
-    NumberOfDays = 2
-    NumberOfResources = 6
-    Left = 275
-    Top = 136
-  end
   object PictureContainer1: TPictureContainer
     Items = <
       item
@@ -11267,14 +11230,47 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   end
   object dsGoogleEvents: TUniDataSource
     DataSet = vtGoogleEvents
-    Left = 528
-    Top = 144
-  end
-  object dsCalendar: TUniDataSource
     Left = 272
-    Top = 200
+    Top = 336
+  end
+  object dsCalendars: TUniDataSource
+    Left = 272
+    Top = 80
   end
   object DBDaySourceGCalendar: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    DataSource = dsGoogleEvents
+    ResourceDataSource.DataSource = dsGCalendar
+    ResourceDataSource.ResourceIDField = 'ID'
+    ResourceDataSource.ResourceNameField = 'SUMMARY'
+    ResourceMap = <>
+    StartTimeField = 'STARTTIME'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'ID'
+    ReadOnly = False
+    ResourceField = 'CALENDARID'
+    SubjectField = 'SUMMARY'
+    NotesField = 'SUBJECT'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45444.000000000000000000
+    Mode = dmMultiDayRes
+    NumberOfDays = 2
+    NumberOfResources = 6
+    Left = 275
+    Top = 208
+  end
+  object dsGCalendar: TUniDataSource
+    DataSet = vtGoogleCalendars
+    Left = 272
+    Top = 272
+  end
+  object DBDaySourceCalendar: TDBDaySource
     Active = False
     OnSetFilter = DBDaySourceCalendarSetFilter
     AutoIncKey = True
@@ -11298,10 +11294,14 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     NumberOfDays = 2
     NumberOfResources = 6
     Left = 267
-    Top = 264
+    Top = 16
   end
-  object dsGCalendar: TUniDataSource
+  object dsCalendarEvents: TUniDataSource
     Left = 272
-    Top = 328
+    Top = 144
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 416
+    Top = 368
   end
 end

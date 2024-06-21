@@ -1,4 +1,4 @@
-inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
+inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   Height = 569
   Width = 996
   inherited SVGIconImageList48: TSVGIconImageList
@@ -7,9 +7,6 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
   inherited SVGIconImageList16: TSVGIconImageList
     Left = 64
     Top = 344
-  end
-  inherited DBDaySourceCalendar: TDBDaySource
-    DataSource = dsCalendar
   end
   inherited PictureContainer1: TPictureContainer
     Top = 384
@@ -61,13 +58,15 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       0000000000000000}
   end
   inherited dsGoogleEvents: TUniDataSource
-    Left = 272
-    Top = 408
+    Top = 344
   end
-  inherited dsCalendar: TUniDataSource
-    DataSet = qryPlannerCalendar
+  inherited dsCalendars: TUniDataSource
+    DataSet = qryPlannerEvents
   end
-  object qryReportPlanner: TUniQuery
+  inherited DBDaySourceGCalendar: TDBDaySource
+    DataSource = dsGCalendar
+  end
+  object qryReportPlanner: TUniQuery [23]
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
       
@@ -474,7 +473,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       Calculated = True
     end
   end
-  object spSetStatinoStato: TUniStoredProc
+  object spSetStatinoStato: TUniStoredProc [24]
     StoredProcName = 'SET_STATINI_STATO'
     SQL.Strings = (
       'EXECUTE PROCEDURE SET_STATINI_STATO')
@@ -483,7 +482,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
     Top = 280
     CommandStoredProcName = 'SET_STATINI_STATO'
   end
-  object qryCustomers: TUniQuery
+  object qryCustomers: TUniQuery [25]
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT C.chiave, C.descrizione_scheda'
@@ -504,7 +503,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       Size = 255
     end
   end
-  object qryTech: TUniQuery
+  object qryTech: TUniQuery [26]
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
@@ -512,6 +511,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       'JOIN TECNICI T ON T.chiave = S.responsabile'
       'ORDER BY T.descrizione'
       ';')
+    Active = True
     Left = 688
     Top = 248
     object qryTechRESPONSABILE: TIntegerField
@@ -523,7 +523,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       Size = 255
     end
   end
-  object qryCAP: TUniQuery
+  object qryCAP: TUniQuery [27]
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT DISTINCT S.CAP'
@@ -538,7 +538,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       Size = 10
     end
   end
-  object qryPlannerCalendar: TUniQuery
+  object qryPlannerEvents: TUniQuery [28]
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT * FROM CALENDARIO_EVENTI '
@@ -547,6 +547,8 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       'AND'
       'DALLE_ORE <= :DATA_AL'
       ';')
+    FetchRows = 100
+    Active = True
     Left = 792
     Top = 280
     ParamData = <
@@ -562,75 +564,77 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
         ParamType = ptInput
         Value = 45503d
       end>
-    object qryPlannerCalendarCHIAVE: TIntegerField
+    object qryPlannerEventsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object qryPlannerCalendarSTATINO: TIntegerField
+    object qryPlannerEventsSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
-    object qryPlannerCalendarTECNICO: TIntegerField
+    object qryPlannerEventsTECNICO: TIntegerField
       FieldName = 'TECNICO'
       Required = True
     end
-    object qryPlannerCalendarDALLE_ORE: TDateTimeField
+    object qryPlannerEventsDALLE_ORE: TDateTimeField
       FieldName = 'DALLE_ORE'
       Required = True
     end
-    object qryPlannerCalendarALLE_ORE: TDateTimeField
+    object qryPlannerEventsALLE_ORE: TDateTimeField
       FieldName = 'ALLE_ORE'
       Required = True
     end
-    object qryPlannerCalendarNOTE: TBlobField
+    object qryPlannerEventsNOTE: TBlobField
       FieldName = 'NOTE'
     end
-    object qryPlannerCalendarSUBJECT: TStringField
+    object qryPlannerEventsSUBJECT: TStringField
       FieldName = 'SUBJECT'
       Size = 128
     end
-    object qryPlannerCalendarTECNICO_SIGLA: TStringField
+    object qryPlannerEventsTECNICO_SIGLA: TStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
-    object qryPlannerCalendarCOLORE: TIntegerField
+    object qryPlannerEventsCOLORE: TIntegerField
       FieldName = 'COLORE'
     end
-    object qryPlannerCalendarJGUID: TBytesField
+    object qryPlannerEventsJGUID: TBytesField
       FieldName = 'JGUID'
     end
-    object qryPlannerCalendarICONA: TSmallintField
+    object qryPlannerEventsICONA: TSmallintField
       FieldName = 'ICONA'
     end
-    object qryPlannerCalendarGOOGLE_JSON: TBlobField
+    object qryPlannerEventsGOOGLE_JSON: TBlobField
       FieldName = 'GOOGLE_JSON'
     end
-    object qryPlannerCalendarGFORECOLOR: TIntegerField
+    object qryPlannerEventsGFORECOLOR: TIntegerField
       FieldName = 'GFORECOLOR'
     end
-    object qryPlannerCalendarGBACKCOLOR: TIntegerField
+    object qryPlannerEventsGBACKCOLOR: TIntegerField
       FieldName = 'GBACKCOLOR'
     end
-    object qryPlannerCalendarCALENDARIO: TIntegerField
+    object qryPlannerEventsCALENDARIO: TIntegerField
       FieldName = 'CALENDARIO'
     end
-    object qryPlannerCalendarGOOGLEID: TStringField
+    object qryPlannerEventsGOOGLEID: TStringField
       FieldName = 'GOOGLEID'
       Size = 128
     end
   end
-  object qryTechPlanned: TUniQuery
+  object qryTechPlanned: TUniQuery [29]
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
+      
+        'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO, T' +
+        '.SIGLA'
       'FROM STATINI s'
       'JOIN TECNICI T ON T.chiave = S.responsabile'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
+      'WHERE S.STATO > -1 -- AND S.STATO < 9'
       '        AND S.APPUNTAMENTO_DATA >= :DATA_DAL'
       '        AND S.APPUNTAMENTO_DATA <= :DATA_AL'
       'ORDER BY T.descrizione'
       ';')
-    Left = 792
-    Top = 216
+    Left = 592
+    Top = 344
     ParamData = <
       item
         DataType = ftDate
@@ -652,8 +656,13 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       ReadOnly = True
       Size = 255
     end
+    object qryTechPlannedSIGLA: TStringField
+      FieldName = 'SIGLA'
+      ReadOnly = True
+      Size = 12
+    end
   end
-  object tabGoogleCalendars: TUniTable
+  object tabGoogleCalendars: TUniTable [30]
     TableName = 'GOOGLE_CALENDARS'
     Connection = JanuaUniConnection1
     Left = 688
@@ -691,7 +700,7 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
       FieldName = 'FORE_COLOR'
     end
   end
-  object tabGoogleEvents: TUniTable
+  object tabGoogleEvents: TUniTable [31]
     TableName = 'GOOGLE_CALENDAR_EVENTS'
     DataTypeMap = <
       item
@@ -766,6 +775,1373 @@ inherited dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner
     object tabGoogleEventsCALENDARID: TStringField
       FieldName = 'CALENDARID'
       Required = True
+      Size = 128
+    end
+  end
+  object dsTecnici: TUniDataSource [32]
+    DataSet = qryPlannerEvents
+    Left = 784
+    Top = 144
+  end
+  inherited DBDaySourceCalendar: TDBDaySource
+    Active = True
+    DataSource = dsCalendarEvents
+    ResourceDataSource.DataSource = dsCalendars
+    ResourceDataSource.ResourceIDField = 'CHIAVE'
+    ResourceDataSource.ResourceNameField = 'TECNICO_SIGLA'
+    ResourceMap = <
+      item
+        ResourceIndex = 2168564
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168565
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168566
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168567
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168568
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168569
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168570
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168571
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168572
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168573
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166655
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166678
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166692
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166711
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166720
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166732
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166739
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166752
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166753
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166754
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166755
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166756
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166757
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166758
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166761
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166768
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166769
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166770
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166772
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166773
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166774
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166775
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166776
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166777
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166778
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166779
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166781
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166782
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166783
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166784
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166785
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166786
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166787
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166788
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166789
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166790
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166791
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166792
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166793
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166794
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166795
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166796
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166797
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166798
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166799
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166800
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166801
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166802
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166803
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166804
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166805
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166806
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166807
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166808
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166809
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166810
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166811
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166812
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166813
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166814
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166815
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166816
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166817
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166818
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166819
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166820
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166821
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166822
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166823
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166824
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166825
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166826
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166827
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166828
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166829
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166830
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166831
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166832
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166833
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166834
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166835
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166836
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166837
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166838
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166839
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166840
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166841
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166842
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166843
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166844
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166845
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166846
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166847
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166848
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166849
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166850
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166851
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166852
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166853
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166854
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166855
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166856
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166857
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166858
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166859
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166860
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166861
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166862
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166863
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166864
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166865
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166866
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166867
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166868
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166869
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166870
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166871
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166872
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166873
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166874
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166875
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166876
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166877
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166878
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166879
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166880
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166881
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166882
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166883
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166884
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166885
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166886
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166887
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166888
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166889
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166890
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166891
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166892
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166893
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166894
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166895
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166896
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166897
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166898
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166899
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166900
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166901
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166902
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166903
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166904
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166905
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166906
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166907
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166908
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166909
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166910
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166911
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166912
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166913
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166914
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166915
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166916
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166917
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166918
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166919
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166920
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166921
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166922
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166923
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166924
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166925
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166926
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166927
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166928
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166929
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166930
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166931
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166932
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166933
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166934
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166935
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166936
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166937
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166938
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166939
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166940
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166941
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166942
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166943
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166944
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166945
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166946
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166947
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166948
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166949
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2166950
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168557
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168558
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168559
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168560
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168561
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168562
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end
+      item
+        ResourceIndex = 2168563
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end>
+    ResourceField = 'TECNICO_SIGLA'
+    NotesField = 'NOTE'
+    Day = 45457.000000000000000000
+    Mode = dmMultiResDay
+    NumberOfDays = 6
+    MinTimeField = 'DALLE_ORE'
+    MaxTimeField = 'ALLE_ORE'
+  end
+  object dsTecniciPlanned: TUniDataSource [34]
+    DataSet = qryTechPlanned
+    Left = 792
+    Top = 352
+  end
+  inherited dsCalendarEvents: TUniDataSource
+    DataSet = qryPlannerEvents
+  end
+  object qryPlannerCalendars: TUniQuery [36]
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO'
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 792
+    Top = 216
+    object qryPlannerCalendarsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendarsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerCalendarsSUMMARY: TBlobField
+      FieldName = 'SUMMARY'
+    end
+    object qryPlannerCalendarsDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendarsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendarsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendarsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerCalendarsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendarsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendarsDEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendarsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
       Size = 128
     end
   end

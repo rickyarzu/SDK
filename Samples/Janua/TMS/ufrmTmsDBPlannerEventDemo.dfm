@@ -107,8 +107,8 @@ object Form1: TForm1
       5E5E5E5EAFAF56165E07070DA7A7675F5F5E5E5E5E5E56165E07EDAF0D0D0D0D
       0D0D0D0D0D0D0D0D5EECD9ED070707070707070707070707EDD1}
     Display.ActiveEnd = 40
-    Display.CurrentPosFrom = 38727
-    Display.CurrentPosTo = 38727
+    Display.CurrentPosFrom = 45464
+    Display.CurrentPosTo = 45464
     Display.ColorActive = 16575452
     Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013
@@ -170,7 +170,7 @@ object Form1: TForm1
     HTMLOptions.HeaderFontStyle = []
     HTMLOptions.SidebarFontStyle = []
     Items = <>
-    Mode.Month = 1
+    Mode.Month = 12
     Mode.PeriodStartDay = 10
     Mode.PeriodStartMonth = 1
     Mode.PeriodStartYear = 2006
@@ -180,8 +180,8 @@ object Form1: TForm1
     Mode.TimeLineStart = 38727.000000000000000000
     Mode.TimeLineNVUBegin = 0
     Mode.TimeLineNVUEnd = 0
-    Mode.Year = 2006
-    Mode.Day = 11
+    Mode.Year = 1899
+    Mode.Day = 30
     Sidebar.ActiveColor = 16575452
     Sidebar.ActiveColorTo = 16571329
     Sidebar.Background = 16645114
@@ -250,6 +250,7 @@ object Form1: TForm1
     Top = 512
   end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>

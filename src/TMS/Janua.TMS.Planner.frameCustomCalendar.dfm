@@ -54,11 +54,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Align = alTop
     Alignment = taCenter
     Caption = 'Selezione Calendari Attivi'
-    ExplicitTop = -3
+    ExplicitWidth = 133
   end
   object DBPlanner1: TDBPlanner
-    Left = 8
-    Top = 184
+    Left = 14
+    Top = 185
     Width = 1161
     Height = 689
     AttachementGlyph.Data = {
@@ -269,7 +269,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Sidebar.Font.Style = []
     Sidebar.HourFontRatio = 1.800000000000000000
     Sidebar.Width = 48
-    PictureContainer = dmVCLPlannerCustomController.PictureContainer1
     Positions = 16
     PositionProps = <>
     PrintOptions.LineWidth = 0
@@ -295,11 +294,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
     OnItemCreated = DBPlanner1ItemCreated
-    ItemSource = dmVCLPlannerCustomController.DBDaySourceCalendar
+    ItemSource = dmVCLPhoenixPlannerController.DBDaySourceCalendar
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
-      Left = 528
-      Top = 344
+      Left = 418
+      Top = 192
       Width = 26
       Height = 26
       Visible = True
@@ -369,9 +368,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionAddMeeting
       Align = alLeft
+      Caption = 'Aggiungi Appuntamento'
       ImageAlignment = iaTop
+      ImageIndex = 31
+      ImageName = '032-calendar'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 0
@@ -382,9 +383,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionUndoMeeting
       Align = alLeft
+      Caption = 'Annulla Appuntamento'
       ImageAlignment = iaTop
+      ImageIndex = 1
+      ImageName = '002-time'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 1
@@ -395,22 +398,27 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionSearchMeeting
       Align = alLeft
+      Caption = 'Cerca Appuntamento'
       ImageAlignment = iaTop
+      ImageIndex = 45
+      ImageName = '046-search'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 2
       WordWrap = True
+      ExplicitLeft = 194
     end
     object btnAddPerson: TButton
       Left = 300
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionAddUser
       Align = alLeft
+      Caption = 'Aggiungi Dipendente'
       ImageAlignment = iaTop
+      ImageIndex = 2
+      ImageName = '003-employee'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 3
@@ -434,22 +442,27 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionExport
       Align = alLeft
+      Caption = 'Esporta (Excel, Pdf, Csv)'
       ImageAlignment = iaTop
+      ImageIndex = 24
+      ImageName = '025-planning'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 5
       WordWrap = True
+      ExplicitLeft = 494
     end
     object btnSendShare: TButton
       Left = 600
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionSendShare
       Align = alLeft
+      Caption = 'Invia (Mail) Condividi'
       ImageAlignment = iaTop
+      ImageIndex = 8
+      ImageName = '009-email'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 6
@@ -473,9 +486,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionCalendarSync
       Align = alLeft
+      Caption = 'Sincro Calendario'
       ImageAlignment = iaTop
+      ImageIndex = 26
+      ImageName = '027-tasks'
       ImageMargins.Top = 6
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 8
@@ -526,9 +541,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       Caption = 'Tutti'
       TabOrder = 0
-      ExplicitLeft = 4
-      ExplicitTop = 4
-      ExplicitHeight = 16
     end
     object ckbCalendarList: TCheckListBox
       Left = 59
@@ -552,19 +564,15 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
         'dodici')
       TabOrder = 1
       OnClickCheck = ckbCalendarListClickCheck
-      ExplicitLeft = 1
-      ExplicitTop = -1
-      ExplicitWidth = 1176
-      ExplicitHeight = 25
     end
   end
   object ColorDialog1: TColorDialog
-    Left = 880
-    Top = 560
+    Left = 336
+    Top = 328
   end
   object ItemPopup: TPopupMenu
-    Left = 536
-    Top = 464
+    Left = 432
+    Top = 288
     object Color1: TMenuItem
       Action = dmVCLPlannerCustomController.actColor
     end

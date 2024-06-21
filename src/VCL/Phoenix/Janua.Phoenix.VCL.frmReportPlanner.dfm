@@ -19,7 +19,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1222
     Height = 754
-    ActivePage = tabTicketsList
+    ActivePage = tabPlannerCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -188,6 +188,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           ParentFont = False
           PopupMenu = PopupMenu1
+          OnDrawColumnCell = frameVCLCRDBGridCRDBGridDrawColumnCell
+          OnDblClick = frameVCLCRDBGridCRDBGridDblClick
           Columns = <
             item
               Expanded = False
@@ -403,7 +405,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           end
         end
         inherited UniDataSource: TUniDataSource
-          DataSet = dmVCLPhoenixIBPlanner.qryReportPlanner
+          DataSet = dmVCLPhoenixPlannerController.qryReportPlanner
           Top = 120
         end
       end
@@ -447,6 +449,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Width = 483
           ExplicitWidth = 483
         end
+        inherited lbCalendarList: TLabel
+          AlignWithMargins = False
+          Left = 0
+          Width = 1214
+        end
         inherited DBPlanner1: TDBPlanner
           Width = 1197
           Height = 540
@@ -466,13 +473,14 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Left = 506
           ExplicitLeft = 506
         end
-        inherited grdAnagraph: TDBCtrlGrid
-          Width = 1208
-          PanelWidth = 238
-          ExplicitWidth = 1208
-          inherited DBText1: TDBText
-            Width = 238
-            ExplicitWidth = 238
+        inherited Panel2: TPanel
+          Top = 15
+          Width = 1214
+          ExplicitWidth = 1214
+          inherited ckbCalendarList: TCheckListBox
+            Width = 1155
+            ExplicitWidth = 1155
+            ExplicitHeight = 26
           end
         end
       end
@@ -513,7 +521,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
           end
           inherited TabSheet2: TTabSheet
+            ExplicitWidth = 830
+            ExplicitHeight = 482
             inherited DBPlanner1: TDBPlanner
+              Width = 830
+              Height = 482
               TMSStyle = 0
             end
           end
@@ -524,6 +536,20 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited Image1: TImage
             Left = 1177
             ExplicitLeft = 1177
+          end
+          inherited btnConnect: TButton
+            Left = 20
+            Top = 8
+            Width = 130
+            ExplicitLeft = 20
+            ExplicitTop = 8
+            ExplicitWidth = 130
+          end
+          inherited btnRemove: TButton
+            Top = 8
+            Width = 133
+            ExplicitTop = 8
+            ExplicitWidth = 133
           end
         end
         inherited grpCalendars: TGroupBox
@@ -560,17 +586,17 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
   end
   object dsTechnicians: TUniDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryTech
+    DataSet = dmVCLPhoenixPlannerController.qryTech
     Left = 168
     Top = 280
   end
   object dsCustomers: TUniDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryCustomers
+    DataSet = dmVCLPhoenixPlannerController.qryCustomers
     Left = 88
     Top = 248
   end
   object dsCAP: TUniDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryCAP
+    DataSet = dmVCLPhoenixPlannerController.qryCAP
     Left = 168
     Top = 192
   end
@@ -886,17 +912,17 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       000000000000}
   end
   object dsDayCalendar: TDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryPlannerCalendar
+    DataSet = dmVCLPhoenixPlannerController.qryPlannerEvents
     Left = 752
     Top = 216
   end
   object dsTech: TDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryPlannerCalendar
+    DataSet = dmVCLPhoenixPlannerController.qryPlannerEvents
     Left = 664
     Top = 256
   end
   object dsTechCalendar: TDataSource
-    DataSet = dmVCLPhoenixIBPlanner.qryTechPlanned
+    DataSet = dmVCLPhoenixPlannerController.qryTechPlanned
     Left = 743
     Top = 382
   end

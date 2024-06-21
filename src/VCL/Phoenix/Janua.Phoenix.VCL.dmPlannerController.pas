@@ -8,19 +8,19 @@ uses
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS,
   // VCL
-  SVGIconImageListBase, SVGIconImageList, Vcl.Dialogs, Vcl.ActnList, Vcl.ImgList, Vcl.Controls,
+  SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
-  Janua.Vcl.Planner.dmCustomController, Janua.Phoenix.dmIBModel, VirtualTable, PostgreSQLUniProvider,
+  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, VirtualTable, PostgreSQLUniProvider,
   PictureContainer, DBPlanner, PlanExLiveCalendar, Planner, PlanExGCalendar, CloudvCal, CloudWebDav,
   CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, Janua.Core.Commons,
   Janua.Core.Classes;
 
 type
-  TdmVCLPhoenixIBPlanner = class(TdmVCLPlannerCustomController) // ()
+  TdmVCLPhoenixPlannerController = class(TdmVCLPlannerCustomController) // ()
     qryReportPlanner: TUniQuery;
     spSetStatinoStato: TUniStoredProc;
     qryReportPlannerCHIAVE: TIntegerField;
@@ -99,18 +99,18 @@ type
     qryCAPCAP: TStringField;
     qryReportPlannerAMMINISTRATORE: TIntegerField;
     qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
-    qryPlannerCalendar: TUniQuery;
-    qryPlannerCalendarCHIAVE: TIntegerField;
-    qryPlannerCalendarSTATINO: TIntegerField;
-    qryPlannerCalendarTECNICO: TIntegerField;
-    qryPlannerCalendarDALLE_ORE: TDateTimeField;
-    qryPlannerCalendarALLE_ORE: TDateTimeField;
-    qryPlannerCalendarNOTE: TBlobField;
-    qryPlannerCalendarSUBJECT: TStringField;
-    qryPlannerCalendarTECNICO_SIGLA: TStringField;
-    qryPlannerCalendarCOLORE: TIntegerField;
-    qryPlannerCalendarJGUID: TBytesField;
-    qryPlannerCalendarICONA: TSmallintField;
+    qryPlannerEvents: TUniQuery;
+    qryPlannerEventsCHIAVE: TIntegerField;
+    qryPlannerEventsSTATINO: TIntegerField;
+    qryPlannerEventsTECNICO: TIntegerField;
+    qryPlannerEventsDALLE_ORE: TDateTimeField;
+    qryPlannerEventsALLE_ORE: TDateTimeField;
+    qryPlannerEventsNOTE: TBlobField;
+    qryPlannerEventsSUBJECT: TStringField;
+    qryPlannerEventsTECNICO_SIGLA: TStringField;
+    qryPlannerEventsCOLORE: TIntegerField;
+    qryPlannerEventsJGUID: TBytesField;
+    qryPlannerEventsICONA: TSmallintField;
     qryTechPlanned: TUniQuery;
     IntegerField1: TIntegerField;
     StringField1: TStringField;
@@ -144,11 +144,28 @@ type
     tabGoogleCalendarsCOLOR: TSmallintField;
     tabGoogleCalendarsBACK_COLOR: TIntegerField;
     tabGoogleCalendarsFORE_COLOR: TIntegerField;
-    qryPlannerCalendarGOOGLE_JSON: TBlobField;
-    qryPlannerCalendarGFORECOLOR: TIntegerField;
-    qryPlannerCalendarGBACKCOLOR: TIntegerField;
-    qryPlannerCalendarCALENDARIO: TIntegerField;
-    qryPlannerCalendarGOOGLEID: TStringField;
+    qryPlannerEventsGOOGLE_JSON: TBlobField;
+    qryPlannerEventsGFORECOLOR: TIntegerField;
+    qryPlannerEventsGBACKCOLOR: TIntegerField;
+    qryPlannerEventsCALENDARIO: TIntegerField;
+    qryPlannerEventsGOOGLEID: TStringField;
+    dsTecnici: TUniDataSource;
+    dsTecniciPlanned: TUniDataSource;
+    qryTechPlannedSIGLA: TStringField;
+    qryPlannerCalendars: TUniQuery;
+    qryPlannerCalendarsCHIAVE: TIntegerField;
+    qryPlannerCalendarsTECNICO: TIntegerField;
+    qryPlannerCalendarsSUMMARY: TBlobField;
+    qryPlannerCalendarsDESCRIPTION: TStringField;
+    qryPlannerCalendarsTECNICO_SIGLA: TStringField;
+    qryPlannerCalendarsCOLORE: TIntegerField;
+    qryPlannerCalendarsJGUID: TGuidField;
+    qryPlannerCalendarsGOOGLE_JSON: TBlobField;
+    qryPlannerCalendarsGFORECOLOR: TIntegerField;
+    qryPlannerCalendarsGBACKCOLOR: TIntegerField;
+    qryPlannerCalendarsDEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendarsGOOGLEID: TStringField;
+    qryPlannerCalendarsGOOGLE_SUMMARY: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -184,9 +201,13 @@ type
     procedure Setup; override;
     procedure Filter; override;
     procedure UndoMeeting; override;
-
+    /// <summary> After Selecting Calendars this procedure should be called (it can be inside a thread) </summary>
+    procedure SelectCalendars; override;
+    // <summary> Fill Calendars list with Custom Data in this case Tecnici </summary>
+    procedure PopulateCalendars; override;
   public
-    function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
+    function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; override;
+    procedure ActivateCalendar; override;
     property CustomerID: Int64 read FCustomerID write SetCustomerID;
     property TechID: Int64 read FTechID write SetTechID;
     property CustomerFilter: Boolean read FCustomerFilter write SetCustomerFilter;
@@ -196,28 +217,37 @@ type
     property CAPFilter: Boolean read FCAPFilter write SetCAPFilter;
     property CAP: String read FCAP write SetCAP;
     property StateFilter: Integer read FStateFilter write SetStateFilter;
+
   end;
 
 var
-  dmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner;
+  dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TdmVCLPhoenixIBPlanner.ActionAddMeetingExecute(Sender: TObject);
+procedure TdmVCLPhoenixPlannerController.ActionAddMeetingExecute(Sender: TObject);
 begin
   inherited;
   AddEvent
 end;
 
-procedure TdmVCLPhoenixIBPlanner.AddEvent;
+procedure TdmVCLPhoenixPlannerController.ActivateCalendar;
+begin
+  if not qryPlannerEvents.Active then
+    qryPlannerEvents.Open;
+  inherited;
+
+end;
+
+procedure TdmVCLPhoenixPlannerController.AddEvent;
 begin
 
 end;
 
-procedure TdmVCLPhoenixIBPlanner.DataModuleCreate(Sender: TObject);
+procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
   FTechFilter := False;
@@ -229,12 +259,12 @@ begin
   FCAPFilter := False;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.EditEvent;
+procedure TdmVCLPhoenixPlannerController.EditEvent;
 begin
 
 end;
 
-procedure TdmVCLPhoenixIBPlanner.Filter;
+procedure TdmVCLPhoenixPlannerController.Filter;
   procedure CheckFilter;
   begin
     if qryReportPlanner.Filter > '' then
@@ -313,22 +343,37 @@ begin
   end;
 end;
 
-function TdmVCLPhoenixIBPlanner.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
+function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
 begin
+  PopulateCalendars;
+
   qryTechPlanned.Close;
   qryTechPlanned.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryTechPlanned.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryTechPlanned.Open;
 
-  qryPlannerCalendar.Close;
-  qryPlannerCalendar.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
-  qryPlannerCalendar.ParamByName('DATA_AL').AsDateTime := aDateTo;
-  qryPlannerCalendar.Open;
+  qryPlannerEvents.Close;
+  qryPlannerEvents.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
+  qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
+  qryPlannerEvents.Open;
 
   Result := qryTechPlanned.RecordCount;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.qryReportPlannerBeforePost(DataSet: TDataSet);
+procedure TdmVCLPhoenixPlannerController.PopulateCalendars;
+begin
+  inherited;
+  qryPlannerCalendars.Open;
+  qryPlannerCalendars.First;
+
+  While not qryPlannerCalendars.Eof do
+  begin
+    CalendarsList.Add(qryPlannerCalendarsTECNICO_SIGLA.AsString);
+    qryPlannerCalendars.Next;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);
 begin
   inherited;
   if qryReportPlannerSTATO.AsInteger = 0 then
@@ -366,59 +411,65 @@ begin
   end
 end;
 
-procedure TdmVCLPhoenixIBPlanner.qryReportPlannerCalcFields(DataSet: TDataSet);
+procedure TdmVCLPhoenixPlannerController.qryReportPlannerCalcFields(DataSet: TDataSet);
 begin
   inherited;
   qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetCAP(const Value: String);
+procedure TdmVCLPhoenixPlannerController.SelectCalendars;
+begin
+  inherited;
+
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetCAP(const Value: String);
 begin
   FCAP := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetCAPFilter(const Value: Boolean);
+procedure TdmVCLPhoenixPlannerController.SetCAPFilter(const Value: Boolean);
 begin
   FCAPFilter := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetCustomerFilter(const Value: Boolean);
+procedure TdmVCLPhoenixPlannerController.SetCustomerFilter(const Value: Boolean);
 begin
   FCustomerFilter := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetCustomerID(const Value: Int64);
+procedure TdmVCLPhoenixPlannerController.SetCustomerID(const Value: Int64);
 begin
   FCustomerID := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetReportDate(const Value: TDateTime);
+procedure TdmVCLPhoenixPlannerController.SetReportDate(const Value: TDateTime);
 begin
   FReportDate := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetReportDateFilter(const Value: Boolean);
+procedure TdmVCLPhoenixPlannerController.SetReportDateFilter(const Value: Boolean);
 begin
   FReportDateFilter := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetStateFilter(const Value: Integer);
+procedure TdmVCLPhoenixPlannerController.SetStateFilter(const Value: Integer);
 begin
   FStateFilter := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetTechFilter(const Value: Boolean);
+procedure TdmVCLPhoenixPlannerController.SetTechFilter(const Value: Boolean);
 begin
   FTechFilter := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.SetTechID(const Value: Int64);
+procedure TdmVCLPhoenixPlannerController.SetTechID(const Value: Int64);
 begin
   FTechID := Value;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.Setup;
+procedure TdmVCLPhoenixPlannerController.Setup;
 begin
   qryReportPlanner.Close;
   qryCustomers.Close;
@@ -430,7 +481,7 @@ begin
   qryCAP.Open;
 end;
 
-procedure TdmVCLPhoenixIBPlanner.UndoMeeting;
+procedure TdmVCLPhoenixPlannerController.UndoMeeting;
 begin
   if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin

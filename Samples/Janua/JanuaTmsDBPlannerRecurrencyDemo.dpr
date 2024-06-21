@@ -1,7 +1,7 @@
 program JanuaTmsDBPlannerRecurrencyDemo;
 
 uses
-  Forms,
+  VCL.Forms,
   uTmsDBPlannerRecurrencyDemo in 'TMS\uTmsDBPlannerRecurrencyDemo.pas' {frmTMSDemosDBPlannerRecurrencyDemo};
 
 {$R *.res}

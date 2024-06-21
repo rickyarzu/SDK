@@ -80,7 +80,7 @@ type
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
-    FdmVCLPhoenixIBPlanner: TdmVCLPhoenixIBPlanner;
+    FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
   public
     { Public declarations }
   end;
@@ -195,15 +195,16 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
-  FdmVCLPhoenixIBPlanner := TdmVCLPhoenixIBPlanner.Create(self);
+  FdmVCLPhoenixIBPlanner := TdmVCLPhoenixPlannerController.Create(self);
   { if not Assigned( FdmVCLPhoenixIBPlanner) then
     Application.CreateForm(T FdmVCLPhoenixIBPlanner,  FdmVCLPhoenixIBPlanner => FdmVCLPhoenixIBPlanner); }
    FdmVCLPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
   // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
-  { TdmVCLPhoenixIBPlanner }
-
+  { TdmVCLPhoenixPlannerController }
+  frameTMSPhoenixPlannerCalendar1.PlannerController := FdmVCLPhoenixIBPlanner;
+  frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);

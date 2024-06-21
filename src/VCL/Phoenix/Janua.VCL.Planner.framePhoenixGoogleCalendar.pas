@@ -16,12 +16,13 @@ uses
 type
   TframeVCLPhoenixGoogleCalendar = class(TframeVCLCustomGoogleCalendar)
   private
-    FPhoenixController: TdmVCLPhoenixIBPlanner;
-    procedure SetPhoenixController(const Value: TdmVCLPhoenixIBPlanner);
+    FPhoenixController: TdmVCLPhoenixPlannerController;
+    procedure SetPhoenixController(const Value: TdmVCLPhoenixPlannerController);
     { Private declarations }
   public
     { Public declarations }
-    property PhoenixController: TdmVCLPhoenixIBPlanner read FPhoenixController write SetPhoenixController;
+    property PhoenixController: TdmVCLPhoenixPlannerController read FPhoenixController
+      write SetPhoenixController;
   end;
 
 var
@@ -30,13 +31,12 @@ var
 implementation
 
 {$R *.dfm}
-
 { TframeVCLPhoenixGoogleCalendar }
 
-procedure TframeVCLPhoenixGoogleCalendar.SetPhoenixController(const Value: TdmVCLPhoenixIBPlanner);
+procedure TframeVCLPhoenixGoogleCalendar.SetPhoenixController(const Value: TdmVCLPhoenixPlannerController);
 begin
   FPhoenixController := Value;
-  Self.CustomController := FPhoenixController;
+  CustomController := FPhoenixController;
 end;
 
 end.
