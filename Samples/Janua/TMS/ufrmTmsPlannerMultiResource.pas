@@ -70,6 +70,20 @@ type
     PostgreSQLUniProvider1: TPostgreSQLUniProvider;
     JanuaUniConnection1: TJanuaUniConnection;
     DBDaySourcePhoenix: TDBDaySource;
+    qryPlannerCalendars: TUniQuery;
+    qryPlannerCalendarsCHIAVE: TIntegerField;
+    qryPlannerCalendarsTECNICO: TIntegerField;
+    qryPlannerCalendarsSUMMARY: TBlobField;
+    qryPlannerCalendarsDESCRIPTION: TStringField;
+    qryPlannerCalendarsTECNICO_SIGLA: TStringField;
+    qryPlannerCalendarsCOLORE: TIntegerField;
+    qryPlannerCalendarsJGUID: TGuidField;
+    qryPlannerCalendarsGOOGLE_JSON: TBlobField;
+    qryPlannerCalendarsGFORECOLOR: TIntegerField;
+    qryPlannerCalendarsGBACKCOLOR: TIntegerField;
+    qryPlannerCalendarsDEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendarsGOOGLEID: TStringField;
+    qryPlannerCalendarsGOOGLE_SUMMARY: TStringField;
     procedure DBTimeLineSource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBPlanner1ItemInsert(Sender: TObject; Position, FromSel, FromSelPrecise, ToSel,
       ToSelPrecise: Integer);
@@ -126,7 +140,7 @@ begin
 
   ADOTable1.Active := true;
   ADOTable2.Active := true;
-  // DateTimePicker1.Date := Now;
+  DateTimePicker1.Date := Now;
   FillPlanner;
 end;
 
@@ -191,6 +205,30 @@ begin
   DBDaySource1.Active := true;
 
   ADOTable1.Active := true;
+
+  PlannerPosition := 0;
+  // DBDaySource1
+  DBDaySourcePhoenix.Active := false;
+  DBDaySourcePhoenix.Day := DateTimePicker1.Date;
+
+  qryPlannerCalendars.Open;
+  qryPlannerCalendars.First;
+  While not qryPlannerCalendars.Eof do
+  begin
+    With DBDaySourcePhoenix.ResourceMap.Add Do
+    Begin
+      ResourceIndex := qryPlannerCalendarsCHIAVE.AsInteger;
+      PositionIndex := PlannerPosition;
+      DisplayName := qryPlannerCalendarsTECNICO_SIGLA.AsString;
+      inc(PlannerPosition);
+    End;
+    qryPlannerCalendars.Next;
+  end;
+
+  qryPlannerCalendars.Close;
+  DBDaySourcePhoenix.NumberOfResources := PlannerPosition;
+  DBDaySourcePhoenix.Active := True;
+  qryPlannerEvents.Open;
 end;
 
 procedure TfrmTmsDemosPlannerMultiResource.Color1Click(Sender: TObject);

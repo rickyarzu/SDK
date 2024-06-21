@@ -222,7 +222,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Version = '3.4.6.0'
     OnItemDelete = DBPlanner1ItemDelete
     OnItemInsert = DBPlanner1ItemInsert
-    ItemSource = DBDaySource1
+    ItemSource = DBDaySourcePhoenix
     ExplicitTop = 28
     TMSStyle = 0
   end
@@ -568,7 +568,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
       000000000000}
   end
   object ItemPopup: TPopupMenu
-    Left = 603
+    Left = 619
     Top = 342
     object Color1: TMenuItem
       Caption = 'Color'
@@ -743,7 +743,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     EndTimeField = 'ALLE_ORE'
     KeyField = 'CHIAVE'
     ReadOnly = False
-    ResourceField = 'TECNICO_SIGLA'
+    ResourceField = 'TECNICO'
     SubjectField = 'SUBJECT'
     NotesField = 'NOTE'
     UpdateByQuery = False
@@ -751,7 +751,68 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     DateFormat = 'mm/dd/yyyy'
     Day = 38190.000000000000000000
     Mode = dmMultiDayRes
-    Left = 704
-    Top = 389
+    Left = 624
+    Top = 405
+  end
+  object qryPlannerCalendars: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO'
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 792
+    Top = 352
+    object qryPlannerCalendarsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendarsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerCalendarsSUMMARY: TBlobField
+      FieldName = 'SUMMARY'
+    end
+    object qryPlannerCalendarsDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendarsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendarsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendarsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerCalendarsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendarsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendarsDEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendarsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
+      Size = 128
+    end
   end
 end
