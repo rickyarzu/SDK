@@ -6,18 +6,19 @@ uses
   // RTL
   System.SysUtils, System.Classes, System.ImageList, System.Actions,
   // UniDac - DB
-  Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS,
-  // VCL
+  Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
+  // VCL / TMS
   SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
+  PictureContainer,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
+  DBPlanner, PlanExLiveCalendar, Planner, PlanExGCalendar, CloudvCal, CloudWebDav, CloudCustomLive,
+  CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar,
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
-  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, VirtualTable, PostgreSQLUniProvider,
-  PictureContainer, DBPlanner, PlanExLiveCalendar, Planner, PlanExGCalendar, CloudvCal, CloudWebDav,
-  CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, Janua.Core.Commons,
-  Janua.Core.Classes;
+  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, PostgreSQLUniProvider,
+  Janua.Core.Commons, Janua.Core.Classes;
 
 type
   TdmVCLPhoenixPlannerController = class(TdmVCLPlannerCustomController) // ()
@@ -257,6 +258,12 @@ begin
   FCustomerFilter := True;
   FStateFilter := -1;
   FCAPFilter := False;
+  // Fields.FieldByName('COLOR')
+  ItemColorField :=  qryPlannerEventsCOLORE;
+  // Fields.FieldByName('IMAGE')
+  ItemImageField := qryPlannerEventsICONA;
+  // Fields.FieldByName('CAPTION')
+  ItemCaptionField := nil;
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -352,25 +359,47 @@ begin
   qryTechPlanned.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryTechPlanned.Open;
 
+  Result := qryTechPlanned.RecordCount;
+
   qryPlannerEvents.Close;
   qryPlannerEvents.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents.Open;
 
-  Result := qryTechPlanned.RecordCount;
 end;
 
 procedure TdmVCLPhoenixPlannerController.PopulateCalendars;
 begin
   inherited;
   qryPlannerCalendars.Open;
+
+  // DBDaySource1
+  DBDaySourceCalendar.Active := False;
+  DBDaySourceCalendar.Day := Now;
+
+  qryPlannerCalendars.Open;
   qryPlannerCalendars.First;
+  var
+  PlannerPosition := 0;
 
   While not qryPlannerCalendars.Eof do
   begin
     CalendarsList.Add(qryPlannerCalendarsTECNICO_SIGLA.AsString);
+
+    With DBDaySourceCalendar.ResourceMap.Add Do
+    Begin
+      ResourceIndex := qryPlannerCalendarsCHIAVE.AsInteger;
+      PositionIndex := PlannerPosition;
+      DisplayName := qryPlannerCalendarsTECNICO_SIGLA.AsString;
+      inc(PlannerPosition);
+    End;
     qryPlannerCalendars.Next;
   end;
+
+  qryPlannerCalendars.Close;
+  DBDaySourceCalendar.NumberOfResources := PlannerPosition;
+  DBDaySourceCalendar.Active := True;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);

@@ -54,7 +54,7 @@
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>JanuaTMSPlannerFullDemo</SanitizedProjectName>
         <DCC_DependencyCheckOutputName>plandemo.exe</DCC_DependencyCheckOutputName>
-        <Custom_Styles>Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf;&quot;Windows10 IDE Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WindowsIDEDark.vsf&quot;;&quot;Windows10 OxfordBlue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10 Oxford Blue.vsf&quot;;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;</Custom_Styles>
+        <Custom_Styles>Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>

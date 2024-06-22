@@ -223,7 +223,6 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     OnItemDelete = DBPlanner1ItemDelete
     OnItemInsert = DBPlanner1ItemInsert
     ItemSource = DBDaySourcePhoenix
-    ExplicitTop = 28
     TMSStyle = 0
   end
   object ToolBar1: TToolBar
@@ -624,6 +623,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     DateFormat = 'mm/dd/yyyy'
     Day = 38190.000000000000000000
     Mode = dmMultiDayRes
+    NumberOfDays = 5
     Left = 624
     Top = 277
   end

@@ -59,7 +59,7 @@ type
     ColorDialog1: TColorDialog;
     actColor: TAction;
     actCaption: TAction;
-    Action2: TAction;
+    actFont: TAction;
     JanuaUniConnection1: TJanuaUniConnection;
     InterBaseUniProvider1: TInterBaseUniProvider;
     PostgreSQLUniProvider1: TPostgreSQLUniProvider;
@@ -107,6 +107,8 @@ type
     DBDaySourceCalendar: TDBDaySource;
     dsCalendarEvents: TUniDataSource;
     SaveDialog1: TSaveDialog;
+    FontDialog1: TFontDialog;
+    SVGIconImageList24: TSVGIconImageList;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -209,7 +211,7 @@ type
     procedure FilterGoogle; virtual;
     procedure UndoMeeting; virtual;
     procedure Filter; virtual; abstract;
-        procedure ActivateCalendar; virtual;
+    procedure ActivateCalendar; virtual;
   private
     Fgcal: TGCalendar;
     Fgrem: TGReminder;
@@ -243,6 +245,9 @@ type
     FCurrentGoogleItem: IGoogleCalendarEvent;
     FPlannerPDFIO: TAdvPlannerPDFIO;
     FGooglePlannerPDFIO: TAdvPlannerPDFIO;
+    FItemImageField: TField;
+    FItemColorField: TField;
+    FItemCaptionField: TField;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -272,10 +277,16 @@ type
     procedure SetCurrentGoogleItem(const Value: IGoogleCalendarEvent);
     procedure SetGooglePlannerPDFIO(const Value: TAdvPlannerPDFIO);
     procedure SetPlannerPDFIO(const Value: TAdvPlannerPDFIO);
+    procedure SetItemCaptionField(const Value: TField);
+    procedure SetItemColorField(const Value: TField);
+    procedure SetItemImageField(const Value: TField);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     procedure AddActivity; virtual; abstract;
     procedure AddUser; Virtual; abstract;
+    property ItemColorField: TField read FItemColorField write SetItemColorField;
+    property ItemImageField: TField read FItemImageField write SetItemImageField;
+    property ItemCaptionField: TField read FItemCaptionField write SetItemCaptionField;
   public
     { Public declarations }
     // Google CAlendar
@@ -453,13 +464,21 @@ begin
     field from the database can be connected in a custom way to planner item
     properties.
   }
-  Item.Color := TColor(Fields.FieldByName('COLOR').AsInteger);
+  // Fields.FieldByName('COLOR')
+  if Assigned(ItemColorField) and (ItemColorField.AsInteger > 0) then
+    Item.Color := TColor(ItemColorField.AsInteger);
   Item.CaptionBkg := Item.Color;
-  Item.ImageID := Fields.FieldByName('IMAGE').AsInteger;
-  if Fields.FieldByName('CAPTION').AsBoolean then
-    Item.CaptionType := TCaptionType.ctTime
-  else
-    Item.CaptionType := TCaptionType.ctNone;
+  // Fields.FieldByName('IMAGE')
+  if Assigned(ItemImageField) and (ItemImageField.AsInteger > -1) then
+    Item.ImageID := ItemImageField.AsInteger;
+  // Fields.FieldByName('CAPTION')
+  if Assigned(ItemCaptionField) then
+  begin
+    if ItemCaptionField.AsBoolean then
+      Item.CaptionType := TCaptionType.ctTime
+    else
+      Item.CaptionType := TCaptionType.ctNone;
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.DBDaySourceCalendarItemToFields(Sender: TObject; Fields: TFields;
@@ -1154,6 +1173,21 @@ end;
 procedure TdmVCLPlannerCustomController.SetInserting(const Value: Boolean);
 begin
   FInserting := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemCaptionField(const Value: TField);
+begin
+  FItemCaptionField := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemColorField(const Value: TField);
+begin
+  FItemColorField := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemImageField(const Value: TField);
+begin
+  FItemImageField := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetItemVisibilityIndex(const Value: Integer);

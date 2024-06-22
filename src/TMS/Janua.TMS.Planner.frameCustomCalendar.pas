@@ -19,12 +19,9 @@ uses
 type
   TframeTMSCustomPlannerCalendar = class(TFrame)
     lbGiorni: TLabel;
-    lbSearch: TLabel;
     DBPlanner1: TDBPlanner;
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
-    SpinEdit1: TSpinEdit;
-    edMeeting: TEdit;
-    DoFilter: TCheckBox;
+    edDays: TSpinEdit;
     Panel1: TPanel;
     btnAddMeeting: TButton;
     btnUndoMeeting: TButton;
@@ -39,15 +36,19 @@ type
     Color1: TMenuItem;
     Caption1: TMenuItem;
     btnCalendarSync: TButton;
-    DBText2: TDBText;
     grpMeeting: TGroupBox;
-    lbDateSelector: TLabel;
-    edPlannerDateFrom: TDateTimePicker;
-    edPlannerDateTo: TDateTimePicker;
     lbCalendarList: TLabel;
     Panel2: TPanel;
     ckbAll: TCheckBox;
     ckbCalendarList: TCheckListBox;
+    Panel3: TPanel;
+    edMeeting: TEdit;
+    lbSearch: TLabel;
+    DoFilter: TCheckBox;
+    lbDateSelector: TLabel;
+    Panel4: TPanel;
+    edPlannerDateFrom: TDateTimePicker;
+    edPlannerDateTo: TDateTimePicker;
     procedure DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
     procedure ckbCalendarListClickCheck(Sender: TObject);
   private
