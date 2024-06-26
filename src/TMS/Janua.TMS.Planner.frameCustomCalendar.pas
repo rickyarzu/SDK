@@ -49,7 +49,7 @@ type
     Panel4: TPanel;
     edPlannerDateFrom: TDateTimePicker;
     edPlannerDateTo: TDateTimePicker;
-    procedure DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
+    Carattere1: TMenuItem;
     procedure ckbCalendarListClickCheck(Sender: TObject);
   private
     FCustomController: TdmVCLPlannerCustomController;
@@ -79,11 +79,6 @@ begin
     aList.Free;
   end;
 
-end;
-
-procedure TframeTMSCustomPlannerCalendar.DBPlanner1ItemCreated(Sender: TObject; Item: TPlannerItem);
-begin
-  // Code for DBPlannerItemCreated (from here we can launch the Display Setup Dialog);
 end;
 
 procedure TframeTMSCustomPlannerCalendar.SetCustomController(const Value: TdmVCLPlannerCustomController);

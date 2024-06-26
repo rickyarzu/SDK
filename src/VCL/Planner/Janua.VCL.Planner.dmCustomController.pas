@@ -26,6 +26,8 @@ uses
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
+  TItemProc = TProc<TPlannerItem>;
+  TItemFunc = TFunc<TPlannerItem, Boolean>;
 
 type
   TdmVCLPlannerCustomController = class(TJanuaCoreDataModule, IJanuaDataModule, IJanuaBindable)
@@ -135,6 +137,11 @@ type
     procedure actUpdateEventsExecute(Sender: TObject);
     procedure vtGoogleEventsAfterScroll(DataSet: TDataSet);
     procedure ActionExportExecute(Sender: TObject);
+    procedure actFontExecute(Sender: TObject);
+    procedure ActionSearchMeetingExecute(Sender: TObject);
+    procedure DBDaySourceCalendarUpdateItem(Sender: TObject; APlannerItem: TPlannerItem);
+    procedure DBDaySourceCalendarTimeToFields(Sender: TObject; Fields: TFields; dtS, dtE: TDateTime);
+    procedure DBDaySourceCalendarInsertItem(Sender: TObject; APlannerItem: TPlannerItem);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -248,6 +255,7 @@ type
     FItemImageField: TField;
     FItemColorField: TField;
     FItemCaptionField: TField;
+    FItemCreatedProc: TItemProc;
     procedure SetCalendarItemIndex(const Value: Integer);
     procedure SetCalendarList(const Value: TStrings);
     procedure SetSelectedCalendar(const Value: TJanuaGCalendar);
@@ -280,13 +288,20 @@ type
     procedure SetItemCaptionField(const Value: TField);
     procedure SetItemColorField(const Value: TField);
     procedure SetItemImageField(const Value: TField);
+    procedure SetItemCreatedProc(const Value: TItemProc);
+  private
+    FDeleteItemFunc: TItemFunc;
+    procedure SetDeleteItemFunc(const Value: TItemFunc);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
+    function InternalDeleteItem(aItem: TPlannerItem): Boolean; virtual; abstract;
     procedure AddActivity; virtual; abstract;
     procedure AddUser; Virtual; abstract;
     property ItemColorField: TField read FItemColorField write SetItemColorField;
     property ItemImageField: TField read FItemImageField write SetItemImageField;
     property ItemCaptionField: TField read FItemCaptionField write SetItemCaptionField;
+    property ItemCreatedProc: TItemProc read FItemCreatedProc write SetItemCreatedProc;
+    property DeleteItemFunc: TItemFunc read FDeleteItemFunc write SetDeleteItemFunc;
   public
     { Public declarations }
     // Google CAlendar
@@ -305,6 +320,8 @@ type
     procedure Init();
     procedure ListAttendees(Item: TGCalendarItem);
     procedure ListReminders(Item: TGCalendarItem);
+    procedure PlannerItemDelete(Sender: TObject; Item: TPlannerItem);
+    procedure PlannerItemCreated(Sender: TObject; Item: TPlannerItem);
   public
     property PlannerPDFIO: TAdvPlannerPDFIO read FPlannerPDFIO write SetPlannerPDFIO;
     property GooglePlannerPDFIO: TAdvPlannerPDFIO read FGooglePlannerPDFIO write SetGooglePlannerPDFIO;
@@ -464,6 +481,7 @@ begin
     field from the database can be connected in a custom way to planner item
     properties.
   }
+  Item.CaptionType := ctTimeText;
   // Fields.FieldByName('COLOR')
   if Assigned(ItemColorField) and (ItemColorField.AsInteger > 0) then
     Item.Color := TColor(ItemColorField.AsInteger);
@@ -475,10 +493,32 @@ begin
   if Assigned(ItemCaptionField) then
   begin
     if ItemCaptionField.AsBoolean then
-      Item.CaptionType := TCaptionType.ctTime
+      Item.CaptionType := ctTimeText
     else
       Item.CaptionType := TCaptionType.ctNone;
   end;
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarInsertItem(Sender: TObject;
+  APlannerItem: TPlannerItem);
+begin
+  inherited;
+  { property ID: Integer read FID write FID;
+    property Focus: Boolean read FFocus write SetFocus;
+    property ItemStartTime: TDateTime read GetItemStartTime write SetItemStartTime;
+    property ItemEndTime: TDateTime read GetItemEndTime write SetItemEndTime;
+    property ItemRealStartTime: TDateTime read GetItemRealStartTime write SetItemRealStartTime;
+    property ItemRealEndTime: TDateTime read GetItemRealEndTime write SetItemRealEndTime;
+    property ItemStartTimeStr: string read GetItemStartTimeStr;
+    property ItemEndTimeStr: string read GetItemEndTimeStr;
+    property ItemSpanTimeStr: string read GetItemSpanTimeStr;
+    property ItemText: string read GetItemText;
+    property StrippedItemText: string read GetStrippedItemText;
+    property LinkedItem: TPlannerItem read FLinkedItem write FLinkedItem;
+    property DBKey: string read FDBKey write FDBKey;
+    property LinkedDBKey: string read FLinkedDBKey write FLinkedDBKey; }
+
+  JShowMessage(Format('On Insert Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey ]));
 end;
 
 procedure TdmVCLPlannerCustomController.DBDaySourceCalendarItemToFields(Sender: TObject; Fields: TFields;
@@ -489,10 +529,12 @@ begin
     property of the item can be saved into any field of the database in
     a custom way to be retrieved later with the inverse event FieldsToItem
   }
-
-  Fields.FieldByName('COLOR').AsInteger := Integer(Item.Color);
-  Fields.FieldByName('CAPTION').AsBoolean := Item.CaptionType = ctTime;
-  Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
+  if Assigned(ItemColorField) then
+    ItemColorField.AsInteger := Integer(Item.Color);
+  if Assigned(ItemCaptionField) then
+    ItemCaptionField.AsBoolean := Item.CaptionType = ctTime;
+  if Assigned(ItemImageField) then
+    ItemImageField.AsInteger := Item.ImageID;
 end;
 
 procedure TdmVCLPlannerCustomController.DBDaySourceCalendarSetFilter(Sender: TObject);
@@ -512,6 +554,20 @@ begin
     PlannerTable.Filter:=  'STARTTIME > '+sd1+' AND ENDTIME < '+sd2;
     PlannerTable.Filtered := DoFilter.Checked;
   *)
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarTimeToFields(Sender: TObject; Fields: TFields; dtS,
+  dtE: TDateTime);
+begin
+  inherited;
+  JShowMessage('Time To Fields');
+end;
+
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarUpdateItem(Sender: TObject;
+  APlannerItem: TPlannerItem);
+begin
+  inherited;
+  JShowMessage(Format('On Update Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey ]))
 end;
 
 procedure TdmVCLPlannerCustomController.actAddAttendeeExecute(Sender: TObject);
@@ -551,12 +607,15 @@ end;
 
 procedure TdmVCLPlannerCustomController.actCaptionExecute(Sender: TObject);
 begin
-  if FPlanner.PopupPlannerItem.CaptionType = ctTime then
-    FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctNone
-  else
-    FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctTime;
+  if Assigned(FPlanner) then
+  begin
+    if FPlanner.PopupPlannerItem.CaptionType = ctTime then
+      FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctNone
+    else
+      FPlanner.PopupPlannerItem.CaptionType := TCaptionType.ctTime;
 
-  FPlanner.PopupPlannerItem.Update;
+    FPlanner.PopupPlannerItem.Update;
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.actColorExecute(Sender: TObject);
@@ -599,6 +658,14 @@ begin
     ShowMessage('Please select an Event first.');
   end;
 
+end;
+
+procedure TdmVCLPlannerCustomController.actFontExecute(Sender: TObject);
+begin
+  FontDialog1.Font.Assign(Planner.PopupPlannerItem.Font);
+
+  if FontDialog1.Execute then
+    Planner.PopupPlannerItem.Font.Assign(FontDialog1.Font);
 end;
 
 procedure TdmVCLPlannerCustomController.actUpdateCalendarExecute(Sender: TObject);
@@ -657,6 +724,21 @@ procedure TdmVCLPlannerCustomController.ActionPrintExecute(Sender: TObject);
 begin
   if PrinterSetupDialog1.Execute then
     FPlanner.Print;
+end;
+
+procedure TdmVCLPlannerCustomController.ActionSearchMeetingExecute(Sender: TObject);
+begin
+  var
+  s := JanuaInputText('Inserire testo Ricerca', 'Ricerca Testuale Appuntamenti', '');
+
+  if s <> '' then
+  begin
+    Planner.Items.UnSelectAll;
+    if Planner.Items.FindText(nil, '*' + s + '*', [fnAutoGoto, fnMatchRegular, fnIgnoreHTMLTags, fnText]) = nil
+    then
+      JShowWarning('Testo ' + s + ' non trovato nel Calendario');
+  end;
+
 end;
 
 procedure TdmVCLPlannerCustomController.ActivateCalendar;
@@ -939,9 +1021,45 @@ begin
 
 end;
 
+procedure TdmVCLPlannerCustomController.PlannerItemCreated(Sender: TObject; Item: TPlannerItem);
+begin
+  if Assigned(FItemCreatedProc) then
+    FItemCreatedProc(Item)
+  else
+  begin
+    var
+    aMessage := Format('Creato Appuntamento alle ore: %s, codice: %i', [Item.ItemStartTimeStr, Item.ID]);
+    ShowMessage(aMessage);
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.PlannerItemDblClick(Sender: TObject; Item: TPlannerItem);
 begin
   EditEvent;
+end;
+
+procedure TdmVCLPlannerCustomController.PlannerItemDelete(Sender: TObject; Item: TPlannerItem);
+begin
+  {
+    the Planner.FreeItem call removes the item from the planner and deletes
+    its entry from the database
+  }
+  var
+  lDelBool := false;
+
+  if Assigned(DeleteItemFunc) then
+    lDelBool := DeleteItemFunc(Item)
+  else
+  begin
+    lDelBool := JMessageDlg(Format('Elimino appuntamento %s delle ore %s relativo a: %s',
+      [Item.DBKey, Item.ItemStartTimeStr, Item.ItemText]));
+  end;
+
+  if lDelBool then
+    Item.Free;
+
+  { if Assigned(FCustomController) then
+    FCustomController.DeleteItem(Item); }
 end;
 
 procedure TdmVCLPlannerCustomController.PlannerItemImageClick(Sender: TObject; Item: TPlannerItem;
@@ -1132,12 +1250,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetDBPlanner(const Value: TDBPlanner);
 begin
   FDBPlanner := Value;
-  FPlanner := TPlanner(FDBPlanner);
+  Planner := TPlanner(FDBPlanner);
   if Assigned(FDBPlanner) then
   begin
 
   end;
-
 end;
 
 procedure TdmVCLPlannerCustomController.SetDefaultRemindersIndex(const Value: Integer);
@@ -1148,6 +1265,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetDefaultRemindersList(const Value: TStrings);
 begin
   FDefaultRemindersList := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetDeleteItemFunc(const Value: TItemFunc);
+begin
+  FDeleteItemFunc := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetEndTime(const Value: TTime);
@@ -1185,6 +1307,11 @@ begin
   FItemColorField := Value;
 end;
 
+procedure TdmVCLPlannerCustomController.SetItemCreatedProc(const Value: TItemProc);
+begin
+  FItemCreatedProc := Value;
+end;
+
 procedure TdmVCLPlannerCustomController.SetItemImageField(const Value: TField);
 begin
   FItemImageField := Value;
@@ -1218,14 +1345,20 @@ end;
 procedure TdmVCLPlannerCustomController.SetPlanner(const Value: TPlanner);
 begin
   FPlanner := Value;
-  if Assigned(FPlanner) and not(FPlanner is TDBPlanner) then
+  if Assigned(FPlanner) then
   begin
-    FPlanner.Positions := 7;
-    FPlanner.Header.Captions.Clear;
-    FPlanner.Header.Captions.Add('');
+    FPlanner.OnItemDelete := PlannerItemDelete;
+    // Code for DBPlannerItemCreated (from here we can launch the Display Setup Dialog);
+    FPlanner.OnItemCreated := PlannerItemCreated;
+    if not(FPlanner is TDBPlanner) then
+    begin
+      FPlanner.Positions := 7;
+      FPlanner.Header.Captions.Clear;
+      FPlanner.Header.Captions.Add('');
 
-    for var i := 0 to 6 do
-      FPlanner.Header.Captions.Add(datetostr(Now + i));
+      for var i := 0 to 6 do
+        FPlanner.Header.Captions.Add(datetostr(Now + i));
+    end;
   end;
 
 end;

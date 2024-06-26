@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes, // Janua
   Janua.Core.Types, Janua.Core.Classes, Janua.Core.Functions, Janua.VCL.Functions,
-  VCL.Controls, VCL.StdCtrls, VCL.Graphics, VCL.Forms;
+  VCL.Controls, VCL.StdCtrls, VCL.Graphics, VCL.Forms, SVGIconImage;
 
 type
   TdlgVCLInputText = class(TForm)
@@ -13,6 +13,7 @@ type
     AdvGlowButton2: TButton;
     Label1: TLabel;
     Edit1: TEdit;
+    SVGIconImage1: TSVGIconImage;
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
     procedure Edit1Enter(Sender: TObject);
     procedure Edit1Exit(Sender: TObject);

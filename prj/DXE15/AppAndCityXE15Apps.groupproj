@@ -114,10 +114,7 @@
         <Projects Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="VCL\CarServiceBackOffice.dproj">
+        <Projects Include="VCL\AppAndCityBackOffice.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -509,23 +506,14 @@
     <Target Name="TMSWebGMapsPkg:Make">
         <MSBuild Projects="..\..\components\pkg120\TMSWebGMapsPkg.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaCarServiceDMVCFullTesting">
-        <MSBuild Projects="Testing\JanuaCarServiceDMVCFullTesting.dproj"/>
+    <Target Name="AppAndCityBackOffice">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj"/>
     </Target>
-    <Target Name="JanuaCarServiceDMVCFullTesting:Clean">
-        <MSBuild Projects="Testing\JanuaCarServiceDMVCFullTesting.dproj" Targets="Clean"/>
+    <Target Name="AppAndCityBackOffice:Clean">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="JanuaCarServiceDMVCFullTesting:Make">
-        <MSBuild Projects="Testing\JanuaCarServiceDMVCFullTesting.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceBackOffice">
-        <MSBuild Projects="VCL\CarServiceBackOffice.dproj"/>
-    </Target>
-    <Target Name="CarServiceBackOffice:Clean">
-        <MSBuild Projects="VCL\CarServiceBackOffice.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceBackOffice:Make">
-        <MSBuild Projects="VCL\CarServiceBackOffice.dproj" Targets="Make"/>
+    <Target Name="AppAndCityBackOffice:Make">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj" Targets="Make"/>
     </Target>
     <Target Name="CarServiceDMVCustomerConfirmation">
         <MSBuild Projects="WebREST\CarServiceDMVCustomerConfirmation.dproj"/>
@@ -672,13 +660,13 @@
         <MSBuild Projects="..\..\Samples\Janua\VCL\SamplPlannerVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="dclsbridge;TRCGooglePlacesRuntime;PlanAddons;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;AppCityInvestorUniGUI;PickAPP;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverApp;TmsTwilio;FSThemeApache;ButtonStyle;UniMobileDemo;NeonMainDemo;JanuaAllDemos;EuroFloraApp;RESTDebuggerClient;JanuaJsonSerializeNeonTest;SamplPlannerVCL"/>
+        <CallTarget Targets="dclsbridge;TRCGooglePlacesRuntime;PlanAddons;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;AppAndCityBackOffice;CarServiceDMVCustomerConfirmation;AppCityInvestorUniGUI;PickAPP;TGooglePlacesTest;mod_csdriversmersmobile;CarServiceDriverApp;TmsTwilio;FSThemeApache;ButtonStyle;UniMobileDemo;NeonMainDemo;JanuaAllDemos;EuroFloraApp;RESTDebuggerClient;JanuaJsonSerializeNeonTest;SamplPlannerVCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;PlanAddons:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;AppCityInvestorUniGUI:Clean;PickAPP:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverApp:Clean;TmsTwilio:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;RESTDebuggerClient:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean"/>
+        <CallTarget Targets="dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;PlanAddons:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;AppAndCityBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;AppCityInvestorUniGUI:Clean;PickAPP:Clean;TGooglePlacesTest:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverApp:Clean;TmsTwilio:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;RESTDebuggerClient:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="dclsbridge:Make;TRCGooglePlacesRuntime:Make;PlanAddons:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;AppCityInvestorUniGUI:Make;PickAPP:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverApp:Make;TmsTwilio:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;RESTDebuggerClient:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make"/>
+        <CallTarget Targets="dclsbridge:Make;TRCGooglePlacesRuntime:Make;PlanAddons:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;AppAndCityBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;AppCityInvestorUniGUI:Make;PickAPP:Make;TGooglePlacesTest:Make;mod_csdriversmersmobile:Make;CarServiceDriverApp:Make;TmsTwilio:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;RESTDebuggerClient:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -760,7 +748,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -976,12 +964,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1092,7 +1074,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1308,12 +1290,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1424,7 +1400,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1640,12 +1616,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1750,7 +1720,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
@@ -1972,12 +1942,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2088,7 +2052,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2304,12 +2268,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2420,7 +2378,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2633,12 +2591,6 @@
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2752,7 +2704,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2968,12 +2920,6 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3084,7 +3030,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -3300,12 +3246,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3416,7 +3356,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -3631,12 +3571,6 @@
             <Configurations>Test</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
@@ -3748,7 +3682,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
+        <BuildGroupProject Include="VCL\AppAndCityBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -3961,12 +3895,6 @@
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
-            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

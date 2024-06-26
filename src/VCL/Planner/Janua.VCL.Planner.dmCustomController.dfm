@@ -1,8 +1,8 @@
 inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 620
-  Width = 925
+  Height = 537
+  Width = 908
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -5549,6 +5549,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       Caption = 'Cerca Appuntamento'
       ImageIndex = 45
       ImageName = '046-search'
+      OnExecute = ActionSearchMeetingExecute
     end
     object ActionAddUser: TAction
       Category = 'Meetings'
@@ -5617,7 +5618,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45465.000000000000000000
+    DateFrom = 45469.000000000000000000
     Left = 416
     Top = 40
   end
@@ -5671,7 +5672,10 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       OnExecute = actCaptionExecute
     end
     object actFont: TAction
-      Caption = 'actFont'
+      Caption = 'Carattere'
+      ImageIndex = 61
+      ImageName = 'font-size'
+      OnExecute = actFontExecute
     end
   end
   object GCalendarButtons: TActionList
@@ -11782,6 +11786,9 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     UpdateByQuery = False
     OnFieldsToItem = DBDaySourceCalendarFieldsToItem
     OnItemToFields = DBDaySourceCalendarItemToFields
+    OnInsertItem = DBDaySourceCalendarInsertItem
+    OnUpdateItem = DBDaySourceCalendarUpdateItem
+    OnTimeToFields = DBDaySourceCalendarTimeToFields
     AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000

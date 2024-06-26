@@ -450,6 +450,26 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited DBPlanner1: TDBPlanner
           Width = 1416
           Height = 447
+          Display.CurrentPosFrom = 11
+          Display.CurrentPosTo = 11
+          Header.Captions.Strings = (
+            ''
+            ''
+            ''
+            ''
+            ''
+            '')
+          Header.GroupCaptions.Strings = (
+            '14/06/2024'
+            '15/06/2024'
+            '16/06/2024'
+            '17/06/2024'
+            '18/06/2024')
+          Mode.Month = 6
+          Mode.Year = 2024
+          Mode.Day = 14
+          Positions = 5
+          PositionGroup = 1
           ExplicitWidth = 1416
           ExplicitHeight = 447
           TMSStyle = 0
@@ -585,8 +605,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 192
   end
   object PopupMenu1: TPopupMenu
-    Left = 416
-    Top = 304
+    Left = 584
+    Top = 392
     object Modifica1: TMenuItem
       Caption = 'Modifica'
     end

@@ -7,6 +7,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
   inherited lbGiorni: TLabel
     Left = 3
     Top = 48
+    Anchors = [akLeft, akTop, akRight]
     ExplicitLeft = 3
     ExplicitTop = 48
   end

@@ -261,7 +261,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
-    OnItemCreated = DBPlanner1ItemCreated
     ItemSource = dmVCLPhoenixPlannerController.DBDaySourceCalendar
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
@@ -480,7 +479,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Height = 24
       Align = alClient
       Columns = 12
-      ItemHeight = 17
       Items.Strings = (
         'uno'
         'due'
@@ -578,6 +576,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Top = 328
   end
   object ItemPopup: TPopupMenu
+    Images = dmVCLPlannerCustomController.SVGIconImageList16
     Left = 432
     Top = 288
     object Color1: TMenuItem
@@ -585,6 +584,9 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     end
     object Caption1: TMenuItem
       Action = dmVCLPlannerCustomController.actCaption
+    end
+    object Carattere1: TMenuItem
+      Action = dmVCLPlannerCustomController.actFont
     end
   end
 end

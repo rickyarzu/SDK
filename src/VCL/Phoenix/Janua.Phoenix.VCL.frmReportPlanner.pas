@@ -204,6 +204,7 @@ begin
   // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
   { TdmVCLPhoenixPlannerController }
   frameTMSPhoenixPlannerCalendar1.PlannerController := FdmVCLPhoenixIBPlanner;
+  FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar1.DBPlanner1;
   frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
 end;
 

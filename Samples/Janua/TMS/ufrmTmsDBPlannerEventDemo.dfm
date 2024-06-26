@@ -107,8 +107,8 @@ object Form1: TForm1
       5E5E5E5EAFAF56165E07070DA7A7675F5F5E5E5E5E5E56165E07EDAF0D0D0D0D
       0D0D0D0D0D0D0D0D5EECD9ED070707070707070707070707EDD1}
     Display.ActiveEnd = 40
-    Display.CurrentPosFrom = 45464
-    Display.CurrentPosTo = 45464
+    Display.CurrentPosFrom = 45469
+    Display.CurrentPosTo = 45469
     Display.ColorActive = 16575452
     Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013

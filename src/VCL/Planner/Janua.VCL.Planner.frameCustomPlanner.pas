@@ -52,6 +52,9 @@ type
     btnCalendarSync: TButton;
     dbtAnagraphName: TDBText;
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    gridPopup: TPopupMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
     procedure DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
     procedure DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu; Item: TPlannerItem);
     procedure DBPlanner1PlannerNext(Sender: TObject);
@@ -82,10 +85,12 @@ uses Spring, Janua.Application.Framework, Janua.ViewModels.Application;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
 begin
-  { the Planner.FreeItem call removes the item from the planner and deletes
+  {
+    the Planner.FreeItem call removes the item from the planner and deletes
     its entry from the database
   }
-  DBPlanner1.FreeItem(Item);
+  if Assigned(Controller) and Controller.DeleteItem(Item) then
+    DBPlanner1.FreeItem(Item);
 end;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu;

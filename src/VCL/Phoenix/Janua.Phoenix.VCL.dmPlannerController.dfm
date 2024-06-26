@@ -195,6 +195,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '--AND S.CHIAVE = 2100103'
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
+    FetchRows = 100
     BeforePost = qryReportPlannerBeforePost
     OnCalcFields = qryReportPlannerCalcFields
     Left = 584
@@ -557,6 +558,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
   end
   object qryPlannerEvents: TUniQuery
+    KeyFields = 'JGUID'
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT * FROM CALENDARIO_EVENTI '
@@ -566,6 +573,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'DALLE_ORE <= :DATA_AL'
       ';')
     FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'JGUID'
     Left = 792
     Top = 280
     ParamData = <
@@ -614,9 +623,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerEventsCOLORE: TIntegerField
       FieldName = 'COLORE'
     end
-    object qryPlannerEventsJGUID: TBytesField
-      FieldName = 'JGUID'
-    end
     object qryPlannerEventsICONA: TSmallintField
       FieldName = 'ICONA'
     end
@@ -635,6 +641,11 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerEventsGOOGLEID: TStringField
       FieldName = 'GOOGLEID'
       Size = 128
+    end
+    object qryPlannerEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
     end
   end
   object qryTechPlanned: TUniQuery
@@ -864,6 +875,608 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
       FieldName = 'GOOGLE_SUMMARY'
       Size = 128
+    end
+  end
+  object vtReportPlanner: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'CHIAVE'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'DESCRIZIONE_SCHEDA'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'CLIENTE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOME'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 100
+      end
+      item
+        Name = 'PROVINCIA'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'CAP'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'INDIRIZZO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'TELEFONO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'NOTE'
+        DataType = ftBlob
+      end
+      item
+        Name = 'ORARIO_APERTURA_DAL1'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_DAL2'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_AL1'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_AL2'
+        DataType = ftTime
+      end
+      item
+        Name = 'CHIUSURA'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'CELLULARE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'ESCLUDI_DA_GENERAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'SEDE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'REF_TELEFONO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'REF_CELLULARE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'COMUNE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'FATTURA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DATA_INTERVENTO'
+        DataType = ftDate
+      end
+      item
+        Name = 'GENERAZIONE_AUTOMATICA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'TECNICO_INTERVENTO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SCANSIONE'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'REGISTRO'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'NOTE_PER_IL_TECNICO'
+        DataType = ftWideString
+        Size = 1024
+      end
+      item
+        Name = 'SOSPESO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'DA_ESPORTARE_SUL_WEB'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'RESPONSABILE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ESPORTATO_SU_MOBILE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'NOTE_DAL_TECNICO'
+        DataType = ftBlob
+      end
+      item
+        Name = 'VERBALE_PROVA_DINAMICA'
+        DataType = ftBlob
+      end
+      item
+        Name = 'VERBALE_MANICHETTE'
+        DataType = ftBlob
+      end
+      item
+        Name = 'PREVENTIVO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'IGNORA_EVIDENZIAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ANNULLATO_DA_TABLET'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_ORDINARIA_RITIRATA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_SMALTIMENTO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'STATO_LAVORAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'DATA_CHIUSURA_DA_SERVER'
+        DataType = ftDate
+      end
+      item
+        Name = 'CHIUSURA_EXT'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'CHIUSURA_STATINO'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'MOBILEWARN_NON_ESEGUITI'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'PRESA_IN_CARICO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'FORNITURA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ORDINARI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'STRAORDINARI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'INTERVENTI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'NOME_TECNICO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'APPUNTAMENTO_DATA'
+        DataType = ftDate
+      end
+      item
+        Name = 'APPUNTAMENTO_ORA'
+        DataType = ftTime
+      end
+      item
+        Name = 'STATO'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'STATINO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ESTINTORI_ORDINARIO'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'ESTINTORI_STRAORDINARIO'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'GRUPPI_ELETTR'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'FUMI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'LUCI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'IDRANTI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'SPRINKLER'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'IMPIANTI_EL'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'AMMINISTRATORE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'calcAppuntamentoDataOra'
+        DataType = ftDateTime
+      end>
+    Left = 592
+    Top = 416
+    Data = {
+      040044000600434849415645030000000000000012004445534352495A494F4E
+      455F5343484544410100FF00000000000700434C49454E544503000000000000
+      0004004E4F4D450100640000000000090050524F56494E434941010002000000
+      0000030043415001000A00000000000900494E444952495A5A4F0100FF000000
+      0000080054454C45464F4E4F0100FF000000000004004E4F54450F0000000000
+      000014004F524152494F5F41504552545552415F44414C310A00000000000000
+      14004F524152494F5F41504552545552415F44414C320A000000000000001300
+      4F524152494F5F41504552545552415F414C310A0000000000000013004F5241
+      52494F5F41504552545552415F414C320A000000000000000800434849555355
+      52410100FF0000000000090043454C4C554C4152450100FF0000000000050045
+      4D41494C0100FF000000000016004553434C5544495F44415F47454E4552415A
+      494F4E4501000100000000000400534544450100010000000000020049440100
+      FF00000000000C005245465F54454C45464F4E4F0100FF00000000000D005245
+      465F43454C4C554C4152450100FF00000000000600434F4D554E450100FF0000
+      00000007004641545455524103000000000000000F00444154415F494E544552
+      56454E544F0900000000000000160047454E4552415A494F4E455F4155544F4D
+      4154494341030000000000000012005445434E49434F5F494E54455256454E54
+      4F030000000000000009005343414E53494F4E45180000080000000008005245
+      47495354524F180000080000000013004E4F54455F5045525F494C5F5445434E
+      49434F18000004000000000700534F535045534F010001000000000014004441
+      5F4553504F52544152455F53554C5F57454201000100000000000C0052455350
+      4F4E534142494C45030000000000000013004553504F525441544F5F53555F4D
+      4F42494C45010001000000000010004E4F54455F44414C5F5445434E49434F0F
+      00000000000000160056455242414C455F50524F56415F44494E414D4943410F
+      00000000000000120056455242414C455F4D414E494348455454450F00000000
+      0000000A0050524556454E5449564F0300000000000000150049474E4F52415F
+      45564944454E5A49415A494F4E4501000100000000001300414E4E554C4C4154
+      4F5F44415F5441424C455401000100000000001D004D4F42494C455741524E5F
+      4E554F56415F41545452455A5A415455524101000100000000001D004D4F4249
+      4C455741524E5F4F5244494E415249415F524954495241544101000100000000
+      001E004D4F42494C455741524E5F4E5F4F5244494E5F434F4E54524F4C4C4154
+      41010001000000000016004D4F42494C455741524E5F534D414C54494D454E54
+      4F01000100000000001100535441544F5F4C41564F52415A494F4E4501000100
+      000000001700444154415F43484955535552415F44415F534552564552090000
+      00000000000C0043484955535552415F45585401003200000000001000434849
+      55535552415F53544154494E4F180000080000000017004D4F42494C45574152
+      4E5F4E4F4E5F455345475549544901000100000000000F0050524553415F494E
+      5F43415249434F01000100000000000900464F524E4954555241010001000000
+      000008004F5244494E41524919000000000000000C00535452414F5244494E41
+      524919000000000000000A00494E54455256454E544919000000000000000C00
+      4E4F4D455F5445434E49434F0100FF00000000001100415050554E54414D454E
+      544F5F4441544109000000000000001000415050554E54414D454E544F5F4F52
+      410A000000000000000500535441544F0200000000000000070053544154494E
+      4F03000000000000001300455354494E544F52495F4F5244494E4152494F1900
+      0000000000001700455354494E544F52495F535452414F5244494E4152494F19
+      000000000000000D004752555050495F454C4554545219000000000000000400
+      46554D49190000000000000004004C5543491900000000000000070049445241
+      4E544919000000000000000900535052494E4B4C455219000000000000000B00
+      494D5049414E54495F454C19000000000000000E00414D4D494E495354524154
+      4F52450300000000000000170063616C63417070756E74616D656E746F446174
+      614F72610B00000000000000000000000000}
+    object vtReportPlannerCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object vtReportPlannerDESCRIZIONE_SCHEDA: TStringField
+      FieldName = 'DESCRIZIONE_SCHEDA'
+      Size = 255
+    end
+    object vtReportPlannerCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+    end
+    object vtReportPlannerNOME: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object vtReportPlannerPROVINCIA: TStringField
+      FieldName = 'PROVINCIA'
+      Size = 2
+    end
+    object vtReportPlannerCAP: TStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object vtReportPlannerINDIRIZZO: TStringField
+      FieldName = 'INDIRIZZO'
+      Size = 255
+    end
+    object vtReportPlannerTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object vtReportPlannerNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object vtReportPlannerORARIO_APERTURA_DAL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL1'
+    end
+    object vtReportPlannerORARIO_APERTURA_DAL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL2'
+    end
+    object vtReportPlannerORARIO_APERTURA_AL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL1'
+    end
+    object vtReportPlannerORARIO_APERTURA_AL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL2'
+    end
+    object vtReportPlannerCHIUSURA: TStringField
+      FieldName = 'CHIUSURA'
+      Size = 255
+    end
+    object vtReportPlannerCELLULARE: TStringField
+      FieldName = 'CELLULARE'
+      Size = 255
+    end
+    object vtReportPlannerEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Size = 255
+    end
+    object vtReportPlannerESCLUDI_DA_GENERAZIONE: TStringField
+      FieldName = 'ESCLUDI_DA_GENERAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerSEDE: TStringField
+      FieldName = 'SEDE'
+      Size = 1
+    end
+    object vtReportPlannerID: TStringField
+      FieldName = 'ID'
+      Size = 255
+    end
+    object vtReportPlannerREF_TELEFONO: TStringField
+      FieldName = 'REF_TELEFONO'
+      Size = 255
+    end
+    object vtReportPlannerREF_CELLULARE: TStringField
+      FieldName = 'REF_CELLULARE'
+      Size = 255
+    end
+    object vtReportPlannerCOMUNE: TStringField
+      FieldName = 'COMUNE'
+      Size = 255
+    end
+    object vtReportPlannerFATTURA: TIntegerField
+      FieldName = 'FATTURA'
+    end
+    object vtReportPlannerDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+    end
+    object vtReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField
+      FieldName = 'GENERAZIONE_AUTOMATICA'
+    end
+    object vtReportPlannerTECNICO_INTERVENTO: TIntegerField
+      FieldName = 'TECNICO_INTERVENTO'
+    end
+    object vtReportPlannerSCANSIONE: TWideStringField
+      FieldName = 'SCANSIONE'
+      Size = 2048
+    end
+    object vtReportPlannerREGISTRO: TWideStringField
+      FieldName = 'REGISTRO'
+      Size = 2048
+    end
+    object vtReportPlannerNOTE_PER_IL_TECNICO: TWideStringField
+      FieldName = 'NOTE_PER_IL_TECNICO'
+      Size = 1024
+    end
+    object vtReportPlannerSOSPESO: TStringField
+      FieldName = 'SOSPESO'
+      Size = 1
+    end
+    object vtReportPlannerDA_ESPORTARE_SUL_WEB: TStringField
+      FieldName = 'DA_ESPORTARE_SUL_WEB'
+      Size = 1
+    end
+    object vtReportPlannerRESPONSABILE: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object vtReportPlannerESPORTATO_SU_MOBILE: TStringField
+      FieldName = 'ESPORTATO_SU_MOBILE'
+      Size = 1
+    end
+    object vtReportPlannerNOTE_DAL_TECNICO: TBlobField
+      FieldName = 'NOTE_DAL_TECNICO'
+    end
+    object vtReportPlannerVERBALE_PROVA_DINAMICA: TBlobField
+      FieldName = 'VERBALE_PROVA_DINAMICA'
+    end
+    object vtReportPlannerVERBALE_MANICHETTE: TBlobField
+      FieldName = 'VERBALE_MANICHETTE'
+    end
+    object vtReportPlannerPREVENTIVO: TIntegerField
+      FieldName = 'PREVENTIVO'
+    end
+    object vtReportPlannerIGNORA_EVIDENZIAZIONE: TStringField
+      FieldName = 'IGNORA_EVIDENZIAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerANNULLATO_DA_TABLET: TStringField
+      FieldName = 'ANNULLATO_DA_TABLET'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
+      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField
+      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
+      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_SMALTIMENTO: TStringField
+      FieldName = 'MOBILEWARN_SMALTIMENTO'
+      Size = 1
+    end
+    object vtReportPlannerSTATO_LAVORAZIONE: TStringField
+      FieldName = 'STATO_LAVORAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField
+      FieldName = 'DATA_CHIUSURA_DA_SERVER'
+    end
+    object vtReportPlannerCHIUSURA_EXT: TStringField
+      FieldName = 'CHIUSURA_EXT'
+      Size = 50
+    end
+    object vtReportPlannerCHIUSURA_STATINO: TWideStringField
+      FieldName = 'CHIUSURA_STATINO'
+      Size = 2048
+    end
+    object vtReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
+      FieldName = 'MOBILEWARN_NON_ESEGUITI'
+      Size = 1
+    end
+    object vtReportPlannerPRESA_IN_CARICO: TStringField
+      FieldName = 'PRESA_IN_CARICO'
+      Size = 1
+    end
+    object vtReportPlannerFORNITURA: TStringField
+      FieldName = 'FORNITURA'
+      Size = 1
+    end
+    object vtReportPlannerORDINARI: TLargeintField
+      FieldName = 'ORDINARI'
+    end
+    object vtReportPlannerSTRAORDINARI: TLargeintField
+      FieldName = 'STRAORDINARI'
+    end
+    object vtReportPlannerINTERVENTI: TLargeintField
+      FieldName = 'INTERVENTI'
+    end
+    object vtReportPlannerNOME_TECNICO: TStringField
+      FieldName = 'NOME_TECNICO'
+      Size = 255
+    end
+    object vtReportPlannerAPPUNTAMENTO_DATA: TDateField
+      FieldName = 'APPUNTAMENTO_DATA'
+    end
+    object vtReportPlannerAPPUNTAMENTO_ORA: TTimeField
+      FieldName = 'APPUNTAMENTO_ORA'
+    end
+    object vtReportPlannerSTATO: TSmallintField
+      FieldName = 'STATO'
+    end
+    object vtReportPlannerSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object vtReportPlannerESTINTORI_ORDINARIO: TLargeintField
+      FieldName = 'ESTINTORI_ORDINARIO'
+    end
+    object vtReportPlannerESTINTORI_STRAORDINARIO: TLargeintField
+      FieldName = 'ESTINTORI_STRAORDINARIO'
+    end
+    object vtReportPlannerGRUPPI_ELETTR: TLargeintField
+      FieldName = 'GRUPPI_ELETTR'
+    end
+    object vtReportPlannerFUMI: TLargeintField
+      FieldName = 'FUMI'
+    end
+    object vtReportPlannerLUCI: TLargeintField
+      FieldName = 'LUCI'
+    end
+    object vtReportPlannerIDRANTI: TLargeintField
+      FieldName = 'IDRANTI'
+    end
+    object vtReportPlannerSPRINKLER: TLargeintField
+      FieldName = 'SPRINKLER'
+    end
+    object vtReportPlannerIMPIANTI_EL: TLargeintField
+      FieldName = 'IMPIANTI_EL'
+    end
+    object vtReportPlannerAMMINISTRATORE: TIntegerField
+      FieldName = 'AMMINISTRATORE'
     end
   end
 end
