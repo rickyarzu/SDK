@@ -1187,8 +1187,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         Name = 'calcAppuntamentoDataOra'
         DataType = ftDateTime
       end>
-    Left = 592
-    Top = 416
+    Left = 688
+    Top = 384
     Data = {
       040044000600434849415645030000000000000012004445534352495A494F4E
       455F5343484544410100FF00000000000700434C49454E544503000000000000

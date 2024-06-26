@@ -261,6 +261,7 @@ type
     { Private declarations }
   protected
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; override;
+    procedure InternalUpdateItem(aItem: TPlannerItem);
   public
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
@@ -316,7 +317,7 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.AddEvent;
 begin
-   inherited;
+  inherited;
 end;
 
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
@@ -337,6 +338,8 @@ begin
   ItemCaptionField := nil;
   // InternalDeleteItem - Associo la procedura Interna Per Cancellare una Scheda:
   DeleteItemFunc := InternalDeleteItem;
+
+  ItemUpdateProc := InternalUpdateItem;
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -462,6 +465,37 @@ begin
     end;
   end;
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.InternalUpdateItem(aItem: TPlannerItem);
+begin
+  if (aItem.DBKey <> '') and qryPlannerEvents.Locate('JGUID', aItem.DBKey, []) and
+    vtReportPlanner.Locate('CHIAVE', qryPlannerEventsSTATINO.AsInteger, []) then
+  begin
+    var
+    lDataOra := vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsString + ' - ' +
+      vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsString;
+    var
+    lPresso := vtReportPlanner.FieldByName('NOME').Value + ' - ' + vtReportPlanner.FieldByName
+      ('DESCRIZIONE_SCHEDA').Value;
+    var
+    aFiltered := qryReportPlanner.Filtered;
+    qryReportPlanner.Filtered := False;
+    try
+      if qryReportPlanner.Locate('CHIAVE', qryPlannerEventsSTATINO.AsInteger, []) then
+      begin
+        qryReportPlanner.Edit;
+        {    property ItemStartTime: TDateTime read GetItemStartTime write SetItemStartTime;
+    property ItemEndTime: TDateTime read GetItemEndTime write SetItemEndTime;}
+        qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := Trunc(aItem.ItemStartTime);
+        qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := aItem.ItemStartTime - Trunc(aItem.ItemStartTime);
+        qryReportPlanner.Post;
+        JShowMessage(Format('Appuntamento Aggiornato: %s', [aItem.ItemStartTimeStr]));
+      end;
+    finally
+      qryReportPlanner.Filtered := aFiltered;
+    end;
+  end;
 end;
 
 function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;

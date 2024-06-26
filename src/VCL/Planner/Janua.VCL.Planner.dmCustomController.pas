@@ -291,7 +291,11 @@ type
     procedure SetItemCreatedProc(const Value: TItemProc);
   private
     FDeleteItemFunc: TItemFunc;
+    FItemModifyFunc: TItemFunc;
+    FItemUpdateProc: TItemProc;
     procedure SetDeleteItemFunc(const Value: TItemFunc);
+    procedure SetItemModifyFunc(const Value: TItemFunc);
+    procedure SetItemUpdateProc(const Value: TItemProc);
   protected
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; virtual; abstract;
@@ -302,6 +306,8 @@ type
     property ItemCaptionField: TField read FItemCaptionField write SetItemCaptionField;
     property ItemCreatedProc: TItemProc read FItemCreatedProc write SetItemCreatedProc;
     property DeleteItemFunc: TItemFunc read FDeleteItemFunc write SetDeleteItemFunc;
+    property ItemModifyFunc: TItemFunc read FItemModifyFunc write SetItemModifyFunc;
+    property ItemUpdateProc: TItemProc read FItemUpdateProc write SetItemUpdateProc;
   public
     { Public declarations }
     // Google CAlendar
@@ -518,7 +524,7 @@ begin
     property DBKey: string read FDBKey write FDBKey;
     property LinkedDBKey: string read FLinkedDBKey write FLinkedDBKey; }
 
-  JShowMessage(Format('On Insert Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey ]));
+  JShowMessage(Format('On Insert Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey]));
 end;
 
 procedure TdmVCLPlannerCustomController.DBDaySourceCalendarItemToFields(Sender: TObject; Fields: TFields;
@@ -556,8 +562,8 @@ begin
   *)
 end;
 
-procedure TdmVCLPlannerCustomController.DBDaySourceCalendarTimeToFields(Sender: TObject; Fields: TFields; dtS,
-  dtE: TDateTime);
+procedure TdmVCLPlannerCustomController.DBDaySourceCalendarTimeToFields(Sender: TObject; Fields: TFields;
+  dtS, dtE: TDateTime);
 begin
   inherited;
   JShowMessage('Time To Fields');
@@ -567,7 +573,10 @@ procedure TdmVCLPlannerCustomController.DBDaySourceCalendarUpdateItem(Sender: TO
   APlannerItem: TPlannerItem);
 begin
   inherited;
-  JShowMessage(Format('On Update Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey ]))
+  if Assigned(ItemUpdateProc) then
+    ItemUpdateProc(APlannerItem)
+  else
+    JShowMessage(Format('On Update Item %s %s', [APlannerItem.ItemStartTimeStr, APlannerItem.DBKey]))
 end;
 
 procedure TdmVCLPlannerCustomController.actAddAttendeeExecute(Sender: TObject);
@@ -1315,6 +1324,16 @@ end;
 procedure TdmVCLPlannerCustomController.SetItemImageField(const Value: TField);
 begin
   FItemImageField := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemModifyFunc(const Value: TItemFunc);
+begin
+  FItemModifyFunc := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetItemUpdateProc(const Value: TItemProc);
+begin
+  FItemUpdateProc := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetItemVisibilityIndex(const Value: Integer);
