@@ -559,6 +559,50 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object qryPlannerEvents: TUniQuery
     KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'JGUID = :Old_JGUID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :JGUID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
     DataTypeMap = <
       item
         FieldName = 'JGUID'
@@ -661,6 +705,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '        AND S.APPUNTAMENTO_DATA <= :DATA_AL'
       'ORDER BY T.descrizione'
       ';')
+    AfterScroll = qryTechPlannedAfterScroll
     Left = 592
     Top = 344
     ParamData = <
@@ -676,10 +721,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         ParamType = ptInput
         Value = 45503d
       end>
-    object IntegerField1: TIntegerField
+    object qryTechPlannedRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object StringField1: TStringField
+    object qryTechPlannedNOME_TECNICO: TStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
@@ -814,7 +859,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object dsTecniciPlanned: TUniDataSource
     DataSet = qryTechPlanned
     Left = 792
-    Top = 352
+    Top = 344
   end
   object qryPlannerCalendars: TUniQuery
     DataTypeMap = <

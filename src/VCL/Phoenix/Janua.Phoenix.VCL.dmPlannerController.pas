@@ -112,8 +112,6 @@ type
     qryPlannerEventsCOLORE: TIntegerField;
     qryPlannerEventsICONA: TSmallintField;
     qryTechPlanned: TUniQuery;
-    IntegerField1: TIntegerField;
-    StringField1: TStringField;
     tabGoogleCalendars: TUniTable;
     tabGoogleEvents: TUniTable;
     tabGoogleEventsID: TStringField;
@@ -151,7 +149,6 @@ type
     qryPlannerEventsGOOGLEID: TStringField;
     dsTecnici: TUniDataSource;
     dsTecniciPlanned: TUniDataSource;
-    qryTechPlannedSIGLA: TStringField;
     qryPlannerCalendars: TUniQuery;
     qryPlannerCalendarsCHIAVE: TIntegerField;
     qryPlannerCalendarsTECNICO: TIntegerField;
@@ -235,10 +232,14 @@ type
     vtReportPlannerSPRINKLER: TLargeintField;
     vtReportPlannerIMPIANTI_EL: TLargeintField;
     vtReportPlannerAMMINISTRATORE: TIntegerField;
+    qryTechPlannedRESPONSABILE: TIntegerField;
+    qryTechPlannedNOME_TECNICO: TStringField;
+    qryTechPlannedSIGLA: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
     procedure ActionAddMeetingExecute(Sender: TObject);
+    procedure qryTechPlannedAfterScroll(DataSet: TDataSet);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -260,8 +261,10 @@ type
     procedure SetStateFilter(const Value: Integer);
     { Private declarations }
   protected
+    FAutoFilterTech: Boolean;
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; override;
     procedure InternalUpdateItem(aItem: TPlannerItem);
+    procedure InternalItemInsert;
   public
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
@@ -277,6 +280,8 @@ type
     procedure SelectCalendars; override;
     // <summary> Fill Calendars list with Custom Data in this case Tecnici </summary>
     procedure PopulateCalendars; override;
+    // Filtro TEcnico vFilter :=  (FStateFilter > 0);
+    procedure FilterTech;
   public
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; override;
     procedure ActivateCalendar; override;
@@ -296,7 +301,7 @@ var
 
 implementation
 
-uses Janua.Core.Functions, Janua.Core.AsyncTask;
+uses Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Phoenix.VCL.dlgPlannerEvent;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -324,6 +329,7 @@ procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
   FTechFilter := False;
+  FAutoFilterTech := False;
   FReportDateFilter := False;
   FReportDate := Date();
   FCustomerID := -1;
@@ -340,6 +346,8 @@ begin
   DeleteItemFunc := InternalDeleteItem;
 
   ItemUpdateProc := InternalUpdateItem;
+
+  ItemInsertProc := InternalItemInsert;
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -451,12 +459,7 @@ begin
       try
         if qryReportPlanner.Locate('CHIAVE', qryPlannerEventsSTATINO.AsInteger, []) then
         begin
-          qryReportPlanner.Edit;
-          {
-            qryReportPlannerAPPUNTAMENTO_DATA.Clear;
-            qryReportPlannerAPPUNTAMENTO_ORA.Clear;
-          }
-          qryReportPlanner.Post;
+          UndoMeeting;
           JShowMessage('Appuntamento Annullato');
         end;
       finally
@@ -467,14 +470,20 @@ begin
 
 end;
 
+procedure TdmVCLPhoenixPlannerController.InternalItemInsert;
+begin
+
+end;
+
 procedure TdmVCLPhoenixPlannerController.InternalUpdateItem(aItem: TPlannerItem);
 begin
   if (aItem.DBKey <> '') and qryPlannerEvents.Locate('JGUID', aItem.DBKey, []) and
     vtReportPlanner.Locate('CHIAVE', qryPlannerEventsSTATINO.AsInteger, []) then
   begin
-    var
-    lDataOra := vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsString + ' - ' +
-      vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsString;
+    qryPlannerEvents.Edit;
+    qryPlannerEventsDALLE_ORE.AsDateTime := aItem.ItemStartTime;
+    qryPlannerEventsALLE_ORE.AsDateTime := aItem.ItemEndTime;
+    qryPlannerEvents.Post;
     var
     lPresso := vtReportPlanner.FieldByName('NOME').Value + ' - ' + vtReportPlanner.FieldByName
       ('DESCRIZIONE_SCHEDA').Value;
@@ -485,12 +494,12 @@ begin
       if qryReportPlanner.Locate('CHIAVE', qryPlannerEventsSTATINO.AsInteger, []) then
       begin
         qryReportPlanner.Edit;
-        {    property ItemStartTime: TDateTime read GetItemStartTime write SetItemStartTime;
-    property ItemEndTime: TDateTime read GetItemEndTime write SetItemEndTime;}
+        { property ItemStartTime: TDateTime read GetItemStartTime write SetItemStartTime;
+          property ItemEndTime: TDateTime read GetItemEndTime write SetItemEndTime; }
         qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := Trunc(aItem.ItemStartTime);
         qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := aItem.ItemStartTime - Trunc(aItem.ItemStartTime);
         qryReportPlanner.Post;
-        JShowMessage(Format('Appuntamento Aggiornato: %s', [aItem.ItemStartTimeStr]));
+        JShowMessage(Format('Appuntamento Aggiornato: %s %s', [aItem.ItemStartTimeStr, lPresso]));
       end;
     finally
       qryReportPlanner.Filtered := aFiltered;
@@ -595,6 +604,13 @@ begin
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 end;
 
+procedure TdmVCLPhoenixPlannerController.qryTechPlannedAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  if FAutoFilterTech then
+    FilterTech
+end;
+
 procedure TdmVCLPhoenixPlannerController.SelectCalendars;
 begin
   inherited;
@@ -658,6 +674,15 @@ begin
   qryCustomers.Open;
   qryTech.Open;
   qryCAP.Open;
+end;
+
+procedure TdmVCLPhoenixPlannerController.FilterTech;
+begin
+  ReportDateFilter := False;
+  CustomerFilter := False;
+  TechFilter := True;
+  FStateFilter := 5; // Non Assegnati
+  TechID := qryTechPlannedRESPONSABILE.AsInteger;
 end;
 
 procedure TdmVCLPhoenixPlannerController.UndoMeeting;

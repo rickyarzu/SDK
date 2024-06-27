@@ -49,7 +49,9 @@ uses System.Types,
 class procedure TJanuaPhoenixVCLApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
-
+  TJanuaApplication.CloudConf.GoogleAppKey :=
+    '236693880296-rm39939mbtpabvkfdiqsolvkdogn334a.apps.googleusercontent.com';
+  TJanuaApplication.CloudConf.GoogleAppSecret := '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';
 end;
 
 class procedure TJanuaPhoenixVCLApplication.ApplicationTearDown;

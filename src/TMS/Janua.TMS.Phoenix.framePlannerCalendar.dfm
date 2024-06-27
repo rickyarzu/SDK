@@ -61,9 +61,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     TMSStyle = 0
   end
   inherited edDays: TSpinEdit
-    Left = 62
     Top = 45
-    ExplicitLeft = 62
     ExplicitTop = 45
   end
   inherited Panel1: TPanel

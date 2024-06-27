@@ -139,6 +139,7 @@ begin
   grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
   // Bind Controls to Current Record in Calendar Client.
 
+
 end;
 
 procedure TframeVCLCustomGoogleCalendar.cboCalendarsListChange(Sender: TObject);
@@ -165,6 +166,7 @@ begin
   FCustomController := Value;
   if Assigned(FCustomController) then
   begin
+    BindControls;
     FCustomController.OnToggleGoogleControls := ToggleControls;
     FCustomController.OnToggleGoogleReminders := ToggleReminders;
     FCustomController.OnSetColor := SetColor;
@@ -211,6 +213,7 @@ begin
   btAddCalendar.Enabled := Connected;
   btDeleteCalendar.Enabled := Connected;
   btUpdateCalendar.Enabled := Connected;
+  cboCalendarsList.Text := FCustomController.CalendarsListText;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.ToggleReminders(Sender: TObject);

@@ -5553,7 +5553,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     end
     object ActionAddUser: TAction
       Category = 'Meetings'
-      Caption = 'Aggiungi Dipendente'
+      Caption = 'Gestione Utenti'
       ImageIndex = 2
       ImageName = '003-employee'
       OnExecute = ActionAddUserExecute
@@ -5618,7 +5618,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45469.000000000000000000
+    DateFrom = 45470.000000000000000000
     Left = 416
     Top = 40
   end
