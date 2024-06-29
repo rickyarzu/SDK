@@ -41,7 +41,7 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     ExplicitTop = 179
   end
   object grdDateTime: TGroupBox
-    Left = 24
+    Left = 8
     Top = 8
     Width = 273
     Height = 145
@@ -249,8 +249,6 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     Caption = 'Ok'
     ModalResult = 1
     TabOrder = 1
-    ExplicitLeft = 644
-    ExplicitTop = 423
   end
   object btnCancel: TButton
     Left = 517
@@ -261,8 +259,6 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     Caption = 'Annulla'
     ModalResult = 2
     TabOrder = 2
-    ExplicitLeft = 540
-    ExplicitTop = 423
   end
   object Memo1: TMemo
     Left = 8
@@ -273,8 +269,6 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     Lines.Strings = (
       'Memo1')
     TabOrder = 3
-    ExplicitTop = 202
-    ExplicitWidth = 694
   end
   object lkpGroups: TJvDBLookupCombo
     Left = 312
@@ -287,7 +281,6 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     LookupSource = dmPgPlannerStorage.dsActivitiesGroups
     TabOrder = 4
     OnChange = lkpGroupsChange
-    ExplicitWidth = 387
   end
   object lkpActivities: TJvDBLookupCombo
     Left = 312
@@ -299,7 +292,6 @@ object dlgVCLCustomPlannerEvent: TdlgVCLCustomPlannerEvent
     LookupDisplay = 'name'
     LookupSource = dmPgPlannerStorage.dsActivities
     TabOrder = 5
-    ExplicitWidth = 387
   end
   object DataSource1: TDataSource
     Left = 113

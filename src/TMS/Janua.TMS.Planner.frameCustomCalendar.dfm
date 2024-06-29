@@ -1,54 +1,21 @@
 object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
   Left = 0
   Top = 0
-  Width = 1178
+  Width = 1440
   Height = 986
   TabOrder = 0
-  DesignSize = (
-    1178
-    986)
   object lbGiorni: TLabel
-    Left = 1060
-    Top = 164
+    Left = 16
+    Top = 52
     Width = 32
     Height = 15
-    Anchors = [akTop, akRight]
     Caption = 'Giorni'
-  end
-  object lbSearch: TLabel
-    Left = 587
-    Top = 164
-    Width = 134
-    Height = 15
-    Anchors = [akTop, akRight]
-    Caption = 'Ricerca Appuntamento ...'
-  end
-  object DBText2: TDBText
-    Left = 11
-    Top = 160
-    Width = 447
-    Height = 17
-    Anchors = [akLeft, akTop, akRight]
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clCrimson
-    Font.Height = -12
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
-    ParentFont = False
-    StyleElements = [seClient, seBorder]
-  end
-  object lbDateSelector: TLabel
-    Left = 11
-    Top = 116
-    Width = 160
-    Height = 15
-    Caption = 'Selezionare il Periodo e le Date'
   end
   object lbCalendarList: TLabel
     AlignWithMargins = True
     Left = 3
     Top = 0
-    Width = 1172
+    Width = 1434
     Height = 15
     Margins.Top = 0
     Align = alTop
@@ -57,10 +24,11 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     ExplicitWidth = 133
   end
   object DBPlanner1: TDBPlanner
-    Left = 14
-    Top = 185
-    Width = 1161
-    Height = 689
+    Left = 0
+    Top = 160
+    Width = 1440
+    Height = 715
+    Align = alBottom
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -293,7 +261,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
-    OnItemCreated = DBPlanner1ItemCreated
     ItemSource = dmVCLPhoenixPlannerController.DBDaySourceCalendar
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
@@ -328,33 +295,15 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Options.PageNumberFont.Name = 'Arial'
     end
   end
-  object SpinEdit1: TSpinEdit
-    Left = 1123
-    Top = 160
+  object edDays: TSpinEdit
+    Left = 59
+    Top = 48
     Width = 41
     Height = 24
-    Anchors = [akTop, akRight]
     MaxValue = 7
     MinValue = 1
     TabOrder = 1
-    Value = 7
-  end
-  object edMeeting: TEdit
-    Left = 743
-    Top = 160
-    Width = 281
-    Height = 23
-    Anchors = [akTop, akRight]
-    TabOrder = 2
-  end
-  object DoFilter: TCheckBox
-    Left = 470
-    Top = 164
-    Width = 97
-    Height = 17
-    Anchors = [akTop, akRight]
-    Caption = 'Applica Filtro'
-    TabOrder = 3
+    Value = 5
   end
   object Panel1: TPanel
     Left = 264
@@ -362,7 +311,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     Width = 911
     Height = 110
     BevelOuter = bvNone
-    TabOrder = 4
+    TabOrder = 2
     object btnAddMeeting: TButton
       Left = 0
       Top = 0
@@ -407,7 +356,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 2
       WordWrap = True
-      ExplicitLeft = 194
     end
     object btnAddPerson: TButton
       Left = 300
@@ -451,7 +399,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Images = dmVCLPlannerCustomController.SVGIconImageList48
       TabOrder = 5
       WordWrap = True
-      ExplicitLeft = 494
     end
     object btnSendShare: TButton
       Left = 600
@@ -498,40 +445,23 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     end
   end
   object grpMeeting: TGroupBox
-    Left = 3
-    Top = 872
-    Width = 1172
+    Left = 0
+    Top = 875
+    Width = 1440
     Height = 111
+    Align = alBottom
     Caption = 'Meeting Details'
-    TabOrder = 5
-  end
-  object edPlannerDateFrom: TDateTimePicker
-    Left = 11
-    Top = 131
-    Width = 110
-    Height = 23
-    Date = 45462.000000000000000000
-    Time = 0.538302731481962800
-    TabOrder = 6
-  end
-  object edPlannerDateTo: TDateTimePicker
-    Left = 137
-    Top = 131
-    Width = 112
-    Height = 23
-    Date = 45462.000000000000000000
-    Time = 0.538302731481962800
-    TabOrder = 7
+    TabOrder = 3
   end
   object Panel2: TPanel
     Left = 0
     Top = 18
-    Width = 1178
+    Width = 1440
     Height = 24
     Align = alTop
     BevelOuter = bvNone
     Caption = 'Panel2'
-    TabOrder = 8
+    TabOrder = 4
     object ckbAll: TCheckBox
       AlignWithMargins = True
       Left = 3
@@ -545,7 +475,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     object ckbCalendarList: TCheckListBox
       Left = 59
       Top = 0
-      Width = 1119
+      Width = 1381
       Height = 24
       Align = alClient
       Columns = 12
@@ -566,11 +496,87 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       OnClickCheck = ckbCalendarListClickCheck
     end
   end
+  object Panel3: TPanel
+    Left = 1181
+    Top = 48
+    Width = 256
+    Height = 106
+    BevelOuter = bvNone
+    TabOrder = 5
+    object lbSearch: TLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 250
+      Height = 15
+      Align = alTop
+      Caption = 'Ricerca Appuntamento ...'
+      ExplicitWidth = 134
+    end
+    object lbDateSelector: TLabel
+      Left = 0
+      Top = 61
+      Width = 256
+      Height = 15
+      Align = alTop
+      Caption = 'Selezionare il Periodo e le Date'
+      ExplicitWidth = 160
+    end
+    object edMeeting: TEdit
+      Left = 0
+      Top = 21
+      Width = 256
+      Height = 23
+      Align = alTop
+      TabOrder = 0
+    end
+    object DoFilter: TCheckBox
+      Left = 0
+      Top = 44
+      Width = 256
+      Height = 17
+      Align = alTop
+      Caption = 'Applica Filtro'
+      TabOrder = 1
+    end
+    object Panel4: TPanel
+      Left = 0
+      Top = 76
+      Width = 256
+      Height = 30
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 2
+      object edPlannerDateFrom: TDateTimePicker
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 110
+        Height = 24
+        Align = alLeft
+        Date = 45462.000000000000000000
+        Time = 0.538302731481962800
+        TabOrder = 0
+      end
+      object edPlannerDateTo: TDateTimePicker
+        AlignWithMargins = True
+        Left = 119
+        Top = 3
+        Width = 112
+        Height = 24
+        Align = alLeft
+        Date = 45462.000000000000000000
+        Time = 0.538302731481962800
+        TabOrder = 1
+      end
+    end
+  end
   object ColorDialog1: TColorDialog
     Left = 336
     Top = 328
   end
   object ItemPopup: TPopupMenu
+    Images = dmVCLPlannerCustomController.SVGIconImageList16
     Left = 432
     Top = 288
     object Color1: TMenuItem
@@ -578,6 +584,9 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
     end
     object Caption1: TMenuItem
       Action = dmVCLPlannerCustomController.actCaption
+    end
+    object Carattere1: TMenuItem
+      Action = dmVCLPlannerCustomController.actFont
     end
   end
 end

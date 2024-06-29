@@ -14,12 +14,17 @@ type
 
 type
   TOSMLocationGroup = (osgUnknown, osgAmenity, osgPubliTransport, osgTourism, osgHigway, osgCraft,
-    osgEmergency, osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osmSubway, osgNotFound);
+    osgEmergency, osgHistoric, osgOffice, osgRailway, osgShop, osgLeisure, osgSubway, osgNatural,
+    osgNotFound);
+
+  TOSMSpecificationGroup = (osrHighway, osrVending);
 
 const
   OSMLocationGroups: array [TOSMLocationGroup] of string = ('unknown', 'amenity', 'public_transport',
-    'tourism', 'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure',
-    'subway', '');
+    'tourism', 'highway', 'craft', 'emergency', 'historic', 'office', 'railway', 'shop', 'leisure', 'subway',
+    'natural', '');
+
+  OSMSpecificationGroup: array [TOSMSpecificationGroup] of string = ('highway', 'vending');
 
 type
   TOSMLocationType = (osmUnknown, osmFuel, osmTelephone, osmParking, osmPharmacy, osmPostOffice, osmAtm,
@@ -27,11 +32,13 @@ type
     osmIceCream, osmkindergarten, osmnursing_home, osmPolice, osmPub, osmRestaurant, osmSchool, osmToilets,
     osmVeterinary, osmBank, osmTaxi, osmCommunityCentre, osmDressMaker, osmAmbulanceStation, osmMemorial,
     osmEstateAgent, osmBusStop, osmRailwayStop, osmBakery, osmBabyGoods, osmbookmaker, osmButcher,
-    osmCarRepair, clothes, coffee, osmComputer, confectionery, deli, dry_cleaning, electronics, florist,
-    furniture, gardencentre, greengrocer, hairdresser, hardware, hearing_aids, jewelry, leather, mobile_phone,
-    newsagent, optician, outdoor, paint, perfumery, pet, photo, scuba_diving, seafood, stationery,
-    osmSupermarket, osmTobacco, travel_agency, tyres, wine, information, museum, swimming_pool, osmPostBox,
-    osmNotFound);
+    osmCarRepair, clothes, coffee, osmComputer, confectionery, deli, osmDryCleaning, osmElectronics,
+    osmFlorist, furniture, osmGardenCentre, greengrocer, hairdresser, hardware, hearing_aids, jewelry,
+    leather, osmMobilePhone, newsagent, optician, outdoor, osmPaint, osmPerfumery, pet, photo, scuba_diving,
+    seafood, stationery, osmSupermarket, osmTobacco, osmTravelAgency, osmTyres, osmWine, osmInformation,
+    osmMuseum, osmSwimmingPool, osmPostBox, osmCape, osmVendingMachine, osmNotFound);
+
+  TOSMSpecifications = (ospPlatform);
 
 const
   // Every kind of Location (Address)
@@ -46,7 +53,9 @@ const
     'florist', 'furniture', 'garden_centre', 'greengrocer', 'hairdresser', 'hardware', 'hearing_aids',
     'jewelry', 'leather', 'mobile_phone', 'newsagent', 'optician', 'outdoor', 'paint', 'perfumery', 'pet',
     'photo', 'scuba_diving', 'seafood', 'stationery', 'supermarket', 'tobacco', 'travel_agency', 'tyres',
-    'wine', 'information', 'museum', 'swimming_pool', 'post_box', '');
+    'wine', 'information', 'museum', 'swimming_pool', 'post_box', 'cape', 'vending_machine', '');
+
+  OSMSpecificationCodes: array [TOSMSpecifications] of string = ('platform');
 
   OSMAddressGroupTypes: array [TOSMLocationType] of TOSMLocationGroup = (osgUnknown, osgAmenity, osgAmenity,
     osgAmenity, osgAmenity, osgAmenity, osgAmenity, osgHigway, osgTourism, osgAmenity, osgAmenity, osgAmenity,
@@ -56,9 +65,11 @@ const
     osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
     osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
     osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop, osgShop,
-    osgShop, osgTourism, osgTourism, osgLeisure, osgAmenity { post_box } , osgNotFound);
+    osgShop, osgTourism, osgTourism, osgLeisure, osgAmenity { post_box } , osgNatural { cape } ,
+    osgAmenity { vending_machine } , osgNotFound);
 
-  { la ricerca dei vari luoghi avviene con questo criterio:
+  {
+    la ricerca dei vari luoghi avviene con questo criterio:
     un 'loop' sulle chiavi presenti nel gruppo AddressGroup, se trovate vanno allora confrontate con i codici presenti
     in Codes. Alternativamente un Loop sui codici può permetterci una verifica diretta chiave-valore del tipo:
     shop= -- cartoleria
@@ -69,10 +80,10 @@ const
 
 type
   TOSMAddress = record
-    city: string;
-    housenumber: string;
-    postcode: string;
-    street: string;
+    city: string; // addr:city
+    housenumber: string; // addr:housenumber
+    postcode: string; // addr:postcode
+    street: string; // addr:street
     addressfull: string;
   end;
 

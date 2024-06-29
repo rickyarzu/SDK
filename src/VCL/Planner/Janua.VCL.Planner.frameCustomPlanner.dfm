@@ -200,31 +200,7 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
     HTMLOptions.CellFontStyle = []
     HTMLOptions.HeaderFontStyle = []
     HTMLOptions.SidebarFontStyle = []
-    Items = <
-      item
-        CaptionBkg = clYellow
-        CaptionFont.Charset = DEFAULT_CHARSET
-        CaptionFont.Color = clWindowText
-        CaptionFont.Height = -11
-        CaptionFont.Name = 'MS Sans Serif'
-        CaptionFont.Style = []
-        CaptionType = ctTime
-        Color = clYellow
-        Cursor = -1
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        ImageID = 0
-        ItemBegin = 16
-        ItemEnd = 17
-        ItemPos = 0
-        Name = 'PlannerItem0'
-        PopupMenu = ItemPopup
-        SelectColor = clYellow
-        Shadow = False
-      end>
+    Items = <>
     Mode.Month = 12
     Mode.PeriodStartDay = 28
     Mode.PeriodStartMonth = 4
@@ -278,7 +254,6 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
     OnItemPopupPrepare = DBPlanner1ItemPopupPrepare
     OnPlannerNext = DBPlanner1PlannerNext
     OnPlannerPrev = DBPlanner1PlannerPrev
-    ItemSource = dmVCLPlannerCustomController.DBDaySource1
     TMSStyle = 0
     object AdvPlannerPDFIO1: TAdvPlannerPDFIO
       Left = 618
@@ -489,7 +464,7 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
       Top = 0
       Width = 100
       Height = 110
-      Action = dmVCLPlannerCustomController.ActionPrint
+      Action = dmVCLPlannerCustomController.ActionCalendarSync
       Align = alLeft
       ImageAlignment = iaTop
       ImageMargins.Top = 6
@@ -510,6 +485,17 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
       Action = dmVCLPlannerCustomController.actColor
     end
     object Caption1: TMenuItem
+      Caption = 'Caption'
+    end
+  end
+  object gridPopup: TPopupMenu
+    Images = dmVCLPlannerCustomController.SVGIconImageList16
+    Left = 584
+    Top = 448
+    object MenuItem1: TMenuItem
+      Action = dmVCLPlannerCustomController.actColor
+    end
+    object MenuItem2: TMenuItem
       Caption = 'Caption'
     end
   end

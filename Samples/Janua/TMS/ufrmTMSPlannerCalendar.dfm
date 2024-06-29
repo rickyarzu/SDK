@@ -54,10 +54,6 @@ object frmTMSDemosPlannerCalendar: TfrmTMSDemosPlannerCalendar
       ShowClose = True
       TabColor = clBtnFace
       TabColorTo = clWhite
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 380
-      ExplicitHeight = 409
       object Label1: TLabel
         Left = 187
         Top = 0
