@@ -11,7 +11,8 @@ uses
   AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, VCL.Grids, VCL.DBGrids, CRGrid,
   // JanuaProject
   Janua.VCL.Planner.frameCustomGoogleCalendar,
-  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.VCL.dmPlannerController;
+  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.VCL.dmPlannerController, CloudBase, CloudBaseWin,
+  CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, Vcl.CheckLst;
 
 type
   TframeVCLPhoenixGoogleCalendar = class(TframeVCLCustomGoogleCalendar)

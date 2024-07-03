@@ -14,13 +14,11 @@ uses
   // Janua
   Janua.Vcl.Planner.dmCustomController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.VCL.EnhCRDBGrid;
 
 type
   TframeTMSCustomPlannerCalendar = class(TFrame)
     lbGiorni: TLabel;
-    DBPlanner1: TDBPlanner;
-    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     edDays: TSpinEdit;
     Panel1: TPanel;
     btnAddMeeting: TButton;
@@ -50,6 +48,12 @@ type
     edPlannerDateFrom: TDateTimePicker;
     edPlannerDateTo: TDateTimePicker;
     Carattere1: TMenuItem;
+    PageControl1: TPageControl;
+    tabCalendar: TTabSheet;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
+    tabCalendarGrid: TTabSheet;
+    EnhCRDBGrid1: TEnhCRDBGrid;
     procedure ckbCalendarListClickCheck(Sender: TObject);
   private
     FCustomController: TdmVCLPlannerCustomController;

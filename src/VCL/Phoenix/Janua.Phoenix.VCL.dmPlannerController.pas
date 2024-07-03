@@ -4,7 +4,7 @@ interface
 
 uses
   // RTL
-  System.SysUtils, System.Classes, System.ImageList, System.Actions,
+  System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils,
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
   // VCL / TMS
@@ -122,7 +122,6 @@ type
     tabGoogleEventsENDTIME: TDateTimeField;
     tabGoogleEventsCREATED: TDateTimeField;
     tabGoogleEventsUPDATED: TDateTimeField;
-    tabGoogleEventsISALLDAY: TBooleanField;
     tabGoogleEventsLOCATION: TStringField;
     tabGoogleEventsSTATUS: TSmallintField;
     tabGoogleEventsVISIBILITY: TIntegerField;
@@ -130,14 +129,10 @@ type
     tabGoogleEventsRECURRINGID: TStringField;
     tabGoogleEventsSEQUENCE: TIntegerField;
     tabGoogleEventsCOLOR: TSmallintField;
-    tabGoogleEventsUSEDEFAULTREMINDERS: TBooleanField;
-    tabGoogleEventsSENDNOTIFICATIONS: TBooleanField;
     tabGoogleEventsCALENDARID: TStringField;
     tabGoogleCalendarsID: TStringField;
-    tabGoogleCalendarsDESCRIPTION: TBlobField;
     tabGoogleCalendarsLOCATION: TStringField;
     tabGoogleCalendarsSUMMARY: TStringField;
-    tabGoogleCalendarsPRIMARY: TBooleanField;
     tabGoogleCalendarsTIMEZONE: TStringField;
     tabGoogleCalendarsCOLOR: TSmallintField;
     tabGoogleCalendarsBACK_COLOR: TIntegerField;
@@ -235,6 +230,16 @@ type
     qryTechPlannedRESPONSABILE: TIntegerField;
     qryTechPlannedNOME_TECNICO: TStringField;
     qryTechPlannedSIGLA: TStringField;
+    tabGoogleCalendarsISPRIMARY: TStringField;
+    tabGoogleEventsATTENDEES: TWideMemoField;
+    tabGoogleEventsREMINDERS: TWideMemoField;
+    tabGoogleEventsUSEDEFAULTREMINDERS: TStringField;
+    tabGoogleEventsSENDNOTIFICATIONS: TStringField;
+    tabGoogleEventsISALLDAY: TStringField;
+    tabGoogleCalendarsALIAS: TStringField;
+    tabGoogleCalendarsDESCRIPTION: TWideStringField;
+    tabGoogleCalendarsJGUID: TGuidField;
+    tabGoogleEventsJGUID: TGuidField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -265,6 +270,12 @@ type
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; override;
     procedure InternalUpdateItem(aItem: TPlannerItem);
     procedure InternalItemInsert;
+    procedure PhoenixInsertGoogleCalendars;
+    procedure PhoenixUpdateGoogleCalendars;
+    /// <summary> Update and Event from temporay Virtual Google Events Table to Tab</summary>
+    procedure PhoenixUpdateGoogleEvents;
+    /// <summary> Insert or Update and Event from temporay Virtual Google Events Table to Tab</summary>
+    procedure PhoenixInsertGoogleEvents;
   public
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
@@ -328,6 +339,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+
   FTechFilter := False;
   FAutoFilterTech := False;
   FReportDateFilter := False;
@@ -344,10 +356,102 @@ begin
   ItemCaptionField := nil;
   // InternalDeleteItem - Associo la procedura Interna Per Cancellare una Scheda:
   DeleteItemFunc := InternalDeleteItem;
-
   ItemUpdateProc := InternalUpdateItem;
-
   ItemInsertProc := InternalItemInsert;
+  // property GoogleCalendarUpdateProc: TProc
+  GoogleCalendarUpdateProc := PhoenixUpdateGoogleEvents;
+  // property GoogleCalendarInsertProc: TProc
+  GoogleCalendarInsertProc := PhoenixInsertGoogleCalendars;
+  // Update and Event from temporay Virtual Google Events Table to Tab
+  GoogleItemInsertProc := PhoenixInsertGoogleEvents;
+  // Insert or Update and Event from temporay Virtual Google Events Table to Tab
+  GoogleItemUpdateProc := PhoenixUpdateGoogleEvents;
+
+  dsCalendars.Enabled := False;
+  dsGCalendar.Enabled := False;
+  dsCalendarEvents.Enabled := False;
+  dsGoogleEvents.Enabled := False;
+  dslkpGCalendar.Enabled := False;
+
+  JanuaUniConnection1.Connected := True;
+  tabGoogleCalendars.Open;
+  if tabGoogleCalendars.RecordCount > 0 then
+  begin
+    tabGoogleCalendars.First;
+    While not tabGoogleCalendars.Eof do
+    begin
+      if not vtGoogleCalendars.Locate('ID', tabGoogleCalendars.FieldByName('ID').Value, []) then
+      begin
+        vtGoogleCalendars.Append;
+        vtGoogleCalendars.FieldByName('ID').Value := tabGoogleCalendarsID.Value;
+        vtGoogleCalendars.FieldByName('ALIAS').Value := tabGoogleCalendarsALIAS.Value;
+        vtGoogleCalendars.FieldByName('DESCRIPTION').Text := tabGoogleCalendarsDESCRIPTION.Text;
+        vtGoogleCalendars.FieldByName('LOCATION').AsString := tabGoogleCalendarsLOCATION.AsString;
+        vtGoogleCalendars.FieldByName('SUMMARY').AsString := tabGoogleCalendarsSUMMARY.AsString;
+        vtGoogleCalendars.FieldByName('PRIMARY').AsBoolean := (tabGoogleCalendarsISPRIMARY.AsString = 'T');
+        vtGoogleCalendars.FieldByName('TIMEZONE').AsString := tabGoogleCalendarsTIMEZONE.AsString;
+        vtGoogleCalendars.FieldByName('COLOR').Value := tabGoogleCalendarsCOLOR.Value;
+        vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger := tabGoogleCalendarsFORE_COLOR.Value;
+        vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger := tabGoogleCalendarsBACK_COLOR.Value;
+        vtGoogleCalendars.FieldByName('JGUID').Value := tabGoogleCalendarsJGUID.Value;
+        vtGoogleCalendars.Post;
+      end;
+      tabGoogleCalendars.Next;
+    end
+  end;
+
+  lkpGCalendarAlias.Assign(vtGoogleCalendars);
+  lkpGCalendarAlias.Open;
+
+  tabGoogleEvents.Open;
+  if tabGoogleEvents.RecordCount > 0 then
+  begin
+    try
+      UpdatingFromDB := True;
+      tabGoogleEvents.First;
+      While not tabGoogleEvents.Eof do
+      begin
+        if not vtGoogleEvents.Locate('ID', tabGoogleEvents.FieldByName('ID').Value, []) then
+        begin
+          vtGoogleEvents.Append;
+          vtGoogleEventsID.Value := tabGoogleEventsID.Value;
+          vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
+          vtGoogleEventsETAG.Value := tabGoogleEventsETAG.Value;
+          vtGoogleEventsSUMMARY.Value := tabGoogleEventsSUMMARY.Value;
+          vtGoogleEventsDESCRIPTION.Value := tabGoogleEventsDESCRIPTION.Value;
+          vtGoogleEventsSTARTTIME.Value := tabGoogleEventsSTARTTIME.Value;
+          vtGoogleEventsENDTIME.Value := tabGoogleEventsENDTIME.Value;
+          vtGoogleEventsCREATED.Value := tabGoogleEventsCREATED.Value;
+          vtGoogleEventsUPDATED.Value := tabGoogleEventsUPDATED.Value;
+          vtGoogleEventsISALLDAY.Value := tabGoogleEventsISALLDAY.Value = 'T';
+          vtGoogleEventsLOCATION.Value := tabGoogleEventsLOCATION.Value;
+          vtGoogleEventsSTATUS.Value := tabGoogleEventsSTATUS.Value;
+          vtGoogleEventsVISIBILITY.Value := tabGoogleEventsVISIBILITY.Value;
+          vtGoogleEventsRECURRENCE.Value := tabGoogleEventsRECURRENCE.Value;
+          vtGoogleEventsRECURRINGID.Value := tabGoogleEventsRECURRINGID.Value;
+          vtGoogleEventsSEQUENCE.Value := tabGoogleEventsSEQUENCE.Value;
+          vtGoogleEventsCOLOR.Value := tabGoogleEventsCOLOR.Value;
+          vtGoogleEventsUSEDEFAULTREMINDERS.AsBoolean := (tabGoogleEventsUSEDEFAULTREMINDERS.Value = 'T');
+          vtGoogleEventsSENDNOTIFICATIONS.AsBoolean := (tabGoogleEventsSENDNOTIFICATIONS.Value = 'T');
+          vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
+          vtGoogleEventsAttendees.Value := tabGoogleEventsATTENDEES.Value;
+          vtGoogleEventsREMINDERS.Value := tabGoogleEventsREMINDERS.Value;
+          vtGoogleEventsJGUID.Value := tabGoogleEventsJGUID.Value;
+          vtGoogleEvents.Post;
+        end;
+        tabGoogleEvents.Next;
+      end;
+    finally
+      UpdatingFromDB := False;
+    end;
+  end;
+
+  dsCalendars.Enabled := True;
+  dsGCalendar.Enabled := True;
+  dsCalendarEvents.Enabled := True;
+  dsGoogleEvents.Enabled := True;
+  dslkpGCalendar.Enabled := True;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -523,6 +627,88 @@ begin
   qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents.Open;
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.PhoenixInsertGoogleEvents;
+begin
+  if not tabGoogleEvents.Locate('ID', vtGoogleEvents.FieldByName('ID').Value, []) then
+  begin
+    tabGoogleEvents.Append;
+    tabGoogleEventsID.Value := vtGoogleEventsID.Value;
+    PhoenixUpdateGoogleEvents;
+  end
+  else
+  begin
+    if (tabGoogleEventsETAG.Value <> vtGoogleEventsETAG.Value) or
+      (tabGoogleEventsSUMMARY.Value <> vtGoogleEventsSUMMARY.Value) or
+      (tabGoogleEventsDESCRIPTION.Value <> vtGoogleEventsDESCRIPTION.Value) or
+      (tabGoogleEventsSTARTTIME.Value <> vtGoogleEventsSTARTTIME.Value) or
+      (tabGoogleEventsENDTIME.Value <> vtGoogleEventsENDTIME.Value) or
+      (tabGoogleEventsCREATED.Value <> vtGoogleEventsCREATED.Value) or
+      (tabGoogleEventsUPDATED.Value <> vtGoogleEventsUPDATED.Value) or
+    { (tabGoogleEventsISALLDAY.Value <> vtGoogleEventsISALLDAY.Value) or }
+      (tabGoogleEventsLOCATION.Value <> vtGoogleEventsLOCATION.Value) or
+      (tabGoogleEventsSTATUS.Value <> vtGoogleEventsSTATUS.Value) or
+      (tabGoogleEventsVISIBILITY.Value <> vtGoogleEventsVISIBILITY.Value) or
+      (tabGoogleEventsRECURRENCE.Value <> vtGoogleEventsRECURRENCE.Value) or
+      (tabGoogleEventsRECURRINGID.Value <> vtGoogleEventsRECURRINGID.Value) or
+      (tabGoogleEventsSEQUENCE.Value <> vtGoogleEventsSEQUENCE.Value) or
+      (tabGoogleEventsCOLOR.Value <> vtGoogleEventsCOLOR.Value) then
+      PhoenixUpdateGoogleEvents;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.PhoenixInsertGoogleCalendars;
+begin
+  if not tabGoogleCalendars.Locate('ID', vtGoogleCalendars.FieldByName('ID').Value, []) then
+  begin
+    tabGoogleCalendars.Append;
+    tabGoogleCalendarsID.Value := vtGoogleCalendars.FieldByName('ID').Value;
+    tabGoogleCalendarsDESCRIPTION.Text := vtGoogleCalendars.FieldByName('DESCRIPTION').Text;
+    tabGoogleCalendarsLOCATION.AsString := vtGoogleCalendars.FieldByName('LOCATION').AsString;
+    tabGoogleCalendarsSUMMARY.AsString := vtGoogleCalendars.FieldByName('SUMMARY').AsString;
+    tabGoogleCalendarsISPRIMARY.AsString := IfThen(vtGoogleCalendars.FieldByName('PRIMARY').AsBoolean,
+      'T', 'F');
+    tabGoogleCalendarsTIMEZONE.AsString := vtGoogleCalendars.FieldByName('TIMEZONE').AsString;
+    tabGoogleCalendarsCOLOR.Value := vtGoogleCalendars.FieldByName('COLOR').Value;
+    tabGoogleCalendarsFORE_COLOR.Value := vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger;
+    tabGoogleCalendarsBACK_COLOR.Value := vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger;
+    tabGoogleCalendarsJGUID.Value := vtGoogleCalendars.FieldByName('JGUID').Value;
+    tabGoogleCalendars.Post;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.PhoenixUpdateGoogleCalendars;
+begin
+
+end;
+
+procedure TdmVCLPhoenixPlannerController.PhoenixUpdateGoogleEvents;
+begin
+  tabGoogleEvents.Edit;
+  tabGoogleEventsCALENDARID.Value := vtGoogleEventsCALENDARID.Value;
+  tabGoogleEventsETAG.Value := vtGoogleEventsETAG.Value;
+  tabGoogleEventsSUMMARY.Value := vtGoogleEventsSUMMARY.Value;
+  tabGoogleEventsDESCRIPTION.Value := vtGoogleEventsDESCRIPTION.Value;
+  tabGoogleEventsSTARTTIME.Value := vtGoogleEventsSTARTTIME.Value;
+  tabGoogleEventsENDTIME.Value := vtGoogleEventsENDTIME.Value;
+  tabGoogleEventsCREATED.Value := vtGoogleEventsCREATED.Value;
+  tabGoogleEventsUPDATED.Value := vtGoogleEventsUPDATED.Value;
+  tabGoogleEventsISALLDAY.Value := IfThen(vtGoogleEventsISALLDAY.AsBoolean, 'T', 'F');
+  tabGoogleEventsLOCATION.Value := vtGoogleEventsLOCATION.Value;
+  tabGoogleEventsSTATUS.Value := vtGoogleEventsSTATUS.Value;
+  tabGoogleEventsVISIBILITY.Value := vtGoogleEventsVISIBILITY.Value;
+  tabGoogleEventsRECURRENCE.Value := vtGoogleEventsRECURRENCE.Value;
+  tabGoogleEventsRECURRINGID.Value := vtGoogleEventsRECURRINGID.Value;
+  tabGoogleEventsSEQUENCE.Value := vtGoogleEventsSEQUENCE.Value;
+  tabGoogleEventsCOLOR.Value := vtGoogleEventsCOLOR.Value;
+  tabGoogleEventsUSEDEFAULTREMINDERS.Value := IfThen(vtGoogleEventsUSEDEFAULTREMINDERS.AsBoolean, 'T', 'F');
+  tabGoogleEventsSENDNOTIFICATIONS.Value := IfThen(vtGoogleEventsSENDNOTIFICATIONS.AsBoolean, 'T', 'F');
+  tabGoogleEventsCALENDARID.Value := vtGoogleEventsCALENDARID.Value;
+  tabGoogleEventsATTENDEES.Value := vtGoogleEventsAttendees.Value;
+  tabGoogleEventsREMINDERS.Value := tabGoogleEventsREMINDERS.Value;
+  tabGoogleEventsJGUID.Value := tabGoogleEventsJGUID.Value;
+  tabGoogleEvents.Post;
 end;
 
 procedure TdmVCLPhoenixPlannerController.PopulateCalendars;

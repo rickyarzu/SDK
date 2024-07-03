@@ -5596,29 +5596,13 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Left = 416
     Top = 104
   end
-  object AdvGCalendar1: TAdvGCalendar
-    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
-    App.CallBackURL = 'http://127.0.0.1:8888/'
-    App.CallBackPort = 8888
-    PersistTokens.Location = plIniFile
-    Scopes.Strings = (
-      'https://www.googleapis.com/auth/calendar')
-    OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
-    AuthFormSettings.Caption = 'Authorize'
-    AuthFormSettings.Width = 900
-    AuthFormSettings.Height = 600
-    Calendars = <>
-    Items = <>
-    Left = 155
-    Top = 39
-  end
   object JanuaPlannerController1: TJanuaPlannerController
     Enabled = True
     Verbose = False
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45470.000000000000000000
+    DateFrom = 45475.000000000000000000
     Left = 416
     Top = 40
   end
@@ -11468,7 +11452,6 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     FieldDefs = <
       item
         Name = 'ID'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 128
       end
@@ -11547,15 +11530,32 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       end
       item
         Name = 'CALENDARID'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 128
+      end
+      item
+        Name = 'Attendees'
+        DataType = ftMemo
+      end
+      item
+        Name = 'Reminders'
+        DataType = ftMemo
+      end
+      item
+        Name = 'JGUID'
+        DataType = ftGuid
+        Size = 38
+      end
+      item
+        Name = 'CalcColor'
+        DataType = ftInteger
       end>
+    BeforePost = vtGoogleEventsBeforePost
     AfterScroll = vtGoogleEventsAfterScroll
     Left = 528
-    Top = 80
+    Top = 72
     Data = {
-      0400130002004944010080000000000004004554414701008000000000000700
+      0400170002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
       000000000900535441525454494D450B000000000000000700454E4454494D45
       0B000000000000000700435245415445440B0000000000000007005550444154
@@ -11566,7 +11566,9 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       55454E434503000000000000000500434F4C4F52020000000000000013005553
       4544454641554C5452454D494E444552530500000000000000110053454E444E
       4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
-      0100800000000000000000000000}
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F720300000000000000000000000000}
     object vtGoogleEventsID: TStringField
       FieldName = 'ID'
       Required = True
@@ -11642,90 +11644,30 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       FieldName = 'Reminders'
       BlobType = ftMemo
     end
-  end
-  object vtGoogleCalendars: TVirtualTable
-    FieldDefs = <
-      item
-        Name = 'ID'
-        Attributes = [faRequired]
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'DESCRIPTION'
-        DataType = ftBlob
-      end
-      item
-        Name = 'LOCATION'
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'SUMMARY'
-        DataType = ftString
-        Size = 256
-      end
-      item
-        Name = 'PRIMARY'
-        DataType = ftBoolean
-      end
-      item
-        Name = 'TIMEZONE'
-        DataType = ftString
-        Size = 60
-      end
-      item
-        Name = 'COLOR'
-        DataType = ftSmallint
-      end
-      item
-        Name = 'BACK_COLOR'
-        DataType = ftInteger
-      end
-      item
-        Name = 'FORE_COLOR'
-        DataType = ftInteger
-      end>
-    Left = 527
-    Top = 8
-    Data = {
-      040009000200494401008000000000000B004445534352495054494F4E0F0000
-      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
-      010000010000000007005052494D4152590500000000000000080054494D455A
-      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
-      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
-      0000000000000000}
-    object vtGoogleCalendarsID: TStringField
-      FieldName = 'ID'
-      Required = True
-      Size = 128
+    object vtGoogleEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      Size = 38
     end
-    object vtGoogleCalendarsDESCRIPTION: TBlobField
-      FieldName = 'DESCRIPTION'
+    object vtGoogleEventsBackColor: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'BackColor'
+      LookupDataSet = lkpGCalendarAlias
+      LookupKeyFields = 'ID'
+      LookupResultField = 'BACK_COLOR'
+      KeyFields = 'CALENDARID'
+      Lookup = True
     end
-    object vtGoogleCalendarsLOCATION: TStringField
-      FieldName = 'LOCATION'
-      Size = 128
+    object vtGoogleEventsCalcColor: TIntegerField
+      FieldName = 'CalcColor'
     end
-    object vtGoogleCalendarsSUMMARY: TStringField
-      FieldName = 'SUMMARY'
-      Size = 256
-    end
-    object vtGoogleCalendarsPRIMARY: TBooleanField
-      FieldName = 'PRIMARY'
-    end
-    object vtGoogleCalendarsTIMEZONE: TStringField
-      FieldName = 'TIMEZONE'
-      Size = 60
-    end
-    object vtGoogleCalendarsCOLOR: TSmallintField
-      FieldName = 'COLOR'
-    end
-    object vtGoogleCalendarsBACK_COLOR: TIntegerField
-      FieldName = 'BACK_COLOR'
-    end
-    object vtGoogleCalendarsFORE_COLOR: TIntegerField
-      FieldName = 'FORE_COLOR'
+    object vtGoogleEventsAlias: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'Alias'
+      LookupDataSet = lkpGCalendarAlias
+      LookupKeyFields = 'ID'
+      LookupResultField = 'SUMMARY'
+      KeyFields = 'CALENDARID'
+      Lookup = True
     end
   end
   object dsGoogleEvents: TUniDataSource
@@ -11739,28 +11681,28 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   end
   object DBDaySourceGCalendar: TDBDaySource
     Active = False
-    OnSetFilter = DBDaySourceCalendarSetFilter
     AutoIncKey = True
     DataSource = dsGoogleEvents
-    ResourceDataSource.DataSource = dsGCalendar
-    ResourceDataSource.ResourceIDField = 'ID'
-    ResourceDataSource.ResourceNameField = 'SUMMARY'
-    ResourceMap = <>
+    ResourceMap = <
+      item
+        ResourceIndex = 0
+        PositionIndex = -1
+        DisplayName = ''
+        Tag = 0
+      end>
     StartTimeField = 'STARTTIME'
-    EndTimeField = 'ALLE_ORE'
+    EndTimeField = 'ENDTIME'
     KeyField = 'ID'
     ReadOnly = False
-    ResourceField = 'CALENDARID'
     SubjectField = 'SUMMARY'
-    NotesField = 'SUBJECT'
+    NotesField = 'SUMMARY'
     UpdateByQuery = False
-    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
-    OnItemToFields = DBDaySourceCalendarItemToFields
+    OnFieldsToItem = DBDaySourceGCalendarFieldsToItem
     AutoHeaderUpdate = True
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000
     Mode = dmMultiDayRes
-    NumberOfDays = 2
+    NumberOfDays = 3
     NumberOfResources = 6
     Left = 275
     Top = 208
@@ -17337,5 +17279,215 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Scaled = True
     Left = 72
     Top = 416
+  end
+  object lkpGCalendarAlias: TVirtualTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'PRIMARY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'TIMEZONE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'FORE_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftWideMemo
+      end
+      item
+        Name = 'BACK_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ALIAS'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'JGUID'
+        DataType = ftGuid
+        Size = 38
+      end>
+    Left = 271
+    Top = 400
+    Data = {
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
+    object lkpGCalendarAliasID: TStringField
+      FieldName = 'ID'
+      Size = 128
+    end
+    object lkpGCalendarAliasLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object lkpGCalendarAliasSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object lkpGCalendarAliasPRIMARY: TBooleanField
+      FieldName = 'PRIMARY'
+    end
+    object lkpGCalendarAliasTIMEZONE: TStringField
+      FieldName = 'TIMEZONE'
+      Size = 60
+    end
+    object lkpGCalendarAliasCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object lkpGCalendarAliasFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+    object lkpGCalendarAliasDESCRIPTION: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object lkpGCalendarAliasBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object lkpGCalendarAliasALIAS: TStringField
+      FieldName = 'ALIAS'
+    end
+    object lkpGCalendarAliasJGUID: TGuidField
+      FieldName = 'JGUID'
+      Size = 38
+    end
+  end
+  object dslkpGCalendar: TUniDataSource
+    DataSet = lkpGCalendarAlias
+    Left = 272
+    Top = 472
+  end
+  object vtGoogleCalendars: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'PRIMARY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'TIMEZONE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'FORE_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftWideMemo
+      end
+      item
+        Name = 'BACK_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ALIAS'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'JGUID'
+        DataType = ftGuid
+        Size = 38
+      end>
+    Left = 527
+    Top = 8
+    Data = {
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
+    object vtGoogleCalendarsID: TStringField
+      FieldName = 'ID'
+      Size = 128
+    end
+    object vtGoogleCalendarsLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object vtGoogleCalendarsSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object vtGoogleCalendarsPRIMARY: TBooleanField
+      FieldName = 'PRIMARY'
+    end
+    object vtGoogleCalendarsTIMEZONE: TStringField
+      FieldName = 'TIMEZONE'
+      Size = 60
+    end
+    object vtGoogleCalendarsCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object vtGoogleCalendarsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+    object vtGoogleCalendarsDESCRIPTION: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object vtGoogleCalendarsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object vtGoogleCalendarsALIAS: TStringField
+      FieldName = 'ALIAS'
+    end
+    object vtGoogleCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      Size = 38
+    end
   end
 end

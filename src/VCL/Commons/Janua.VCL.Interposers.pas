@@ -646,8 +646,6 @@ type
     function GetJanuaItemIndex: Integer;
     procedure SetItemsText(const Value: string);
     procedure SetJanuaItemIndex(const Value: Integer);
-    function GetJanuaText: string;
-    procedure SetJanuaText(const Value: string);
     procedure Change; override;
     function GetJanuaOnEnter: TNotifyEvent;
     procedure SetJanuaOnEnter(const Value: TNotifyEvent);
@@ -659,7 +657,7 @@ type
     function AsComponent: TComponent;
     property ItemsText: string read GetItemsText write SetItemsText;
     property JanuaItemIndex: Integer read GetJanuaItemIndex write SetJanuaItemIndex;
-    property Text: string read GetJanuaText write SetJanuaText;
+    property Text: string read GetItemsText write SetItemsText;
 
   end;
 
@@ -1972,11 +1970,6 @@ begin
 
 end;
 
-function TComboBox.GetJanuaText: string;
-begin
-  Result := Self.Text
-end;
-
 function TComboBox.GetSelf: TObject;
 begin
   Result := Self as TObject
@@ -2005,11 +1998,6 @@ end;
 procedure TComboBox.SetJanuaOnExit(const Value: TNotifyEvent);
 begin
 
-end;
-
-procedure TComboBox.SetJanuaText(const Value: string);
-begin
-  Self.Text := Value
 end;
 
 { TSpinEdit }

@@ -608,6 +608,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       Height = 21
       Caption = 'Sample'
       TabOrder = 12
+      StyleElements = []
     end
     object edID: TEdit
       Left = 389
@@ -667,7 +668,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
       OnClick = ComboBox1Click
     end
     object GroupBox4: TGroupBox
-      Left = 17
+      Left = 16
       Top = 44
       Width = 720
       Height = 117
@@ -756,6 +757,15 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
         Height = 21
         TabOrder = 6
       end
+      object panelGroupColor: TPanel
+        Left = 360
+        Top = 78
+        Width = 344
+        Height = 25
+        Caption = 'Sample'
+        TabOrder = 7
+        StyleElements = []
+      end
     end
     object cbDefaultReminders: TComboBox
       Left = 471
@@ -771,7 +781,7 @@ object frmTMSAdvCalendarDemo: TfrmTMSAdvCalendarDemo
     App.CallBackURL = 'http://127.0.0.1:8888/'
     App.CallBackPort = 8888
     PersistTokens.Location = plIniFile
-    PersistTokens.Section = 'GCalendar'
+    PersistTokens.Section = 'google_janua'
     Scopes.Strings = (
       'https://www.googleapis.com/auth/calendar')
     OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken

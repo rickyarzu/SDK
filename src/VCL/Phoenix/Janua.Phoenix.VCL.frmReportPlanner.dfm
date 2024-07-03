@@ -19,7 +19,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1424
     Height = 754
-    ActivePage = tabTicketsList
+    ActivePage = tabGoogleCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -500,7 +500,16 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
+            ItemHeight = 16
             ExplicitWidth = 1357
+          end
+        end
+        inherited Panel3: TPanel
+          inherited lbSearch: TLabel
+            Width = 250
+          end
+          inherited lbDateSelector: TLabel
+            Width = 256
           end
         end
       end
@@ -520,8 +529,24 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited PageControl1: TPageControl
           Width = 1040
           Height = 512
+          ActivePage = frameVCLPhoenixGoogleCalendar1.TabSheet1
           ExplicitWidth = 1040
           ExplicitHeight = 512
+          inherited TabSheet1: TTabSheet
+            ExplicitWidth = 1032
+            ExplicitHeight = 482
+            inherited GroupBox2: TGroupBox
+              Width = 1026
+              Height = 479
+              inherited btUpdate: TButton
+                Left = 853
+              end
+              inherited grdGoogleCalendar: TCRDBGrid
+                Width = 995
+                Height = 412
+              end
+            end
+          end
           inherited TabSheet2: TTabSheet
             ExplicitWidth = 1032
             ExplicitHeight = 482

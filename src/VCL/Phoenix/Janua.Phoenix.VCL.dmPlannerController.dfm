@@ -5,6 +5,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Top = 280
   end
   inherited MainToolBarActions: TActionList
+    inherited ActionAddUser: TAction
+      Caption = 'Gestione Tecnici    e Calendari'
+    end
     inherited ActionExport: TAction
       Caption = 'Esporta (Excel,    Pdf, Csv)'
     end
@@ -38,7 +41,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   inherited vtGoogleEvents: TVirtualTable
     Left = 792
     Data = {
-      0400130002004944010080000000000004004554414701008000000000000700
+      0400170002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
       000000000900535441525454494D450B000000000000000700454E4454494D45
       0B000000000000000700435245415445440B0000000000000007005550444154
@@ -49,18 +52,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       55454E434503000000000000000500434F4C4F52020000000000000013005553
       4544454641554C5452454D494E444552530500000000000000110053454E444E
       4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
-      0100800000000000000000000000}
-  end
-  inherited vtGoogleCalendars: TVirtualTable
-    Left = 791
-    Top = 16
-    Data = {
-      040009000200494401008000000000000B004445534352495054494F4E0F0000
-      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
-      010000010000000007005052494D4152590500000000000000080054494D455A
-      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
-      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
-      0000000000000000}
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F720300000000000000000000000000}
+    inherited vtGoogleEventsAlias: TWideStringField
+      LookupResultField = 'ALIAS'
+    end
   end
   inherited dsGoogleEvents: TUniDataSource
     Top = 344
@@ -69,7 +66,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     DataSet = qryPlannerEvents
   end
   inherited DBDaySourceGCalendar: TDBDaySource
-    DataSource = dsGCalendar
+    Mode = dmMultiDay
+    NumberOfResources = 1
   end
   inherited DBDaySourceCalendar: TDBDaySource
     DataSource = dsCalendarEvents
@@ -84,6 +82,28 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   inherited dsCalendarEvents: TUniDataSource
     DataSet = qryPlannerEvents
+  end
+  inherited lkpGCalendarAlias: TVirtualTable
+    Data = {
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
+  end
+  inherited vtGoogleCalendars: TVirtualTable
+    Left = 791
+    Top = 16
+    Data = {
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
   end
   object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (
@@ -498,7 +518,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     SQL.Strings = (
       'EXECUTE PROCEDURE SET_STATINI_STATO')
     Connection = JanuaUniConnection1
-    Left = 592
+    Left = 584
     Top = 280
     CommandStoredProcName = 'SET_STATINI_STATO'
   end
@@ -706,7 +726,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'ORDER BY T.descrizione'
       ';')
     AfterScroll = qryTechPlannedAfterScroll
-    Left = 592
+    Left = 584
     Top = 344
     ParamData = <
       item
@@ -737,6 +757,16 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'DESCRIPTION'
+        FieldType = ftWideString
+        FieldLength = 1024
+      end>
     Connection = JanuaUniConnection1
     Left = 688
     Top = 40
@@ -745,9 +775,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Required = True
       Size = 128
     end
-    object tabGoogleCalendarsDESCRIPTION: TBlobField
-      FieldName = 'DESCRIPTION'
-    end
     object tabGoogleCalendarsLOCATION: TStringField
       FieldName = 'LOCATION'
       Size = 128
@@ -755,9 +782,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleCalendarsSUMMARY: TStringField
       FieldName = 'SUMMARY'
       Size = 256
-    end
-    object tabGoogleCalendarsPRIMARY: TBooleanField
-      FieldName = 'PRIMARY'
     end
     object tabGoogleCalendarsTIMEZONE: TStringField
       FieldName = 'TIMEZONE'
@@ -772,6 +796,23 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleCalendarsFORE_COLOR: TIntegerField
       FieldName = 'FORE_COLOR'
     end
+    object tabGoogleCalendarsISPRIMARY: TStringField
+      FieldName = 'ISPRIMARY'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleCalendarsALIAS: TStringField
+      FieldName = 'ALIAS'
+    end
+    object tabGoogleCalendarsDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+      Size = 1024
+    end
+    object tabGoogleCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
   end
   object tabGoogleEvents: TUniTable
     TableName = 'GOOGLE_CALENDAR_EVENTS'
@@ -779,8 +820,21 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       item
         FieldName = 'DESCRIPTION'
         FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'ATTENDEES'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'REMINDERS'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
       end>
     Connection = JanuaUniConnection1
+    IndexFieldNames = 'ID'
     Left = 688
     Top = 104
     object tabGoogleEventsID: TStringField
@@ -812,15 +866,17 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleEventsUPDATED: TDateTimeField
       FieldName = 'UPDATED'
     end
-    object tabGoogleEventsISALLDAY: TBooleanField
-      FieldName = 'ISALLDAY'
-    end
     object tabGoogleEventsLOCATION: TStringField
       FieldName = 'LOCATION'
       Size = 128
     end
     object tabGoogleEventsSTATUS: TSmallintField
       FieldName = 'STATUS'
+    end
+    object tabGoogleEventsSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
     end
     object tabGoogleEventsVISIBILITY: TIntegerField
       FieldName = 'VISIBILITY'
@@ -839,21 +895,38 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleEventsCOLOR: TSmallintField
       FieldName = 'COLOR'
     end
-    object tabGoogleEventsUSEDEFAULTREMINDERS: TBooleanField
-      FieldName = 'USEDEFAULTREMINDERS'
-    end
-    object tabGoogleEventsSENDNOTIFICATIONS: TBooleanField
-      FieldName = 'SENDNOTIFICATIONS'
-    end
     object tabGoogleEventsCALENDARID: TStringField
       FieldName = 'CALENDARID'
       Required = True
       Size = 128
     end
+    object tabGoogleEventsATTENDEES: TWideMemoField
+      FieldName = 'ATTENDEES'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsREMINDERS: TWideMemoField
+      FieldName = 'REMINDERS'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
   end
   object dsTecnici: TUniDataSource
     DataSet = qryPlannerEvents
-    Left = 784
+    Left = 792
     Top = 144
   end
   object dsTecniciPlanned: TUniDataSource

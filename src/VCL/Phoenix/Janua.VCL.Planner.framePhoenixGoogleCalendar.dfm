@@ -1,11 +1,16 @@
 inherited frameVCLPhoenixGoogleCalendar: TframeVCLPhoenixGoogleCalendar
   inherited PageControl1: TPageControl
-    ActivePage = TabSheet2
     inherited TabSheet2: TTabSheet
       inherited DBPlanner1: TDBPlanner
         PictureContainer = nil
         ItemSource = nil
         TMSStyle = 0
+      end
+      inherited pnlFilterBar: TPanel
+        inherited ckbCalendarList: TCheckListBox
+          ItemHeight = 16
+          OnClickCheck = nil
+        end
       end
     end
   end

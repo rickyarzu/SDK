@@ -14,7 +14,7 @@ uses
   // Janua
   Janua.TMS.Planner.frameCustomCalendar, Janua.Phoenix.Vcl.dmPlannerController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.VCL.EnhCRDBGrid;
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)

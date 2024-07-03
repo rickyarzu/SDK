@@ -102,6 +102,7 @@ type
     edEtag: TEdit;
     lbGrp: TLabel;
     edGrp: TEdit;
+    panelGroupColor: TPanel;
     procedure btnConnectClick(Sender: TObject);
     procedure btnGoogleEventNewClick(Sender: TObject);
     procedure btnGoogleEventDeleteClick(Sender: TObject);
@@ -115,6 +116,7 @@ type
     procedure ToggleReminders();
     procedure ClearControls();
     procedure Init();
+    procedure SetCalendarColor();
     procedure SetCalendarItem(Item: TGCalendarItem);
     procedure ComboBox1Change(Sender: TObject);
     procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
@@ -408,7 +410,7 @@ end;
 procedure TfrmTMSAdvCalendarDemo.ClearControls;
 begin
   edCalendarItemName.Text := '';
-  Edit5.Text := '';
+  edCalendarLocation.Text := '';
   Memo1.Lines.Text := '';
   cbVisibility.ItemIndex := 0;
   cbAllday.Checked := false;
@@ -425,12 +427,14 @@ procedure TfrmTMSAdvCalendarDemo.ComboBox1Change(Sender: TObject);
 begin
   { Codice portato in DataModule Controller }
   FillCalendarItems;
+  SetCalendarColor;
 end;
 
 procedure TfrmTMSAdvCalendarDemo.ComboBox1Click(Sender: TObject);
 begin
   { Codice portato in DataModule Controller }
   FillCalendarItems;
+  SetCalendarColor;
 end;
 
 procedure TfrmTMSAdvCalendarDemo.FillCalendarItems;
@@ -526,8 +530,8 @@ end;
 procedure TfrmTMSAdvCalendarDemo.FormCreate(Sender: TObject);
 begin
   AdvGCalendar1.PersistTokens.Location := plIniFile;
-  AdvGCalendar1.PersistTokens.Key := '.\tokens.ini';
-  AdvGCalendar1.PersistTokens.Section := 'google';
+  AdvGCalendar1.PersistTokens.Key := 'C:\Phoenix\tokens.ini';
+  AdvGCalendar1.PersistTokens.Section := 'google_janua';
   AdvGCalendar1.LoadTokens;
 
   dpCalStartDate.Date := IncMonth(Now, -1);
@@ -547,6 +551,7 @@ begin
   FillCalendarItems;
   FillColors;
   ToggleControls;
+  SetCalendarColor;
 end;
 
 procedure TfrmTMSAdvCalendarDemo.FillCalendarItemDetails();
@@ -653,11 +658,40 @@ begin
   ToggleReminders;
 end;
 
+procedure TfrmTMSAdvCalendarDemo.SetCalendarColor;
+var
+  bg: TColor;
+  fg: TColor;
+begin
+  if ComboBox1.ItemIndex >= 0 then
+  begin
+    var
+    gcal := (ComboBox1.Items.Objects[ComboBox1.ItemIndex] as TGCalendar);
+
+    for var I := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
+    begin
+      if Ord(gcal.Color) = AdvGCalendar1.CalendarColors[I].ID then
+      begin
+        bg := AdvGCalendar1.CalendarColors[I].BackgroundColor;
+        fg := AdvGCalendar1.CalendarColors[I].ForegroundColor;
+      end;
+    end;
+
+    if gcal.BackgroundColor <> clNone then
+      bg := gcal.BackgroundColor;
+    if gcal.ForegroundColor <> clNone then
+      fg := gcal.ForegroundColor;
+
+    panelGroupColor.Color := bg;
+    panelGroupColor.Font.Color := fg;
+  end
+end;
+
 procedure TfrmTMSAdvCalendarDemo.SetCalendarItem(Item: TGCalendarItem);
 begin
   Item.Summary := edCalendarItemName.Text;
   Item.Description := Memo1.Lines.Text;
-  Item.Location := Edit5.Text;
+  Item.Location := edCalendarLocation.Text;
   if cbColors.ItemIndex >= 0 then
     Item.Color := TGItemColor(cbColors.ItemIndex)
   else
@@ -738,7 +772,7 @@ begin
   btUpdate.Enabled := Connected;
   ListView1.Enabled := Connected;
   edCalendarItemName.Enabled := Connected;
-  Edit5.Enabled := Connected;
+  edCalendarLocation.Enabled := Connected;
   Memo1.Enabled := Connected;
   cbVisibility.Enabled := Connected;
   cbAllday.Enabled := Connected;

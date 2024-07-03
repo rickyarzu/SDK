@@ -14,7 +14,8 @@ uses
   Janua.VCL.Planner.dmCustomController,
 
   // Interposers
-  Janua.VCL.Interposers, Janua.TMS.Interposers;
+  Janua.VCL.Interposers, Janua.TMS.Interposers, CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin,
+  CloudCustomGCalendar, CloudGCalendar, VCL.CheckLst;
 
 type
   TframeVCLCustomGoogleCalendar = class(TFrame)
@@ -100,8 +101,15 @@ type
     ActionList1: TActionList;
     Action1: TAction;
     cbRem: TCheckBox;
+    AdvGCalendar1: TAdvGCalendar;
+    pnlGroupColor: TPanel;
+    pnlFilterBar: TPanel;
+    ckbCalendarList: TCheckListBox;
+    ckbAll: TCheckBox;
     procedure cboCalendarsListChange(Sender: TObject);
     procedure cboCalendarsListClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
   private
     { Private declarations }
     FCustomController: TdmVCLPlannerCustomController;
@@ -121,6 +129,11 @@ implementation
 {$R *.dfm}
 { TframeVCLCustomGoogleCalendar }
 
+procedure TframeVCLCustomGoogleCalendar.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+begin
+  FCustomController.InitGoogle
+end;
+
 procedure TframeVCLCustomGoogleCalendar.BindControls;
 begin
   dpCalStartDate.DateTime := FCustomController.GCalStartDate;
@@ -128,28 +141,51 @@ begin
   dpCalEndDate.DateTime := FCustomController.GCalEndDate;
   FCustomController.Bind('GCalEndDate', dpCalEndDate, 'DateTime');
   grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
-  edCalendarName.Text := FCustomController.CalendarName;
-  FCustomController.Bind('CalendarName', edCalendarName, 'Text');
-  edCalendarDescription.Text := FCustomController.CalendarDescription;
-  FCustomController.Bind('CalendarDescription', edCalendarDescription, 'Text');
-  edCalendarLocation.Text := FCustomController.CalendarLocation;
-  FCustomController.Bind('CalendarLocation', edCalendarLocation, 'Text');
-  edCalendarTimeZone.Text := FCustomController.CalendarTimeZone;
-  FCustomController.Bind('CalendarTimeZone', edCalendarTimeZone, 'Text');
+  edCalendarName.Text := FCustomController.GCalendarName;
+  FCustomController.Bind('GCalendarName', edCalendarName, 'Text');
+  edCalendarDescription.Text := FCustomController.GCalendarDescription;
+  FCustomController.Bind('GCalendarDescription', edCalendarDescription, 'Text');
+  edCalendarLocation.Text := FCustomController.GCalendarLocation;
+  FCustomController.Bind('GCalendarLocation', edCalendarLocation, 'Text');
+  edCalendarTimeZone.Text := FCustomController.GCalendarTimeZone;
+  FCustomController.Bind('GCalendarTimeZone', edCalendarTimeZone, 'Text');
   grdGoogleCalendar.DataSource := FCustomController.dsGoogleEvents;
   // Bind Controls to Current Record in Calendar Client.
+  cboCalendarsList.ItemIndex := FCustomController.GCalendarItemIndex;
+  FCustomController.Bind('GCalendarItemIndex', cboCalendarsList, 'ItemIndex');
+  cboCalendarsList.Text := FCustomController.GCalendarListText;
+  FCustomController.Bind('GCalendarListText', cboCalendarsList, 'Text', True);
+  DBPlanner1.ItemSource := FCustomController.DBDaySourceGCalendar;
+end;
 
+procedure TframeVCLCustomGoogleCalendar.Button1Click(Sender: TObject);
+begin
+  AdvGCalendar1.PersistTokens.Location := plIniFile;
+  AdvGCalendar1.PersistTokens.Key := 'C:\Phoenix\tokens.ini';
+  AdvGCalendar1.PersistTokens.Section := 'google_janua';
+  AdvGCalendar1.LoadTokens;
 
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.RefreshAccess;
+
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.DoAuth
 end;
 
 procedure TframeVCLCustomGoogleCalendar.cboCalendarsListChange(Sender: TObject);
 begin
-  FCustomController.FillCalendarItems;
+  if Assigned(FCustomController) then
+    FCustomController.GCalendarItemIndex := cboCalendarsList.ItemIndex;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.cboCalendarsListClick(Sender: TObject);
 begin
-  FCustomController.FillCalendarItems;
+  if Assigned(FCustomController) then
+  begin
+    FCustomController.GCalendarItemIndex := cboCalendarsList.ItemIndex;
+    pnlGroupColor.Color := FCustomController.GroupBackColor;
+    pnlGroupColor.Font.Color := FCustomController.GroupForeColor;
+  end;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.SetColor(Sender: TObject);
@@ -166,10 +202,22 @@ begin
   FCustomController := Value;
   if Assigned(FCustomController) then
   begin
+    FCustomController.AdvGCalendar1 := AdvGCalendar1;
+    AdvGCalendar1.PersistTokens.Location := plIniFile;
+    AdvGCalendar1.PersistTokens.Key := 'C:\Phoenix\tokens.ini';
+    AdvGCalendar1.PersistTokens.Section := 'google_janua';
+    AdvGCalendar1.LoadTokens;
     BindControls;
     FCustomController.OnToggleGoogleControls := ToggleControls;
     FCustomController.OnToggleGoogleReminders := ToggleReminders;
     FCustomController.OnSetColor := SetColor;
+    if not AdvGCalendar1.TestTokens then
+      AdvGCalendar1.RefreshAccess
+    else
+      FCustomController.InitGoogle;
+
+    if not AdvGCalendar1.TestTokens then
+      AdvGCalendar1.DoAuth;
   end;
 end;
 
@@ -213,7 +261,11 @@ begin
   btAddCalendar.Enabled := Connected;
   btDeleteCalendar.Enabled := Connected;
   btUpdateCalendar.Enabled := Connected;
-  cboCalendarsList.Text := FCustomController.CalendarsListText;
+  cboCalendarsList.Text := FCustomController.GCalendarListText;
+  cboCalendarsList.ItemIndex := FCustomController.GCalendarItemIndex;
+  pnlGroupColor.Color := FCustomController.GroupBackColor;
+  pnlGroupColor.Font.Color := FCustomController.GroupForeColor;
+  ckbCalendarList.Items.Text := FCustomController.GCalendarListText;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.ToggleReminders(Sender: TObject);

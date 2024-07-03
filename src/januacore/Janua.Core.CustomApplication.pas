@@ -9,7 +9,6 @@ type
   private
     class var FDBEngine: TJanuaDBEngine;
     class procedure SetDBEngine(const Value: TJanuaDBEngine); static;
-
   protected
     class var FPgConf: TJanuaServerRecordConf;
   public
@@ -53,6 +52,12 @@ begin
   Janua.Orm.Register.TJanuaOrmFramework.Initialize;
   // These are the basic interfaces for View and Models (all DB and Platform independant)
   TJanuaCoreViewModelFramework.RegisterInterfaces;
+
+  TJanuaApplication.CloudConf.GoogleAppKey := TJanuaCoreOS.ReadRegistry(False, 'GoogleAppKey', 'Google',
+    '236693880296-rm39939mbtpabvkfdiqsolvkdogn334a.apps.googleusercontent.com');
+  TJanuaApplication.CloudConf.GoogleAppSecret := TJanuaCoreOS.ReadRegistry(False, 'GoogleAppKey', 'Google',
+    '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');
+
   RegisterForms;
 end;
 
@@ -80,7 +85,7 @@ begin
   TJanuaApplication.ServerPort := TJanuaCoreOS.ReadIntRegistry(False, 'port', sDBEngine,
     TJanuaApplication.ServerPort);
   TJanuaApplication.ServerDatabaseName := TJanuaCoreOS.ReadRegistry(False, 'database', sDBEngine,
-   TJanuaApplication.ServerDatabaseName);
+    TJanuaApplication.ServerDatabaseName);
   TJanuaApplication.DBSchemaID := TJanuaCoreOS.ReadIntRegistry(False, 'schema_id', sDBEngine,
     TJanuaApplication.DBSchemaID);
 end;

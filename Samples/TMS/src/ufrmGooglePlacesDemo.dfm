@@ -74,7 +74,6 @@ object Form1: TForm1
     Caption = 'Nearby'
     TabOrder = 3
     OnClick = btnSearchNearbyClick
-    ExplicitLeft = 376
   end
   object lstPlaces: TListView
     Left = 8
@@ -92,7 +91,6 @@ object Form1: TForm1
     ViewStyle = vsReport
     OnChange = lstPlacesChange
     OnClick = lstPlacesClick
-    ExplicitHeight = 411
   end
   object Button1: TButton
     Left = 400
@@ -103,7 +101,6 @@ object Form1: TForm1
     Caption = 'Search'
     TabOrder = 2
     OnClick = Button1Click
-    ExplicitLeft = 287
   end
   object edSearch: TEdit
     Left = 48
@@ -113,7 +110,6 @@ object Form1: TForm1
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
     TextHint = 'Search...'
-    ExplicitWidth = 233
   end
   object GroupBox1: TGroupBox
     Left = 473
@@ -123,8 +119,6 @@ object Form1: TForm1
     Anchors = [akLeft, akTop, akRight, akBottom]
     Caption = 'Place Detail'
     TabOrder = 7
-    ExplicitWidth = 354
-    ExplicitHeight = 417
     DesignSize = (
       442
       456)
@@ -250,7 +244,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 0
-      ExplicitTop = 183
     end
     object edLat: TEdit
       Left = 223
@@ -259,7 +252,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 7
-      ExplicitTop = 352
     end
     object edLong: TEdit
       Left = 223
@@ -268,7 +260,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 8
-      ExplicitTop = 393
     end
     object edVicinity: TEdit
       Left = 80
@@ -277,7 +268,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 4
-      ExplicitTop = 288
     end
     object cbOpen: TCheckBox
       Left = 80
@@ -287,7 +277,6 @@ object Form1: TForm1
       Anchors = [akLeft, akBottom]
       Caption = 'Now Open'
       TabOrder = 5
-      ExplicitTop = 315
     end
     object lstTypes: TListBox
       Left = 80
@@ -297,7 +286,6 @@ object Form1: TForm1
       Anchors = [akLeft, akBottom]
       ItemHeight = 13
       TabOrder = 6
-      ExplicitTop = 337
     end
     object edPhone: TEdit
       Left = 80
@@ -306,7 +294,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 2
-      ExplicitTop = 237
     end
     object edAddress: TEdit
       Left = 80
@@ -315,7 +302,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 1
-      ExplicitTop = 210
     end
     object edWebsie: TEdit
       Left = 80
@@ -324,7 +310,6 @@ object Form1: TForm1
       Height = 21
       Anchors = [akLeft, akBottom]
       TabOrder = 3
-      ExplicitTop = 264
     end
   end
   object btnNextPage: TButton
@@ -336,7 +321,6 @@ object Form1: TForm1
     Caption = 'Next Page'
     TabOrder = 5
     OnClick = btnNextPageClick
-    ExplicitLeft = 376
   end
   object ScrollBox1: TScrollBox
     Left = 8
@@ -345,7 +329,6 @@ object Form1: TForm1
     Height = 241
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 8
-    ExplicitTop = 508
   end
   object btnAutocomplete: TButton
     Left = 840
@@ -357,7 +340,6 @@ object Form1: TForm1
     TabOrder = 4
     Visible = False
     OnClick = btnAutocompleteClick
-    ExplicitLeft = 726
   end
   object edType: TEdit
     Left = 48
@@ -367,7 +349,6 @@ object Form1: TForm1
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 1
     TextHint = 'Type..'
-    ExplicitWidth = 314
   end
   object AdvGPlaces1: TAdvGPlaces
     Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'

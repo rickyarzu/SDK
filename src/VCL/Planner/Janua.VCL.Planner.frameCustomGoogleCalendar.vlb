@@ -185,9 +185,6 @@ Coordinates=748,608,53,58
 [Label13]
 Coordinates=1348,540,60,58
 
-[dmVCLPlannerCustomController.vtGoogleCalendars]
-Coordinates=442,10,315,256
-
 [dmVCLPlannerCustomController.dsCalendar]
 Coordinates=637,1105,271,36
 
@@ -262,4 +259,7 @@ Coordinates=892,608,64,58
 
 [edCalendarItemLocation]
 Coordinates=915,676,44,58
+
+[dmVCLPlannerCustomController.]
+Coordinates=442,10,315,256
 

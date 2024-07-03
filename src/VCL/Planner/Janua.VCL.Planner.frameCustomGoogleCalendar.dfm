@@ -9,7 +9,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Top = 212
     Width = 904
     Height = 856
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -88,6 +88,18 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           Columns = <
             item
               Expanded = False
+              FieldName = 'Alias'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'COLOR'
+              Width = 64
+              Visible = True
+            end
+            item
+              Expanded = False
               FieldName = 'STARTTIME'
               Title.Caption = 'Dalle Ore'
               Width = 112
@@ -104,26 +116,20 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
               Expanded = False
               FieldName = 'SUMMARY'
               Title.Caption = 'Oggetto (Sintesi)'
-              Width = 300
+              Width = 1024
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'LOCATION'
               Title.Caption = 'Luogo (Indirizzo)'
-              Width = 304
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'CALENDARID'
-              Width = 772
+              Width = 250
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'ID'
-              Width = 104
+              Width = 300
               Visible = True
             end>
         end
@@ -134,9 +140,9 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       ImageIndex = 1
       object DBPlanner1: TDBPlanner
         Left = 0
-        Top = 0
+        Top = 47
         Width = 896
-        Height = 826
+        Height = 779
         Align = alClient
         AttachementGlyph.Data = {
           F6000000424DF600000000000000760000002800000010000000100000000100
@@ -368,7 +374,8 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
-        ItemSource = dmVCLPlannerCustomController.DBDaySourceCalendar
+        ItemSource = dmVCLPlannerCustomController.DBDaySourceGCalendar
+        ExplicitLeft = 1
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 528
@@ -400,6 +407,58 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           Options.PageNumberMargins.Bottom = 5.000000000000000000
           Options.PageNumberFormat = '%d'
           Options.PageNumberFont.Name = 'Arial'
+        end
+      end
+      object pnlFilterBar: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 890
+        Height = 41
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 896
+        object ckbCalendarList: TCheckListBox
+          Left = 59
+          Top = 0
+          Width = 831
+          Height = 41
+          Align = alClient
+          Columns = 12
+          ItemHeight = 17
+          Items.Strings = (
+            'uno'
+            'due'
+            'tre'
+            'quattro'
+            'cinque '
+            'sei '
+            'sette'
+            'otto'
+            'nove'
+            'dieci'
+            'undici'
+            'dodici')
+          TabOrder = 0
+          ExplicitLeft = 60
+          ExplicitTop = -3
+        end
+        object ckbAll: TCheckBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 53
+          Height = 35
+          Align = alLeft
+          Caption = 'Tutti'
+          Checked = True
+          State = cbChecked
+          TabOrder = 1
+          ExplicitLeft = 11
+          ExplicitTop = 6
         end
       end
     end
@@ -521,22 +580,22 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       1274
       168)
     object lbLists: TLabel
-      Left = 28
-      Top = 23
+      Left = 76
+      Top = 18
       Width = 27
       Height = 15
       Caption = 'Liste:'
     end
     object lbDefaultReminders: TLabel
       Left = 392
-      Top = 23
+      Top = 18
       Width = 95
       Height = 15
       Caption = 'Allarmi di Default:'
     end
     object cboCalendarsList: TComboBox
       Left = 130
-      Top = 20
+      Top = 15
       Width = 246
       Height = 23
       Style = csDropDownList
@@ -643,10 +702,20 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
       end
+      object pnlGroupColor: TPanel
+        Left = 488
+        Top = 80
+        Width = 617
+        Height = 25
+        BevelOuter = bvNone
+        Caption = 'Colore Calendario'
+        TabOrder = 7
+        StyleElements = []
+      end
     end
     object cbDefaultReminders: TComboBox
       Left = 505
-      Top = 20
+      Top = 15
       Width = 621
       Height = 23
       Style = csDropDownList
@@ -1087,5 +1156,22 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       ImageIndex = 10
       ImageName = '011-planner'
     end
+  end
+  object AdvGCalendar1: TAdvGCalendar
+    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
+    App.CallBackURL = 'http://127.0.0.1:8888/'
+    App.CallBackPort = 8888
+    PersistTokens.Location = plIniFile
+    PersistTokens.Section = 'google_janua'
+    Scopes.Strings = (
+      'https://www.googleapis.com/auth/calendar')
+    OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
+    AuthFormSettings.Caption = 'Authorize'
+    AuthFormSettings.Width = 900
+    AuthFormSettings.Height = 600
+    Calendars = <>
+    Items = <>
+    Left = 392
+    Top = 376
   end
 end
