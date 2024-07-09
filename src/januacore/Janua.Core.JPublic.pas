@@ -568,7 +568,7 @@ begin
     if not FListaProvince.Equals(Value) then
     begin
       self.FListaProvince.Assign(Value);
-      SortTStrings(FListaProvince);
+      JSortTStrings(FListaProvince);
       self.DistrictIndex := self.FListaProvince.IndexOf(self.DistrictName);
       // self.WriteLog('TJanuaLocation.SetListaProvince: self.DistrictIndex=' + RegionIndex.ToString +
       // ', DistrictName=' + self.DistrictName);
@@ -593,7 +593,7 @@ begin
     if not FListaRegioni.Equals(Value) then
     begin
       self.FListaRegioni.Assign(Value);
-      SortTStrings(FListaRegioni);
+      JSortTStrings(FListaRegioni);
       self.RegionIndex := self.FListaRegioni.IndexOf(FRegionName);
       // self.WriteLog('TJanuaLocation.SetListaRegioni: self.RegionIndex=' + RegionIndex.ToString +
       // ', FRegionName=' + self.RegionName);
@@ -896,7 +896,7 @@ begin
           FListaComuni.Assign(FLocation.CountryRecord.SelectedRegion.SelectedDistrict.ListTown);
           WriteLog('TJanuaServerJPublic.UpdateDistrict FSelectedDistrict:',
             FLocation.CountryRecord.SelectedRegion.SelectedDistrict.ToString(false));
-          SortTStrings(FListaComuni);
+          JSortTStrings(FListaComuni);
           if self.FTownID = 0 then
             self.FTownID := self.FLocation.Town.ID;
           if FLocation.SetTownID(FTownID) then

@@ -202,7 +202,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Align = alLeft
       Caption = 'Tutti'
       TabOrder = 0
-      ExplicitLeft = 0
     end
     object ckbCalendarList: TCheckListBox
       Left = 59
@@ -227,7 +226,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
         'dodici')
       TabOrder = 1
       OnClickCheck = ckbCalendarListClickCheck
-      ExplicitLeft = 62
     end
   end
   object Panel3: TPanel
@@ -367,7 +365,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
         DefaultItem.ItemEnd = 17
         DefaultItem.ItemPos = 0
         DefaultItem.Name = 'PlannerItem0'
-        DefaultItem.PopupMenu = ItemPopup
         DefaultItem.SelectColor = clYellow
         DefaultItem.Shadow = False
         DeleteGlyph.Data = {
@@ -501,7 +498,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
         HTMLOptions.CellFontStyle = []
         HTMLOptions.HeaderFontStyle = []
         HTMLOptions.SidebarFontStyle = []
-        ItemPopup = ItemPopup
         Items = <>
         Mode.Month = 12
         Mode.PeriodStartDay = 28
@@ -528,6 +524,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
         Sidebar.Font.Style = []
         Sidebar.HourFontRatio = 1.800000000000000000
         Sidebar.Width = 48
+        PictureContainer = dmVCLPlannerCustomController.PictureContainer1
         Positions = 16
         PositionProps = <>
         PrintOptions.LineWidth = 0
@@ -552,14 +549,12 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
           88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
-        ItemSource = dmVCLPhoenixPlannerController.DBDaySourceCalendar
-        ExplicitTop = 160
-        ExplicitWidth = 1440
-        ExplicitHeight = 715
+        ExplicitWidth = 896
+        ExplicitHeight = 771
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
-          Left = 418
-          Top = 192
+          Left = 528
+          Top = 344
           Width = 26
           Height = 26
           Visible = True

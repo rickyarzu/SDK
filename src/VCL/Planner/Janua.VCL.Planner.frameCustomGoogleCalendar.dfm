@@ -6,80 +6,39 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
   TabOrder = 0
   object PageControl1: TPageControl
     Left = 0
-    Top = 212
+    Top = 267
     Width = 904
-    Height = 856
+    Height = 801
     ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = -1
+    ExplicitTop = 211
+    ExplicitHeight = 856
     object TabSheet1: TTabSheet
       Caption = 'Google Sync'
-      object GroupBox2: TGroupBox
+      object grpEventsList: TGroupBox
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 890
-        Height = 823
+        Height = 768
         Margins.Bottom = 0
         Align = alClient
-        Caption = 'Events'
+        Caption = 'Lista Eventi '
         TabOrder = 0
+        ExplicitHeight = 823
         DesignSize = (
           890
-          823)
-        object Label1: TLabel
-          Left = 17
-          Top = 23
-          Width = 53
-          Height = 15
-          Caption = 'Start date:'
-        end
-        object Label13: TLabel
-          Left = 214
-          Top = 23
-          Width = 49
-          Height = 15
-          Caption = 'End date:'
-        end
-        object dpCalStartDate: TDateTimePicker
-          Left = 87
-          Top = 22
-          Width = 106
-          Height = 21
-          Date = 41153.000000000000000000
-          Time = 0.582957546299439900
-          TabOrder = 0
-        end
-        object dpCalEndDate: TDateTimePicker
-          Left = 288
-          Top = 22
-          Width = 105
-          Height = 21
-          Date = 41274.000000000000000000
-          Time = 0.582957546299439900
-          TabOrder = 1
-        end
-        object btUpdate: TButton
-          Left = 717
-          Top = 22
-          Width = 144
-          Height = 25
-          Action = dmVCLPlannerCustomController.actUpdateEvents
-          Anchors = [akTop, akRight]
-          ImageMargins.Left = 6
-          Images = dmVCLPlannerCustomController.SVGIconImageList16
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-        end
+          768)
         object grdGoogleCalendar: TCRDBGrid
           Left = 13
-          Top = 53
+          Top = 24
           Width = 859
-          Height = 756
+          Height = 730
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = dmVCLPlannerCustomController.dsGoogleEvents
-          TabOrder = 3
+          TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
           TitleFont.Height = -12
@@ -140,9 +99,9 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       ImageIndex = 1
       object DBPlanner1: TDBPlanner
         Left = 0
-        Top = 47
+        Top = 0
         Width = 896
-        Height = 779
+        Height = 771
         Align = alClient
         AttachementGlyph.Data = {
           F6000000424DF600000000000000760000002800000010000000100000000100
@@ -375,7 +334,8 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
         ItemSource = dmVCLPlannerCustomController.DBDaySourceGCalendar
-        ExplicitLeft = 1
+        ExplicitTop = 47
+        ExplicitHeight = 779
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 528
@@ -407,58 +367,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           Options.PageNumberMargins.Bottom = 5.000000000000000000
           Options.PageNumberFormat = '%d'
           Options.PageNumberFont.Name = 'Arial'
-        end
-      end
-      object pnlFilterBar: TPanel
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 890
-        Height = 41
-        Align = alTop
-        BevelOuter = bvNone
-        TabOrder = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 896
-        object ckbCalendarList: TCheckListBox
-          Left = 59
-          Top = 0
-          Width = 831
-          Height = 41
-          Align = alClient
-          Columns = 12
-          ItemHeight = 17
-          Items.Strings = (
-            'uno'
-            'due'
-            'tre'
-            'quattro'
-            'cinque '
-            'sei '
-            'sette'
-            'otto'
-            'nove'
-            'dieci'
-            'undici'
-            'dodici')
-          TabOrder = 0
-          ExplicitLeft = 60
-          ExplicitTop = -3
-        end
-        object ckbAll: TCheckBox
-          AlignWithMargins = True
-          Left = 3
-          Top = 3
-          Width = 53
-          Height = 35
-          Align = alLeft
-          Caption = 'Tutti'
-          Checked = True
-          State = cbChecked
-          TabOrder = 1
-          ExplicitLeft = 11
-          ExplicitTop = 6
         end
       end
     end
@@ -537,7 +445,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     end
     object btnConnect: TButton
       Left = 36
-      Top = 13
+      Top = 8
       Width = 114
       Height = 25
       Action = dmVCLPlannerCustomController.actConnect
@@ -549,7 +457,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     end
     object btnRemove: TButton
       Left = 156
-      Top = 13
+      Top = 8
       Width = 125
       Height = 25
       Action = dmVCLPlannerCustomController.actRemoveAccess
@@ -606,13 +514,13 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     object grpCalendarDetails: TGroupBox
       Left = 17
       Top = 44
-      Width = 1123
+      Width = 1240
       Height = 117
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Dettagli Calendario'
       TabOrder = 1
       DesignSize = (
-        1123
+        1240
         117)
       object Label16: TLabel
         Left = 11
@@ -689,61 +597,77 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       object edCalendarLocation: TEdit
         Left = 488
         Top = 22
-        Width = 621
+        Width = 738
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
+        ExplicitWidth = 621
       end
       object edCalendarTimeZone: TEdit
         Left = 488
         Top = 51
-        Width = 621
+        Width = 738
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
+        ExplicitWidth = 621
       end
       object pnlGroupColor: TPanel
         Left = 488
         Top = 80
-        Width = 617
+        Width = 734
         Height = 25
+        Anchors = [akLeft, akTop, akRight]
         BevelOuter = bvNone
         Caption = 'Colore Calendario'
         TabOrder = 7
         StyleElements = []
+        ExplicitWidth = 617
       end
     end
     object cbDefaultReminders: TComboBox
       Left = 505
       Top = 15
-      Width = 621
+      Width = 617
       Height = 23
       Style = csDropDownList
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
     end
+    object ckbFilterCalendar: TCheckBox
+      Left = 1128
+      Top = 21
+      Width = 118
+      Height = 17
+      Anchors = [akTop, akRight]
+      Caption = 'Filtra Calendario'
+      TabOrder = 3
+    end
   end
   object pnlEventDetail: TPanel
     Left = 904
-    Top = 212
+    Top = 267
     Width = 376
-    Height = 856
+    Height = 801
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitTop = 212
+    ExplicitHeight = 856
     object grpItemDetails: TGroupBox
       AlignWithMargins = True
       Left = 3
       Top = 3
       Width = 370
-      Height = 853
+      Height = 798
       Margins.Bottom = 0
       Align = alClient
       Caption = 'Details'
       TabOrder = 0
+      ExplicitHeight = 853
       DesignSize = (
         370
-        853)
+        798)
       object Label4: TLabel
         Left = 16
         Top = 94
@@ -942,12 +866,13 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       end
       object PageControl2: TPageControl
         Left = 19
-        Top = 608
+        Top = 553
         Width = 334
         Height = 233
         ActivePage = tabAttendees
-        Anchors = [akLeft, akTop, akRight]
+        Anchors = [akLeft, akRight, akBottom]
         TabOrder = 10
+        ExplicitTop = 608
         object tabDettagli: TTabSheet
           Caption = 'Dettagli'
           object Label8: TLabel
@@ -1147,6 +1072,97 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       end
     end
   end
+  object pnlFilterCalendar: TPanel
+    Left = 0
+    Top = 212
+    Width = 1280
+    Height = 55
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 4
+    ExplicitTop = 211
+    DesignSize = (
+      1280
+      55)
+    object lbStartDate: TLabel
+      Left = 12
+      Top = 4
+      Width = 56
+      Height = 15
+      Caption = 'Dal Giorno'
+    end
+    object lbEndDate: TLabel
+      Left = 12
+      Top = 29
+      Width = 50
+      Height = 15
+      Caption = 'Al Giorno'
+    end
+    object btUpdate: TButton
+      Left = 1121
+      Top = 16
+      Width = 144
+      Height = 25
+      Action = dmVCLPlannerCustomController.actUpdateEvents
+      Anchors = [akTop, akRight]
+      ImageMargins.Left = 6
+      Images = dmVCLPlannerCustomController.SVGIconImageList16
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object dpCalStartDate: TDateTimePicker
+      Left = 79
+      Top = 3
+      Width = 106
+      Height = 21
+      Date = 41153.000000000000000000
+      Time = 0.582957546299439900
+      TabOrder = 1
+    end
+    object dpCalEndDate: TDateTimePicker
+      Left = 80
+      Top = 28
+      Width = 105
+      Height = 21
+      Date = 41274.000000000000000000
+      Time = 0.582957546299439900
+      TabOrder = 2
+    end
+    object ckbAll: TCheckBox
+      AlignWithMargins = True
+      Left = 191
+      Top = 3
+      Width = 50
+      Height = 49
+      Caption = 'Tutti'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object ckbCalendarList: TCheckListBox
+      Left = 240
+      Top = 8
+      Width = 545
+      Height = 41
+      Columns = 6
+      Items.Strings = (
+        'uno'
+        'due'
+        'tre'
+        'quattro'
+        'cinque '
+        'sei '
+        'sette'
+        'otto'
+        'nove'
+        'dieci'
+        'undici'
+        'dodici')
+      TabOrder = 4
+      OnClickCheck = ckbCalendarListClickCheck
+    end
+  end
   object ActionList1: TActionList
     Images = dmVCLPlannerCustomController.SVGIconImageList16
     Left = 492
@@ -1156,22 +1172,5 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       ImageIndex = 10
       ImageName = '011-planner'
     end
-  end
-  object AdvGCalendar1: TAdvGCalendar
-    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
-    App.CallBackURL = 'http://127.0.0.1:8888/'
-    App.CallBackPort = 8888
-    PersistTokens.Location = plIniFile
-    PersistTokens.Section = 'google_janua'
-    Scopes.Strings = (
-      'https://www.googleapis.com/auth/calendar')
-    OnReceivedAccessToken = AdvGCalendar1ReceivedAccessToken
-    AuthFormSettings.Caption = 'Authorize'
-    AuthFormSettings.Width = 900
-    AuthFormSettings.Height = 600
-    Calendars = <>
-    Items = <>
-    Left = 392
-    Top = 376
   end
 end

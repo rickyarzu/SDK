@@ -5602,7 +5602,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45475.000000000000000000
+    DateFrom = 45481.000000000000000000
     Left = 416
     Top = 40
   end
@@ -11735,7 +11735,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     DateFormat = 'dd/mm/yyyy'
     Day = 45444.000000000000000000
     Mode = dmMultiDayRes
-    NumberOfDays = 2
+    NumberOfDays = 3
     NumberOfResources = 6
     Left = 267
     Top = 16

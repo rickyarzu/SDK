@@ -6,12 +6,12 @@ inherited frameVCLPhoenixGoogleCalendar: TframeVCLPhoenixGoogleCalendar
         ItemSource = nil
         TMSStyle = 0
       end
-      inherited pnlFilterBar: TPanel
-        inherited ckbCalendarList: TCheckListBox
-          ItemHeight = 16
-          OnClickCheck = nil
-        end
-      end
+    end
+  end
+  inherited grpCalendars: TGroupBox
+    inherited ckbFilterCalendar: TCheckBox
+      Top = 18
+      ExplicitTop = 18
     end
   end
   inherited pnlEventDetail: TPanel

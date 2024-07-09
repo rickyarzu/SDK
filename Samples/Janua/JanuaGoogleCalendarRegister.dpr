@@ -1,4 +1,4 @@
-program JanuaGoogleCalendarDemo;
+program JanuaGoogleCalendarRegister;
 
 uses
   VCL.Forms,
@@ -17,8 +17,6 @@ begin
   TJanuaApplication.StyleManager.Activate;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  dlgVclCloudGoogleConnect:=TdlgVclCloudGoogleConnect.Create(nil);
-  dlgVclCloudGoogleConnect.ShowModal;
-  Application.CreateForm(TfrmTMSAdvCalendarDemo, frmTMSAdvCalendarDemo);
+  Application.CreateForm(TdlgVclCloudGoogleConnect, dlgVclCloudGoogleConnect);
   Application.Run;
 end.

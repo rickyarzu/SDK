@@ -75,8 +75,11 @@ uses Spring, System.StrUtils, Janua.Components.Planner;
 
 procedure TdlgVCLCustomPlannerEvent.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FEvent.ActivityGroupJguid.AsString := lkpGroups.Value;
-  FEvent.ActivityJguid.AsString := lkpActivities.Value;
+  if Assigned(FEvent) then
+  begin
+    FEvent.ActivityGroupJguid.AsString := lkpGroups.Value;
+    FEvent.ActivityJguid.AsString := lkpActivities.Value;
+  end;
 end;
 
 { function TdlgVCLPlannerEvent.IsTouchPropertyStored(AProperty: TTouchProperty): Boolean;

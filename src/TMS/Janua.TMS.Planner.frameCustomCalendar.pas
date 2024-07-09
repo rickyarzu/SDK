@@ -14,7 +14,7 @@ uses
   // Janua
   Janua.Vcl.Planner.dmCustomController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.VCL.EnhCRDBGrid;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.Vcl.EnhCRDBGrid;
 
 type
   TframeTMSCustomPlannerCalendar = class(TFrame)
@@ -50,10 +50,10 @@ type
     Carattere1: TMenuItem;
     PageControl1: TPageControl;
     tabCalendar: TTabSheet;
-    DBPlanner1: TDBPlanner;
-    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     tabCalendarGrid: TTabSheet;
     EnhCRDBGrid1: TEnhCRDBGrid;
+    DBPlanner1: TDBPlanner;
+    AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     procedure ckbCalendarListClickCheck(Sender: TObject);
   private
     FCustomController: TdmVCLPlannerCustomController;
@@ -66,6 +66,8 @@ type
   end;
 
 implementation
+
+uses Janua.Application.Framework, Janua.Core.Functions, Spring;
 
 {$R *.dfm}
 
@@ -115,6 +117,24 @@ begin
     ckbCalendarList.Items.Text := FCustomController.CalendarsList.Text;
     FCustomController.PlannerPDFIO := AdvPlannerPDFIO1;
     FCustomController.ActivateCalendar;
+{$IFDEF DEBUG}
+    Guard.CheckNotNull(FCustomController.DBDaySourceCalendar, 'FCustomController.DBDaySourceCalendar');
+    Guard.CheckNotNull(FCustomController.DBDaySourceCalendar.DataSource, 'DataSource');
+{$ENDIF}
+    DBPlanner1.ItemSource := FCustomController.DBDaySourceCalendar;
+    if not FCustomController.DBDaySourceCalendar.DataSource.Enabled then
+      FCustomController.DBDaySourceCalendar.DataSource.Enabled := True;
+    if not FCustomController.DBDaySourceCalendar.DataSource.Dataset.Active then
+      FCustomController.DBDaySourceCalendar.DataSource.Dataset.Open;
+
+    edPlannerDateFrom.Date := FCustomController.DateFrom;
+    FCustomController.Bind('DateFrom', edPlannerDateFrom, 'Date');
+    edPlannerDateTo.Date := FCustomController.DateTo;
+    FCustomController.Bind('DateTo', edPlannerDateTo, 'Date');
+
+    for var I := 0 to ckbCalendarList.Count - 1 do
+      ckbCalendarList.Checked[I] := True; // Check if the item at index I is checked
+    ckbCalendarListClickCheck(self);
   end;
 end;
 

@@ -4,13 +4,13 @@ interface
 
 uses
   // RTL
-  System.SysUtils, System.Classes, System.Actions, System.Bindings.Helper, System.ImageList, Data.DB,
-  System.UITypes, System.DateUtils, System.TypInfo, System.StrUtils,
+  System.SysUtils, System.Classes, System.Actions, System.Bindings.Helper, System.ImageList, System.UITypes,
+  System.DateUtils, System.TypInfo, System.StrUtils, Windows, Winapi.ShellAPI, Spring, System.Math,
   // DB
-  PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
+  Data.DB, PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
   // VCL
   VCL.ActnList, VCL.ImgList, VCL.Controls, SVGIconImageListBase, SVGIconImageList, VCL.Dialogs,
-  PictureContainer, VCL.Graphics,
+  PictureContainer, VCL.Graphics, VCL.Forms,
   // Planner
   AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner,
   // Cloud
@@ -330,6 +330,7 @@ type
     FGItemColorField: TField;
     FGItemCaptionField: TField;
     FUpdatingFromDB: Boolean;
+    FOnAfterConnect: TNotifyEvent;
     procedure SetDeleteItemFunc(const Value: TItemFunc);
     procedure SetItemModifyFunc(const Value: TItemFunc);
     procedure SetItemUpdateProc(const Value: TItemProc);
@@ -351,7 +352,11 @@ type
     procedure SetGItemColorField(const Value: TField);
     procedure SetGItemImageField(const Value: TField);
     procedure SetUpdatingFromDB(const Value: Boolean);
+    procedure SetOnAfterConnect(const Value: TNotifyEvent);
   protected
+    LoadCalendarsFromDB: TProc;
+    LoadCalendarItemsFromDB: TProc;
+    AfterLoadCalendars: TProc;
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; virtual; abstract;
     procedure AddActivity; virtual; abstract;
@@ -455,6 +460,7 @@ type
     property CurrentGCalendar: TGCalendar read Fgcal;
     /// <summary> Prevents updating Calendar Color while inserting/updating data from DB </summary>
     property UpdatingFromDB: Boolean read FUpdatingFromDB write SetUpdatingFromDB;
+    property OnAfterConnect: TNotifyEvent read FOnAfterConnect write SetOnAfterConnect;
   end;
 
 var
@@ -462,8 +468,7 @@ var
 
 implementation
 
-uses VCL.Forms, Windows, Winapi.ShellAPI, Spring, Janua.Application.Framework, Janua.ViewModels.Application,
-  udmSVGImageList,
+uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
   Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl,
   // Orm to Manage Google Calendars (not Internal Planner so).
   JOrm.Cloud.GoogleCalendars.Impl, JOrm.Cloud.GoogleCalendarEvents.Impl,
@@ -485,6 +490,10 @@ var
   I: Integer;
 begin
   FUpdatingFromDB := False;
+
+  DBDaySourceCalendar.Active := False;
+  DBDaySourceCalendar.Day := Date;
+
   FCurrentGoogleItem := TGoogleCalendarEventFactory.CreateRecord('GCalItem');
   vtGoogleCalendars.Open;
   vtGoogleEvents.Open;
@@ -519,29 +528,26 @@ begin
   var
   vTest2 := EndOfTheMonth(Date()) - Date;
 
-  if (vTest1 >= 3) and (vTest2 >= 5) then
+  if (vTest1 >= 7) and (vTest2 >= 5) then
   begin
     FDateFrom := StartOfTheMonth(Date());
     FDateTo := EndOfTheMonth(Date());
   end
   else
   begin
-    if vTest1 <= 3 then
+    if vTest1 <= 7 then
     begin
-      FDateFrom := Date() - 5;
+      FDateFrom := StartOfTheMonth(Date() - 7);
       FDateTo := EndOfTheMonth(Date());
     end
     else
     begin
-      FDateFrom := Date() - 2;
+      FDateFrom := StartOfTheMonth(Date() - 2);
       FDateTo := EndOfTheMonth(IncMonth(Date(), 1));
     end;
   end;
   FCalStartDate := FDateFrom;
   FCalEndDate := IncDay(FDateTo, 90);
-  DBDaySourceGCalendar.NumberOfResources := OpenCalendar(FDateFrom, FDateTo);
-  DBDaySourceGCalendar.Active := True;
-
   // Gestione Item:
   // Creo la Lista e la Imposto
   FItemVisibilityList := TStringList.Create;
@@ -882,7 +888,7 @@ begin
   begin
     for var I := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
     begin
-      if Ord(Fgcal.Color) = AdvGCalendar1.CalendarColors[I].ID then
+      if { Ord(Fgcal.Color) } aColor = AdvGCalendar1.CalendarColors[I].ID then
       begin
         if bg = 0 then
           bg := AdvGCalendar1.CalendarColors[I].BackgroundColor;
@@ -912,20 +918,6 @@ begin
     AdvGCalendar1.DoAuth
   else
     InitGoogle;
-
-  {
-    if not AdvGCalendar1.TestTokens then
-    begin
-    AdvGCalendar1.RefreshAccess;
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.DoAuth;
-    GetGCalendarList;
-    end
-    else
-    GetGCalendarList;
-
-    InitGoogle;
-  }
 end;
 
 procedure TdmVCLPlannerCustomController.ConnectLiveCalendar;
@@ -980,6 +972,10 @@ var
   I: Integer;
   rem: string;
 begin
+  {
+    LoadCalendarsFromDB: TProc;
+    LoadCalendarItemsFromDB: TProc;
+  }
   Screen.Cursor := crHourGlass;
 
   if Assigned(Fgcal) then
@@ -1010,12 +1006,15 @@ begin
       else
       begin
         var
-        vTest := (vtGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
+        bTest := False;
+        {
+          bTest := (vtGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
           (vtGoogleEventsENDTIME.AsDateTime <> AdvGCalendar1.Items[I].EndTime) or
           (vtGoogleEventsSUMMARY.AsString <> AdvGCalendar1.Items[I].Summary) or
           (vtGoogleEventsLOCATION.AsString <> AdvGCalendar1.Items[I].Location) or
           (vtGoogleEventsCALENDARID.AsString <> AdvGCalendar1.Items[I].CalendarID);
-        if vTest then
+        }
+        if bTest then
         begin
           vtGoogleEvents.Edit;
           UpdateGoogleCalendarItem(I);
@@ -1084,7 +1083,7 @@ begin
 
       FGoogleCalendarList.addObject(lCalAlias + isPrimary, AdvGCalendar1.Calendars[I]);
 
-      With DBDaySourceCalendar.ResourceMap.Add Do
+      With DBDaySourceGCalendar.ResourceMap.Add Do
       Begin
         ResourceIndex := PlannerPosition;
         PositionIndex := PlannerPosition;
@@ -1094,11 +1093,9 @@ begin
 
       FillGoogleCalendarItems;
     end;
-    GCalendarItemIndex := 0;
-  end
-  else
-    GCalendarItemIndex := -1;
+  end;
 
+  GCalendarItemIndex := IfThen(PlannerPosition > 0, 0, -1);
   DBDaySourceGCalendar.NumberOfResources := PlannerPosition;
   DBDaySourceGCalendar.Active := True;
   NotifyGCalendars;
@@ -1181,13 +1178,46 @@ end;
 procedure TdmVCLPlannerCustomController.InitGoogle;
 begin
   Connected := True;
-  FillGoogleCalendars;
-  FillGoogleCalendarItems;
   FillColors;
-  ToggleControls;
-  if Assigned(FSyncGoogleCalendars) then
-    FSyncGoogleCalendars;
-  NotifyGCalendars;
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      // This is the "background" anonymous method. Runs in the
+      // background thread, and its result is passed
+      // to the "success" callback.
+      // In this case the result is a String.
+      Result := True;
+      if Assigned(LoadCalendarsFromDB) then
+        LoadCalendarsFromDB;
+      if Assigned(LoadCalendarItemsFromDB) then
+        LoadCalendarItemsFromDB;
+      FillGoogleCalendars;
+      FillGoogleCalendarItems;
+    end,
+    procedure(const aValue: Boolean)
+    begin
+      // This is the "success" callback. Runs in the UI thread and
+      // gets the result of the "background" anonymous method.
+      if Assigned(AfterLoadCalendars) then
+        AfterLoadCalendars;
+      ToggleControls;
+      if Assigned(FSyncGoogleCalendars) then
+        FSyncGoogleCalendars;
+      OpenCalendar(FDateFrom, FDateTo);
+      DBDaySourceGCalendar.Active := True;
+      DBDaySourceCalendar.Active := True;
+      if Assigned(FOnAfterConnect) then
+        FOnAfterConnect(Self);
+      NotifyGCalendars;
+    end,
+    procedure(const Ex: Exception)
+    begin
+      // This is the "error" callback.
+      // Runs in the UI thread and is called only if the
+      // "background" anonymous method raises an exception.
+      JShowError(Ex.Message);
+    end);
+
 end;
 
 procedure TdmVCLPlannerCustomController.ListAttendees(Item: TGCalendarItem);
@@ -1276,7 +1306,7 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.PlannerItemImageClick(Sender: TObject; Item: TPlannerItem;
-  ImageIndex: Integer);
+ImageIndex: Integer);
 begin
   // Virtual Method to Manage the Image Click on The Calendar Planner Item
   if Item.ImageID < 2 then
@@ -1288,7 +1318,7 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.PlannerItemInsert(Sender: TObject;
-  Position, FromSel, FromSelPrecise, ToSel, ToSelPrecise: Integer);
+Position, FromSel, FromSelPrecise, ToSel, ToSelPrecise: Integer);
 begin
   { creates an item in the planner at the selected cells which is automatically
     propagated to the database
@@ -1673,6 +1703,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetItemVisibilityList(const Value: TStrings);
 begin
   FItemVisibilityList := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetOnAfterConnect(const Value: TNotifyEvent);
+begin
+  FOnAfterConnect := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetOnSetColor(const Value: TNotifyEvent);

@@ -32,13 +32,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     Top = 865
     ExplicitTop = 865
   end
-  inherited Panel2: TPanel
-    inherited ckbCalendarList: TCheckListBox
-      ItemHeight = 16
-    end
-  end
   inherited PageControl1: TPageControl
-    ActivePage = tabCalendarGrid
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0

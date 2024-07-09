@@ -13,13 +13,14 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object PageControl1: TPageControl
     Left = 0
     Top = 0
     Width = 1424
     Height = 754
-    ActivePage = tabGoogleCalendar
+    ActivePage = tabPlannerCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -336,6 +337,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Title.Caption = 'Ora Appuntamento'
               Width = 110
               Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'GCAL'
+              Title.Caption = 'G.'
+              Width = 15
+              Visible = True
             end>
         end
         inherited Panel1: TPanel
@@ -408,6 +416,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           DataSet = dmVCLPhoenixPlannerController.qryReportPlanner
           Top = 120
         end
+        inherited ActionList1: TActionList
+          Left = 224
+          Top = 313
+        end
       end
       object pnlBottom: TPanel
         Left = 0
@@ -428,88 +440,45 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabPlannerCalendar: TTabSheet
       Caption = 'Calendario / Planner'
       ImageIndex = 1
-      inline frameTMSPhoenixPlannerCalendar1: TframeTMSPhoenixPlannerCalendar
+      inline frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
         Left = 0
         Top = 0
         Width = 1416
         Height = 724
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 1416
-        ExplicitHeight = 724
         inherited lbGiorni: TLabel
-          Top = 45
-          ExplicitTop = 45
+          Width = 8
         end
         inherited lbCalendarList: TLabel
-          AlignWithMargins = False
-          Left = 0
-          Width = 1416
-          ExplicitLeft = 0
-        end
-        inherited DBPlanner1: TDBPlanner
-          Width = 1416
-          Height = 447
-          Display.CurrentPosFrom = 11
-          Display.CurrentPosTo = 11
-          Header.Captions.Strings = (
-            ''
-            ''
-            ''
-            ''
-            ''
-            '')
-          Header.GroupCaptions.Strings = (
-            '14/06/2024'
-            '15/06/2024'
-            '16/06/2024'
-            '17/06/2024'
-            '18/06/2024')
-          Mode.Month = 6
-          Mode.Year = 2024
-          Mode.Day = 14
-          Positions = 5
-          PositionGroup = 1
-          ExplicitWidth = 1416
-          ExplicitHeight = 447
-          TMSStyle = 0
-        end
-        inherited edDays: TSpinEdit
-          Top = 42
-          AutoSize = False
-          ExplicitTop = 42
-        end
-        inherited Panel1: TPanel
-          inherited btnExport: TButton
-            Action = dmVCLPhoenixPlannerController.ActionExport
-          end
+          Width = 1410
         end
         inherited grpMeeting: TGroupBox
-          AlignWithMargins = True
-          Left = 3
-          Top = 610
-          Width = 1410
-          ExplicitLeft = 3
-          ExplicitTop = 610
-          ExplicitWidth = 1410
+          Top = 613
+          Width = 1416
         end
         inherited Panel2: TPanel
-          Top = 15
           Width = 1416
-          ExplicitTop = 15
-          ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
             ItemHeight = 16
-            ExplicitWidth = 1357
           end
         end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
+        inherited PageControl1: TPageControl
+          Left = 0
+          Width = 1416
+          Height = 453
+          ExplicitLeft = 0
+          ExplicitWidth = 1440
+          ExplicitHeight = 705
+          inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1408
+            ExplicitHeight = 423
+            inherited DBPlanner1: TDBPlanner
+              Width = 1408
+              Height = 423
+              TMSStyle = 0
+            end
           end
         end
       end
@@ -528,33 +497,17 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         ExplicitHeight = 724
         inherited PageControl1: TPageControl
           Width = 1040
-          Height = 512
-          ActivePage = frameVCLPhoenixGoogleCalendar1.TabSheet1
+          Height = 457
           ExplicitWidth = 1040
-          ExplicitHeight = 512
-          inherited TabSheet1: TTabSheet
-            ExplicitWidth = 1032
-            ExplicitHeight = 482
-            inherited GroupBox2: TGroupBox
-              Width = 1026
-              Height = 479
-              inherited btUpdate: TButton
-                Left = 853
-              end
-              inherited grdGoogleCalendar: TCRDBGrid
-                Width = 995
-                Height = 412
-              end
-            end
-          end
+          ExplicitHeight = 457
           inherited TabSheet2: TTabSheet
             ExplicitWidth = 1032
-            ExplicitHeight = 482
+            ExplicitHeight = 427
             inherited DBPlanner1: TDBPlanner
               Width = 1032
-              Height = 482
+              Height = 427
               ExplicitWidth = 1032
-              ExplicitHeight = 482
+              ExplicitHeight = 427
               TMSStyle = 0
             end
           end
@@ -568,16 +521,12 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           end
           inherited btnConnect: TButton
             Left = 20
-            Top = 8
             Width = 130
             ExplicitLeft = 20
-            ExplicitTop = 8
             ExplicitWidth = 130
           end
           inherited btnRemove: TButton
-            Top = 8
             Width = 133
-            ExplicitTop = 8
             ExplicitWidth = 133
           end
         end
@@ -585,30 +534,47 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Width = 1410
           ExplicitWidth = 1410
           inherited grpCalendarDetails: TGroupBox
-            Width = 1259
-            ExplicitWidth = 1259
+            Width = 1382
+            ExplicitWidth = 1382
             inherited edCalendarLocation: TEdit
-              Width = 757
-              ExplicitWidth = 757
+              Width = 880
+              ExplicitWidth = 880
             end
             inherited edCalendarTimeZone: TEdit
-              Width = 757
-              ExplicitWidth = 757
+              Width = 880
+              ExplicitWidth = 880
+            end
+            inherited pnlGroupColor: TPanel
+              Width = 881
+              ExplicitWidth = 881
             end
           end
           inherited cbDefaultReminders: TComboBox
             Width = 757
             ExplicitWidth = 757
           end
+          inherited ckbFilterCalendar: TCheckBox
+            Left = 1268
+            Width = 125
+            ExplicitLeft = 1268
+            ExplicitWidth = 125
+          end
         end
         inherited pnlEventDetail: TPanel
           Left = 1040
-          Height = 512
+          Height = 457
           ExplicitLeft = 1040
-          ExplicitHeight = 512
+          ExplicitHeight = 457
           inherited grpItemDetails: TGroupBox
-            Height = 509
-            ExplicitHeight = 509
+            Height = 454
+            ExplicitHeight = 454
+          end
+        end
+        inherited pnlFilterCalendar: TPanel
+          Width = 1416
+          ExplicitWidth = 1416
+          inherited ckbCalendarList: TCheckListBox
+            ItemHeight = 16
           end
         end
       end
@@ -646,6 +612,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
     object VisualizzaContratto1: TMenuItem
       Caption = 'Visualizza Contratto'
+    end
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object GoogleSync1: TMenuItem
+      Caption = 'Google Sync.'
+      OnClick = GoogleSync1Click
     end
   end
   object ColorDialog1: TColorDialog
