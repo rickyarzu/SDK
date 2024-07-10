@@ -606,6 +606,14 @@
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Components.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.WebServer.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -674,13 +682,13 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCore280.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaCore.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\Win64\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>JanuaCore.bpl</RemoteName>

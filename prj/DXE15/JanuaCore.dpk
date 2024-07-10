@@ -403,6 +403,14 @@ contains
   Janua.Core.StackTrace in '..\..\src\januacore\Janua.Core.StackTrace.pas',
   Janua.REST.Components in '..\..\src\januacore\dmvc\Janua.REST.Components.pas',
   Janua.Core.WebServer in '..\..\src\januacore\Janua.Core.WebServer.pas',
-  Janua.Orm.CodeGen.Impl in '..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas';
+  Janua.Orm.CodeGen.Impl in '..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas',
+  JOrm.Cloud.GoogleCalendarEvents.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Impl.pas',
+  JOrm.Cloud.GoogleCalendarEvents.Custom.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Intf.pas',
+  JOrm.Cloud.GoogleCalendarEvents.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Impl.pas',
+  JOrm.Cloud.GoogleCalendarEvents.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Intf.pas',
+  JOrm.Cloud.GoogleCalendars.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Intf.pas',
+  JOrm.Cloud.GoogleCalendars.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas',
+  JOrm.Cloud.GoogleCalendars.Custom.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas',
+  JOrm.Cloud.GoogleCalendars.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas';
 
 end.

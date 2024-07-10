@@ -2,7 +2,7 @@ unit JOrm.Cloud.GoogleCalendars.Intf;
 
 interface
 
-uses JOrm.Phoenix.GoogleCalendars.Custom.Intf, Janua.Orm.Intf;
+uses JOrm.Cloud.GoogleCalendars.Custom.Intf, Janua.Orm.Intf;
 
 type
 

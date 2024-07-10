@@ -694,11 +694,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT E.* FROM CALENDARIO_EVENTI E'
+      'SELECT E.* FROM '
+      'CALENDARIO_EVENTI E LEFT JOIN CALENDARI C ON E.'
       'where '
-      'DALLE_ORE >= :DATA_DAL'
+      'E.DALLE_ORE >= :DATA_DAL'
       'AND'
-      'DALLE_ORE <= :DATA_AL'
+      'E.DALLE_ORE <= :DATA_AL'
       ';')
     FetchRows = 100
     Filtered = True
