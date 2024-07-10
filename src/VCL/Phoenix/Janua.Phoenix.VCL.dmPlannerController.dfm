@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 569
+  Height = 588
   Width = 1030
   inherited SVGIconImageList48: TSVGIconImageList
     Top = 280
@@ -67,7 +67,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Top = 344
   end
   inherited dsCalendars: TUniDataSource
-    DataSet = qryPlannerEvents
+    DataSet = qryPlannerCalendars
   end
   inherited DBDaySourceGCalendar: TDBDaySource
     Mode = dmMultiDay
@@ -695,8 +695,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT E.* FROM '
-      'CALENDARIO_EVENTI E LEFT JOIN CALENDARI C ON E.'
+      
+        'CALENDARIO_EVENTI E LEFT JOIN CALENDARIO C ON E.CALENDARIO = C.C' +
+        'HIAVE'
       'where '
+      'C.GRUPPO_ID = '#39'T'#39
+      'AND'
       'E.DALLE_ORE >= :DATA_DAL'
       'AND'
       'E.DALLE_ORE <= :DATA_AL'
@@ -740,7 +744,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryPlannerEventsSUBJECT: TStringField
       FieldName = 'SUBJECT'
-      Size = 128
+      Size = 256
     end
     object qryPlannerEventsNOTE: TWideMemoField
       FieldName = 'NOTE'
@@ -1008,7 +1012,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT * FROM CALENDARIO'
+      'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'T'#39
       'order by TECNICO_SIGLA'
       ';')
     Left = 792
@@ -1995,6 +1999,271 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryCAPTecniciTECNICO: TIntegerField
       FieldName = 'TECNICO'
       ReadOnly = True
+    end
+  end
+  object qryPlannerCalendars2: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'SUMMARY'
+        FieldType = ftWideString
+        FieldLength = 2048
+      end
+      item
+        FieldName = 'GOOGLE_JSON'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'A'#39
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 928
+    Top = 40
+    object qryPlannerCalendars2CHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendars2TECNICO: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object qryPlannerCalendars2SUMMARY: TWideStringField
+      FieldName = 'SUMMARY'
+      Size = 2048
+    end
+    object qryPlannerCalendars2DESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendars2TECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendars2COLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendars2JGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendars2GOOGLE_JSON: TWideMemoField
+      FieldName = 'GOOGLE_JSON'
+      BlobType = ftWideMemo
+    end
+    object qryPlannerCalendars2GFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendars2GBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendars2DEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendars2GOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendars2GOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
+      Size = 128
+    end
+    object qryPlannerCalendars2GRUPPO_ID: TStringField
+      FieldName = 'GRUPPO_ID'
+      FixedChar = True
+      Size = 1
+    end
+    object qryPlannerCalendars2ACTIVE: TStringField
+      FieldName = 'ACTIVE'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object DBDaySourceCalendar2: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    DataSource = dsCalendarEvents2
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTE'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendar2FieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    OnInsertItem = DBDaySourceCalendarInsertItem
+    OnUpdateItem = DBDaySourceCalendarUpdateItem
+    OnTimeToFields = DBDaySourceCalendarTimeToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45474.000000000000000000
+    DayIncrement = 3
+    Mode = dmMultiResDay
+    NumberOfDays = 3
+    MinTimeField = 'DALLE_ORE'
+    MaxTimeField = 'ALLE_ORE'
+    Left = 411
+    Top = 304
+  end
+  object dsCalendars2: TUniDataSource
+    DataSet = qryPlannerCalendars2
+    Left = 928
+    Top = 104
+  end
+  object dsCalendarEvents2: TUniDataSource
+    DataSet = qryPlannerEvents2
+    Left = 928
+    Top = 240
+  end
+  object qryPlannerEvents2: TUniQuery
+    KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'JGUID = :Old_JGUID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :JGUID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'NOTE'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT E.* FROM '
+      
+        'CALENDARIO_EVENTI E LEFT JOIN CALENDARIO C ON E.CALENDARIO = C.C' +
+        'HIAVE'
+      'where '
+      'C.GRUPPO_ID = '#39'A'#39
+      'AND'
+      'E.DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'E.DALLE_ORE <= :DATA_AL'
+      ';')
+    FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'JGUID'
+    Left = 928
+    Top = 168
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45437d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATA_AL'
+        ParamType = ptInput
+        Value = 45503d
+      end>
+    object qryPlannerEvents2CHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerEvents2STATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryPlannerEvents2TECNICO: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object qryPlannerEvents2DALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEvents2ALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEvents2NOTE: TWideMemoField
+      FieldName = 'NOTE'
+      BlobType = ftWideMemo
+    end
+    object qryPlannerEvents2SUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 256
+    end
+    object qryPlannerEvents2TECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerEvents2COLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerEvents2JGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerEvents2ICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object qryPlannerEvents2GOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerEvents2GFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerEvents2GBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerEvents2CALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPlannerEvents2GOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
     end
   end
 end

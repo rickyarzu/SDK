@@ -4,7 +4,7 @@ interface
 
 uses
   // RTL
-  System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils,
+  System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils, System.UITypes,
   System.DateUtils,
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
@@ -297,6 +297,42 @@ type
     qryCAPTecnici: TUniQuery;
     StringField1: TStringField;
     qryCAPTecniciTECNICO: TIntegerField;
+    qryPlannerCalendars2: TUniQuery;
+    DBDaySourceCalendar2: TDBDaySource;
+    dsCalendars2: TUniDataSource;
+    dsCalendarEvents2: TUniDataSource;
+    qryPlannerEvents2: TUniQuery;
+    qryPlannerEvents2CHIAVE: TIntegerField;
+    qryPlannerEvents2STATINO: TIntegerField;
+    qryPlannerEvents2TECNICO: TIntegerField;
+    qryPlannerEvents2DALLE_ORE: TDateTimeField;
+    qryPlannerEvents2ALLE_ORE: TDateTimeField;
+    qryPlannerEvents2NOTE: TWideMemoField;
+    qryPlannerEvents2SUBJECT: TStringField;
+    qryPlannerEvents2TECNICO_SIGLA: TStringField;
+    qryPlannerEvents2COLORE: TIntegerField;
+    qryPlannerEvents2JGUID: TGuidField;
+    qryPlannerEvents2ICONA: TSmallintField;
+    qryPlannerEvents2GOOGLE_JSON: TBlobField;
+    qryPlannerEvents2GFORECOLOR: TIntegerField;
+    qryPlannerEvents2GBACKCOLOR: TIntegerField;
+    qryPlannerEvents2CALENDARIO: TIntegerField;
+    qryPlannerEvents2GOOGLEID: TStringField;
+    qryPlannerCalendars2CHIAVE: TIntegerField;
+    qryPlannerCalendars2TECNICO: TIntegerField;
+    qryPlannerCalendars2SUMMARY: TWideStringField;
+    qryPlannerCalendars2DESCRIPTION: TStringField;
+    qryPlannerCalendars2TECNICO_SIGLA: TStringField;
+    qryPlannerCalendars2COLORE: TIntegerField;
+    qryPlannerCalendars2JGUID: TGuidField;
+    qryPlannerCalendars2GOOGLE_JSON: TWideMemoField;
+    qryPlannerCalendars2GFORECOLOR: TIntegerField;
+    qryPlannerCalendars2GBACKCOLOR: TIntegerField;
+    qryPlannerCalendars2DEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendars2GOOGLEID: TStringField;
+    qryPlannerCalendars2GOOGLE_SUMMARY: TStringField;
+    qryPlannerCalendars2GRUPPO_ID: TStringField;
+    qryPlannerCalendars2ACTIVE: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -304,6 +340,7 @@ type
     procedure qryTechPlannedAfterScroll(DataSet: TDataSet);
     procedure DataModuleDestroy(Sender: TObject);
     procedure vtGoogleEventsSearchBeforePost(DataSet: TDataSet);
+    procedure DBDaySourceCalendar2FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -314,6 +351,10 @@ type
     FCAP: String;
     FStateFilter: Integer;
     FCAPFilter: Boolean;
+    FCalendarsList2: TStrings;
+    FItemImageField2: TField;
+    FItemColorField2: TField;
+    FItemCaptionField2: TField;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -323,6 +364,11 @@ type
     procedure SetCAP(const Value: String);
     procedure SetCAPFilter(const Value: Boolean);
     procedure SetStateFilter(const Value: Integer);
+    function GetCalendarsList2Text: string;
+    procedure SetCalendarsList2(const Value: TStrings);
+    procedure SetItemCaptionField2(const Value: TField);
+    procedure SetItemColorField2(const Value: TField);
+    procedure SetItemImageField2(const Value: TField);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -359,8 +405,18 @@ type
     procedure ReportGoogleSync;
     procedure FilterMeeting(const aFilter: TRecordFilter);
   public
+    property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
+    property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
+    property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
+
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; override;
     procedure ActivateCalendar; override;
+
+    /// Resources such as Offices, Rooms, Spaces ... or Entity Members such as Cars or Workers. </summary>
+    property CalendarsList2: TStrings read FCalendarsList2 write SetCalendarsList2;
+    /// <summary> This property can be used to synchronize late bindings engine </summary>
+    property CalendarsList2Text: string read GetCalendarsList2Text;
+
     property CustomerID: Int64 read FCustomerID write SetCustomerID;
     property TechID: Int64 read FTechID write SetTechID;
     property CustomerFilter: Boolean read FCustomerFilter write SetCustomerFilter;
@@ -395,13 +451,16 @@ procedure TdmVCLPhoenixPlannerController.ActivateCalendar;
 begin
   if not qryPlannerEvents.Active then
     qryPlannerEvents.Open;
+  if not qryPlannerEvents2.Active then
+    qryPlannerEvents2.Open;
   inherited;
 
 end;
 
 procedure TdmVCLPhoenixPlannerController.AddEvent;
+var
+  dlg: TdlgVCLPhoenixPlannerEvent;
 begin
-  var
   dlg := TdlgVCLPhoenixPlannerEvent.Create(nil);
   try
     dlg.ShowModal;
@@ -413,6 +472,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FCalendarsList2 := TStringList.Create;
   JMonitor := TObject.Create;
   lkpTecnici.Open;
   FTechFilter := False;
@@ -588,6 +648,34 @@ begin
   inherited;
   JMonitor.Free;
   JMonitor := nil;
+  FCalendarsList2.Free;
+  FCalendarsList2 := nil;
+end;
+
+procedure TdmVCLPhoenixPlannerController.DBDaySourceCalendar2FieldsToItem(Sender: TObject; Fields: TFields;
+Item: TPlannerItem);
+begin
+  { The FieldsToItem event is called when records are read from the database
+    and extra properties are set from database fields. With this code, any
+    field from the database can be connected in a custom way to planner item
+    properties.
+  }
+  Item.CaptionType := ctTimeText;
+  // Fields.FieldByName('COLOR')
+  if Assigned(ItemColorField2) and (ItemColorField2.AsInteger > 0) then
+    Item.Color := TColor(ItemColorField2.AsInteger);
+  Item.CaptionBkg := Item.Color;
+  // Fields.FieldByName('IMAGE')
+  if Assigned(ItemImageField2) and (ItemImageField2.AsInteger > -1) then
+    Item.ImageID := ItemImageField2.AsInteger;
+  // Fields.FieldByName('CAPTION')
+  if Assigned(ItemCaptionField2) then
+  begin
+    if ItemCaptionField2.AsBoolean then
+      Item.CaptionType := ctTimeText
+    else
+      Item.CaptionType := TCaptionType.ctNone;
+  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -806,6 +894,11 @@ begin
   qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents.Open;
 
+  qryPlannerEvents2.Close;
+  qryPlannerEvents2.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
+  qryPlannerEvents2.ParamByName('DATA_AL').AsDateTime := aDateTo;
+  qryPlannerEvents2.Open;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.PhoenixInsertGoogleEvents;
@@ -922,11 +1015,41 @@ begin
     End;
     qryPlannerCalendars.Next;
   end;
-
-  qryPlannerCalendars.Close;
+  qryPlannerCalendars.Last;
   DBDaySourceCalendar.NumberOfResources := PlannerPosition;
   dsCalendarEvents.Enabled := True;
   DBDaySourceCalendar.Active := True;
+
+  // Calendar 2 ---------------------------------------------------------------
+
+  qryPlannerCalendars2.Open;
+
+  // DBDaySource1
+  DBDaySourceCalendar2.Active := False;
+  DBDaySourceCalendar2.Day := Now;
+
+  qryPlannerCalendars2.Open;
+  qryPlannerCalendars2.First;
+  PlannerPosition := 0;
+
+  While not qryPlannerCalendars2.Eof do
+  begin
+    CalendarsList2.Add(qryPlannerCalendars2TECNICO_SIGLA.AsString);
+
+    With DBDaySourceCalendar2.ResourceMap.Add Do
+    Begin
+      ResourceIndex := qryPlannerCalendars2CHIAVE.AsInteger;
+      PositionIndex := PlannerPosition;
+      DisplayName := qryPlannerCalendars2TECNICO_SIGLA.AsString;
+      inc(PlannerPosition);
+    End;
+    qryPlannerCalendars2.Next;
+  end;
+  qryPlannerCalendars2.Last;
+  DBDaySourceCalendar2.NumberOfResources := PlannerPosition;
+  dsCalendarEvents2.Enabled := True;
+  DBDaySourceCalendar2.Active := True;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);
@@ -1060,6 +1183,11 @@ begin
 
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetCalendarsList2(const Value: TStrings);
+begin
+  FCalendarsList2 := Value;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetCAP(const Value: String);
 begin
   FCAP := Value;
@@ -1078,6 +1206,21 @@ end;
 procedure TdmVCLPhoenixPlannerController.SetCustomerID(const Value: Int64);
 begin
   FCustomerID := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetItemCaptionField2(const Value: TField);
+begin
+  FItemCaptionField2 := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetItemColorField2(const Value: TField);
+begin
+  FItemColorField2 := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetItemImageField2(const Value: TField);
+begin
+  FItemImageField2 := Value;
 end;
 
 procedure TdmVCLPhoenixPlannerController.SetReportDate(const Value: TDateTime);
@@ -1126,6 +1269,12 @@ begin
   TechFilter := True;
   FStateFilter := 5; // Non Assegnati
   TechID := qryTechPlannedRESPONSABILE.AsInteger;
+end;
+
+function TdmVCLPhoenixPlannerController.GetCalendarsList2Text: string;
+begin
+  if Assigned(CalendarsList2) then
+    Result := CalendarsList2.Text;
 end;
 
 procedure TdmVCLPhoenixPlannerController.UndoMeeting;
