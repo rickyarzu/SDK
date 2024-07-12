@@ -27,7 +27,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
     Top = 0
     Width = 1206
     Height = 732
-    ActivePage = tabContracts
+    ActivePage = tabBooking
     Align = alClient
     TabOrder = 0
     object tabBooking: TTabSheet
@@ -184,7 +184,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         SelectionTextColor = clHighlightText
         Color = clWindow
         ParentFont = False
-        Version = '1.8.9.1'
+        Version = '1.8.9.11'
       end
       object AdvMemo1: TAdvMemo
         Left = 3
@@ -304,7 +304,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwClientWidth
       end
       object AdvMemo2: TAdvMemo
@@ -433,7 +433,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwClientWidth
       end
     end
@@ -467,6 +467,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
+            inherited Label1: TLabel
+              Top = 520
+              Width = 1184
+              ExplicitTop = 520
+            end
             inherited pnlCustomerMail: TPanel
               Width = 1184
               ExplicitWidth = 1170
@@ -524,22 +529,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 441
-              ExplicitLeft = 185
-              ExplicitTop = 157
+              Height = 363
               ExplicitWidth = 999
-              ExplicitHeight = 441
+              ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 411
+                ExplicitHeight = 333
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 411
+                  Height = 333
                   ExplicitWidth = 991
-                  ExplicitHeight = 411
+                  ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -550,7 +553,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
-                    ExplicitWidth = 403
+                    ExplicitWidth = 991
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -622,15 +625,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 254
                     ExplicitWidth = 713
-                    ExplicitHeight = 135
+                    ExplicitHeight = 57
                   end
                   inherited pnlFooter: TPanel
-                    Top = 389
+                    Top = 311
                     Width = 991
-                    ExplicitTop = 389
+                    ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
@@ -640,14 +643,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
-                    ExplicitHeight = 277
+                    ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 249
+                      ExplicitHeight = 171
                       inherited pnlLists: TPanel
-                        Height = 249
-                        ExplicitHeight = 249
+                        Height = 171
+                        ExplicitHeight = 171
                       end
                     end
                   end
@@ -655,7 +658,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  ExplicitWidth = 1247
+                  DoubleBuffered = True
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
@@ -663,33 +666,33 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   ExplicitWidth = 1147
                 end
                 inherited pgcTestPreview: TPageControl
-                  ExplicitWidth = 1247
+                  ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      ExplicitWidth = 1239
+                      DoubleBuffered = True
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
                     inherited advmMailHtmlPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabJsonPreview: TTabSheet
                     inherited advmMailJsonPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                 end
               end
               inherited tabAdvanced: TTabSheet
                 inherited pgcAdvanced: TPageControl
-                  ExplicitWidth = 829
+                  ExplicitHeight = 502
                   inherited tabAdvancedHtml: TTabSheet
                     inherited advmMailHtml: TAdvMemo
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabAdvancedJson: TTabSheet
@@ -697,7 +700,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabJsonLog: TTabSheet
@@ -705,7 +708,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                 end
@@ -745,8 +748,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 441
-              ExplicitHeight = 150
+              Height = 363
+              ExplicitHeight = 363
+            end
+            inherited grdMaster: TDBGrid
+              Top = 535
+              Width = 1184
             end
           end
         end
@@ -772,6 +779,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 TabOrder = 0
                 ExplicitWidth = 1176
                 ExplicitHeight = 568
+                inherited Label1: TLabel
+                  Top = 490
+                  Width = 1176
+                  ExplicitTop = 490
+                end
                 inherited pnlCustomerMail: TPanel
                   Width = 1176
                   ExplicitWidth = 1176
@@ -826,22 +838,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
                 inherited pgcCustomerMail: TPageControl
                   Width = 991
-                  Height = 411
-                  ExplicitLeft = 185
-                  ExplicitTop = 157
+                  Height = 333
                   ExplicitWidth = 991
-                  ExplicitHeight = 411
+                  ExplicitHeight = 333
                   inherited tabEditor: TTabSheet
                     ExplicitWidth = 983
-                    ExplicitHeight = 381
+                    ExplicitHeight = 303
                     inherited frameHTMLEditor1: TframeHTMLEditor
                       Width = 983
-                      Height = 381
+                      Height = 303
                       ExplicitWidth = 983
-                      ExplicitHeight = 381
+                      ExplicitHeight = 303
                       inherited Splitter1: TSplitter
                         Top = 112
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 112
                         ExplicitHeight = 247
                       end
@@ -852,7 +862,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited ToolBar2: TToolBar
                         Width = 983
                         Height = 56
-                        ExplicitWidth = 395
+                        ExplicitWidth = 983
                         ExplicitHeight = 56
                         inherited ToolButton9: TToolButton
                           Left = 0
@@ -924,15 +934,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited E: THtmlEditor
                         Top = 112
                         Width = 705
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 254
                         ExplicitWidth = 705
-                        ExplicitHeight = 105
+                        ExplicitHeight = 27
                       end
                       inherited pnlFooter: TPanel
-                        Top = 359
+                        Top = 281
                         Width = 983
-                        ExplicitTop = 359
+                        ExplicitTop = 281
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
                           Left = 619
@@ -942,14 +952,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 112
-                        ExplicitHeight = 247
+                        ExplicitHeight = 169
                         inherited tabTag: TTabSheet
-                          ExplicitHeight = 219
+                          ExplicitHeight = 141
                           inherited pnlLists: TPanel
-                            Height = 219
-                            ExplicitHeight = 219
+                            Height = 141
+                            ExplicitHeight = 141
                           end
                         end
                       end
@@ -957,7 +967,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
-                      ExplicitWidth = 1247
+                      DoubleBuffered = True
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
@@ -968,33 +978,33 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       end
                     end
                     inherited pgcTestPreview: TPageControl
-                      ExplicitWidth = 1247
+                      ExplicitHeight = 432
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
-                          ExplicitWidth = 1239
+                          DoubleBuffered = True
                         end
                       end
                       inherited tabHtmlPreview: TTabSheet
                         inherited advmMailHtmlPreview: TAdvMemo
-                          ExplicitWidth = 1239
+                          ExplicitHeight = 402
                         end
                       end
                       inherited tabJsonPreview: TTabSheet
                         inherited advmMailJsonPreview: TAdvMemo
-                          ExplicitWidth = 1239
+                          ExplicitHeight = 402
                         end
                       end
                     end
                   end
                   inherited tabAdvanced: TTabSheet
                     inherited pgcAdvanced: TPageControl
-                      ExplicitWidth = 829
+                      ExplicitHeight = 502
                       inherited tabAdvancedHtml: TTabSheet
                         inherited advmMailHtml: TAdvMemo
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                       inherited tabAdvancedJson: TTabSheet
@@ -1002,7 +1012,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                       inherited tabJsonLog: TTabSheet
@@ -1010,7 +1020,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                     end
@@ -1035,8 +1045,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pnlLists: TPanel
-                  Height = 411
-                  ExplicitHeight = 120
+                  Height = 333
+                  ExplicitHeight = 333
+                end
+                inherited grdMaster: TDBGrid
+                  Top = 505
+                  Width = 1176
                 end
               end
             end
@@ -1052,6 +1066,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 TabOrder = 0
                 ExplicitWidth = 1176
                 ExplicitHeight = 568
+                inherited Label1: TLabel
+                  Top = 490
+                  Width = 1176
+                  ExplicitTop = 490
+                end
                 inherited pnlCustomerMail: TPanel
                   Width = 1176
                   ExplicitWidth = 1176
@@ -1106,22 +1125,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
                 inherited pgcCustomerMail: TPageControl
                   Width = 991
-                  Height = 411
-                  ExplicitLeft = 185
-                  ExplicitTop = 157
+                  Height = 333
                   ExplicitWidth = 991
-                  ExplicitHeight = 411
+                  ExplicitHeight = 333
                   inherited tabEditor: TTabSheet
                     ExplicitWidth = 983
-                    ExplicitHeight = 381
+                    ExplicitHeight = 303
                     inherited frameHTMLEditor1: TframeHTMLEditor
                       Width = 983
-                      Height = 381
+                      Height = 303
                       ExplicitWidth = 983
-                      ExplicitHeight = 381
+                      ExplicitHeight = 303
                       inherited Splitter1: TSplitter
                         Top = 112
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 112
                         ExplicitHeight = 247
                       end
@@ -1132,7 +1149,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited ToolBar2: TToolBar
                         Width = 983
                         Height = 56
-                        ExplicitWidth = 395
+                        ExplicitWidth = 983
                         ExplicitHeight = 56
                         inherited ToolButton9: TToolButton
                           Left = 0
@@ -1204,15 +1221,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited E: THtmlEditor
                         Top = 112
                         Width = 705
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 254
                         ExplicitWidth = 705
-                        ExplicitHeight = 105
+                        ExplicitHeight = 27
                       end
                       inherited pnlFooter: TPanel
-                        Top = 359
+                        Top = 281
                         Width = 983
-                        ExplicitTop = 359
+                        ExplicitTop = 281
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
                           Left = 619
@@ -1222,14 +1239,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
-                        Height = 247
+                        Height = 169
                         ExplicitTop = 112
-                        ExplicitHeight = 247
+                        ExplicitHeight = 169
                         inherited tabTag: TTabSheet
-                          ExplicitHeight = 219
+                          ExplicitHeight = 141
                           inherited pnlLists: TPanel
-                            Height = 219
-                            ExplicitHeight = 219
+                            Height = 141
+                            ExplicitHeight = 141
                           end
                         end
                       end
@@ -1237,7 +1254,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
-                      ExplicitWidth = 1247
+                      DoubleBuffered = True
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
@@ -1248,33 +1265,33 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       end
                     end
                     inherited pgcTestPreview: TPageControl
-                      ExplicitWidth = 1247
+                      ExplicitHeight = 432
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
-                          ExplicitWidth = 1239
+                          DoubleBuffered = True
                         end
                       end
                       inherited tabHtmlPreview: TTabSheet
                         inherited advmMailHtmlPreview: TAdvMemo
-                          ExplicitWidth = 1239
+                          ExplicitHeight = 402
                         end
                       end
                       inherited tabJsonPreview: TTabSheet
                         inherited advmMailJsonPreview: TAdvMemo
-                          ExplicitWidth = 1239
+                          ExplicitHeight = 402
                         end
                       end
                     end
                   end
                   inherited tabAdvanced: TTabSheet
                     inherited pgcAdvanced: TPageControl
-                      ExplicitWidth = 829
+                      ExplicitHeight = 502
                       inherited tabAdvancedHtml: TTabSheet
                         inherited advmMailHtml: TAdvMemo
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                       inherited tabAdvancedJson: TTabSheet
@@ -1282,7 +1299,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                       inherited tabJsonLog: TTabSheet
@@ -1290,7 +1307,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           BorderColor = clGray
                           Gutter.BorderColor = clGray
                           Gutter.GutterColor = clBtnFace
-                          ExplicitWidth = 821
+                          ExplicitHeight = 472
                         end
                       end
                     end
@@ -1319,8 +1336,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pnlLists: TPanel
-                  Height = 411
-                  ExplicitHeight = 120
+                  Height = 333
+                  ExplicitHeight = 333
+                end
+                inherited grdMaster: TDBGrid
+                  Top = 505
+                  Width = 1176
                 end
               end
             end
@@ -1338,6 +1359,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
+            inherited Label1: TLabel
+              Top = 520
+              Width = 1184
+              ExplicitTop = 520
+            end
             inherited pnlCustomerMail: TPanel
               Width = 1184
               ExplicitWidth = 1184
@@ -1392,22 +1418,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 441
-              ExplicitLeft = 185
-              ExplicitTop = 157
+              Height = 363
               ExplicitWidth = 999
-              ExplicitHeight = 441
+              ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 411
+                ExplicitHeight = 333
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 411
+                  Height = 333
                   ExplicitWidth = 991
-                  ExplicitHeight = 411
+                  ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -1418,7 +1442,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
-                    ExplicitWidth = 403
+                    ExplicitWidth = 991
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -1490,15 +1514,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 254
                     ExplicitWidth = 713
-                    ExplicitHeight = 135
+                    ExplicitHeight = 57
                   end
                   inherited pnlFooter: TPanel
-                    Top = 389
+                    Top = 311
                     Width = 991
-                    ExplicitTop = 389
+                    ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
@@ -1508,14 +1532,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
-                    ExplicitHeight = 277
+                    ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 249
+                      ExplicitHeight = 171
                       inherited pnlLists: TPanel
-                        Height = 249
-                        ExplicitHeight = 249
+                        Height = 171
+                        ExplicitHeight = 171
                       end
                     end
                   end
@@ -1523,7 +1547,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  ExplicitWidth = 1247
+                  DoubleBuffered = True
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
@@ -1534,33 +1558,33 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pgcTestPreview: TPageControl
-                  ExplicitWidth = 1247
+                  ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      ExplicitWidth = 1239
+                      DoubleBuffered = True
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
                     inherited advmMailHtmlPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabJsonPreview: TTabSheet
                     inherited advmMailJsonPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                 end
               end
               inherited tabAdvanced: TTabSheet
                 inherited pgcAdvanced: TPageControl
-                  ExplicitWidth = 829
+                  ExplicitHeight = 502
                   inherited tabAdvancedHtml: TTabSheet
                     inherited advmMailHtml: TAdvMemo
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabAdvancedJson: TTabSheet
@@ -1568,7 +1592,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabJsonLog: TTabSheet
@@ -1576,7 +1600,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                 end
@@ -1601,8 +1625,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 441
-              ExplicitHeight = 150
+              Height = 363
+              ExplicitHeight = 363
+            end
+            inherited grdMaster: TDBGrid
+              Top = 535
+              Width = 1184
             end
           end
         end
@@ -1618,6 +1646,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
+            inherited Label1: TLabel
+              Top = 520
+              Width = 1184
+              ExplicitTop = 520
+            end
             inherited pnlCustomerMail: TPanel
               Width = 1184
               ExplicitWidth = 1184
@@ -1672,22 +1705,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 441
-              ExplicitLeft = 185
-              ExplicitTop = 157
+              Height = 363
               ExplicitWidth = 999
-              ExplicitHeight = 441
+              ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 411
+                ExplicitHeight = 333
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 411
+                  Height = 333
                   ExplicitWidth = 991
-                  ExplicitHeight = 411
+                  ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -1698,7 +1729,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
-                    ExplicitWidth = 403
+                    ExplicitWidth = 991
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -1770,15 +1801,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 254
                     ExplicitWidth = 713
-                    ExplicitHeight = 135
+                    ExplicitHeight = 57
                   end
                   inherited pnlFooter: TPanel
-                    Top = 389
+                    Top = 311
                     Width = 991
-                    ExplicitTop = 389
+                    ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
@@ -1788,14 +1819,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 277
+                    Height = 199
                     ExplicitTop = 112
-                    ExplicitHeight = 277
+                    ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 249
+                      ExplicitHeight = 171
                       inherited pnlLists: TPanel
-                        Height = 249
-                        ExplicitHeight = 249
+                        Height = 171
+                        ExplicitHeight = 171
                       end
                     end
                   end
@@ -1803,7 +1834,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  ExplicitWidth = 1247
+                  DoubleBuffered = True
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
@@ -1814,33 +1845,33 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pgcTestPreview: TPageControl
-                  ExplicitWidth = 1247
+                  ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      ExplicitWidth = 1239
+                      DoubleBuffered = True
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
                     inherited advmMailHtmlPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabJsonPreview: TTabSheet
                     inherited advmMailJsonPreview: TAdvMemo
-                      ExplicitWidth = 1239
+                      ExplicitHeight = 402
                     end
                   end
                 end
               end
               inherited tabAdvanced: TTabSheet
                 inherited pgcAdvanced: TPageControl
-                  ExplicitWidth = 829
+                  ExplicitHeight = 502
                   inherited tabAdvancedHtml: TTabSheet
                     inherited advmMailHtml: TAdvMemo
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabAdvancedJson: TTabSheet
@@ -1848,7 +1879,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                   inherited tabJsonLog: TTabSheet
@@ -1856,7 +1887,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       BorderColor = clGray
                       Gutter.BorderColor = clGray
                       Gutter.GutterColor = clBtnFace
-                      ExplicitWidth = 821
+                      ExplicitHeight = 472
                     end
                   end
                 end
@@ -1881,8 +1912,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 441
-              ExplicitHeight = 150
+              Height = 363
+              ExplicitHeight = 363
+            end
+            inherited grdMaster: TDBGrid
+              Top = 535
+              Width = 1184
             end
           end
         end
@@ -2028,7 +2063,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
@@ -2190,7 +2225,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -2376,7 +2411,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object AdvMemo4: TAdvMemo
@@ -2492,7 +2527,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object AdvMemo3: TAdvMemo
@@ -2608,7 +2643,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object btnSerialize1: TButton
@@ -2915,7 +2950,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
@@ -2989,7 +3024,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
-                    ExplicitWidth = 409
+                    ExplicitWidth = 997
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -3081,13 +3116,27 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Height = 355
                     ExplicitTop = 112
-                    ExplicitHeight = 64
+                    ExplicitHeight = 355
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 327
                       inherited pnlLists: TPanel
                         Height = 327
-                        ExplicitHeight = 36
+                        ExplicitHeight = 327
                       end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
                     end
                   end
                 end
@@ -3120,7 +3169,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -3184,7 +3233,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
-                    ExplicitWidth = 409
+                    ExplicitWidth = 997
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -3276,13 +3325,27 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Height = 355
                     ExplicitTop = 112
-                    ExplicitHeight = 64
+                    ExplicitHeight = 355
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 327
                       inherited pnlLists: TPanel
                         Height = 327
-                        ExplicitHeight = 36
+                        ExplicitHeight = 327
                       end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
                     end
                   end
                 end
@@ -3315,7 +3378,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -3481,6 +3544,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
               end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
               inherited tabCustomerTestMail: TTabSheet
                 ExplicitWidth = 997
                 ExplicitHeight = 489
@@ -3504,6 +3572,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited brwTestMessage: TTMSFNCWebBrowser
                       Width = 989
                       Height = 389
+                      DoubleBuffered = True
                       ExplicitWidth = 1174
                       ExplicitHeight = 461
                     end
@@ -3556,7 +3625,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -3590,10 +3659,10 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 471
             inherited Panel1: TPanel
               Height = 471
-              ExplicitHeight = 180
+              ExplicitHeight = 471
               inherited pnlLists: TPanel
                 Height = 469
-                ExplicitHeight = 178
+                ExplicitHeight = 469
               end
             end
             inherited Panel2: TPanel
@@ -3697,10 +3766,10 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 471
             inherited Panel1: TPanel
               Height = 471
-              ExplicitHeight = 180
+              ExplicitHeight = 471
               inherited pnlLists: TPanel
                 Height = 469
-                ExplicitHeight = 178
+                ExplicitHeight = 469
               end
             end
             inherited Panel2: TPanel
@@ -3792,10 +3861,10 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 471
             inherited Panel1: TPanel
               Height = 471
-              ExplicitHeight = 180
+              ExplicitHeight = 471
               inherited pnlLists: TPanel
                 Height = 469
-                ExplicitHeight = 178
+                ExplicitHeight = 469
               end
             end
             inherited Panel2: TPanel
@@ -3812,20 +3881,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited grpURL: TGroupBox
                 Width = 965
                 ExplicitWidth = 965
-                inherited edtMobileUrl: TEdit
-                  ExplicitLeft = 72
-                  ExplicitTop = 20
-                  ExplicitWidth = 349
-                end
                 inherited btnTestUrl: TButton
                   Left = 678
                   ExplicitLeft = 678
-                  ExplicitHeight = 30
                 end
                 inherited edtCustomerMobileUrl1: TEdit
                   Width = 245
-                  ExplicitLeft = 427
-                  ExplicitTop = 20
                   ExplicitWidth = 245
                 end
                 inherited edtTestTinyUrl: TEdit
@@ -3983,7 +4044,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
-                    ExplicitWidth = 409
+                    ExplicitWidth = 997
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -4056,9 +4117,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Width = 719
                     Height = 355
-                    ExplicitTop = 254
+                    ExplicitTop = 112
                     ExplicitWidth = 719
-                    ExplicitHeight = 213
+                    ExplicitHeight = 355
                   end
                   inherited pnlFooter: TPanel
                     Top = 467
@@ -4075,13 +4136,27 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Height = 355
                     ExplicitTop = 112
-                    ExplicitHeight = 64
+                    ExplicitHeight = 355
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 327
                       inherited pnlLists: TPanel
                         Height = 327
-                        ExplicitHeight = 36
+                        ExplicitHeight = 327
                       end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
                     end
                   end
                 end
@@ -4114,7 +4189,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -4177,7 +4252,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
-                    ExplicitWidth = 409
+                    ExplicitWidth = 997
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -4269,13 +4344,27 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Height = 355
                     ExplicitTop = 112
-                    ExplicitHeight = 64
+                    ExplicitHeight = 355
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 327
                       inherited pnlLists: TPanel
                         Height = 327
-                        ExplicitHeight = 36
+                        ExplicitHeight = 327
                       end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
                     end
                   end
                 end
@@ -4308,7 +4397,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -4370,7 +4459,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
-                    ExplicitWidth = 409
+                    ExplicitWidth = 997
                     ExplicitHeight = 56
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -4462,13 +4551,27 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Height = 355
                     ExplicitTop = 112
-                    ExplicitHeight = 64
+                    ExplicitHeight = 355
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 327
                       inherited pnlLists: TPanel
                         Height = 327
-                        ExplicitHeight = 36
+                        ExplicitHeight = 327
                       end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
                     end
                   end
                 end
@@ -4501,7 +4604,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 519
-              ExplicitHeight = 228
+              ExplicitHeight = 519
             end
             inherited grdMaster: TDBGrid
               Top = 600
@@ -4560,6 +4663,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
     Top = 360
   end
   object astHtml: TAdvHTMLMemoStyler
+    AutoFormat = False
     LineComment = '//'
     MultiCommentLeft = '<!--'
     MultiCommentRight = '-->'

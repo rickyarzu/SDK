@@ -8,12 +8,12 @@ inherited frmMDIRibbonToolbar: TfrmMDIRibbonToolbar
     Top = 639
     Width = 976
     ExplicitLeft = 0
-    ExplicitTop = 520
-    ExplicitWidth = 876
+    ExplicitTop = 639
+    ExplicitWidth = 976
   end
   inherited Panel4: TPanel
     Width = 976
-    ExplicitWidth = 876
+    ExplicitWidth = 976
     inherited MenuButtonToolbar: TToolBar
       ButtonWidth = 40
       inherited ToolButton1: TToolButton
@@ -22,14 +22,12 @@ inherited frmMDIRibbonToolbar: TfrmMDIRibbonToolbar
     end
     inherited ToolBarTopRight: TToolBar
       Left = 937
-      ExplicitLeft = 837
+      ExplicitLeft = 937
     end
   end
   inherited SplitViewLeft: TSplitView
     Height = 597
     DoubleBuffered = True
-    ExplicitLeft = -6
-    ExplicitTop = 45
     ExplicitHeight = 597
   end
   inherited pgcApplicationArea: TPageControl
@@ -40,6 +38,10 @@ inherited frmMDIRibbonToolbar: TfrmMDIRibbonToolbar
     ExplicitWidth = 776
     ExplicitHeight = 597
   end
+  inherited MainMenu1: TMainMenu
+    Left = 360
+    Top = 232
+  end
   object AdvPopupMenu1: TAdvPopupMenu
     Version = '2.7.1.12'
     UIStyle = tsCustom
@@ -48,7 +50,7 @@ inherited frmMDIRibbonToolbar: TfrmMDIRibbonToolbar
   end
   object tmrWaitSpin: TTimer
     OnTimer = tmrWaitSpinTimer
-    Left = 496
-    Top = 288
+    Left = 464
+    Top = 272
   end
 end

@@ -60,4 +60,5 @@ contains
   Clipper.Minkowski in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Minkowski.pas',
   Clipper.Offset in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.Offset.pas',
   Clipper.RectClip in '..\..\..\Lib\SVGIconImageList\Image32\source\Clipper.RectClip.pas';
+
 end.
