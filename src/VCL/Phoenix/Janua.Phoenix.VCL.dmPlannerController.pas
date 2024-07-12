@@ -333,6 +333,16 @@ type
     qryPlannerCalendars2GOOGLE_SUMMARY: TStringField;
     qryPlannerCalendars2GRUPPO_ID: TStringField;
     qryPlannerCalendars2ACTIVE: TStringField;
+    MainToolBarActions2: TActionList;
+    ActionAddMeeting2: TAction;
+    ActionUndoMeeting2: TAction;
+    ActionSearchMeeting2: TAction;
+    ActionAddUser2: TAction;
+    ActionAddActivity2: TAction;
+    ActionExport2: TAction;
+    ActionSendShare2: TAction;
+    ActionPrint2: TAction;
+    ActionCalendarSync2: TAction;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -355,6 +365,7 @@ type
     FItemImageField2: TField;
     FItemColorField2: TField;
     FItemCaptionField2: TField;
+    FCalendarsFilter2: Boolean;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -369,6 +380,7 @@ type
     procedure SetItemCaptionField2(const Value: TField);
     procedure SetItemColorField2(const Value: TField);
     procedure SetItemImageField2(const Value: TField);
+    procedure SetCalendarsFilter2(const Value: Boolean);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -393,6 +405,8 @@ type
     procedure Filter; override;
     procedure UndoMeeting; override;
     /// <summary> After Selecting Calendars this procedure should be called (it can be inside a thread) </summary>
+    procedure SelectCalendars2; virtual;
+    /// <summary> After Selecting Calendars this procedure should be called (it can be inside a thread) </summary>
     procedure SelectCalendars; override;
     // <summary> Fill Calendars list with Custom Data in this case Tecnici </summary>
     procedure PopulateCalendars; override;
@@ -408,6 +422,8 @@ type
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
+    /// <summary> List of Calendars Selected by Users to be Showed on Window </summary>
+    property CalendarsFilter2: Boolean read FCalendarsFilter2 write SetCalendarsFilter2;
 
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; override;
     procedure ActivateCalendar; override;
@@ -472,6 +488,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FCalendarsFilter2 := True;
   FCalendarsList2 := TStringList.Create;
   JMonitor := TObject.Create;
   lkpTecnici.Open;
@@ -1180,7 +1197,21 @@ end;
 procedure TdmVCLPhoenixPlannerController.SelectCalendars;
 begin
   inherited;
+  { TODO : Adeguare la lista Calendars a FCalendarsFilter }
+end;
 
+procedure TdmVCLPhoenixPlannerController.SelectCalendars2;
+begin
+  { TODO : Adeguare la lista Calendars2 a FCalendarsFilter2 }
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetCalendarsFilter2(const Value: Boolean);
+begin
+  if FCalendarsFilter2 <> Value then
+  begin
+    FCalendarsFilter2 := Value;
+    SelectCalendars2;
+  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.SetCalendarsList2(const Value: TStrings);

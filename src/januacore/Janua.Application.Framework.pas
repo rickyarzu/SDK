@@ -4099,6 +4099,7 @@ end;
 
 class function TJanuaWebServerFactory.CreateWebServer: TJanuaWebServer;
 begin
+  Result := nil;
   if Assigned(FWebServerClass) then
     Result := FWebServerClass.Create;
 end;

@@ -210,6 +210,11 @@ type
     procedure SetCalendarsSelList(const Value: TStrings);
     function GetCalendarsListText: string;
     procedure SetCalendarsListText(const Value: string);
+  private const
+    JanuaAttendeeGoogleStatus: array [TResponseStatus] of TJanuaAttendeeStatus = (jrsNeedsAction, rsDeclined,
+      rsTentative, rsAccepted);
+    // FReminders
+    JanuaReminderMethods: array [TReminderMethod] of TJanuaReminderMethod = (jrmPopup, jrmEmail, jrmSMS);
   public
     property CloudCalendar: TCloudCalendar read FCloudCalendar write SetCloudCalendar;
     property PlannerEvent: ITimetable read GetPlannerEvent write SetPlannerEvent;
@@ -478,12 +483,6 @@ uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
-
-const
-  JanuaAttendeeGoogleStatus: array [TResponseStatus] of TJanuaAttendeeStatus = (jrsNeedsAction, rsDeclined,
-    rsTentative, rsAccepted);
-  // FReminders
-  JanuaReminderMethods: array [TReminderMethod] of TJanuaReminderMethod = (jrmPopup, jrmEmail, jrmSMS);
 
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var

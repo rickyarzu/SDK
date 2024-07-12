@@ -22,7 +22,7 @@ uses
   Janua.TMS.Phoenix.framePlannerCalendar, Janua.Phoenix.VCL.dmPlannerController,
   Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
-  Janua.VCL.Planner.framePhoenixGoogleCalendar;
+  Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -68,6 +68,8 @@ type
     frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar;
     N3: TMenuItem;
     GoogleSync1: TMenuItem;
+    tabPlannerEvents: TTabSheet;
+    frameVCLPhoenixPlannerCalendar21: TframeVCLPhoenixPlannerCalendar2;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);

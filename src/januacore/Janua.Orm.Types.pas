@@ -291,7 +291,7 @@ type
     procedure SetSchemaName(const Value: string);
     procedure SetDataset(const Value: TDataset);
     procedure SetSingularName(const Value: string);
-  published
+  public
     property DatasetName: string read FDatasetName write SetDatasetName;
     property PluralName: string read FPluralName write SetPluralName;
     property SingularName: string read FSingularName write SetSingularName;
@@ -308,7 +308,7 @@ type
     procedure SetFileName(const Value: string);
     procedure SetText(const Value: string);
     procedure SetConf(const Value: TRecordUnitConf);
-  published
+  public
     property Conf: TRecordUnitConf read FConf write SetConf;
     property FileName: string read FFileName write SetFileName;
     property Text: string read FText write SetText;
@@ -325,7 +325,7 @@ type
     procedure SetImplFile(const Value: TRecordUnitFile);
     procedure SetIntfFile(const Value: TRecordUnitFile);
     procedure SetConf(const Value: TRecordUnitConf);
-  published
+  public
     property IntfFile: TRecordUnitFile read FIntfFile write SetIntfFile;
     property ImplFile: TRecordUnitFile read FImplFile write SetImplFile;
     property Conf: TRecordUnitConf read FConf write SetConf;

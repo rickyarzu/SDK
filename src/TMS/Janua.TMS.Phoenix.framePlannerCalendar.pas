@@ -18,9 +18,9 @@ uses
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)
-  private
+  protected
     FPlannerController: TdmVCLPhoenixPlannerController;
-    procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController);
+    procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController); virtual;
     { Private declarations }
   public
     { Public declarations }

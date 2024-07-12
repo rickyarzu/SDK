@@ -20,7 +20,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1424
     Height = 754
-    ActivePage = tabPlannerCalendar
+    ActivePage = tabPlannerEvents
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -466,14 +466,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 1357
           end
         end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
-          end
-        end
         inherited PageControl1: TPageControl
           Left = 0
           Width = 1416
@@ -489,6 +481,54 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Height = 423
               ExplicitWidth = 1408
               ExplicitHeight = 423
+              TMSStyle = 0
+            end
+          end
+        end
+      end
+    end
+    object tabPlannerEvents: TTabSheet
+      Caption = 'Calendari'
+      ImageIndex = 3
+      inline frameVCLPhoenixPlannerCalendar21: TframeVCLPhoenixPlannerCalendar2
+        Left = 0
+        Top = 0
+        Width = 1416
+        Height = 724
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 240
+        ExplicitTop = 88
+        ExplicitHeight = 9
+        inherited lbGiorni: TLabel
+          Width = 272
+        end
+        inherited lbCalendarList: TLabel
+          Width = 1410
+        end
+        inherited grpMeeting: TGroupBox
+          Top = 613
+          Width = 1416
+          ExplicitTop = 794
+          ExplicitWidth = 1176
+        end
+        inherited Panel2: TPanel
+          Width = 1416
+          ExplicitWidth = 1176
+          inherited ckbCalendarList: TCheckListBox
+            Width = 1357
+            ExplicitWidth = 1117
+          end
+        end
+        inherited PageControl1: TPageControl
+          Width = 1671
+          Height = 540
+          inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1663
+            ExplicitHeight = 510
+            inherited DBPlanner1: TDBPlanner
+              Width = 1663
+              Height = 510
               TMSStyle = 0
             end
           end
@@ -514,11 +554,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 267
           ExplicitWidth = 1040
           ExplicitHeight = 457
-          inherited TabSheet1: TTabSheet
-            inherited grpEventsList: TGroupBox
-              ExplicitHeight = 823
-            end
-          end
           inherited TabSheet2: TTabSheet
             ExplicitWidth = 1032
             ExplicitHeight = 427

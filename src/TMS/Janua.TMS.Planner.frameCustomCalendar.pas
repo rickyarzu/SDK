@@ -56,10 +56,11 @@ type
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     procedure ckbCalendarListClickCheck(Sender: TObject);
   private
-    FCustomController: TdmVCLPlannerCustomController;
-    FSelectedList: TStrings;
-    procedure SetCustomController(const Value: TdmVCLPlannerCustomController);
     { Private declarations }
+  protected
+    FSelectedList: TStrings;
+    FCustomController: TdmVCLPlannerCustomController;
+    procedure SetCustomController(const Value: TdmVCLPlannerCustomController); virtual;
   public
     { Public declarations }
     property CustomController: TdmVCLPlannerCustomController read FCustomController write SetCustomController;
@@ -84,7 +85,6 @@ begin
   finally
     aList.Free;
   end;
-
 end;
 
 procedure TframeTMSCustomPlannerCalendar.SetCustomController(const Value: TdmVCLPlannerCustomController);

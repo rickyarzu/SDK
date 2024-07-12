@@ -2266,4 +2266,69 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Size = 128
     end
   end
+  object MainToolBarActions2: TActionList
+    Images = SVGIconImageList48
+    Left = 72
+    Top = 480
+    object ActionAddMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Pianificazione Tecnico'
+      ImageIndex = 31
+      ImageName = '032-calendar'
+      OnExecute = ActionAddMeetingExecute
+    end
+    object ActionUndoMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Annulla Appuntamento'
+      ImageIndex = 1
+      ImageName = '002-time'
+    end
+    object ActionSearchMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Cerca Appuntamento'
+      ImageIndex = 45
+      ImageName = '046-search'
+      OnExecute = ActionSearchMeetingExecute
+    end
+    object ActionAddUser2: TAction
+      Category = 'Meetings'
+      Caption = 'Gestione Tecnici    e Calendari'
+      ImageIndex = 2
+      ImageName = '003-employee'
+      OnExecute = ActionAddUserExecute
+    end
+    object ActionAddActivity2: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiungi Una Attivit'#224
+      ImageIndex = 35
+      ImageName = '036-planner'
+      OnExecute = ActionAddActivityExecute
+    end
+    object ActionExport2: TAction
+      Category = 'Meetings'
+      Caption = 'Esporta (Excel,    Pdf, Csv)'
+      ImageIndex = 24
+      ImageName = '025-planning'
+      OnExecute = ActionExportExecute
+    end
+    object ActionSendShare2: TAction
+      Category = 'Meetings'
+      Caption = 'Invia (Mail) Condividi'
+      ImageIndex = 8
+      ImageName = '009-email'
+    end
+    object ActionPrint2: TAction
+      Category = 'Meetings'
+      Caption = 'Stampa / Anteprima'
+      ImageIndex = 57
+      ImageName = '008-printer'
+      OnExecute = ActionPrintExecute
+    end
+    object ActionCalendarSync2: TAction
+      Category = 'Meetings'
+      Caption = 'Sincro Calendario'
+      ImageIndex = 26
+      ImageName = '027-tasks'
+    end
+  end
 end

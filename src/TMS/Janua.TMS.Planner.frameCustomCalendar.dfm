@@ -549,8 +549,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
           88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
-        ExplicitWidth = 896
-        ExplicitHeight = 771
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 528
