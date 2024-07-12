@@ -61,7 +61,7 @@ type
     property tbActivitiesGroups: TDataset read FtbActivitiesGroups write SettbActivitiesGroups;
     property tbActivities: TDataset read FtbActivities write SettbActivities;
     property GroupNameField: string read FGroupNameField write SetGroupNameField;
-    property ActivityNameField : string read FActivityNameField write SetActivityNameField;
+    property ActivityNameField: string read FActivityNameField write SetActivityNameField;
   end;
 
 var
@@ -75,8 +75,11 @@ uses Spring, System.StrUtils, Janua.Components.Planner;
 
 procedure TdlgVCLCustomPlannerEvent.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FEvent.ActivityGroupJguid.AsString := lkpGroups.Value;
-  FEvent.ActivityJguid.AsString := lkpActivities.Value;
+  if Assigned(FEvent) then
+  begin
+    FEvent.ActivityGroupJguid.AsString := lkpGroups.Value;
+    FEvent.ActivityJguid.AsString := lkpActivities.Value;
+  end;
 end;
 
 { function TdlgVCLPlannerEvent.IsTouchPropertyStored(AProperty: TTouchProperty): Boolean;
@@ -134,16 +137,14 @@ begin
     Value.Notes.Bind('AsString', Memo1, 'Text');
 
     lkpGroups.Value := Value.ActivityGroupJguid.AsString;
-    if FtbActivitiesGroups.Locate('jguid', Value.ActivityGroupJguid.AsString,
-      [loCaseInsensitive]) then
+    if FtbActivitiesGroups.Locate('jguid', Value.ActivityGroupJguid.AsString, [loCaseInsensitive]) then
       lkpGroups.DisplayValue := FtbActivitiesGroups[FGroupNameField].AsWideString;
 
     // Value.ActivityGroupJguid.Bind('AsString', lkpGroups, 'Value');
 
     lkpActivities.Value := Value.ActivityJguid.AsString;
-    if FtbActivities.Locate('jguid', Value.ActivityJguid.AsString, [loCaseInsensitive])
-    then
-      lkpActivities.DisplayValue := FtbActivities [FActivityNameField].AsWideString;
+    if FtbActivities.Locate('jguid', Value.ActivityJguid.AsString, [loCaseInsensitive]) then
+      lkpActivities.DisplayValue := FtbActivities[FActivityNameField].AsWideString;
     // Value.ActivityGroupJguid.Bind('AsString', lkpActivities, 'Value');
   end;
   FEvent := Value;

@@ -10,8 +10,6 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Planner1: TPlanner
     Left = 0
@@ -118,11 +116,11 @@ object Form1: TForm1
     Display.ActiveEnd = 30
     Display.DisplayStart = 10
     Display.DisplayEnd = 100
-    Display.ColorActive = 12766641
-    Display.ColorNonActive = clSilver
+    Display.ColorActive = 16575452
+    Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -140,7 +138,7 @@ object Form1: TForm1
     Footer.Font.Name = 'Tahoma'
     Footer.Font.Style = []
     GridLeftCol = 1
-    GridLineColor = 16504504
+    GridLineColor = clSilver
     GridTopRow = 0
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
@@ -547,7 +545,7 @@ object Form1: TForm1
       0080880408F8F0F8F80880CCC0000400008874CCC2222C4788887CCCC22226C0
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
-    Version = '3.5.1.1'
+    Version = '3.6.1.3'
     TMSStyle = 0
   end
   object Panel1: TPanel
@@ -605,12 +603,17 @@ object Form1: TForm1
     Options.FooterMargins.Top = 5.000000000000000000
     Options.FooterMargins.Right = 5.000000000000000000
     Options.FooterMargins.Bottom = 5.000000000000000000
+    Options.PageNumberMargins.Left = 10.000000000000000000
+    Options.PageNumberMargins.Top = 5.000000000000000000
+    Options.PageNumberMargins.Right = 10.000000000000000000
+    Options.PageNumberMargins.Bottom = 5.000000000000000000
+    Options.PageNumberFont.Name = 'Arial'
   end
   object ImageList1: TImageList
     Left = 1168
     Top = 128
     Bitmap = {
-      494C01010F0018005C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010F001800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000018395200183952001839
       5200183952001839520018395200183952001839520018395200183952001839

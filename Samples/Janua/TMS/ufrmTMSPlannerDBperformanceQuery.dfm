@@ -639,7 +639,6 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object DBPeriodSource1: TDBPeriodSource
-    Active = False
     AutoIncKey = False
     DataSource = DataSource1
     ResourceMap = <>
@@ -664,6 +663,7 @@ object Form1: TForm1
     Top = 232
   end
   object ADOQuery1: TADOQuery
+    Active = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Januaproject\bin' +
       '\Demos\dbplanner.mdb;Persist Security Info=False'

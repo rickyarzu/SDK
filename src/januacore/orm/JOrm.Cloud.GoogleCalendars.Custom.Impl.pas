@@ -1,8 +1,8 @@
-unit JOrm.Phoenix.GoogleCalendars.Custom.Impl;
+unit JOrm.Cloud.GoogleCalendars.Custom.Impl;
 
 interface
 
-uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, JOrm.Phoenix.GoogleCalendars.Custom.Intf;
+uses Janua.Orm.Intf, Janua.Orm.Impl, Janua.Core.Types, JOrm.Cloud.GoogleCalendars.Custom.Intf;
 
 //------------------------------------------ Impl Record interface ----------------------------------
 

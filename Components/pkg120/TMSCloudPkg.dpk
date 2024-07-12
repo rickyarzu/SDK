@@ -10,27 +10,25 @@ package TMSCloudPkg;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS VCL Cloud Pack'}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
-
-
 
 requires
   rtl,
@@ -139,7 +137,7 @@ contains
   CloudCustomPryv in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudCustomPryv.pas',
   CloudPryv in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudPryv.pas',
   CloudPryvReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudPryvReg.pas',
-  CloudCustomGPlaces in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudCustomGPlaces.pas',
+  CloudCustomGPlaces in '..\src\CloudCustomGPlaces.pas',
   CloudCustomGTasks in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudCustomGTasks.pas',
   CloudGPlaces in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudGPlaces.pas',
   CloudGPlacesReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudGPlacesReg.pas',

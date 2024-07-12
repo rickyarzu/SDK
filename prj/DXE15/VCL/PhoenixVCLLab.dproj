@@ -181,7 +181,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas">
-            <Form>dmPhoenixIBPlanner</Form>
+            <Form>dmVCLPhoenixPlannerController</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

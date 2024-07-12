@@ -100,7 +100,7 @@ type
     procedure SetWinLiveClientSecret(const Value: string);
     procedure SetYandexDiskAppKey(const Value: string);
     procedure SetYandexDiskAppSecret(const Value: string);
-  published
+  public
     property DropBoxAppkey: string read FDropBoxAppkey write SetDropBoxAppkey;
     property DropBoxAppSecret: string read FDropBoxAppSecret write SetDropBoxAppSecret;
 

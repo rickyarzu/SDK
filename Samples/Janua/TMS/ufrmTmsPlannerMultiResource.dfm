@@ -119,6 +119,12 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Font.Style = []
     Footer.Captions.Strings = (
       ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       '')
     Footer.CompletionFormat = '%d%%'
     Footer.Completion.Font.Charset = DEFAULT_CHARSET
@@ -137,6 +143,12 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Header.ActiveColor = 16575452
     Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       ''
       '')
     Header.Color = 16645114
@@ -167,7 +179,6 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Mode.PeriodEndDay = 5
     Mode.PeriodEndMonth = 8
     Mode.PeriodEndYear = 2004
-    Mode.PlannerType = plDayPeriod
     Mode.TimeLineStart = 38018.000000000000000000
     Mode.TimeLineNVUBegin = 0
     Mode.TimeLineNVUEnd = 0
@@ -185,7 +196,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Sidebar.HourFontRatio = 1.800000000000000000
     Sidebar.Position = spTop
     Sidebar.RotateOnTop = False
-    Positions = 1
+    Positions = 7
     PositionProps = <>
     PositionWidth = 60
     PrintOptions.LineWidth = 0
@@ -211,7 +222,8 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     Version = '3.4.6.0'
     OnItemDelete = DBPlanner1ItemDelete
     OnItemInsert = DBPlanner1ItemInsert
-    ItemSource = DBPeriodSource1
+    ItemSource = DBDaySourcePhoenix
+    ExplicitTop = 28
     TMSStyle = 0
   end
   object ToolBar1: TToolBar
@@ -226,7 +238,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
       Top = 0
       Width = 186
       Height = 22
-      Date = 38049.000000000000000000
+      Date = 38190.000000000000000000
       Time = 0.046246539350249800
       TabOrder = 0
       OnCloseUp = DateTimePicker1CloseUp
@@ -556,7 +568,7 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
       000000000000}
   end
   object ItemPopup: TPopupMenu
-    Left = 603
+    Left = 619
     Top = 342
     object Color1: TMenuItem
       Caption = 'Color'
@@ -595,5 +607,213 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     EndDate = 38204.000000000000000000
     Left = 520
     Top = 245
+  end
+  object DBDaySource1: TDBDaySource
+    AutoIncKey = False
+    DataSource = DataSource1
+    ResourceMap = <>
+    StartTimeField = 'STARTTIME'
+    EndTimeField = 'ENDTIME'
+    KeyField = 'KEYFIELD'
+    ReadOnly = False
+    ResourceField = 'RESOURCE'
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTES'
+    UpdateByQuery = False
+    AutoHeaderUpdate = True
+    DateFormat = 'mm/dd/yyyy'
+    Day = 38190.000000000000000000
+    Mode = dmMultiDayRes
+    NumberOfDays = 5
+    Left = 624
+    Top = 277
+  end
+  object qryPlannerEvents: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO_EVENTI '
+      'where '
+      'DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'DALLE_ORE <= :DATA_AL'
+      ';')
+    FetchRows = 100
+    Left = 792
+    Top = 280
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45437d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATA_AL'
+        ParamType = ptInput
+        Value = 45503d
+      end>
+    object qryPlannerEventsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerEventsSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryPlannerEventsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerEventsDALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEventsALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEventsNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object qryPlannerEventsSUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 128
+    end
+    object qryPlannerEventsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerEventsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerEventsJGUID: TBytesField
+      FieldName = 'JGUID'
+    end
+    object qryPlannerEventsICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object qryPlannerEventsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerEventsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerEventsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerEventsCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPlannerEventsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+  end
+  object dsCalendarEvents: TUniDataSource
+    DataSet = qryPlannerEvents
+    Left = 792
+    Top = 216
+  end
+  object InterBaseUniProvider1: TInterBaseUniProvider
+    Left = 912
+    Top = 320
+  end
+  object PostgreSQLUniProvider1: TPostgreSQLUniProvider
+    Left = 912
+    Top = 192
+  end
+  object JanuaUniConnection1: TJanuaUniConnection
+    ProviderName = 'InterBase'
+    Port = 3050
+    Database = 'C:\PhoenixDB\PHOENIX.FDB'
+    Username = 'SYSDBA'
+    Server = '192.168.1.200'
+    Connected = True
+    LoginPrompt = False
+    SchemaParamKey = 'system.db_schema_id'
+    SchemaParams = <>
+    Left = 912
+    Top = 256
+    EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
+  end
+  object DBDaySourcePhoenix: TDBDaySource
+    AutoIncKey = False
+    DataSource = dsCalendarEvents
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'CHIAVE'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTE'
+    UpdateByQuery = False
+    AutoHeaderUpdate = True
+    DateFormat = 'mm/dd/yyyy'
+    Day = 38190.000000000000000000
+    Mode = dmMultiDayRes
+    Left = 624
+    Top = 405
+  end
+  object qryPlannerCalendars: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO'
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 792
+    Top = 352
+    object qryPlannerCalendarsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendarsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerCalendarsSUMMARY: TBlobField
+      FieldName = 'SUMMARY'
+    end
+    object qryPlannerCalendarsDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendarsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendarsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendarsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerCalendarsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendarsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendarsDEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendarsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
+      Size = 128
+    end
   end
 end

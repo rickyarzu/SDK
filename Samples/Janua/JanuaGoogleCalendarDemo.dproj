@@ -82,6 +82,8 @@
         <Manifest_File>None</Manifest_File>
         <BT_BuildType>Debug</BT_BuildType>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <DCC_ExeOutput>C:\Phoenix</DCC_ExeOutput>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -106,6 +108,10 @@
             <Form>frmTMSAdvCalendarDemo</Form>
         </DCCReference>
         <DCCReference Include="Janua.TMSVCLDemos.VCLApplication.pas"/>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
+            <Form>dlgVclCloudGoogleConnect</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
@@ -167,7 +173,7 @@
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <Deployment Version="4">
-                <DeployFile LocalName="Debug\Win32\JanuaGoogleCalendarDemo.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Phoenix\JanuaGoogleCalendarDemo.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaGoogleCalendarDemo.exe</RemoteName>
                         <Overwrite>true</Overwrite>

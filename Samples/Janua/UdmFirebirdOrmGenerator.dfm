@@ -1,7 +1,6 @@
-object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
-  OnCreate = DataModuleCreate
-  Height = 406
-  Width = 503
+inherited dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
+  Height = 435
+  Width = 542
   object UniConnection1: TUniConnection
     ProviderName = 'InterBase'
     Database = 'C:\PhoenixDB\PHOENIX.FDB'
@@ -50,6 +49,11 @@ object dmFirebirdOrmGenerator: TdmFirebirdOrmGenerator
   end
   object tbFields: TUniTable
     TableName = 'AMMINISTRATORI'
+    DataTypeMap = <
+      item
+        DBType = 416
+        FieldType = ftWideMemo
+      end>
     Connection = UniConnection1
     FilterSQL = '1=2'
     Left = 232

@@ -528,6 +528,7 @@ type
   public
     class constructor Create;
     class procedure PublicClearLog(const Sender: TObject; const ProcedureName: string);
+    class procedure RunAndWait(const FileName, Parameters: string);
     class function PublicWriteLog(Sender: TObject; ProcedureName, sMessage: string; isError: Boolean = false)
       : TJanuaLogRecord;
     class function PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;
@@ -3226,6 +3227,28 @@ begin
 {$ENDIF}
 end;
 
+class procedure TJanuaCoreOS.RunAndWait(const FileName, Parameters: string);
+var
+  StartupInfo: TStartupInfo;
+  ProcessInfo: TProcessInformation;
+  CommandLine: string;
+begin
+  CommandLine := '"' + FileName + '" ' + Parameters;
+  FillChar(StartupInfo, SizeOf(StartupInfo), 0);
+  StartupInfo.cb := SizeOf(StartupInfo);
+{$IF Defined(MSWINDOWS)}
+  if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, nil, StartupInfo,
+    ProcessInfo) then
+    RaiseLastOSError;
+  try
+    WaitForSingleObject(ProcessInfo.hProcess, INFINITE);
+  finally
+    CloseHandle(ProcessInfo.hProcess);
+    CloseHandle(ProcessInfo.hThread);
+  end;
+{$ENDIF}
+end;
+
 class procedure TJanuaCoreOS.WriteBoolRegistry(Machine: Boolean; aName, aKey: string; aValue: Boolean);
 {$IF Defined(MSWINDOWS) and not Defined(JANUASERVER)}
 var
@@ -4076,6 +4099,7 @@ end;
 
 class function TJanuaWebServerFactory.CreateWebServer: TJanuaWebServer;
 begin
+  Result := nil;
   if Assigned(FWebServerClass) then
     Result := FWebServerClass.Create;
 end;

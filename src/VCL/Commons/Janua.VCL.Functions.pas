@@ -1,5 +1,6 @@
 unit Janua.VCL.Functions;
-
+
+
 interface
 
 uses
@@ -691,4 +692,4 @@ begin
 end;
 
 end.
-
+

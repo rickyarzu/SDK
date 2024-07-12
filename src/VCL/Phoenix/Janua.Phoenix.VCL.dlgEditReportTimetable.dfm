@@ -15,7 +15,7 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
   TextHeight = 15
   object edDate: TDateTimePicker
     Left = 80
-    Top = 32
+    Top = 40
     Width = 241
     Height = 29
     Date = 45294.000000000000000000
@@ -72,7 +72,7 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 44
-    Top = 77
+    Left = 65516
+    Top = 53
   end
 end

@@ -1,17 +1,17 @@
-unit JOrm.Phoenix.GoogleCalendarEvents.Intf;
+unit JOrm.Cloud.GoogleCalendarEvents.Intf;
 
 interface
 
-uses JOrm.Phoenix.GoogleCalendarEvents.Custom.Intf, Janua.Orm.Intf;
+uses JOrm.Cloud.GoogleCalendarEvents.Custom.Intf, Janua.Orm.Intf;
 
 type
 
   IGoogleCalendarEvent = interface(ICustomGoogleCalendarEvent)
-  ['{537FBDEC-CB82-4D88-B96C-A6E0CA6D15AA}']
+  ['{FAFAC460-DF44-4078-8374-82F87A40D8C2}']
   end;
 
   IGoogleCalendarEvents = interface(IJanuaRecordSet)
-  ['{69E288C0-636B-409D-B526-8CC11A5E1A46}']
+  ['{462AE809-1C86-46EC-BB9E-C55D5B6A6E70}']
     function GetGoogleCalendarEvent: IGoogleCalendarEvent;
     property GoogleCalendarEvent: IGoogleCalendarEvent read GetGoogleCalendarEvent;
 

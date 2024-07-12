@@ -1,20 +1,32 @@
-inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
-  Height = 523
-  Width = 913
-  inherited GCalendarButtons: TActionList
-    Top = 272
+inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
+  Height = 588
+  Width = 1030
+  inherited SVGIconImageList48: TSVGIconImageList
+    Top = 280
+  end
+  inherited MainToolBarActions: TActionList
+    inherited ActionAddMeeting: TAction
+      Caption = 'Pianificazione Tecnico'
+    end
+    inherited ActionAddUser: TAction
+      Caption = 'Gestione Tecnici    e Calendari'
+    end
+    inherited ActionExport: TAction
+      Caption = 'Esporta (Excel,    Pdf, Csv)'
+    end
   end
   inherited SVGIconImageList16: TSVGIconImageList
-    Top = 352
+    Left = 64
+    Top = 344
   end
   inherited PictureContainer1: TPictureContainer
-    Top = 400
+    Top = 384
   end
   inherited SVGIconImageListIt: TSVGIconImageList
-    Top = 440
+    Top = 416
   end
   inherited ColorDialog1: TColorDialog
-    Top = 330
+    Top = 314
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
     Left = 576
@@ -31,8 +43,9 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
   end
   inherited vtGoogleEvents: TVirtualTable
     Left = 792
+    Top = 80
     Data = {
-      0400130002004944010080000000000004004554414701008000000000000700
+      0400170002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
       000000000900535441525454494D450B000000000000000700454E4454494D45
       0B000000000000000700435245415445440B0000000000000007005550444154
@@ -43,33 +56,87 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       55454E434503000000000000000500434F4C4F52020000000000000013005553
       4544454641554C5452454D494E444552530500000000000000110053454E444E
       4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
-      0100800000000000000000000000}
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F720300000000000000000000000000}
+    inherited vtGoogleEventsAlias: TWideStringField
+      LookupResultField = 'ALIAS'
+    end
+  end
+  inherited dsGoogleEvents: TUniDataSource
+    Top = 344
+  end
+  inherited dsCalendars: TUniDataSource
+    DataSet = qryPlannerCalendars
+  end
+  inherited DBDaySourceGCalendar: TDBDaySource
+    Mode = dmMultiDay
+    NumberOfResources = 1
+  end
+  inherited DBDaySourceCalendar: TDBDaySource
+    DataSource = dsCalendarEvents
+    ResourceDataSource.ResourceNameField = ''
+    NotesField = 'NOTE'
+    Day = 45474.000000000000000000
+    DayIncrement = 3
+    Mode = dmMultiResDay
+    NumberOfResources = 1
+    MinTimeField = 'DALLE_ORE'
+    MaxTimeField = 'ALLE_ORE'
+  end
+  inherited dsCalendarEvents: TUniDataSource
+    DataSet = qryPlannerEvents
+  end
+  inherited lkpGCalendarAlias: TVirtualTable
+    Top = 408
+    Data = {
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
   end
   inherited vtGoogleCalendars: TVirtualTable
     Left = 791
     Top = 16
     Data = {
-      040009000200494401008000000000000B004445534352495054494F4E0F0000
-      000000000008004C4F434154494F4E0100800000000000070053554D4D415259
-      010000010000000007005052494D4152590500000000000000080054494D455A
-      4F4E4501003C00000000000500434F4C4F5202000000000000000A004241434B
-      5F434F4C4F5203000000000000000A00464F52455F434F4C4F52030000000000
-      0000000000000000}
-  end
-  inherited dsGoogleEvents: TUniDataSource
-    Left = 592
-    Top = 344
+      04000B0002004944010080000000000008004C4F434154494F4E010080000000
+      0000070053554D4D415259010000010000000007005052494D41525905000000
+      00000000080054494D455A4F4E4501003C00000000000500434F4C4F52020000
+      00000000000A00464F52455F434F4C4F5203000000000000000B004445534352
+      495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
+      00000500414C494153010014000000000005004A475549442300260000000000
+      000000000000}
   end
   object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
       
-        '  (NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, APPUNTAMENTO_ORA, STA' +
-        'TO)'
+        '  (CHIAVE, CLIENTE, FATTURA, DATA_INTERVENTO, GENERAZIONE_AUTOMA' +
+        'TICA, TECNICO_INTERVENTO, SCANSIONE, REGISTRO, NOTE_PER_IL_TECNI' +
+        'CO, SOSPESO, DA_ESPORTARE_SUL_WEB, RESPONSABILE, ESPORTATO_SU_MO' +
+        'BILE, NOTE_DAL_TECNICO, VERBALE_PROVA_DINAMICA, VERBALE_MANICHET' +
+        'TE, PREVENTIVO, IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLET, MOBI' +
+        'LEWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA, MOBILE' +
+        'WARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO, STATO_LAVORAZI' +
+        'ONE, DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT, CHIUSURA_STATINO, MO' +
+        'BILEWARN_NON_ESEGUITI, PRESA_IN_CARICO, FORNITURA, APPUNTAMENTO_' +
+        'DATA, APPUNTAMENTO_ORA, STATO, GCAL)'
       'VALUES'
       
-        '  (:NOTE_PER_IL_TECNICO, :APPUNTAMENTO_DATA, :APPUNTAMENTO_ORA, ' +
-        ':STATO)')
+        '  (:CHIAVE, :CLIENTE, :FATTURA, :DATA_INTERVENTO, :GENERAZIONE_A' +
+        'UTOMATICA, :TECNICO_INTERVENTO, :SCANSIONE, :REGISTRO, :NOTE_PER' +
+        '_IL_TECNICO, :SOSPESO, :DA_ESPORTARE_SUL_WEB, :RESPONSABILE, :ES' +
+        'PORTATO_SU_MOBILE, :NOTE_DAL_TECNICO, :VERBALE_PROVA_DINAMICA, :' +
+        'VERBALE_MANICHETTE, :PREVENTIVO, :IGNORA_EVIDENZIAZIONE, :ANNULL' +
+        'ATO_DA_TABLET, :MOBILEWARN_NUOVA_ATTREZZATURA, :MOBILEWARN_ORDIN' +
+        'ARIA_RITIRATA, :MOBILEWARN_N_ORDIN_CONTROLLATA, :MOBILEWARN_SMAL' +
+        'TIMENTO, :STATO_LAVORAZIONE, :DATA_CHIUSURA_DA_SERVER, :CHIUSURA' +
+        '_EXT, :CHIUSURA_STATINO, :MOBILEWARN_NON_ESEGUITI, :PRESA_IN_CAR' +
+        'ICO, :FORNITURA, :APPUNTAMENTO_DATA, :APPUNTAMENTO_ORA, :STATO, ' +
+        ':GCAL)')
     SQLDelete.Strings = (
       'DELETE FROM STATINI'
       'WHERE'
@@ -78,9 +145,27 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       'UPDATE STATINI'
       'SET'
       
-        '  NOTE_PER_IL_TECNICO = :NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA ' +
-        '= :APPUNTAMENTO_DATA, APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STAT' +
-        'O = :STATO'
+        '  CHIAVE = :CHIAVE, CLIENTE = :CLIENTE, FATTURA = :FATTURA, DATA' +
+        '_INTERVENTO = :DATA_INTERVENTO, GENERAZIONE_AUTOMATICA = :GENERA' +
+        'ZIONE_AUTOMATICA, TECNICO_INTERVENTO = :TECNICO_INTERVENTO, SCAN' +
+        'SIONE = :SCANSIONE, REGISTRO = :REGISTRO, NOTE_PER_IL_TECNICO = ' +
+        ':NOTE_PER_IL_TECNICO, SOSPESO = :SOSPESO, DA_ESPORTARE_SUL_WEB =' +
+        ' :DA_ESPORTARE_SUL_WEB, RESPONSABILE = :RESPONSABILE, ESPORTATO_' +
+        'SU_MOBILE = :ESPORTATO_SU_MOBILE, NOTE_DAL_TECNICO = :NOTE_DAL_T' +
+        'ECNICO, VERBALE_PROVA_DINAMICA = :VERBALE_PROVA_DINAMICA, VERBAL' +
+        'E_MANICHETTE = :VERBALE_MANICHETTE, PREVENTIVO = :PREVENTIVO, IG' +
+        'NORA_EVIDENZIAZIONE = :IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLE' +
+        'T = :ANNULLATO_DA_TABLET, MOBILEWARN_NUOVA_ATTREZZATURA = :MOBIL' +
+        'EWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA = :MOBIL' +
+        'EWARN_ORDINARIA_RITIRATA, MOBILEWARN_N_ORDIN_CONTROLLATA = :MOBI' +
+        'LEWARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO = :MOBILEWARN' +
+        '_SMALTIMENTO, STATO_LAVORAZIONE = :STATO_LAVORAZIONE, DATA_CHIUS' +
+        'URA_DA_SERVER = :DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT = :CHIUSU' +
+        'RA_EXT, CHIUSURA_STATINO = :CHIUSURA_STATINO, MOBILEWARN_NON_ESE' +
+        'GUITI = :MOBILEWARN_NON_ESEGUITI, PRESA_IN_CARICO = :PRESA_IN_CA' +
+        'RICO, FORNITURA = :FORNITURA, APPUNTAMENTO_DATA = :APPUNTAMENTO_' +
+        'DATA, APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STATO = :STATO, GCAL' +
+        ' = :GCAL'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -90,8 +175,16 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
-        'SELECT NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, APPUNTAMENTO_ORA,' +
-        ' STATO FROM STATINI'
+        'SELECT CHIAVE, CLIENTE, FATTURA, DATA_INTERVENTO, GENERAZIONE_AU' +
+        'TOMATICA, TECNICO_INTERVENTO, SCANSIONE, REGISTRO, NOTE_PER_IL_T' +
+        'ECNICO, SOSPESO, DA_ESPORTARE_SUL_WEB, RESPONSABILE, ESPORTATO_S' +
+        'U_MOBILE, NOTE_DAL_TECNICO, VERBALE_PROVA_DINAMICA, VERBALE_MANI' +
+        'CHETTE, PREVENTIVO, IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLET, ' +
+        'MOBILEWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA, MO' +
+        'BILEWARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO, STATO_LAVO' +
+        'RAZIONE, DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT, CHIUSURA_STATINO' +
+        ', MOBILEWARN_NON_ESEGUITI, PRESA_IN_CARICO, FORNITURA, APPUNTAME' +
+        'NTO_DATA, APPUNTAMENTO_ORA, STATO, GCAL FROM STATINI'
       'WHERE'
       '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
@@ -155,7 +248,9 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       '       COALESCE(I.LUCI, 0) LUCI,'
       '       COALESCE(I.IDRANTI, 0) IDRANTI,'
       '       COALESCE(I.SPRINKLER, 0) SPRINKLER,'
-      '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL'
+      '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL, '
+      '       T.EMAIL AS EMAIL_TECNICO,'
+      '       S.GCAL'
       'FROM FILIALI_CLIENTI F '
       'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
       'JOIN STATINI S ON F.chiave = S.filiale'
@@ -170,6 +265,7 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       '--AND S.CHIAVE = 2100103'
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
+    FetchRows = 100
     BeforePost = qryReportPlannerBeforePost
     OnCalcFields = qryReportPlannerCalcFields
     Left = 584
@@ -466,13 +562,23 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       FieldName = 'calcAppuntamentoDataOra'
       Calculated = True
     end
+    object qryReportPlannerEMAIL_TECNICO: TStringField
+      FieldName = 'EMAIL_TECNICO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryReportPlannerGCAL: TStringField
+      FieldName = 'GCAL'
+      FixedChar = True
+      Size = 1
+    end
   end
   object spSetStatinoStato: TUniStoredProc
     StoredProcName = 'SET_STATINI_STATO'
     SQL.Strings = (
       'EXECUTE PROCEDURE SET_STATINI_STATO')
     Connection = JanuaUniConnection1
-    Left = 592
+    Left = 584
     Top = 280
     CommandStoredProcName = 'SET_STATINI_STATO'
   end
@@ -531,15 +637,77 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Size = 10
     end
   end
-  object qryPlannerCalendar: TUniQuery
+  object qryPlannerEvents: TUniQuery
+    KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'JGUID = :Old_JGUID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :JGUID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'NOTE'
+        FieldType = ftWideMemo
+      end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT * FROM CALENDARIO '
+      'SELECT E.* FROM '
+      
+        'CALENDARIO_EVENTI E LEFT JOIN CALENDARIO C ON E.CALENDARIO = C.C' +
+        'HIAVE'
       'where '
-      'DALLE_ORE >= :DATA_DAL'
+      'C.GRUPPO_ID = '#39'T'#39
       'AND'
-      'DALLE_ORE <= :DATA_AL'
+      'E.DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'E.DALLE_ORE <= :DATA_AL'
       ';')
+    FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'JGUID'
     Left = 792
     Top = 280
     ParamData = <
@@ -553,61 +721,83 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
         DataType = ftDate
         Name = 'DATA_AL'
         ParamType = ptInput
-        Value = 45473d
+        Value = 45503d
       end>
-    object qryPlannerCalendarCHIAVE: TIntegerField
+    object qryPlannerEventsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object qryPlannerCalendarSTATINO: TIntegerField
+    object qryPlannerEventsSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
-    object qryPlannerCalendarTECNICO: TIntegerField
+    object qryPlannerEventsTECNICO: TIntegerField
       FieldName = 'TECNICO'
       Required = True
     end
-    object qryPlannerCalendarDALLE_ORE: TDateTimeField
+    object qryPlannerEventsDALLE_ORE: TDateTimeField
       FieldName = 'DALLE_ORE'
       Required = True
     end
-    object qryPlannerCalendarALLE_ORE: TDateTimeField
+    object qryPlannerEventsALLE_ORE: TDateTimeField
       FieldName = 'ALLE_ORE'
       Required = True
     end
-    object qryPlannerCalendarNOTE: TBlobField
-      FieldName = 'NOTE'
-    end
-    object qryPlannerCalendarSUBJECT: TStringField
+    object qryPlannerEventsSUBJECT: TStringField
       FieldName = 'SUBJECT'
-      Size = 128
+      Size = 256
     end
-    object qryPlannerCalendarTECNICO_SIGLA: TStringField
+    object qryPlannerEventsNOTE: TWideMemoField
+      FieldName = 'NOTE'
+      BlobType = ftWideMemo
+    end
+    object qryPlannerEventsTECNICO_SIGLA: TStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
-    object qryPlannerCalendarCOLORE: TIntegerField
+    object qryPlannerEventsCOLORE: TIntegerField
       FieldName = 'COLORE'
     end
-    object qryPlannerCalendarJGUID: TBytesField
-      FieldName = 'JGUID'
-    end
-    object qryPlannerCalendarICONA: TSmallintField
+    object qryPlannerEventsICONA: TSmallintField
       FieldName = 'ICONA'
+    end
+    object qryPlannerEventsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerEventsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerEventsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerEventsCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPlannerEventsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
     end
   end
   object qryTechPlanned: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO'
+      
+        'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO, T' +
+        '.SIGLA'
       'FROM STATINI s'
       'JOIN TECNICI T ON T.chiave = S.responsabile'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
+      'WHERE S.STATO > -1 -- AND S.STATO < 9'
       '        AND S.APPUNTAMENTO_DATA >= :DATA_DAL'
       '        AND S.APPUNTAMENTO_DATA <= :DATA_AL'
       'ORDER BY T.descrizione'
       ';')
-    Left = 792
-    Top = 216
+    AfterScroll = qryTechPlannedAfterScroll
+    Left = 584
+    Top = 344
     ParamData = <
       item
         DataType = ftDate
@@ -619,19 +809,34 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
         DataType = ftDate
         Name = 'DATA_AL'
         ParamType = ptInput
-        Value = 45473d
+        Value = 45503d
       end>
-    object IntegerField1: TIntegerField
+    object qryTechPlannedRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object StringField1: TStringField
+    object qryTechPlannedNOME_TECNICO: TStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
     end
+    object qryTechPlannedSIGLA: TStringField
+      FieldName = 'SIGLA'
+      ReadOnly = True
+      Size = 12
+    end
   end
   object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'DESCRIPTION'
+        FieldType = ftWideString
+        FieldLength = 1024
+      end>
     Connection = JanuaUniConnection1
     Left = 688
     Top = 40
@@ -640,9 +845,6 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       Required = True
       Size = 128
     end
-    object tabGoogleCalendarsDESCRIPTION: TBlobField
-      FieldName = 'DESCRIPTION'
-    end
     object tabGoogleCalendarsLOCATION: TStringField
       FieldName = 'LOCATION'
       Size = 128
@@ -650,9 +852,6 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object tabGoogleCalendarsSUMMARY: TStringField
       FieldName = 'SUMMARY'
       Size = 256
-    end
-    object tabGoogleCalendarsPRIMARY: TBooleanField
-      FieldName = 'PRIMARY'
     end
     object tabGoogleCalendarsTIMEZONE: TStringField
       FieldName = 'TIMEZONE'
@@ -667,6 +866,23 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object tabGoogleCalendarsFORE_COLOR: TIntegerField
       FieldName = 'FORE_COLOR'
     end
+    object tabGoogleCalendarsISPRIMARY: TStringField
+      FieldName = 'ISPRIMARY'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleCalendarsALIAS: TStringField
+      FieldName = 'ALIAS'
+    end
+    object tabGoogleCalendarsDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+      Size = 1024
+    end
+    object tabGoogleCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
   end
   object tabGoogleEvents: TUniTable
     TableName = 'GOOGLE_CALENDAR_EVENTS'
@@ -674,8 +890,21 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
       item
         FieldName = 'DESCRIPTION'
         FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'ATTENDEES'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'REMINDERS'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
       end>
     Connection = JanuaUniConnection1
+    IndexFieldNames = 'ID'
     Left = 688
     Top = 104
     object tabGoogleEventsID: TStringField
@@ -707,15 +936,17 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object tabGoogleEventsUPDATED: TDateTimeField
       FieldName = 'UPDATED'
     end
-    object tabGoogleEventsISALLDAY: TBooleanField
-      FieldName = 'ISALLDAY'
-    end
     object tabGoogleEventsLOCATION: TStringField
       FieldName = 'LOCATION'
       Size = 128
     end
     object tabGoogleEventsSTATUS: TSmallintField
       FieldName = 'STATUS'
+    end
+    object tabGoogleEventsSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
     end
     object tabGoogleEventsVISIBILITY: TIntegerField
       FieldName = 'VISIBILITY'
@@ -734,16 +965,1370 @@ inherited dmPhoenixIBPlanner: TdmPhoenixIBPlanner
     object tabGoogleEventsCOLOR: TSmallintField
       FieldName = 'COLOR'
     end
-    object tabGoogleEventsUSEDEFAULTREMINDERS: TBooleanField
-      FieldName = 'USEDEFAULTREMINDERS'
-    end
-    object tabGoogleEventsSENDNOTIFICATIONS: TBooleanField
-      FieldName = 'SENDNOTIFICATIONS'
-    end
     object tabGoogleEventsCALENDARID: TStringField
       FieldName = 'CALENDARID'
       Required = True
       Size = 128
+    end
+    object tabGoogleEventsATTENDEES: TWideMemoField
+      FieldName = 'ATTENDEES'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsREMINDERS: TWideMemoField
+      FieldName = 'REMINDERS'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+  end
+  object dsTecnici: TUniDataSource
+    DataSet = qryPlannerEvents
+    Left = 792
+    Top = 144
+  end
+  object dsTecniciPlanned: TUniDataSource
+    DataSet = qryTechPlanned
+    Left = 792
+    Top = 344
+  end
+  object qryPlannerCalendars: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'T'#39
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 792
+    Top = 216
+    object qryPlannerCalendarsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendarsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      Required = True
+    end
+    object qryPlannerCalendarsSUMMARY: TBlobField
+      FieldName = 'SUMMARY'
+    end
+    object qryPlannerCalendarsDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendarsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendarsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendarsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendarsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerCalendarsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendarsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendarsDEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendarsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
+      Size = 128
+    end
+  end
+  object vtReportPlanner: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'CHIAVE'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'DESCRIZIONE_SCHEDA'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'CLIENTE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOME'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 100
+      end
+      item
+        Name = 'PROVINCIA'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'CAP'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'INDIRIZZO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'TELEFONO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'NOTE'
+        DataType = ftBlob
+      end
+      item
+        Name = 'ORARIO_APERTURA_DAL1'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_DAL2'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_AL1'
+        DataType = ftTime
+      end
+      item
+        Name = 'ORARIO_APERTURA_AL2'
+        DataType = ftTime
+      end
+      item
+        Name = 'CHIUSURA'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'CELLULARE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'ESCLUDI_DA_GENERAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'SEDE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'REF_TELEFONO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'REF_CELLULARE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'COMUNE'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'FATTURA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DATA_INTERVENTO'
+        DataType = ftDate
+      end
+      item
+        Name = 'GENERAZIONE_AUTOMATICA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'TECNICO_INTERVENTO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SCANSIONE'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'REGISTRO'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'NOTE_PER_IL_TECNICO'
+        DataType = ftWideString
+        Size = 1024
+      end
+      item
+        Name = 'SOSPESO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'DA_ESPORTARE_SUL_WEB'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'RESPONSABILE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ESPORTATO_SU_MOBILE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'NOTE_DAL_TECNICO'
+        DataType = ftBlob
+      end
+      item
+        Name = 'VERBALE_PROVA_DINAMICA'
+        DataType = ftBlob
+      end
+      item
+        Name = 'VERBALE_MANICHETTE'
+        DataType = ftBlob
+      end
+      item
+        Name = 'PREVENTIVO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'IGNORA_EVIDENZIAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ANNULLATO_DA_TABLET'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_ORDINARIA_RITIRATA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'MOBILEWARN_SMALTIMENTO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'STATO_LAVORAZIONE'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'DATA_CHIUSURA_DA_SERVER'
+        DataType = ftDate
+      end
+      item
+        Name = 'CHIUSURA_EXT'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'CHIUSURA_STATINO'
+        DataType = ftWideString
+        Size = 2048
+      end
+      item
+        Name = 'MOBILEWARN_NON_ESEGUITI'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'PRESA_IN_CARICO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'FORNITURA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'ORDINARI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'STRAORDINARI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'INTERVENTI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'NOME_TECNICO'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'APPUNTAMENTO_DATA'
+        DataType = ftDate
+      end
+      item
+        Name = 'APPUNTAMENTO_ORA'
+        DataType = ftTime
+      end
+      item
+        Name = 'STATO'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'STATINO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ESTINTORI_ORDINARIO'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'ESTINTORI_STRAORDINARIO'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'GRUPPI_ELETTR'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'FUMI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'LUCI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'IDRANTI'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'SPRINKLER'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'IMPIANTI_EL'
+        DataType = ftLargeint
+      end
+      item
+        Name = 'AMMINISTRATORE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'calcAppuntamentoDataOra'
+        DataType = ftDateTime
+      end>
+    Left = 688
+    Top = 384
+    Data = {
+      040044000600434849415645030000000000000012004445534352495A494F4E
+      455F5343484544410100FF00000000000700434C49454E544503000000000000
+      0004004E4F4D450100640000000000090050524F56494E434941010002000000
+      0000030043415001000A00000000000900494E444952495A5A4F0100FF000000
+      0000080054454C45464F4E4F0100FF000000000004004E4F54450F0000000000
+      000014004F524152494F5F41504552545552415F44414C310A00000000000000
+      14004F524152494F5F41504552545552415F44414C320A000000000000001300
+      4F524152494F5F41504552545552415F414C310A0000000000000013004F5241
+      52494F5F41504552545552415F414C320A000000000000000800434849555355
+      52410100FF0000000000090043454C4C554C4152450100FF0000000000050045
+      4D41494C0100FF000000000016004553434C5544495F44415F47454E4552415A
+      494F4E4501000100000000000400534544450100010000000000020049440100
+      FF00000000000C005245465F54454C45464F4E4F0100FF00000000000D005245
+      465F43454C4C554C4152450100FF00000000000600434F4D554E450100FF0000
+      00000007004641545455524103000000000000000F00444154415F494E544552
+      56454E544F0900000000000000160047454E4552415A494F4E455F4155544F4D
+      4154494341030000000000000012005445434E49434F5F494E54455256454E54
+      4F030000000000000009005343414E53494F4E45180000080000000008005245
+      47495354524F180000080000000013004E4F54455F5045525F494C5F5445434E
+      49434F18000004000000000700534F535045534F010001000000000014004441
+      5F4553504F52544152455F53554C5F57454201000100000000000C0052455350
+      4F4E534142494C45030000000000000013004553504F525441544F5F53555F4D
+      4F42494C45010001000000000010004E4F54455F44414C5F5445434E49434F0F
+      00000000000000160056455242414C455F50524F56415F44494E414D4943410F
+      00000000000000120056455242414C455F4D414E494348455454450F00000000
+      0000000A0050524556454E5449564F0300000000000000150049474E4F52415F
+      45564944454E5A49415A494F4E4501000100000000001300414E4E554C4C4154
+      4F5F44415F5441424C455401000100000000001D004D4F42494C455741524E5F
+      4E554F56415F41545452455A5A415455524101000100000000001D004D4F4249
+      4C455741524E5F4F5244494E415249415F524954495241544101000100000000
+      001E004D4F42494C455741524E5F4E5F4F5244494E5F434F4E54524F4C4C4154
+      41010001000000000016004D4F42494C455741524E5F534D414C54494D454E54
+      4F01000100000000001100535441544F5F4C41564F52415A494F4E4501000100
+      000000001700444154415F43484955535552415F44415F534552564552090000
+      00000000000C0043484955535552415F45585401003200000000001000434849
+      55535552415F53544154494E4F180000080000000017004D4F42494C45574152
+      4E5F4E4F4E5F455345475549544901000100000000000F0050524553415F494E
+      5F43415249434F01000100000000000900464F524E4954555241010001000000
+      000008004F5244494E41524919000000000000000C00535452414F5244494E41
+      524919000000000000000A00494E54455256454E544919000000000000000C00
+      4E4F4D455F5445434E49434F0100FF00000000001100415050554E54414D454E
+      544F5F4441544109000000000000001000415050554E54414D454E544F5F4F52
+      410A000000000000000500535441544F0200000000000000070053544154494E
+      4F03000000000000001300455354494E544F52495F4F5244494E4152494F1900
+      0000000000001700455354494E544F52495F535452414F5244494E4152494F19
+      000000000000000D004752555050495F454C4554545219000000000000000400
+      46554D49190000000000000004004C5543491900000000000000070049445241
+      4E544919000000000000000900535052494E4B4C455219000000000000000B00
+      494D5049414E54495F454C19000000000000000E00414D4D494E495354524154
+      4F52450300000000000000170063616C63417070756E74616D656E746F446174
+      614F72610B00000000000000000000000000}
+    object vtReportPlannerCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object vtReportPlannerDESCRIZIONE_SCHEDA: TStringField
+      FieldName = 'DESCRIZIONE_SCHEDA'
+      Size = 255
+    end
+    object vtReportPlannerCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+    end
+    object vtReportPlannerNOME: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object vtReportPlannerPROVINCIA: TStringField
+      FieldName = 'PROVINCIA'
+      Size = 2
+    end
+    object vtReportPlannerCAP: TStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object vtReportPlannerINDIRIZZO: TStringField
+      FieldName = 'INDIRIZZO'
+      Size = 255
+    end
+    object vtReportPlannerTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object vtReportPlannerNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object vtReportPlannerORARIO_APERTURA_DAL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL1'
+    end
+    object vtReportPlannerORARIO_APERTURA_DAL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL2'
+    end
+    object vtReportPlannerORARIO_APERTURA_AL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL1'
+    end
+    object vtReportPlannerORARIO_APERTURA_AL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL2'
+    end
+    object vtReportPlannerCHIUSURA: TStringField
+      FieldName = 'CHIUSURA'
+      Size = 255
+    end
+    object vtReportPlannerCELLULARE: TStringField
+      FieldName = 'CELLULARE'
+      Size = 255
+    end
+    object vtReportPlannerEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Size = 255
+    end
+    object vtReportPlannerESCLUDI_DA_GENERAZIONE: TStringField
+      FieldName = 'ESCLUDI_DA_GENERAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerSEDE: TStringField
+      FieldName = 'SEDE'
+      Size = 1
+    end
+    object vtReportPlannerID: TStringField
+      FieldName = 'ID'
+      Size = 255
+    end
+    object vtReportPlannerREF_TELEFONO: TStringField
+      FieldName = 'REF_TELEFONO'
+      Size = 255
+    end
+    object vtReportPlannerREF_CELLULARE: TStringField
+      FieldName = 'REF_CELLULARE'
+      Size = 255
+    end
+    object vtReportPlannerCOMUNE: TStringField
+      FieldName = 'COMUNE'
+      Size = 255
+    end
+    object vtReportPlannerFATTURA: TIntegerField
+      FieldName = 'FATTURA'
+    end
+    object vtReportPlannerDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+    end
+    object vtReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField
+      FieldName = 'GENERAZIONE_AUTOMATICA'
+    end
+    object vtReportPlannerTECNICO_INTERVENTO: TIntegerField
+      FieldName = 'TECNICO_INTERVENTO'
+    end
+    object vtReportPlannerSCANSIONE: TWideStringField
+      FieldName = 'SCANSIONE'
+      Size = 2048
+    end
+    object vtReportPlannerREGISTRO: TWideStringField
+      FieldName = 'REGISTRO'
+      Size = 2048
+    end
+    object vtReportPlannerNOTE_PER_IL_TECNICO: TWideStringField
+      FieldName = 'NOTE_PER_IL_TECNICO'
+      Size = 1024
+    end
+    object vtReportPlannerSOSPESO: TStringField
+      FieldName = 'SOSPESO'
+      Size = 1
+    end
+    object vtReportPlannerDA_ESPORTARE_SUL_WEB: TStringField
+      FieldName = 'DA_ESPORTARE_SUL_WEB'
+      Size = 1
+    end
+    object vtReportPlannerRESPONSABILE: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object vtReportPlannerESPORTATO_SU_MOBILE: TStringField
+      FieldName = 'ESPORTATO_SU_MOBILE'
+      Size = 1
+    end
+    object vtReportPlannerNOTE_DAL_TECNICO: TBlobField
+      FieldName = 'NOTE_DAL_TECNICO'
+    end
+    object vtReportPlannerVERBALE_PROVA_DINAMICA: TBlobField
+      FieldName = 'VERBALE_PROVA_DINAMICA'
+    end
+    object vtReportPlannerVERBALE_MANICHETTE: TBlobField
+      FieldName = 'VERBALE_MANICHETTE'
+    end
+    object vtReportPlannerPREVENTIVO: TIntegerField
+      FieldName = 'PREVENTIVO'
+    end
+    object vtReportPlannerIGNORA_EVIDENZIAZIONE: TStringField
+      FieldName = 'IGNORA_EVIDENZIAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerANNULLATO_DA_TABLET: TStringField
+      FieldName = 'ANNULLATO_DA_TABLET'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
+      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField
+      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
+      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+      Size = 1
+    end
+    object vtReportPlannerMOBILEWARN_SMALTIMENTO: TStringField
+      FieldName = 'MOBILEWARN_SMALTIMENTO'
+      Size = 1
+    end
+    object vtReportPlannerSTATO_LAVORAZIONE: TStringField
+      FieldName = 'STATO_LAVORAZIONE'
+      Size = 1
+    end
+    object vtReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField
+      FieldName = 'DATA_CHIUSURA_DA_SERVER'
+    end
+    object vtReportPlannerCHIUSURA_EXT: TStringField
+      FieldName = 'CHIUSURA_EXT'
+      Size = 50
+    end
+    object vtReportPlannerCHIUSURA_STATINO: TWideStringField
+      FieldName = 'CHIUSURA_STATINO'
+      Size = 2048
+    end
+    object vtReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
+      FieldName = 'MOBILEWARN_NON_ESEGUITI'
+      Size = 1
+    end
+    object vtReportPlannerPRESA_IN_CARICO: TStringField
+      FieldName = 'PRESA_IN_CARICO'
+      Size = 1
+    end
+    object vtReportPlannerFORNITURA: TStringField
+      FieldName = 'FORNITURA'
+      Size = 1
+    end
+    object vtReportPlannerORDINARI: TLargeintField
+      FieldName = 'ORDINARI'
+    end
+    object vtReportPlannerSTRAORDINARI: TLargeintField
+      FieldName = 'STRAORDINARI'
+    end
+    object vtReportPlannerINTERVENTI: TLargeintField
+      FieldName = 'INTERVENTI'
+    end
+    object vtReportPlannerNOME_TECNICO: TStringField
+      FieldName = 'NOME_TECNICO'
+      Size = 255
+    end
+    object vtReportPlannerAPPUNTAMENTO_DATA: TDateField
+      FieldName = 'APPUNTAMENTO_DATA'
+    end
+    object vtReportPlannerAPPUNTAMENTO_ORA: TTimeField
+      FieldName = 'APPUNTAMENTO_ORA'
+    end
+    object vtReportPlannerSTATO: TSmallintField
+      FieldName = 'STATO'
+    end
+    object vtReportPlannerSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object vtReportPlannerESTINTORI_ORDINARIO: TLargeintField
+      FieldName = 'ESTINTORI_ORDINARIO'
+    end
+    object vtReportPlannerESTINTORI_STRAORDINARIO: TLargeintField
+      FieldName = 'ESTINTORI_STRAORDINARIO'
+    end
+    object vtReportPlannerGRUPPI_ELETTR: TLargeintField
+      FieldName = 'GRUPPI_ELETTR'
+    end
+    object vtReportPlannerFUMI: TLargeintField
+      FieldName = 'FUMI'
+    end
+    object vtReportPlannerLUCI: TLargeintField
+      FieldName = 'LUCI'
+    end
+    object vtReportPlannerIDRANTI: TLargeintField
+      FieldName = 'IDRANTI'
+    end
+    object vtReportPlannerSPRINKLER: TLargeintField
+      FieldName = 'SPRINKLER'
+    end
+    object vtReportPlannerIMPIANTI_EL: TLargeintField
+      FieldName = 'IMPIANTI_EL'
+    end
+    object vtReportPlannerAMMINISTRATORE: TIntegerField
+      FieldName = 'AMMINISTRATORE'
+    end
+  end
+  object vtGoogleEventsSearch: TVirtualTable
+    Filtered = True
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'ETAG'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftWideMemo
+      end
+      item
+        Name = 'STARTTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ENDTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'CREATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'UPDATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ISALLDAY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'STATUS'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'VISIBILITY'
+        DataType = ftInteger
+      end
+      item
+        Name = 'RECURRENCE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'RECURRINGID'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'SEQUENCE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'USEDEFAULTREMINDERS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'SENDNOTIFICATIONS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'CALENDARID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'Attendees'
+        DataType = ftMemo
+      end
+      item
+        Name = 'Reminders'
+        DataType = ftMemo
+      end
+      item
+        Name = 'JGUID'
+        DataType = ftGuid
+        Size = 38
+      end
+      item
+        Name = 'CalcColor'
+        DataType = ftInteger
+      end>
+    BeforePost = vtGoogleEventsSearchBeforePost
+    Left = 792
+    Top = 416
+    Data = {
+      0400170002004944010080000000000004004554414701008000000000000700
+      53554D4D41525901000001000000000B004445534352495054494F4E27000000
+      000000000900535441525454494D450B000000000000000700454E4454494D45
+      0B000000000000000700435245415445440B0000000000000007005550444154
+      45440B0000000000000008004953414C4C444159050000000000000008004C4F
+      434154494F4E0100800000000000060053544154555302000000000000000A00
+      5649534942494C49545903000000000000000A00524543555252454E43450100
+      3C00000000000B00524543555252494E47494401003C00000000000800534551
+      55454E434503000000000000000500434F4C4F52020000000000000013005553
+      4544454641554C5452454D494E444552530500000000000000110053454E444E
+      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F720300000000000000000000000000}
+    object vtGoogleEventsSearchID3: TStringField
+      FieldName = 'ID'
+      Size = 128
+    end
+    object vtGoogleEventsSearchETAG3: TStringField
+      FieldName = 'ETAG'
+      Size = 128
+    end
+    object vtGoogleEventsSearchSUMMARY3: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object vtGoogleEventsSearchDESCRIPTION3: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object vtGoogleEventsSearchSTARTTIME2: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object vtGoogleEventsSearchENDTIME3: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object vtGoogleEventsSearchCREATED3: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object vtGoogleEventsSearchUPDATED3: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object vtGoogleEventsSearchISALLDAY3: TBooleanField
+      FieldName = 'ISALLDAY'
+    end
+    object vtGoogleEventsSearchLOCATION3: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object vtGoogleEventsSearchSTATUS3: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object vtGoogleEventsSearchVISIBILITY3: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object vtGoogleEventsSearchRECURRENCE3: TStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object vtGoogleEventsSearchRECURRINGID3: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object vtGoogleEventsSearchSEQUENCE3: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object vtGoogleEventsSearchCOLOR3: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object vtGoogleEventsSearchUSEDEFAULTREMINDERS3: TBooleanField
+      FieldName = 'USEDEFAULTREMINDERS'
+    end
+    object vtGoogleEventsSearchSENDNOTIFICATIONS3: TBooleanField
+      FieldName = 'SENDNOTIFICATIONS'
+    end
+    object vtGoogleEventsSearchCALENDARID3: TStringField
+      FieldName = 'CALENDARID'
+      Size = 128
+    end
+    object vtGoogleEventsSearchAttendees3: TMemoField
+      FieldName = 'Attendees'
+      BlobType = ftMemo
+    end
+    object vtGoogleEventsSearchReminders3: TMemoField
+      FieldName = 'Reminders'
+      BlobType = ftMemo
+    end
+    object vtGoogleEventsSearchJGUID3: TGuidField
+      FieldName = 'JGUID'
+      Size = 38
+    end
+    object vtGoogleEventsSearchCalcColor3: TIntegerField
+      FieldName = 'CalcColor'
+    end
+  end
+  object dsGoogleEventsSearch: TUniDataSource
+    DataSet = vtGoogleEventsSearch
+    Left = 792
+    Top = 488
+  end
+  object lkpTecnici: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT T.*'
+      'FROM  TECNICI T'
+      'where T.EMAIL IS NOT NULL')
+    Left = 592
+    Top = 416
+    object lkpTecniciCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object lkpTecniciDESCRIZIONE: TStringField
+      FieldName = 'DESCRIZIONE'
+      Size = 255
+    end
+    object lkpTecniciSOSPESO: TStringField
+      FieldName = 'SOSPESO'
+      FixedChar = True
+      Size = 1
+    end
+    object lkpTecniciATTIVO: TStringField
+      FieldName = 'ATTIVO'
+      FixedChar = True
+      Size = 1
+    end
+    object lkpTecniciACCOUNT_MOBILE: TStringField
+      FieldName = 'ACCOUNT_MOBILE'
+      Size = 255
+    end
+    object lkpTecniciEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Size = 255
+    end
+    object lkpTecniciTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object lkpTecniciSIGLA: TStringField
+      FieldName = 'SIGLA'
+      Size = 12
+    end
+  end
+  object dsLkpTecnici: TUniDataSource
+    DataSet = lkpTecnici
+    Left = 592
+    Top = 488
+  end
+  object CalendarGridActions: TActionList
+    Images = SVGIconImageList16
+    Left = 64
+    Top = 16
+    object actGridCalColor: TAction
+      Caption = 'Colore'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actColorExecute
+    end
+    object actGridCalEdit: TAction
+      Caption = 'Mostra Titolo'
+      ImageIndex = 24
+      ImageName = '025-planning'
+      OnExecute = actCaptionExecute
+    end
+    object actGridCalSync: TAction
+      Caption = 'Google Sync'
+      ImageIndex = 50
+      ImageName = '023-share'
+    end
+  end
+  object DBSingleCalendar: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    DataSource = dsCalendarEvents
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTE'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendarFieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    OnInsertItem = DBDaySourceCalendarInsertItem
+    OnUpdateItem = DBDaySourceCalendarUpdateItem
+    OnTimeToFields = DBDaySourceCalendarTimeToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45474.000000000000000000
+    DayIncrement = 3
+    Mode = dmMultiResDay
+    NumberOfDays = 3
+    MinTimeField = 'DALLE_ORE'
+    MaxTimeField = 'ALLE_ORE'
+    Left = 411
+    Top = 168
+  end
+  object vtPlannerEvents: TVirtualTable
+    Left = 416
+    Top = 240
+    Data = {04000000000000000000}
+  end
+  object qryCAPTecnici: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'SELECT DISTINCT S.CAP, COALESCE(S.TECNICO_INTERVENTO, S.RESPONSA' +
+        'BILE) AS TECNICO'
+      'FROM STATINI S'
+      'WHERE S.STATO > -1 AND S.STATO < 9'
+      'ORDER BY  S.CAP'
+      ';')
+    MasterSource = dsLkpTecnici
+    Left = 680
+    Top = 448
+    object StringField1: TStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object qryCAPTecniciTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+      ReadOnly = True
+    end
+  end
+  object qryPlannerCalendars2: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'SUMMARY'
+        FieldType = ftWideString
+        FieldLength = 2048
+      end
+      item
+        FieldName = 'GOOGLE_JSON'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'A'#39
+      'order by TECNICO_SIGLA'
+      ';')
+    Left = 928
+    Top = 40
+    object qryPlannerCalendars2CHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerCalendars2TECNICO: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object qryPlannerCalendars2SUMMARY: TWideStringField
+      FieldName = 'SUMMARY'
+      Size = 2048
+    end
+    object qryPlannerCalendars2DESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+    object qryPlannerCalendars2TECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerCalendars2COLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerCalendars2JGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerCalendars2GOOGLE_JSON: TWideMemoField
+      FieldName = 'GOOGLE_JSON'
+      BlobType = ftWideMemo
+    end
+    object qryPlannerCalendars2GFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerCalendars2GBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerCalendars2DEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+    end
+    object qryPlannerCalendars2GOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPlannerCalendars2GOOGLE_SUMMARY: TStringField
+      FieldName = 'GOOGLE_SUMMARY'
+      Size = 128
+    end
+    object qryPlannerCalendars2GRUPPO_ID: TStringField
+      FieldName = 'GRUPPO_ID'
+      FixedChar = True
+      Size = 1
+    end
+    object qryPlannerCalendars2ACTIVE: TStringField
+      FieldName = 'ACTIVE'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object DBDaySourceCalendar2: TDBDaySource
+    Active = False
+    OnSetFilter = DBDaySourceCalendarSetFilter
+    AutoIncKey = True
+    DataSource = dsCalendarEvents2
+    ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
+    ReadOnly = False
+    ResourceField = 'TECNICO'
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTE'
+    UpdateByQuery = False
+    OnFieldsToItem = DBDaySourceCalendar2FieldsToItem
+    OnItemToFields = DBDaySourceCalendarItemToFields
+    OnInsertItem = DBDaySourceCalendarInsertItem
+    OnUpdateItem = DBDaySourceCalendarUpdateItem
+    OnTimeToFields = DBDaySourceCalendarTimeToFields
+    AutoHeaderUpdate = True
+    DateFormat = 'dd/mm/yyyy'
+    Day = 45474.000000000000000000
+    DayIncrement = 3
+    Mode = dmMultiResDay
+    NumberOfDays = 3
+    MinTimeField = 'DALLE_ORE'
+    MaxTimeField = 'ALLE_ORE'
+    Left = 411
+    Top = 304
+  end
+  object dsCalendars2: TUniDataSource
+    DataSet = qryPlannerCalendars2
+    Left = 928
+    Top = 104
+  end
+  object dsCalendarEvents2: TUniDataSource
+    DataSet = qryPlannerEvents2
+    Left = 928
+    Top = 240
+  end
+  object qryPlannerEvents2: TUniQuery
+    KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'JGUID = :Old_JGUID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  JGUID = :JGUID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'NOTE'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT E.* FROM '
+      
+        'CALENDARIO_EVENTI E LEFT JOIN CALENDARIO C ON E.CALENDARIO = C.C' +
+        'HIAVE'
+      'where '
+      'C.GRUPPO_ID = '#39'A'#39
+      'AND'
+      'E.DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'E.DALLE_ORE <= :DATA_AL'
+      ';')
+    FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'JGUID'
+    Left = 928
+    Top = 168
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45437d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATA_AL'
+        ParamType = ptInput
+        Value = 45503d
+      end>
+    object qryPlannerEvents2CHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPlannerEvents2STATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryPlannerEvents2TECNICO: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object qryPlannerEvents2DALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEvents2ALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object qryPlannerEvents2NOTE: TWideMemoField
+      FieldName = 'NOTE'
+      BlobType = ftWideMemo
+    end
+    object qryPlannerEvents2SUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 256
+    end
+    object qryPlannerEvents2TECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPlannerEvents2COLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPlannerEvents2JGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPlannerEvents2ICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object qryPlannerEvents2GOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPlannerEvents2GFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPlannerEvents2GBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPlannerEvents2CALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPlannerEvents2GOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+  end
+  object MainToolBarActions2: TActionList
+    Images = SVGIconImageList48
+    Left = 72
+    Top = 480
+    object ActionAddMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Pianificazione Tecnico'
+      ImageIndex = 31
+      ImageName = '032-calendar'
+      OnExecute = ActionAddMeetingExecute
+    end
+    object ActionUndoMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Annulla Appuntamento'
+      ImageIndex = 1
+      ImageName = '002-time'
+    end
+    object ActionSearchMeeting2: TAction
+      Category = 'Meetings'
+      Caption = 'Cerca Appuntamento'
+      ImageIndex = 45
+      ImageName = '046-search'
+      OnExecute = ActionSearchMeetingExecute
+    end
+    object ActionAddUser2: TAction
+      Category = 'Meetings'
+      Caption = 'Gestione Tecnici    e Calendari'
+      ImageIndex = 2
+      ImageName = '003-employee'
+      OnExecute = ActionAddUserExecute
+    end
+    object ActionAddActivity2: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiungi Una Attivit'#224
+      ImageIndex = 35
+      ImageName = '036-planner'
+      OnExecute = ActionAddActivityExecute
+    end
+    object ActionExport2: TAction
+      Category = 'Meetings'
+      Caption = 'Esporta (Excel,    Pdf, Csv)'
+      ImageIndex = 24
+      ImageName = '025-planning'
+      OnExecute = ActionExportExecute
+    end
+    object ActionSendShare2: TAction
+      Category = 'Meetings'
+      Caption = 'Invia (Mail) Condividi'
+      ImageIndex = 8
+      ImageName = '009-email'
+    end
+    object ActionPrint2: TAction
+      Category = 'Meetings'
+      Caption = 'Stampa / Anteprima'
+      ImageIndex = 57
+      ImageName = '008-printer'
+      OnExecute = ActionPrintExecute
+    end
+    object ActionCalendarSync2: TAction
+      Category = 'Meetings'
+      Caption = 'Sincro Calendario'
+      ImageIndex = 26
+      ImageName = '027-tasks'
     end
   end
 end

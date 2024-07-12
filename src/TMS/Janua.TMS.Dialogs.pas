@@ -497,11 +497,11 @@ end;
 function TJanuaTMSDialogText.InputText(const sTitle, sCaption: string; const sDefault: string = ''): string;
 // function TJanuaTMSDialogText.InputText(sTitle: string; sCaption: string; sDefault: string = ''): string;
 begin
-  Self.SetCaption(sTitle);
-  Self.SetDisplayText(sCaption);
-  Self.Text := sDefault;
-  if Self.Execute then
-    Result := Self.Text
+  SetCaption(sTitle);
+  SetDisplayText(sCaption);
+  Text := sDefault;
+  if Execute then
+    Result := Text
   else
     Result := sDefault;
 end;

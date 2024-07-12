@@ -1,4 +1,4 @@
-unit JOrm.Phoenix.GoogleCalendarEvents.Custom.Intf;
+unit JOrm.Cloud.GoogleCalendarEvents.Custom.Intf;
 
 interface
 
@@ -7,7 +7,7 @@ uses Janua.Orm.Intf;
 type
 
   ICustomGoogleCalendarEvent = interface(IJanuaRecord)
-  ['{B9568EB8-7916-4C75-89B4-5E4C889C6397}']
+  ['{4A45091B-CB18-412F-A0FD-9AFC596C9CA2}']
     function GetId: IJanuaField;
     property Id: IJanuaField read GetId;
     function GetEtag: IJanuaField;
@@ -24,8 +24,6 @@ type
     property Created: IJanuaField read GetCreated;
     function GetUpdated: IJanuaField;
     property Updated: IJanuaField read GetUpdated;
-    function GetIsallday: IJanuaField;
-    property Isallday: IJanuaField read GetIsallday;
     function GetLocation: IJanuaField;
     property Location: IJanuaField read GetLocation;
     function GetStatus: IJanuaField;
@@ -40,16 +38,22 @@ type
     property Sequence: IJanuaField read GetSequence;
     function GetColor: IJanuaField;
     property Color: IJanuaField read GetColor;
+    function GetCalendarid: IJanuaField;
+    property Calendarid: IJanuaField read GetCalendarid;
     function GetUsedefaultreminders: IJanuaField;
     property Usedefaultreminders: IJanuaField read GetUsedefaultreminders;
     function GetSendnotifications: IJanuaField;
     property Sendnotifications: IJanuaField read GetSendnotifications;
-    function GetCalendarid: IJanuaField;
-    property Calendarid: IJanuaField read GetCalendarid;
+    function GetIsallday: IJanuaField;
+    property Isallday: IJanuaField read GetIsallday;
+    function GetAttendees: IJanuaField;
+    property Attendees: IJanuaField read GetAttendees;
+    function GetReminders: IJanuaField;
+    property Reminders: IJanuaField read GetReminders;
   end;
 
   ICustomGoogleCalendarEvents = interface(IJanuaRecordSet)
-  ['{0EE66200-E182-4997-BDB2-FC0262B12152}']
+  ['{676F45AF-3B2D-4079-AB33-611162C77AA8}']
     function GetId: IJanuaField;
     property Id: IJanuaField read GetId;
     function GetEtag: IJanuaField;
@@ -66,8 +70,6 @@ type
     property Created: IJanuaField read GetCreated;
     function GetUpdated: IJanuaField;
     property Updated: IJanuaField read GetUpdated;
-    function GetIsallday: IJanuaField;
-    property Isallday: IJanuaField read GetIsallday;
     function GetLocation: IJanuaField;
     property Location: IJanuaField read GetLocation;
     function GetStatus: IJanuaField;
@@ -82,12 +84,18 @@ type
     property Sequence: IJanuaField read GetSequence;
     function GetColor: IJanuaField;
     property Color: IJanuaField read GetColor;
+    function GetCalendarid: IJanuaField;
+    property Calendarid: IJanuaField read GetCalendarid;
     function GetUsedefaultreminders: IJanuaField;
     property Usedefaultreminders: IJanuaField read GetUsedefaultreminders;
     function GetSendnotifications: IJanuaField;
     property Sendnotifications: IJanuaField read GetSendnotifications;
-    function GetCalendarid: IJanuaField;
-    property Calendarid: IJanuaField read GetCalendarid;
+    function GetIsallday: IJanuaField;
+    property Isallday: IJanuaField read GetIsallday;
+    function GetAttendees: IJanuaField;
+    property Attendees: IJanuaField read GetAttendees;
+    function GetReminders: IJanuaField;
+    property Reminders: IJanuaField read GetReminders;
 
   end;
 

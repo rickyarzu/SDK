@@ -49,7 +49,6 @@ uses System.Types,
 class procedure TJanuaPhoenixVCLApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
-
 end;
 
 class procedure TJanuaPhoenixVCLApplication.ApplicationTearDown;

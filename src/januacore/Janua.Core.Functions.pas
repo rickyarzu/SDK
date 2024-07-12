@@ -355,7 +355,7 @@ procedure ReplaceStringPos(var text: TStringList; searchstr: string; newstr: str
 function ConvertFloatToString(const Value: Double; const digits: integer): string; inline;
 function CompareStringLists(List1, List2: TStringList): boolean; inline;
 procedure CompareStringListsDiff(List1, List2: TStringList; Missing1, Missing2: TStrings);
-procedure SortTStrings(Strings: TStrings); inline;
+procedure JSortTStrings(Strings: TStrings); inline;
 function StripStringSearchIndex(const strStringa: string): string; inline;
 function StripString(const strStringa: string; const spacereplace: string): string; overload; inline;
 function StripString(const strStringa: string): string; overload; inline;
@@ -2030,7 +2030,7 @@ begin
 
 end;
 
-procedure SortTStrings(Strings: TStrings);
+procedure JSortTStrings(Strings: TStrings);
 var
   tmp: TStringList;
 begin

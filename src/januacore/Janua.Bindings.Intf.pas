@@ -76,12 +76,13 @@ type
     property OnExit: TNotifyEvent read GetJanuaOnExit write SetJanuaOnExit;
   end;
 
-  IJanuaBindableComboControl = interface(IJanuaBindableEditControl)
+  IJanuaBindableComboControl = interface(IJanuaBindableControl)
     ['{A14BE8DF-B1DF-4D7E-BCC6-9854CC796505}']
     function GetItemsText: string;
     function GetJanuaItemIndex: Integer;
     procedure SetItemsText(const Value: string);
     procedure SetJanuaItemIndex(const Value: Integer);
+    property Text: string read GetItemsText write SetItemsText;
   end;
 
   IJanuaBindableFloatControl = interface(IJanuaBindableControl)

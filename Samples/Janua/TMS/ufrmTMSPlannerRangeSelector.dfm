@@ -35,7 +35,7 @@ object Form92: TForm92
   object PlannerRangeSelector1: TPlannerRangeSelector
     Left = 8
     Top = 14
-    Width = 233
+    Width = 161
     Height = 21
     Color = clWindow
     DefaultHandling = True
