@@ -9,12 +9,15 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
   inherited grpMeeting: TGroupBox
     Top = 794
     Width = 1176
+    ExplicitTop = 794
+    ExplicitWidth = 1176
   end
   inherited Panel2: TPanel
     Width = 1176
+    ExplicitWidth = 1176
     inherited ckbCalendarList: TCheckListBox
       Width = 1117
-      ItemHeight = 16
+      ExplicitWidth = 1117
     end
   end
   inherited PageControl1: TPageControl

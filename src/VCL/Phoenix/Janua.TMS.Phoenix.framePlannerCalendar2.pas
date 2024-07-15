@@ -30,6 +30,8 @@ type
 
 implementation
 
+uses Janua.Core.Functions, Janua.Application.Framework, Spring;
+
 {$R *.dfm}
 { TframeVCLPhoenixPlannerCalendar2 }
 
