@@ -49,7 +49,6 @@ contains
   MVCFramework.ActiveRecordController in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecordController.pas',
   MVCFramework.ApplicationSession in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ApplicationSession.pas',
   MVCFramework.Cache in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas',
-  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
   MVCFramework.Console in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Console.pas',
   MVCFramework.DataSet.Utils in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DataSet.Utils.pas',
   MVCFramework.DuckTyping in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DuckTyping.pas',
@@ -111,7 +110,8 @@ contains
   MVCFramework.Middleware.ETag in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Middleware.ETag.pas',
   MVCFramework.Middleware.StaticFiles in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Middleware.StaticFiles.pas',
   MVCFramework.DotEnv.Parser in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.Parser.pas',
-  MVCFramework.DotEnv in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas';
+  MVCFramework.DotEnv in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas',
+  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas';
 
 end.
 

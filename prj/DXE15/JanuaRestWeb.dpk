@@ -28,7 +28,7 @@ package JanuaRestWeb;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   dmvcframeworkRT,
   DECCipher,
   Neon,
@@ -49,19 +49,18 @@ requires
   rtl,
   bindengine,
   IndyIPServer,
-  Spring.Base,
   JanuaCoreThirdParty,
   JanuaCore,
-  JanuaMVVM,
-  IndyIPServer;
+  JanuaMVVM;
 
-contains
+ocontains
   Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.DMVC.Srv.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
   Janua.CarService.DMVC.Driver in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
   Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
   Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
-  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
+  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
+  Unit2 in 'Unit2.pas';
 
-end.
+d.
