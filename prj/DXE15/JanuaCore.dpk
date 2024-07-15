@@ -49,6 +49,7 @@ requires
   FireDACCommonDriver,
   FireDACCommon,
   Neon,
+  OpenAIPackage,
   Spring.Base,
   JanuaCoreThirdParty,
   RestRequestLib;
