@@ -9,6 +9,7 @@
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>131</TargetedPlatforms>
         <AppType>Package</AppType>
+        <ProjectName Condition="'$(ProjectName)'==''">dmvcframeworkRT</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -191,7 +192,6 @@
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecordController.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.ApplicationSession.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas"/>
-        <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Console.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DataSet.Utils.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DuckTyping.pas"/>
@@ -254,6 +254,7 @@
         <DCCReference Include="..\..\..\Lib\delphimvcframework\sources\MVCFramework.Middleware.StaticFiles.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.Parser.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</DependentOn>
@@ -1174,6 +1175,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Android">False</Platform>

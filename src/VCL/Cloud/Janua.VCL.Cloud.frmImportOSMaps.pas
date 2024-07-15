@@ -5,11 +5,16 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Janua.core.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Janua.core.Functions, AdvMemo, Advmxml, Vcl.ComCtrls, Data.DB,
-  MemDS, VirtualTable, Vcl.Grids, Vcl.DBGrids, CRGrid, Vcl.DBCtrls, DBAccess, Uni, Janua.Vcl.EnhCRDBGrid,
-  UniProvider, PostgreSQLUniProvider, Janua.Unidac.Connection;
+  MemDS, VirtualTable, Vcl.Grids, Vcl.DBGrids, CRGrid, Vcl.DBCtrls,
+  // UniDAC
+  DBAccess, Uni, UniProvider, PostgreSQLUniProvider,
+  // Janua
+  Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
+  Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Bindings.Intf,
+  Janua.Anagraph.Types, Janua.Vcl.EnhCRDBGrid, Janua.Unidac.Connection;
 
 type
-  TfrmVCLImportOSMaps = class(TForm)
+  TfrmVCLImportOSMaps = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
     AdvXMLMemoStyler1: TAdvXMLMemoStyler;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;

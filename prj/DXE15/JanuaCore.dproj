@@ -615,6 +615,7 @@
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -683,6 +684,12 @@
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCore280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaCore.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaCore.bpl</RemoteName>

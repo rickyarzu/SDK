@@ -128,8 +128,6 @@ begin
   begin
     TCarServiceProjectApplication.LoadMenu;
     Application.CreateForm(TfrmCarserviceMain, frmCarserviceMain);
-  Application.CreateForm(TdmJanuaPgAnagraphStorage, dmJanuaPgAnagraphStorage);
-  Application.CreateForm(TdlgVCLHtmlEditorAddImage, dlgVCLHtmlEditorAddImage);
   Application.Run;
   end
   else
