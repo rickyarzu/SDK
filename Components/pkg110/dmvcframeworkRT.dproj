@@ -255,6 +255,10 @@
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.Parser.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.URLEncoded.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Container.pas"/>
+        <DCCReference Include="D:\lib\delphimvcframework\sources\sqids.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</DependentOn>

@@ -111,7 +111,11 @@ contains
   MVCFramework.Middleware.StaticFiles in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Middleware.StaticFiles.pas',
   MVCFramework.DotEnv.Parser in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.Parser.pas',
   MVCFramework.DotEnv in '..\..\..\lib\delphimvcframework\sources\MVCFramework.DotEnv.pas',
-  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas';
+  MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
+  MVCFramework.Serializer.URLEncoded in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.URLEncoded.pas',
+  MVCFramework.Serializer.Text in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas',
+  MVCFramework.Container in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Container.pas',
+  sqids in '..\..\..\..\..\lib\delphimvcframework\sources\sqids.pas';
 
 end.
 

@@ -1,4 +1,4 @@
-unit Janua.Core.WebServer;
+unit Janua.Http.WebServer;
 
 interface
 
@@ -10,13 +10,16 @@ Type
   TJanuaWebServer = class
   public
     constructor Create; overload;
+    /// <summary> Create Class imposta la class Var FPort. Variabile 'unica' in tutta l'applicazione </summary>
     class Constructor CreateClass;
   private
     class var FPort: Integer;
   private
     FLogProc: TMessageLogProc;
   protected
+    /// <summary> GetIsActive va impostata nella classe figlia in quanto connessa al WebServer sottostante </summary>
     function GetIsActive: Boolean; virtual;
+    /// <summary> scrive una freccia o un prompt per la gestione del Server a mezzo 'console' </summary>
     procedure WriteArrow;
     procedure SetIsActive(const Value: Boolean); virtual; abstract;
     procedure SetLogProc(const Value: TMessageLogProc);

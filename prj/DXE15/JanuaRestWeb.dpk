@@ -43,7 +43,8 @@ contains
   Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
   Janua.Sytem.DMVC.Client in '..\..\src\januacore\dmvc\Janua.Sytem.DMVC.Client.pas',
-  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas';
+  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
+  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
 
 requires
   dmvcframeworkRT,

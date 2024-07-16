@@ -5228,14 +5228,12 @@ object frmVCLRestClient: TfrmVCLRestClient
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 142
-      ExplicitTop = -6
       object edtBaseURL: TLabeledEdit
         AlignWithMargins = True
         Left = 3
-        Top = 68
+        Top = 70
         Width = 839
-        Height = 23
+        Height = 21
         Align = alBottom
         EditLabel.Width = 23
         EditLabel.Height = 13
@@ -5243,7 +5241,6 @@ object frmVCLRestClient: TfrmVCLRestClient
         TabOrder = 0
         Text = 'http://localhost:8888/users'
         TextHint = 'http://localhost:8888/users'
-        ExplicitTop = 49
       end
       object pnlUsernamePassword: TPanel
         Left = 0
@@ -5261,7 +5258,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           Left = 3
           Top = 18
           Width = 286
-          Height = 23
+          Height = 21
           Anchors = [akLeft, akTop, akRight]
           EditLabel.Width = 59
           EditLabel.Height = 13
@@ -5275,7 +5272,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           Left = 295
           Top = 18
           Width = 338
-          Height = 23
+          Height = 21
           Anchors = [akTop, akRight]
           EditLabel.Width = 50
           EditLabel.Height = 13
@@ -5298,9 +5295,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             'Token'
             'Basic')
           TabOrder = 2
-          ExplicitLeft = 648
-          ExplicitTop = 0
-          ExplicitHeight = 49
         end
       end
     end
@@ -5313,9 +5307,6 @@ object frmVCLRestClient: TfrmVCLRestClient
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 78
-    ExplicitWidth = 980
-    ExplicitHeight = 482
     object Splitter1: TSplitter
       Left = 0
       Top = 209
@@ -5335,8 +5326,6 @@ object frmVCLRestClient: TfrmVCLRestClient
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 980
-      ExplicitHeight = 265
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -5355,7 +5344,6 @@ object frmVCLRestClient: TfrmVCLRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 980
         object lblStatusCode: TLabel
           AlignWithMargins = True
           Left = 976
@@ -5400,8 +5388,6 @@ object frmVCLRestClient: TfrmVCLRestClient
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 980
-        ExplicitHeight = 243
         object TabSheet6: TTabSheet
           Caption = 'Body'
           ImageIndex = 1
@@ -5422,6 +5408,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             AutoCompletion.StartToken = '(.'
             AutoCorrect.Active = True
             AutoHintParameterPosition = hpBelowCode
+            BkColor = clWindow
             BookmarkGlyph.Data = {
               36050000424D3605000000000000360400002800000010000000100000000100
               0800000000000001000000000000000000000001000000000000000000000000
@@ -5465,7 +5452,6 @@ object frmVCLRestClient: TfrmVCLRestClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = False
@@ -5478,9 +5464,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
-            Gutter.LineNumberTextColor = 3881787
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -5491,7 +5476,7 @@ object frmVCLRestClient: TfrmVCLRestClient
               '')
             MarkerList.UseDefaultMarkerImageIndex = False
             MarkerList.DefaultMarkerImageIndex = -1
-            MarkerList.ImageTransparentColor = -1
+            MarkerList.ImageTransparentColor = -16776961
             OleDropTarget = []
             PrintOptions.MarginLeft = 0
             PrintOptions.MarginRight = 0
@@ -5502,8 +5487,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             ReadOnly = False
             RightMarginColor = 14869218
             ScrollHint = False
-            SelColor = clWhite
-            SelBkColor = clNavy
+            SelColor = clHighlightText
+            SelBkColor = clHighlight
             ShowRightMargin = True
             SmartTabs = False
             TabOrder = 0
@@ -5521,12 +5506,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitLeft = 128
-            ExplicitTop = 24
-            ExplicitWidth = 350
-            ExplicitHeight = 250
           end
         end
       end
@@ -5539,7 +5520,6 @@ object frmVCLRestClient: TfrmVCLRestClient
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 980
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -5558,14 +5538,13 @@ object frmVCLRestClient: TfrmVCLRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 980
       end
       object PageControl1: TPageControl
         Left = 0
         Top = 22
         Width = 984
         Height = 187
-        ActivePage = TabSheet1
+        ActivePage = tabSQLQueryRequest
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -5610,7 +5589,6 @@ object frmVCLRestClient: TfrmVCLRestClient
                 '{"name":"Vinicius","lastName":"Sanchez","email":"vinicius@fioril' +
                 'li.com.br"}')
             TabOrder = 1
-            ExplicitWidth = 865
           end
           object btnDELETE: TButton
             Left = 884
@@ -5621,7 +5599,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'DELETE'
             TabOrder = 2
             OnClick = btnDELETEClick
-            ExplicitLeft = 880
           end
           object btnPUT: TButton
             Left = 885
@@ -5632,7 +5609,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'PUT'
             TabOrder = 3
             OnClick = btnPUTClick
-            ExplicitLeft = 881
           end
           object btnPOST: TButton
             Left = 885
@@ -5643,7 +5619,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'POST'
             TabOrder = 4
             OnClick = btnPOSTClick
-            ExplicitLeft = 881
           end
           object btnGET: TButton
             Left = 885
@@ -5654,7 +5629,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'GET'
             TabOrder = 5
             OnClick = btnGETClick
-            ExplicitLeft = 881
           end
           object lbedToken: TLabeledEdit
             AlignWithMargins = True
@@ -5681,9 +5655,6 @@ object frmVCLRestClient: TfrmVCLRestClient
             Height = 41
             Align = alTop
             TabOrder = 0
-            ExplicitLeft = 160
-            ExplicitTop = 48
-            ExplicitWidth = 185
           end
           object DBAdvMemo1: TDBAdvMemo
             Left = 0
@@ -5702,6 +5673,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             AutoCompletion.StartToken = '(.'
             AutoCorrect.Active = True
             AutoHintParameterPosition = hpBelowCode
+            BkColor = clWindow
             BookmarkGlyph.Data = {
               36050000424D3605000000000000360400002800000010000000100000000100
               0800000000000001000000000000000000000001000000000000000000000000
@@ -5745,7 +5717,6 @@ object frmVCLRestClient: TfrmVCLRestClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = False
@@ -5758,9 +5729,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
-            Gutter.LineNumberTextColor = 3881787
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -5782,8 +5752,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             ReadOnly = False
             RightMarginColor = 14869218
             ScrollHint = False
-            SelColor = clWhite
-            SelBkColor = clNavy
+            SelColor = clHighlightText
+            SelBkColor = clHighlight
             ShowRightMargin = True
             SmartTabs = False
             TabOrder = 1
@@ -5801,12 +5771,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitLeft = 128
-            ExplicitTop = 24
-            ExplicitWidth = 350
-            ExplicitHeight = 250
           end
         end
         object tabHeaders: TTabSheet

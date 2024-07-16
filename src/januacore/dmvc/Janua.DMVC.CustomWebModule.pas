@@ -12,12 +12,15 @@ type
   TJanuaDMVCCustomWebModule = class(TWebModule)
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
-
+  private
+    function GetSessionTimeOut: integer;
+    procedure SetSessionTimeOut(const Value: integer);
   protected
     FMVC: TMVCEngine;
     procedure AddControllers; virtual;
   public
     { Public declarations }
+
   end;
 
 var
@@ -51,9 +54,9 @@ begin
   lConfigClaims:
     TJWTClaimsSetup := procedure(const JWT: TJWT)
       begin
-        JWT.Claims.Issuer := 'DMVCFramework JWT Authority';
+        JWT.Claims.Issuer := 'Januaproject JWT Authority';
         JWT.Claims.ExpirationTime := Now + EncodeTime(1, 0, 0, 0); // One hour
-        JWT.Claims.NotBefore := Now - EncodeTime(0, 5, 0, 0);
+        JWT.Claims.NotBefore := Now - EncodeTime(0, 5, 0, 0); // 5 minuti (fa)?
       end;
     var
     vLoginURI := TJanuaCoreOS.ReadParam('DMVC', 'LoginURI', '/login');
@@ -61,6 +64,7 @@ begin
       'ergomercator_secret', vLoginURI, [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
   end;
 end;
+
 
 procedure TJanuaDMVCCustomWebModule.WebModuleCreate(Sender: TObject);
 begin
@@ -151,8 +155,6 @@ begin
   if TJanuaCoreOS.ReadParam('DMVC', 'ETag', false) then
     FMVC.AddMiddleware(TMVCETagMiddleware.Create);
 
-  // [MVCPath('/')] TPikappCustConfWWWController
-  { FMVC.AddController(TPikappCustConfWWWController); }
 end;
 
 procedure TJanuaDMVCCustomWebModule.WebModuleDestroy(Sender: TObject);

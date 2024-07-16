@@ -403,7 +403,7 @@ contains
   Janua.Orm.Firedac in '..\..\src\januacore\Janua.Orm.Firedac.pas',
   Janua.Core.StackTrace in '..\..\src\januacore\Janua.Core.StackTrace.pas',
   Janua.REST.Components in '..\..\src\januacore\dmvc\Janua.REST.Components.pas',
-  Janua.Core.WebServer in '..\..\src\januacore\Janua.Core.WebServer.pas',
+  Janua.Http.WebServer in '..\..\src\januacore\Janua.Http.WebServer.pas',
   Janua.Orm.CodeGen.Impl in '..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas',
   JOrm.Cloud.GoogleCalendarEvents.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Impl.pas',
   JOrm.Cloud.GoogleCalendarEvents.Custom.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Intf.pas',
@@ -412,6 +412,7 @@ contains
   JOrm.Cloud.GoogleCalendars.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Intf.pas',
   JOrm.Cloud.GoogleCalendars.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas',
   JOrm.Cloud.GoogleCalendars.Custom.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas',
-  JOrm.Cloud.GoogleCalendars.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas';
+  JOrm.Cloud.GoogleCalendars.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas',
+  Janua.WebBroker.ServerConst in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas';
 
 end.
