@@ -204,6 +204,7 @@ function StoreBlobToBase64Stream(aBlob: TJanuaBlob; aStream: TStream): boolean; 
 function GetBlobFromBase64Stream(aBlob: TJanuaBlob; aStream: TStream): boolean; inline;
 function StoreBlobToBase64String(aBlob: TJanuaBlob; out aString: string): boolean; inline;
 function GetBlobFromBase64String(aBlob: TJanuaBlob; const aString: string): boolean; inline;
+function StreamToString(const aStream: TStream): string; inline;
 
 // funzioni a monte di GetFieldValue
 
@@ -508,6 +509,26 @@ const
   lower_letters = ['a' .. 'z'];
   extra_chars = ['(', ')', '<', '>', '@', ',', ';', ':', '.', '[', ']', '?', '!', '$', '€', '%', '£', '^',
     '°', '*', '+', '-', '°', '§'];
+
+function StreamToString(const aStream: TStream): string;
+var
+  SS: TStringStream;
+begin
+  if aStream <> nil then
+  begin
+    SS := TStringStream.Create('');
+    try
+      SS.CopyFrom(aStream, 0); // Exception: TStream.Seek not implemented
+      Result := SS.DataString;
+    finally
+      SS.Free;
+    end;
+  end
+  else
+  begin
+    Result := '';
+  end;
+end;
 
 function FloatToStrDotted(const aNumber: Double): string;
 begin

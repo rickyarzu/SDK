@@ -15,13 +15,12 @@ uses
 Classes, Generics.Collections;
 {$ENDIF}
 
-
 type
   // Main protocols on internet TCP/IP protocols ..............................
   TJanuaProtocol = (jptFtp, jptFtps, jptSCP, jptTcpIp, jptUdp, jptHttp, jtpHttps, jtpSMTP, jtpPOP, jtpIMAP,
     jptStop, jptStompSSL, jptNone);
 
-// Janua Http Socket
+  // Janua Http Socket
 
 type
   TJanuaHttpParamTypes = (jhtString, jhtStrings, jhtMultipart);
@@ -220,6 +219,9 @@ const
   JanuaCharsetString: array [TJanuaCharsetType] of string = ('', 'UTF-8', 'ANSI', 'ASCII', 'ISO-8859-1');
 
 type
+  TJanuaHttpStatus = (jhsContinue = 100, jhsSwitchingProtocol = 101, jhsOK = 200, jhsCreated = 201,
+    jhsAccepted = 202);
+
   // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
   HTTP_STATUS = record
   const

@@ -8,6 +8,6 @@ begin
   ReportMemoryLeaksOnShutdown := True;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TfrmVCLRestClient, frmVCLRestClient);
   Application.Run;
 end.

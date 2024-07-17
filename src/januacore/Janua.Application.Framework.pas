@@ -639,6 +639,7 @@ type
     class procedure ExternalExec(FileName, parameter: string);
     class procedure InternalExec(FileName, parameter: string); virtual;
     class procedure ExecCommand(FileName, parameter: string; aWaitEnd: Boolean = false);
+    class function GetDosOutput(ACommandLine: string; AWorkingDirectory: string): string;
     class Function GetConsoleOutput: string;
     class property ConfigDataset: IJanuaDBDataset read FConfigDataset write SetConfigDataset;
     class function ReadRegistry(Machine: Boolean; stringa: string; chiave: string; Default: string)
@@ -2456,6 +2457,60 @@ begin
 {$ENDIF}
 end;
 
+class function TJanuaCoreOS.GetDosOutput(ACommandLine, AWorkingDirectory: string): string;
+var
+{$IFDEF MSWINDOWS}
+  SecurityAttributes: TSecurityAttributes;
+  StartupInfo: TStartupInfo;
+  ProcessInformation: TProcessInformation;
+  StdOutPipeRead, StdOutPipeWrite: THandle;
+{$ENDIF}
+  WasOK: Boolean;
+  Buffer: array [0 .. 255] of AnsiChar;
+  BytesRead: Cardinal;
+  Handle: Boolean;
+begin
+  Result := '';
+{$IFDEF MSWINDOWS}
+  SecurityAttributes.nLength := SizeOf(TSecurityAttributes);
+  SecurityAttributes.bInheritHandle := True;
+  SecurityAttributes.lpSecurityDescriptor := nil;
+  CreatePipe(StdOutPipeRead, StdOutPipeWrite, @SecurityAttributes, 0);
+  try
+    FillChar(StartupInfo, SizeOf(TStartupInfo), 0);
+    StartupInfo.cb := SizeOf(TStartupInfo);
+    StartupInfo.dwFlags := STARTF_USESHOWWINDOW or STARTF_USESTDHANDLES;
+    StartupInfo.wShowWindow := SW_HIDE;
+    StartupInfo.hStdInput := StdOutPipeRead;
+    StartupInfo.hStdOutput := StdOutPipeWrite;
+    StartupInfo.hStdError := StdOutPipeWrite;
+    FillChar(ProcessInformation, SizeOf(ProcessInformation), 0);
+
+    Handle := CreateProcess(nil, PChar(AnsiString(ACommandLine)), nil, nil, True, 0, nil,
+      PChar(AnsiString(AWorkingDirectory)), StartupInfo, ProcessInformation);
+
+    CloseHandle(StdOutPipeWrite);
+    if Handle then
+      try
+        repeat
+          WasOK := ReadFile(StdOutPipeRead, Buffer, 255, BytesRead, nil);
+          if BytesRead > 0 then
+          begin
+            Buffer[BytesRead] := #0;
+            Result := Result + Buffer;
+          end;
+        until not WasOK or (BytesRead = 0);
+        WaitForSingleObject(ProcessInformation.hProcess, INFINITE);
+      finally
+        CloseHandle(ProcessInformation.hThread);
+        CloseHandle(ProcessInformation.hProcess);
+      end;
+  finally
+    CloseHandle(StdOutPipeRead);
+  end;
+{$ENDIF}
+end;
+
 class function TJanuaCoreOS.GetDownloadsDirectory: string;
 begin
 {$IFDEF delphixe} Result := TPath.GetDownloadsPath; {$ENDIF}
@@ -2816,7 +2871,7 @@ var
 {$ENDIF}
 begin
 {$IF Defined(MSWINDOWS)}
-  ShellExecute(0, 'OPEN', PChar(FileName), nil, nil, SW_SHOWNORMAL);
+  ShellExecute(0, 'OPEN', PChar(AnsiString(FileName)), nil, nil, SW_SHOWNORMAL);
   // ShellExecute(0, 'OPEN', PChar(FileName), '', '', SW_SHOWNORMAL);
 {$ENDIF}
 {$IF Defined(MACOS)}

@@ -2,8 +2,8 @@ object frmVCLRestClient: TfrmVCLRestClient
   Left = 0
   Top = 0
   Caption = 'REST Request - Samples'
-  ClientHeight = 561
-  ClientWidth = 984
+  ClientHeight = 772
+  ClientWidth = 1088
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object frmVCLRestClient: TfrmVCLRestClient
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 984
+    Width = 1088
     Height = 94
     Align = alTop
     BevelOuter = bvNone
@@ -5223,7 +5223,7 @@ object frmVCLRestClient: TfrmVCLRestClient
     object pnlRequest: TPanel
       Left = 139
       Top = 0
-      Width = 845
+      Width = 949
       Height = 94
       Align = alClient
       BevelOuter = bvNone
@@ -5232,12 +5232,12 @@ object frmVCLRestClient: TfrmVCLRestClient
         AlignWithMargins = True
         Left = 3
         Top = 70
-        Width = 839
+        Width = 943
         Height = 21
         Align = alBottom
-        EditLabel.Width = 23
+        EditLabel.Width = 49
         EditLabel.Height = 13
-        EditLabel.Caption = 'URL:'
+        EditLabel.Caption = 'Base URL:'
         TabOrder = 0
         Text = 'http://localhost:8888/users'
         TextHint = 'http://localhost:8888/users'
@@ -5245,19 +5245,19 @@ object frmVCLRestClient: TfrmVCLRestClient
       object pnlUsernamePassword: TPanel
         Left = 0
         Top = 0
-        Width = 845
+        Width = 949
         Height = 49
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
         DesignSize = (
-          845
+          949
           49)
         object lbedUserName: TLabeledEdit
           AlignWithMargins = True
           Left = 3
           Top = 18
-          Width = 286
+          Width = 390
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           EditLabel.Width = 59
@@ -5269,7 +5269,7 @@ object frmVCLRestClient: TfrmVCLRestClient
         end
         object lbedPassword: TLabeledEdit
           AlignWithMargins = True
-          Left = 295
+          Left = 399
           Top = 18
           Width = 338
           Height = 21
@@ -5283,13 +5283,14 @@ object frmVCLRestClient: TfrmVCLRestClient
         end
         object rgAuthentication: TRadioGroup
           AlignWithMargins = True
-          Left = 645
+          Left = 749
           Top = 3
           Width = 197
           Height = 43
           Align = alRight
           Caption = 'Authentication'
           Columns = 3
+          ItemIndex = 0
           Items.Strings = (
             'No'
             'Token'
@@ -5302,15 +5303,15 @@ object frmVCLRestClient: TfrmVCLRestClient
   object Panel2: TPanel
     Left = 0
     Top = 94
-    Width = 984
-    Height = 467
+    Width = 1088
+    Height = 678
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
     object Splitter1: TSplitter
       Left = 0
-      Top = 209
-      Width = 984
+      Top = 259
+      Width = 1088
       Height = 8
       Cursor = crVSplit
       Align = alTop
@@ -5320,16 +5321,16 @@ object frmVCLRestClient: TfrmVCLRestClient
     end
     object Panel3: TPanel
       Left = 0
-      Top = 217
-      Width = 984
-      Height = 250
+      Top = 267
+      Width = 1088
+      Height = 411
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
       object Panel6: TPanel
         Left = 0
         Top = 0
-        Width = 984
+        Width = 1088
         Height = 22
         Align = alTop
         Alignment = taLeftJustify
@@ -5346,7 +5347,7 @@ object frmVCLRestClient: TfrmVCLRestClient
         TabOrder = 0
         object lblStatusCode: TLabel
           AlignWithMargins = True
-          Left = 976
+          Left = 1080
           Top = 2
           Width = 3
           Height = 20
@@ -5360,7 +5361,7 @@ object frmVCLRestClient: TfrmVCLRestClient
         end
         object Label3: TLabel
           AlignWithMargins = True
-          Left = 903
+          Left = 1007
           Top = 2
           Width = 68
           Height = 20
@@ -5377,8 +5378,8 @@ object frmVCLRestClient: TfrmVCLRestClient
       object PageControl2: TPageControl
         Left = 0
         Top = 22
-        Width = 984
-        Height = 228
+        Width = 1088
+        Height = 389
         ActivePage = TabSheet6
         Align = alClient
         Font.Charset = ANSI_CHARSET
@@ -5394,8 +5395,8 @@ object frmVCLRestClient: TfrmVCLRestClient
           object mmBody: TDBAdvMemo
             Left = 0
             Top = 0
-            Width = 976
-            Height = 198
+            Width = 1080
+            Height = 359
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -5491,6 +5492,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             SelBkColor = clHighlight
             ShowRightMargin = True
             SmartTabs = False
+            SyntaxStyles = AdvJSONMemoStyler1
             TabOrder = 0
             TabStop = True
             TrimTrailingSpaces = False
@@ -5510,20 +5512,34 @@ object frmVCLRestClient: TfrmVCLRestClient
             WordWrap = wwNone
           end
         end
+        object tabImage: TTabSheet
+          Caption = 'Image'
+          ImageIndex = 1
+          object Image2: TImage
+            Left = 0
+            Top = 0
+            Width = 1080
+            Height = 359
+            Align = alClient
+            ExplicitLeft = 624
+            ExplicitWidth = 456
+            ExplicitHeight = 207
+          end
+        end
       end
     end
     object Panel4: TPanel
       Left = 0
       Top = 0
-      Width = 984
-      Height = 209
+      Width = 1088
+      Height = 259
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 984
+        Width = 1088
         Height = 22
         Align = alTop
         Alignment = taLeftJustify
@@ -5542,9 +5558,9 @@ object frmVCLRestClient: TfrmVCLRestClient
       object PageControl1: TPageControl
         Left = 0
         Top = 22
-        Width = 984
-        Height = 187
-        ActivePage = tabSQLQueryRequest
+        Width = 1088
+        Height = 237
+        ActivePage = TabSheet1
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -5556,17 +5572,24 @@ object frmVCLRestClient: TfrmVCLRestClient
         object TabSheet1: TTabSheet
           Caption = 'Request'
           DesignSize = (
-            976
-            157)
+            1080
+            207)
           object Label1: TLabel
             Left = 10
-            Top = 53
+            Top = 128
             Width = 75
             Height = 15
             Caption = 'Custom body:'
           end
+          object lbFile: TLabel
+            Left = 10
+            Top = 67
+            Width = 74
+            Height = 15
+            Caption = 'File To Upload'
+          end
           object edtAccept: TLabeledEdit
-            Left = 736
+            Left = 762
             Top = 24
             Width = 143
             Height = 23
@@ -5579,10 +5602,10 @@ object frmVCLRestClient: TfrmVCLRestClient
             TextHint = 'application/json'
           end
           object mmCustomBody: TMemo
-            Left = 10
-            Top = 74
-            Width = 869
-            Height = 71
+            Left = 9
+            Top = 149
+            Width = 896
+            Height = 49
             Anchors = [akLeft, akTop, akRight]
             Lines.Strings = (
               
@@ -5591,8 +5614,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             TabOrder = 1
           end
           object btnDELETE: TButton
-            Left = 884
-            Top = 118
+            Left = 924
+            Top = 94
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5601,8 +5624,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnDELETEClick
           end
           object btnPUT: TButton
-            Left = 885
-            Top = 87
+            Left = 925
+            Top = 63
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5611,8 +5634,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnPUTClick
           end
           object btnPOST: TButton
-            Left = 885
-            Top = 56
+            Left = 925
+            Top = 32
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5621,8 +5644,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnPOSTClick
           end
           object btnGET: TButton
-            Left = 885
-            Top = 25
+            Left = 925
+            Top = 1
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5632,9 +5655,9 @@ object frmVCLRestClient: TfrmVCLRestClient
           end
           object lbedToken: TLabeledEdit
             AlignWithMargins = True
-            Left = 10
+            Left = 3
             Top = 24
-            Width = 711
+            Width = 734
             Height = 23
             Anchors = [akLeft, akTop, akRight]
             EditLabel.Width = 34
@@ -5644,6 +5667,147 @@ object frmVCLRestClient: TfrmVCLRestClient
             Text = ''
             TextHint = 'application/json'
           end
+          object edFileName: TAdvFileNameEdit
+            Left = 10
+            Top = 88
+            Width = 895
+            Height = 23
+            BorderColor = 11250603
+            EmptyTextStyle = []
+            FlatLineColor = 11250603
+            FocusColor = clWindow
+            FocusFontColor = 3881787
+            LabelFont.Charset = ANSI_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -12
+            LabelFont.Name = 'Segoe UI'
+            LabelFont.Style = []
+            Lookup.Font.Charset = ANSI_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Segoe UI'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWindow
+            ShortCut = 0
+            TabOrder = 7
+            Text = ''
+            Visible = True
+            Version = '1.7.1.3'
+            ButtonStyle = bsButton
+            ButtonWidth = 18
+            Flat = False
+            Etched = False
+            Glyph.Data = {
+              36050000424D3605000000000000360400002800000010000000100000000100
+              0800000000000001000000000000000000000001000000000000000000000000
+              80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+              A6000020400000206000002080000020A0000020C0000020E000004000000040
+              20000040400000406000004080000040A0000040C0000040E000006000000060
+              20000060400000606000006080000060A0000060C0000060E000008000000080
+              20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+              200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+              200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+              200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+              20004000400040006000400080004000A0004000C0004000E000402000004020
+              20004020400040206000402080004020A0004020C0004020E000404000004040
+              20004040400040406000404080004040A0004040C0004040E000406000004060
+              20004060400040606000406080004060A0004060C0004060E000408000004080
+              20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+              200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+              200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+              200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+              20008000400080006000800080008000A0008000C0008000E000802000008020
+              20008020400080206000802080008020A0008020C0008020E000804000008040
+              20008040400080406000804080008040A0008040C0008040E000806000008060
+              20008060400080606000806080008060A0008060C0008060E000808000008080
+              20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+              200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+              200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+              200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+              2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+              2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+              2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+              2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+              2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+              2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+              2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFDFDFDFDFD
+              FDFDFDFDFDFDFDFDFDFDB7B76F67676767676767676767B7FDFD6FFDBFBFBFBF
+              BFBFBFBFBFB7FD6FFDFD6FFDBFBFBFBFBF7F7F7F7777FD6FFDFD6FFDBFBFBFBF
+              BFBFBFBF7F7FFD6FFDFD6FFDFDFDBFBFBFBFBFBFBF7FFD6FFDFD6FFDFDFDFD08
+              070707B6B6B6096FE3EC6FFDB76F6FAFFDFDFDFDFDFDFD6FFDE36FFDBFBFBFED
+              B76F6F6F6F6F6F6FFDE377FDBFBFBF09FD09FD09FDFDFDFDFDE377FDFDFDFD09
+              FD09090909090909FDE377B7B7B7B709FD09FD09FDFDFDFDFDE3FDFDFDFDFD09
+              FD09090909090909FDEBFDFDFDFDFD09FDFDFDFDFDFDFDFDFDEBFDFDFDFDFD09
+              FDBDBDB5B4B4B4B4FDEBFDFDFDFDFDFD0909090909ECECECEC09}
+            ReadOnly = False
+            ButtonColor = clWhite
+            ButtonColorHot = 15917525
+            ButtonColorDown = 14925219
+            ButtonTextColor = 4474440
+            ButtonTextColorHot = 2303013
+            ButtonTextColorDown = 2303013
+            FilterIndex = 0
+            DialogOptions = []
+            DialogKind = fdOpen
+          end
+          object ckbAddFile: TCheckBox
+            Left = 104
+            Top = 65
+            Width = 153
+            Height = 17
+            Caption = 'Aggiungi Un File'
+            TabOrder = 8
+          end
+          object btnUpload: TButton
+            Left = 924
+            Top = 125
+            Width = 72
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Upload File'
+            TabOrder = 9
+            OnClick = btnUploadClick
+          end
+          object btnCurl: TButton
+            Left = 924
+            Top = 155
+            Width = 72
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Curl'
+            TabOrder = 10
+            OnClick = btnCurlClick
+          end
+          object btnIndy: TButton
+            Left = 1003
+            Top = 1
+            Width = 72
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Indy'
+            TabOrder = 11
+            OnClick = btnIndyClick
+          end
+          object btnTHttp: TButton
+            Left = 1003
+            Top = 32
+            Width = 75
+            Height = 25
+            Caption = 'THttp'
+            TabOrder = 12
+            OnClick = btnTHttpClick
+          end
+          object btnHttpClient: TButton
+            Left = 1003
+            Top = 63
+            Width = 75
+            Height = 25
+            Caption = 'HttpClient'
+            TabOrder = 13
+            OnClick = btnHttpClientClick
+          end
         end
         object tabSQLQueryRequest: TTabSheet
           Caption = 'SQL Request'
@@ -5651,7 +5815,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           object pnlSQLButtons: TPanel
             Left = 0
             Top = 0
-            Width = 976
+            Width = 1080
             Height = 41
             Align = alTop
             TabOrder = 0
@@ -5659,8 +5823,8 @@ object frmVCLRestClient: TfrmVCLRestClient
           object DBAdvMemo1: TDBAdvMemo
             Left = 0
             Top = 41
-            Width = 976
-            Height = 116
+            Width = 1080
+            Height = 166
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -5782,6 +5946,47 @@ object frmVCLRestClient: TfrmVCLRestClient
         object tabParams: TTabSheet
           Caption = 'Params'
           ImageIndex = 3
+        end
+        object GetImage: TTabSheet
+          Caption = 'Get Image'
+          ImageIndex = 4
+          object lbedImageUrl: TLabeledEdit
+            AlignWithMargins = True
+            Left = 0
+            Top = 22
+            Width = 1071
+            Height = 23
+            EditLabel.Width = 51
+            EditLabel.Height = 15
+            EditLabel.Caption = 'Base URL:'
+            TabOrder = 0
+            Text = 'http://localhost:8888/users'
+            TextHint = 'http://localhost:8888/users'
+          end
+          object btnGetIndy: TButton
+            Left = 0
+            Top = 56
+            Width = 110
+            Height = 25
+            Caption = 'Get Indy'
+            TabOrder = 1
+          end
+          object btnGetHttpClient: TButton
+            Left = 128
+            Top = 56
+            Width = 110
+            Height = 25
+            Caption = 'Get Http Client'
+            TabOrder = 2
+          end
+          object btnGetRestClient: TButton
+            Left = 256
+            Top = 56
+            Width = 110
+            Height = 25
+            Caption = 'Get Rest Client'
+            TabOrder = 3
+          end
         end
       end
     end
@@ -5964,5 +6169,56 @@ object frmVCLRestClient: TfrmVCLRestClient
       end>
     Left = 176
     Top = 392
+  end
+  object RESTClient: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 568
+    Top = 432
+  end
+  object RESTRequest: TRESTRequest
+    Client = RESTClient
+    Params = <
+      item
+        Kind = pkHTTPHEADER
+        Name = 'Authorization'
+        Options = [poDoNotEncode]
+        Value = 'Bearer H7YcKbPCuD648zcxffLlw4xFfPtRYaECgzdjYNMi'
+      end>
+    Response = RESTResponse
+    SynchronizedEvents = False
+    Left = 512
+    Top = 472
+  end
+  object RESTResponse: TRESTResponse
+    Left = 600
+    Top = 504
+  end
+  object IdHTTP: TIdHTTP
+    IOHandler = OpenSSL
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = []
+    Left = 764
+    Top = 425
+  end
+  object OpenSSL: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmClient
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 896
+    Top = 393
   end
 end
