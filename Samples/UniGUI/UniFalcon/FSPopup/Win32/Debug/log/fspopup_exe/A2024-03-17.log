@@ -1,0 +1,101 @@
+FSPopup.exe: 00001108: 13:01:56 []:>--------------------------------------------------------------<
+FSPopup.exe: 00001108: 13:01:56 [TUniServerModule]:Server First Init.
+FSPopup.exe: 00001108: 13:01:56 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\
+FSPopup.exe: 00001108: 13:01:56 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FSPopup.exe: 00001108: 13:01:56 [TUniServerModule]:HTTP Server Started on Port: 8077
+FSPopup.exe: 00001108: 13:02:34 [TUniServerModule]:Shutting Down Server.
+FSPopup.exe: 00001108: 13:02:34 [TUniServerModule]:Stopping HTTP Server.
+FSPopup.exe: 00001108: 13:02:34 [TUniServerModule]:HTTP Server Stopped.
+FSPopup.exe: 00001108: 13:02:34 [TUniGUISessionManager]:Terminating Session manager.
+FSPopup.exe: 00001108: 13:02:35 [TUniGUISessionManager]:Stopping Cache Eraser...
+FSPopup.exe: 00001108: 13:02:35 [TUniGUISessionManager]:Cache Eraser Stopped.
+FSPopup.exe: 00001108: 13:02:35 [TUniGUISessionManager]:Destroying Worker Threads.
+FSPopup.exe: 00001108: 13:02:35 [TUniGUISessionManager]:Session manager terminated.
+FSPopup.exe: 00001108: 13:02:35 [TUniWebSocketStack]:Terminating...
+FSPopup.exe: 00001108: 13:02:35 [TUniGUIMessageQ]:Terminated.
+FSPopup.exe: 00001108: 13:02:35 [TUniWebSocketStack]:Terminated.
+FSPopup.exe: 00001108: 13:02:35 [TUniServerModule]:Server Shutdown Completed.
+FSPopup.exe: 00001108: 13:02:35 []:<-------------------------------------------------------------->
+FSPopup.exe: 00001108: 13:02:35 [Terminated]:Exit Code: 0
+FSPopup.exe: 000034B0: 13:10:34 []:>--------------------------------------------------------------<
+FSPopup.exe: 000034B0: 13:10:34 [TUniServerModule]:Server First Init.
+FSPopup.exe: 000034B0: 13:10:34 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\
+FSPopup.exe: 000034B0: 13:10:35 [TUniServerModule]:Starting HTTP Server on Port: 8081...
+FSPopup.exe: 000034B0: 13:10:36 [TUniServerModule]:HTTP Server Started on Port: 8081
+FSPopup.exe: 00002500: 13:22:02 []:>--------------------------------------------------------------<
+FSPopup.exe: 00002500: 13:22:02 [TUniServerModule]:Server First Init.
+FSPopup.exe: 00002500: 13:22:02 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\
+FSPopup.exe: 00002500: 13:22:02 [TUniGUISessionManager]:Cache erase job created, Folder count: [1]
+FSPopup.exe: 00002500: 13:22:02 [TUniServerModule]:Starting HTTP Server on Port: 8081...
+FSPopup.exe: 00002500: 13:22:02 [TUniServerModule]:HTTP Server Started on Port: 8081
+FSPopup.exe: 00002F20: 13:22:41 [127.0.0.1]:EReadError : Error reading PopupAlerta.OnEvents: Invalid property value : Addr: $005EC4C4
+FSPopup.exe: 00002F20: 13:22:42 [HandleFileRequest[127.0.0.1]]:File not found: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\favicon.ico
+FSPopup.exe: 0000371C: 13:22:45 [127.0.0.1]:EReadError : Error reading PopupAlerta.OnEvents: Invalid property value : Addr: $005EC4C4
+FSPopup.exe: 00002500: 13:23:03 [TUniServerModule]:Shutting Down Server.
+FSPopup.exe: 00002500: 13:23:03 [TUniServerModule]:Stopping HTTP Server.
+FSPopup.exe: 00002500: 13:23:05 [TUniServerModule]:HTTP Server Stopped.
+FSPopup.exe: 00002500: 13:23:05 [TUniGUISessionManager]:Terminating Session manager.
+FSPopup.exe: 00002500: 13:23:05 [TUniGUISessionManager]:Stopping Cache Eraser...
+FSPopup.exe: 00002500: 13:23:05 [TUniGUISessionManager]:Cache Eraser Stopped.
+FSPopup.exe: 00002500: 13:23:05 [TUniGUISessionManager]:Destroying Worker Threads.
+FSPopup.exe: 00002500: 13:23:05 [TUniGUISessionManager]:Session manager terminated.
+FSPopup.exe: 00002500: 13:23:06 [TUniWebSocketStack]:Terminating...
+FSPopup.exe: 00002500: 13:23:06 [TUniGUIMessageQ]:Terminated.
+FSPopup.exe: 00002500: 13:23:06 [TUniWebSocketStack]:Terminated.
+FSPopup.exe: 00002500: 13:23:06 [TUniServerModule]:Server Shutdown Completed.
+FSPopup.exe: 00002500: 13:23:06 []:<-------------------------------------------------------------->
+FSPopup.exe: 00002500: 13:23:06 [Terminated]:Exit Code: 0
+FSPopup.exe: 000026A8: 13:25:39 []:>--------------------------------------------------------------<
+FSPopup.exe: 000026A8: 13:25:40 [TUniServerModule]:Server First Init.
+FSPopup.exe: 000026A8: 13:25:40 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\
+FSPopup.exe: 000026A8: 13:25:40 [TUniGUISessionManager]:Cache erase job created, Folder count: [2]
+FSPopup.exe: 000026A8: 13:25:40 [TUniServerModule]:Starting HTTP Server on Port: 8081...
+FSPopup.exe: 000026A8: 13:25:41 [TUniServerModule]:HTTP Server Started on Port: 8081
+FSPopup.exe: 0000130C: 13:28:17 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 0000130C: 13:38:17 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000018B4: 13:48:17 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000018B4: 13:56:49 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00003234: 13:58:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00003234: 14:08:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000035B0: 14:18:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000035B0: 14:26:01 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001E20: 14:28:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001E20: 14:38:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00000130: 14:48:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00000130: 14:53:24 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002D4C: 14:58:18 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002D4C: 15:08:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001F68: 15:18:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001F68: 15:28:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002834: 15:38:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002834: 15:48:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002D08: 15:58:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002D08: 16:08:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002BE4: 16:18:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002BE4: 16:28:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001FD8: 16:38:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001FD8: 16:48:19 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002CEC: 16:58:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002CEC: 17:08:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001440: 17:18:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001440: 17:28:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00000B60: 17:38:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00000B60: 17:48:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 0000149C: 17:56:51 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 0000149C: 17:58:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 0000149C: 18:08:20 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000025BC: 18:18:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000025BC: 18:28:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001E6C: 18:38:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001E6C: 18:48:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000001F4: 18:58:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000001F4: 19:08:21 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001F68: 19:18:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00001F68: 19:26:01 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00003600: 19:28:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00003600: 19:38:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002994: 19:48:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002994: 19:53:24 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002EC4: 19:58:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 00002EC4: 20:08:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.
+FSPopup.exe: 000029B0: 20:18:22 [HandleFileRequest[127.0.0.1]]:Access denied: Z:\GitHub\Libraries\UniFalcon\Demos\FSPopup\Win32\Debug\wpad.dat.

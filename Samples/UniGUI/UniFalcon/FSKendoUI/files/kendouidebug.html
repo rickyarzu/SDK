@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KendoUI Demo</title>
+    <script src="https://financeiro.app/falconfinancas.dll/uni-1.90.0.1564/jQuery/jquery-1.11.2.min.js"></script>
+
+    <script src="https://kendo.cdn.telerik.com/2022.2.621/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.621/js/kendo.timezones.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.621/js/cultures/kendo.culture.en-GB.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.621/js/cultures/kendo.culture.pt-BR.min.js"></script>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.621/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.621/styles/kendo.default.mobile.min.css">
+</head>
+
+<body>
+    <div id="fs_canOE0" class="chart_class"
+        style="position:absolute; width:100%; height:500px;background: center no-repeat url('https://demos.telerik.com/kendo-ui/content/shared/styles/world-map.png');">
+    </div>
+
+    <script>
+        var chart = $("#fs_canOE0").getKendoChart();
+
+        if (chart) {
+            chart.destroy();
+        };
+
+        $("#fs_canOE0").kendoChart({
+            title: {
+                text: "Title Test (bar, column, line)",
+                visible: true, font: "20px sans-serif"
+            },
+            theme: "silver",
+            seriesDefaults: {
+                type: "bar",
+                style: "smooth",
+                stack: false,
+                labels: {
+                    visible: true,
+                    position: "insideEnd",
+                    template: "#= kendo.format('{0:n3}', value) #"
+                }
+            },
+            categoryAxis: {
+                categories: ['2005', '2006', '2007', '2008', '2009']
+            },
+            series: [
+                { name: "Brasil", data: [500000.52, 479999.93, 350000.21, 809890.23, 285382.11] },
+                { name: "Mundo", data: [700000.52, 579999.93, 750000.21, 109890.23, 785382.11] }
+            ],
+            tooltip: {
+                visible: true, format: "{0:n3}"
+            },
+            valueAxis: {
+                labels: {
+                    rotation: "auto",
+                    color: "green",
+                    font: "18px Tahoma"
+                }
+            },
+            axisDefaults: {
+                labels: {
+                    rotation: "auto",
+                    color: "green",
+                    font: "18px Tahoma"
+                }
+            },
+            legend: {
+                position: "top"
+            },
+            chartArea: {
+                background: "#f9f9f900"
+            },
+
+            seriesClick: function (e) { console.log(e); ajaxRequest(OE0, "ClickSeries", ["name=" + e.series.name, "category=" + e.category, "value=" + ((typeof e.value === "object") ? e.value.x + "," + e.value.y : e.value)]); }
+        });
+
+    </script>
+</body>
