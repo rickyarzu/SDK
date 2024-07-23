@@ -1,18 +1,21 @@
 object frmLoginNew: TfrmLoginNew
   Left = 0
   Top = 0
-  Width = 1252
-  Height = 753
-  OnCreate = UniFrameCreate
-  Visible = False
+  ClientHeight = 714
+  ClientWidth = 1236
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
   Font.Name = 'Roboto'
-  TabOrder = 0
-  ParentFont = False
+  Font.Style = []
+  OnCreate = UniFrameCreate
+  TextHeight = 14
   object pnlBackground: TUniPanel
     Left = 0
     Top = 0
-    Width = 1252
-    Height = 753
+    Width = 1236
+    Height = 714
     Hint = ''
     Align = alClient
     TabOrder = 0
@@ -26,8 +29,8 @@ object frmLoginNew: TfrmLoginNew
     OnResize = pnlBackgroundResize
     object pnlBottom: TUniPanel
       Left = 0
-      Top = 721
-      Width = 1252
+      Top = 682
+      Width = 1236
       Height = 32
       Hint = ''
       Align = alBottom
@@ -40,7 +43,7 @@ object frmLoginNew: TfrmLoginNew
       Caption = ''
       Color = clGray
       DesignSize = (
-        1252
+        1236
         32)
       object lbllLinkTermos: TUniLabel
         Left = 829
@@ -199,7 +202,7 @@ object frmLoginNew: TfrmLoginNew
               Font.Color = 15563820
               Font.Height = -29
               Font.Name = 'Roboto'
-              TabOrder = 4
+              TabOrder = 3
             end
             object lblSubTitulo: TUniLabel
               Left = 69
@@ -237,7 +240,7 @@ object frmLoginNew: TfrmLoginNew
               Width = 1
               Height = 256
               Hint = ''
-              TabOrder = 1
+              TabOrder = 0
               Caption = 'pnlSep'
               Color = clGrayText
             end
@@ -248,7 +251,7 @@ object frmLoginNew: TfrmLoginNew
               Height = 236
               Hint = ''
               Visible = False
-              TabOrder = 3
+              TabOrder = 2
               BorderStyle = ubsNone
               Caption = ''
               Color = clWhite
@@ -313,7 +316,7 @@ object frmLoginNew: TfrmLoginNew
               Width = 345
               Height = 253
               Hint = ''
-              TabOrder = 2
+              TabOrder = 1
               BorderStyle = ubsNone
               Caption = ''
               Color = clWhite

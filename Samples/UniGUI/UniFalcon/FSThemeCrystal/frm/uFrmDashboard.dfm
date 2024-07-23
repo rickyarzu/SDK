@@ -1,26 +1,30 @@
 object frmDashboard: TfrmDashboard
   Left = 0
   Top = 0
-  Width = 1152
-  Height = 903
-  OnReady = UniFrameReady
-  TabOrder = 0
+  ClientHeight = 864
+  ClientWidth = 1136
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
   object scrPrincipal: TUniScrollBox
     Left = 0
     Top = 0
-    Width = 1152
-    Height = 903
+    Width = 1136
+    Height = 864
     Hint = ''
     Align = alClient
     TabOrder = 0
     ScrollDirection = sdVertical
-    ExplicitHeight = 906
     DesignSize = (
-      1150
-      901)
+      1134
+      862)
     ScrollHeight = 861
     object pnlPrincipal: TUniPanel
-      Left = 76
+      Left = 68
       Top = 0
       Width = 1015
       Height = 861
@@ -108,7 +112,6 @@ object frmDashboard: TfrmDashboard
                 '"#00DF8F", "#0083F5", "#FEB019", "#FF4560", "#775DD0", "#41DBD2"' +
                 ', "#F05FC7", "#F9E213", "#45B1FF", "#98DF00"'
               Align = alClient
-              ExplicitTop = 35
             end
             object UniPanel1: TUniPanel
               Left = 1

@@ -1,9 +1,8 @@
 inherited frameVCLPhoenixGoogleCalendar: TframeVCLPhoenixGoogleCalendar
   inherited PageControl1: TPageControl
     ActivePage = TabSheet1
-    inherited TabSheet2: TTabSheet
+    inherited tabGoogleCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
-        PictureContainer = nil
         TMSStyle = 0
       end
     end

@@ -39,8 +39,8 @@ end;
 procedure TUniServerModule.UniGUIServerModuleCreate(Sender: TObject);
 begin
   {Em modo de desenvolvimento}
-  Self.UniRoot := 'c:\unigui\[uni]\';
-  Self.ExtRoot := 'c:\unigui\[ext]\';
+  Self.UniRoot := 'c:\januaproject\unigui\[uni]\';
+  Self.ExtRoot := 'c:\januaproject\unigui\[ext]\';
 end;
 
 initialization

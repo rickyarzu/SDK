@@ -1,0 +1,8 @@
+ThemeCrystal.exe: 00003044: 09:46:43 []:>--------------------------------------------------------------<
+ThemeCrystal.exe: 00003044: 09:46:43 [TUniServerModule]:Server First Init.
+ThemeCrystal.exe: 00003044: 09:46:43 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FSThemeCrystal\
+ThemeCrystal.exe: 00003044: 09:46:43 [TUniServerModule]:Debug Mode = ON
+ThemeCrystal.exe: 00003044: 09:46:43 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+ThemeCrystal.exe: 00003044: 09:46:43 [TUniServerModule]:HTTP Server Started on Port: 8077
+ThemeCrystal.exe: 00007BC0: 09:47:23 [Requested Theme File not found:]:c:\januaproject\unigui\uni\css\uni-xtheme-classic.css
+ThemeCrystal.exe: 00007BC0: 09:47:23 []:TUniThemeProps: File not found: c:\januaproject\unigui\uni\css\uni-xtheme-classic.css

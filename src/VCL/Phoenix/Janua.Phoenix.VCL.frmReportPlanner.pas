@@ -63,8 +63,6 @@ type
     dsTech: TDataSource;
     dsTechCalendar: TDataSource;
     N1: TMenuItem;
-    tabGoogleCalendar: TTabSheet;
-    frameVCLPhoenixGoogleCalendar1: TframeVCLPhoenixGoogleCalendar;
     frameTMSPhoenixPlannerTecnici: TframeTMSPhoenixPlannerCalendar;
     frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2;
     N3: TMenuItem;
@@ -105,7 +103,7 @@ uses
   udmSVGImageList, Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   // Phoenix
-  DlgShowContratto, DlgNuovoStatino;
+  DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync;
 
 procedure TfrmPhoenixVCLReportPlanner.AnnullaAppuntamento1Click(Sender: TObject);
 begin
@@ -326,20 +324,22 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
-  Async.Run<Boolean>(
+  (*
+    Async.Run<Boolean>(
     function: Boolean
     begin
-      frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
-      Result := True;
+    frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
+    Result := True;
     end,
     procedure(const aResult: Boolean)
     begin
     end,
     procedure(const Ex: Exception)
     begin
-      ShowMessage(Ex.Message);
-      FdmVCLPhoenixIBPlanner.Setup;
+    ShowMessage(Ex.Message);
+    FdmVCLPhoenixIBPlanner.Setup;
     end);
+  *)
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);

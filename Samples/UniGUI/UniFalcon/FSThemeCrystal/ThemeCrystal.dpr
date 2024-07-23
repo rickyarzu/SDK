@@ -1,5 +1,5 @@
-//{$define UNIGUI_VCL} // Diretiva Gera EXE
-{$define UNIGUI_DLL} // Diretiva Gera DLL
+{$define UNIGUI_VCL} // Diretiva Gera EXE
+//{$define UNIGUI_DLL} // Diretiva Gera DLL
 
 {$IFDEF UNIGUI_VCL}
   program {$E exe}

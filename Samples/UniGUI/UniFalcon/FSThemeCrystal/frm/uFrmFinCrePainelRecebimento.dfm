@@ -1,14 +1,20 @@
 object frmFinCrePainelRecebimento: TfrmFinCrePainelRecebimento
   Left = 0
   Top = 0
-  Width = 971
-  Height = 510
-  TabOrder = 0
+  ClientHeight = 471
+  ClientWidth = 955
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
   object dbg1: TUniDBGrid
     Left = 0
     Top = 63
-    Width = 971
-    Height = 447
+    Width = 955
+    Height = 408
     Hint = ''
     LoadMask.Message = 'Loading data...'
     RowHeight = 40
@@ -20,7 +26,7 @@ object frmFinCrePainelRecebimento: TfrmFinCrePainelRecebimento
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 965
+    Width = 949
     Height = 57
     Hint = ''
     Align = alTop

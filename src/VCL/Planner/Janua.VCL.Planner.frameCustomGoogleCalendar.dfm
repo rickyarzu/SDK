@@ -9,7 +9,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Top = 267
     Width = 904
     Height = 801
-    ActivePage = TabSheet2
+    ActivePage = tabGoogleCalendar
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -90,9 +90,10 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         end
       end
     end
-    object TabSheet2: TTabSheet
+    object tabGoogleCalendar: TTabSheet
       Caption = 'Google Calendar'
       ImageIndex = 1
+      OnShow = tabGoogleCalendarShow
       object DBPlanner1: TDBPlanner
         Left = 0
         Top = 0
@@ -1131,6 +1132,7 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Width = 545
       Height = 41
       Columns = 6
+      ItemHeight = 17
       Items.Strings = (
         'uno'
         'due'

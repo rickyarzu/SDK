@@ -1,15 +1,21 @@
 object frmFinCapPainelPagamento: TfrmFinCapPainelPagamento
   Left = 0
   Top = 0
-  Width = 1053
-  Height = 623
+  ClientHeight = 584
+  ClientWidth = 1037
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
   OnCreate = UniFrameCreate
-  TabOrder = 0
+  TextHeight = 15
   object pnl1: TUniPanel
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 1047
+    Width = 1031
     Height = 57
     Hint = ''
     Align = alTop
@@ -38,8 +44,8 @@ object frmFinCapPainelPagamento: TfrmFinCapPainelPagamento
   object dbg1: TUniDBGrid
     Left = 0
     Top = 63
-    Width = 1053
-    Height = 560
+    Width = 1037
+    Height = 521
     Hint = ''
     DataSource = DS
     LoadMask.Message = 'Loading data...'

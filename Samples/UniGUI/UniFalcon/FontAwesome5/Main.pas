@@ -28,6 +28,7 @@ type
     lbl6: TUniLabel;
     lbl7: TUniLabel;
     lbl2: TUniLabel;
+    Maps1: TUniMenuItem;
   private
     { Private declarations }
   public

@@ -6,7 +6,7 @@ object MainForm: TMainForm
   Caption = 'FontAwesome5 with UniFalcon <i class="far fa-smile-wink"></i>'
   OldCreateOrder = False
   MonitoredKeys.Keys = <>
-  TextHeight = 13
+  TextHeight = 15
   object btn1: TUniFSButton
     Left = 224
     Top = 24
@@ -150,8 +150,8 @@ object MainForm: TMainForm
   object lbl2: TUniLabel
     Left = 351
     Top = 91
-    Width = 250
-    Height = 19
+    Width = 241
+    Height = 21
     Hint = ''
     Caption = 'https://store.falconsistemas.com.br'
     ParentFont = False
@@ -160,6 +160,7 @@ object MainForm: TMainForm
     TabOrder = 4
   end
   object Men: TUniMenuItems
+    Images = imglFont
     Left = 80
     Top = 104
     object Control1: TUniMenuItem
@@ -182,15 +183,20 @@ object MainForm: TMainForm
         ImageIndex = 1
       end
     end
+    object Maps1: TUniMenuItem
+      Caption = 'Maps'
+      ImageIndex = 5
+    end
   end
   object imglFont: TUniNativeImageList
     Left = 80
     Top = 208
     Images = {
-      050000000000000006160000006661732066612D6372656469742D636172643B
-      66613B0000000006160000006661732066612D757365722D636972636C653B66
-      613B0000000006100000006661732066612D746F6F6C733B66613B0000000006
-      110000006661732066612D646F6E6174653B66613B0000000006100000006661
-      732066612D61776172643B66613B}
+      06000000FFFFFF1F06160000006661732066612D6372656469742D636172643B
+      66613BFFFFFF1F06160000006661732066612D757365722D636972636C653B66
+      613BFFFFFF1F06100000006661732066612D746F6F6C733B66613BFFFFFF1F06
+      110000006661732066612D646F6E6174653B66613BFFFFFF1F06100000006661
+      732066612D61776172643B66613BFFFFFF1F06190000006661732066612D6C6F
+      636174696F6E2D6172726F773B66613B}
   end
 end
