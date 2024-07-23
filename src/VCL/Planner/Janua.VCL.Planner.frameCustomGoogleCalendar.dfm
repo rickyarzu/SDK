@@ -12,9 +12,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -1
-    ExplicitTop = 211
-    ExplicitHeight = 856
     object TabSheet1: TTabSheet
       Caption = 'Google Sync'
       object grpEventsList: TGroupBox
@@ -27,7 +24,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Align = alClient
         Caption = 'Lista Eventi '
         TabOrder = 0
-        ExplicitHeight = 823
         DesignSize = (
           890
           768)
@@ -333,9 +329,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
           88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
           888887F8F8222208888888776888208888888887777778888888}
         Version = '3.4.6.0'
-        ItemSource = dmVCLPlannerCustomController.DBDaySourceGCalendar
-        ExplicitTop = 47
-        ExplicitHeight = 779
         TMSStyle = 0
         object AdvPlannerPDFIO1: TAdvPlannerPDFIO
           Left = 528
@@ -601,7 +594,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 5
-        ExplicitWidth = 621
       end
       object edCalendarTimeZone: TEdit
         Left = 488
@@ -610,7 +602,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 6
-        ExplicitWidth = 621
       end
       object pnlGroupColor: TPanel
         Left = 488
@@ -622,7 +613,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         Caption = 'Colore Calendario'
         TabOrder = 7
         StyleElements = []
-        ExplicitWidth = 617
       end
     end
     object cbDefaultReminders: TComboBox
@@ -652,8 +642,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 212
-    ExplicitHeight = 856
     object grpItemDetails: TGroupBox
       AlignWithMargins = True
       Left = 3
@@ -664,7 +652,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Align = alClient
       Caption = 'Details'
       TabOrder = 0
-      ExplicitHeight = 853
       DesignSize = (
         370
         798)
@@ -872,7 +859,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
         ActivePage = tabAttendees
         Anchors = [akLeft, akRight, akBottom]
         TabOrder = 10
-        ExplicitTop = 608
         object tabDettagli: TTabSheet
           Caption = 'Dettagli'
           object Label8: TLabel
@@ -1080,7 +1066,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 211
     DesignSize = (
       1280
       55)

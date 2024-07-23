@@ -65,11 +65,12 @@ type
     N1: TMenuItem;
     tabGoogleCalendar: TTabSheet;
     frameVCLPhoenixGoogleCalendar1: TframeVCLPhoenixGoogleCalendar;
-    frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar;
+    frameTMSPhoenixPlannerTecnici: TframeTMSPhoenixPlannerCalendar;
+    frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2;
     N3: TMenuItem;
     GoogleSync1: TMenuItem;
     tabPlannerEvents: TTabSheet;
-    frameVCLPhoenixPlannerCalendar21: TframeVCLPhoenixPlannerCalendar2;
+    Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -83,6 +84,7 @@ type
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure GoogleSync1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
@@ -209,14 +211,16 @@ begin
   // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
   // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
   { TdmVCLPhoenixPlannerController }
-  frameTMSPhoenixPlannerCalendar.PlannerController := FdmVCLPhoenixIBPlanner;
+  frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
-  frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
+  frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;
+  Timer1.Enabled := True;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
 begin
-  frameTMSPhoenixPlannerCalendar.DBPlanner1.Refresh;
+  frameTMSPhoenixPlannerTecnici.DBPlanner1.Refresh;
+  frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
@@ -317,6 +321,25 @@ begin
   finally
     ADialog.Free;
   end;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);
+begin
+  Timer1.Enabled := False;
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      frameVCLPhoenixGoogleCalendar1.PhoenixController := FdmVCLPhoenixIBPlanner;
+      Result := True;
+    end,
+    procedure(const aResult: Boolean)
+    begin
+    end,
+    procedure(const Ex: Exception)
+    begin
+      ShowMessage(Ex.Message);
+      FdmVCLPhoenixIBPlanner.Setup;
+    end);
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);

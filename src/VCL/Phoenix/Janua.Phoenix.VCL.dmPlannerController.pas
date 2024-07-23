@@ -343,6 +343,7 @@ type
     ActionSendShare2: TAction;
     ActionPrint2: TAction;
     ActionCalendarSync2: TAction;
+    qryPlannerEventslkpMailTecnico: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -351,6 +352,7 @@ type
     procedure DataModuleDestroy(Sender: TObject);
     procedure vtGoogleEventsSearchBeforePost(DataSet: TDataSet);
     procedure DBDaySourceCalendar2FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
+    procedure ActionCalendarSync2Execute(Sender: TObject);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -403,6 +405,8 @@ type
     procedure AddEvent; override;
     procedure Setup; override;
     procedure Filter; override;
+    procedure Filter2;
+    procedure ActivateCalendar2;
     procedure UndoMeeting; override;
     /// <summary> After Selecting Calendars this procedure should be called (it can be inside a thread) </summary>
     procedure SelectCalendars2; virtual;
@@ -417,6 +421,7 @@ type
     function FilterGoogleCalendar(const aSearch: string): Integer;
     function FilterGoogleCalendarSubject(const aSearch, aCalendar: string): Integer;
     procedure ReportGoogleSync;
+    procedure PlannerGoogleSync; override;
     procedure FilterMeeting(const aFilter: TRecordFilter);
   public
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
@@ -463,14 +468,24 @@ begin
   AddEvent
 end;
 
+procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
+begin
+  inherited;
+  if Assigned(PlannerPDFIO2) then
+    PDFIOExport(PlannerPDFIO2)
+end;
+
 procedure TdmVCLPhoenixPlannerController.ActivateCalendar;
 begin
   if not qryPlannerEvents.Active then
     qryPlannerEvents.Open;
+  inherited;
+end;
+
+procedure TdmVCLPhoenixPlannerController.ActivateCalendar2;
+begin
   if not qryPlannerEvents2.Active then
     qryPlannerEvents2.Open;
-  inherited;
-
 end;
 
 procedure TdmVCLPhoenixPlannerController.AddEvent;
@@ -779,6 +794,11 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.Filter2;
+begin
+
+end;
+
 function TdmVCLPhoenixPlannerController.FilterGoogle(const aSearch: string): Integer;
 begin
   var
@@ -1005,6 +1025,56 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.PlannerGoogleSync;
+begin
+  var
+  lSearchString := qryPlannerEventsSUBJECT.AsString;
+  var
+  bTest := FilterGoogle(lSearchString) > 0;
+
+  { if not bTest then
+    begin
+    lSearchString := qryReportPlannerNOME.AsString;
+    bTest := FilterGoogle(lSearchString) > 0;
+    end; }
+
+  if not bTest then
+  begin
+    bTest := FilterGoogleCalendar(qryPlannerEventslkpMailTecnico.AsString) > 0;
+    { if (UpperCase(qryReportPlannerNOME.AsString) <> 'SEDE') AND
+      (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') AND
+      (UpperCase(qryReportPlannerNOME.AsString) <> 'MAGAZZINO') then
+      lSearchString := qryReportPlannerDESCRIZIONE_SCHEDA.AsString + ' ' + lSearchString; }
+  end;
+
+  if bTest then
+  begin
+    var
+    dlgPhoenixVCLGoogleSync := TdlgPhoenixVCLGoogleSync.Create(nil);
+    try
+      dlgPhoenixVCLGoogleSync.edSearch.Text := lSearchString;
+      dlgPhoenixVCLGoogleSync.ShowModal;
+      if dlgPhoenixVCLGoogleSync.ModalResult = mrOK then
+      begin
+          qryPlannerEvents.Edit;
+          qryPlannerEventsDALLE_ORE.AsDateTime := vtGoogleEventsSearchSTARTTIME2.AsDateTime;
+          qryPlannerEventsCOLORE.AsInteger := vtGoogleEventsSearchCalcColor3.AsInteger;
+          qryPlannerEventsALLE_ORE.AsDateTime := vtGoogleEventsSearchENDTIME3.AsDateTime;
+          qryPlannerEventsSUBJECT.AsString := vtGoogleEventsSearchSUMMARY3.AsString;
+          qryPlannerEventsNOTE.AsString := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
+          qryPlannerEventsGOOGLEID.AsString := vtGoogleEventsSearchID3.AsString;
+          qryPlannerEvents.Post;
+          qryReportPlanner.Edit;
+          qryReportPlannerGCAL.AsString := 'G';
+          qryReportPlanner.Post;
+      end;
+    finally
+      dlgPhoenixVCLGoogleSync.Free;
+      dlgPhoenixVCLGoogleSync := nil;
+    end;
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.PopulateCalendars;
 begin
   inherited;
@@ -1130,7 +1200,8 @@ begin
   bTest := FilterGoogle(lSearchString) > 0;
 
   if not bTest AND (UpperCase(qryReportPlannerNOME.AsString) <> 'SEDE') AND
-    (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') then
+    (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') AND
+    (UpperCase(qryReportPlannerNOME.AsString) <> 'MAGAZZINO') then
   begin
     lSearchString := qryReportPlannerNOME.AsString;
     bTest := FilterGoogle(lSearchString) > 0;
@@ -1140,7 +1211,8 @@ begin
   begin
     bTest := FilterGoogleCalendar(qryReportPlannerEMAIL_TECNICO.AsString) > 0;
     if (UpperCase(qryReportPlannerNOME.AsString) <> 'SEDE') AND
-      (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') then
+      (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') AND
+      (UpperCase(qryReportPlannerNOME.AsString) <> 'MAGAZZINO') then
       lSearchString := qryReportPlannerDESCRIZIONE_SCHEDA.AsString + ' ' + lSearchString;
   end;
 

@@ -3,6 +3,9 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
   Height = 905
   ExplicitWidth = 1176
   ExplicitHeight = 905
+  DesignSize = (
+    1176
+    905)
   inherited lbCalendarList: TLabel
     Width = 1170
   end
@@ -24,6 +27,11 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0
+      end
+    end
+    inherited tabCalendarGrid: TTabSheet
+      inherited EnhCRDBGrid1: TEnhCRDBGrid
+        DataSource = dmVCLPhoenixPlannerController.dsCalendarEvents2
       end
     end
   end

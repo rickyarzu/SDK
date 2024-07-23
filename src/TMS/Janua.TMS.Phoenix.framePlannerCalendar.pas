@@ -18,6 +18,8 @@ uses
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)
+    GridPopup: TPopupMenu;
+    mnuGoogleSync1: TMenuItem;
   protected
     FPlannerController: TdmVCLPhoenixPlannerController;
     procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController); virtual;
@@ -40,6 +42,8 @@ procedure TframeTMSPhoenixPlannerCalendar.SetPlannerController(const Value: TdmV
 begin
   FPlannerController := Value;
   CustomController := FPlannerController;
+  GridPopup.Images := FPlannerController.SVGIconImageList16;
+  mnuGoogleSync1.Action := FPlannerController.actGoogleSync;
 end;
 
 end.

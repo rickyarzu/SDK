@@ -1334,14 +1334,23 @@ class destructor TJanuaApplication.Destroy;
 begin
   try
     FRESTClientConf.Free;
-  finally
-    FRESTClientConf := nil;
+  except
+    on e: Exception do
+      FRESTClientConf := nil;
   end;
   // FRestServerConf
   try
     FRestServerConf.Free;
-  finally
-    FRestServerConf := nil;
+  except
+    on e: Exception do
+      FRestServerConf := nil;
+  end;
+
+  try
+    FCloudConf.Free;
+  except
+    on e: Exception do
+      FCloudConf := nil;
   end;
 end;
 

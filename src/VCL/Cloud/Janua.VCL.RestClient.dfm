@@ -5808,6 +5808,15 @@ object frmVCLRestClient: TfrmVCLRestClient
             TabOrder = 13
             OnClick = btnHttpClientClick
           end
+          object btnJsonParse: TButton
+            Left = 1002
+            Top = 94
+            Width = 75
+            Height = 25
+            Caption = 'Json Parse'
+            TabOrder = 14
+            OnClick = btnJsonParseClick
+          end
         end
         object tabSQLQueryRequest: TTabSheet
           Caption = 'SQL Request'

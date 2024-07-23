@@ -77,8 +77,11 @@ function JanuaBoolJson(aBool: string): boolean;
 function JsonEncodeDate(aDate: TDateTime): string; overload;
 function JsonEncodeDate(aDate: TDate): string; overload;
 function JsonEncodeDateTime(aDateTime: TDateTime): string;
+function JsonEncodeDateTimeISO(aDateTime: TDateTime): string;
 function JsonDecodeDate(const aDate: string): TDateTime;
 function JsonDecodeDateStrict(const aDate: string): TDate;
+function JsonDecodeDateTime(const aDate: string): TDateTime;
+function JsonDecodeDateTimeISO(const aDateTime: string): TDateTime;
 // Json Object Management Strings
 function JsonObjectToString(const aObject: TJsonObject): string;
 function JsonObjectToJSON(const aObject: TJsonObject): string;
@@ -167,11 +170,24 @@ function JsonString(aTitle, AValue: String): TJsonObject; inline;
 function JsonResultArray(aTitle: string; AValue: TJsonArray): TJsonObject; inline;
 function JsonObject(aTitle: string; AValue: TJsonObject): TJsonObject; inline;
 
+function GetJsonString(const AValue: TJSONValue): string; inline;
+function GetJsonDateTime(const AValue: TJSONValue): TDateTime; inline;
+
 implementation
 
 uses Soap.EncdDecd, System.DateUtils, Writers,
   // Neon Json Serializer
   Neon.Core.Persistence.Json, Neon.Core.Utils;
+
+function GetJsonString(const AValue: TJSONValue): string;
+begin
+  Result := AValue.Value
+end;
+
+function GetJsonDateTime(const AValue: TJSONValue): TDateTime;
+begin
+
+end;
 
 function EscapeString(const AValue: string): string;
 const
@@ -366,10 +382,15 @@ begin
       if Assigned(LT) then
       begin
         LV := LT.JsonValue;
-        if Assigned(LV) then
+        if Assigned(LV) and not(LV is TJSONNull) { and (Length(tmp) in [38, 36]) } then
         begin
           tmp := LV.Value;
-          AValue := System.SysUtils.StringToGUID(tmp);
+          if Length(tmp) = 36 then
+            tmp := '{' + tmp + '}';
+          if Length(tmp) = 38 then
+            AValue := System.SysUtils.StringToGUID(tmp)
+          else
+            AValue := GUID_Null
         end
         else
           AValue := GUID_Null
@@ -386,6 +407,60 @@ begin
   end
   else
     AValue := GUID_Null;
+{$ENDIF FPC}
+end;
+
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDateTime;
+  vCheck: boolean); overload;
+{$IFNDEF FPC}
+var
+  LV: TJSONValue;
+  LT: TJsonPair;
+{$ENDIF FPC}
+begin
+{$IFNDEF FPC}
+  LV := nil;
+  LT := nil;
+{$ENDIF FPC}
+  var
+  sValue := '';
+  if Assigned(aObject) then
+  begin
+{$IFNDEF FPC}
+    try
+      LT := aObject.Get(aParam);
+      if Assigned(LT) then
+      begin
+        LV := LT.JsonValue;
+        if Assigned(LV) then
+          sValue := LV.Value
+      end
+      else
+        sValue := '';
+    except
+      on e: Exception do
+        sValue := '';
+    end;
+
+    if sValue = '' then
+      AValue := 0.0
+    else
+      try
+        if Pos(':', sValue) > 0 then
+          try
+            AValue := JsonDecodeDateTimeISO(sValue)
+          except
+            on e: Exception do
+              AValue := JsonDecodeDateTime(sValue)
+          end
+        else
+          AValue := JsonDecodeDate(sValue);
+      except
+        on e: Exception do
+          AValue := 0.0;
+      end;
+  end;
+
 {$ENDIF FPC}
 end;
 
@@ -454,43 +529,7 @@ begin
   end;
 end;
 
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDateTime;
-  vCheck: boolean = False);
-{$IFNDEF FPC}
-var
-  V: TJSONValue;
-{$ENDIF FPC}
-begin
-  AValue := 0.0;
-  if Assigned(aObject) then
-  begin
-{$IFNDEF FPC}
-    try
-      V := nil;
-      V := aObject.Get(aParam).JsonValue;
-      // FindJSONValue();
-      if V <> nil then
-        AValue := JsonDecodeDate(V.Value)
-      else
-
-        AValue := 0.0;
-    except
-      on e: Exception do
-      begin
-        AValue := 0.0;
-        if vCheck then
-          raise e;
-      end;
-    end;
-{$ENDIF FPC}
-  end;
-end;
-
-procedure JsonValue(aObject: TJsonObject;
-
-  const aParam: string;
-
-  var AValue: TDate);
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDate);
 var
 {$IFNDEF FPC}
   V: TJSONValue;
@@ -525,11 +564,7 @@ begin
 
 end;
 
-procedure JsonValue(aObject: TJsonObject;
-
-  const aParam: string;
-
-  var AValue: Cardinal); overload;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Cardinal); overload;
 var
 {$IFNDEF FPC}
   p: TJsonPair;
@@ -1192,6 +1227,22 @@ begin
   Result := EncodeDate(Year, Month, Day);
 end;
 
+function JsonDecodeDateTime(const aDate: string): TDateTime;
+var
+  ldt: TDateTime;
+  lFormat: TFormatSettings;
+begin
+  lFormat := TFormatSettings.Create;
+  lFormat.DateSeparator := '-';
+  lFormat.ShortDateFormat := 'yyyy-mm-dd';
+  ldt := strtodatetime('aDate', lFormat);
+end;
+
+function JsonDecodeDateTimeISO(const aDateTime: string): TDateTime;
+begin
+  Result := ISO8601ToDate(aDateTime);
+end;
+
 function JsonFloatToStr(const aFloat: Double; digits: integer): string;
 var
   FS_ENUS: TFormatSettings;
@@ -1263,7 +1314,12 @@ end;
 
 function JsonEncodeDateTime(aDateTime: TDateTime): string;
 begin
-  Result := FormatDateTime('yyyy-mm-dd hh:mm', aDateTime);
+  Result := FormatDateTime('yyyy-mm-dd hh:nn:ss.zzz', aDateTime);
+end;
+
+function JsonEncodeDateTimeISO(aDateTime: TDateTime): string;
+begin
+  Result := DateToISO8601(aDateTime);
 end;
 
 function JanuaBoolJson(aBool: string): boolean;

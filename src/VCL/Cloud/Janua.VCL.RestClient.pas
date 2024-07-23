@@ -5,7 +5,7 @@ interface
 uses
   // RTL
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.IOUtils,
-  System.NetEncoding, REST.Types, REST.Client, Data.Bind.Components, System.Net.Mime,
+  System.NetEncoding, REST.Types, REST.Client, Data.Bind.Components, System.Net.Mime, System.Json,
   // VCL
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.ComCtrls, VCL.Imaging.pngimage, VCL.Mask, VCL.Dialogs,
   VCL.StdCtrls,
@@ -83,6 +83,7 @@ type
     btnIndy: TButton;
     btnTHttp: TButton;
     btnHttpClient: TButton;
+    btnJsonParse: TButton;
     procedure btnGETClick(Sender: TObject);
     procedure btnPOSTClick(Sender: TObject);
     procedure btnPUTClick(Sender: TObject);
@@ -92,6 +93,7 @@ type
     procedure btnIndyClick(Sender: TObject);
     procedure btnTHttpClick(Sender: TObject);
     procedure btnHttpClientClick(Sender: TObject);
+    procedure btnJsonParseClick(Sender: TObject);
   public
     procedure ManageFileAttach(const aRequest: IRequest);
     procedure ManageAuthentication(const aRequest: IRequest);
@@ -102,7 +104,7 @@ var
 
 implementation
 
-uses Janua.Application.Framework, System.Net.HttpClientComponent,
+uses Janua.Application.Framework, System.Net.HttpClientComponent, Janua.Core.Json,
   System.Net.HttpClient, IdMultipartFormData, Janua.Core.Functions;
 
 {$R *.dfm}
@@ -176,14 +178,12 @@ begin
 
       MimeMultiPart.AddFile('file', aFileName);
 
-
       // Post Usando Multipart Vediamo se va
       { function Post(const AURL: string; const ASource: TMultipartFormData; const AResponseContent: TStream = nil;
         const AHeaders: TNetHeaders = nil): IHTTPResponse; overload; }
-        LResponse := WebClient.Post
+      LResponse := WebClient.Post
         ('https://api.cloudflare.com/client/v4/accounts/d39f5796a2b5f87a11e9ea7c7b2cfac7/images/v1',
         MimeMultiPart);
-
 
       /// Post usando il File Name (non va)
       { function Post(const AURL: string; const ASourceFile: string; const AResponseContent: TStream = nil;
@@ -263,6 +263,36 @@ begin
   finally
     Data.Free;
   end;
+end;
+
+procedure TfrmVCLRestClient.btnJsonParseClick(Sender: TObject);
+var
+  lResult: TJsonObject;
+  aDateTime: TDateTime;
+  lID: TGUID;
+  lVariants: TJsonArray;
+  lFileName: string;
+begin
+  // JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonObject); overload;
+  var
+  aObject := JsonParse(mmBody.Lines.Text);
+  var
+  lTest := False;
+
+  JSonValue(aObject, 'success', lTest);
+
+  // System.DateUtils.ISO8601ToDate
+
+  if lTest then
+  begin
+    JSonValue(aObject, 'result', lResult);
+    JSonValue(lResult, 'uploaded', aDateTime);
+    JSonValue(lResult, 'id', lID);
+    JSonValue(lResult, 'variants', lVariants);
+    lFileName := lVariants[0].Value;
+  end;
+
+  aObject.Free;
 end;
 
 procedure TfrmVCLRestClient.btnPOSTClick(Sender: TObject);
