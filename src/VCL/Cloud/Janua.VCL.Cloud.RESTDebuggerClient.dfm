@@ -23,7 +23,6 @@ object FrmMain: TFrmMain
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1008
     object Image1: TImage
       AlignWithMargins = True
       Left = 10
@@ -5232,7 +5231,6 @@ object FrmMain: TFrmMain
       Caption = 'Panel8'
       ShowCaption = False
       TabOrder = 0
-      ExplicitLeft = 768
       object lblRESTRequest4DelphiComponent: TLabel
         Left = 1
         Top = 1
@@ -5251,8 +5249,6 @@ object FrmMain: TFrmMain
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 1008
-    ExplicitHeight = 601
     object Splitter1: TSplitter
       Left = 0
       Top = 209
@@ -5272,8 +5268,6 @@ object FrmMain: TFrmMain
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 1008
-      ExplicitHeight = 384
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -5292,7 +5286,6 @@ object FrmMain: TFrmMain
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 1008
         object lblStatusCode: TLabel
           AlignWithMargins = True
           Left = 1004
@@ -5337,8 +5330,6 @@ object FrmMain: TFrmMain
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 1008
-        ExplicitHeight = 362
         object TabSheet6: TTabSheet
           Caption = 'Body'
           ImageIndex = 1
@@ -5456,10 +5447,8 @@ object FrmMain: TFrmMain
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1000
-            ExplicitHeight = 332
           end
         end
       end
@@ -5472,7 +5461,6 @@ object FrmMain: TFrmMain
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 1008
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -5491,14 +5479,13 @@ object FrmMain: TFrmMain
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 1008
       end
       object PageControl1: TPageControl
         Left = 0
         Top = 22
         Width = 1012
         Height = 187
-        ActivePage = TabSheet1
+        ActivePage = TabSheet2
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -5507,7 +5494,6 @@ object FrmMain: TFrmMain
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 1008
         object TabSheet1: TTabSheet
           Caption = 'Request'
           DesignSize = (
@@ -5532,7 +5518,6 @@ object FrmMain: TFrmMain
             TabOrder = 0
             Text = 'http://localhost:8888/users'
             TextHint = 'http://localhost:8888/users'
-            ExplicitWidth = 668
           end
           object edtAccept: TLabeledEdit
             Left = 688
@@ -5546,7 +5531,6 @@ object FrmMain: TFrmMain
             TabOrder = 1
             Text = 'application/json'
             TextHint = 'application/json'
-            ExplicitLeft = 684
           end
           object btnDELETE: TButton
             Left = 919
@@ -5557,7 +5541,6 @@ object FrmMain: TFrmMain
             Caption = 'DELETE'
             TabOrder = 2
             OnClick = btnDELETEClick
-            ExplicitLeft = 915
           end
           object btnPUT: TButton
             Left = 919
@@ -5568,7 +5551,6 @@ object FrmMain: TFrmMain
             Caption = 'PUT'
             TabOrder = 3
             OnClick = btnPUTClick
-            ExplicitLeft = 915
           end
           object btnPOST: TButton
             Left = 919
@@ -5579,7 +5561,6 @@ object FrmMain: TFrmMain
             Caption = 'POST'
             TabOrder = 4
             OnClick = btnPOSTClick
-            ExplicitLeft = 915
           end
           object btnGET: TButton
             Left = 919
@@ -5590,7 +5571,6 @@ object FrmMain: TFrmMain
             Caption = 'GET'
             TabOrder = 5
             OnClick = btnGETClick
-            ExplicitLeft = 915
           end
         end
         object TabSheet2: TTabSheet
@@ -11044,7 +11024,7 @@ object FrmMain: TFrmMain
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.8.4.8'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -11063,6 +11043,7 @@ object FrmMain: TFrmMain
     Top = 392
   end
   object AdvHTMLMemoStyler1: TAdvHTMLMemoStyler
+    AutoFormat = False
     LineComment = '//'
     MultiCommentLeft = '<!--'
     MultiCommentRight = '-->'

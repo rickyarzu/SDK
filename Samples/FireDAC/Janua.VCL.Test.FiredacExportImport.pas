@@ -16,7 +16,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, VCL.Graphics,
   VCL.Controls, VCL.Forms, VCL.Dialogs, Data.DB, VCL.StdCtrls, VCL.DBCtrls, VCL.Grids, VCL.DBGrids,
   VCL.ComCtrls, VCL.ExtCtrls, VCL.Samples.Spin, AdvCustomControl, AdvWebBrowser, AdvMemo, Advmxml, advmjson,
-  DBAdvMemo;
+  DBAdvMemo, Janua.VCL.frameRestClient;
 
 type
   TfrmVCLTestFiredacExportImport = class(TForm)
@@ -64,6 +64,8 @@ type
     btnRecord: TButton;
     btnXml: TButton;
     btnBin: TButton;
+    tabRest4Delphi: TTabSheet;
+    frameVCLJanuaRestClient1: TframeVCLJanuaRestClient;
     procedure btnExportBinaryClick(Sender: TObject);
     procedure btnImportBinaryClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -91,7 +93,7 @@ implementation
 {$R *.dfm}
 
 uses Janua.Test.dmFiredacExportImport, Janua.Core.Json, udmPgTestExportImport, Janua.Core.DB.Types,
-  Janua.Test.Firead.dmRemoteDMCustomers;
+  Janua.Test.FDac.dmRemoteDMCustomers;
 
 var
   LServer: TIdHTTPWebBrokerBridge;

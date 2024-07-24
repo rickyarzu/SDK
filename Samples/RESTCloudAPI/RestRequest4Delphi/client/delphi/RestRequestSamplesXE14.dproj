@@ -127,8 +127,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\..\..\src\VCL\Cloud\Janua.VCL.RestClient.pas">
-            <Form>frmVCLRestClient</Form>
+        <DCCReference Include="..\..\..\..\..\src\VCL\Cloud\Janua.VCL.frameRestClient.pas">
+            <Form>frameVCLJanuaRestClient</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

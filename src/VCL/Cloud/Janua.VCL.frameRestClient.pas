@@ -1,4 +1,4 @@
-unit Janua.VCL.RestClient;
+unit Janua.VCL.frameRestClient;
 
 interface
 
@@ -26,7 +26,7 @@ uses
 type
   TMyCompletionHandlerWithError = TProc<TObject>;
 
-  TfrmVCLRestClient = class(TForm)
+  TframeVCLJanuaRestClient = class(TFrame)
     Panel1: TPanel;
     Image1: TImage;
     Panel2: TPanel;
@@ -77,13 +77,15 @@ type
     RESTRequest: TRESTRequest;
     RESTResponse: TRESTResponse;
     btnUpload: TButton;
-    btnCurl: TButton;
     IdHTTP: TIdHTTP;
     OpenSSL: TIdSSLIOHandlerSocketOpenSSL;
+    tabCloudFlare: TTabSheet;
     btnIndy: TButton;
     btnTHttp: TButton;
     btnHttpClient: TButton;
     btnJsonParse: TButton;
+    tabWordPress: TTabSheet;
+    btnCurl: TButton;
     procedure btnGETClick(Sender: TObject);
     procedure btnPOSTClick(Sender: TObject);
     procedure btnPUTClick(Sender: TObject);
@@ -100,7 +102,7 @@ type
   end;
 
 var
-  frmVCLRestClient: TfrmVCLRestClient;
+  frameVCLJanuaRestClient: TframeVCLJanuaRestClient;
 
 implementation
 
@@ -109,7 +111,7 @@ uses Janua.Application.Framework, System.Net.HttpClientComponent, Janua.Core.Jso
 
 {$R *.dfm}
 
-procedure TfrmVCLRestClient.btnCurlClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnCurlClick(Sender: TObject);
 begin
   var
   vExec := AnsiString('curl -X POST -F file=@C:\Januaproject\Data\images\photo-1560521166-117ca72366bd.jpg ' +
@@ -125,7 +127,7 @@ begin
 
 end;
 
-procedure TfrmVCLRestClient.btnDELETEClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnDELETEClick(Sender: TObject);
 var
   LResponse: IResponse;
 begin
@@ -135,7 +137,7 @@ begin
   lblStatusCode.Caption := LResponse.StatusCode.ToString;
 end;
 
-procedure TfrmVCLRestClient.btnGETClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnGETClick(Sender: TObject);
 var
   LResponse: IResponse;
   LRequest: IRequest;
@@ -150,7 +152,7 @@ begin
   lblStatusCode.Caption := LResponse.StatusCode.ToString;
 end;
 
-procedure TfrmVCLRestClient.btnHttpClientClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnHttpClientClick(Sender: TObject);
 var
   LResponse: IHTTPResponse;
   WebClient: { THTTPClient } TNetHTTPClient;
@@ -176,7 +178,8 @@ begin
       var
       aFileName := 'C:\Januaproject\Data\images\photo-1560521166-117ca72366bd.jpg';
 
-      MimeMultiPart.AddFile('file', aFileName);
+      // MimeMultiPart.AddFile('file', aFileName);
+      MimeMultiPart.AddField('file', aFile);
 
       // Post Usando Multipart Vediamo se va
       { function Post(const AURL: string; const ASource: TMultipartFormData; const AResponseContent: TStream = nil;
@@ -185,21 +188,6 @@ begin
         ('https://api.cloudflare.com/client/v4/accounts/d39f5796a2b5f87a11e9ea7c7b2cfac7/images/v1',
         MimeMultiPart);
 
-      /// Post usando il File Name (non va)
-      { function Post(const AURL: string; const ASourceFile: string; const AResponseContent: TStream = nil;
-        const AHeaders: TNetHeaders = nil): IHTTPResponse; overload; }
-      {
-        LResponse := WebClient.Post
-        ('https://api.cloudflare.com/client/v4/accounts/d39f5796a2b5f87a11e9ea7c7b2cfac7/images/v1',
-        aFileName);
-      }
-
-      // Post usando la String List (non va)
-      {
-        LResponse := WebClient.Post
-        ('https://api.cloudflare.com/client/v4/accounts/d39f5796a2b5f87a11e9ea7c7b2cfac7/images/v1', postdata,
-        nil, TEncoding.UTF8, nil);
-      }
     finally
       { postdata.Free; }
       MimeMultiPart.Free;
@@ -213,7 +201,7 @@ begin
 
 end;
 
-procedure TfrmVCLRestClient.btnIndyClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnIndyClick(Sender: TObject);
 begin
 
   { var
@@ -265,7 +253,7 @@ begin
   end;
 end;
 
-procedure TfrmVCLRestClient.btnJsonParseClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnJsonParseClick(Sender: TObject);
 var
   lResult: TJsonObject;
   aDateTime: TDateTime;
@@ -295,7 +283,7 @@ begin
   aObject.Free;
 end;
 
-procedure TfrmVCLRestClient.btnPOSTClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnPOSTClick(Sender: TObject);
 var
   LResponse: IResponse;
 begin
@@ -315,7 +303,7 @@ begin
   lblStatusCode.Caption := LResponse.StatusCode.ToString;
 end;
 
-procedure TfrmVCLRestClient.btnPUTClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnPUTClick(Sender: TObject);
 var
   LResponse: IResponse;
 begin
@@ -326,7 +314,7 @@ begin
   lblStatusCode.Caption := LResponse.StatusCode.ToString;
 end;
 
-procedure TfrmVCLRestClient.btnTHttpClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnTHttpClick(Sender: TObject);
 var
   LResponse: IHTTPResponse;
   LClient: THTTPClient;
@@ -369,7 +357,7 @@ begin
 {$ENDIF MSWINDOWS}
 end;
 
-procedure TfrmVCLRestClient.btnUploadClick(Sender: TObject);
+procedure TframeVCLJanuaRestClient.btnUploadClick(Sender: TObject);
 var
   FileStream: TFileStream;
 begin
@@ -399,7 +387,7 @@ begin
 
 end;
 
-procedure TfrmVCLRestClient.ManageAuthentication(const aRequest: IRequest);
+procedure TframeVCLJanuaRestClient.ManageAuthentication(const aRequest: IRequest);
 begin
   case rgAuthentication.ItemIndex of
     1:
@@ -409,7 +397,7 @@ begin
   end;
 end;
 
-procedure TfrmVCLRestClient.ManageFileAttach(const aRequest: IRequest);
+procedure TframeVCLJanuaRestClient.ManageFileAttach(const aRequest: IRequest);
 begin
 
   // Aggiungere il file al corpo della richiesta

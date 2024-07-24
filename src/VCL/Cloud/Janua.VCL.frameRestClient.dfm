@@ -1,26 +1,26 @@
-object frmVCLRestClient: TfrmVCLRestClient
+object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
   Left = 0
   Top = 0
-  Caption = 'REST Request - Samples'
-  ClientHeight = 772
-  ClientWidth = 1088
-  Color = clBtnFace
+  Width = 1141
+  Height = 685
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  TextHeight = 13
+  ParentFont = False
+  TabOrder = 0
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1088
+    Width = 1141
     Height = 94
     Align = alTop
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 640
     object Image1: TImage
       AlignWithMargins = True
       Left = 10
@@ -5223,16 +5223,17 @@ object frmVCLRestClient: TfrmVCLRestClient
     object pnlRequest: TPanel
       Left = 139
       Top = 0
-      Width = 949
+      Width = 1002
       Height = 94
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 501
       object edtBaseURL: TLabeledEdit
         AlignWithMargins = True
         Left = 3
         Top = 70
-        Width = 943
+        Width = 996
         Height = 21
         Align = alBottom
         EditLabel.Width = 49
@@ -5241,23 +5242,25 @@ object frmVCLRestClient: TfrmVCLRestClient
         TabOrder = 0
         Text = 'http://localhost:8888/users'
         TextHint = 'http://localhost:8888/users'
+        ExplicitWidth = 982
       end
       object pnlUsernamePassword: TPanel
         Left = 0
         Top = 0
-        Width = 949
+        Width = 1002
         Height = 49
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
+        ExplicitWidth = 501
         DesignSize = (
-          949
+          1002
           49)
         object lbedUserName: TLabeledEdit
           AlignWithMargins = True
           Left = 3
           Top = 18
-          Width = 390
+          Width = 443
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           EditLabel.Width = 59
@@ -5269,7 +5272,7 @@ object frmVCLRestClient: TfrmVCLRestClient
         end
         object lbedPassword: TLabeledEdit
           AlignWithMargins = True
-          Left = 399
+          Left = 452
           Top = 18
           Width = 338
           Height = 21
@@ -5280,10 +5283,11 @@ object frmVCLRestClient: TfrmVCLRestClient
           TabOrder = 1
           Text = ''
           TextHint = 'application/json'
+          ExplicitLeft = -49
         end
         object rgAuthentication: TRadioGroup
           AlignWithMargins = True
-          Left = 749
+          Left = 802
           Top = 3
           Width = 197
           Height = 43
@@ -5296,6 +5300,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             'Token'
             'Basic')
           TabOrder = 2
+          ExplicitLeft = 301
         end
       end
     end
@@ -5303,15 +5308,17 @@ object frmVCLRestClient: TfrmVCLRestClient
   object Panel2: TPanel
     Left = 0
     Top = 94
-    Width = 1088
-    Height = 678
+    Width = 1141
+    Height = 591
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
+    ExplicitWidth = 640
+    ExplicitHeight = 386
     object Splitter1: TSplitter
       Left = 0
       Top = 259
-      Width = 1088
+      Width = 1141
       Height = 8
       Cursor = crVSplit
       Align = alTop
@@ -5322,15 +5329,17 @@ object frmVCLRestClient: TfrmVCLRestClient
     object Panel3: TPanel
       Left = 0
       Top = 267
-      Width = 1088
-      Height = 411
+      Width = 1141
+      Height = 324
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 640
+      ExplicitHeight = 119
       object Panel6: TPanel
         Left = 0
         Top = 0
-        Width = 1088
+        Width = 1141
         Height = 22
         Align = alTop
         Alignment = taLeftJustify
@@ -5345,9 +5354,10 @@ object frmVCLRestClient: TfrmVCLRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 640
         object lblStatusCode: TLabel
           AlignWithMargins = True
-          Left = 1080
+          Left = 1133
           Top = 2
           Width = 3
           Height = 20
@@ -5357,11 +5367,12 @@ object frmVCLRestClient: TfrmVCLRestClient
           Margins.Bottom = 0
           Align = alRight
           Alignment = taRightJustify
+          ExplicitLeft = 1080
           ExplicitHeight = 15
         end
         object Label3: TLabel
           AlignWithMargins = True
-          Left = 1007
+          Left = 1060
           Top = 2
           Width = 68
           Height = 20
@@ -5372,14 +5383,15 @@ object frmVCLRestClient: TfrmVCLRestClient
           Align = alRight
           Alignment = taRightJustify
           Caption = 'Status code:'
+          ExplicitLeft = 1007
           ExplicitHeight = 15
         end
       end
       object PageControl2: TPageControl
         Left = 0
         Top = 22
-        Width = 1088
-        Height = 389
+        Width = 1141
+        Height = 302
         ActivePage = TabSheet6
         Align = alClient
         Font.Charset = ANSI_CHARSET
@@ -5389,14 +5401,16 @@ object frmVCLRestClient: TfrmVCLRestClient
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        ExplicitWidth = 640
+        ExplicitHeight = 97
         object TabSheet6: TTabSheet
           Caption = 'Body'
           ImageIndex = 1
           object mmBody: TDBAdvMemo
             Left = 0
             Top = 0
-            Width = 1080
-            Height = 359
+            Width = 1133
+            Height = 272
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -5510,6 +5524,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 632
+            ExplicitHeight = 67
           end
         end
         object tabImage: TTabSheet
@@ -5518,8 +5534,8 @@ object frmVCLRestClient: TfrmVCLRestClient
           object Image2: TImage
             Left = 0
             Top = 0
-            Width = 1080
-            Height = 359
+            Width = 1133
+            Height = 272
             Align = alClient
             ExplicitLeft = 624
             ExplicitWidth = 456
@@ -5531,15 +5547,16 @@ object frmVCLRestClient: TfrmVCLRestClient
     object Panel4: TPanel
       Left = 0
       Top = 0
-      Width = 1088
+      Width = 1141
       Height = 259
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 640
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 1088
+        Width = 1141
         Height = 22
         Align = alTop
         Alignment = taLeftJustify
@@ -5554,11 +5571,12 @@ object frmVCLRestClient: TfrmVCLRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 640
       end
       object PageControl1: TPageControl
         Left = 0
         Top = 22
-        Width = 1088
+        Width = 1141
         Height = 237
         ActivePage = TabSheet1
         Align = alClient
@@ -5569,10 +5587,11 @@ object frmVCLRestClient: TfrmVCLRestClient
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        ExplicitWidth = 640
         object TabSheet1: TTabSheet
           Caption = 'Request'
           DesignSize = (
-            1080
+            1133
             207)
           object Label1: TLabel
             Left = 10
@@ -5589,7 +5608,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'File To Upload'
           end
           object edtAccept: TLabeledEdit
-            Left = 762
+            Left = 1263
             Top = 24
             Width = 143
             Height = 23
@@ -5600,11 +5619,12 @@ object frmVCLRestClient: TfrmVCLRestClient
             TabOrder = 0
             Text = 'application/json'
             TextHint = 'application/json'
+            ExplicitLeft = 762
           end
           object mmCustomBody: TMemo
             Left = 9
             Top = 149
-            Width = 896
+            Width = 1000
             Height = 49
             Anchors = [akLeft, akTop, akRight]
             Lines.Strings = (
@@ -5614,8 +5634,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             TabOrder = 1
           end
           object btnDELETE: TButton
-            Left = 924
-            Top = 94
+            Left = 1040
+            Top = 127
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5624,8 +5644,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnDELETEClick
           end
           object btnPUT: TButton
-            Left = 925
-            Top = 63
+            Left = 1040
+            Top = 96
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5634,8 +5654,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnPUTClick
           end
           object btnPOST: TButton
-            Left = 925
-            Top = 32
+            Left = 1040
+            Top = 31
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5644,8 +5664,8 @@ object frmVCLRestClient: TfrmVCLRestClient
             OnClick = btnPOSTClick
           end
           object btnGET: TButton
-            Left = 925
-            Top = 1
+            Left = 1040
+            Top = 0
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
@@ -5657,7 +5677,7 @@ object frmVCLRestClient: TfrmVCLRestClient
             AlignWithMargins = True
             Left = 3
             Top = 24
-            Width = 734
+            Width = 1000
             Height = 23
             Anchors = [akLeft, akTop, akRight]
             EditLabel.Width = 34
@@ -5670,7 +5690,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           object edFileName: TAdvFileNameEdit
             Left = 10
             Top = 88
-            Width = 895
+            Width = 993
             Height = 23
             BorderColor = 11250603
             EmptyTextStyle = []
@@ -5761,61 +5781,14 @@ object frmVCLRestClient: TfrmVCLRestClient
             TabOrder = 8
           end
           object btnUpload: TButton
-            Left = 924
-            Top = 125
+            Left = 1040
+            Top = 65
             Width = 72
             Height = 25
             Anchors = [akTop, akRight]
             Caption = 'Upload File'
             TabOrder = 9
             OnClick = btnUploadClick
-          end
-          object btnCurl: TButton
-            Left = 924
-            Top = 155
-            Width = 72
-            Height = 25
-            Anchors = [akTop, akRight]
-            Caption = 'Curl'
-            TabOrder = 10
-            OnClick = btnCurlClick
-          end
-          object btnIndy: TButton
-            Left = 1003
-            Top = 1
-            Width = 72
-            Height = 25
-            Anchors = [akTop, akRight]
-            Caption = 'Indy'
-            TabOrder = 11
-            OnClick = btnIndyClick
-          end
-          object btnTHttp: TButton
-            Left = 1003
-            Top = 32
-            Width = 75
-            Height = 25
-            Caption = 'THttp'
-            TabOrder = 12
-            OnClick = btnTHttpClick
-          end
-          object btnHttpClient: TButton
-            Left = 1003
-            Top = 63
-            Width = 75
-            Height = 25
-            Caption = 'HttpClient'
-            TabOrder = 13
-            OnClick = btnHttpClientClick
-          end
-          object btnJsonParse: TButton
-            Left = 1002
-            Top = 94
-            Width = 75
-            Height = 25
-            Caption = 'Json Parse'
-            TabOrder = 14
-            OnClick = btnJsonParseClick
           end
         end
         object tabSQLQueryRequest: TTabSheet
@@ -5824,7 +5797,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           object pnlSQLButtons: TPanel
             Left = 0
             Top = 0
-            Width = 1080
+            Width = 1133
             Height = 41
             Align = alTop
             TabOrder = 0
@@ -5832,7 +5805,7 @@ object frmVCLRestClient: TfrmVCLRestClient
           object DBAdvMemo1: TDBAdvMemo
             Left = 0
             Top = 41
-            Width = 1080
+            Width = 1133
             Height = 166
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
@@ -5996,6 +5969,64 @@ object frmVCLRestClient: TfrmVCLRestClient
             Caption = 'Get Rest Client'
             TabOrder = 3
           end
+        end
+        object tabCloudFlare: TTabSheet
+          Caption = 'CloudFlare'
+          ImageIndex = 5
+          DesignSize = (
+            1133
+            207)
+          object btnIndy: TButton
+            Left = 507
+            Top = 9
+            Width = 72
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Indy'
+            TabOrder = 0
+            OnClick = btnIndyClick
+          end
+          object btnTHttp: TButton
+            Left = 99
+            Top = 9
+            Width = 75
+            Height = 25
+            Caption = 'THttp'
+            TabOrder = 1
+            OnClick = btnTHttpClick
+          end
+          object btnHttpClient: TButton
+            Left = 195
+            Top = 9
+            Width = 75
+            Height = 25
+            Caption = 'HttpClient'
+            TabOrder = 2
+            OnClick = btnHttpClientClick
+          end
+          object btnJsonParse: TButton
+            Left = 290
+            Top = 9
+            Width = 75
+            Height = 25
+            Caption = 'Json Parse'
+            TabOrder = 3
+            OnClick = btnJsonParseClick
+          end
+          object btnCurl: TButton
+            Left = 889
+            Top = 9
+            Width = 72
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Curl'
+            TabOrder = 4
+            OnClick = btnCurlClick
+          end
+        end
+        object tabWordPress: TTabSheet
+          Caption = 'WordPress'
+          ImageIndex = 6
         end
       end
     end
