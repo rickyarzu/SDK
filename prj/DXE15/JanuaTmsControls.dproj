@@ -91,10 +91,10 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;TMSCloudPkg;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;TMSCloudPkg;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -146,9 +146,9 @@
         <DCCReference Include="TMSWebGMapsPkg.dcp"/>
         <DCCReference Include="TMSVCLUIPackPkgDXE15.dcp"/>
         <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
-        <DCCReference Include="TMSCloudPkg.dcp"/>
+        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
         <DCCReference Include="JanuaVCLComponents.dcp"/>
-        <DCCReference Include="VCLTMSFNCCloudPackPkg.dcp"/>
+        <DCCReference Include="VCLTMSFNCCloudPackPkgDXE15.dcp"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas"/>

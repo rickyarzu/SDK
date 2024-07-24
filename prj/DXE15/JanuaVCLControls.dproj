@@ -152,10 +152,10 @@
         <DCCReference Include="JvCore.dcp"/>
         <DCCReference Include="FlexCel_Core.dcp"/>
         <DCCReference Include="VCL_FlexCel_Core.dcp"/>
-        <DCCReference Include="VCLTMSFNCCorePkg.dcp"/>
+        <DCCReference Include="VCLTMSFNCCorePkgDXE15.dcp"/>
         <DCCReference Include="FlexCel_XlsAdapter.dcp"/>
         <DCCReference Include="TMSVCLUIPackPkgDXE15.dcp"/>
-        <DCCReference Include="TMSCloudPkg.dcp"/>
+        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
         <DCCReference Include="VCLThemeSelector.dcp"/>
         <DCCReference Include="SVGIconImageList.dcp"/>
         <DCCReference Include="gtDocEng.dcp"/>

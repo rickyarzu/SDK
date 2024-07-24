@@ -13,8 +13,8 @@ package FMXTMSFNCBloxPkg;
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
 {$OPTIMIZATION ON}
-{$OVERFLOWCHECKS OFF}
-{$RANGECHECKS OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
 {$REFERENCEINFO OFF}
 {$SAFEDIVIDE OFF}
 {$STACKFRAMES OFF}
@@ -32,7 +32,7 @@ package FMXTMSFNCBloxPkg;
 requires
   rtl,
   fmx,
-  FMXTMSFNCCorePkg;
+  FMXTMSFNCCorePkgDXE15;
 
 contains
   FMX.TMSFNCBloxControl in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxControl.pas',
@@ -67,7 +67,6 @@ contains
   FMX.TMSFNCBloxShapesElectrical2 in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesElectrical2.pas',
   FMX.TMSFNCBloxShapesFlowchart in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesFlowchart.pas',
   FMX.TMSFNCBloxShapesUML in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxShapesUML.pas',
-  FMX.TMSFNCBloxTestsBasic in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxTestsBasic.pas',
   FMX.TMSFNCBloxUIEventTypes in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIEventTypes.pas',
   FMX.TMSFNCBloxUIExceptions in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIExceptions.pas',
   FMX.TMSFNCBloxUIPresenter in '..\..\..\tmssoftware\TMS FNC Blox\FMX.TMSFNCBloxUIPresenter.pas',

@@ -10,7 +10,6 @@ inherited frmVCLCarServiceBackOfficeMain: TfrmVCLCarServiceBackOfficeMain
   inherited StatusBar: TStatusBar
     Top = 706
     Width = 1028
-    ExplicitLeft = 0
     ExplicitTop = 706
     ExplicitWidth = 1028
   end
@@ -18,11 +17,6 @@ inherited frmVCLCarServiceBackOfficeMain: TfrmVCLCarServiceBackOfficeMain
     Width = 1028
     StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 1028
-    inherited MenuButtonToolbar: TToolBar
-      inherited ToolButton1: TToolButton
-        ExplicitWidth = 8
-      end
-    end
     inherited ToolBarTopRight: TToolBar
       Left = 989
       ExplicitLeft = 989
@@ -30,9 +24,8 @@ inherited frmVCLCarServiceBackOfficeMain: TfrmVCLCarServiceBackOfficeMain
   end
   inherited SplitViewLeft: TSplitView
     Height = 664
+    DoubleBuffered = True
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitLeft = -6
-    ExplicitTop = 45
     ExplicitHeight = 664
   end
   inherited pgcApplicationArea: TPageControl

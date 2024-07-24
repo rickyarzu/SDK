@@ -907,18 +907,14 @@ end;
 
 procedure TdmVCLPlannerCustomController.ConnectGCalendar;
 begin
-  AdvGCalendar1.Logging := True;
-  AdvGCalendar1.LogLevel := llDetail;
-  AdvGCalendar1.App.Key := TJanuaApplication.CloudConf.GoogleAppKey;
-  AdvGCalendar1.App.Secret := TJanuaApplication.CloudConf.GoogleAppSecret;
-
-  if not AdvGCalendar1.TestTokens then
+  (* if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.RefreshAccess;
 
-  if not AdvGCalendar1.TestTokens then
+    if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.DoAuth
-  else
-    InitGoogle;
+    else
+  *)
+  InitGoogle;
 end;
 
 procedure TdmVCLPlannerCustomController.ConnectLiveCalendar;
@@ -1209,7 +1205,7 @@ begin
       DBDaySourceCalendar.Active := True;
       if Assigned(FOnAfterConnect) then
         FOnAfterConnect(Self);
-      NotifyGCalendars;
+      { NotifyGCalendars; }
     end,
     procedure(const Ex: Exception)
     begin

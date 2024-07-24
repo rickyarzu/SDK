@@ -42,9 +42,9 @@ requires
   TMSWebGMapsPkg,
   TMSVCLUIPackPkgDXE15,
   TMSVCLUIPackPkgExDXE15,
-  TMSCloudPkg,
+  TMSCloudPkgDXE15,
   JanuaVCLComponents,
-  VCLTMSFNCCloudPackPkg;
+  VCLTMSFNCCloudPackPkgDXE15;
 
 contains
   Janua.Legacy.SelectPrinter in '..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas',
