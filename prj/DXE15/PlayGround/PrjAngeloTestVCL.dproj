@@ -158,6 +158,14 @@
         <DCCReference Include="..\..\..\Samples\Angelo\uFormHelloWorld.pas">
             <Form>frmHelloWorld</Form>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas">
+            <Form>dlgVCLCustomLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Samples\Angelo\udlgVCLAngeloLogin.pas">
+            <Form>dlgVCLAngeloLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
