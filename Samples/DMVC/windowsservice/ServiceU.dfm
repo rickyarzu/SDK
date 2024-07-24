@@ -1,4 +1,5 @@
 object ArticlesService: TArticlesService
+  OldCreateOrder = False
   OnCreate = ServiceCreate
   AllowPause = False
   DisplayName = 'DMVCFramework Articles RESTServer'

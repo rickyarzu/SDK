@@ -66,7 +66,7 @@ procedure TArticlesService.ServiceStart(Sender: TService; var Started: Boolean);
 begin
   fServer := TIdHTTPWebBrokerBridge.Create(nil);
   fServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
-  fServer.DefaultPort := 8061;
+  fServer.DefaultPort := 8080;
   fServer.Active := True;
 end;
 

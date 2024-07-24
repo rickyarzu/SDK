@@ -229,6 +229,7 @@
         <DCCReference Include="FireDACCommonDriver.dcp"/>
         <DCCReference Include="FireDACCommon.dcp"/>
         <DCCReference Include="Neon.dcp"/>
+        <DCCReference Include="OpenAIPackage.dcp"/>
         <DCCReference Include="Spring.Base.dcp"/>
         <DCCReference Include="JanuaCoreThirdParty.dcp"/>
         <DCCReference Include="RestRequestLib.dcp"/>
@@ -604,7 +605,7 @@
         <DCCReference Include="..\..\src\januacore\Janua.Orm.Firedac.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.StackTrace.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Components.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.WebServer.pas"/>
+        <DCCReference Include="..\..\src\januacore\Janua.Http.WebServer.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Intf.pas"/>
@@ -614,7 +615,19 @@
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas"/>
+        <DCCReference Include="..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\WebBroker\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\WebBroker\ServerConst\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\WebServer\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Http\WebServer\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\WebServer\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Http\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Http\WebServer\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Wordpress\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

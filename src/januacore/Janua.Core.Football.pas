@@ -362,9 +362,11 @@ type
     property cdsCalendarMatchDay: TJanuaJsonDacDataset read FcdsCalendarMatchDay write SetcdsCalendarMatchDay;
     property cdsCalendarMatches: TJanuaJsonDacDataset read FcdsCalendarMatches write SetcdsCalendarMatches;
     property cdsMatchDetail: TJanuaJsonDacDataset read FcdsMatchDetail write SetcdsMatchDetail;
-    property cdsMatchDetailEvents: TJanuaJsonDacDataset read FcdsMatchDetailEvents write SetcdsMatchDetailEvents;
+    property cdsMatchDetailEvents: TJanuaJsonDacDataset read FcdsMatchDetailEvents
+      write SetcdsMatchDetailEvents;
     property cdsMatchDetailHome: TJanuaJsonDacDataset read FcdsMatchDetailHome write SetcdsMatchDetailHome;
-    property cdsMatchDetailVisitors: TJanuaJsonDacDataset read FcdsMatchDetailVisitors write SetcdsMatchDetailVisitors;
+    property cdsMatchDetailVisitors: TJanuaJsonDacDataset read FcdsMatchDetailVisitors
+      write SetcdsMatchDetailVisitors;
     property cdsChampTeam: TJanuaJsonDacDataset read FcdsChampTeam write SetcdsChampTeam;
     property cdsChampTeamPlayers: TJanuaJsonDacDataset read FcdsChampTeamPlayers write SetcdsChampTeamPlayers;
     property cdsChampTeamMatches: TJanuaJsonDacDataset read FcdsChampTeamMatches write SetcdsChampTeamMatches;
@@ -468,7 +470,8 @@ type
     procedure TerminateRanking(aIsFrame: boolean = False);
     procedure TerminateChampionshipTeam(aIsFrame: boolean = False);
   published
-    property JanuaServerFootball: TJanuaCustomServerFootball read FJanuaServerFootball write SetJanuaServerFootball;
+    property JanuaServerFootball: TJanuaCustomServerFootball read FJanuaServerFootball
+      write SetJanuaServerFootball;
   end;
 
 type
@@ -507,9 +510,11 @@ type
     function ActionPlayerCareer(aUseFrame: boolean = False): boolean;
     // Crea la Pagina della Carriera del giocatore
   published
-    property JanuaServerFootball: TJanuaCustomServerFootball read FJanuaServerFootball write SetJanuaServerFootball;
+    property JanuaServerFootball: TJanuaCustomServerFootball read FJanuaServerFootball
+      write SetJanuaServerFootball;
     // Questo il codice HTML della lista degli Istituti
-    property JanuaTemplateFootball: TJanuaTemplateFootball read FJanuaTemplateFootball write SetJanuaTemplateFootball;
+    property JanuaTemplateFootball: TJanuaTemplateFootball read FJanuaTemplateFootball
+      write SetJanuaTemplateFootball;
   end;
 
 {$IFDEF webbroker}
@@ -534,28 +539,28 @@ type
     procedure WritePage(var aResponse: TWebResponse); override;
   public
     // Actions List **********************************************************************************************
-    procedure ActionDoLogOut(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      InternalCall: boolean = False);
-    procedure ActionDoLoginFB(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aFrame: boolean = False);
-    procedure ActionDoRegister(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aFrame: boolean = False);
-    procedure ActionHomeDefault(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
-    procedure ActionLiveScore(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
-    procedure ActionMatchDetail(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
+    procedure ActionDoLogOut(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; InternalCall: boolean = False);
+    procedure ActionDoLoginFB(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aFrame: boolean = False);
+    procedure ActionDoRegister(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aFrame: boolean = False);
+    procedure ActionHomeDefault(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
+    procedure ActionLiveScore(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
+    procedure ActionMatchDetail(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
     procedure ActionChampionshipTeam(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
       var Handled: boolean; aUseFrame: boolean = False);
-    procedure ActionRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
-    procedure ActionGoalRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
-    procedure ActionMatchDay(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
-    procedure ActionPlayerCareer(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: boolean;
-      aUseFrame: boolean = False);
+    procedure ActionRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
+    procedure ActionGoalRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
+    procedure ActionMatchDay(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
+    procedure ActionPlayerCareer(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+      var Handled: boolean; aUseFrame: boolean = False);
     // ********************************************************** fine action list ************************************
   published
     property JanuaFootballController: TJanuaFootballWebController read FJanuaFootballController
@@ -667,7 +672,8 @@ type
   protected
     procedure Execute; override;
   public
-    property JanuaFootballClient: TJanuaCustomFootballClient read FJanuaFootballClient write SetJanuaFootballClient;
+    property JanuaFootballClient: TJanuaCustomFootballClient read FJanuaFootballClient
+      write SetJanuaFootballClient;
   end;
 
 type
@@ -679,7 +685,8 @@ type
   public
     procedure getChampSummary;
   public
-    property JanuaFootballClient: TJanuaCustomFootballClient read FJanuaFootballClient write SetJanuaFootballClient;
+    property JanuaFootballClient: TJanuaCustomFootballClient read FJanuaFootballClient
+      write SetJanuaFootballClient;
 
   end;
 
@@ -1488,7 +1495,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenChampionship  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenChampionship  IFootballSettings not set');
   aTransaction := self.InTransaction;
   self.CreateDataModule;
   try
@@ -1530,7 +1538,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenChampionshipsList  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenChampionshipsList  IFootballSettings not set');
   aTransaction := self.InTransaction;
   self.CreateDataModule;
   try
@@ -1553,7 +1562,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
   aTransaction := self.InTransaction;
   self.CreateDataModule;
   try
@@ -1575,15 +1585,16 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
   aTransaction := self.InTransaction;
   self.CreateDataModule;
   try
     // self.InternalOpenChampionship;
     self.InternalOpenLiveScore;
     self.AssignDatasets;
-    FMatchDetails.SetFromDataset(cdsChampionship.MemDataset, cdsMatchDetail.MemDataset, cdsMatchDetailHome.MemDataset,
-      cdsMatchDetailVisitors.MemDataset, cdsMatchDetailEvents.MemDataset);
+    FMatchDetails.SetFromDataset(cdsChampionship.MemDataset, cdsMatchDetail.MemDataset,
+      cdsMatchDetailHome.MemDataset, cdsMatchDetailVisitors.MemDataset, cdsMatchDetailEvents.MemDataset);
     if FFootballSettings.match_id = 0 then
     begin
       self.FChampionship.SetFromDataset(cdsChampionship.MemDataset);
@@ -1602,7 +1613,8 @@ procedure TJanuaCustomServerFootball.OpenLiveScore(aSeasonID, aLeagueID, aMatchD
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
   self.season_id := aSeasonID;
   self.league_id := aLeagueID;
   self.match_day := aMatchDay;
@@ -1613,7 +1625,8 @@ procedure TJanuaCustomServerFootball.OpenLiveScore(aSeasonID, aLeagueID: smallin
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenLiveScore  IFootballSettings not set');
   self.season_id := aSeasonID;
   self.league_id := aLeagueID;
   self.match_day := 0;
@@ -1624,7 +1637,8 @@ procedure TJanuaCustomServerFootball.OpenMatchDetail(aMatchID: int64);
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
   self.match_id := aMatchID;
   self.OpenMatchDetail;
 end;
@@ -1635,7 +1649,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
 
   aTransaction := self.InTransaction;
   self.StartTransaction;
@@ -1643,8 +1658,8 @@ begin
   try
     self.InternalOpenMatchDetail;
     self.AssignDatasets;
-    FMatchDetail.SetFromDataset(cdsChampionship.MemDataset, cdsMatchDetail.MemDataset, cdsMatchDetailHome.MemDataset,
-      cdsMatchDetailVisitors.MemDataset, cdsMatchDetailEvents.MemDataset);
+    FMatchDetail.SetFromDataset(cdsChampionship.MemDataset, cdsMatchDetail.MemDataset,
+      cdsMatchDetailHome.MemDataset, cdsMatchDetailVisitors.MemDataset, cdsMatchDetailEvents.MemDataset);
   finally
     if not aTransaction then
       self.EndTransaction;
@@ -1656,7 +1671,8 @@ procedure TJanuaCustomServerFootball.OpenMatchDetail(aSeasonID, aLeagueID, aMatc
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
 
   self.match_id := 0;
   self.season_id := aSeasonID;
@@ -1672,14 +1688,16 @@ begin
 
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenMatchDetail  IFootballSettings not set');
 
   aTransaction := self.InTransaction;
   self.StartTransaction;
   self.CreateDataModule;
   try
     self.InternalOpenMatches;
-    self.FMatches.SetFromDataset(FcdsMatches.MemDataset, FcdsMatchDay.MemDataset, FcdsChampionship.MemDataset);
+    self.FMatches.SetFromDataset(FcdsMatches.MemDataset, FcdsMatchDay.MemDataset,
+      FcdsChampionship.MemDataset);
   finally
     if not aTransaction then
       self.EndTransaction;
@@ -1693,7 +1711,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenNextMatches  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenNextMatches  IFootballSettings not set');
 
   aTransaction := self.InTransaction;
   self.StartTransaction;
@@ -1716,7 +1735,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenPlayerCareer  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenPlayerCareer  IFootballSettings not set');
 
   try
     aTransaction := self.InTransaction;
@@ -1741,7 +1761,8 @@ procedure TJanuaCustomServerFootball.OpenPlayerCareer(aPlayerID: integer);
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenPlayerCareer  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenPlayerCareer  IFootballSettings not set');
 
   self.player_id := aPlayerID;
   self.OpenPlayerCareer;
@@ -1753,7 +1774,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenSeasonsList  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenSeasonsList  IFootballSettings not set');
 
   try
     aTransaction := self.InTransaction;
@@ -1781,7 +1803,8 @@ var
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenTeamChampionship  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenTeamChampionship  IFootballSettings not set');
 
   aTransaction := self.InTransaction;
   self.StartTransaction;
@@ -1803,7 +1826,8 @@ procedure TJanuaCustomServerFootball.OpenTeamChampionship(aSeasonID, aLeagueID, 
 begin
   if (csDesigning in ComponentState) then
     exit;
-  Guard.CheckNotNull(FFootballSettings, 'TJanuaCustomServerFootball.OpenTeamChampionship  IFootballSettings not set');
+  Guard.CheckNotNull(FFootballSettings,
+    'TJanuaCustomServerFootball.OpenTeamChampionship  IFootballSettings not set');
 
   self.match_id := 0;
   self.season_id := aSeasonID;
@@ -2162,38 +2186,44 @@ begin
     { bodychampteam.html }
     self.ReplaceTemplateString('league_name', FJanuaServerFootball.Championship.league_name);
     self.ReplaceTemplateString('football.teamname', FJanuaServerFootball.ChampionshipTeam.Name);
-    self.ReplaceTemplateString('football.teamranking', FJanuaServerFootball.ChampionshipTeam.AsTableBig.AsHtml);
-    self.ReplaceTemplateString('football.teampoints', FJanuaServerFootball.ChampionshipTeam.Ranking.goal_done.ToString);
-    self.ReplaceTemplateString('football.season_des', FJanuaServerFootball.ChampionshipTeam.Championship.season_des);
-    self.ReplaceTemplateString('football.teamchampionship', FJanuaServerFootball.ChampionshipTeam.AsMetroPortlet(10,
-      False, aIsFrame));
-    self.ReplaceTemplateString('football.teammatches', FJanuaServerFootball.ChampionshipTeam.matches.AsMetroPortlet
-      (10, False));
+    self.ReplaceTemplateString('football.teamranking',
+      FJanuaServerFootball.ChampionshipTeam.AsTableBig.AsHtml);
+    self.ReplaceTemplateString('football.teampoints',
+      FJanuaServerFootball.ChampionshipTeam.Ranking.goal_done.ToString);
+    self.ReplaceTemplateString('football.season_des',
+      FJanuaServerFootball.ChampionshipTeam.Championship.season_des);
+    self.ReplaceTemplateString('football.teamchampionship',
+      FJanuaServerFootball.ChampionshipTeam.AsMetroPortlet(10, False, aIsFrame));
+    self.ReplaceTemplateString('football.teammatches',
+      FJanuaServerFootball.ChampionshipTeam.matches.AsMetroPortlet(10, False));
   end;
   self.TerminatePageContent;
 end;
 
 procedure TJanuaTemplateFootball.TerminateHome(aIsFrame: boolean = False);
 begin
-  Assert(Assigned(FJanuaServerFootball), 'Error TJanuaTemplateFootball.TerminateHome FJanuaServerFootball = nil');
+  Assert(Assigned(FJanuaServerFootball),
+    'Error TJanuaTemplateFootball.TerminateHome FJanuaServerFootball = nil');
   TerminateTemplatePage(aIsFrame);
   if aIsFrame then
   begin
     // ReplaceTemplateString('football.matches', self.FJanuaServerFootball.matches.AsMetroPortlet(4, True, aIsFrame));
-    ReplaceTemplateString('football.matches', self.FJanuaServerFootball.matches.AsMetroHtmlTable(4, aIsFrame));
+    ReplaceTemplateString('football.matches', self.FJanuaServerFootball.matches.AsMetroHtmlTable(4,
+      aIsFrame));
     // ReplaceTemplateString('football.rankings', self.FJanuaServerFootball.rankings.AsMetroPortlet(4));
     ReplaceTemplateString('football.rankings', self.FJanuaServerFootball.rankings.AsShortTable);
     // ReplaceTemplateString('football.goalrankings', self.FJanuaServerFootball.goalrankings.AsMetroPortlet(4));
-    ReplaceTemplateString('football.goalrankings', self.FJanuaServerFootball.goalrankings.AsShortTable(4, aIsFrame));
+    ReplaceTemplateString('football.goalrankings', self.FJanuaServerFootball.goalrankings.AsShortTable(4,
+      aIsFrame));
   end
   else
   begin
     self.ReplaceTemplateString('football.matches', self.FJanuaServerFootball.matches.AsMetroPortlet(4, False,
       aIsFrame));
-    self.ReplaceTemplateString('football.rankings', self.FJanuaServerFootball.rankings.AsMetroPortlet(4, False,
-      aIsFrame));
-    self.ReplaceTemplateString('football.goalrankings', self.FJanuaServerFootball.goalrankings.AsMetroPortlet(4,
-      aIsFrame));
+    self.ReplaceTemplateString('football.rankings', self.FJanuaServerFootball.rankings.AsMetroPortlet(4,
+      False, aIsFrame));
+    self.ReplaceTemplateString('football.goalrankings',
+      self.FJanuaServerFootball.goalrankings.AsMetroPortlet(4, aIsFrame));
   end;
   self.ReplaceTemplateString('league_name', FJanuaServerFootball.Championship.league_name);
   self.ReplaceTemplateString('match_day', FJanuaServerFootball.matches.match_day_number.ToString);
@@ -2212,8 +2242,8 @@ begin
   begin
     TerminateTemplatePage(aIsFrame);
 
-    temp := IfThen(FJanuaServerFootball.match_id <> 0, '', FJanuaServerFootball.matches.AsMetroPortlet(4, True,
-      aIsFrame));
+    temp := IfThen(FJanuaServerFootball.match_id <> 0, '', FJanuaServerFootball.matches.AsMetroPortlet(4,
+      True, aIsFrame));
     ReplaceTemplateString('football.matches', temp);
     // ReplaceTemplateString('football.rankings', self.FJanuaServerFootball.rankings.AsMetroPortlet(4));
 
@@ -2225,7 +2255,8 @@ begin
 
     temp := IfThen(FJanuaServerFootball.match_id <> 0, '', self.FJanuaServerFootball.rankings.AsShortTable);
     ReplaceTemplateString('football.rankings', temp);
-    temp := IfThen(FJanuaServerFootball.match_id <> 0, '', FJanuaServerFootball.goalrankings.AsShortTable(4, aIsFrame));
+    temp := IfThen(FJanuaServerFootball.match_id <> 0, '', FJanuaServerFootball.goalrankings.AsShortTable(4,
+      aIsFrame));
     ReplaceTemplateString('football.goalrankings', temp);
 
     ReplaceTemplateString('football.livescore', FJanuaServerFootball.MatchDetails.AsLiveScore);
@@ -2243,7 +2274,8 @@ begin
   begin
     TerminateTemplatePage(aIsFrame);
     ReplaceTemplateString('football.home_team_name', self.FJanuaServerFootball.MatchDetail.hometeam.Name);
-    ReplaceTemplateString('football.visitors_team_name', self.FJanuaServerFootball.MatchDetail.visitorsteam.Name);
+    ReplaceTemplateString('football.visitors_team_name',
+      self.FJanuaServerFootball.MatchDetail.visitorsteam.Name);
     ReplaceTemplateString('football.match_goals', self.FJanuaServerFootball.MatchDetail.match.ShortResult);
     ReplaceTemplateString('league_name', FJanuaServerFootball.Championship.league_name);
     ReplaceTemplateString('match_day', FJanuaServerFootball.matches.match_day_number.ToString);
@@ -2262,7 +2294,8 @@ begin
   if not aIsFrame then
   begin
     self.ReplaceTemplateString('football.seasons', self.FJanuaServerFootball.Seasons.AsHtml(False));
-    self.ReplaceTemplateString('football.championships', self.FJanuaServerFootball.Championships.AsHtml(True));
+    self.ReplaceTemplateString('football.championships',
+      self.FJanuaServerFootball.Championships.AsHtml(True));
   end;
 end;
 
@@ -2320,8 +2353,8 @@ begin
   self.TerminatePageContent;
   TerminateTemplatePage(aIsFrame);
   ReplaceTemplateString('football.playername', f.Player.FullName);
-  ReplaceTemplateString('football.playerbirthdate', IfThen(f.Player.BirthDate > 0, FormatDateTime('dd/mm/yyyy',
-    f.Player.BirthDate), f.Player.BirthYear.ToString));
+  ReplaceTemplateString('football.playerbirthdate', IfThen(f.Player.BirthDate > 0,
+    FormatDateTime('dd/mm/yyyy', f.Player.BirthDate), f.Player.BirthYear.ToString));
   ReplaceTemplateString('football.player_career', f.Player.AsMetroPortlet());
 end;
 
@@ -2355,11 +2388,11 @@ begin
         goal: smallint; points: smallint;
         Season: TJanuaFootballSeasons;  Championship: TJanuaChampionship
       }
-      self.FJanuaTemplateFootball.TerminateChampionshipTeam(aUseFrame);
-      self.Mime.MimeType := TJanuaMimeType.jmtTextHtml;
-      self.FFromPage := TJanuaWebPage.jwpHome;
-      self.FToPage := TJanuaWebPage.jwpHome;
-      self.WebResponse.Assign(FJanuaTemplateFootball.Template);
+      FJanuaTemplateFootball.TerminateChampionshipTeam(aUseFrame);
+      Mime.MimeType := TJanuaMimeType.jmtTextHtml;
+      FFromPage := TJanuaWebPage.jwpHome;
+      FToPage := TJanuaWebPage.jwpHome;
+      WebResponse.Assign(FJanuaTemplateFootball.Template);
       Result := True;
     except
       on e: exception do
@@ -2617,8 +2650,8 @@ end;
 
 {$IFDEF webbroker}
 
-procedure TJanuaWebSessionFootball.ActionDoLoginFB(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionDoLoginFB(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aFrame: boolean = False);
 begin
   InternalCreateController;
   try
@@ -2641,8 +2674,8 @@ begin
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionDoLogOut(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; InternalCall: boolean);
+procedure TJanuaWebSessionFootball.ActionDoLogOut(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; InternalCall: boolean);
 begin
   InternalCreateController;
   try
@@ -2663,8 +2696,8 @@ begin
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionDoRegister(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionDoRegister(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aFrame: boolean = False);
 var
   aUserProfile: TJanuaRecordUserProfile;
 begin
@@ -2691,22 +2724,23 @@ begin
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionLiveScore(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionLiveScore(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
   InternalCreateController;
   try
     if self.CheckSession(Sender, Request, Response, Handled, aUseFrame) then
-      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionLiveScore, aUseFrame);
+      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionLiveScore,
+        aUseFrame);
   finally
     InternalDestroyController;
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionRanking(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
@@ -2719,37 +2753,39 @@ begin
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionGoalRanking(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionGoalRanking(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
   InternalCreateController;
   try
     if self.CheckSession(Sender, Request, Response, Handled, aUseFrame) then
-      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionGoalRanking, aUseFrame);
+      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionGoalRanking,
+        aUseFrame);
   finally
     InternalDestroyController;
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionPlayerCareer(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionPlayerCareer(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
   InternalCreateController;
   try
     if self.CheckSession(Sender, Request, Response, Handled, aUseFrame) then
-      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionPlayerCareer, aUseFrame);
+      self.ResponseController(Request, Response, Handled, FJanuaFootballController.ActionPlayerCareer,
+        aUseFrame);
   finally
     InternalDestroyController;
   end;
 
 end;
 
-procedure TJanuaWebSessionFootball.ActionMatchDay(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionMatchDay(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
@@ -2763,8 +2799,8 @@ begin
 
 end;
 
-procedure TJanuaWebSessionFootball.ActionHomeDefault(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionHomeDefault(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
@@ -2788,8 +2824,8 @@ begin
   end;
 end;
 
-procedure TJanuaWebSessionFootball.ActionChampionshipTeam(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionChampionshipTeam(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
@@ -2813,8 +2849,8 @@ begin
 
 end;
 
-procedure TJanuaWebSessionFootball.ActionMatchDetail(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
-  var Handled: boolean; aUseFrame: boolean = False);
+procedure TJanuaWebSessionFootball.ActionMatchDetail(Sender: TObject; Request: TWebRequest;
+  Response: TWebResponse; var Handled: boolean; aUseFrame: boolean = False);
 begin
   // Default Handler Action ..................................
   // primo step preparare il Controller ......................
@@ -2971,8 +3007,8 @@ begin
   Result := inherited;
   if self.TestMode then
 
-    Result := Result + '<p>' + 'season_id = ' + FJanuaFootballController.JanuaServerFootball.season_id.ToString +
-      ' - league_id = ' + FJanuaFootballController.JanuaServerFootball.league_id.ToString + '</p>';
+    Result := Result + '<p>' + 'season_id = ' + FJanuaFootballController.JanuaServerFootball.season_id.
+      ToString + ' - league_id = ' + FJanuaFootballController.JanuaServerFootball.league_id.ToString + '</p>';
 
 end;
 
@@ -3041,11 +3077,11 @@ begin
     aResponse.Content := StringReplace(aResponse.Content, '$actionsearch$', self.FRoot + '/search' + '?sid=' +
       SessionKey, [rfReplaceAll, rfIgnoreCase]);
 
-    aResponse.Content := StringReplace(aResponse.Content, '$confirm$', self.FRoot + '/?page=dologin' + '?sid=' +
-      SessionKey, [rfReplaceAll, rfIgnoreCase]);
+    aResponse.Content := StringReplace(aResponse.Content, '$confirm$', self.FRoot + '/?page=dologin' + '?sid='
+      + SessionKey, [rfReplaceAll, rfIgnoreCase]);
 
-    aResponse.Content := StringReplace(aResponse.Content, '$actionbooking$', self.FRoot + '/booking' + '?sid=' +
-      SessionKey, [rfReplaceAll, rfIgnoreCase]);
+    aResponse.Content := StringReplace(aResponse.Content, '$actionbooking$', self.FRoot + '/booking' + '?sid='
+      + SessionKey, [rfReplaceAll, rfIgnoreCase]);
 
     self.SetCookies(7, aResponse);
     aResponse.Content := StringReplace(aResponse.Content, '$messages$', self.Messages, [rfReplaceAll]);

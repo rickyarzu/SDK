@@ -33,6 +33,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     ExplicitTop = 865
   end
   inherited PageControl1: TPageControl
+    ActivePage = tabCalendarGrid
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0
@@ -42,6 +43,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
       TabVisible = True
       inherited EnhCRDBGrid1: TEnhCRDBGrid
         DataSource = dmVCLPhoenixPlannerController.dsCalendarEvents
+        PopupMenu = GridPopup
         Columns = <
           item
             Expanded = False
@@ -93,6 +95,14 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
             Visible = True
           end>
       end
+    end
+  end
+  object GridPopup: TPopupMenu
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    Left = 439
+    Top = 370
+    object mnuGoogleSync1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actGoogleSync
     end
   end
 end

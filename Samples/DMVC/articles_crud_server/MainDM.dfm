@@ -1,16 +1,18 @@
 object dmMain: TdmMain
-  Height = 200
-  Width = 277
+  Height = 214
+  Width = 438
   object Connection: TFDConnection
     Params.Strings = (
+      'User_Name=sysdba'
+      'Password=masterkey'
       'Protocol=TCPIP'
       'Server=localhost'
-      'ConnectionDef=articles_crud_db')
+      'DriverID=FB')
     ConnectedStoredUsage = []
     LoginPrompt = False
     BeforeConnect = ConnectionBeforeConnect
     Left = 64
-    Top = 72
+    Top = 48
   end
   object dsArticles: TFDQuery
     Connection = Connection

@@ -173,9 +173,6 @@ Coordinates=637,1105,271,36
 [StartTime]
 Coordinates=673,744,70,58
 
-[TabSheet2]
-Coordinates=1013,744,77,36
-
 [StartDate]
 Coordinates=1094,676,69,58
 
@@ -247,4 +244,7 @@ Coordinates=442,10,315,256
 
 [grpEventsList]
 Coordinates=253,744,79,58
+
+[tabGoogleCalendar]
+Coordinates=1013,744,77,36
 

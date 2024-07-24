@@ -129,6 +129,7 @@ type
     lkpGCalendarAliasALIAS: TStringField;
     lkpGCalendarAliasJGUID: TGuidField;
     vtGoogleEventsCalcColor: TIntegerField;
+    actGoogleSync: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -162,6 +163,7 @@ type
     procedure DBDaySourceCalendarInsertItem(Sender: TObject; APlannerItem: TPlannerItem);
     procedure DBDaySourceGCalendarFieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure vtGoogleEventsBeforePost(DataSet: TDataSet);
+    procedure actGoogleSyncExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -169,6 +171,7 @@ type
     procedure SetDBPlanner(const Value: TDBPlanner);
     procedure SetPlanner(const Value: TPlanner);
     procedure PostEvent; Virtual; Abstract;
+    procedure PDFIOExport(const aPDFExport: TAdvPlannerPDFIO);
     { Private declarations }
   public
     { Public declarations }
@@ -336,6 +339,7 @@ type
     FGItemCaptionField: TField;
     FUpdatingFromDB: Boolean;
     FOnAfterConnect: TNotifyEvent;
+    FPlannerPDFIO2: TAdvPlannerPDFIO;
     procedure SetDeleteItemFunc(const Value: TItemFunc);
     procedure SetItemModifyFunc(const Value: TItemFunc);
     procedure SetItemUpdateProc(const Value: TItemProc);
@@ -358,10 +362,12 @@ type
     procedure SetGItemImageField(const Value: TField);
     procedure SetUpdatingFromDB(const Value: Boolean);
     procedure SetOnAfterConnect(const Value: TNotifyEvent);
+    procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
   protected
     LoadCalendarsFromDB: TProc;
     LoadCalendarItemsFromDB: TProc;
     AfterLoadCalendars: TProc;
+    procedure PlannerGoogleSync; virtual; abstract;
     function OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer; virtual; abstract;
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; virtual; abstract;
     procedure AddActivity; virtual; abstract;
@@ -407,6 +413,7 @@ type
     function CreateGoogleEvent(const aCalendarItem: ITimetable): IGoogleCalendar;
   public
     property PlannerPDFIO: TAdvPlannerPDFIO read FPlannerPDFIO write SetPlannerPDFIO;
+    property PlannerPDFIO2: TAdvPlannerPDFIO read FPlannerPDFIO2 write SetPlannerPDFIO2;
     property GooglePlannerPDFIO: TAdvPlannerPDFIO read FGooglePlannerPDFIO write SetGooglePlannerPDFIO;
     property Connected: Boolean read FConnected write SetConnected;
     property Inserting: Boolean read FInserting write SetInserting;
@@ -527,7 +534,7 @@ begin
   var
   vTest2 := EndOfTheMonth(Date()) - Date;
 
-  if (vTest1 >= 7) and (vTest2 >= 5) then
+  if (vTest1 >= 7) and (vTest2 >= 15) then
   begin
     FDateFrom := StartOfTheMonth(Date());
     FDateTo := EndOfTheMonth(Date());
@@ -782,6 +789,12 @@ begin
     Planner.PopupPlannerItem.Font.Assign(FontDialog1.Font);
 end;
 
+procedure TdmVCLPlannerCustomController.actGoogleSyncExecute(Sender: TObject);
+begin
+  inherited;
+  PlannerGoogleSync;
+end;
+
 procedure TdmVCLPlannerCustomController.actUpdateCalendarExecute(Sender: TObject);
 begin
   if Assigned(Fgcal) then
@@ -812,20 +825,9 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.ActionExportExecute(Sender: TObject);
-var
-  fn: string;
 begin
-  if Assigned(PlannerPDFIO) and SaveDialog1.Execute then
-  begin
-    fn := SaveDialog1.FileName;
-
-    if ExtractFileExt(fn) = '' then
-      fn := fn + '.PDF';
-
-    PlannerPDFIO.Save(fn);
-    ShellExecute(0, 'open', PChar(fn), nil, nil, SW_SHOWNORMAL);
-  end;
-
+  if Assigned(PlannerPDFIO) then
+    PDFIOExport(PlannerPDFIO)
 end;
 
 procedure TdmVCLPlannerCustomController.ActionPrintExecute(Sender: TObject);
@@ -1261,6 +1263,23 @@ begin
   Notify('GCalendarLocation');
   Notify('GCalendarTimeZone');
   Notify('GCalendarItemIndex');
+end;
+
+procedure TdmVCLPlannerCustomController.PDFIOExport(const aPDFExport: TAdvPlannerPDFIO);
+var
+  fn: string;
+begin
+  if Assigned(aPDFExport) and SaveDialog1.Execute then
+  begin
+    fn := SaveDialog1.FileName;
+
+    if ExtractFileExt(fn) = '' then
+      fn := fn + '.PDF';
+
+    aPDFExport.Save(fn);
+    ShellExecute(0, 'open', PChar(fn), nil, nil, SW_SHOWNORMAL);
+  end;
+
 end;
 
 procedure TdmVCLPlannerCustomController.PlannerItemCreated(Sender: TObject; Item: TPlannerItem);
@@ -1753,6 +1772,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetPlannerPDFIO(const Value: TAdvPlannerPDFIO);
 begin
   FPlannerPDFIO := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
+begin
+  FPlannerPDFIO2 := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetSelectedGCalendar(const Value: TJanuaGCalendar);

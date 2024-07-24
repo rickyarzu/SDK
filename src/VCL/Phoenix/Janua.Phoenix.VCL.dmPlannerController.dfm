@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 588
+  Height = 634
   Width = 1030
   inherited SVGIconImageList48: TSVGIconImageList
     Top = 280
@@ -780,6 +780,16 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'JGUID'
       FixedChar = True
       Size = 38
+    end
+    object qryPlannerEventslkpMailTecnico: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpMailTecnico'
+      LookupDataSet = lkpTecnici
+      LookupKeyFields = 'CHIAVE'
+      LookupResultField = 'EMAIL'
+      KeyFields = 'TECNICO'
+      Size = 128
+      Lookup = True
     end
   end
   object qryTechPlanned: TUniQuery
@@ -2191,6 +2201,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'E.DALLE_ORE <= :DATA_AL'
       ';')
     FetchRows = 100
+    Active = True
     Filtered = True
     IndexFieldNames = 'JGUID'
     Left = 928
@@ -2206,7 +2217,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         DataType = ftDate
         Name = 'DATA_AL'
         ParamType = ptInput
-        Value = 45503d
+        Value = 45534d
       end>
     object qryPlannerEvents2CHIAVE: TIntegerField
       FieldName = 'CHIAVE'
@@ -2329,6 +2340,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Caption = 'Sincro Calendario'
       ImageIndex = 26
       ImageName = '027-tasks'
+      OnExecute = ActionCalendarSync2Execute
     end
   end
 end

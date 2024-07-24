@@ -129,11 +129,31 @@
         <DCCReference Include="..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas">
             <Form>frmMDIRibbonToolbar</Form>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Commons\udmVCLMainApplication.pas">
+            <Form>dmVCLMainApplication</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\TMS\udmTmsMainApplication.pas">
+            <Form>dmTmsMainApplication</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Forms\uJanuaVCLForm.pas">
+            <Form>JanuaVCLFormModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas">
+            <Form>JanuaVCLFrameModel</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Commons\uJanuaVCLMainForm.pas">
+            <Form>JanuaVCLMainForm</Form>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\CarService\Janua.Carservice.VCL.frmBackOfficeMain.pas">
             <Form>frmVCLCarServiceBackOfficeMain</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uCarServiceBackOfficeProject.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Commons\uJanuaVCLMainForm.pas">
+            <Form>JanuaVCLMainForm</Form>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>

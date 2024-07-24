@@ -21,7 +21,7 @@ type
   TframeVCLCustomGoogleCalendar = class(TFrame)
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
+    tabGoogleCalendar: TTabSheet;
     grpEventsList: TGroupBox;
     grdGoogleCalendar: TCRDBGrid;
     Panel1: TPanel;
@@ -109,12 +109,14 @@ type
     procedure cboCalendarsListChange(Sender: TObject);
     procedure cboCalendarsListClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
     procedure ckbCalendarListClickCheck(Sender: TObject);
+    procedure tabGoogleCalendarShow(Sender: TObject);
   private
     { Private declarations }
     FCustomController: TdmVCLPlannerCustomController;
+    FActive: Boolean;
     procedure SetCustomController(const Value: TdmVCLPlannerCustomController);
+    procedure SetActive(const Value: Boolean);
   public
     { Public declarations }
     procedure BindControls;
@@ -122,7 +124,8 @@ type
     procedure ToggleReminders(Sender: TObject);
     procedure SetColor(Sender: TObject);
     property CustomController: TdmVCLPlannerCustomController read FCustomController write SetCustomController;
-
+    procedure Activate;
+    property Active: Boolean read FActive write SetActive;
   end;
 
 implementation
@@ -130,9 +133,16 @@ implementation
 {$R *.dfm}
 { TframeVCLCustomGoogleCalendar }
 
-procedure TframeVCLCustomGoogleCalendar.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
+procedure TframeVCLCustomGoogleCalendar.Activate;
 begin
-  FCustomController.InitGoogle
+  if Assigned(FCustomController) then
+  begin
+    FCustomController.OnToggleGoogleControls := ToggleControls;
+    FCustomController.OnToggleGoogleReminders := ToggleReminders;
+    FCustomController.OnSetColor := SetColor;
+  end;
+
+  FActive := True;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.BindControls;
@@ -181,8 +191,6 @@ begin
   FCustomController.GCalendarItemIndex := lGindex;
   cboCalendarsList.Text := FCustomController.GCalendarListText;
   FCustomController.Bind('GCalendarListText', cboCalendarsList, 'Text', True);
-  DBPlanner1.ItemSource := FCustomController.DBDaySourceGCalendar;
-
   cboCalendarsList.Text := FCustomController.GCalendarListText;
   cboCalendarsList.ItemIndex := FCustomController.GCalendarItemIndex;
   pnlGroupColor.Color := FCustomController.GroupBackColor;
@@ -230,6 +238,11 @@ begin
 
 end;
 
+procedure TframeVCLCustomGoogleCalendar.SetActive(const Value: Boolean);
+begin
+  FActive := Value;
+end;
+
 procedure TframeVCLCustomGoogleCalendar.SetColor(Sender: TObject);
 begin
   if Assigned(FCustomController) then
@@ -245,11 +258,14 @@ begin
   if Assigned(FCustomController) then
   begin
     BindControls;
-    FCustomController.OnToggleGoogleControls := ToggleControls;
-    FCustomController.OnToggleGoogleReminders := ToggleReminders;
-    FCustomController.OnSetColor := SetColor;
     ToggleControls(self);
   end;
+end;
+
+procedure TframeVCLCustomGoogleCalendar.tabGoogleCalendarShow(Sender: TObject);
+begin
+  DBPlanner1.ItemSource := FCustomController.DBDaySourceGCalendar;
+  FCustomController.DBDaySourceGCalendar.Active := True;
 end;
 
 procedure TframeVCLCustomGoogleCalendar.ToggleControls(Sender: TObject);

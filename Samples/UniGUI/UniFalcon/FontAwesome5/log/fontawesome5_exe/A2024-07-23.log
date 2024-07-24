@@ -1,0 +1,42 @@
+FontAwesome5.exe: 00008630: 09:23:43 []:>--------------------------------------------------------------<
+FontAwesome5.exe: 00008630: 09:23:43 [TUniServerModule]:Server First Init.
+FontAwesome5.exe: 00008630: 09:23:43 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FontAwesome5\
+FontAwesome5.exe: 00008630: 09:23:43 [TUniServerModule]:Debug Mode = ON
+FontAwesome5.exe: 00008630: 09:23:43 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FontAwesome5.exe: 00008630: 09:23:43 [TUniServerModule]:HTTP Server Started on Port: 8077
+FontAwesome5.exe: 000039C4: 09:26:45 []:>--------------------------------------------------------------<
+FontAwesome5.exe: 000039C4: 09:26:45 [TUniServerModule]:Server First Init.
+FontAwesome5.exe: 000039C4: 09:26:45 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FontAwesome5\
+FontAwesome5.exe: 000039C4: 09:26:45 [TUniServerModule]:Debug Mode = ON
+FontAwesome5.exe: 000039C4: 09:26:46 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FontAwesome5.exe: 000039C4: 09:26:46 [TUniServerModule]:HTTP Server Started on Port: 8077
+FontAwesome5.exe: 00003948: 09:32:06 []:>--------------------------------------------------------------<
+FontAwesome5.exe: 00003948: 09:32:06 [TUniServerModule]:Server First Init.
+FontAwesome5.exe: 00003948: 09:32:06 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FontAwesome5\
+FontAwesome5.exe: 00003948: 09:32:06 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FontAwesome5.exe: 00003948: 09:32:06 [TUniServerModule]:HTTP Server Started on Port: 8077
+FontAwesome5.exe: 00005144: 09:33:54 []:>--------------------------------------------------------------<
+FontAwesome5.exe: 00005144: 09:33:54 [TUniServerModule]:Server First Init.
+FontAwesome5.exe: 00005144: 09:33:54 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FontAwesome5\
+FontAwesome5.exe: 00005144: 09:33:54 [TUniServerModule]:Debug Mode = ON
+FontAwesome5.exe: 00005144: 09:33:54 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FontAwesome5.exe: 00003948: 09:34:11 [TUniServerModule]:Shutting Down Server.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniServerModule]:Stopping HTTP Server.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniServerModule]:HTTP Server Stopped.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUISessionManager]:Terminating Session manager.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUISessionManager]:Stopping Cache Eraser...
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUISessionManager]:Cache Eraser Stopped.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUISessionManager]:Destroying Worker Threads.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUISessionManager]:Session manager terminated.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniWebSocketStack]:Terminating...
+FontAwesome5.exe: 00003948: 09:34:11 [TUniGUIMessageQ]:Terminated.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniWebSocketStack]:Terminated.
+FontAwesome5.exe: 00003948: 09:34:11 [TUniServerModule]:Server Shutdown Completed.
+FontAwesome5.exe: 00003948: 09:34:11 []:<-------------------------------------------------------------->
+FontAwesome5.exe: 00003948: 09:34:11 [Terminated]:Exit Code: 0
+FontAwesome5.exe: 00005868: 09:34:28 []:>--------------------------------------------------------------<
+FontAwesome5.exe: 00005868: 09:34:28 [TUniServerModule]:Server First Init.
+FontAwesome5.exe: 00005868: 09:34:28 [TUniServerModule]:Start Path = D:\GitHub\SDK\Samples\UniGUI\UniFalcon\FontAwesome5\
+FontAwesome5.exe: 00005868: 09:34:28 [TUniServerModule]:Debug Mode = ON
+FontAwesome5.exe: 00005868: 09:34:28 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FontAwesome5.exe: 00005868: 09:34:28 [TUniServerModule]:HTTP Server Started on Port: 8077

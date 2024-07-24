@@ -1,0 +1,17 @@
+{
+  "result": {
+    "id": "d05689cd-345c-40a6-6214-7374f9ff2500", 
+    "filename": "photo-1560521166-117ca72366bd.jpg",
+    "uploaded": "2024-07-17T16:54:24.675Z",
+    "requireSignedURLs": false,
+    "variants": [
+      "https://imagedelivery.net/sy6UZssjiKQC0k7np5dXNQ/d05689cd-345c-40a6-6214-7374f9ff2500/public"
+    ]
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+} 
+
+
+[dcc64 Error] TUniFalcon.dpk(36): Required package 'uniGUI29m' not found

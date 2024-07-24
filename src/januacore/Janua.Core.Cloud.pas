@@ -628,17 +628,17 @@ end;
 function TJanuaCloudComponent.GetJsonResponse(const AURL: string; aMethod: TJanuaHttpMethod = jhmNone;
   aProtocol: TJanuaProtocol = jptNone): boolean;
 begin
-  self.FProtocol := aProtocol;
-  self.FMethod := aMethod;
-  self.FUrl := AURL;
-  Result := self.GetJsonResponse;
+  FProtocol := aProtocol;
+  FMethod := aMethod;
+  FUrl := AURL;
+  Result := GetJsonResponse;
 end;
 
 function TJanuaCloudComponent.GetJsonResponse: boolean;
 begin
   try
     Result := False;
-    self.FAccept.MimeType := TJanuaMimeType.jmtApplicationJson;
+    FAccept.MimeType := TJanuaMimeType.jmtApplicationJson;
     {
       sTestUrl := StringReplace(self.FUrl, 'https://', '', [rfIgnoreCase, rfReplaceAll]);
       sTestUrl := StringReplace(sTestUrl, 'http://', '', [rfIgnoreCase, rfReplaceAll]);

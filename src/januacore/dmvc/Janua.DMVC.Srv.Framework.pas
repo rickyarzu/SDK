@@ -14,6 +14,16 @@ type
   TAuthenticationFunc = TFunc<TWebContext, TList<String>, string, boolean>;
 
 type
+  TJanuaDMVCConf = class
+  private
+    function GetSessionTimeOut: integer;
+    procedure SetSessionTimeOut(const Value: integer);
+
+  public
+    ///<summary>   </summary>
+    property SessionTimeOut: integer read GetSessionTimeOut Write SetSessionTimeOut;
+  end;
+
   TJanuaServerDMVCApplication = class
   public
     class constructor Create;
@@ -27,11 +37,11 @@ type
       read FAuthenticationFunctions;
   public
     class procedure AddProtectedControllerAction(const aControllerQualifiedClassName, aActionName: string);
-    ///<summary> Checks if Controller and Action are Registered as Protected by Authentication </summary>
+    /// <summary> Checks if Controller and Action are Registered as Protected by Authentication </summary>
     class function RequiresAuthentication(const aControllerQualifiedClassName, aActionName: string): boolean;
-    ///<summary> Adds an Authentication Function for a registered Controller </summary>
+    /// <summary> Adds an Authentication Function for a registered Controller </summary>
     class procedure AddAuthFunc(const aControllerName: string; aFunc: TAuthenticationFunc);
-    ///<summary> Should be called by Authentication  </summary>
+    /// <summary> Should be called by Authentication  </summary>
     class function Authenticate(AContext: TWebContext; AUserRoles: TList<String>;
       aControllerQualifiedClassName, aActionName: string): boolean;
   end;
@@ -78,6 +88,18 @@ class function TJanuaServerDMVCApplication.RequiresAuthentication(const aControl
   aActionName: string): boolean;
 begin
   Result := FProtectedControllersActions.Contains(aControllerQualifiedClassName + '.' + aActionName);
+end;
+
+{ TJanuaDMVCConf }
+
+function TJanuaDMVCConf.GetSessionTimeOut: integer;
+begin
+
+end;
+
+procedure TJanuaDMVCConf.SetSessionTimeOut(const Value: integer);
+begin
+
 end;
 
 end.

@@ -1,0 +1,19 @@
+FSMap.exe: 000021F4: 10:39:13 []:>--------------------------------------------------------------<
+FSMap.exe: 000021F4: 10:39:13 [TUniServerModule]:Server First Init.
+FSMap.exe: 000021F4: 10:39:13 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSMap\
+FSMap.exe: 000021F4: 10:39:14 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FSMap.exe: 000021F4: 10:39:15 [TUniServerModule]:HTTP Server Started on Port: 8077
+FSMap.exe: 00003390: 11:21:53 []:>--------------------------------------------------------------<
+FSMap.exe: 00003390: 11:21:53 [TUniServerModule]:Server First Init.
+FSMap.exe: 00003390: 11:21:53 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSMap\
+FSMap.exe: 00003390: 11:21:53 [TUniGUISessionManager]:Cache erase job created, Folder count: [1]
+FSMap.exe: 00003390: 11:21:54 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FSMap.exe: 00003390: 11:21:54 [TUniServerModule]:HTTP Server Started on Port: 8077
+FSMap.exe: 000028BC: 11:22:05 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. (Session not found: 5nJSaNBJ2U10CAEBBCE ) : Addr: $004D0A9A
+FSMap.exe: 000020DC: 11:34:19 []:>--------------------------------------------------------------<
+FSMap.exe: 000020DC: 11:34:19 [TUniServerModule]:Server First Init.
+FSMap.exe: 000020DC: 11:34:19 [TUniServerModule]:Start Path = Z:\GitHub\Libraries\UniFalcon\Demos\FSMap\
+FSMap.exe: 000020DC: 11:34:19 [TUniGUISessionManager]:Cache erase job created, Folder count: [1]
+FSMap.exe: 000020DC: 11:34:20 [TUniServerModule]:Starting HTTP Server on Port: 8077...
+FSMap.exe: 000020DC: 11:34:20 [TUniServerModule]:HTTP Server Started on Port: 8077
+FSMap.exe: 00001594: 11:34:25 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. (Session not found: YAOsTpTGdq10CAEC427 ) : Addr: $00E90A9A

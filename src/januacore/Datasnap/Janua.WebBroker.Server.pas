@@ -12,7 +12,7 @@ uses
   Web.WebBroker,
 {$ENDIF}
   Janua.Core.Types,
-  Janua.Core.WebServer;
+  Janua.Http.WebServer;
 
 type
   TJanuaWebBrokerServer = class(TJanuaWebServer)

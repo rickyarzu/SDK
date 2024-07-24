@@ -29,9 +29,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
-  rtl,
-  dbrtl,
+requires
   IndySystem,
   IndyProtocols,
   IndyCore,
@@ -75,7 +73,7 @@ rrequires
   JanuaVCLComponents,
   JanuaTmsControls;
 
-ocontains
+contains
   Janua.VCL.ViewModels.Register in '..\..\src\VCL\ViewModels\Janua.VCL.ViewModels.Register.pas',
   Janua.VCL.Actions in '..\..\src\VCL\Commons\Janua.VCL.Actions.pas',
   Janua.VCL.Interposers in '..\..\src\VCL\Commons\Janua.VCL.Interposers.pas',
@@ -114,5 +112,5 @@ ocontains
   Janua.VCL.frameAddress in '..\..\src\VCL\Commons\Janua.VCL.frameAddress.pas' {frameVCLAddress: TFrame},
   Janua.Anagraph.VCL.dlgEditAnagraph in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.dlgEditAnagraph.pas' {dlgVCLEditAnagraph};
 
-d.
+end.
 

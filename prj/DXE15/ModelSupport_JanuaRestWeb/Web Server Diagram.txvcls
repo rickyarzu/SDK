@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="shv2ocvr311x5nzjl_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="Web Server Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="700,80,403,175" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleCreate(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleDestroy(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.FMVC" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.AddControllers()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.GetSessionTimeOut()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.SetSessionTimeOut(System.Integer)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,40,307,250" />
+      <property name="grd_color_one" value="255, 224, 192" />
+      <property name="grd_on" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.FServer" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.BindPort(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.CheckPort(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.SetServerPort(Janua.WebBroker.Server.TIdHTTPWebBrokerBridge,System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StartServer(Janua.WebBroker.Server.TIdHTTPWebBrokerBridge)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StopServer(Janua.WebBroker.Server.TIdHTTPWebBrokerBridge)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.RunServer(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.GetIsActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StartServer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StopServer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.WriteStatus()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="463,433,0,0" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,40,255,343" />
+      <property name="grd_color_one" value="255, 255, 192" />
+      <property name="grd_on" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.CreateClass()static" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.FPort" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.FLogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.GetIsActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.WriteArrow()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.SetIsActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.SetLogProc(TProc`3)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.InternalLogProc(System.string,System.string,System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.GetPort()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.SetPort(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.GetPort(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.StartServer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.StopServer()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.WriteStatus()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.IsActive" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.LogProc" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.Port" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="222,503,0,0" />
+    </reference>
+    <reference referencedUin="design:view:::kez2crmok0p_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,400,192,134" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass" />
+    </reference>
+  </view>
+</nodeSet>

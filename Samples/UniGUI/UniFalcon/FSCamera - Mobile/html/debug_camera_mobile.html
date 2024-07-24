@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <center style="height: 100%;">
+        <video id="camera_player_O14" width="275" height="275" class="center" autoplay style="height: 100%;"></video>
+    </center>
+    <canvas hidden id="camera_canvas_O14" width="275" height="367"></canvas>
+    <script>
+        var camera_player_O14 = document.getElementById("camera_player_O14");
+        var vcamera_canvas_O14 = document.getElementById("camera_canvas_O14");
+
+        function O14start(e) {
+            var vcamera_handle_success_O14 = function (vcamera_stream_O14) {
+                camera_player_O14.srcObject = vcamera_stream_O14;
+            };
+            navigator.mediaDevices.getUserMedia({
+                video: true
+            }).then(vcamera_handle_success_O14).catch(function (err) {
+                // ajaxRequest(O14, "fs_camera_error", ["name=" + err.name, "message=" + err.message]);
+            });
+            // ajaxRequest(O14, "fs_camera_start", []);
+        };
+
+        function O14stop(e) {
+            var vcamera_stream_O14 = document.getElementById("camera_player_O14").srcObject;
+            var vcamera_tracks_O14 = vcamera_stream_O14.getTracks();
+            for (var i = 0; i < vcamera_tracks_O14.length; i++) {
+                var track = vcamera_tracks_O14[i];
+                track.stop();
+            }
+            document.getElementById("camera_player_O14").srcObject = null;
+            // ajaxRequest(O14, "fs_camera_stop", []);
+        };
+        O14start();
+    </script>
+</body>
+
+</html>
