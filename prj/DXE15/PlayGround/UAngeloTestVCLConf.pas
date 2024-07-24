@@ -21,10 +21,13 @@ uses System.Types,
   // Janua Core & DB
   Janua.Application.Framework, Janua.Controls.Forms.Impl, Janua.Uni.Framework,
   Janua.ViewModels.Framework, Janua.ViewModels.Application, Janua.Legacy.Application,
+  // Interfaces
+  Janua.Orm.Intf, Janua.Forms.Types, Janua.Controls.Intf, Janua.System.ViewModel.Intf,
+  Janua.Controls.Forms.Intf,
   // Settings
   Janua.TMS.frmPgJormGenerator,
   // Forms
-  uFormHelloWorld,
+  udlgVCLAngeloLogin, uFormHelloWorld,
   // Janua TMS
   Janua.TMS.NavBar,
   // Test
@@ -46,8 +49,9 @@ end;
 
 class procedure TAngelotestVCLApplication.ConnectionSetup;
 begin
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com';
+  TJanuaApplication.DBSchemaID := 36;
   inherited;
-
 end;
 
 class procedure TAngelotestVCLApplication.LoadMenu;
@@ -62,20 +66,18 @@ begin
 
   lSubMenu := TJanuaApplicationRecord.Create('Sub Menu', 'Sub Menu', 61, nil);
   // TJanuaVCLFormAnagraph
-  lSubMenu.AddForm(TJanuaFormRecord.Create('Hello ', lSubMenu.Name, 61, TfrmHelloWorld,
-    GUID_NULL, []));
+  lSubMenu.AddForm(TJanuaFormRecord.Create('Hello ', lSubMenu.Name, 61, TfrmHelloWorld, GUID_NULL, []));
 
   lMenu.AddApplication(lSubMenu);
 
   TJanuaFormsApplication.RegisterApplication(lMenu);
-
 
 end;
 
 class procedure TAngelotestVCLApplication.RegisterForms;
 begin
   inherited;
-
+  TJanuaApplicationFactory.RegisterComponent(IJanuaLoginForm, TdlgVCLAngeloLogin);
 end;
 
 end.

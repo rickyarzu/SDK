@@ -13,16 +13,17 @@ uses
   Janua.Vcl.MVVM.Framework,
   Vcl.Themes,
   Vcl.Styles,
-  ufrmMDIRibbonToolbar in '..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas' {frmMDIRibbonToolbar} ,
-  udmVCLMainApplication
-    in '..\..\..\src\VCL\Commons\udmVCLMainApplication.pas' {dmVCLMainApplication: TDataModule} ,
-  udmTmsMainApplication in '..\..\..\src\TMS\udmTmsMainApplication.pas' {dmTmsMainApplication: TDataModule} ,
-  uJanuaVCLForm in '..\..\..\src\VCL\Forms\uJanuaVCLForm.pas' {JanuaVCLFormModel} ,
-  uJanuaVCLFrame in '..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas' {JanuaVCLFrameModel: TFrame} ,
-  uJanuaVCLMainForm in '..\..\..\src\VCL\Commons\uJanuaVCLMainForm.pas' {JanuaVCLMainForm} ,
-  UFormMainVCLAngelo in '..\..\..\Samples\Angelo\UFormMainVCLAngelo.pas' {frmMainAngeloTestVCL} ,
+  ufrmMDIRibbonToolbar in '..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas' {frmMDIRibbonToolbar},
+  udmVCLMainApplication in '..\..\..\src\VCL\Commons\udmVCLMainApplication.pas' {dmVCLMainApplication: TDataModule},
+  udmTmsMainApplication in '..\..\..\src\TMS\udmTmsMainApplication.pas' {dmTmsMainApplication: TDataModule},
+  uJanuaVCLForm in '..\..\..\src\VCL\Forms\uJanuaVCLForm.pas' {JanuaVCLFormModel},
+  uJanuaVCLFrame in '..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas' {JanuaVCLFrameModel: TFrame},
+  uJanuaVCLMainForm in '..\..\..\src\VCL\Commons\uJanuaVCLMainForm.pas' {JanuaVCLMainForm},
+  UFormMainVCLAngelo in '..\..\..\Samples\Angelo\UFormMainVCLAngelo.pas' {frmMainAngeloTestVCL},
   UAngeloTestVCLConf in 'UAngeloTestVCLConf.pas',
-  uFormHelloWorld in '..\..\..\Samples\Angelo\uFormHelloWorld.pas' {frmHelloWorld};
+  uFormHelloWorld in '..\..\..\Samples\Angelo\uFormHelloWorld.pas' {frmHelloWorld},
+  Janua.VCL.dlgCustomLogin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas' {dlgVCLCustomLogin},
+  udlgVCLAngeloLogin in '..\..\..\Samples\Angelo\udlgVCLAngeloLogin.pas' {dlgVCLAngeloLogin};
 
 {$R *.res}
 
@@ -46,9 +47,13 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows11 Polar Light');
   // ****** Codice di Login *********************************************************
-  TAngelotestVCLApplication.LoadMenu;
-
-  Application.CreateForm(TfrmMainAngeloTestVCL, frmMainAngeloTestVCL);
-  Application.Run;
+  if TJanuaApplication.UserSessionVM.LoginWithDialog then
+  begin
+    TAngelotestVCLApplication.LoadMenu;
+    Application.CreateForm(TfrmMainAngeloTestVCL, frmMainAngeloTestVCL);
+    Application.Run;
+  end
+  else
+    Application.Terminate;
 
 end.

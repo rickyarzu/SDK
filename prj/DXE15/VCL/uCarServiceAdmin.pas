@@ -247,7 +247,6 @@ end;
 class procedure TCarServiceProjectApplication.RegisterForms;
 begin
   inherited;
-  // TdlgVCLTMLogisticLogin = class(TdlgVCLCustomLogin, IJanuaLoginForm)
   TJanuaApplicationFactory.RegisterComponent(IJanuaLoginForm, TdlgVCLCarServiceLogin);
 end;
 
