@@ -186,6 +186,12 @@
         <Projects Include="..\..\Samples\Janua\JanuaVCLTestCloudFlare.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -743,14 +749,32 @@
     <Target Name="JanuaVCLTestCloudFlare:Make">
         <MSBuild Projects="..\..\Samples\Janua\JanuaVCLTestCloudFlare.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CustomPathBlox">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj"/>
+    </Target>
+    <Target Name="CustomPathBlox:Clean">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomPathBlox:Make">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomSVGBlox">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Clean">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Make">
+        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -946,6 +970,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -978,6 +1008,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1314,6 +1350,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1347,6 +1389,12 @@
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
             <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1682,6 +1730,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1714,6 +1768,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2050,6 +2110,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2082,6 +2148,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2418,6 +2490,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2450,6 +2528,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2786,6 +2870,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2818,6 +2908,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3154,6 +3250,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\SVG Custom Block\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations/>
@@ -3186,6 +3288,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
             <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
