@@ -14,7 +14,7 @@ uses
   // Janua.Interposers
   Janua.Vcl.Interposers, Janua.TMS.Interposers,
   // Warehouse Receipts View Model
-  Janua.ViewModels.Intf, Janua.Documents.ViewModel.Intf, Janua.Documents.frameVCLDocRows;
+  Janua.ViewModels.Intf, Janua.Documents.ViewModel.Intf, Janua.Documents.frameVCLDocRows, Vcl.ComCtrls;
 
 type
   TdlgVCLDocumentRow = class(TJanuaVCLFormModel, IJanuaRecordEditDialog, IJanuaBindable, IJanuaDocRowsDialog)

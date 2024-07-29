@@ -5,12 +5,12 @@ interface
 uses
   // RTL
   System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils, System.UITypes,
-  System.DateUtils,
+  System.DateUtils, System.Math,
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
   // VCL / TMS
   SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
-  PictureContainer,
+  PictureContainer, VCL.Graphics,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
   DBPlanner, PlanExLiveCalendar, Planner, PlanExGCalendar, CloudvCal, CloudWebDav, CloudCustomLive,
@@ -344,6 +344,28 @@ type
     ActionPrint2: TAction;
     ActionCalendarSync2: TAction;
     qryPlannerEventslkpMailTecnico: TStringField;
+    qryReportPlannercalcIndirizzo: TStringField;
+    qryPersonalPlannerEvents: TUniQuery;
+    IntegerField1: TIntegerField;
+    IntegerField2: TIntegerField;
+    IntegerField3: TIntegerField;
+    DateTimeField1: TDateTimeField;
+    DateTimeField2: TDateTimeField;
+    StringField2: TStringField;
+    WideMemoField1: TWideMemoField;
+    StringField3: TStringField;
+    IntegerField4: TIntegerField;
+    SmallintField1: TSmallintField;
+    BlobField1: TBlobField;
+    IntegerField5: TIntegerField;
+    IntegerField6: TIntegerField;
+    IntegerField7: TIntegerField;
+    StringField4: TStringField;
+    GuidField1: TGuidField;
+    StringField5: TStringField;
+    qryPersonalPlannerEventscalcImage: TGraphicField;
+    qryReportPlannercalcReportID: TIntegerField;
+    qryReportPlannercalcImage: TBlobField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -368,6 +390,8 @@ type
     FItemColorField2: TField;
     FItemCaptionField2: TField;
     FCalendarsFilter2: Boolean;
+    FSelectedCalendarTec: Integer;
+    FSelectedDate: TDate;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -383,6 +407,8 @@ type
     procedure SetItemColorField2(const Value: TField);
     procedure SetItemImageField2(const Value: TField);
     procedure SetCalendarsFilter2(const Value: Boolean);
+    procedure SetSelectedCalendarTec(const Value: Integer);
+    procedure SetSelectedDate(const Value: TDate);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -423,6 +449,7 @@ type
     procedure ReportGoogleSync;
     procedure PlannerGoogleSync; override;
     procedure FilterMeeting(const aFilter: TRecordFilter);
+    procedure OpenCalendarT(aDate: TDate; aTechID: Integer);
   public
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
@@ -447,6 +474,8 @@ type
     property CAPFilter: Boolean read FCAPFilter write SetCAPFilter;
     property CAP: String read FCAP write SetCAP;
     property StateFilter: Integer read FStateFilter write SetStateFilter;
+    property SelectedCalendarTec: Integer read FSelectedCalendarTec write SetSelectedCalendarTec;
+    property SelectedDate: TDate read FSelectedDate write SetSelectedDate;
   end;
 
 var
@@ -494,9 +523,13 @@ var
 begin
   dlg := TdlgVCLPhoenixPlannerEvent.Create(nil);
   try
+    OpenCalendarT(FSelectedDate, FTechID);
+
+    dlg.cboTecnici.Value := SelectedCalendarTec.ToString;
     dlg.ShowModal;
   finally
     dlg.Free;
+    dlg := nil;
   end;
 end;
 
@@ -539,6 +572,11 @@ begin
   dsCalendarEvents.Enabled := False;
   dsGoogleEvents.Enabled := False;
   dslkpGCalendar.Enabled := False;
+
+  var
+  aDay := DayOfWeek(Date + 1);
+  aDay := 1 + IfThen(aDay >= 6, 7 - aDay, 0);
+  FSelectedDate := Date + aDay;
 
   {
     LoadCalendarsFromDB: TProc;
@@ -938,6 +976,24 @@ begin
 
 end;
 
+procedure TdmVCLPhoenixPlannerController.OpenCalendarT(aDate: TDate; aTechID: Integer);
+begin
+  { SELECT E.* FROM CALENDARIO_EVENTI E
+    where
+    E.DALLE_ORE >= :DATA_DAL AND E.ALLE_ORE < :DATA_DAL + 1
+    and E.TECNICO = :TECNICO }
+
+  if (qryPersonalPlannerEvents.Params[0].AsDate <> aDate) or
+    (qryPersonalPlannerEvents.Params[1].AsInteger <> aTechID) then
+  begin
+    qryPersonalPlannerEvents.Close;
+    qryPersonalPlannerEvents.Params[0].AsDate := aDate;
+    qryPersonalPlannerEvents.Params[1].AsInteger := aTechID;
+    qryPersonalPlannerEvents.Open;
+  end;
+
+end;
+
 procedure TdmVCLPhoenixPlannerController.PhoenixInsertGoogleEvents;
 begin
   if not tabGoogleEvents.Locate('ID', vtGoogleEvents.FieldByName('ID').Value, []) then
@@ -1056,17 +1112,17 @@ begin
       dlgPhoenixVCLGoogleSync.ShowModal;
       if dlgPhoenixVCLGoogleSync.ModalResult = mrOK then
       begin
-          qryPlannerEvents.Edit;
-          qryPlannerEventsDALLE_ORE.AsDateTime := vtGoogleEventsSearchSTARTTIME2.AsDateTime;
-          qryPlannerEventsCOLORE.AsInteger := vtGoogleEventsSearchCalcColor3.AsInteger;
-          qryPlannerEventsALLE_ORE.AsDateTime := vtGoogleEventsSearchENDTIME3.AsDateTime;
-          qryPlannerEventsSUBJECT.AsString := vtGoogleEventsSearchSUMMARY3.AsString;
-          qryPlannerEventsNOTE.AsString := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
-          qryPlannerEventsGOOGLEID.AsString := vtGoogleEventsSearchID3.AsString;
-          qryPlannerEvents.Post;
-          qryReportPlanner.Edit;
-          qryReportPlannerGCAL.AsString := 'G';
-          qryReportPlanner.Post;
+        qryPlannerEvents.Edit;
+        qryPlannerEventsDALLE_ORE.AsDateTime := vtGoogleEventsSearchSTARTTIME2.AsDateTime;
+        qryPlannerEventsCOLORE.AsInteger := vtGoogleEventsSearchCalcColor3.AsInteger;
+        qryPlannerEventsALLE_ORE.AsDateTime := vtGoogleEventsSearchENDTIME3.AsDateTime;
+        qryPlannerEventsSUBJECT.AsString := vtGoogleEventsSearchSUMMARY3.AsString;
+        qryPlannerEventsNOTE.AsString := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
+        qryPlannerEventsGOOGLEID.AsString := vtGoogleEventsSearchID3.AsString;
+        qryPlannerEvents.Post;
+        qryReportPlanner.Edit;
+        qryReportPlannerGCAL.AsString := 'G';
+        qryReportPlanner.Post;
       end;
     finally
       dlgPhoenixVCLGoogleSync.Free;
@@ -1179,10 +1235,70 @@ begin
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerCalcFields(DataSet: TDataSet);
+  procedure LoadImageFromImageList(Index: Integer);
+  var
+    Bitmap: TBitmap;
+  begin
+    if (Index >= 0) and (Index < SVGIconImageListIt.Count) then
+    begin
+      Bitmap := TBitmap.Create;
+      try
+        SVGIconImageListIt.GetBitmap(Index, Bitmap);
+        qryReportPlannercalcImage.Assign(Bitmap); // Copia l'immagine dal Bitmap al TImage
+      finally
+        Bitmap.Free;
+      end;
+    end
+    else
+      ShowMessage('Indice fuori intervallo!');
+  end;
+
+const
+  green = 0;
+  red = 1;
+  orange = 2;
+  blue = 3;
+  white = 4;
 begin
-  inherited;
+  if qryReportPlannercalcReportID.IsNull or
+    (qryReportPlannercalcReportID.AsInteger <> qryReportPlannerCHIAVE.AsInteger) then
+    try
+      var
+      Image := white;
+
+      with dmVCLPhoenixPlannerController.qryReportPlanner do
+      begin
+        if (FieldByName('STATO').AsInteger < 0) then
+          Image := red;
+        if (FieldByName('STATO').AsInteger in [1, 6]) then
+        begin
+          Image := blue;
+          { FontStyles := [fsBold]; }
+        end;
+
+        if (FieldByName('STATO').AsInteger = 4) then
+          Image := orange;
+
+        if (FieldByName('STATO').AsInteger in [5, 6]) then
+          Image := green;
+
+        if not FieldByName('APPUNTAMENTO_DATA').IsNull and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)
+        then
+          Image := red;
+      end;
+
+      LoadImageFromImageList(Image);
+    finally
+      qryReportPlannercalcReportID.AsInteger := qryReportPlannerCHIAVE.AsInteger;
+
+    end;
+
   qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+
+  qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
+    qryReportPlannerCAP.AsString + qryReportPlannerCOMUNE.AsString;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryTechPlannedAfterScroll(DataSet: TDataSet);
@@ -1336,6 +1452,24 @@ begin
   FReportDateFilter := Value;
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetSelectedCalendarTec(const Value: Integer);
+begin
+  if Value <> FSelectedCalendarTec then
+  begin
+    FSelectedCalendarTec := Value;
+    OpenCalendarT(FSelectedDate, FSelectedCalendarTec);
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetSelectedDate(const Value: TDate);
+begin
+  if Value <> FSelectedDate then
+  begin
+    FSelectedDate := Value;
+    OpenCalendarT(FSelectedDate, FSelectedCalendarTec);
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetStateFilter(const Value: Integer);
 begin
   FStateFilter := Value;
@@ -1348,7 +1482,12 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.SetTechID(const Value: Int64);
 begin
-  FTechID := Value;
+  if FTechID <> FSelectedDate then
+  begin
+    FTechID := Value;
+    { OpenCalendarT(FSelectedDate, FTechID); }
+    Notify('TechID');
+  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.Setup;

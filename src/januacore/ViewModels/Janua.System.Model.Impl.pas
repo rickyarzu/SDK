@@ -101,28 +101,42 @@ type
   end;
 
   TJanuaDBSystemUsersModel = class(TJanuaModelDBTemplate, IJanuaDBSystemUsersModel, IJanuaModel)
+  public
+    constructor Create; override;
+    destructor Destroy; override;
   private
     FUserProfileRecord: IUserProfile;
     FjdsUser: IJanuaDBDataset;
     FjdsUserProfile: IJanuaDBDataset;
     FjdsLogin: IJanuaDBDataset;
   strict protected
+    FAnagraphModel: IJanuaAnagraphModel;
     FDM: IJanuaSystemDataModule;
+    function GetAnagraphModel: IJanuaAnagraphModel;
   protected
     // qryUserProfile
     function GetjdsUserProfile: IJanuaDBDataset;
     // qryUserProfile
     function GetjdsUser: IJanuaDBDataset;
     function GetUserProfileRecord: IUserProfile;
+    // Users List
+    function GetjdsUsers: IJanuaDBDataset;
     // Anagraph Profile
+    function GetAnagraphProfile: IAnagraphView;
   public
     property jdsUser: IJanuaDBDataset read GetjdsUser;
     property jdsUserProfile: IJanuaDBDataset read GetjdsUserProfile;
     property UserProfileRecord: IUserProfile read GetUserProfileRecord;
+    // <summary> Lists all Users belonging to a specific user's group  </summary>
+    property jdsUsers: IJanuaDBDataset read GetjdsUsers;
   public
     function searchuserbyGUID(const aGUID: TGUID): boolean; overload;
-    constructor Create; override;
-    destructor Destroy; override;
+    /// <summary> Opens the Users table according to a Group ID Identifier </summary>
+    function ListUsersByGroupID(const GroupID: Integer): boolean;
+    /// <summary> Selects an User by its ID </summary>
+    function searchuserbyID(const aID: Integer): boolean;
+    /// <summary> Retrieves user's anagraph profile, this profile is managed by Anagraph Model </summary>
+    property AnagraphProfile: IAnagraphView read GetAnagraphProfile;
   end;
 
   TJanuaRESTSystemUserSessionModel = class(TJanuaRESTModelTemplate, IJanuaRemoteSystemUserSessionModel,
@@ -162,8 +176,8 @@ type
     function InternalAddUser(const aUser: IUserProfile): boolean;
     function InternalAddUserSocial(const aUser: IUserProfile): boolean;
     function InternalCheckUserSocial(const aUser: IUserProfile): boolean;
-    function InternalCheckUser(var count: integer; aUser: IUserProfile): boolean;
-    function OpenProfile(aUserID: integer): boolean;
+    function InternalCheckUser(var count: Integer; aUser: IUserProfile): boolean;
+    function OpenProfile(aUserID: Integer): boolean;
   protected
     function GetUserSessionRecord: IUserSession;
     function GetSessionID: Int64;
@@ -211,7 +225,7 @@ type
     /// <returns> bool value should be True (found) or False (not Found) </returns>
     function FindUserByName(const aName: string): boolean;
     function FindUserByKey(const key: string): boolean;
-    function FindUserByID(const Id: integer): boolean;
+    function FindUserByID(const Id: Integer): boolean;
     function CheckUser(const aUser: IUserProfile): boolean;
     function AddUser(const aUser: IUserProfile): boolean;
     /// <summary> funzione che crea un utente partendo da un profilo utente auto registrato</summary>
@@ -225,7 +239,7 @@ type
     /// <summary> Deletes an user from the storage using Searched User Profile </summary>
     function DelUser: boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by User ID </summary>
-    function DelUser(const aUserID: integer): boolean; overload;
+    function DelUser(const aUserID: Integer): boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by GUID </summary>
     function DelUser(const aGUID: TGUID): boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by EMail UID </summary>
@@ -233,9 +247,9 @@ type
     /// <summary> Deletes an user from the storage using Searched User Profile by TGUID </summary>
     function searchuserbyGUID(const aGUID: TGUID): boolean; overload;
     /// <summary> Create a new anagraph profiles and adds it to the passed user </summary>
-    function CreateNewAnagraph(const Value: IUser; const aAnagraphProfile: IAnagraphView): integer; overload;
+    function CreateNewAnagraph(const Value: IUser; const aAnagraphProfile: IAnagraphView): Integer; overload;
     /// <summary> Create a new anagraph profiles and adds it to user logged in </summary>
-    function CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): integer; overload;
+    function CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): Integer; overload;
     /// <summary> Sends Anagraph Profile to AnagraphModel for Updates </summary>
     procedure UpdateAnagraphProfile(aAnagraphProfile: IAnagraphView);
     /// <summary> Deletes current logged User </summary>
@@ -252,7 +266,7 @@ type
     function findaddress(const aAddress: string): smallint;
     function findaddressbyID(const aID: Int64): smallint;
     // Find users by List Returns the number of found Users
-    function FindUsers(const aUserName, aEmail: string): integer;
+    function FindUsers(const aUserName, aEmail: string): Integer;
     /// <summary> basic payment function, on Finded user found by ID or Token or EMail </summary>
     function DoPaymentFindUser(const aAmount: Currency; const aDate: TDate): boolean;
     /// <summary> basic payment function, on session or user logged in  </summary>
@@ -315,8 +329,8 @@ type
     function InternalAddUser(const aUser: IUserProfile): boolean;
     function InternalAddUserSocial(const aUser: IUserProfile): boolean;
     function InternalCheckUserSocial(const aUser: IUserProfile): boolean;
-    function InternalCheckUser(var count: integer; aUser: IUserProfile): boolean;
-    function OpenProfile(aUserID: integer): boolean;
+    function InternalCheckUser(var count: Integer; aUser: IUserProfile): boolean;
+    function OpenProfile(aUserID: Integer): boolean;
   protected
     function GetjspUserAdd: IJanuaDBStoredProcedure;
     function GetjdsUserProfile: IJanuaDBDataset;
@@ -370,7 +384,7 @@ type
     /// <returns> bool value should be True (found) or False (not Found) </returns>
     function FindUserByName(const aName: string): boolean;
     function FindUserByKey(const key: string): boolean;
-    function FindUserByID(const Id: integer): boolean;
+    function FindUserByID(const Id: Integer): boolean;
     function CheckUser(const aUser: IUserProfile): boolean;
     function AddUser(const aUser: IUserProfile): boolean;
     /// <summary> funzione che crea un utente partendo da un profilo utente auto registrato</summary>
@@ -384,7 +398,7 @@ type
     /// <summary> Deletes an user from the storage using Searched User Profile </summary>
     function DelUser: boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by User ID </summary>
-    function DelUser(const aUserID: integer): boolean; overload;
+    function DelUser(const aUserID: Integer): boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by GUID </summary>
     function DelUser(const aGUID: TGUID): boolean; overload;
     /// <summary> Deletes an user from the storage using Searched User Profile by EMail UID </summary>
@@ -392,9 +406,9 @@ type
     /// <summary> Deletes an user from the storage using Searched User Profile by TGUID </summary>
     function searchuserbyGUID(const aGUID: TGUID): boolean; overload;
     /// <summary> Create a new anagraph profiles and adds it to the passed user </summary>
-    function CreateNewAnagraph(const Value: IUser; const aAnagraphProfile: IAnagraphView): integer; overload;
+    function CreateNewAnagraph(const Value: IUser; const aAnagraphProfile: IAnagraphView): Integer; overload;
     /// <summary> Create a new anagraph profiles and adds it to user logged in </summary>
-    function CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): integer; overload;
+    function CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): Integer; overload;
     /// <summary> Sends Anagraph Profile to AnagraphModel for Updates </summary>
     procedure UpdateAnagraphProfile(aAnagraphProfile: IAnagraphView);
     /// <summary> Deletes current logged User </summary>
@@ -411,7 +425,7 @@ type
     function findaddress(const aAddress: string): smallint;
     function findaddressbyID(const aID: Int64): smallint;
     // Find users by List Returns the number of found Users
-    function FindUsers(const aUserName, aEmail: string): integer;
+    function FindUsers(const aUserName, aEmail: string): Integer;
     /// <summary> basic payment function, on Finded user found by ID or Token or EMail </summary>
     function DoPaymentFindUser(const aAmount: Currency; const aDate: TDate): boolean;
     /// <summary> basic payment function, on session or user logged in  </summary>
@@ -655,6 +669,11 @@ begin
   Result := FUserProfileRecord
 end;
 
+function TJanuaDBSystemUsersModel.ListUsersByGroupID(const GroupID: Integer): boolean;
+begin
+
+end;
+
 destructor TJanuaDBSystemUsersModel.Destroy;
 begin
   FjdsUser := nil;
@@ -662,6 +681,19 @@ begin
   FjdsLogin := nil;
   FDM := nil;
   inherited;
+end;
+
+function TJanuaDBSystemUsersModel.GetAnagraphModel: IJanuaAnagraphModel;
+begin
+  if not Assigned(FAnagraphModel) then
+    if not TJanuaApplicationFactory.TryGetInterface(IJanuaDBAnagraphModel, FAnagraphModel) then
+      raise exception.Create('IJanuaDBAnagraphModel not set');
+  Result := FAnagraphModel
+end;
+
+function TJanuaDBSystemUsersModel.GetAnagraphProfile: IAnagraphView;
+begin
+
 end;
 
 function TJanuaDBSystemUsersModel.GetjdsUser: IJanuaDBDataset;
@@ -674,10 +706,20 @@ begin
   Result := FjdsUserProfile
 end;
 
+function TJanuaDBSystemUsersModel.GetjdsUsers: IJanuaDBDataset;
+begin
+
+end;
+
 function TJanuaDBSystemUsersModel.searchuserbyGUID(const aGUID: TGUID): boolean;
 begin
   { TODO: Implementation of method searchuserbyGUID }
   Result := False;
+end;
+
+function TJanuaDBSystemUsersModel.searchuserbyID(const aID: Integer): boolean;
+begin
+
 end;
 
 { TJanuaDBSystemUserSessionModel }
@@ -773,7 +815,7 @@ begin
 end;
 
 function TJanuaDBSystemUserSessionModel.CreateNewAnagraph(const Value: IUser;
-  const aAnagraphProfile: IAnagraphView): integer;
+  const aAnagraphProfile: IAnagraphView): Integer;
 begin
   Result := -1; // if fails should return -1
   try
@@ -826,7 +868,7 @@ begin
   end;
 end;
 
-function TJanuaDBSystemUserSessionModel.CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): integer;
+function TJanuaDBSystemUserSessionModel.CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): Integer;
 begin
   Result := CreateNewAnagraph(User, aAnagraphProfile);
 end;
@@ -903,13 +945,13 @@ begin
   Result := False;
 end;
 
-function TJanuaDBSystemUserSessionModel.DelUser(const aUserID: integer): boolean;
+function TJanuaDBSystemUserSessionModel.DelUser(const aUserID: Integer): boolean;
 begin
   { TODO: Implementation of method DelUser (ID) }
   Result := False;
 end;
 
-function TJanuaDBSystemUserSessionModel.FindUserByID(const Id: integer): boolean;
+function TJanuaDBSystemUserSessionModel.FindUserByID(const Id: Integer): boolean;
 begin
   jdsUserProfile.Close;
   jdsUserProfile.ParamByName('db_user_id').AsInteger := Id;
@@ -935,7 +977,7 @@ begin
   Result := False;
 end;
 
-function TJanuaDBSystemUserSessionModel.FindUsers(const aUserName, aEmail: string): integer;
+function TJanuaDBSystemUserSessionModel.FindUsers(const aUserName, aEmail: string): Integer;
 begin
   { TODO : Implement FindUserBySocialID (by aUserName or  aEmail) returning a boolean }
   Result := -1;
@@ -1099,7 +1141,7 @@ end;
 
 function TJanuaDBSystemUserSessionModel.InternalAddUser(const aUser: IUserProfile): boolean;
 var
-  vcount: integer;
+  vcount: Integer;
   vResult: boolean;
 
   procedure RegisterUser;
@@ -1181,7 +1223,7 @@ begin
   Result := False;
 end;
 
-function TJanuaDBSystemUserSessionModel.InternalCheckUser(var count: integer; aUser: IUserProfile): boolean;
+function TJanuaDBSystemUserSessionModel.InternalCheckUser(var count: Integer; aUser: IUserProfile): boolean;
 begin
   { TODO: Implementation of method InternalCheckUser (aUser) }
   Result := False;
@@ -1310,7 +1352,7 @@ end;
 procedure TJanuaDBSystemUserSessionModel.LoadSessionAnagraphProfile;
 var
   lModel: IJanuaDBAnagraphModel;
-  lID: integer;
+  lID: Integer;
   lAnagraph: IAnagraphView;
 begin
   lAnagraph := nil;
@@ -1440,7 +1482,7 @@ begin
   UserSessionRecord.Clear;
 end;
 
-function TJanuaDBSystemUserSessionModel.OpenProfile(aUserID: integer): boolean;
+function TJanuaDBSystemUserSessionModel.OpenProfile(aUserID: Integer): boolean;
 begin
   Result := False;
   if (FSessionKey > '') and (FSessionKey <> 'Error') then
@@ -1824,7 +1866,7 @@ begin
 end;
 
 function TJanuaRESTSystemUserSessionModel.CreateNewAnagraph(const Value: IUser;
-  const aAnagraphProfile: IAnagraphView): integer;
+  const aAnagraphProfile: IAnagraphView): Integer;
 begin
   raise exception.Create('CreateNewAnagraph not completely implemented yet');
 
@@ -1879,7 +1921,7 @@ begin
 
 end;
 
-function TJanuaRESTSystemUserSessionModel.CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): integer;
+function TJanuaRESTSystemUserSessionModel.CreateNewAnagraph(const aAnagraphProfile: IAnagraphView): Integer;
 begin
   Result := CreateNewAnagraph(User, aAnagraphProfile);
 end;
@@ -1896,7 +1938,7 @@ begin
   Result := False;
 end;
 
-function TJanuaRESTSystemUserSessionModel.DelUser(const aUserID: integer): boolean;
+function TJanuaRESTSystemUserSessionModel.DelUser(const aUserID: Integer): boolean;
 begin
   { TODO : Aggiungere procedura DMVC e Client Rest per DelUser }
   Result := False;
@@ -1960,7 +2002,7 @@ begin
   Result := False;
 end;
 
-function TJanuaRESTSystemUserSessionModel.FindUserByID(const Id: integer): boolean;
+function TJanuaRESTSystemUserSessionModel.FindUserByID(const Id: Integer): boolean;
 begin
   { TODO : Aggiungere procedura DMVC e Client Rest per FindUserByID }
   Result := False;
@@ -1984,7 +2026,7 @@ begin
   Result := False;
 end;
 
-function TJanuaRESTSystemUserSessionModel.FindUsers(const aUserName, aEmail: string): integer;
+function TJanuaRESTSystemUserSessionModel.FindUsers(const aUserName, aEmail: string): Integer;
 begin
   { TODO : Aggiungere procedura DMVC e Client Rest per findaddressbyID }
   Result := -1;
@@ -2146,7 +2188,7 @@ begin
 
 end;
 
-function TJanuaRESTSystemUserSessionModel.InternalCheckUser(var count: integer; aUser: IUserProfile): boolean;
+function TJanuaRESTSystemUserSessionModel.InternalCheckUser(var count: Integer; aUser: IUserProfile): boolean;
 begin
 
 end;
@@ -2263,7 +2305,7 @@ begin
 
 end;
 
-function TJanuaRESTSystemUserSessionModel.OpenProfile(aUserID: integer): boolean;
+function TJanuaRESTSystemUserSessionModel.OpenProfile(aUserID: Integer): boolean;
 begin
 
 end;

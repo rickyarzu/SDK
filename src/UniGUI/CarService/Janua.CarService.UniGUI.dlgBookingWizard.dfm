@@ -70,11 +70,9 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
-    ExplicitHeight = 560
     object pgDateSelectionPage: TUniTabSheet
       Hint = ''
       Caption = 'pgDateSelection'
-      ExplicitHeight = 532
       object UniPanel1: TUniPanel
         Left = 0
         Top = 133
@@ -118,7 +116,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alClient
         TabOrder = 1
-        ExplicitHeight = 358
         object pnlPickup: TUniContainerPanel
           Left = 0
           Top = 0
@@ -128,7 +125,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alLeft
           TabOrder = 1
-          ExplicitHeight = 358
           object cldPickup1: TUniCalendar
             Left = 0
             Top = 53
@@ -195,7 +191,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 2
-          ExplicitHeight = 358
           object cldReturn1: TUniCalendar
             Left = 0
             Top = 53
@@ -1390,7 +1385,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgTimeSelection: TUniTabSheet
       Hint = ''
       Caption = 'pgTimeSelection'
-      ExplicitHeight = 532
       object UniContainerPanel1: TUniContainerPanel
         Left = 0
         Top = 0
@@ -1401,7 +1395,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 532
         object pnlPickupTimeSelect: TUniContainerPanel
           AlignWithMargins = True
           Left = 40
@@ -1414,7 +1407,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alLeft
           TabOrder = 1
-          ExplicitHeight = 386
           DesignSize = (
             340
             404)
@@ -1490,7 +1482,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
             TabOrder = 6
-            ExplicitHeight = 253
             object pnlSlotSelection: TUniSimplePanel
               Left = 0
               Top = 0
@@ -1906,7 +1897,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 2
-          ExplicitHeight = 386
           DesignSize = (
             327
             404)
@@ -1981,7 +1971,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Anchors = [akLeft, akTop, akRight, akBottom]
             TabOrder = 6
-            ExplicitHeight = 253
             object UniSimplePanel2: TUniSimplePanel
               Left = 0
               Top = 0
@@ -2396,7 +2385,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alTop
           TabOrder = 3
-          ExplicitTop = 2
           object UniImage7: TUniImage
             AlignWithMargins = True
             Left = 40
@@ -3521,7 +3509,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgClientInformationsPage: TUniTabSheet
       Hint = ''
       Caption = 'pgClientInformations'
-      ExplicitHeight = 532
       object pnlBookingClient: TUniContainerPanel
         AlignWithMargins = True
         Left = 3
@@ -3532,7 +3519,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 526
         object cntCarBookingClient: TUniContainerPanel
           Left = 0
           Top = 0
@@ -3542,7 +3528,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 526
           object cnt02CustomerName: TUniContainerPanel
             AlignWithMargins = True
             Left = 5
@@ -3653,7 +3638,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               ParentColor = False
               Align = alClient
               TabOrder = 1
-              ExplicitLeft = 1
               object EdFullAddress: TUniEdit
                 AlignWithMargins = True
                 Left = 3
@@ -3927,7 +3911,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgTimetableLocations: TUniTabSheet
       Hint = ''
       Caption = 'pgTimetableLocations'
-      ExplicitHeight = 532
       object pnlTimetableLocations: TUniContainerPanel
         AlignWithMargins = True
         Left = 3
@@ -3938,8 +3921,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alClient
         TabOrder = 0
-        ExplicitTop = 3
-        ExplicitHeight = 526
         object cntAddressSelect: TUniContainerPanel
           Left = 0
           Top = 0
@@ -3949,8 +3930,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 1
-          ExplicitTop = 1
-          ExplicitHeight = 526
           object UniContainerPanel2: TUniContainerPanel
             AlignWithMargins = True
             Left = 3
@@ -4060,7 +4039,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
               ParentColor = False
               Align = alClient
               TabOrder = 1
-              ExplicitHeight = 160
               object pnlTop: TUniContainerPanel
                 Left = 0
                 Top = 0
@@ -4120,7 +4098,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 ParentColor = False
                 Align = alTop
                 TabOrder = 2
-                ExplicitTop = 33
                 object cboPickup: TUniComboBox
                   AlignWithMargins = True
                   Left = 10
@@ -4162,7 +4139,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                 ParentColor = False
                 Align = alTop
                 TabOrder = 3
-                ExplicitTop = 86
                 object cboReturn: TUniComboBox
                   AlignWithMargins = True
                   Left = 10
@@ -4178,8 +4154,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   Font.Height = -13
                   TabOrder = 1
                   IconItems = <>
-                  ExplicitTop = 31
-                  ExplicitHeight = 33
                 end
                 object lbVehiclePickupPlace: TUniLabel
                   AlignWithMargins = True
@@ -4213,7 +4187,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Align = alTop
             TabOrder = 6
-            ExplicitTop = 279
             object UniContainerPanel5: TUniContainerPanel
               Left = 0
               Top = 0
@@ -4297,7 +4270,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   Font.Height = -13
                   TabOrder = 1
                   IconItems = <>
-                  ExplicitHeight = 35
                 end
                 object lbDepartureD: TUniLabel
                   AlignWithMargins = True
@@ -4339,7 +4311,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
                   Font.Height = -13
                   TabOrder = 1
                   IconItems = <>
-                  ExplicitHeight = 35
                 end
                 object lbVehiclePickupPlaceD: TUniLabel
                   AlignWithMargins = True
@@ -4374,8 +4345,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alTop
         TabOrder = 1
-        ExplicitLeft = 6
-        ExplicitTop = 13
         object UniImage9: TUniImage
           AlignWithMargins = True
           Left = 40
@@ -5457,7 +5426,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgSummaryConfirmationPage: TUniTabSheet
       Hint = ''
       Caption = 'pgSummaryConfirmation'
-      ExplicitHeight = 532
       DesignSize = (
         740
         550)
@@ -5771,7 +5739,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     object pgPaymentPage: TUniTabSheet
       Hint = ''
       Caption = 'pgPayment'
-      ExplicitHeight = 532
       DesignSize = (
         740
         550)
@@ -9417,7 +9384,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       'memoLog')
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 560
   end
   object CalendarSelectPickup: TUNIControllerCalendarSelect
     Enabled = False

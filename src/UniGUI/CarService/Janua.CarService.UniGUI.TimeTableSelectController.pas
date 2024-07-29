@@ -57,6 +57,7 @@ type
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure UpdateTimeTableDateTime;
     procedure cboPickupCloseUp(Sender: TObject); // Assigned to FcboPickup
     procedure cboReturnCloseUp(Sender: TObject); // FcboReturn
     property TimeTableView: ItimetableView read FTimeTableView write SetTimeTableView;
@@ -245,6 +246,7 @@ end;
 procedure TTimeTableUniGUIController.SetlbDeliveryTime(const Value: TUniLabel);
 begin
   FlbDeliveryTime := Value;
+  UpdateTimeTableDateTime;
 end;
 
 procedure TTimeTableUniGUIController.SetlbDeparture(const Value: TUniLabel);
@@ -255,6 +257,7 @@ end;
 procedure TTimeTableUniGUIController.SetlbTimetableDAte(const Value: TUniLabel);
 begin
   FlbTimetableDAte := Value;
+  UpdateTimeTableDateTime;
 end;
 
 procedure TTimeTableUniGUIController.SetlbTimeTableType(const Value: TUniLabel);
@@ -282,14 +285,21 @@ begin
   end;
 end;
 
+procedure TTimeTableUniGUIController.UpdateTimeTableDateTime;
+begin
+  if Assigned(FTimeTableView) then
+  begin
+    if Assigned(lbTimetableDAte) then
+      lbTimetableDAte.Caption := FTimeTableView.Workingday.AsString;
+    if Assigned(lbDeliveryTime) then
+      lbDeliveryTime.Caption := FTimeTableView.SlotDes.AsString;
+  end;
+end;
+
 procedure TTimeTableUniGUIController.SetTimeTableView(const Value: ItimetableView);
 begin
   FTimeTableView := Value;
-  if Assigned(lbTimetableDAte) then
-    lbTimetableDAte.Caption := FTimeTableView.Workingday.AsString;
-  if Assigned(lbDeliveryTime) then
-    lbDeliveryTime.Caption := FTimeTableView.SlotDes.AsString;
-
+  UpdateTimeTableDateTime;
 end;
 
 end.

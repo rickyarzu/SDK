@@ -271,7 +271,7 @@ end
 
 
 
-
+[dcc32 Error] JanuaTmsControls.dpk(47): Packages 'VCLTMSFNCCorePkgDXE15' and 'VCLTMSFNCCorePkg' both contain unit 'VCL.TMSFNCBitmapContainerEditor'
 
 
 

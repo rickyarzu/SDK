@@ -8,11 +8,14 @@ uses
   // Windows / System
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Spring.Collections, System.Json, System.Types, System.UITypes,
-  VCL.Controls, VCL.Forms, {Janua.Bindings.Impl,} Janua.Bindings.Intf,
-  Janua.Controls.Forms.Intf, Janua.Controls.Intf, Janua.Core.Types, Janua.Core.Classes.Intf;
+  // VVCL
+  VCL.Controls, VCL.Forms, {Janua.Bindings.Impl,}
+  // Janua ............................................................................
+  Janua.Bindings.Intf, Janua.Controls.Forms.Intf, Janua.Controls.Intf, Janua.Core.Types,
+  Janua.Core.Classes.Intf;
 
 type
-  TJanuaVCLFrameModel = class(TFrame, IJanuaContainer, IJanuaBindable)
+  TJanuaVCLFrameModel = class(TFrame, IJanuaFrame, IJanuaContainer, IJanuaBindable)
     // ------- Observer
   private
     FObserversList: IDictionary<IJanuaBindable, TProc>;
@@ -40,7 +43,8 @@ type
     procedure Notify(const AProperty: string);
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
+      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]);
     property BindManager: IJanuaBindManager read GetBindManager;
     // ************************************* Bindings Procedures ***********************************
 
@@ -83,7 +87,8 @@ type
     procedure WriteLog(LogMessage: string; isError: Boolean = false); overload; virtual;
     procedure WriteLog(ProcedureName, LogMessage: string; isError: Boolean = false); overload; virtual;
     procedure WriteError(LogMessage: string; E: Exception; doraise: Boolean = true); overload; virtual;
-    procedure WriteError(ProcedureName, LogMessage: string; E: Exception; doraise: Boolean = true); overload; virtual;
+    procedure WriteError(ProcedureName, LogMessage: string; E: Exception; doraise: Boolean = true);
+      overload; virtual;
     property LocalLog: string read GetLocalLog;
     property LogText: string read GetLogText;
     // *********************************** end Logging Procedures ********************************************
@@ -193,8 +198,8 @@ begin
 
 end;
 
-procedure TJanuaVCLFrameModel.Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-  const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
+procedure TJanuaVCLFrameModel.Bind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
 begin
   try
     BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
@@ -228,7 +233,7 @@ constructor TJanuaVCLFrameModel.Create(AOwner: TComponent);
 begin
   inherited;
   FJActive := false;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaBindManager.Create(Self);
 end;
 
 procedure TJanuaVCLFrameModel.DeActivate;
@@ -266,7 +271,7 @@ end;
 
 function TJanuaVCLFrameModel.GetAfterActivate: TProc;
 begin
-   Result := FAfterActivate
+  Result := FAfterActivate
 end;
 
 function TJanuaVCLFrameModel.GetAlignWM: Boolean;

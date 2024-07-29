@@ -467,14 +467,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 1357
           end
         end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
-          end
-        end
         inherited PageControl1: TPageControl
           Left = 0
           Width = 1416
@@ -483,14 +475,20 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           ExplicitHeight = 453
           inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1408
+            ExplicitHeight = 423
             inherited DBPlanner1: TDBPlanner
+              Width = 1408
+              Height = 423
+              ExplicitWidth = 1408
+              ExplicitHeight = 423
               TMSStyle = 0
             end
           end
           inherited tabCalendarGrid: TTabSheet
             ExplicitWidth = 1408
             ExplicitHeight = 423
-            inherited EnhCRDBGrid1: TEnhCRDBGrid
+            inherited grdCalendar: TEnhCRDBGrid
               Width = 1408
               Height = 423
             end
@@ -513,6 +511,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited lbCalendarList: TLabel
           Width = 1410
         end
+        inherited Area: TLabel
+          Width = 57
+          Caption = 'Calendario'
+          ExplicitWidth = 57
+        end
         inherited grpMeeting: TGroupBox
           Top = 613
           Width = 1416
@@ -528,14 +531,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 1357
           end
         end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
-          end
-        end
         inherited PageControl1: TPageControl
           Left = 0
           Width = 1416
@@ -544,18 +539,28 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           ExplicitHeight = 453
           inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1408
+            ExplicitHeight = 423
             inherited DBPlanner1: TDBPlanner
+              Width = 1408
+              Height = 423
+              ExplicitWidth = 1408
+              ExplicitHeight = 423
               TMSStyle = 0
             end
           end
           inherited tabCalendarGrid: TTabSheet
             ExplicitWidth = 1408
             ExplicitHeight = 423
-            inherited EnhCRDBGrid1: TEnhCRDBGrid
+            inherited grdCalendar: TEnhCRDBGrid
               Width = 1408
               Height = 423
             end
           end
+        end
+        inherited GridPopup: TPopupMenu
+          Left = 423
+          Top = 450
         end
       end
     end
@@ -589,6 +594,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
     object ModificaStatino1: TMenuItem
       Caption = 'Modifica Statino'
+      OnClick = ModificaStatino1Click
     end
     object VisualizzaContratto1: TMenuItem
       Caption = 'Visualizza Contratto'

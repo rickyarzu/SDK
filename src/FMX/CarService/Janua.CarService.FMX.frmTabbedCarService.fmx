@@ -62,7 +62,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
         Size.Height = 753.000000000000000000
         Size.PlatformDefault = False
         TabHeight = 49.000000000000000000
-        TabIndex = 2
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         Sizes = (
@@ -77,7 +77,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 8.000000000000000000
           Size.Height = 8.000000000000000000
           Size.PlatformDefault = False
@@ -10683,7 +10683,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 8.000000000000000000
           Size.Height = 8.000000000000000000
           Size.PlatformDefault = False
@@ -16053,9 +16053,9 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                 Align = Right
                 Images = ImageList1
                 ImageIndex = 18
-                Position.X = -22.888671875000000000
+                Position.X = 262.000000000000000000
                 Size.Width = 168.000000000000000000
-                Size.Height = 31.921875000000000000
+                Size.Height = 30.000000000000000000
                 Size.PlatformDefault = False
                 TabOrder = 0
                 Text = 'Chiama Utente'
@@ -21346,7 +21346,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           753s
           443s
           753s)
-        object TabItem1: TTabItem
+        object tabMsg01List: TTabItem
           CustomIcon = <
             item
             end>
@@ -26616,7 +26616,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             end
           end
         end
-        object TabItem2: TTabItem
+        object tabMsg02Message: TTabItem
           CustomIcon = <
             item
             end>
@@ -26627,7 +26627,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           Size.PlatformDefault = False
           StyleLookup = ''
           TabOrder = 0
-          Text = 'TabItem6'
+          Text = 'Message'
           ExplicitSize.cx = 8.000000000000000000
           ExplicitSize.cy = 8.000000000000000000
           object ToolBar8: TToolBar
@@ -37085,8 +37085,65 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             inherited VertScrollBox1: TVertScrollBox
               Size.Width = 443.000000000000000000
               Size.Height = 705.000000000000000000
-              Viewport.Width = 360.000000000000000000
-              Viewport.Height = 617.000000000000000000
+              Viewport.Width = 443.000000000000000000
+              Viewport.Height = 705.000000000000000000
+              inherited Layout1: TLayout
+                Size.Width = 443.000000000000000000
+                Size.Height = 705.000000000000000000
+                inherited Panel1: TPanel
+                  Size.Width = 443.000000000000000000
+                  inherited btnRegister: TButton
+                    Size.Width = 443.000000000000000000
+                  end
+                end
+                inherited Label1: TLabel
+                  Size.Width = 443.000000000000000000
+                end
+                inherited edFirstMail: TEdit
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
+                end
+                inherited edConfirmMail: TEdit
+                  Position.Y = 126.000000000000000000
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
+                end
+                inherited Label2: TLabel
+                  Position.Y = 95.000000000000000000
+                  Size.Width = 443.000000000000000000
+                end
+                inherited edPassword: TEdit
+                  Position.Y = 192.000000000000000000
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
+                end
+                inherited Label3: TLabel
+                  Position.Y = 161.000000000000000000
+                  Size.Width = 443.000000000000000000
+                end
+                inherited edConfirmPassword: TEdit
+                  Position.Y = 258.000000000000000000
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
+                end
+                inherited Label4: TLabel
+                  Position.Y = 227.000000000000000000
+                  Size.Width = 443.000000000000000000
+                end
+                inherited Panel3: TPanel
+                  Position.Y = 293.000000000000000000
+                  Size.Width = 443.000000000000000000
+                  inherited Switch1: TSwitch
+                    Position.X = 396.000000000000000000
+                    Position.Y = 5.000000000000000000
+                    Size.Width = 44.000000000000000000
+                    Size.Height = 26.000000000000000000
+                  end
+                  inherited Label5: TLabel
+                    Size.Width = 387.000000000000000000
+                  end
+                end
+              end
             end
           end
           inherited TabItemPersonal: TTabItem
@@ -37095,70 +37152,92 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             inherited VertScrollBox2: TVertScrollBox
               Size.Width = 443.000000000000000000
               Size.Height = 705.000000000000000000
-              Viewport.Width = 413.000000000000000000
-              Viewport.Height = 576.000000000000000000
+              Viewport.Width = 443.000000000000000000
+              Viewport.Height = 705.000000000000000000
               inherited Layout2: TLayout
-                Size.Width = 413.000000000000000000
-                Size.Height = 576.000000000000000000
+                Size.Width = 443.000000000000000000
+                Size.Height = 705.000000000000000000
                 inherited edLuogoNascita: TEdit
-                  Size.Width = 403.000000000000000000
+                  Position.Y = 274.000000000000000000
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
                 end
                 inherited Panel4: TPanel
-                  Size.Width = 413.000000000000000000
+                  Position.Y = 241.000000000000000000
+                  Size.Width = 443.000000000000000000
                   inherited edDataNascita: TDateEdit
-                    Position.X = 303.000000000000000000
+                    Position.X = 333.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited Label9: TLabel
-                    Size.Width = 293.000000000000000000
+                    Size.Width = 323.000000000000000000
                   end
                 end
                 inherited Panel2: TPanel
-                  Size.Width = 413.000000000000000000
+                  Position.Y = 185.000000000000000000
+                  Size.Width = 443.000000000000000000
                 end
                 inherited edIndrizzo: TEdit
-                  Size.Width = 403.000000000000000000
+                  Size.Width = 433.000000000000000000
+                  Size.Height = 32.000000000000000000
                 end
                 inherited btnProfile: TButton
-                  Size.Width = 413.000000000000000000
+                  Size.Width = 443.000000000000000000
                 end
                 inherited Panel5: TPanel
-                  Size.Width = 413.000000000000000000
+                  Size.Width = 443.000000000000000000
                   inherited edPersonaCognome: TEdit
-                    Size.Width = 403.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited edPersonaNome: TEdit
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 41.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited edCodiceFiscale: TEdit
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 79.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                 end
                 inherited layoutUser: TLayout
-                  Size.Width = 413.000000000000000000
+                  Position.Y = 309.000000000000000000
+                  Size.Width = 443.000000000000000000
                   TabOrder = 8
                   inherited lbUsername: TLabel
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 38.000000000000000000
+                    Size.Width = 433.000000000000000000
                   end
                   inherited lbPassword: TLabel
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 130.000000000000000000
+                    Size.Width = 433.000000000000000000
                   end
                   inherited edtPassword: TEdit
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 149.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited edtUserName: TEdit
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 57.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited edtRepeatPassword: TEdit
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 208.000000000000000000
+                    Size.Width = 433.000000000000000000
+                    Size.Height = 32.000000000000000000
                   end
                   inherited lbRepeatPassword: TLabel
-                    Size.Width = 403.000000000000000000
+                    Position.Y = 189.000000000000000000
+                    Size.Width = 433.000000000000000000
                   end
                   inherited btnChangeUserName: TButton
-                    Size.Width = 413.000000000000000000
+                    Size.Width = 443.000000000000000000
                   end
                   inherited btnChangePassword: TButton
-                    Size.Width = 413.000000000000000000
+                    Position.Y = 92.000000000000000000
+                    Size.Width = 443.000000000000000000
                   end
                 end
               end
@@ -37205,10 +37284,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     Top = 313
     GestureData = <
       item
-        Control = pgMessages
-        Collection = <>
-      end
-      item
         Control = pgCarHome
         Collection = <
           item
@@ -37217,6 +37292,10 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           item
             GestureID = sgiRight
           end>
+      end
+      item
+        Control = pgMessages
+        Collection = <>
       end
       item
         Control = pgHome

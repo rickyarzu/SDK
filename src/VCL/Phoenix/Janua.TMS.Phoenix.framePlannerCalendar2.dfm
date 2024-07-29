@@ -9,6 +9,11 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
   inherited lbCalendarList: TLabel
     Width = 1170
   end
+  inherited edDays: TSpinEdit
+    Top = 62
+    Value = 3
+    ExplicitTop = 62
+  end
   inherited grpMeeting: TGroupBox
     Top = 794
     Width = 1176

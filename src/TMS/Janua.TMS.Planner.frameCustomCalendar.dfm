@@ -587,7 +587,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Caption = 'Archivio Calendari'
       ImageIndex = 1
       TabVisible = False
-      object EnhCRDBGrid1: TEnhCRDBGrid
+      object grdCalendar: TEnhCRDBGrid
         Left = 0
         Top = 0
         Width = 1423
