@@ -152,7 +152,7 @@ type
     qryPlannerEventsGBACKCOLOR: TIntegerField;
     qryPlannerEventsCALENDARIO: TIntegerField;
     qryPlannerEventsGOOGLEID: TStringField;
-    dsTecnici: TUniDataSource;
+    dsTecniciCalendar: TUniDataSource;
     dsTecniciPlanned: TUniDataSource;
     qryPlannerCalendars: TUniQuery;
     qryPlannerCalendarsCHIAVE: TIntegerField;
@@ -170,73 +170,6 @@ type
     qryPlannerCalendarsGOOGLE_SUMMARY: TStringField;
     qryPlannerEventsJGUID: TGuidField;
     vtReportPlanner: TVirtualTable;
-    vtReportPlannerCHIAVE: TIntegerField;
-    vtReportPlannerDESCRIZIONE_SCHEDA: TStringField;
-    vtReportPlannerCLIENTE: TIntegerField;
-    vtReportPlannerNOME: TStringField;
-    vtReportPlannerPROVINCIA: TStringField;
-    vtReportPlannerCAP: TStringField;
-    vtReportPlannerINDIRIZZO: TStringField;
-    vtReportPlannerTELEFONO: TStringField;
-    vtReportPlannerNOTE: TBlobField;
-    vtReportPlannerORARIO_APERTURA_DAL1: TTimeField;
-    vtReportPlannerORARIO_APERTURA_DAL2: TTimeField;
-    vtReportPlannerORARIO_APERTURA_AL1: TTimeField;
-    vtReportPlannerORARIO_APERTURA_AL2: TTimeField;
-    vtReportPlannerCHIUSURA: TStringField;
-    vtReportPlannerCELLULARE: TStringField;
-    vtReportPlannerEMAIL: TStringField;
-    vtReportPlannerESCLUDI_DA_GENERAZIONE: TStringField;
-    vtReportPlannerSEDE: TStringField;
-    vtReportPlannerID: TStringField;
-    vtReportPlannerREF_TELEFONO: TStringField;
-    vtReportPlannerREF_CELLULARE: TStringField;
-    vtReportPlannerCOMUNE: TStringField;
-    vtReportPlannerFATTURA: TIntegerField;
-    vtReportPlannerDATA_INTERVENTO: TDateField;
-    vtReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField;
-    vtReportPlannerTECNICO_INTERVENTO: TIntegerField;
-    vtReportPlannerSCANSIONE: TWideStringField;
-    vtReportPlannerREGISTRO: TWideStringField;
-    vtReportPlannerNOTE_PER_IL_TECNICO: TWideStringField;
-    vtReportPlannerSOSPESO: TStringField;
-    vtReportPlannerDA_ESPORTARE_SUL_WEB: TStringField;
-    vtReportPlannerRESPONSABILE: TIntegerField;
-    vtReportPlannerESPORTATO_SU_MOBILE: TStringField;
-    vtReportPlannerNOTE_DAL_TECNICO: TBlobField;
-    vtReportPlannerVERBALE_PROVA_DINAMICA: TBlobField;
-    vtReportPlannerVERBALE_MANICHETTE: TBlobField;
-    vtReportPlannerPREVENTIVO: TIntegerField;
-    vtReportPlannerIGNORA_EVIDENZIAZIONE: TStringField;
-    vtReportPlannerANNULLATO_DA_TABLET: TStringField;
-    vtReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField;
-    vtReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField;
-    vtReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField;
-    vtReportPlannerMOBILEWARN_SMALTIMENTO: TStringField;
-    vtReportPlannerSTATO_LAVORAZIONE: TStringField;
-    vtReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField;
-    vtReportPlannerCHIUSURA_EXT: TStringField;
-    vtReportPlannerCHIUSURA_STATINO: TWideStringField;
-    vtReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField;
-    vtReportPlannerPRESA_IN_CARICO: TStringField;
-    vtReportPlannerFORNITURA: TStringField;
-    vtReportPlannerORDINARI: TLargeintField;
-    vtReportPlannerSTRAORDINARI: TLargeintField;
-    vtReportPlannerINTERVENTI: TLargeintField;
-    vtReportPlannerNOME_TECNICO: TStringField;
-    vtReportPlannerAPPUNTAMENTO_DATA: TDateField;
-    vtReportPlannerAPPUNTAMENTO_ORA: TTimeField;
-    vtReportPlannerSTATO: TSmallintField;
-    vtReportPlannerSTATINO: TIntegerField;
-    vtReportPlannerESTINTORI_ORDINARIO: TLargeintField;
-    vtReportPlannerESTINTORI_STRAORDINARIO: TLargeintField;
-    vtReportPlannerGRUPPI_ELETTR: TLargeintField;
-    vtReportPlannerFUMI: TLargeintField;
-    vtReportPlannerLUCI: TLargeintField;
-    vtReportPlannerIDRANTI: TLargeintField;
-    vtReportPlannerSPRINKLER: TLargeintField;
-    vtReportPlannerIMPIANTI_EL: TLargeintField;
-    vtReportPlannerAMMINISTRATORE: TIntegerField;
     qryTechPlannedRESPONSABILE: TIntegerField;
     qryTechPlannedNOME_TECNICO: TStringField;
     qryTechPlannedSIGLA: TStringField;
@@ -344,37 +277,99 @@ type
     ActionPrint2: TAction;
     ActionCalendarSync2: TAction;
     qryPlannerEventslkpMailTecnico: TStringField;
-    qryReportPlannercalcIndirizzo: TStringField;
     qryPersonalPlannerEvents: TUniQuery;
-    IntegerField1: TIntegerField;
-    IntegerField2: TIntegerField;
-    IntegerField3: TIntegerField;
-    DateTimeField1: TDateTimeField;
-    DateTimeField2: TDateTimeField;
-    StringField2: TStringField;
-    WideMemoField1: TWideMemoField;
-    StringField3: TStringField;
-    IntegerField4: TIntegerField;
-    SmallintField1: TSmallintField;
-    BlobField1: TBlobField;
-    IntegerField5: TIntegerField;
-    IntegerField6: TIntegerField;
-    IntegerField7: TIntegerField;
-    StringField4: TStringField;
-    GuidField1: TGuidField;
-    StringField5: TStringField;
-    qryPersonalPlannerEventscalcImage: TGraphicField;
-    qryReportPlannercalcReportID: TIntegerField;
-    qryReportPlannercalcImage: TBlobField;
+    qryReportPlannercalcIndirizzo: TStringField;
+    vtReportPlannerCHIAVE: TIntegerField;
+    vtReportPlannerDESCRIZIONE_SCHEDA: TStringField;
+    vtReportPlannerCLIENTE: TIntegerField;
+    vtReportPlannerNOME: TStringField;
+    vtReportPlannerPROVINCIA: TStringField;
+    vtReportPlannerCAP: TStringField;
+    vtReportPlannerINDIRIZZO: TStringField;
+    vtReportPlannerTELEFONO: TStringField;
+    vtReportPlannerNOTE: TBlobField;
+    vtReportPlannerORARIO_APERTURA_DAL1: TTimeField;
+    vtReportPlannerORARIO_APERTURA_DAL2: TTimeField;
+    vtReportPlannerORARIO_APERTURA_AL1: TTimeField;
+    vtReportPlannerORARIO_APERTURA_AL2: TTimeField;
+    vtReportPlannerCHIUSURA: TStringField;
+    vtReportPlannerCOMUNE: TStringField;
+    vtReportPlannerFATTURA: TIntegerField;
+    vtReportPlannerDATA_INTERVENTO: TDateField;
+    vtReportPlannerTECNICO_INTERVENTO: TIntegerField;
+    vtReportPlannerNOTE_PER_IL_TECNICO: TWideStringField;
+    vtReportPlannerRESPONSABILE: TIntegerField;
+    vtReportPlannerSTATO_LAVORAZIONE: TStringField;
+    vtReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField;
+    vtReportPlannerCHIUSURA_EXT: TStringField;
+    vtReportPlannerPRESA_IN_CARICO: TStringField;
+    vtReportPlannerFORNITURA: TStringField;
+    vtReportPlannerORDINARI: TLargeintField;
+    vtReportPlannerSTRAORDINARI: TLargeintField;
+    vtReportPlannerINTERVENTI: TLargeintField;
+    vtReportPlannerNOME_TECNICO: TStringField;
+    vtReportPlannerAPPUNTAMENTO_DATA: TDateField;
+    vtReportPlannerAPPUNTAMENTO_ORA: TTimeField;
+    vtReportPlannerSTATO: TSmallintField;
+    vtReportPlannerSTATINO: TIntegerField;
+    vtReportPlannerESTINTORI_ORDINARIO: TLargeintField;
+    vtReportPlannerESTINTORI_STRAORDINARIO: TLargeintField;
+    vtReportPlannerGRUPPI_ELETTR: TLargeintField;
+    vtReportPlannerFUMI: TLargeintField;
+    vtReportPlannerLUCI: TLargeintField;
+    vtReportPlannerIDRANTI: TLargeintField;
+    vtReportPlannerSPRINKLER: TLargeintField;
+    vtReportPlannerIMPIANTI_EL: TLargeintField;
+    vtReportPlannerAMMINISTRATORE: TIntegerField;
+    vtReportPlannercalcAppuntamentoDataOra: TDateTimeField;
+    vtReportPlannercalcIndirizzo: TStringField;
+    vtReportPlannercalcImage: TBlobField;
+    vtReportPlannercalcReportID: TIntegerField;
+    qryPersonalPlannerEventsCHIAVE: TIntegerField;
+    qryPersonalPlannerEventsSTATINO: TIntegerField;
+    qryPersonalPlannerEventsTECNICO: TIntegerField;
+    qryPersonalPlannerEventsDALLE_ORE: TDateTimeField;
+    qryPersonalPlannerEventsALLE_ORE: TDateTimeField;
+    qryPersonalPlannerEventsSUBJECT: TStringField;
+    qryPersonalPlannerEventsTECNICO_SIGLA: TStringField;
+    qryPersonalPlannerEventsCOLORE: TIntegerField;
+    qryPersonalPlannerEventsJGUID: TGuidField;
+    qryPersonalPlannerEventsICONA: TSmallintField;
+    qryPersonalPlannerEventsGOOGLE_JSON: TBlobField;
+    qryPersonalPlannerEventsGFORECOLOR: TIntegerField;
+    qryPersonalPlannerEventsGBACKCOLOR: TIntegerField;
+    qryPersonalPlannerEventsCALENDARIO: TIntegerField;
+    qryPersonalPlannerEventsGOOGLEID: TStringField;
+    qryTecniciCalendar: TUniQuery;
+    qryTecniciCalendarRESPONSABILE: TIntegerField;
+    qryTecniciCalendarNOME_TECNICO: TStringField;
+    qryTecniciCalendarEMAIL: TStringField;
+    qryTecniciCalendarSIGLA: TStringField;
+    qryTecniciCalendarGOOGLEID: TStringField;
+    qryTecniciCalendarCALENDARIO: TIntegerField;
+    qryTecniciCalendarDEFAULTCOLOR: TIntegerField;
+    qryGenID: TUniQuery;
+    qryGenIDID: TLargeintField;
+    dlgItemsActions: TActionList;
+    actDlgColorAction: TAction;
+    actDlgEditAction: TAction;
+    Action3: TAction;
+    Action4: TAction;
+    actDlgDeleteActions: TAction;
+    qryPersonalPlannerEventsNOTE: TWideStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
-    procedure ActionAddMeetingExecute(Sender: TObject);
     procedure qryTechPlannedAfterScroll(DataSet: TDataSet);
     procedure DataModuleDestroy(Sender: TObject);
     procedure vtGoogleEventsSearchBeforePost(DataSet: TDataSet);
     procedure DBDaySourceCalendar2FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure ActionCalendarSync2Execute(Sender: TObject);
+    procedure vtReportPlannerBeforePost(DataSet: TDataSet);
+    procedure qryPersonalPlannerEventsBeforePost(DataSet: TDataSet);
+    procedure actDlgColorActionExecute(Sender: TObject);
+    procedure actDlgEditActionExecute(Sender: TObject);
+    procedure actDlgDeleteActionsExecute(Sender: TObject);
   private
     FTechID: Int64;
     FTechFilter: Boolean;
@@ -392,6 +387,7 @@ type
     FCalendarsFilter2: Boolean;
     FSelectedCalendarTec: Integer;
     FSelectedDate: TDate;
+    FPlannerDlg: TDBPlanner;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -409,6 +405,7 @@ type
     procedure SetCalendarsFilter2(const Value: Boolean);
     procedure SetSelectedCalendarTec(const Value: Integer);
     procedure SetSelectedDate(const Value: TDate);
+    procedure SetPlannerDlg(const Value: TDBPlanner);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -421,6 +418,7 @@ type
     procedure PhoenixUpdateGoogleEvents;
     /// <summary> Insert or Update and Event from temporay Virtual Google Events Table to Tab</summary>
     procedure PhoenixInsertGoogleEvents;
+    procedure CloneReportPlanner;
   public
     // Public Procedures (better if Actions)
     /// <summary>  Tries to Edit an Event using ITimetable interface. </summary>
@@ -431,7 +429,7 @@ type
     procedure AddEvent; override;
     procedure Setup; override;
     procedure Filter; override;
-    procedure Filter2;
+    procedure FilterDialog;
     procedure ActivateCalendar2;
     procedure UndoMeeting; override;
     /// <summary> After Selecting Calendars this procedure should be called (it can be inside a thread) </summary>
@@ -442,6 +440,8 @@ type
     procedure PopulateCalendars; override;
     // Filtro TEcnico vFilter :=  (FStateFilter > 0);
     procedure FilterTech;
+
+    procedure RefreshCalendarTech;
     // Filtro Google
     function FilterGoogle(const aSearch: string): Integer;
     function FilterGoogleCalendar(const aSearch: string): Integer;
@@ -449,8 +449,10 @@ type
     procedure ReportGoogleSync;
     procedure PlannerGoogleSync; override;
     procedure FilterMeeting(const aFilter: TRecordFilter);
+    procedure FilterMeetingDialog(const aFilter: TRecordFilter);
     procedure OpenCalendarT(aDate: TDate; aTechID: Integer);
   public
+    procedure AddTechEvent;
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
@@ -476,6 +478,7 @@ type
     property StateFilter: Integer read FStateFilter write SetStateFilter;
     property SelectedCalendarTec: Integer read FSelectedCalendarTec write SetSelectedCalendarTec;
     property SelectedDate: TDate read FSelectedDate write SetSelectedDate;
+    property PlannerDlg: TDBPlanner read FPlannerDlg write SetPlannerDlg;
   end;
 
 var
@@ -483,7 +486,8 @@ var
 
 implementation
 
-uses Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Phoenix.VCL.dlgPlannerEvent, udlgPhoenixVCLGoogleSync;
+uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
+  Janua.Phoenix.VCL.dlgPlannerEvent, udlgPhoenixVCLGoogleSync;
 
 var
   JMonitor: TObject;
@@ -491,10 +495,58 @@ var
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TdmVCLPhoenixPlannerController.ActionAddMeetingExecute(Sender: TObject);
+procedure TdmVCLPhoenixPlannerController.actDlgColorActionExecute(Sender: TObject);
+begin
+  { Sets the planner item color }
+  ColorDialog1.Color := PlannerDlg.PopupPlannerItem.Color;
+  if ColorDialog1.Execute then
+  begin
+    PlannerDlg.PopupPlannerItem.Color := ColorDialog1.Color;
+    PlannerDlg.PopupPlannerItem.CaptionBkg := ColorDialog1.Color;
+    PlannerDlg.PopupPlannerItem.Update;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actDlgDeleteActionsExecute(Sender: TObject);
+begin
+  var
+  vID := PlannerDlg.PopupPlannerItem.ID;
+  if qryPersonalPlannerEvents.Locate('CHIAVE', vID, []) and JMessageDlg('Volete annullare appuntamento?') then
+  begin
+    qryPersonalPlannerEvents.Delete;
+    qryPersonalPlannerEvents.close;
+    qryPersonalPlannerEvents.Open;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actDlgEditActionExecute(Sender: TObject);
 begin
   inherited;
-  AddEvent
+  var
+  vID := PlannerDlg.PopupPlannerItem.ID;
+  if qryPersonalPlannerEvents.Locate('CHIAVE', vID, []) then
+  begin
+    var
+    lDlg := TdlgPhoenixVCLEditReportTimetable.Create(self);
+    try
+      lDlg.edTime.Time := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+      lDlg.edDate.DateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+      lDlg.edRagioneSociale.Text := qryPersonalPlannerEventsSUBJECT.AsString;
+      lDlg.edNote.Text := qryPersonalPlannerEventsNOTE.AsString;
+      lDlg.ShowModal;
+      if lDlg.ModalResult = mrOK then
+      begin
+        qryPersonalPlannerEvents.Edit;
+        qryPersonalPlannerEventsDALLE_ORE.AsDateTime := SumDateTime(lDlg.edDate.DateTime, lDlg.edTime.Time);
+        qryPersonalPlannerEventsSUBJECT.AsString := lDlg.edRagioneSociale.Text;
+        qryPersonalPlannerEventsNOTE.AsString := lDlg.edNote.Text;
+        qryPersonalPlannerEvents.Post;
+      end;
+    finally
+      lDlg.Free;
+    end;
+  end;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
@@ -520,16 +572,223 @@ end;
 procedure TdmVCLPhoenixPlannerController.AddEvent;
 var
   dlg: TdlgVCLPhoenixPlannerEvent;
+  procedure FilterMeetingDefault;
+  var
+    lFilter: TRecordFilter;
+  begin
+    lFilter.TecnicoDB := FSelectedCalendarTec;
+    lFilter.TecnicoCk := True; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
+    lFilter.CAPCk := False;
+    lFilter.ClienteID := -1;
+    lFilter.ClienteCk := False;
+    lFilter.Status := 5;
+    FilterMeetingDialog(lFilter);
+  end;
+
 begin
+  FSelectedCalendarTec := qryTecniciCalendarRESPONSABILE.AsInteger;
+  if FSelectedDate < Date + 1 then
+    FSelectedDate := Date + 1;
+
+  OpenCalendarT(FSelectedDate, FSelectedCalendarTec);
+  FilterMeetingDefault;
   dlg := TdlgVCLPhoenixPlannerEvent.Create(nil);
   try
-    OpenCalendarT(FSelectedDate, FTechID);
-
-    dlg.cboTecnici.Value := SelectedCalendarTec.ToString;
+    dlg.cboTecnici.Value := FSelectedCalendarTec.ToString;
     dlg.ShowModal;
+    RefreshCalendarTech;
   finally
     dlg.Free;
     dlg := nil;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.AddTechEvent;
+var
+  lDlg: TdlgPhoenixVCLEditReportTimetable;
+  vTime: TDateTime;
+  vID: Integer;
+begin
+  lDlg := TdlgPhoenixVCLEditReportTimetable.Create(self);
+  try
+    if not vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').IsNull then
+    begin
+      lDlg.edTime.Time := vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsDateTime;
+      lDlg.edDate.DateTime := vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsDateTime;
+    end
+    else
+    begin
+      lDlg.edDate.DateTime := SelectedDate;
+    end;
+
+    vTime := SelectedDate + EncodeTime(8, 30, 0, 0);
+
+    if qryPersonalPlannerEvents.RecordCount > 0 then
+    begin
+      qryPersonalPlannerEvents.First;
+      While not qryPersonalPlannerEvents.Eof do
+      begin
+        if qryPersonalPlannerEventsDALLE_ORE.AsDateTime > vTime then
+          vTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+        qryPersonalPlannerEvents.Next;
+      end;
+
+      vTime := vTime + (1 / 24);
+    end;
+
+    lDlg.edTime.Time := vTime;
+
+    lDlg.edRagioneSociale.Text := vtReportPlanner.FieldByName('DESCRIZIONE_SCHEDA').AsString;
+    lDlg.edNote.Text := vtReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text;
+    vID := vtReportPlanner.FieldByName('CHIAVE').AsInteger;
+
+    lDlg.ShowModal;
+
+    if lDlg.ModalResult = mrOK then
+      try
+        vtReportPlanner.Filtered := False;
+        if (vID = vtReportPlanner.FieldByName('CHIAVE').AsInteger) or vtReportPlanner.Locate('CHIAVE', vID, [])
+        then
+        begin
+          vtReportPlanner.Edit;
+          vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsDateTime := lDlg.edTime.Time;
+          vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsDateTime := lDlg.edDate.DateTime;
+          vtReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text := lDlg.edNote.Text;
+
+          if vtReportPlanner.FieldByName('STATO').AsInteger = 0 then
+          begin
+            vtReportPlanner.FieldByName('STATO').AsInteger := 1;
+          end
+          else if vtReportPlanner.FieldByName('STATO').AsInteger = 4 then
+          begin
+            if not vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+              { qryReportPlanner.Cancel; }
+              if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
+                qryReportPlanner.Cancel;
+            end;
+          end
+          else if vtReportPlanner.FieldByName('STATO').AsInteger = 5 then
+          begin
+            if not vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 6;
+            end;
+          end
+          else if (vtReportPlanner.FieldByName('STATO').AsInteger = 6) or
+            (vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').Value = 0) then
+          begin
+            if vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 5;
+            end;
+          end
+          else if vtReportPlanner.FieldByName('STATO').AsInteger = 1 then
+          begin
+            if vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull or
+              (vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').Value = 0) then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 0;
+            end;
+          end;
+
+          vtReportPlanner.FieldByName('calcReportID').Clear;
+
+          vtReportPlanner.Post;
+
+          qryReportPlanner.Filtered := False;
+          if qryReportPlanner.Locate('CHIAVE', vID, []) then
+          begin
+            qryReportPlanner.Edit;
+            qryReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsDateTime := lDlg.edTime.Time;
+            qryReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsDateTime := lDlg.edDate.DateTime;
+            qryReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text := lDlg.edNote.Text;
+            qryReportPlanner.Post;
+
+            qryPersonalPlannerEvents.Append;
+            // Chiave ora è impostata automaticamente dal programma (GenID)
+            vTime := SumDateTime(lDlg.edDate.DateTime, lDlg.edTime.Time);
+            qryPersonalPlannerEventsDALLE_ORE.AsDateTime := vTime;
+            qryPersonalPlannerEventsALLE_ORE.AsDateTime := vTime + (1 / 24);
+            qryPersonalPlannerEventsJGUID.AsString := TGUID.NewGuid.ToString();
+            qryPersonalPlannerEventsTECNICO.AsInteger := TechID;
+            qryPersonalPlannerEventsSTATINO.AsInteger := vtReportPlannerCHIAVE.AsInteger;
+            // Subject
+            qryPersonalPlannerEventsSUBJECT.AsString := vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
+            qryPersonalPlannerEventsICONA.AsInteger := 0;
+            qryPersonalPlannerEventsNOTE.Text := lDlg.edNote.Text;
+
+            if (qryTecniciCalendarRESPONSABILE.AsInteger = TechID) or
+              qryTecniciCalendar.Locate('RESPONSABILE', TechID, []) then
+            begin
+              qryPersonalPlannerEventsTECNICO_SIGLA.AsString := qryTecniciCalendarSIGLA.AsString;
+              qryPersonalPlannerEventsCALENDARIO.AsInteger := qryTecniciCalendarCALENDARIO.AsInteger;
+              qryPersonalPlannerEventsCOLORE.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
+            end;
+
+            qryPersonalPlannerEvents.Post;
+          end;
+        end;
+
+      except
+        on e: Exception do
+        begin
+          vtReportPlanner.Cancel;
+          raise
+        end;
+      end;
+  finally
+    vtReportPlanner.Filtered := True;
+    lDlg.Free;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.CloneReportPlanner;
+begin
+  var
+  vTest := qryReportPlanner.RecordCount;
+  if vTest > 0 then
+  begin
+    qryReportPlanner.First;
+    While not qryReportPlanner.Eof do
+    begin
+      vtReportPlanner.Append;
+      vtReportPlannerCHIAVE.Value := qryReportPlannerCHIAVE.Value;
+      vtReportPlannerDESCRIZIONE_SCHEDA.Value := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
+      vtReportPlannerCLIENTE.Value := qryReportPlannerCLIENTE.Value;
+      vtReportPlannerNOME.Value := qryReportPlannerNOME.Value;
+      vtReportPlannerPROVINCIA.Value := qryReportPlannerPROVINCIA.Value;
+      vtReportPlannerCAP.Value := qryReportPlannerCAP.Value;
+      vtReportPlannerINDIRIZZO.Value := qryReportPlannerINDIRIZZO.Value;
+      vtReportPlannerDATA_INTERVENTO.Value := qryReportPlannerDATA_INTERVENTO.Value;
+      vtReportPlannerTECNICO_INTERVENTO.Value := qryReportPlannerTECNICO_INTERVENTO.Value;
+      vtReportPlannerNOTE_PER_IL_TECNICO.Value := qryReportPlannerNOTE_PER_IL_TECNICO.Value;
+      vtReportPlannerRESPONSABILE.Value := qryReportPlannerRESPONSABILE.Value;
+      vtReportPlannerSTATO_LAVORAZIONE.Value := qryReportPlannerSTATO_LAVORAZIONE.Value;
+      vtReportPlannerPRESA_IN_CARICO.Value := qryReportPlannerPRESA_IN_CARICO.Value;
+      vtReportPlannerFORNITURA.Value := qryReportPlannerFORNITURA.Value;
+      vtReportPlannerORDINARI.Value := qryReportPlannerORDINARI.Value;
+      vtReportPlannerSTRAORDINARI.Value := qryReportPlannerSTRAORDINARI.Value;
+      vtReportPlannerINTERVENTI.Value := qryReportPlannerINTERVENTI.Value;
+      vtReportPlannerNOME_TECNICO.Value := qryReportPlannerNOME_TECNICO.Value;
+      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+        vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value;
+      if not vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+        vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value;
+      vtReportPlannerSTATO.Value := qryReportPlannerSTATO.Value;
+      vtReportPlannerSTATINO.Value := qryReportPlannerSTATINO.Value;
+      vtReportPlannerESTINTORI_ORDINARIO.Value := qryReportPlannerESTINTORI_ORDINARIO.Value;
+      vtReportPlannerESTINTORI_STRAORDINARIO.Value := qryReportPlannerESTINTORI_STRAORDINARIO.Value;
+      vtReportPlannerGRUPPI_ELETTR.Value := qryReportPlannerGRUPPI_ELETTR.Value;
+      vtReportPlannerFUMI.Value := qryReportPlannerFUMI.Value;
+      vtReportPlannerLUCI.Value := qryReportPlannerLUCI.Value;
+      vtReportPlannerIDRANTI.Value := qryReportPlannerIDRANTI.Value;
+      vtReportPlannerSPRINKLER.Value := qryReportPlannerSPRINKLER.Value;
+      vtReportPlannerIMPIANTI_EL.Value := qryReportPlannerIMPIANTI_EL.Value;
+      vtReportPlannerAMMINISTRATORE.Value := qryReportPlannerAMMINISTRATORE.Value;
+      vtReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
   end;
 end;
 
@@ -661,6 +920,7 @@ begin
   AfterLoadCalendars := (
     procedure
     begin
+      qryTecniciCalendar.Open;
       dsCalendars.Enabled := True;
       dsGCalendar.Enabled := True;
       dsCalendarEvents.Enabled := True;
@@ -678,20 +938,26 @@ begin
           Result := True;
           TMonitor.Enter(JMonitor);
           try
+            // Carico e metto in Cache nelle MemTable tutti i dataset che serviranno per la gestione del Cal.
             vtGoogleEventsSearch.Assign(vtGoogleEvents);
             vtGoogleEventsSearch.Open;
+            vtGoogleEventsSearch.Last;
             vtGoogleEventsSearch.First;
-            { While not vtGoogleEventsSearch.Eof do
-              begin
-              vtGoogleEventsSearch.Edit;
-              vtGoogleEventsSearch.Next;
-              end; }
             qryCAPTecnici.Open;
             qryCAPTecnici.Last;
+            qryCAPTecnici.First;
             lkpTecnici.Open;
             lkpTecnici.Last;
+            lkpTecnici.First;
             qryReportPlanner.Open;
             qryReportPlanner.Last;
+            qryReportPlanner.First;
+            // per la finestra di dialogo degli appuntamenti faccio le ricerche su un 'clone' della tabella
+            // report Planner. Nota: il Clone mi serve principalmente per poter gestire le Immagini (icone)
+            // Relative allo 'stato' del Rapportino ed allo stato del Calendario
+            if not vtReportPlanner.Active then
+              vtReportPlanner.Open;
+            CloneReportPlanner;
           finally
             TMonitor.Exit(JMonitor);
           end;
@@ -832,8 +1098,83 @@ begin
   end;
 end;
 
-procedure TdmVCLPhoenixPlannerController.Filter2;
+procedure TdmVCLPhoenixPlannerController.FilterDialog;
+  procedure CheckFilter;
+  begin
+    if vtReportPlanner.Filter > '' then
+      vtReportPlanner.Filter := vtReportPlanner.Filter + ' AND ';
+  end;
+
 begin
+  try
+    vtReportPlanner.Filter := '';
+    vtReportPlanner.Filtered := False;
+
+    var
+    vFilter := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or (FStateFilter > 0);
+
+    if vFilter then
+    begin
+      if ReportDateFilter then
+      begin
+        CheckFilter;
+        vtReportPlanner.Filter := vtReportPlanner.Filter + ' APPUNTAMENTO_DATA = ' +
+          QuotedStr(FormatDateTime('dd/mm/yyyy', FReportDate));
+      end;
+
+      if TechFilter then
+      begin
+        CheckFilter;
+        vtReportPlanner.Filter := vtReportPlanner.Filter + ' RESPONSABILE = ' + TechID.ToString;
+      end;
+
+      if CustomerFilter then
+      begin
+        CheckFilter;
+        vtReportPlanner.Filter := vtReportPlanner.Filter + ' CLIENTE = ' + CustomerID.ToString;
+      end;
+
+      if CAPFilter then
+      begin
+        CheckFilter;
+        vtReportPlanner.Filter := vtReportPlanner.Filter + ' CAP = ' + QuotedStr(FCAP);
+      end;
+
+      case FStateFilter of
+        1:
+          begin
+            CheckFilter;
+            vtReportPlanner.Filter := vtReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
+          end;
+        2:
+          begin
+            CheckFilter;
+            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 4 ';
+          end;
+        3:
+          begin
+            CheckFilter;
+            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 5 ';
+          end;
+        4:
+          begin
+            CheckFilter;
+            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 0 ';
+          end;
+        5:
+          begin
+            CheckFilter;
+            vtReportPlanner.Filter := vtReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+          end;
+      end;
+
+      vtReportPlanner.Filtered := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or
+        (FStateFilter > 0);
+    end;
+  except
+    on e: Exception do
+      raise Exception.Create('Error Filtering ' + vtReportPlanner.Filter + sLineBreak + e.Message);
+  end;
 
 end;
 
@@ -878,6 +1219,22 @@ begin
   CAP := aFilter.CAP;
 
   Filter;
+end;
+
+procedure TdmVCLPhoenixPlannerController.FilterMeetingDialog(const aFilter: TRecordFilter);
+begin
+  ReportDateFilter := False;
+
+  CustomerFilter := aFilter.ClienteCk;
+  TechFilter := aFilter.TecnicoCk;
+  CAPFilter := aFilter.CAPCk;
+  FStateFilter := aFilter.Status;
+
+  TechID := aFilter.TecnicoDB;
+  CustomerID := aFilter.ClienteID;
+  CAP := aFilter.CAP;
+
+  FilterDialog;
 end;
 
 function TdmVCLPhoenixPlannerController.InternalDeleteItem(aItem: TPlannerItem): Boolean;
@@ -1086,22 +1443,9 @@ begin
   var
   lSearchString := qryPlannerEventsSUBJECT.AsString;
   var
-  bTest := FilterGoogle(lSearchString) > 0;
-
-  { if not bTest then
-    begin
-    lSearchString := qryReportPlannerNOME.AsString;
-    bTest := FilterGoogle(lSearchString) > 0;
-    end; }
-
-  if not bTest then
-  begin
-    bTest := FilterGoogleCalendar(qryPlannerEventslkpMailTecnico.AsString) > 0;
-    { if (UpperCase(qryReportPlannerNOME.AsString) <> 'SEDE') AND
-      (UpperCase(qryReportPlannerNOME.AsString) <> 'CONDOMINIO') AND
-      (UpperCase(qryReportPlannerNOME.AsString) <> 'MAGAZZINO') then
-      lSearchString := qryReportPlannerDESCRIZIONE_SCHEDA.AsString + ' ' + lSearchString; }
-  end;
+  bTest := False;
+  bTest := (FilterGoogle(lSearchString) > 0) or
+    (FilterGoogleCalendar(qryPlannerEventslkpMailTecnico.AsString) > 0);
 
   if bTest then
   begin
@@ -1195,6 +1539,18 @@ begin
 
 end;
 
+procedure TdmVCLPhoenixPlannerController.qryPersonalPlannerEventsBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if qryPersonalPlannerEventsCHIAVE.IsNull then
+  begin
+    qryGenID.Close;
+    qryGenID.Open;
+    qryPersonalPlannerEventsCHIAVE.AsInteger := qryGenIDID.AsInteger;
+    qryGenID.Close;
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);
 begin
   inherited;
@@ -1235,70 +1591,12 @@ begin
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerCalcFields(DataSet: TDataSet);
-  procedure LoadImageFromImageList(Index: Integer);
-  var
-    Bitmap: TBitmap;
-  begin
-    if (Index >= 0) and (Index < SVGIconImageListIt.Count) then
-    begin
-      Bitmap := TBitmap.Create;
-      try
-        SVGIconImageListIt.GetBitmap(Index, Bitmap);
-        qryReportPlannercalcImage.Assign(Bitmap); // Copia l'immagine dal Bitmap al TImage
-      finally
-        Bitmap.Free;
-      end;
-    end
-    else
-      ShowMessage('Indice fuori intervallo!');
-  end;
-
-const
-  green = 0;
-  red = 1;
-  orange = 2;
-  blue = 3;
-  white = 4;
 begin
-  if qryReportPlannercalcReportID.IsNull or
-    (qryReportPlannercalcReportID.AsInteger <> qryReportPlannerCHIAVE.AsInteger) then
-    try
-      var
-      Image := white;
-
-      with dmVCLPhoenixPlannerController.qryReportPlanner do
-      begin
-        if (FieldByName('STATO').AsInteger < 0) then
-          Image := red;
-        if (FieldByName('STATO').AsInteger in [1, 6]) then
-        begin
-          Image := blue;
-          { FontStyles := [fsBold]; }
-        end;
-
-        if (FieldByName('STATO').AsInteger = 4) then
-          Image := orange;
-
-        if (FieldByName('STATO').AsInteger in [5, 6]) then
-          Image := green;
-
-        if not FieldByName('APPUNTAMENTO_DATA').IsNull and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)
-        then
-          Image := red;
-      end;
-
-      LoadImageFromImageList(Image);
-    finally
-      qryReportPlannercalcReportID.AsInteger := qryReportPlannerCHIAVE.AsInteger;
-
-    end;
-
   qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 
   qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
     qryReportPlannerCAP.AsString + qryReportPlannerCOMUNE.AsString;
-
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryTechPlannedAfterScroll(DataSet: TDataSet);
@@ -1306,6 +1604,12 @@ begin
   inherited;
   if FAutoFilterTech then
     FilterTech
+end;
+
+procedure TdmVCLPhoenixPlannerController.RefreshCalendarTech;
+begin
+  qryPlannerEvents.Close;
+  qryPlannerEvents.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.ReportGoogleSync;
@@ -1442,6 +1746,11 @@ begin
   FItemImageField2 := Value;
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetPlannerDlg(const Value: TDBPlanner);
+begin
+  FPlannerDlg := Value;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetReportDate(const Value: TDateTime);
 begin
   FReportDate := Value;
@@ -1482,7 +1791,7 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.SetTechID(const Value: Int64);
 begin
-  if FTechID <> FSelectedDate then
+  if FTechID <> Value then
   begin
     FTechID := Value;
     { OpenCalendarT(FSelectedDate, FTechID); }
@@ -1497,7 +1806,6 @@ begin
   qryTech.Close;
   spSetStatinoStato.ExecProc;
   qryReportPlanner.Open;
-  vtReportPlanner.Assign(qryReportPlanner);
   vtReportPlanner.Open;
   qryCustomers.Open;
   qryTech.Open;
@@ -1540,6 +1848,69 @@ begin
   inherited;
   // vtGoogleEventsSearchFilterSearch.AsString := StripString(qryPlannerEventsSUBJECT.AsString);
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.vtReportPlannerBeforePost(DataSet: TDataSet);
+  procedure LoadImageFromImageList(Index: Integer);
+  var
+    Bitmap: TBitmap;
+  begin
+    if (Index >= 0) and (Index < SVGIconImageListIt.Count) then
+    begin
+      Bitmap := TBitmap.Create;
+      try
+        SVGIconImageListIt.GetBitmap(Index, Bitmap);
+        vtReportPlanner.FieldByName('calcImage').Assign(Bitmap); // Copia l'immagine dal Bitmap al TImage
+      finally
+        Bitmap.Free;
+      end;
+    end
+    else
+      ShowMessage('Indice fuori intervallo!');
+  end;
+
+const
+  green = 0;
+  red = 1;
+  orange = 2;
+  blue = 3;
+  white = 4;
+begin
+  if vtReportPlanner.FieldByName('calcReportID').IsNull or
+    (vtReportPlanner.FieldByName('calcReportID').AsInteger <> vtReportPlanner.FieldByName('CHIAVE').AsInteger)
+  then
+    with DataSet do
+      try
+        var
+        Image := white;
+
+        if (FieldByName('STATO').AsInteger < 0) then
+          Image := red;
+
+        if (FieldByName('STATO').AsInteger in [1, 6]) then
+          Image := blue;
+
+        if (FieldByName('STATO').AsInteger = 4) then
+          Image := orange;
+
+        if (FieldByName('STATO').AsInteger in [5, 6]) then
+          Image := green;
+
+        if not(FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0))
+          and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
+          Image := red;
+
+        LoadImageFromImageList(Image);
+      finally
+        FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
+      end;
+
+  if not vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
+    vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+      SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime, vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+
+  vtReportPlannercalcIndirizzo.AsString := vtReportPlannerINDIRIZZO.AsString + ', ' +
+    vtReportPlannerCAP.AsString + vtReportPlannerCOMUNE.AsString;
 end;
 
 end.

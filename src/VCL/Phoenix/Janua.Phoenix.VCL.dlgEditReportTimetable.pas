@@ -15,7 +15,7 @@ type
     btnCancel: TBitBtn;
     btnOK: TBitBtn;
     edTime: TTimePicker;
-    BindingsList1: TBindingsList;
+    edRagioneSociale: TEdit;
   private
     { Private declarations }
   public

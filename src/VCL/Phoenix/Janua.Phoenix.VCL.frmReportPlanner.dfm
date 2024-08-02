@@ -20,7 +20,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1424
     Height = 754
-    ActivePage = tabTicketsList
+    ActivePage = tabPlannerCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -197,6 +197,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               FieldName = 'CAP'
               Width = 46
               Visible = True
+              SortOrder = soAsc
+              SortSequence = 1
             end
             item
               Expanded = False
@@ -225,6 +227,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Title.Caption = 'Cliente'
               Width = 226
               Visible = True
+              SortOrder = soAsc
+              SortSequence = 2
             end
             item
               Expanded = False
@@ -463,7 +467,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
-            ItemHeight = 16
             ExplicitWidth = 1357
           end
         end
@@ -480,8 +483,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited DBPlanner1: TDBPlanner
               Width = 1408
               Height = 423
-              ExplicitWidth = 1408
-              ExplicitHeight = 423
               TMSStyle = 0
             end
           end
@@ -493,6 +494,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Height = 423
             end
           end
+        end
+        inherited GridPopup: TPopupMenu
+          Left = 575
+          Top = 442
         end
       end
     end
@@ -527,8 +532,15 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
-            ItemHeight = 16
             ExplicitWidth = 1357
+          end
+        end
+        inherited Panel3: TPanel
+          inherited lbSearch: TLabel
+            Width = 250
+          end
+          inherited lbDateSelector: TLabel
+            Width = 256
           end
         end
         inherited PageControl1: TPageControl
@@ -544,8 +556,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited DBPlanner1: TDBPlanner
               Width = 1408
               Height = 423
-              ExplicitWidth = 1408
-              ExplicitHeight = 423
               TMSStyle = 0
             end
           end
@@ -584,7 +594,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Left = 584
     Top = 392
     object Modifica1: TMenuItem
-      Caption = 'Modifica'
+      Caption = 'Appuntamento'
+      OnClick = frameVCLCRDBGridCRDBGridDblClick
     end
     object AnnullaAppuntamento1: TMenuItem
       Caption = 'Annulla Appuntamento'

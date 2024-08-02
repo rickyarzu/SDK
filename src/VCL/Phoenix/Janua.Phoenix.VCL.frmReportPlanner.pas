@@ -213,6 +213,7 @@ begin
   { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
   frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;
   Timer1.Enabled := True;
+  PageControl1.ActivePage := tabPlannerCalendar;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);

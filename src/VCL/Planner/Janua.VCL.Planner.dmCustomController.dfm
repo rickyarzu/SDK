@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45502.000000000000000000
+    DateFrom = 45506.000000000000000000
     Left = 416
     Top = 40
   end

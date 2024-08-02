@@ -27,6 +27,7 @@ type
     procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController); override;
   public
     { Public declarations }
+    procedure AfterConstruction; override;
   end;
 
 implementation
@@ -35,6 +36,12 @@ uses Janua.Core.Functions, Janua.Application.Framework, Spring;
 
 {$R *.dfm}
 { TframeVCLPhoenixPlannerCalendar2 }
+
+procedure TframeVCLPhoenixPlannerCalendar2.AfterConstruction;
+begin
+  inherited;
+
+end;
 
 procedure TframeVCLPhoenixPlannerCalendar2.SetCustomController(const Value: TdmVCLPlannerCustomController);
 begin

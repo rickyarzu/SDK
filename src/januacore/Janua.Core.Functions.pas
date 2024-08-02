@@ -157,7 +157,8 @@ procedure PostDataset(aDataset: TDataset);
 {$IFDEF delphixe}
 { Dataset Related Functions *********************************************************************** }
 // FDMemTable Procedures
-procedure CloneDataset(DataSet: TDataset; dataclone: TFdMemTable; bStructure: boolean = true);overload; inline;
+procedure CloneDataset(DataSet: TDataset; dataclone: TFdMemTable; bStructure: boolean = true);
+  overload; inline;
 procedure CloneDatasetStruct(DataSet: TDataset; dataclone: TFdMemTable); overload; inline;
 function ExportDatasetToBase64String(DataSet: TFdMemTable; var aString: string): boolean; overload;
 function ImportDatasetFromXMLMemo(aDataset: TFdMemTable; aList: TStrings): boolean; overload; inline;
@@ -312,6 +313,7 @@ function DateYearToStr(const aDate: TDateTime; const aDigits: Byte = 4): string;
 function DateMonth(const aDate: TDateTime): Word; inline;
 function DateDay(const aDate: TDateTime): Word; inline;
 function DateFile(const aDate: TDateTime): string; inline;
+function SumDateTime(const aDate: TDate; aTime: TDateTime): TDateTime;
 
 {$IFDEF WEBBROKER}
 // WebBroker Public functions
@@ -1734,6 +1736,16 @@ begin
   DecodeDate(aDate, Y, M, d);
   Result := d
 
+end;
+
+function SumDateTime(const aDate: TDate; aTime: TDateTime): TDateTime;
+var
+  Hour, Min, Sec, MSec: Word;
+  Year, Month, Day: Word;
+begin
+  DecodeTime(aTime, Hour, Min, Sec, MSec);
+  DecodeDate(aDate, Year, Month, Day);
+  Result := EncodeDateTime(Year, Month, Day, Hour, Min, Sec, MSec);
 end;
 
 // Standard StringList Functions

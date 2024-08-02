@@ -62,7 +62,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
         Size.Height = 753.000000000000000000
         Size.PlatformDefault = False
         TabHeight = 49.000000000000000000
-        TabIndex = 0
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         Sizes = (
@@ -77,7 +77,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 8.000000000000000000
           Size.Height = 8.000000000000000000
           Size.PlatformDefault = False
@@ -10683,7 +10683,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 8.000000000000000000
           Size.Height = 8.000000000000000000
           Size.PlatformDefault = False
@@ -16032,6 +16032,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               ShowHint = False
               Text = 'Firma Consegna'
               TextSettings.Trimming = None
+              OnClick = btnSignatureClick
             end
             object Memo1: TMemo
               Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -16079,6 +16080,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               ShowHint = False
               Text = 'Foto Carrozzeria Veicolo'
               TextSettings.Trimming = None
+              OnClick = Button1Click
             end
             object btnNotes: TSpeedButton
               Align = Top
@@ -37135,9 +37137,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                   Size.Width = 443.000000000000000000
                   inherited Switch1: TSwitch
                     Position.X = 396.000000000000000000
-                    Position.Y = 5.000000000000000000
                     Size.Width = 44.000000000000000000
-                    Size.Height = 26.000000000000000000
                   end
                   inherited Label5: TLabel
                     Size.Width = 387.000000000000000000
@@ -37167,7 +37167,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                   Size.Width = 443.000000000000000000
                   inherited edDataNascita: TDateEdit
                     Position.X = 333.000000000000000000
-                    Size.Height = 32.000000000000000000
                   end
                   inherited Label9: TLabel
                     Size.Width = 323.000000000000000000
@@ -37206,7 +37205,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                   Size.Width = 443.000000000000000000
                   TabOrder = 8
                   inherited lbUsername: TLabel
-                    Position.Y = 38.000000000000000000
                     Size.Width = 433.000000000000000000
                   end
                   inherited lbPassword: TLabel
@@ -37219,7 +37217,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                     Size.Height = 32.000000000000000000
                   end
                   inherited edtUserName: TEdit
-                    Position.Y = 57.000000000000000000
                     Size.Width = 433.000000000000000000
                     Size.Height = 32.000000000000000000
                   end
@@ -37233,6 +37230,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                     Size.Width = 433.000000000000000000
                   end
                   inherited btnChangeUserName: TButton
+                    Position.Y = 59.000000000000000000
                     Size.Width = 443.000000000000000000
                   end
                   inherited btnChangePassword: TButton
@@ -37284,7 +37282,11 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     Top = 313
     GestureData = <
       item
-        Control = pgCarHome
+        Control = pgMessages
+        Collection = <>
+      end
+      item
+        Control = pgHome
         Collection = <
           item
             GestureID = sgiLeft
@@ -37294,11 +37296,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           end>
       end
       item
-        Control = pgMessages
-        Collection = <>
-      end
-      item
-        Control = pgHome
+        Control = pgCarHome
         Collection = <
           item
             GestureID = sgiLeft

@@ -33,6 +33,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure AfterConstruction; override;
     property PlannerController: TdmVCLPhoenixPlannerController read FPlannerController
       write SetPlannerController;
   end;
@@ -44,6 +45,12 @@ implementation
 
 {$R *.dfm}
 { TframeTMSPhoenixPlannerCalendar }
+
+procedure TframeTMSPhoenixPlannerCalendar.AfterConstruction;
+begin
+  inherited;
+  PageControl1.ActivePage := PageControl1.Pages[0];
+end;
 
 procedure TframeTMSPhoenixPlannerCalendar.cboTecniciCloseUp(Sender: TObject);
 begin

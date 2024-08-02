@@ -45,7 +45,6 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     ExplicitTop = 865
   end
   inherited PageControl1: TPageControl
-    ActivePage = tabCalendarGrid
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0
@@ -117,7 +116,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     EmptyValue = '-1'
     LookupField = 'RESPONSABILE'
     LookupDisplay = 'NOME_TECNICO'
-    LookupSource = dsTechnicians
+    LookupSource = dmVCLPhoenixPlannerController.dsTecniciCalendar
     TabOrder = 6
     OnCloseUp = cboTecniciCloseUp
   end
