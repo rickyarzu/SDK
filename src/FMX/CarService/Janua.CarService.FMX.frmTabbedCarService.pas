@@ -81,14 +81,14 @@ type
     btnConfCancel: TButton;
     tmList: TTimer;
     pgMessages: TTabControl;
-    TabItem1: TTabItem;
+    tabMsg01List: TTabItem;
     ToolBar7: TToolBar;
     Image8: TImage;
     Button7: TButton;
     Button8: TButton;
     lvMessages: TListView;
     Timer1: TTimer;
-    TabItem2: TTabItem;
+    tabMsg02Message: TTabItem;
     ToolBar8: TToolBar;
     btnMessagesBack: TSpeedButton;
     Image9: TImage;
@@ -258,6 +258,9 @@ begin
   { This defines the default active tab at runtime }
   FMonitor := TObject.Create;
   pgCarHome.ActiveTab := tabHome;
+  pgHome.ActiveTab := tab01DriverList;
+  pgMessages.ActiveTab := tabMsg01List;
+
   TPlatformServices.Current.SupportsPlatformService(IFMXPhoneDialerService, IInterface(PhoneDialerService));
 end;
 

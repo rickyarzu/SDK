@@ -1,139 +1,93 @@
-inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
+object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
   Caption = 'Gestione Programmazione Tecnico'
-  ClientHeight = 676
-  ClientWidth = 1066
-  ExplicitWidth = 1082
-  ExplicitHeight = 715
-  TextHeight = 17
-  inherited Area: TLabel
-    Left = 8
-    Top = 6
-    Width = 119
-    Caption = 'Tecnico / Calendario'
-    ExplicitLeft = 8
-    ExplicitTop = 6
-    ExplicitWidth = 119
-  end
-  inherited lbActivity: TLabel
-    Left = 8
-    Top = 54
-    Width = 84
-    Caption = 'Cliente - Filiale'
-    ExplicitLeft = 8
-    ExplicitTop = 54
-    ExplicitWidth = 84
-  end
-  inherited lbNote: TLabel
-    Left = 786
-    Top = 249
-    Anchors = [akTop, akRight]
-    ExplicitLeft = 786
-    ExplicitTop = 249
-  end
-  object lbCap: TLabel [3]
-    Left = 784
+  ClientHeight = 772
+  ClientWidth = 1146
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignSize = (
+    1146
+    772)
+  TextHeight = 15
+  object lbCap: TLabel
+    Left = 864
     Top = 6
     Width = 23
-    Height = 17
+    Height = 15
     Anchors = [akTop, akRight]
     Caption = 'CAP'
+    ExplicitLeft = 784
   end
-  object lbData: TLabel [4]
-    Left = 928
-    Top = 6
-    Width = 27
-    Height = 17
+  object lbData: TLabel
+    Left = 687
+    Top = 61
+    Width = 24
+    Height = 15
     Anchors = [akTop, akRight]
     Caption = 'Data'
   end
-  inherited grdDateTime: TGroupBox
-    Left = 786
-    Top = 65
+  object Area: TLabel
+    Left = 8
+    Top = 8
+    Width = 108
+    Height = 15
+    Caption = 'Tecnico / Calendario'
+  end
+  object lbActivity: TLabel
+    Left = 8
+    Top = 60
+    Width = 78
+    Height = 15
+    Caption = 'Cliente - Filiale'
+  end
+  object lbNote: TLabel
+    Left = 866
+    Top = 216
+    Width = 26
+    Height = 15
     Anchors = [akTop, akRight]
-    ExplicitLeft = 786
-    ExplicitTop = 65
+    Caption = 'Note'
   end
-  inherited btnOk: TButton
-    Left = 967
-    Top = 635
-    ExplicitLeft = 967
-    ExplicitTop = 635
-  end
-  inherited btnCancel: TButton
-    Left = 863
-    Top = 635
-    ExplicitLeft = 863
-    ExplicitTop = 635
-  end
-  inherited Memo1: TMemo
-    Left = 786
-    Top = 272
-    Width = 272
-    Height = 346
-    Anchors = [akTop, akRight, akBottom]
-    ExplicitLeft = 786
-    ExplicitTop = 272
-    ExplicitWidth = 272
-    ExplicitHeight = 346
-  end
-  inherited lkpGroups: TJvDBLookupCombo
-    Left = 8
+  object lkpCAP: TJvDBLookupCombo
+    Left = 864
     Top = 24
-    Width = 278
-    EmptyValue = '-1'
-    LookupField = 'RESPONSABILE'
-    LookupDisplay = 'NOME_TECNICO'
-    LookupSource = dsTechnicians
-    OnChange = ChangeFilter
-    ExplicitLeft = 8
-    ExplicitTop = 24
-    ExplicitWidth = 278
-  end
-  inherited lkpActivities: TJvDBLookupCombo
-    Left = 8
-    Top = 77
-    Width = 745
-    LookupField = 'CHIAVE'
-    LookupDisplay = 'DESCRIZIONE_SCHEDA'
-    LookupSource = dsCustomers
-    OnClick = ChangeFilter
-    ExplicitLeft = 8
-    ExplicitTop = 77
-    ExplicitWidth = 745
-  end
-  object lkpCAP: TJvDBLookupCombo [11]
-    Left = 784
-    Top = 24
-    Width = 97
+    Width = 104
     Height = 24
     Anchors = [akTop, akRight]
     LookupField = 'CAP'
     LookupDisplay = 'CAP'
     LookupSource = dsCAP
-    TabOrder = 6
-    OnChange = lkpGroupsChange
+    TabOrder = 1
     OnCloseUp = ChangeFilter
   end
-  object DBCtrlGrid1: TDBCtrlGrid [12]
+  object DBCtrlGrid1: TDBCtrlGrid
     Left = 8
     Top = 107
-    Width = 338
-    Height = 558
-    Anchors = [akLeft, akTop, akBottom]
-    DataSource = DataSource1
-    PanelHeight = 93
-    PanelWidth = 321
-    TabOrder = 7
-    RowCount = 6
+    Width = 393
+    Height = 658
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    DataSource = dsReportsPlanner
+    PanelHeight = 94
+    PanelWidth = 376
+    TabOrder = 4
+    RowCount = 7
     object pnlInterventi: TPanel
       Left = 0
-      Top = 73
-      Width = 321
+      Top = 74
+      Width = 376
       Height = 20
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 69
       object Label3: TLabel
         AlignWithMargins = True
         Left = 3
@@ -159,7 +113,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'LUCI'
-        DataSource = DataSource1
+        DataSource = dsReportsPlanner
         ExplicitLeft = 36
         ExplicitTop = 1
         ExplicitHeight = 18
@@ -189,7 +143,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'IDRANTI'
-        DataSource = DataSource1
+        DataSource = dsReportsPlanner
         ExplicitLeft = 148
         ExplicitTop = 3
         ExplicitHeight = 18
@@ -219,7 +173,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_ORDINARIO'
-        DataSource = DataSource1
+        DataSource = dsReportsPlanner
         ExplicitLeft = 199
         ExplicitTop = 3
         ExplicitHeight = 18
@@ -249,7 +203,25 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_ORDINARIO'
-        DataSource = DataSource1
+        DataSource = dsReportsPlanner
+        ExplicitLeft = 281
+        ExplicitTop = 3
+      end
+      object DBText2: TDBText
+        Left = 347
+        Top = 0
+        Width = 29
+        Height = 20
+        Align = alRight
+        DataField = 'STATO'
+        DataSource = dsReportsPlanner
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMediumblue
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        StyleElements = [seClient, seBorder]
         ExplicitLeft = 281
         ExplicitTop = 3
       end
@@ -257,80 +229,69 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     object Panel1: TPanel
       Left = 0
       Top = 0
-      Width = 321
-      Height = 73
+      Width = 376
+      Height = 74
       Align = alClient
       TabOrder = 1
-      ExplicitLeft = 48
-      ExplicitTop = 16
-      ExplicitWidth = 185
-      ExplicitHeight = 41
-      object JvSpeedButton2: TJvSpeedButton
-        Left = 1
-        Top = 1
-        Width = 60
-        Height = 71
-        Align = alLeft
-        Flat = True
-      end
       object Panel2: TPanel
-        Left = 61
+        Left = 78
         Top = 1
-        Width = 259
-        Height = 71
+        Width = 297
+        Height = 72
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitLeft = 224
-        ExplicitTop = 24
-        ExplicitWidth = 185
-        ExplicitHeight = 41
         object DBText1: TDBText
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 253
+          Width = 291
           Height = 17
           Align = alTop
           DataField = 'DESCRIZIONE_SCHEDA'
-          DataSource = DataSource1
-          ExplicitLeft = 16
-          ExplicitTop = 0
-          ExplicitWidth = 265
-        end
-        object DBText2: TDBText
-          AlignWithMargins = True
-          Left = 3
-          Top = 26
-          Width = 253
-          Height = 17
-          Align = alTop
-          DataField = 'DATA_INTERVENTO'
-          DataSource = DataSource1
-          ExplicitLeft = -5
-          ExplicitTop = 73
-          ExplicitWidth = 306
+          DataSource = dsReportsPlanner
+          ExplicitLeft = 6
         end
         object DBText3: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 49
-          Width = 253
-          Height = 17
+          Top = 26
+          Width = 291
+          Height = 15
           Align = alTop
-          DataField = 'INDIRIZZO'
-          DataSource = DataSource1
-          ExplicitTop = 90
-          ExplicitWidth = 306
+          DataField = 'calcIndirizzo'
+          DataSource = dsReportsPlanner
         end
+        object DBText8: TDBText
+          AlignWithMargins = True
+          Left = 3
+          Top = 54
+          Width = 291
+          Height = 15
+          Align = alBottom
+          DataField = 'calcAppuntamentoDataOra'
+          DataSource = dsReportsPlanner
+          ExplicitTop = 26
+        end
+      end
+      object btnImage: TDBImage
+        Left = 1
+        Top = 1
+        Width = 77
+        Height = 72
+        Align = alLeft
+        DataField = 'calcImage'
+        DataSource = dsReportsPlanner
+        TabOrder = 1
+        OnClick = btnImageClick
       end
     end
   end
-  object DBPlanner1: TDBPlanner [13]
-    Left = 392
+  object DBPlanner1: TDBPlanner
+    Left = 472
     Top = 107
     Width = 388
-    Height = 561
+    Height = 660
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -426,6 +387,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       5E5E5E5EAFAF56165E07070DA7A7675F5F5E5E5E5E5E56165E07EDAF0D0D0D0D
       0D0D0D0D0D0D0D0D5EECD9ED070707070707070707070707EDD1}
     Display.ActiveEnd = 40
+    Display.DisplayStart = 16
     Display.ColorActive = 16575452
     Display.ColorNonActive = clWhite
     Display.HourLineColor = 13542013
@@ -435,6 +397,12 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Name = 'Segoe UI'
     Font.Style = []
     Footer.Captions.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       ''
       '')
     Footer.CompletionFormat = '%d%%'
@@ -458,6 +426,12 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Header.ActiveColorTo = 16571329
     Header.Captions.Strings = (
       ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       '')
     Header.Color = 16645114
     Header.ColorTo = 16643051
@@ -477,6 +451,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     HTMLOptions.CellFontStyle = []
     HTMLOptions.HeaderFontStyle = []
     HTMLOptions.SidebarFontStyle = []
+    ItemPopup = PopupItems
     Items = <>
     Mode.Month = 7
     Mode.PeriodStartDay = 6
@@ -489,7 +464,7 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Mode.TimeLineNVUBegin = 0
     Mode.TimeLineNVUEnd = 0
     Mode.Year = 2024
-    Mode.Day = 6
+    Mode.Day = 30
     Sidebar.ActiveColor = 16575452
     Sidebar.ActiveColorTo = 16571329
     Sidebar.Background = 16645114
@@ -531,74 +506,76 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
+    ItemSource = DBDaySource1
     TMSStyle = 0
   end
-  object Button1: TButton [14]
-    Left = 930
-    Top = 224
+  object btnEditMeeting: TButton
+    Left = 1010
+    Top = 320
     Width = 128
     Height = 25
     Anchors = [akRight, akBottom]
-    Caption = 'Ok'
+    Caption = 'Modifica'
+    ImageIndex = 62
+    ImageName = 'calendar'
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 9
+    TabOrder = 7
   end
-  object Button2: TButton [15]
-    Left = 786
-    Top = 224
+  object btnDeleteMeeting: TButton
+    Left = 866
+    Top = 320
     Width = 129
     Height = 25
     Anchors = [akRight, akBottom]
-    Caption = 'Ok'
+    Caption = 'Annulla App.to'
+    ImageIndex = 64
+    ImageName = 'goal'
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 10
+    TabOrder = 9
   end
-  object ckbFilterTech: TCheckBox [16]
-    Left = 287
-    Top = 28
-    Width = 18
-    Height = 17
+  object btnAdd: TButton
+    Left = 416
+    Top = 264
+    Width = 36
+    Height = 33
     Anchors = [akTop, akRight]
-    Checked = True
-    State = cbChecked
-    TabOrder = 11
-    OnClick = ChangeFilter
-  end
-  object btnAdd: TButton [17]
-    Left = 356
-    Top = 272
-    Width = 26
-    Height = 25
     Caption = '>'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clGreen
-    Font.Height = -13
+    Font.Height = -19
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 10
     StyleElements = [seClient, seBorder]
+    OnClick = btnAddClick
   end
-  object btnRemove: TButton [18]
-    Left = 356
+  object btnRemove: TButton
+    Left = 416
     Top = 312
-    Width = 26
-    Height = 25
+    Width = 36
+    Height = 33
+    Anchors = [akTop, akRight]
     Caption = '<'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
-    Font.Height = -13
+    Font.Height = -19
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 13
+    TabOrder = 0
     StyleElements = [seClient, seBorder]
   end
-  object grpStato: TRadioGroup [19]
-    Left = 311
-    Top = 8
-    Width = 467
+  object grpStato: TRadioGroup
+    Left = 383
+    Top = 4
+    Width = 477
     Height = 51
+    Anchors = [akTop, akRight]
     Columns = 6
     ItemIndex = 5
     Items.Strings = (
@@ -608,51 +585,376 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       'Pronti'
       'Generati'
       'N. Ass.')
-    TabOrder = 14
+    TabOrder = 2
     OnClick = ChangeFilter
   end
-  object ckbCAP: TCheckBox [20]
-    Left = 887
-    Top = 28
+  object ckbCAP: TCheckBox
+    Left = 974
+    Top = 26
     Width = 18
     Height = 17
     Anchors = [akTop, akRight]
-    Checked = True
-    State = cbChecked
-    TabOrder = 15
+    TabOrder = 5
     OnClick = ChangeFilter
   end
-  object ckbActivities: TCheckBox [21]
-    Left = 759
-    Top = 84
+  object ckbActivities: TCheckBox
+    Left = 647
+    Top = 81
     Width = 18
     Height = 17
     Anchors = [akTop, akRight]
-    Checked = True
-    State = cbChecked
-    TabOrder = 16
+    TabOrder = 6
     OnClick = ChangeFilter
   end
-  object DateTimePicker1: TDateTimePicker [22]
-    Left = 928
-    Top = 24
-    Width = 120
+  object CalendarDate: TDateTimePicker
+    Left = 687
+    Top = 76
+    Width = 90
     Height = 25
+    Anchors = [akTop, akRight]
     Date = 45481.000000000000000000
     Time = 0.538943368053878700
+    TabOrder = 8
+    OnChange = CalendarDateChange
+  end
+  object cboTecnici: TJvDBLookupCombo
+    Left = 8
+    Top = 24
+    Width = 369
+    Height = 24
+    EmptyValue = '-1'
+    Anchors = [akLeft, akTop, akRight]
+    LookupField = 'RESPONSABILE'
+    LookupDisplay = 'NOME_TECNICO'
+    LookupSource = dsTechnicians
+    TabOrder = 11
+    OnChange = cboTecniciChange
+  end
+  object cboCustomers: TJvDBLookupCombo
+    Left = 8
+    Top = 77
+    Width = 625
+    Height = 24
+    Anchors = [akLeft, akTop, akRight]
+    LookupField = 'CHIAVE'
+    LookupDisplay = 'DESCRIZIONE_SCHEDA'
+    LookupSource = dsCustomers
+    TabOrder = 12
+    OnClick = ChangeFilter
+  end
+  object btnOk: TButton
+    Left = 1047
+    Top = 731
+    Width = 91
+    Height = 33
+    Anchors = [akRight, akBottom]
+    Caption = 'Ok'
+    ModalResult = 1
+    TabOrder = 13
+  end
+  object btnCancel: TButton
+    Left = 943
+    Top = 731
+    Width = 91
+    Height = 33
+    Anchors = [akRight, akBottom]
+    Caption = 'Annulla'
+    ModalResult = 2
+    TabOrder = 14
+  end
+  object Memo1: TMemo
+    Left = 866
+    Top = 237
+    Width = 272
+    Height = 276
+    Anchors = [akTop, akRight]
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 15
+  end
+  object grdDateTime: TGroupBox
+    Left = 866
+    Top = 65
+    Width = 273
+    Height = 145
+    Anchors = [akTop, akRight]
+    Caption = 'Data ed Ora di Calendario'
+    TabOrder = 16
+    object lbDateFrom: TLabel
+      Left = 16
+      Top = 34
+      Width = 53
+      Height = 15
+      Caption = 'Dalla Data'
+    end
+    object lbDateTo: TLabel
+      Left = 16
+      Top = 84
+      Width = 47
+      Height = 15
+      Caption = 'Alla Data'
+    end
+    object lbStartHours: TLabel
+      Left = 160
+      Top = 34
+      Width = 19
+      Height = 15
+      Caption = 'Ore'
+    end
+    object Label1: TLabel
+      Left = 160
+      Top = 84
+      Width = 19
+      Height = 15
+      Caption = 'Ore'
+    end
+    object lbMin: TLabel
+      Left = 213
+      Top = 34
+      Width = 21
+      Height = 15
+      Caption = 'Min'
+    end
+    object Label2: TLabel
+      Left = 213
+      Top = 84
+      Width = 21
+      Height = 15
+      Caption = 'Min'
+    end
+    object cboHourFrom: TComboBox
+      Left = 160
+      Top = 53
+      Width = 41
+      Height = 23
+      TabOrder = 0
+      Text = '00'
+      Items.Strings = (
+        '00'
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+        '11'
+        '12'
+        '13'
+        '14'
+        '15'
+        '16'
+        '17'
+        '18'
+        '19'
+        '20'
+        '21'
+        '22'
+        '23')
+    end
+    object cboHourTo: TComboBox
+      Left = 160
+      Top = 103
+      Width = 41
+      Height = 23
+      TabOrder = 1
+      Text = '00'
+      Items.Strings = (
+        '00'
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+        '11'
+        '12'
+        '13'
+        '14'
+        '15'
+        '16'
+        '17'
+        '18'
+        '19'
+        '20'
+        '21'
+        '22'
+        '23')
+    end
+    object cboMinsFrom: TComboBox
+      Left = 213
+      Top = 53
+      Width = 41
+      Height = 23
+      TabOrder = 2
+      Text = '00'
+      Items.Strings = (
+        '00'
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+        '11'
+        '12'
+        '13'
+        '14'
+        '15'
+        '16'
+        '17'
+        '18'
+        '19'
+        '20'
+        '21'
+        '22'
+        '23')
+    end
+    object cboMinsTo: TComboBox
+      Left = 213
+      Top = 103
+      Width = 41
+      Height = 23
+      TabOrder = 3
+      Text = '00'
+      Items.Strings = (
+        '00'
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+        '11'
+        '12'
+        '13'
+        '14'
+        '15'
+        '16'
+        '17'
+        '18'
+        '19'
+        '20'
+        '21'
+        '22'
+        '23')
+    end
+    object edEventDateFrom: TDateTimePicker
+      Left = 16
+      Top = 53
+      Width = 129
+      Height = 25
+      Date = 44090.000000000000000000
+      Time = 0.723429768520873000
+      TabOrder = 4
+    end
+    object edEventDateTo: TDateTimePicker
+      Left = 16
+      Top = 103
+      Width = 129
+      Height = 25
+      Date = 44090.000000000000000000
+      Time = 0.723429768520873000
+      TabOrder = 5
+    end
+  end
+  object btnSearch: TBitBtn
+    Left = 998
+    Top = 11
+    Width = 140
+    Height = 48
+    Anchors = [akTop, akRight]
+    Caption = 'Filtra Ricerca'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clTeal
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ImageIndex = 65
+    ImageName = 'search'
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList48
+    ParentFont = False
     TabOrder = 17
+    StyleElements = [seClient, seBorder]
+    OnClick = btnSearchClick
   end
-  inherited DataSource1: TDataSource
-    DataSet = dmVCLPhoenixPlannerController.qryReportPlanner
-    Top = 358
+  object btnPrevDay: TButton
+    Left = 783
+    Top = 76
+    Width = 34
+    Height = 25
+    Caption = '<'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 18
+    OnClick = btnPrevDayClick
   end
-  inherited ColorDialog1: TColorDialog
-    Left = 153
-    Top = 430
+  object btnNextDay: TButton
+    Left = 815
+    Top = 76
+    Width = 34
+    Height = 25
+    Caption = '>'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 19
+    OnClick = btnNextDayClick
   end
-  inherited ImageList1: TImageList
-    Left = 257
-    Top = 374
+  object CRDBGrid1: TCRDBGrid
+    Left = 866
+    Top = 519
+    Width = 272
+    Height = 206
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    DataSource = dsCalendar
+    TabOrder = 20
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'TECNICO'
+        Width = 74
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SUBJECT'
+        Width = 160
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DALLE_ORE'
+        Width = 112
+        Visible = True
+      end>
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
@@ -660,23 +962,64 @@ inherited dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Top = 248
   end
   object dsTechnicians: TUniDataSource
-    DataSet = dmVCLPhoenixPlannerController.qryTech
-    Left = 168
+    DataSet = dmVCLPhoenixPlannerController.qryTecniciCalendar
+    Left = 184
     Top = 280
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 168
+    Left = 176
     Top = 192
   end
   object DBDaySource1: TDBDaySource
     AutoIncKey = False
+    DataSource = dsCalendar
     ResourceMap = <>
+    StartTimeField = 'DALLE_ORE'
+    EndTimeField = 'ALLE_ORE'
+    KeyField = 'JGUID'
     ReadOnly = False
+    SubjectField = 'SUBJECT'
+    NotesField = 'NOTE'
     UpdateByQuery = False
+    OnFieldsToItem = DBDaySource1FieldsToItem
+    OnItemToFields = DBDaySource1ItemToFields
     DateFormat = 'mm/dd/yyyy'
+    Day = 45503.000000000000000000
     Mode = dmMultiDay
-    Left = 496
-    Top = 243
+    NumberOfDays = 1
+    Left = 608
+    Top = 259
+  end
+  object dsReportsPlanner: TUniDataSource
+    DataSet = dmVCLPhoenixPlannerController.vtReportPlanner
+    Left = 88
+    Top = 344
+  end
+  object dsCalendar: TUniDataSource
+    DataSet = dmVCLPhoenixPlannerController.qryPersonalPlannerEvents
+    Left = 680
+    Top = 312
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = Timer1Timer
+    Left = 432
+    Top = 176
+  end
+  object PopupItems: TPopupMenu
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    Left = 600
+    Top = 347
+    object Colore1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actDlgColorAction
+    end
+    object ModificaAppuntamento1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actDlgEditAction
+    end
+    object ModificaAppuntamento2: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actDlgDeleteActions
+    end
   end
 end

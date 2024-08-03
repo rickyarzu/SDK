@@ -204,6 +204,7 @@ begin
     Ts.Data := Fra;
   }
   FdmPgCarServiceMain := TdmPgCarServiceMain.Create(self);
+  PgcMain.ActivePage := pgMainMenu;
 end;
 
 procedure TfrmUNIMainForm.UniFormScreenResize(Sender: TObject; AWidth, AHeight: Integer);

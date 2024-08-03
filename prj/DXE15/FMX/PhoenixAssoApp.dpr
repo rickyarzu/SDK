@@ -13,7 +13,6 @@ uses
   Janua.FMX.PhoenixMobile.frameEstinguisherSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameEstinguisherSettings.pas' {frameFMXPhoenixMobileEstinguisherSetting: TFrame},
   Janua.FMX.PhoenixMobile.frameFireHose in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameFireHose.pas' {frameFMXMobileFireHose: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListFireHoses in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireHoses.pas' {Frame4: TFrame},
-  Janua.Phoenix.dmReportController in '..\..\..\src\januacore\datamodule\Janua.Phoenix.dmReportController.pas' {dmPhoenixReportController: TDataModule},
   Janua.FMX.PhoenixMobile.frameReportListSmokeDetection in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSmokeDetection.pas' {frameFMXPhoenixReportListSmokeDetection: TFrame},
   Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings.pas' {frameFMXPhoenixSmokeDetectionSetting: TFrame};
 
@@ -24,6 +23,5 @@ begin
   Application.CreateForm(TfrmFMXPhoenixMobileMain, frmFMXPhoenixMobileMain);
   Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
   Application.CreateForm(TframeFMXPhoenixReportListEstinguishers, frameFMXPhoenixReportListEstinguishers);
-  Application.CreateForm(TdmPhoenixReportController, dmPhoenixReportController);
   Application.Run;
 end.

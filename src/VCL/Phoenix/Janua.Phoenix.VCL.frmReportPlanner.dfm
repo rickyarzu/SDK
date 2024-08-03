@@ -20,7 +20,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1424
     Height = 754
-    ActivePage = tabTicketsList
+    ActivePage = tabPlannerCalendar
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -197,6 +197,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               FieldName = 'CAP'
               Width = 46
               Visible = True
+              SortOrder = soAsc
+              SortSequence = 1
             end
             item
               Expanded = False
@@ -225,6 +227,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Title.Caption = 'Cliente'
               Width = 226
               Visible = True
+              SortOrder = soAsc
+              SortSequence = 2
             end
             item
               Expanded = False
@@ -463,16 +467,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
-            ItemHeight = 16
             ExplicitWidth = 1357
-          end
-        end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
           end
         end
         inherited PageControl1: TPageControl
@@ -483,18 +478,26 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           ExplicitHeight = 453
           inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1408
+            ExplicitHeight = 423
             inherited DBPlanner1: TDBPlanner
+              Width = 1408
+              Height = 423
               TMSStyle = 0
             end
           end
           inherited tabCalendarGrid: TTabSheet
             ExplicitWidth = 1408
             ExplicitHeight = 423
-            inherited EnhCRDBGrid1: TEnhCRDBGrid
+            inherited grdCalendar: TEnhCRDBGrid
               Width = 1408
               Height = 423
             end
           end
+        end
+        inherited GridPopup: TPopupMenu
+          Left = 575
+          Top = 442
         end
       end
     end
@@ -513,6 +516,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited lbCalendarList: TLabel
           Width = 1410
         end
+        inherited Area: TLabel
+          Width = 57
+          Caption = 'Calendario'
+          ExplicitWidth = 57
+        end
         inherited grpMeeting: TGroupBox
           Top = 613
           Width = 1416
@@ -524,7 +532,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           inherited ckbCalendarList: TCheckListBox
             Width = 1357
-            ItemHeight = 16
             ExplicitWidth = 1357
           end
         end
@@ -544,18 +551,26 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1416
           ExplicitHeight = 453
           inherited tabCalendar: TTabSheet
+            ExplicitWidth = 1408
+            ExplicitHeight = 423
             inherited DBPlanner1: TDBPlanner
+              Width = 1408
+              Height = 423
               TMSStyle = 0
             end
           end
           inherited tabCalendarGrid: TTabSheet
             ExplicitWidth = 1408
             ExplicitHeight = 423
-            inherited EnhCRDBGrid1: TEnhCRDBGrid
+            inherited grdCalendar: TEnhCRDBGrid
               Width = 1408
               Height = 423
             end
           end
+        end
+        inherited GridPopup: TPopupMenu
+          Left = 423
+          Top = 450
         end
       end
     end
@@ -579,7 +594,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Left = 584
     Top = 392
     object Modifica1: TMenuItem
-      Caption = 'Modifica'
+      Caption = 'Appuntamento'
+      OnClick = frameVCLCRDBGridCRDBGridDblClick
     end
     object AnnullaAppuntamento1: TMenuItem
       Caption = 'Annulla Appuntamento'
@@ -589,6 +605,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
     object ModificaStatino1: TMenuItem
       Caption = 'Modifica Statino'
+      OnClick = ModificaStatino1Click
     end
     object VisualizzaContratto1: TMenuItem
       Caption = 'Visualizza Contratto'

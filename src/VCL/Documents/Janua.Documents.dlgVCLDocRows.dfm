@@ -5,14 +5,14 @@ inherited dlgVCLDocumentRow: TdlgVCLDocumentRow
   ClientWidth = 838
   Font.Height = -12
   Position = poScreenCenter
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 854
   ExplicitHeight = 251
-  PixelsPerInch = 96
   DesignSize = (
     838
     212)
   TextHeight = 15
-  object lbGUID: TLabel
+  object lbGUID: TLabel [0]
     Left = 11
     Top = 188
     Width = 72
@@ -25,6 +25,10 @@ inherited dlgVCLDocumentRow: TdlgVCLDocumentRow
     Font.Name = 'Courier New'
     Font.Style = []
     ParentFont = False
+  end
+  inherited StatusBar: TStatusBar
+    Top = 193
+    Width = 838
   end
   object btnUndo: TButton
     Left = 573
@@ -60,5 +64,68 @@ inherited dlgVCLDocumentRow: TdlgVCLDocumentRow
     ParentFont = False
     TabOrder = 2
     ExplicitWidth = 838
+    inherited lbQtyUnits: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbCurrency: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbItemsDescription: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbPrice: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbVatCode: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbAmount: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbVatPurcent: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbVatAmount: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbNetAmount: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbDiscRate: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbDiscAmount: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edQuantity: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edItemsModel: TEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited memItemDescription: TMemo
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edValidateAmount: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edPrice: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edVat: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edVatAmount: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edNetAmount: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edDiscRate: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edDiscAmount: TJvValidateEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
   end
 end

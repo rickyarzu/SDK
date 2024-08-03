@@ -15,7 +15,8 @@ uses
   Janua.Vcl.Planner.dmCustomController, Janua.TMS.Planner.frameCustomCalendar,
   Janua.Phoenix.Vcl.dmPlannerController, Janua.TMS.Phoenix.framePlannerCalendar,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.Vcl.EnhCRDBGrid;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.Vcl.EnhCRDBGrid,
+  JvExControls, JvDBLookup, DBAccess, Uni;
 
 type
   TframeVCLPhoenixPlannerCalendar2 = class(TframeTMSPhoenixPlannerCalendar)
@@ -26,6 +27,7 @@ type
     procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController); override;
   public
     { Public declarations }
+    procedure AfterConstruction; override;
   end;
 
 implementation
@@ -34,6 +36,12 @@ uses Janua.Core.Functions, Janua.Application.Framework, Spring;
 
 {$R *.dfm}
 { TframeVCLPhoenixPlannerCalendar2 }
+
+procedure TframeVCLPhoenixPlannerCalendar2.AfterConstruction;
+begin
+  inherited;
+
+end;
 
 procedure TframeVCLPhoenixPlannerCalendar2.SetCustomController(const Value: TdmVCLPlannerCustomController);
 begin

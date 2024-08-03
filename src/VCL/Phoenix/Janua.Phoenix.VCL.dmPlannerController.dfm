@@ -1,48 +1,123 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 634
-  Width = 1030
-  inherited SVGIconImageList48: TSVGIconImageList
-    Top = 280
-  end
-  inherited MainToolBarActions: TActionList
-    inherited ActionAddMeeting: TAction
-      Caption = 'Pianificazione Tecnico'
-    end
-    inherited ActionAddUser: TAction
-      Caption = 'Gestione Tecnici    e Calendari'
-    end
-    inherited ActionExport: TAction
-      Caption = 'Esporta (Excel,    Pdf, Csv)'
-    end
-  end
-  inherited SVGIconImageList16: TSVGIconImageList
-    Left = 64
-    Top = 344
-  end
-  inherited PictureContainer1: TPictureContainer
-    Top = 384
-  end
+  Height = 678
+  Width = 1047
   inherited SVGIconImageListIt: TSVGIconImageList
-    Top = 416
-  end
-  inherited ColorDialog1: TColorDialog
-    Top = 314
+    Size = 48
+    SVGIconItems = <
+      item
+        IconName = 'checked'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm24 2.75c0-1.517-1.233-2.75-2.75-2.75h-18.5c-1.517 0-2.75 1.233-' +
+          '2.75 2.75v18.5c0 1.517 1.233 2.75 2.75 2.75h18.5c1.517 0 2.75-1.' +
+          '233 2.75-2.75z" fill="#4caf50"/><path d="m18.082 8.043c.391.391.' +
+          '391 1.023 0 1.414l-6.5 6.5c-.195.195-.451.293-.707.293s-.512-.09' +
+          '8-.707-.293l-3.25-3.25c-.391-.391-.391-1.024 0-1.414.391-.391 1.' +
+          '023-.391 1.414 0l2.543 2.543 5.793-5.793c.391-.391 1.023-.391 1.' +
+          '414 0z" fill="#fafafa"/><path d="m12 0h-9.25c-1.517 0-2.75 1.233' +
+          '-2.75 2.75v18.5c0 1.517 1.233 2.75 2.75 2.75h9.25v-8.461l-.418.4' +
+          '18c-.195.195-.451.293-.707.293s-.512-.098-.707-.293l-3.25-3.25c-' +
+          '.391-.391-.391-1.024 0-1.414.195-.195.451-.293.707-.293s.512.098' +
+          '.707.293l2.543 2.543 1.125-1.125z" fill="#429846"/><path d="m7.6' +
+          '25 11c-.256 0-.512.098-.707.293-.391.391-.391 1.024 0 1.414l3.25' +
+          ' 3.25c.195.195.451.293.707.293s.512-.098.707-.293l.418-.418v-2.8' +
+          '28l-1.125 1.125-2.543-2.543c-.195-.195-.451-.293-.707-.293z" fil' +
+          'l="#dadada"/></svg>'
+      end
+      item
+        IconName = 'delete'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.38' +
+          '3-12-12-12z" fill="#f44336"/><path d="m16.419 15.006c.391.391.39' +
+          '1 1.023 0 1.414-.195.195-.451.293-.707.293s-.512-.098-.707-.293l' +
+          '-3.005-3.006-3.005 3.006c-.195.195-.451.293-.707.293s-.512-.098-' +
+          '.707-.293c-.391-.391-.391-1.023 0-1.414l3.005-3.006-3.005-3.006c' +
+          '-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0l3.005 3.006 3.0' +
+          '05-3.006c.391-.391 1.023-.391 1.414 0s.391 1.023 0 1.414l-3.005 ' +
+          '3.006z" fill="#fafafa"/><path d="m12 0c-6.617 0-12 5.383-12 12s5' +
+          '.383 12 12 12v-10.586l-3.005 3.006c-.195.195-.451.293-.707.293s-' +
+          '.512-.098-.707-.293c-.391-.391-.391-1.023 0-1.414l3.005-3.006-3.' +
+          '005-3.006c-.391-.391-.391-1.023 0-1.414.195-.195.451-.293.707-.2' +
+          '93s.511.098.707.293l3.005 3.006z" fill="#d43a2f"/><path d="m8.28' +
+          '8 7.287c-.256 0-.512.098-.707.293-.391.391-.391 1.023 0 1.414l3.' +
+          '005 3.006-3.005 3.006c-.391.391-.391 1.023 0 1.414.195.195.451.2' +
+          '93.707.293s.512-.098.707-.293l3.005-3.006v-2.828l-3.005-3.006c-.' +
+          '196-.195-.452-.293-.707-.293z" fill="#dadada"/></svg>'
+      end
+      item
+        IconName = 'faq'
+        SVGText = 
+          '<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0' +
+          ' 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="' +
+          'm12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.38' +
+          '3-12-12-12z" fill="#ffc107"/><path d="m12 19c-.553 0-1-.447-1-1s' +
+          '.447-1 1-1 1 .447 1 1-.447 1-1 1z" fill="#eceff1"/><path d="m13.' +
+          '583 12.642c-.354.163-.583.52-.583.909v.449c0 .553-.447 1-1 1s-1-' +
+          '.447-1-1v-.449c0-1.167.685-2.236 1.745-2.726 1.019-.47 1.755-1.7' +
+          '14 1.755-2.325 0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5c0 .5' +
+          '53-.447 1-1 1s-1-.447-1-1c0-2.481 2.019-4.5 4.5-4.5s4.5 2.019 4.' +
+          '5 4.5c0 1.351-1.172 3.338-2.917 4.142z" fill="#fafafa"/><path d=' +
+          '"m12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12v-5c-.553 0-1-.447-' +
+          '1-1s.447-1 1-1v-2c-.553 0-1-.447-1-1v-.449c0-.864.375-1.674 1-2.' +
+          '235v-5.316c-1.379 0-2.5 1.121-2.5 2.5 0 .553-.447 1-1 1s-1-.447-' +
+          '1-1c0-2.481 2.019-4.5 4.5-4.5z" fill="#dea806"/><path d="m12 17c' +
+          '-.553 0-1 .447-1 1s.447 1 1 1z" fill="#cdd0d2"/><path d="m12 11.' +
+          '316c-.625.561-1 1.371-1 2.235v.449c0 .553.447 1 1 1zm0-7.316c-2.' +
+          '481 0-4.5 2.019-4.5 4.5 0 .553.447 1 1 1s1-.447 1-1c0-1.379 1.12' +
+          '1-2.5 2.5-2.5z" fill="#dadada"/></svg>'
+      end
+      item
+        IconName = 'check'
+        SVGText = 
+          '<svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="h' +
+          'ttp://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114' +
+          '.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-11' +
+          '4.835938-256-256-256zm0 0" fill="#2196f3"/><path d="m385.75 201.' +
+          '75-138.667969 138.664062c-4.160156 4.160157-9.621093 6.253907-15' +
+          '.082031 6.253907s-10.921875-2.09375-15.082031-6.253907l-69.33203' +
+          '1-69.332031c-8.34375-8.339843-8.34375-21.824219 0-30.164062 8.33' +
+          '9843-8.34375 21.820312-8.34375 30.164062 0l54.25 54.25 123.58593' +
+          '8-123.582031c8.339843-8.34375 21.820312-8.34375 30.164062 0 8.33' +
+          '9844 8.339843 8.339844 21.820312 0 30.164062zm0 0" fill="#fafafa' +
+          '"/></svg>'
+      end
+      item
+        IconName = 'check-mark'
+        SVGText = 
+          '<?xml version="1.0" encoding="UTF-8" standalone="no"?>'#10'<!-- Crea' +
+          'ted with Inkscape (http://www.inkscape.org/) -->'#10'<svg xmlns="htt' +
+          'p://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" ' +
+          'version="1.1" id="svg435" width="682.66669" height="682.66669" v' +
+          'iewBox="0 0 682.66669 682.66669">'#10'  <defs id="defs439">'#10'    <cli' +
+          'pPath clipPathUnits="userSpaceOnUse" id="clipPath453">'#10'      <pa' +
+          'th d="M 0,512 H 512 V 0 H 0 Z" id="path451"/>'#10'    </clipPath>'#10'  ' +
+          '</defs>'#10'  <mask id="custom"><rect id="bg" x="0" y="0" width="100' +
+          '%" height="100%" fill="white"/><g transform="matrix(1.3333333,0,' +
+          '0,-1.3333333,0,682.66667)"/></mask><g mask="url(#custom)"><g id=' +
+          '"g441" transform="matrix(1.3333333,0,0,-1.3333333,0,682.66667)">' +
+          #10'    <g id="g443" transform="translate(355.0234,323.0869)">'#10'    ' +
+          '  <path d="m 0,0 -134.174,-134.174 -63.873,63.872" style="fill:n' +
+          'one;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-l' +
+          'inejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-' +
+          'opacity:1" id="path445"/>'#10'    </g>'#10'    <g id="g447">'#10'      <g id' +
+          '="g449" clip-path="url(#clipPath453)">'#10'        <g id="g455" tran' +
+          'sform="translate(492,256)">'#10'          <path d="m 0,0 c 0,-130.33' +
+          '9 -105.661,-236 -236,-236 -130.339,0 -236,105.661 -236,236 0,130' +
+          '.339 105.661,236 236,236 C -105.661,236 0,130.339 0,0 Z" style="' +
+          'fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;st' +
+          'roke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;s' +
+          'troke-opacity:1" id="path457"/>'#10'        </g>'#10'      </g>'#10'    </g>' +
+          #10'  </g></g>'#10'</svg>'#10
+      end>
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
-    Left = 576
-    Top = 80
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
-  inherited InterBaseUniProvider1: TInterBaseUniProvider
-    Left = 576
-    Top = 144
-  end
-  inherited PostgreSQLUniProvider1: TPostgreSQLUniProvider
-    Left = 576
-    Top = 16
-  end
   inherited vtGoogleEvents: TVirtualTable
-    Left = 792
+    Left = 584
     Top = 80
     Data = {
       0400170002004944010080000000000004004554414701008000000000000700
@@ -59,36 +134,18 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       01008000000000000900417474656E646565731000000000000000090052656D
       696E64657273100000000000000005004A475549442300260000000000090043
       616C63436F6C6F720300000000000000000000000000}
-    inherited vtGoogleEventsAlias: TWideStringField
-      LookupResultField = 'ALIAS'
-    end
-  end
-  inherited dsGoogleEvents: TUniDataSource
-    Top = 344
   end
   inherited dsCalendars: TUniDataSource
     DataSet = qryPlannerCalendars
   end
-  inherited DBDaySourceGCalendar: TDBDaySource
-    Mode = dmMultiDay
-    NumberOfResources = 1
-  end
   inherited DBDaySourceCalendar: TDBDaySource
     DataSource = dsCalendarEvents
-    ResourceDataSource.ResourceNameField = ''
-    NotesField = 'NOTE'
-    Day = 45474.000000000000000000
-    DayIncrement = 3
     Mode = dmMultiResDay
-    NumberOfResources = 1
-    MinTimeField = 'DALLE_ORE'
-    MaxTimeField = 'ALLE_ORE'
   end
   inherited dsCalendarEvents: TUniDataSource
     DataSet = qryPlannerEvents
   end
   inherited lkpGCalendarAlias: TVirtualTable
-    Top = 408
     Data = {
       04000B0002004944010080000000000008004C4F434154494F4E010080000000
       0000070053554D4D415259010000010000000007005052494D41525905000000
@@ -99,7 +156,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       000000000000}
   end
   inherited vtGoogleCalendars: TVirtualTable
-    Left = 791
+    Left = 583
     Top = 16
     Data = {
       04000B0002004944010080000000000008004C4F434154494F4E010080000000
@@ -572,6 +629,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FixedChar = True
       Size = 1
     end
+    object qryReportPlannercalcIndirizzo: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcIndirizzo'
+      Size = 128
+      Calculated = True
+    end
   end
   object spSetStatinoStato: TUniStoredProc
     StoredProcName = 'SET_STATINI_STATO'
@@ -707,8 +770,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ';')
     FetchRows = 100
     Filtered = True
-    IndexFieldNames = 'JGUID'
-    Left = 792
+    IndexFieldNames = 'DALLE_ORE DESC'
+    Left = 808
     Top = 280
     ParamData = <
       item
@@ -1004,14 +1067,14 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Size = 38
     end
   end
-  object dsTecnici: TUniDataSource
-    DataSet = qryPlannerEvents
-    Left = 792
+  object dsTecniciCalendar: TUniDataSource
+    DataSet = qryTecniciCalendar
+    Left = 808
     Top = 144
   end
   object dsTecniciPlanned: TUniDataSource
     DataSet = qryTechPlanned
-    Left = 792
+    Left = 808
     Top = 344
   end
   object qryPlannerCalendars: TUniQuery
@@ -1025,7 +1088,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'T'#39
       'order by TECNICO_SIGLA'
       ';')
-    Left = 792
+    Left = 808
     Top = 216
     object qryPlannerCalendarsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
@@ -1143,41 +1206,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         Size = 255
       end
       item
-        Name = 'CELLULARE'
-        DataType = ftString
-        Size = 255
-      end
-      item
-        Name = 'EMAIL'
-        DataType = ftString
-        Size = 255
-      end
-      item
-        Name = 'ESCLUDI_DA_GENERAZIONE'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'SEDE'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'ID'
-        DataType = ftString
-        Size = 255
-      end
-      item
-        Name = 'REF_TELEFONO'
-        DataType = ftString
-        Size = 255
-      end
-      item
-        Name = 'REF_CELLULARE'
-        DataType = ftString
-        Size = 255
-      end
-      item
         Name = 'COMUNE'
         DataType = ftString
         Size = 255
@@ -1191,22 +1219,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         DataType = ftDate
       end
       item
-        Name = 'GENERAZIONE_AUTOMATICA'
-        DataType = ftInteger
-      end
-      item
         Name = 'TECNICO_INTERVENTO'
         DataType = ftInteger
-      end
-      item
-        Name = 'SCANSIONE'
-        DataType = ftWideString
-        Size = 2048
-      end
-      item
-        Name = 'REGISTRO'
-        DataType = ftWideString
-        Size = 2048
       end
       item
         Name = 'NOTE_PER_IL_TECNICO'
@@ -1214,69 +1228,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         Size = 1024
       end
       item
-        Name = 'SOSPESO'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'DA_ESPORTARE_SUL_WEB'
-        DataType = ftString
-        Size = 1
-      end
-      item
         Name = 'RESPONSABILE'
         DataType = ftInteger
       end
       item
-        Name = 'ESPORTATO_SU_MOBILE'
-        DataType = ftString
-        Size = 1
-      end
-      item
         Name = 'NOTE_DAL_TECNICO'
         DataType = ftBlob
-      end
-      item
-        Name = 'VERBALE_PROVA_DINAMICA'
-        DataType = ftBlob
-      end
-      item
-        Name = 'VERBALE_MANICHETTE'
-        DataType = ftBlob
-      end
-      item
-        Name = 'PREVENTIVO'
-        DataType = ftInteger
-      end
-      item
-        Name = 'IGNORA_EVIDENZIAZIONE'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'ANNULLATO_DA_TABLET'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'MOBILEWARN_NUOVA_ATTREZZATURA'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'MOBILEWARN_ORDINARIA_RITIRATA'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
-        DataType = ftString
-        Size = 1
-      end
-      item
-        Name = 'MOBILEWARN_SMALTIMENTO'
-        DataType = ftString
-        Size = 1
       end
       item
         Name = 'STATO_LAVORAZIONE'
@@ -1291,16 +1248,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         Name = 'CHIUSURA_EXT'
         DataType = ftString
         Size = 50
-      end
-      item
-        Name = 'CHIUSURA_STATINO'
-        DataType = ftWideString
-        Size = 2048
-      end
-      item
-        Name = 'MOBILEWARN_NON_ESEGUITI'
-        DataType = ftString
-        Size = 1
       end
       item
         Name = 'PRESA_IN_CARICO'
@@ -1384,11 +1331,25 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       item
         Name = 'calcAppuntamentoDataOra'
         DataType = ftDateTime
+      end
+      item
+        Name = 'calcIndirizzo'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'calcImage'
+        DataType = ftBlob
+      end
+      item
+        Name = 'calcReportID'
+        DataType = ftInteger
       end>
+    BeforePost = vtReportPlannerBeforePost
     Left = 688
     Top = 384
     Data = {
-      040044000600434849415645030000000000000012004445534352495A494F4E
+      04002F000600434849415645030000000000000012004445534352495A494F4E
       455F5343484544410100FF00000000000700434C49454E544503000000000000
       0004004E4F4D450100640000000000090050524F56494E434941010002000000
       0000030043415001000A00000000000900494E444952495A5A4F0100FF000000
@@ -1397,48 +1358,30 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       14004F524152494F5F41504552545552415F44414C320A000000000000001300
       4F524152494F5F41504552545552415F414C310A0000000000000013004F5241
       52494F5F41504552545552415F414C320A000000000000000800434849555355
-      52410100FF0000000000090043454C4C554C4152450100FF0000000000050045
-      4D41494C0100FF000000000016004553434C5544495F44415F47454E4552415A
-      494F4E4501000100000000000400534544450100010000000000020049440100
-      FF00000000000C005245465F54454C45464F4E4F0100FF00000000000D005245
-      465F43454C4C554C4152450100FF00000000000600434F4D554E450100FF0000
-      00000007004641545455524103000000000000000F00444154415F494E544552
-      56454E544F0900000000000000160047454E4552415A494F4E455F4155544F4D
-      4154494341030000000000000012005445434E49434F5F494E54455256454E54
-      4F030000000000000009005343414E53494F4E45180000080000000008005245
-      47495354524F180000080000000013004E4F54455F5045525F494C5F5445434E
-      49434F18000004000000000700534F535045534F010001000000000014004441
-      5F4553504F52544152455F53554C5F57454201000100000000000C0052455350
-      4F4E534142494C45030000000000000013004553504F525441544F5F53555F4D
-      4F42494C45010001000000000010004E4F54455F44414C5F5445434E49434F0F
-      00000000000000160056455242414C455F50524F56415F44494E414D4943410F
-      00000000000000120056455242414C455F4D414E494348455454450F00000000
-      0000000A0050524556454E5449564F0300000000000000150049474E4F52415F
-      45564944454E5A49415A494F4E4501000100000000001300414E4E554C4C4154
-      4F5F44415F5441424C455401000100000000001D004D4F42494C455741524E5F
-      4E554F56415F41545452455A5A415455524101000100000000001D004D4F4249
-      4C455741524E5F4F5244494E415249415F524954495241544101000100000000
-      001E004D4F42494C455741524E5F4E5F4F5244494E5F434F4E54524F4C4C4154
-      41010001000000000016004D4F42494C455741524E5F534D414C54494D454E54
-      4F01000100000000001100535441544F5F4C41564F52415A494F4E4501000100
-      000000001700444154415F43484955535552415F44415F534552564552090000
-      00000000000C0043484955535552415F45585401003200000000001000434849
-      55535552415F53544154494E4F180000080000000017004D4F42494C45574152
-      4E5F4E4F4E5F455345475549544901000100000000000F0050524553415F494E
-      5F43415249434F01000100000000000900464F524E4954555241010001000000
-      000008004F5244494E41524919000000000000000C00535452414F5244494E41
-      524919000000000000000A00494E54455256454E544919000000000000000C00
-      4E4F4D455F5445434E49434F0100FF00000000001100415050554E54414D454E
-      544F5F4441544109000000000000001000415050554E54414D454E544F5F4F52
-      410A000000000000000500535441544F0200000000000000070053544154494E
-      4F03000000000000001300455354494E544F52495F4F5244494E4152494F1900
-      0000000000001700455354494E544F52495F535452414F5244494E4152494F19
-      000000000000000D004752555050495F454C4554545219000000000000000400
-      46554D49190000000000000004004C5543491900000000000000070049445241
-      4E544919000000000000000900535052494E4B4C455219000000000000000B00
-      494D5049414E54495F454C19000000000000000E00414D4D494E495354524154
-      4F52450300000000000000170063616C63417070756E74616D656E746F446174
-      614F72610B00000000000000000000000000}
+      52410100FF00000000000600434F4D554E450100FF0000000000070046415454
+      55524103000000000000000F00444154415F494E54455256454E544F09000000
+      0000000012005445434E49434F5F494E54455256454E544F0300000000000000
+      13004E4F54455F5045525F494C5F5445434E49434F18000004000000000C0052
+      4553504F4E534142494C45030000000000000010004E4F54455F44414C5F5445
+      434E49434F0F000000000000001100535441544F5F4C41564F52415A494F4E45
+      01000100000000001700444154415F43484955535552415F44415F5345525645
+      5209000000000000000C0043484955535552415F45585401003200000000000F
+      0050524553415F494E5F43415249434F01000100000000000900464F524E4954
+      555241010001000000000008004F5244494E41524919000000000000000C0053
+      5452414F5244494E41524919000000000000000A00494E54455256454E544919
+      000000000000000C004E4F4D455F5445434E49434F0100FF0000000000110041
+      5050554E54414D454E544F5F4441544109000000000000001000415050554E54
+      414D454E544F5F4F52410A000000000000000500535441544F02000000000000
+      00070053544154494E4F03000000000000001300455354494E544F52495F4F52
+      44494E4152494F19000000000000001700455354494E544F52495F535452414F
+      5244494E4152494F19000000000000000D004752555050495F454C4554545219
+      00000000000000040046554D49190000000000000004004C5543491900000000
+      0000000700494452414E544919000000000000000900535052494E4B4C455219
+      000000000000000B00494D5049414E54495F454C19000000000000000E00414D
+      4D494E4953545241544F52450300000000000000170063616C63417070756E74
+      616D656E746F446174614F72610B000000000000000D0063616C63496E646972
+      697A7A6F0100800000000000090063616C63496D6167650F000000000000000C
+      0063616C635265706F727449440300000000000000000000000000}
     object vtReportPlannerCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
@@ -1490,34 +1433,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'CHIUSURA'
       Size = 255
     end
-    object vtReportPlannerCELLULARE: TStringField
-      FieldName = 'CELLULARE'
-      Size = 255
-    end
-    object vtReportPlannerEMAIL: TStringField
-      FieldName = 'EMAIL'
-      Size = 255
-    end
-    object vtReportPlannerESCLUDI_DA_GENERAZIONE: TStringField
-      FieldName = 'ESCLUDI_DA_GENERAZIONE'
-      Size = 1
-    end
-    object vtReportPlannerSEDE: TStringField
-      FieldName = 'SEDE'
-      Size = 1
-    end
-    object vtReportPlannerID: TStringField
-      FieldName = 'ID'
-      Size = 255
-    end
-    object vtReportPlannerREF_TELEFONO: TStringField
-      FieldName = 'REF_TELEFONO'
-      Size = 255
-    end
-    object vtReportPlannerREF_CELLULARE: TStringField
-      FieldName = 'REF_CELLULARE'
-      Size = 255
-    end
     object vtReportPlannerCOMUNE: TStringField
       FieldName = 'COMUNE'
       Size = 255
@@ -1528,74 +1443,15 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object vtReportPlannerDATA_INTERVENTO: TDateField
       FieldName = 'DATA_INTERVENTO'
     end
-    object vtReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField
-      FieldName = 'GENERAZIONE_AUTOMATICA'
-    end
     object vtReportPlannerTECNICO_INTERVENTO: TIntegerField
       FieldName = 'TECNICO_INTERVENTO'
-    end
-    object vtReportPlannerSCANSIONE: TWideStringField
-      FieldName = 'SCANSIONE'
-      Size = 2048
-    end
-    object vtReportPlannerREGISTRO: TWideStringField
-      FieldName = 'REGISTRO'
-      Size = 2048
     end
     object vtReportPlannerNOTE_PER_IL_TECNICO: TWideStringField
       FieldName = 'NOTE_PER_IL_TECNICO'
       Size = 1024
     end
-    object vtReportPlannerSOSPESO: TStringField
-      FieldName = 'SOSPESO'
-      Size = 1
-    end
-    object vtReportPlannerDA_ESPORTARE_SUL_WEB: TStringField
-      FieldName = 'DA_ESPORTARE_SUL_WEB'
-      Size = 1
-    end
     object vtReportPlannerRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
-    end
-    object vtReportPlannerESPORTATO_SU_MOBILE: TStringField
-      FieldName = 'ESPORTATO_SU_MOBILE'
-      Size = 1
-    end
-    object vtReportPlannerNOTE_DAL_TECNICO: TBlobField
-      FieldName = 'NOTE_DAL_TECNICO'
-    end
-    object vtReportPlannerVERBALE_PROVA_DINAMICA: TBlobField
-      FieldName = 'VERBALE_PROVA_DINAMICA'
-    end
-    object vtReportPlannerVERBALE_MANICHETTE: TBlobField
-      FieldName = 'VERBALE_MANICHETTE'
-    end
-    object vtReportPlannerPREVENTIVO: TIntegerField
-      FieldName = 'PREVENTIVO'
-    end
-    object vtReportPlannerIGNORA_EVIDENZIAZIONE: TStringField
-      FieldName = 'IGNORA_EVIDENZIAZIONE'
-      Size = 1
-    end
-    object vtReportPlannerANNULLATO_DA_TABLET: TStringField
-      FieldName = 'ANNULLATO_DA_TABLET'
-      Size = 1
-    end
-    object vtReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
-      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
-      Size = 1
-    end
-    object vtReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField
-      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
-      Size = 1
-    end
-    object vtReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
-      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
-      Size = 1
-    end
-    object vtReportPlannerMOBILEWARN_SMALTIMENTO: TStringField
-      FieldName = 'MOBILEWARN_SMALTIMENTO'
-      Size = 1
     end
     object vtReportPlannerSTATO_LAVORAZIONE: TStringField
       FieldName = 'STATO_LAVORAZIONE'
@@ -1607,14 +1463,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object vtReportPlannerCHIUSURA_EXT: TStringField
       FieldName = 'CHIUSURA_EXT'
       Size = 50
-    end
-    object vtReportPlannerCHIUSURA_STATINO: TWideStringField
-      FieldName = 'CHIUSURA_STATINO'
-      Size = 2048
-    end
-    object vtReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
-      FieldName = 'MOBILEWARN_NON_ESEGUITI'
-      Size = 1
     end
     object vtReportPlannerPRESA_IN_CARICO: TStringField
       FieldName = 'PRESA_IN_CARICO'
@@ -1675,6 +1523,19 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object vtReportPlannerAMMINISTRATORE: TIntegerField
       FieldName = 'AMMINISTRATORE'
+    end
+    object vtReportPlannercalcAppuntamentoDataOra: TDateTimeField
+      FieldName = 'calcAppuntamentoDataOra'
+    end
+    object vtReportPlannercalcIndirizzo: TStringField
+      FieldName = 'calcIndirizzo'
+      Size = 128
+    end
+    object vtReportPlannercalcImage: TBlobField
+      FieldName = 'calcImage'
+    end
+    object vtReportPlannercalcReportID: TIntegerField
+      FieldName = 'calcReportID'
     end
   end
   object vtGoogleEventsSearch: TVirtualTable
@@ -1781,7 +1642,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         DataType = ftInteger
       end>
     BeforePost = vtGoogleEventsSearchBeforePost
-    Left = 792
+    Left = 808
     Top = 416
     Data = {
       0400170002004944010080000000000004004554414701008000000000000700
@@ -1881,7 +1742,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object dsGoogleEventsSearch: TUniDataSource
     DataSet = vtGoogleEventsSearch
-    Left = 792
+    Left = 808
     Top = 488
   end
   object lkpTecnici: TUniQuery
@@ -1890,7 +1751,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'SELECT T.*'
       'FROM  TECNICI T'
       'where T.EMAIL IS NOT NULL')
-    Left = 592
+    Left = 576
     Top = 416
     object lkpTecniciCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
@@ -1929,13 +1790,13 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object dsLkpTecnici: TUniDataSource
     DataSet = lkpTecnici
-    Left = 592
+    Left = 576
     Top = 488
   end
   object CalendarGridActions: TActionList
     Images = SVGIconImageList16
-    Left = 64
-    Top = 16
+    Left = 72
+    Top = 544
     object actGridCalColor: TAction
       Caption = 'Colore'
       ImageIndex = 15
@@ -1981,12 +1842,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     NumberOfDays = 3
     MinTimeField = 'DALLE_ORE'
     MaxTimeField = 'ALLE_ORE'
-    Left = 411
-    Top = 168
+    Left = 419
+    Top = 512
   end
   object vtPlannerEvents: TVirtualTable
-    Left = 416
-    Top = 240
+    Left = 584
+    Top = 144
     Data = {04000000000000000000}
   end
   object qryCAPTecnici: TUniQuery
@@ -2000,8 +1861,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'ORDER BY  S.CAP'
       ';')
     MasterSource = dsLkpTecnici
-    Left = 680
-    Top = 448
+    Left = 688
+    Top = 456
     object StringField1: TStringField
       FieldName = 'CAP'
       Size = 10
@@ -2031,7 +1892,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'SELECT * FROM CALENDARIO WHERE GRUPPO_ID = '#39'A'#39
       'order by TECNICO_SIGLA'
       ';')
-    Left = 928
+    Left = 944
     Top = 40
     object qryPlannerCalendars2CHIAVE: TIntegerField
       FieldName = 'CHIAVE'
@@ -2119,17 +1980,17 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     NumberOfDays = 3
     MinTimeField = 'DALLE_ORE'
     MaxTimeField = 'ALLE_ORE'
-    Left = 411
-    Top = 304
+    Left = 419
+    Top = 440
   end
   object dsCalendars2: TUniDataSource
     DataSet = qryPlannerCalendars2
-    Left = 928
+    Left = 944
     Top = 104
   end
   object dsCalendarEvents2: TUniDataSource
     DataSet = qryPlannerEvents2
-    Left = 928
+    Left = 944
     Top = 240
   end
   object qryPlannerEvents2: TUniQuery
@@ -2201,10 +2062,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'E.DALLE_ORE <= :DATA_AL'
       ';')
     FetchRows = 100
-    Active = True
     Filtered = True
     IndexFieldNames = 'JGUID'
-    Left = 928
+    Left = 944
     Top = 168
     ParamData = <
       item
@@ -2341,6 +2201,246 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ImageIndex = 26
       ImageName = '027-tasks'
       OnExecute = ActionCalendarSync2Execute
+    end
+  end
+  object qryPersonalPlannerEvents: TUniQuery
+    KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'NOTE'
+        FieldType = ftWideString
+        FieldLength = 2048
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT E.* FROM '
+      'CALENDARIO_EVENTI E'
+      'where '
+      'E.DALLE_ORE >= :DATA_DAL'
+      'AND'
+      'E.ALLE_ORE < :DATA_DAL + 1'
+      'and '
+      'E.TECNICO = :TECNICO'
+      'ORDER BY E.DALLE_ORE'
+      ';')
+    FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'DALLE_ORE'
+    BeforePost = qryPersonalPlannerEventsBeforePost
+    Left = 688
+    Top = 528
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATA_DAL'
+        ParamType = ptInput
+        Value = 45503d
+      end
+      item
+        DataType = ftInteger
+        Name = 'TECNICO'
+        ParamType = ptInput
+        Value = 2035681
+      end>
+    object qryPersonalPlannerEventsCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryPersonalPlannerEventsSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryPersonalPlannerEventsTECNICO: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object qryPersonalPlannerEventsDALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object qryPersonalPlannerEventsALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object qryPersonalPlannerEventsSUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 256
+    end
+    object qryPersonalPlannerEventsTECNICO_SIGLA: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object qryPersonalPlannerEventsCOLORE: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object qryPersonalPlannerEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryPersonalPlannerEventsICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object qryPersonalPlannerEventsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryPersonalPlannerEventsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryPersonalPlannerEventsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryPersonalPlannerEventsCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryPersonalPlannerEventsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object qryPersonalPlannerEventsNOTE: TWideStringField
+      FieldName = 'NOTE'
+      Size = 2048
+    end
+  end
+  object qryTecniciCalendar: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'SELECT DISTINCT S.responsabile, T.descrizione as NOME_TECNICO, t' +
+        '.email, t.sigla, '
+      
+        '                c.googleid, c.chiave as calendario, c.defaultcol' +
+        'or'
+      'FROM STATINI s'
+      'JOIN TECNICI T ON T.chiave = S.responsabile'
+      'JOIN CALENDARIO C on C.Tecnico = S.responsabile'
+      'ORDER BY T.descrizione'
+      ';')
+    Left = 808
+    Top = 72
+    object qryTecniciCalendarRESPONSABILE: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object qryTecniciCalendarNOME_TECNICO: TStringField
+      FieldName = 'NOME_TECNICO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryTecniciCalendarEMAIL: TStringField
+      FieldName = 'EMAIL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryTecniciCalendarSIGLA: TStringField
+      FieldName = 'SIGLA'
+      ReadOnly = True
+      Size = 12
+    end
+    object qryTecniciCalendarGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryTecniciCalendarCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+      ReadOnly = True
+      Required = True
+    end
+    object qryTecniciCalendarDEFAULTCOLOR: TIntegerField
+      FieldName = 'DEFAULTCOLOR'
+      ReadOnly = True
+    end
+  end
+  object qryGenID: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT Gen_id(gen_chiavi, 1) as ID FROM RDB$DATABASE;')
+    Left = 576
+    Top = 552
+    object qryGenIDID: TLargeintField
+      FieldName = 'ID'
+      ReadOnly = True
+    end
+  end
+  object dlgItemsActions: TActionList
+    Images = SVGIconImageList16
+    Left = 160
+    Top = 512
+    object actDlgColorAction: TAction
+      Caption = 'Colore'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actDlgColorActionExecute
+    end
+    object actDlgEditAction: TAction
+      Caption = 'Modifica Appuntamento'
+      ImageIndex = 24
+      ImageName = '025-planning'
+      OnExecute = actDlgEditActionExecute
+    end
+    object Action3: TAction
+      Caption = 'Carattere'
+      ImageIndex = 61
+      ImageName = 'font-size'
+      OnExecute = actFontExecute
+    end
+    object Action4: TAction
+      Caption = 'Google Sync'
+      ImageIndex = 16
+      ImageName = '017-clock'
+      OnExecute = actGoogleSyncExecute
+    end
+    object actDlgDeleteActions: TAction
+      Caption = 'Annulla Appuntamento'
+      ImageIndex = 49
+      ImageName = '050-stopwatch'
+      OnExecute = actDlgDeleteActionsExecute
     end
   end
 end

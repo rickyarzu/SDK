@@ -14,18 +14,26 @@ uses
   // Janua
   Janua.TMS.Planner.frameCustomCalendar, Janua.Phoenix.Vcl.dmPlannerController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.VCL.EnhCRDBGrid;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.Vcl.EnhCRDBGrid,
+  DBAccess, Uni, JvExControls, JvDBLookup;
 
 type
   TframeTMSPhoenixPlannerCalendar = class(TframeTMSCustomPlannerCalendar)
     GridPopup: TPopupMenu;
     mnuGoogleSync1: TMenuItem;
+    dsCAP: TUniDataSource;
+    dsTechnicians: TUniDataSource;
+    dsCustomers: TUniDataSource;
+    cboTecnici: TJvDBLookupCombo;
+    Area: TLabel;
+    procedure cboTecniciCloseUp(Sender: TObject);
   protected
     FPlannerController: TdmVCLPhoenixPlannerController;
     procedure SetPlannerController(const Value: TdmVCLPhoenixPlannerController); virtual;
     { Private declarations }
   public
     { Public declarations }
+    procedure AfterConstruction; override;
     property PlannerController: TdmVCLPhoenixPlannerController read FPlannerController
       write SetPlannerController;
   end;
@@ -38,12 +46,29 @@ implementation
 {$R *.dfm}
 { TframeTMSPhoenixPlannerCalendar }
 
+procedure TframeTMSPhoenixPlannerCalendar.AfterConstruction;
+begin
+  inherited;
+  PageControl1.ActivePage := PageControl1.Pages[0];
+end;
+
+procedure TframeTMSPhoenixPlannerCalendar.cboTecniciCloseUp(Sender: TObject);
+begin
+  inherited;
+  FPlannerController.SelectedCalendarTec := cboTecnici.Value.ToInteger;
+end;
+
 procedure TframeTMSPhoenixPlannerCalendar.SetPlannerController(const Value: TdmVCLPhoenixPlannerController);
 begin
   FPlannerController := Value;
   CustomController := FPlannerController;
   GridPopup.Images := FPlannerController.SVGIconImageList16;
   mnuGoogleSync1.Action := FPlannerController.actGoogleSync;
+  if FPlannerController.qryPlannerEvents.RecordCount > 0 then
+  begin
+    FPlannerController.SelectedCalendarTec := FPlannerController.qryPlannerEventsTECNICO.AsInteger;
+    cboTecnici.Value := FPlannerController.SelectedCalendarTec.ToString;
+  end;
 end;
 
 end.

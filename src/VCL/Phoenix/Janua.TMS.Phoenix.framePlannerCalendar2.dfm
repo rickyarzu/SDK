@@ -9,6 +9,11 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
   inherited lbCalendarList: TLabel
     Width = 1170
   end
+  inherited edDays: TSpinEdit
+    Top = 62
+    Value = 3
+    ExplicitTop = 62
+  end
   inherited grpMeeting: TGroupBox
     Top = 794
     Width = 1176
@@ -23,15 +28,18 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
       ExplicitWidth = 1117
     end
   end
+  inherited Panel3: TPanel
+    inherited lbSearch: TLabel
+      Width = 250
+    end
+    inherited lbDateSelector: TLabel
+      Width = 256
+    end
+  end
   inherited PageControl1: TPageControl
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0
-      end
-    end
-    inherited tabCalendarGrid: TTabSheet
-      inherited EnhCRDBGrid1: TEnhCRDBGrid
-        DataSource = dmVCLPhoenixPlannerController.dsCalendarEvents2
       end
     end
   end

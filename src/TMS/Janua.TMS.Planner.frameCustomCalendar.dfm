@@ -1,9 +1,8 @@
-object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
-  Left = 0
-  Top = 0
+inherited frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
   Width = 1440
   Height = 986
-  TabOrder = 0
+  ExplicitWidth = 1440
+  ExplicitHeight = 986
   DesignSize = (
     1440
     986)
@@ -210,7 +209,6 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Height = 24
       Align = alClient
       Columns = 12
-      ItemHeight = 17
       Items.Strings = (
         'uno'
         'due'
@@ -239,20 +237,18 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 250
+      Width = 134
       Height = 15
       Align = alTop
       Caption = 'Ricerca Appuntamento ...'
-      ExplicitWidth = 134
     end
     object lbDateSelector: TLabel
       Left = 0
       Top = 61
-      Width = 256
+      Width = 160
       Height = 15
       Align = alTop
       Caption = 'Selezionare il Periodo e le Date'
-      ExplicitWidth = 160
     end
     object edMeeting: TEdit
       Left = 0
@@ -587,7 +583,7 @@ object frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Caption = 'Archivio Calendari'
       ImageIndex = 1
       TabVisible = False
-      object EnhCRDBGrid1: TEnhCRDBGrid
+      object grdCalendar: TEnhCRDBGrid
         Left = 0
         Top = 0
         Width = 1423

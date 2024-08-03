@@ -109,7 +109,7 @@ object frmUNIMainForm: TfrmUNIMainForm
         Width = 805
         Height = 719
         Hint = ''
-        ActivePage = tabCustomersList
+        ActivePage = pgMainMenu
         Align = alClient
         LayoutConfig.Height = '100%'
         LayoutConfig.Width = '100%'
@@ -122,7 +122,7 @@ object frmUNIMainForm: TfrmUNIMainForm
             691)
           object cntMain: TUniContainerPanel
             Left = 64
-            Top = 21
+            Top = 22
             Width = 600
             Height = 465
             Hint = ''
@@ -2285,7 +2285,6 @@ object frmUNIMainForm: TfrmUNIMainForm
             Align = alTop
             TabOrder = 0
             Caption = ''
-            ExplicitTop = -6
             object btnEditBooking: TUniButton
               Left = 1
               Top = 1
@@ -2456,8 +2455,6 @@ object frmUNIMainForm: TfrmUNIMainForm
               Images = imgl32
               ImageIndex = 22
               OnClick = btnEditCustomerClick
-              ExplicitLeft = 9
-              ExplicitTop = 2
             end
           end
           object UniDBGrid2: TUniDBGrid

@@ -9,15 +9,17 @@ uses
   // VCL
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, PictureContainer, Vcl.Menus, Vcl.ComCtrls, Vcl.Mask,
   Vcl.CheckLst, Vcl.ImgList, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBCGrids, Vcl.Samples.Spin,
+  Vcl.Grids, Vcl.DBGrids, CRGrid,
   // TMS
   DBPlanner, AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, AdvEdit, AdvMEdBtn, PlannerRangeSelector,
   // Janua
   Janua.Vcl.Planner.dmCustomController,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Grids, Vcl.DBGrids, CRGrid, Janua.Vcl.EnhCRDBGrid;
+  Janua.Controls.Forms.Intf, Janua.Vcl.Interposers, Janua.TMS.Interposers, uJanuaVCLFrame,
+  Janua.Vcl.EnhCRDBGrid;
 
 type
-  TframeTMSCustomPlannerCalendar = class(TFrame)
+  TframeTMSCustomPlannerCalendar = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer)
     lbGiorni: TLabel;
     edDays: TSpinEdit;
     Panel1: TPanel;
@@ -51,7 +53,7 @@ type
     PageControl1: TPageControl;
     tabCalendar: TTabSheet;
     tabCalendarGrid: TTabSheet;
-    EnhCRDBGrid1: TEnhCRDBGrid;
+    grdCalendar: TEnhCRDBGrid;
     DBPlanner1: TDBPlanner;
     AdvPlannerPDFIO1: TAdvPlannerPDFIO;
     procedure ckbCalendarListClickCheck(Sender: TObject);

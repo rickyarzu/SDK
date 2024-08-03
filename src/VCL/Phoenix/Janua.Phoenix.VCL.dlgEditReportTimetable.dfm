@@ -3,8 +3,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Modifica Scheda Appuntamento'
-  ClientHeight = 315
-  ClientWidth = 410
+  ClientHeight = 333
+  ClientWidth = 426
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
   Position = poScreenCenter
   TextHeight = 15
   object edDate: TDateTimePicker
-    Left = 80
-    Top = 40
+    Left = 96
+    Top = 29
     Width = 241
     Height = 29
     Date = 45294.000000000000000000
@@ -31,8 +31,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
     StyleElements = [seClient, seBorder]
   end
   object edNote: TMemo
-    Left = 32
-    Top = 136
+    Left = 40
+    Top = 173
     Width = 345
     Height = 121
     Lines.Strings = (
@@ -40,8 +40,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
     TabOrder = 1
   end
   object btnCancel: TBitBtn
-    Left = 312
-    Top = 272
+    Left = 327
+    Top = 300
     Width = 75
     Height = 25
     Caption = 'Annulla'
@@ -49,8 +49,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
     TabOrder = 2
   end
   object btnOK: TBitBtn
-    Left = 231
-    Top = 272
+    Left = 246
+    Top = 300
     Width = 75
     Height = 25
     Caption = 'OK'
@@ -58,8 +58,8 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
     TabOrder = 3
   end
   object edTime: TTimePicker
-    Left = 128
-    Top = 88
+    Left = 136
+    Top = 72
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -69,10 +69,11 @@ object dlgPhoenixVCLEditReportTimetable: TdlgPhoenixVCLEditReportTimetable
     Time = 0.375000000000000000
     TimeFormat = 'hh:nn'
   end
-  object BindingsList1: TBindingsList
-    Methods = <>
-    OutputConverters = <>
-    Left = 65516
-    Top = 53
+  object edRagioneSociale: TEdit
+    Left = 40
+    Top = 136
+    Width = 345
+    Height = 23
+    TabOrder = 5
   end
 end
