@@ -22,7 +22,8 @@ uses
   Janua.TMS.Phoenix.framePlannerCalendar, Janua.Phoenix.VCL.dmPlannerController,
   Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
-  Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2;
+  Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
+  Janua.Phoenix.VCL.framePlannerEvent, AdvCustomControl, AdvWebBrowser;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -65,10 +66,13 @@ type
     N1: TMenuItem;
     frameTMSPhoenixPlannerTecnici: TframeTMSPhoenixPlannerCalendar;
     frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2;
+    frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
     N3: TMenuItem;
     GoogleSync1: TMenuItem;
     tabPlannerEvents: TTabSheet;
     Timer1: TTimer;
+    tabCalendariTecnici: TTabSheet;
+    AdvWebBrowser1: TAdvWebBrowser;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -213,13 +217,14 @@ begin
   { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
   frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;
   Timer1.Enabled := True;
-  PageControl1.ActivePage := tabPlannerCalendar;
+  PageControl1.ActivePage := tabCalendariTecnici;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
 begin
   frameTMSPhoenixPlannerTecnici.DBPlanner1.Refresh;
   frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
+
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);

@@ -67,7 +67,6 @@ type
     procedure DeSerialize(const aJson: string);
   end;
 
-
   TJanuaCloudConf = class
   private
     FHubicCallBack: string;
@@ -124,7 +123,6 @@ type
     property YandexDiskAppSecret: string read FYandexDiskAppSecret write SetYandexDiskAppSecret;
   end;
 
-
 type
   TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird,
     jdbTmsRemoteDB, jdbMSAccess);
@@ -152,8 +150,12 @@ type
     property Items: Tarray<T> read FArray;
     function Inc: Integer;
     procedure Clear;
+    function JsonSerialize: string;
+    procedure JsonDeserialize(const aJson: string);
+    procedure AddItem(aItem: T);
   public
-    constructor Create(aArray: Tarray<T>);
+    constructor Create(aArray: Tarray<T>); overload;
+    constructor Create(aJson: string); overload;
     procedure Assign(aArray: TJanuaArray<T>);
     procedure Remove(Index: Integer);
   end;
@@ -1660,7 +1662,7 @@ end;
 
 // Function to get the IP Address from a Host
 
-function GetIPFromHost(   const HostName: String): string;
+function GetIPFromHost(const HostName: String): string;
 type
   TaPInAddr = array [0 .. 10] of PInAddr;
   PaPInAddr = ^TaPInAddr;
@@ -1901,7 +1903,6 @@ procedure TJanuaCloudConf.SetYandexDiskAppSecret(const Value: string);
 begin
   FYandexDiskAppSecret := Value;
 end;
-
 
 { TJanuaStringBuilder }
 
@@ -5188,6 +5189,15 @@ begin
   Result := True;
 end;
 
+procedure TJanuaArray<T>.AddItem(aItem: T);
+var
+  i: Integer;
+begin
+  i := Count;
+  SetLength(FArray, i + 1);
+  FArray[i] := aItem;
+end;
+
 procedure TJanuaArray<T>.Assign(aArray: TJanuaArray<T>);
 var
   i: Integer;
@@ -5201,6 +5211,11 @@ end;
 procedure TJanuaArray<T>.Clear;
 begin
   SetLength(FArray, 0)
+end;
+
+constructor TJanuaArray<T>.Create(aJson: string);
+begin
+  JsonDeserialize(aJson);
 end;
 
 constructor TJanuaArray<T>.Create(aArray: Tarray<T>);
@@ -5227,6 +5242,16 @@ function TJanuaArray<T>.Inc: Integer;
 begin
   Result := Count;
   SetLength(FArray, Result + 1)
+end;
+
+procedure TJanuaArray<T>.JsonDeserialize(const aJson: string);
+begin
+  self := TJanuaJson.DeserializeSimple < TJanuaArray < T >> (aJson)
+end;
+
+function TJanuaArray<T>.JsonSerialize: string;
+begin
+  Result := TJanuaJson.SerializeSimple < TJanuaArray < T >> (self);
 end;
 
 procedure TJanuaArray<T>.Remove(Index: Integer);

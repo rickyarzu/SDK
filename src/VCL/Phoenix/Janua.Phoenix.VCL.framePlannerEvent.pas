@@ -1,4 +1,4 @@
-unit Janua.Phoenix.VCL.dlgPlannerEvent;
+unit Janua.Phoenix.VCL.framePlannerEvent;
 
 interface
 
@@ -13,11 +13,11 @@ uses
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLForm, VCL.Buttons, VCL.Grids, VCL.DBGrids, CRGrid,
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, VCL.Buttons, VCL.Grids, VCL.DBGrids, CRGrid,
   VCL.Menus;
 
 type
-  TdlgVCLPhoenixPlannerEvent = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
+  TframeVCLPhoenixPlannerEvent = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
     lkpCAP: TJvDBLookupCombo;
     lbCap: TLabel;
     lbData: TLabel;
@@ -43,16 +43,11 @@ type
     DBText1: TDBText;
     DBText3: TDBText;
     DBDaySource1: TDBDaySource;
-    ckbCAP: TCheckBox;
-    ckbActivities: TCheckBox;
     CalendarDate: TDateTimePicker;
     Area: TLabel;
     cboTecnici: TJvDBLookupCombo;
     lbActivity: TLabel;
     cboCustomers: TJvDBLookupCombo;
-    btnOk: TButton;
-    btnCancel: TButton;
-    lbNote: TLabel;
     Memo1: TMemo;
     grdDateTime: TGroupBox;
     lbDateFrom: TLabel;
@@ -75,7 +70,6 @@ type
     btnPrevDay: TButton;
     btnNextDay: TButton;
     Timer1: TTimer;
-    CRDBGrid1: TCRDBGrid;
     DBText8: TDBText;
     PopupItems: TPopupMenu;
     Colore1: TMenuItem;
@@ -84,7 +78,6 @@ type
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
@@ -121,7 +114,7 @@ type
   end;
 
 var
-  dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent;
+  frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
 
 implementation
 
@@ -129,7 +122,7 @@ uses System.Math, DlgNuovoStatino, Janua.Phoenix.VCL.dmPlannerController, udmSVG
 
 {$R *.dfm}
 
-procedure TdlgVCLPhoenixPlannerEvent.btnPrevDayClick(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.btnPrevDayClick(Sender: TObject);
 begin
   var
   aDay := DayOfWeek(CalendarDate.Date - 1);
@@ -141,12 +134,12 @@ begin
   CalendarDateChange(Self);
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
 begin
   dmVCLPhoenixPlannerController.AddTechEvent
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
+procedure TframeVCLPhoenixPlannerEvent.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
   if Button = mbLeft then { drag only if left button pressed }
@@ -157,12 +150,12 @@ begin
     end;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.btnSearchClick(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.btnSearchClick(Sender: TObject);
 begin
   Filter
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.btnNextDayClick(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.btnNextDayClick(Sender: TObject);
 begin
   var
   aDate := (CalendarDate.Date);
@@ -173,14 +166,14 @@ begin
   CalendarDateChange(Self);
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.CalendarDateChange(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.CalendarDateChange(Sender: TObject);
 begin
   inherited;
   dmVCLPhoenixPlannerController.SelectedDate := CalendarDate.Date;
   DBDaySource1.Day := CalendarDate.Date;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.cboTecniciChange(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.cboTecniciChange(Sender: TObject);
 begin
   if dmVCLPhoenixPlannerController.SelectedCalendarTec <> cboTecnici.Value.ToInteger then
   begin
@@ -193,12 +186,12 @@ begin
   Filter;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.ChangeFilter(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.ChangeFilter(Sender: TObject);
 begin
   Filter
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
+procedure TframeVCLPhoenixPlannerEvent.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
@@ -226,7 +219,7 @@ begin
   Item.ID := ItemIDField.AsInteger;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
+procedure TframeVCLPhoenixPlannerEvent.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
   Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
@@ -242,19 +235,19 @@ begin
     ItemImageField.AsInteger := Item.ImageID;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
 begin
   if FID = dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger then
     btnAddClick(Sender);
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer;
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer;
   State: TDragState; var Accept: Boolean);
 begin
   Accept := (Source is TDBImage);
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.DBText1DblClick(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.DBText1DblClick(Sender: TObject);
 var
   ADialog: TDLG_STATINO;
 begin
@@ -271,7 +264,7 @@ begin
   end;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.Filter;
+procedure TframeVCLPhoenixPlannerEvent.Filter;
 var
   lFilter: TRecordFilter;
 begin
@@ -281,49 +274,34 @@ begin
     lFilter.TecnicoDB := -1;
   lFilter.TecnicoCk := True; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
   lFilter.CAP := lkpCAP.Value;
-  lFilter.CAPCk := ckbCAP.Checked and not lkpCAP.Value.IsEmpty;
+  lFilter.CAPCk := not lkpCAP.Value.IsEmpty;
   if not cboCustomers.Value.IsEmpty then
     lFilter.ClienteID := cboCustomers.Value.ToInteger
   else
     lFilter.ClienteID := -1;
-  lFilter.ClienteCk := ckbActivities.Checked and not cboCustomers.Value.IsEmpty;
+  lFilter.ClienteCk := not cboCustomers.Value.IsEmpty;
   lFilter.Status := grpStato.ItemIndex;
   dmVCLPhoenixPlannerController.FilterMeetingDialog(lFilter);
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.FormCreate(Sender: TObject);
-begin
-  inherited;
-  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
-  FreportID := -1;
-  // Fields.FieldByName('COLOR')
-  ItemColorField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('COLORE');
-  // Fields.FieldByName('IMAGE')
-  ItemImageField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('ICONA');
-  // Fields.FieldByName('CAPTION')
-  ItemCaptionField := nil;
-
-  ItemIDField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
-end;
-
-procedure TdlgVCLPhoenixPlannerEvent.FormShow(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.FormShow(Sender: TObject);
 begin
   inherited;
   CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
   Timer1.Enabled := True;
 end;
 
-function TdlgVCLPhoenixPlannerEvent.GetTecnicoID: Integer;
+function TframeVCLPhoenixPlannerEvent.GetTecnicoID: Integer;
 begin
   Result := cboTecnici.Value.ToInteger;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.SetTecnicoID(const Value: Integer);
+procedure TframeVCLPhoenixPlannerEvent.SetTecnicoID(const Value: Integer);
 begin
   cboTecnici.Value := Value.ToString;
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.Timer1Timer(Sender: TObject);
+procedure TframeVCLPhoenixPlannerEvent.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
   btnPrevDayClick(Self);

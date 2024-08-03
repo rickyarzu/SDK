@@ -1,38 +1,23 @@
-object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
-  Left = 0
-  Top = 0
-  BorderStyle = bsDialog
-  Caption = 'Gestione Programmazione Tecnico'
-  ClientHeight = 772
-  ClientWidth = 1146
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  Position = poScreenCenter
-  OnCreate = FormCreate
-  OnShow = FormShow
+inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
+  Width = 800
+  Height = 927
+  ExplicitWidth = 800
+  ExplicitHeight = 927
   DesignSize = (
-    1146
-    772)
-  TextHeight = 15
+    800
+    927)
   object lbCap: TLabel
-    Left = 864
-    Top = 6
+    Left = 691
+    Top = 58
     Width = 23
     Height = 15
-    Anchors = [akTop, akRight]
     Caption = 'CAP'
-    ExplicitLeft = 784
   end
   object lbData: TLabel
-    Left = 687
-    Top = 61
+    Left = 511
+    Top = 58
     Width = 24
     Height = 15
-    Anchors = [akTop, akRight]
     Caption = 'Data'
   end
   object Area: TLabel
@@ -44,25 +29,16 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
   end
   object lbActivity: TLabel
     Left = 8
-    Top = 60
+    Top = 58
     Width = 78
     Height = 15
     Caption = 'Cliente - Filiale'
   end
-  object lbNote: TLabel
-    Left = 866
-    Top = 216
-    Width = 26
-    Height = 15
-    Anchors = [akTop, akRight]
-    Caption = 'Note'
-  end
   object lkpCAP: TJvDBLookupCombo
-    Left = 864
-    Top = 24
+    Left = 691
+    Top = 73
     Width = 104
-    Height = 24
-    Anchors = [akTop, akRight]
+    Height = 25
     LookupField = 'CAP'
     LookupDisplay = 'CAP'
     LookupSource = dsCAP
@@ -73,22 +49,23 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Left = 8
     Top = 107
     Width = 393
-    Height = 658
-    Anchors = [akLeft, akTop, akRight, akBottom]
+    Height = 700
+    Anchors = [akLeft, akTop, akBottom]
     DataSource = dsReportsPlanner
-    PanelHeight = 94
+    PanelHeight = 100
     PanelWidth = 376
     TabOrder = 3
     RowCount = 7
     SelectedColor = clAntiquewhite
     object pnlInterventi: TPanel
       Left = 0
-      Top = 74
+      Top = 80
       Width = 376
       Height = 20
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitTop = 79
       object Label3: TLabel
         AlignWithMargins = True
         Left = 3
@@ -231,18 +208,20 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       Left = 0
       Top = 0
       Width = 376
-      Height = 74
+      Height = 80
       Align = alClient
       TabOrder = 1
+      ExplicitHeight = 79
       object Panel2: TPanel
         Left = 78
         Top = 1
         Width = 297
-        Height = 72
+        Height = 78
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
         OnDblClick = DBText1DblClick
+        ExplicitHeight = 77
         object DBText1: TDBText
           AlignWithMargins = True
           Left = 3
@@ -269,7 +248,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         object DBText8: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 54
+          Top = 60
           Width = 291
           Height = 15
           Align = alBottom
@@ -282,12 +261,13 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Left = 1
         Top = 1
         Width = 77
-        Height = 72
+        Height = 78
         Align = alLeft
         DataField = 'calcImage'
         DataSource = dsReportsPlanner
         TabOrder = 1
         OnMouseDown = btnImageMouseDown
+        ExplicitHeight = 77
       end
     end
   end
@@ -295,7 +275,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Left = 407
     Top = 104
     Width = 388
-    Height = 660
+    Height = 700
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -305,7 +285,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       8888888880808080888888888080808088888888808080808888888880808080
       8888888880808080888888888080808088888888808080808888888888808080
       8888888888808880888888888888000888888888888888888888}
-    Anchors = [akLeft, akTop, akRight, akBottom]
+    Anchors = [akLeft, akTop, akBottom]
     Caption.Title = 'TMS software <b>TDBPlanner</b>'
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = 4474440
@@ -516,39 +496,38 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     TMSStyle = 0
   end
   object btnEditMeeting: TButton
-    Left = 1010
-    Top = 320
+    Left = 659
+    Top = 846
     Width = 128
-    Height = 25
-    Anchors = [akRight, akBottom]
+    Height = 33
+    Anchors = [akLeft, akBottom]
     Caption = 'Modifica'
     ImageIndex = 62
     ImageName = 'calendar'
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 6
+    TabOrder = 4
   end
   object btnDeleteMeeting: TButton
-    Left = 866
-    Top = 320
+    Left = 658
+    Top = 816
     Width = 129
-    Height = 25
-    Anchors = [akRight, akBottom]
+    Height = 33
+    Anchors = [akLeft, akBottom]
     Caption = 'Annulla App.to'
     ImageIndex = 64
     ImageName = 'goal'
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 8
+    TabOrder = 6
   end
   object grpStato: TRadioGroup
     Left = 383
     Top = 4
-    Width = 477
+    Width = 412
     Height = 51
-    Anchors = [akTop, akRight]
     Columns = 6
     ItemIndex = 5
     Items.Strings = (
@@ -561,33 +540,14 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     TabOrder = 1
     OnClick = ChangeFilter
   end
-  object ckbCAP: TCheckBox
-    Left = 974
-    Top = 26
-    Width = 18
-    Height = 17
-    Anchors = [akTop, akRight]
-    TabOrder = 4
-    OnClick = ChangeFilter
-  end
-  object ckbActivities: TCheckBox
-    Left = 647
-    Top = 81
-    Width = 18
-    Height = 17
-    Anchors = [akTop, akRight]
-    TabOrder = 5
-    OnClick = ChangeFilter
-  end
   object CalendarDate: TDateTimePicker
-    Left = 687
-    Top = 76
+    Left = 511
+    Top = 73
     Width = 90
     Height = 25
-    Anchors = [akTop, akRight]
     Date = 45481.000000000000000000
     Time = 0.538943368053878700
-    TabOrder = 7
+    TabOrder = 5
     OnChange = CalendarDateChange
   end
   object cboTecnici: TJvDBLookupCombo
@@ -596,108 +556,86 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Width = 369
     Height = 24
     EmptyValue = '-1'
-    Anchors = [akLeft, akTop, akRight]
     LookupField = 'RESPONSABILE'
     LookupDisplay = 'NOME_TECNICO'
     LookupSource = dsTechnicians
-    TabOrder = 9
+    TabOrder = 7
     OnChange = cboTecniciChange
   end
   object cboCustomers: TJvDBLookupCombo
     Left = 8
-    Top = 77
-    Width = 625
+    Top = 73
+    Width = 497
     Height = 24
-    Anchors = [akLeft, akTop, akRight]
     LookupField = 'CHIAVE'
     LookupDisplay = 'DESCRIZIONE_SCHEDA'
     LookupSource = dsCustomers
-    TabOrder = 10
+    TabOrder = 8
     OnClick = ChangeFilter
   end
-  object btnOk: TButton
-    Left = 1047
-    Top = 731
-    Width = 91
-    Height = 33
-    Anchors = [akRight, akBottom]
-    Caption = 'Ok'
-    ModalResult = 1
-    TabOrder = 11
-  end
-  object btnCancel: TButton
-    Left = 943
-    Top = 731
-    Width = 91
-    Height = 33
-    Anchors = [akRight, akBottom]
-    Caption = 'Annulla'
-    ModalResult = 2
-    TabOrder = 12
-  end
   object Memo1: TMemo
-    Left = 866
-    Top = 237
-    Width = 272
-    Height = 276
-    Anchors = [akTop, akRight]
+    Left = 295
+    Top = 810
+    Width = 346
+    Height = 113
+    Anchors = [akLeft, akBottom]
     Lines.Strings = (
       'Memo1')
-    TabOrder = 13
+    TabOrder = 9
   end
   object grdDateTime: TGroupBox
-    Left = 866
-    Top = 65
+    Left = 8
+    Top = 807
     Width = 273
-    Height = 145
-    Anchors = [akTop, akRight]
+    Height = 113
+    Anchors = [akLeft, akBottom]
     Caption = 'Data ed Ora di Calendario'
-    TabOrder = 14
+    TabOrder = 10
     object lbDateFrom: TLabel
       Left = 16
-      Top = 34
+      Top = 18
       Width = 53
       Height = 15
       Caption = 'Dalla Data'
     end
     object lbDateTo: TLabel
       Left = 16
-      Top = 84
+      Top = 60
       Width = 47
       Height = 15
       Caption = 'Alla Data'
     end
     object lbStartHours: TLabel
       Left = 160
-      Top = 34
+      Top = 18
       Width = 19
       Height = 15
       Caption = 'Ore'
     end
     object Label1: TLabel
       Left = 160
-      Top = 84
+      Top = 60
       Width = 19
       Height = 15
       Caption = 'Ore'
     end
     object lbMin: TLabel
       Left = 213
-      Top = 34
+      Top = 18
       Width = 21
       Height = 15
       Caption = 'Min'
     end
     object Label2: TLabel
       Left = 213
-      Top = 84
+      Top = 60
       Width = 21
       Height = 15
       Caption = 'Min'
     end
     object cboHourFrom: TComboBox
       Left = 160
-      Top = 53
+      Top = 32
       Width = 41
       Height = 23
       TabOrder = 0
@@ -730,7 +668,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
     object cboHourTo: TComboBox
       Left = 160
-      Top = 103
+      Top = 74
       Width = 41
       Height = 23
       TabOrder = 1
@@ -763,7 +701,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
     object cboMinsFrom: TComboBox
       Left = 213
-      Top = 53
+      Top = 32
       Width = 41
       Height = 23
       TabOrder = 2
@@ -796,7 +734,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
     object cboMinsTo: TComboBox
       Left = 213
-      Top = 103
+      Top = 74
       Width = 41
       Height = 23
       TabOrder = 3
@@ -829,7 +767,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
     object edEventDateFrom: TDateTimePicker
       Left = 16
-      Top = 53
+      Top = 32
       Width = 129
       Height = 25
       Date = 44090.000000000000000000
@@ -838,7 +776,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
     object edEventDateTo: TDateTimePicker
       Left = 16
-      Top = 103
+      Top = 74
       Width = 129
       Height = 25
       Date = 44090.000000000000000000
@@ -847,12 +785,12 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     end
   end
   object btnSearch: TBitBtn
-    Left = 998
-    Top = 11
-    Width = 140
-    Height = 48
-    Anchors = [akTop, akRight]
-    Caption = 'Filtra Ricerca'
+    Left = 659
+    Top = 876
+    Width = 128
+    Height = 33
+    Anchors = [akLeft, akBottom]
+    Caption = 'Google Sync'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clTeal
     Font.Height = -12
@@ -860,15 +798,15 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Style = [fsBold]
     ImageIndex = 65
     ImageName = 'search'
-    Images = dmVCLPhoenixPlannerController.SVGIconImageList48
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ParentFont = False
-    TabOrder = 15
+    TabOrder = 11
     StyleElements = [seClient, seBorder]
     OnClick = btnSearchClick
   end
   object btnPrevDay: TButton
-    Left = 783
-    Top = 76
+    Left = 607
+    Top = 73
     Width = 34
     Height = 25
     Caption = '<'
@@ -878,12 +816,12 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 16
+    TabOrder = 12
     OnClick = btnPrevDayClick
   end
   object btnNextDay: TButton
-    Left = 815
-    Top = 76
+    Left = 639
+    Top = 73
     Width = 34
     Height = 25
     Caption = '>'
@@ -893,41 +831,8 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 13
     OnClick = btnNextDayClick
-  end
-  object CRDBGrid1: TCRDBGrid
-    Left = 866
-    Top = 519
-    Width = 272
-    Height = 206
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    DataSource = dsCalendar
-    TabOrder = 18
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'TECNICO'
-        Width = 74
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'SUBJECT'
-        Width = 160
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DALLE_ORE'
-        Width = 112
-        Visible = True
-      end>
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
