@@ -7528,6 +7528,7 @@ inherited dlgFMXCarserviceLoginDialogMobile: TdlgFMXCarserviceLoginDialogMobile
       Size.Width = 268.000000000000000000
       inherited swRemember: TSwitch
         Position.X = 213.000000000000000000
+        TabOrder = 5
       end
     end
   end
