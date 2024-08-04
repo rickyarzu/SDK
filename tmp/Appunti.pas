@@ -1,34 +1,23 @@
-var
-  backgroundColor: TColor;
-  FontColor: TColor;
-  FontStyles: VCL.Graphics.TFontStyles;
-  Image: Integer; 
-const 
-  green = 0;
-  red = 1;
-  orange = 2; 
-  blue = 3; 
-begin
-   // if not FieldByName('APPUNTAMENTO_DATA').IsNull then
-   //   backgroundColor := clWebBeige;
+unit Janua.Core.WebServer;
+...
 
-    if (FieldByName('STATO').AsInteger < 0) then
-      Image := red;
-    if (FieldByName('STATO').AsInteger in [1, 6]) then
-    begin
-      image := blue;
-      FontStyles := [fsBold];
-    end;
-	
-    if (FieldByName('STATO').AsInteger = 4) then
-      image := orange;
-	  
-    if (FieldByName('STATO').AsInteger in [5, 6]) then
-      image := green;
-
-    if not FieldByName('APPUNTAMENTO_DATA').IsNull and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)
-    then
-      image := red;
-
-    
- end;
+Type
+  TJanuaWebServer = class
+  public
+    constructor Create; overload;
+    /// <summary> Create Class imposta la class Var FPort. Variabile 'unica' in tutta l'applicazione </summary>
+    class Constructor CreateClass;
+  private
+    class var FPort: Integer;
+  private
+    FLogProc: TMessageLogProc;
+  public
+    class function GetPort(aDefault: Integer): Integer; overload;
+    procedure StartServer; overload; virtual; abstract;
+    procedure StopServer; overload; virtual; abstract;
+    procedure WriteStatus; virtual; abstract;
+  public
+    property IsActive: Boolean read GetIsActive write SetIsActive;
+    property LogProc: TMessageLogProc read FLogProc write SetLogProc;
+    class property Port: Integer read GetPort write SetPort;
+  end;
