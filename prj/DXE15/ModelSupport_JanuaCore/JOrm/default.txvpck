@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeSet version="1.0">
-  <view uin="hmkdc0z4s1mkaiq5h_v">
+  <view uin="z3gdlksojsq_v">
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
