@@ -65,7 +65,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 79
       object Label3: TLabel
         AlignWithMargins = True
         Left = 3
@@ -211,7 +210,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       Height = 80
       Align = alClient
       TabOrder = 1
-      ExplicitHeight = 79
       object Panel2: TPanel
         Left = 78
         Top = 1
@@ -221,7 +219,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         BevelOuter = bvNone
         TabOrder = 0
         OnDblClick = DBText1DblClick
-        ExplicitHeight = 77
         object DBText1: TDBText
           AlignWithMargins = True
           Left = 3
@@ -267,7 +264,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         DataSource = dsReportsPlanner
         TabOrder = 1
         OnMouseDown = btnImageMouseDown
-        ExplicitHeight = 77
       end
     end
   end

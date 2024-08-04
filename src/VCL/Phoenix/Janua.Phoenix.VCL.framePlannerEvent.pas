@@ -77,7 +77,6 @@ type
     ModificaAppuntamento2: TMenuItem;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
@@ -109,6 +108,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure AfterConstruction; override;
     procedure Filter;
     property TecnicoID: Integer read GetTecnicoID write SetTecnicoID;
   end;
@@ -132,6 +132,24 @@ begin
   // aDay := 1;
   CalendarDate.Date := aDate - aDay;
   CalendarDateChange(Self);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.AfterConstruction;
+begin
+  inherited;
+  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
+  FreportID := -1;
+  // Fields.FieldByName('COLOR')
+  ItemColorField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('COLORE');
+  // Fields.FieldByName('IMAGE')
+  ItemImageField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('ICONA');
+  // Fields.FieldByName('CAPTION')
+  ItemCaptionField := nil;
+
+  ItemIDField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
+
+  CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
+  Timer1.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
@@ -282,13 +300,6 @@ begin
   lFilter.ClienteCk := not cboCustomers.Value.IsEmpty;
   lFilter.Status := grpStato.ItemIndex;
   dmVCLPhoenixPlannerController.FilterMeetingDialog(lFilter);
-end;
-
-procedure TframeVCLPhoenixPlannerEvent.FormShow(Sender: TObject);
-begin
-  inherited;
-  CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
-  Timer1.Enabled := True;
 end;
 
 function TframeVCLPhoenixPlannerEvent.GetTecnicoID: Integer;

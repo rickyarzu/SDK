@@ -348,11 +348,9 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited Panel1: TPanel
           Width = 1440
-          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 1440
           inherited Panel2: TPanel
             Width = 369
-            StyleElements = [seFont, seClient, seBorder]
             ExplicitWidth = 369
             inherited btClose: TSpeedButton
               Left = 49
@@ -380,7 +378,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited Panel3: TPanel
             Left = 369
             Width = 1071
-            StyleElements = [seFont, seClient, seBorder]
             ExplicitLeft = 369
             ExplicitWidth = 1071
             inherited chkFiltered: TCheckBox
@@ -431,7 +428,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Height = 41
         Align = alBottom
         TabOrder = 2
-        ExplicitTop = 844
         object lbFilter: TLabel
           Left = 24
           Top = 16
@@ -452,68 +448,35 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Align = alLeft
         TabOrder = 1
         ExplicitHeight = 815
-        inherited lbCap: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited lbData: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Area: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited lbActivity: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited DBCtrlGrid1: TDBCtrlGrid
           Height = 588
           PanelHeight = 84
           ExplicitHeight = 588
           inherited pnlInterventi: TPanel
             Top = 64
-            StyleElements = [seFont, seClient, seBorder]
             ExplicitTop = 64
             inherited Label3: TLabel
-              StyleElements = [seFont, seClient, seBorder]
-            end
-            inherited DBText4: TDBText
-              StyleElements = [seFont, seClient, seBorder]
+              Height = 20
             end
             inherited lbIdranti: TLabel
-              StyleElements = [seFont, seClient, seBorder]
-            end
-            inherited DBText5: TDBText
-              StyleElements = [seFont, seClient, seBorder]
+              Height = 20
             end
             inherited Label4: TLabel
-              StyleElements = [seFont, seClient, seBorder]
-            end
-            inherited DBText6: TDBText
-              StyleElements = [seFont, seClient, seBorder]
+              Height = 20
             end
             inherited Label5: TLabel
-              StyleElements = [seFont, seClient, seBorder]
-            end
-            inherited DBText7: TDBText
-              StyleElements = [seFont, seClient, seBorder]
+              Height = 20
             end
           end
           inherited Panel1: TPanel
             Height = 64
-            StyleElements = [seFont, seClient, seBorder]
             ExplicitHeight = 64
             inherited Panel2: TPanel
               Height = 62
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 62
-              inherited DBText1: TDBText
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited DBText3: TDBText
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited DBText8: TDBText
                 Top = 44
-                StyleElements = [seFont, seClient, seBorder]
+                ExplicitTop = 44
               end
             end
             inherited btnImage: TDBImage
@@ -537,7 +500,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited Memo1: TMemo
           Top = 700
-          StyleElements = [seFont, seClient, seBorder]
           ExplicitTop = 700
         end
         inherited grdDateTime: TGroupBox
@@ -545,36 +507,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Height = 112
           ExplicitTop = 700
           ExplicitHeight = 112
-          inherited lbDateFrom: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited lbDateTo: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited lbStartHours: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited Label1: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited lbMin: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited Label2: TLabel
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited cboHourFrom: TComboBox
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited cboHourTo: TComboBox
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited cboMinsFrom: TComboBox
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited cboMinsTo: TComboBox
-            StyleElements = [seFont, seClient, seBorder]
-          end
         end
         inherited btnSearch: TBitBtn
           Top = 764
@@ -591,11 +523,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         ParentDoubleBuffered = False
         DoubleBuffered = True
         TabOrder = 0
+        OnNavigateComplete = AdvWebBrowser1NavigateComplete
         Settings.EnableContextMenu = True
         Settings.EnableShowDebugConsole = True
         Settings.EnableAcceleratorKeys = True
         Settings.AllowExternalDrop = True
         Settings.UsePopupMenuAsContextMenu = False
+        OnGetCookies = AdvWebBrowser1GetCookies
       end
     end
     object tabPlannerCalendar: TTabSheet
@@ -609,46 +543,21 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Align = alClient
         TabOrder = 0
         ExplicitHeight = 815
-        inherited lbGiorni: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited lbCalendarList: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Area: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited edDays: TSpinEdit
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Panel1: TPanel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited grpMeeting: TGroupBox
           Top = 704
-          ExplicitTop = 774
+          ExplicitTop = 704
         end
         inherited Panel2: TPanel
-          StyleElements = [seFont, seClient, seBorder]
           inherited ckbCalendarList: TCheckListBox
-            StyleElements = [seFont, seClient, seBorder]
+            ItemHeight = 16
           end
         end
         inherited Panel3: TPanel
-          StyleElements = [seFont, seClient, seBorder]
           inherited lbSearch: TLabel
             Width = 250
-            StyleElements = [seFont, seClient, seBorder]
           end
           inherited lbDateSelector: TLabel
             Width = 256
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited edMeeting: TEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited Panel4: TPanel
-            StyleElements = [seFont, seClient, seBorder]
           end
         end
         inherited PageControl1: TPageControl
@@ -688,57 +597,35 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         TabOrder = 0
         ExplicitWidth = 1440
         ExplicitHeight = 815
-        inherited lbGiorni: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited lbCalendarList: TLabel
           Width = 1434
-          StyleElements = [seFont, seClient, seBorder]
         end
         inherited Area: TLabel
           Width = 57
           Caption = 'Calendario'
-          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 57
-        end
-        inherited edDays: TSpinEdit
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Panel1: TPanel
-          StyleElements = [seFont, seClient, seBorder]
         end
         inherited grpMeeting: TGroupBox
           Top = 704
           Width = 1440
-          ExplicitTop = 774
+          ExplicitTop = 704
           ExplicitWidth = 1440
         end
         inherited Panel2: TPanel
           Width = 1440
-          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
             ItemHeight = 16
-            StyleElements = [seFont, seClient, seBorder]
             ExplicitWidth = 1381
           end
         end
         inherited Panel3: TPanel
-          StyleElements = [seFont, seClient, seBorder]
           inherited lbSearch: TLabel
             Width = 250
-            StyleElements = [seFont, seClient, seBorder]
           end
           inherited lbDateSelector: TLabel
             Width = 256
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited edMeeting: TEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited Panel4: TPanel
-            StyleElements = [seFont, seClient, seBorder]
           end
         end
         inherited PageControl1: TPageControl
@@ -1121,7 +1008,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Enabled = False
     Interval = 100
     OnTimer = Timer1Timer
-    Left = 412
-    Top = 370
+    Left = 908
+    Top = 154
   end
 end
