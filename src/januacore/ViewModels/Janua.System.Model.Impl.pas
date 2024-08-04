@@ -1783,7 +1783,6 @@ begin
   Result := False;
   { TODO : Aggiungere Chiamata DMVC Post a risorsa /user mettendo nel 'body' aUser }
 
-  Self.WriteLocalLog('AddUser', 'Creazione utente ..... TJanuaRecordUserProfile');
   Result := False;
   try
     if aUser.User.ValidateUser then
@@ -2156,7 +2155,9 @@ var
     if TJanuaApplicationFactory.TryGetInterface(IRESTRecordClient, lClient) then
     begin
       lClient.JanuaRecord := aUser;
+      // API Expected is 'user'
       lClient.APIUrl := '/user';
+      // Create Record Calls a standard 'POST'
       Result := lClient.CreateRecord;
     end;
   end;

@@ -58,11 +58,19 @@ begin
         JWT.Claims.ExpirationTime := Now + EncodeTime(1, 0, 0, 0); // One hour
         JWT.Claims.NotBefore := Now - EncodeTime(0, 5, 0, 0); // 5 minuti (fa)?
       end;
+    // Note one thing: Login that is Autehntication Middleware follows different Rules compared to
+    // 'standar' Januaproject Login procedures. That is it does not pass a Json with all session and
+    // user configuration but a JWT with User role, schema and id instead.
+    // Detailed user infos need to be requested using the token and usually are then stored in the Client
     var
     vLoginURI := TJanuaCoreOS.ReadParam('DMVC', 'LoginURI', '/login');
     FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TAuthCriteria.Create, lConfigClaims,
       'ergomercator_secret', vLoginURI, [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
   end;
+
+  // Analytics middleware generates a csv log, useful to do trafic analysis
+  if TJanuaCoreOS.ReadParam('DMVC', 'Analytics', false) then
+    FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
 end;
 
 
@@ -119,10 +127,6 @@ begin
       Config[vKey] := vValue;
     end);
 
-  // Analytics middleware generates a csv log, useful to do trafic analysis
-  if TJanuaCoreOS.ReadParam('DMVC', 'Analytics', false) then
-    FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
-
   AddControllers;
 
   var
@@ -154,6 +158,8 @@ begin
   // ETag middleware must be the latest in the chain
   if TJanuaCoreOS.ReadParam('DMVC', 'ETag', false) then
     FMVC.AddMiddleware(TMVCETagMiddleware.Create);
+
+
 
 end;
 
