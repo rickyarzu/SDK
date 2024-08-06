@@ -25,7 +25,21 @@ type
   IJanuaRecordSetModel = interface;
   TJanuaFilterOption = (jfoMemory, jfoDataset);
 
-  IJanuaBaseModel = interface(IJanuaStorage)
+  /// <summary> Is the simplest Interface for Datasets, Recordsets, Objects Storage Container </summary>
+  IJanuaBaseModel = interface(IJanuaBindableObject)
+    ['{F02DA4E5-73D7-43C6-B03A-40557648015C}']
+    function GetLastErrorMessage: string;
+    procedure SetLastErrorMessage(const Value: string);
+    function GetKeepAlive: boolean;
+    procedure SetKeepAlive(const Value: boolean);
+    property KeepAlive: boolean read GetKeepAlive write SetKeepAlive;
+    property LastErrorMessage: string read GetLastErrorMessage write SetLastErrorMessage;
+    function GetSelectedSchema: Integer;
+    procedure SetSelectedSchema(const Value: Integer);
+    property SelectedSchema: Integer read GetSelectedSchema write SetSelectedSchema;
+  end;
+
+  IJanuaBaseDataModel = interface(IJanuaStorage)
     ['{F03434EA-E07A-4CD3-898B-E8AE8EA1DBBC}']
     function GetInternalRecord: IJanuaRecord;
     /// <summary> Actual Model main Record casting to IJanuaRecord Interface</summary>
@@ -44,7 +58,7 @@ type
     function GetMainSearchParams: IJanuaParams;
     /// <summary> List of Search parameters that are mutually exclusive related to Search Text </summary>
     property MainSearchParams: IJanuaParams read GetMainSearchParams;
-    function SearchByParams(aParams: IJanuaParams): integer;
+    function SearchByParams(aParams: IJanuaParams): Integer;
     // ---------- Common Dataset Objects Procedures and Functions ----------------------------------------
     function GetjdsDataset: IJanuaDBDataset;
     /// <summary>  Main Dataset that is exposed to ViewModel or to the client.</summary>
@@ -53,7 +67,7 @@ type
     procedure SetParams(const aParams: TJanuaVariantArray);
     property Params: TJanuaVariantArray read GetParams write SetParams;
     function SearchByGUID(const aGuid: TGUID): boolean;
-    function SearchText(const aText: string; const aLimit: Word = 0; const aOffset: Word = 0): integer;
+    function SearchText(const aText: string; const aLimit: Word = 0; const aOffset: Word = 0): Integer;
   end;
 
   IJanuaSingleRecordDBModel = interface(IJanuaStorage)
@@ -80,7 +94,7 @@ type
     procedure PostRecord; overload;
     procedure UndoChanges;
     procedure DeleteRecord; overload;
-    procedure DeleteRecord(const aGUID: string); overload;
+    procedure DeleteRecord(const aGuid: string); overload;
     procedure LoadRecord;
     procedure RefreshRecord;
   end;
@@ -92,7 +106,7 @@ type
     function GetDetailModels: IList<IJanuaRecordSetModel>;
     property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
     procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
-    function ModelCount: integer;
+    function ModelCount: Integer;
     procedure GenerateSubModels;
     function GetCurrentRecord: IJanuaRecord;
     property CurrentRecord: IJanuaRecord read GetCurrentRecord;
@@ -106,20 +120,19 @@ type
     procedure PostRecord; overload;
     procedure UndoChanges;
     procedure DeleteRecord; overload;
-    procedure DeleteRecord(const aGUID: string); overload;
+    procedure DeleteRecord(const aGuid: string); overload;
     procedure LoadRecord;
     procedure RefreshRecord;
   end;
 
-
-  IJanuaClientModel = interface(IJanuaBaseModel)
+  IJanuaClientModel = interface(IJanuaBaseDataModel)
     ['{FA40D114-A948-484E-9230-5DA5E35AFE15}']
     function GetMainSearchText: string;
     procedure SetMainSearchText(const Value: string);
     /// <summary> Main Search Text connects View-ViewModel-Model with Live-Bindings </summary>
     property MainSearchText: string read GetMainSearchText write SetMainSearchText;
     /// <summary> This function makes a Search according to MainSearchText and IsThreaded </summary>
-    function Search: integer;
+    function Search: Integer;
     // ---------- Record Public Procedures --------------------------------------------------------------
     procedure First(const aProc: TProc; const aNotThreaded: boolean = False);
     procedure Last(const aProc: TProc; const aNotThreaded: boolean = False);
@@ -127,19 +140,19 @@ type
     procedure Prior(const aProc: TProc; const aNotThreaded: boolean = False);
     // MAIN GROUP used to select a portion of the Dataset (if necessary)
     function GetGroupGUID: TGUID;
-    function GetGroupID: integer;
+    function GetGroupID: Integer;
     procedure SetGroupGUID(const Value: TGUID);
-    procedure SetGroupID(const Value: integer);
+    procedure SetGroupID(const Value: Integer);
     property GroupGUID: TGUID read GetGroupGUID write SetGroupGUID;
     /// <summary>
     /// Used to generate Search Dataset. When data to search is grouped by  type
     /// </summary>
-    property GroupID: integer read GetGroupID write SetGroupID;
+    property GroupID: Integer read GetGroupID write SetGroupID;
     // ---------- Sub RecordSet Management --------------------------------------------------------------
     function GetDetailModels: IList<IJanuaRecordSetModel>;
     property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
     procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
-    function ModelCount: integer;
+    function ModelCount: Integer;
     procedure GenerateSubModels;
     procedure RemoveSubModels;
     function GetFilterParams: IJanuaParams;
@@ -148,20 +161,20 @@ type
     /// <summary> Opens the 'Master' Dataset and all Lookups and Detail Datasets setting up Objects </summary>
     procedure OpenAll(const aThreaded: boolean = False);
     procedure Refresh(aProc: TProc);
-    function GetRecordCount: integer;
-    property RecordCount: integer read GetRecordCount;
+    function GetRecordCount: Integer;
+    property RecordCount: Integer read GetRecordCount;
     function GetIsThreaded: boolean;
     procedure SetIsThreaded(const Value: boolean);
     property IsThreaded: boolean read GetIsThreaded write SetIsThreaded;
     function GetMainSelectedParam: IJanuaField;
-    function GetSelectedItem: integer;
+    function GetSelectedItem: Integer;
     function GetState: TJanuaModelState;
-    procedure SetSelectedItem(const Value: integer);
+    procedure SetSelectedItem(const Value: Integer);
     procedure SetState(const Value: TJanuaModelState);
     /// <summary> Selected Parameter to which apply Text Value for Search </summary>
     property SelectedParam: IJanuaField read GetMainSelectedParam;
     /// <summary> Selected Parameter Index for Text Search (set by a Selection) </summary>
-    property SelectedItem: integer read GetSelectedItem write SetSelectedItem;
+    property SelectedItem: Integer read GetSelectedItem write SetSelectedItem;
     property State: TJanuaModelState read GetState write SetState;
     function GetDateFrom: TDate;
     function GetDateTo: TDate;
@@ -192,7 +205,7 @@ type
     function LocateByGUID(const aGuid: TGUID): boolean;
   end;
 
-  IJanuaServerDBModel = interface(IJanuaBaseModel)
+  IJanuaServerDBModel = interface(IJanuaBaseDataModel)
     ['{E0612AD2-3E29-4EE3-BE91-1A261180FCF5}']
     function RestGetDataset(const aFormat, aParams: string): string;
     function RestGetRecord(const aRecordGUID: string): string;
@@ -201,7 +214,22 @@ type
     function RestDelRecord(const aRecordGUID: string): boolean;
   end;
 
-  IJanuaRESTModel = interface(IJanuaBaseModel)
+  IJanuaRESTClientModel = interface(IJanuaBaseModel)
+    ['{A2FD589E-F85F-4B6B-89BC-74928DBBD05D}']
+    function GetRestAPIEndpoint: string;
+    function GetServerUrl: string;
+    procedure SetRestAPIEndpoint(const Value: string);
+    procedure SetServerUrl(const Value: string);
+    function GetBaseUrl: string;
+    function GetPort: Word;
+    procedure SetPort(const Value: Word);
+    property ServerUrl: string read GetServerUrl write SetServerUrl;
+    property RestAPIEndpoint: string read GetRestAPIEndpoint write SetRestAPIEndpoint;
+    property ServerPort: Word Read GetPort write SetPort;
+    function GetClientFullUrl: string;
+  end;
+
+  IJanuaDataRESTModel = interface(IJanuaBaseDataModel)
     ['{B00FDB14-C9B1-4631-90A9-DC5B28D35839}']
     function GetLastErrorMessage: string;
     procedure SetLastErrorMessage(const Value: string);
@@ -224,14 +252,14 @@ type
     property RestFormat: TRestFormat read GetRestFormat write SetRestFormat;
   end;
 
-  IJanuaSingleRecordRESTModel = interface(IJanuaRESTModel)
+  IJanuaSingleRecordRESTModel = interface(IJanuaDataRESTModel)
     ['{6FDC503E-B261-4C8D-86AE-126EE0CF833E}']
     // ---------- Sub RecordSet Management --------------------------------------------------------------
     procedure RemoveSubModels;
     function GetDetailModels: IList<IJanuaRecordSetModel>;
     property DetailModels: IList<IJanuaRecordSetModel> read GetDetailModels;
     procedure AddDetailModel(const aModel: IJanuaRecordSetModel);
-    function ModelCount: integer;
+    function ModelCount: Integer;
     procedure GenerateSubModels;
     function SearchByGUID(const aGuid: TGUID): boolean;
     function GetCurrentRecord: IJanuaRecord;
@@ -300,17 +328,12 @@ type
   IJanuaRecordEditDialog = interface;
 
   IJanuaBaseViewModel = interface(IJanuaBindableObject)
-    ['{D33BEB04-2F60-4799-9456-BCD7744D43FD}']
     function GetMainActionList: IJanuaActionList;
     property MainActionList: IJanuaActionList read GetMainActionList;
     function GetFormActionList: IJanuaActionList;
     /// <summary> A reduced Actions Set for Edit Form. </summary>
     property FormActionList: IJanuaActionList read GetFormActionList;
-    function GetGridActionList: IJanuaActionList;
-    property GridActionList: IJanuaActionList read GetGridActionList;
-    function GetActionPreview: IJanuaAction;
     /// <summary> Action Edit can Launch an Edit-Form can be triggered (also) by Double click. </summary>
-    property ActionPreview: IJanuaAction read GetActionPreview;
     function GetActionEdit: IJanuaAction;
     /// <summary> Action Edit can Launch an Edit-Form can be triggered (also) by Double click. </summary>
     property ActionEdit: IJanuaAction read GetActionEdit;
@@ -325,16 +348,25 @@ type
     property UseThreads: boolean read GetUseThreads write SetUseThreads;
     procedure SetIsThreaded(const Value: boolean);
     property IsThreaded: boolean read GetIsThreaded write SetIsThreaded;
+    function GetFormDialog: IJanuaRecordEditDialog;
+    property FormDialog: IJanuaRecordEditDialog read GetFormDialog;
+  end;
+
+  IJanuaDataViewModel = interface(IJanuaBaseViewModel)
+    ['{D33BEB04-2F60-4799-9456-BCD7744D43FD}']
+    function GetGridActionList: IJanuaActionList;
+    property GridActionList: IJanuaActionList read GetGridActionList;
+    function GetActionPreview: IJanuaAction;
+    /// <summary> Action Preview can Create a Report Preview in Html/PDF/Custom be triggered (also) by Double click. </summary>
+    property ActionPreview: IJanuaAction read GetActionPreview;
     function GetRecordEditDialog: TGUID;
     procedure SetRecordEditDialog(const Value: TGUID);
     /// <summary> This is the GUID of the interface of the Edit Record Dialog (if it is set) </summary>
     property RecordEditDialog: TGUID read GetRecordEditDialog write SetRecordEditDialog;
-    function GetFormDialog: IJanuaRecordEditDialog;
-    property FormDialog: IJanuaRecordEditDialog read GetFormDialog;
     function ExecuteEditDialog: boolean;
-    function GetGroupID: integer;
-    procedure SetGroupID(const Value: integer);
-    property GroupID: integer read GetGroupID write SetGroupID;
+    function GetGroupID: Integer;
+    procedure SetGroupID(const Value: Integer);
+    property GroupID: Integer read GetGroupID write SetGroupID;
     function GetParams: TJanuaVariantArray;
     procedure SetParams(const aParams: TJanuaVariantArray);
     property Params: TJanuaVariantArray read GetParams write SetParams;
@@ -344,10 +376,8 @@ type
     function LocateByGUID(const aGuid: TGUID): boolean;
   end;
 
-  /// <summary>
-  /// Base Interface for a ViewModel Implementation (Template)
-  /// </summary>
-  IJanuaViewModel = interface(IJanuaBaseViewModel)
+  /// <summary>  Base Interface for a ViewModel Implementation (Template) </summary>
+  IJanuaViewModel = interface(IJanuaDataViewModel)
     ['{4839EDC9-A928-4E72-8030-21F0052CE8E9}']
     function GetMainSearchParams: IJanuaParams;
     /// <summary>IJanuaParams:  Directly connected with MainSearch Params in Model (First Assign Then Bind).</summary>
@@ -380,15 +410,15 @@ type
     procedure SetMainSearchLabel(const Value: string);
     function GetFilterDate: boolean;
     procedure SetFilterDate(const Value: boolean);
-    function GetSelectedItem: integer;
-    procedure SetSelectedItem(const Value: integer);
+    function GetSelectedItem: Integer;
+    procedure SetSelectedItem(const Value: Integer);
     function GetHasDetail: boolean;
     /// <summary> Checks if Detail dataset is not nil and is defined as Detail Dataset </summary>
     property HasDetail: boolean read GetHasDetail;
     /// <summary> Define if user wants to filter result by Date </summary>
     property FilterDate: boolean read GetFilterDate write SetFilterDate;
     /// <summary> Selected Parameter to which apply Text Value for Search </summary>
-    property SelectedItem: integer read GetSelectedItem write SetSelectedItem;
+    property SelectedItem: Integer read GetSelectedItem write SetSelectedItem;
     /// <summary> Main Search Text Label's Caption (changes accordingly with Sel. Item) </summary>
     property MainSearchLabel: string read GetMainSearchLabel write SetMainSearchLabel;
     function GetDetailsActive: boolean;
@@ -396,8 +426,8 @@ type
     function GetDetails: IList<IJanuaViewModel>;
     /// <summary> List of SubModels usually IJanuaRecordSetViewModel  </summary>
     property Details: IList<IJanuaViewModel> read GetDetails;
-    function GetDetailCount: integer;
-    property DetailCount: integer read GetDetailCount;
+    function GetDetailCount: Integer;
+    property DetailCount: Integer read GetDetailCount;
     procedure GenerateSubModels;
     procedure RemoveSubModels;
     function GetDetailActionList: IJanuaActionList;

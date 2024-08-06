@@ -220,6 +220,9 @@
         <None Include="ModelSupport_JanuaRestWeb\Janua\Cloud\DMVC\default.txvpck"/>
         <None Include="ModelSupport_JanuaRestWeb\Janua\Cloud\DMVC\FileUpload\default.txvpck"/>
         <None Include="ModelSupport_JanuaRestWeb\Janua\WebBroker\Server\default.txvpck"/>
+        <None Include="ModelSupport_JanuaRestWeb\Janua\Carservice\DMVC\JsonRPC\default.txvpck"/>
+        <None Include="ModelSupport_JanuaRestWeb\Janua\Carservice\DMVC\CustomerConfWebModule\default.txvpck"/>
+        <None Include="ModelSupport_JanuaRestWeb\Janua\DMVC\Srv\Framework\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

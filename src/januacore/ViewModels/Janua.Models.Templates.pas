@@ -97,7 +97,7 @@ type
     property CurrentRecord: IJanuaRecord read GetCurrentRecord;
   end;
 
-  TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
+  TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseDataModel, IJanuaStorage, IJanuaInterface)
   public
     constructor Create; override;
     procedure AfterConstruction; override;
@@ -171,7 +171,8 @@ type
   TJanuaBaseModelTemplateClass = class of TJanuaBaseModelTemplate;
   TJanuaDataModuleTemplateClass = class of TJanuaDataModuleTemplate;
 
-  TJanuaMVCSModelTemplate = class(TJanuaBaseModelTemplate, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
+  TJanuaMVCSModelTemplate = class(TJanuaBaseModelTemplate, IJanuaBaseDataModel, IJanuaStorage,
+    IJanuaInterface)
   public
     constructor Create; override;
     procedure AfterConstruction; override;
@@ -254,8 +255,8 @@ type
     property MainSearchText: string read GetMainSearchText write SetMainSearchText;
   end;
 
-  TJanuaRESTModelTemplate = class(TJanuaMVCSModelTemplate, IJanuaBaseModel, IJanuaRESTModel, IJanuaStorage,
-    IJanuaInterface, IJanuaClientModel)
+  TJanuaRESTModelTemplate = class(TJanuaMVCSModelTemplate, IJanuaBaseDataModel, IJanuaDataRESTModel,
+    IJanuaStorage, IJanuaInterface, IJanuaClientModel)
   private
     class var FDBDatasetFactory: IJanuaDBDatasetFactory;
   protected

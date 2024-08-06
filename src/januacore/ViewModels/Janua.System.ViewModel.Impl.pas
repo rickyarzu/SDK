@@ -13,7 +13,7 @@ uses
 
 type
   TJanuaCustomSystemUserSessionViewModel = class(TJanuaRecordViewModelTemplate,
-    IJanuaSystemUserSessionViewModel, IJanuaBaseViewModel)
+    IJanuaSystemUserSessionViewModel, IJanuaDataViewModel)
   private
     [weak]
     FSystemUserSessionModel: IJanuaSystemUserSessionModel;
@@ -114,7 +114,7 @@ type
 
 type
   TJanuaDBSystemUserSessionViewModel = class(TJanuaCustomSystemUserSessionViewModel,
-    IJanuaSystemUserSessionViewModel, IJanuaDBSystemUserSessionViewModel, IJanuaBaseViewModel)
+    IJanuaSystemUserSessionViewModel, IJanuaDBSystemUserSessionViewModel, IJanuaDataViewModel)
   private
     FSystemDBUserSessionModel: IJanuaDBSystemUserSessionModel;
   protected // virtual methods

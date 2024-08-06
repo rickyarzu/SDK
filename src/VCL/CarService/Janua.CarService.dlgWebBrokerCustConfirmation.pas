@@ -11,7 +11,7 @@ uses
   Janua.WebBroker.ServerConst,
   Janua.Core.Types,
   Janua.Core.WebServer,
-  Janua.CarService.WebModuleCustomerConfirmation;
+  Janua.CarService.WebModuleCustomerConfirmation, Vcl.Samples.Spin;
 
 // IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;
 
@@ -19,10 +19,10 @@ type
   TForm1 = class(TForm)
     ButtonStart: TButton;
     ButtonStop: TButton;
-    EditPort: TEdit;
     Label1: TLabel;
     ApplicationEvents1: TApplicationEvents;
     ButtonOpenBrowser: TButton;
+    edPort: TSpinEdit;
     procedure FormCreate(Sender: TObject);
     procedure ButtonStartClick(Sender: TObject);
     procedure ButtonStopClick(Sender: TObject);
@@ -58,8 +58,8 @@ var
 {$ENDIF}
 begin
   StartServer;
+  LURL := Format('http://localhost:%s', [edPort.Text]);
 {$IFDEF MSWINDOWS}
-  LURL := Format('http://localhost:%s', [EditPort.Text]);
   ShellExecute(0, nil, PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
 {$ENDIF}
 end;

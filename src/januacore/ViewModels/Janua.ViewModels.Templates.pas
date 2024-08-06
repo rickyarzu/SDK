@@ -18,7 +18,7 @@ type
   end;
 
 type
-  TJanuaViewModelBaseTemplate = class(TJanuaInterfacedBindableObject, IJanuaBaseViewModel)
+  TJanuaViewModelBaseTemplate = class(TJanuaInterfacedBindableObject, IJanuaDataViewModel)
   private
     // ---- Action Lists for Master, Detail, Search engine and Grids ------------------------------------
     FMainActionList: IJanuaActionList;
@@ -131,7 +131,7 @@ type
 
   TViewModelClass = class of TJanuaViewModelBaseTemplate;
 
-  TJanuaRecordViewModelTemplate = class(TJanuaViewModelBaseTemplate, IJanuaBaseViewModel)
+  TJanuaRecordViewModelTemplate = class(TJanuaViewModelBaseTemplate, IJanuaDataViewModel)
   public
     constructor Create; override;
   end;

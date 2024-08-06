@@ -5,7 +5,7 @@
     <property name="$name" value="Web Server Diagram" />
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="700,80,403,175" />
+      <property name="bounds" value="720,40,403,175" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleCreate(System.TObject)" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleDestroy(System.TObject)" />
@@ -13,6 +13,8 @@
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.AddControllers()" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.GetSessionTimeOut()" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.SetSessionTimeOut(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleCreate(Janua.DMVC.CustomWebModule.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleDestroy(Janua.DMVC.CustomWebModule.TObject)" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer">
       <property name="$shortcutReference" value="true" />
@@ -31,6 +33,16 @@
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StartServer()" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.StopServer()" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.WriteStatus()" />
+      <reference referencedUin="design:link:::1jkikywk78k_l">
+        <property name="sourceAnchor" value="360,165" />
+        <property name="targetAnchor" value="295,165" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::v0oj3yin9eo_l">
+        <property name="sourceAnchor" value="667,127" />
+        <property name="targetAnchor" value="720,127" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.@unitclass">
       <property name="$shortcutReference" value="true" />
@@ -60,16 +72,80 @@
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.IsActive" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.LogProc" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.Port" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer.InternalLogProc(System.string,System.string,Janua.Http.WebServer.TObject)" />
+      <reference referencedUin="design:link:::ro3qi8diizn_l">
+        <property name="sourceAnchor" value="295,351" />
+        <property name="targetAnchor" value="420,351" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass">
       <property name="$shortcutReference" value="true" />
       <property name="bounds" value="222,503,0,0" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sPortInUse" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sPortSet" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sServerRunning" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sStartingServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sStoppingServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sServerStopped" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sServerNotRunning" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sInvalidCommand" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sIndyVersion" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sActive" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sPort" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sSessionID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.sCommands" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cArrow" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandStart" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandStop" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandStatus" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandHelp" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandSetPort" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass.cCommandExit" />
     </reference>
     <reference referencedUin="design:view:::kez2crmok0p_v">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="40,400,192,134" />
+      <property name="bounds" value="420,320,192,134" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,280,371,131" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.WebModuleDestroy(Janua.Carservice.DMVC.WebModule.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.WebModuleCreate(Janua.Carservice.DMVC.WebModule.TObject)" />
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.FMVC" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.AddControllers()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule">
+        <property name="sourceAnchor" value="905,280" />
+        <property name="targetAnchor" value="905,215" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaDMVCConf">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,440,292,116" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaDMVCConf.GetSessionTimeOut()" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaDMVCConf.SetSessionTimeOut(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaDMVCConf.SessionTimeOut" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="720,440,382,191" />
+      <property name="hideAttribute" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.Create()static" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.Destroy()" />
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.FProtectedControllersActions" />
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.FAuthenticationFunctions" />
+      <reference referencedUin="delphi:e_property:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.ProtectedControllersActions" />
+      <reference referencedUin="delphi:e_property:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.AuthenticationFunctions" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.AddProtectedControllerAction(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.RequiresAuthentication(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.AddAuthFunc(System.string,TFunc`4)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaServerDMVCApplication.Authenticate(MVCFramework.TWebContext,TList`1,System.string,System.string)" />
     </reference>
   </view>
 </nodeSet>
