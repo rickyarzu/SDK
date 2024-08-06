@@ -139,7 +139,7 @@ type
     property AnagraphProfile: IAnagraphView read GetAnagraphProfile;
   end;
 
-  TJanuaRESTSystemUserSessionModel = class(TJanuaRESTModelTemplate, IJanuaRemoteSystemUserSessionModel,
+  TJanuaRESTSystemUserSessionModel = class(TJanuaRESTDataModelTemplate, IJanuaRemoteSystemUserSessionModel,
     IJanuaSystemUserSessionModel, IJanuaClientModel)
   strict protected
     function InternalActivate: boolean; override;

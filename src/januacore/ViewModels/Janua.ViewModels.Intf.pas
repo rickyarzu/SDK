@@ -350,6 +350,8 @@ type
     property IsThreaded: boolean read GetIsThreaded write SetIsThreaded;
     function GetFormDialog: IJanuaRecordEditDialog;
     property FormDialog: IJanuaRecordEditDialog read GetFormDialog;
+    function GetModel: IJanuaBaseModel;
+    property Model: IJanuaBaseModel read GetModel;
   end;
 
   IJanuaDataViewModel = interface(IJanuaBaseViewModel)

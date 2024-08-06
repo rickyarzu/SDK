@@ -115,7 +115,7 @@
         <Cfg_3>true</Cfg_3>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
+    <Import Project="..\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaDemoDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -131,7 +131,7 @@
         <SanitizedProjectName>JanuaCoreUnitTesting</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_Define>JANUATEST;TESTINSIGHT;$(DCC_Define)</DCC_Define>
-        <CfgDependentOn>..\JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>..\JanuaDemoDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
@@ -224,6 +224,7 @@
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
+    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
@@ -261,7 +262,7 @@
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\JanuaDemoDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>

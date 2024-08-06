@@ -111,7 +111,7 @@ type
   end;
 
   // *********************************************************************************************************
-  TJanuaCSDriversRESTModel = class(TJanuaRESTModelTemplate, IJanuaCSDriversRestModel, IJanuaDataRESTModel)
+  TJanuaCSDriversRESTModel = class(TJanuaRESTDataModelTemplate, IJanuaCSDriversRestModel, IJanuaDataRESTModel)
   strict private
     FTimetableRecord: IBookingTimetableView;
     FDriversDataModule: IJanuaCSDriversDataModule;
