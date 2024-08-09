@@ -52,7 +52,7 @@ uses
   uJanuaDevIDEProject in 'uJanuaDevIDEProject.pas',
   uCarServiceProject_x86_64 in 'uCarServiceProject_x86_64.pas',
   Janua.VCL.Cloud.frmImportOSMaps in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmImportOSMaps.pas' {frmVCLImportOSMaps},
-  Janua.VCL.frameWebBroker in '..\..\..\src\VCL\Http\Janua.VCL.frameWebBroker.pas' {Frame2: TFrame};
+  Janua.VCL.frameWebBroker in '..\..\..\src\VCL\Http\Janua.VCL.frameWebBroker.pas' {frameWebBrokerStarter: TFrame};
 
 {$R *.res}
 

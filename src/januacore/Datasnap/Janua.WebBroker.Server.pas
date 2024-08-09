@@ -84,8 +84,10 @@ var
   LResponse: string;
 begin
   IsMultiThread := True;
+  // WebRequestHandler that is a singleton can handle an http call and pass it to an instance of WebModule
+  // to do this it has to create a new webmodule for each call or session
   if WebRequestHandler <> nil then
-    WebRequestHandler.WebModuleClass := WebModuleClass;
+    WebRequestHandler.WebModuleClass := FWebModuleClass;
   WebRequestHandlerProc.MaxConnections := 1024;
 
   if not Assigned(FServer) then

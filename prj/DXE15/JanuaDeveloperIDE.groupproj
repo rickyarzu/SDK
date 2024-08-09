@@ -198,6 +198,9 @@
         <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -791,14 +794,23 @@
     <Target Name="CarServiceWebBrokerCustConfVCL:Make">
         <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
     </Target>
+    <Target Name="WebBrokerDMVCServerTest">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj"/>
+    </Target>
+    <Target Name="WebBrokerDMVCServerTest:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebBrokerDMVCServerTest:Make">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -1016,6 +1028,12 @@
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
@@ -1410,6 +1428,12 @@
             <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1800,6 +1824,12 @@
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
@@ -2194,6 +2224,12 @@
             <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2584,6 +2620,12 @@
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
@@ -2978,6 +3020,12 @@
             <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3368,6 +3416,12 @@
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
