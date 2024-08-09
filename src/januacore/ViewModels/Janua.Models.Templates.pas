@@ -1594,9 +1594,12 @@ end;
 destructor TJanuaModelTemplate.Destroy;
 begin
   // ---- Recordset Editing Procedures ---------------------------------------------------------------------
-  FDetailDatasets := nil;
-  FjdsDataset := nil;
-  inherited;
+  try
+    FDetailDatasets := nil;
+    FjdsDataset := nil;
+  finally
+    inherited;
+  end;
 end;
 
 function TJanuaModelTemplate.GetDetailDatasets: IList<IJanuaDBDataset>;

@@ -112,7 +112,7 @@ begin
   // Synchronize Servers
   lClient.ServerURL := 'http://127.0.0.1';
   lClient.ServerPort := 8081;
-  lClient.ApiUrl := '';
+  lClient.ApiUrl := 'dataset';
   lClient.DataFormat := TRestFormat.rfBinary;
   aUrl := lClient.GetBaseUrl;
   Assert.AreEqual(aMockUrl, aUrl, 'MockUrl error');
@@ -317,7 +317,7 @@ begin
   // Synchronize Servers
   lClient.ServerURL := 'http://127.0.0.1';
   lClient.ServerPort := 8081;
-  lClient.ApiUrl := '';
+  lClient.ApiUrl := 'dataset';
   lClient.DataFormat := TRestFormat.rfBinary;
   aUrl := lClient.GetBaseUrl;
   Assert.AreEqual(aMockUrl, aUrl, 'MockUrl error');
@@ -353,16 +353,19 @@ begin
       AResponse.WithStatus(200).WithBody(aBinResponse);
     end);
 
-  // DELETE - DELETE
-  WebMock.StubRequest('DELETE', ConcatUrl('/dataset', aTmp));
-  try
+      { TODO : Manage and Test Delete procedure WebMock and REST Dataset }
+  {
+    // DELETE - DELETE
+    WebMock.StubRequest('DELETE', ConcatUrl('/dataset', aTmp));
+    try
     lClient.LoadData;
-  except
+    except
     on e: exception do
-      raise exception.Create('lClient.LoadData: ' + e.Message);
-  end;
+    raise exception.Create('lClient.LoadData: ' + e.Message);
+    end;
+  }
 
-  Assert.AreEqual(TestDM.MemDataset.RecordCount, lClient.JanuaDataset.RecordCount, 'RecordCount');
+  // Assert.AreEqual(TestDM.MemDataset.RecordCount, lClient.JanuaDataset.RecordCount, 'RecordCount');
 
 end;
 

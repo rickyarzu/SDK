@@ -12,12 +12,12 @@ uses
   // Janua Commons
   Janua.Core.Types, Janua.Http.Types, Janua.REST.Types, Janua.Core.DB.Types,
   // Januaproject Interfaces
-  Janua.Orm.Dataset.Intf, Janua.Orm.Intf, Janua.Core.Classes.Intf, Janua.Bindings.Intf, Janua.Core.DB.Intf,
+  Janua.Orm.Dataset.Intf, Janua.Orm.Intf, Janua.Core.Classes.Intf,
   JOrm.System.Settings.Intf,
   // ViewModels
   Janua.ViewModels.Intf, Janua.System.ViewModel.Intf,
   // Janua.Libraries
-  Janua.DMVC.Srv.Template, Janua.Core.Classes, Janua.Core.DB.Impl;
+  Janua.DMVC.Srv.Template;
 
 type
 

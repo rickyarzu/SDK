@@ -4,18 +4,19 @@ interface
 
 uses
   System.SysUtils,
+  System.Classes,
   IPPeerServer,
   IPPeerAPI,
   IdHTTPWebBrokerBridge,
-{$IFDEF WINDOWS}
   Web.WebReq,
   Web.WebBroker,
-{$ENDIF}
   Janua.Core.Types,
   Janua.Http.WebServer;
 
 type
   TJanuaWebBrokerServer = class(TJanuaWebServer)
+  strict protected
+    class var FWebModuleClass: TComponentClass;
   private
     FServer: TIdHTTPWebBrokerBridge;
     function BindPort(APort: Integer): Boolean;
@@ -26,10 +27,13 @@ type
     procedure RunServer(APort: Integer);
   protected
     function GetIsActive: Boolean; override;
+    procedure AfterServerCreation; virtual;
   public
     procedure StartServer; override;
     procedure StopServer; override;
     procedure WriteStatus; override;
+  public
+    class property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
   end;
 
 implementation
@@ -37,6 +41,16 @@ implementation
 uses Spring, Janua.WebBroker.ServerConst, Janua.Application.Framework;
 
 { TJanuaWebBrokerServer }
+
+procedure TJanuaWebBrokerServer.AfterServerCreation;
+begin
+  { more info about MaxConnections
+    http://www.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=TIdCustomTCPServer_MaxConnections.html }
+  FServer.MaxConnections := 0;
+  { more info about ListenQueue
+    http://www.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=TIdCustomTCPServer_ListenQueue.html }
+  FServer.ListenQueue := 200;
+end;
 
 function TJanuaWebBrokerServer.BindPort(APort: Integer): Boolean;
 var
@@ -69,11 +83,17 @@ var
   LServer: TIdHTTPWebBrokerBridge;
   LResponse: string;
 begin
+  IsMultiThread := True;
+  if WebRequestHandler <> nil then
+    WebRequestHandler.WebModuleClass := WebModuleClass;
+  WebRequestHandlerProc.MaxConnections := 1024;
+
   if not Assigned(FServer) then
   begin
     LServer := TIdHTTPWebBrokerBridge.Create(nil);
     SetServerPort(LServer, GetPort);
     FServer := LServer;
+    AfterServerCreation;
   end
   else
     LServer := FServer;
@@ -124,8 +144,8 @@ end;
 
 procedure TJanuaWebBrokerServer.StartServer;
 begin
-  if BindPort(self.Port) then
-    RunServer(self.Port);
+  if BindPort(Port) then
+    RunServer(Port);
 end;
 
 procedure TJanuaWebBrokerServer.StopServer;

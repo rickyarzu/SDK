@@ -1,4 +1,4 @@
-unit Janua.DMVC.CustomWebModule;
+unit Janua.DMVC.WebBroker.WebModule;
 
 interface
 
@@ -13,6 +13,7 @@ type
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
   private
+    FSessionTimeOut: Integer;
     function GetSessionTimeOut: integer;
     procedure SetSessionTimeOut(const Value: integer);
   protected
@@ -20,7 +21,7 @@ type
     procedure AddControllers; virtual;
   public
     { Public declarations }
-
+    property SessionTimeOut: Integer read GetSessionTimeOut write SetSessionTimeOut;
   end;
 
 var
@@ -73,6 +74,15 @@ begin
     FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
 end;
 
+function TJanuaDMVCCustomWebModule.GetSessionTimeOut: integer;
+begin
+
+end;
+
+procedure TJanuaDMVCCustomWebModule.SetSessionTimeOut(const Value: integer);
+begin
+
+end;
 
 procedure TJanuaDMVCCustomWebModule.WebModuleCreate(Sender: TObject);
 begin
@@ -158,8 +168,6 @@ begin
   // ETag middleware must be the latest in the chain
   if TJanuaCoreOS.ReadParam('DMVC', 'ETag', false) then
     FMVC.AddMiddleware(TMVCETagMiddleware.Create);
-
-
 
 end;
 

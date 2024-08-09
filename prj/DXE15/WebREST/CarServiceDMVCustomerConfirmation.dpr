@@ -23,7 +23,7 @@ uses
   Janua.DMVC.UniDacApplication in '..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
   Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
   Janua.CarService.DMVC.www.CustConf in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas',
-  Janua.DMVC.CustomWebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas' {JanuaDMVCCustomWebModule: TWebModule};
+  Janua.DMVC.WebBroker.WebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.WebModule.pas' {JanuaDMVCCustomWebModule: TWebModule};
 
 {$R *.res}
 procedure RunServer(APort: Integer);

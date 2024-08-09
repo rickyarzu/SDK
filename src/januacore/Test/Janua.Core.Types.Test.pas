@@ -161,11 +161,11 @@ var
   aSmallint: SmallInt;
   aLargeInt: Int64;
 begin
-  aBlob.Create({sGitHubHome}sJanuaHome + '\SDK\Testing\res\images\logo.jpg');
+  aBlob.Create( { sGitHubHome } sJanuaHome + '\test\res\images\logo.jpg');
   Assert.IsTrue(aBlob.size > 0, 'aBlob.size = 0');
   aFilename := FormatDateTime('yymmddhhnn', now) + '.jpg';
-  aBlob.SaveToFile({sGitHubHome}sJanuaHome + '\SDK\Testing\res\images\' + aFilename);
-  Assert.IsTrue(FileExists({sGitHubHome}sJanuaHome + '\SDK\Testing\res\images\' + aFilename),
+  aBlob.SaveToFile( { sGitHubHome } sJanuaHome + '\test\res\images\' + aFilename);
+  Assert.IsTrue(FileExists( { sGitHubHome } sJanuaHome + '\test\res\images\' + aFilename),
     'File ' + aFilename + ' does not exist');
   aBlob.Clear;
   aInteger := aBlob.size;

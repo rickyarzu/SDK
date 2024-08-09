@@ -11,7 +11,7 @@ uses
   Janua.Application.Framework,
   Janua.TMS.SMS,
   Janua.Carservice.DMVC.JsonRPC in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas',
-  Janua.DMVC.CustomWebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas' {JanuaDMVCCustomWebModule: TWebModule},
+  Janua.DMVC.WebBroker.WebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.WebModule.pas' {JanuaDMVCCustomWebModule: TWebModule},
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',

@@ -103,6 +103,7 @@ begin
   FServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
   FServer.Active := True;
 end;
+
 procedure StopHttpServer;
 begin
   if Assigned(FServer) then
@@ -111,6 +112,7 @@ begin
     FServer.Free;
   end;
 end;
+
 function RestLogin: Boolean;
 var
   lClient: TTestLoginClient;
@@ -131,6 +133,7 @@ begin
     end;
   end;
 end;
+
 begin
   try
     TJanuaUniTestApplication.ApplicationSetup('test.mvvm.unidac.local');

@@ -3,22 +3,9 @@
   <view uin="shv2ocvr311x5nzjl_v">
     <property name="$metaclass" value="Class Diagram" />
     <property name="$name" value="Web Server Diagram" />
-    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule">
-      <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="720,40,403,175" />
-      <property name="location_set_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleCreate(System.TObject)" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleDestroy(System.TObject)" />
-      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.FMVC" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.AddControllers()" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.GetSessionTimeOut()" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.SetSessionTimeOut(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleCreate(Janua.DMVC.CustomWebModule.TObject)" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule.WebModuleDestroy(Janua.DMVC.CustomWebModule.TObject)" />
-    </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="360,40,307,250" />
+      <property name="bounds" value="360,40,307,297" />
       <property name="grd_color_one" value="255, 224, 192" />
       <property name="grd_on" value="True" />
       <property name="location_set_by_user" value="True" />
@@ -38,11 +25,9 @@
         <property name="targetAnchor" value="295,165" />
         <property name="bendpoints" value="" />
       </reference>
-      <reference referencedUin="design:link:::v0oj3yin9eo_l">
-        <property name="sourceAnchor" value="667,127" />
-        <property name="targetAnchor" value="720,127" />
-        <property name="bendpoints" value="" />
-      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.FWebModuleClass" />
+      <reference referencedUin="delphi:e_property:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.WebModuleClass" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.SetWebModuleClass(Janua.WebBroker.Server.TComponentClass)" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.@unitclass">
       <property name="$shortcutReference" value="true" />
@@ -108,20 +93,6 @@
       <property name="bounds" value="420,320,192,134" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.WebBroker.ServerConst.@unitclass" />
-    </reference>
-    <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule">
-      <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="720,280,371,131" />
-      <property name="location_set_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.WebModuleDestroy(Janua.Carservice.DMVC.WebModule.TObject)" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.WebModuleCreate(Janua.Carservice.DMVC.WebModule.TObject)" />
-      <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.FMVC" />
-      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule.AddControllers()" />
-      <reference referencedUin="delphi:l_gnt:src:JanuaRestWeb:Janua.Carservice.DMVC.WebModule.TCarServiceWebModule:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule">
-        <property name="sourceAnchor" value="905,280" />
-        <property name="targetAnchor" value="905,215" />
-        <property name="bendpoints" value="" />
-      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.Srv.Framework.TJanuaDMVCConf">
       <property name="$shortcutReference" value="true" />

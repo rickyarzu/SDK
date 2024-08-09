@@ -1,11 +1,11 @@
-unit Janua.WebBroker.UniDACApplication;
+unit Janua.DMVC.UniDACApplication;
 
 interface
 
 uses System.Classes, System.SysUtils, Janua.Core.Types, Janua.Uni.Application;
 
 type
-  TJanuaWebBrokerUniDACApplication = class(TJanuaUniApplication)
+  TJanuaDMVCUniDACApplication = class(TJanuaUniApplication)
   private
     class var FUniGUIPort: Smallint;
   protected
@@ -35,15 +35,15 @@ uses System.Types, System.StrUtils,
   Janua.Application.Framework, Janua.Controls.Forms.Impl, Janua.Uni.Framework,
   Janua.ViewModels.Framework, Janua.ViewModels.Application, Janua.Orm.Register;
 
-{ TJanuaWebBrokerUniDACApplication }
+{ TJanuaDMVCUniDACApplication }
 
-class procedure TJanuaWebBrokerUniDACApplication.AfterLogin;
+class procedure TJanuaDMVCUniDACApplication.AfterLogin;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.ApplicationSetup(const aAppname: string);
+class procedure TJanuaDMVCUniDACApplication.ApplicationSetup(const aAppname: string);
 begin
   TJanuaApplication.CustomServer := True;
   // The WebServerClass is not customized at 'Application' Level but at 'server' Level.
@@ -53,13 +53,13 @@ begin
   TJanuaCoreViewModelFramework.RegisterInterfaces;
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.ApplicationTearDown;
+class procedure TJanuaDMVCUniDACApplication.ApplicationTearDown;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.ConnectionSetup;
+class procedure TJanuaDMVCUniDACApplication.ConnectionSetup;
 begin
   // uncomment this for testing based on UNIGUI environment
   TJanuaApplication.IsTestVersion := False;
@@ -67,22 +67,22 @@ begin
 
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.LoadMenu;
+class procedure TJanuaDMVCUniDACApplication.LoadMenu;
 begin
   // uncomment this for testing based on UNIGUI environment
   // Well should be interesting to Setup
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.RegisterForms;
+class procedure TJanuaDMVCUniDACApplication.RegisterForms;
 begin
   inherited;
 
 end;
 
-class procedure TJanuaWebBrokerUniDACApplication.Terminate;
+class procedure TJanuaDMVCUniDACApplication.Terminate;
 begin
   inherited;
-  TJanuaWebBrokerUniDACApplication.ApplicationTearDown;
+  TJanuaDMVCUniDACApplication.ApplicationTearDown;
 end;
 
 end.
