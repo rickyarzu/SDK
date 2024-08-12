@@ -83,7 +83,7 @@
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;dsnap;FlexCel_Core;FlexCel_XlsAdapter;JanuaCoreComponents;JanuaCore;gtDocEng;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;JanuaVCLControls;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;dsnap;FlexCel_Core;FlexCel_XlsAdapter;JanuaCoreComponents;JanuaCore;gtDocEng;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;JanuaVCLControls;JanuaRestWeb;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -91,7 +91,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;unidac280;dac280;crcontrols280;SVGIconImageList;SVGIconPackage;gtDocEng;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VisualStyles;JanuaVCLControls;VCLThemeSelector;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;unidac280;dac280;crcontrols280;SVGIconImageList;SVGIconPackage;gtDocEng;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VisualStyles;JanuaVCLControls;VCLThemeSelector;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;JanuaRestWeb;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -99,7 +99,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;SVGIconImageList;SVGIconPackage;JanuaMVVM;VisualStyles;JanuaVCLControls;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;SVGIconImageList;SVGIconPackage;JanuaMVVM;VisualStyles;JanuaVCLControls;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;JanuaRestWeb;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
