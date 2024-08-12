@@ -51,18 +51,25 @@ requires
   IndyIPServer,
   JanuaCoreThirdParty,
   JanuaCore,
-  JanuaMVVM;
+  JanuaMVVM,
+  dsnap,
+  dac290,
+  unidac290,
+  pgprovider290,
+  JanuaUnidacComponentsD,
+  JanuaUnidac;
 
 contains
   Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas',
-  Janua.Carservice.DMVC.Application in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
   Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.DMVC.Srv.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Janua.CarService.DMVC.Driver in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
-  Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
-  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
+  Janua.DMVC.Controller.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
   Janua.DMVC.UniDACApplication in '..\..\src\januacore\dmvc\Janua.DMVC.UniDACApplication.pas',
-  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
+  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
+  Janua.DMVC.WebBroker.Server in '..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas',
+  Janua.CarService.Driver.DMVCController in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
+  Janua.System.Session.DMVCController in '..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas';
+
+// IdHTTPWebBrokerBridge,
 
 end.

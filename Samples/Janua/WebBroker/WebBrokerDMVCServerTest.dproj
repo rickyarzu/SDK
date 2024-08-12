@@ -123,9 +123,34 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="ufrmVCLWebBrokerDMVCTest.pas">
-            <Form>Form3</Form>
-            <FormType>dfm</FormType>
+            <Form>frmVCLWebBrokerDMVCTest</Form>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas">
+            <Form>JanuaframeWebServerManager</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Test.WebBroker.WebModule.pas">
+            <Form>TestWebModule</Form>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas"/>
+        <DCCReference Include="..\..\Angelo\uBindingEngine.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.WebModule.pas">
+            <Form>JanuaDMVCCustomWebModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.CoreWebModule.pas">
+            <Form>JanuaDMVCTestWebModule</Form>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVC.Controller.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

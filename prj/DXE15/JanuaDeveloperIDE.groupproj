@@ -84,10 +84,10 @@
         <Projects Include="JanuaUnidacComponents.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaRestWeb.dproj">
+        <Projects Include="Testing\JanuaUniDACUnitTesting.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Testing\JanuaUniDACUnitTesting.dproj">
+        <Projects Include="JanuaRestWeb.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Testing\JanuaDMVCUnitTesting.dproj">
@@ -199,6 +199,12 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\StyleControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\StyleControlsD.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -452,15 +458,6 @@
     <Target Name="JanuaUnidacComponents:Make">
         <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaRestWeb">
-        <MSBuild Projects="JanuaRestWeb.dproj"/>
-    </Target>
-    <Target Name="JanuaRestWeb:Clean">
-        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaRestWeb:Make">
-        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaUniDACUnitTesting">
         <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj"/>
     </Target>
@@ -469,6 +466,15 @@
     </Target>
     <Target Name="JanuaUniDACUnitTesting:Make">
         <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestWeb">
+        <MSBuild Projects="JanuaRestWeb.dproj"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Clean">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Make">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaDMVCUnitTesting">
         <MSBuild Projects="Testing\JanuaDMVCUnitTesting.dproj"/>
@@ -803,14 +809,32 @@
     <Target Name="WebBrokerDMVCServerTest:Make">
         <MSBuild Projects="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Make"/>
     </Target>
+    <Target Name="StyleControls">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj"/>
+    </Target>
+    <Target Name="StyleControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControls:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControlsD">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj"/>
+    </Target>
+    <Target Name="StyleControlsD:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControlsD:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaUniDACUnitTesting;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;StyleControls;StyleControlsD"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaUniDACUnitTesting:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;StyleControls:Clean;StyleControlsD:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaUniDACUnitTesting:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;StyleControls:Make;StyleControlsD:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -882,14 +906,14 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Linux64</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\fileupload\FilesUploadDemo.dproj">
@@ -936,14 +960,14 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
@@ -1020,9 +1044,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
@@ -1050,9 +1074,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCRestApplication.dproj">
             <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
@@ -1065,6 +1089,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
@@ -1152,8 +1182,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\windowsservice\dmvcwindowsservice.dproj">
@@ -1182,14 +1212,14 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
@@ -1204,10 +1234,16 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
-            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
@@ -1464,6 +1500,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1598,6 +1640,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1862,6 +1910,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1996,6 +2050,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2260,6 +2320,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2394,6 +2460,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2658,6 +2730,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2792,6 +2870,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3056,6 +3140,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3190,6 +3280,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3454,6 +3550,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations/>
@@ -3588,6 +3690,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

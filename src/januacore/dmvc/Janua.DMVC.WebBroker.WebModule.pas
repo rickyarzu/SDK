@@ -9,13 +9,14 @@ uses
   MVCFramework;
 
 type
+  /// <summary> This is the model from DMVC WebModule with authentication </summary>
   TJanuaDMVCCustomWebModule = class(TWebModule)
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
   private
     FSessionTimeOut: Integer;
-    function GetSessionTimeOut: integer;
-    procedure SetSessionTimeOut(const Value: integer);
+    function GetSessionTimeOut: Integer;
+    procedure SetSessionTimeOut(const Value: Integer);
   protected
     FMVC: TMVCEngine;
     procedure AddControllers; virtual;
@@ -51,6 +52,7 @@ procedure TJanuaDMVCCustomWebModule.AddControllers;
 begin
   if TJanuaCoreOS.ReadParam('DMVC', 'UseJWT', true) then
   begin
+    // Claims define the behaviour of JWT such as expiration time and Issuer (a Standard in JanuaProject)
     var
   lConfigClaims:
     TJWTClaimsSetup := procedure(const JWT: TJWT)
@@ -65,7 +67,8 @@ begin
     // Detailed user infos need to be requested using the token and usually are then stored in the Client
     var
     vLoginURI := TJanuaCoreOS.ReadParam('DMVC', 'LoginURI', '/login');
-    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TAuthCriteria.Create, lConfigClaims,
+    // Note: Janua.System.DMVC.AuthCriteria is the unit for TJanuaAuthCriteria
+    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TJanuaAuthCriteria.Create, lConfigClaims,
       'ergomercator_secret', vLoginURI, [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
   end;
 
@@ -74,12 +77,12 @@ begin
     FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
 end;
 
-function TJanuaDMVCCustomWebModule.GetSessionTimeOut: integer;
+function TJanuaDMVCCustomWebModule.GetSessionTimeOut: Integer;
 begin
 
 end;
 
-procedure TJanuaDMVCCustomWebModule.SetSessionTimeOut(const Value: integer);
+procedure TJanuaDMVCCustomWebModule.SetSessionTimeOut(const Value: Integer);
 begin
 
 end;
@@ -91,7 +94,7 @@ begin
     begin
       // session timeout (0 means session cookie)
       var
-      vKey := TMVCConfigKey.SessionTimeout;
+      vKey := TMVCConfigKey.SessionTimeOut;
       Config[vKey] := TJanuaCoreOS.ReadParam('DMVC', vKey, '0');
 
       // default content-type

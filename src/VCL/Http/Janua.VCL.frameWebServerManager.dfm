@@ -1,28 +1,37 @@
-object frameWebBrokerStarter: TframeWebBrokerStarter
+object JanuaframeWebServerManager: TJanuaframeWebServerManager
   Left = 0
   Top = 0
   Width = 374
-  Height = 54
+  Height = 43
   TabOrder = 0
+  object Label1: TLabel
+    Left = 16
+    Top = 10
+    Width = 22
+    Height = 15
+    Caption = 'Port'
+  end
   object btnStartServer: TButton
-    Left = 144
-    Top = 16
+    Left = 152
+    Top = 7
     Width = 89
     Height = 25
     Caption = 'Start Server'
     TabOrder = 0
+    OnClick = btnStartServerClick
   end
   object btnStopServer: TButton
     Left = 256
-    Top = 16
+    Top = 7
     Width = 89
     Height = 25
     Caption = 'Stop Server'
     TabOrder = 1
+    OnClick = btnStopServerClick
   end
   object sedPort: TscSpinEdit
-    Left = 64
-    Top = 17
+    Left = 72
+    Top = 7
     Width = 66
     Height = 23
     FluentUIOpaque = False

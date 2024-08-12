@@ -6,7 +6,7 @@ uses
   MVCFramework, System.Generics.Collections, Janua.System.ViewModel.Intf;
 
 type
-  TAuthCriteria = class(TInterfacedObject, IMVCAuthenticationHandler)
+  TJanuaAuthCriteria = class(TInterfacedObject, IMVCAuthenticationHandler)
   public
     procedure OnRequest(const AContext: TWebContext; const AControllerQualifiedClassName: string;
       const AActionName: string; var AAuthenticationRequired: Boolean);
@@ -21,9 +21,9 @@ implementation
 uses
   System.SysUtils, Janua.Application.Framework, Janua.DMVC.Srv.Framework;
 
-{ TAuthCriteria }
+{ TJanuaAuthCriteria }
 
-procedure TAuthCriteria.OnAuthentication(const AContext: TWebContext; const AUserName, APassword: string;
+procedure TJanuaAuthCriteria.OnAuthentication(const AContext: TWebContext; const AUserName, APassword: string;
   AUserRoles: TList<string>; var AIsValid: Boolean; const ASessionData: TDictionary<String, String>);
 var
   aSession: IJanuaSystemUserSessionModel;
@@ -71,7 +71,7 @@ begin
 
 end;
 
-procedure TAuthCriteria.OnAuthorization(const AContext: TWebContext;
+procedure TJanuaAuthCriteria.OnAuthorization(const AContext: TWebContext;
   AUserRoles: System.Generics.Collections.TList<String>; const AControllerQualifiedClassName,
   AActionName: string; var AIsAuthorized: Boolean);
 begin
@@ -81,7 +81,7 @@ begin
     AIsAuthorized := AUserRoles.Contains('admin');
 end;
 
-procedure TAuthCriteria.OnRequest(const AContext: TWebContext;
+procedure TJanuaAuthCriteria.OnRequest(const AContext: TWebContext;
   const AControllerQualifiedClassName, AActionName: string; var AAuthenticationRequired: Boolean);
 begin
   AAuthenticationRequired := TJanuaServerDMVCApplication.RequiresAuthentication(AControllerQualifiedClassName,

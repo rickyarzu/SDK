@@ -1,4 +1,4 @@
-unit Janua.CarService.DMVC.www.CustConf;
+unit Janua.Test.DMVC.www;
 
 interface
 
@@ -22,7 +22,7 @@ uses
 type
 
   [MVCPath('/')]
-  TPikappCustConfWWWController = class(TCustomMVVMSrvController)
+  TTestWWWController = class(TCustomMVVMSrvController)
 
   public
     [MVCPath]
@@ -37,15 +37,18 @@ type
 
 implementation
 
-{ TPikappCustConfWWWController }
+{ TTestWWWController }
 
-procedure TPikappCustConfWWWController.Index;
+procedure TTestWWWController.Index;
 var
   aPair: System.Generics.Collections.TPair<string, string>;
   lResponse: string;
 begin
   // Completely override inhterited behaviour
   // inherited;
+
+  // This simple Html returs the params received by the Client during the Tests
+  // Note it can Return Url Params, Get Params or Form (post) params
   var
   aBuilder := TStringBuilder.Create;
   try
@@ -65,16 +68,13 @@ begin
     aBuilder.Free;
   end;
 
-  { we are going to produce simple text.
-    let's inform the client about the format
-    of the body response format }
+  { we are going to produce simple text. let's inform the client about the format of the body response format }
   ContentType := TJanuaMimeString.TEXT_HTML;
   { Render a simple string }
   Render(lResponse)
-
 end;
 
-procedure TPikappCustConfWWWController.IndexPost;
+procedure TTestWWWController.IndexPost;
 begin
 
 end;

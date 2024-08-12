@@ -1,4 +1,4 @@
-unit Janua.DMVC.Srv.Template;
+unit Janua.DMVC.Controller.Template;
 
 interface
 

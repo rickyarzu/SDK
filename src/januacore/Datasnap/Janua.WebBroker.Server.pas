@@ -8,8 +8,8 @@ uses
   IPPeerServer,
   IPPeerAPI,
   IdHTTPWebBrokerBridge,
+  IdCustomHTTPServer,
   Web.WebReq,
-  Web.WebBroker,
   Janua.Core.Types,
   Janua.Http.WebServer;
 
@@ -19,6 +19,7 @@ type
     class var FWebModuleClass: TComponentClass;
   private
     FServer: TIdHTTPWebBrokerBridge;
+    FOnParseAuthentication: TIdHTTPParseAuthenticationEvent;
     function BindPort(APort: Integer): Boolean;
     function CheckPort(APort: Integer): Integer;
     procedure SetServerPort(const AServer: TIdHTTPWebBrokerBridge; APort: Integer);
@@ -28,6 +29,8 @@ type
   protected
     function GetIsActive: Boolean; override;
     procedure AfterServerCreation; virtual;
+    property OnParseAuthentication: TIdHTTPParseAuthenticationEvent read FOnParseAuthentication
+      write FOnParseAuthentication;
   public
     procedure StartServer; override;
     procedure StopServer; override;
@@ -35,6 +38,11 @@ type
   public
     class property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
   end;
+
+  TJanuaWebBrokerServerClass = class of TJanuaWebBrokerServer;
+
+var
+  JanuaWebBrokerServerClass: TJanuaWebBrokerServerClass = TJanuaWebBrokerServer;
 
 implementation
 
@@ -95,6 +103,8 @@ begin
     LServer := TIdHTTPWebBrokerBridge.Create(nil);
     SetServerPort(LServer, GetPort);
     FServer := LServer;
+    if Assigned(OnParseAuthentication) then
+      FServer.OnParseAuthentication := OnParseAuthentication;
     AfterServerCreation;
   end
   else

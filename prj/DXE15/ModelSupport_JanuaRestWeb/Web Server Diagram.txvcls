@@ -28,6 +28,7 @@
       <reference referencedUin="delphi:e_field:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.FWebModuleClass" />
       <reference referencedUin="delphi:e_property:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.WebModuleClass" />
       <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.SetWebModuleClass(Janua.WebBroker.Server.TComponentClass)" />
+      <reference referencedUin="delphi:e_method:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer.AfterServerCreation()" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.@unitclass">
       <property name="$shortcutReference" value="true" />

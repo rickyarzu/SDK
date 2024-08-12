@@ -1,4 +1,4 @@
-unit Janua.Carservice.DMVC.WebModule;
+unit Janua.Carservice.DMVC.CoreWebModule;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   System.Classes,
   Web.HTTPApp,
   MVCFramework,
-  Janua.DMVC.CustomWebModule;
+  Janua.DMVC.WebBroker.WebModule;
 
 type
   TCarServiceWebModule = class(TJanuaDMVCCustomWebModule)
@@ -16,7 +16,6 @@ type
   private
 
   protected
-    FMVC: TMVCEngine;
     procedure AddControllers; override;
   public
     { Public declarations }
@@ -31,9 +30,9 @@ implementation
 
 uses
   Janua.System.DMVC.AuthCriteria,
-  Janua.System.DMVC.Srv,
+  Janua.System.DMVC.Session.Controller,
   Janua.Carservice.DMVC.JsonRPC,
-  Janua.Carservice.DMVC.Driver,
+  Janua.CarService.Driver.DMVCController,
 
   System.IOUtils,
   MVCFramework.Commons,
@@ -50,7 +49,6 @@ uses
 procedure TCarServiceWebModule.AddControllers;
 begin
   inherited;
-  // [MVCPath('/')] TPikappCustConfWWWController = class(TJanuaCustomDMVCSrvController)
   // [MVCPath('/driver')]  TCSDriverController
   FMVC.AddController(TCSDriverController);
 end;

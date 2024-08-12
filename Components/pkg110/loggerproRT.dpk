@@ -39,7 +39,6 @@ requires
 contains
   LoggerPro.ElasticSearchAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ElasticSearchAppender.pas',
   LoggerPro.EMailAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.EMailAppender.pas',
-  LoggerPro.FileAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas',
   LoggerPro.GlobalLogger in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.GlobalLogger.pas',
   LoggerPro.MemoryAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.MemoryAppender.pas',
   LoggerPro.NSQAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.NSQAppender.pas',
@@ -48,6 +47,9 @@ contains
   LoggerPro.RESTAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.RESTAppender.pas',
   LoggerPro.UDPSyslogAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.UDPSyslogAppender.pas',
   ThreadSafeQueueU in '..\..\..\lib\delphimvcframework\lib\loggerpro\ThreadSafeQueueU.pas',
-  LoggerPro.OutputDebugStringAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas';
+  LoggerPro.OutputDebugStringAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas',
+  LoggerPro.Renderers in '..\..\..\Lib\delphimvcframework\lib\loggerpro\LoggerPro.Renderers.pas',
+  LoggerPro.ConsoleAppender in '..\..\..\Lib\delphimvcframework\lib\loggerpro\LoggerPro.ConsoleAppender.pas',
+  LoggerPro.FileAppender in '..\..\..\Lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas';
 
 end.

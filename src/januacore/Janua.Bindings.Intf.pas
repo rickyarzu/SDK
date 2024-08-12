@@ -42,11 +42,8 @@ type
     function GetSelf: TObject;
     property AsObject: TObject read GetSelf;
 
-    { procedure AttachObserver(const aObserver: TObject; aProc: TProc);
-      procedure Detach(const aObserved: TObject); }
-
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
+      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput{, jbcEvaluate}]);
   end;
 
 

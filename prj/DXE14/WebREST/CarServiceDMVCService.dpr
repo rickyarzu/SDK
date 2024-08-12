@@ -13,13 +13,13 @@ uses
   Janua.Carservice.DMVC.JsonRPC in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas',
   Janua.Carservice.DMVC.WebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.WebModule.pas' {MyWebModule: TWebModule},
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
+  Janua.System.DMVC.Session.Controller in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Session.Controller.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
   Janua.DMVC.Test.PublicController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas',
   Janua.Carservice.DMVC.Application in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
   Janua.DMVC.UniDacApplication in '..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
-  Janua.CarService.DMVC.Driver in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
-  Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
+  Janua.CarService.Driver.DMVCController in '..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
+  Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
   Carservice.DMVC.WindowsService in '..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas' {PickappAPIService: TService};
 
 {$R *.RES}

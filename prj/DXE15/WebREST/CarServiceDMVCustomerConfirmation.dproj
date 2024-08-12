@@ -169,18 +169,19 @@
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.WebModule.pas">
             <Form>JanuaDMVCCustomWebModule</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Test.DMVC.www.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>

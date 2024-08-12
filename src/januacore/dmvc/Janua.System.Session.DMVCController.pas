@@ -1,4 +1,4 @@
-unit Janua.System.DMVC.Srv;
+unit Janua.System.Session.DMVCController;
 
 interface
 
@@ -17,7 +17,7 @@ uses
   // ViewModels
   Janua.ViewModels.Intf, Janua.System.ViewModel.Intf,
   // Janua.Libraries
-  Janua.DMVC.Srv.Template;
+  Janua.DMVC.Controller.Template;
 
 type
 
