@@ -17,20 +17,27 @@ type
   end;
 
 var
-  JanuaDMVCTestWebModule: TJanuaDMVCTestWebModule;
+  JanuaDMVCTestWebModuleClass: TComponentClass = TJanuaDMVCTestWebModule;
 
 implementation
 
 uses
-  Janua.DMVC.Test.PublicController,
-  Janua.DMVC.Test.PrivateController,
-  Janua.Test.Firedac.DMVC,
   Janua.System.DMVC.AuthCriteria,
+  // Test
+  // --Public
+  Janua.DMVC.Test.PublicController,
+  // -- Private
+  Janua.DMVC.Test.PrivateController,
+  // -- Firedac
+  Janua.Test.Firedac.DMVC,
+  // -- www
+  Janua.Test.DMVC.www,
   // CarService
-  // Driver
+  // --- Driver
   Janua.CarService.Driver.DMVCController,
   // System
-  Janua.System.DMVC.Session.Controller,
+  // --- Session
+  Janua.System.Session.DMVCController,
 
   System.IOUtils,
   MVCFramework.Commons,
@@ -56,10 +63,13 @@ begin
   FMVC.AddController(TPrivateController);
   // Firedac Testing - Janua.Test.Firedac.DMVC -- To Test Standard MVVM remote Record Controller
   FMVC.AddController(TFDacTestController);
+  // TTestWWWController
+  FMVC.AddController(TSystemSessionMVCController); // basic user/session information and authentication
+  // TTestWWWController
+  FMVC.AddController(TTestWWWController);
   { // [MVCPath('/driver')]  TCSDriverController
     FMVC.AddController(TCSDriverController); }
   // [MVCPath('/driver')]  TCSDriverController
-  FMVC.AddController(TSystemSessionMVCController); // basic user/session information and authentication
 end;
 
 end.

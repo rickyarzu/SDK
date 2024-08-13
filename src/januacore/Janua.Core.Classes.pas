@@ -1395,7 +1395,6 @@ var
 begin
   for lProperty in FBindedProperties do
     Notify(lProperty);
-
 end;
 
 procedure TJanuaBindManager.UnBind(const AProperty: string; const ABindToObject: TObject;
@@ -4147,7 +4146,8 @@ procedure TJanuaBindableObject.Bind(const AProperty: string; const ABindToObject
 const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
 begin
   try
-    BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
+    if Assigned(FBindManager) then
+      FBindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
   except
     on E: Exception do
       RaiseException('Bind', E, self);
@@ -4230,7 +4230,8 @@ const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: T
 begin
   try
 {$IFDEF DEBUG} Guard.CheckNotNull(ABindToObject, 'ABindToObject'); {$ENDIF}
-    BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
+    if Assigned(FBindManager) then
+      FBindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
   except
     on E: Exception do
       RaiseException('Bind', E, self);
@@ -4253,7 +4254,6 @@ destructor TJanuaInterfacedBindableObject.Destroy;
 begin
   try
     ClearBindings;
-    FBindManager := nil;
   except
     on E: Exception do
       RaiseException('Destroy', E, self);
@@ -4279,7 +4279,8 @@ end;
 
 procedure TJanuaInterfacedBindableObject.Notify(const Value: string);
 begin
-  BindManager.Notify(Value);
+  if Assigned(FBindManager) then
+    FBindManager.Notify(Value);
 end;
 
 procedure TJanuaInterfacedObject.SetAfterActivate(const Value: TProc);
@@ -4363,8 +4364,8 @@ const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: T
 begin
   if not(csDesigning in ComponentState) then
     try
-      Guard.CheckNotNull(BindManager, 'BindManager');
-      BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
+      if Assigned(FBindManager) then
+        FBindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
     except
       on E: Exception do
         RaiseException('Bind', E, self);
@@ -4475,8 +4476,8 @@ end;
 
 procedure TJanuaBindableComponent.Notify(const AProperty: string);
 begin
-  if notDesigning then
-    BindManager.Notify(AProperty);
+  if notDesigning and Assigned(FBindManager) then
+    FBindManager.Notify(AProperty);
 end;
 
 procedure TJanuaBindableComponent.SetLogProc(const Value: TMessageLogProc);
@@ -4594,7 +4595,8 @@ begin
   if FCaption <> Value then
   begin
     FCaption := Value;
-    BindManager.Notify('Caption');
+    if Assigned(FBindManager) then
+      FBindManager.Notify('Caption');
   end;
 end;
 
@@ -4635,7 +4637,8 @@ begin
   if FEnabled <> Value then
   begin
     FEnabled := Value;
-    BindManager.Notify('Enabled');
+    if Assigned(FBindManager) then
+      FBindManager.Notify('Enabled');
   end;
 end;
 
@@ -4654,14 +4657,16 @@ begin
       FDropDownList := nil;
 
     FHasDropDown := Value;
-    BindManager.Notify('HasDropDown');
+    if Assigned(FBindManager) then
+      FBindManager.Notify('HasDropDown');
   end;
 end;
 
 procedure TJanuaAction.SetImageIndex(const Value: TImageIndex);
 begin
   FImageIndex := Value;
-  BindManager.Notify('ImageIndex');
+  if Assigned(FBindManager) then
+    FBindManager.Notify('ImageIndex');
 end;
 
 procedure TJanuaAction.SetName(const Value: string);
@@ -5013,4 +5018,3 @@ except
 end;
 
 end.
-

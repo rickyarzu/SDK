@@ -143,7 +143,7 @@ begin
   AddControllers;
 
   var
-  lStaticFilePath := '';
+  lStaticFilePath := TJanuaCoreOS.GetAppHomePath;
 
   if TJanuaCoreOS.ReadParam('DMVC', 'UseJanuaPath', true) then
     lStaticFilePath := TJanuaCoreOS.GetAppWebFilesPath
@@ -151,7 +151,7 @@ begin
     TDirectory.CreateDirectory(TPath.Combine(ExtractFilePath(GetModuleName(HInstance)), 'www'));
 
   // The folder mapped as documentroot for TMVCStaticFilesMiddleware is the CoreOsWebFiles Path
-  FMVC.AddMiddleware(TMVCStaticFilesMiddleware.Create('/static', lStaticFilePath));
+  FMVC.AddMiddleware(TMVCStaticFilesMiddleware.Create('/htdocs', lStaticFilePath));
 
   // Trace middlewares produces a much detailed log for debug purposes
   if TJanuaCoreOS.ReadParam('DMVC', 'Trace', false) then

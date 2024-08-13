@@ -205,6 +205,7 @@
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
+        <None Include="ModelSupport_JanuaRestWeb\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

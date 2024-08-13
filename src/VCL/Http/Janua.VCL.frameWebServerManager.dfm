@@ -56,5 +56,6 @@ object JanuaframeWebServerManager: TJanuaframeWebServerManager
     Transparent = False
     BorderKind = scebFrame
     TabOrder = 2
+    OnChange = sedPortChange
   end
 end

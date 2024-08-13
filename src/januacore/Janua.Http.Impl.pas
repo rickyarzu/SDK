@@ -259,24 +259,6 @@ var
   end;
 
 begin
-  (*
-    LAction := (
-    procedure(aPair: TPair<string, TWebAction>)
-    var
-    LWebAction: TWebActionItem;
-    begin
-    LWebAction := aModule.Actions.Add;
-    // imposto tutte le azioni non come Default ..........................
-    LWebAction.Default := False;
-    LWebAction.Enabled := aPair.Value.Active;
-    LWebAction.MethodType := TMethodType.mtAny;
-    LWebAction.Name := aPair.Value.Name;
-    LWebAction.PathInfo := aPair.Value.PathInfo;
-    LWebAction.OnAction := aPair.Value.Action;
-    end);
-  *)
-  // self.FWebActions.ForEach(LAction);
-
   for LItem in FWebActions do
     AddAction(LItem.Value.Name, LItem.Value.PathInfo, LItem.Value.Action, LItem.Value.Active);
 

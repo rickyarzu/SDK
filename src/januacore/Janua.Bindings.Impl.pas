@@ -5,15 +5,16 @@ interface
 uses
   // RTL
   System.Classes, Spring.Collections, System.Bindings.Expression, System.Bindings.Helper,
-  System.Generics.Collections,
   // Janua
   Janua.Core.Commons, Janua.Core.Types, Janua.Bindings.Intf;
 
 type
 
-  TBindRecord = class(TInterfacedObject, IJanuaBindRecord)
+  TJanuaBindRecord = class(TInterfacedObject, IJanuaBindRecord)
   private
     FOwner: TObject;
+    [weak]
+    FBindManager: IJanuaBindManager;
   private
     FBindings: IDictionary<TObject, TBindingExpression>; // *** bindings
     function GetBindCount: Integer;
@@ -21,8 +22,8 @@ type
     property Bindings: IDictionary<TObject, TBindingExpression> read FBindings; // *** bindings
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-      { const AReadOnly: boolean = False; } const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
-      jbcEvaluate]);
+      const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput]);
+    // jbcEvaluate
     procedure ClearBindings;
     procedure RemoveBindings(const aObject: TObject);
   public
@@ -56,7 +57,7 @@ type
     FObjectBindings: IDictionary<TObject, IJanuaBindRecord>;
   protected
     /// <summary> Create a Binding Record according to Actual binding Framework </summary>
-    function GetBIndRecord(const aObject: TObject): IJanuaBindRecord;
+    function GeTJanuaBindRecord(const aObject: TObject): IJanuaBindRecord;
   public
     procedure Bind(const aObject: TObject; const AProperty: string; const ABindToObject: TObject;
       const ABindToProperty: string; { const aBidiRectional: boolean = False; } const AReadOnly
@@ -80,15 +81,26 @@ const
   JanuaCreateBindOptions: array [jbcNotifyOutput .. jbcEvaluate] of TBindings.TCreateOption = (coNotifyOutput,
     coEvaluate);
 
-  { TBindRecord }
+function lOwnerName(aOwner: TObject): string;
+begin
+  if Assigned(aOwner) then
+  begin
+    Result := aOwner.ClassName;
 
-procedure TBindRecord.Bind(const AProperty: string; const ABindToObject: TObject;
-  const ABindToProperty: string;
-  { const AReadOnly: boolean = False; }
-  const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
-var
-  lBindable: IJanuaBindable;
-  lBindableControl: IJanuaBindableControl;
+    if (aOwner is TComponent) then
+    begin
+      Result := Result + (aOwner as TComponent).Name + '.';
+      if Assigned((aOwner as TComponent).Owner) then
+        Result := (aOwner as TComponent).Owner.Name + '.' + Result;
+    end;
+  end;
+end;
+
+{ TJanuaBindRecord }
+
+procedure TJanuaBindRecord.Bind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput]);
+// jbcEvaluate
 
   function GetCreateOptions: TBindings.TCreateOptions;
   var
@@ -97,21 +109,6 @@ var
     Result := [];
     for LJanuaOption in ACreateOptions do
       Result := Result + [JanuaCreateBindOptions[LJanuaOption]];
-  end;
-
-  function lOwnerName: string;
-  begin
-    if Assigned(FOwner) then
-    begin
-      Result := FOwner.ClassName;
-
-      if (FOwner is TComponent) then
-      begin
-        Result := Result + (FOwner as TComponent).Name + '.';
-        if Assigned((FOwner as TComponent).Owner) then
-          Result := (FOwner as TComponent).Owner.Name + '.' + Result;
-      end;
-    end;
   end;
 
   function InternalErrorMessage(const aMessage: string): string;
@@ -125,8 +122,8 @@ var
         lComponentName := (ABindToObject as TComponent).Owner.Name + '.' + lComponentName;
     end;
 
-    Result := lOwnerName + '.' + AProperty + ' Bind Error Binding to ' + ABindToObject.ClassName + '.' +
-      lComponentName + ABindToProperty + sLineBreak + aMessage;
+    Result := lOwnerName(FOwner) + '.' + AProperty + ' Bind Error Binding to ' + ABindToObject.ClassName + '.'
+      + lComponentName + ABindToProperty + sLineBreak + aMessage;
   end;
 
 begin
@@ -136,34 +133,15 @@ begin
     and control have been created). The TBindings class in the System.Bindings.Helper unit provides utility
     functions to accomplish this. One of these is CreateManagedBinding. *)
   try
-    Guard.CheckNotNull(Self.FOwner, 'Owner');
+    Guard.CheckNotNull(FOwner, 'Owner');
 
     if not FBindings.ContainsKey(ABindToObject) then
     begin
-      if Supports(FOwner, IJanuaBindableControl, lBindableControl) then
-      begin
-        Guard.CheckNotNull(lBindableControl.BindManager, FOwner.ClassName + '.BindManager');
-        lBindableControl.BindManager.IncBindCount
-      end
-      else if Supports(FOwner, IJanuaBindable, lBindable) then
-      begin
-        Guard.CheckNotNull(lBindable.BindManager, FOwner.ClassName + '.BindManager');
-        lBindable.BindManager.IncBindCount
-      end
-      else if (FOwner is TJanuaCoreBindableObject) then
-      begin
-        Guard.CheckNotNull((FOwner as TJanuaCoreBindableObject).BindManager,
-          FOwner.ClassName + '.BindManager');
-        (FOwner as TJanuaCoreBindableObject).BindManager.IncBindCount
-      end
-      else
-        raise Exception.Create('Bind Engine IBindable not Supported: ' + lOwnerName);
+      FBindManager.IncBindCount;
 
       Guard.CheckNotNull(ABindToObject, InternalErrorMessage('ABindToObject is nil'));
       // From source to dest
-
       // 2020-01-25 Removed Bi-Directional Binding from Binding Record to simplify Clear Bindings Management.
-
       FBindings.Add(ABindToObject, TBindings.CreateManagedBinding(
         { inputs }
         [TBindings.CreateAssociationScope([Associate(FOwner, 'src')])], 'src.' + AProperty,
@@ -178,7 +156,7 @@ begin
   end;
 end;
 
-procedure TBindRecord.ClearBindings;
+procedure TJanuaBindRecord.ClearBindings;
 var
   i: Spring.Collections.TPair<TObject, TBindingExpression>;
   lBindObject: IJanuaBindable;
@@ -209,36 +187,44 @@ begin
   FBindings.Clear;
 end;
 
-constructor TBindRecord.Create(aOwner: TObject);
+constructor TJanuaBindRecord.Create(aOwner: TObject);
+var
+  lBindable: IJanuaBindable;
+  lBindableControl: IJanuaBindableControl;
 begin
   Create;
   Guard.CheckNotNull(aOwner, 'Bind Record Creation failed AOwner not set');
   FOwner := aOwner;
+
+  if Supports(FOwner, IJanuaBindableControl, lBindableControl { out valorizzata se è Bindable } ) then
+    FBindManager := lBindableControl.BindManager
+  else if Supports(FOwner, IJanuaBindable, lBindable) then
+    FBindManager := lBindable.BindManager
+  else if (FOwner is TJanuaCoreBindableObject) then
+    FBindManager := (FOwner as TJanuaCoreBindableObject).BindManager
+  else
+    raise Exception.Create('Bind Engine IBindable not Supported: ' + lOwnerName(FOwner));
+  Guard.CheckNotNull(FBindManager, FOwner.ClassName + '.BindManager');
 end;
 
-constructor TBindRecord.Create;
+constructor TJanuaBindRecord.Create;
 begin
   inherited;
   FBindings := Spring.Collections.TCollections.CreateDictionary<TObject, TBindingExpression>;
-  // IObjectList<TBindingExpression>
-  // TExpressionList.Create(False { AOwnsObjects } );
 end;
 
-destructor TBindRecord.Destroy;
+destructor TJanuaBindRecord.Destroy;
 begin
   ClearBindings;
   inherited;
 end;
 
-function TBindRecord.GetBindCount: Integer;
+function TJanuaBindRecord.GetBindCount: Integer;
 begin
-  if FBindings.Count < 255 then
-    Result := Byte(FBindings.Count)
-  else
-    Result := 255
+  Result := FBindings.Count
 end;
 
-procedure TBindRecord.RemoveBindings(const aObject: TObject);
+procedure TJanuaBindRecord.RemoveBindings(const aObject: TObject);
 var
   aBindingExpression: TBindingExpression;
   lBindObject: IJanuaBindable;
@@ -270,7 +256,7 @@ begin
 
   if not FObjectBindings.TryGetValue(aObject, lBindRecord) then
   begin
-    lBindRecord := TBindRecord.Create(aObject);
+    lBindRecord := TJanuaBindRecord.Create(aObject);
     FObjectBindings.Add(aObject, lBindRecord);
   end;
   lBindRecord.Bind(AProperty, ABindToObject, ABindToProperty, { AReadOnly, } ACreateOptions);
@@ -279,33 +265,35 @@ begin
   begin
     if not FObjectBindings.TryGetValue( { aObject } ABindToObject, lBindRecord) then
     begin
-      lBindRecord := TBindRecord.Create( { aObject } ABindToObject);
+      lBindRecord := TJanuaBindRecord.Create( { aObject } ABindToObject);
       FObjectBindings.Add(ABindToObject, lBindRecord);
     end;
     lBindRecord.Bind(ABindToProperty, aObject, AProperty, { AReadOnly, } ACreateOptions);
   end;
-
-  // StrTest2 := StrTest;
 end;
 
 procedure TJanuaBindings.ClearAllBindings;
 var
-  LOB: TPair<TObject, IJanuaBindRecord>;
+  LOB: Spring.Collections.TPair<TObject, IJanuaBindRecord>;
 begin
-
+  if Assigned(FObjectBindings) then
+    for LOB in FObjectBindings do
+      IJanuaBindRecord(LOB.Value).ClearBindings;
 end;
 
 procedure TJanuaBindings.ClearBindings(const aObject: TObject);
 var
   LOB: Spring.Collections.TPair<TObject, IJanuaBindRecord>;
 begin
-  GetBIndRecord(aObject).ClearBindings;
-  FObjectBindings.Remove(aObject);
+  if FObjectBindings.ContainsKey(aObject) then
+  begin
+    GeTJanuaBindRecord(aObject).ClearBindings;
+    FObjectBindings.Remove(aObject);
+  end;
 
   for LOB in FObjectBindings do
     LOB.Value.RemoveBindings(aObject);
 
-  // if Supports(aObject, IJanuaBindable, LB) then LB.DecBindCount;
 end;
 
 destructor TJanuaBindings.Destroy;
@@ -315,11 +303,11 @@ begin
   inherited;
 end;
 
-function TJanuaBindings.GetBIndRecord(const aObject: TObject): IJanuaBindRecord;
+function TJanuaBindings.GeTJanuaBindRecord(const aObject: TObject): IJanuaBindRecord;
 begin
   if not FObjectBindings.TryGetValue(aObject, Result) then
   begin
-    Result := TBindRecord.Create(aObject);
+    Result := TJanuaBindRecord.Create(aObject);
     FObjectBindings.Add(aObject, Result);
   end;
 end;

@@ -2003,10 +2003,13 @@ end;
 
 procedure TJanuaAnagDoctor.NotifyCouncil;
 begin
-  BindManager.Notify('Council');
-  BindManager.Notify('CouncilCode');
-  BindManager.Notify('CouncilID');
-  BindManager.Notify('CouncilIndex');
+  if Assigned(BindManager) then
+  begin
+    BindManager.Notify('Council');
+    BindManager.Notify('CouncilCode');
+    BindManager.Notify('CouncilID');
+    BindManager.Notify('CouncilIndex');
+  end;
 end;
 
 procedure TJanuaAnagDoctor.UpdateOrganization;
@@ -4919,7 +4922,7 @@ end;
 
 procedure TJanuaCustomHealthBooking.PrepareMailBooking(aTemplate: string);
 begin
-  FMailMessage.SetText(FBooking.AsHtml(aTemplate {FMailMessage.Text}));
+  FMailMessage.SetText(FBooking.AsHtml(aTemplate { FMailMessage.Text } ));
 end;
 
 function TJanuaCustomHealthBooking.SearchInstitutes(iItemID, iLimit: integer; aAddress: string;

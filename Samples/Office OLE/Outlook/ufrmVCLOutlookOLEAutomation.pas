@@ -11,7 +11,7 @@ uses
   Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
   Janua.Bindings.Intf, Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Buttons;
 
 type
   TfrmVCLOutlookOLEAutomation = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)

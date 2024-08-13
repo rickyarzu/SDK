@@ -1,4 +1,5 @@
 object TestWebModule: TTestWebModule
+  OnCreate = WebModuleCreate
   Actions = <
     item
       Default = True

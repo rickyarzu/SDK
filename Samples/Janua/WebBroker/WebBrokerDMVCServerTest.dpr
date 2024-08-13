@@ -17,8 +17,11 @@ uses
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
   Janua.DMVC.Test.PublicController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas',
-  Janua.CarService.Driver.DMVC.Controller in '..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVC.Controller.pas',
-  Janua.Test.DMVC.www in '..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas';
+  Janua.CarService.Driver.DMVCController in '..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
+  Janua.Test.DMVC.www in '..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas',
+  Janua.WebBroker.Server in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
+  uBindVCLInterposers in '..\..\Angelo\uBindVCLInterposers.pas',
+  uBindingEngineRTL in '..\..\Angelo\uBindingEngineRTL.pas';
 
 {$R *.res}
 
@@ -39,6 +42,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmVCLWebBrokerDMVCTest, frmVCLWebBrokerDMVCTest);
-  Application.CreateForm(TJanuaDMVCTestWebModule, JanuaDMVCTestWebModule);
   Application.Run;
 end.

@@ -9,9 +9,7 @@ uses System.SysUtils, Janua.Core.Types;
 Type
   TJanuaWebServer = class
   public
-    constructor Create; overload;
-    /// <summary> Create Class imposta la class Var FPort. Variabile 'unica' in tutta l'applicazione </summary>
-    class Constructor CreateClass;
+    constructor Create; overload; virtual;
   private
     FLogProc: TMessageLogProc;
   protected
@@ -47,11 +45,6 @@ uses Janua.Application.Framework;
 constructor TJanuaWebServer.Create;
 begin
   FLogProc := InternalLogProc;
-end;
-
-class constructor TJanuaWebServer.CreateClass;
-begin
-
 end;
 
 function TJanuaWebServer.GetIsActive: Boolean;

@@ -70,7 +70,6 @@ object frmVCLOutlookOLEAutomation: TfrmVCLOutlookOLEAutomation
     DataSource = UniDataSource1
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 2
-    ExplicitWidth = 790
   end
   object tbContacts: TVirtualTable
     Left = 440

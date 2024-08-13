@@ -168,6 +168,7 @@ begin
     StopServer(FServer);
     FServer.Free;
     FServer := nil;
+    WebRequestHandler.FreeModules;
   end;
   WriteArrow;
 end;

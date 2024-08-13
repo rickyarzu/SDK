@@ -1266,7 +1266,7 @@ end;
 procedure TJanuaSocketWebBroker.SetWebModule(const Value: TWebModule);
 begin
   FWebModule := Value;
-  if Assigned(FWebModule) and Assigned(self.JanuaProcedure) then
+  if Assigned(FWebModule) and Assigned(JanuaProcedure) then
   begin
     FWebAction := FWebModule.Actions.Add;
     FWebAction.Name := JanuaProcedure.FullName;

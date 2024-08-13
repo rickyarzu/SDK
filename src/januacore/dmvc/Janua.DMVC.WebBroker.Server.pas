@@ -24,8 +24,15 @@ type
     function CustomHandler(const Value: String; const Server: TIdHTTPWebBrokerBridge; out Handled: Boolean)
       : THandleCommandResult; virtual;
   public
-    constructor Create; overload;
+    constructor Create; override;
   end;
+
+  TJanuaDMVCWebBrokerServerClass = class of TJanuaDMVCServer;
+
+var
+  JanuaDMVCWebBrokerServerClass: TJanuaWebBrokerServerClass = TJanuaDMVCServer;
+
+
 
 implementation
 

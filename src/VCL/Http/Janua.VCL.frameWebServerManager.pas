@@ -17,6 +17,7 @@ type
     Label1: TLabel;
     procedure btnStartServerClick(Sender: TObject);
     procedure btnStopServerClick(Sender: TObject);
+    procedure sedPortChange(Sender: TObject);
   private
     FWebModuleClass: TComponentClass;
     FWebServer: TJanuaWebBrokerServer;
@@ -96,6 +97,12 @@ begin
   StopServer
 end;
 
+procedure TJanuaframeWebServerManager.sedPortChange(Sender: TObject);
+begin
+  if Assigned(FWebBrokerClass) and (sedPort.Value <> FWebBrokerClass.Port) then
+    sedPort.Value := FWebBrokerClass.Port
+end;
+
 procedure TJanuaframeWebServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
 begin
   FOnAfterStartServer := Value;
@@ -133,7 +140,10 @@ begin
   if Assigned(OnBeforeStartServer) then
     OnBeforeStartServer(Self);
   if Assigned(FWebBrokerClass) then
+  begin
     FWebBrokerClass.WebModuleClass := FWebModuleClass;
+    TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
+  end;
   FUrl := Format('http://localhost:%d', [sedPort.ValueAsInt]);
   FWebServer := TJanuaWebServerFactory.CreateWebServer as TJanuaWebBrokerServer;
   FWebServer.StartServer;

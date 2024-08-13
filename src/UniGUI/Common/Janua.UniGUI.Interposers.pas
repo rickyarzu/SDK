@@ -15,7 +15,6 @@ uses
 type
 
   [ObservableMember('Text')] { identifies the control value name for TUniObservableEdit }
-
   [ObservableMember('PasswordChar')]
   // PasswordChar
   TUniEdit = class(uniEdit.TUniEdit, IJanuaBindableControl, IJanuaBindableEditControl, IJanuaBindable)

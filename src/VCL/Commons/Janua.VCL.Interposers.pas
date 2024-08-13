@@ -145,7 +145,7 @@ type
     procedure Initialize; virtual;
     function GetSelf: TObject;
   public
-      procedure ClearBindings;
+    procedure ClearBindings;
     procedure BindToField(const aField: IJanuaField);
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
       const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
@@ -153,7 +153,6 @@ type
     property BindManager: IJanuaBindManager read GetBindManager;
     // ************************************* Bindings Procedures ***********************************
   end;
-
 
 type
   TJvValidateEdit = class(JvValidateEdit.TJvValidateEdit, IJanuaBindableControl, IJanuaBindableEditControl,
@@ -742,9 +741,9 @@ end;
 procedure TEdit.BindToField(const aField: IJanuaField);
 begin
   try
-    Self.Text := aField.AsString;
-    Self.Enabled := not(aField.Calculated or aField.IsReadOnly);
-    aField.Bind('AsString', Self, 'Text', aField.Calculated);
+    Text := aField.AsString;
+    Enabled := not(aField.Calculated or aField.IsReadOnly);
+    aField.Bind('AsString', Self, 'Text', aField.Calculated or aField.IsReadOnly);
   except
     on e: exception do
       RaiseException('BindToField(' + Self.Name + ', ' + aField.DBField + ')  AsString -> Text', e, Self);
@@ -806,8 +805,6 @@ end;
 
 function TEdit.GetBindManager: IJanuaBindManager;
 begin
-  { if not Assigned(FBindManager) then
-    FBindManager := TJanuabindManager.Create(Self); }
   Result := FBindManager
 end;
 

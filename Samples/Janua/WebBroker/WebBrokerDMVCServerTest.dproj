@@ -149,8 +149,11 @@
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVC.Controller.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas"/>
+        <DCCReference Include="..\..\Angelo\uBindVCLInterposers.pas"/>
+        <DCCReference Include="..\..\Angelo\uBindingEngineRTL.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
