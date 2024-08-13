@@ -266,7 +266,6 @@
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.Model.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\ViewModels\Janua.System.REST.ClientModel.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.CarService.Booking.ViewModel.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Impl.pas"/>

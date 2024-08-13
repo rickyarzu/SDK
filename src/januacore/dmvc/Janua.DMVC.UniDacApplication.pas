@@ -6,10 +6,6 @@ uses System.Classes, System.SysUtils, Janua.Core.Types, Janua.Uni.Application;
 
 type
   TJanuaDMVCUniDACApplication = class(TJanuaUniApplication)
-  private
-    class var FUniGUIPort: Smallint;
-  protected
-    class var FPgConf: TJanuaServerRecordConf;
   public
     /// <summary> Interface registration for VCL Forms </summary>
     class procedure RegisterForms; override;
@@ -19,7 +15,6 @@ type
     class procedure LoadMenu; override;
     class procedure Terminate; override;
     class procedure AfterLogin; override;
-  public
   end;
 
 implementation
@@ -44,11 +39,6 @@ class procedure TJanuaDMVCUniDACApplication.ApplicationSetup(const aAppname: str
 begin
   TJanuaApplication.CustomServer := True;
   inherited ApplicationSetup(aAppname);
-  // For REST Servers we must Read the listening default Port
-  TJanuacoreOS.ReadParam('RestServerApi', 'Port', 9010);
-  // Uso il Framework UniGUI il Framework TMS per la comunicazioni non lo uso ancora
-  // Per ultimo viene inizializzato il Model View View Model Framework che si 'appoggia' agli altri.
-  // Connects to TApplication.Terminate
   // This must come after Forms and After VCL MVVM Framework Initialization
   TJanuaCoreViewModelFramework.RegisterInterfaces;
 end;

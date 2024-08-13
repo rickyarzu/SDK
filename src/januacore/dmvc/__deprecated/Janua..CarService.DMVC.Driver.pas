@@ -1,10 +1,10 @@
-unit Janua.CarService.DMVC.Driver;
+unit Janua.CarService.Driver.DMVCController;
 
 interface
 
 uses
   MVCFramework, MVCFramework.Commons, MVCFramework.Serializer.Commons, Janua.Core.DB.Types,
-  Janua.DMVC.Srv.Template;
+  Janua.DMVC.Controller.Template;
 
 type
 

@@ -16,13 +16,48 @@ Classes, Generics.Collections;
 {$ENDIF}
 
 type
+{$IFNDEF MACOS}
+  TJWebBrowserSameSiteType = (jsstNone, jsstLax, jsstSameSite); // Lax means same-site and cross-site
+{$ENDIF}
+
+  TJWebBrowserCookie = record
+    Path: string;
+    Name: string;
+    Expires: TDateTime;
+    Domain: string;
+    Secure: Boolean;
+    HTTPOnly: Boolean;
+    Value: string;
+    Session: Boolean;
+{$IFNDEF MACOS}
+    SameSite: TJWebBrowserSameSiteType;
+{$ENDIF}
+  end;
+
+  TJWebBrowserCookies = record
+  private
+    function GetCount: Integer;
+  public
+    Draws: Tarray<TJWebBrowserCookie>;
+    Width: Single;
+    Heigth: Single;
+    Notes: string;
+    property Count: Integer read GetCount;
+  public
+    constructor Create(aWidth, aHeigth: Single);
+    procedure AddCookie(aCookie: TJWebBrowserCookie);
+    procedure Clear;
+    function Serialize: string;
+    procedure DeSerialize(const aJson: string);
+    function GetSiteCookies(aDomain, aPath: string): Tarray<TJWebBrowserCookie>;
+  end;
+
   // Main protocols on internet TCP/IP protocols ..............................
   TJanuaProtocol = (jptFtp, jptFtps, jptSCP, jptTcpIp, jptUdp, jptHttp, jtpHttps, jtpSMTP, jtpPOP, jtpIMAP,
     jptStop, jptStompSSL, jptNone);
 
   // Janua Http Socket
 
-type
   TJanuaHttpParamTypes = (jhtString, jhtStrings, jhtMultipart);
 
   TJanuaHttpMethod = (jhmAny, jhmGet, jhmPut, jhmPost, jhmHead, jhmDelete, jhmPatch, jhmTrace, jhmOptions,
@@ -699,6 +734,43 @@ begin
   Dest.FStatusDict.Add(504, 'Gateway Timeout');
   Dest.FStatusDict.Add(505, 'HTTPVersion Not Supported');
   Dest.FStatusDict.Add(507, 'Insufficient Storage');
+end;
+
+{ TJWebBrowserCookies }
+
+procedure TJWebBrowserCookies.AddCookie(aCookie: TJWebBrowserCookie);
+begin
+
+end;
+
+procedure TJWebBrowserCookies.Clear;
+begin
+
+end;
+
+constructor TJWebBrowserCookies.Create(aWidth, aHeigth: Single);
+begin
+
+end;
+
+procedure TJWebBrowserCookies.DeSerialize(const aJson: string);
+begin
+
+end;
+
+function TJWebBrowserCookies.GetCount: Integer;
+begin
+
+end;
+
+function TJWebBrowserCookies.GetSiteCookies(aDomain, aPath: string): Tarray<TJWebBrowserCookie>;
+begin
+
+end;
+
+function TJWebBrowserCookies.Serialize: string;
+begin
+
 end;
 
 initialization

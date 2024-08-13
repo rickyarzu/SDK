@@ -46,11 +46,9 @@ end;
 class procedure TJanuaWebBrokerUniDACApplication.ApplicationSetup(const aAppname: string);
 begin
   TJanuaApplication.CustomServer := True;
+  // The WebServerClass is not customized at 'Application' Level but at 'server' Level.
   TJanuaWebServerFactory.WebServerClass := TJanuaWebBrokerServer;
   inherited ApplicationSetup(aAppname);
-  // Uso il Framework UniGUI il Framework TMS per la comunicazioni non lo uso ancora
-  // Per ultimo viene inizializzato il Model View View Model Framework che si 'appoggia' agli altri.
-  // Connects to TApplication.Terminate
   // This must come after Forms and After VCL MVVM Framework Initialization
   TJanuaCoreViewModelFramework.RegisterInterfaces;
 end;

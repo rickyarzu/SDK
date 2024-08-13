@@ -630,7 +630,7 @@ begin
   Assert.IsNotNull(LDestination, 'LDestination is nil');
   Assert.AreEqual(LOrigin.Count, LDestination.Count);
   for i := 0 to Pred(LOrigin.Count) do
-    Assert.AreEqual(LOrigin.Items[i].Value, LDestination.Items[i].Value, 'LOrigin: ' + LOrigin.Items[i].Key +
+    Assert.IsTrue(LOrigin.Items[i].Value.Equals(LDestination.Items[i].Value) , 'LOrigin: ' + LOrigin.Items[i].Key +
       ' = ' + LOrigin.Items[i].AsString + ' Item <> LDestination: ' + LDestination.Items[i].Key + ' = ' +
       LDestination.Items[i].AsString);
 

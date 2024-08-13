@@ -1,4 +1,4 @@
-unit Janua.System.DMVC.Srv;
+unit Janua.System.DMVC.Session.Controller;
 
 interface
 
@@ -12,7 +12,7 @@ uses
   Janua.Orm.Dataset.Intf, Janua.Orm.Intf, Janua.Core.Classes.Intf,
   Janua.Bindings.Intf, Janua.ViewModels.Intf, Janua.Core.DB.Intf, JOrm.System.Settings.Intf,
   // Janua.Libraries
-  Janua.DMVC.Srv.Template, Janua.Core.Classes, Janua.Core.DB.Impl, Janua.Core.Types, Janua.Core.DB.Types;
+  Janua.DMVC.Controller.Template, Janua.Core.Classes, Janua.Core.DB.Impl, Janua.Core.Types, Janua.Core.DB.Types;
 
 type
 

@@ -480,8 +480,7 @@ begin
     FJanuaDocumentsModel.Activate;
     if not Supports(FJanuaDocumentsModel, IJanuaDBModel, Result) then
       raise Exception.Create
-        ('TJanuaDBDocumentsViewModel.CreateModel FJanuaDocumentsModel does not support IJanuaDBModel ');
-
+        ('CreateDBModel FJanuaDocumentsModel does not support IJanuaDBModel ');
 {$IFDEF JANUATEST}
     if TJanuaViewModelApplication.TryGetSearchViewModel(ISearchViewModelAnagraph, 13, lSVMTmp) then
       TJanuaViewModelApplication.GetSearchViewModel(ISearchViewModelAnagraph, 13, FSVMCarrier);
@@ -728,10 +727,13 @@ begin
 end;
 
 procedure TDocRowsViewModel.CreateModel;
+var
+  ltmpModel: IJanuaModel;
 begin
   inherited;
-  if not Supports(FRsDocRowsModel, IJanuaModel, FJanuaModel) then
-    raise Exception.Create('FDetailTestModel IJanuaModel not supported');
+  if not Supports(FRsDocRowsModel, IJanuaModel, ltmpModel) then
+    raise Exception.Create('TDocRowsViewModel IJanuaModel not supported');
+  SetModel(ltmpModel);
 end;
 
 function TDocRowsViewModel.GetDocRow: IDocRowView;

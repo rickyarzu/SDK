@@ -1,0 +1,657 @@
+object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
+  Left = 0
+  Top = 0
+  Margins.Left = 2
+  Margins.Top = 2
+  Margins.Right = 2
+  Margins.Bottom = 2
+  Caption = 'AdvWebBrowser Cookies Demo'
+  ClientHeight = 637
+  ClientWidth = 1011
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Icon.Data = {
+    0000010001002020000001002000A81000001600000028000000200000004000
+    0000010020000000000000100000640000006400000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00002A2A2A061F1F24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F
+    24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F
+    24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F24311F1F
+    24311F1F24311F1F24311F1F24311F1F24311F1F24312121262E000000000000
+    00001E1E1E21201F23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F
+    23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F
+    23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F23FF201F
+    23FF201F23FF201F23FF201F23FF201F23FF201F23FF232225EF000000000000
+    00001C1C1C09211E2144211E2144211E2144211E2144211E2144211E2144211E
+    2144211E2144211E2144211E2144211E2144211E2144211E2144211E2144211E
+    2144211E2144211E2144211E2144211E2144211E2144211E2144211E2144211E
+    2144211E2144211E2144211E2144211E2144212124A9232225EF000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000002321268A232225EF000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000002321268A232225EF000000000000
+    00000000000000000001242024462320256D242424310000000026262C282525
+    285825252A36000000000000000027272B402525285827272720000000000000
+    000028282C4B2525285826262614000000003F3F3F04222226422121256C2222
+    246122222E160000000000000000000000002321268A232225EF000000000000
+    00000000000021212492201F23FF201F23FF201F23FE2323274123202574201F
+    23FF201E239D0000000000000000212123B9201F23FF201E235D000000000000
+    0000212025DB201F23FF1E1E223B22222734212023DF201F23FF201F23FF201F
+    23FF212023EF2323283200000000000000002323264F24222884000000000000
+    00003333330F201F23FC201F23FF21212579212125963333330523202574201F
+    23FF201E239D0000000000000000212123B9201F23FF201E235D000000000000
+    0000212025DB201F23FF1E1E223B2A2A2A12202024C921212469252525292222
+    2575201F23FF212124A20000000000000000D4AA0006F0B40F11000000000000
+    00001E1E2621201F23FF212024F500000000000000000000000023202574201F
+    23FF201E239D0000000000000000212123B9201F23FF201E235D000000000000
+    0000212025DB201F23FF1E1E223B00000000000000002626261422222468211F
+    23D8201F23FF2120259E00000000E6A90015EFAE01E1EEAE00FCEEAC025D0000
+    00001E1E1E21201F23FF212024F500000000000000000000000023202574201F
+    23FF2020239F0000000000000000211F23B9201F23FF2020235E000000000000
+    0000212024DB201F23FF1E1E223B0000000024212663201F23F5201F23FF201F
+    23FF202024C3271F272000000000ECAE0346EFAE00FFEFAE00FFEEAD00A90000
+    00001E1E1E21201F23FF212024F500000000000000000000000023202574201F
+    23FF202024CB0000000100000000212023CF201F23FF2121248B000000002A2A
+    2A06201F24F0201F23FF2520253755555503201F23F6201F23FC232125822727
+    2727000000010000000000000000DF9F0008EEAE01AEEFAE01D3EDAB003A0000
+    00002422267D201F23FF201F23F92424286A2626294F0000000023202574201F
+    23FF201F23FF202024C2211F24AA201F23FF201F22F8201F23FC211F24A8211F
+    23C1201F23FF201F23F42727270D00000001201F23EA201F23F8211F23722220
+    257C212024D4271F272000000000000000000000000000000000000000000000
+    0000201F23FF201F23FF201F23FF201F23FF222125C00000000023202574201F
+    23FF1F1F23C8201F23E4201F23FF201F23ED2520253E21202596201F23FC201F
+    23FF201F23F32222255800000000000000002222254A201F23EA201F23FF201F
+    23FF212023DF2424283F00000000000000000000000000000000000000000000
+    00001E1E2333201F23FF212024F6242424151F1F1F10000000001919190A2424
+    24152727270D1F1F3F08251F25302727270D000000000000000022222E162424
+    24312A2A2A0C000000000000000000000000000000002A2A2A062121272D2626
+    2628000000020000000000000000000000000000000000000000000000000000
+    00001E1E1E21201F23FF212024F5000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00001919330A2323264F2424284C000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnShow = FormShow
+  TextHeight = 15
+  object Splitter1: TSplitter
+    Left = 473
+    Top = 0
+    Width = 13
+    Height = 637
+    Align = alRight
+    MinSize = 20
+    ExplicitLeft = 425
+    ExplicitHeight = 571
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 473
+    Height = 637
+    Align = alClient
+    Caption = 'Panel1'
+    TabOrder = 0
+    ExplicitWidth = 425
+    ExplicitHeight = 571
+    DesignSize = (
+      473
+      637)
+    object AdvWebBrowser1: TAdvWebBrowser
+      Left = 16
+      Top = 44
+      Width = 435
+      Height = 588
+      ParentDoubleBuffered = False
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      DoubleBuffered = True
+      TabOrder = 0
+      OnInitialized = AdvWebBrowser1Initialized
+      OnNavigateComplete = AdvWebBrowser1NavigateComplete
+      Settings.EnableContextMenu = True
+      Settings.EnableShowDebugConsole = True
+      Settings.EnableAcceleratorKeys = True
+      Settings.AllowExternalDrop = True
+      Settings.UsePopupMenuAsContextMenu = False
+      OnGetCookies = AdvWebBrowser1GetCookies
+      ExplicitWidth = 387
+      ExplicitHeight = 522
+    end
+    object NavigateBtn: TButton
+      Left = 376
+      Top = 16
+      Width = 75
+      Height = 22
+      Anchors = [akTop, akRight]
+      Caption = 'Navigate'
+      TabOrder = 1
+      OnClick = NavigateBtnClick
+      ExplicitLeft = 328
+    end
+    object URLEdit: TEdit
+      Left = 16
+      Top = 16
+      Width = 353
+      Height = 23
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 2
+      Text = 'https://calendar.google.com/calendar/u/1/r'
+      ExplicitWidth = 305
+    end
+  end
+  object pnlCookies: TPanel
+    Left = 486
+    Top = 0
+    Width = 525
+    Height = 637
+    Align = alRight
+    TabOrder = 1
+    ExplicitLeft = 438
+    ExplicitHeight = 571
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 1
+      Width = 523
+      Height = 635
+      ActivePage = tabSerialization
+      Align = alClient
+      TabOrder = 0
+      ExplicitHeight = 569
+      object tabCookiesDashboard: TTabSheet
+        Caption = 'Cookies'
+        DesignSize = (
+          515
+          605)
+        object Label1: TLabel
+          Left = 25
+          Top = 18
+          Width = 45
+          Height = 15
+          Caption = 'Cookies:'
+        end
+        object Label2: TLabel
+          Left = 24
+          Top = 363
+          Width = 35
+          Height = 15
+          Anchors = [akLeft, akBottom]
+          Caption = 'Name:'
+        end
+        object Label3: TLabel
+          Left = 24
+          Top = 392
+          Width = 45
+          Height = 15
+          Anchors = [akLeft, akBottom]
+          Caption = 'Domain:'
+        end
+        object Label4: TLabel
+          Left = 24
+          Top = 423
+          Width = 27
+          Height = 15
+          Anchors = [akLeft, akBottom]
+          Caption = 'Path:'
+        end
+        object Label5: TLabel
+          Left = 24
+          Top = 449
+          Width = 31
+          Height = 15
+          Anchors = [akLeft, akBottom]
+          Caption = 'Value:'
+        end
+        object Label6: TLabel
+          Left = 24
+          Top = 480
+          Width = 40
+          Height = 15
+          Anchors = [akLeft, akBottom]
+          Caption = 'Expires:'
+        end
+        object GetCookiesBtn: TButton
+          Left = 344
+          Top = 16
+          Width = 168
+          Height = 22
+          Anchors = [akTop, akRight]
+          Caption = 'Refresh Cookies'
+          TabOrder = 0
+          OnClick = GetCookiesBtnClick
+        end
+        object CookieGrid: TStringGrid
+          Left = 19
+          Top = 45
+          Width = 493
+          Height = 300
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          DefaultColWidth = 125
+          FixedCols = 0
+          RowCount = 8
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goFixedRowDefAlign]
+          TabOrder = 1
+          OnSelectCell = CookieGridSelectCell
+          ExplicitHeight = 234
+          ColWidths = (
+            125
+            125
+            125
+            125
+            125)
+        end
+        object NameEdit: TEdit
+          Left = 116
+          Top = 361
+          Width = 396
+          Height = 23
+          Anchors = [akLeft, akRight, akBottom]
+          TabOrder = 2
+          ExplicitTop = 295
+        end
+        object DomainEdit: TEdit
+          Left = 116
+          Top = 390
+          Width = 396
+          Height = 23
+          Anchors = [akLeft, akRight, akBottom]
+          TabOrder = 3
+          ExplicitTop = 324
+        end
+        object PathEdit: TEdit
+          Left = 116
+          Top = 419
+          Width = 396
+          Height = 23
+          Anchors = [akLeft, akRight, akBottom]
+          TabOrder = 4
+          ExplicitTop = 353
+        end
+        object ValueEdit: TEdit
+          Left = 116
+          Top = 447
+          Width = 396
+          Height = 23
+          Anchors = [akLeft, akRight, akBottom]
+          TabOrder = 5
+          ExplicitTop = 381
+        end
+        object ExpiresDate: TDateTimePicker
+          Left = 116
+          Top = 476
+          Width = 396
+          Height = 23
+          Anchors = [akLeft, akRight, akBottom]
+          Date = 45044.000000000000000000
+          Time = 0.452469861113058900
+          Kind = dtkDateTime
+          TabOrder = 6
+          ExplicitTop = 410
+        end
+        object AddCookieBtn: TButton
+          Left = 19
+          Top = 510
+          Width = 493
+          Height = 26
+          Anchors = [akLeft, akRight, akBottom]
+          Caption = 'Add or Update Cookie'
+          TabOrder = 7
+          OnClick = AddCookieBtnClick
+          ExplicitTop = 444
+        end
+        object DeleteCookieBtn: TButton
+          Left = 19
+          Top = 542
+          Width = 493
+          Height = 26
+          Anchors = [akLeft, akRight, akBottom]
+          Caption = 'Delete Cookie'
+          TabOrder = 8
+          OnClick = DeleteCookieBtnClick
+          ExplicitTop = 476
+        end
+        object DeleteAllCookiesBtn: TButton
+          Left = 19
+          Top = 574
+          Width = 493
+          Height = 26
+          Anchors = [akLeft, akRight, akBottom]
+          Caption = 'Delete All Cookies'
+          TabOrder = 9
+          OnClick = DeleteAllCookiesBtnClick
+          ExplicitTop = 508
+        end
+      end
+      object tabSerialization: TTabSheet
+        Caption = 'Json Serialization'
+        ImageIndex = 1
+        object pnlSerialization: TPanel
+          Left = 0
+          Top = 0
+          Width = 515
+          Height = 49
+          Align = alTop
+          TabOrder = 0
+          object btnSerizalize: TButton
+            Left = 1
+            Top = 1
+            Width = 128
+            Height = 47
+            Align = alLeft
+            Caption = 'Serialize'
+            TabOrder = 0
+            OnClick = btnSerizalizeClick
+            ExplicitTop = -4
+          end
+          object btnDeserizalize: TButton
+            Left = 129
+            Top = 1
+            Width = 128
+            Height = 47
+            Align = alLeft
+            Caption = 'Deserialize'
+            TabOrder = 1
+            OnClick = btnDeserizalizeClick
+            ExplicitLeft = 135
+            ExplicitTop = -4
+          end
+        end
+        object AdvMemo1: TAdvMemo
+          Left = 0
+          Top = 49
+          Width = 515
+          Height = 556
+          Cursor = crIBeam
+          ActiveLineSettings.ShowActiveLine = False
+          ActiveLineSettings.ShowActiveLineIndicator = False
+          Align = alClient
+          AutoCompletion.Font.Charset = DEFAULT_CHARSET
+          AutoCompletion.Font.Color = clWindowText
+          AutoCompletion.Font.Height = -12
+          AutoCompletion.Font.Name = 'Segoe UI'
+          AutoCompletion.Font.Style = []
+          AutoCompletion.StartToken = '(.'
+          AutoCorrect.Active = True
+          AutoHintParameterPosition = hpBelowCode
+          BookmarkGlyph.Data = {
+            36050000424D3605000000000000360400002800000010000000100000000100
+            0800000000000001000000000000000000000001000000000000000000000000
+            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+            A6000020400000206000002080000020A0000020C0000020E000004000000040
+            20000040400000406000004080000040A0000040C0000040E000006000000060
+            20000060400000606000006080000060A0000060C0000060E000008000000080
+            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+            20004000400040006000400080004000A0004000C0004000E000402000004020
+            20004020400040206000402080004020A0004020C0004020E000404000004040
+            20004040400040406000404080004040A0004040C0004040E000406000004060
+            20004060400040606000406080004060A0004060C0004060E000408000004080
+            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+            20008000400080006000800080008000A0008000C0008000E000802000008020
+            20008020400080206000802080008020A0008020C0008020E000804000008040
+            20008040400080406000804080008040A0008040C0008040E000806000008060
+            20008060400080606000806080008060A0008060C0008060E000808000008080
+            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+            2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+            2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+            B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+            B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+            BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+            BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+            25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+          BorderColor = 10724259
+          BorderStyle = bsSingle
+          ClipboardFormats = [cfText]
+          CodeFolding.Enabled = False
+          CodeFolding.LineColor = clGray
+          Ctl3D = False
+          DelErase = True
+          EnhancedHomeKey = False
+          Gutter.Font.Charset = DEFAULT_CHARSET
+          Gutter.Font.Color = clWindowText
+          Gutter.Font.Height = -13
+          Gutter.Font.Name = 'Courier New'
+          Gutter.Font.Style = []
+          Gutter.BorderColor = 10724259
+          Gutter.GutterColor = clWhite
+          Gutter.LineNumberTextColor = 3881787
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'COURIER NEW'
+          Font.Style = []
+          HiddenCaret = False
+          Lines.Strings = (
+            '')
+          MarkerList.UseDefaultMarkerImageIndex = False
+          MarkerList.DefaultMarkerImageIndex = -1
+          MarkerList.ImageTransparentColor = -1
+          OleDropTarget = []
+          PrintOptions.MarginLeft = 0
+          PrintOptions.MarginRight = 0
+          PrintOptions.MarginTop = 0
+          PrintOptions.MarginBottom = 0
+          PrintOptions.PageNr = False
+          PrintOptions.PrintLineNumbers = False
+          RightMarginColor = 14869218
+          ScrollHint = False
+          SelColor = clWhite
+          SelBkColor = clNavy
+          ShowRightMargin = True
+          SmartTabs = False
+          SyntaxStyles = AdvJSONMemoStyler1
+          TabOrder = 1
+          TabStop = True
+          TrimTrailingSpaces = False
+          UILanguage.ScrollHint = 'Row'
+          UILanguage.Undo = 'Undo'
+          UILanguage.Redo = 'Redo'
+          UILanguage.Copy = 'Copy'
+          UILanguage.Cut = 'Cut'
+          UILanguage.Paste = 'Paste'
+          UILanguage.Delete = 'Delete'
+          UILanguage.SelectAll = 'Select All'
+          UrlStyle.TextColor = clBlue
+          UrlStyle.BkColor = clWhite
+          UrlStyle.Style = [fsUnderline]
+          UseStyler = True
+          Version = '3.9.1.1'
+          WordWrap = wwNone
+          ExplicitLeft = 248
+          ExplicitTop = 136
+          ExplicitWidth = 350
+          ExplicitHeight = 250
+        end
+      end
+    end
+  end
+  object AdvJSONMemoStyler1: TAdvJSONMemoStyler
+    CommentStyle.TextColor = clNavy
+    CommentStyle.BkColor = clWhite
+    CommentStyle.Style = [fsItalic]
+    NumberStyle.TextColor = clFuchsia
+    NumberStyle.BkColor = clWhite
+    NumberStyle.Style = [fsBold]
+    HighlightStyle.TextColor = clWhite
+    HighlightStyle.BkColor = clRed
+    HighlightStyle.Style = [fsBold]
+    AllStyles = <
+      item
+        KeyWords.Strings = (
+          'NULL'
+          'TRUE'
+          'FALSE')
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGreen
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = [fsBold]
+        BGColor = clWhite
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'JSON Standard Default'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clWhite
+        StyleType = stBracket
+        BracketStart = #39
+        BracketEnd = #39
+        Info = 'Simple Quote'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clWhite
+        StyleType = stBracket
+        BracketStart = '"'
+        BracketEnd = '"'
+        Info = 'Double Quote'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clWhite
+        StyleType = stSymbol
+        BracketStart = #0
+        BracketEnd = #0
+        Symbols = ',:(){}[]='
+        Info = 'Symbols'
+      end>
+    HintParameter.TextColor = clBlack
+    HintParameter.BkColor = clInfoBk
+    HintParameter.HintCharStart = '('
+    HintParameter.HintCharEnd = ')'
+    HintParameter.HintCharDelimiter = ';'
+    HintParameter.HintClassDelimiter = '.'
+    HintParameter.HintCharWriteDelimiter = ','
+    HexIdentifier = '0x'
+    Description = 'JSON'
+    Filter = 'JSON Files (*.json)|*.json'
+    DefaultExtension = '.json'
+    StylerName = 'JSON'
+    Extensions = 'json'
+    RegionDefinitions = <
+      item
+        Identifier = '{'
+        RegionStart = '{'
+        RegionEnd = '}'
+        RegionType = rtClosed
+        ShowComments = False
+      end>
+    Left = 643
+    Top = 147
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 651
+    Top = 211
+  end
+end

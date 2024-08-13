@@ -193,8 +193,8 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.REST.Client.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Session.Controller.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.UnitTest.DMVCFramework.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.REST.Test.LoginClient.pas"/>
@@ -221,7 +221,7 @@
         <DCCReference Include="..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.MVVM.CarService.Booking.pas"/>
         <DCCReference Include="..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.MVVM.Carservice.Drivers.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Carservice.Driver.UnitTest.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.System.Session.UnitTest.pas"/>
         <BuildConfiguration Include="Base">

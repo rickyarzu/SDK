@@ -66,7 +66,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     LookupField = 'CAP'
     LookupDisplay = 'CAP'
     LookupSource = dsCAP
-    TabOrder = 1
+    TabOrder = 0
     OnCloseUp = ChangeFilter
   end
   object DBCtrlGrid1: TDBCtrlGrid
@@ -78,8 +78,9 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     DataSource = dsReportsPlanner
     PanelHeight = 94
     PanelWidth = 376
-    TabOrder = 4
+    TabOrder = 3
     RowCount = 7
+    SelectedColor = clAntiquewhite
     object pnlInterventi: TPanel
       Left = 0
       Top = 74
@@ -241,6 +242,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
+        OnDblClick = DBText1DblClick
         object DBText1: TDBText
           AlignWithMargins = True
           Left = 3
@@ -250,6 +252,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
           Align = alTop
           DataField = 'DESCRIZIONE_SCHEDA'
           DataSource = dsReportsPlanner
+          OnDblClick = DBText1DblClick
           ExplicitLeft = 6
         end
         object DBText3: TDBText
@@ -261,6 +264,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
           Align = alTop
           DataField = 'calcIndirizzo'
           DataSource = dsReportsPlanner
+          OnDblClick = DBText1DblClick
         end
         object DBText8: TDBText
           AlignWithMargins = True
@@ -283,13 +287,13 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
         DataField = 'calcImage'
         DataSource = dsReportsPlanner
         TabOrder = 1
-        OnClick = btnImageClick
+        OnMouseDown = btnImageMouseDown
       end
     end
   end
   object DBPlanner1: TDBPlanner
-    Left = 472
-    Top = 107
+    Left = 407
+    Top = 104
     Width = 388
     Height = 660
     AttachementGlyph.Data = {
@@ -506,6 +510,8 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
+    OnDragOver = DBPlanner1DragOver
+    OnDragDrop = DBPlanner1DragDrop
     ItemSource = DBDaySource1
     TMSStyle = 0
   end
@@ -521,7 +527,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 7
+    TabOrder = 6
   end
   object btnDeleteMeeting: TButton
     Left = 866
@@ -535,40 +541,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
-    TabOrder = 9
-  end
-  object btnAdd: TButton
-    Left = 416
-    Top = 264
-    Width = 36
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = '>'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clGreen
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 10
-    StyleElements = [seClient, seBorder]
-    OnClick = btnAddClick
-  end
-  object btnRemove: TButton
-    Left = 416
-    Top = 312
-    Width = 36
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = '<'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clRed
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 0
-    StyleElements = [seClient, seBorder]
+    TabOrder = 8
   end
   object grpStato: TRadioGroup
     Left = 383
@@ -585,7 +558,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
       'Pronti'
       'Generati'
       'N. Ass.')
-    TabOrder = 2
+    TabOrder = 1
     OnClick = ChangeFilter
   end
   object ckbCAP: TCheckBox
@@ -594,7 +567,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Width = 18
     Height = 17
     Anchors = [akTop, akRight]
-    TabOrder = 5
+    TabOrder = 4
     OnClick = ChangeFilter
   end
   object ckbActivities: TCheckBox
@@ -603,7 +576,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Width = 18
     Height = 17
     Anchors = [akTop, akRight]
-    TabOrder = 6
+    TabOrder = 5
     OnClick = ChangeFilter
   end
   object CalendarDate: TDateTimePicker
@@ -614,7 +587,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Anchors = [akTop, akRight]
     Date = 45481.000000000000000000
     Time = 0.538943368053878700
-    TabOrder = 8
+    TabOrder = 7
     OnChange = CalendarDateChange
   end
   object cboTecnici: TJvDBLookupCombo
@@ -627,7 +600,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     LookupField = 'RESPONSABILE'
     LookupDisplay = 'NOME_TECNICO'
     LookupSource = dsTechnicians
-    TabOrder = 11
+    TabOrder = 9
     OnChange = cboTecniciChange
   end
   object cboCustomers: TJvDBLookupCombo
@@ -639,7 +612,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     LookupField = 'CHIAVE'
     LookupDisplay = 'DESCRIZIONE_SCHEDA'
     LookupSource = dsCustomers
-    TabOrder = 12
+    TabOrder = 10
     OnClick = ChangeFilter
   end
   object btnOk: TButton
@@ -650,7 +623,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Anchors = [akRight, akBottom]
     Caption = 'Ok'
     ModalResult = 1
-    TabOrder = 13
+    TabOrder = 11
   end
   object btnCancel: TButton
     Left = 943
@@ -660,7 +633,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Anchors = [akRight, akBottom]
     Caption = 'Annulla'
     ModalResult = 2
-    TabOrder = 14
+    TabOrder = 12
   end
   object Memo1: TMemo
     Left = 866
@@ -670,7 +643,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Anchors = [akTop, akRight]
     Lines.Strings = (
       'Memo1')
-    TabOrder = 15
+    TabOrder = 13
   end
   object grdDateTime: TGroupBox
     Left = 866
@@ -679,7 +652,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Height = 145
     Anchors = [akTop, akRight]
     Caption = 'Data ed Ora di Calendario'
-    TabOrder = 16
+    TabOrder = 14
     object lbDateFrom: TLabel
       Left = 16
       Top = 34
@@ -889,7 +862,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     ImageName = 'search'
     Images = dmVCLPhoenixPlannerController.SVGIconImageList48
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 15
     StyleElements = [seClient, seBorder]
     OnClick = btnSearchClick
   end
@@ -905,7 +878,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 18
+    TabOrder = 16
     OnClick = btnPrevDayClick
   end
   object btnNextDay: TButton
@@ -920,7 +893,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 19
+    TabOrder = 17
     OnClick = btnNextDayClick
   end
   object CRDBGrid1: TCRDBGrid
@@ -930,7 +903,7 @@ object dlgVCLPhoenixPlannerEvent: TdlgVCLPhoenixPlannerEvent
     Height = 206
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = dsCalendar
-    TabOrder = 20
+    TabOrder = 18
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

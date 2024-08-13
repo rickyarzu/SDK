@@ -91,7 +91,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;unidac280;dac280;crcontrols280;SVGIconImageList;SVGIconPackage;gtDocEng;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VisualStyles;JanuaVCLControls;VCLThemeSelector;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;unidac280;dac280;crcontrols280;SVGIconImageList;SVGIconPackage;gtDocEng;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VisualStyles;JanuaVCLControls;VCLThemeSelector;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -99,7 +99,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;SVGIconImageList;SVGIconPackage;JanuaMVVM;VisualStyles;JanuaVCLControls;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;vclie;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;TMSVCLUIPackPkg;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;JanuaCoreComponents;JanuaCore;SVGIconImageList;SVGIconPackage;JanuaMVVM;VisualStyles;JanuaVCLControls;officeXPrt;DCLgtQRExp;crcontrols290;QRWRunDXE12_W64;TMSVCLUIPackPkgDXE15;dacvcl290;unidacvcl290;IndyIPServer;StyleControls;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
@@ -165,8 +165,11 @@
         <DCCReference Include="JanuaUniDACComponents.dcp"/>
         <DCCReference Include="JanuaCoreComponents.dcp"/>
         <DCCReference Include="JanuaVCLControls.dcp"/>
+        <DCCReference Include="JanuaRestWeb.dcp"/>
         <DCCReference Include="dacvcl290.dcp"/>
         <DCCReference Include="unidacvcl290.dcp"/>
+        <DCCReference Include="IndyIPServer.dcp"/>
+        <DCCReference Include="StyleControls.dcp"/>
         <DCCReference Include="..\..\src\JanuaLegacy\ufrmAttesa.pas">
             <Form>frmAttesa</Form>
         </DCCReference>
@@ -209,6 +212,11 @@
         <DCCReference Include="..\..\src\VCL\Janua.VCL.Register.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frameCRDBGrid.pas">
             <Form>frameVCLCRDBGrid</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas">
+            <Form>JanuaframeWebServerManager</Form>
+            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">

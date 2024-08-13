@@ -1,4 +1,4 @@
-unit Janua.DMVC.Srv.Template;
+unit Janua.DMVC.Controller.Template;
 
 interface
 
@@ -34,6 +34,10 @@ type
     class var FReadProcs: TList<String>;
     class var FWriteRoles: TList<String>;
     class var FReadRoles: TList<String>;
+  public
+    [MVCPath]
+    [MVCHTTPMethod([httpGET])]
+    procedure Index; virtual;
   protected
     function GenerateMessage(const aCode, aMessage: string): string;
     class procedure AddReadWriteRole(const aRole: string);
@@ -41,10 +45,11 @@ type
     class procedure AddReadRole(const aRole: string);
     /// <summary>Grants Read grants Read based on the input of the Roles from the dmvc auth criteria</summary>
     class function GrantRead(const aRole: TList<String>): boolean;
+    /// <summary>Grants write grants Read based on the input of the Roles from the dmvc auth criteria</summary>
     class function GrantWrite(const aRole: TList<String>): boolean;
     /// <summary>Adds a Proc to Write protected procedures List to be checked with Authenticate</summary>
     class procedure AddWriteProc(const aProc: string);
-    /// <summary></summary>
+    /// <summary>Adds a Proc to Read protected procedures List to be checked with Authenticate</summary>
     class procedure AddReadProc(const aProc: string);
   end;
 
@@ -66,10 +71,6 @@ type
   protected
     property Model: IJanuaServerDBModel read GetModel write SetModel;
   public
-    [MVCPath]
-    [MVCHTTPMethod([httpGET])]
-    procedure Index; virtual;
-
     [MVCPath('/liveness')]
     [MVCHTTPMethod([httpGET])]
     /// <summary> Liveness works like a ping to check if the Service is 'alive and running' </summary>
@@ -164,16 +165,6 @@ begin
     Context.Response.StatusCode := HTTP_STATUS.NotFound;
     Render(GenerateMessage('Record not Found', 'J001'));
   end;
-end;
-
-procedure TJanuaCustomDMVCSrvController.Index;
-begin
-  { we are going to produce simple text.
-    let's inform the client about the format
-    of the body response format }
-  ContentType := TMVCMediaType.TEXT_PLAIN;
-  { Render a simple string }
-  Render('It Works!')
 end;
 
 procedure TJanuaCustomDMVCSrvController.Liveness;
@@ -321,6 +312,16 @@ begin
   for lRole in aRole do
     Result := Result or FWriteRoles.Contains(lRole.ToLower);
 
+end;
+
+procedure TCustomMVVMSrvController.Index;
+begin
+  { we are going to produce simple text.
+    let's inform the client about the format
+    of the body response format }
+  ContentType := TMVCMediaType.TEXT_PLAIN;
+  { Render a simple string }
+  Render('It Works!')
 end;
 
 end.

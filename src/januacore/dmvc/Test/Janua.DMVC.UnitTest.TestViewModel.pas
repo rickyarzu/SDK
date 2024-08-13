@@ -39,7 +39,7 @@ procedure TestRESTModelClient.aCreateClient;
 var
   lRestModel: IJanuaRemoteTestModel;
 begin
-  // TJanuaRestTestModel = class(TJanuaRESTModelTemplate, IJanuaRemoteTestModel)
+  // TJanuaRestTestModel = class(TJanuaRESTDataModelTemplate, IJanuaRemoteTestModel)
   lRestModel := TJanuaRestTestModel.Create;
 end;
 

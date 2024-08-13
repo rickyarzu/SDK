@@ -167,59 +167,44 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas">
-            <Form>CarServiceCustConfWebModule</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TWebModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Carservice.DMVC.WebModule.pas">
-            <Form>CarServiceWebModule</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TWebModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Cloud.DMVC.FileUpload.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas">
-            <Form>JanuaDMVCCustomWebModule</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TWebModule</DesignClass>
-        </DCCReference>
+        <DCCReference Include="dmvcframeworkRT.dcp"/>
+        <DCCReference Include="DECCipher.dcp"/>
+        <DCCReference Include="Neon.dcp"/>
+        <DCCReference Include="Spring.Base.dcp"/>
+        <DCCReference Include="loggerproRT.dcp"/>
+        <DCCReference Include="SwagDoc.dcp"/>
+        <DCCReference Include="FireDACCommon.dcp"/>
+        <DCCReference Include="FireDACCommonDriver.dcp"/>
+        <DCCReference Include="FireDAC.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="IndyCore.dcp"/>
+        <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndySystem.dcp"/>
+        <DCCReference Include="inet.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="soaprtl.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="IndyIPServer.dcp"/>
+        <DCCReference Include="JanuaCoreThirdParty.dcp"/>
+        <DCCReference Include="JanuaCore.dcp"/>
+        <DCCReference Include="JanuaMVVM.dcp"/>
+        <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="dac290.dcp"/>
+        <DCCReference Include="unidac290.dcp"/>
+        <DCCReference Include="pgprovider290.dcp"/>
+        <DCCReference Include="JanuaUnidacComponentsD.dcp"/>
+        <DCCReference Include="JanuaUnidac.dcp"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Sytem.DMVC.Client.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.UniDACApplication.pas"/>
         <DCCReference Include="..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas"/>
-        <None Include="ModelSupport_JanuaRestWeb\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaRestWeb\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\DMVC\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Cloud\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\System\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Test\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\CarService\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Sytem\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\WebBroker\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Web Server Diagram.txvcls"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Carservice\DMVC\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Carservice\DMVC\Application\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Carservice\DMVC\WebModule\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\CarService\DMVC\www\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\CarService\DMVC\www\CustConf\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\CarService\DMVC\Driver\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\DMVC\CustomWebModule\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\DMVC\Srv\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\DMVC\UniDacApplication\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\System\DMVC\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\System\DMVC\Srv\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Cloud\DMVC\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\Cloud\DMVC\FileUpload\default.txvpck"/>
-        <None Include="ModelSupport_JanuaRestWeb\Janua\WebBroker\Server\default.txvpck"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

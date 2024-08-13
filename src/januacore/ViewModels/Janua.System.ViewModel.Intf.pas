@@ -274,7 +274,7 @@ type
     property CurrentRecord: IUserProfile read GetCurrentRecord write SetCurrentRecord;
   end;
 
-  IJanuaSystemUserSessionViewModel = interface(IJanuaBaseViewModel)
+  IJanuaSystemUserSessionViewModel = interface(IJanuaDataViewModel)
     ['{A14A507B-40A8-4F6E-B116-F6F4E812DF5F}']
     function GetSystemUserSessionModel: IJanuaSystemUserSessionModel;
     procedure SetSystemUserSessionModel(const Value: IJanuaSystemUserSessionModel);

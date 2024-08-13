@@ -51,7 +51,8 @@ uses
   Janua.Framework.JormGenerator.Firebird in '..\..\..\src\januaunidac\datamodules\Janua.Framework.JormGenerator.Firebird.pas' {dmPgFrameworkJormGenerator1: TDataModule},
   uJanuaDevIDEProject in 'uJanuaDevIDEProject.pas',
   uCarServiceProject_x86_64 in 'uCarServiceProject_x86_64.pas',
-  Janua.VCL.Cloud.frmImportOSMaps in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmImportOSMaps.pas' {frmVCLImportOSMaps};
+  Janua.VCL.Cloud.frmImportOSMaps in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmImportOSMaps.pas' {frmVCLImportOSMaps},
+  Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame};
 
 {$R *.res}
 
@@ -88,7 +89,6 @@ begin
   begin
     TCarServiceProjectApplication.LoadMenu;
     Application.CreateForm(TfrmCarserviceMain, frmCarserviceMain);
-  Application.CreateForm(TfrmVCLImportOSMaps, frmVCLImportOSMaps);
   Application.Run;
   end
   else

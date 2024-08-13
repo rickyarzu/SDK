@@ -86,7 +86,7 @@ begin
   *)
 
   (*
-    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TAuthCriteria.Create, lConfigClaims,
+    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TJanuaAuthCriteria.Create, lConfigClaims,
     'ergomercator_secret', '/login', [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
   *)
 

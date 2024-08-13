@@ -13,7 +13,7 @@ uses
 
 type
   TJanuaSystemRestUserSessionModel = class(TJanuaRestModelTemplate, IJanuaClientModel,
-    IJanuaRemoteSystemUserSessionModel)
+    IJanuaSystemUserSessionModel, IJanuaRemoteSystemUserSessionModel)
   public
     Constructor Create; override;
     Destructor Destroy; override;
@@ -338,6 +338,9 @@ end;
 
 function TJanuaSystemRestUserSessionModel.login: Boolean;
 begin
+  FRESTClientLogin.ServerPort := TJanuaApplication.RestClientConf.Port;
+  FRESTClientLogin.ServerURL := TJanuaApplication.RestClientConf.Server;
+  FRESTClientLogin.APIUrl := TJanuaApplication.RestClientConf.LoginResource;
 
 end;
 
@@ -353,7 +356,7 @@ end;
 
 procedure TJanuaSystemRestUserSessionModel.LogOut;
 begin
-  TJanuaApplication.RESTClientConf.JWT := '';
+  TJanuaApplication.RestClientConf.JWT := '';
 end;
 
 procedure TJanuaSystemRestUserSessionModel.OpenUserProfile;

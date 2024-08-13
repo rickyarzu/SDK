@@ -32,9 +32,9 @@ uses
   Janua.System.DMVC.AuthCriteria,
   // CarService
   // Driver
-  Janua.CarService.DMVC.Driver,
+  Janua.CarService.Driver.DMVCController,
   // System
-  Janua.System.DMVC.Srv,
+  Janua.System.DMVC.Session.Controller,
 
   System.IOUtils,
   MVCFramework.Commons,
@@ -96,7 +96,7 @@ lConfigClaims:
       JWT.Claims.NotBefore := Now - EncodeTime(0, 5, 0, 0);
     end;
 
-  FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TAuthCriteria.Create, lConfigClaims,
+  FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TJanuaAuthCriteria.Create, lConfigClaims,
     'ergomercator_secret', '/login', [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
 
   // Analytics middleware generates a csv log, useful to do trafic analysis

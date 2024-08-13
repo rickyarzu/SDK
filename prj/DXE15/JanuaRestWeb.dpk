@@ -28,24 +28,6 @@ package JanuaRestWeb;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-contains
-  Janua.Carservice.DMVC.Application in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
-  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule},
-  Janua.CarService.DMVC.Driver in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
-  Janua.Carservice.DMVC.JsonRPC in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.JsonRPC.pas',
-  Janua.Carservice.DMVC.WebModule in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.WebModule.pas' {CarServiceWebModule: TWebModule},
-  Janua.CarService.DMVC.www.CustConf in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas',
-  Janua.Cloud.DMVC.FileUpload in '..\..\src\januacore\dmvc\Janua.Cloud.DMVC.FileUpload.pas',
-  Janua.DMVC.CustomWebModule in '..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas' {JanuaDMVCCustomWebModule: TWebModule},
-  Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
-  Janua.DMVC.Srv.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Janua.DMVC.UniDacApplication in '..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
-  Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
-  Janua.Sytem.DMVC.Client in '..\..\src\januacore\dmvc\Janua.Sytem.DMVC.Client.pas',
-  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
-  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
-
 requires
   dmvcframeworkRT,
   DECCipher,
@@ -69,17 +51,25 @@ requires
   IndyIPServer,
   JanuaCoreThirdParty,
   JanuaCore,
-  JanuaMVVM;
+  JanuaMVVM,
+  dsnap,
+  dac290,
+  unidac290,
+  pgprovider290,
+  JanuaUnidacComponentsD,
+  JanuaUnidac;
 
 contains
   Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas',
-  Janua.Carservice.DMVC.Application in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
   Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.DMVC.Srv.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Janua.CarService.DMVC.Driver in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
-  Janua.System.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
-  Janua.Test.DMVC.Srv in '..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas',
-  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas';
+  Janua.DMVC.Controller.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
+  Janua.DMVC.UniDACApplication in '..\..\src\januacore\dmvc\Janua.DMVC.UniDACApplication.pas',
+  Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
+  Janua.DMVC.WebBroker.Server in '..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas',
+  Janua.CarService.Driver.DMVCController in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
+  Janua.System.Session.DMVCController in '..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas';
+
+// IdHTTPWebBrokerBridge,
 
 end.

@@ -13,8 +13,8 @@ uses
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLForm, VCL.Buttons, Vcl.Grids, Vcl.DBGrids, CRGrid,
-  Vcl.Menus;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLForm, VCL.Buttons, VCL.Grids, VCL.DBGrids, CRGrid,
+  VCL.Menus;
 
 type
   TdlgVCLPhoenixPlannerEvent = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
@@ -32,10 +32,8 @@ type
     DBText5: TDBText;
     Label4: TLabel;
     DBText6: TDBText;
-    btnAdd: TButton;
     Label5: TLabel;
     DBText7: TDBText;
-    btnRemove: TButton;
     dsCustomers: TUniDataSource;
     dsTechnicians: TUniDataSource;
     dsCAP: TUniDataSource;
@@ -86,7 +84,6 @@ type
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure btnImageClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
@@ -96,6 +93,11 @@ type
     procedure btnAddClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure cboTecniciChange(Sender: TObject);
+    procedure btnImageMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer; State: TDragState;
+      var Accept: Boolean);
+    procedure DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
+    procedure DBText1DblClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -103,6 +105,8 @@ type
     ItemImageField: TField;
     // Fields.FieldByName('CAPTION')
     ItemCaptionField: TField;
+
+    FID: Integer;
 
     ItemIDField: TField;
     FreportID: Integer;
@@ -132,7 +136,7 @@ begin
   var
   aDate := CalendarDate.Date;
   aDay := 1 + IfThen(aDay = 1, 1, 0);
-  //aDay := 1;
+  // aDay := 1;
   CalendarDate.Date := aDate - aDay;
   CalendarDateChange(Self);
 end;
@@ -142,22 +146,15 @@ begin
   dmVCLPhoenixPlannerController.AddTechEvent
 end;
 
-procedure TdlgVCLPhoenixPlannerEvent.btnImageClick(Sender: TObject);
-var
-  ADialog: TDLG_STATINO;
+procedure TdlgVCLPhoenixPlannerEvent.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
 begin
-  ADialog := TDLG_STATINO.Create(Nil);
-  try
-    ADialog.Init(TFiBConfig.QRY_GENERIC, dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger);
-    if ADialog.ShowModal = mrOK then
+  if Button = mbLeft then { drag only if left button pressed }
+    with Sender as TDBImage do { treat Sender as TFileListBox }
     begin
-      ADialog.NodoStatino.Registra(spsRegistra);
-      // FStatinoModificato := True;
+      BeginDrag(False); { if so, drag it }
+      FID := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
     end;
-  finally
-    ADialog.Free;
-  end;
-
 end;
 
 procedure TdlgVCLPhoenixPlannerEvent.btnSearchClick(Sender: TObject);
@@ -245,6 +242,35 @@ begin
     ItemImageField.AsInteger := Item.ImageID;
 end;
 
+procedure TdlgVCLPhoenixPlannerEvent.DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
+begin
+  if FID = dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger then
+    btnAddClick(Sender);
+end;
+
+procedure TdlgVCLPhoenixPlannerEvent.DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer;
+  State: TDragState; var Accept: Boolean);
+begin
+  Accept := (Source is TDBImage);
+end;
+
+procedure TdlgVCLPhoenixPlannerEvent.DBText1DblClick(Sender: TObject);
+var
+  ADialog: TDLG_STATINO;
+begin
+  ADialog := TDLG_STATINO.Create(Nil);
+  try
+    ADialog.Init(TFiBConfig.QRY_GENERIC, dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger);
+    if ADialog.ShowModal = mrOK then
+    begin
+      ADialog.NodoStatino.Registra(spsRegistra);
+      // FStatinoModificato := True;
+    end;
+  finally
+    ADialog.Free;
+  end;
+end;
+
 procedure TdlgVCLPhoenixPlannerEvent.Filter;
 var
   lFilter: TRecordFilter;
@@ -277,7 +303,7 @@ begin
   // Fields.FieldByName('CAPTION')
   ItemCaptionField := nil;
 
-  ItemIDField :=  dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
+  ItemIDField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
 end;
 
 procedure TdlgVCLPhoenixPlannerEvent.FormShow(Sender: TObject);

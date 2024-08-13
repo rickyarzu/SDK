@@ -33,8 +33,6 @@ inherited frmMDIRibbonToolbar: TfrmMDIRibbonToolbar
   inherited pgcApplicationArea: TPageControl
     Width = 776
     Height = 597
-    ExplicitLeft = 206
-    ExplicitTop = 45
     ExplicitWidth = 776
     ExplicitHeight = 597
   end

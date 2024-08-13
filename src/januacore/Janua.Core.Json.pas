@@ -46,7 +46,7 @@ function JsonPretty(aJson: string): string; overload;
 function JsonPretty(aJson: TJSONValue): string; overload;
 
 function ToJsonFree(aJson: TJsonObject): string; overload;
-function TJsonFree(aJson: TJSONValue): string; overload;
+function ToJsonFree(aJson: TJSONValue): string; overload;
 function ToJsonPrettyFree(aJson: TJSONValue): string; overload;
 function ToJsonPrettyFree(aJson: TJsonObject): string; overload;
 
@@ -261,7 +261,7 @@ begin
   end;
 end;
 
-function TJsonFree(aJson: TJSONValue): string; overload;
+function ToJsonFree(aJson: TJSONValue): string; overload;
 begin
   try
     Result := aJson.ToJSON

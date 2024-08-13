@@ -1,4 +1,4 @@
-unit Janua.DMVC.CustomWebModule;
+unit Janua.DMVC.WebBroker.WebModule;
 
 interface
 
@@ -9,18 +9,20 @@ uses
   MVCFramework;
 
 type
+  /// <summary> This is the model from DMVC WebModule with authentication </summary>
   TJanuaDMVCCustomWebModule = class(TWebModule)
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
   private
-    function GetSessionTimeOut: integer;
-    procedure SetSessionTimeOut(const Value: integer);
+    FSessionTimeOut: Integer;
+    function GetSessionTimeOut: Integer;
+    procedure SetSessionTimeOut(const Value: Integer);
   protected
     FMVC: TMVCEngine;
     procedure AddControllers; virtual;
   public
     { Public declarations }
-
+    property SessionTimeOut: Integer read GetSessionTimeOut write SetSessionTimeOut;
   end;
 
 var
@@ -50,6 +52,7 @@ procedure TJanuaDMVCCustomWebModule.AddControllers;
 begin
   if TJanuaCoreOS.ReadParam('DMVC', 'UseJWT', true) then
   begin
+    // Claims define the behaviour of JWT such as expiration time and Issuer (a Standard in JanuaProject)
     var
   lConfigClaims:
     TJWTClaimsSetup := procedure(const JWT: TJWT)
@@ -58,13 +61,31 @@ begin
         JWT.Claims.ExpirationTime := Now + EncodeTime(1, 0, 0, 0); // One hour
         JWT.Claims.NotBefore := Now - EncodeTime(0, 5, 0, 0); // 5 minuti (fa)?
       end;
+    // Note one thing: Login that is Autehntication Middleware follows different Rules compared to
+    // 'standar' Januaproject Login procedures. That is it does not pass a Json with all session and
+    // user configuration but a JWT with User role, schema and id instead.
+    // Detailed user infos need to be requested using the token and usually are then stored in the Client
     var
     vLoginURI := TJanuaCoreOS.ReadParam('DMVC', 'LoginURI', '/login');
-    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TAuthCriteria.Create, lConfigClaims,
+    // Note: Janua.System.DMVC.AuthCriteria is the unit for TJanuaAuthCriteria
+    FMVC.AddMiddleware(TMVCJWTAuthenticationMiddleware.Create(TJanuaAuthCriteria.Create, lConfigClaims,
       'ergomercator_secret', vLoginURI, [TJWTCheckableClaim.ExpirationTime, TJWTCheckableClaim.NotBefore]));
   end;
+
+  // Analytics middleware generates a csv log, useful to do trafic analysis
+  if TJanuaCoreOS.ReadParam('DMVC', 'Analytics', false) then
+    FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
 end;
 
+function TJanuaDMVCCustomWebModule.GetSessionTimeOut: Integer;
+begin
+
+end;
+
+procedure TJanuaDMVCCustomWebModule.SetSessionTimeOut(const Value: Integer);
+begin
+
+end;
 
 procedure TJanuaDMVCCustomWebModule.WebModuleCreate(Sender: TObject);
 begin
@@ -73,7 +94,7 @@ begin
     begin
       // session timeout (0 means session cookie)
       var
-      vKey := TMVCConfigKey.SessionTimeout;
+      vKey := TMVCConfigKey.SessionTimeOut;
       Config[vKey] := TJanuaCoreOS.ReadParam('DMVC', vKey, '0');
 
       // default content-type
@@ -118,10 +139,6 @@ begin
       vValue := IntToStr(TJanuaCoreOS.ReadParam('DMVC', vKey, TMVCConstants.DEFAULT_MAX_REQUEST_SIZE));
       Config[vKey] := vValue;
     end);
-
-  // Analytics middleware generates a csv log, useful to do trafic analysis
-  if TJanuaCoreOS.ReadParam('DMVC', 'Analytics', false) then
-    FMVC.AddMiddleware(TMVCAnalyticsMiddleware.Create(GetAnalyticsDefaultLogger));
 
   AddControllers;
 
