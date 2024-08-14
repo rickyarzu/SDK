@@ -67,7 +67,7 @@ type
     function ConfirmBooking(const aJGUID: TGUID): Boolean;
   end;
 
-  IJanuaCSDriversRestModel = interface(IJanuaRESTModel)
+  IJanuaCSDriversRestModel = interface(IJanuaDataRESTModel)
     ['{825160CA-3E5B-4EA4-A01A-0BBF3C352C5B}']
     function GetjdsCalendar: IJanuaDBDataset;
     property jdsCalendar: IJanuaDBDataset read GetjdsCalendar;

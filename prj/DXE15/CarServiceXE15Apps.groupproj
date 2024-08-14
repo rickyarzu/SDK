@@ -3,18 +3,6 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\sbridge.dproj">
             <Dependencies/>
         </Projects>
@@ -254,42 +242,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="FMXTMSFNCCorePkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCCorePkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCCorePkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCCloudPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCUIPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FMXTMSFNCWXPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj" Targets="Make"/>
-    </Target>
     <Target Name="sbridge">
         <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
     </Target>
@@ -984,13 +936,13 @@
         <MSBuild Projects="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="FMXTMSFNCCorePkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FMXTMSFNCCorePkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -1083,18 +1035,6 @@
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
@@ -1324,12 +1264,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -1462,12 +1396,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1569,18 +1497,6 @@
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1810,12 +1726,6 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
@@ -1950,12 +1860,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2058,18 +1962,6 @@
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
@@ -2300,12 +2192,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -2438,12 +2324,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2524,10 +2404,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
+        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
+            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
@@ -2542,22 +2422,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
-            <ProjectGuid>{F9165F55-DDB9-4549-8CDE-1D66CF0E3464}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\TmsTwilio.dproj">
             <ProjectGuid>{C2741F11-6423-4488-900D-E6A8EA8B7EC6}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
@@ -2788,12 +2656,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2926,12 +2788,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3033,18 +2889,6 @@
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3276,12 +3120,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -3411,12 +3249,6 @@
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3524,18 +3356,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3764,12 +3584,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -3899,12 +3713,6 @@
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4012,18 +3820,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4252,12 +4048,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -4390,12 +4180,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4497,18 +4281,6 @@
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4740,12 +4512,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -4878,12 +4644,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4985,18 +4745,6 @@
         <BuildGroupProject Include="VCL\CarServiceBackOffice.dproj">
             <ProjectGuid>{FA3BB887-4E64-4830-93BC-F37C832DC2D3}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5228,12 +4976,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -5363,12 +5105,6 @@
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5476,18 +5212,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCorePkg.dproj">
-            <ProjectGuid>{4AC8998C-546B-43D0-88A5-821AB5E7020E}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCUIPackPkg.dproj">
-            <ProjectGuid>{6B9D28BF-2316-454E-A9EF-C4DAD6EA0A5D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -5716,12 +5440,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{7B668533-7906-4B59-BA9C-09FA9CB5FE13}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="WebREST\RESTDebuggerClient.dproj">
             <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
             <Configurations/>
@@ -5851,12 +5569,6 @@
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\FMXTMSFNCWXPackPkg.dproj">
-            <ProjectGuid>{E6207379-98E8-4349-B176-E5797CCFA4DB}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

@@ -25,7 +25,7 @@ uses System.Types, System.StrUtils,
   // Janua Janua.VCL.Anagraph
   Janua.Anagraph.ViewModel.Intf,
   // Sms/Mail Framework
-  Janua.TMS.Cloud.Mail.VCL, Janua.Carservice.impl, Janua.TMS.SMS,
+  Janua.TMS.Cloud.Mail.VCL, Janua.Carservice.impl,
   // Test.VCL
   Janua.Test.ViewModel.Intf,
   // Janua Core & DB

@@ -9,10 +9,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Spring.Collections, System.Json, System.Types, System.UITypes,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, Vcl.ComCtrls,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, Vcl.ComCtrls;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf;
 
 type
   TJanuaVCLFormModel = class(TForm, IJanuaForm, IJanuaContainer, IJanuaControl, IJanuaBindable)

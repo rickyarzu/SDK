@@ -13,8 +13,6 @@ Type
     /// <summary> Create Class imposta la class Var FPort. Variabile 'unica' in tutta l'applicazione </summary>
     class Constructor CreateClass;
   private
-    class var FPort: Integer;
-  private
     FLogProc: TMessageLogProc;
   protected
     /// <summary> GetIsActive va impostata nella classe figlia in quanto connessa al WebServer sottostante </summary>
@@ -53,7 +51,7 @@ end;
 
 class constructor TJanuaWebServer.CreateClass;
 begin
-  FPort := 0;
+
 end;
 
 function TJanuaWebServer.GetIsActive: Boolean;
@@ -63,11 +61,11 @@ end;
 
 class function TJanuaWebServer.GetPort(aDefault: Integer): Integer;
 begin
-  if FPort = 0 then
-    FPort := TJanuacoreOS.ReadParam('WebBroker', 'Port', aDefault);
-  Result := FPort;
+  if TJanuaApplication.RestServerConf.Port = 0 then
+    TJanuaApplication.RestServerConf.Port := TJanuacoreOS.ReadParam('RestServer', 'Port', aDefault);
+  Result := TJanuaApplication.RestServerConf.Port;
   var
-  lLogMessage := 'Default port: ' + IntToStr(FPort);
+  lLogMessage := 'Default port: ' + IntToStr(TJanuaApplication.RestServerConf.Port);
   if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
     Writeln(lLogMessage);
   TJanuaLogger.LogMessage('GetPort', lLogMessage, nil);
@@ -75,9 +73,9 @@ end;
 
 class function TJanuaWebServer.GetPort: Integer;
 begin
-  if FPort = 0 then
-    FPort := TJanuacoreOS.ReadParam('WebBroker', 'Port', 8084);
-  Result := FPort;
+  if TJanuaApplication.RestServerConf.Port = 0 then
+    TJanuaApplication.RestServerConf.Port := TJanuacoreOS.ReadParam('RestServer', 'Port', 8084);
+  Result := TJanuaApplication.RestServerConf.Port;
 end;
 
 procedure TJanuaWebServer.InternalLogProc(aProcName, aLogMessage: string; aObject: TObject);
@@ -94,9 +92,9 @@ end;
 
 class procedure TJanuaWebServer.SetPort(const Value: Integer);
 begin
-  if FPort <> Value then
+  if TJanuaApplication.RestServerConf.Port <> Value then
   begin
-    FPort := Value;
+    TJanuaApplication.RestServerConf.Port := Value;
     TJanuacoreOS.WriteParam('WebBroker', 'Port', Value);
   end;
 end;

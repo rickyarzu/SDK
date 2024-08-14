@@ -32,8 +32,8 @@ uses
   Janua.DMVC.Test.WebModule in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.WebModule.pas' {MyWebModule: TWebModule},
   Janua.REST.Client in '..\..\..\src\januacore\dmvc\Janua.REST.Client.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
+  Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
+  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas',
   Janua.DMVC.UnitTest.DMVCFramework in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.UnitTest.DMVCFramework.pas',
   Janua.Rest.TestClasses in '..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas',
   Janua.REST.Test.LoginClient in '..\..\..\src\januacore\dmvc\Test\Janua.REST.Test.LoginClient.pas',
@@ -91,7 +91,6 @@ begin
       // end;
     end;
   FServer := TIdHTTPWebBrokerBridge.Create(nil);
-  FServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
   FServer.DefaultPort := TJanuaApplication.RESTClientConf.Port;
   { more info about MaxConnections
     http://www.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=TIdCustomTCPServer_MaxConnections.html }
@@ -103,6 +102,7 @@ begin
   FServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
   FServer.Active := True;
 end;
+
 procedure StopHttpServer;
 begin
   if Assigned(FServer) then
@@ -111,6 +111,7 @@ begin
     FServer.Free;
   end;
 end;
+
 function RestLogin: Boolean;
 var
   lClient: TTestLoginClient;
@@ -131,6 +132,7 @@ begin
     end;
   end;
 end;
+
 begin
   try
     TJanuaUniTestApplication.ApplicationSetup('test.mvvm.unidac.local');

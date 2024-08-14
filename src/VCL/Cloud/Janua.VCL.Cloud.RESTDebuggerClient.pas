@@ -117,13 +117,16 @@ procedure TFrmMain.btnMultipartFormDataPostClick(Sender: TObject);
 var
   LStream: TMemoryStream;
   LResponse: IResponse;
+  LRequest: IRequest;
 begin
   LStream := TMemoryStream.Create;
   try
     imgMultipartFormDataStream.Picture.SaveToStream(LStream);
-    LResponse := TRequest.New.BaseURL(edtMultipartFormDataBaseURL.Text)
-      .AddField('text', edtMultipartFormDataText.Text).AddFile('file', lblMultipartFormDataFile.Caption)
-      .AddFile('stream', LStream).Post;
+    LRequest := TRequest.New.BaseURL(edtMultipartFormDataBaseURL.Text);
+    LRequest.AddParam('text', edtMultipartFormDataText.Text)
+      .AddParam('file', lblMultipartFormDataFile.Caption);
+    {LRequest.AddParam('stream', LStream);}
+    LResponse := LRequest.Post;
   finally
     LStream.Free;
   end;
@@ -141,8 +144,8 @@ begin
   try
     imgMultipartFormDataStream.Picture.SaveToStream(LStream);
     LResponse := TRequest.New.BaseURL(edtMultipartFormDataBaseURL.Text)
-      .AddField('text', edtMultipartFormDataText.Text).AddFile('file', lblMultipartFormDataFile.Caption)
-      .AddFile('stream', LStream).Put;
+      .AddParam('text', edtMultipartFormDataText.Text).AddParam('file', lblMultipartFormDataFile.Caption)
+      {.AddParam('stream', LStream)}.Put;
   finally
     LStream.Free;
   end;

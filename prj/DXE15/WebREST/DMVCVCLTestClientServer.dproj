@@ -158,8 +158,8 @@
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.REST.Client.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
         <DCCReference Include="..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.dmPgParams.pas">
             <Form>dmPgTestParams</Form>
             <FormType>dfm</FormType>

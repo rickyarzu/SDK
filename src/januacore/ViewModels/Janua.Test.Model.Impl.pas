@@ -49,7 +49,7 @@ type
     Constructor Create(aSubRecordset: IJanuaTestSubRecordSet); overload;
   end;
 
-  TJanuaRestTestModel = class(TJanuaRESTModelTemplate, IJanuaRemoteTestModel)
+  TJanuaRestTestModel = class(TJanuaRESTDataModelTemplate, IJanuaRemoteTestModel)
   public
     constructor Create; override;
     destructor Destroy; override;

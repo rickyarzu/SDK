@@ -3,7 +3,7 @@ unit Janua.DMVC.Test.PrivateController;
 interface
 
 uses
-  MVCFramework, MVCFramework.Commons, Janua.DMVC.Srv.Template;
+  MVCFramework, MVCFramework.Commons, Janua.DMVC.Controller.Template;
 
 type
 

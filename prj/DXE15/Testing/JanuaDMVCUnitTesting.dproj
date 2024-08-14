@@ -195,8 +195,8 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.REST.Client.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.UnitTest.DMVCFramework.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.REST.Test.LoginClient.pas"/>
@@ -1151,6 +1151,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

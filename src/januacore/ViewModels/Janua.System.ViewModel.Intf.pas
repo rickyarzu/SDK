@@ -101,14 +101,30 @@ type
     ['{264ED184-1127-4BE3-AA88-2759B2DF0E36}']
     // qryUserProfile
     function GetjdsUserProfile: IJanuaDBDataset;
+    /// <summary> Selected User's profile.  </summary>
     property jdsUserProfile: IJanuaDBDataset read GetjdsUserProfile;
-    // qryUserProfile
+    // <summary> Selected User's Record Dataset.  </summary>
     function GetjdsUser: IJanuaDBDataset;
     property jdsUser: IJanuaDBDataset read GetjdsUser;
 
     function GetUserProfileRecord: IUserProfile;
+    // <summary> Selected User's Profile and User Record with Anagraph Record.  </summary>
     property UserProfileRecord: IUserProfile read GetUserProfileRecord;
 
+    function GetjdsUsers: IJanuaDBDataset;
+    // <summary> Lists all Users belonging to a specific user's group  </summary>
+    property jdsUsers: IJanuaDBDataset read GetjdsUsers;
+
+    function GetAnagraphProfile: IAnagraphView;
+    /// <summary> Retrieves user's anagraph profile, this profile is managed by Anagraph Model </summary>
+    property AnagraphProfile: IAnagraphView read GetAnagraphProfile;
+
+    /// <summary> Opens the Users table according to a Group ID Identifier </summary>
+    function ListUsersByGroupID(const GroupID: Integer): Boolean;
+    /// <summary> Selects an User by its GUID </summary>
+    function searchuserbyGUID(const aGUID: TGUID): Boolean;
+    /// <summary> Selects an User by its ID </summary>
+    function searchuserbyID(const aID: Integer): Boolean;
   end;
 
   IJanuaSystemUserSessionModel = interface(IJanuaClientModel)
@@ -258,7 +274,7 @@ type
     property CurrentRecord: IUserProfile read GetCurrentRecord write SetCurrentRecord;
   end;
 
-  IJanuaSystemUserSessionViewModel = interface(IJanuaBaseViewModel)
+  IJanuaSystemUserSessionViewModel = interface(IJanuaDataViewModel)
     ['{A14A507B-40A8-4F6E-B116-F6F4E812DF5F}']
     function GetSystemUserSessionModel: IJanuaSystemUserSessionModel;
     procedure SetSystemUserSessionModel(const Value: IJanuaSystemUserSessionModel);

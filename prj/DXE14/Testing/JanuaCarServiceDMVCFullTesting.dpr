@@ -30,8 +30,8 @@ uses
   Janua.DMVC.Test.WebModule in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.WebModule.pas' {MyWebModule: TWebModule},
   Janua.REST.Client in '..\..\..\src\januacore\dmvc\Janua.REST.Client.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
-  Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
+  Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
+  Janua.System.DMVC.Session.Controller in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Session.Controller.pas',
   Janua.DMVC.UnitTest.DMVCFramework in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.UnitTest.DMVCFramework.pas',
   Janua.Rest.TestClasses in '..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas',
   Janua.REST.Test.LoginClient in '..\..\..\src\januacore\dmvc\Test\Janua.REST.Test.LoginClient.pas',
@@ -55,7 +55,7 @@ uses
   Janua.UniDAC.Test.MVVM.CarService.Booking in '..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.MVVM.CarService.Booking.pas',
   Janua.UniDAC.Test.MVVM.Carservice.Drivers in '..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.MVVM.Carservice.Drivers.pas',
   Janua.Carservice.DMVC.Application in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
-  Janua.CarService.DMVC.Driver in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas',
+  Janua.CarService.Driver.DMVCController in '..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
   Janua.DMVC.Carservice.Driver.UnitTest in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Carservice.Driver.UnitTest.pas',
   Janua.DMVC.System.Session.UnitTest in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.System.Session.UnitTest.pas';
 

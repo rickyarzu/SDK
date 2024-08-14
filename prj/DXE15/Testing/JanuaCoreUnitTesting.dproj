@@ -4,7 +4,7 @@
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Test</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Console</AppType>
@@ -116,7 +116,7 @@
         <Cfg_3>true</Cfg_3>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
+    <Import Project="..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -132,7 +132,7 @@
         <SanitizedProjectName>JanuaCoreUnitTesting</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_Define>JANUATEST;TESTINSIGHT;$(DCC_Define)</DCC_Define>
-        <CfgDependentOn>..\JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>..\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
@@ -225,6 +225,8 @@
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
+    <Import Project="..\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaDemoDXE15.optset')"/>
+    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
@@ -262,7 +264,7 @@
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -286,15 +288,9 @@
                     <Source Name="MainSource">JanuaCoreUnitTesting.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\SVGImage32Package280.bpl">Image32 2D Graphic Library - Copyright Angus Johnson</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Administrator\Documents\Skia4Delphi\Library\RAD Studio 11 Alexandria\Win32\Release\Bpl\Skia.Package.FMX280.bpl">Skia4Delphi FMX package</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\ZComponentsVCL280.bpl">(untitled)</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Administrator\Documents\Skia4Delphi\Library\RAD Studio 11 Alexandria\Win32\Release\Bpl\Skia.Package.VCL280.bpl">Skia4Delphi VCL package</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Administrator\Documents\Skia4Delphi\Library\RAD Studio 11 Alexandria\Win32\Release\Bpl\Skia.Package.FMX.Designtime280.bpl">Skia4Delphi FMX Designtime package</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Administrator\Documents\Skia4Delphi\Library\RAD Studio 11 Alexandria\Win32\Release\Bpl\Skia.Package.VCL.Designtime280.bpl">Skia4Delphi VCL Designtime package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">

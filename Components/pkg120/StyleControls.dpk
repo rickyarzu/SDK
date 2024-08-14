@@ -9,31 +9,31 @@ package StyleControls;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
-{$IMPLICITBUILD ON}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
 
 requires
   rtl,
   vcl,
   vclimg,
   vclactnband,
-  designide,
   xmlrtl,
   vclie,
   dbrtl,
@@ -42,7 +42,6 @@ requires
 contains
   scControls in '..\..\..\Libraries\Almediadev\StyleControls\scControls.pas',
   scDrawUtils in '..\..\..\Libraries\Almediadev\StyleControls\scDrawUtils.pas',
-  scPReg in '..\..\..\Libraries\Almediadev\StyleControls\scPReg.pas',
   scImageCollection in '..\..\..\Libraries\Almediadev\StyleControls\scImageCollection.pas',
   scShellControls in '..\..\..\Libraries\Almediadev\StyleControls\scShellControls.pas',
   scAdvancedControls in '..\..\..\Libraries\Almediadev\StyleControls\scAdvancedControls.pas',

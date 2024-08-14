@@ -51,7 +51,7 @@ type
   public
     Destructor Destroy; override;
   strict private
-    function InternalActivate: Boolean; override;
+    function InternalActivate: boolean; override;
   private
     FObjectBindings: IDictionary<TObject, IJanuaBindRecord>;
   protected
@@ -60,7 +60,7 @@ type
   public
     procedure Bind(const aObject: TObject; const AProperty: string; const ABindToObject: TObject;
       const ABindToProperty: string; { const aBidiRectional: boolean = False; } const AReadOnly
-      : Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
+      : boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
     procedure UnBind(const aObject: TObject; const AProperty: string; const ABindToObject: TObject;
       const ABindToProperty: string); overload;
     procedure UnBind(const aObject, ABindToObject: TObject); overload;
@@ -86,7 +86,6 @@ procedure TBindRecord.Bind(const AProperty: string; const ABindToObject: TObject
   const ABindToProperty: string;
   { const AReadOnly: boolean = False; }
   const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
-
 var
   lBindable: IJanuaBindable;
   lBindableControl: IJanuaBindableControl;
@@ -263,7 +262,7 @@ end;
 { TJanuaBindings }
 
 procedure TJanuaBindings.Bind(const aObject: TObject; const AProperty: string; const ABindToObject: TObject;
-  const ABindToProperty: string; const { aBidiRectional, } AReadOnly: Boolean;
+  const ABindToProperty: string; const { aBidiRectional, } AReadOnly: boolean;
   const ACreateOptions: TJanuaBindCreateOptions);
 var
   lBindRecord: IJanuaBindRecord;
@@ -309,7 +308,6 @@ begin
   // if Supports(aObject, IJanuaBindable, LB) then LB.DecBindCount;
 end;
 
-
 destructor TJanuaBindings.Destroy;
 begin
   ClearAllBindings;
@@ -326,7 +324,7 @@ begin
   end;
 end;
 
-function TJanuaBindings.InternalActivate: Boolean;
+function TJanuaBindings.InternalActivate: boolean;
 begin
   Result := FActive;
   if not Result then
@@ -364,8 +362,6 @@ begin
 
 end;
 
-
-
 { TJanuaBindControlsList }
 
 procedure TJanuaBindControlsList.AddControl(aControl: TComponent);
@@ -402,6 +398,5 @@ begin
   FBindListObject := nil;
   inherited;
 end;
-
 
 end.

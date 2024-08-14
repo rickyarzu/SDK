@@ -13,7 +13,7 @@ uses
 
 type
   TJanuaCustomSystemUserSessionViewModel = class(TJanuaRecordViewModelTemplate,
-    IJanuaSystemUserSessionViewModel, IJanuaBaseViewModel)
+    IJanuaSystemUserSessionViewModel, IJanuaDataViewModel)
   private
     [weak]
     FSystemUserSessionModel: IJanuaSystemUserSessionModel;
@@ -114,7 +114,7 @@ type
 
 type
   TJanuaDBSystemUserSessionViewModel = class(TJanuaCustomSystemUserSessionViewModel,
-    IJanuaSystemUserSessionViewModel, IJanuaDBSystemUserSessionViewModel, IJanuaBaseViewModel)
+    IJanuaSystemUserSessionViewModel, IJanuaDBSystemUserSessionViewModel, IJanuaDataViewModel)
   private
     FSystemDBUserSessionModel: IJanuaDBSystemUserSessionModel;
   protected // virtual methods
@@ -420,7 +420,7 @@ begin
   Result := FSystemUserSessionModel.LoggedIn and
     (FSystemUserSessionModel.User.Username.AsString.ToLower = aUser.Username.AsString.ToLower) and
     (FSystemUserSessionModel.User.DbUserId.AsInteger <> 0);
-  Result := Result or FSystemUserSessionModel.Login(aUser);
+  Result := Result or FSystemUserSessionModel.login(aUser);
 end;
 
 function TJanuaCustomSystemUserSessionViewModel.TryLoginOrRegister
@@ -499,14 +499,16 @@ end;
 procedure TJanuaDBSystemUserSessionViewModel.CreateModel;
 var
   LSystemUserSessionModel: IJanuaSystemUserSessionModel;
+  lModel: IJanuaModel;
 begin
   if not ASsigned(SystemUserSessionModel) then
   begin
     if not TJanuaApplicationFactory.TryGetInterface(IJanuaDBSystemUserSessionModel, FSystemDBUserSessionModel)
     then
       raise Exception.Create('TAnagraphViewModel.DataModuleCreate IJanuaDBSystemUserSessionModel not set');
-    if not Supports(FSystemDBUserSessionModel, IJanuaModel, FJanuaModel) then
+    if not Supports(FSystemDBUserSessionModel, IJanuaModel, lModel) then
       raise Exception.Create('IJanuaModel not supported');
+    SetModel(lModel);
     if not Supports(FSystemDBUserSessionModel, IJanuaSystemUserSessionModel, LSystemUserSessionModel) then
       raise Exception.Create('IJanuaSystemUserSessionModel not supported');
     // procedure SetSystemUserSessionModel(const Value: IJanuaSystemUserSessionModel);

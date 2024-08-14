@@ -44,6 +44,11 @@ requires
   SwagDoc;
 
 contains
+  Web.ApacheConst,
+  Web.ApacheHTTP,
+  Web.Win.IsapiHTTP,
+  Web.HTTPDMethods,
+  Web.HTTPDImpl,
   MVCFramework in '..\..\..\lib\delphimvcframework\sources\MVCFramework.pas',
   MVCFramework.ActiveRecord in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecord.pas',
   MVCFramework.ActiveRecordController in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecordController.pas',

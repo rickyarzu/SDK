@@ -138,6 +138,10 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Carservice.PgBooking.pas">
+            <Form>dmPgCarServiceBookingList</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\Common\Janua.UniGUI.ServerModule.pas">
             <Form>UniServerModule</Form>
             <DesignClass>TUniGUIServerModule</DesignClass>
@@ -151,8 +155,12 @@
             <DesignClass>TUniLoginForm</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas"/>
+        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.UniGUI.BackofficeMainFormSample.pas">
+            <Form>frmUniGUIMainBackofficeSample</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.UniGUI.BackofficeMainForm.pas">
-            <Form>frmUniGUIMainBackoffice</Form>
+            <Form>frmUniGUICarServiceBackOfficeMain</Form>
             <FormType>dfm</FormType>
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
@@ -191,6 +199,18 @@
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\CarServiceBackOfficeUniGUI.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceBackOfficeUniGUI.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>CarServiceBackOfficeUniGUI.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceBackOfficeUniGUI.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>CarServiceBackOfficeUniGUI.rsm</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

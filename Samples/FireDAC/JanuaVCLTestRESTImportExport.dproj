@@ -155,10 +155,10 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.DMVC.CarService.ServiceAPI.Driver.pas"/>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.RestClient.pas">
-            <Form>frmVCLRestClient</Form>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.frameRestClient.pas">
+            <Form>frameVCLJanuaRestClient</Form>
             <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -186,6 +186,18 @@
                 <DeployFile LocalName="Win32\Debug\JanuaVCLTestRESTImportExport.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaVCLTestRESTImportExport.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\JanuaVCLTestRESTImportExport.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>JanuaVCLTestRESTImportExport.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\JanuaVCLTestRESTImportExport.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>JanuaVCLTestRESTImportExport.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -778,7 +778,6 @@ begin
   begin
     ShowMessage('Selezionate un Calendario o un evento.');
   end;
-
 end;
 
 procedure TdmVCLPlannerCustomController.actFontExecute(Sender: TObject);
@@ -881,20 +880,23 @@ begin
 end;
 
 procedure TdmVCLPlannerCustomController.CalcGoogleCalendarColor(const aColor: smallint; out bg, fg: TColor);
+var
+  TGC: TGColor;
 begin
   if AdvGCalendar1.CalendarColors.Count = 0 then
     AdvGCalendar1.GetColors;
 
   if bg = 0 then
   begin
-    for var I := 0 to AdvGCalendar1.CalendarColors.Count - 1 do
+    for var I in AdvGCalendar1.CalendarColors do
     begin
-      if { Ord(Fgcal.Color) } aColor = AdvGCalendar1.CalendarColors[I].ID then
+      TGC := TGColor(I);
+      if { Ord(Fgcal.Color) } aColor = TGC.ID then
       begin
         if bg = 0 then
-          bg := AdvGCalendar1.CalendarColors[I].BackgroundColor;
+          bg := TGC.BackgroundColor;
         if fg = 0 then
-          fg := AdvGCalendar1.CalendarColors[I].ForegroundColor;
+          fg := TGC.ForegroundColor;
       end;
     end;
   end;

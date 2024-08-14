@@ -16,14 +16,15 @@ uses
   Janua.TMS.SMS,
   Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas' {CarServiceCustConfWebModule: TWebModule},
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
-  Janua.System.DMVC.Srv in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas',
+  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas',
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
   Janua.DMVC.Test.PublicController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas',
   Janua.Carservice.DMVC.Application in '..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas',
   Janua.DMVC.UniDacApplication in '..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas',
-  Janua.DMVC.Srv.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas',
+  Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
   Janua.CarService.DMVC.www.CustConf in '..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas',
-  Janua.DMVC.CustomWebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.CustomWebModule.pas' {JanuaDMVCCustomWebModule: TWebModule};
+  Janua.DMVC.WebBroker.WebModule in '..\..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.WebModule.pas' {JanuaDMVCCustomWebModule: TWebModule},
+  Janua.Test.DMVC.www in '..\..\..\src\januacore\dmvc\Janua.Test.DMVC.www.pas';
 
 {$R *.res}
 procedure RunServer(APort: Integer);

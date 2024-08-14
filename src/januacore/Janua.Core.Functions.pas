@@ -156,13 +156,9 @@ function generateIntAnagBarcode(p_barcode: integer): string; inline;
 procedure PostDataset(aDataset: TDataset);
 {$IFDEF delphixe}
 { Dataset Related Functions *********************************************************************** }
-// procedure CloneDataset(fromDataset: TDataset; toDataset: TClientDataset); overload; inline;
-//
-// procedure CloneDataset(DataSet, dataclone: TCustomClientDataset); overload; inline;
-// function CloneDatasetToStream(DataSet, dataclone: TCustomClientDataset): boolean; inline;
-// function GetParamByName(aName: string; aDataset: TClientDataset): TParam; inline;
 // FDMemTable Procedures
-procedure CloneDataset(DataSet: TDataset; dataclone: TFdMemTable; bStructure: boolean = true); inline;
+procedure CloneDataset(DataSet: TDataset; dataclone: TFdMemTable; bStructure: boolean = true);
+  overload; inline;
 procedure CloneDatasetStruct(DataSet: TDataset; dataclone: TFdMemTable); overload; inline;
 function ExportDatasetToBase64String(DataSet: TFdMemTable; var aString: string): boolean; overload;
 function ImportDatasetFromXMLMemo(aDataset: TFdMemTable; aList: TStrings): boolean; overload; inline;
@@ -183,6 +179,7 @@ function ExportDatasetToXMLStream(DataSet: TDataset; aStream: TStream): boolean;
 function ExportDatasetToXMLMemo(aDataset: TDataset; aList: TStrings): boolean;
 {$ENDIF fpc}
 procedure CopyRecord(DataSet, dataclone: TDataset);
+procedure CloneDataset(DataSet, dataclone: TDataset); overload; inline;
 function ExportDatasetToBase64Stream(DataSet: TDataset; aStream: TStream): boolean;
 function ExportDatasetToBase64Memo(aDataset: TDataset; aList: TStrings): boolean;
 function ExportDatasetToXMLString(aDataset: TDataset; var aString: string): boolean;
@@ -316,6 +313,7 @@ function DateYearToStr(const aDate: TDateTime; const aDigits: Byte = 4): string;
 function DateMonth(const aDate: TDateTime): Word; inline;
 function DateDay(const aDate: TDateTime): Word; inline;
 function DateFile(const aDate: TDateTime): string; inline;
+function SumDateTime(const aDate: TDate; aTime: TDateTime): TDateTime;
 
 {$IFDEF WEBBROKER}
 // WebBroker Public functions
@@ -1740,6 +1738,16 @@ begin
 
 end;
 
+function SumDateTime(const aDate: TDate; aTime: TDateTime): TDateTime;
+var
+  Hour, Min, Sec, MSec: Word;
+  Year, Month, Day: Word;
+begin
+  DecodeTime(aTime, Hour, Min, Sec, MSec);
+  DecodeDate(aDate, Year, Month, Day);
+  Result := EncodeDateTime(Year, Month, Day, Hour, Min, Sec, MSec);
+end;
+
 // Standard StringList Functions
 function GetListInteger(aList: TStrings; aParam: string): integer; overload;
 begin
@@ -2753,25 +2761,33 @@ begin
 
 end;
 
-{$IFDEF delphixe}
-(*
-  procedure CloneDataset(fromDataset: TDataset; toDataset: TClientDataset);
-  var
-  TempProvider: TDataSetProvider;
+procedure CloneDataset(DataSet, dataclone: TDataset); overload; inline;
+begin
+  if not DataSet.Active then
+    DataSet.Open;
   begin
-  Guard.CheckNotNull(fromDataset, 'Janua.Core.Functions.CloneDataset fromDataset is nil');
-  Guard.CheckNotNull(toDataset, 'Janua.Core.Functions.CloneDataset toDataset is nil');
-  TempProvider := TDataSetProvider.Create(nil);
-  try
-  Guard.CheckNotNull(TempProvider, 'TDataSetProvider is nil');
-  TempProvider.DataSet := fromDataset;
-  toDataset.Data := TempProvider.Data;
-  finally
-  TempProvider.Free;
+    if dataclone.Active then
+      dataclone.Close;
+
+    if not dataclone.Active then
+      dataclone.Open;
+
+    if DataSet.RecordCount > 0 then
+    begin
+      DataSet.Last;
+      DataSet.First;
+      while not DataSet.Eof do
+      begin
+        dataclone.Append;
+        CopyRecord(DataSet, dataclone);
+        DataSet.Next;
+      end;
+    end;
   end;
 
-  end;
-*)
+end;
+
+{$IFDEF delphixe}
 
 procedure CloneDataset(DataSet: TDataset; dataclone: TFdMemTable; bStructure: boolean = true);
 begin

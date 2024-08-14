@@ -1,388 +1,109 @@
-object CRDBGrid1: TCRDBGrid
-  Left = 2
-  Top = 39
-  Width = 721
-  Height = 274
-  DataSource = dmVCLPhoenixPlannerController.dsGoogleEventsSearch
-  TabOrder = 0
-  TitleFont.Charset = DEFAULT_CHARSET
-  TitleFont.Color = clWindowText
-  TitleFont.Height = -12
-  TitleFont.Name = 'Segoe UI'
-  TitleFont.Style = []
-  Columns = <
-    item
-      Expanded = False
-      FieldName = 'STARTTIME'
-      Title.Caption = 'Dal Giorno / Ora'
-      Width = 102
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'ENDTIME'
-      Title.Caption = 'Al Giorno / Ora'
-      Width = 97
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'SUMMARY'
-      Title.Caption = 'Note Intervento'
-      Width = 483
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'ID'
-      Width = 772
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'ETAG'
-      Width = 772
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'DESCRIPTION'
-      Width = 76
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'CREATED'
-      Width = 112
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'UPDATED'
-      Width = 112
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'ISALLDAY'
-      Width = 56
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'LOCATION'
-      Width = 772
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'STATUS'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'VISIBILITY'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'RECURRENCE'
-      Width = 364
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'RECURRINGID'
-      Width = 364
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'SEQUENCE'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'COLOR'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'USEDEFAULTREMINDERS'
-      Width = 135
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'SENDNOTIFICATIONS'
-      Width = 118
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'CALENDARID'
-      Width = 772
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'Attendees'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'Reminders'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'JGUID'
-      Width = 232
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'CalcColor'
-      Width = 64
-      Visible = True
-    end
-    item
-      Expanded = False
-      FieldName = 'FilterSearch'
-      Width = 60
-      Visible = True
-    end>
-end
 
 
 
-object UniDataSource: TUniDataSource
-  AutoEdit = False
-  DataSet = dmVCLPhoenixPlannerController.qryPlannerEvents
-  Left = 328
-  Top = 120
-end
+Done testing.
+Tests Found   : 84
+Tests Ignored : 0
+Tests Passed  : 54
+Tests Leaked  : 0
+Tests Failed  : 24
+Tests Errored : 6
 
+Failing Tests
 
-object DBText1: TDBText
-  Left = 16
-  Top = 319
-  Width = 113
-  Height = 17
-  DataField = 'DALLE_ORE'
-  StyleElements = []
-end
-object DBText2: TDBText
-  Left = 152
-  Top = 319
-  Width = 113
-  Height = 17
-  DataField = 'TECNICO_SIGLA'
-  StyleElements = []
-end
-object DBText3: TDBText
-  Left = 288
-  Top = 319
-  Width = 403
-  Height = 17
-  DataField = 'TECNICO'
-  StyleElements = []
-end
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.Model
+  Message: Condition is False when True expected. []
 
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.DatasetFilter
+  Message: Condition is False when True expected. []
 
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.ModelFilter
+  Message: Condition is False when True expected. []
 
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.ViewModelFilter
+  Message: Condition is False when True expected. []
 
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.DocChargesViewModel
+  Message: Interface is Nil when Not Nil expected. ChargesViewModel
 
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.AttachmentsViewModel
+  Message: Interface is Nil when Not Nil expected.
 
-object pnlBottom: TPanel
-  Left = 0
-  Top = 344
-  Width = 723
-  Height = 41
-  Align = alBottom
-  TabOrder = 0
-  StyleElements = []
-  object btnOK: TButton
-    Left = 616
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'OK'
-    ModalResult = 1
-    TabOrder = 0
-    StyleElements = []
-  end
-  object btnCancel: TButton
-    Left = 528
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Annulla'
-    ModalResult = 2
-    TabOrder = 1
-    StyleElements = []
-  end
-end
-object edSearch: TButtonedEdit
-  Left = 8
-  Top = 11
-  Width = 520
-  Height = 23
-  RightButton.Visible = True
-  TabOrder = 1
-  StyleElements = []
-end
-object btnFilter: TButton
-  Left = 637
-  Top = 8
-  Width = 75
-  Height = 25
-  Caption = 'Ricerca'
-  TabOrder = 2
-  StyleElements = []
-  OnClick = btnFilterClick
-end
-object ckbFilter: TCheckBox
-  Left = 534
-  Top = 16
-  Width = 97
-  Height = 17
-  Caption = 'Filtra Tecnico'
-  Checked = True
-  State = cbChecked
-  TabOrder = 3
-  StyleElements = []
-end
+  Janua.UniDAC.Test.MVVM.Shipments.TTShipmentsMVVM.Model
+  Message: Expected [0] equals actual [0] jdsShipments.RecordCount
+
+  Janua.UniDAC.Test.MVVM.Shipments.TTShipmentsMVVM.DatasetFilter
+  Message: Expected [0] equals actual [0] lDataModule.jdsShipments.RecordCount
+
+  Janua.UniDAC.Test.MVVM.Shipments.TTShipmentsMVVM.ModelFilter
+  Message: Expected [0] equals actual [0]
+
+  Janua.UniDAC.Test.MVVM.Shipments.TTShipmentsMVVM.ViewModelFilter
+  Message: Expected [0] equals actual [0] OpenAll dsMaster.Dataset.RecordCount
+
+  Janua.UniDAC.Test.MVVM.Test.LookupSearch.TLookupEngine.CustomSearchVM
+  Message: Expected [{f15bb444-5189-45c1-ab1c-b412ec217ac8}] but got [{019381B0-0000-0000-30F1-BF2E05000000}]
+
+  Janua.UniDAC.Test.MVVM.WHReceipt.TWHRMVVM.Model
+  Message: Expected [0] equals actual [0] jdsDocHeads.RecordCount
+
+  Janua.UniDAC.Test.MVVM.WHReceipt.TWHRMVVM.DatasetFilter
+  Message: Expected [0] equals actual [0] RecordCount
+
+  Janua.UniDAC.Test.MVVM.WHReceipt.TWHRMVVM.ModelFilter
+  Message: Expected [0] equals actual [0]
+
+  Janua.UniDAC.Test.MVVM.WHReceipt.TWHRMVVM.ViewModelFilter
+  Message: Expected [0] equals actual [0] (1)jdsDocHeads.RecordCount
+
+  Janua.UniDAC.Test.MVVM.WHReceipt.TWHRMVVM.ViewModelDetails
+  Message: Interface is Nil when Not Nil expected. WHRRowsViewModel
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.Model
+  Message: Condition is False when True expected. []
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.DatasetFilter
+  Message: Condition is False when True expected. []
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.ModelFilter
+  Message: Condition is False when True expected. []
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.ViewModelFilter
+  Message: Condition is False when True expected. []
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.DocChargesViewModel
+  Message: Interface is Nil when Not Nil expected. ChargesViewModel
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.AttachmentsViewModel
+  Message: Interface is Nil when Not Nil expected.
+
+  Janua.UnitTest.ViewModel.MVVMSearch.TMVVMSearchLookups.ShipmentsModel
+  Message: Expected [1] but got [0] SC11500018 1 count
+
+  Janua.UnitTest.ViewModel.MVVMSearch.TMVVMSearchLookups.ShipmentsViewModel
+  Message: Expected [1] but got [0]
 
 
 
+Tests With Errors
+
+  Janua.UniDAC.Test.MVVM.Invoices.TTInvoicesMVVM.DocChargesModel
+  Message: Access violation at address 0000000001FAAA13 in module 'JanuaUniMVVMTesting.exe'. Read of address 0000000000000000
+
+  Janua.UnitTest.ViewModel.Documents.TTDocsMVVM.DocChargesModel
+  Message: Access violation at address 0000000001FAAA13 in module 'JanuaUniMVVMTesting.exe'. Read of address 0000000000000000
+
+  Janua.UnitTest.ViewModel.System.TMVVMSystemTest.TestLoginModel.TestTrue
+  Message: Access violation at address 0000000000E7E36B in module 'JanuaUniMVVMTesting.exe'. Read of address 0000000000000010
+
+  Janua.UnitTest.ViewModel.System.TMVVMSystemTest.CreateUser.TestFalse
+  Message: Access violation at address 0000000000E7E36B in module 'JanuaUniMVVMTesting.exe'. Read of address 0000000000000010
+
+  Janua.UnitTest.ViewModel.System.TMVVMSystemTest.CreateUser.TestTrue
+  Message: Not implemented yet
+
+  Janua.UnitTest.ViewModel.System.TMVVMSystemTest.AddAnagraphViewModel
+  Message: Access violation at address 0000000000E7E36B in module 'JanuaUniMVVMTesting.exe'. Read of address 0000000000000010
 
 
-
-
-
-
-
-
-
-
-
-
-
-inline frameVCLPhoenixGoogleCalendar1: TframeVCLPhoenixGoogleCalendar
-  Left = 0
-  Top = 0
-  Width = 1416
-  Height = 724
-  Align = alClient
-  TabOrder = 0
-  ExplicitWidth = 1416
-  ExplicitHeight = 724
-  inherited PageControl1: TPageControl
-    Width = 1040
-    Height = 457
-    ExplicitWidth = 1040
-    ExplicitHeight = 457
-    inherited TabSheet1: TTabSheet
-      ExplicitWidth = 1032
-      ExplicitHeight = 427
-      inherited grpEventsList: TGroupBox
-        Width = 1026
-        Height = 424
-        ExplicitWidth = 1026
-        ExplicitHeight = 424
-        inherited grdGoogleCalendar: TCRDBGrid
-          AlignWithMargins = True
-          Left = 8
-          Top = 25
-          Width = 1010
-          Height = 391
-          Margins.Left = 6
-          Margins.Top = 8
-          Margins.Right = 6
-          Margins.Bottom = 6
-          Align = alClient
-        end
-      end
-    end
-    inherited tabGoogleCalendar: TTabSheet
-      inherited DBPlanner1: TDBPlanner
-        TMSStyle = 0
-      end
-    end
-  end
-  inherited Panel1: TPanel
-    Width = 1416
-    ExplicitWidth = 1416
-    inherited Image1: TImage
-      Left = 1379
-      ExplicitLeft = 1177
-    end
-    inherited btnConnect: TButton
-      Left = 20
-      Width = 130
-      ExplicitLeft = 20
-      ExplicitWidth = 130
-    end
-    inherited btnRemove: TButton
-      Width = 133
-      ExplicitWidth = 133
-    end
-  end
-  inherited grpCalendars: TGroupBox
-    Width = 1410
-    ExplicitWidth = 1410
-    inherited grpCalendarDetails: TGroupBox
-      Width = 1382
-      ExplicitWidth = 1382
-      inherited edCalendarLocation: TEdit
-        Width = 880
-        ExplicitWidth = 880
-      end
-      inherited edCalendarTimeZone: TEdit
-        Width = 880
-        ExplicitWidth = 880
-      end
-      inherited pnlGroupColor: TPanel
-        Width = 881
-        ExplicitWidth = 881
-      end
-    end
-    inherited cbDefaultReminders: TComboBox
-      Width = 757
-      ExplicitWidth = 757
-    end
-    inherited ckbFilterCalendar: TCheckBox
-      Left = 1268
-      Width = 125
-      ExplicitLeft = 1268
-      ExplicitWidth = 125
-    end
-  end
-  inherited pnlEventDetail: TPanel
-    Left = 1040
-    Height = 457
-    ExplicitLeft = 1040
-    ExplicitHeight = 457
-    inherited grpItemDetails: TGroupBox
-      Height = 454
-      ExplicitHeight = 454
-    end
-  end
-  inherited pnlFilterCalendar: TPanel
-    Width = 1416
-    ExplicitWidth = 1416
-    inherited ckbCalendarList: TCheckListBox
-      ItemHeight = 16
-    end
-  end
-end
-
-
-
+Done.. press <Enter> key to quit.

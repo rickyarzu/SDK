@@ -2,8 +2,8 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
   Left = 0
   Top = 0
   Caption = 'TestFireDACImportExport'
-  ClientHeight = 609
-  ClientWidth = 953
+  ClientHeight = 690
+  ClientWidth = 1117
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,18 +15,18 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
   object PageControl1: TPageControl
     Left = 0
     Top = 41
-    Width = 953
-    Height = 568
-    ActivePage = tabFiredac
+    Width = 1117
+    Height = 649
+    ActivePage = tabRest4Delphi
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 949
-    ExplicitHeight = 567
+    ExplicitWidth = 953
+    ExplicitHeight = 568
     object tabFiredac: TTabSheet
       Caption = 'Firedac'
       DesignSize = (
-        945
-        538)
+        1109
+        619)
       object DBGrid1: TDBGrid
         Left = 0
         Top = 48
@@ -43,7 +43,7 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object DBGrid2: TDBGrid
         Left = 471
         Top = 48
-        Width = 470
+        Width = 634
         Height = 242
         Anchors = [akLeft, akTop, akRight]
         DataSource = dsRemoteFireDACClienti
@@ -111,8 +111,8 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object memExport: TAdvMemo
         Left = 3
         Top = 296
-        Width = 935
-        Height = 226
+        Width = 1099
+        Height = 307
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
         ActiveLineSettings.ShowActiveLineIndicator = False
@@ -222,16 +222,18 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
+        ExplicitWidth = 935
+        ExplicitHeight = 226
       end
     end
     object tabUniDAC: TTabSheet
       Caption = 'UniDAC'
       ImageIndex = 1
       DesignSize = (
-        945
-        538)
+        1109
+        619)
       object Button1: TButton
         Left = 104
         Top = 16
@@ -269,7 +271,7 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object DBGrid3: TDBGrid
         Left = 471
         Top = 56
-        Width = 470
+        Width = 634
         Height = 242
         Anchors = [akLeft, akTop, akRight]
         DataSource = dsVirtualCountries
@@ -296,12 +298,14 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object memExportXML: TMemo
         Left = 8
         Top = 304
-        Width = 933
-        Height = 234
+        Width = 1097
+        Height = 315
         Anchors = [akLeft, akTop, akRight, akBottom]
         Lines.Strings = (
           'memExport')
         TabOrder = 6
+        ExplicitWidth = 933
+        ExplicitHeight = 234
       end
     end
     object tabDMVCSimpleTest: TTabSheet
@@ -310,21 +314,23 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object pnlUrl: TPanel
         Left = 0
         Top = 0
-        Width = 945
+        Width = 1109
         Height = 25
         Align = alTop
         TabOrder = 0
+        ExplicitWidth = 945
         object edtUrl: TEdit
           Left = 1
           Top = 1
-          Width = 868
+          Width = 1032
           Height = 23
           Align = alClient
           TabOrder = 0
           Text = 'http://localhost:8080/api'
+          ExplicitWidth = 868
         end
         object btnUrl: TButton
-          Left = 869
+          Left = 1033
           Top = 1
           Width = 75
           Height = 23
@@ -332,17 +338,25 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
           Caption = 'Go To'
           TabOrder = 1
           OnClick = btnUrlClick
+          ExplicitLeft = 869
         end
       end
       object AdvWebBrowser1: TAdvWebBrowser
         Left = 0
         Top = 25
-        Width = 945
-        Height = 513
+        Width = 1109
+        Height = 594
         Align = alClient
         ParentDoubleBuffered = False
         DoubleBuffered = True
         TabOrder = 1
+        Settings.EnableContextMenu = True
+        Settings.EnableShowDebugConsole = True
+        Settings.EnableAcceleratorKeys = True
+        Settings.AllowExternalDrop = True
+        Settings.UsePopupMenuAsContextMenu = False
+        ExplicitWidth = 945
+        ExplicitHeight = 513
       end
     end
     object tabRESTClientFDAC: TTabSheet
@@ -351,7 +365,7 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object DBGrid5: TDBGrid
         Left = 0
         Top = 33
-        Width = 945
+        Width = 1109
         Height = 257
         Align = alTop
         DataSource = dsRemoteFireDACClienti
@@ -365,11 +379,11 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object pnlButtons: TPanel
         Left = 0
         Top = 0
-        Width = 945
+        Width = 1109
         Height = 33
         Align = alTop
         TabOrder = 1
-        ExplicitWidth = 941
+        ExplicitWidth = 945
         object btnJson: TButton
           Left = 265
           Top = 1
@@ -411,7 +425,7 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
       object Panel6: TPanel
         Left = 0
         Top = 290
-        Width = 945
+        Width = 1109
         Height = 22
         Align = alTop
         Alignment = taLeftJustify
@@ -426,10 +440,10 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
         ParentBackground = False
         ParentFont = False
         TabOrder = 2
-        ExplicitWidth = 941
+        ExplicitWidth = 945
         object lblStatusCode: TLabel
           AlignWithMargins = True
-          Left = 937
+          Left = 1101
           Top = 2
           Width = 3
           Height = 20
@@ -439,11 +453,12 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
           Margins.Bottom = 0
           Align = alRight
           Alignment = taRightJustify
+          ExplicitLeft = 937
           ExplicitHeight = 15
         end
         object Label3: TLabel
           AlignWithMargins = True
-          Left = 864
+          Left = 1028
           Top = 2
           Width = 68
           Height = 20
@@ -454,14 +469,15 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
           Align = alRight
           Alignment = taRightJustify
           Caption = 'Status code:'
+          ExplicitLeft = 864
           ExplicitHeight = 15
         end
       end
       object advMemoClient: TDBAdvMemo
         Left = 0
         Top = 312
-        Width = 945
-        Height = 226
+        Width = 1109
+        Height = 307
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
         ActiveLineSettings.ShowActiveLineIndicator = False
@@ -572,21 +588,191 @@ object frmVCLTestFiredacExportImport: TfrmVCLTestFiredacExportImport
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.8.4.8'
+        Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitWidth = 941
-        ExplicitHeight = 225
+        ExplicitWidth = 945
+        ExplicitHeight = 226
+      end
+    end
+    object tabRest4Delphi: TTabSheet
+      Caption = 'Rest 4 Delphi'
+      ImageIndex = 4
+      inline frameVCLJanuaRestClient1: TframeVCLJanuaRestClient
+        Left = 0
+        Top = 0
+        Width = 1109
+        Height = 619
+        Align = alClient
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitLeft = -196
+        ExplicitTop = -147
+        inherited Panel1: TPanel
+          Width = 1109
+          StyleElements = [seFont, seClient, seBorder]
+          ExplicitWidth = 1141
+          inherited pnlRequest: TPanel
+            Width = 970
+            StyleElements = [seFont, seClient, seBorder]
+            ExplicitWidth = 1002
+            inherited edtBaseURL: TLabeledEdit
+              Width = 964
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitWidth = 996
+            end
+            inherited pnlUsernamePassword: TPanel
+              Width = 970
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitWidth = 1002
+              inherited lbedUserName: TLabeledEdit
+                Width = 411
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited lbedPassword: TLabeledEdit
+                Left = 420
+                EditLabel.ExplicitLeft = 420
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitLeft = 452
+              end
+              inherited rgAuthentication: TRadioGroup
+                Left = 770
+                ExplicitLeft = 802
+              end
+            end
+          end
+        end
+        inherited Panel2: TPanel
+          Width = 1109
+          Height = 525
+          StyleElements = [seFont, seClient, seBorder]
+          ExplicitWidth = 1141
+          ExplicitHeight = 591
+          inherited Splitter1: TSplitter
+            Width = 1109
+          end
+          inherited Panel3: TPanel
+            Width = 1109
+            Height = 258
+            StyleElements = [seFont, seClient, seBorder]
+            ExplicitWidth = 1141
+            ExplicitHeight = 324
+            inherited Panel6: TPanel
+              Width = 1109
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitWidth = 1141
+              inherited lblStatusCode: TLabel
+                Left = 1101
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitLeft = 1133
+              end
+              inherited Label3: TLabel
+                Left = 1028
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitLeft = 1060
+              end
+            end
+            inherited PageControl2: TPageControl
+              Width = 1109
+              Height = 236
+              ExplicitWidth = 1141
+              ExplicitHeight = 302
+              inherited TabSheet6: TTabSheet
+                ExplicitWidth = 1101
+                ExplicitHeight = 206
+                inherited mmBody: TDBAdvMemo
+                  Width = 1101
+                  Height = 206
+                  ExplicitWidth = 1133
+                  ExplicitHeight = 272
+                end
+              end
+            end
+          end
+          inherited Panel4: TPanel
+            Width = 1109
+            StyleElements = [seFont, seClient, seBorder]
+            ExplicitWidth = 1141
+            inherited Panel5: TPanel
+              Width = 1109
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitWidth = 1141
+            end
+            inherited PageControl1: TPageControl
+              Width = 1109
+              ExplicitWidth = 1141
+              inherited TabSheet1: TTabSheet
+                ExplicitWidth = 1101
+                inherited Label1: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited lbFile: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited edtAccept: TLabeledEdit
+                  Left = 1231
+                  EditLabel.ExplicitLeft = 1231
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitLeft = 1263
+                end
+                inherited mmCustomBody: TMemo
+                  Width = 968
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited btnDELETE: TButton
+                  Left = 1008
+                end
+                inherited btnPUT: TButton
+                  Left = 1008
+                end
+                inherited btnPOST: TButton
+                  Left = 1008
+                end
+                inherited btnGET: TButton
+                  Left = 1008
+                end
+                inherited lbedToken: TLabeledEdit
+                  Width = 968
+                  EditLabel.ExplicitLeft = 0
+                  EditLabel.ExplicitTop = -18
+                  EditLabel.ExplicitWidth = 54
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited edFileName: TAdvFileNameEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited btnUpload: TButton
+                  Left = 1008
+                end
+              end
+              inherited tabSQLQueryRequest: TTabSheet
+                inherited pnlSQLButtons: TPanel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+              inherited GetImage: TTabSheet
+                inherited lbedImageUrl: TLabeledEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+            end
+          end
+        end
       end
     end
   end
   object pnlTop: TPanel
     Left = 0
     Top = 0
-    Width = 953
+    Width = 1117
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 949
+    ExplicitWidth = 953
     object btnStartServer: TButton
       Left = 12
       Top = 9

@@ -190,10 +190,10 @@
         <DCCReference Include="JanuaMVVM.dcp"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Test.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.DMVC.Session.Controller.pas"/>
+        <DCCReference Include="..\..\src\januacore\dmvc\Janua.Test.DMVC.www.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE14.optset</DependentOn>

@@ -97,7 +97,27 @@ type
     property CurrentRecord: IJanuaRecord read GetCurrentRecord;
   end;
 
-  TJanuaBaseModelTemplate = class(TJanuaStorage, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
+  TJanuaBaseModelTemplate = class(TJanuaInterfacedBindableObject, IJanuaBaseModel, IJanuaBindableObject,
+    IJanuaInterface)
+  private
+    FLastErrorMessage: string;
+    FKeepAlive: Boolean;
+    FSelectedSchema: Integer;
+  protected
+    function GetLastErrorMessage: string;
+    procedure SetLastErrorMessage(const Value: string);
+    function GetKeepAlive: Boolean;
+    procedure SetKeepAlive(const Value: Boolean);
+    function GetSelectedSchema: Integer;
+    procedure SetSelectedSchema(const Value: Integer);
+  public
+    property LastErrorMessage: string read GetLastErrorMessage write SetLastErrorMessage;
+    property KeepAlive: Boolean read GetKeepAlive write SetKeepAlive;
+    property SelectedSchema: Integer read GetSelectedSchema write SetSelectedSchema;
+  end;
+
+  TJanuaDataModelTemplate = class(TJanuaStorage, IJanuaBaseDataModel, IJanuaStorage, IJanuaBaseModel,
+    IJanuaInterface)
   public
     constructor Create; override;
     procedure AfterConstruction; override;
@@ -168,10 +188,11 @@ type
     property MainSearchParams: IJanuaParams read GetMainSearchParams;
   end;
 
-  TJanuaBaseModelTemplateClass = class of TJanuaBaseModelTemplate;
+  TJanuaDataModelTemplateClass = class of TJanuaDataModelTemplate;
   TJanuaDataModuleTemplateClass = class of TJanuaDataModuleTemplate;
 
-  TJanuaMVCSModelTemplate = class(TJanuaBaseModelTemplate, IJanuaBaseModel, IJanuaStorage, IJanuaInterface)
+  TJanuaMVCSModelTemplate = class(TJanuaDataModelTemplate, IJanuaBaseDataModel, IJanuaStorage,
+    IJanuaInterface)
   public
     constructor Create; override;
     procedure AfterConstruction; override;
@@ -254,8 +275,8 @@ type
     property MainSearchText: string read GetMainSearchText write SetMainSearchText;
   end;
 
-  TJanuaRESTModelTemplate = class(TJanuaMVCSModelTemplate, IJanuaBaseModel, IJanuaRESTModel, IJanuaStorage,
-    IJanuaInterface, IJanuaClientModel)
+  TJanuaRESTDataModelTemplate = class(TJanuaMVCSModelTemplate, IJanuaBaseDataModel, IJanuaDataRESTModel,
+    IJanuaStorage, IJanuaInterface, IJanuaClientModel)
   private
     class var FDBDatasetFactory: IJanuaDBDatasetFactory;
   protected
@@ -1573,9 +1594,12 @@ end;
 destructor TJanuaModelTemplate.Destroy;
 begin
   // ---- Recordset Editing Procedures ---------------------------------------------------------------------
-  FDetailDatasets := nil;
-  FjdsDataset := nil;
-  inherited;
+  try
+    FDetailDatasets := nil;
+    FjdsDataset := nil;
+  finally
+    inherited;
+  end;
 end;
 
 function TJanuaModelTemplate.GetDetailDatasets: IList<IJanuaDBDataset>;
@@ -1723,9 +1747,9 @@ begin
   FSelectedSchema := Value;
 end;
 
-{ TJanuaBaseModelTemplate }
+{ TJanuaDataModelTemplate }
 
-procedure TJanuaBaseModelTemplate.AddNewRecord;
+procedure TJanuaDataModelTemplate.AddNewRecord;
 begin
   try
     SetState(TJanuaModelState.jmsInsert);
@@ -1736,32 +1760,32 @@ begin
   end;
 end;
 
-procedure TJanuaBaseModelTemplate.AfterConstruction;
+procedure TJanuaDataModelTemplate.AfterConstruction;
 begin
   inherited;
 
 end;
 
-procedure TJanuaBaseModelTemplate.BeforeDestruction;
+procedure TJanuaDataModelTemplate.BeforeDestruction;
 begin
   inherited;
 
 end;
 
-constructor TJanuaBaseModelTemplate.Create;
+constructor TJanuaDataModelTemplate.Create;
 begin
   inherited;
   // Filter option in in memory by default; This is OK for 'fat-client' and not for Server
   FFilterOption := TJanuaFilterOption.jfoMemory;
 end;
 
-destructor TJanuaBaseModelTemplate.Destroy;
+destructor TJanuaDataModelTemplate.Destroy;
 begin
   FInternalRecord := nil;
   inherited;
 end;
 
-procedure TJanuaBaseModelTemplate.First(const aProc: TProc; const aNotThreaded: Boolean);
+procedure TJanuaDataModelTemplate.First(const aProc: TProc; const aNotThreaded: Boolean);
 begin
   Guard.CheckNotNull(jdsDataset, ClassName + '.TJanuaModelDBTemplate.First: jdsMaster is nil');
   Guard.CheckNotNull(InternalRecord, ClassName + '.TJanuaModelDBTemplate.First: InternalRecord not set');
@@ -1831,22 +1855,22 @@ begin
 
 end;
 
-function TJanuaBaseModelTemplate.GetCurrentRecord: IJanuaRecord;
+function TJanuaDataModelTemplate.GetCurrentRecord: IJanuaRecord;
 begin
   Result := FInternalRecord
 end;
 
-function TJanuaBaseModelTemplate.GetFilterOption: TJanuaFilterOption;
+function TJanuaDataModelTemplate.GetFilterOption: TJanuaFilterOption;
 begin
   Result := Self.FFilterOption
 end;
 
-function TJanuaBaseModelTemplate.GetGroupID: Integer;
+function TJanuaDataModelTemplate.GetGroupID: Integer;
 begin
   Result := FGroupID
 end;
 
-function TJanuaBaseModelTemplate.GetInternalRecord: IJanuaRecord;
+function TJanuaDataModelTemplate.GetInternalRecord: IJanuaRecord;
 begin
   try
     Result := FInternalRecord;
@@ -1858,12 +1882,12 @@ begin
   end;
 end;
 
-function TJanuaBaseModelTemplate.GetjdsDataset: IJanuaDBDataset;
+function TJanuaDataModelTemplate.GetjdsDataset: IJanuaDBDataset;
 begin
   Result := FjdsDataset;
 end;
 
-function TJanuaBaseModelTemplate.GetMainSearchParams: IJanuaParams;
+function TJanuaDataModelTemplate.GetMainSearchParams: IJanuaParams;
 begin
   if Assigned(FjdsDataset) then
     Result := FjdsDataset.Params
@@ -1871,22 +1895,22 @@ begin
     Result := nil;
 end;
 
-function TJanuaBaseModelTemplate.GetParams: TJanuaVariantArray;
+function TJanuaDataModelTemplate.GetParams: TJanuaVariantArray;
 begin
   Result := FParams
 end;
 
-function TJanuaBaseModelTemplate.GetRecordCount: Integer;
+function TJanuaDataModelTemplate.GetRecordCount: Integer;
 begin
   Result := FjdsDataset.RecordCount;
 end;
 
-function TJanuaBaseModelTemplate.GetState: TJanuaModelState;
+function TJanuaDataModelTemplate.GetState: TJanuaModelState;
 begin
   Result := FState
 end;
 
-procedure TJanuaBaseModelTemplate.Last(const aProc: TProc; const aNotThreaded: Boolean);
+procedure TJanuaDataModelTemplate.Last(const aProc: TProc; const aNotThreaded: Boolean);
 begin
   Guard.CheckNotNull(jdsDataset, ClassName + '.TJanuaModelDBTemplate.jdsMaster is nil');
   if aNotThreaded or TJanuaApplication.UnitTesting then
@@ -1945,12 +1969,12 @@ begin
       end);
 end;
 
-procedure TJanuaBaseModelTemplate.LoadRecord;
+procedure TJanuaDataModelTemplate.LoadRecord;
 begin
   RefreshRecord;
 end;
 
-procedure TJanuaBaseModelTemplate.Next(const aProc: TProc; const aNotThreaded: Boolean);
+procedure TJanuaDataModelTemplate.Next(const aProc: TProc; const aNotThreaded: Boolean);
 begin
   Guard.CheckNotNull(jdsDataset, ClassName + '.TJanuaModelDBTemplate.jdsDataset is nil');
   if TJanuaApplication.UnitTesting or aNotThreaded or not IsMultiThread then
@@ -2006,7 +2030,7 @@ begin
       end);
 end;
 
-procedure TJanuaBaseModelTemplate.Prior(const aProc: TProc; const aNotThreaded: Boolean);
+procedure TJanuaDataModelTemplate.Prior(const aProc: TProc; const aNotThreaded: Boolean);
 begin
   Guard.CheckNotNull(jdsDataset, ClassName + '.TJanuaModelDBTemplate.jdsDataset is nil');
   if TJanuaApplication.UnitTesting or aNotThreaded then
@@ -2060,7 +2084,7 @@ begin
       end);
 end;
 
-function TJanuaBaseModelTemplate.SearchByGUID(const aGuid: TGUID): Boolean;
+function TJanuaDataModelTemplate.SearchByGUID(const aGuid: TGUID): Boolean;
 begin
   Result := False;
   if Assigned(FjdsDataset) then
@@ -2074,7 +2098,7 @@ begin
   end;
 end;
 
-function TJanuaBaseModelTemplate.SearchByParams(aParams: IJanuaParams): Integer;
+function TJanuaDataModelTemplate.SearchByParams(aParams: IJanuaParams): Integer;
 begin
   FjdsDataset.Close;
   FjdsDataset.Params.Assign(aParams);
@@ -2082,7 +2106,7 @@ begin
   Result := FjdsDataset.RecordCount;
 end;
 
-function TJanuaBaseModelTemplate.SearchText(const aText: string; const aLimit, aOffset: Word): Integer;
+function TJanuaDataModelTemplate.SearchText(const aText: string; const aLimit, aOffset: Word): Integer;
 var
   aParam: IJanuaField;
 begin
@@ -2096,12 +2120,12 @@ begin
   end;
 end;
 
-procedure TJanuaBaseModelTemplate.SetFilterOption(const Value: TJanuaFilterOption);
+procedure TJanuaDataModelTemplate.SetFilterOption(const Value: TJanuaFilterOption);
 begin
   FFilterOption := Value;
 end;
 
-procedure TJanuaBaseModelTemplate.SetGroupID(const Value: Integer);
+procedure TJanuaDataModelTemplate.SetGroupID(const Value: Integer);
 var
   aParam: IJanuaField;
 begin
@@ -2114,17 +2138,17 @@ begin
   end;
 end;
 
-procedure TJanuaBaseModelTemplate.SetInternalDataset(aDataset: IJanuaDBDataset);
+procedure TJanuaDataModelTemplate.SetInternalDataset(aDataset: IJanuaDBDataset);
 begin
   FjdsDataset := aDataset;
 end;
 
-procedure TJanuaBaseModelTemplate.SetInternalRecord(const aRecord: IJanuaRecord);
+procedure TJanuaDataModelTemplate.SetInternalRecord(const aRecord: IJanuaRecord);
 begin
   FInternalRecord := aRecord;
 end;
 
-procedure TJanuaBaseModelTemplate.SetParams(const aParams: TJanuaVariantArray);
+procedure TJanuaDataModelTemplate.SetParams(const aParams: TJanuaVariantArray);
 var
   aField: IJanuaField;
 begin
@@ -2133,7 +2157,7 @@ begin
     SetGroupID(FParams[0]);
 end;
 
-procedure TJanuaBaseModelTemplate.SetState(const Value: TJanuaModelState);
+procedure TJanuaDataModelTemplate.SetState(const Value: TJanuaModelState);
 begin
   FState := Value;
   // Set State should control connected Record Dataset and Datasource or bindource controls
@@ -2561,36 +2585,36 @@ begin
   end;
 end;
 
-{ TJanuaRESTModelTemplate }
+{ TJanuaRESTDataModelTemplate }
 
-procedure TJanuaRESTModelTemplate.AfterConstruction;
+procedure TJanuaRESTDataModelTemplate.AfterConstruction;
 begin
   inherited;
   SetRestFormat(TRestFormat.rfBinary);
 end;
 
-procedure TJanuaRESTModelTemplate.AppendRecord;
+procedure TJanuaRESTDataModelTemplate.AppendRecord;
 begin
   inherited AddNewRecord;
 end;
 
-procedure TJanuaRESTModelTemplate.BeforeDestruction;
+procedure TJanuaRESTDataModelTemplate.BeforeDestruction;
 begin
   inherited;
 
 end;
 
-procedure TJanuaRESTModelTemplate.BeginScroll;
+procedure TJanuaRESTDataModelTemplate.BeginScroll;
 begin
   jdsDataset.BeginScroll;
 end;
 
-procedure TJanuaRESTModelTemplate.CAllBackAfterOpen;
+procedure TJanuaRESTDataModelTemplate.CAllBackAfterOpen;
 begin
 
 end;
 
-constructor TJanuaRESTModelTemplate.Create;
+constructor TJanuaRESTDataModelTemplate.Create;
 begin
   inherited;
   // TJanuaApplicationFactory.TryGetInterface(const IID: TGUID; out Intf; const aRaise: Boolean = True)
@@ -2608,127 +2632,127 @@ begin
   FjdsRESTRemotDataset.RemoteClient := FRESTDBClient as IRemoteDatasetClient;
 end;
 
-procedure TJanuaRESTModelTemplate.DeleteRecord;
+procedure TJanuaRESTDataModelTemplate.DeleteRecord;
 begin
   if not FRESTRecordClient.Delete then
     raise Exception.Create('DeleteRecord: ' + FRESTRecordClient.LogString);
 end;
 
-destructor TJanuaRESTModelTemplate.Destroy;
+destructor TJanuaRESTDataModelTemplate.Destroy;
 begin
 
   inherited;
 end;
 
-procedure TJanuaRESTModelTemplate.EndScroll;
+procedure TJanuaRESTDataModelTemplate.EndScroll;
 begin
   Sleep(20);
   jdsDataset.EndScroll;
 end;
 
-function TJanuaRESTModelTemplate.GetBaseUrl: string;
+function TJanuaRESTDataModelTemplate.GetBaseUrl: string;
 begin
   Result := GetRESTClient.GetBaseUrl;
   { ConcatUrl(FServerUrl + IfThen(FPort in [0, 80], '', ':' + FPort.ToString), FRestAPIEndpoint); }
 end;
 
-function TJanuaRESTModelTemplate.GetClientFullUrl: string;
+function TJanuaRESTDataModelTemplate.GetClientFullUrl: string;
 begin
   Result := FRESTRecordClient.GetFullUrl
 end;
 
-function TJanuaRESTModelTemplate.GetDBClientFullUrl: string;
+function TJanuaRESTDataModelTemplate.GetDBClientFullUrl: string;
 begin
   Result := FRESTDBClient.GetFullUrl
 end;
 
-class function TJanuaRESTModelTemplate.GetDBDatasetFactory: IJanuaDBDatasetFactory;
+class function TJanuaRESTDataModelTemplate.GetDBDatasetFactory: IJanuaDBDatasetFactory;
 begin
   if not Assigned(FDBDatasetFactory) then
     TJanuaApplicationFactory.TryGetInterface(IJanuaDBDatasetFactory, FDBDatasetFactory, True);
   Result := FDBDatasetFactory;
 end;
 
-function TJanuaRESTModelTemplate.GetLastErrorMessage: string;
+function TJanuaRESTDataModelTemplate.GetLastErrorMessage: string;
 begin
   Result := FLastErrorMessage
 end;
 
-function TJanuaRESTModelTemplate.GetPort: Word;
+function TJanuaRESTDataModelTemplate.GetPort: Word;
 begin
   Result := FPort
 end;
 
-function TJanuaRESTModelTemplate.GetRecordClientFullUrl(const aGuid: TGUID): string;
+function TJanuaRESTDataModelTemplate.GetRecordClientFullUrl(const aGuid: TGUID): string;
 begin
   FRESTRecordClient.GUID := aGuid;
   Result := FRESTRecordClient.GetFullUrl;
 end;
 
-function TJanuaRESTModelTemplate.GetRestAPIEndpoint: string;
+function TJanuaRESTDataModelTemplate.GetRestAPIEndpoint: string;
 begin
   Result := FRestAPIEndpoint
 end;
 
-function TJanuaRESTModelTemplate.GetRESTClient: IJanuaRESTClient;
+function TJanuaRESTDataModelTemplate.GetRESTClient: IJanuaRESTClient;
 begin
   Result := FRESTClient
 end;
 
-function TJanuaRESTModelTemplate.GetRESTDBClient: IRESTDBClient;
+function TJanuaRESTDataModelTemplate.GetRESTDBClient: IRESTDBClient;
 begin
   Result := FRESTDBClient
 end;
 
-function TJanuaRESTModelTemplate.GetRestFormat: TRestFormat;
+function TJanuaRESTDataModelTemplate.GetRestFormat: TRestFormat;
 begin
   // Returns Rest Format
   Result := FRestFormat;
 end;
 
-function TJanuaRESTModelTemplate.GetRESTRecordClient: IRESTRecordClient;
+function TJanuaRESTDataModelTemplate.GetRESTRecordClient: IRESTRecordClient;
 begin
   Result := FRESTRecordClient
 end;
 
-function TJanuaRESTModelTemplate.GetRESTRemotDataset: IJanuaVirtualDBDataset;
+function TJanuaRESTDataModelTemplate.GetRESTRemotDataset: IJanuaVirtualDBDataset;
 begin
   Result := FjdsRESTRemotDataset
 end;
 
-function TJanuaRESTModelTemplate.GetServerUrl: string;
+function TJanuaRESTDataModelTemplate.GetServerUrl: string;
 begin
   Result := FServerUrl
 end;
 
-procedure TJanuaRESTModelTemplate.LoadRecord;
+procedure TJanuaRESTDataModelTemplate.LoadRecord;
 begin
   // il caricamento Record avviene in base al Record 'puntato' dal Dataset.
   if jdsDataset.RecordCount > 0 then
     FRESTRecordClient.Retrieve(jdsDataset.GUID);
 end;
 
-procedure TJanuaRESTModelTemplate.OpenAll(const aThreaded: Boolean);
+procedure TJanuaRESTDataModelTemplate.OpenAll(const aThreaded: Boolean);
 begin
   FRESTDBClient.LoadData;
 end;
 
-procedure TJanuaRESTModelTemplate.PostRecord;
+procedure TJanuaRESTDataModelTemplate.PostRecord;
 begin
   FRESTRecordClient.CreateRecord;
 end;
 
-procedure TJanuaRESTModelTemplate.Refresh(aProc: TProc);
+procedure TJanuaRESTDataModelTemplate.Refresh(aProc: TProc);
 begin
 
 end;
 
-procedure TJanuaRESTModelTemplate.RefreshDataset;
+procedure TJanuaRESTDataModelTemplate.RefreshDataset;
 begin
 
 end;
 
-procedure TJanuaRESTModelTemplate.RefreshRecord;
+procedure TJanuaRESTDataModelTemplate.RefreshRecord;
 begin
   if not GetInternalRecord.GUID.IsEmpty then
     FRESTRecordClient.Retrieve(GetInternalRecord.GUID)
@@ -2736,34 +2760,34 @@ begin
     GetInternalRecord.Post;
 end;
 
-function TJanuaRESTModelTemplate.Search: Integer;
+function TJanuaRESTDataModelTemplate.Search: Integer;
 begin
 
 end;
 
-function TJanuaRESTModelTemplate.SearchByGUID(const aGuid: TGUID): Boolean;
+function TJanuaRESTDataModelTemplate.SearchByGUID(const aGuid: TGUID): Boolean;
 begin
   Result := FRESTRecordClient.Retrieve(aGuid);
 end;
 
-procedure TJanuaRESTModelTemplate.SetInternalRecord(const aRecord: IJanuaRecord);
+procedure TJanuaRESTDataModelTemplate.SetInternalRecord(const aRecord: IJanuaRecord);
 begin
   inherited;
   FRESTRecordClient.JanuaRecord := GetInternalRecord
 end;
 
-procedure TJanuaRESTModelTemplate.SetjdsRESTRemotDataset(const aDataset: IJanuaVirtualDBDataset);
+procedure TJanuaRESTDataModelTemplate.SetjdsRESTRemotDataset(const aDataset: IJanuaVirtualDBDataset);
 begin
   FjdsRESTRemotDataset := aDataset;
   FjdsDataset := aDataset;
 end;
 
-procedure TJanuaRESTModelTemplate.SetLastErrorMessage(const Value: string);
+procedure TJanuaRESTDataModelTemplate.SetLastErrorMessage(const Value: string);
 begin
   FLastErrorMessage := Value
 end;
 
-procedure TJanuaRESTModelTemplate.SetPort(const Value: Word);
+procedure TJanuaRESTDataModelTemplate.SetPort(const Value: Word);
 begin
   FPort := Value;
   FRESTDBClient.ServerPort := FPort;
@@ -2771,7 +2795,7 @@ begin
   FRESTClient.ServerPort := FPort;
 end;
 
-procedure TJanuaRESTModelTemplate.SetRestAPIEndpoint(const Value: string);
+procedure TJanuaRESTDataModelTemplate.SetRestAPIEndpoint(const Value: string);
 begin
   FRestAPIEndpoint := Value;
   if FRestAPIEndpoint <> '' then
@@ -2788,7 +2812,7 @@ begin
   end;
 end;
 
-procedure TJanuaRESTModelTemplate.SetRestFormat(const Value: TRestFormat);
+procedure TJanuaRESTDataModelTemplate.SetRestFormat(const Value: TRestFormat);
 begin
   FRestFormat := Value;
   if Assigned(FjdsDataset) then
@@ -2797,7 +2821,7 @@ begin
     FjdsRESTRemotDataset.RemoteFormat := Value;
 end;
 
-procedure TJanuaRESTModelTemplate.SetServerUrl(const Value: string);
+procedure TJanuaRESTDataModelTemplate.SetServerUrl(const Value: string);
 begin
   FServerUrl := Value;
   if FServerUrl <> '' then
@@ -2808,19 +2832,19 @@ begin
   end;
 end;
 
-procedure TJanuaRESTModelTemplate.StartSearch;
+procedure TJanuaRESTDataModelTemplate.StartSearch;
 begin
   // code to setup parameters as in Model.
   jdsDataset.ApplyFilter;
 end;
 
-function TJanuaRESTModelTemplate.TryGetDetailDataset(const aName: string;
+function TJanuaRESTDataModelTemplate.TryGetDetailDataset(const aName: string;
 out aDataset: IJanuaDBDataset): Boolean;
 begin
 
 end;
 
-procedure TJanuaRESTModelTemplate.UndoChanges;
+procedure TJanuaRESTDataModelTemplate.UndoChanges;
 begin
   GetInternalRecord.UndoUpdates;
 end;
@@ -2957,6 +2981,46 @@ end;
 procedure TJanuaSingleRecordDBModel.UndoChanges;
 begin
   FCurrentRecord.UndoUpdates
+end;
+
+{ TJanuaBaseModelTemplate }
+
+function TJanuaBaseModelTemplate.GetKeepAlive: Boolean;
+begin
+  Result := FKeepAlive
+end;
+
+function TJanuaBaseModelTemplate.GetLastErrorMessage: string;
+begin
+  Result := FLastErrorMessage
+end;
+
+function TJanuaBaseModelTemplate.GetSelectedSchema: Integer;
+begin
+  Result := FSelectedSchema;
+end;
+
+procedure TJanuaBaseModelTemplate.SetKeepAlive(const Value: Boolean);
+begin
+  FKeepAlive := Value;
+end;
+
+procedure TJanuaBaseModelTemplate.SetLastErrorMessage(const Value: string);
+begin
+  if FLastErrorMessage <> Value then
+  begin
+    FLastErrorMessage := Value;
+    Notify('LastErrorMessage');
+  end;
+end;
+
+procedure TJanuaBaseModelTemplate.SetSelectedSchema(const Value: Integer);
+begin
+  if FSelectedSchema <> Value then
+  begin
+    FSelectedSchema := Value;
+    Notify('SelectedSchema');
+  end;
 end;
 
 end.

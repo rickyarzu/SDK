@@ -11,13 +11,25 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     ExplicitLeft = 3
     ExplicitTop = 48
   end
+  object Area: TLabel [2]
+    Left = 50
+    Top = 48
+    Width = 108
+    Height = 15
+    Caption = 'Tecnico / Calendario'
+  end
   inherited edDays: TSpinEdit
-    Top = 45
-    ExplicitTop = 45
+    Left = 3
+    Top = 64
+    ExplicitLeft = 3
+    ExplicitTop = 64
   end
   inherited Panel1: TPanel
     Width = 903
     ExplicitWidth = 903
+    inherited btnAddMeeting: TButton
+      Action = dmVCLPhoenixPlannerController.ActionAddMeeting
+    end
     inherited btnAddPerson: TButton
       Action = dmVCLPhoenixPlannerController.ActionAddUser
     end
@@ -33,7 +45,6 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     ExplicitTop = 865
   end
   inherited PageControl1: TPageControl
-    ActivePage = tabCalendarGrid
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
         TMSStyle = 0
@@ -41,7 +52,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     end
     inherited tabCalendarGrid: TTabSheet
       TabVisible = True
-      inherited EnhCRDBGrid1: TEnhCRDBGrid
+      inherited grdCalendar: TEnhCRDBGrid
         DataSource = dmVCLPhoenixPlannerController.dsCalendarEvents
         PopupMenu = GridPopup
         Columns = <
@@ -97,6 +108,18 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
       end
     end
   end
+  object cboTecnici: TJvDBLookupCombo [9]
+    Left = 50
+    Top = 64
+    Width = 208
+    Height = 24
+    EmptyValue = '-1'
+    LookupField = 'RESPONSABILE'
+    LookupDisplay = 'NOME_TECNICO'
+    LookupSource = dmVCLPhoenixPlannerController.dsTecniciCalendar
+    TabOrder = 6
+    OnCloseUp = cboTecniciCloseUp
+  end
   object GridPopup: TPopupMenu
     Images = dmVCLPhoenixPlannerController.SVGIconImageList16
     Left = 439
@@ -104,5 +127,20 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     object mnuGoogleSync1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actGoogleSync
     end
+  end
+  object dsCAP: TUniDataSource
+    DataSet = dmVCLPhoenixPlannerController.qryCAP
+    Left = 160
+    Top = 280
+  end
+  object dsTechnicians: TUniDataSource
+    DataSet = dmVCLPhoenixPlannerController.qryTech
+    Left = 160
+    Top = 368
+  end
+  object dsCustomers: TUniDataSource
+    DataSet = dmVCLPhoenixPlannerController.qryCustomers
+    Left = 80
+    Top = 336
   end
 end

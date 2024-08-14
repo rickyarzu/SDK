@@ -14,7 +14,7 @@ type
   TJanuaViewModelApplication = class
   private
     class var FSearchViewModels: IDictionary<string, ISearchViewModel>;
-    class var FViewModels: IDictionary<string, TJanuaViewModelBaseTemplate>;
+    class var FViewModels: IDictionary<string, TJanuaViewModelDataTemplate>;
     class var FSettings: IJanuaViewModelSettings;
   private
     // Model Search Basket
@@ -54,7 +54,7 @@ type
     // View Models Basket
     class procedure RegisterViewModelClass(const aGUID: TGUID; aClass: TViewModelClass);
     class function GetViewModelObject(const aGUID: TGUID; const GId: Integer;
-      out aObject: TJanuaViewModelBaseTemplate): Boolean;
+      out aObject: TJanuaViewModelDataTemplate): Boolean;
     class function TryGetCachedViewModel(const IID: TGUID; const aGroupID: Integer; out Intf): Boolean;
   protected
     class function GetSettings: IJanuaViewModelSettings; static;
@@ -219,7 +219,7 @@ begin
 end;
 
 class function TJanuaViewModelApplication.GetViewModelObject(const aGUID: TGUID; const GId: Integer;
-  out aObject: TJanuaViewModelBaseTemplate): Boolean;
+  out aObject: TJanuaViewModelDataTemplate): Boolean;
 var
   lClass: TViewModelClass;
 begin
@@ -337,7 +337,7 @@ end;
 class function TJanuaViewModelApplication.TryGetCachedViewModel(const IID: TGUID; const aGroupID: Integer;
   out Intf): Boolean;
 var
-  lObject: TJanuaViewModelBaseTemplate;
+  lObject: TJanuaViewModelDataTemplate;
   lFound: Boolean;
   lSearchString: string;
 begin
@@ -346,7 +346,7 @@ begin
     lSearchString := IID.ToString + aGroupID.ToHexString;
     Result := False;
     if not Assigned(FViewModels) then
-      FViewModels := TCollections.CreateDictionary<string, TJanuaViewModelBaseTemplate>;
+      FViewModels := TCollections.CreateDictionary<string, TJanuaViewModelDataTemplate>;
 
     lFound := FViewModels.TryGetValue(lSearchString, lObject);
 

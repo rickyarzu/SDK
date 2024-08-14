@@ -280,9 +280,13 @@ end;
   end; }
 
 procedure TTestDetailViewModel.CreateModel;
+var
+  ltmpModel: IJanuaModel;
 begin
-  if not Supports(FDetailTestModel, IJanuaModel, FJanuaModel) then
+  if not Supports(FDetailTestModel, IJanuaModel, ltmpModel) then
     raise Exception.Create('FDetailTestModel IJanuaModel not supported');
+
+  SetModel(ltmpModel);
 end;
 
 procedure TTestDetailViewModel.DeActivateDetails;

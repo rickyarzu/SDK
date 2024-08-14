@@ -143,13 +143,13 @@
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Srv.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.DMVC.Session.Controller.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.Carservice.DMVC.Application.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.UniDacApplication.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.DMVC.Driver.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Template.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Carservice.DMVC.WindowsService.pas">
             <Form>PickappAPIService</Form>
             <DesignClass>TService</DesignClass>

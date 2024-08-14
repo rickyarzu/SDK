@@ -88,7 +88,6 @@ contains
   Janua.CarService.Anagraph.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Intf.pas',
   Janua.CarService.Anagraph.Model.Impl in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.Model.Impl.pas',
   Janua.CarService.Anagraph.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Impl.pas',
-  Janua.System.REST.ClientModel in '..\..\src\januacore\ViewModels\Janua.System.REST.ClientModel.pas',
   Janua.CarService.Booking.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.CarService.Booking.ViewModel.Intf.pas',
   Janua.Carservice.Driver.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Intf.pas',
   Janua.Carservice.Driver.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Impl.pas',

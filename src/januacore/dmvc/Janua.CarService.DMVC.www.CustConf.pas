@@ -14,7 +14,7 @@ uses
   Janua.Orm.Dataset.Intf, Janua.Orm.Intf, Janua.Core.Classes.Intf, Janua.Bindings.Intf,
   Janua.ViewModels.Intf, Janua.Core.DB.Intf, JOrm.System.Settings.Intf,
   // Janua DMVC
-  Janua.DMVC.Srv.Template,
+  Janua.DMVC.Controller.Template,
   // Janua.Libraries
   Janua.Core.Commons, Janua.Core.Classes, Janua.Core.DB.Impl, Janua.Core.Types, Janua.Core.DB.Types,
   Janua.Http.Types;
@@ -22,7 +22,7 @@ uses
 type
 
   [MVCPath('/')]
-  TPikappCustConfWWWController = class(TJanuaCustomDMVCSrvController)
+  TPikappCustConfWWWController = class(TCustomMVVMSrvController)
 
   public
     [MVCPath]

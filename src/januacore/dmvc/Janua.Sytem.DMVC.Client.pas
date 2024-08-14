@@ -2,13 +2,13 @@ unit Janua.Sytem.DMVC.Client;
 
 interface
 
-uses System.SysUtils, Janua.Core.Types, Janua.Http.Types, Janua.DMVC.Client;
+uses System.SysUtils, Janua.Core.Types, Janua.Http.Types, Janua.REST.Client;
 
 type
 
-  TJanuaDMVCSystemClient = class(TDMVCClient)
+  TJanuaDMVCSystemClient = class(TJanuaRESTClient)
   public
-   constructor Create; override;
+    constructor Create; override;
   private
     FLoginResult: string;
   protected
@@ -42,8 +42,10 @@ end;
 constructor TJanuaDMVCSystemClient.Create;
 begin
   inherited;
-  ServerURL := TJanuaApplication.RestSystemUrl;
-  ServerPort := TJanuaApplication.RestSystemPort;
+  {
+    ServerURL := TJanuaApplication.RestSystemUrl;
+    ServerPort := TJanuaApplication.RestSystemPort;
+  }
 end;
 
 function TJanuaDMVCSystemClient.Login: Boolean;
@@ -70,7 +72,9 @@ begin
   if Result then
   begin
     FLoginResult := LResponse.StatusCode.ToString + ' ' + LResponse.StatusText + sl + LResponse.Content;
-    TJanuaApplication.JWT := LResponse.Content;
+    {
+      TJanuaApplication.JWT := LResponse.Content;
+    }
   end
   else
   begin
