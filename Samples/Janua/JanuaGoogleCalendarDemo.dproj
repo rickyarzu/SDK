@@ -107,7 +107,7 @@
         <DCCReference Include="Cloud\ufrmTMSAdvCalendarDemo.pas">
             <Form>frmTMSAdvCalendarDemo</Form>
         </DCCReference>
-        <DCCReference Include="Janua.TMSVCLDemos.VCLApplication.pas"/>
+        <DCCReference Include="..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas"/>
         <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
             <Form>dlgVclCloudGoogleConnect</Form>
             <FormType>dfm</FormType>

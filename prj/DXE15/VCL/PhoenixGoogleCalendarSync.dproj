@@ -1,14 +1,14 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{77B113D7-D490-4D3A-981F-BB6163049672}</ProjectGuid>
+        <ProjectGuid>{57224E55-4B80-46DE-8FE5-DBB019E6BF72}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
-        <MainSource>JanuaGoogleCalendarRegister.dpr</MainSource>
+        <MainSource>PhoenixGoogleCalendarSync.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <Platform>Win32</Platform>
     </PropertyGroup>
@@ -53,12 +53,12 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE15\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaDemoDXE15.optset')"/>
+    <Import Project="..\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaDemoDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1040</VerInfo_Locale>
-        <SanitizedProjectName>JanuaGoogleCalendarRegister</SanitizedProjectName>
-        <CfgDependentOn>..\..\prj\DXE15\JanuaDemoDXE15.optset</CfgDependentOn>
+        <SanitizedProjectName>PhoenixGoogleCalendarSync</SanitizedProjectName>
+        <CfgDependentOn>..\JanuaDemoDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
@@ -100,26 +100,32 @@
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
+    <Import Project="..\..\prj\DXE15\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaDemoDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Cloud\ufrmTMSAdvCalendarDemo.pas">
+        <DCCReference Include="..\..\..\Samples\Janua\Cloud\ufrmTMSAdvCalendarDemo.pas">
             <Form>frmTMSAdvCalendarDemo</Form>
         </DCCReference>
-        <DCCReference Include="Janua.TMSVCLDemos.VCLApplication.pas"/>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
             <Form>dlgVclCloudGoogleConnect</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas">
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas">
+            <Form>dmPhoenixVCLGCalendarController</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas">
             <Form>dmVCLPlannerCustomController</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
+            <DependentOn>..\JanuaDemoDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -170,7 +176,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">JanuaGoogleCalendarRegister.dpr</Source>
+                    <Source Name="MainSource">PhoenixGoogleCalendarSync.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Platforms>
@@ -178,9 +184,9 @@
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <Deployment Version="4">
-                <DeployFile LocalName="C:\Phoenix\JanuaGoogleCalendarRegister.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Phoenix\PhoenixGoogleCalendarSync.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>JanuaGoogleCalendarRegister.exe</RemoteName>
+                        <RemoteName>PhoenixGoogleCalendarSync.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

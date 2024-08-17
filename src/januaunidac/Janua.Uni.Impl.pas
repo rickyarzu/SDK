@@ -20,13 +20,6 @@ type
     function GetOrderByClause: string; override;
   end;
 
-  (*
-    TJanuaUniApplication = class
-    class var
-    LocalDataBaseConnection: IJanuaUniSessionSource;
-    end;
-  *)
-
 type
   TUniDatasetFunctions = class(TJanuaCustomDatasetFunctions, IJanuaDatasetFunctions,
     IJanuaUniDatasetFunctions)

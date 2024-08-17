@@ -154,6 +154,7 @@
         <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas"/>
         <DCCReference Include="..\..\Angelo\uBindVCLInterposers.pas"/>
         <DCCReference Include="..\..\Angelo\uBindingEngineRTL.pas"/>
+        <DCCReference Include="..\..\Angelo\uVCLBindingInterposers.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

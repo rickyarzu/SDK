@@ -284,11 +284,14 @@ end;
 procedure TJanuaBindings.ClearBindings(const aObject: TObject);
 var
   LOB: Spring.Collections.TPair<TObject, IJanuaBindRecord>;
+  aRecord: IJanuaBindRecord;
 begin
-  if FObjectBindings.ContainsKey(aObject) then
+  if FObjectBindings.TryExtract(aObject, aRecord) then
   begin
-    GeTJanuaBindRecord(aObject).ClearBindings;
-    FObjectBindings.Remove(aObject);
+    aRecord.ClearBindings;
+    // questa procedura rimuove un record e lo elimina.
+    { FObjectBindings.Remove(aObject); }
+    aRecord := nil;
   end;
 
   for LOB in FObjectBindings do

@@ -4,7 +4,7 @@ uses
   VCL.Forms,
   Janua.Application.Framework,
   ufrmTMSAdvCalendarDemo in 'Cloud\ufrmTMSAdvCalendarDemo.pas' {frmTMSAdvCalendarDemo},
-  Janua.TMSVCLDemos.VCLApplication in 'Janua.TMSVCLDemos.VCLApplication.pas',
+  Janua.Phoenix.VCL.BackgroundApplication in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas',
   Janua.VCL.Cloud.dlgGoogleConnect in '..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas' {dlgVclCloudGoogleConnect};
 
 {$R *.res}

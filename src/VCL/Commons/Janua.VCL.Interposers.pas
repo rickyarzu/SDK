@@ -13,22 +13,6 @@ uses
   Janua.Core.Types, Janua.Orm.Intf, Janua.Core.Classes.Intf, Janua.VCL.Bindings.Intf, Janua.Bindings.Intf,
   Janua.Controls.Forms.Impl, Janua.Controls.Forms.Intf, Janua.VCL.CategoryButtonsFrame;
 
-(*
-  IJanuaBindableEditControl = interface(IJanuaBindableControl)
-  ['{BF293CF9-26F1-4572-B E63-5543BDEA7174}']
-  function GetJanuaText: string;
-  procedure SetJanuaText(const Value: string);
-  property Text: string read GetJanuaText write SetJanuaText;
-
-  function GetJanuaOnEnter: string;
-  procedure SetJanuaOnEnter(const Value: string);
-  property OnEnter: string read GetJanuaOnEnter write SetJanuaOnEnter;
-
-  function GetJanuaOnExit: string;
-  procedure SetJanuaOnExit(const Value: string);
-  property OnExit: string read GetJanuaOnExit write SetJanuaOnExit;
-*)
-
 type
   TAction = class(VCL.ActnList.TAction, IJanuaBindable)
     // ------- Observer
@@ -50,7 +34,6 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -96,7 +79,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -142,7 +125,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure ClearBindings;
@@ -192,7 +175,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure BindToField(const aField: IJanuaField);
@@ -233,7 +216,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -281,7 +264,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -336,7 +319,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -379,7 +362,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -427,7 +410,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
     procedure CheckValidDate(Value: TDate); override;
   public
@@ -478,7 +461,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -515,7 +498,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -550,7 +533,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -587,7 +570,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -632,7 +615,7 @@ type
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   protected
-    procedure Initialize; virtual;
+
     function GetSelf: TObject;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -734,7 +717,7 @@ begin
     BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
   except
     on e: exception do
-      Janua.Application.Framework.RaiseException('Bind', e, Self);
+      Raise exception.Create(ClassName + '.' + Name + '.Bind Error:' + e.Message);
   end;
 end;
 
@@ -770,7 +753,6 @@ constructor TEdit.Create(AOwner: TComponent);
 begin
   FBindManager := TJanuaBindManager.Create(Self);
   inherited Create(AOwner);
-  Initialize;
 end;
 
 destructor TEdit.Destroy;
@@ -826,11 +808,6 @@ end;
 function TEdit.GetSelf: TObject;
 begin
   Result := Self as TObject
-end;
-
-procedure TEdit.Initialize;
-begin
-
 end;
 
 procedure TEdit.SetJanuaOnEnter(const Value: TNotifyEvent);
@@ -911,7 +888,6 @@ constructor TJvValidateEdit.Create(AOwner: TComponent);
 begin
   FBindManager := TJanuaBindManager.Create(Self);
   inherited Create(AOwner);
-  Initialize;
 end;
 
 destructor TJvValidateEdit.Destroy;
@@ -971,11 +947,6 @@ end;
 function TJvValidateEdit.GetSelf: TObject;
 begin
   Result := Self as TObject
-end;
-
-procedure TJvValidateEdit.Initialize;
-begin
-
 end;
 
 procedure TJvValidateEdit.SetJanuaOnEnter(const Value: TNotifyEvent);
@@ -1105,11 +1076,6 @@ begin
   Result := Self as TObject
 end;
 
-procedure TJvDateEdit.Initialize;
-begin
-
-end;
-
 procedure TJvDateEdit.SetJanuaDate(const Value: TDate);
 begin
   Self.Date := Value
@@ -1217,11 +1183,6 @@ begin
   Result := Self
 end;
 
-procedure TSpinEdit.Initialize;
-begin
-
-end;
-
 procedure TSpinEdit.OnChangeEvent(Sender: TObject);
 begin
   BindManager.Notify('Value');
@@ -1313,11 +1274,6 @@ end;
 function TLabel.GetSelf: TObject;
 begin
   Result := Self as TObject
-end;
-
-procedure TLabel.Initialize;
-begin
-
 end;
 
 procedure TLabel.SetJanuaCaption(const Value: string);
@@ -1431,11 +1387,6 @@ end;
 function TLabeledEdit.GetSelf: TObject;
 begin
   Result := Self
-end;
-
-procedure TLabeledEdit.Initialize;
-begin
-
 end;
 
 procedure TLabeledEdit.SetJanuaCaption(const Value: string);
@@ -1645,11 +1596,6 @@ begin
   Result := Self;
 end;
 
-procedure TDateTimePicker.Initialize;
-begin
-
-end;
-
 procedure TDateTimePicker.SetJanuaDate(const Value: TDate);
 begin
   Self.Date := Value
@@ -1746,10 +1692,6 @@ begin
   Result := Self
 end;
 
-procedure TCheckBox.Initialize;
-begin
-
-end;
 
 { TMemo }
 
@@ -1853,11 +1795,6 @@ end;
 function TMemo.GetSelf: TObject;
 begin
   Result := Self as TObject
-end;
-
-procedure TMemo.Initialize;
-begin
-
 end;
 
 procedure TMemo.SetJanuaOnEnter(const Value: TNotifyEvent);
@@ -1970,11 +1907,6 @@ end;
 function TComboBox.GetSelf: TObject;
 begin
   Result := Self as TObject
-end;
-
-procedure TComboBox.Initialize;
-begin
-
 end;
 
 procedure TComboBox.SetItemsText(const Value: string);
@@ -2092,11 +2024,6 @@ begin
   Result := Self;
 end;
 
-procedure TJvCalcEdit.Initialize;
-begin
-
-end;
-
 { TJvDBLookupCombo }
 
 function TJvDBLookupCombo.AsComponent: TComponent;
@@ -2155,8 +2082,7 @@ constructor TJvDBLookupCombo.Create(AOwner: TComponent);
 begin
   FBindManager := TJanuaBindManager.Create(Self);
   inherited Create(AOwner);
-  Initialize;
-
+  FBindCount := 0;
 end;
 
 destructor TJvDBLookupCombo.Destroy;
@@ -2193,11 +2119,6 @@ end;
 function TJvDBLookupCombo.GetSelf: TObject;
 begin
   Result := Self
-end;
-
-procedure TJvDBLookupCombo.Initialize;
-begin
-  FBindCount := 0;
 end;
 
 procedure TJvDBLookupCombo.KeyValueChanged;
@@ -2272,11 +2193,6 @@ end;
 function TAction.GetSelf: TObject;
 begin
   Result := Self;
-end;
-
-procedure TAction.Initialize;
-begin
-
 end;
 
 { TRadioGroup }
@@ -2386,11 +2302,6 @@ end;
 function TRadioGroup.GetSelf: TObject;
 begin
   Result := Self
-end;
-
-procedure TRadioGroup.Initialize;
-begin
-
 end;
 
 procedure TRadioGroup.SetJanuaOnEnter(const Value: TNotifyEvent);

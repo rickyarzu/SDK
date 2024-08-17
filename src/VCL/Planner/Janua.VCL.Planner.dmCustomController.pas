@@ -252,7 +252,6 @@ type
     procedure Filter; virtual; abstract;
     procedure ActivateCalendar; virtual;
   private
-    Fgcal: TGCalendar;
     Fgrem: TGReminder;
     FGoogleCalendarList: TStrings;
     FCalendarItemIndex: Integer;
@@ -364,6 +363,7 @@ type
     procedure SetOnAfterConnect(const Value: TNotifyEvent);
     procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
   protected
+    Fgcal: TGCalendar;
     LoadCalendarsFromDB: TProc;
     LoadCalendarItemsFromDB: TProc;
     AfterLoadCalendars: TProc;
@@ -395,7 +395,7 @@ type
     procedure NotifyGCalendars();
     procedure FillGoogleCalendars(); virtual;
     procedure FillGoogleCalendarItems(); virtual;
-    procedure UpdateGoogleCalendarItem(Const I: Integer);
+    procedure UpdateGoogleCalendarItem(Const I: Integer); virtual;
     procedure LoaGoogleCalendarItemRecord(); virtual;
     procedure FillColors();
     procedure SetColor();
@@ -971,10 +971,6 @@ var
   I: Integer;
   rem: string;
 begin
-  {
-    LoadCalendarsFromDB: TProc;
-    LoadCalendarItemsFromDB: TProc;
-  }
   Screen.Cursor := crHourGlass;
 
   if Assigned(Fgcal) then
@@ -1035,11 +1031,14 @@ var
   bg: TColor;
   fg: TColor;
 begin
+  // Set custom Calendar as Google Calendar API
   CloudCalendar := ccGoogle;
+  // Asks GCalendar to update Calendar List
   AdvGCalendar1.GetCalendars();
-
+  // During Update DBDaySourceGCalendar must be Inactive
   DBDaySourceGCalendar.Active := False;
-  DBDaySourceGCalendar.Day := Now;
+  // Day Source is 'today'
+  DBDaySourceGCalendar.Day := Date;
 
   var
   PlannerPosition := 0;

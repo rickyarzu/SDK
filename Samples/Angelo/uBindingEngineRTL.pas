@@ -3,11 +3,11 @@ unit uBindingEngineRTL;
 interface
 
 uses // RTL
-  System.SysUtils, System.Classes, {System.Bindings.Expression, System.Bindings.Helper,}
+  System.SysUtils, System.Classes, System.Bindings.Expression, System.Bindings.Helper,
   // Spring
-  Spring.Collections
+  Spring.Collections,
   // inherited
-    uBindingEngine;
+  uBindingEngine;
 
 type
   TBindRecordRTL = class(TBindRecord)
@@ -34,6 +34,8 @@ var
   BindingEngineRTL: TBindingEngineClass = TBindingEngineRTL;
 
 implementation
+
+uses Spring;
 
 const
   JanuaCreateBindOptions: array [jbcNotifyOutput .. jbcEvaluate] of TBindings.TCreateOption = (coNotifyOutput,
@@ -63,7 +65,7 @@ procedure TBindRecordRTL.Bind(const AProperty: string; const ABindToObject: TObj
         lComponentName := (ABindToObject as TComponent).Owner.Name + '.' + lComponentName;
     end;
 
-    Result := lOwnerName(FOwner) + '.' + AProperty + ' Bind Error Binding to ' + ABindToObject.ClassName + '.'
+    Result := lOwnerName(Owner) + '.' + AProperty + ' Bind Error Binding to ' + ABindToObject.ClassName + '.'
       + lComponentName + '.' + ABindToProperty + sLineBreak + aMessage;
   end;
 
@@ -75,7 +77,7 @@ begin
       and control have been created). The TBindings class in the System.Bindings.Helper unit provides utility
       functions to accomplish this. One of these is CreateManagedBinding. *)
     try
-      Guard.CheckNotNull(FOwner, 'Owner');
+      Guard.CheckNotNull(Owner, 'Owner');
 
       if not FBindings.ContainsKey(ABindToObject) then
       begin
@@ -86,7 +88,7 @@ begin
         // 2020-01-25 Removed Bi-Directional Binding from Binding Record to simplify Clear Bindings Management.
         FBindings.Add(ABindToObject, TBindings.CreateManagedBinding(
           { inputs }
-          [TBindings.CreateAssociationScope([Associate(FOwner, 'src')])], 'src.' + AProperty,
+          [TBindings.CreateAssociationScope([Associate(Owner, 'src')])], 'src.' + AProperty,
           { outputs }
           [TBindings.CreateAssociationScope([Associate(ABindToObject, 'dst')])], 'dst.' + ABindToProperty,
           nil, nil, GetCreateOptions));
@@ -106,11 +108,11 @@ var
   lBindObject: IBindable;
   lBindControl: IBindableControl;
 begin
-  if Assigned(FOwner) and Assigned(FBindings) and (FBindings.Count > 0) then
+  if Assigned(Owner) and Assigned(FBindings) and (FBindings.Count > 0) then
   begin
 {$IFDEF DEBUG}
     if not Assigned(FBindManager) then
-      Raise Exception.Create('Bind engine IBindable not Supported: ' + FOwner.ClassName);
+      Raise Exception.Create('Bind engine IBindable not Supported: ' + Owner.ClassName);
 {$ENDIF}
     for i in FBindings do
       try
@@ -140,7 +142,7 @@ procedure TBindRecordRTL.RemoveBindings(const aObject: TObject);
 var
   aBindingExpression: TBindingExpression;
 begin
-  if Assigned(FOwner) and Assigned(FBindings) and (FBindings.Count > 0) and
+  if Assigned(Owner) and Assigned(FBindings) and (FBindings.Count > 0) and
     FBindings.TryGetValue(aObject, aBindingExpression) then
   begin
     aBindingExpression.Clear;
