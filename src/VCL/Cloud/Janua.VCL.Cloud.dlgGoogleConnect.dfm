@@ -76,7 +76,14 @@ object dlgVclCloudGoogleConnect: TdlgVclCloudGoogleConnect
     Enabled = False
     Interval = 300
     OnTimer = Timer1Timer
-    Left = 184
-    Top = 72
+    Left = 368
+    Top = 120
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 300
+    OnTimer = Timer2Timer
+    Left = 368
+    Top = 56
   end
 end

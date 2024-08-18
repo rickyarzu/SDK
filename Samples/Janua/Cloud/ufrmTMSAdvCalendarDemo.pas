@@ -697,6 +697,8 @@ begin
   else
     Item.Color := icDefault;
 
+
+
   if cbAllday.Checked then
   begin
     Item.StartTime := EncodeDateTime(YearOf(StartDate.Date), MonthOf(StartDate.Date), DayOf(StartDate.Date),

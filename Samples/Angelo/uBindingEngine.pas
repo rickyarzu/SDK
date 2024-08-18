@@ -55,7 +55,7 @@ type
   end;
 
 type
-  TJanuaBindManager = class(TInterfacedObject, IBindManager)
+  TBindManager = class(TInterfacedObject, IBindManager)
   private
     FBindCount: Integer;
     FOwner: TObject;
@@ -87,9 +87,8 @@ type
   TBindRecord = class(TObject)
   private
     FOwner: TObject;
-    FBindManager: IBindManager;
-  private
   strict protected // *** bindings
+    FBindManager: IBindManager;
     function GetBindCount: Integer; virtual;
   public
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -138,15 +137,19 @@ type
   private
     class var FBindEngineClass: TBindingEngineClass;
     class var FBindRecordClass: TBindRecordClass;
+    class var FBindEngine: TBindingEngine;
     class function CreateBindEgine: TBindingEngine;
     class function GetBindingEngine: TBindingEngine; static;
   public
-    class function CreateBindRecord: TBindRecord;
+    class function CreateBindRecord(AOwner: TObject): TBindRecord;
+    class destructor Destroy;
   public
     class property BindEngine: TBindingEngine read GetBindingEngine;
     class property BindEngineClass: TBindingEngineClass read FBindEngineClass write FBindEngineClass;
     class property BindRecordClass: TBindRecordClass read FBindRecordClass write FBindRecordClass;
   end;
+
+function lOwnerName(AOwner: TObject): string;
 
 implementation
 
@@ -177,7 +180,7 @@ begin
 
   if not FObjectBindings.TryGetValue(aObject, lBindRecord) then
   begin
-    lBindRecord := TBindRecord.Create(aObject);
+    lBindRecord := TBindApplication.CreateBindRecord(aObject);
     FObjectBindings.Add(aObject, lBindRecord);
   end;
   lBindRecord.Bind(AProperty, ABindToObject, ABindToProperty, ACreateOptions);
@@ -186,7 +189,7 @@ begin
   begin
     if not FObjectBindings.TryGetValue(ABindToObject, lBindRecord) then
     begin
-      lBindRecord := TBindRecord.Create(ABindToObject);
+      lBindRecord := TBindApplication.CreateBindRecord(ABindToObject);
       FObjectBindings.Add(ABindToObject, lBindRecord);
     end;
     lBindRecord.Bind(ABindToProperty, aObject, AProperty, ACreateOptions);
@@ -206,9 +209,16 @@ end;
 procedure TBindingEngine.ClearBindings(const aObject: TObject);
 var
   LOB: Spring.Collections.TPair<TObject, TBindRecord>;
+  aRecord: TBindRecord;
 begin
-  GetBIndRecord(aObject).ClearBindings;
-  FObjectBindings.Remove(aObject);
+  if FObjectBindings.TryExtract(aObject, aRecord) then
+  begin
+    aRecord.ClearBindings;
+    // questa procedura rimuove un record e lo elimina.
+    aRecord.Free;
+    { FObjectBindings.Remove(aObject); }
+    aRecord := nil;
+  end;
 
   for LOB in FObjectBindings do
     LOB.Value.RemoveBindings(aObject);
@@ -230,7 +240,7 @@ function TBindingEngine.GetBIndRecord(const aObject: TObject): TBindRecord;
 begin
   if not FObjectBindings.TryGetValue(aObject, Result) then
   begin
-    Result := TBindRecord.Create(aObject);
+    Result := TBindApplication.CreateBindRecord(aObject);
     FObjectBindings.Add(aObject, Result);
   end;
 end;
@@ -294,9 +304,9 @@ begin
   Result := -1
 end;
 
-{ TJanuaBindManager }
+{ TBindManager }
 
-procedure TJanuaBindManager.Bind(const AProperty: string; const ABindToObject: TObject;
+procedure TBindManager.Bind(const AProperty: string; const ABindToObject: TObject;
   const ABindToProperty: string; const AReadOnly: boolean; const ACreateOptions: TBindCreateOptions);
 
   function GetDescription: string;
@@ -338,7 +348,7 @@ begin
   end;
 end;
 
-procedure TJanuaBindManager.ClearBindings;
+procedure TBindManager.ClearBindings;
 begin
   if Assigned(TBindApplication.BindEngine) then
     TBindApplication.BindEngine.ClearBindings(FOwner);
@@ -346,7 +356,7 @@ begin
   FBindCount := 0;
 end;
 
-constructor TJanuaBindManager.Create(AOwner: TObject);
+constructor TBindManager.Create(AOwner: TObject);
 begin
   inherited Create;
   FBindCount := 0;
@@ -354,13 +364,13 @@ begin
   FBindedProperties := TCollections.CreateList<string>;
 end;
 
-procedure TJanuaBindManager.DecBindCount;
+procedure TBindManager.DecBindCount;
 begin
   if FBindCount > 0 then
     Dec(FBindCount);
 end;
 
-destructor TJanuaBindManager.Destroy;
+destructor TBindManager.Destroy;
 begin
   try
     ClearBindings;
@@ -371,28 +381,28 @@ begin
   end;
 end;
 
-function TJanuaBindManager.GetBindCount: Integer;
+function TBindManager.GetBindCount: Integer;
 begin
   Result := FBindCount
 end;
 
-function TJanuaBindManager.GetHasBindings: boolean;
+function TBindManager.GetHasBindings: boolean;
 begin
   Result := FBindCount > 0
 end;
 
-procedure TJanuaBindManager.IncBindCount;
+procedure TBindManager.IncBindCount;
 begin
   Inc(FBindCount);
 end;
 
-procedure TJanuaBindManager.Notify(const AProperty: string);
+procedure TBindManager.Notify(const AProperty: string);
 begin
   if Assigned(FOwner) then
     TBindApplication.BindEngine.Notify(FOwner, AProperty);
 end;
 
-procedure TJanuaBindManager.NotifyAll;
+procedure TBindManager.NotifyAll;
 var
   lProperty: string;
 begin
@@ -400,7 +410,7 @@ begin
     Notify(lProperty);
 end;
 
-procedure TJanuaBindManager.UnBind(const AProperty: string; const ABindToObject: TObject;
+procedure TBindManager.UnBind(const AProperty: string; const ABindToObject: TObject;
   const ABindToProperty: string);
 begin
   TBindApplication.BindEngine.UnBind(FOwner, AProperty, ABindToObject, ABindToProperty);
@@ -408,19 +418,34 @@ end;
 
 { TBindApplication }
 
+{ class var FBindEngineClass: TBindingEngineClass;
+  class var FBindRecordClass: TBindRecordClass;
+  class function CreateBindEgine: TBindingEngine;
+  class function GetBindingEngine: TBindingEngine; static;
+}
+
 class function TBindApplication.CreateBindEgine: TBindingEngine;
 begin
-
+  Result := FBindEngineClass.Create
 end;
 
-class function TBindApplication.CreateBindRecord: TBindRecord;
+class function TBindApplication.CreateBindRecord(AOwner: TObject): TBindRecord;
 begin
+  Result := FBindRecordClass.Create(AOwner)
+end;
 
+class destructor TBindApplication.Destroy;
+begin
+  if Assigned(FBindEngine) then
+    FBindEngine.Free;
+  FBindEngine := nil;
 end;
 
 class function TBindApplication.GetBindingEngine: TBindingEngine;
 begin
-
+  if not Assigned(FBindEngine) then
+    FBindEngine := CreateBindEgine;
+  Result := FBindEngine;
 end;
 
 end.
