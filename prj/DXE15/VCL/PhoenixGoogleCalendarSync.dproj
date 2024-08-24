@@ -105,9 +105,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\Samples\Janua\Cloud\ufrmTMSAdvCalendarDemo.pas">
-            <Form>frmTMSAdvCalendarDemo</Form>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
             <Form>dlgVclCloudGoogleConnect</Form>

@@ -10,6 +10,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = mmuPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
   OnCreate = FormCreate
@@ -616,7 +617,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end
@@ -641,6 +641,24 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited DBPlanner1: TDBPlanner
               Width = 1432
               Height = 514
+              Header.GroupCaptions.Strings = (
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                '')
               ExplicitWidth = 1432
               ExplicitHeight = 514
               TMSStyle = 0
@@ -1010,5 +1028,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     OnTimer = Timer1Timer
     Left = 908
     Top = 154
+  end
+  object mmuPlanner: TMainMenu
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    Left = 456
+    Top = 312
+    object Colore1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actCalendarColor
+    end
   end
 end

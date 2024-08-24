@@ -241,17 +241,44 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           DataField = 'calcIndirizzo'
           DataSource = dsReportsPlanner
           OnDblClick = DBText1DblClick
+          ExplicitLeft = 6
+          ExplicitTop = 15
         end
-        object DBText8: TDBText
-          AlignWithMargins = True
-          Left = 3
-          Top = 60
-          Width = 291
-          Height = 15
+        object Panel3: TPanel
+          Left = 0
+          Top = 56
+          Width = 297
+          Height = 22
           Align = alBottom
-          DataField = 'calcAppuntamentoDataOra'
-          DataSource = dsReportsPlanner
-          ExplicitTop = 26
+          BevelOuter = bvNone
+          TabOrder = 0
+          ExplicitLeft = 6
+          ExplicitTop = 54
+          object DBText8: TDBText
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 84
+            Height = 16
+            Align = alLeft
+            DataField = 'calcAppuntamentoDataOra'
+            DataSource = dsReportsPlanner
+            OnDblClick = DBText1DblClick
+          end
+          object DBText9: TDBText
+            AlignWithMargins = True
+            Left = 93
+            Top = 3
+            Width = 201
+            Height = 16
+            Align = alClient
+            DataField = 'NOME_TECNICO'
+            DataSource = dsReportsPlanner
+            OnDblClick = DBText1DblClick
+            ExplicitLeft = 153
+            ExplicitTop = 1
+            ExplicitWidth = 84
+          end
         end
       end
       object btnImage: TDBImage
@@ -263,7 +290,10 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         DataField = 'calcImage'
         DataSource = dsReportsPlanner
         TabOrder = 1
+        OnDblClick = DBText1DblClick
         OnMouseDown = btnImageMouseDown
+        ExplicitLeft = -2
+        ExplicitTop = -1
       end
     end
   end
@@ -549,7 +579,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   object cboTecnici: TJvDBLookupCombo
     Left = 8
     Top = 24
-    Width = 369
+    Width = 225
     Height = 24
     EmptyValue = '-1'
     LookupField = 'RESPONSABILE'
@@ -829,6 +859,17 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     ParentFont = False
     TabOrder = 13
     OnClick = btnNextDayClick
+  end
+  object cbkFilterReport: TCheckBox
+    Left = 239
+    Top = 32
+    Width = 121
+    Height = 16
+    Caption = 'Filtra Rapp. Tecnico'
+    Checked = True
+    State = cbChecked
+    TabOrder = 14
+    OnClick = cbkFilterReportClick
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers

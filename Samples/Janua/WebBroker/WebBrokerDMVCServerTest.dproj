@@ -155,6 +155,7 @@
         <DCCReference Include="..\..\Angelo\uBindVCLInterposers.pas"/>
         <DCCReference Include="..\..\Angelo\uBindingEngineRTL.pas"/>
         <DCCReference Include="..\..\Angelo\uVCLBindingInterposers.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

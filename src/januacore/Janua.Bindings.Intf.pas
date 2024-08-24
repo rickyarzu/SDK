@@ -43,7 +43,7 @@ type
     property AsObject: TObject read GetSelf;
 
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput{, jbcEvaluate}]);
+      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
   end;
 
 

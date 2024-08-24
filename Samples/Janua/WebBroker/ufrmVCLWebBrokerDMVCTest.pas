@@ -38,6 +38,7 @@ type
     AdvMemo1: TAdvMemo;
     s: TAdvJSONMemoStyler;
     edDMVCUrlTest: TEdit;
+    btnLogin: TButton;
     procedure frameTestWebBrokerBeforeStartServer(Sender: TObject);
     procedure frameTestWebBrokerAfterStartServer(Sender: TObject);
     procedure frameDMVCWebBrokerAfterStartServer(Sender: TObject);

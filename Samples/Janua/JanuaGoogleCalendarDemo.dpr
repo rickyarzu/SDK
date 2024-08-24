@@ -13,7 +13,7 @@ var
 dlgVclCloudGoogleConnect:TdlgVclCloudGoogleConnect;
 
 begin
-  TJanuaTmsDemosVCLApplication.ApplicationSetup('demo.tmssoftware.com');
+  TPhoenixVCLBackgroundApplication.ApplicationSetup('demo.assoantincendio.com');
   TJanuaApplication.StyleManager.Activate;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;

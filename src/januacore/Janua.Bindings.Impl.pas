@@ -339,7 +339,8 @@ end;
 
 procedure TJanuaBindings.Notify(const aObject: TObject; const APropertyName: string);
 begin
-  TBindings.Notify(aObject, APropertyName);
+  if Assigned(aObject) then
+    TBindings.Notify(aObject, APropertyName);
 end;
 
 procedure TJanuaBindings.UnBind(const aObject: TObject; const AProperty: string; const ABindToObject: TObject;

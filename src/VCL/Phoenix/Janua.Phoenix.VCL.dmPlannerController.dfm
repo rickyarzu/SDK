@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 678
+  Height = 614
   Width = 1047
   inherited SVGIconImageListIt: TSVGIconImageList
     Size = 48
@@ -166,6 +166,29 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
       00000500414C494153010014000000000005004A475549442300260000000000
       000000000000}
+  end
+  inherited vtGoogleColors: TVirtualTable
+    Left = 944
+    Top = 312
+    Data = {
+      040003000200494402000000000000000A004241434B5F434F4C4F5203000000
+      000000000A00464F52455F434F4C4F520300000000000000000000000000}
+  end
+  inherited tbGoogleColors: TUniTable
+    OrderFields = 'ID'
+    Left = 944
+    Top = 376
+    object tbGoogleColorsID: TSmallintField
+      FieldName = 'ID'
+      Required = True
+    end
+    object tbGoogleColorsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+      Required = True
+    end
+    object tbGoogleColorsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
   end
   object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (
@@ -648,12 +671,18 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object qryCustomers: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
+      'SELECT * FROM'
+      '('
       'SELECT DISTINCT C.chiave, C.descrizione_scheda'
       'FROM FILIALI_CLIENTI F '
       'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
       'JOIN STATINI S ON F.chiave = S.filiale'
       'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY TRIM(C.DESCRIZIONE_SCHEDA)'
+      'UNION'
+      'SELECT '
+      '0 , NULL FROM  RDB$DATABASE'
+      ') A'
+      'ORDER BY TRIM(A.DESCRIZIONE_SCHEDA)'
       ';')
     Left = 688
     Top = 184
@@ -688,10 +717,15 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object qryCAP: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
+      'SELECT * FROM ('
       'SELECT DISTINCT S.CAP'
       'FROM STATINI s'
       'WHERE S.STATO > -1 AND S.STATO < 9'
-      'ORDER BY  S.CAP'
+      'UNION'
+      'SELECT '
+      #39'00000'#39' FROM  RDB$DATABASE'
+      ') A'
+      'ORDER BY  A.CAP'
       ';')
     Left = 688
     Top = 312
@@ -2062,6 +2096,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'E.DALLE_ORE <= :DATA_AL'
       ';')
     FetchRows = 100
+    Active = True
     Filtered = True
     IndexFieldNames = 'JGUID'
     Left = 944

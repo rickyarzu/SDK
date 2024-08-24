@@ -1,5 +1,5 @@
 inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
-  Height = 569
+  Height = 555
   Width = 987
   inherited JanuaUniConnection1: TJanuaUniConnection
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
@@ -40,6 +40,11 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       495054494F4E27000000000000000A004241434B5F434F4C4F52030000000000
       00000500414C494153010014000000000005004A475549442300260000000000
       000000000000}
+  end
+  inherited vtGoogleColors: TVirtualTable
+    Data = {
+      040003000200494402000000000000000A004241434B5F434F4C4F5203000000
+      000000000A00464F52455F434F4C4F520300000000000000000000000000}
   end
   object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
@@ -388,7 +393,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     Filtered = True
     IndexFieldNames = 'DALLE_ORE DESC'
     Left = 528
-    Top = 336
+    Top = 400
     ParamData = <
       item
         DataType = ftDate
@@ -528,100 +533,182 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT E.* FROM '
-      
-        'CALENDARIO_EVENTI E LEFT JOIN CALENDARIO C ON E.CALENDARIO = C.C' +
-        'HIAVE'
-      'where '
-      'C.GRUPPO_ID = '#39'T'#39
-      'AND'
-      'E.DALLE_ORE >= :DATA_DAL'
-      'AND'
-      'E.DALLE_ORE <= :DATA_AL'
+      'CALENDARIO_EVENTI E where uuid_to_char(JGUID) = :GUID'
       ';')
     FetchRows = 100
     Filtered = True
     IndexFieldNames = 'DALLE_ORE DESC'
     Left = 528
-    Top = 408
+    Top = 328
     ParamData = <
       item
-        DataType = ftDate
-        Name = 'DATA_DAL'
-        ParamType = ptInput
-        Value = 45437d
-      end
-      item
-        DataType = ftDate
-        Name = 'DATA_AL'
-        ParamType = ptInput
-        Value = 45503d
+        DataType = ftString
+        Name = 'GUID'
+        Value = 'F3C93E19-8124-4D74-95BA-9FE0E5E119F7'
       end>
-    object IntegerField1: TIntegerField
+    object qryUpdatePlannerEventsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object IntegerField2: TIntegerField
+    object qryUpdatePlannerEventsSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
-    object IntegerField3: TIntegerField
+    object qryUpdatePlannerEventsTECNICO: TIntegerField
       FieldName = 'TECNICO'
-      Required = True
     end
-    object DateTimeField1: TDateTimeField
+    object qryUpdatePlannerEventsDALLE_ORE: TDateTimeField
       FieldName = 'DALLE_ORE'
       Required = True
     end
-    object DateTimeField2: TDateTimeField
+    object qryUpdatePlannerEventsALLE_ORE: TDateTimeField
       FieldName = 'ALLE_ORE'
       Required = True
     end
-    object StringField1: TStringField
-      FieldName = 'SUBJECT'
-      Size = 256
-    end
-    object WideMemoField1: TWideMemoField
+    object qryUpdatePlannerEventsNOTE: TWideMemoField
       FieldName = 'NOTE'
       BlobType = ftWideMemo
     end
-    object StringField2: TStringField
+    object qryUpdatePlannerEventsSUBJECT: TStringField
+      FieldName = 'SUBJECT'
+      Size = 256
+    end
+    object qryUpdatePlannerEventsTECNICO_SIGLA: TStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
-    object IntegerField4: TIntegerField
+    object qryUpdatePlannerEventsCOLORE: TIntegerField
       FieldName = 'COLORE'
     end
-    object SmallintField1: TSmallintField
-      FieldName = 'ICONA'
-    end
-    object BlobField1: TBlobField
-      FieldName = 'GOOGLE_JSON'
-    end
-    object IntegerField5: TIntegerField
-      FieldName = 'GFORECOLOR'
-    end
-    object IntegerField6: TIntegerField
-      FieldName = 'GBACKCOLOR'
-    end
-    object IntegerField7: TIntegerField
-      FieldName = 'CALENDARIO'
-    end
-    object StringField3: TStringField
-      FieldName = 'GOOGLEID'
-      Size = 128
-    end
-    object GuidField1: TGuidField
+    object qryUpdatePlannerEventsJGUID: TGuidField
       FieldName = 'JGUID'
       FixedChar = True
       Size = 38
     end
-    object StringField4: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpMailTecnico'
-      LookupKeyFields = 'CHIAVE'
-      LookupResultField = 'EMAIL'
-      KeyFields = 'TECNICO'
+    object qryUpdatePlannerEventsICONA: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object qryUpdatePlannerEventsGOOGLE_JSON: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object qryUpdatePlannerEventsGFORECOLOR: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object qryUpdatePlannerEventsGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object qryUpdatePlannerEventsCALENDARIO: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object qryUpdatePlannerEventsGOOGLEID: TStringField
+      FieldName = 'GOOGLEID'
       Size = 128
-      Lookup = True
+    end
+  end
+  object qryGoogleEvent: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT * FROM  GOOGLE_CALENDAR_EVENTS '
+      'WHERE uuid_to_char(JGUID) = :GUID')
+    Left = 648
+    Top = 296
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'GUID'
+        ParamType = ptInput
+        Value = 'F3C93E19-8124-4D74-95BA-9FE0E5E119F7'
+      end>
+    object qryGoogleEventID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 128
+    end
+    object qryGoogleEventETAG: TStringField
+      FieldName = 'ETAG'
+      Size = 128
+    end
+    object qryGoogleEventSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object qryGoogleEventDESCRIPTION: TBlobField
+      FieldName = 'DESCRIPTION'
+    end
+    object qryGoogleEventSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object qryGoogleEventENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object qryGoogleEventCREATED: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object qryGoogleEventUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object qryGoogleEventLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object qryGoogleEventSTATUS: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object qryGoogleEventVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object qryGoogleEventRECURRENCE: TStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object qryGoogleEventRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object qryGoogleEventSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object qryGoogleEventCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object qryGoogleEventCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      Required = True
+      Size = 128
+    end
+    object qryGoogleEventUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventATTENDEES: TBlobField
+      FieldName = 'ATTENDEES'
+    end
+    object qryGoogleEventREMINDERS: TBlobField
+      FieldName = 'REMINDERS'
+    end
+    object qryGoogleEventJGUID: TBytesField
+      FieldName = 'JGUID'
+    end
+    object qryGoogleEventBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+    end
+    object qryGoogleEventFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+    end
+    object qryGoogleEventSYNC: TStringField
+      FieldName = 'SYNC'
+      FixedChar = True
+      Size = 1
     end
   end
 end

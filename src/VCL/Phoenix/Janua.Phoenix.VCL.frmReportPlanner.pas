@@ -29,6 +29,7 @@ type
   TJanuaTmsCookies = TJanuaArray<TAdvWebBrowserCookie>;
 
   TfrmPhoenixVCLReportPlanner = class(TForm)
+    mmuPlanner: TMainMenu;
     PageControl1: TPageControl;
     tabTicketsList: TTabSheet;
     tabPlannerCalendar: TTabSheet;

@@ -70,11 +70,14 @@ type
     btnPrevDay: TButton;
     btnNextDay: TButton;
     Timer1: TTimer;
-    DBText8: TDBText;
     PopupItems: TPopupMenu;
     Colore1: TMenuItem;
     ModificaAppuntamento1: TMenuItem;
     ModificaAppuntamento2: TMenuItem;
+    cbkFilterReport: TCheckBox;
+    Panel3: TPanel;
+    DBText8: TDBText;
+    DBText9: TDBText;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -90,6 +93,7 @@ type
       var Accept: Boolean);
     procedure DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
     procedure DBText1DblClick(Sender: TObject);
+    procedure cbkFilterReportClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -191,6 +195,12 @@ begin
   DBDaySource1.Day := CalendarDate.Date;
 end;
 
+procedure TframeVCLPhoenixPlannerEvent.cbkFilterReportClick(Sender: TObject);
+begin
+  inherited;
+  Filter;
+end;
+
 procedure TframeVCLPhoenixPlannerEvent.cboTecniciChange(Sender: TObject);
 begin
   if dmVCLPhoenixPlannerController.SelectedCalendarTec <> cboTecnici.Value.ToInteger then
@@ -286,19 +296,27 @@ procedure TframeVCLPhoenixPlannerEvent.Filter;
 var
   lFilter: TRecordFilter;
 begin
+
+  // il Tecnico può essere impostato o non impostato (difficile) ma in ogni caso deve essere possibile riaassegnare
   if not cboTecnici.Value.IsEmpty then
     lFilter.TecnicoDB := cboTecnici.Value.ToInteger
   else
     lFilter.TecnicoDB := -1;
-  lFilter.TecnicoCk := True; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
+  lFilter.TecnicoCk := cbkFilterReport.Checked; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
+
+  // Cap può essere Non settato (default) impostato (ha un cap) o resettato (tutti i cap) pari a 00000
   lFilter.CAP := lkpCAP.Value;
-  lFilter.CAPCk := not lkpCAP.Value.IsEmpty;
+  lFilter.CAPCk := not (lkpCAP.Value.IsEmpty or (lkpCAP.Value = '00000'));
+
   if not cboCustomers.Value.IsEmpty then
     lFilter.ClienteID := cboCustomers.Value.ToInteger
   else
     lFilter.ClienteID := -1;
-  lFilter.ClienteCk := not cboCustomers.Value.IsEmpty;
+
+  lFilter.ClienteCk := not (cboCustomers.Value.IsEmpty or (cboCustomers.Value.ToInteger = 0));
+
   lFilter.Status := grpStato.ItemIndex;
+
   dmVCLPhoenixPlannerController.FilterMeetingDialog(lFilter);
 end;
 

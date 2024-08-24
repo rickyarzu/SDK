@@ -5,7 +5,7 @@ interface
 uses
   // RTL
   System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils, System.UITypes,
-  System.DateUtils, System.Math,
+  System.DateUtils, System.Math, System.Diagnostics, System.TimeSpan,
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
   // VCL / TMS
@@ -13,7 +13,7 @@ uses
   PictureContainer, VCL.Graphics,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
-  DBPlanner, PlanExLiveCalendar, Planner, PlanExGCalendar, CloudvCal, CloudWebDav, CloudCustomLive,
+  DBPlanner, Planner, CloudvCal, CloudWebDav, CloudCustomLive,
   CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar,
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
@@ -357,6 +357,9 @@ type
     Action4: TAction;
     actDlgDeleteActions: TAction;
     qryPersonalPlannerEventsNOTE: TWideStringField;
+    tbGoogleColorsID: TSmallintField;
+    tbGoogleColorsBACK_COLOR: TIntegerField;
+    tbGoogleColorsFORE_COLOR: TIntegerField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -371,6 +374,9 @@ type
     procedure actDlgEditActionExecute(Sender: TObject);
     procedure actDlgDeleteActionsExecute(Sender: TObject);
   private
+    Stopwatch: TStopwatch;
+    Elapsed: TTimeSpan;
+    Seconds: Double;
     FTechID: Int64;
     FTechFilter: Boolean;
     FReportDateFilter: Boolean;
@@ -487,7 +493,7 @@ var
 implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
-  Janua.Phoenix.VCL.dlgPlannerEvent, udlgPhoenixVCLGoogleSync;
+  Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync;
 
 var
   JMonitor: TObject;
@@ -728,6 +734,25 @@ begin
 
             qryPersonalPlannerEvents.Post;
           end;
+
+          if (qryTecniciCalendarRESPONSABILE.AsInteger = TechID) or qryTecniciCalendar.Locate('RESPONSABILE',
+            TechID, []) then
+          begin
+            // Google Calendar Table
+            // SELECT * FROM   GOOGLE_CALENDAR_EVENTS WHERE sync = 'F' and etag = '""';
+            tabGoogleEvents.Append;
+            tabGoogleEventsID.AsString := qryPersonalPlannerEventsJGUID.AsString;
+            tabGoogleEventsETAG.AsString := '""';
+            tabGoogleEventsSUMMARY.AsString := qryPersonalPlannerEventsSUBJECT.AsString;
+            tabGoogleEventsDESCRIPTION.Text := lDlg.edNote.Text;
+            tabGoogleEventsCALENDARID.AsString := qryTecniciCalendarGOOGLEID.AsString;
+            tabGoogleEventsSTARTTIME.AsDateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+            tabGoogleEventsENDTIME.AsDateTime := qryPersonalPlannerEventsALLE_ORE.AsDateTime;
+            tabGoogleEventsLOCATION.AsString := 'Europe/Rome';
+            tabGoogleEventsCOLOR.AsInteger := 0;
+            tabGoogleEventsJGUID.AsString := qryPersonalPlannerEventsJGUID.AsString;
+            tabGoogleEvents.Post;
+          end;
         end;
 
       except
@@ -844,6 +869,7 @@ begin
   LoadCalendarsFromDB := (
     procedure
     begin
+      Stopwatch := TStopwatch.StartNew;
       JanuaUniConnection1.Connected := True;
       tabGoogleCalendars.Open;
       if tabGoogleCalendars.RecordCount > 0 then
@@ -873,48 +899,83 @@ begin
       end;
       lkpGCalendarAlias.Assign(vtGoogleCalendars);
       lkpGCalendarAlias.Open;
+      Elapsed := Stopwatch.Elapsed;
+      Seconds := Elapsed.TotalSeconds;
     end);
 
   LoadCalendarItemsFromDB := (
     procedure
     begin
-      tabGoogleEvents.Open;
-      if tabGoogleEvents.RecordCount > 0 then
-      begin
-        tabGoogleEvents.First;
-        While not tabGoogleEvents.Eof do
+      Async.Run<Boolean>(
+        function: Boolean
         begin
-          if not vtGoogleEvents.Locate('ID', tabGoogleEvents.FieldByName('ID').Value, []) then
+          var
+          lStopwatch := TStopwatch.StartNew;
+          if not tabGoogleEvents.Active then
+            tabGoogleEvents.Open;
+
+          if tabGoogleEvents.RecordCount > 0 then
           begin
-            vtGoogleEvents.Append;
-            vtGoogleEventsID.Value := tabGoogleEventsID.Value;
-            vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
-            vtGoogleEventsETAG.Value := tabGoogleEventsETAG.Value;
-            vtGoogleEventsSUMMARY.Value := tabGoogleEventsSUMMARY.Value;
-            vtGoogleEventsDESCRIPTION.Value := tabGoogleEventsDESCRIPTION.Value;
-            vtGoogleEventsSTARTTIME.Value := tabGoogleEventsSTARTTIME.Value;
-            vtGoogleEventsENDTIME.Value := tabGoogleEventsENDTIME.Value;
-            vtGoogleEventsCREATED.Value := tabGoogleEventsCREATED.Value;
-            vtGoogleEventsUPDATED.Value := tabGoogleEventsUPDATED.Value;
-            vtGoogleEventsISALLDAY.Value := tabGoogleEventsISALLDAY.Value = 'T';
-            vtGoogleEventsLOCATION.Value := tabGoogleEventsLOCATION.Value;
-            vtGoogleEventsSTATUS.Value := tabGoogleEventsSTATUS.Value;
-            vtGoogleEventsVISIBILITY.Value := tabGoogleEventsVISIBILITY.Value;
-            vtGoogleEventsRECURRENCE.Value := tabGoogleEventsRECURRENCE.Value;
-            vtGoogleEventsRECURRINGID.Value := tabGoogleEventsRECURRINGID.Value;
-            vtGoogleEventsSEQUENCE.Value := tabGoogleEventsSEQUENCE.Value;
-            vtGoogleEventsCOLOR.Value := tabGoogleEventsCOLOR.Value;
-            vtGoogleEventsUSEDEFAULTREMINDERS.AsBoolean := (tabGoogleEventsUSEDEFAULTREMINDERS.Value = 'T');
-            vtGoogleEventsSENDNOTIFICATIONS.AsBoolean := (tabGoogleEventsSENDNOTIFICATIONS.Value = 'T');
-            vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
-            vtGoogleEventsAttendees.Value := tabGoogleEventsATTENDEES.Value;
-            vtGoogleEventsREMINDERS.Value := tabGoogleEventsREMINDERS.Value;
-            vtGoogleEventsJGUID.Value := tabGoogleEventsJGUID.Value;
-            vtGoogleEvents.Post;
+            tabGoogleEvents.First;
+            While not tabGoogleEvents.Eof do
+            begin
+              if not vtGoogleEvents.Locate('ID', tabGoogleEvents.FieldByName('ID').Value, []) then
+              begin
+                vtGoogleEvents.Append;
+                vtGoogleEventsID.Value := tabGoogleEventsID.Value;
+                vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
+                vtGoogleEventsETAG.Value := tabGoogleEventsETAG.Value;
+                vtGoogleEventsSUMMARY.Value := tabGoogleEventsSUMMARY.Value;
+                vtGoogleEventsDESCRIPTION.Value := tabGoogleEventsDESCRIPTION.Value;
+                vtGoogleEventsSTARTTIME.Value := tabGoogleEventsSTARTTIME.Value;
+                vtGoogleEventsENDTIME.Value := tabGoogleEventsENDTIME.Value;
+                vtGoogleEventsCREATED.Value := tabGoogleEventsCREATED.Value;
+                vtGoogleEventsUPDATED.Value := tabGoogleEventsUPDATED.Value;
+                vtGoogleEventsISALLDAY.Value := tabGoogleEventsISALLDAY.Value = 'T';
+                vtGoogleEventsLOCATION.Value := tabGoogleEventsLOCATION.Value;
+                vtGoogleEventsSTATUS.Value := tabGoogleEventsSTATUS.Value;
+                vtGoogleEventsVISIBILITY.Value := tabGoogleEventsVISIBILITY.Value;
+                vtGoogleEventsRECURRENCE.Value := tabGoogleEventsRECURRENCE.Value;
+                vtGoogleEventsRECURRINGID.Value := tabGoogleEventsRECURRINGID.Value;
+                vtGoogleEventsSEQUENCE.Value := tabGoogleEventsSEQUENCE.Value;
+                vtGoogleEventsCOLOR.Value := tabGoogleEventsCOLOR.Value;
+                vtGoogleEventsUSEDEFAULTREMINDERS.AsBoolean :=
+                  (tabGoogleEventsUSEDEFAULTREMINDERS.Value = 'T');
+                vtGoogleEventsSENDNOTIFICATIONS.AsBoolean := (tabGoogleEventsSENDNOTIFICATIONS.Value = 'T');
+                vtGoogleEventsCALENDARID.Value := tabGoogleEventsCALENDARID.Value;
+                vtGoogleEventsAttendees.Value := tabGoogleEventsATTENDEES.Value;
+                vtGoogleEventsREMINDERS.Value := tabGoogleEventsREMINDERS.Value;
+                vtGoogleEventsJGUID.Value := tabGoogleEventsJGUID.Value;
+                vtGoogleEvents.Post;
+              end;
+              tabGoogleEvents.Next;
+            end;
           end;
-          tabGoogleEvents.Next;
-        end;
-      end;
+          vtGoogleEventsSearch.Assign(vtGoogleEvents);
+          vtGoogleEventsSearch.Open;
+          vtGoogleEventsSearch.Last;
+          var
+          lElapsed := lStopwatch.Elapsed;
+          var
+          lSeconds := Elapsed.TotalSeconds;
+        end,
+        procedure(const aValue: Boolean)
+        begin
+          // This is the "success" callback. Runs in the UI thread and
+          // gets the result of the "background" anonymous method.
+          vtGoogleEventsSearch.First;
+          dsGCalendar.Enabled := True;
+          dsGoogleEvents.Enabled := True;
+          dslkpGCalendar.Enabled := True;
+        end,
+        procedure(const Ex: Exception)
+        begin
+          // This is the "error" callback.
+          // Runs in the UI thread and is called only if the
+          // "background" anonymous method raises an exception.
+          JShowError(Ex.Message);
+        end);
+
     end);
 
   AfterLoadCalendars := (
@@ -922,10 +983,7 @@ begin
     begin
       qryTecniciCalendar.Open;
       dsCalendars.Enabled := True;
-      dsGCalendar.Enabled := True;
       dsCalendarEvents.Enabled := True;
-      dsGoogleEvents.Enabled := True;
-      dslkpGCalendar.Enabled := True;
       DBDaySourceCalendar.Active := True;
       DBDaySourceCalendar.Day := Date;
       Async.Run<Boolean>(
@@ -938,11 +996,8 @@ begin
           Result := True;
           TMonitor.Enter(JMonitor);
           try
+            Stopwatch := TStopwatch.StartNew;
             // Carico e metto in Cache nelle MemTable tutti i dataset che serviranno per la gestione del Cal.
-            vtGoogleEventsSearch.Assign(vtGoogleEvents);
-            vtGoogleEventsSearch.Open;
-            vtGoogleEventsSearch.Last;
-            vtGoogleEventsSearch.First;
             qryCAPTecnici.Open;
             qryCAPTecnici.Last;
             qryCAPTecnici.First;
@@ -957,7 +1012,8 @@ begin
             // Relative allo 'stato' del Rapportino ed allo stato del Calendario
             if not vtReportPlanner.Active then
               vtReportPlanner.Open;
-            CloneReportPlanner;
+            Elapsed := Stopwatch.Elapsed;
+            Seconds := Elapsed.TotalSeconds;
           finally
             TMonitor.Exit(JMonitor);
           end;
@@ -966,7 +1022,7 @@ begin
         begin
           // This is the "success" callback. Runs in the UI thread and
           // gets the result of the "background" anonymous method.
-          vtGoogleEventsSearch.First;
+          CloneReportPlanner;
         end,
         procedure(const Ex: Exception)
         begin
@@ -998,11 +1054,11 @@ begin
   }
   Item.CaptionType := ctTimeText;
   // Fields.FieldByName('COLOR')
-  if Assigned(ItemColorField2) and (ItemColorField2.AsInteger > 0) then
+  if Assigned(ItemColorField2) and not ItemColorField2.IsNull and (ItemColorField2.AsInteger > 0) then
     Item.Color := TColor(ItemColorField2.AsInteger);
   Item.CaptionBkg := Item.Color;
   // Fields.FieldByName('IMAGE')
-  if Assigned(ItemImageField2) and (ItemImageField2.AsInteger > -1) then
+  if Assigned(ItemImageField2) and not ItemImageField2.IsNull and (ItemImageField2.AsInteger > -1) then
     Item.ImageID := ItemImageField2.AsInteger;
   // Fields.FieldByName('CAPTION')
   if Assigned(ItemCaptionField2) then
@@ -1314,19 +1370,19 @@ function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: T
 begin
   PopulateCalendars;
 
-  qryTechPlanned.Close;
+  qryTechPlanned.close;
   qryTechPlanned.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryTechPlanned.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryTechPlanned.Open;
 
   Result := qryTechPlanned.RecordCount;
 
-  qryPlannerEvents.Close;
+  qryPlannerEvents.close;
   qryPlannerEvents.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents.Open;
 
-  qryPlannerEvents2.Close;
+  qryPlannerEvents2.close;
   qryPlannerEvents2.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryPlannerEvents2.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents2.Open;
@@ -1343,7 +1399,7 @@ begin
   if (qryPersonalPlannerEvents.Params[0].AsDate <> aDate) or
     (qryPersonalPlannerEvents.Params[1].AsInteger <> aTechID) then
   begin
-    qryPersonalPlannerEvents.Close;
+    qryPersonalPlannerEvents.close;
     qryPersonalPlannerEvents.Params[0].AsDate := aDate;
     qryPersonalPlannerEvents.Params[1].AsInteger := aTechID;
     qryPersonalPlannerEvents.Open;
@@ -1473,6 +1529,7 @@ begin
       dlgPhoenixVCLGoogleSync := nil;
     end;
   end;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.PopulateCalendars;
@@ -1544,10 +1601,10 @@ begin
   inherited;
   if qryPersonalPlannerEventsCHIAVE.IsNull then
   begin
-    qryGenID.Close;
+    qryGenID.close;
     qryGenID.Open;
     qryPersonalPlannerEventsCHIAVE.AsInteger := qryGenIDID.AsInteger;
-    qryGenID.Close;
+    qryGenID.close;
   end;
 end;
 
@@ -1608,7 +1665,7 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.RefreshCalendarTech;
 begin
-  qryPlannerEvents.Close;
+  qryPlannerEvents.close;
   qryPlannerEvents.Open;
 end;
 
@@ -1801,9 +1858,9 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.Setup;
 begin
-  qryReportPlanner.Close;
-  qryCustomers.Close;
-  qryTech.Close;
+  qryReportPlanner.close;
+  qryCustomers.close;
+  qryTech.close;
   spSetStatinoStato.ExecProc;
   qryReportPlanner.Open;
   vtReportPlanner.Open;

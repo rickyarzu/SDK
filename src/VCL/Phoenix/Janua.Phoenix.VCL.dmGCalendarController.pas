@@ -110,23 +110,48 @@ type
     qryPlannerEventsJGUID: TGuidField;
     qryPlannerEventslkpMailTecnico: TStringField;
     qryUpdatePlannerEvents: TUniQuery;
-    IntegerField1: TIntegerField;
-    IntegerField2: TIntegerField;
-    IntegerField3: TIntegerField;
-    DateTimeField1: TDateTimeField;
-    DateTimeField2: TDateTimeField;
-    StringField1: TStringField;
-    WideMemoField1: TWideMemoField;
-    StringField2: TStringField;
-    IntegerField4: TIntegerField;
-    SmallintField1: TSmallintField;
-    BlobField1: TBlobField;
-    IntegerField5: TIntegerField;
-    IntegerField6: TIntegerField;
-    IntegerField7: TIntegerField;
-    StringField3: TStringField;
-    GuidField1: TGuidField;
-    StringField4: TStringField;
+    qryUpdatePlannerEventsCHIAVE: TIntegerField;
+    qryUpdatePlannerEventsSTATINO: TIntegerField;
+    qryUpdatePlannerEventsTECNICO: TIntegerField;
+    qryUpdatePlannerEventsDALLE_ORE: TDateTimeField;
+    qryUpdatePlannerEventsALLE_ORE: TDateTimeField;
+    qryUpdatePlannerEventsNOTE: TWideMemoField;
+    qryUpdatePlannerEventsSUBJECT: TStringField;
+    qryUpdatePlannerEventsTECNICO_SIGLA: TStringField;
+    qryUpdatePlannerEventsCOLORE: TIntegerField;
+    qryUpdatePlannerEventsJGUID: TGuidField;
+    qryUpdatePlannerEventsICONA: TSmallintField;
+    qryUpdatePlannerEventsGOOGLE_JSON: TBlobField;
+    qryUpdatePlannerEventsGFORECOLOR: TIntegerField;
+    qryUpdatePlannerEventsGBACKCOLOR: TIntegerField;
+    qryUpdatePlannerEventsCALENDARIO: TIntegerField;
+    qryUpdatePlannerEventsGOOGLEID: TStringField;
+    qryGoogleEvent: TUniQuery;
+    qryGoogleEventID: TStringField;
+    qryGoogleEventETAG: TStringField;
+    qryGoogleEventSUMMARY: TStringField;
+    qryGoogleEventDESCRIPTION: TBlobField;
+    qryGoogleEventSTARTTIME: TDateTimeField;
+    qryGoogleEventENDTIME: TDateTimeField;
+    qryGoogleEventCREATED: TDateTimeField;
+    qryGoogleEventUPDATED: TDateTimeField;
+    qryGoogleEventLOCATION: TStringField;
+    qryGoogleEventSTATUS: TSmallintField;
+    qryGoogleEventVISIBILITY: TIntegerField;
+    qryGoogleEventRECURRENCE: TStringField;
+    qryGoogleEventRECURRINGID: TStringField;
+    qryGoogleEventSEQUENCE: TIntegerField;
+    qryGoogleEventCOLOR: TSmallintField;
+    qryGoogleEventCALENDARID: TStringField;
+    qryGoogleEventUSEDEFAULTREMINDERS: TStringField;
+    qryGoogleEventSENDNOTIFICATIONS: TStringField;
+    qryGoogleEventISALLDAY: TStringField;
+    qryGoogleEventATTENDEES: TBlobField;
+    qryGoogleEventREMINDERS: TBlobField;
+    qryGoogleEventJGUID: TBytesField;
+    qryGoogleEventBACKGROUNDCOLOR: TIntegerField;
+    qryGoogleEventFOREGROUNDCOLOR: TIntegerField;
+    qryGoogleEventSYNC: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     bg: TColor;
@@ -141,6 +166,7 @@ type
     procedure UpdateGoogleEventsQueue;
 
   public
+    function AddNewGoogleItem(const aID: string): string;
     procedure FillGoogleCalendars; override;
     procedure PlannerGoogleSync;
     procedure AddNewGoogleItems;
@@ -156,12 +182,84 @@ implementation
 {$R *.dfm}
 { TdmPhoenixVCLGCalendarController }
 
+function TdmPhoenixVCLGCalendarController.AddNewGoogleItem(const aID: string): string;
+begin
+  (*
+    #### ETAG #####
+    So if you make a event.get call and you get an event object back containing an etag back.
+    The next time you make that call you again get an event object back containing an etag.
+    If the etag is the same as the etag you had before then you know the data was not changed
+    since the last time you checked it.
+  *)
+  qryGoogleEvent.Close;
+  qryGoogleEvent.Params[0].AsString := aID;
+  qryGoogleEvent.Open;
+
+  Result := '';
+
+  if qryGoogleEvent.RecordCount > 0 then
+  begin
+
+    Item := AdvGCalendar1.Items.Add;
+
+    Item.Summary := qryGoogleEventSUMMARY.AsString;
+    if qryGoogleEventDESCRIPTION.BlobSize > 0 then
+    begin
+      var
+      aStream := TStringStream.Create;
+      try
+        qryGoogleEventDESCRIPTION.SaveToStream(aStream);
+        Item.Description := aStream.DataString;
+      finally
+        aStream.Free;
+      end;
+    end;
+
+    Item.Location := qryGoogleEventLOCATION.AsString;
+    Item.Color := TGItemColor.icRed; // TGItemColor(qryGoogleEventCOLOR.AsInteger);
+
+    if qryGoogleEventISALLDAY.AsString = 'T' then
+    begin
+      var
+      StartDate := qryGoogleEventSTARTTIME.AsDateTime;
+      Item.StartTime := EncodeDateTime(YearOf(StartDate), MonthOf(StartDate), DayOf(StartDate), 0, 0, 0, 0);
+      var
+      EndDate := qryGoogleEventENDTIME.AsDateTime;
+      Item.EndTime := EncodeDateTime(YearOf(EndDate), MonthOf(EndDate), DayOf(EndDate), 0, 0, 0, 0);
+      Item.IsAllDay := true;
+    end
+    else
+    begin
+      Item.StartTime := qryGoogleEventSTARTTIME.AsDateTime;
+      Item.EndTime := qryGoogleEventENDTIME.AsDateTime;
+      Item.IsAllDay := False;
+    end;
+
+    Item.Visibility := CloudCustomGCalendar.TVisibility.viDefault;
+    Item.CalendarID := qryGoogleEventCALENDARID.AsString;
+
+    AdvGCalendar1.Add(Item);
+    Result := Item.ID;
+
+    qryGoogleEvent.Edit;
+    qryGoogleEventID.AsString := Item.ID;
+    qryGoogleEventETAG.AsString := Item.ETag;
+    qryGoogleEventCREATED.AsDateTime := Item.Created;
+    qryGoogleEventUPDATED.AsDateTime := Item.Updated;
+    qryGoogleEventSYNC.AsString := 'T';
+    qryGoogleEvent.Post;
+  end;
+
+  { SELECT E.* FROM
+    CALENDARIO_EVENTI E where uuid_to_char(JGUID) = :GUID }
+end;
+
 procedure TdmPhoenixVCLGCalendarController.AddNewGoogleItems;
 begin
   qryGoogleEventsQueue.Open;
   while not qryGoogleEventsQueue.Eof do
   begin
-    self.InsertGoogleEventsQueue;
+    InsertGoogleEventsQueue;
     qryGoogleEventsQueue.Next;
   end;
 end;
@@ -341,7 +439,12 @@ begin
   qryGoogleEventsQueueETAG.AsString := Item.ETag;
   qryGoogleEventsQueueCREATED.AsDateTime := Item.Created;
   qryGoogleEventsQueueUPDATED.AsDateTime := Item.Updated;
+  qryGoogleEventsQueueSYNC.AsString := 'T';
   qryGoogleEventsQueue.Post;
+
+  { SELECT E.* FROM
+    CALENDARIO_EVENTI E where uuid_to_char(JGUID) = :GUID }
+
 end;
 
 procedure TdmPhoenixVCLGCalendarController.PhoenixUpdateGoogleCalendars;
@@ -469,8 +572,6 @@ begin
   end;
 
   Item.Visibility := CloudCustomGCalendar.TVisibility.viDefault;
-
-  { li.CalendarID := (ComboBox1.Items.Objects[ComboBox1.ItemIndex] as TGCalendar).ID; }
   Item.CalendarID := qryGoogleEventsQueueCALENDARID.AsString;
 
 end;

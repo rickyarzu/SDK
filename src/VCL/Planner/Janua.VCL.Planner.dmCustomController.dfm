@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45520.000000000000000000
+    DateFrom = 45527.000000000000000000
     Left = 416
     Top = 40
   end
@@ -19498,6 +19498,53 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     object vtGoogleCalendarsJGUID: TGuidField
       FieldName = 'JGUID'
       Size = 38
+    end
+  end
+  object vtGoogleColors: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'BACK_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'FORE_COLOR'
+        DataType = ftInteger
+      end>
+    Left = 528
+    Top = 136
+    Data = {
+      040003000200494402000000000000000A004241434B5F434F4C4F5203000000
+      000000000A00464F52455F434F4C4F520300000000000000000000000000}
+    object vtGoogleColorsID: TSmallintField
+      FieldName = 'ID'
+    end
+    object vtGoogleColorsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object vtGoogleColorsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+  end
+  object tbGoogleColors: TUniTable
+    TableName = 'GOOGLE_COLORS'
+    Connection = JanuaUniConnection1
+    Left = 528
+    Top = 200
+  end
+  object MainMenuActions: TActionList
+    Images = SVGIconImageList48
+    Left = 72
+    Top = 488
+    object actCalendarColor: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiorna Lista Colori'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actCalendarColorExecute
     end
   end
 end

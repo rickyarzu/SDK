@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, UniProvider, InterBaseUniProvider, Data.DB,
-  DBAccess, Uni, Janua.Unidac.Connection, Janua.Interbase.dmModel, Globale;
+  DBAccess, Uni, Janua.Unidac.Connection, Janua.Interbase.dmModel;
 
 type
   TdmPhoenixIBModel = class(TdmJanuaInterbaseModel)
@@ -19,6 +19,8 @@ var
   dmPhoenixIBModel: TdmPhoenixIBModel;
 
 implementation
+
+uses Janua.Application.Framework;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 

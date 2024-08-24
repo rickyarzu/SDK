@@ -39,6 +39,7 @@ inherited frameVCLPhoenixPlannerCalendar2: TframeVCLPhoenixPlannerCalendar2
   inherited PageControl1: TPageControl
     inherited tabCalendar: TTabSheet
       inherited DBPlanner1: TDBPlanner
+        ItemSource = dmVCLPhoenixPlannerController.DBDaySourceCalendar2
         TMSStyle = 0
       end
     end
