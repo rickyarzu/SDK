@@ -227,6 +227,11 @@
         <DCCReference Include="..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.SMS.pas"/>
         <None Include="ModelSupport_JanuaTmsControls\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaTmsControls\default.txvpck"/>
+        <None Include="ModelSupport_JanuaTmsControls\Janua\default.txvpck"/>
+        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\default.txvpck"/>
+        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txvpck"/>
+        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

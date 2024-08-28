@@ -716,5 +716,18 @@
       <property name="$shortcutReference" value="true" />
       <property name="bounds" value="921,144,0,0" />
     </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="860,480,225,152" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.SendSMS(TProc`2,TProc`2,Janua.TMS.SMS.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.Destroy()" />
+      <reference referencedUin="design:link:::9h24wvo3ykr_l">
+        <property name="sourceAnchor" value="860,596" />
+        <property name="targetAnchor" value="768,596" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
   </view>
 </nodeSet>
