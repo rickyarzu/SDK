@@ -456,18 +456,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited pnlInterventi: TPanel
             Top = 64
             ExplicitTop = 64
-            inherited Label3: TLabel
-              Height = 20
-            end
-            inherited lbIdranti: TLabel
-              Height = 20
-            end
-            inherited Label4: TLabel
-              Height = 20
-            end
-            inherited Label5: TLabel
-              Height = 20
-            end
           end
           inherited Panel1: TPanel
             Height = 64
@@ -475,9 +463,12 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Panel2: TPanel
               Height = 62
               ExplicitHeight = 62
-              inherited DBText8: TDBText
-                Top = 44
-                ExplicitTop = 44
+              inherited Panel3: TPanel
+                Top = 40
+                ExplicitTop = 40
+                inherited DBText8: TDBText
+                  ExplicitTop = 44
+                end
               end
             end
             inherited btnImage: TDBImage
@@ -589,6 +580,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabPlannerEvents: TTabSheet
       Caption = 'Calendari'
       ImageIndex = 3
+      TabVisible = False
       inline frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2
         Left = 0
         Top = 0
@@ -617,6 +609,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
+            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end

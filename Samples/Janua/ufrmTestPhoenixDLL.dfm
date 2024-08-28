@@ -49,7 +49,7 @@ object frmTestDelphiDLL: TfrmTestDelphiDLL
     Width = 465
     Height = 23
     TabOrder = 2
-    Text = 'F3C93E19-8124-4D74-95BA-9FE0E5E119F7'
+    Text = '90C30D09-3A82-4CC2-A0D6-098242C91FCA'
   end
   object btnDLLTest: TButton
     Left = 135
@@ -58,5 +58,6 @@ object frmTestDelphiDLL: TfrmTestDelphiDLL
     Height = 25
     Caption = 'DLLTest'
     TabOrder = 3
+    OnClick = btnDLLTestClick
   end
 end

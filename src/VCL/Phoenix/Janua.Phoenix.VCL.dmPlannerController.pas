@@ -360,6 +360,9 @@ type
     tbGoogleColorsID: TSmallintField;
     tbGoogleColorsBACK_COLOR: TIntegerField;
     tbGoogleColorsFORE_COLOR: TIntegerField;
+    tabGoogleEventsBACKGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsFOREGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsSYNC: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -494,6 +497,10 @@ implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync;
+
+function InitializeDLL: string; stdcall; external 'PhoenixLib32.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32.dll' index 3;
 
 var
   JMonitor: TObject;
@@ -647,11 +654,13 @@ begin
     lDlg.edRagioneSociale.Text := vtReportPlanner.FieldByName('DESCRIZIONE_SCHEDA').AsString;
     lDlg.edNote.Text := vtReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text;
     vID := vtReportPlanner.FieldByName('CHIAVE').AsInteger;
-
     lDlg.ShowModal;
 
     if lDlg.ModalResult = mrOK then
       try
+        var
+        lTitle := lDlg.edRagioneSociale.Text;
+
         vtReportPlanner.Filtered := False;
         if (vID = vtReportPlanner.FieldByName('CHIAVE').AsInteger) or vtReportPlanner.Locate('CHIAVE', vID, [])
         then
@@ -720,7 +729,7 @@ begin
             qryPersonalPlannerEventsTECNICO.AsInteger := TechID;
             qryPersonalPlannerEventsSTATINO.AsInteger := vtReportPlannerCHIAVE.AsInteger;
             // Subject
-            qryPersonalPlannerEventsSUBJECT.AsString := vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
+            qryPersonalPlannerEventsSUBJECT.AsString := lTitle; // vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
             qryPersonalPlannerEventsICONA.AsInteger := 0;
             qryPersonalPlannerEventsNOTE.Text := lDlg.edNote.Text;
 
@@ -748,10 +757,30 @@ begin
             tabGoogleEventsCALENDARID.AsString := qryTecniciCalendarGOOGLEID.AsString;
             tabGoogleEventsSTARTTIME.AsDateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
             tabGoogleEventsENDTIME.AsDateTime := qryPersonalPlannerEventsALLE_ORE.AsDateTime;
-            tabGoogleEventsLOCATION.AsString := 'Europe/Rome';
+            tabGoogleEventsLOCATION.AsString := qryReportPlannercalcIndirizzo.AsString;
             tabGoogleEventsCOLOR.AsInteger := 0;
+            tabGoogleEventsISALLDAY.AsString := 'F';
+            tabGoogleEventsRECURRENCE.AsString := 'F';
+            tabGoogleEventsSYNC.AsString := 'F';
+            tabGoogleEventsBACKGROUNDCOLOR.AsInteger := 22;
+            tabGoogleEventsFOREGROUNDCOLOR.AsInteger := 0;
             tabGoogleEventsJGUID.AsString := qryPersonalPlannerEventsJGUID.AsString;
             tabGoogleEvents.Post;
+            var
+            lEventID := StringReplace(tabGoogleEventsJGUID.AsString, '{', '', []);
+            lEventID := StringReplace(lEventID, '}', '', []);
+            lEventID := CreateGoogleEventDLL(lEventID);
+
+            if lEventID <> '' then
+            begin
+              qryPersonalPlannerEvents.Edit;
+              qryPersonalPlannerEventsGOOGLEID.AsString := lEventID;
+              qryPersonalPlannerEvents.Post;
+              qryReportPlanner.Edit;
+              qryReportPlannerGCAL.AsString := 'G';
+              qryReportPlanner.Post;
+            end;
+
           end;
         end;
 
@@ -1653,7 +1682,7 @@ begin
     qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
 
   qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
-    qryReportPlannerCAP.AsString + qryReportPlannerCOMUNE.AsString;
+    qryReportPlannerCAP.AsString + ', ' + qryReportPlannerCOMUNE.AsString;
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryTechPlannedAfterScroll(DataSet: TDataSet);

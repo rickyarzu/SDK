@@ -46,12 +46,16 @@ end;
 
 function CreateGoogleEvent(aEvent: string): string; stdcall;
 begin
-  Result := aDlg.AddGoogleItem(aEvent)
+  Result := 'CreateGoogleEvent: ';
+  if Assigned(aDlg) then
+    Result := aDlg.AddGoogleItem(aEvent)
+  else
+    Result := Result + ' Error aDlg not set';
 end;
 
 function UpdateGoogleEvent(aJson: string): string; stdcall;
 begin
-  Result := 'Test3';
+  Result := 'UpdateGoogleEvent';
 end;
 
 exports

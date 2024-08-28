@@ -16,6 +16,7 @@ type
     btnDLLTest: TButton;
     procedure btnTestSetupClick(Sender: TObject);
     procedure btnLocalTestClick(Sender: TObject);
+    procedure btnDLLTestClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +35,11 @@ function CreateGoogleEvent(aEvent: string): string; stdcall; external 'PhoenixLi
 function UpdateGoogleEvent(aJson: string): string; stdcall; external 'PhoenixLib32.dll' index 3;
 
 {$R *.dfm}
+
+procedure TfrmTestDelphiDLL.btnDLLTestClick(Sender: TObject);
+begin
+  lbGUID.Caption := CreateGoogleEvent(edGUID.Text);
+end;
 
 procedure TfrmTestDelphiDLL.btnLocalTestClick(Sender: TObject);
 begin

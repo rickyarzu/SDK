@@ -216,7 +216,7 @@ begin
     end;
 
     Item.Location := qryGoogleEventLOCATION.AsString;
-    Item.Color := TGItemColor.icRed; // TGItemColor(qryGoogleEventCOLOR.AsInteger);
+    Item.Color := TGItemColor.icBoldRed; // TGItemColor(qryGoogleEventCOLOR.AsInteger);
 
     if qryGoogleEventISALLDAY.AsString = 'T' then
     begin
@@ -552,7 +552,7 @@ begin
   end;
 
   Item.Location := qryGoogleEventsQueueLOCATION.AsString;
-  Item.Color := TGItemColor.icRed; // TGItemColor(qryGoogleEventsQueueCOLOR.AsInteger);
+  Item.Color := TGItemColor.icBoldRed; // TGItemColor(qryGoogleEventsQueueCOLOR.AsInteger);
 
   if qryGoogleEventsQueueISALLDAY.AsString = 'T' then
   begin

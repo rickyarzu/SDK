@@ -252,8 +252,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           Align = alBottom
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitLeft = 6
-          ExplicitTop = 54
           object DBText8: TDBText
             AlignWithMargins = True
             Left = 3
@@ -292,14 +290,12 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         TabOrder = 1
         OnDblClick = DBText1DblClick
         OnMouseDown = btnImageMouseDown
-        ExplicitLeft = -2
-        ExplicitTop = -1
       end
     end
   end
   object DBPlanner1: TDBPlanner
     Left = 407
-    Top = 104
+    Top = 103
     Width = 388
     Height = 700
     AttachementGlyph.Data = {

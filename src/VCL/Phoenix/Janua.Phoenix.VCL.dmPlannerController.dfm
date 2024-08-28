@@ -1100,6 +1100,17 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FixedChar = True
       Size = 38
     end
+    object tabGoogleEventsBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+    end
+    object tabGoogleEventsFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+    end
+    object tabGoogleEventsSYNC: TStringField
+      FieldName = 'SYNC'
+      FixedChar = True
+      Size = 1
+    end
   end
   object dsTecniciCalendar: TUniDataSource
     DataSet = qryTecniciCalendar
