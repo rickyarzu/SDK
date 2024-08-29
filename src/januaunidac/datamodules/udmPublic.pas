@@ -7,7 +7,7 @@ uses
   Janua.Core.Jpublic,
   Datasnap.DBClient, Janua.Core.System,
   Janua.Core.Functions, Datasnap.Provider, Janua.Core.Types, Janua.Core.Entities,
-  udmJanuaPostgresModel, Janua.Core.Classes, Janua.Core.Exceptions;
+  udmJanuaPostgresModel, Janua.Core.Classes, Janua.Core.Exceptions, Janua.Unidac.Connection;
 
 type
   TdmPublic = class(TdmJanuaPostgresModel)
@@ -165,19 +165,19 @@ function TdmPublic.GetAllRegionsArray(iCountry_id: smallint): TArray<TRegion>;
 var
   i: integer;
 begin
-  self.PgErgoConnection.Connect;
-  ServerFunctions.OpenDataset(self.tbRegions);
-  self.tbRegions.Last;
-  self.tbRegions.First;
-  SetLength(result, self.tbRegions.RecordCount);
+  PgErgoConnection.Connect;
+  ServerFunctions.OpenDataset(tbRegions);
+  tbRegions.Last;
+  tbRegions.First;
+  SetLength(result, tbRegions.RecordCount);
   i := 0;
-  while not self.tbRegions.Eof do
+  while not tbRegions.Eof do
   begin
-    result[i].Region.id := self.tbRegionsregion_id.AsInteger;
-    result[i].Region.name := self.tbRegionsregion_name.AsWideString;
+    result[i].Region.id := tbRegionsregion_id.AsInteger;
+    result[i].Region.name := tbRegionsregion_name.AsWideString;
   end;
 
-  self.PgErgoConnection.Close;
+  PgErgoConnection.Close;
 end;
 
 function TdmPublic.GetAllRegionsDataset(iCountry_id: smallint): TClientDataSet;

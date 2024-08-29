@@ -313,6 +313,15 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.frmMDCCountries.pas">
+            <Form>frmVCLMDCCountries</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPublic.pas">
+            <Form>dmPublic</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -352,6 +361,12 @@
             <Deployment Version="4">
                 <DeployFile LocalName="JanuaDevIDEXE15.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
+                        <RemoteName>JanuaDevIDEXE15.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="JanuaDevIDEXE15.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
                         <RemoteName>JanuaDevIDEXE15.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1008,9 +1023,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

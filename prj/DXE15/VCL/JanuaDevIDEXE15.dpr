@@ -52,7 +52,9 @@ uses
   uJanuaDevIDEProject in 'uJanuaDevIDEProject.pas',
   uCarServiceProject_x86_64 in 'uCarServiceProject_x86_64.pas',
   Janua.VCL.Cloud.frmImportOSMaps in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmImportOSMaps.pas' {frmVCLImportOSMaps},
-  Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame};
+  Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame},
+  Janua.VCL.frmMDCCountries in '..\..\..\src\VCL\Commons\Janua.VCL.frmMDCCountries.pas' {frmVCLMDCCountries},
+  udmPublic in '..\..\..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic: TDataModule};
 
 {$R *.res}
 
@@ -89,7 +91,7 @@ begin
   begin
     TCarServiceProjectApplication.LoadMenu;
     Application.CreateForm(TfrmCarserviceMain, frmCarserviceMain);
-  Application.Run;
+    Application.Run;
   end
   else
     Application.Terminate;

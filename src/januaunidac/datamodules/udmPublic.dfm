@@ -1,6 +1,5 @@
 inherited dmPublic: TdmPublic
-  Height = 642
-  Width = 826
+  Width = 729
   inherited PgErgoConnection: TJanuaUniConnection
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
@@ -35,6 +34,9 @@ inherited dmPublic: TdmPublic
         ParamType = ptInput
         Value = 10
       end>
+  end
+  inherited spSetSchemaID: TUniStoredProc
+    CommandStoredProcName = 'system.set_schema_id'
   end
   object dsRegions: TDataSource
     DataSet = tbRegions

@@ -1,4 +1,6 @@
 inherited dmPgLookupsStorage: TdmPgLookupsStorage
+  Height = 300
+  Width = 408
   inherited PgErgoConnection: TJanuaUniConnection
     AutoCommit = False
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
