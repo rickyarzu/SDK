@@ -4,15 +4,15 @@ interface
 
 uses
   SysUtils, Variants, Classes, DB, Uni, Janua.Core.Functions, Janua.Core.Types, Janua.Core.DB.Intf,
-  Janua.Core.JPublic, udmPublic, Janua.Core.System, Janua.Core.Classes;
+  Janua.Core.JPublic, Janua.Commons.pgCountriesLocal, Janua.Core.System, Janua.Core.Classes;
 
 type
   TJanuaServerJPublic = class(TJanuaCustomServerJPublic)
   private
-    DM: TDmPublic;
+    DM: TdmPgCountriesLocal;
     // private declarations **************************************************************************
     procedure ActivateCountryDataset;
-    procedure SetdmPublic(const Value: TDmPublic);
+    procedure SeTdmPgCountriesLocal(const Value: TdmPgCountriesLocal);
   strict protected
     function InternalActivate: boolean; override;
   protected
@@ -28,7 +28,7 @@ type
     Destructor Destroy; override;
   published
     // published Properties .....
-    property dmPublic: TDmPublic read DM write SetdmPublic;
+    property dmPublic: TdmPgCountriesLocal read DM write SeTdmPgCountriesLocal;
   end;
 
 implementation
@@ -93,7 +93,7 @@ procedure TJanuaServerJPublic.CreateDataModule;
 begin
   if not Assigned(DM) then
   begin
-    DM := TDmPublic.Create(nil);
+    DM := TdmPgCountriesLocal.Create(nil);
     if not supports(DM, IJanuaServerDataModule, FIDM) then
       raise exception.Create('lCms do not supports IJanuaServerDataModule');
 
@@ -132,7 +132,7 @@ begin
       if not self.CheckUp then
         Exit(false);
       if self.Verbose then
-        self.WriteLog('TJanuaServerJPublic.SetCountryByCode TdmPublic.Create(nil)');
+        self.WriteLog('TJanuaServerJPublic.SetCountryByCode TdmPgCountriesLocal.Create(nil)');
       CreateDataModule;
       try
         DM.SetCountryByCode(cCode);
@@ -161,7 +161,7 @@ begin
     try
       if not CheckUp then
         Exit(false);
-      WriteLog('TJanuaServerJPublic.SetCountryByID TdmPublic.Create(nil)');
+      WriteLog('TJanuaServerJPublic.SetCountryByID TdmPgCountriesLocal.Create(nil)');
       self.CreateDataModule;
 
       try
@@ -171,7 +171,7 @@ begin
         self.FSelectedCountry := DM.Country;
         WriteLog('TJanuaServerJPublic.SetCountryByID FSelectedCountry := ' +
           self.SelectedCountry.Country.id.ToString());
-        WriteLog('TDmPublic.Log = ');
+        WriteLog('TdmPgCountriesLocal.Log = ');
         WriteLog('TJanuaServerJPublic.SetCountryByID', DM.Log);
       finally
         if Verbose then
@@ -207,7 +207,7 @@ begin
       if not CheckUp then
         Exit(false);
       if Verbose then
-        WriteLog('TJanuaServerJPublic.SetCountryByName TdmPublic.Create(nil)');
+        WriteLog('TJanuaServerJPublic.SetCountryByName TdmPgCountriesLocal.Create(nil)');
       // if not Assigned(FdmPublic) then
       self.CreateDataModule;
       try
@@ -232,7 +232,7 @@ begin
     end;
 end;
 
-procedure TJanuaServerJPublic.SetdmPublic(const Value: TDmPublic);
+procedure TJanuaServerJPublic.SeTdmPgCountriesLocal(const Value: TdmPgCountriesLocal);
 begin
   DM := Value;
 end;

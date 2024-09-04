@@ -711,4 +711,270 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       Size = 1
     end
   end
+  object qryRicercaStatino: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO STATINI'
+      '  (APPUNTAMENTO_DATA, APPUNTAMENTO_ORA, STATO, JGUID, GCAL)'
+      'VALUES'
+      '  (:APPUNTAMENTO_DATA, :APPUNTAMENTO_ORA, :STATO, :JGUID, :GCAL)')
+    SQLDelete.Strings = (
+      'DELETE FROM STATINI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE STATINI'
+      'SET'
+      
+        '  APPUNTAMENTO_DATA = :APPUNTAMENTO_DATA, APPUNTAMENTO_ORA = :AP' +
+        'PUNTAMENTO_ORA, STATO = :STATO, JGUID = :JGUID, GCAL = :GCAL'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM STATINI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT APPUNTAMENTO_DATA, APPUNTAMENTO_ORA, STATO, JGUID, GCAL F' +
+        'ROM STATINI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM STATINI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        DBType = 416
+        FieldType = ftWideString
+        FieldLength = 2048
+      end
+      item
+        FieldName = 'NOTE_PER_IL_TECNICO'
+        FieldType = ftWideString
+        FieldLength = 1024
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT S.*'
+      'FROM STATINI S where S.chiave = :statino'
+      ';')
+    FetchRows = 100
+    Left = 648
+    Top = 360
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'statino'
+        ParamType = ptInput
+        Value = nil
+      end>
+    object qryRicercaStatinoCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryRicercaStatinoCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+    end
+    object qryRicercaStatinoFILIALE: TIntegerField
+      FieldName = 'FILIALE'
+    end
+    object qryRicercaStatinoTITOLO: TStringField
+      FieldName = 'TITOLO'
+      Size = 10
+    end
+    object qryRicercaStatinoRAGIONE_SOCIALE: TStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      Size = 255
+    end
+    object qryRicercaStatinoINDIRIZZO: TStringField
+      FieldName = 'INDIRIZZO'
+      Size = 255
+    end
+    object qryRicercaStatinoCOMUNE: TStringField
+      FieldName = 'COMUNE'
+      Size = 255
+    end
+    object qryRicercaStatinoPROVINCIA: TStringField
+      FieldName = 'PROVINCIA'
+      FixedChar = True
+      Size = 2
+    end
+    object qryRicercaStatinoCAP: TStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object qryRicercaStatinoTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object qryRicercaStatinoCELLULARE: TStringField
+      FieldName = 'CELLULARE'
+      Size = 255
+    end
+    object qryRicercaStatinoNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object qryRicercaStatinoORARIO_APERTURA_DAL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL1'
+    end
+    object qryRicercaStatinoORARIO_APERTURA_DAL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL2'
+    end
+    object qryRicercaStatinoORARIO_APERTURA_AL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL1'
+    end
+    object qryRicercaStatinoORARIO_APERTURA_AL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL2'
+    end
+    object qryRicercaStatinoCHIUSURA: TStringField
+      FieldName = 'CHIUSURA'
+      Size = 255
+    end
+    object qryRicercaStatinoFATTURA: TIntegerField
+      FieldName = 'FATTURA'
+    end
+    object qryRicercaStatinoDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+    end
+    object qryRicercaStatinoGENERAZIONE_AUTOMATICA: TIntegerField
+      FieldName = 'GENERAZIONE_AUTOMATICA'
+    end
+    object qryRicercaStatinoTECNICO_INTERVENTO: TIntegerField
+      FieldName = 'TECNICO_INTERVENTO'
+    end
+    object qryRicercaStatinoSCANSIONE: TWideStringField
+      FieldName = 'SCANSIONE'
+      Size = 2048
+    end
+    object qryRicercaStatinoREGISTRO: TWideStringField
+      FieldName = 'REGISTRO'
+      Size = 2048
+    end
+    object qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideStringField
+      FieldName = 'NOTE_PER_IL_TECNICO'
+      Size = 1024
+    end
+    object qryRicercaStatinoSOSPESO: TStringField
+      FieldName = 'SOSPESO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoDA_ESPORTARE_SUL_WEB: TStringField
+      FieldName = 'DA_ESPORTARE_SUL_WEB'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoRESPONSABILE: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object qryRicercaStatinoESPORTATO_SU_MOBILE: TStringField
+      FieldName = 'ESPORTATO_SU_MOBILE'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoNOTE_DAL_TECNICO: TBlobField
+      FieldName = 'NOTE_DAL_TECNICO'
+    end
+    object qryRicercaStatinoJSON_DA_MOBILE: TBlobField
+      FieldName = 'JSON_DA_MOBILE'
+    end
+    object qryRicercaStatinoPDF_STATINO: TBlobField
+      FieldName = 'PDF_STATINO'
+    end
+    object qryRicercaStatinoREGISTRO_IS_PDF: TStringField
+      FieldName = 'REGISTRO_IS_PDF'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoVERBALE_PROVA_DINAMICA: TBlobField
+      FieldName = 'VERBALE_PROVA_DINAMICA'
+    end
+    object qryRicercaStatinoVERBALE_MANICHETTE: TBlobField
+      FieldName = 'VERBALE_MANICHETTE'
+    end
+    object qryRicercaStatinoPREVENTIVO: TIntegerField
+      FieldName = 'PREVENTIVO'
+    end
+    object qryRicercaStatinoIGNORA_EVIDENZIAZIONE: TStringField
+      FieldName = 'IGNORA_EVIDENZIAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoANNULLATO_DA_TABLET: TStringField
+      FieldName = 'ANNULLATO_DA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
+      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoMOBILEWARN_ORDINARIA_RITIRATA: TStringField
+      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
+      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoMOBILEWARN_SMALTIMENTO: TStringField
+      FieldName = 'MOBILEWARN_SMALTIMENTO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoSTATO_LAVORAZIONE: TStringField
+      FieldName = 'STATO_LAVORAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoDATA_CHIUSURA_DA_SERVER: TDateField
+      FieldName = 'DATA_CHIUSURA_DA_SERVER'
+    end
+    object qryRicercaStatinoCHIUSURA_EXT: TStringField
+      FieldName = 'CHIUSURA_EXT'
+      Size = 50
+    end
+    object qryRicercaStatinoCHIUSURA_STATINO: TWideStringField
+      FieldName = 'CHIUSURA_STATINO'
+      Size = 2048
+    end
+    object qryRicercaStatinoMOBILEWARN_NON_ESEGUITI: TStringField
+      FieldName = 'MOBILEWARN_NON_ESEGUITI'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoPRESA_IN_CARICO: TStringField
+      FieldName = 'PRESA_IN_CARICO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoFORNITURA: TStringField
+      FieldName = 'FORNITURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryRicercaStatinoAPPUNTAMENTO_DATA: TDateField
+      FieldName = 'APPUNTAMENTO_DATA'
+    end
+    object qryRicercaStatinoAPPUNTAMENTO_ORA: TTimeField
+      FieldName = 'APPUNTAMENTO_ORA'
+    end
+    object qryRicercaStatinoSTATO: TSmallintField
+      FieldName = 'STATO'
+    end
+    object qryRicercaStatinoJGUID: TBytesField
+      FieldName = 'JGUID'
+    end
+    object qryRicercaStatinoGCAL: TStringField
+      FieldName = 'GCAL'
+      FixedChar = True
+      Size = 1
+    end
+  end
 end

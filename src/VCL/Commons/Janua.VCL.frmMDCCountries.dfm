@@ -1,21 +1,22 @@
-object frmVCLMDCCountries: TfrmVCLMDCCountries
-  Left = 0
-  Top = 0
+inherited frmVCLMDCCountriesLocal: TfrmVCLMDCCountriesLocal
   Caption = 'Countries Regions Configuration'
   ClientHeight = 749
   ClientWidth = 1050
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
+  ExplicitWidth = 1066
+  ExplicitHeight = 788
   TextHeight = 15
+  inherited StatusBar: TStatusBar
+    Top = 730
+    Width = 1050
+    ExplicitTop = 730
+    ExplicitWidth = 1050
+  end
   object pnlCountries: TPanel
     Left = 0
     Top = 0
     Width = 340
-    Height = 749
+    Height = 730
     Align = alLeft
     TabOrder = 0
     object lbCountryCode: TLabel
@@ -48,7 +49,7 @@ object frmVCLMDCCountries: TfrmVCLMDCCountries
       Width = 338
       Height = 464
       Align = alTop
-      DataSource = dmPublic.dsCountries
+      DataSource = dmPgCountriesLocal.dsCountries
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -84,7 +85,6 @@ object frmVCLMDCCountries: TfrmVCLMDCCountries
       Width = 28
       Height = 23
       DataField = 'iso_country_code'
-      DataSource = dmPublic.dsCountries
       TabOrder = 1
     end
     object edCountryCode2: TDBEdit
@@ -93,7 +93,6 @@ object frmVCLMDCCountries: TfrmVCLMDCCountries
       Width = 23
       Height = 23
       DataField = 'iso_country_code2'
-      DataSource = dmPublic.dsCountries
       TabOrder = 2
     end
     object edCountryName: TDBEdit
@@ -102,29 +101,38 @@ object frmVCLMDCCountries: TfrmVCLMDCCountries
       Width = 250
       Height = 23
       DataField = 'iso_country_code'
-      DataSource = dmPublic.dsCountries
       TabOrder = 3
     end
     object btnCountryText: TButton
       Left = 16
       Top = 528
-      Width = 91
+      Width = 137
       Height = 41
-      Caption = 'Text'
+      Action = dmVCLCountriesLocalController.actGenerateText
+      ImageMargins.Left = 2
+      ImageMargins.Top = 2
+      ImageMargins.Right = 3
+      ImageMargins.Bottom = 2
+      Images = dmSVGImageList.SVGIconImageList
       TabOrder = 4
     end
     object btnCountryImage: TButton
-      Left = 121
+      Left = 185
       Top = 528
-      Width = 96
+      Width = 144
       Height = 41
-      Caption = 'Image'
+      Action = dmVCLCountriesLocalController.actUploadImage
+      ImageMargins.Left = 3
+      ImageMargins.Top = 2
+      ImageMargins.Right = 2
+      ImageMargins.Bottom = 2
+      Images = dmSVGImageList.SVGIconImageList
       TabOrder = 5
     end
     object btnTranslations: TButton
-      Left = 233
-      Top = 528
-      Width = 96
+      Left = 16
+      Top = 584
+      Width = 137
       Height = 41
       Caption = 'Translations'
       TabOrder = 6

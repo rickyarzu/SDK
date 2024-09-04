@@ -207,7 +207,7 @@ uses
   udmPgFootballServer in '..\..\src\januaunidac\datamodules\udmPgFootballServer.pas' {dmPgFootballServer},
   udmSocial in '..\..\src\januaunidac\datamodules\udmSocial.pas' {dmSocial},
   udmPgAnagraph in '..\..\src\januaunidac\datamodules\udmPgAnagraph.pas' {dmPgAnagraph},
-  udmPublic in '..\..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic},
+  Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal},
   udmPgCmsGraphicMenu in '..\..\src\januaunidac\datamodules\udmPgCmsGraphicMenu.pas' {dmPgCmsGraphicMenu},
   udmPgStorage in '..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
   Janua.Anagraph.Postgres.Storage in '..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmPgAnagraphStorage: TDataModule},

@@ -1,20 +1,20 @@
 inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
-  Width = 800
+  Width = 879
   Height = 927
-  ExplicitWidth = 800
+  ExplicitWidth = 879
   ExplicitHeight = 927
   DesignSize = (
-    800
+    879
     927)
   object lbCap: TLabel
-    Left = 691
+    Left = 747
     Top = 58
     Width = 23
     Height = 15
     Caption = 'CAP'
   end
   object lbData: TLabel
-    Left = 511
+    Left = 567
     Top = 58
     Width = 24
     Height = 15
@@ -35,7 +35,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Caption = 'Cliente - Filiale'
   end
   object lkpCAP: TJvDBLookupCombo
-    Left = 691
+    Left = 747
     Top = 73
     Width = 104
     Height = 25
@@ -48,19 +48,19 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   object DBCtrlGrid1: TDBCtrlGrid
     Left = 8
     Top = 107
-    Width = 393
+    Width = 441
     Height = 700
     Anchors = [akLeft, akTop, akBottom]
     DataSource = dsReportsPlanner
     PanelHeight = 100
-    PanelWidth = 376
+    PanelWidth = 424
     TabOrder = 3
     RowCount = 7
     SelectedColor = clAntiquewhite
     object pnlInterventi: TPanel
       Left = 0
       Top = 80
-      Width = 376
+      Width = 424
       Height = 20
       Align = alBottom
       BevelOuter = bvNone
@@ -86,18 +86,15 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       object DBText4: TDBText
         Left = 35
         Top = 0
-        Width = 29
+        Width = 20
         Height = 20
         Align = alLeft
         DataField = 'LUCI'
         DataSource = dsReportsPlanner
-        ExplicitLeft = 36
-        ExplicitTop = 1
-        ExplicitHeight = 18
       end
       object lbIdranti: TLabel
         AlignWithMargins = True
-        Left = 67
+        Left = 58
         Top = 0
         Width = 24
         Height = 20
@@ -114,20 +111,17 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         ExplicitHeight = 17
       end
       object DBText5: TDBText
-        Left = 94
+        Left = 85
         Top = 0
-        Width = 29
+        Width = 20
         Height = 20
         Align = alLeft
         DataField = 'IDRANTI'
         DataSource = dsReportsPlanner
-        ExplicitLeft = 148
-        ExplicitTop = 3
-        ExplicitHeight = 18
       end
       object Label4: TLabel
         AlignWithMargins = True
-        Left = 126
+        Left = 108
         Top = 0
         Width = 42
         Height = 20
@@ -144,20 +138,17 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         ExplicitHeight = 17
       end
       object DBText6: TDBText
-        Left = 171
+        Left = 153
         Top = 0
-        Width = 29
+        Width = 20
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_ORDINARIO'
         DataSource = dsReportsPlanner
-        ExplicitLeft = 199
-        ExplicitTop = 3
-        ExplicitHeight = 18
       end
       object Label5: TLabel
         AlignWithMargins = True
-        Left = 203
+        Left = 176
         Top = 0
         Width = 43
         Height = 20
@@ -174,23 +165,26 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         ExplicitHeight = 17
       end
       object DBText7: TDBText
-        Left = 249
+        Left = 222
         Top = 0
-        Width = 29
+        Width = 20
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_ORDINARIO'
         DataSource = dsReportsPlanner
-        ExplicitLeft = 281
-        ExplicitTop = 3
       end
       object DBText2: TDBText
-        Left = 347
+        AlignWithMargins = True
+        Left = 359
         Top = 0
-        Width = 29
+        Width = 63
         Height = 20
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 2
+        Margins.Bottom = 0
         Align = alRight
-        DataField = 'STATO'
+        DataField = 'calcStato'
         DataSource = dsReportsPlanner
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMediumblue
@@ -199,21 +193,78 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Font.Style = [fsBold]
         ParentFont = False
         StyleElements = [seClient, seBorder]
-        ExplicitLeft = 281
-        ExplicitTop = 3
+        ExplicitLeft = 361
+      end
+      object Label6: TLabel
+        AlignWithMargins = True
+        Left = 245
+        Top = 0
+        Width = 35
+        Height = 20
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alLeft
+        Caption = 'Fumi:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitHeight = 17
+      end
+      object DBText10: TDBText
+        Left = 283
+        Top = 0
+        Width = 20
+        Height = 20
+        Align = alLeft
+        DataField = 'FUMI'
+        DataSource = dsReportsPlanner
+        ExplicitLeft = 306
+        ExplicitTop = 5
+      end
+      object Label7: TLabel
+        AlignWithMargins = True
+        Left = 306
+        Top = 0
+        Width = 26
+        Height = 20
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alLeft
+        Caption = 'Grp:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitHeight = 17
+      end
+      object DBText11: TDBText
+        Left = 335
+        Top = 0
+        Width = 20
+        Height = 20
+        Align = alLeft
+        DataField = 'GRUPPI_ELETTR'
+        DataSource = dsReportsPlanner
+        ExplicitLeft = 358
+        ExplicitTop = 2
       end
     end
     object Panel1: TPanel
       Left = 0
       Top = 0
-      Width = 376
+      Width = 424
       Height = 80
       Align = alClient
       TabOrder = 1
       object Panel2: TPanel
         Left = 78
         Top = 1
-        Width = 297
+        Width = 345
         Height = 78
         Align = alClient
         BevelOuter = bvNone
@@ -223,19 +274,20 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 291
+          Width = 339
           Height = 17
           Align = alTop
           DataField = 'DESCRIZIONE_SCHEDA'
           DataSource = dsReportsPlanner
           OnDblClick = DBText1DblClick
           ExplicitLeft = 6
+          ExplicitWidth = 291
         end
         object DBText3: TDBText
           AlignWithMargins = True
           Left = 3
           Top = 26
-          Width = 291
+          Width = 339
           Height = 15
           Align = alTop
           DataField = 'calcIndirizzo'
@@ -243,11 +295,12 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           OnDblClick = DBText1DblClick
           ExplicitLeft = 6
           ExplicitTop = 15
+          ExplicitWidth = 291
         end
         object Panel3: TPanel
           Left = 0
           Top = 56
-          Width = 297
+          Width = 345
           Height = 22
           Align = alBottom
           BevelOuter = bvNone
@@ -267,7 +320,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
             AlignWithMargins = True
             Left = 93
             Top = 3
-            Width = 201
+            Width = 249
             Height = 16
             Align = alClient
             DataField = 'NOME_TECNICO'
@@ -294,7 +347,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     end
   end
   object DBPlanner1: TDBPlanner
-    Left = 407
+    Left = 463
     Top = 103
     Width = 388
     Height = 700
@@ -512,13 +565,18 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
+    OnItemDrag = DBPlanner1ItemDrag
+    OnItemSize = DBPlanner1ItemSize
+    OnItemMove = DBPlanner1ItemMove
+    OnItemEndEdit = DBPlanner1ItemEndEdit
+    OnItemEnter = DBPlanner1ItemEnter
     OnDragOver = DBPlanner1DragOver
     OnDragDrop = DBPlanner1DragDrop
     ItemSource = DBDaySource1
     TMSStyle = 0
   end
   object btnEditMeeting: TButton
-    Left = 659
+    Left = 715
     Top = 846
     Width = 128
     Height = 33
@@ -532,7 +590,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     TabOrder = 4
   end
   object btnDeleteMeeting: TButton
-    Left = 658
+    Left = 714
     Top = 816
     Width = 129
     Height = 33
@@ -563,7 +621,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = ChangeFilter
   end
   object CalendarDate: TDateTimePicker
-    Left = 511
+    Left = 567
     Top = 73
     Width = 90
     Height = 25
@@ -587,7 +645,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   object cboCustomers: TJvDBLookupCombo
     Left = 8
     Top = 73
-    Width = 497
+    Width = 545
     Height = 24
     LookupField = 'CHIAVE'
     LookupDisplay = 'DESCRIZIONE_SCHEDA'
@@ -807,7 +865,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     end
   end
   object btnSearch: TBitBtn
-    Left = 659
+    Left = 715
     Top = 876
     Width = 128
     Height = 33
@@ -827,7 +885,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = btnSearchClick
   end
   object btnPrevDay: TButton
-    Left = 607
+    Left = 663
     Top = 73
     Width = 34
     Height = 25
@@ -842,7 +900,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = btnPrevDayClick
   end
   object btnNextDay: TButton
-    Left = 639
+    Left = 695
     Top = 73
     Width = 34
     Height = 25
@@ -879,8 +937,8 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 176
-    Top = 192
+    Left = 264
+    Top = 304
   end
   object DBDaySource1: TDBDaySource
     AutoIncKey = False

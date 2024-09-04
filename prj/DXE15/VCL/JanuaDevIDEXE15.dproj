@@ -176,13 +176,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas">
-            <Form>frmMDIRibbonToolbar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Commons\udmVCLMainApplication.pas">
-            <Form>dmVCLMainApplication</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\TMS\udmTmsMainApplication.pas">
             <Form>dmTmsMainApplication</Form>
             <DesignClass>TDataModule</DesignClass>
@@ -207,8 +200,8 @@
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.frmOutlookOLEAutomation.pas">
             <Form>frmVCLOutlookOLEAutomation</Form>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\CarService\Janua.CarService.VCLMainForm.pas">
-            <Form>frmCarserviceMain</Form>
+        <DCCReference Include="..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCLMainForm.pas">
+            <Form>frmJanuaDEVIDEMainForm</Form>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Forms\UTMSTetMenuFrame.pas">
             <Form>TMSTestMenuFrame</Form>
@@ -314,11 +307,16 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.frmMDCCountries.pas">
-            <Form>frmVCLMDCCountries</Form>
+            <Form>frmVCLMDCCountriesLocal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
+            <Form>dmPgCountriesLocal</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCL.dmCountriesLocalController.pas">
+            <Form>dmVCLCountriesLocalController</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

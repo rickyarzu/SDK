@@ -1,4 +1,4 @@
-library PhoenixLib32;
+library PhoenixLib32_r2;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -46,7 +46,7 @@ end;
 
 function CreateGoogleEvent(aEvent: string): string; stdcall;
 begin
-  Result := 'CreateGoogleEvent: ';
+  Result := '';
   if Assigned(aDlg) then
     Result := aDlg.AddGoogleItem(aEvent)
   else
@@ -55,13 +55,33 @@ end;
 
 function UpdateGoogleEvent(aJson: string): string; stdcall;
 begin
-  Result := 'UpdateGoogleEvent';
+  Result := '';
+  try
+    if Assigned(aDlg) then
+      Result := aDlg.UpdateGoogleItem(aJson)
+  except
+    on e: exception do
+      Result := e.Message;
+  end;
+end;
+
+function DeleteGoogleEvent(aJson: string): string; stdcall;
+begin
+  Result := '';
+  try
+    if Assigned(aDlg) then
+      Result := aDlg.DeleteGoogleItem(aJson)
+  except
+    on e: exception do
+      Result := e.Message;
+  end;
 end;
 
 exports
   Initialize index 1,
   CreateGoogleEvent index 2,
-  UpdateGoogleEvent index 3;
+  UpdateGoogleEvent index 3,
+  DeleteGoogleEvent index 4;
 
 begin
   aSetted := False;

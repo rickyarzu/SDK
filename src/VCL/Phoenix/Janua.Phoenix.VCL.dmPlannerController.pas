@@ -10,7 +10,7 @@ uses
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
   // VCL / TMS
   SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
-  PictureContainer, VCL.Graphics,
+  PictureContainer, VCL.Graphics, JvImageList,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
   DBPlanner, Planner, CloudvCal, CloudWebDav, CloudCustomLive,
@@ -19,7 +19,7 @@ uses
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
   Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, PostgreSQLUniProvider,
-  Janua.Core.Commons, Janua.Core.Classes;
+  Janua.Core.Commons, Janua.Core.Classes, Janua.Cloud.Types;
 
 type
   TRecordFilter = record
@@ -363,6 +363,12 @@ type
     tabGoogleEventsBACKGROUNDCOLOR: TIntegerField;
     tabGoogleEventsFOREGROUNDCOLOR: TIntegerField;
     tabGoogleEventsSYNC: TStringField;
+    ImageListIcons: TImageList;
+    JvImageList1: TJvImageList;
+    vtReportPlannercalcStato: TStringField;
+    vtGoogleEventsSearchBACKGROUNDCOLOR: TIntegerField;
+    vtGoogleEventsSearchFOREGROUNDCOLOR: TIntegerField;
+    vtGoogleEventsSearchSYNC: TStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -460,8 +466,11 @@ type
     procedure FilterMeeting(const aFilter: TRecordFilter);
     procedure FilterMeetingDialog(const aFilter: TRecordFilter);
     procedure OpenCalendarT(aDate: TDate; aTechID: Integer);
+    procedure DeleteGoogleMeeting(const aGUID: string);
+    function LocateGoogleMeeting(const aGUID: string): TJanuaRecEvent;
+    function UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
   public
-    procedure AddTechEvent;
+    function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
@@ -498,9 +507,10 @@ implementation
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync;
 
-function InitializeDLL: string; stdcall; external 'PhoenixLib32.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32.dll' index 3;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r2.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 4;
 
 var
   JMonitor: TObject;
@@ -525,11 +535,9 @@ begin
   var
   vID := PlannerDlg.PopupPlannerItem.ID;
   if qryPersonalPlannerEvents.Locate('CHIAVE', vID, []) and JMessageDlg('Volete annullare appuntamento?') then
-  begin
-    qryPersonalPlannerEvents.Delete;
-    qryPersonalPlannerEvents.close;
-    qryPersonalPlannerEvents.Open;
-  end;
+    DeleteGoogleMeeting(PlannerDlg.PopupPlannerItem.DBKey);
+  qryPersonalPlannerEvents.close;
+  qryPersonalPlannerEvents.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.actDlgEditActionExecute(Sender: TObject);
@@ -616,7 +624,7 @@ begin
   end;
 end;
 
-procedure TdmVCLPhoenixPlannerController.AddTechEvent;
+function TdmVCLPhoenixPlannerController.AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
 var
   lDlg: TdlgPhoenixVCLEditReportTimetable;
   vTime: TDateTime;
@@ -654,9 +662,11 @@ begin
     lDlg.edRagioneSociale.Text := vtReportPlanner.FieldByName('DESCRIZIONE_SCHEDA').AsString;
     lDlg.edNote.Text := vtReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text;
     vID := vtReportPlanner.FieldByName('CHIAVE').AsInteger;
-    lDlg.ShowModal;
 
-    if lDlg.ModalResult = mrOK then
+    if aShow then
+      lDlg.ShowModal;
+
+    if not aShow or (lDlg.ModalResult = mrOK) then
       try
         var
         lTitle := lDlg.edRagioneSociale.Text;
@@ -666,6 +676,9 @@ begin
         then
         begin
           vtReportPlanner.Edit;
+          // Forza l'update.
+          vtReportPlanner.FieldByName('calcReportID').Clear;
+
           vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsDateTime := lDlg.edTime.Time;
           vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsDateTime := lDlg.edDate.DateTime;
           vtReportPlanner.FieldByName('NOTE_PER_IL_TECNICO').Text := lDlg.edNote.Text;
@@ -770,6 +783,17 @@ begin
             lEventID := StringReplace(tabGoogleEventsJGUID.AsString, '{', '', []);
             lEventID := StringReplace(lEventID, '}', '', []);
             lEventID := CreateGoogleEventDLL(lEventID);
+
+            tabGoogleEvents.close;
+            tabGoogleEvents.Open;
+            if tabGoogleEvents.Locate('ID', lEventID, []) then
+            begin
+              Result.LoadFromDataset(tabGoogleEvents);
+              vtGoogleEventsSearch.Append;
+              Result.SaveToDataset(vtGoogleEventsSearch);
+            end
+            else
+              Result.Clear;
 
             if lEventID <> '' then
             begin
@@ -1099,6 +1123,40 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.DeleteGoogleMeeting(const aGUID: string);
+begin
+  var
+  sGUID := StringReplace(aGUID, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+  DeleteGoogleEventDLL(sGUID);
+  // dmVCLPhoenixPlannerController.qryPersonalPlannerEvents
+  if qryPersonalPlannerEvents.Locate('JGUID', aGUID, []) then
+  begin
+    var
+    vChiave := qryPersonalPlannerEventsSTATINO.AsInteger;
+    vtReportPlanner.Filtered := False;
+    if vtReportPlanner.Locate('CHIAVE', vChiave, []) then
+    begin
+      vtReportPlanner.Edit;
+      // Forza l'update.
+      vtReportPlanner.FieldByName('calcReportID').Clear;
+      vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
+      vtReportPlannerAPPUNTAMENTO_DATA.Clear;
+      vtReportPlannerAPPUNTAMENTO_ORA.Clear;
+      vtReportPlanner.Post;
+      // dmVCLPhoenixPlannerController.vtReportPlanner
+
+    end;
+    vtReportPlanner.close;
+    vtReportPlanner.Open;
+    vtReportPlanner.Filtered := True;
+  end;
+  qryPersonalPlannerEvents.close;
+  qryPersonalPlannerEvents.Open;
+  qryReportPlanner.close;
+  qryReportPlanner.Open;
+end;
+
 procedure TdmVCLPhoenixPlannerController.EditEvent;
 begin
 
@@ -1393,6 +1451,16 @@ begin
       qryReportPlanner.Filtered := aFiltered;
     end;
   end;
+end;
+
+function TdmVCLPhoenixPlannerController.LocateGoogleMeeting(const aGUID: string): TJanuaRecEvent;
+begin
+  var
+  sGUID := StringReplace(aGUID, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+
+  if tabGoogleEvents.Locate('JGUID', sGUID, []) or tabGoogleEvents.Locate('JGUID', aGUID, []) then
+    Result.LoadFromDataset(tabGoogleEvents);
 end;
 
 function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
@@ -1929,6 +1997,28 @@ begin
 
 end;
 
+function TdmVCLPhoenixPlannerController.UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
+begin
+  var
+  tmpMeeting := self.LocateGoogleMeeting(aMeeting.JGUID.ToString);
+  // (tmpMeeting.Summary <> aMeeting.Summary) or
+  if (tmpMeeting.ID <> '') and ((tmpMeeting.StartTime <> aMeeting.StartTime) or
+    (tmpMeeting.EndTime <> aMeeting.EndTime) or (tmpMeeting.Description <> aMeeting.Description)) then
+  begin
+    tabGoogleEvents.Edit;
+    { tabGoogleEventsSUMMARY.Value := aMeeting.Summary; }
+    tabGoogleEventsDESCRIPTION.AsString := aMeeting.Description;
+    tabGoogleEventsSTARTTIME.Value := aMeeting.StartTime;
+    tabGoogleEventsENDTIME.Value := aMeeting.EndTime;
+    tabGoogleEvents.Post;
+    var
+    sGUID := StringReplace(aMeeting.JGUID.ToString, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
+    UpdateGoogleEventDLL(sGUID);
+  end;
+
+end;
+
 procedure TdmVCLPhoenixPlannerController.vtGoogleEventsSearchBeforePost(DataSet: TDataSet);
 begin
   inherited;
@@ -1945,8 +2035,10 @@ procedure TdmVCLPhoenixPlannerController.vtReportPlannerBeforePost(DataSet: TDat
     begin
       Bitmap := TBitmap.Create;
       try
-        SVGIconImageListIt.GetBitmap(Index, Bitmap);
-        vtReportPlanner.FieldByName('calcImage').Assign(Bitmap); // Copia l'immagine dal Bitmap al TImage
+        // SVGIconImageListIt
+        JvImageList1.GetBitmap(Index, Bitmap);
+        vtReportPlanner.FieldByName('calcImage').Assign(Bitmap);
+        // Copia l'immagine dal Bitmap al TImage
       finally
         Bitmap.Free;
       end;
@@ -1970,21 +2062,53 @@ begin
         var
         Image := white;
 
-        if (FieldByName('STATO').AsInteger < 0) then
-          Image := red;
+        var
+        sStato := 'Generato';
 
-        if (FieldByName('STATO').AsInteger in [1, 6]) then
-          Image := blue;
+        var
+        aStato := FieldByName('STATO').AsInteger;
 
-        if (FieldByName('STATO').AsInteger = 4) then
-          Image := orange;
+        case aStato of
+          - 1:
+            begin
+              Image := red;
+              sStato := 'Ritardo';
+            end;
+          0:
+            begin
+              Image := white;
+              sStato := 'Generato';
+            end;
+          1:
+            begin
+              Image := blue;
+              sStato := 'Programmato';
+            end;
+          4:
+            begin
+              Image := orange;
+              sStato := 'In Lavorazione';
+            end;
+          5:
+            begin
+              Image := green;
+              sStato := 'Pronti';
+            end;
+          6:
+            begin
+              Image := blue;
+              sStato := 'Rest. Program.';
+            end;
+        end;
 
-        if (FieldByName('STATO').AsInteger in [5, 6]) then
-          Image := green;
+        FieldByName('calcStato').AsString := sStato;
 
         if not(FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0))
           and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
+        begin
           Image := red;
+          sStato := 'Ritardo';
+        end;
 
         LoadImageFromImageList(Image);
       finally

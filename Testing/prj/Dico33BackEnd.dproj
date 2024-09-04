@@ -175,8 +175,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
+        <DCCReference Include="..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
+            <Form>dmPgCountriesLocal</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

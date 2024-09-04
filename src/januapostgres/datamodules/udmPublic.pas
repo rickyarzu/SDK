@@ -1,4 +1,4 @@
-unit udmPublic;
+unit Janua.Commons.pgCountriesLocal;
 
 interface
 
@@ -10,7 +10,7 @@ uses
   udmJanuaPostgresModel, Janua.Core.Classes, Janua.Core.Exceptions;
 
 type
-  TdmPublic = class(TdmJanuaPostgresModel)
+  TdmPgCountriesLocal = class(TdmJanuaPostgresModel)
     dsRegions: TDataSource;
     tbDistricts: TPgTable;
     tbDistrictsdistrict_id: TSmallintField;
@@ -128,40 +128,40 @@ type
   end;
 
 var
-  dmPublic: TdmPublic;
+  dmPublic: TdmPgCountriesLocal;
 
 implementation
 
 {$R *.dfm}
-{ TdmPublic }
+{ TdmPgCountriesLocal }
 
-procedure TdmPublic.DataModuleCreate(Sender: TObject);
+procedure TdmPgCountriesLocal.DataModuleCreate(Sender: TObject);
 begin
   /// faremo qualcosa  ....
   inherited;
   try
-    self.WriteLog('TdmPublic.DataModuleCreate');
+    self.WriteLog('TdmPgCountriesLocal.DataModuleCreate');
   except
     on e: exception do
     begin
-      self.WriteError('TdmPublic.DataModuleCreate: Errore:', e);
+      self.WriteError('TdmPgCountriesLocal.DataModuleCreate: Errore:', e);
     end;
 
   end;
 end;
 
-function TdmPublic.FindDistrictByName(sDistrictName: string): TDistrict;
+function TdmPgCountriesLocal.FindDistrictByName(sDistrictName: string): TDistrict;
 begin
 
 end;
 
-function TdmPublic.FindDistrinctByID(rID, sID: integer): TDistrict;
+function TdmPgCountriesLocal.FindDistrinctByID(rID, sID: integer): TDistrict;
 begin
   /// idemm ......
   ///
 end;
 
-function TdmPublic.GetAllRegionsArray(iCountry_id: smallint): TArray<TRegion>;
+function TdmPgCountriesLocal.GetAllRegionsArray(iCountry_id: smallint): TArray<TRegion>;
 var
   i: integer;
 begin
@@ -180,23 +180,23 @@ begin
   self.PgErgoConnection.Close;
 end;
 
-function TdmPublic.GetAllRegionsDataset(iCountry_id: smallint): TClientDataSet;
+function TdmPgCountriesLocal.GetAllRegionsDataset(iCountry_id: smallint): TClientDataSet;
 begin
-  { TODO -oRiccardo -cSystem : Implementare funzione TdmPublic.GetAllRegionsDataset }
+  { TODO -oRiccardo -cSystem : Implementare funzione TdmPgCountriesLocal.GetAllRegionsDataset }
   Result := nil;
 end;
 
-procedure TdmPublic.OpenLKPTowns;
+procedure TdmPgCountriesLocal.OpenLKPTowns;
 begin
   self.ServerFunctions.OpenDataset(qryLkpTowns);
 end;
 
-procedure TdmPublic.SetRegionCache;
+procedure TdmPgCountriesLocal.SetRegionCache;
 var
   i, j, k: integer;
 begin
   SetLength(FCountry.Regions, self.cdsRegions.RecordCount);
-  self.WriteLog('TdmPublic.SetRegionCache: Inizio');
+  self.WriteLog('TdmPgCountriesLocal.SetRegionCache: Inizio');
   // self.WriteLog('SetLength(FCountry.Regions. ' + self.cdsRegions.RecordCount.ToString());
   self.cdsRegions.First;
   i := 0;
@@ -238,10 +238,10 @@ begin
     self.cdsRegions.Next;
     inc(i);
   end;
-  self.WriteLog('TdmPublic.SetRegionCache: Fine');
+  self.WriteLog('TdmPgCountriesLocal.SetRegionCache: Fine');
 end;
 
-procedure TdmPublic.SetRegionPostgres;
+procedure TdmPgCountriesLocal.SetRegionPostgres;
 var
   i, j, k: integer;
 begin
@@ -290,9 +290,9 @@ begin
   end;
 end;
 
-procedure TdmPublic.SetCountry(id: smallint);
+procedure TdmPgCountriesLocal.SetCountry(id: smallint);
 begin
-  self.WriteLog('TdmPublic.SetCountry: ' + id.ToString());
+  self.WriteLog('TdmPgCountriesLocal.SetCountry: ' + id.ToString());
 
   if self.cdsCountries.Locate('country_id', id, []) then
   begin
@@ -313,26 +313,26 @@ begin
     self.SetRegionPostgres;
   end;
 
-  self.WriteLog('TdmPublic.SetCountry: Terminato correttamente ... 1');
+  self.WriteLog('TdmPgCountriesLocal.SetCountry: Terminato correttamente ... 1');
 end;
 
-procedure TdmPublic.SetCountryByCode(code: string);
+procedure TdmPgCountriesLocal.SetCountryByCode(code: string);
 begin
   self.SetCountry(ServerFunctions.GetCountryByCode(code, self.qryCountries));
 end;
 
-procedure TdmPublic.SetCountryByName(name: string);
+procedure TdmPgCountriesLocal.SetCountryByName(name: string);
 begin
   self.SetCountry(ServerFunctions.GetCountryByName(name, self.qryCountries));
 end;
 
-procedure TdmPublic.tbRegionsAfterClose(DataSet: TDataSet);
+procedure TdmPgCountriesLocal.tbRegionsAfterClose(DataSet: TDataSet);
 begin
   self.tbDistricts.Close;
   self.tbTowns.Close;
 end;
 
-procedure TdmPublic.tbRegionsAfterOpen(DataSet: TDataSet);
+procedure TdmPgCountriesLocal.tbRegionsAfterOpen(DataSet: TDataSet);
 begin
   self.ServerFunctions.OpenDataset(tbDistricts);
   self.ServerFunctions.OpenDataset(tbTowns);

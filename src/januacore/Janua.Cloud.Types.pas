@@ -2,7 +2,8 @@ unit Janua.Cloud.Types;
 
 interface
 
-uses Spring.Collections, Janua.Core.Types, Data.DB, Janua.Core.Http.Intf;
+uses Spring.Collections, System.SysUtils, System.StrUtils, System.Types, System.NetEncoding,
+  Janua.Core.Types, Data.DB, Janua.Core.Http.Intf;
 
 type
   TSendMessageEvent = procedure(const aMessage, aJson: string) of object;
@@ -313,17 +314,49 @@ type
     function GetMethodDescription: string;
   end;
 
-  TJanuaReminders = record
+  TJanuaRecReminders = record
     Reminders: TArray<TJanuaReminder>;
-  private
-    function GetAsJson: String;
-    procedure SetAsJson(const aJson: string);
   public
     procedure AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
     procedure RemoveReminder(aNumber: integer); overload;
     procedure RemoveReminder(aID: TGUID); overload;
     procedure Clear;
-    property AsJson: String read GetAsJson write SetAsJson;
+    function GetAsJson: String;
+    procedure SetAsJson(const aJson: string);
+  end;
+
+  TJanuaRecEvent = record
+    ID: string;
+    ETag: string;
+    Summary: string;
+    Description: string;
+    StartTime: TDateTime;
+    EndTime: TDateTime;
+    Created: TDateTime;
+    Updated: TDateTime;
+    Location: string;
+    Status: smallint;
+    Visibility: integer;
+    Recurrence: string;
+    RecurringID: string;
+    Sequence: integer;
+    Color: smallint;
+    CalendarID: string;
+    UseDefaultReminders: Boolean;
+    SendNotifications: Boolean;
+    IsAllDAy: Boolean;
+    Attendees: string;
+    Reminders: string;
+    JGUID: TGUID;
+    BackgroundColor: integer;
+    ForegroundColor: integer;
+    Sync: Boolean;
+  public
+    function GetAsJson: String;
+    procedure Clear;
+    procedure SetAsJson(const Value: String);
+    function LoadFromDataset(const aDataset: TDataSet): Boolean;
+    function SaveToDataset(const aDataset: TDataSet): Boolean;
   end;
 
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
@@ -335,9 +368,8 @@ type
 
 implementation
 
-uses System.SysUtils, System.StrUtils, Janua.Core.Functions, System.NetEncoding,
-  Janua.Application.Framework, Janua.Core.Json, Janua.Core.Commons,
-  Janua.Core.DB;
+uses
+  Janua.Core.Functions, Janua.Application.Framework, Janua.Core.Json, Janua.Core.Commons, Janua.Core.DB;
 
 const
   JanuaAttendeeStatuses: array [TJanuaAttendeeStatus] of string = ('Necessita Attenzione', 'Rifiutato',
@@ -949,9 +981,9 @@ begin
   Self := TJanuaJson.DeserializeSimple<TJanuaRecCalEventAttendees>(aJson);
 end;
 
-{ TJanuaReminders }
+{ TJanuaRecReminders }
 
-procedure TJanuaReminders.AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
+procedure TJanuaRecReminders.AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
 begin
   var
   i := Length(Reminders);
@@ -961,29 +993,29 @@ begin
   Reminders[i].Minutes := aMinutes;
 end;
 
-procedure TJanuaReminders.Clear;
+procedure TJanuaRecReminders.Clear;
 begin
   SetLength(Reminders, 0);
 end;
 
-function TJanuaReminders.GetAsJson: String;
+function TJanuaRecReminders.GetAsJson: String;
 begin
-  Result := TJanuaJson.SerializeSimple<TJanuaReminders>(Self);
+  Result := TJanuaJson.SerializeSimple<TJanuaRecReminders>(Self);
 end;
 
-procedure TJanuaReminders.RemoveReminder(aNumber: integer);
+procedure TJanuaRecReminders.RemoveReminder(aNumber: integer);
 begin
   Delete(Reminders, aNumber, 1);
 end;
 
-procedure TJanuaReminders.RemoveReminder(aID: TGUID);
+procedure TJanuaRecReminders.RemoveReminder(aID: TGUID);
 begin
 
 end;
 
-procedure TJanuaReminders.SetAsJson(const aJson: string);
+procedure TJanuaRecReminders.SetAsJson(const aJson: string);
 begin
-  Self := TJanuaJson.DeserializeSimple<TJanuaReminders>(aJson);
+  Self := TJanuaJson.DeserializeSimple<TJanuaRecReminders>(aJson);
 end;
 
 { TJanuaReminder }
@@ -991,6 +1023,107 @@ end;
 function TJanuaReminder.GetMethodDescription: string;
 begin
   Result := JanuaReminderMethods[Self.Method];
+end;
+
+{ TJanuaRecEvent }
+
+procedure TJanuaRecEvent.Clear;
+begin
+  Self.ID := '';
+  Self.ETag := '';
+  Description := '';
+  StartTime := cNullDate;
+  EndTime := cNullDate;
+  Created := cNullDate;
+  Updated := cNullDate;
+  Location := '';
+  Status := -1;
+  Visibility := -1;
+  Recurrence := '';
+  RecurringID := '';
+  Sequence := 0;
+  Color := 0;
+  CalendarID := '';
+  UseDefaultReminders := False;
+  SendNotifications := False;
+  IsAllDAy := False;
+  Attendees := '';
+  Reminders := '';
+  JGUID := GUID_NULL;
+  BackgroundColor := 0;
+  ForegroundColor := 0;
+  Sync := False;
+end;
+
+function TJanuaRecEvent.GetAsJson: String;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaRecEvent>(Self);
+end;
+
+function TJanuaRecEvent.LoadFromDataset(const aDataset: TDataSet): Boolean;
+begin
+  Self.ID := aDataset.FieldByName('ID').AsString;
+  Self.ETag := aDataset.FieldByName('ETAG').AsString;
+  Summary := aDataset.FieldByName('SUMMARY').AsString;
+  if not aDataset.FieldByName('DESCRIPTION').IsNull then
+    Description := aDataset.FieldByName('DESCRIPTION').AsString;
+  StartTime := aDataset.FieldByName('STARTTIME').AsDateTime;
+  EndTime := aDataset.FieldByName('ENDTIME').AsDateTime;
+  Created := aDataset.FieldByName('CREATED').AsDateTime;
+  Updated := aDataset.FieldByName('UPDATED').AsDateTime;
+  Location := aDataset.FieldByName('LOCATION').AsString;
+  Status := aDataset.FieldByName('STATUS').AsInteger; // SMALLINT,
+  Visibility := aDataset.FieldByName('VISIBILITY').AsInteger; // INTEGER,
+  Recurrence := aDataset.FieldByName('RECURRENCE').AsString; // VARCHAR(60),
+  RecurringID := aDataset.FieldByName('RECURRINGID').AsString; // VARCHAR(60),
+  Sequence := aDataset.FieldByName('SEQUENCE').AsInteger; // ""           INTEGER,
+  Color := aDataset.FieldByName('COLOR').AsInteger; // SMALLINT,
+  CalendarID := aDataset.FieldByName('CALENDARID').AsString; // VARCHAR(128) NOT NULL,
+  UseDefaultReminders := aDataset.FieldByName('USEDEFAULTREMINDERS').AsString = 'T'; // BOOL_CHAR
+  SendNotifications := aDataset.FieldByName('SENDNOTIFICATIONS').AsString = 'T'; // BOOL_CHAR
+  IsAllDAy := aDataset.FieldByName('ISALLDAY').AsString = 'T'; // BOOL_CHAR
+  Attendees := aDataset.FieldByName('ATTENDEES').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  Reminders := aDataset.FieldByName('REMINDERS').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  JGUID := aDataset.FieldByName('JGUID').AsGUID; // UUID /* UUID = CHAR(16) */,
+  BackgroundColor := aDataset.FieldByName('BACKGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
+  ForegroundColor := aDataset.FieldByName('FOREGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
+  Sync := aDataset.FieldByName('SYNC').AsString = 'T'; // BOOL_CHAR /*
+end;
+
+function TJanuaRecEvent.SaveToDataset(const aDataset: TDataSet): Boolean;
+begin
+  aDataset.FieldByName('ID').AsString := Self.ID;
+  aDataset.FieldByName('ETAG').AsString := Self.ETag;
+  aDataset.FieldByName('ID').AsString := Description;
+  aDataset.FieldByName('STARTTIME').AsDateTime := StartTime;
+  aDataset.FieldByName('ENDTIME').AsDateTime := EndTime;
+  aDataset.FieldByName('CREATED').AsDateTime := Created;
+  aDataset.FieldByName('UPDATED').AsDateTime := Updated;
+  aDataset.FieldByName('LOCATION').AsString := Location;
+  aDataset.FieldByName('STATUS').AsInteger := Status; // SMALLINT,
+  aDataset.FieldByName('VISIBILITY').AsInteger := Visibility; // INTEGER,
+  aDataset.FieldByName('RECURRENCE').AsString := Recurrence; // VARCHAR(60),
+  aDataset.FieldByName('RECURRINGID').AsString := RecurringID; // VARCHAR(60),
+  aDataset.FieldByName('SEQUENCE').AsInteger := Sequence; // ""           INTEGER,
+  aDataset.FieldByName('COLOR').AsInteger := Color; // SMALLINT,
+  aDataset.FieldByName('CALENDARID').AsString := CalendarID; // VARCHAR(128) NOT NULL,
+  aDataset.FieldByName('USEDEFAULTREMINDERS').AsString := IfThen(UseDefaultReminders, 'T', 'F'); // BOOL_CHAR
+  aDataset.FieldByName('SENDNOTIFICATIONS').AsString := IfThen(SendNotifications, 'T', 'F'); // BOOL_CHAR
+  aDataset.FieldByName('ISALLDAY').AsString := IfThen(IsAllDAy, 'T', 'F'); // BOOL_CHAR
+  Attendees := aDataset.FieldByName('ATTENDEES').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  Reminders := aDataset.FieldByName('REMINDERS').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  JGUID := aDataset.FieldByName('JGUID').AsGUID; // UUID /* UUID = CHAR(16) */,
+  BackgroundColor := aDataset.FieldByName('BACKGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
+  ForegroundColor := aDataset.FieldByName('FOREGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
+  Sync := aDataset.FieldByName('SYNC').AsString = 'T'; // BOOL_CHAR /*
+end;
+
+procedure TJanuaRecEvent.SetAsJson(const Value: String);
+begin
+  if (Value = '') or (Value = '{}') then
+    Clear
+  else
+    Self := TJanuaJson.DeserializeSimple<TJanuaRecEvent>(Value);
 end;
 
 initialization

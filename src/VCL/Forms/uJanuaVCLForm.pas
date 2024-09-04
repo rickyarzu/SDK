@@ -476,7 +476,7 @@ end;
 
 function TJanuaVCLFormModel.GetOnCreate: TNotifyEvent;
 begin
-
+  Result := OnCreate;
 end;
 
 function TJanuaVCLFormModel.GetOnDeactivate: TNotifyEvent;
@@ -848,7 +848,7 @@ end;
 
 procedure TJanuaVCLFormModel.SetOnCreate(const Value: TNotifyEvent);
 begin
-
+  self.OnCreate := Value;
 end;
 
 procedure TJanuaVCLFormModel.SetOnDeactivate(const Value: TNotifyEvent);

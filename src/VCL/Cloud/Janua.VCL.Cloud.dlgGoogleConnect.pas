@@ -29,6 +29,8 @@ type
     procedure UpdateGoogle;
     procedure CheckCalendarColors;
     function AddGoogleItem(aItem: string): string;
+    function UpdateGoogleItem(aItem: string): string;
+    function DeleteGoogleItem(aItem: string): string;
   end;
 
 var
@@ -87,6 +89,29 @@ begin
     finally
       cnt.Free;
     end;
+end;
+
+function TdlgVclCloudGoogleConnect.DeleteGoogleItem(aItem: string): string;
+var
+  cnt: TdmPhoenixVCLGCalendarController;
+begin
+  Result := '';
+
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.RefreshAccess;
+
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.DoAuth;
+
+  if AdvGCalendar1.TestTokens then
+    try
+      cnt := TdmPhoenixVCLGCalendarController.Create(nil);
+      cnt.AdvGCalendar1 := AdvGCalendar1;
+      Result := cnt.DeleteGoogleItem(aItem);
+    finally
+      cnt.Free;
+    end;
+
 end;
 
 procedure TdlgVclCloudGoogleConnect.FormCreate(Sender: TObject);
@@ -157,6 +182,29 @@ begin
   finally
     cnt.Free;
   end;
+end;
+
+function TdlgVclCloudGoogleConnect.UpdateGoogleItem(aItem: string): string;
+var
+  cnt: TdmPhoenixVCLGCalendarController;
+begin
+  Result := '';
+
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.RefreshAccess;
+
+  if not AdvGCalendar1.TestTokens then
+    AdvGCalendar1.DoAuth;
+
+  if AdvGCalendar1.TestTokens then
+    try
+      cnt := TdmPhoenixVCLGCalendarController.Create(nil);
+      cnt.AdvGCalendar1 := AdvGCalendar1;
+      Result := cnt.UpdateGoogleItem(aItem);
+    finally
+      cnt.Free;
+    end;
+
 end;
 
 end.

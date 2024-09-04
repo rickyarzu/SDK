@@ -253,8 +253,8 @@
             <Form>dmPostgresCloud</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
+        <DCCReference Include="..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
+            <Form>dmPgCountriesLocal</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\src\januaunidac\datamodules\udmSocial.pas">
@@ -436,7 +436,7 @@
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\Janua\Postgres\Health\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmPgItems\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmPgWebSite\default.txvpck"/>
-        <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmPublic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaPostgresSystemXE1023\Janua.Commons.pgCountriesLocal\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmPgbooksUniversity\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmHealthBooking\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystemXE1023\udmPgCloudStorage\default.txvpck"/>
@@ -549,7 +549,7 @@
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmPgUniversity\default.txvpck"/>
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmFootballPostgres\default.txvpck"/>
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmPgFootballStorage\default.txvpck"/>
-        <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmPublic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaUniDACSystemXE1023\Janua.Commons.pgCountriesLocal\default.txvpck"/>
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmPgItems\default.txvpck"/>
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmHealthBooking\default.txvpck"/>
         <None Include="ModelSupport_JanuaUniDACSystemXE1023\udmPgWebSite\default.txvpck"/>

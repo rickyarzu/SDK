@@ -6,7 +6,7 @@ uses
   // System
   System.Classes, System.SysUtils,
   // DB Libraries
-  Datasnap.DBClient, Data.DB, MemData, MemDS, Uni,
+  Data.DB, MemData, MemDS, Uni,
   // Janua
   Janua.Cms.Types, Janua.Core.Types, Janua.Core.Functions, Janua.Core.DB, Janua.Uni.Impl, Janua.Uni.Intf,
   Janua.Core.Classes, Janua.Core.DB.Intf;

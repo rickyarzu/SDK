@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, MemDS,
   Janua.Core.System, Janua.Core.Social,
   Janua.Core.Classes,
-  udmJanuaPostgresModel, Datasnap.Provider, Datasnap.DBClient, UniProvider, PostgreSQLUniProvider;
+  udmJanuaPostgresModel, Datasnap.Provider, Datasnap.DBClient, UniProvider, PostgreSQLUniProvider,
+  Janua.Unidac.Connection;
 
 type
   TdmSocial = class(TdmJanuaPostgresModel)

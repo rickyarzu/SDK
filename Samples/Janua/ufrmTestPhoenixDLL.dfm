@@ -60,4 +60,40 @@ object frmTestDelphiDLL: TfrmTestDelphiDLL
     TabOrder = 3
     OnClick = btnDLLTestClick
   end
+  object btnLocalDel: TButton
+    Left = 40
+    Top = 140
+    Width = 89
+    Height = 25
+    Caption = 'LocalDel'
+    TabOrder = 4
+    OnClick = btnLocalDelClick
+  end
+  object btnDLLDel: TButton
+    Left = 135
+    Top = 140
+    Width = 89
+    Height = 25
+    Caption = 'DLL Del'
+    TabOrder = 5
+    OnClick = btnDLLDelClick
+  end
+  object btnLocalUp: TButton
+    Left = 40
+    Top = 188
+    Width = 89
+    Height = 25
+    Caption = 'LocalUpdate'
+    TabOrder = 6
+    OnClick = btnLocalUpClick
+  end
+  object btnDLLUpd: TButton
+    Left = 135
+    Top = 188
+    Width = 89
+    Height = 25
+    Caption = 'DLL Update'
+    TabOrder = 7
+    OnClick = btnDLLUpdClick
+  end
 end

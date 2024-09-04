@@ -152,6 +152,60 @@ type
     qryGoogleEventBACKGROUNDCOLOR: TIntegerField;
     qryGoogleEventFOREGROUNDCOLOR: TIntegerField;
     qryGoogleEventSYNC: TStringField;
+    qryRicercaStatino: TUniQuery;
+    qryRicercaStatinoCHIAVE: TIntegerField;
+    qryRicercaStatinoCLIENTE: TIntegerField;
+    qryRicercaStatinoFILIALE: TIntegerField;
+    qryRicercaStatinoTITOLO: TStringField;
+    qryRicercaStatinoRAGIONE_SOCIALE: TStringField;
+    qryRicercaStatinoINDIRIZZO: TStringField;
+    qryRicercaStatinoCOMUNE: TStringField;
+    qryRicercaStatinoPROVINCIA: TStringField;
+    qryRicercaStatinoCAP: TStringField;
+    qryRicercaStatinoTELEFONO: TStringField;
+    qryRicercaStatinoCELLULARE: TStringField;
+    qryRicercaStatinoNOTE: TBlobField;
+    qryRicercaStatinoORARIO_APERTURA_DAL1: TTimeField;
+    qryRicercaStatinoORARIO_APERTURA_DAL2: TTimeField;
+    qryRicercaStatinoORARIO_APERTURA_AL1: TTimeField;
+    qryRicercaStatinoORARIO_APERTURA_AL2: TTimeField;
+    qryRicercaStatinoCHIUSURA: TStringField;
+    qryRicercaStatinoFATTURA: TIntegerField;
+    qryRicercaStatinoDATA_INTERVENTO: TDateField;
+    qryRicercaStatinoGENERAZIONE_AUTOMATICA: TIntegerField;
+    qryRicercaStatinoTECNICO_INTERVENTO: TIntegerField;
+    qryRicercaStatinoSCANSIONE: TWideStringField;
+    qryRicercaStatinoREGISTRO: TWideStringField;
+    qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideStringField;
+    qryRicercaStatinoSOSPESO: TStringField;
+    qryRicercaStatinoDA_ESPORTARE_SUL_WEB: TStringField;
+    qryRicercaStatinoRESPONSABILE: TIntegerField;
+    qryRicercaStatinoESPORTATO_SU_MOBILE: TStringField;
+    qryRicercaStatinoNOTE_DAL_TECNICO: TBlobField;
+    qryRicercaStatinoJSON_DA_MOBILE: TBlobField;
+    qryRicercaStatinoPDF_STATINO: TBlobField;
+    qryRicercaStatinoREGISTRO_IS_PDF: TStringField;
+    qryRicercaStatinoVERBALE_PROVA_DINAMICA: TBlobField;
+    qryRicercaStatinoVERBALE_MANICHETTE: TBlobField;
+    qryRicercaStatinoPREVENTIVO: TIntegerField;
+    qryRicercaStatinoIGNORA_EVIDENZIAZIONE: TStringField;
+    qryRicercaStatinoANNULLATO_DA_TABLET: TStringField;
+    qryRicercaStatinoMOBILEWARN_NUOVA_ATTREZZATURA: TStringField;
+    qryRicercaStatinoMOBILEWARN_ORDINARIA_RITIRATA: TStringField;
+    qryRicercaStatinoMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField;
+    qryRicercaStatinoMOBILEWARN_SMALTIMENTO: TStringField;
+    qryRicercaStatinoSTATO_LAVORAZIONE: TStringField;
+    qryRicercaStatinoDATA_CHIUSURA_DA_SERVER: TDateField;
+    qryRicercaStatinoCHIUSURA_EXT: TStringField;
+    qryRicercaStatinoCHIUSURA_STATINO: TWideStringField;
+    qryRicercaStatinoMOBILEWARN_NON_ESEGUITI: TStringField;
+    qryRicercaStatinoPRESA_IN_CARICO: TStringField;
+    qryRicercaStatinoFORNITURA: TStringField;
+    qryRicercaStatinoAPPUNTAMENTO_DATA: TDateField;
+    qryRicercaStatinoAPPUNTAMENTO_ORA: TTimeField;
+    qryRicercaStatinoSTATO: TSmallintField;
+    qryRicercaStatinoJGUID: TBytesField;
+    qryRicercaStatinoGCAL: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     bg: TColor;
@@ -167,6 +221,8 @@ type
 
   public
     function AddNewGoogleItem(const aID: string): string;
+    function DeleteGoogleItem(const aID: string): string;
+    function UpdateGoogleItem(const aID: string): string;
     procedure FillGoogleCalendars; override;
     procedure PlannerGoogleSync;
     procedure AddNewGoogleItems;
@@ -279,6 +335,69 @@ begin
   dsCalendarEvents.Enabled := False;
   dsGoogleEvents.Enabled := False;
   dslkpGCalendar.Enabled := False;
+
+end;
+
+function TdmPhoenixVCLGCalendarController.DeleteGoogleItem(const aID: string): string;
+var
+  aItem: TGCalendarItem;
+  aCalendar: TGCalendar;
+begin
+  qryGoogleEvent.Close;
+  qryGoogleEvent.Params[0].AsString := aID;
+  qryGoogleEvent.Open;
+
+  Result := '';
+
+  if qryGoogleEvent.RecordCount > 0 then
+  begin
+    var
+    aCalendarID := qryGoogleEventCALENDARID.AsString;
+
+    AdvGCalendar1.GetCalendars();
+
+    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    begin
+      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+        aCalendar := AdvGCalendar1.Calendars[J];
+    end;
+
+    if Assigned(aCalendar) then
+      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime,
+        qryGoogleEventENDTIME.AsDateTime + 1);
+
+    aItem := AdvGCalendar1.Items.Find(qryGoogleEventID.AsString);
+    if Assigned(aItem) then
+    begin
+      AdvGCalendar1.Delete(aItem);
+      qryUpdatePlannerEvents.Close;
+      qryUpdatePlannerEvents.Params[0].AsString := aID;
+      qryUpdatePlannerEvents.Open;
+      if qryUpdatePlannerEvents.RecordCount > 0 then
+      begin
+        var
+        vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+        qryUpdatePlannerEvents.Delete;
+        if vStatino > 0 then
+        begin
+          qryRicercaStatino.Close;
+          qryRicercaStatino.Params[0].AsInteger := vStatino;
+          qryRicercaStatino.Open;
+          if qryRicercaStatino.RecordCount = 1 then
+          begin
+            qryRicercaStatino.Edit;
+            qryRicercaStatinoSTATO.AsInteger := qryRicercaStatinoSTATO.AsInteger - 1;
+            qryRicercaStatinoAPPUNTAMENTO_DATA.Clear;
+            qryRicercaStatinoAPPUNTAMENTO_ORA.Clear;
+            qryRicercaStatinoGCAL.Clear;
+            qryRicercaStatino.Post;
+          end;
+        end;
+        qryGoogleEvent.Delete;
+      end;
+
+    end;
+  end;
 
 end;
 
@@ -534,6 +653,71 @@ end;
 procedure TdmPhoenixVCLGCalendarController.UpdateGoogleEventsQueue;
 begin
 
+end;
+
+function TdmPhoenixVCLGCalendarController.UpdateGoogleItem(const aID: string): string;
+var
+  aItem: TGCalendarItem;
+  aCalendar: TGCalendar;
+begin
+  qryGoogleEvent.Close;
+  qryGoogleEvent.Params[0].AsString := aID;
+  qryGoogleEvent.Open;
+
+  Result := '';
+
+  if qryGoogleEvent.RecordCount > 0 then
+  begin
+    var
+    aCalendarID := qryGoogleEventCALENDARID.AsString;
+
+    AdvGCalendar1.GetCalendars();
+
+    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    begin
+      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+        aCalendar := AdvGCalendar1.Calendars[J];
+    end;
+
+    if Assigned(aCalendar) then
+      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime - 1,
+        qryGoogleEventENDTIME.AsDateTime + 1);
+
+    aItem := AdvGCalendar1.Items.Find(qryGoogleEventID.AsString);
+    if Assigned(aItem) then
+    begin
+      aItem.StartTime := qryGoogleEventSTARTTIME.AsDateTime;
+      aItem.EndTime := qryGoogleEventENDTIME.AsDateTime;
+      aItem.Description := qryGoogleEventDESCRIPTION.AsString;
+      AdvGCalendar1.Update(aItem);
+
+      qryUpdatePlannerEvents.Close;
+      qryUpdatePlannerEvents.Params[0].AsString := aID;
+      qryUpdatePlannerEvents.Open;
+      if qryUpdatePlannerEvents.RecordCount > 0 then
+      begin
+        var
+        vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+
+        if vStatino > 0 then
+        begin
+          qryRicercaStatino.Close;
+          qryRicercaStatino.Params[0].AsInteger := vStatino;
+          qryRicercaStatino.Open;
+          if qryRicercaStatino.RecordCount = 1 then
+          begin
+            qryRicercaStatino.Edit;
+            qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := qryGoogleEventSTARTTIME.AsDateTime;
+            qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := qryGoogleEventENDTIME.AsDateTime;
+            qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := qryGoogleEventDESCRIPTION.AsString;
+            qryRicercaStatino.Post;
+          end;
+        end;
+        {qryGoogleEvent.Delete;}
+      end;
+
+    end;
+  end;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.WriteGoogleEventsValues;

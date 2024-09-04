@@ -4,7 +4,7 @@ interface
 
 uses
   SysUtils, Variants, Classes, DB, PgAccess, Janua.Core.Functions,
-  Janua.Core.JPublic, Janua.Server.System, udmPublic, Janua.Core.System,
+  Janua.Core.JPublic, Janua.Server.System, Janua.Commons.pgCountriesLocal, Janua.Core.System,
   Janua.Server.Functions, Janua.Core.Classes;
 
 type
@@ -12,10 +12,10 @@ type
   private
     // private declarations **************************************************************************
     procedure ActivateCountryDataset;
-    procedure SetdmPublic(const Value: TDmPublic);
+    procedure SeTdmPgCountriesLocal(const Value: TdmPgCountriesLocal);
   protected
     // ****************************************************************************
-    FdmPublic: TDmPublic;
+    FdmPublic: TdmPgCountriesLocal;
     procedure CreateDataModule; override;
     procedure DestroyDataModule(Force: boolean = false); override;
     // ****************************************************************************
@@ -28,7 +28,7 @@ type
     function Activate: boolean; override;
   published
     // published Properties .....
-    property dmPublic: TDmPublic read FdmPublic write SetdmPublic;
+    property dmPublic: TdmPgCountriesLocal read FdmPublic write SeTdmPgCountriesLocal;
   end;
 
 implementation
@@ -85,7 +85,7 @@ procedure TJanuaServerJPublic.CreateDataModule;
 begin
   if not Assigned(FdmPublic) then
   begin
-    FdmPublic := TDmPublic.Create(nil);
+    FdmPublic := TdmPgCountriesLocal.Create(nil);
     FdmPublic.ServerSession := self.FJanuaSystem.JanuaServerSession;
     FdmPublic.isServer := not(FApplicationProfile.ApplicationType in [jatClientWin]);
   end;
@@ -120,7 +120,7 @@ begin
       if not self.CheckUp then
         Exit(False);
       if self.Verbose then
-        self.WriteLog('TJanuaServerJPublic.SetCountryByCode TdmPublic.Create(nil)');
+        self.WriteLog('TJanuaServerJPublic.SetCountryByCode TdmPgCountriesLocal.Create(nil)');
       CreateDataModule;
       try
         FdmPublic.SetCountryByCode(cCode);
@@ -149,7 +149,7 @@ begin
     try
       if not CheckUp then
         Exit(False);
-      WriteLog('TJanuaServerJPublic.SetCountryByID TdmPublic.Create(nil)');
+      WriteLog('TJanuaServerJPublic.SetCountryByID TdmPgCountriesLocal.Create(nil)');
       self.CreateDataModule;
 
       try
@@ -160,7 +160,7 @@ begin
         self.FSelectedCountry := FdmPublic.Country;
         WriteLog('TJanuaServerJPublic.SetCountryByID FSelectedCountry := ' +
           self.SelectedCountry.Country.id.ToString());
-        WriteLog('TDmPublic.Log = ');
+        WriteLog('TdmPgCountriesLocal.Log = ');
         WriteLog(FdmPublic.Log.Text);
       finally
         if FVerbose then
@@ -198,7 +198,7 @@ begin
       if not CheckUp then
         Exit(False);
       if Verbose then
-        WriteLog('TJanuaServerJPublic.SetCountryByName TdmPublic.Create(nil)');
+        WriteLog('TJanuaServerJPublic.SetCountryByName TdmPgCountriesLocal.Create(nil)');
       // if not Assigned(FdmPublic) then
       self.CreateDataModule;
       try
@@ -225,7 +225,7 @@ begin
     end;
 end;
 
-procedure TJanuaServerJPublic.SetdmPublic(const Value: TDmPublic);
+procedure TJanuaServerJPublic.SeTdmPgCountriesLocal(const Value: TdmPgCountriesLocal);
 begin
   FdmPublic := Value;
 end;

@@ -103,10 +103,13 @@
         <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_MapFile>1</DCC_MapFile>
+        <DCC_LargeAddressAware>true</DCC_LargeAddressAware>
+        <DCC_OutputDRCFile>true</DCC_OutputDRCFile>
+        <DCC_DebugInfoInTds>true</DCC_DebugInfoInTds>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>

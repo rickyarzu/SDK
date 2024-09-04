@@ -7,7 +7,7 @@ uses
   PgAccess, Janua.Core.System, Janua.Core.Classes, Janua.Core.Cms,
   Xml.xmldom, Xml.XMLIntf, Xml.Win.msxmldom, Xml.XMLDoc, Soap.XSBuiltIns,
   Janua.Core.Functions, IdBaseComponent, IdComponent, IdTCPConnection,
-  IdTCPClient, IdHTTP, System.Variants,  Janua.Server.Functions, udmPublic,
+  IdTCPClient, IdHTTP, System.Variants,  Janua.Server.Functions, Janua.Commons.pgCountriesLocal,
   Datasnap.DBClient, Datasnap.Provider, Janua.Postgres.Functions;
 
 type

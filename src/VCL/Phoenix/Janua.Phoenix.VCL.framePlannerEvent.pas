@@ -8,13 +8,13 @@ uses
   Data.DB, DBAccess, Uni, Planner, DBPlanner, AdvEdit, AdvEdBtn, PlannerDatePicker,
   // VCL
   VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.Graphics, VCL.ImgList, JvExControls, JvDBLookup, VCL.StdCtrls,
-  VCL.ComCtrls, VCL.DBCGrids, VCL.DBCtrls, VCL.ExtCtrls, JvSpeedButton,
+  VCL.ComCtrls, VCL.DBCGrids, VCL.DBCtrls, VCL.ExtCtrls, JvSpeedButton, VCL.Buttons, VCL.Grids, VCL.DBGrids,
+  CRGrid, VCL.Menus,
   // ZLibraries
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, VCL.Buttons, VCL.Grids, VCL.DBGrids, CRGrid,
-  VCL.Menus;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types;
 
 type
   TframeVCLPhoenixPlannerEvent = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
@@ -78,6 +78,10 @@ type
     Panel3: TPanel;
     DBText8: TDBText;
     DBText9: TDBText;
+    Label6: TLabel;
+    DBText10: TDBText;
+    Label7: TLabel;
+    DBText11: TDBText;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -94,6 +98,13 @@ type
     procedure DBPlanner1DragDrop(Sender, Source: TObject; X, Y: Integer);
     procedure DBText1DblClick(Sender: TObject);
     procedure cbkFilterReportClick(Sender: TObject);
+    procedure DBPlanner1ItemEnter(Sender: TObject; Item: TPlannerItem);
+    procedure DBPlanner1ItemEndEdit(Sender: TObject; Item: TPlannerItem);
+    procedure DBPlanner1ItemDrag(Sender: TObject; Item: TPlannerItem; var Allow: Boolean);
+    procedure DBPlanner1ItemMove(Sender: TObject; Item: TPlannerItem;
+      FromBegin, FromEnd, FromPos, ToBegin, ToEnd, ToPos: Integer);
+    procedure DBPlanner1ItemSize(Sender: TObject; Item: TPlannerItem;
+      Position, FromBegin, FromEnd, ToBegin, ToEnd: Integer);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -103,6 +114,9 @@ type
     ItemCaptionField: TField;
 
     FID: Integer;
+    FDBKey: string;
+    SelectedItem: TPlannerItem;
+    FRecordItem: TJanuaRecEvent;
 
     ItemIDField: TField;
     FreportID: Integer;
@@ -158,7 +172,7 @@ end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
 begin
-  dmVCLPhoenixPlannerController.AddTechEvent
+  Self.FRecordItem := dmVCLPhoenixPlannerController.AddTechEvent(False);
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
@@ -275,6 +289,57 @@ begin
   Accept := (Source is TDBImage);
 end;
 
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemDrag(Sender: TObject; Item: TPlannerItem;
+  var Allow: Boolean);
+begin
+  inherited;
+  FRecordItem.StartTime := Item.ItemStartTime;
+  FRecordItem.EndTime := Item.ItemEndTime;
+  FRecordItem.Description := Item.ItemText;
+  dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemEndEdit(Sender: TObject; Item: TPlannerItem);
+begin
+  inherited;
+  FRecordItem.StartTime := Item.ItemStartTime;
+  FRecordItem.EndTime := Item.ItemEndTime;
+  FRecordItem.Description := Item.ItemText;
+  dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemEnter(Sender: TObject; Item: TPlannerItem);
+begin
+  inherited;
+  if FID <> Item.ID then
+  begin
+    FID := Item.ID;
+    FDBKey := Item.DBKey;
+    SelectedItem := Item;
+    FRecordItem := dmVCLPhoenixPlannerController.LocateGoogleMeeting(FDBKey);
+  end;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemMove(Sender: TObject; Item: TPlannerItem;
+  FromBegin, FromEnd, FromPos, ToBegin, ToEnd, ToPos: Integer);
+begin
+  inherited;
+  FRecordItem.StartTime := Item.ItemStartTime;
+  FRecordItem.EndTime := Item.ItemEndTime;
+  FRecordItem.Description := Item.ItemText;
+  dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemSize(Sender: TObject; Item: TPlannerItem;
+  Position, FromBegin, FromEnd, ToBegin, ToEnd: Integer);
+begin
+  inherited;
+  FRecordItem.StartTime := Item.ItemStartTime;
+  FRecordItem.EndTime := Item.ItemEndTime;
+  FRecordItem.Description := Item.ItemText;
+  dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+end;
+
 procedure TframeVCLPhoenixPlannerEvent.DBText1DblClick(Sender: TObject);
 var
   ADialog: TDLG_STATINO;
@@ -306,14 +371,14 @@ begin
 
   // Cap può essere Non settato (default) impostato (ha un cap) o resettato (tutti i cap) pari a 00000
   lFilter.CAP := lkpCAP.Value;
-  lFilter.CAPCk := not (lkpCAP.Value.IsEmpty or (lkpCAP.Value = '00000'));
+  lFilter.CAPCk := not(lkpCAP.Value.IsEmpty or (lkpCAP.Value = '00000'));
 
   if not cboCustomers.Value.IsEmpty then
     lFilter.ClienteID := cboCustomers.Value.ToInteger
   else
     lFilter.ClienteID := -1;
 
-  lFilter.ClienteCk := not (cboCustomers.Value.IsEmpty or (cboCustomers.Value.ToInteger = 0));
+  lFilter.ClienteCk := not(cboCustomers.Value.IsEmpty or (cboCustomers.Value.ToInteger = 0));
 
   lFilter.Status := grpStato.ItemIndex;
 
