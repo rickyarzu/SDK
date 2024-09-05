@@ -21,7 +21,8 @@ uses
   Janua.Core.DataModule, JOrm.Cloud.GoogleCalendarEvents.Intf, JOrm.Cloud.GoogleCalendars.Intf,
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types;
+  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types,
+  CloudSMS;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -139,6 +140,7 @@ type
     vtGoogleEventsBACKGROUNDCOLOR: TIntegerField;
     vtGoogleEventsFOREGROUNDCOLOR: TIntegerField;
     vtGoogleEventsSYNC: TStringField;
+    AdvTwilio: TAdvTwilio;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -400,6 +402,7 @@ type
     { Public declarations }
     // Google CAlendar
     { procedure GetGCalendarList; }
+    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string): Boolean;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
@@ -500,6 +503,12 @@ uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
 { udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
+
+const
+  cKey = 'AC221a150df22723daef8d097a7f76cfcf';
+  cSecret = 'f3c90112efdccd931b81dea46f74f1da';
+  cAppName = '+393513535778' { '+15302036772' };
+  cMessageType = jmtWhatsApp;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -1455,6 +1464,31 @@ begin
     vtGoogleColors.Next;
   end;
 
+end;
+
+function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string;
+aRecipient: string): Boolean;
+begin
+  AdvTwilio.App.Key := cKey;
+  // 'AC221a150df22723daef8d097a7f76cfcf';
+  AdvTwilio.App.Secret := cSecret;
+  // 'f3c90112efdccd931b81dea46f74f1da';
+  AdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + cAppName; // +39 351 353 5778
+  // '+15302036772';
+  var
+  lSMS := aMessage;
+
+  var
+  lRecipient := aRecipient; // +39 348 826 1954
+
+  if cMessageType = jmtWhatsApp then
+    lRecipient := 'whatsapp:' + lRecipient;
+
+  Result := AdvTwilio.SendSMS(lRecipient, lSMS);
+  if Result then
+    ShowMessage('Messaggio inviato correttamente')
+  else
+    raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
 end;
 
 procedure TdmVCLPlannerCustomController.SetAdvGCalendar1(const Value: TAdvGCalendar);

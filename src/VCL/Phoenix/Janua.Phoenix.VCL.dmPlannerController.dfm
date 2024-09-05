@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 658
+  Height = 682
   Width = 1047
   inherited SVGIconImageListIt: TSVGIconImageList
     Size = 48
@@ -1905,7 +1905,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     MinTimeField = 'DALLE_ORE'
     MaxTimeField = 'ALLE_ORE'
     Left = 419
-    Top = 512
+    Top = 496
   end
   object vtPlannerEvents: TVirtualTable [50]
     Left = 584
@@ -2043,7 +2043,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     MinTimeField = 'DALLE_ORE'
     MaxTimeField = 'ALLE_ORE'
     Left = 419
-    Top = 440
+    Top = 432
   end
   object dsCalendars2: TUniDataSource [54]
     DataSet = qryPlannerCalendars2
@@ -2202,8 +2202,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object MainToolBarActions2: TActionList [57]
     Images = SVGIconImageList48
-    Left = 72
-    Top = 480
+    Left = 168
+    Top = 584
     object ActionAddMeeting2: TAction
       Category = 'Meetings'
       Caption = 'Pianificazione Tecnico'
@@ -2504,6 +2504,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ImageIndex = 49
       ImageName = '050-stopwatch'
       OnExecute = actDlgDeleteActionsExecute
+    end
+    object actDlgMessage: TAction
+      Caption = 'Invia Msg WhatsApp'
+      ImageIndex = 35
+      ImageName = '036-planner'
+      OnExecute = actDlgMessageExecute
     end
   end
   object ImageListIcons: TImageList [62]
@@ -6747,8 +6753,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Items = <>
     Height = 64
     Width = 64
-    Left = 424
-    Top = 576
+    Left = 256
+    Top = 616
     Bitmap = {
       494C010105000800040040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000000100008000000001002000000000000000
@@ -10999,5 +11005,310 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       616C63436F6C6F7203000000000000000F004241434B47524F554E44434F4C4F
       5203000000000000000F00464F524547524F554E44434F4C4F52030000000000
       0000040053594E430100010000000000000000000000}
+  end
+  inherited AdvTwilio: TAdvTwilio
+    Top = 560
+  end
+  object qryCellulariStatino: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'select   REPLACE( REPLACE(coalesce(trim(S.cellulare), S.telefono' +
+        '), '#39'/'#39', '#39#39'), '#39'-'#39', '#39#39')  as telefono  ,  coalesce(coalesce(S.cellu' +
+        'lare, s.telefono), c.cellulare) as cellulare,'
+      
+        's.telefono as stelefono, s.cellulare as scellulare, c.telefono1 ' +
+        'as ctel1, c.cellulare as ccell , c.telefono2 as ctel2,'
+      'F.cellulare AS FCEL, F.telefono AS FTEL ,'
+      'EXTRACTNUMBERS('
+      '    CASE '
+      
+        '        WHEN S.cellulare IS NOT NULL AND TRIM(S.cellulare) <> '#39#39 +
+        ' AND  TRIM(S.cellulare) NOT STARTING WITH '#39'0'#39' THEN S.cellulare'
+      
+        '        WHEN s.telefono IS NOT NULL AND  TRIM(s.telefono ) <> '#39#39 +
+        ' and  TRIM(s.telefono ) NOT STARTING WITH '#39'0'#39' THEN s.telefono'
+      
+        '        WHEN F.cellulare IS NOT NULL AND TRIM(F.cellulare) <> '#39#39 +
+        ' AND  TRIM(F.cellulare) NOT STARTING WITH '#39'0'#39' THEN F.cellulare'
+      
+        '        WHEN F.telefono IS NOT NULL AND  TRIM(F.telefono ) <> '#39#39 +
+        ' and  TRIM(F.telefono ) NOT STARTING WITH '#39'0'#39' THEN F.telefono'
+      
+        '        WHEN c.cellulare IS NOT NULL AND TRIM(c.cellulare) <> '#39#39 +
+        ' and  TRIM(c.cellulare) NOT STARTING WITH '#39'0'#39'  THEN c.cellulare'
+      
+        '        WHEN c.telefono1 IS NOT NULL AND TRIM(c.telefono1) <> '#39#39 +
+        ' AND  TRIM(c.telefono1) NOT STARTING WITH '#39'0'#39' THEN  c.telefono1'
+      
+        '        WHEN c.telefono2 IS NOT NULL AND TRIM(c.telefono2) <> '#39#39 +
+        ' AND  TRIM(c.telefono2) NOT STARTING WITH '#39'0'#39' THEN  c.telefono2'
+      
+        '      --  WHEN c.telefono3 IS NOT NULL AND TRIM(c.telefono3) <> ' +
+        #39#39' AND  TRIM(c.telefono3) NOT STARTING WITH '#39'0'#39' THEN  c.telefono' +
+        '2'
+      '        ELSE NULL'
+      '    END'
+      ')'
+      '    AS risultato'
+      
+        'from statini S INNER JOIN CLIENTI C ON S.cliente = C.chiave  INN' +
+        'ER JOIN  filiali_clienti F ON S.filiale = F.chiave'
+      'WHERE S.CHIAVE = :STATINO')
+    Left = 808
+    Top = 560
+    ParamData = <
+      item
+        DataType = ftLargeint
+        Name = 'STATINO'
+        ParamType = ptInput
+        Value = nil
+      end>
+    object qryCellulariStatinoTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoCELLULARE: TStringField
+      FieldName = 'CELLULARE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoSTELEFONO: TStringField
+      FieldName = 'STELEFONO'
+      Size = 255
+    end
+    object qryCellulariStatinoSCELLULARE: TStringField
+      FieldName = 'SCELLULARE'
+      Size = 255
+    end
+    object qryCellulariStatinoCTEL1: TStringField
+      FieldName = 'CTEL1'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoCCELL: TStringField
+      FieldName = 'CCELL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoCTEL2: TStringField
+      FieldName = 'CTEL2'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoFCEL: TStringField
+      FieldName = 'FCEL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoFTEL: TStringField
+      FieldName = 'FTEL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCellulariStatinoRISULTATO: TStringField
+      FieldName = 'RISULTATO'
+      ReadOnly = True
+      Size = 255
+    end
+  end
+  object qryElencoEventiWhatsApp: TUniQuery
+    KeyFields = 'JGUID'
+    SQLInsert.Strings = (
+      'INSERT INTO CALENDARIO_EVENTI'
+      
+        '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
+        ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
+        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+      'VALUES'
+      
+        '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
+        'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+    SQLDelete.Strings = (
+      'DELETE FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE CALENDARIO_EVENTI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, STATINO = :STATINO, TECNICO = :TECNICO, DALL' +
+        'E_ORE = :DALLE_ORE, ALLE_ORE = :ALLE_ORE, NOTE = :NOTE, SUBJECT ' +
+        '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
+        'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
+        'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
+        'NDARIO, GOOGLEID = :GOOGLEID'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM CALENDARIO_EVENTI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
+        'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'NOTE'
+        FieldType = ftWideString
+        FieldLength = 2048
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'select E.ID, E.ETAG, E.SUMMARY, E.DESCRIPTION, E.STARTTIME, E.EN' +
+        'DTIME, CREATED, UPDATED, LOCATION, STATUS, VISIBILITY, RECURRENC' +
+        'E,'
+      
+        '       RECURRINGID, "SEQUENCE", COLOR, CALENDARID, USEDEFAULTREM' +
+        'INDERS, SENDNOTIFICATIONS, ISALLDAY, ATTENDEES,'
+      
+        '       REMINDERS, c.JGUID, e.jguid as GJGUID, BACKGROUNDCOLOR, F' +
+        'OREGROUNDCOLOR, SYNC,'
+      
+        '       s.telefono as stelefono, s.cellulare as scellulare, c.tel' +
+        'efono1 as ctel1, c.cellulare as ccell , c.telefono2 as ctel2,'
+      '       F.cellulare AS FCEL, F.telefono AS FTEL ,'
+      'EXTRACTNUMBERS('
+      '    CASE '
+      
+        '        WHEN S.cellulare IS NOT NULL AND TRIM(S.cellulare) <> '#39#39 +
+        ' AND  TRIM(S.cellulare) NOT STARTING WITH '#39'0'#39' THEN S.cellulare'
+      
+        '        WHEN s.telefono IS NOT NULL AND  TRIM(s.telefono ) <> '#39#39 +
+        ' and  TRIM(s.telefono ) NOT STARTING WITH '#39'0'#39' THEN s.telefono'
+      
+        '        WHEN F.cellulare IS NOT NULL AND TRIM(F.cellulare) <> '#39#39 +
+        ' AND  TRIM(F.cellulare) NOT STARTING WITH '#39'0'#39' THEN F.cellulare'
+      
+        '        WHEN F.telefono IS NOT NULL AND  TRIM(F.telefono ) <> '#39#39 +
+        ' and  TRIM(F.telefono ) NOT STARTING WITH '#39'0'#39' THEN F.telefono'
+      
+        '        WHEN c.cellulare IS NOT NULL AND TRIM(c.cellulare) <> '#39#39 +
+        ' and  TRIM(c.cellulare) NOT STARTING WITH '#39'0'#39'  THEN c.cellulare'
+      
+        '        WHEN c.telefono1 IS NOT NULL AND TRIM(c.telefono1) <> '#39#39 +
+        ' AND  TRIM(c.telefono1) NOT STARTING WITH '#39'0'#39' THEN  c.telefono1'
+      
+        '        WHEN c.telefono2 IS NOT NULL AND TRIM(c.telefono2) <> '#39#39 +
+        ' AND  TRIM(c.telefono2) NOT STARTING WITH '#39'0'#39' THEN  c.telefono2'
+      
+        '      --  WHEN c.telefono3 IS NOT NULL AND TRIM(c.telefono3) <> ' +
+        #39#39' AND  TRIM(c.telefono3) NOT STARTING WITH '#39'0'#39' THEN  c.telefono' +
+        '2'
+      '        ELSE NULL'
+      '    END'
+      ')'
+      '    AS risultato'
+      
+        'from GOOGLE_CALENDAR_EVENTS e inner join  calendario_eventi CE  ' +
+        'on E.id = CE.googleid'
+      'INNER JOIN STATINI S ON S.chiave = CE.statino'
+      
+        'INNER JOIN CLIENTI C ON S.cliente = C.chiave  INNER JOIN  filial' +
+        'i_clienti F ON S.filiale = F.chiave'
+      'WHERE'
+      'E.STARTTIME >= :DATE_FROM'
+      'AND'
+      'E.ENDTIME < :DATE_TO'
+      'AND'
+      '(CE.TECNICO = :TECNICO OR :TECNICO = 0)')
+    FetchRows = 100
+    Filtered = True
+    IndexFieldNames = 'DALLE_ORE'
+    Left = 688
+    Top = 600
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'DATE_FROM'
+        ParamType = ptInput
+        Value = 45541d
+      end
+      item
+        DataType = ftDate
+        Name = 'DATE_TO'
+        ParamType = ptInput
+        Value = 45542d
+      end
+      item
+        DataType = ftInteger
+        Name = 'TECNICO'
+        ParamType = ptInput
+        Value = 0
+      end>
+    object IntegerField1: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object IntegerField2: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object IntegerField3: TIntegerField
+      FieldName = 'TECNICO'
+    end
+    object DateTimeField1: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      Required = True
+    end
+    object DateTimeField2: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      Required = True
+    end
+    object StringField2: TStringField
+      FieldName = 'SUBJECT'
+      Size = 256
+    end
+    object StringField3: TStringField
+      FieldName = 'TECNICO_SIGLA'
+      Size = 12
+    end
+    object IntegerField4: TIntegerField
+      FieldName = 'COLORE'
+    end
+    object GuidField1: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object SmallintField1: TSmallintField
+      FieldName = 'ICONA'
+    end
+    object BlobField1: TBlobField
+      FieldName = 'GOOGLE_JSON'
+    end
+    object IntegerField5: TIntegerField
+      FieldName = 'GFORECOLOR'
+    end
+    object IntegerField6: TIntegerField
+      FieldName = 'GBACKCOLOR'
+    end
+    object IntegerField7: TIntegerField
+      FieldName = 'CALENDARIO'
+    end
+    object StringField4: TStringField
+      FieldName = 'GOOGLEID'
+      Size = 128
+    end
+    object WideStringField1: TWideStringField
+      FieldName = 'NOTE'
+      Size = 2048
+    end
   end
 end

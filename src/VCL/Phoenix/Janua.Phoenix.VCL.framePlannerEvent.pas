@@ -82,6 +82,7 @@ type
     DBText10: TDBText;
     Label7: TLabel;
     DBText11: TDBText;
+    InviaMsgWhatsApp1: TMenuItem;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);

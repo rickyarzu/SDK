@@ -986,9 +986,13 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     end
     object ModificaAppuntamento1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actDlgEditAction
+      Visible = False
     end
     object ModificaAppuntamento2: TMenuItem
       Action = dmVCLPhoenixPlannerController.actDlgDeleteActions
+    end
+    object InviaMsgWhatsApp1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actDlgMessage
     end
   end
 end

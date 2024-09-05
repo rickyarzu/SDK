@@ -19,7 +19,8 @@ uses
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
   Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, PostgreSQLUniProvider,
-  Janua.Core.Commons, Janua.Core.Classes, Janua.Cloud.Types;
+  Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.Commons, Janua.Core.Classes,
+  Janua.Cloud.Types, CloudSMS;
 
 type
   TRecordFilter = record
@@ -369,6 +370,35 @@ type
     vtGoogleEventsSearchBACKGROUNDCOLOR: TIntegerField;
     vtGoogleEventsSearchFOREGROUNDCOLOR: TIntegerField;
     vtGoogleEventsSearchSYNC: TStringField;
+    actDlgMessage: TAction;
+    qryCellulariStatino: TUniQuery;
+    qryCellulariStatinoTELEFONO: TStringField;
+    qryCellulariStatinoCELLULARE: TStringField;
+    qryCellulariStatinoSTELEFONO: TStringField;
+    qryCellulariStatinoSCELLULARE: TStringField;
+    qryCellulariStatinoCTEL1: TStringField;
+    qryCellulariStatinoCCELL: TStringField;
+    qryCellulariStatinoCTEL2: TStringField;
+    qryCellulariStatinoFCEL: TStringField;
+    qryCellulariStatinoFTEL: TStringField;
+    qryCellulariStatinoRISULTATO: TStringField;
+    qryElencoEventiWhatsApp: TUniQuery;
+    IntegerField1: TIntegerField;
+    IntegerField2: TIntegerField;
+    IntegerField3: TIntegerField;
+    DateTimeField1: TDateTimeField;
+    DateTimeField2: TDateTimeField;
+    StringField2: TStringField;
+    StringField3: TStringField;
+    IntegerField4: TIntegerField;
+    GuidField1: TGuidField;
+    SmallintField1: TSmallintField;
+    BlobField1: TBlobField;
+    IntegerField5: TIntegerField;
+    IntegerField6: TIntegerField;
+    IntegerField7: TIntegerField;
+    StringField4: TStringField;
+    WideStringField1: TWideStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -382,6 +412,7 @@ type
     procedure actDlgColorActionExecute(Sender: TObject);
     procedure actDlgEditActionExecute(Sender: TObject);
     procedure actDlgDeleteActionsExecute(Sender: TObject);
+    procedure actDlgMessageExecute(Sender: TObject);
   private
     Stopwatch: TStopwatch;
     Elapsed: TTimeSpan;
@@ -403,6 +434,7 @@ type
     FSelectedCalendarTec: Integer;
     FSelectedDate: TDate;
     FPlannerDlg: TDBPlanner;
+    FPlannerEvent: TJanuaRecEvent;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -421,6 +453,7 @@ type
     procedure SetSelectedCalendarTec(const Value: Integer);
     procedure SetSelectedDate(const Value: TDate);
     procedure SetPlannerDlg(const Value: TDBPlanner);
+    procedure SetPlannerEvent(const Value: TJanuaRecEvent);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -469,6 +502,7 @@ type
     procedure DeleteGoogleMeeting(const aGUID: string);
     function LocateGoogleMeeting(const aGUID: string): TJanuaRecEvent;
     function UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
+    function SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;
   public
     function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
@@ -497,6 +531,7 @@ type
     property SelectedCalendarTec: Integer read FSelectedCalendarTec write SetSelectedCalendarTec;
     property SelectedDate: TDate read FSelectedDate write SetSelectedDate;
     property PlannerDlg: TDBPlanner read FPlannerDlg write SetPlannerDlg;
+    property PlannerEvent: TJanuaRecEvent read FPlannerEvent write SetPlannerEvent;
   end;
 
 var
@@ -505,7 +540,8 @@ var
 implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
-  Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync;
+  Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, Janua.Application.Framework,
+  udlgPhoenixVCLWhatsAppSMSMessage;
 
 function InitializeDLL: string; stdcall; external 'PhoenixLib32_r2.dll' index 1;
 function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 2;
@@ -514,6 +550,13 @@ function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'Phoenix
 
 var
   JMonitor: TObject;
+
+const
+  cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
+    'La contatto per comunicarLe che nella giornata del $$date$$ il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in $$address$$. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza.'
+    + sl + 'Cordiali Saluti' + sl + sl +
+    'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
+
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -568,6 +611,12 @@ begin
     end;
   end;
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.actDlgMessageExecute(Sender: TObject);
+begin
+  inherited;
+  SendWhatsAppMessage(PlannerEvent);
 end;
 
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
@@ -1461,6 +1510,8 @@ begin
 
   if tabGoogleEvents.Locate('JGUID', sGUID, []) or tabGoogleEvents.Locate('JGUID', aGUID, []) then
     Result.LoadFromDataset(tabGoogleEvents);
+
+  self.PlannerEvent := Result;
 end;
 
 function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
@@ -1851,6 +1902,52 @@ begin
   { TODO : Adeguare la lista Calendars2 a FCalendarsFilter2 }
 end;
 
+function TdmVCLPhoenixPlannerController.SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;
+var
+  // lSender: IJanuaSMSTwilio;
+  lDlg: TdlgPhoenixVCLWhatsAppSMSMessage;
+begin
+  // ---------------------------------------------------------------------------------------------------------
+  // By Default it uses Twilio Sender (note whene more senders will be supported this should be a case choice)
+  var
+  lMessage := StringReplace(cMessage, '$$date$$', DateToStr(aMeeting.StartTime),
+    [rfIgnoreCase, rfReplaceAll]);
+  lMessage := StringReplace(lMessage, '$$address$$', aMeeting.Location, [rfIgnoreCase, rfReplaceAll]);
+
+  var
+  sGUID := StringReplace(aMeeting.JGUID.ToString, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+
+  if qryPersonalPlannerEvents.Locate('JGUID', aMeeting.JGUID.ToString, []) or
+    qryPersonalPlannerEvents.Locate('JGUID', sGUID, []) then
+  begin
+    qryCellulariStatino.close;
+    qryCellulariStatino.Params[0].AsInteger := qryPersonalPlannerEventsSTATINO.AsInteger;
+    qryCellulariStatino.Open;
+  end;
+
+  lDlg := TdlgPhoenixVCLWhatsAppSMSMessage.Create(nil);
+  try
+    lDlg.WATemplate := cMessage;
+    lDlg.Meeting := aMeeting;
+    lDlg.ShowModal;
+    if lDlg.ModalResult = mrOK then
+    begin
+      lMessage := lDlg.Memo1.Lines.Text;
+      var
+      lPhone := '+39' + StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+
+      SendMSSWhatsAppMessage(lMessage, '+393474065336');
+    end;
+
+  finally
+    lDlg.Free;
+  end;
+
+  // SendMSSWhatsAppMessage(lMessage, '+393474065336'); // +393474065336  //3409111352
+
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetCalendarsFilter2(const Value: Boolean);
 begin
   if FCalendarsFilter2 <> Value then
@@ -1903,6 +2000,11 @@ end;
 procedure TdmVCLPhoenixPlannerController.SetPlannerDlg(const Value: TDBPlanner);
 begin
   FPlannerDlg := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetPlannerEvent(const Value: TJanuaRecEvent);
+begin
+  FPlannerEvent := Value;
 end;
 
 procedure TdmVCLPhoenixPlannerController.SetReportDate(const Value: TDateTime);
@@ -2000,7 +2102,7 @@ end;
 function TdmVCLPhoenixPlannerController.UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
 begin
   var
-  tmpMeeting := self.LocateGoogleMeeting(aMeeting.JGUID.ToString);
+  tmpMeeting := LocateGoogleMeeting(aMeeting.JGUID.ToString);
   // (tmpMeeting.Summary <> aMeeting.Summary) or
   if (tmpMeeting.ID <> '') and ((tmpMeeting.StartTime <> aMeeting.StartTime) or
     (tmpMeeting.EndTime <> aMeeting.EndTime) or (tmpMeeting.Description <> aMeeting.Description)) then
@@ -2016,7 +2118,7 @@ begin
     sGUID := StringReplace(sGUID, '}', '', []);
     UpdateGoogleEventDLL(sGUID);
   end;
-
+  SetPlannerEvent(aMeeting);
 end;
 
 procedure TdmVCLPhoenixPlannerController.vtGoogleEventsSearchBeforePost(DataSet: TDataSet);
