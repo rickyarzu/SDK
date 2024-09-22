@@ -403,9 +403,9 @@ begin
     FRiga := ('Non è consentito modificare questo disegno')
     { Errori di conversione }
   else if E is EInvalidCast then
-    FRiga := ('Errore di conversione')
+    FRiga := ('Errore di conversione ' + E.Message)
   else if E is EConvertError then
-    FRiga := ('Errore di conversione Dati')
+    FRiga := ('Errore di conversione Dati ' + E.Message)
 
     { Errori di tipo Hardware e dispositivi o periferiche }
   else if E is EPrinter then

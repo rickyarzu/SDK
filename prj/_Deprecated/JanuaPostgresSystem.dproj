@@ -242,8 +242,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
+        <DCCReference Include="..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
+            <Form>dmPgCountriesLocal</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -332,7 +332,7 @@
         <None Include="ModelSupport_JanuaPostgresSystem\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgUniversity\default.txvpck"/>
-        <None Include="ModelSupport_JanuaPostgresSystem\udmPublic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaPostgresSystem\Janua.Commons.pgCountriesLocal\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPostgresCloud\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgAnagraph\default.txvpck"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgbooksUniversity\default.txvpck"/>
@@ -391,7 +391,7 @@
         <None Include="ModelSupport_JanuaPostgresSystem\udmPostgresCloud\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgAnagraphPharmacies\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\uJanuaPostgresServerController\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaPostgresSystem\udmPublic\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaPostgresSystem\Janua.Commons.pgCountriesLocal\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgCms\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\udmPgAdsServer\default.txaPackage"/>
         <None Include="ModelSupport_JanuaPostgresSystem\Janua\Postgres\Pharmacies\default.txaPackage"/>

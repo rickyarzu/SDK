@@ -13,8 +13,8 @@ uses
   Janua.Vcl.MVVM.Framework,
   Vcl.Themes,
   Vcl.Styles,
-  ufrmMDIRibbonToolbar in '..\..\..\src\TMS\ufrmMDIRibbonToolbar.pas' {frmMDIRibbonToolbar},
-  udmVCLMainApplication in '..\..\..\src\VCL\Commons\udmVCLMainApplication.pas' {dmVCLMainApplication: TDataModule},
+  ufrmMDIRibbonToolbar,
+  udmVCLMainApplication,
   udmTmsMainApplication in '..\..\..\src\TMS\udmTmsMainApplication.pas' {dmTmsMainApplication: TDataModule},
   uJanuaVCLForm in '..\..\..\src\VCL\Forms\uJanuaVCLForm.pas' {JanuaVCLFormModel},
   uJanuaVCLFrame in '..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas' {JanuaVCLFrameModel: TFrame},
@@ -22,7 +22,7 @@ uses
   ufrmVCLVMTestNavigator in '..\..\..\src\VCL\Test\ufrmVCLVMTestNavigator.pas' {TfrmVCLVMTestNavigator},
   uframeVCLItem in '..\..\..\src\VCL\Items\uframeVCLItem.pas' {frameVCLItem: TFrame},
   Janua.VCL.frmOutlookOLEAutomation in '..\..\..\src\VCL\Commons\Janua.VCL.frmOutlookOLEAutomation.pas' {frmVCLOutlookOLEAutomation},
-  Janua.CarService.VCLMainForm in '..\..\..\src\VCL\CarService\Janua.CarService.VCLMainForm.pas' {frmCarserviceMain},
+  Janua.DevIDE.VCLMainForm in '..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCLMainForm.pas' {frmJanuaDEVIDEMainForm},
   UTMSTetMenuFrame in '..\..\..\src\VCL\Forms\UTMSTetMenuFrame.pas' {TMSTestMenuFrame: TFrame},
   Janua.VCL.Controls.BoolSelect in '..\..\..\src\VCL\Controls\Janua.VCL.Controls.BoolSelect.pas' {frameSelectBool: TFrame},
   Janua.CarService.VCLApplication in '..\..\..\src\VCL\CarService\Janua.CarService.VCLApplication.pas',
@@ -52,7 +52,10 @@ uses
   uJanuaDevIDEProject in 'uJanuaDevIDEProject.pas',
   uCarServiceProject_x86_64 in 'uCarServiceProject_x86_64.pas',
   Janua.VCL.Cloud.frmImportOSMaps in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmImportOSMaps.pas' {frmVCLImportOSMaps},
-  Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame};
+  Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame},
+  Janua.VCL.frmMDCCountries in '..\..\..\src\VCL\Commons\Janua.VCL.frmMDCCountries.pas' {frmVCLMDCCountriesLocal},
+  Janua.Commons.pgCountriesLocal in '..\..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
+  Janua.DevIDE.VCL.dmCountriesLocalController in '..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCL.dmCountriesLocalController.pas' {dmVCLCountriesLocalController: TDataModule};
 
 {$R *.res}
 
@@ -66,7 +69,7 @@ begin
   errorManager.Activate;
   // Inizializzazione TAilor Made Logistic Application
   // Viene impostato l'albero delle finestre ed il menu principale
-  TCarServiceProjectApplication.ApplicationSetup('desktop.januaproject.it');
+  TJanuaDevIDEVCLApplication.ApplicationSetup('desktop.januaproject.it');
   TJanuaApplication.Title := 'Janua Dev IDE';
   TStyleManager.TrySetStyle('Win10IDE_Light');
   Application.Title := TJanuaApplication.Title;
@@ -88,7 +91,8 @@ begin
   if TJanuaApplication.UserSessionVM.LoginWithDialog then
   begin
     TCarServiceProjectApplication.LoadMenu;
-    Application.CreateForm(TfrmCarserviceMain, frmCarserviceMain);
+    Application.CreateForm(TfrmJanuaDEVIDEMainForm, frmJanuaDEVIDEMainForm);
+  Application.CreateForm(TdmVCLCountriesLocalController, dmVCLCountriesLocalController);
   Application.Run;
   end
   else

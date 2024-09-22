@@ -51,11 +51,35 @@ end;
 class procedure TJanuaDevIDEVCLApplication.LoadMenu;
 var
   // Tests 104 // Extras 102 // Demos 103
-  lAppExtras, lAppTest, lAppDemos: TJanuaApplicationRecord;
-  lAppSettings: TJanuaApplicationRecord; // Settings Applications
-  lAppSettingsDB: TJanuaApplicationRecord; // Settings DB Migration Application
+  lMainMenu, lSubMenu: TJanuaApplicationRecord;
 begin
-  inherited;
+  lMainMenu := TJanuaApplicationRecord.Create('Extras', 'Extra Applications', 102, nil);
+  // -------------- Demos --------------------------------------------------------------------------
+  lSubMenu := TJanuaApplicationRecord.Create('Demos', 'Demos Applications', 103, nil);
+  lSubMenu.AddForm(TJanuaFormRecord.Create('Test MVVM', lSubMenu.Name, 33, TfrmTMMigrationMain,
+    GUID_NULL));
+  lMainMenu.AddApplication(lSubMenu);
+
+  // -------------- Test ---------------------------------------------------------------------------
+  lSubMenu := TJanuaApplicationRecord.Create('Test', 'Test Applications', 104, nil);
+  lSubMenu.AddForm(TJanuaFormRecord.Create('Test Outlook', lSubMenu.Name, 75, TfrmVCLOutlookOLEAutomation,
+    GUID_NULL));
+  lSubMenu.AddForm(TJanuaFormRecord.Create('Test Filters', lSubMenu.Name, 95, TfrmVCLTestFilters, GUID_NULL));
+  // TfrmVCLTestGrids
+  lSubMenu.AddForm(TJanuaFormRecord.Create('Test Grids', lSubMenu.Name, 98, TfrmVCLTestGrids, GUID_NULL));
+  lMainMenu.AddApplication(lSubMenu);
+  TJanuaFormsApplication.RegisterApplication(lMainMenu);
+
+
+  // -------------- Settings ---------------------------------------------------------------------------
+  lMainMenu := TJanuaApplicationRecord.Create('Settings', 'Settings', 210, nil);
+  lSubMenu := TJanuaApplicationRecord.Create('Janua Dev', 'Janua Dev', 1, nil);
+  // ConfirmPreInvoice
+  lSubMenu.AddForm(TJanuaFormRecord.Create('ORM Generator', lSubMenu.Name, 103,
+    TfrmVCLPgJormGenerator, GUID_NULL));
+  // TfrmVCLCarServiceSettings
+  lMainMenu.AddApplication(lSubMenu);
+  TJanuaFormsApplication.RegisterApplication(lMainMenu);
 
 end;
 

@@ -14,10 +14,11 @@ var
 dlgVclCloudGoogleConnect:TdlgVclCloudGoogleConnect;
 
 begin
-  TJanuaTmsDemosVCLApplication.ApplicationSetup('demo.tmssoftware.com');
+  TPhoenixVCLBackgroundApplication.ApplicationSetup('demo.tmssoftware.com');
   TJanuaApplication.StyleManager.Activate;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdlgVclCloudGoogleConnect, dlgVclCloudGoogleConnect);
+  dlgVclCloudGoogleConnect.CheckCalendarColors;
   Application.Run;
 end.

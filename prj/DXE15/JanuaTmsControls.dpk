@@ -82,6 +82,7 @@ contains
   Janua.TMS.Framework in '..\..\src\TMS\Janua.TMS.Framework.pas',
   Janua.TMS.dmComponents in '..\..\src\TMS\Janua.TMS.dmComponents.pas' {dmTmsComponents: TDataModule},
   Janua.TMS.Cloud.Mail.VCL in '..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas',
-  Janua.TMS.MyMonthPlanner in '..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas';
+  Janua.TMS.MyMonthPlanner in '..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas',
+  Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas';
 
 end.

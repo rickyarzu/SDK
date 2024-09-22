@@ -1,7 +1,6 @@
 object dmJanuaCoreRSS: TdmJanuaCoreRSS
-  OldCreateOrder = False
-  Height = 495
-  Width = 788
+  Height = 224
+  Width = 312
   object XMLDoc: TXMLDocument
     Left = 104
     Top = 56

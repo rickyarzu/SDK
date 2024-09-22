@@ -66,10 +66,11 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
         Height = 49
         Align = alTop
         TabOrder = 0
+        ExplicitTop = -6
         object frameDMVCWebBroker: TJanuaframeWebServerManager
           Left = 1
           Top = 1
-          Width = 374
+          Width = 352
           Height = 47
           Align = alLeft
           TabOrder = 0
@@ -77,7 +78,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           OnBeforeStartServer = frameDMVCWebBrokerBeforeStartServer
         end
         object edPassword: TLabeledEdit
-          Left = 648
+          Left = 688
           Top = 9
           Width = 121
           Height = 23
@@ -92,7 +93,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           Text = 'J4nu4pr0j3ct.'
         end
         object LabeledEdit1: TLabeledEdit
-          Left = 456
+          Left = 496
           Top = 9
           Width = 121
           Height = 23
@@ -105,6 +106,14 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           PasswordChar = '*'
           TabOrder = 2
           Text = 'J4nu4pr0j3ct.'
+        end
+        object btnLogin: TButton
+          Left = 359
+          Top = 9
+          Width = 66
+          Height = 25
+          Caption = 'Login'
+          TabOrder = 3
         end
       end
       object PageControl1: TPageControl

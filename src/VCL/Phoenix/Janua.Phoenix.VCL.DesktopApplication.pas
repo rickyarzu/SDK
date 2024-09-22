@@ -23,7 +23,7 @@ uses System.Types,
   Janua.Application.Framework, Janua.Controls.Forms.Impl, Janua.Uni.Framework,
   Janua.Orm.Intf, Janua.ViewModels.Framework, Janua.ViewModels.Application, JOrm.Anagraph.Group.Intf,
   // Janua TMS
-  Janua.TMS.NavBar,
+  Janua.TMS.NavBar, Janua.TMS.SMS,
   // Janua VCL
   /// Settings
   ufrmVCLVMTestNavigator,

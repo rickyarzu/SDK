@@ -974,7 +974,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   object lkpTeams: TClientDataSet
     Aggregates = <>
     Params = <>
-    ProviderName = 'cdsLkpTeams'
+    ProviderName = 'qryLkpTeams'
     Left = 736
     Top = 304
     object lkpTeamsteam_id: TIntegerField

@@ -17,6 +17,10 @@ uses
   Spring, Spring.Collections, Data.DB;
 {$ENDIF}
 
+const
+  cNullDate = -700000;
+  cInvalidDate = cNullDate + 1;
+
 type
   TJanuaPoint = record
     X: Single;
@@ -158,6 +162,7 @@ type
     constructor Create(aJson: string); overload;
     procedure Assign(aArray: TJanuaArray<T>);
     procedure Remove(Index: Integer);
+    procedure Replace(aItem: T; aPosition: Integer);
   end;
 
   TJanuaConfCustomField = record
@@ -5259,6 +5264,12 @@ begin
   if Index < Pred(GetCount) then { if we want to delete an element inside the array }
     FArray[Index] := FArray[High(FArray)]; { Copy the last element over the 'deleted' element }
   SetLength(FArray, Length(FArray) - 1); { Cut the last element }
+end;
+
+procedure TJanuaArray<T>.Replace(aItem: T; aPosition: Integer);
+begin
+  if aPosition < self.Count then
+    FArray[aPosition] := aItem;
 end;
 
 procedure TJanuaArray<T>.SetItems(Index: Integer; Value: T);

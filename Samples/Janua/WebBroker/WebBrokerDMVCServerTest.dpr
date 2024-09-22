@@ -22,7 +22,8 @@ uses
   Janua.WebBroker.Server in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
   uBindVCLInterposers in '..\..\Angelo\uBindVCLInterposers.pas',
   uBindingEngineRTL in '..\..\Angelo\uBindingEngineRTL.pas',
-  uVCLBindingInterposers in '..\..\Angelo\uVCLBindingInterposers.pas';
+  uVCLBindingInterposers in '..\..\Angelo\uVCLBindingInterposers.pas',
+  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas';
 
 {$R *.res}
 

@@ -2,8 +2,8 @@ object JanuaVCLFormModel: TJanuaVCLFormModel
   Left = 0
   Top = 0
   Caption = 'JanuaFormModel'
-  ClientHeight = 420
-  ClientWidth = 769
+  ClientHeight = 630
+  ClientWidth = 902
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,14 +15,14 @@ object JanuaVCLFormModel: TJanuaVCLFormModel
   TextHeight = 17
   object StatusBar: TStatusBar
     Left = 0
-    Top = 401
-    Width = 769
+    Top = 611
+    Width = 902
     Height = 19
     Panels = <
       item
         Width = 200
       end>
-    ExplicitLeft = 1
-    ExplicitTop = 402
+    ExplicitTop = 401
+    ExplicitWidth = 769
   end
 end

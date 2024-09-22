@@ -1,0 +1,99 @@
+object frmTestDelphiDLL: TfrmTestDelphiDLL
+  Left = 0
+  Top = 0
+  Caption = 'Test Phoenix DLL'
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object lbInitialize: TLabel
+    Left = 152
+    Top = 36
+    Width = 43
+    Height = 15
+    Caption = 'Initialize'
+  end
+  object lbGUID: TLabel
+    Left = 264
+    Top = 96
+    Width = 27
+    Height = 15
+    Caption = 'GUID'
+  end
+  object btnTestSetup: TButton
+    Left = 40
+    Top = 32
+    Width = 89
+    Height = 25
+    Caption = 'Initialize'
+    TabOrder = 0
+    OnClick = btnTestSetupClick
+  end
+  object btnLocalTest: TButton
+    Left = 40
+    Top = 92
+    Width = 89
+    Height = 25
+    Caption = 'LocalTest'
+    TabOrder = 1
+    OnClick = btnLocalTestClick
+  end
+  object edGUID: TEdit
+    Left = 40
+    Top = 63
+    Width = 465
+    Height = 23
+    TabOrder = 2
+    Text = '90C30D09-3A82-4CC2-A0D6-098242C91FCA'
+  end
+  object btnDLLTest: TButton
+    Left = 135
+    Top = 92
+    Width = 89
+    Height = 25
+    Caption = 'DLLTest'
+    TabOrder = 3
+    OnClick = btnDLLTestClick
+  end
+  object btnLocalDel: TButton
+    Left = 40
+    Top = 140
+    Width = 89
+    Height = 25
+    Caption = 'LocalDel'
+    TabOrder = 4
+    OnClick = btnLocalDelClick
+  end
+  object btnDLLDel: TButton
+    Left = 135
+    Top = 140
+    Width = 89
+    Height = 25
+    Caption = 'DLL Del'
+    TabOrder = 5
+    OnClick = btnDLLDelClick
+  end
+  object btnLocalUp: TButton
+    Left = 40
+    Top = 188
+    Width = 89
+    Height = 25
+    Caption = 'LocalUpdate'
+    TabOrder = 6
+    OnClick = btnLocalUpClick
+  end
+  object btnDLLUpd: TButton
+    Left = 135
+    Top = 188
+    Width = 89
+    Height = 25
+    Caption = 'DLL Update'
+    TabOrder = 7
+    OnClick = btnDLLUpdClick
+  end
+end

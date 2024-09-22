@@ -3,7 +3,6 @@ program PhoenixGoogleCalendarSync;
 uses
   VCL.Forms,
   Janua.Application.Framework,
-  ufrmTMSAdvCalendarDemo in '..\..\..\Samples\Janua\Cloud\ufrmTMSAdvCalendarDemo.pas' {frmTMSAdvCalendarDemo},
   Janua.Phoenix.VCL.BackgroundApplication in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas',
   Janua.VCL.Cloud.dlgGoogleConnect in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas' {dlgVclCloudGoogleConnect},
   Janua.Phoenix.VCL.dmGCalendarController in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas' {dmPhoenixVCLGCalendarController: TDataModule},

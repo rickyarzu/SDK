@@ -10,6 +10,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = mmuPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
   OnCreate = FormCreate
@@ -443,40 +444,134 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
       inline frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Left = 0
         Top = 0
-        Width = 800
+        Width = 841
         Height = 815
         Align = alLeft
         TabOrder = 1
+        ExplicitWidth = 841
         ExplicitHeight = 815
+        inherited lbCap: TLabel
+          Left = 723
+          ExplicitLeft = 723
+        end
+        inherited lbData: TLabel
+          Left = 543
+          ExplicitLeft = 543
+        end
+        inherited lkpCAP: TJvDBLookupCombo
+          Left = 723
+          ExplicitLeft = 723
+        end
         inherited DBCtrlGrid1: TDBCtrlGrid
+          Width = 433
           Height = 588
+          PanelBorder = gbNone
           PanelHeight = 84
+          PanelWidth = 416
+          ExplicitWidth = 433
           ExplicitHeight = 588
           inherited pnlInterventi: TPanel
             Top = 64
+            Width = 416
             ExplicitTop = 64
+            ExplicitWidth = 416
             inherited Label3: TLabel
-              Height = 20
+              Width = 13
+              Caption = 'Lc'
+              ExplicitWidth = 13
+            end
+            inherited DBText4: TDBText
+              Left = 19
+              ExplicitLeft = 19
             end
             inherited lbIdranti: TLabel
-              Height = 20
+              Left = 42
+              Width = 22
+              Caption = 'Idr:'
+              ExplicitLeft = 42
+              ExplicitWidth = 22
+            end
+            inherited DBText5: TDBText
+              Left = 67
+              ExplicitLeft = 67
             end
             inherited Label4: TLabel
-              Height = 20
+              Left = 90
+              Width = 38
+              Caption = 'E.Ord:'
+              ExplicitLeft = 90
+              ExplicitWidth = 38
+            end
+            inherited DBText6: TDBText
+              Left = 131
+              ExplicitLeft = 131
             end
             inherited Label5: TLabel
-              Height = 20
+              Left = 154
+              Width = 39
+              Caption = 'E.Stra:'
+              ExplicitLeft = 154
+              ExplicitWidth = 39
+            end
+            inherited DBText7: TDBText
+              Left = 196
+              ExplicitLeft = 196
+            end
+            inherited DBText2: TDBText
+              Left = 333
+              Width = 81
+              Alignment = taRightJustify
+              ExplicitLeft = 333
+              ExplicitTop = 3
+              ExplicitWidth = 81
+            end
+            inherited Label6: TLabel
+              Left = 219
+              ExplicitLeft = 219
+            end
+            inherited DBText10: TDBText
+              Left = 257
+              ExplicitLeft = 257
+            end
+            inherited Label7: TLabel
+              Left = 280
+              ExplicitLeft = 280
+            end
+            inherited DBText11: TDBText
+              Left = 309
+              ExplicitLeft = 309
             end
           end
           inherited Panel1: TPanel
+            Width = 416
             Height = 64
+            ExplicitWidth = 416
             ExplicitHeight = 64
             inherited Panel2: TPanel
+              Width = 337
               Height = 62
+              ExplicitWidth = 337
               ExplicitHeight = 62
-              inherited DBText8: TDBText
-                Top = 44
-                ExplicitTop = 44
+              inherited DBText1: TDBText
+                Width = 331
+                ExplicitWidth = 331
+              end
+              inherited DBText3: TDBText
+                Width = 331
+                ExplicitWidth = 331
+              end
+              inherited Panel3: TPanel
+                Top = 40
+                Width = 337
+                ExplicitTop = 40
+                ExplicitWidth = 337
+                inherited DBText8: TDBText
+                  ExplicitTop = 44
+                end
+                inherited DBText9: TDBText
+                  Width = 241
+                  ExplicitWidth = 241
+                end
               end
             end
             inherited btnImage: TDBImage
@@ -486,7 +581,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           end
         end
         inherited DBPlanner1: TDBPlanner
+          Left = 447
+          Top = 106
           Height = 588
+          ExplicitLeft = 447
+          ExplicitTop = 106
           ExplicitHeight = 588
           TMSStyle = 0
         end
@@ -497,6 +596,18 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited btnDeleteMeeting: TButton
           Top = 704
           ExplicitTop = 704
+        end
+        inherited grpStato: TRadioGroup
+          Width = 452
+          ExplicitWidth = 452
+        end
+        inherited CalendarDate: TDateTimePicker
+          Left = 543
+          ExplicitLeft = 543
+        end
+        inherited cboCustomers: TJvDBLookupCombo
+          Width = 513
+          ExplicitWidth = 513
         end
         inherited Memo1: TMemo
           Top = 700
@@ -513,11 +624,19 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           DoubleBuffered = True
           ExplicitTop = 764
         end
+        inherited btnPrevDay: TButton
+          Left = 651
+          ExplicitLeft = 651
+        end
+        inherited btnNextDay: TButton
+          Left = 683
+          ExplicitLeft = 683
+        end
       end
       object AdvWebBrowser1: TAdvWebBrowser
-        Left = 800
+        Left = 841
         Top = 0
-        Width = 640
+        Width = 599
         Height = 815
         Align = alClient
         ParentDoubleBuffered = False
@@ -546,11 +665,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
-        end
-        inherited Panel2: TPanel
-          inherited ckbCalendarList: TCheckListBox
-            ItemHeight = 16
-          end
         end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
@@ -588,6 +702,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabPlannerEvents: TTabSheet
       Caption = 'Calendari'
       ImageIndex = 3
+      TabVisible = False
       inline frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2
         Left = 0
         Top = 0
@@ -616,7 +731,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end
@@ -641,6 +755,24 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited DBPlanner1: TDBPlanner
               Width = 1432
               Height = 514
+              Header.GroupCaptions.Strings = (
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                ''
+                '')
               ExplicitWidth = 1432
               ExplicitHeight = 514
               TMSStyle = 0
@@ -666,8 +798,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 168
-    Top = 192
+    Left = 288
+    Top = 280
   end
   object PopupMenu1: TPopupMenu
     Left = 584
@@ -1010,5 +1142,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     OnTimer = Timer1Timer
     Left = 908
     Top = 154
+  end
+  object mmuPlanner: TMainMenu
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    Left = 456
+    Top = 312
+    object Colore1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actCalendarColor
+    end
   end
 end

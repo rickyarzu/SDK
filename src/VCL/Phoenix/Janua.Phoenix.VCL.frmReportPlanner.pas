@@ -29,6 +29,7 @@ type
   TJanuaTmsCookies = TJanuaArray<TAdvWebBrowserCookie>;
 
   TfrmPhoenixVCLReportPlanner = class(TForm)
+    mmuPlanner: TMainMenu;
     PageControl1: TPageControl;
     tabTicketsList: TTabSheet;
     tabPlannerCalendar: TTabSheet;
@@ -247,7 +248,7 @@ begin
   { TdmVCLPhoenixPlannerController }
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
-  frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;
+  {frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;}
   PageControl1.ActivePage := tabCalendariTecnici;
 
   var
@@ -277,7 +278,7 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
 begin
   frameTMSPhoenixPlannerTecnici.DBPlanner1.Refresh;
-  frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
+  // frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
 
 end;
 

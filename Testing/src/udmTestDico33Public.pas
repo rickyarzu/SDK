@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, udmPublic, Data.DB, Datasnap.DBClient, Datasnap.Provider, Uni, MemDS,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Janua.Commons.pgCountriesLocal, Data.DB, Datasnap.DBClient, Datasnap.Provider, Uni, MemDS,
   DBAccess;
 
 type
-  TdmDico33Public = class(TdmPublic)
+  TdmDico33Public = class(TdmPgCountriesLocal)
   private
     { Private declarations }
   public

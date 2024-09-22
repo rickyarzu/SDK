@@ -9,8 +9,7 @@ uses
   Janua.Test.DMVC.WebModuleImportExport in 'Janua.Test.DMVC.WebModuleImportExport.pas' {TestWebModule: TWebModule},
   Janua.TMS.FrameAdvBrowser in '..\..\src\TMS\Janua.TMS.FrameAdvBrowser.pas' {frameTmsAdvBrowser: TFrame},
   Janua.Test.FDac.dmRemoteDMCustomers in '..\..\src\januacore\Test\Janua.Test.FDac.dmRemoteDMCustomers.pas' {dmTestFDacRemoteCustomers: TDataModule},
-  Janua.VCL.frameRestClient in '..\..\src\VCL\Cloud\Janua.VCL.frameRestClient.pas' {frameVCLJanuaRestClient: TFrame},
-  Janua.CarService.Driver. in '..\..\src\januacore\dmvc\Janua.CarService.Driver..pas';
+  Janua.VCL.frameRestClient in '..\..\src\VCL\Cloud\Janua.VCL.frameRestClient.pas' {frameVCLJanuaRestClient: TFrame};
 
 {$R *.res}
 

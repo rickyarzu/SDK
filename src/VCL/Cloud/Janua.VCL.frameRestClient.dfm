@@ -20,7 +20,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 640
     object Image1: TImage
       AlignWithMargins = True
       Left = 10
@@ -5228,7 +5227,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 501
       object edtBaseURL: TLabeledEdit
         AlignWithMargins = True
         Left = 3
@@ -5242,7 +5240,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         TabOrder = 0
         Text = 'http://localhost:8888/users'
         TextHint = 'http://localhost:8888/users'
-        ExplicitWidth = 982
       end
       object pnlUsernamePassword: TPanel
         Left = 0
@@ -5252,7 +5249,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitWidth = 501
         DesignSize = (
           1002
           49)
@@ -5283,7 +5279,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
           TabOrder = 1
           Text = ''
           TextHint = 'application/json'
-          ExplicitLeft = -49
         end
         object rgAuthentication: TRadioGroup
           AlignWithMargins = True
@@ -5300,7 +5295,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
             'Token'
             'Basic')
           TabOrder = 2
-          ExplicitLeft = 301
         end
       end
     end
@@ -5313,8 +5307,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 640
-    ExplicitHeight = 386
     object Splitter1: TSplitter
       Left = 0
       Top = 259
@@ -5334,8 +5326,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 640
-      ExplicitHeight = 119
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -5354,7 +5344,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 640
         object lblStatusCode: TLabel
           AlignWithMargins = True
           Left = 1133
@@ -5367,7 +5356,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
           Margins.Bottom = 0
           Align = alRight
           Alignment = taRightJustify
-          ExplicitLeft = 1080
           ExplicitHeight = 15
         end
         object Label3: TLabel
@@ -5383,7 +5371,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
           Align = alRight
           Alignment = taRightJustify
           Caption = 'Status code:'
-          ExplicitLeft = 1007
           ExplicitHeight = 15
         end
       end
@@ -5401,8 +5388,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 640
-        ExplicitHeight = 97
         object TabSheet6: TTabSheet
           Caption = 'Body'
           ImageIndex = 1
@@ -5524,8 +5509,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 632
-            ExplicitHeight = 67
           end
         end
         object tabImage: TTabSheet
@@ -5552,7 +5535,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 640
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -5571,14 +5553,13 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 640
       end
       object PageControl1: TPageControl
         Left = 0
         Top = 22
         Width = 1141
         Height = 237
-        ActivePage = TabSheet1
+        ActivePage = tabCloudFlare
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -5587,7 +5568,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 640
         object TabSheet1: TTabSheet
           Caption = 'Request'
           DesignSize = (
@@ -5619,7 +5599,6 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
             TabOrder = 0
             Text = 'application/json'
             TextHint = 'application/json'
-            ExplicitLeft = 762
           end
           object mmCustomBody: TMemo
             Left = 9
@@ -5987,7 +5966,7 @@ object frameVCLJanuaRestClient: TframeVCLJanuaRestClient
             OnClick = btnIndyClick
           end
           object btnTHttp: TButton
-            Left = 99
+            Left = 91
             Top = 9
             Width = 75
             Height = 25

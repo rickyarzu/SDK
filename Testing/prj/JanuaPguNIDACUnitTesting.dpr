@@ -258,7 +258,7 @@ uses
   udmSocial in '..\..\src\januaunidac\datamodules\udmSocial.pas' {dmSocial},
   udmFootballPostgres in '..\..\src\januaunidac\datamodules\udmFootballPostgres.pas' {dmFootballPostgres},
   udmPgAnagraph in '..\..\src\januaunidac\datamodules\udmPgAnagraph.pas' {dmPgAnagraph},
-  udmPublic in '..\..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic},
+  Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal},
   udmHealthBooking in '..\..\src\januaunidac\datamodules\udmHealthBooking.pas' {dmHealthBooking},
   udmPgCmsGraphicMenu in '..\..\src\januaunidac\datamodules\udmPgCmsGraphicMenu.pas' {dmPgCmsGraphicMenu},
   udmPgStorage in '..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},

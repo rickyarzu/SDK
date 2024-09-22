@@ -1,0 +1,56 @@
+package PhoenixVCL;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter,
+  JanuaVCLControls,
+  SVGIconImageList,
+  JanuaCore,
+  JanuaUnidac,
+  JanuaMVVM,
+  TMSWebGMapsPkg,
+  TMSVCLUIPackPkgDXE15,
+  TMSVCLUIPackPkgExDXE15,
+  TMSCloudPkgDXE15,
+  JanuaVCLComponents,
+  VCLTMSFNCCloudPackPkgDXE15,
+  PlanAddons,
+  JanuaVCLMVVM;
+
+contains
+  Janua.VCL.Cloud.dlgGoogleConnect in '..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas' {dlgVclCloudGoogleConnect},
+  Janua.VCL.Planner.dmCustomController in '..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas' {dmVCLPlannerCustomController: TDataModule},
+  Janua.Phoenix.VCL.dmPlannerController in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas' {dmVCLPhoenixPlannerController: TDataModule},
+  Janua.Phoenix.VCL.dlgGoogleSync in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dlgGoogleSync.pas' {dlgPhoenixVCLGoogleSync},
+  Janua.Phoenix.VCL.dmGCalendarController in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas' {dmPhoenixVCLGCalendarController: TDataModule};
+
+end.

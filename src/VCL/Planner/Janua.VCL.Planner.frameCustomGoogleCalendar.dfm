@@ -1132,7 +1132,6 @@ object frameVCLCustomGoogleCalendar: TframeVCLCustomGoogleCalendar
       Width = 545
       Height = 41
       Columns = 6
-      ItemHeight = 17
       Items.Strings = (
         'uno'
         'due'

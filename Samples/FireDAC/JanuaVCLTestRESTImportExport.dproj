@@ -58,7 +58,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
+    <Import Project="..\..\prj\DXE15\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -72,7 +72,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>JanuaVCLTestRESTImportExport</SanitizedProjectName>
-        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>..\..\prj\DXE15\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>FireDACIBDriver;JvNet;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;FMXTMSFNCUIPackPkg;TMSVCLSecuritySystemPkgUI;dacvcl280;DCLgtDocEng;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;aurelius;FMX_FlexCel_Components;appanalytics;IndyProtocols;vclx;TMSVCLUIPackPkgWiz;VCLTMSFNCDashboardPackPkg;dbxcds;vcledge;FMXTMSFNCAppToolsPkg;VCLTMSFNCBloxPkg;uniGUI28;Skia.Package.RTL;frxe28;FmxTeeUI;myprovider280;unidac280;FlexCel_Pdf;VisualStyles;DBXFirebirdDriver;TMSVCLUIPackPkgEx;SKIA_FlexCel_Core;JvAppFrm;FireDACSqliteDriver;DbxClientDriver;JclVcl;soapmidas;TeeUI;Jcl;dbexpress;gtDocEng;TMSCloudPkgDE;JvManagedThreads;TMSVCLUIPackPkg;uniSF28;dacfmx280;inet;unidacvcl280;vcltouch;ipstudiowin;JvDB;FMX_FlexCel_Core;FireDACDBXDriver;QRWRunDXE11_w64;fmxdae;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;JvCustom;SVGIconPackage;ipstudiowinwordxp;uniGUI28m;mongoprovider280;JvControls;VCLTMSFNCCloudPackPkg;JVEsoft;aseprovider280;OmniThreadLibraryRuntime;JvCrypt;JvJans;JvMM;IndySystem;ZipMasterR;VCLTMSFNCBloxToolBarsPkg;TMSFMXPackPkg;JvGlobus;JanuaCoreComponents;ibxbindings;TMSVCLIWPkg;VCLTMSFNCChartPkg;JclContainers;JvPageComps;vclFireDAC;sgcWebSockets;TMSVCLIWPkgDE;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;FlexCel_Render;unidacfmx280;htmleditcore;bindcompdbx;rtl;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;htmlcomp;accessprovider280;DBXSqliteDriver;ZLibrariesWin;FMXTMSFNCChartPkg;DBXSybaseASEDriver;Intraweb_15_D11;JvRuntimeDesign;FMXTMSFNCBloxToolBarsPkg;JvXPCtrls;vclimg;DataSnapFireDAC;eInvoice4D;inetdbxpress;FireDAC;VCLTMSFNCUIPackPkg;JvDlgs;xmlrtl;JvDocking;htmlfastreport;ibxpress;JanuaUnidacComponentsD;dsnap;xdata;JvCmp;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXTMSFNCMapsPkg;JanuaVCLMVVM;UnifalconXE14;DatasnapConnectorsFreePascal;TMSVCLSecuritySystemPkgCore;SVGIconImageList;ZComponentsVCL;Ean;FMXTMSFNCCorePkg;FlexCel_Report;pgprovider280;emshosting;sparkle;hclcore;FireDACCommonDriver;uniGUI28Chart;TMSWebGMapsPkg;uniGUI28Core;IndyIPClient;frxTee28;dac280;TMSCloudPkg;FMXTMSFNCCloudPackPkg;bindcompvclwinx;oraprovider280;emsedge;bindcompfmx;FIBPlus;DCLgtQRExp;JvBands;inetdb;dbfprovider280;htmleditfm;ibmonitor;FireDACASADriver;Tee;htmledit;vclactnband;FMXTMSFNCWXPackPkg;fmxFireDAC;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;JvPascalInterpreter;Barcomp;uIndy28;fmxase;ZComponentsD;frx28;JanuaTmsControls;JvPluginSystem;DBXOdbcDriver;VCLTMSFNCWXPackPkg;dbrtl;JvTimeFramework;FireDACOracleDriver;VCLTMSFNCAppToolsPkg;Skia.Package.FMX;htmlcompfm;TeeDB;FlexCel_XlsAdapter;db2provider280;FireDACMSAccDriver;JanuaThirdParty;DataSnapIndy10ServerTransport;JclDeveloperTools;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;frxDB28;FireDACMongoDBDriver;ibprovider280;JvWizards;mailchimpprovider280;VCLThemeSelector;TMSVCLUIPackPkgXls;FireDACTDataDriver;liteprovider280;Skia.Package.VCL;JanuaVCLControls;vcldb;uSynEdit_R2024;FlexCel_Core;FMXTMSFNCDashboardPackPkg;IWBootstrap4D11;JvCore;fs28;vquery280;bindcomp;JanuaUnidacComponents;IndyCore;RESTBackendComponents;dmvcframeworkDT;JanuaMVVM;JanuaVCLComponents;tdsprovider280;AWSSDKFMX;FireDACADSDriver;htmlreports;AWSSDKVCL;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;JvDotNetCtrls;JvHMI;odbcprovider280;uniGUI28VCL;TMSWebOSMapsPkg;DBXDb2Driver;FMXTMSFNCBloxPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;dmvcframeworkRT;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;JvStdCtrls;JanuaCore;uniSFChart28;crcontrols280;bindcompvcl;JanuaThirdPartyVCL;CloudService;DBXSybaseASADriver;VCLTMSFNCCorePkg;JanuaFMXControls;IWBootstrapD11;FMXTee;soaprtl;soapserver;VCLTMSFNCMapsPkg;$(DCC_UsePackage)</DCC_UsePackage>
@@ -121,6 +121,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
+    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
@@ -162,7 +163,7 @@
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\..\prj\DXE15\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -859,9 +860,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

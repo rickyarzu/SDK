@@ -1,19 +1,20 @@
-procedure TframeVCLPhoenixPlannerEvent.Filter;
+  Item.Summary := edCalendarItemName.Text;
+  Item.Description := Memo1.Lines.Text;
+  Item.Location := edCalendarLocation.Text;
+  if cbColors.ItemIndex >= 0 then
+    Item.Color := TGItemColor(cbColors.ItemIndex)
+  else
+    Item.Color := icDefault;
+	
 var
-  lFilter: TRecordFilter;
+  li: TGCalendarItem;
+  SelectedID: string;
 begin
-  if not cboTecnici.Value.IsEmpty then
-    lFilter.TecnicoDB := cboTecnici.Value.ToInteger
-  else
-    lFilter.TecnicoDB := -1;
-  lFilter.TecnicoCk := True; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
-  lFilter.CAP := lkpCAP.Value;
-  lFilter.CAPCk := not lkpCAP.Value.IsEmpty;
-  if not cboCustomers.Value.IsEmpty then
-    lFilter.ClienteID := cboCustomers.Value.ToInteger
-  else
-    lFilter.ClienteID := -1;
-  lFilter.ClienteCk := not cboCustomers.Value.IsEmpty;
-  lFilter.Status := grpStato.ItemIndex;
-  dmVCLPhoenixPlannerController.FilterMeetingDialog(lFilter);
-end;
+  if ListView1.ItemIndex >= 0 then
+  begin
+    li := ListView1.Items[ListView1.ItemIndex].Data;
+
+    SetCalendarItem(li);
+    AdvGCalendar1.Update(li);
+    SelectedID := li.ID;	
+	

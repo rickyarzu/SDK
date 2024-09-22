@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45520.000000000000000000
+    DateFrom = 45539.000000000000000000
     Left = 416
     Top = 40
   end
@@ -12795,230 +12795,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     Left = 416
     Top = 296
   end
-  object vtGoogleEvents: TVirtualTable
-    FieldDefs = <
-      item
-        Name = 'ID'
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'ETAG'
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'SUMMARY'
-        DataType = ftString
-        Size = 256
-      end
-      item
-        Name = 'DESCRIPTION'
-        DataType = ftWideMemo
-      end
-      item
-        Name = 'STARTTIME'
-        DataType = ftDateTime
-      end
-      item
-        Name = 'ENDTIME'
-        DataType = ftDateTime
-      end
-      item
-        Name = 'CREATED'
-        DataType = ftDateTime
-      end
-      item
-        Name = 'UPDATED'
-        DataType = ftDateTime
-      end
-      item
-        Name = 'ISALLDAY'
-        DataType = ftBoolean
-      end
-      item
-        Name = 'LOCATION'
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'STATUS'
-        DataType = ftSmallint
-      end
-      item
-        Name = 'VISIBILITY'
-        DataType = ftInteger
-      end
-      item
-        Name = 'RECURRENCE'
-        DataType = ftString
-        Size = 60
-      end
-      item
-        Name = 'RECURRINGID'
-        DataType = ftString
-        Size = 60
-      end
-      item
-        Name = 'SEQUENCE'
-        DataType = ftInteger
-      end
-      item
-        Name = 'COLOR'
-        DataType = ftSmallint
-      end
-      item
-        Name = 'USEDEFAULTREMINDERS'
-        DataType = ftBoolean
-      end
-      item
-        Name = 'SENDNOTIFICATIONS'
-        DataType = ftBoolean
-      end
-      item
-        Name = 'CALENDARID'
-        DataType = ftString
-        Size = 128
-      end
-      item
-        Name = 'Attendees'
-        DataType = ftMemo
-      end
-      item
-        Name = 'Reminders'
-        DataType = ftMemo
-      end
-      item
-        Name = 'JGUID'
-        DataType = ftGuid
-        Size = 38
-      end
-      item
-        Name = 'CalcColor'
-        DataType = ftInteger
-      end>
-    BeforePost = vtGoogleEventsBeforePost
-    AfterScroll = vtGoogleEventsAfterScroll
-    Left = 528
-    Top = 72
-    Data = {
-      0400170002004944010080000000000004004554414701008000000000000700
-      53554D4D41525901000001000000000B004445534352495054494F4E27000000
-      000000000900535441525454494D450B000000000000000700454E4454494D45
-      0B000000000000000700435245415445440B0000000000000007005550444154
-      45440B0000000000000008004953414C4C444159050000000000000008004C4F
-      434154494F4E0100800000000000060053544154555302000000000000000A00
-      5649534942494C49545903000000000000000A00524543555252454E43450100
-      3C00000000000B00524543555252494E47494401003C00000000000800534551
-      55454E434503000000000000000500434F4C4F52020000000000000013005553
-      4544454641554C5452454D494E444552530500000000000000110053454E444E
-      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
-      01008000000000000900417474656E646565731000000000000000090052656D
-      696E64657273100000000000000005004A475549442300260000000000090043
-      616C63436F6C6F720300000000000000000000000000}
-    object vtGoogleEventsID: TStringField
-      FieldName = 'ID'
-      Required = True
-      Size = 128
-    end
-    object vtGoogleEventsETAG: TStringField
-      FieldName = 'ETAG'
-      Size = 128
-    end
-    object vtGoogleEventsSUMMARY: TStringField
-      FieldName = 'SUMMARY'
-      Size = 256
-    end
-    object vtGoogleEventsDESCRIPTION: TWideMemoField
-      FieldName = 'DESCRIPTION'
-      BlobType = ftWideMemo
-    end
-    object vtGoogleEventsSTARTTIME: TDateTimeField
-      FieldName = 'STARTTIME'
-    end
-    object vtGoogleEventsENDTIME: TDateTimeField
-      FieldName = 'ENDTIME'
-    end
-    object vtGoogleEventsCREATED: TDateTimeField
-      FieldName = 'CREATED'
-    end
-    object vtGoogleEventsUPDATED: TDateTimeField
-      FieldName = 'UPDATED'
-    end
-    object vtGoogleEventsISALLDAY: TBooleanField
-      FieldName = 'ISALLDAY'
-    end
-    object vtGoogleEventsLOCATION: TStringField
-      FieldName = 'LOCATION'
-      Size = 128
-    end
-    object vtGoogleEventsSTATUS: TSmallintField
-      FieldName = 'STATUS'
-    end
-    object vtGoogleEventsVISIBILITY: TIntegerField
-      FieldName = 'VISIBILITY'
-    end
-    object vtGoogleEventsRECURRENCE: TStringField
-      FieldName = 'RECURRENCE'
-      Size = 60
-    end
-    object vtGoogleEventsRECURRINGID: TStringField
-      FieldName = 'RECURRINGID'
-      Size = 60
-    end
-    object vtGoogleEventsSEQUENCE: TIntegerField
-      FieldName = 'SEQUENCE'
-    end
-    object vtGoogleEventsCOLOR: TSmallintField
-      FieldName = 'COLOR'
-    end
-    object vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField
-      FieldName = 'USEDEFAULTREMINDERS'
-    end
-    object vtGoogleEventsSENDNOTIFICATIONS: TBooleanField
-      FieldName = 'SENDNOTIFICATIONS'
-    end
-    object vtGoogleEventsCALENDARID: TStringField
-      FieldName = 'CALENDARID'
-      Required = True
-      Size = 128
-    end
-    object vtGoogleEventsAttendees: TMemoField
-      FieldName = 'Attendees'
-      BlobType = ftMemo
-    end
-    object vtGoogleEventsReminders: TMemoField
-      FieldName = 'Reminders'
-      BlobType = ftMemo
-    end
-    object vtGoogleEventsJGUID: TGuidField
-      FieldName = 'JGUID'
-      Size = 38
-    end
-    object vtGoogleEventsBackColor: TIntegerField
-      FieldKind = fkLookup
-      FieldName = 'BackColor'
-      LookupDataSet = lkpGCalendarAlias
-      LookupKeyFields = 'ID'
-      LookupResultField = 'BACK_COLOR'
-      KeyFields = 'CALENDARID'
-      Lookup = True
-    end
-    object vtGoogleEventsCalcColor: TIntegerField
-      FieldName = 'CalcColor'
-    end
-    object vtGoogleEventsAlias: TWideStringField
-      FieldKind = fkLookup
-      FieldName = 'Alias'
-      LookupDataSet = lkpGCalendarAlias
-      LookupKeyFields = 'ID'
-      LookupResultField = 'SUMMARY'
-      KeyFields = 'CALENDARID'
-      Lookup = True
-    end
-  end
   object dsGoogleEvents: TUniDataSource
-    DataSet = vtGoogleEvents
     Left = 272
     Top = 336
   end
@@ -19499,5 +19276,306 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       FieldName = 'JGUID'
       Size = 38
     end
+  end
+  object vtGoogleColors: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'BACK_COLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'FORE_COLOR'
+        DataType = ftInteger
+      end>
+    Left = 528
+    Top = 136
+    Data = {
+      040003000200494402000000000000000A004241434B5F434F4C4F5203000000
+      000000000A00464F52455F434F4C4F520300000000000000000000000000}
+    object vtGoogleColorsID: TSmallintField
+      FieldName = 'ID'
+    end
+    object vtGoogleColorsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object vtGoogleColorsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+  end
+  object tbGoogleColors: TUniTable
+    TableName = 'GOOGLE_COLORS'
+    Connection = JanuaUniConnection1
+    Left = 528
+    Top = 200
+  end
+  object MainMenuActions: TActionList
+    Images = SVGIconImageList48
+    Left = 72
+    Top = 488
+    object actCalendarColor: TAction
+      Category = 'Meetings'
+      Caption = 'Aggiorna Lista Colori'
+      ImageIndex = 15
+      ImageName = '016-plan'
+      OnExecute = actCalendarColorExecute
+    end
+  end
+  object vtGoogleEvents: TVirtualTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'ETAG'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'SUMMARY'
+        DataType = ftString
+        Size = 256
+      end
+      item
+        Name = 'DESCRIPTION'
+        DataType = ftWideMemo
+      end
+      item
+        Name = 'STARTTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ENDTIME'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'CREATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'UPDATED'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'ISALLDAY'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'LOCATION'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'STATUS'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'VISIBILITY'
+        DataType = ftInteger
+      end
+      item
+        Name = 'RECURRENCE'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'RECURRINGID'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'SEQUENCE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'COLOR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'USEDEFAULTREMINDERS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'SENDNOTIFICATIONS'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'CALENDARID'
+        DataType = ftString
+        Size = 128
+      end
+      item
+        Name = 'Attendees'
+        DataType = ftMemo
+      end
+      item
+        Name = 'Reminders'
+        DataType = ftMemo
+      end
+      item
+        Name = 'JGUID'
+        DataType = ftGuid
+        Size = 38
+      end
+      item
+        Name = 'CalcColor'
+        DataType = ftInteger
+      end
+      item
+        Name = 'BACKGROUNDCOLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'FOREGROUNDCOLOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SYNC'
+        DataType = ftString
+        Size = 1
+      end>
+    BeforePost = vtGoogleEventsBeforePost
+    AfterScroll = vtGoogleEventsAfterScroll
+    Left = 528
+    Top = 72
+    Data = {
+      04001A0002004944010080000000000004004554414701008000000000000700
+      53554D4D41525901000001000000000B004445534352495054494F4E27000000
+      000000000900535441525454494D450B000000000000000700454E4454494D45
+      0B000000000000000700435245415445440B0000000000000007005550444154
+      45440B0000000000000008004953414C4C444159050000000000000008004C4F
+      434154494F4E0100800000000000060053544154555302000000000000000A00
+      5649534942494C49545903000000000000000A00524543555252454E43450100
+      3C00000000000B00524543555252494E47494401003C00000000000800534551
+      55454E434503000000000000000500434F4C4F52020000000000000013005553
+      4544454641554C5452454D494E444552530500000000000000110053454E444E
+      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F7203000000000000000F004241434B47524F554E44434F4C4F
+      5203000000000000000F00464F524547524F554E44434F4C4F52030000000000
+      0000040053594E430100010000000000000000000000}
+    object vtGoogleEventsID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 128
+    end
+    object vtGoogleEventsETAG: TStringField
+      FieldName = 'ETAG'
+      Size = 128
+    end
+    object vtGoogleEventsSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 256
+    end
+    object vtGoogleEventsDESCRIPTION: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object vtGoogleEventsSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object vtGoogleEventsENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object vtGoogleEventsCREATED: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object vtGoogleEventsUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object vtGoogleEventsISALLDAY: TBooleanField
+      FieldName = 'ISALLDAY'
+    end
+    object vtGoogleEventsLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object vtGoogleEventsSTATUS: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object vtGoogleEventsVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object vtGoogleEventsRECURRENCE: TStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object vtGoogleEventsRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object vtGoogleEventsSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object vtGoogleEventsCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField
+      FieldName = 'USEDEFAULTREMINDERS'
+    end
+    object vtGoogleEventsSENDNOTIFICATIONS: TBooleanField
+      FieldName = 'SENDNOTIFICATIONS'
+    end
+    object vtGoogleEventsCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      Required = True
+      Size = 128
+    end
+    object vtGoogleEventsAttendees: TMemoField
+      FieldName = 'Attendees'
+      BlobType = ftMemo
+    end
+    object vtGoogleEventsReminders: TMemoField
+      FieldName = 'Reminders'
+      BlobType = ftMemo
+    end
+    object vtGoogleEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      Size = 38
+    end
+    object vtGoogleEventsBackColor: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'BackColor'
+      LookupDataSet = lkpGCalendarAlias
+      LookupKeyFields = 'ID'
+      LookupResultField = 'BACK_COLOR'
+      KeyFields = 'CALENDARID'
+      Lookup = True
+    end
+    object vtGoogleEventsCalcColor: TIntegerField
+      FieldName = 'CalcColor'
+    end
+    object vtGoogleEventsAlias: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'Alias'
+      LookupDataSet = lkpGCalendarAlias
+      LookupKeyFields = 'ID'
+      LookupResultField = 'SUMMARY'
+      KeyFields = 'CALENDARID'
+      Lookup = True
+    end
+    object vtGoogleEventsBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+    end
+    object vtGoogleEventsFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+    end
+    object vtGoogleEventsSYNC: TStringField
+      FieldName = 'SYNC'
+      Size = 1
+    end
+  end
+  object AdvTwilio: TAdvTwilio
+    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
+    App.CallBackPort = 80
+    PersistTokens.Location = plIniFile
+    Left = 416
+    Top = 440
   end
 end

@@ -267,8 +267,8 @@
             <Form>dmPostgresCloud</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
+        <DCCReference Include="..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
+            <Form>dmPgCountriesLocal</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\src\januaunidac\datamodules\udmSocial.pas">

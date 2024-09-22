@@ -17,12 +17,12 @@ uses
   CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar, CloudBase, CloudBaseWin,
   CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, CloudCustomOutlook,
   CloudOutlookWin, CloudCustomOutlookCalendar, CloudOutlookCalendar, CloudWebDav, CloudvCal,
-  PlanExGCalendar, PlanExLiveCalendar,
   // Januaproject
   Janua.Core.DataModule, JOrm.Cloud.GoogleCalendarEvents.Intf, JOrm.Cloud.GoogleCalendars.Intf,
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
-  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types;
+  Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types,
+  CloudSMS;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -64,26 +64,6 @@ type
     JanuaUniConnection1: TJanuaUniConnection;
     InterBaseUniProvider1: TInterBaseUniProvider;
     PostgreSQLUniProvider1: TPostgreSQLUniProvider;
-    vtGoogleEvents: TVirtualTable;
-    vtGoogleEventsID: TStringField;
-    vtGoogleEventsETAG: TStringField;
-    vtGoogleEventsSUMMARY: TStringField;
-    vtGoogleEventsDESCRIPTION: TWideMemoField;
-    vtGoogleEventsSTARTTIME: TDateTimeField;
-    vtGoogleEventsENDTIME: TDateTimeField;
-    vtGoogleEventsCREATED: TDateTimeField;
-    vtGoogleEventsUPDATED: TDateTimeField;
-    vtGoogleEventsISALLDAY: TBooleanField;
-    vtGoogleEventsLOCATION: TStringField;
-    vtGoogleEventsSTATUS: TSmallintField;
-    vtGoogleEventsVISIBILITY: TIntegerField;
-    vtGoogleEventsRECURRENCE: TStringField;
-    vtGoogleEventsRECURRINGID: TStringField;
-    vtGoogleEventsSEQUENCE: TIntegerField;
-    vtGoogleEventsCOLOR: TSmallintField;
-    vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField;
-    vtGoogleEventsSENDNOTIFICATIONS: TBooleanField;
-    vtGoogleEventsCALENDARID: TStringField;
     actDeleteCalendar: TAction;
     actAddAttendee: TAction;
     dsGoogleEvents: TUniDataSource;
@@ -98,13 +78,8 @@ type
     SaveDialog1: TSaveDialog;
     FontDialog1: TFontDialog;
     SVGIconImageList24: TSVGIconImageList;
-    vtGoogleEventsJGUID: TGuidField;
-    vtGoogleEventsAttendees: TMemoField;
-    vtGoogleEventsReminders: TMemoField;
     lkpGCalendarAlias: TVirtualTable;
     dslkpGCalendar: TUniDataSource;
-    vtGoogleEventsBackColor: TIntegerField;
-    vtGoogleEventsAlias: TWideStringField;
     vtGoogleCalendars: TVirtualTable;
     vtGoogleCalendarsID: TStringField;
     vtGoogleCalendarsLOCATION: TStringField;
@@ -128,8 +103,44 @@ type
     lkpGCalendarAliasBACK_COLOR: TIntegerField;
     lkpGCalendarAliasALIAS: TStringField;
     lkpGCalendarAliasJGUID: TGuidField;
-    vtGoogleEventsCalcColor: TIntegerField;
     actGoogleSync: TAction;
+    vtGoogleColors: TVirtualTable;
+    vtGoogleColorsID: TSmallintField;
+    vtGoogleColorsBACK_COLOR: TIntegerField;
+    vtGoogleColorsFORE_COLOR: TIntegerField;
+    tbGoogleColors: TUniTable;
+    MainMenuActions: TActionList;
+    actCalendarColor: TAction;
+    vtGoogleEvents: TVirtualTable;
+    vtGoogleEventsID: TStringField;
+    vtGoogleEventsETAG: TStringField;
+    vtGoogleEventsSUMMARY: TStringField;
+    vtGoogleEventsDESCRIPTION: TWideMemoField;
+    vtGoogleEventsSTARTTIME: TDateTimeField;
+    vtGoogleEventsENDTIME: TDateTimeField;
+    vtGoogleEventsCREATED: TDateTimeField;
+    vtGoogleEventsUPDATED: TDateTimeField;
+    vtGoogleEventsISALLDAY: TBooleanField;
+    vtGoogleEventsLOCATION: TStringField;
+    vtGoogleEventsSTATUS: TSmallintField;
+    vtGoogleEventsVISIBILITY: TIntegerField;
+    vtGoogleEventsRECURRENCE: TStringField;
+    vtGoogleEventsRECURRINGID: TStringField;
+    vtGoogleEventsSEQUENCE: TIntegerField;
+    vtGoogleEventsCOLOR: TSmallintField;
+    vtGoogleEventsUSEDEFAULTREMINDERS: TBooleanField;
+    vtGoogleEventsSENDNOTIFICATIONS: TBooleanField;
+    vtGoogleEventsCALENDARID: TStringField;
+    vtGoogleEventsAttendees: TMemoField;
+    vtGoogleEventsReminders: TMemoField;
+    vtGoogleEventsJGUID: TGuidField;
+    vtGoogleEventsBackColor: TIntegerField;
+    vtGoogleEventsCalcColor: TIntegerField;
+    vtGoogleEventsAlias: TWideStringField;
+    vtGoogleEventsBACKGROUNDCOLOR: TIntegerField;
+    vtGoogleEventsFOREGROUNDCOLOR: TIntegerField;
+    vtGoogleEventsSYNC: TStringField;
+    AdvTwilio: TAdvTwilio;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -164,6 +175,7 @@ type
     procedure DBDaySourceGCalendarFieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure vtGoogleEventsBeforePost(DataSet: TDataSet);
     procedure actGoogleSyncExecute(Sender: TObject);
+    procedure actCalendarColorExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -271,7 +283,7 @@ type
     FAttName: string;
     FAttEmail: string;
     FAttendeesList: TStrings;
-    FReminders: TJanuaReminders;
+    FReminders: TJanuaRecReminders;
     FOnToggleGoogleControls: TNotifyEvent;
     FUseDefaultReminders: Boolean;
     FOnToggleGoogleReminders: TNotifyEvent;
@@ -363,6 +375,7 @@ type
     procedure SetOnAfterConnect(const Value: TNotifyEvent);
     procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
   protected
+    FGConnected: Boolean;
     Fgcal: TGCalendar;
     LoadCalendarsFromDB: TProc;
     LoadCalendarItemsFromDB: TProc;
@@ -389,6 +402,7 @@ type
     { Public declarations }
     // Google CAlendar
     { procedure GetGCalendarList; }
+    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string): Boolean;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
@@ -405,6 +419,10 @@ type
     procedure InitGoogle();
     procedure SetGoogleCalendarColor(out bg, fg: TColor);
     procedure CalcGoogleCalendarColor(const aColor: smallint; out bg, fg: TColor);
+    procedure CalcLocalGoogleCalendarColor(const aColor: smallint; out bg, fg: TColor);
+    procedure SaveCalendarColors;
+    procedure LoadCalendarColors;
+    procedure CheckCalendarColors;
     procedure ListAttendees(Item: TGCalendarItem);
     procedure ListReminders(Item: TGCalendarItem);
     procedure PlannerItemDelete(Sender: TObject; Item: TPlannerItem);
@@ -429,10 +447,8 @@ type
     // Google Calendar
     property GoogleItemUpdateProc: TProc read FGoogleItemUpdateProc write SetGoogleItemUpdateProc;
     property GoogleItemInsertProc: TProc read FGoogleItemInsertProc write SetGoogleItemInsertProc;
-
     property GoogleCalendarUpdateProc: TProc read FGoogleCalendarUpdateProc write SetGoogleCalendarUpdateProc;
     property GoogleCalendarInsertProc: TProc read FGoogleCalendarInsertProc write SetGoogleCalendarInsertProc;
-
     property GroupBackColor: TColor read FGroupBackColor write SetGroupBackColor;
     property GroupForeColor: TColor read FGroupForeColor write SetGroupForeColor;
     property AdvGCalendar1: TAdvGCalendar read FAdvGCalendar1 write SetAdvGCalendar1;
@@ -487,6 +503,12 @@ uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
 { udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
+
+const
+  cKey = 'AC221a150df22723daef8d097a7f76cfcf';
+  cSecret = 'f3c90112efdccd931b81dea46f74f1da';
+  cAppName = '+393513535778' { '+15302036772' };
+  cMessageType = jmtWhatsApp;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -561,6 +583,8 @@ begin
   FItemVisibilityList.Add('Default');
   FItemVisibilityList.Add('Pubblico');
   FItemVisibilityList.Add('Privato');
+
+  LoadCalendarColors;
 end;
 
 procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
@@ -731,6 +755,12 @@ begin
   FillGoogleCalendars;
 end;
 
+procedure TdmVCLPlannerCustomController.actCalendarColorExecute(Sender: TObject);
+begin
+  inherited;
+  SaveCalendarColors;
+end;
+
 procedure TdmVCLPlannerCustomController.actCaptionExecute(Sender: TObject);
 begin
   if Assigned(FPlanner) then
@@ -883,23 +913,45 @@ procedure TdmVCLPlannerCustomController.CalcGoogleCalendarColor(const aColor: sm
 var
   TGC: TGColor;
 begin
-  if AdvGCalendar1.CalendarColors.Count = 0 then
-    AdvGCalendar1.GetColors;
-
-  if bg = 0 then
+  if FGConnected then
   begin
-    for var I in AdvGCalendar1.CalendarColors do
+    if AdvGCalendar1.CalendarColors.Count = 0 then
+      AdvGCalendar1.GetColors;
+
+    if bg = 0 then
     begin
-      TGC := TGColor(I);
-      if { Ord(Fgcal.Color) } aColor = TGC.ID then
+      for var I in AdvGCalendar1.CalendarColors do
       begin
-        if bg = 0 then
-          bg := TGC.BackgroundColor;
-        if fg = 0 then
-          fg := TGC.ForegroundColor;
+        TGC := TGColor(I);
+        if { Ord(Fgcal.Color) } aColor = TGC.ID then
+        begin
+          if bg = 0 then
+            bg := TGC.BackgroundColor;
+          if fg = 0 then
+            fg := TGC.ForegroundColor;
+        end;
       end;
     end;
+  end
+  else
+    CalcLocalGoogleCalendarColor(aColor, bg, fg)
+end;
+
+procedure TdmVCLPlannerCustomController.CalcLocalGoogleCalendarColor(const aColor: smallint;
+  out bg, fg: TColor);
+begin
+  if vtGoogleColors.Locate('ID', aColor, []) then
+  begin
+    bg := vtGoogleColorsBACK_COLOR.AsInteger;
+    fg := vtGoogleColorsFORE_COLOR.AsInteger;
   end;
+end;
+
+procedure TdmVCLPlannerCustomController.CheckCalendarColors;
+begin
+  tbGoogleColors.Open;
+  if tbGoogleColors.RecordCount = 0 then
+    SaveCalendarColors;
 end;
 
 procedure TdmVCLPlannerCustomController.ClearControls;
@@ -909,13 +961,11 @@ end;
 
 procedure TdmVCLPlannerCustomController.ConnectGCalendar;
 begin
-  (* if not AdvGCalendar1.TestTokens then
+  if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.RefreshAccess;
 
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.DoAuth
-    else
-  *)
+  FGConnected := AdvGCalendar1.TestTokens;
+
   InitGoogle;
 end;
 
@@ -961,6 +1011,25 @@ begin
   PlannerEvent := nil;
 end;
 
+procedure TdmVCLPlannerCustomController.LoadCalendarColors;
+begin
+  tbGoogleColors.Open;
+  vtGoogleColors.Open;
+  tbGoogleColors.First;
+  While not tbGoogleColors.Eof do
+  begin
+    if not vtGoogleColors.Locate('ID', tbGoogleColors.FieldByName('ID').AsInteger, []) then
+    begin
+      vtGoogleColors.Append;
+      vtGoogleColorsID.AsInteger := tbGoogleColors.FieldByName('ID').AsInteger;
+      vtGoogleColorsBACK_COLOR.AsInteger := tbGoogleColors.FieldByName('BACK_COLOR').AsInteger;
+      vtGoogleColorsFORE_COLOR.AsInteger := tbGoogleColors.FieldByName('FORE_COLOR').AsInteger;
+      vtGoogleColors.Post;
+    end;
+    tbGoogleColors.Next;
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.LoaGoogleCalendarItemRecord;
 begin
   FCurrentGoogleItem.DirectLoadFromDataset(vtGoogleEvents);
@@ -973,7 +1042,7 @@ var
 begin
   Screen.Cursor := crHourGlass;
 
-  if Assigned(Fgcal) then
+  if FGConnected and Assigned(Fgcal) then
   begin
     AdvGCalendar1.GetCalendar(Fgcal.ID, GCalStartDate, GCalEndDate);
 
@@ -1031,84 +1100,90 @@ var
   bg: TColor;
   fg: TColor;
 begin
-  // Set custom Calendar as Google Calendar API
-  CloudCalendar := ccGoogle;
-  // Asks GCalendar to update Calendar List
-  AdvGCalendar1.GetCalendars();
-  // During Update DBDaySourceGCalendar must be Inactive
-  DBDaySourceGCalendar.Active := False;
-  // Day Source is 'today'
-  DBDaySourceGCalendar.Day := Date;
-
-  var
-  PlannerPosition := 0;
-
-  if not vtGoogleCalendars.Active then
-    vtGoogleCalendars.Open;
-
-  FGoogleCalendarList.Clear;
-
-  if AdvGCalendar1.Calendars.Count > 0 then
+  if FGConnected then
   begin
-    for I := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    // Set custom Calendar as Google Calendar API
+    CloudCalendar := ccGoogle;
+    // Asks GCalendar to update Calendar List
+    AdvGCalendar1.GetCalendars();
+    // During Update DBDaySourceGCalendar must be Inactive
+    DBDaySourceGCalendar.Active := False;
+    // Day Source is 'today'
+    DBDaySourceGCalendar.Day := Date;
+
+    var
+    PlannerPosition := 0;
+
+    if not vtGoogleCalendars.Active then
+      vtGoogleCalendars.Open;
+
+    FGoogleCalendarList.Clear;
+
+    if AdvGCalendar1.Calendars.Count > 0 then
     begin
-      Fgcal := AdvGCalendar1.Calendars[I];
-      if Fgcal.Primary then
-        isPrimary := ' (Primary)'
-      else
-        isPrimary := '';
-
-      if not vtGoogleCalendars.Locate('ID', Fgcal.ID, []) then
+      for I := 0 to AdvGCalendar1.Calendars.Count - 1 do
       begin
-        vtGoogleCalendars.Append;
-        vtGoogleCalendars.FieldByName('ID').Value := Fgcal.ID;
-        vtGoogleCalendars.FieldByName('DESCRIPTION').Text := Fgcal.Description;
-        vtGoogleCalendars.FieldByName('LOCATION').AsString := Fgcal.Location;
-        vtGoogleCalendars.FieldByName('SUMMARY').AsString := Fgcal.Summary;
-        vtGoogleCalendars.FieldByName('PRIMARY').AsBoolean := Fgcal.Primary;
-        vtGoogleCalendars.FieldByName('TIMEZONE').AsString := Fgcal.TimeZone;
-        vtGoogleCalendars.FieldByName('COLOR').Value := Ord(Fgcal.Color);
-        vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger := fg;
-        vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger := bg;
-        vtGoogleCalendars.Post;
-        if Assigned(FGoogleCalendarInsertProc) then
-          FGoogleCalendarInsertProc;
+        Fgcal := AdvGCalendar1.Calendars[I];
+        if Fgcal.Primary then
+          isPrimary := ' (Primary)'
+        else
+          isPrimary := '';
+
+        if not vtGoogleCalendars.Locate('ID', Fgcal.ID, []) then
+        begin
+          vtGoogleCalendars.Append;
+          vtGoogleCalendars.FieldByName('ID').Value := Fgcal.ID;
+          vtGoogleCalendars.FieldByName('DESCRIPTION').Text := Fgcal.Description;
+          vtGoogleCalendars.FieldByName('LOCATION').AsString := Fgcal.Location;
+          vtGoogleCalendars.FieldByName('SUMMARY').AsString := Fgcal.Summary;
+          vtGoogleCalendars.FieldByName('PRIMARY').AsBoolean := Fgcal.Primary;
+          vtGoogleCalendars.FieldByName('TIMEZONE').AsString := Fgcal.TimeZone;
+          vtGoogleCalendars.FieldByName('COLOR').Value := Ord(Fgcal.Color);
+          vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger := fg;
+          vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger := bg;
+          vtGoogleCalendars.Post;
+          if Assigned(FGoogleCalendarInsertProc) then
+            FGoogleCalendarInsertProc;
+        end;
+
+        var
+        lCalAlias := vtGoogleCalendars.FieldByName('ALIAS').AsString;
+        lCalAlias := IfThen(lCalAlias.IsEmpty, Fgcal.Summary, lCalAlias);
+
+        FGoogleCalendarList.addObject(lCalAlias + isPrimary, AdvGCalendar1.Calendars[I]);
+
+        With DBDaySourceGCalendar.ResourceMap.Add Do
+        Begin
+          ResourceIndex := PlannerPosition;
+          PositionIndex := PlannerPosition;
+          DisplayName := lCalAlias;
+          inc(PlannerPosition);
+        End;
+
+        FillGoogleCalendarItems;
       end;
-
-      var
-      lCalAlias := vtGoogleCalendars.FieldByName('ALIAS').AsString;
-      lCalAlias := IfThen(lCalAlias.IsEmpty, Fgcal.Summary, lCalAlias);
-
-      FGoogleCalendarList.addObject(lCalAlias + isPrimary, AdvGCalendar1.Calendars[I]);
-
-      With DBDaySourceGCalendar.ResourceMap.Add Do
-      Begin
-        ResourceIndex := PlannerPosition;
-        PositionIndex := PlannerPosition;
-        DisplayName := lCalAlias;
-        inc(PlannerPosition);
-      End;
-
-      FillGoogleCalendarItems;
     end;
-  end;
 
-  GCalendarItemIndex := IfThen(PlannerPosition > 0, 0, -1);
-  DBDaySourceGCalendar.NumberOfResources := PlannerPosition;
-  DBDaySourceGCalendar.Active := True;
-  NotifyGCalendars;
+    GCalendarItemIndex := IfThen(PlannerPosition > 0, 0, -1);
+    DBDaySourceGCalendar.NumberOfResources := PlannerPosition;
+    DBDaySourceGCalendar.Active := True;
+    NotifyGCalendars;
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.FillColors;
 var
   cl: TGItemColor;
 begin
-  AdvGCalendar1.GetColors;
-  FCalendarColors.Clear;
-  for cl := Low(TGItemColor) to High(TGItemColor) do
-    FCalendarColors.Add(StringReplace(GetEnumName(TypeInfo(TGItemColor), Ord(cl)), 'ic', '', []));
-  if FCalendarColors.Count > 0 then
-    FCalendarColorIndex := 0;
+  if FGConnected then
+  begin
+    AdvGCalendar1.GetColors;
+    FCalendarColors.Clear;
+    for cl := Low(TGItemColor) to High(TGItemColor) do
+      FCalendarColors.Add(StringReplace(GetEnumName(TypeInfo(TGItemColor), Ord(cl)), 'ic', '', []));
+    if FCalendarColors.Count > 0 then
+      FCalendarColorIndex := 0;
+  end;
 end;
 
 procedure TdmVCLPlannerCustomController.FilterGoogle;
@@ -1165,7 +1240,7 @@ function TdmVCLPlannerCustomController.GetPlannerEvent: ITimetable;
 begin
   if not Assigned(FPlannerEvent) then
   begin
-    TJanuaCoreOS.PublicWriteLog(Self, 'EditEvent', 'TryGetRecordIntf(ITimetable)');
+    TJanuaCoreOS.PublicWriteLog(self, 'EditEvent', 'TryGetRecordIntf(ITimetable)');
     if not TJanuaOrmFactory.TryGetRecordIntf(ITimetable, FPlannerEvent, 'Event', TJanuaEntity.PlannerTimetable)
     then
       raise Exception.Create('TryGetRecordIntf(ITimetable) ITimetable not set');
@@ -1205,7 +1280,7 @@ begin
       DBDaySourceGCalendar.Active := True;
       DBDaySourceCalendar.Active := True;
       if Assigned(FOnAfterConnect) then
-        FOnAfterConnect(Self);
+        FOnAfterConnect(self);
       { NotifyGCalendars; }
     end,
     procedure(const Ex: Exception)
@@ -1346,6 +1421,74 @@ begin
     Text.Text := 'Creato Evento il ' + FormatDateTime('hh:nn dd/mm/yyyy', Now);
     Update;
   end;
+end;
+
+procedure TdmVCLPlannerCustomController.SaveCalendarColors;
+var
+  TGC: TGColor;
+  bg, fg: TColor;
+begin
+  if AdvGCalendar1.CalendarColors.Count = 0 then
+    AdvGCalendar1.GetColors;
+  if not vtGoogleColors.Active then
+    vtGoogleColors.Open;
+
+  for var I in AdvGCalendar1.CalendarColors do
+  begin
+    TGC := TGColor(I);
+    if not vtGoogleColors.Locate('ID', TGC.ID, []) then
+    begin
+      bg := TGC.BackgroundColor;
+      fg := TGC.ForegroundColor;
+
+      vtGoogleColors.Append;
+      vtGoogleColorsID.AsInteger := TGC.ID;
+      vtGoogleColorsBACK_COLOR.AsInteger := bg;
+      vtGoogleColorsFORE_COLOR.AsInteger := fg;
+      vtGoogleColors.Post;
+    end;
+  end;
+
+  tbGoogleColors.Open;
+  vtGoogleColors.First;
+  While not vtGoogleColors.Eof do
+  begin
+    if not tbGoogleColors.Locate('ID', vtGoogleColorsID.AsInteger, []) then
+    begin
+      tbGoogleColors.Append;
+      tbGoogleColors.FieldByName('ID').AsInteger := vtGoogleColorsID.AsInteger;
+      tbGoogleColors.FieldByName('BACK_COLOR').AsInteger := vtGoogleColorsBACK_COLOR.AsInteger;
+      tbGoogleColors.FieldByName('FORE_COLOR').AsInteger := vtGoogleColorsFORE_COLOR.AsInteger;
+      tbGoogleColors.Post;
+    end;
+    vtGoogleColors.Next;
+  end;
+
+end;
+
+function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string;
+aRecipient: string): Boolean;
+begin
+  AdvTwilio.App.Key := cKey;
+  // 'AC221a150df22723daef8d097a7f76cfcf';
+  AdvTwilio.App.Secret := cSecret;
+  // 'f3c90112efdccd931b81dea46f74f1da';
+  AdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + cAppName; // +39 351 353 5778
+  // '+15302036772';
+  var
+  lSMS := aMessage;
+
+  var
+  lRecipient := aRecipient; // +39 348 826 1954
+
+  if cMessageType = jmtWhatsApp then
+    lRecipient := 'whatsapp:' + lRecipient;
+
+  Result := AdvTwilio.SendSMS(lRecipient, lSMS);
+  if Result then
+    ShowMessage('Messaggio inviato correttamente')
+  else
+    raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
 end;
 
 procedure TdmVCLPlannerCustomController.SetAdvGCalendar1(const Value: TAdvGCalendar);
@@ -1825,13 +1968,13 @@ end;
 procedure TdmVCLPlannerCustomController.ToggleControls;
 begin
   if Assigned(FOnToggleGoogleControls) then
-    FOnToggleGoogleControls(Self);
+    FOnToggleGoogleControls(self);
 end;
 
 procedure TdmVCLPlannerCustomController.ToggleReminders;
 begin
   if Assigned(FOnToggleGoogleReminders) then
-    FOnToggleGoogleReminders(Self);
+    FOnToggleGoogleReminders(self);
 end;
 
 procedure TdmVCLPlannerCustomController.UndoMeeting;

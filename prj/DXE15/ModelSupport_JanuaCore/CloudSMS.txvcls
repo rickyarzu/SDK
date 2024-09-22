@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="xmx8jfhn3xid5sz2h_v">
+    <property name="$description" value="SMS Telegram WhatsApp Messages Classes Framework " />
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="CloudSMS" />
+    <property name="Alias" value="Janua Cloud Message Diagram" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,40,251,80" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SetLastErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetKeepAlive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SetKeepAlive(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.KeepAlive" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.LastErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.GetSelectedSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SetSelectedSchema(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseModel.SelectedSchema" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,560,239,66" />
+      <property name="grd_color_one" value="192, 255, 255" />
+      <property name="grd_on" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetjdsDetail(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.jdsDetail" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetDetailDatasets()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetDetailDatasets(Spring.Collections.IList`1)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.DetailDatasets" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.GetLazyLoading()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.SetLazyLoading(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.LazyLoading" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.StartSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.RefreshDetails()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel.RestGetDataset(System.string,System.string)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBModel:Janua.ViewModels.Intf.IJanuaModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1160,40,40,30" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel">
+        <property name="bounds" value="0,0,198,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetMainActionList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.MainActionList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetFormActionList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.FormActionList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetActionEdit()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.ActionEdit" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetFormTitle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.SetFormTitle(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.FormTitle" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetIsThreaded()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetUseThreads()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.SetUseThreads(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.UseThreads" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.SetIsThreaded(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.IsThreaded" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetFormDialog()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.FormDialog" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.GetModel()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.Model" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.ViewModels.Intf.IJanuaBaseViewModel.Model">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="840,340,267,68" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.GetdsMaster()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.dsMaster" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.GetJdsMaster()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.jdsMaster" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.GetdsDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.dsDetail" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel.jdsDetail" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaDBViewModel:Janua.ViewModels.Intf.IJanuaViewModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel">
+      <property name="$briefView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="140,400,221,36" />
+      <property name="grd_color_one" value="192, 255, 255" />
+      <property name="grd_on" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.GetjdsRecordDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.jdsRecordDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.GetjdsDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel.jdsDetail" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaModel:Janua.ViewModels.Intf.IJanuaClientModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="140,20,255,82" />
+      <property name="grd_color_one" value="192, 255, 255" />
+      <property name="grd_on" value="True" />
+      <property name="hideOperation" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetMainSearchText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetMainSearchText(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.MainSearchText" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.Search()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.First(Janua.Core.Classes.Intf.TProc,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.Last(Janua.Core.Classes.Intf.TProc,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.Next(Janua.Core.Classes.Intf.TProc,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.Prior(Janua.Core.Classes.Intf.TProc,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetGroupGUID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetGroupID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetGroupGUID(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetGroupID(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GroupGUID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GroupID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetDetailModels()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.DetailModels" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.AddDetailModel(Janua.ViewModels.Intf.IJanuaRecordSetModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.ModelCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GenerateSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.RemoveSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetFilterParams()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.FilterParams" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.OpenAll(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.Refresh(Janua.Core.Classes.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetRecordCount()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.RecordCount" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetIsThreaded()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetIsThreaded(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.IsThreaded" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetMainSelectedParam()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetSelectedItem()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetState()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetSelectedItem(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetState(Janua.ViewModels.Intf.TJanuaModelState)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SelectedParam" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SelectedItem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.State" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetDateFrom()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetDateTo()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetDateFrom(Janua.ViewModels.Intf.TDate)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetDateTo(Janua.ViewModels.Intf.TDate)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.DateFrom" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.DateTo" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetOrderByFields()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.OrderByFields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetDataSource()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.DataSource" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetFilterOption()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetFilterOption(Janua.ViewModels.Intf.TJanuaFilterOption)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.FilterOption" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetAfterOpen()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.GetAfterScroll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetAfterOpen(Janua.Orm.Intf.TJanuaDBDataSetNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.SetAfterScroll(Janua.Orm.Intf.TJanuaDBDataSetNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.AfterOpen" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.AfterScroll" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaClientModel.LocateByGUID(Janua.ViewModels.Intf.TGUID)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="840,40,277,80" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestGetDataset(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestGetRecord(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestPostRecord(ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestUpdateRecord(ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaServerDBModel.RestDelRecord(System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="460,400,333,80" />
+      <property name="grd_color_one" value="255, 224, 192" />
+      <property name="grd_on" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.RemoveSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.GetDetailModels()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.DetailModels" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.AddDetailModel(Janua.ViewModels.Intf.IJanuaRecordSetModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.ModelCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.GenerateSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.SearchByGUID(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.AddNewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.AppendRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.PostRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.UndoChanges()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.DeleteRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.LoadRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordRESTModel.RefreshRecord()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="700,560,332,80" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.RemoveSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.GetDetailModels()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.DetailModels" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AddDetailModel(Janua.ViewModels.Intf.IJanuaRecordSetModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.ModelCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.GenerateSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AddNewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AddNewRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AddNewRecord(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AppendRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AppendRecord(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.AppendRecord(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.PostRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.UndoChanges()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.DeleteRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.DeleteRecord(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.LoadRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaSingleRecordClientModel.RefreshRecord()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel">
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="300,560,282,66" />
+      <property name="grd_color_one" value="192, 255, 255" />
+      <property name="grd_on" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel.GetRecordSet()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel.SetRecordSet(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel.RecordSet" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel.GenerateMemDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel.ConnectToDataset(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.ViewModels.Intf.IJanuaRecordSetModel:Janua.ViewModels.Intf.IJanuaModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1180,340,40,30" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel">
+        <property name="bounds" value="0,0,195,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetMainSearchParams()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.MainSearchParams" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetMainSearchText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetMainSearchText(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.MainSearchText" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetActionSearch()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.ActionSearch" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetFilterParams()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.FilterParams" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDateFrom()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDateTo()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetDateFrom(Janua.ViewModels.Intf.TDate)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetDateTo(Janua.ViewModels.Intf.TDate)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.DateFrom" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.DateTo" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetHasSearchList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.HasSearchList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetOrderByFields()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.OrderByFields" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetMainSearchLabel()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetMainSearchLabel(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetFilterDate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetFilterDate(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetSelectedItem()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetSelectedItem(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetHasDetail()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.HasDetail" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.FilterDate" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SelectedItem" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.MainSearchLabel" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDetailsActive()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.DetailsActive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDetails()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.Details" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDetailCount()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.DetailCount" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GenerateSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.RemoveSubModels()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetDetailActionList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.DetailActionList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.NewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetOnNewRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.SetOnNewRecord(Janua.ViewModels.Intf.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.OnNewRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.StartSearch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.Refresh()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.OpenAll(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.GetjdsDataset()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.ViewModels.Intf.IJanuaViewModel.jdsDataset" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="860,640,40,30" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel">
+        <property name="bounds" value="0,0,195,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.GetjdsUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.jdsUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.GetjdsUser()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.jdsUser" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.GetUserProfileRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.UserProfileRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.GetjdsUsers()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.jdsUsers" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.GetAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.AnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.ListUsersByGroupID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.searchuserbyGUID(Janua.System.ViewModel.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel.searchuserbyID(System.Integer)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersModel:Janua.ViewModels.Intf.IJanuaDBModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="800,580,40,30" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel">
+        <property name="bounds" value="0,0,195,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel.SetCurrentRecord(JOrm.System.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel.CurrentRecord" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaDBSystemUsersViewModel:Janua.ViewModels.Intf.IJanuaDBViewModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="880,680,40,30" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule">
+        <property name="bounds" value="0,0,195,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsSchemaConfig()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsSchemaConfig" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUser()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUser" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUserSession()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUserSession" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspLogin()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspLogin" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserAdd()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserAdd" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserAddWithProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserAddWithProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspLoginSocial()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspLoginSocial" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsLogin()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsLogin" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserTest()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserTest" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspCreatePersonalSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsGetUserByKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsSearchUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspSetUserDefaultSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserDel()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspCreatePersonalSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsGetUserByKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsSearchUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspSetUserDefaultSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserDel" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspAddAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspAddAnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUpdateUserAnID()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUpdateUserAnID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsSchemasList()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsSchemasList" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel">
+      <property name="$circleView" value="True" />
+      <property name="$hidden" value="True" />
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="820,720,40,30" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="label:$name:delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel">
+        <property name="bounds" value="0,0,195,16" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.SetCurrentRecord(JOrm.System.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.GetUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.SetUserProfile(JOrm.System.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.UserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.GetUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.SetUser(JOrm.System.Intf.IUser)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.User" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.GetAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.AnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel.searchuserbyGUID(Janua.System.ViewModel.Intf.TGUID)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserModel:Janua.ViewModels.Intf.IJanuaModel">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.SMS.TSendSMS">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,60,224,188" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.Create(Janua.Cloud.SMS.TStrings,System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.FRecipients" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.FSMSMessageRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.Getscheduled_delivery_time()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetreturnCredits()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetRecipients()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetSMSSender()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetSMSMessageType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetRecipients(Janua.Cloud.SMS.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetreturnCredits(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.Setscheduled_delivery_time(Janua.Cloud.SMS.TDateTime)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetSMSMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetSMSMessageType(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetSMSSender(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SetAsJsonObject(Janua.Cloud.SMS.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.Create()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SMSMessageType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.SMSSender" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.scheduled_delivery_time" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.Recipients" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.returnCredits" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.TSendSMS.AsJsonObject" />
+      <reference referencedUin="delphi:l_impl:src:JanuaCore:Janua.Cloud.SMS.TSendSMS:Janua.Cloud.SMS.IJanuaSMS">
+        <property name="sourceAnchor" value="500,145" />
+        <property name="targetAnchor" value="284,145" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,60,224,171" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.Getscheduled_delivery_time()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetreturnCredits()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetRecipients()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetSMSSender()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetSMSMessageType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetRecipients(Janua.Cloud.SMS.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetreturnCredits(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.Setscheduled_delivery_time(Janua.Cloud.SMS.TDateTime)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetSMSMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetSMSMessageType(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetSMSSender(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.GetAsJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SetAsJsonObject(Janua.Cloud.SMS.TJsonObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SMSMessageType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.SMSSender" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.scheduled_delivery_time" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.Recipients" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.returnCredits" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.SMS.IJanuaSMS.AsJsonObject" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,320,258,200" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FsTO" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FsFrom" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FsFromAddr" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FSMSMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FLoaded" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FSMSSender" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetLogProc()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FMessageConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetSettingKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetSettingKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetSMSSender(Janua.Cloud.Sms.Intf.IJanuaSMSSender)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetSMSSender()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetsTo(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetsFrom(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetsFromAddr(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetsTo()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetFrom()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetFromAddr()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetSMSMessage(Janua.Cloud.Types.TSMSMessage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetMessageConf(Janua.Cloud.Conf.TSMSMessageConf)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetMessageConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetSettingLocation()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetSettingLocation(Janua.Core.System.Types.TJanuaSettingLocation)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetMsgText(Janua.Cloud.Sms.Impl.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GetsText()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetsText(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SetLogProc(Janua.Cloud.Sms.Impl.TMessageLogProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.LoadSettings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GenerateSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GenerateSMSMessage(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GenerateSMSMessage(Janua.Cloud.Sms.Impl.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.GenerateSMSMessage(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SendSMS(Janua.Orm.Intf.IJanuaRecord,TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SendSMS(Janua.Cloud.Sms.Impl.TDataset,TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SendSMS(Janua.Orm.Intf.IJanuaRecordSet,TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SendSMS(TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.LoadConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SaveConf()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.sFrom" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.sFromAddr" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.sTo" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SMSMessageConf" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SMSSender" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.LogProc" />
+      <reference referencedUin="delphi:l_impl:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder">
+        <property name="sourceAnchor" value="500,375" />
+        <property name="targetAnchor" value="308,375" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.SMSSender">
+        <property name="sourceAnchor" value="500,482" />
+        <property name="targetAnchor" value="309,482" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Cloud.Sms.Impl.TJanuaSMSBuilder.FSMSSender">
+        <property name="sourceAnchor" value="500,490" />
+        <property name="targetAnchor" value="309,490" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,560,268,203" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FRecipients" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FSenderConf" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FSMSMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetLogProc()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FConfName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FLogProc" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.FMessageType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetSecret()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetRecipients()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetAppName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetAsJsonConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetAppName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetRecipients(Janua.Cloud.Sms.Impl.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetSecret(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetSMSMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetAsJsonConf(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetLogProc(Janua.Cloud.Sms.Impl.TMessageLogProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.GetMessageType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SetMessageType(Janua.Cloud.Types.TJanuaMessageType)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.Recipients" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.AppName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.Key" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.Secret" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.AsJsonConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.AddRecipient(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.ClearConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.LoadSystemConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SaveSystemConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SendSMS(TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SendSMS(Janua.Cloud.Sms.Intf.IJanuaSMSBuilder,TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.SendSMS(Janua.Cloud.Types.TSMSMessage,TProc`2,TProc`2,Janua.Cloud.Sms.Impl.TProc)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.LogProc" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender.MessageType" />
+      <reference referencedUin="delphi:l_impl:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender:Janua.Cloud.Sms.Intf.IJanuaSMSSender">
+        <property name="sourceAnchor" value="500,603" />
+        <property name="targetAnchor" value="309,603" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,260,248,170" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetsTo(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetsFrom(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetsFromAddr(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetsTo()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetFrom()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetFromAddr()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetSMSMessage(Janua.Cloud.Types.TSMSMessage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.sFrom" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.sFromAddr" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.sTo" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetMessageConf(Janua.Cloud.Conf.TSMSMessageConf)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetMessageConf()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SMSMessageConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GetSMSSender()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SetSMSSender(Janua.Cloud.Sms.Intf.IJanuaSMSSender)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SMSSender" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GenerateSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GenerateSMSMessage(Janua.Orm.Intf.IJanuaRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GenerateSMSMessage(Janua.Cloud.Intf.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.GenerateSMSMessage(Janua.Orm.Intf.IJanuaRecordSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SendSMS(Janua.Orm.Intf.IJanuaRecord,TProc`2,TProc`2,Janua.Core.Classes.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SendSMS(Janua.Cloud.Intf.TDataset,TProc`2,TProc`2,Janua.Core.Classes.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SendSMS(Janua.Orm.Intf.IJanuaRecordSet,TProc`2,TProc`2,Janua.Core.Classes.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SendSMS(TProc`2,TProc`2,Janua.Core.Classes.Intf.TProc)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSBuilder.SMSSender">
+        <property name="sourceAnchor" value="184,430" />
+        <property name="targetAnchor" value="184,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,460,249,186" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetSecret()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetRecipients()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetAppName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetSMSMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetAppName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetRecipients(Janua.Cloud.Sms.Intf.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetSecret(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetSMSMessage(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SMSMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.Recipients" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.AppName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.Key" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.Secret" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SendSMS(TProc`2,TProc`2,Janua.Cloud.Sms.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SendSMS(Janua.Cloud.Sms.Intf.IJanuaSMSBuilder,TProc`2,TProc`2,Janua.Cloud.Sms.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SendSMS(Janua.Cloud.Types.TSMSMessage,TProc`2,TProc`2,Janua.Cloud.Sms.Intf.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.AddRecipient(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetAsJsonConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetAsJsonConf(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.AsJsonConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.ClearConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.LoadSystemConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SaveSystemConf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetLogProc()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetLogProc(TProc`3)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.LogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.GetMessageType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.SetMessageType(Janua.Cloud.Types.TJanuaMessageType)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Cloud.Sms.Intf.IJanuaSMSSender.MessageType" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Intf.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="921,144,0,0" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="860,480,225,152" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.SendSMS(TProc`2,TProc`2,Janua.TMS.SMS.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender.Destroy()" />
+      <reference referencedUin="design:link:::9h24wvo3ykr_l">
+        <property name="sourceAnchor" value="860,596" />
+        <property name="targetAnchor" value="768,596" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

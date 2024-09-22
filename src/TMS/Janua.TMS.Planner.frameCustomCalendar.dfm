@@ -209,6 +209,7 @@ inherited frameTMSCustomPlannerCalendar: TframeTMSCustomPlannerCalendar
       Height = 24
       Align = alClient
       Columns = 12
+      ItemHeight = 17
       Items.Strings = (
         'uno'
         'due'

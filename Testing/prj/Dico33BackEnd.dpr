@@ -10,7 +10,7 @@ uses
   udlgDico33Login in '..\..\..\Playground\Prototipi\Dico33\VCL\udlgDico33Login.pas' {dlgDico33Login},
   udlgDico33RegistrationForm in '..\src\udlgDico33RegistrationForm.pas' {dlgDico33RegistrationForm},
   udmTestDico33Public in '..\src\udmTestDico33Public.pas' {dmDico33Public: TDataModule},
-  udmPublic in '..\..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic: TDataModule},
+  Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPublic: TDataModule},
   udlgPhoneConfirmation in '..\..\src\VCL\udlgPhoneConfirmation.pas' {dlgSmsConfirmation},
   ufrmTestingLogs in '..\src\ufrmTestingLogs.pas' {frmTestingLogs},
   udmDico33Server in '..\..\..\projects\WebBroker\src\Dico33\udmDico33Server.pas' {dmDico33Server: TDataModule},
