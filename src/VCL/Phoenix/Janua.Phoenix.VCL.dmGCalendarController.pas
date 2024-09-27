@@ -131,7 +131,6 @@ type
     qryGoogleEventID: TStringField;
     qryGoogleEventETAG: TStringField;
     qryGoogleEventSUMMARY: TStringField;
-    qryGoogleEventDESCRIPTION: TBlobField;
     qryGoogleEventSTARTTIME: TDateTimeField;
     qryGoogleEventENDTIME: TDateTimeField;
     qryGoogleEventCREATED: TDateTimeField;
@@ -147,13 +146,14 @@ type
     qryGoogleEventUSEDEFAULTREMINDERS: TStringField;
     qryGoogleEventSENDNOTIFICATIONS: TStringField;
     qryGoogleEventISALLDAY: TStringField;
-    qryGoogleEventATTENDEES: TBlobField;
-    qryGoogleEventREMINDERS: TBlobField;
-    qryGoogleEventJGUID: TBytesField;
     qryGoogleEventBACKGROUNDCOLOR: TIntegerField;
     qryGoogleEventFOREGROUNDCOLOR: TIntegerField;
     qryGoogleEventSYNC: TStringField;
     qryRicercaStatino: TUniQuery;
+    qryGoogleEventDESCRIPTION: TWideMemoField;
+    qryGoogleEventATTENDEES: TWideMemoField;
+    qryGoogleEventREMINDERS: TWideMemoField;
+    qryGoogleEventJGUID: TGuidField;
     qryRicercaStatinoCHIAVE: TIntegerField;
     qryRicercaStatinoCLIENTE: TIntegerField;
     qryRicercaStatinoFILIALE: TIntegerField;
@@ -175,9 +175,9 @@ type
     qryRicercaStatinoDATA_INTERVENTO: TDateField;
     qryRicercaStatinoGENERAZIONE_AUTOMATICA: TIntegerField;
     qryRicercaStatinoTECNICO_INTERVENTO: TIntegerField;
-    qryRicercaStatinoSCANSIONE: TWideStringField;
-    qryRicercaStatinoREGISTRO: TWideStringField;
-    qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideStringField;
+    qryRicercaStatinoSCANSIONE: TWideMemoField;
+    qryRicercaStatinoREGISTRO: TWideMemoField;
+    qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideMemoField;
     qryRicercaStatinoSOSPESO: TStringField;
     qryRicercaStatinoDA_ESPORTARE_SUL_WEB: TStringField;
     qryRicercaStatinoRESPONSABILE: TIntegerField;
@@ -198,7 +198,7 @@ type
     qryRicercaStatinoSTATO_LAVORAZIONE: TStringField;
     qryRicercaStatinoDATA_CHIUSURA_DA_SERVER: TDateField;
     qryRicercaStatinoCHIUSURA_EXT: TStringField;
-    qryRicercaStatinoCHIUSURA_STATINO: TWideStringField;
+    qryRicercaStatinoCHIUSURA_STATINO: TWideMemoField;
     qryRicercaStatinoMOBILEWARN_NON_ESEGUITI: TStringField;
     qryRicercaStatinoPRESA_IN_CARICO: TStringField;
     qryRicercaStatinoFORNITURA: TStringField;
@@ -207,13 +207,18 @@ type
     qryRicercaStatinoSTATO: TSmallintField;
     qryRicercaStatinoJGUID: TBytesField;
     qryRicercaStatinoGCAL: TStringField;
+    tabGoogleEventsSYNC: TStringField;
+    spGoogleSync: TUniStoredProc;
     procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
+    procedure tabGoogleEventsBeforePost(DataSet: TDataSet);
   private
     bg: TColor;
     fg: TColor;
     Item: TGCalendarItem;
     procedure PhoenixUpdateGoogleCalendars;
   protected
+    JMonitor: TObject;
     procedure FillGoogleCalendarItems; override;
     procedure InsertGoogleEventsQueue;
     procedure WriteGoogleEventsValues;
@@ -228,6 +233,7 @@ type
     procedure PlannerGoogleSync;
     procedure AddNewGoogleItems;
     procedure UpdateGoogleCalendarItem(Const I: Integer); override;
+    function ConfirmMessage(const aID: string): string;
   end;
 
 var
@@ -235,41 +241,143 @@ var
 
 implementation
 
+uses Janua.Core.AsyncTask;
+
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 { TdmPhoenixVCLGCalendarController }
 
 function TdmPhoenixVCLGCalendarController.AddNewGoogleItem(const aID: string): string;
-begin
-  (*
-    #### ETAG #####
-    So if you make a event.get call and you get an event object back containing an etag back.
-    The next time you make that call you again get an event object back containing an etag.
-    If the etag is the same as the etag you had before then you know the data was not changed
-    since the last time you checked it.
-  *)
-  qryGoogleEvent.Close;
-  qryGoogleEvent.Params[0].AsString := aID;
-  qryGoogleEvent.Open;
-
-  Result := '';
-
-  if qryGoogleEvent.RecordCount > 0 then
+var
+  aRecEvent: TJanuaRecEvent;
+  procedure UpdateStatino;
   begin
+    { Stopwatch := TStopwatch.StartNew; }
+    var
+    sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
 
-    Item := AdvGCalendar1.Items.Add;
+    qryGoogleEvent.Close;
+    qryGoogleEvent.Params[0].AsString := sGUID;
+    qryGoogleEvent.Open;
 
+    if qryGoogleEvent.RecordCount = 0 then
+    begin
+      qryGoogleEvent.Append;
+      qryGoogleEvent.Edit;
+      aRecEvent.SaveToDataset(qryGoogleEvent);
+      qryGoogleEventID.AsString := Item.ID;
+      qryGoogleEventETAG.AsString := Item.ETag;
+      qryGoogleEventCREATED.AsDateTime := Item.Created;
+      qryGoogleEventUPDATED.AsDateTime := Item.Updated;
+      qryGoogleEventSYNC.AsString := 'T';
+      qryGoogleEvent.Post;
+    end
+    else
+    begin
+      qryGoogleEvent.Edit;
+      aRecEvent.SaveToDataset(qryGoogleEvent);
+      qryGoogleEventID.AsString := Item.ID;
+      qryGoogleEventETAG.AsString := Item.ETag;
+      qryGoogleEventCREATED.AsDateTime := Item.Created;
+      qryGoogleEventUPDATED.AsDateTime := Item.Updated;
+      qryGoogleEventSYNC.AsString := 'T';
+      qryGoogleEvent.Post;
+    end;
+
+    if (qryUpdatePlannerEvents.RecordCount = 0) or (qryUpdatePlannerEventsJGUID.AsString <> aRecEvent.JGUID)
+    then
+    begin
+      qryUpdatePlannerEvents.Close;
+      qryUpdatePlannerEvents.Params[0].AsString := sGUID;
+      qryUpdatePlannerEvents.Open;
+    end;
+    if qryUpdatePlannerEvents.RecordCount > 0 then
+    begin
+      var
+      vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+      if vStatino > 0 then
+      begin
+        qryRicercaStatino.Close;
+        qryRicercaStatino.Params[0].AsInteger := vStatino;
+        qryRicercaStatino.Open;
+        if qryRicercaStatino.RecordCount = 1 then
+        begin
+          qryRicercaStatino.Edit;
+          qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := Int(aRecEvent.StartTime);
+          qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := aRecEvent.StartTime - Int(aRecEvent.StartTime);
+          if aRecEvent.Description <> '' then
+            qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := aRecEvent.Description;
+          qryRicercaStatinoGCAL.AsString := 'G';
+          if qryRicercaStatino.FieldByName('STATO').AsInteger = 0 then
+            qryRicercaStatino.FieldByName('STATO').AsInteger := 1
+          else if qryRicercaStatino.FieldByName('STATO').AsInteger = 5 then
+            qryRicercaStatino.FieldByName('STATO').AsInteger := 6;
+          qryRicercaStatino.Post;
+        end;
+      end;
+    end;
+  end;
+
+begin
+  aRecEvent.SetAsJson(aID);
+  Item := AdvGCalendar1.Items.Add;
+  Item.Summary := aRecEvent.Summary;
+  Item.Description := aRecEvent.Description;
+  Item.Location := aRecEvent.Location;
+  Item.Color := TGItemColor.icBoldRed; // TGItemColor(aRecEvent.Color);
+  Item.StartTime := aRecEvent.StartTime;
+  Item.EndTime := aRecEvent.StartTime;
+  Item.Visibility := CloudCustomGCalendar.TVisibility.viDefault;
+  Item.IsAllDay := False;
+  Item.CalendarID := aRecEvent.CalendarID;
+  AdvGCalendar1.Add(Item);
+  aRecEvent.ID := Item.ID;
+  aRecEvent.ETag := Item.ETag;
+  aRecEvent.Created := Item.Created;
+  aRecEvent.Updated := Item.Updated;
+  aRecEvent.Sync := True;
+  Result := aRecEvent.GetAsJson;
+  UpdateStatino;
+  (*
+    Async.Run<Boolean>(
+    function: Boolean
+    begin
+    // This is the "background" anonymous method. Runs in the
+    // background thread, and its result is passed
+    // to the "success" callback.
+    // In this case the result is a String.
+    Result := True;
+    System.TMonitor.Enter(JMonitor);
+    try
+    UpdateStatino;
+    { Elapsed := Stopwatch.Elapsed;
+    Seconds := Elapsed.TotalSeconds; }
+    finally
+    System.TMonitor.Exit(JMonitor);
+    end;
+    end,
+    procedure(const aValue: Boolean)
+    begin
+    // This is the "success" callback. Runs in the UI thread and
+    // gets the result of the "background" anonymous method.
+
+    end,
+    nil);
+  *)
+
+  {
     Item.Summary := qryGoogleEventSUMMARY.AsString;
     if qryGoogleEventDESCRIPTION.BlobSize > 0 then
     begin
-      var
-      aStream := TStringStream.Create;
-      try
-        qryGoogleEventDESCRIPTION.SaveToStream(aStream);
-        Item.Description := aStream.DataString;
-      finally
-        aStream.Free;
-      end;
+    var
+    aStream := TStringStream.Create;
+    try
+    qryGoogleEventDESCRIPTION.SaveToStream(aStream);
+    Item.Description := aStream.DataString;
+    finally
+    aStream.Free;
+    end;
     end;
 
     Item.Location := qryGoogleEventLOCATION.AsString;
@@ -277,26 +385,28 @@ begin
 
     if qryGoogleEventISALLDAY.AsString = 'T' then
     begin
-      var
-      StartDate := qryGoogleEventSTARTTIME.AsDateTime;
-      Item.StartTime := EncodeDateTime(YearOf(StartDate), MonthOf(StartDate), DayOf(StartDate), 0, 0, 0, 0);
-      var
-      EndDate := qryGoogleEventENDTIME.AsDateTime;
-      Item.EndTime := EncodeDateTime(YearOf(EndDate), MonthOf(EndDate), DayOf(EndDate), 0, 0, 0, 0);
-      Item.IsAllDay := true;
+    var
+    StartDate := qryGoogleEventSTARTTIME.AsDateTime;
+    Item.StartTime := EncodeDateTime(YearOf(StartDate), MonthOf(StartDate), DayOf(StartDate), 0, 0, 0, 0);
+    var
+    EndDate := qryGoogleEventENDTIME.AsDateTime;
+    Item.EndTime := EncodeDateTime(YearOf(EndDate), MonthOf(EndDate), DayOf(EndDate), 0, 0, 0, 0);
+    Item.IsAllDay := true;
     end
     else
     begin
-      Item.StartTime := qryGoogleEventSTARTTIME.AsDateTime;
-      Item.EndTime := qryGoogleEventENDTIME.AsDateTime;
-      Item.IsAllDay := False;
+    Item.StartTime := qryGoogleEventSTARTTIME.AsDateTime;
+    Item.EndTime := qryGoogleEventENDTIME.AsDateTime;
+    Item.IsAllDay := False;
     end;
+
 
     Item.Visibility := CloudCustomGCalendar.TVisibility.viDefault;
     Item.CalendarID := qryGoogleEventCALENDARID.AsString;
 
     AdvGCalendar1.Add(Item);
     Result := Item.ID;
+
 
     qryGoogleEvent.Edit;
     qryGoogleEventID.AsString := Item.ID;
@@ -305,7 +415,7 @@ begin
     qryGoogleEventUPDATED.AsDateTime := Item.Updated;
     qryGoogleEventSYNC.AsString := 'T';
     qryGoogleEvent.Post;
-  end;
+  }
 
   { SELECT E.* FROM
     CALENDARIO_EVENTI E where uuid_to_char(JGUID) = :GUID }
@@ -321,25 +431,7 @@ begin
   end;
 end;
 
-procedure TdmPhoenixVCLGCalendarController.DataModuleCreate(Sender: TObject);
-begin
-  inherited;
-  // Fields.FieldByName('CAPTION')
-  ItemCaptionField := nil;
-  // InternalDeleteItem - Associo la procedura Interna Per Cancellare una Scheda:
-  DeleteItemFunc := InternalDeleteItem;
-  // property GoogleCalendarInsertProc: TProc
-  { GoogleCalendarInsertProc := PhoenixInsertGoogleCalendars; }
-
-  dsCalendars.Enabled := False;
-  dsGCalendar.Enabled := False;
-  dsCalendarEvents.Enabled := False;
-  dsGoogleEvents.Enabled := False;
-  dslkpGCalendar.Enabled := False;
-
-end;
-
-function TdmPhoenixVCLGCalendarController.DeleteGoogleItem(const aID: string): string;
+function TdmPhoenixVCLGCalendarController.ConfirmMessage(const aID: string): string;
 var
   aItem: TGCalendarItem;
   aCalendar: TGCalendar;
@@ -364,42 +456,154 @@ begin
     end;
 
     if Assigned(aCalendar) then
-      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime,
+      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime - 1,
         qryGoogleEventENDTIME.AsDateTime + 1);
 
     aItem := AdvGCalendar1.Items.Find(qryGoogleEventID.AsString);
     if Assigned(aItem) then
     begin
-      AdvGCalendar1.Delete(aItem);
-      qryUpdatePlannerEvents.Close;
-      qryUpdatePlannerEvents.Params[0].AsString := aID;
-      qryUpdatePlannerEvents.Open;
-      if qryUpdatePlannerEvents.RecordCount > 0 then
-      begin
-        var
-        vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
-        qryUpdatePlannerEvents.Delete;
-        if vStatino > 0 then
-        begin
-          qryRicercaStatino.Close;
-          qryRicercaStatino.Params[0].AsInteger := vStatino;
-          qryRicercaStatino.Open;
-          if qryRicercaStatino.RecordCount = 1 then
-          begin
-            qryRicercaStatino.Edit;
-            qryRicercaStatinoSTATO.AsInteger := qryRicercaStatinoSTATO.AsInteger - 1;
-            qryRicercaStatinoAPPUNTAMENTO_DATA.Clear;
-            qryRicercaStatinoAPPUNTAMENTO_ORA.Clear;
-            qryRicercaStatinoGCAL.Clear;
-            qryRicercaStatino.Post;
-          end;
-        end;
-        qryGoogleEvent.Delete;
-      end;
+      aItem.Color := TGItemColor.icDefault;
+      AdvGCalendar1.Update(aItem);
+    end;
+  end;
+end;
 
+procedure TdmPhoenixVCLGCalendarController.DataModuleCreate(Sender: TObject);
+begin
+  inherited;
+  // Fields.FieldByName('CAPTION')
+  ItemCaptionField := nil;
+  // InternalDeleteItem - Associo la procedura Interna Per Cancellare una Scheda:
+  DeleteItemFunc := InternalDeleteItem;
+  // property GoogleCalendarInsertProc: TProc
+  { GoogleCalendarInsertProc := PhoenixInsertGoogleCalendars; }
+
+  dsCalendars.Enabled := False;
+  dsGCalendar.Enabled := False;
+  dsCalendarEvents.Enabled := False;
+  dsGoogleEvents.Enabled := False;
+  dslkpGCalendar.Enabled := False;
+
+  JMonitor := TObject.Create;
+end;
+
+procedure TdmPhoenixVCLGCalendarController.DataModuleDestroy(Sender: TObject);
+begin
+  inherited;
+  JMonitor.Free;
+  JMonitor := nil;
+end;
+
+function TdmPhoenixVCLGCalendarController.DeleteGoogleItem(const aID: string): string;
+var
+  aItem: TGCalendarItem;
+  aCalendar: TGCalendar;
+  aRecEvent: TJanuaRecEvent;
+  vStatino: Int64;
+
+  procedure DeleteRecords;
+  begin
+
+    { Stopwatch := TStopwatch.StartNew; }
+    var
+    sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
+
+    qryGoogleEvent.Close;
+    qryGoogleEvent.Params[0].AsString := sGUID;
+    qryGoogleEvent.Open;
+
+    if qryGoogleEvent.RecordCount > 0 then
+    begin
+      (*
+        qryUpdatePlannerEvents.Close;
+        qryUpdatePlannerEvents.Params[0].AsString := sGUID;
+        qryUpdatePlannerEvents.Open;
+        if qryUpdatePlannerEvents.RecordCount > 0 then
+        begin
+      *)
+      { qryUpdatePlannerEvents.Delete; }
+      if vStatino > 0 then
+      begin
+        qryRicercaStatino.Close;
+        qryRicercaStatino.Params[0].AsInteger := vStatino;
+        qryRicercaStatino.Open;
+        if qryRicercaStatino.RecordCount = 1 then
+        begin
+          qryRicercaStatino.Edit;
+          if qryRicercaStatinoSTATO.AsInteger in [1, 6] then
+            qryRicercaStatinoSTATO.AsInteger := qryRicercaStatinoSTATO.AsInteger - 1;
+          qryRicercaStatinoAPPUNTAMENTO_DATA.Clear;
+          qryRicercaStatinoAPPUNTAMENTO_ORA.Clear;
+          qryRicercaStatinoGCAL.Clear;
+          qryRicercaStatino.Post;
+        end;
+      end;
+      qryGoogleEvent.Delete;
     end;
   end;
 
+begin
+  aRecEvent.SetAsJson(aID);
+  { ShowMessage('ARecEvent Set'); }
+  vStatino := aRecEvent.RefID; { qryUpdatePlannerEventsSTATINO.AsInteger };
+
+  var
+  aCalendarID := aRecEvent.CalendarID;
+
+  if AdvGCalendar1.Calendars.Count = 0 then
+    AdvGCalendar1.GetCalendars();
+
+  for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+      aCalendar := AdvGCalendar1.Calendars[J];
+  end;
+
+  { ShowMessage('Calendar: ' + aCalendarID); }
+
+  Assert(Assigned(aCalendar), 'ACalendar Not Found');
+
+  AdvGCalendar1.GetCalendar(aCalendar.ID, Min(aRecEvent.StartTime, aRecEvent.OldStartTime) - 1,
+    Max(aRecEvent.EndTime, aRecEvent.OldEndTime) + 1);
+  aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
+
+  Assert(Assigned(aItem), 'Item Not Found');
+
+  if Assigned(aItem) then
+  begin
+    AdvGCalendar1.Delete(aItem);
+  end;
+
+  DeleteRecords;
+
+  Result := aID;
+
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      // This is the "background" anonymous method. Runs in the
+      // background thread, and its result is passed
+      // to the "success" callback.
+      // In this case the result is a String.
+      Result := True;
+      if Assigned(JMonitor) then
+        System.TMonitor.Enter(JMonitor);
+      try
+
+      finally
+        if Assigned(JMonitor) then
+          System.TMonitor.Exit(JMonitor);
+      end;
+    end,
+    procedure(const aValue: Boolean)
+    begin
+      // This is the "success" callback. Runs in the UI thread and
+      // gets the result of the "background" anonymous method.
+
+    end,
+  // nil to run default behaviour
+  nil);
 end;
 
 procedure TdmPhoenixVCLGCalendarController.FillGoogleCalendarItems;
@@ -434,12 +638,14 @@ begin
       else
       begin
         var
-          { bTest := False; }
-        bTest := (tabGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
+        bTest := tabGoogleEventsETAG.AsString <> AdvGCalendar1.Items[I].ETag;
+        {
+          bTest := (tabGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
           (tabGoogleEventsENDTIME.AsDateTime <> AdvGCalendar1.Items[I].EndTime) or
           (tabGoogleEventsSUMMARY.AsString <> AdvGCalendar1.Items[I].Summary) or
           (tabGoogleEventsLOCATION.AsString <> AdvGCalendar1.Items[I].Location) or
           (tabGoogleEventsCALENDARID.AsString <> AdvGCalendar1.Items[I].CalendarID);
+        }
         if bTest then
         begin
           tabGoogleEvents.Edit;
@@ -538,6 +744,7 @@ begin
       end;
     end;
   end;
+  spGoogleSync.ExecProc;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.InsertGoogleEventsQueue;
@@ -609,7 +816,7 @@ end;
 
 procedure TdmPhoenixVCLGCalendarController.PlannerGoogleSync;
 begin
-  JanuaUniConnection1.Connected := true;
+  JanuaUniConnection1.Connected := True;
 
   tabGoogleCalendars.Open;
   tabGoogleCalendars.Last;
@@ -626,10 +833,16 @@ begin
 
 end;
 
+procedure TdmPhoenixVCLGCalendarController.tabGoogleEventsBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  tabGoogleEventsSYNC.AsString := 'T';
+end;
+
 procedure TdmPhoenixVCLGCalendarController.UpdateGoogleCalendarItem(const I: Integer);
 begin
   tabGoogleEventsETAG.AsString := AdvGCalendar1.Items[I].ETag;
-  tabGoogleEventsCOLOR.Value := Ord(CurrentGCalendar.Color);
+  tabGoogleEventsCOLOR.Value := Ord(AdvGCalendar1.Items[I].Color { CurrentGCalendar.Color } );
   tabGoogleEventsBACKGROUNDCOLOR.AsInteger := bg;
   tabGoogleEventsFOREGROUNDCOLOR.AsInteger := fg;
   tabGoogleEventsCALENDARID.AsString := AdvGCalendar1.Items[I].CalendarID;
@@ -660,65 +873,116 @@ function TdmPhoenixVCLGCalendarController.UpdateGoogleItem(const aID: string): s
 var
   aItem: TGCalendarItem;
   aCalendar: TGCalendar;
+  aRecEvent: TJanuaRecEvent;
 begin
-  qryGoogleEvent.Close;
-  qryGoogleEvent.Params[0].AsString := aID;
-  qryGoogleEvent.Open;
+  aRecEvent.SetAsJson(aID);
+  { ShowMessage('ARecEvent Set'); }
 
-  Result := '';
+  var
+  aCalendarID := aRecEvent.CalendarID;
 
-  if qryGoogleEvent.RecordCount > 0 then
-  begin
-    var
-    aCalendarID := qryGoogleEventCALENDARID.AsString;
-
+  if AdvGCalendar1.Calendars.Count = 0 then
     AdvGCalendar1.GetCalendars();
 
-    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
-    begin
-      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
-        aCalendar := AdvGCalendar1.Calendars[J];
-    end;
-
-    if Assigned(aCalendar) then
-      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime - 1,
-        qryGoogleEventENDTIME.AsDateTime + 1);
-
-    aItem := AdvGCalendar1.Items.Find(qryGoogleEventID.AsString);
-    if Assigned(aItem) then
-    begin
-      aItem.StartTime := qryGoogleEventSTARTTIME.AsDateTime;
-      aItem.EndTime := qryGoogleEventENDTIME.AsDateTime;
-      aItem.Description := qryGoogleEventDESCRIPTION.AsString;
-      AdvGCalendar1.Update(aItem);
-
-      qryUpdatePlannerEvents.Close;
-      qryUpdatePlannerEvents.Params[0].AsString := aID;
-      qryUpdatePlannerEvents.Open;
-      if qryUpdatePlannerEvents.RecordCount > 0 then
-      begin
-        var
-        vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
-
-        if vStatino > 0 then
-        begin
-          qryRicercaStatino.Close;
-          qryRicercaStatino.Params[0].AsInteger := vStatino;
-          qryRicercaStatino.Open;
-          if qryRicercaStatino.RecordCount = 1 then
-          begin
-            qryRicercaStatino.Edit;
-            qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := qryGoogleEventSTARTTIME.AsDateTime;
-            qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := qryGoogleEventENDTIME.AsDateTime;
-            qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := qryGoogleEventDESCRIPTION.AsString;
-            qryRicercaStatino.Post;
-          end;
-        end;
-        {qryGoogleEvent.Delete;}
-      end;
-
-    end;
+  for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+      aCalendar := AdvGCalendar1.Calendars[J];
   end;
+
+  { ShowMessage('Calendar: ' + aCalendarID); }
+
+  Assert(Assigned(aCalendar), 'ACalendar Not Found');
+
+  AdvGCalendar1.GetCalendar(aCalendar.ID, Min(aRecEvent.StartTime, aRecEvent.OldEndTime) - 1,
+    Max(aRecEvent.EndTime, aRecEvent.OldEndTime) + 1);
+  aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
+
+  Assert(Assigned(aItem), 'Item Not Found');
+
+  if Assigned(aItem) then
+  begin
+    aItem.StartTime := aRecEvent.StartTime;
+    aItem.EndTime := aRecEvent.EndTime;
+    aItem.Description := aRecEvent.Description;
+    AdvGCalendar1.Update(aItem);
+    aRecEvent.ETag := aItem.ETag;
+    aRecEvent.Updated := aItem.Updated;
+  end;
+
+  Result := aRecEvent.GetAsJson;
+
+  { ShowMessage(Result); }
+
+  Async.Run<Boolean>(
+    function: Boolean
+    begin
+      // This is the "background" anonymous method. Runs in the
+      // background thread, and its result is passed
+      // to the "success" callback.
+      // In this case the result is a String.
+      Result := True;
+      if Assigned(JMonitor) then
+        System.TMonitor.Enter(JMonitor);
+      try
+        { Stopwatch := TStopwatch.StartNew; }
+        var
+        sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
+        sGUID := StringReplace(sGUID, '}', '', []);
+
+        qryGoogleEvent.Close;
+        qryGoogleEvent.Params[0].AsString := sGUID;
+        qryGoogleEvent.Open;
+
+        if qryGoogleEvent.RecordCount = 0 then
+        begin
+          qryGoogleEvent.Edit;
+          aRecEvent.SaveToDataset(qryGoogleEvent);
+          qryGoogleEvent.Post;
+        end;
+
+        if not(qryUpdatePlannerEvents.RecordCount > 0) and
+          not(qryUpdatePlannerEventsJGUID.AsString = aRecEvent.JGUID) then
+        begin
+          qryUpdatePlannerEvents.Close;
+          qryUpdatePlannerEvents.Params[0].AsString := sGUID;
+          qryUpdatePlannerEvents.Open;
+        end;
+        if qryUpdatePlannerEvents.RecordCount > 0 then
+        begin
+          var
+          vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+
+          if vStatino > 0 then
+          begin
+            qryRicercaStatino.Close;
+            qryRicercaStatino.Params[0].AsInteger := vStatino;
+            qryRicercaStatino.Open;
+            if qryRicercaStatino.RecordCount = 1 then
+            begin
+              qryRicercaStatino.Edit;
+              qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := Int(aRecEvent.StartTime);
+              qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := aRecEvent.StartTime - Int(aRecEvent.StartTime);
+              qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := aRecEvent.Description;
+              qryRicercaStatino.Post;
+            end;
+          end;
+          { qryGoogleEvent.Delete; }
+        end;
+      finally
+        if Assigned(JMonitor) then
+          System.TMonitor.Exit(JMonitor);
+      end;
+    end,
+    procedure(const aValue: Boolean)
+    begin
+      // This is the "success" callback. Runs in the UI thread and
+      // gets the result of the "background" anonymous method.
+
+    end,
+  // nil to run default behaviour
+  nil);
+
 end;
 
 procedure TdmPhoenixVCLGCalendarController.WriteGoogleEventsValues;
@@ -737,7 +1001,8 @@ begin
   end;
 
   Item.Location := qryGoogleEventsQueueLOCATION.AsString;
-  Item.Color := TGItemColor.icBoldRed; // TGItemColor(qryGoogleEventsQueueCOLOR.AsInteger);
+  Item.Color := TGItemColor.icBoldRed;
+  // TGItemColor(qryGoogleEventsQueueCOLOR.AsInteger);
 
   if qryGoogleEventsQueueISALLDAY.AsString = 'T' then
   begin
@@ -747,7 +1012,7 @@ begin
     var
     EndDate := qryGoogleEventsQueueENDTIME.AsDateTime;
     Item.EndTime := EncodeDateTime(YearOf(EndDate), MonthOf(EndDate), DayOf(EndDate), 0, 0, 0, 0);
-    Item.IsAllDay := true;
+    Item.IsAllDay := True;
   end
   else
   begin

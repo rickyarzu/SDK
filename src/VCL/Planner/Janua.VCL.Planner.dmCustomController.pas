@@ -103,7 +103,7 @@ type
     lkpGCalendarAliasBACK_COLOR: TIntegerField;
     lkpGCalendarAliasALIAS: TStringField;
     lkpGCalendarAliasJGUID: TGuidField;
-    actGoogleSync: TAction;
+    actEventGoogleSync: TAction;
     vtGoogleColors: TVirtualTable;
     vtGoogleColorsID: TSmallintField;
     vtGoogleColorsBACK_COLOR: TIntegerField;
@@ -174,7 +174,7 @@ type
     procedure DBDaySourceCalendarInsertItem(Sender: TObject; APlannerItem: TPlannerItem);
     procedure DBDaySourceGCalendarFieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure vtGoogleEventsBeforePost(DataSet: TDataSet);
-    procedure actGoogleSyncExecute(Sender: TObject);
+    procedure actEventGoogleSyncExecute(Sender: TObject);
     procedure actCalendarColorExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
@@ -351,6 +351,7 @@ type
     FUpdatingFromDB: Boolean;
     FOnAfterConnect: TNotifyEvent;
     FPlannerPDFIO2: TAdvPlannerPDFIO;
+    FSelectedItem: TPlannerItem;
     procedure SetDeleteItemFunc(const Value: TItemFunc);
     procedure SetItemModifyFunc(const Value: TItemFunc);
     procedure SetItemUpdateProc(const Value: TItemProc);
@@ -374,6 +375,7 @@ type
     procedure SetUpdatingFromDB(const Value: Boolean);
     procedure SetOnAfterConnect(const Value: TNotifyEvent);
     procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
+    procedure SetSelectedItem(const Value: TPlannerItem);
   protected
     FGConnected: Boolean;
     Fgcal: TGCalendar;
@@ -430,6 +432,7 @@ type
     /// <summary> Creates a Googgle Event from a Calendar Items and stores it to  </summary>
     function CreateGoogleEvent(const aCalendarItem: ITimetable): IGoogleCalendar;
   public
+    property SelectedItem: TPlannerItem read FSelectedItem write SetSelectedItem;
     property PlannerPDFIO: TAdvPlannerPDFIO read FPlannerPDFIO write SetPlannerPDFIO;
     property PlannerPDFIO2: TAdvPlannerPDFIO read FPlannerPDFIO2 write SetPlannerPDFIO2;
     property GooglePlannerPDFIO: TAdvPlannerPDFIO read FGooglePlannerPDFIO write SetGooglePlannerPDFIO;
@@ -818,7 +821,7 @@ begin
     Planner.PopupPlannerItem.Font.Assign(FontDialog1.Font);
 end;
 
-procedure TdmVCLPlannerCustomController.actGoogleSyncExecute(Sender: TObject);
+procedure TdmVCLPlannerCustomController.actEventGoogleSyncExecute(Sender: TObject);
 begin
   inherited;
   PlannerGoogleSync;
@@ -1922,6 +1925,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetSelectedGCalendar(const Value: TJanuaGCalendar);
 begin
   FSelectedGCalendar := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetSelectedItem(const Value: TPlannerItem);
+begin
+  FSelectedItem := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetStartTime(const Value: TTime);

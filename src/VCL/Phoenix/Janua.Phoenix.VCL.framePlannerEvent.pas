@@ -83,6 +83,8 @@ type
     Label7: TLabel;
     DBText11: TDBText;
     InviaMsgWhatsApp1: TMenuItem;
+    Button1: TButton;
+    btnWhatsApp: TButton;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -106,6 +108,10 @@ type
       FromBegin, FromEnd, FromPos, ToBegin, ToEnd, ToPos: Integer);
     procedure DBPlanner1ItemSize(Sender: TObject; Item: TPlannerItem;
       Position, FromBegin, FromEnd, ToBegin, ToEnd: Integer);
+    procedure DBPlanner1DragOverCell(Sender, Source: TObject; X, Y: Integer; State: TDragState;
+      var Accept: Boolean);
+    procedure DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
+    procedure ModificaAppuntamento2Click(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -116,15 +122,19 @@ type
 
     FID: Integer;
     FDBKey: string;
-    SelectedItem: TPlannerItem;
     FRecordItem: TJanuaRecEvent;
 
     ItemIDField: TField;
     FreportID: Integer;
+    FSelectedItem: TPlannerItem;
     function GetTecnicoID: Integer;
     procedure SetTecnicoID(const Value: Integer);
+    procedure SetSelectedItem(const Value: TPlannerItem);
 
     { Private declarations }
+  protected
+    property SelectedItem: TPlannerItem read FSelectedItem write SetSelectedItem;
+
   public
     { Public declarations }
     procedure AfterConstruction; override;
@@ -137,7 +147,9 @@ var
 
 implementation
 
-uses System.Math, DlgNuovoStatino, Janua.Phoenix.VCL.dmPlannerController, udmSVGImageList;
+uses System.Math, System.StrUtils, DlgNuovoStatino,
+  // Janua
+  Janua.Core.Functions, Janua.Phoenix.VCL.dmPlannerController, udmSVGImageList;
 
 {$R *.dfm}
 
@@ -284,10 +296,63 @@ begin
     btnAddClick(Sender);
 end;
 
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
+begin
+  inherited;
+  // Create new item only when no items are in the cell
+  { if DBPlanner1.CellToItemNum(X, Y) = 0 then }
+  begin
+    var
+    dbp := DBPlanner1.CreateItem;
+    dbp.ItemBegin := Y;
+    dbp.ItemEnd := Y + 2;
+    dbp.itemPos := X;
+    if dbp.DBKey = '' then
+      dbp.DBKey := TGUID.NewGuid.ToString;
+    if dbp.CaptionText = '' then
+      dbp.CaptionText := dmVCLPhoenixPlannerController.vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
+
+    var
+    vIndex := dbp.Index;
+    var
+    vNote := dmVCLPhoenixPlannerController.vtReportPlannerNOTE_PER_IL_TECNICO.AsString;
+
+    dbp.CaptionType := TCaptionType.ctTimeText;
+
+    if dbp.Text.Text = '' then
+      dbp.Text.Text := vNote;
+
+    var
+    vTest := dbp.ItemStartTime;
+    var
+    vTest2 := dbp.ItemEndTime;
+    var
+    vReport := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
+
+    FRecordItem := dmVCLPhoenixPlannerController.InsertEvent(vTest, vTest2,
+      dbp.CaptionText, vReport);
+
+    Screen.Cursor := crHourGlass;
+    try
+      Sleep(3000);
+    finally
+      Screen.Cursor := crDefault;
+    end;
+  end;
+end;
+
 procedure TframeVCLPhoenixPlannerEvent.DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer;
   State: TDragState; var Accept: Boolean);
 begin
   Accept := (Source is TDBImage);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.DBPlanner1DragOverCell(Sender, Source: TObject; X, Y: Integer;
+  State: TDragState; var Accept: Boolean);
+begin
+  inherited;
+  // Accept this only when no items are in this cell
+  Accept := True; // DBPlanner1.CellToItemNum(X, Y) = 0;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemDrag(Sender: TObject; Item: TPlannerItem;
@@ -389,6 +454,23 @@ end;
 function TframeVCLPhoenixPlannerEvent.GetTecnicoID: Integer;
 begin
   Result := cboTecnici.Value.ToInteger;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.ModificaAppuntamento2Click(Sender: TObject);
+begin
+  inherited;
+  if JMessageDlg('Elimino l''appuntamento?', FSelectedItem.ItemText) then
+  begin
+    Self.DBDaySource1.DeleteDBItem(DBPlanner1);
+    DBDaySource1.DataSource.DataSet.Close;
+    DBDaySource1.DataSource.DataSet.Open;
+  end;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.SetSelectedItem(const Value: TPlannerItem);
+begin
+  FSelectedItem := Value;
+  dmVCLPhoenixPlannerController.SelectedItem := FSelectedItem;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.SetTecnicoID(const Value: Integer);

@@ -1,6 +1,6 @@
 inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
-  Height = 555
-  Width = 987
+  Height = 553
+  Width = 754
   inherited JanuaUniConnection1: TJanuaUniConnection
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
@@ -29,7 +29,26 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       040003000200494402000000000000000A004241434B5F434F4C4F5203000000
       000000000A00464F52455F434F4C4F520300000000000000000000000000}
   end
-  object tabGoogleCalendars: TUniTable [31]
+  inherited vtGoogleEvents: TVirtualTable
+    Data = {
+      04001A0002004944010080000000000004004554414701008000000000000700
+      53554D4D41525901000001000000000B004445534352495054494F4E27000000
+      000000000900535441525454494D450B000000000000000700454E4454494D45
+      0B000000000000000700435245415445440B0000000000000007005550444154
+      45440B0000000000000008004953414C4C444159050000000000000008004C4F
+      434154494F4E0100800000000000060053544154555302000000000000000A00
+      5649534942494C49545903000000000000000A00524543555252454E43450100
+      3C00000000000B00524543555252494E47494401003C00000000000800534551
+      55454E434503000000000000000500434F4C4F52020000000000000013005553
+      4544454641554C5452454D494E444552530500000000000000110053454E444E
+      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
+      01008000000000000900417474656E646565731000000000000000090052656D
+      696E64657273100000000000000005004A475549442300260000000000090043
+      616C63436F6C6F7203000000000000000F004241434B47524F554E44434F4C4F
+      5203000000000000000F00464F524547524F554E44434F4C4F52030000000000
+      0000040053594E430100010000000000000000000000}
+  end
+  object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
     DataTypeMap = <
       item
@@ -87,7 +106,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       BlobType = ftWideMemo
     end
   end
-  object tabGoogleEvents: TUniTable [32]
+  object tabGoogleEvents: TUniTable
     TableName = 'GOOGLE_CALENDAR_EVENTS'
     DataTypeMap = <
       item
@@ -108,6 +127,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       end>
     Connection = JanuaUniConnection1
     IndexFieldNames = 'ID'
+    BeforePost = tabGoogleEventsBeforePost
     Left = 528
     Top = 200
     object tabGoogleEventsID: TStringField
@@ -202,8 +222,13 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     object tabGoogleEventsFOREGROUNDCOLOR: TIntegerField
       FieldName = 'FOREGROUNDCOLOR'
     end
+    object tabGoogleEventsSYNC: TStringField
+      FieldName = 'SYNC'
+      FixedChar = True
+      Size = 1
+    end
   end
-  object qryGoogleEventsQueue: TUniQuery [33]
+  object qryGoogleEventsQueue: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
       
@@ -304,7 +329,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       Size = 1
     end
   end
-  object qryPlannerEvents: TUniQuery [34]
+  object qryPlannerEvents: TUniQuery
     KeyFields = 'JGUID'
     SQLInsert.Strings = (
       'INSERT INTO CALENDARIO_EVENTI'
@@ -458,7 +483,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       Lookup = True
     end
   end
-  object qryUpdatePlannerEvents: TUniQuery [35]
+  object qryUpdatePlannerEvents: TUniQuery
     KeyFields = 'JGUID'
     SQLInsert.Strings = (
       'INSERT INTO CALENDARIO_EVENTI'
@@ -587,7 +612,78 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       Size = 128
     end
   end
-  object qryGoogleEvent: TUniQuery [36]
+  object qryGoogleEvent: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO GOOGLE_CALENDAR_EVENTS'
+      
+        '  (ID, ETAG, SUMMARY, DESCRIPTION, STARTTIME, ENDTIME, CREATED, ' +
+        'UPDATED, LOCATION, STATUS, VISIBILITY, RECURRENCE, RECURRINGID, ' +
+        'SEQUENCE, COLOR, CALENDARID, USEDEFAULTREMINDERS, SENDNOTIFICATI' +
+        'ONS, ISALLDAY, ATTENDEES, REMINDERS, JGUID, BACKGROUNDCOLOR, FOR' +
+        'EGROUNDCOLOR, SYNC)'
+      'VALUES'
+      
+        '  (:ID, :ETAG, :SUMMARY, :DESCRIPTION, :STARTTIME, :ENDTIME, :CR' +
+        'EATED, :UPDATED, :LOCATION, :STATUS, :VISIBILITY, :RECURRENCE, :' +
+        'RECURRINGID, :SEQUENCE, :COLOR, :CALENDARID, :USEDEFAULTREMINDER' +
+        'S, :SENDNOTIFICATIONS, :ISALLDAY, :ATTENDEES, :REMINDERS, :JGUID' +
+        ', :BACKGROUNDCOLOR, :FOREGROUNDCOLOR, :SYNC)')
+    SQLDelete.Strings = (
+      'DELETE FROM GOOGLE_CALENDAR_EVENTS'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLUpdate.Strings = (
+      'UPDATE GOOGLE_CALENDAR_EVENTS'
+      'SET'
+      
+        '  ID = :ID, ETAG = :ETAG, SUMMARY = :SUMMARY, DESCRIPTION = :DES' +
+        'CRIPTION, STARTTIME = :STARTTIME, ENDTIME = :ENDTIME, CREATED = ' +
+        ':CREATED, UPDATED = :UPDATED, LOCATION = :LOCATION, STATUS = :ST' +
+        'ATUS, VISIBILITY = :VISIBILITY, RECURRENCE = :RECURRENCE, RECURR' +
+        'INGID = :RECURRINGID, SEQUENCE = :SEQUENCE, COLOR = :COLOR, CALE' +
+        'NDARID = :CALENDARID, USEDEFAULTREMINDERS = :USEDEFAULTREMINDERS' +
+        ', SENDNOTIFICATIONS = :SENDNOTIFICATIONS, ISALLDAY = :ISALLDAY, ' +
+        'ATTENDEES = :ATTENDEES, REMINDERS = :REMINDERS, JGUID = :JGUID, ' +
+        'BACKGROUNDCOLOR = :BACKGROUNDCOLOR, FOREGROUNDCOLOR = :FOREGROUN' +
+        'DCOLOR, SYNC = :SYNC'
+      'WHERE'
+      '  JGUID = :Old_JGUID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM GOOGLE_CALENDAR_EVENTS'
+      'WHERE'
+      'JGUID = :Old_JGUID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ID, ETAG, SUMMARY, DESCRIPTION, STARTTIME, ENDTIME, CREAT' +
+        'ED, UPDATED, LOCATION, STATUS, VISIBILITY, RECURRENCE, RECURRING' +
+        'ID, SEQUENCE, COLOR, CALENDARID, USEDEFAULTREMINDERS, SENDNOTIFI' +
+        'CATIONS, ISALLDAY, ATTENDEES, REMINDERS, JGUID, BACKGROUNDCOLOR,' +
+        ' FOREGROUNDCOLOR, SYNC FROM GOOGLE_CALENDAR_EVENTS'
+      'WHERE'
+      '  JGUID = :JGUID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM GOOGLE_CALENDAR_EVENTS'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'DESCRIPTION'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end
+      item
+        FieldName = 'ATTENDEES'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'REMINDERS'
+        FieldType = ftWideMemo
+      end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
       'SELECT * FROM  GOOGLE_CALENDAR_EVENTS '
@@ -613,9 +709,6 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     object qryGoogleEventSUMMARY: TStringField
       FieldName = 'SUMMARY'
       Size = 256
-    end
-    object qryGoogleEventDESCRIPTION: TBlobField
-      FieldName = 'DESCRIPTION'
     end
     object qryGoogleEventSTARTTIME: TDateTimeField
       FieldName = 'STARTTIME'
@@ -673,15 +766,6 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       FixedChar = True
       Size = 1
     end
-    object qryGoogleEventATTENDEES: TBlobField
-      FieldName = 'ATTENDEES'
-    end
-    object qryGoogleEventREMINDERS: TBlobField
-      FieldName = 'REMINDERS'
-    end
-    object qryGoogleEventJGUID: TBytesField
-      FieldName = 'JGUID'
-    end
     object qryGoogleEventBACKGROUNDCOLOR: TIntegerField
       FieldName = 'BACKGROUNDCOLOR'
     end
@@ -693,8 +777,25 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       FixedChar = True
       Size = 1
     end
+    object qryGoogleEventDESCRIPTION: TWideMemoField
+      FieldName = 'DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object qryGoogleEventATTENDEES: TWideMemoField
+      FieldName = 'ATTENDEES'
+      BlobType = ftWideMemo
+    end
+    object qryGoogleEventREMINDERS: TWideMemoField
+      FieldName = 'REMINDERS'
+      BlobType = ftWideMemo
+    end
+    object qryGoogleEventJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
   end
-  object qryRicercaStatino: TUniQuery [37]
+  object qryRicercaStatino: TUniQuery
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
       '  (APPUNTAMENTO_DATA, APPUNTAMENTO_ORA, STATO, JGUID, GCAL)'
@@ -731,13 +832,11 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     DataTypeMap = <
       item
         DBType = 416
-        FieldType = ftWideString
-        FieldLength = 2048
+        FieldType = ftWideMemo
       end
       item
         FieldName = 'NOTE_PER_IL_TECNICO'
-        FieldType = ftWideString
-        FieldLength = 1024
+        FieldType = ftWideMemo
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
@@ -828,17 +927,17 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     object qryRicercaStatinoTECNICO_INTERVENTO: TIntegerField
       FieldName = 'TECNICO_INTERVENTO'
     end
-    object qryRicercaStatinoSCANSIONE: TWideStringField
+    object qryRicercaStatinoSCANSIONE: TWideMemoField
       FieldName = 'SCANSIONE'
-      Size = 2048
+      BlobType = ftWideMemo
     end
-    object qryRicercaStatinoREGISTRO: TWideStringField
+    object qryRicercaStatinoREGISTRO: TWideMemoField
       FieldName = 'REGISTRO'
-      Size = 2048
+      BlobType = ftWideMemo
     end
-    object qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideStringField
+    object qryRicercaStatinoNOTE_PER_IL_TECNICO: TWideMemoField
       FieldName = 'NOTE_PER_IL_TECNICO'
-      Size = 1024
+      BlobType = ftWideMemo
     end
     object qryRicercaStatinoSOSPESO: TStringField
       FieldName = 'SOSPESO'
@@ -923,9 +1022,9 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       FieldName = 'CHIUSURA_EXT'
       Size = 50
     end
-    object qryRicercaStatinoCHIUSURA_STATINO: TWideStringField
+    object qryRicercaStatinoCHIUSURA_STATINO: TWideMemoField
       FieldName = 'CHIUSURA_STATINO'
-      Size = 2048
+      BlobType = ftWideMemo
     end
     object qryRicercaStatinoMOBILEWARN_NON_ESEGUITI: TStringField
       FieldName = 'MOBILEWARN_NON_ESEGUITI'
@@ -960,23 +1059,13 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       Size = 1
     end
   end
-  inherited vtGoogleEvents: TVirtualTable
-    Data = {
-      04001A0002004944010080000000000004004554414701008000000000000700
-      53554D4D41525901000001000000000B004445534352495054494F4E27000000
-      000000000900535441525454494D450B000000000000000700454E4454494D45
-      0B000000000000000700435245415445440B0000000000000007005550444154
-      45440B0000000000000008004953414C4C444159050000000000000008004C4F
-      434154494F4E0100800000000000060053544154555302000000000000000A00
-      5649534942494C49545903000000000000000A00524543555252454E43450100
-      3C00000000000B00524543555252494E47494401003C00000000000800534551
-      55454E434503000000000000000500434F4C4F52020000000000000013005553
-      4544454641554C5452454D494E444552530500000000000000110053454E444E
-      4F54494649434154494F4E5305000000000000000A0043414C454E4441524944
-      01008000000000000900417474656E646565731000000000000000090052656D
-      696E64657273100000000000000005004A475549442300260000000000090043
-      616C63436F6C6F7203000000000000000F004241434B47524F554E44434F4C4F
-      5203000000000000000F00464F524547524F554E44434F4C4F52030000000000
-      0000040053594E430100010000000000000000000000}
+  object spGoogleSync: TUniStoredProc
+    StoredProcName = 'GOOGLE_SYNC_PRC'
+    SQL.Strings = (
+      'EXECUTE PROCEDURE GOOGLE_SYNC_PRC')
+    Connection = JanuaUniConnection1
+    Left = 520
+    Top = 472
+    CommandStoredProcName = 'GOOGLE_SYNC_PRC'
   end
 end

@@ -5,12 +5,12 @@ interface
 uses
   // RTL
   System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils, System.UITypes,
-  System.DateUtils, System.Math, System.Diagnostics, System.TimeSpan,
+  System.DateUtils, System.Math, System.Diagnostics, System.TimeSpan, System.Generics.Collections,
   // UniDac - DB
   Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
   // VCL / TMS
   SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
-  PictureContainer, VCL.Graphics, JvImageList,
+  PictureContainer, VCL.Graphics, JvImageList, VCL.Forms,
   // TMS Cloud
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
   DBPlanner, Planner, CloudvCal, CloudWebDav, CloudCustomLive,
@@ -357,7 +357,6 @@ type
     Action3: TAction;
     Action4: TAction;
     actDlgDeleteActions: TAction;
-    qryPersonalPlannerEventsNOTE: TWideStringField;
     tbGoogleColorsID: TSmallintField;
     tbGoogleColorsBACK_COLOR: TIntegerField;
     tbGoogleColorsFORE_COLOR: TIntegerField;
@@ -383,22 +382,39 @@ type
     qryCellulariStatinoFTEL: TStringField;
     qryCellulariStatinoRISULTATO: TStringField;
     qryElencoEventiWhatsApp: TUniQuery;
-    IntegerField1: TIntegerField;
-    IntegerField2: TIntegerField;
-    IntegerField3: TIntegerField;
-    DateTimeField1: TDateTimeField;
-    DateTimeField2: TDateTimeField;
-    StringField2: TStringField;
-    StringField3: TStringField;
-    IntegerField4: TIntegerField;
-    GuidField1: TGuidField;
-    SmallintField1: TSmallintField;
-    BlobField1: TBlobField;
-    IntegerField5: TIntegerField;
-    IntegerField6: TIntegerField;
-    IntegerField7: TIntegerField;
-    StringField4: TStringField;
-    WideStringField1: TWideStringField;
+    qryPersonalPlannerEventsNOTE: TWideMemoField;
+    qryPersonalPlannerEventsWANUMBER: TStringField;
+    qryPersonalPlannerEventsWA_SENT: TStringField;
+    actGlobalGoogleSync: TAction;
+    UniQuery1: TUniQuery;
+    qryElencoEventiWhatsAppID: TStringField;
+    qryElencoEventiWhatsAppETAG: TStringField;
+    qryElencoEventiWhatsAppSUMMARY: TStringField;
+    qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppCREATED: TDateTimeField;
+    qryElencoEventiWhatsAppUPDATED: TDateTimeField;
+    qryElencoEventiWhatsAppLOCATION: TStringField;
+    qryElencoEventiWhatsAppSTATUS: TSmallintField;
+    qryElencoEventiWhatsAppVISIBILITY: TIntegerField;
+    qryElencoEventiWhatsAppRECURRENCE: TStringField;
+    qryElencoEventiWhatsAppJGUID: TGuidField;
+    qryElencoEventiWhatsAppGJGUID: TBytesField;
+    qryElencoEventiWhatsAppSTELEFONO: TStringField;
+    qryElencoEventiWhatsAppSCELLULARE: TStringField;
+    qryElencoEventiWhatsAppCTEL1: TStringField;
+    qryElencoEventiWhatsAppCCELL: TStringField;
+    qryElencoEventiWhatsAppCTEL2: TStringField;
+    qryElencoEventiWhatsAppFCEL: TStringField;
+    qryElencoEventiWhatsAppFTEL: TStringField;
+    qryElencoEventiWhatsAppWANUMBER: TStringField;
+    qryElencoEventiWhatsAppWA: TStringField;
+    qryElencoEventiWhatsAppcalcMessage: TStringField;
+    actWhatsApp: TAction;
+    qryElencoEventiWhatsAppTECNICO: TStringField;
+    actWaSet: TAction;
+    actSelect: TAction;
+    actSelectAll: TAction;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -413,8 +429,19 @@ type
     procedure actDlgEditActionExecute(Sender: TObject);
     procedure actDlgDeleteActionsExecute(Sender: TObject);
     procedure actDlgMessageExecute(Sender: TObject);
+    procedure qryPersonalPlannerEventsAfterInsert(DataSet: TDataSet);
+    function InsertEvent(const aStartDate, aEndDate: TDateTime; aSubject: string; aStatino: Integer)
+      : TJanuaRecEvent;
+    procedure qryPersonalPlannerEventsBeforeDelete(DataSet: TDataSet);
+    procedure actGlobalGoogleSyncExecute(Sender: TObject);
+    procedure qryElencoEventiWhatsAppCalcFields(DataSet: TDataSet);
+    procedure actWhatsAppExecute(Sender: TObject);
+    procedure actWaSetExecute(Sender: TObject);
+    procedure actSelectExecute(Sender: TObject);
+    procedure actSelectAllExecute(Sender: TObject);
   private
     Stopwatch: TStopwatch;
+    FInsertingEvent: Boolean;
     Elapsed: TTimeSpan;
     Seconds: Double;
     FTechID: Int64;
@@ -435,6 +462,8 @@ type
     FSelectedDate: TDate;
     FPlannerDlg: TDBPlanner;
     FPlannerEvent: TJanuaRecEvent;
+    /// <summary>  Every Dict that is created is stored in this List </summary>
+    FGCalEventsDict: TDictionary<TGUID, TJanuaRecEvent>;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -505,6 +534,7 @@ type
     function SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;
   public
     function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
+    function GoogleSync: string;
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
@@ -541,22 +571,33 @@ implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, Janua.Application.Framework,
-  udlgPhoenixVCLWhatsAppSMSMessage;
+  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, uPhoenixWAMessageList;
 
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r2.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r2.dll' index 4;
+{$IFDEF WIN32}
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r5.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.dll' index 6;
+{$ENDIF}
+{$IFDEF WIN64}
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 6;
+{$ENDIF}
 
 var
   JMonitor: TObject;
 
 const
   cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
-    'La contatto per comunicarLe che nella giornata del $$date$$ il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in $$address$$. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza.'
+    'La contatto per comunicarLe che nella giornata del $$date$$ il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in $$address$$. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
     + sl + 'Cordiali Saluti' + sl + sl +
     'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
-
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -578,9 +619,12 @@ begin
   var
   vID := PlannerDlg.PopupPlannerItem.ID;
   if qryPersonalPlannerEvents.Locate('CHIAVE', vID, []) and JMessageDlg('Volete annullare appuntamento?') then
+    qryPersonalPlannerEvents.Delete;
+  (*
     DeleteGoogleMeeting(PlannerDlg.PopupPlannerItem.DBKey);
-  qryPersonalPlannerEvents.close;
-  qryPersonalPlannerEvents.Open;
+    qryPersonalPlannerEvents.close;
+    qryPersonalPlannerEvents.Open;
+  *)
 end;
 
 procedure TdmVCLPhoenixPlannerController.actDlgEditActionExecute(Sender: TObject);
@@ -595,6 +639,8 @@ begin
     try
       lDlg.edTime.Time := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
       lDlg.edDate.DateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+      var
+      Delta := qryPersonalPlannerEventsALLE_ORE.AsDateTime - qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
       lDlg.edRagioneSociale.Text := qryPersonalPlannerEventsSUBJECT.AsString;
       lDlg.edNote.Text := qryPersonalPlannerEventsNOTE.AsString;
       lDlg.ShowModal;
@@ -602,6 +648,7 @@ begin
       begin
         qryPersonalPlannerEvents.Edit;
         qryPersonalPlannerEventsDALLE_ORE.AsDateTime := SumDateTime(lDlg.edDate.DateTime, lDlg.edTime.Time);
+        qryPersonalPlannerEventsALLE_ORE.AsDateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime + Delta;
         qryPersonalPlannerEventsSUBJECT.AsString := lDlg.edRagioneSociale.Text;
         qryPersonalPlannerEventsNOTE.AsString := lDlg.edNote.Text;
         qryPersonalPlannerEvents.Post;
@@ -617,6 +664,14 @@ procedure TdmVCLPhoenixPlannerController.actDlgMessageExecute(Sender: TObject);
 begin
   inherited;
   SendWhatsAppMessage(PlannerEvent);
+end;
+
+procedure TdmVCLPhoenixPlannerController.actGlobalGoogleSyncExecute(Sender: TObject);
+begin
+  inherited;
+  UpdateGoogleDLL;
+  dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
+  dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
@@ -637,6 +692,64 @@ procedure TdmVCLPhoenixPlannerController.ActivateCalendar2;
 begin
   if not qryPlannerEvents2.Active then
     qryPlannerEvents2.Open;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actSelectAllExecute(Sender: TObject);
+begin
+  inherited;
+  qryElencoEventiWhatsApp.First;
+  While not qryElencoEventiWhatsApp.Eof do
+  begin
+    if qryElencoEventiWhatsAppWANUMBER.AsString <> '' then
+    begin
+      qryElencoEventiWhatsApp.Edit;
+      qryElencoEventiWhatsAppWA.AsString := 'F';
+      qryElencoEventiWhatsApp.Post;
+    end;
+    qryElencoEventiWhatsApp.Next;
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actSelectExecute(Sender: TObject);
+begin
+  inherited;
+  qryElencoEventiWhatsApp.Edit;
+  qryElencoEventiWhatsAppWA.AsString := 'F';
+  qryElencoEventiWhatsApp.Post;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWaSetExecute(Sender: TObject);
+begin
+  inherited;
+  qryElencoEventiWhatsApp.Edit;
+  qryElencoEventiWhatsAppWA.AsString := 'T';
+  qryElencoEventiWhatsApp.Post;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWhatsAppExecute(Sender: TObject);
+begin
+  {
+    WHERE
+    CE.DALLE_ORE >= :DATE_FROM
+    AND
+    CE.ALLE_ORE < :DATE_TO
+    AND
+    (CE.TECNICO = :TECNICO OR :TECNICO = 0)
+  }
+  qryElencoEventiWhatsApp.Close;
+  qryElencoEventiWhatsApp.ParamByName('DATE_FROM').AsDate := Date() + 1;
+  qryElencoEventiWhatsApp.ParamByName('DATE_TO').AsDate := Date() + 2;
+  qryElencoEventiWhatsApp.ParamByName('TECNICO').AsInteger := 0;
+  qryElencoEventiWhatsApp.Open;
+
+  Application.CreateForm(TfrmVCLPhoenixWAMessageList, frmVCLPhoenixWAMessageList);
+  try
+    frmVCLPhoenixWAMessageList.ShowModal;
+  finally
+    frmVCLPhoenixWAMessageList.Free;
+    frmVCLPhoenixWAMessageList := nil;
+  end;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.AddEvent;
@@ -738,12 +851,7 @@ begin
           end
           else if vtReportPlanner.FieldByName('STATO').AsInteger = 4 then
           begin
-            if not vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
-            begin
-              { qryReportPlanner.Cancel; }
-              if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
-                qryReportPlanner.Cancel;
-            end;
+            // NON FA NULLA
           end
           else if vtReportPlanner.FieldByName('STATO').AsInteger = 5 then
           begin
@@ -833,7 +941,7 @@ begin
             lEventID := StringReplace(lEventID, '}', '', []);
             lEventID := CreateGoogleEventDLL(lEventID);
 
-            tabGoogleEvents.close;
+            tabGoogleEvents.Close;
             tabGoogleEvents.Open;
             if tabGoogleEvents.Locate('ID', lEventID, []) then
             begin
@@ -922,6 +1030,8 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FInsertingEvent := False;
+  FGCalEventsDict := TDictionary<TGUID, TJanuaRecEvent>.Create;
   FCalendarsFilter2 := True;
   FCalendarsList2 := TStringList.Create;
   JMonitor := TObject.Create;
@@ -963,11 +1073,9 @@ begin
   aDay := DayOfWeek(Date + 1);
   aDay := 1 + IfThen(aDay >= 6, 7 - aDay, 0);
   FSelectedDate := Date + aDay;
+  var
+  vTest := InitializeDLL;
 
-  {
-    LoadCalendarsFromDB: TProc;
-    LoadCalendarItemsFromDB: TProc;
-  }
   LoadCalendarsFromDB := (
     procedure
     begin
@@ -1096,7 +1204,7 @@ begin
           // to the "success" callback.
           // In this case the result is a String.
           Result := True;
-          TMonitor.Enter(JMonitor);
+          System.TMonitor.Enter(JMonitor);
           try
             Stopwatch := TStopwatch.StartNew;
             // Carico e metto in Cache nelle MemTable tutti i dataset che serviranno per la gestione del Cal.
@@ -1117,7 +1225,7 @@ begin
             Elapsed := Stopwatch.Elapsed;
             Seconds := Elapsed.TotalSeconds;
           finally
-            TMonitor.Exit(JMonitor);
+            System.TMonitor.Exit(JMonitor);
           end;
         end,
         procedure(const aValue: Boolean)
@@ -1196,13 +1304,13 @@ begin
       // dmVCLPhoenixPlannerController.vtReportPlanner
 
     end;
-    vtReportPlanner.close;
+    vtReportPlanner.Close;
     vtReportPlanner.Open;
     vtReportPlanner.Filtered := True;
   end;
-  qryPersonalPlannerEvents.close;
+  qryPersonalPlannerEvents.Close;
   qryPersonalPlannerEvents.Open;
-  qryReportPlanner.close;
+  qryReportPlanner.Close;
   qryReportPlanner.Open;
 end;
 
@@ -1429,6 +1537,130 @@ begin
   FilterDialog;
 end;
 
+function TdmVCLPhoenixPlannerController.InsertEvent(const aStartDate, aEndDate: TDateTime; aSubject: string;
+aStatino: Integer): TJanuaRecEvent;
+begin
+  if qryPersonalPlannerEvents.Locate('STATINO', aStatino, []) then
+    try
+      FInsertingEvent := True;
+      qryPersonalPlannerEvents.Edit;
+      qryPersonalPlannerEventsSUBJECT.AsString := aSubject;
+      qryPersonalPlannerEventsDALLE_ORE.AsDateTime := aStartDate;
+      qryPersonalPlannerEventsALLE_ORE.AsDateTime := aEndDate;
+      qryPersonalPlannerEvents.Post;
+      // Il record Google nasce 'non identificato' in quanto non è ancora stato salvato su Google
+      Result.ID := '';
+      Result.ETag := '';
+      Result.Summary := qryPersonalPlannerEventsSUBJECT.AsString;
+      Result.Description := qryPersonalPlannerEventsNOTE.AsString;
+      Result.StartTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+      Result.EndTime := qryPersonalPlannerEventsALLE_ORE.AsDateTime;
+      Result.Location := vtReportPlannercalcIndirizzo.AsString;
+      if (qryTecniciCalendarRESPONSABILE.AsInteger = TechID) or qryTecniciCalendar.Locate('RESPONSABILE',
+        TechID, []) then
+        Result.CalendarID := qryTecniciCalendarGOOGLEID.AsString;
+      Result.Visibility := 0;
+      Result.Status := -1;
+      Result.Recurrence := '';
+      Result.RecurringID := '';
+      Result.Visibility := 0;
+      Result.Color := 0;
+      Result.UseDefaultReminders := True;
+      Result.SendNotifications := True;
+      Result.IsAllDAy := False;
+      Result.Attendees := '';
+      Result.Reminders := '';
+      Result.JGUID := qryPersonalPlannerEventsJGUID.AsString;
+      Result.BackgroundColor := 22;
+      Result.ForegroundColor := 0;
+      Result.Sync := False;
+
+      var
+      vTest := Result.GetAsJson;
+      var
+      vTest2 := CreateGoogleEventDLL(vTest);
+
+      Result.SetAsJson(vTest2);
+      Result.OldStartTime := Result.StartTime;
+      Result.OldEndTime := Result.EndTime;
+
+      FGCalEventsDict.Add(Result.GetGUID, Result);
+
+      (*
+        Application.CreateForm(TdlgPhoenixVCLMemoBox, dlgPhoenixVCLMemoBox);
+        try
+        vTest := Result.GetAsJson;
+        dlgPhoenixVCLMemoBox.advMemo1.Lines.Text := vTest;
+        dlgPhoenixVCLMemoBox.ShowModal;
+        finally
+        dlgPhoenixVCLMemoBox.Free;
+        end;
+      *)
+
+      var
+      vID := qryPersonalPlannerEventsSTATINO.AsInteger;
+
+      if (vID = vtReportPlanner.FieldByName('CHIAVE').AsInteger) or vtReportPlanner.Locate('CHIAVE', vID, [])
+      then
+        try
+          System.TMonitor.Enter(vtReportPlanner);
+          vtReportPlanner.Edit;
+          // Forza l'update.
+          vtReportPlanner.FieldByName('calcReportID').Clear;
+
+          vtReportPlanner.FieldByName('APPUNTAMENTO_ORA').AsDateTime :=
+            Frac(qryPersonalPlannerEventsDALLE_ORE.AsDateTime);
+          vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').AsDateTime :=
+            Int(qryPersonalPlannerEventsDALLE_ORE.AsDateTime);
+
+          if vtReportPlanner.FieldByName('STATO').AsInteger = 0 then
+          begin
+            vtReportPlanner.FieldByName('STATO').AsInteger := 1;
+          end
+          (*
+            else if vtReportPlanner.FieldByName('STATO').AsInteger = 4 then
+            begin
+            if not vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+            { qryReportPlanner.Cancel; }
+            if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
+            qryReportPlanner.Cancel;
+            end;
+            end
+          *)
+          else if vtReportPlanner.FieldByName('STATO').AsInteger = 5 then
+          begin
+            if not vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 6;
+            end;
+          end
+          else if (vtReportPlanner.FieldByName('STATO').AsInteger = 6) or
+            (vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').Value = 0) then
+          begin
+            if vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 5;
+            end;
+          end
+          else if vtReportPlanner.FieldByName('STATO').AsInteger = 1 then
+          begin
+            if vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').IsNull or
+              (vtReportPlanner.FieldByName('APPUNTAMENTO_DATA').Value = 0) then
+            begin
+              vtReportPlanner.FieldByName('STATO').AsInteger := 0;
+            end;
+            vtReportPlanner.FieldByName('calcReportID').Clear;
+          end;
+          vtReportPlanner.Post;
+        finally
+          System.TMonitor.Exit(vtReportPlanner);
+        end;
+    finally
+      FInsertingEvent := False;
+    end;
+end;
+
 function TdmVCLPhoenixPlannerController.InternalDeleteItem(aItem: TPlannerItem): Boolean;
 begin
   Result := False;
@@ -1504,33 +1736,39 @@ end;
 
 function TdmVCLPhoenixPlannerController.LocateGoogleMeeting(const aGUID: string): TJanuaRecEvent;
 begin
-  var
-  sGUID := StringReplace(aGUID, '{', '', []);
-  sGUID := StringReplace(sGUID, '}', '', []);
+  if not FGCalEventsDict.TryGetValue(StringToGUID(aGUID), Result) then
+  begin
+    var
+    sGUID := StringReplace(aGUID, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
 
-  if tabGoogleEvents.Locate('JGUID', sGUID, []) or tabGoogleEvents.Locate('JGUID', aGUID, []) then
-    Result.LoadFromDataset(tabGoogleEvents);
+    if tabGoogleEvents.Locate('JGUID', sGUID, []) or tabGoogleEvents.Locate('JGUID', aGUID, []) then
+    begin
+      Result.LoadFromDataset(tabGoogleEvents);
+      FGCalEventsDict.Add(StringToGUID(aGUID), Result);
+    end;
+  end;
 
-  self.PlannerEvent := Result;
+  PlannerEvent := Result;
 end;
 
 function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
 begin
   PopulateCalendars;
 
-  qryTechPlanned.close;
+  qryTechPlanned.Close;
   qryTechPlanned.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryTechPlanned.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryTechPlanned.Open;
 
   Result := qryTechPlanned.RecordCount;
 
-  qryPlannerEvents.close;
+  qryPlannerEvents.Close;
   qryPlannerEvents.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryPlannerEvents.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents.Open;
 
-  qryPlannerEvents2.close;
+  qryPlannerEvents2.Close;
   qryPlannerEvents2.ParamByName('DATA_DAL').AsDateTime := aDateFrom;
   qryPlannerEvents2.ParamByName('DATA_AL').AsDateTime := aDateTo;
   qryPlannerEvents2.Open;
@@ -1547,7 +1785,7 @@ begin
   if (qryPersonalPlannerEvents.Params[0].AsDate <> aDate) or
     (qryPersonalPlannerEvents.Params[1].AsInteger <> aTechID) then
   begin
-    qryPersonalPlannerEvents.close;
+    qryPersonalPlannerEvents.Close;
     qryPersonalPlannerEvents.Params[0].AsDate := aDate;
     qryPersonalPlannerEvents.Params[1].AsInteger := aTechID;
     qryPersonalPlannerEvents.Open;
@@ -1744,15 +1982,125 @@ begin
 
 end;
 
-procedure TdmVCLPhoenixPlannerController.qryPersonalPlannerEventsBeforePost(DataSet: TDataSet);
+procedure TdmVCLPhoenixPlannerController.qryElencoEventiWhatsAppCalcFields(DataSet: TDataSet);
 begin
   inherited;
+  var
+  lMessage := StringReplace(cMessage, '$$date$$', DateToStr(qryElencoEventiWhatsAppDALLE_ORE.AsDateTime),
+    [rfIgnoreCase, rfReplaceAll]);
+  lMessage := StringReplace(lMessage, '$$address$$', qryElencoEventiWhatsAppLOCATION.AsString,
+    [rfIgnoreCase, rfReplaceAll]);
+  qryElencoEventiWhatsAppcalcMessage.AsString := lMessage;
+end;
+
+procedure TdmVCLPhoenixPlannerController.qryPersonalPlannerEventsAfterInsert(DataSet: TDataSet);
+begin
   if qryPersonalPlannerEventsCHIAVE.IsNull then
   begin
-    qryGenID.close;
+    qryGenID.Close;
     qryGenID.Open;
     qryPersonalPlannerEventsCHIAVE.AsInteger := qryGenIDID.AsInteger;
-    qryGenID.close;
+    qryGenID.Close;
+  end;
+
+  if qryPersonalPlannerEventsSTATINO.AsInteger = 0 then
+    qryPersonalPlannerEventsSTATINO.AsInteger := vtReportPlannerCHIAVE.AsInteger;
+
+  var
+  vTest := lkpTecniciCHIAVE.AsInteger;
+
+  if (qryTecniciCalendarRESPONSABILE.AsInteger = TechID) or qryTecniciCalendar.Locate('RESPONSABILE',
+    TechID, []) then
+  begin
+    qryPersonalPlannerEventsTECNICO_SIGLA.AsString := qryTecniciCalendarSIGLA.AsString;
+    qryPersonalPlannerEventsCALENDARIO.AsInteger := qryTecniciCalendarCALENDARIO.AsInteger;
+    qryPersonalPlannerEventsCOLORE.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
+  end;
+
+end;
+
+procedure TdmVCLPhoenixPlannerController.qryPersonalPlannerEventsBeforeDelete(DataSet: TDataSet);
+begin
+  inherited;
+  var
+  aRecEvent := LocateGoogleMeeting(qryPersonalPlannerEventsJGUID.AsString);
+  aRecEvent.RefID := qryPersonalPlannerEventsSTATINO.AsInteger;
+  var
+  sTest := aRecEvent.GetAsJson;
+  DeleteGoogleEventDLL(sTest);
+
+  // Rimuovi l'elemento in base alla chiave  FGCalEventsDict.Remove(StringToGUID(aGUID), Result);
+  if FGCalEventsDict.ContainsKey(StringToGUID(aRecEvent.JGUID)) then
+    FGCalEventsDict.Remove(StringToGUID(aRecEvent.JGUID));
+end;
+
+procedure TdmVCLPhoenixPlannerController.qryPersonalPlannerEventsBeforePost(DataSet: TDataSet);
+var
+  aRecEvent: TJanuaRecEvent;
+begin
+  inherited;
+
+  if qryPersonalPlannerEvents.State = dsInsert then
+  begin
+    if qryPersonalPlannerEventsJGUID.IsNull or (qryPersonalPlannerEventsJGUID.AsString = '') then
+      qryPersonalPlannerEventsJGUID.AsString := TGUID.NewGuid.ToString();
+
+    qryPersonalPlannerEventsNOTE.AsString := vtReportPlannerNOTE_PER_IL_TECNICO.AsString;
+    qryPersonalPlannerEventsSUBJECT.AsString := vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
+
+    qryPersonalPlannerEventsTECNICO.AsInteger := TechID;
+    qryPersonalPlannerEventsSUBJECT.AsString := vtReportPlanner.FieldByName('DESCRIZIONE_SCHEDA').AsString;
+
+    qryPersonalPlannerEventsICONA.AsInteger := 0;
+  end
+  else
+  begin
+    if not FInsertingEvent then
+    begin
+      aRecEvent := LocateGoogleMeeting(qryPersonalPlannerEventsJGUID.AsString);
+      var
+      vTest := False;
+      vTest := aRecEvent.StartTime <> qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+      vTest := vTest or (aRecEvent.EndTime <> qryPersonalPlannerEventsALLE_ORE.AsDateTime);
+      vTest := vTest or (aRecEvent.Description <> qryPersonalPlannerEventsNOTE.AsString);
+
+      if vTest then
+      begin
+        aRecEvent.OldStartTime := aRecEvent.StartTime;
+        aRecEvent.StartTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime;
+        aRecEvent.OldEndTime := aRecEvent.EndTime;
+        aRecEvent.EndTime := qryPersonalPlannerEventsALLE_ORE.AsDateTime;
+        aRecEvent.Description := qryPersonalPlannerEventsNOTE.AsString;
+
+        if aRecEvent.ID <> '' then
+          Async.Run<TJanuaRecEvent>(
+            function: TJanuaRecEvent
+            begin
+              // This is the "background" anonymous method. Runs in the
+              // background thread, and its result is passed
+              // to the "success" callback.
+              // In this case the result is a String.
+              var
+              aJson := aRecEvent.GetAsJson;
+              var
+              aResult := UpdateGoogleEventDLL(aJson);
+              if aResult <> '' then
+                Result.SetAsJson(aResult);
+            end,
+            procedure(const aValue: TJanuaRecEvent)
+            begin
+              // This is the "success" callback. Runs in the UI thread and
+              // gets the result of the "background" anonymous method.
+              System.TMonitor.Enter(FGCalEventsDict);
+              try
+                // MyDictionary.AddOrSetValue('thekey', a);  // Aggiorna il valore
+                FGCalEventsDict.AddOrSetValue(aValue.GetGUID, aValue);
+              finally
+                System.TMonitor.Exit(FGCalEventsDict);
+              end;
+            end, nil);
+      end;
+    end;
   end;
 end;
 
@@ -1765,12 +2113,13 @@ begin
   end
   else if qryReportPlannerSTATO.AsInteger = 4 then
   begin
-    if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-    begin
-      { qryReportPlanner.Cancel; }
+    {
+      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+      begin
       if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
-        qryReportPlanner.Cancel;
-    end;
+      qryReportPlanner.Cancel;
+      end;
+    }
   end
   else if qryReportPlannerSTATO.AsInteger = 5 then
   begin
@@ -1813,7 +2162,7 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.RefreshCalendarTech;
 begin
-  qryPlannerEvents.close;
+  qryPlannerEvents.Close;
   qryPlannerEvents.Open;
 end;
 
@@ -1915,13 +2264,13 @@ begin
   lMessage := StringReplace(lMessage, '$$address$$', aMeeting.Location, [rfIgnoreCase, rfReplaceAll]);
 
   var
-  sGUID := StringReplace(aMeeting.JGUID.ToString, '{', '', []);
+  sGUID := StringReplace(aMeeting.JGUID, '{', '', []);
   sGUID := StringReplace(sGUID, '}', '', []);
 
-  if qryPersonalPlannerEvents.Locate('JGUID', aMeeting.JGUID.ToString, []) or
-    qryPersonalPlannerEvents.Locate('JGUID', sGUID, []) then
+  if qryPersonalPlannerEvents.Locate('JGUID', aMeeting.JGUID, []) or qryPersonalPlannerEvents.Locate('JGUID',
+    sGUID, []) then
   begin
-    qryCellulariStatino.close;
+    qryCellulariStatino.Close;
     qryCellulariStatino.Params[0].AsInteger := qryPersonalPlannerEventsSTATINO.AsInteger;
     qryCellulariStatino.Open;
   end;
@@ -1937,7 +2286,9 @@ begin
       var
       lPhone := '+39' + StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
-      SendMSSWhatsAppMessage(lMessage, '+393474065336');
+      SendMSSWhatsAppMessage(lMessage, lPhone);
+
+      ConfirmGoogleEventDLL(sGUID);
     end;
 
   finally
@@ -2057,9 +2408,9 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.Setup;
 begin
-  qryReportPlanner.close;
-  qryCustomers.close;
-  qryTech.close;
+  qryReportPlanner.Close;
+  qryCustomers.Close;
+  qryTech.Close;
   spSetStatinoStato.ExecProc;
   qryReportPlanner.Open;
   vtReportPlanner.Open;
@@ -2083,6 +2434,11 @@ begin
     Result := CalendarsList2.Text;
 end;
 
+function TdmVCLPhoenixPlannerController.GoogleSync: string;
+begin
+  Result := UpdateGoogleDLL;
+end;
+
 procedure TdmVCLPhoenixPlannerController.UndoMeeting;
 begin
   if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
@@ -2101,24 +2457,34 @@ end;
 
 function TdmVCLPhoenixPlannerController.UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
 begin
-  var
-  tmpMeeting := LocateGoogleMeeting(aMeeting.JGUID.ToString);
-  // (tmpMeeting.Summary <> aMeeting.Summary) or
-  if (tmpMeeting.ID <> '') and ((tmpMeeting.StartTime <> aMeeting.StartTime) or
-    (tmpMeeting.EndTime <> aMeeting.EndTime) or (tmpMeeting.Description <> aMeeting.Description)) then
+  if (qryPersonalPlannerEventsJGUID.AsString = aMeeting.JGUID) or qryPersonalPlannerEvents.Locate('JGUID',
+    aMeeting.JGUID, []) then
   begin
+    qryPersonalPlannerEvents.Edit;
+    { qryPersonalPlannerEventsNOTE.AsString := aMeeting.Description; }
+    qryPersonalPlannerEventsDALLE_ORE.Value := aMeeting.StartTime;
+    qryPersonalPlannerEventsALLE_ORE.Value := aMeeting.EndTime;
+    qryPersonalPlannerEvents.Post;
+  end;
+
+  (*
+    var
+    tmpMeeting := LocateGoogleMeeting(aMeeting.JGUID);
+    if (tmpMeeting.ID <> '') and ((tmpMeeting.StartTime <> aMeeting.StartTime) or
+    (tmpMeeting.EndTime <> aMeeting.EndTime) or (tmpMeeting.Description <> aMeeting.Description)) then
+    begin
     tabGoogleEvents.Edit;
-    { tabGoogleEventsSUMMARY.Value := aMeeting.Summary; }
     tabGoogleEventsDESCRIPTION.AsString := aMeeting.Description;
     tabGoogleEventsSTARTTIME.Value := aMeeting.StartTime;
     tabGoogleEventsENDTIME.Value := aMeeting.EndTime;
     tabGoogleEvents.Post;
     var
-    sGUID := StringReplace(aMeeting.JGUID.ToString, '{', '', []);
+    sGUID := StringReplace(aMeeting.JGUID, '{', '', []);
     sGUID := StringReplace(sGUID, '}', '', []);
     UpdateGoogleEventDLL(sGUID);
-  end;
-  SetPlannerEvent(aMeeting);
+    end;
+    SetPlannerEvent(aMeeting);
+  *)
 end;
 
 procedure TdmVCLPhoenixPlannerController.vtGoogleEventsSearchBeforePost(DataSet: TDataSet);

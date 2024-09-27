@@ -7,14 +7,14 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     879
     927)
   object lbCap: TLabel
-    Left = 747
+    Left = 598
     Top = 58
     Width = 23
     Height = 15
     Caption = 'CAP'
   end
   object lbData: TLabel
-    Left = 567
+    Left = 438
     Top = 58
     Width = 24
     Height = 15
@@ -35,9 +35,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Caption = 'Cliente - Filiale'
   end
   object lkpCAP: TJvDBLookupCombo
-    Left = 747
-    Top = 73
-    Width = 104
+    Left = 598
+    Top = 72
+    Width = 66
     Height = 25
     LookupField = 'CAP'
     LookupDisplay = 'CAP'
@@ -49,17 +49,17 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Left = 8
     Top = 107
     Width = 441
-    Height = 700
+    Height = 812
     Anchors = [akLeft, akTop, akBottom]
     DataSource = dsReportsPlanner
-    PanelHeight = 100
+    PanelHeight = 116
     PanelWidth = 424
     TabOrder = 3
     RowCount = 7
     SelectedColor = clAntiquewhite
     object pnlInterventi: TPanel
       Left = 0
-      Top = 80
+      Top = 96
       Width = 424
       Height = 20
       Align = alBottom
@@ -258,14 +258,14 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       Left = 0
       Top = 0
       Width = 424
-      Height = 80
+      Height = 96
       Align = alClient
       TabOrder = 1
       object Panel2: TPanel
         Left = 78
         Top = 1
         Width = 345
-        Height = 78
+        Height = 94
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
@@ -299,7 +299,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         end
         object Panel3: TPanel
           Left = 0
-          Top = 56
+          Top = 72
           Width = 345
           Height = 22
           Align = alBottom
@@ -336,7 +336,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Left = 1
         Top = 1
         Width = 77
-        Height = 78
+        Height = 94
         Align = alLeft
         DataField = 'calcImage'
         DataSource = dsReportsPlanner
@@ -347,10 +347,10 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     end
   end
   object DBPlanner1: TDBPlanner
-    Left = 463
+    Left = 455
     Top = 103
     Width = 388
-    Height = 700
+    Height = 821
     AttachementGlyph.Data = {
       F6000000424DF600000000000000760000002800000010000000100000000100
       0400000000008000000000000000000000001000000000000000000000000000
@@ -565,13 +565,11 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
-    OnItemDrag = DBPlanner1ItemDrag
     OnItemSize = DBPlanner1ItemSize
     OnItemMove = DBPlanner1ItemMove
-    OnItemEndEdit = DBPlanner1ItemEndEdit
     OnItemEnter = DBPlanner1ItemEnter
-    OnDragOver = DBPlanner1DragOver
-    OnDragDrop = DBPlanner1DragDrop
+    OnDragOverCell = DBPlanner1DragOverCell
+    OnDragDropCell = DBPlanner1DragDropCell
     ItemSource = DBDaySource1
     TMSStyle = 0
   end
@@ -588,6 +586,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
     TabOrder = 4
+    Visible = False
   end
   object btnDeleteMeeting: TButton
     Left = 714
@@ -602,6 +601,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ModalResult = 1
     TabOrder = 6
+    Visible = False
   end
   object grpStato: TRadioGroup
     Left = 383
@@ -621,8 +621,8 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = ChangeFilter
   end
   object CalendarDate: TDateTimePicker
-    Left = 567
-    Top = 73
+    Left = 438
+    Top = 72
     Width = 90
     Height = 25
     Date = 45481.000000000000000000
@@ -645,7 +645,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   object cboCustomers: TJvDBLookupCombo
     Left = 8
     Top = 73
-    Width = 545
+    Width = 424
     Height = 24
     LookupField = 'CHIAVE'
     LookupDisplay = 'DESCRIZIONE_SCHEDA'
@@ -662,6 +662,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Lines.Strings = (
       'Memo1')
     TabOrder = 9
+    Visible = False
   end
   object grdDateTime: TGroupBox
     Left = 8
@@ -671,6 +672,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Anchors = [akLeft, akBottom]
     Caption = 'Data ed Ora di Calendario'
     TabOrder = 10
+    Visible = False
     object lbDateFrom: TLabel
       Left = 16
       Top = 18
@@ -881,13 +883,14 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Images = dmVCLPhoenixPlannerController.SVGIconImageList24
     ParentFont = False
     TabOrder = 11
+    Visible = False
     StyleElements = [seClient, seBorder]
     OnClick = btnSearchClick
   end
   object btnPrevDay: TButton
-    Left = 663
-    Top = 73
-    Width = 34
+    Left = 534
+    Top = 72
+    Width = 26
     Height = 25
     Caption = '<'
     Font.Charset = DEFAULT_CHARSET
@@ -900,9 +903,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = btnPrevDayClick
   end
   object btnNextDay: TButton
-    Left = 695
-    Top = 73
-    Width = 34
+    Left = 559
+    Top = 72
+    Width = 33
     Height = 25
     Caption = '>'
     Font.Charset = DEFAULT_CHARSET
@@ -924,6 +927,26 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     State = cbChecked
     TabOrder = 14
     OnClick = cbkFilterReportClick
+  end
+  object Button1: TButton
+    Left = 768
+    Top = 72
+    Width = 75
+    Height = 25
+    Action = dmVCLPhoenixPlannerController.actGlobalGoogleSync
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 15
+  end
+  object btnWhatsApp: TButton
+    Left = 670
+    Top = 72
+    Width = 92
+    Height = 25
+    Action = dmVCLPhoenixPlannerController.actWhatsApp
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 16
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
@@ -986,10 +1009,12 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     end
     object ModificaAppuntamento1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actDlgEditAction
-      Visible = False
     end
     object ModificaAppuntamento2: TMenuItem
-      Action = dmVCLPhoenixPlannerController.actDlgDeleteActions
+      Caption = 'Annulla Appuntamento'
+      ImageIndex = 49
+      ImageName = '050-stopwatch'
+      OnClick = ModificaAppuntamento2Click
     end
     object InviaMsgWhatsApp1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actDlgMessage
