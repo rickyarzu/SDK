@@ -78,6 +78,7 @@ contains
   Spring.HashTable in '..\..\..\Lib\spring4d\Source\Base\Spring.HashTable.pas',
   Spring.HazardEra in '..\..\..\Lib\spring4d\Source\Base\Spring.HazardEra.pas',
   Spring.Collections.MultiSets in '..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.MultiSets.pas',
-  Spring.Patterns.Specification in '..\..\..\Lib\spring4d\Source\Base\Patterns\Spring.Patterns.Specification.pas';
+  Spring.Patterns.Specification in '..\..\..\Lib\spring4d\Source\Base\Patterns\Spring.Patterns.Specification.pas',
+  Spring.Logging.Appenders in '..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.pas';
 
 end.
