@@ -80,7 +80,6 @@ contains
   Janua.Postgres.Anagraph in '..\..\src\januaunidac\Janua.Postgres.Anagraph.pas',
   Janua.Postgres.Cms in '..\..\src\januaunidac\Janua.Postgres.Cms.pas',
   Janua.Postgres.Health in '..\..\src\januaunidac\Janua.Postgres.Health.pas',
-  Janua.Postgres.JPublic in '..\..\src\januaunidac\Janua.Postgres.JPublic.pas',
   Janua.Postgres.Social in '..\..\src\januaunidac\Janua.Postgres.Social.pas',
   Janua.Postgres.System in '..\..\src\januaunidac\Janua.Postgres.System.pas',
   Janua.Postgres.Users in '..\..\src\januaunidac\Janua.Postgres.Users.pas',
@@ -88,7 +87,6 @@ contains
   udmPgCms in '..\..\src\januaunidac\datamodules\udmPgCms.pas' {dmPgCms: TDataModule},
   udmPgHealth in '..\..\src\januaunidac\datamodules\udmPgHealth.pas' {dmPgHealth: TDataModule},
   udmPgCloud in '..\..\src\januaunidac\datamodules\udmPgCloud.pas' {dmPostgresCloud: TDataModule},
-  udmPublic in '..\..\src\januaunidac\datamodules\udmPublic.pas' {dmPublic: TDataModule},
   udmSocial in '..\..\src\januaunidac\datamodules\udmSocial.pas' {dmSocial: TDataModule},
   udmPgSystemCommand in '..\..\src\januaunidac\datamodules\udmPgSystemCommand.pas' {dmPgSystemCommand: TDataModule},
   Janua.Postgres.Cloud in '..\..\src\januaunidac\Janua.Postgres.Cloud.pas',
@@ -172,6 +170,7 @@ contains
   Janua.Carservice.PgBookingList in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgBookingList.pas' {PgPgBookingList: TDataModule},
   Janua.Firebird.dmStorage in '..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas' {dmJanuaFBStorage: TDataModule},
   Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas',
-  Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule};
+  Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
+  Janua.Postgres.JPublic in '..\..\src\januaunidac\Janua.Postgres.JPublic.pas';
 
 end.

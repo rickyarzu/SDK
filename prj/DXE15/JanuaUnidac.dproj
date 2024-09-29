@@ -329,7 +329,6 @@
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.Anagraph.pas"/>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.Cms.pas"/>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.Health.pas"/>
-        <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.JPublic.pas"/>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.Social.pas"/>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.System.pas"/>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.Users.pas"/>
@@ -347,10 +346,6 @@
         </DCCReference>
         <DCCReference Include="..\..\src\januaunidac\datamodules\udmPgCloud.pas">
             <Form>dmPostgresCloud</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januaunidac\datamodules\udmPublic.pas">
-            <Form>dmPublic</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\januaunidac\datamodules\udmSocial.pas">
@@ -610,6 +605,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.JPublic.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
