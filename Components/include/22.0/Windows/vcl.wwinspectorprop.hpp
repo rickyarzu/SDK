@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwinspectorprop.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwinspectorpropHPP
-#define Vcl_WwinspectorpropHPP
+#ifndef vcl_wwinspectorpropHPP
+#define vcl_wwinspectorpropHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -113,4 +113,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwinspectorpropHPP
+#endif	// vcl_wwinspectorpropHPP

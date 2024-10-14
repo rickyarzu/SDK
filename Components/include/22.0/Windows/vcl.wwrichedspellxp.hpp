@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwrichedspellxp.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwrichedspellxpHPP
-#define Vcl_WwrichedspellxpHPP
+#ifndef vcl_wwrichedspellxpHPP
+#define vcl_wwrichedspellxpHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -63,4 +63,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwrichedspellxpHPP
+#endif	// vcl_wwrichedspellxpHPP

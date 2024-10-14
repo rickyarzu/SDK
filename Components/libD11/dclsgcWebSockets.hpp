@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'dclsgcWebSockets.dpk' rev: 36.00 (Windows)
 
-#ifndef DclsgcwebsocketsHPP
-#define DclsgcwebsocketsHPP
+#ifndef dclsgcWebSocketsHPP
+#define dclsgcWebSocketsHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -162,4 +162,4 @@ using namespace Dclsgcwebsockets;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// DclsgcwebsocketsHPP
+#endif	// dclsgcWebSocketsHPP
