@@ -133,23 +133,23 @@ object frameUniGUPadelMatch: TframeUniGUPadelMatch
     Color = clBtnFace
     TabOrder = 7
   end
-  object UniLabel1: TUniLabel
-    Left = 8
-    Top = 260
+  object lbSetTeamA: TUniLabel
+    Left = 3
+    Top = 261
     Width = 169
     Height = 30
     Hint = ''
     AutoSize = False
     Caption = 'Squadra A'
     ParentFont = False
-    Font.Color = 30716
+    Font.Color = 10132046
     Font.Height = -21
     Font.Style = [fsBold]
     ParentColor = False
     Color = clBtnFace
     TabOrder = 8
   end
-  object UniLabel2: TUniLabel
+  object lbSetTeambB: TUniLabel
     Left = 8
     Top = 319
     Width = 177
@@ -404,6 +404,8 @@ object frameUniGUPadelMatch: TframeUniGUPadelMatch
     Font.Color = 30716
     Font.Height = -16
     Font.Style = [fsBold]
+    ParentColor = False
+    Color = clBtnFace
   end
   object dsMatches: TDataSource
     DataSet = dmJanuaPgSportsMatches.qryMatches

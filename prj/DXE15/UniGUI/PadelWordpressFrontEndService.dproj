@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>PadelWordpressFrontEndService.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">PadelWordpressFrontEndService</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -154,7 +155,7 @@
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.PadelWordpressService.pas">
-            <Form>UniGuiPadelServiceModule</Form>
+            <Form>UniGuiPadelBackEndServiceModule</Form>
             <DesignClass>TUniGUIService</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatchesFrontEnd.pas">
@@ -861,6 +862,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1153,6 +1157,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Linux64">False</Platform>

@@ -31,7 +31,7 @@ var
 implementation
 
 uses
-  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Core.Functions,
+  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Core.Functions, Janua.Sports.Conf,
   Janua.Sports.UniGUIFormPadelMatch;
 
 {$R *.dfm}
@@ -81,7 +81,9 @@ begin
   if (sLeagueID <> '') and IsNumeric(sLeagueID) then
     dmJanuaPgSportsMatches.LeagueID := sLeagueID.ToInteger;
 
+  lbChampionship.Font.Color := Janua.Sports.Conf.TJanuaSportsConf.MainFontColor;
   lbChampionship.Caption := dmJanuaPgSportsMatches.ChampionshipName;
+  // btnExcel.StyleButton := TStyleButton.GoogleGreenRound;
 end;
 
 initialization

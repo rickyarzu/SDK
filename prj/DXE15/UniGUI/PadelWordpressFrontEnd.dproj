@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>PadelWordpressFrontEnd.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">PadelWordpressFrontEnd</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -158,6 +159,7 @@
             <Form>frmUniGUIPadelMatchesFrontEnd</Form>
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\Janua.Sports.Conf.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaUNIGUIXE15.optset</DependentOn>
@@ -193,13 +195,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\..\bin\Win64\Debug\PadelWordpressFrontEnd.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\PadelWordpressFrontEnd.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>PadelWordpressFrontEnd.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\..\bin\Win64\Debug\PadelWordpressFrontEnd.rsm" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\PadelWordpressFrontEnd.rsm" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win64">
                         <RemoteName>PadelWordpressFrontEnd.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -865,6 +867,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1157,6 +1162,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Linux64">False</Platform>

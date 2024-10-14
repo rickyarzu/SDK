@@ -18,7 +18,7 @@ uses
   Janua.Sports.UniGUIFormPadelMatch
     in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatch.pas' {frmUniGUIPadelMatch: TUniForm} ,
   Janua.Sports.PadelWordpressService
-    in '..\..\..\src\UniGUI\Sports\Janua.Sports.PadelWordpressService.pas' {UniGuiPadelServiceModule: TUniGUIService} ,
+    in '..\..\..\src\UniGUI\Sports\Janua.Sports.PadelWordpressService.pas' {UniGuiPadelBackEndServiceModule: TUniGUIService} ,
   Janua.Sports.UniGUIFormPadelMatchesFrontEnd
     in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatchesFrontEnd.pas' {frmUniGUIPadelMatchesFrontEnd: TUniForm};
 
@@ -33,11 +33,11 @@ begin
   TJanuaSportsUniGUIApplication.ApplicationSetup('wordpress.padelccnect.com');
   TJanuacoreOS.WriteParam('UniGUI', 'Port', 8079);
   // TUniServerModule.Create(Application);
-  Application.CreateForm(TUniGuiPadelServiceModule, UniGuiPadelServiceModule);
+  Application.CreateForm(TUniGuiPadelBackEndServiceModule, UniGuiPadelBackEndServiceModule);
   // Unigui Padel Wordpress Service
-  UniGuiPadelServiceModule.DisplayName := TJanuaApplication.GetServiceDescription
+  UniGuiPadelBackEndServiceModule.DisplayName := TJanuaApplication.GetServiceDescription
     ('Padel Wordpress Front End Service Module');
-  UniGuiPadelServiceModule.Name := TJanuaApplication.GetServiceName('PadelWordpressFrontEndServiceModule');
+  UniGuiPadelBackEndServiceModule.Name := TJanuaApplication.GetServiceName('PadelWordpressFrontEndServiceModule');
   // UniGuiPadelServiceModule.ServiceStartName := 'Administrator';
   Application.Run;
 

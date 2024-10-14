@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, uniGUIBaseClasses, uniImageList, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   uniButton, uniBitBtn, UniFSButton, uniGUIClasses, uniDBNavigator, uniBasicGrid, uniDBGrid, uniMultiItem,
   uniComboBox, uniDBComboBox, uniDBLookupComboBox, uniLabel,
@@ -16,6 +17,7 @@ type
   TfrmUniGUIPadelMatchesFrontEnd = class(TfrmUniGUISportMatches)
     ugexMatches: TUniGridExcelExporter;
     lbChampionship: TUniLabel;
+    btnExcel: TUniFSButton;
     procedure btnNewMatchClick(Sender: TObject);
     procedure btnManageMatchClick(Sender: TObject);
     procedure UniFormCreate(Sender: TObject);
@@ -31,7 +33,7 @@ var
 implementation
 
 uses
-  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Core.Functions,
+  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Core.Functions, Janua.Sports.Conf,
   Janua.Sports.UniGUIFormPadelMatch;
 
 {$R *.dfm}
@@ -80,7 +82,9 @@ begin
   if (sLeagueID <> '') and IsNumeric(sLeagueID) then
     dmJanuaPgSportsMatches.LeagueID := sLeagueID.ToInteger;
 
-  lbChampionship.Caption :=  dmJanuaPgSportsMatches.ChampionshipName;
+  lbChampionship.Font.Color := Janua.Sports.Conf.TJanuaSportsConf.MainFontColor;
+  lbChampionship.Caption := dmJanuaPgSportsMatches.ChampionshipName;
+  btnExcel.StyleButton := TStyleButton.GoogleGreenRound;
 end;
 
 initialization
