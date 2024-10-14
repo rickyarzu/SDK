@@ -36,9 +36,6 @@ requires
   Ean;
 
 contains
-  EanRegEditors in '..\..\..\Libraries\Ean50XE10\EanRegEditors.pas',
-  DesignIntf in 'C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignIntf.pas',
-  DesignEditors in 'C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignEditors.pas',
-  DesignerTypes in 'C:\Program Files (x86)\Embarcadero\Studio\23.0\source\ToolsAPI\DesignerTypes.pas';
+  EanRegEditors in '..\..\..\Libraries\Ean50XE10\EanRegEditors.pas';
 
 end.

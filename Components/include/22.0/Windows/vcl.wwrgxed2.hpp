@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwrgxed2.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_Wwrgxed2HPP
-#define Vcl_Wwrgxed2HPP
+#ifndef vcl_wwrgxed2HPP
+#define vcl_wwrgxed2HPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -103,4 +103,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_Wwrgxed2HPP
+#endif	// vcl_wwrgxed2HPP

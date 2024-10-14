@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.Wwpicdb.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwpicdbHPP
-#define Vcl_WwpicdbHPP
+#ifndef vcl_WwpicdbHPP
+#define vcl_WwpicdbHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -80,4 +80,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwpicdbHPP
+#endif	// vcl_WwpicdbHPP

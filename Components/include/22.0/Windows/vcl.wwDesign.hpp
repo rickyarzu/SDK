@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwDesign.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwdesignHPP
-#define Vcl_WwdesignHPP
+#ifndef vcl_wwDesignHPP
+#define vcl_wwDesignHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -112,4 +112,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwdesignHPP
+#endif	// vcl_wwDesignHPP

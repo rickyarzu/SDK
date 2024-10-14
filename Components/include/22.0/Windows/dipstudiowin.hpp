@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'dipstudiowin.dpk' rev: 36.00 (Windows)
 
-#ifndef DipstudiowinHPP
-#define DipstudiowinHPP
+#ifndef dipstudiowinHPP
+#define dipstudiowinHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -172,4 +172,4 @@ using namespace Dipstudiowin;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// DipstudiowinHPP
+#endif	// dipstudiowinHPP

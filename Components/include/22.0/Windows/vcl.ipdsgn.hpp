@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.ipdsgn.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_IpdsgnHPP
-#define Vcl_IpdsgnHPP
+#ifndef vcl_ipdsgnHPP
+#define vcl_ipdsgnHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -48,4 +48,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_IpdsgnHPP
+#endif	// vcl_ipdsgnHPP
