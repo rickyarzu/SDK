@@ -415,6 +415,10 @@ type
     actWaSet: TAction;
     actSelect: TAction;
     actSelectAll: TAction;
+    qryReportPlannerMESE_CALCOLATO: TIntegerField;
+    qryReportPlannerANNO_CALCOLATO: TIntegerField;
+    qryReportPlannerDATA_FINE_MESE_CALCOLATO: TDateField;
+    qryReportPlannerRITARDO: TLargeintField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -574,20 +578,20 @@ uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.
   udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, uPhoenixWAMessageList;
 
 {$IFDEF WIN32}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r5.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.dll' index 6;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r6.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r6.dll' index 6;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 6;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r6.64.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r6.64.dll' index 6;
 {$ENDIF}
 
 var
@@ -651,7 +655,14 @@ begin
         qryPersonalPlannerEventsALLE_ORE.AsDateTime := qryPersonalPlannerEventsDALLE_ORE.AsDateTime + Delta;
         qryPersonalPlannerEventsSUBJECT.AsString := lDlg.edRagioneSociale.Text;
         qryPersonalPlannerEventsNOTE.AsString := lDlg.edNote.Text;
-        qryPersonalPlannerEvents.Post;
+        try
+          qryPersonalPlannerEvents.Post;
+        except
+          on e: exception do
+          begin
+
+          end;
+        end;
       end;
     finally
       lDlg.Free;
@@ -966,7 +977,7 @@ begin
         end;
 
       except
-        on e: Exception do
+        on e: exception do
         begin
           vtReportPlanner.Cancel;
           raise
@@ -1178,7 +1189,7 @@ begin
           dsGoogleEvents.Enabled := True;
           dslkpGCalendar.Enabled := True;
         end,
-        procedure(const Ex: Exception)
+        procedure(const Ex: exception)
         begin
           // This is the "error" callback.
           // Runs in the UI thread and is called only if the
@@ -1234,7 +1245,7 @@ begin
           // gets the result of the "background" anonymous method.
           CloneReportPlanner;
         end,
-        procedure(const Ex: Exception)
+        procedure(const Ex: exception)
         begin
           // This is the "error" callback.
           // Runs in the UI thread and is called only if the
@@ -1393,8 +1404,8 @@ begin
         (FStateFilter > 0);
     end;
   except
-    on e: Exception do
-      raise Exception.Create('Error Filtering ' + qryReportPlanner.Filter + sLineBreak + e.Message);
+    on e: exception do
+      raise exception.Create('Error Filtering ' + qryReportPlanner.Filter + sLineBreak + e.Message);
   end;
 end;
 
@@ -1472,8 +1483,8 @@ begin
         (FStateFilter > 0);
     end;
   except
-    on e: Exception do
-      raise Exception.Create('Error Filtering ' + vtReportPlanner.Filter + sLineBreak + e.Message);
+    on e: exception do
+      raise exception.Create('Error Filtering ' + vtReportPlanner.Filter + sLineBreak + e.Message);
   end;
 
 end;
@@ -1547,6 +1558,7 @@ begin
       qryPersonalPlannerEventsSUBJECT.AsString := aSubject;
       qryPersonalPlannerEventsDALLE_ORE.AsDateTime := aStartDate;
       qryPersonalPlannerEventsALLE_ORE.AsDateTime := aEndDate;
+      qryPersonalPlannerEventsCOLORE.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
       qryPersonalPlannerEvents.Post;
       // Il record Google nasce 'non identificato' in quanto non è ancora stato salvato su Google
       Result.ID := '';
@@ -2015,6 +2027,7 @@ begin
     qryPersonalPlannerEventsTECNICO_SIGLA.AsString := qryTecniciCalendarSIGLA.AsString;
     qryPersonalPlannerEventsCALENDARIO.AsInteger := qryTecniciCalendarCALENDARIO.AsInteger;
     qryPersonalPlannerEventsCOLORE.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
+    qryPersonalPlannerEventsGBACKCOLOR.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
   end;
 
 end;
@@ -2027,7 +2040,30 @@ begin
   aRecEvent.RefID := qryPersonalPlannerEventsSTATINO.AsInteger;
   var
   sTest := aRecEvent.GetAsJson;
+  if aRecEvent.JGUID = '' then
+    aRecEvent.JGUID := qryPersonalPlannerEventsJGUID.AsString;
+
   DeleteGoogleEventDLL(sTest);
+  if (qryPersonalPlannerEventsSTATINO.AsInteger > 0) then
+  begin
+    try
+      vtReportPlanner.Filtered := False;
+
+      if vtReportPlanner.Locate('CHIAVE', qryPersonalPlannerEventsSTATINO.AsInteger, []) and
+        (vtReportPlannerSTATO.AsInteger in [1, 6]) then
+      begin
+        vtReportPlanner.Edit;
+        vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
+        vtReportPlannerAPPUNTAMENTO_DATA.Clear;
+        vtReportPlannerAPPUNTAMENTO_ORA.Clear;
+        vtReportPlanner.FieldByName('calcReportID').Clear;
+        vtReportPlanner.Post;
+      end;
+    finally
+      vtReportPlanner.Filtered := True;
+    end;
+
+  end;
 
   // Rimuovi l'elemento in base alla chiave  FGCalEventsDict.Remove(StringToGUID(aGUID), Result);
   if FGCalEventsDict.ContainsKey(StringToGUID(aRecEvent.JGUID)) then
@@ -2167,6 +2203,23 @@ begin
 end;
 
 procedure TdmVCLPhoenixPlannerController.ReportGoogleSync;
+  procedure FillGoogle;
+  begin
+    qryPlannerEvents.Edit;
+    qryPlannerEventsDALLE_ORE.AsDateTime := vtGoogleEventsSearchSTARTTIME2.AsDateTime;
+    qryPlannerEventsCOLORE.AsInteger := vtGoogleEventsSearchCalcColor3.AsInteger;
+    qryPlannerEventsALLE_ORE.AsDateTime := vtGoogleEventsSearchENDTIME3.AsDateTime;
+    qryPlannerEventsSUBJECT.AsString := vtGoogleEventsSearchSUMMARY3.AsString;
+    qryPlannerEventsNOTE.AsString := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
+    qryPlannerEventsGOOGLEID.AsString := vtGoogleEventsSearchID3.AsString;
+    if qryPlannerEventsSTATINO.IsNull or (qryPlannerEventsSTATINO.AsInteger = 0) then
+      qryPlannerEventsSTATINO.AsInteger := qryReportPlannerCHIAVE.AsInteger;
+    qryPlannerEvents.Post;
+    qryReportPlanner.Edit;
+    qryReportPlannerGCAL.AsString := 'G';
+    qryReportPlanner.Post;
+  end;
+
 begin
   var
   lSearchString := qryReportPlannerDESCRIZIONE_SCHEDA.AsString;
@@ -2214,23 +2267,9 @@ begin
         qryPlannerEvents.Filtered := False;
 
         if qryPlannerEvents.Locate('STATINO', qryReportPlannerCHIAVE.AsInteger, []) then
-        begin
-          qryPlannerEvents.Edit;
-          qryPlannerEventsDALLE_ORE.AsDateTime := vtGoogleEventsSearchSTARTTIME2.AsDateTime;
-          qryPlannerEventsCOLORE.AsInteger := vtGoogleEventsSearchCalcColor3.AsInteger;
-          qryPlannerEventsALLE_ORE.AsDateTime := vtGoogleEventsSearchENDTIME3.AsDateTime;
-          qryPlannerEventsSUBJECT.AsString := vtGoogleEventsSearchSUMMARY3.AsString;
-          qryPlannerEventsNOTE.AsString := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
-          qryPlannerEventsGOOGLEID.AsString := vtGoogleEventsSearchID3.AsString;
-          qryPlannerEvents.Post;
-          qryReportPlanner.Edit;
-          qryReportPlannerGCAL.AsString := 'G';
-          qryReportPlanner.Post;
-        end
-        else
-        begin
-
-        end;
+          FillGoogle
+        else if qryPlannerEvents.Locate('GOOGLEID', vtGoogleEventsSearchID3.AsString, []) then
+          FillGoogle;
 
       end;
     finally

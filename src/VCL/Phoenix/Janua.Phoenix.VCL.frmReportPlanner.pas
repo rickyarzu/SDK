@@ -357,8 +357,8 @@ begin
     if (FieldByName('STATO').AsInteger in [5, 6]) then
       FontColor := clGreen;
 
-    if not FieldByName('APPUNTAMENTO_DATA').IsNull and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)
-    then
+    if (FieldByName('RITARDO').AsInteger < 0) and
+      (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)) then
       FontColor := clRed;
 
     // if (FieldByName('AN_INVOICE').AsInteger  = 2)  then backgroundColor := clYellow;

@@ -1,6 +1,6 @@
 inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
-  Height = 553
-  Width = 754
+  Height = 566
+  Width = 814
   inherited JanuaUniConnection1: TJanuaUniConnection
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
@@ -47,6 +47,9 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
       616C63436F6C6F7203000000000000000F004241434B47524F554E44434F4C4F
       5203000000000000000F00464F524547524F554E44434F4C4F52030000000000
       0000040053594E430100010000000000000000000000}
+  end
+  inherited AdvTwilio: TAdvTwilio
+    Top = 432
   end
   object tabGoogleCalendars: TUniTable
     TableName = 'GOOGLE_CALENDARS'
@@ -401,7 +404,7 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     Filtered = True
     IndexFieldNames = 'DALLE_ORE DESC'
     Left = 528
-    Top = 400
+    Top = 392
     ParamData = <
       item
         DataType = ftDate
@@ -1064,8 +1067,314 @@ inherited dmPhoenixVCLGCalendarController: TdmPhoenixVCLGCalendarController
     SQL.Strings = (
       'EXECUTE PROCEDURE GOOGLE_SYNC_PRC')
     Connection = JanuaUniConnection1
-    Left = 520
-    Top = 472
+    Left = 528
+    Top = 464
     CommandStoredProcName = 'GOOGLE_SYNC_PRC'
+  end
+  object tabGoogleEventsTemp: TUniTable
+    TableName = 'GOOGLE_CALENDAR_TEMP'
+    DataTypeMap = <
+      item
+        FieldName = 'ATTENDEES'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'REMINDERS'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = JanuaUniConnection1
+    IndexFieldNames = 'ID'
+    BeforePost = tabGoogleEventsTempBeforePost
+    Left = 648
+    Top = 168
+    object tabGoogleEventsTempID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 128
+    end
+    object tabGoogleEventsTempETAG: TStringField
+      FieldName = 'ETAG'
+      Size = 128
+    end
+    object tabGoogleEventsTempSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 512
+    end
+    object tabGoogleEventsTempDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 512
+    end
+    object tabGoogleEventsTempSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object tabGoogleEventsTempENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object tabGoogleEventsTempCREATED: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object tabGoogleEventsTempUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object tabGoogleEventsTempLOCATION: TStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object tabGoogleEventsTempSTATUS: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object tabGoogleEventsTempVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object tabGoogleEventsTempRECURRENCE: TStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object tabGoogleEventsTempRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object tabGoogleEventsTempSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object tabGoogleEventsTempCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object tabGoogleEventsTempCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      Required = True
+      Size = 128
+    end
+    object tabGoogleEventsTempUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsTempSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsTempISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsTempATTENDEES: TWideMemoField
+      FieldName = 'ATTENDEES'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsTempREMINDERS: TWideMemoField
+      FieldName = 'REMINDERS'
+      BlobType = ftWideMemo
+    end
+    object tabGoogleEventsTempJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object tabGoogleEventsTempBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+    end
+    object tabGoogleEventsTempFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+    end
+    object tabGoogleEventsTempSYNC: TStringField
+      FieldName = 'SYNC'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object tabGoogleColors: TUniTable
+    TableName = 'GOOGLE_COLORS'
+    Connection = JanuaUniConnection1
+    Left = 648
+    Top = 424
+    object tabGoogleColorsID: TSmallintField
+      FieldName = 'ID'
+      Required = True
+    end
+    object tabGoogleColorsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+      Required = True
+    end
+    object tabGoogleColorsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+  end
+  object tabEventColors: TUniTable
+    TableName = 'GOOGLE_EVENTS_COLORS'
+    Connection = JanuaUniConnection1
+    Left = 648
+    Top = 488
+    object tabEventColorsID: TSmallintField
+      FieldName = 'ID'
+      Required = True
+    end
+    object tabEventColorsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+      Required = True
+    end
+    object tabEventColorsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
+    end
+    object tabEventColorsDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 128
+    end
+  end
+  object qryGoogleEventsTemp: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'select C.alias, C.back_color, T.color,'
+      '    CASE'
+      
+        '        WHEN t.color = 0 THEN c.back_color  -- Se campo1 '#232' 0, pr' +
+        'endi il valore di campo2 da tabella2'
+      
+        '        ELSE COL.back_color  -- Altrimenti prendi il valore di c' +
+        'ampo3 da tabella3'
+      '    END AS background_color,   -- Alias per il campo calcolato'
+      'T.*'
+      'FROM'
+      
+        'google_calendar_temp t JOIN google_calendars C ON T.calendarid =' +
+        ' C.id'
+      'JOIN tecnici N ON N.email = C.id'
+      'LEFT JOIN google_events_colors col on t.color = col.id;')
+    Left = 648
+    Top = 232
+    object qryGoogleEventsTempSUMMARY: TStringField
+      FieldName = 'SUMMARY'
+      Size = 512
+    end
+    object qryGoogleEventsTempALIAS: TStringField
+      FieldName = 'ALIAS'
+    end
+    object qryGoogleEventsTempBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object qryGoogleEventsTempCOLOR: TSmallintField
+      FieldName = 'COLOR'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempBACKGROUND_COLOR: TIntegerField
+      FieldName = 'BACKGROUND_COLOR'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempID: TStringField
+      FieldName = 'ID'
+      ReadOnly = True
+      Required = True
+      Size = 128
+    end
+    object qryGoogleEventsTempETAG: TStringField
+      FieldName = 'ETAG'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryGoogleEventsTempDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      ReadOnly = True
+      Size = 512
+    end
+    object qryGoogleEventsTempSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempCREATED: TDateTimeField
+      FieldName = 'CREATED'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempLOCATION: TStringField
+      FieldName = 'LOCATION'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryGoogleEventsTempSTATUS: TSmallintField
+      FieldName = 'STATUS'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempRECURRENCE: TStringField
+      FieldName = 'RECURRENCE'
+      ReadOnly = True
+      Size = 60
+    end
+    object qryGoogleEventsTempRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      ReadOnly = True
+      Size = 60
+    end
+    object qryGoogleEventsTempSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      ReadOnly = True
+      Required = True
+      Size = 128
+    end
+    object qryGoogleEventsTempUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventsTempSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventsTempISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryGoogleEventsTempATTENDEES: TBlobField
+      FieldName = 'ATTENDEES'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempREMINDERS: TBlobField
+      FieldName = 'REMINDERS'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempJGUID: TBytesField
+      FieldName = 'JGUID'
+      ReadOnly = True
+      Required = True
+    end
+    object qryGoogleEventsTempBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+      ReadOnly = True
+    end
+    object qryGoogleEventsTempSYNC: TStringField
+      FieldName = 'SYNC'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
   end
 end

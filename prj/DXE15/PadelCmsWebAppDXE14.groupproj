@@ -9,9 +9,6 @@
         <Projects Include="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaCore.dproj">
             <Dependencies/>
         </Projects>
@@ -87,9 +84,6 @@
         <Projects Include="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
             <Dependencies/>
         </Projects>
@@ -103,12 +97,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaTmsForms.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="VCL\CarServiceXE14x86.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="VCL\CarServiceXE14.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\CarServiceUsersUniGUI.dproj">
@@ -208,15 +196,6 @@
     </Target>
     <Target Name="unidac280:Make">
         <MSBuild Projects="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="UnifalconXE14">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj"/>
-    </Target>
-    <Target Name="UnifalconXE14:Clean">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="UnifalconXE14:Make">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -443,15 +422,6 @@
     <Target Name="TTMSFNCCloudSendGridVCLDemo:Make">
         <MSBuild Projects="..\..\Samples\RESTCloudAPI\SendGrid\TTMSFNCCloudSendGridVCLDemo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="VCLTMSFNCCloudPackPkg">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj"/>
-    </Target>
-    <Target Name="VCLTMSFNCCloudPackPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="VCLTMSFNCCloudPackPkg:Make">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
-    </Target>
     <Target Name="FSTheme">
         <MSBuild Projects="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj"/>
     </Target>
@@ -496,24 +466,6 @@
     </Target>
     <Target Name="JanuaTmsForms:Make">
         <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceXE14x86">
-        <MSBuild Projects="VCL\CarServiceXE14x86.dproj"/>
-    </Target>
-    <Target Name="CarServiceXE14x86:Clean">
-        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceXE14x86:Make">
-        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceXE14">
-        <MSBuild Projects="VCL\CarServiceXE14.dproj"/>
-    </Target>
-    <Target Name="CarServiceXE14:Clean">
-        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceXE14:Make">
-        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Make"/>
     </Target>
     <Target Name="CarServiceUsersUniGUI">
         <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj"/>
@@ -732,13 +684,13 @@
         <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Neon;unidac280;UnifalconXE14;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;TestUniComponents;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaUniGUI;SportsManager;PadelWordpressBackEnd;PadelUniGuiBackEndService;mod_padelbackend;PadelMobileFrontEnd;PadelMobileFrontEndService;PadelWordpressFrontEnd;PadelWordpressFrontEndService;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;mod_apachepadeltest;TTMSFNCCloudSendGridVCLDemo;VCLTMSFNCCloudPackPkg;FSTheme;UniGuiFramework;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceXE14x86;CarServiceXE14;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;ServerSideViewsCustomEngine;EditorDemo"/>
+        <CallTarget Targets="Neon;unidac280;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;TestUniComponents;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaUniGUI;SportsManager;PadelWordpressBackEnd;PadelUniGuiBackEndService;mod_padelbackend;PadelMobileFrontEnd;PadelMobileFrontEndService;PadelWordpressFrontEnd;PadelWordpressFrontEndService;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;mod_apachepadeltest;TTMSFNCCloudSendGridVCLDemo;FSTheme;UniGuiFramework;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;ServerSideViewsCustomEngine;EditorDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Neon:Clean;unidac280:Clean;UnifalconXE14:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;TestUniComponents:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;SportsManager:Clean;PadelWordpressBackEnd:Clean;PadelUniGuiBackEndService:Clean;mod_padelbackend:Clean;PadelMobileFrontEnd:Clean;PadelMobileFrontEndService:Clean;PadelWordpressFrontEnd:Clean;PadelWordpressFrontEndService:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;mod_apachepadeltest:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;VCLTMSFNCCloudPackPkg:Clean;FSTheme:Clean;UniGuiFramework:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceXE14x86:Clean;CarServiceXE14:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean"/>
+        <CallTarget Targets="Neon:Clean;unidac280:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;TestUniComponents:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;SportsManager:Clean;PadelWordpressBackEnd:Clean;PadelUniGuiBackEndService:Clean;mod_padelbackend:Clean;PadelMobileFrontEnd:Clean;PadelMobileFrontEndService:Clean;PadelWordpressFrontEnd:Clean;PadelWordpressFrontEndService:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;mod_apachepadeltest:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;FSTheme:Clean;UniGuiFramework:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Neon:Make;unidac280:Make;UnifalconXE14:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;TestUniComponents:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;SportsManager:Make;PadelWordpressBackEnd:Make;PadelUniGuiBackEndService:Make;mod_padelbackend:Make;PadelMobileFrontEnd:Make;PadelMobileFrontEndService:Make;PadelWordpressFrontEnd:Make;PadelWordpressFrontEndService:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;mod_apachepadeltest:Make;TTMSFNCCloudSendGridVCLDemo:Make;VCLTMSFNCCloudPackPkg:Make;FSTheme:Make;UniGuiFramework:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceXE14x86:Make;CarServiceXE14:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make"/>
+        <CallTarget Targets="Neon:Make;unidac280:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;TestUniComponents:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;SportsManager:Make;PadelWordpressBackEnd:Make;PadelUniGuiBackEndService:Make;mod_padelbackend:Make;PadelMobileFrontEnd:Make;PadelMobileFrontEndService:Make;PadelWordpressFrontEnd:Make;PadelWordpressFrontEndService:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;mod_apachepadeltest:Make;TTMSFNCCloudSendGridVCLDemo:Make;FSTheme:Make;UniGuiFramework:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua Libs'">
@@ -832,12 +784,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
-            <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\UniGuiFramework.dproj">
             <ProjectGuid>{11E90FA0-4876-4056-925F-01B5B68F9CEA}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -850,22 +796,16 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\SportsManager.dproj">
-            <ProjectGuid>{A883C1B1-16FF-4678-8100-6059BE608D94}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
             <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaTmsControls.dproj">
-            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+        <BuildGroupProject Include="VCL\SportsManager.dproj">
+            <ProjectGuid>{A883C1B1-16FF-4678-8100-6059BE608D94}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
@@ -874,8 +814,8 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\UnifalconXE14.dproj">
-            <ProjectGuid>{367346D0-65E1-4D0D-AC65-3D3B9FFAD191}</ProjectGuid>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -994,21 +934,9 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceXE14x86.dproj">
-            <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\PadelWordpressFrontEnd.dproj">
             <ProjectGuid>{6EDE3B3C-0C80-47AC-98F8-AA44324419F9}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\CarServiceXE14.dproj">
-            <ProjectGuid>{9229D38B-3886-4495-B54C-D78F04C489ED}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

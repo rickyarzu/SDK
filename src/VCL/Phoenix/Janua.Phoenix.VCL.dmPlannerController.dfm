@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 682
+  Height = 664
   Width = 1047
   inherited SVGIconImageList48: TSVGIconImageList
     SVGIconItems = <
@@ -19004,7 +19004,24 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '       COALESCE(I.SPRINKLER, 0) SPRINKLER,'
       '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL, '
       '       T.EMAIL AS EMAIL_TECNICO,'
-      '       S.GCAL'
+      '       S.GCAL, '
+      
+        '       CAST(SUBSTRING(generazione_automatica FROM 5 FOR 2) AS IN' +
+        'TEGER) AS mese_calcolato,  -- Estrae il mese'
+      
+        '       CAST(SUBSTRING(generazione_automatica FROM 1 FOR 4) AS IN' +
+        'TEGER) AS anno_calcolato,  -- Estrae l'#39'anno'
+      
+        '       CAST(DATEADD(-1 DAY TO DATEADD(1 MONTH TO CAST(SUBSTRING(' +
+        'generazione_automatica FROM 1 FOR 4) || '#39'-'#39' || SUBSTRING(generaz' +
+        'ione_automatica FROM 5 FOR 2) || '#39'-01'#39' AS DATE))) AS DATE) AS da' +
+        'ta_fine_mese_calcolato,  -- Calcola l'#39'ultimo giorno del mese'
+      
+        '       DATEDIFF(DAY, CURRENT_DATE, CAST(DATEADD(-1 DAY TO DATEAD' +
+        'D(1 MONTH TO CAST(SUBSTRING(generazione_automatica FROM 1 FOR 4)' +
+        ' || '#39'-'#39' || SUBSTRING(generazione_automatica FROM 5 FOR 2) || '#39'-0' +
+        '1'#39' AS DATE))) AS DATE)) AS ritardo  -- Calcola il ritardo in gio' +
+        'rni'
       'FROM FILIALI_CLIENTI F '
       'JOIN CLIENTI C ON  F.CLIENTE = C.CHIAVE'
       'JOIN STATINI S ON F.chiave = S.filiale'
@@ -19015,7 +19032,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       
         'LEFT OUTER JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = ' +
         'I.statino'
-      'WHERE S.STATO > -1 AND S.STATO < 9'
+      
+        'WHERE S.STATO > -1 AND S.STATO < 9 AND GENERAZIONE_AUTOMATICA IS' +
+        ' NOT NULL'
       '--AND S.CHIAVE = 2100103'
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
@@ -19332,6 +19351,22 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Size = 128
       Calculated = True
     end
+    object qryReportPlannerMESE_CALCOLATO: TIntegerField
+      FieldName = 'MESE_CALCOLATO'
+      ReadOnly = True
+    end
+    object qryReportPlannerANNO_CALCOLATO: TIntegerField
+      FieldName = 'ANNO_CALCOLATO'
+      ReadOnly = True
+    end
+    object qryReportPlannerDATA_FINE_MESE_CALCOLATO: TDateField
+      FieldName = 'DATA_FINE_MESE_CALCOLATO'
+      ReadOnly = True
+    end
+    object qryReportPlannerRITARDO: TLargeintField
+      FieldName = 'RITARDO'
+      ReadOnly = True
+    end
   end
   object spSetStatinoStato: TUniStoredProc
     StoredProcName = 'SET_STATINI_STATO'
@@ -19415,16 +19450,17 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       
         '  (CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJECT,' +
         ' TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLOR, G' +
-        'BACKCOLOR, CALENDARIO, GOOGLEID)'
+        'BACKCOLOR, CALENDARIO, GOOGLEID, WANUMBER, WA_SENT)'
       'VALUES'
       
         '  (:CHIAVE, :STATINO, :TECNICO, :DALLE_ORE, :ALLE_ORE, :NOTE, :S' +
         'UBJECT, :TECNICO_SIGLA, :COLORE, :JGUID, :ICONA, :GOOGLE_JSON, :' +
-        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID)')
+        'GFORECOLOR, :GBACKCOLOR, :CALENDARIO, :GOOGLEID, :WANUMBER, :WA_' +
+        'SENT)')
     SQLDelete.Strings = (
       'DELETE FROM CALENDARIO_EVENTI'
       'WHERE'
-      '  JGUID = :Old_JGUID')
+      '  CHIAVE = :Old_CHIAVE')
     SQLUpdate.Strings = (
       'UPDATE CALENDARIO_EVENTI'
       'SET'
@@ -19434,21 +19470,23 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         '= :SUBJECT, TECNICO_SIGLA = :TECNICO_SIGLA, COLORE = :COLORE, JG' +
         'UID = :JGUID, ICONA = :ICONA, GOOGLE_JSON = :GOOGLE_JSON, GFOREC' +
         'OLOR = :GFORECOLOR, GBACKCOLOR = :GBACKCOLOR, CALENDARIO = :CALE' +
-        'NDARIO, GOOGLEID = :GOOGLEID'
+        'NDARIO, GOOGLEID = :GOOGLEID, WANUMBER = :WANUMBER, WA_SENT = :W' +
+        'A_SENT'
       'WHERE'
-      '  JGUID = :Old_JGUID')
+      '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
       'SELECT NULL FROM CALENDARIO_EVENTI'
       'WHERE'
-      'JGUID = :Old_JGUID'
+      'CHIAVE = :Old_CHIAVE'
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
         'SELECT CHIAVE, STATINO, TECNICO, DALLE_ORE, ALLE_ORE, NOTE, SUBJ' +
         'ECT, TECNICO_SIGLA, COLORE, JGUID, ICONA, GOOGLE_JSON, GFORECOLO' +
-        'R, GBACKCOLOR, CALENDARIO, GOOGLEID FROM CALENDARIO_EVENTI'
+        'R, GBACKCOLOR, CALENDARIO, GOOGLEID, WANUMBER, WA_SENT FROM CALE' +
+        'NDARIO_EVENTI'
       'WHERE'
-      '  JGUID = :JGUID')
+      '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
       'SELECT COUNT(*) FROM ('
       'SELECT 1 AS C  FROM CALENDARIO_EVENTI'
@@ -20505,7 +20543,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     SQL.Strings = (
       'SELECT T.*'
       'FROM  TECNICI T'
-      'where T.EMAIL IS NOT NULL')
+      'where T.EMAIL IS NOT NULL '
+      'AND T.ATTIVO = '#39'T'#39)
     Left = 576
     Top = 416
     object lkpTecniciCHIAVE: TIntegerField
@@ -20895,7 +20934,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object MainToolBarActions2: TActionList
     Images = SVGIconImageList48
     Left = 168
-    Top = 584
+    Top = 568
     object ActionAddMeeting2: TAction
       Category = 'Meetings'
       Caption = 'Pianificazione Tecnico'
@@ -21127,6 +21166,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'FROM STATINI s'
       'JOIN TECNICI T ON T.chiave = S.responsabile'
       'JOIN CALENDARIO C on C.Tecnico = S.responsabile'
+      'WHERE T.ATTIVO = '#39'T'#39
       'ORDER BY T.descrizione'
       ';')
     Left = 808
@@ -21177,7 +21217,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object dlgItemsActions: TActionList
     Images = SVGIconImageList16
-    Left = 160
+    Left = 168
     Top = 512
     object actDlgColorAction: TAction
       Caption = 'Colore'
@@ -25457,8 +25497,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Items = <>
     Height = 64
     Width = 64
-    Left = 256
-    Top = 616
+    Left = 272
+    Top = 600
     Bitmap = {
       494C010105000800040040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000000100008000000001002000000000000000

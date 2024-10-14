@@ -322,6 +322,8 @@ begin
     if dbp.Text.Text = '' then
       dbp.Text.Text := vNote;
 
+    dbp.Color := dmVCLPhoenixPlannerController.qryTecniciCalendardefaultcolor.AsInteger;
+
     var
     vTest := dbp.ItemStartTime;
     var

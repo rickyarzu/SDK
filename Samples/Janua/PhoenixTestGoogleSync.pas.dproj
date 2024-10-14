@@ -1,21 +1,16 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{F6F1CCAD-71AB-41AB-8AD9-C578B070CF37}</ProjectGuid>
+        <ProjectGuid>{F27442B2-76B5-4A5F-A743-0D4074AFA056}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>PadelUniGuiBackEndService.dpr</MainSource>
+        <MainSource>PhoenixTestGoogleSync.pas.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
-        <Base_Linux64>true</Base_Linux64>
-        <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
@@ -62,8 +57,10 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\JanuaUNIGUIXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaUNIGUIXE15.optset')"/>
+    <Import Project="..\..\prj\DXE15\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -71,17 +68,13 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
-        <VerInfo_Locale>1040</VerInfo_Locale>
-        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <SanitizedProjectName>PadelUniGuiBackEndService</SanitizedProjectName>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <CfgDependentOn>..\JanuaUNIGUIXE15.optset</CfgDependentOn>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>FireDACIBDriver;TMSWebGMapsPkgDE;DataSnapServer;fmx;DbxCommonDriver;bindengine;FireDACCommonODBC;emsclient;aurelius;IndyProtocols;dbxcds;FlexCel_Pdf;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;JanuaUnidac;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;IndySystem;ZipMasterR;JanuaCoreComponents;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;rtl;FireDACMySQLDriver;remotedb;gtxDocumentEngines;DataSnapFireDAC;FireDAC;xmlrtl;JanuaUnidacComponentsD;dsnap;xdata;FireDACDb2Driver;DataSnapNativeClient;DatasnapConnectorsFreePascal;SVGIconImageList;FlexCel_Report;emshosting;sparkle;FireDACCommonDriver;TMSWebGMapsPkg;emsedge;inetdb;FireDACASADriver;FMXTMSFNCWXPackPkg;FireDACInfxDriver;DataSnapCommon;AWSSDK;JanuaTmsControls;dbrtl;FireDACOracleDriver;FlexCel_XlsAdapter;gtxDocumentStudioCore;DataSnapIndy10ServerTransport;DataSnapConnectors;FireDACMongoDBDriver;FireDACTDataDriver;JanuaVCLControls;FlexCel_Core;JanuaUnidacComponents;bindcomp;IndyCore;RESTBackendComponents;JanuaMVVM;JanuaVCLComponents;FireDACADSDriver;RESTComponents;dsnapxml;DataSnapClient;emsclientfiredac;FireDACPgDriver;JanuaCore;vclgtxDocumentStudioCore;CloudService;JanuaFMXControls;soaprtl;soapserver;$(DCC_UsePackage)</DCC_UsePackage>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <SanitizedProjectName>PhoenixTestGoogleSync_pas</SanitizedProjectName>
+        <CfgDependentOn>..\..\prj\DXE15\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>FireDACIBDriver;VCLTMSFNCMapsPkg;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;FMXTMSFNCUIPackPkg;dacvcl280;DCLgtDocEng;fmx;DbxCommonDriver;vclie;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;aurelius;appanalytics;IndyProtocols;vclx;TMSVCLUIPackPkgWiz;uniGUI28;dbxcds;vcledge;VCLTMSFNCDashboardPackPkg;FMXTMSFNCAppToolsPkg;VCLTMSFNCBloxPkg;TRCGooglePlaces_r;FmxTeeUI;unidac280;FlexCel_Pdf;VisualStyles;DBXFirebirdDriver;TMSVCLUIPackPkgEx;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;FireDACSqliteDriver;DbxClientDriver;JclVcl;soapmidas;TeeUI;Jcl;dbexpress;gtDocEng;JvManagedThreads;TMSCloudPkgDE;pckAlcinoe;TMSVCLUIPackPkg;uniSF28;unidacvcl280;inet;dacfmx280;AsyncProDR;vcltouch;ipstudiowin;JvDB;FMX_FlexCel_Core;eMiniInvoice4D;FireDACDBXDriver;QRWRunDXE11_w64;fmxdae;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;SVGIconPackage;JvSystem;JvCustom;ipstudiowinwordxp;uniGUI28m;JvControls;VCLTMSFNCCloudPackPkg;OmniThreadLibraryRuntime;JvCrypt;JvJans;JvMM;IndySystem;ZipMasterR;VCLTMSFNCBloxToolBarsPkg;TMSFMXPackPkg;JvGlobus;JanuaCoreComponents;ibxbindings;JclContainers;TMSVCLIWPkg;VCLTMSFNCChartPkg;JvPageComps;vclFireDAC;CodeSiteLoggingPkg;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;unidacfmx280;TMSVCLIWPkgDE;bindcompdbx;rtl;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;DBXSqliteDriver;gtxDocumentEngines;ZLibrariesWin;FMXTMSFNCChartPkg;DBXSybaseASEDriver;JvRuntimeDesign;FMXTMSFNCBloxToolBarsPkg;JvXPCtrls;vclimg;DataSnapFireDAC;eInvoice4D;inetdbxpress;FireDAC;JvDocking;JvDlgs;xmlrtl;VCLTMSFNCUIPackPkg;JanuaUnidacComponentsD;ibxpress;dsnap;xdata;JvCmp;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXTMSFNCMapsPkg;UnifalconXE15;DatasnapConnectorsFreePascal;SVGIconImageList;Ean;FMXTMSFNCCorePkg;FlexCel_Report;pgprovider280;TMSLogging;emshosting;sparkle;EanEditors;FireDACCommonDriver;uniGUI28Chart;TMSWebGMapsPkg;uniGUI28Core;IndyIPClient;dac280;TMSCloudPkg;FMXTMSFNCCloudPackPkg;bindcompvclwinx;emsedge;bindcompfmx;FIBPlus;DCLgtQRExp;JvBands;inetdb;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;FMXTMSFNCWXPackPkg;fmxFireDAC;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;sbridge280;DataSnapCommon;JvPascalInterpreter;Barcomp;AWSSDK;uIndy28;fmxase;ZComponentsD;JanuaTmsControls;JvPluginSystem;DBXOdbcDriver;JvTimeFramework;dbrtl;CodeSiteDBToolsPkg;FireDACOracleDriver;VCLTMSFNCWXPackPkg;JanuaThirdParty;VCLTMSFNCAppToolsPkg;FlexCel_XlsAdapter;TeeDB;FireDACMSAccDriver;gtxDocumentStudioCore;DataSnapIndy10ServerTransport;JclDeveloperTools;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;VCLThemeSelector;JvWizards;CData.PayPal.D28;TMSVCLUIPackPkgXls;FireDACTDataDriver;JanuaVCLControls;vcldb;uSynEdit_R2024;FlexCel_Core;FMXTMSFNCDashboardPackPkg;JvCore;vquery280;JanuaUnidacComponents;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;JanuaMVVM;JanuaVCLComponents;FireDACADSDriver;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;JvDotNetCtrls;JvHMI;uniGUI28VCL;TMSWebOSMapsPkg;DBXDb2Driver;FMXTMSFNCBloxPkg;CoolTrayIconWin;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;dmvcframeworkRT;TMSWebOSMapsPkgDE;uniSFChart28;tethering;JvStdCtrls;JvPrintPreview;crcontrols280;JanuaCore;bindcompvcl;TRCGooglePlaces_d;vclgtxDocumentStudioCore;JanuaThirdPartyVCL;CloudService;DBXSybaseASADriver;VCLTMSFNCCorePkg;JanuaFMXControls;CData.MailChimp.D28;FMXTee;soaprtl;soapserver;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>hclcore_xe120;DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;TMSFMXPackPkg;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;VCLTMSFNCWXPackPkgDXE15;DBXSqliteDriver;DBXSybaseASEDriver;htmledit_xe120;JvRuntimeDesign;FMXTMSFNCBloxPkgDXE15;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;JvCmp;FireDACDb2Driver;DBXOracleDriver;vclib;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;StyleControlsD;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;JvBands;DCLgtQRExp;VCLTMSFNCBloxPkgDXE15;Intraweb_15_D12;PlanAddons;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;vcldsnap;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;JanuaUnidacComponents;JanuaRestWeb;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;JvDotNetCtrls;vcl;JvHMI;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;JvPrintPreview;TMSWebOSMapsPkgDE;tethering;JvStdCtrls;uniTools29;TRCGooglePlaces_d;JanuaThirdPartyVCL;bindcompvcl;sbridge;JanuaCore;CloudService;JanuaFMXControls;htmleditfm_xe120;unidac290;odbcprovider290;FireDACIBDriver;soapserver;TMSWebGMapsPkgDE;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;IWBootstrap4D12;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;FmxTeeUI;htmlcompfm_xe120;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;IWBootstrapD12;ipstudiowin;JvDB;eMiniInvoice4D;fmxdae;JvCustom;dclUniFalcon;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;OpenAIPackage;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;JvDlgs;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;FlexCel_Report;emshosting;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;fmxFireDAC;ibprovider290;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;JanuaThirdParty;FireDACOracleDriver;Skia.Package.FMX;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;VCLTMSFNCDashboardPackPkgDXE15;VCLTMSFNCWebSocketPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;AWSSDKFMX;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;htmlcomp_xe120;dmvcframeworkRT;FMXTMSFNCDashboardPackPkgDXE15;htmleditcore_xe120;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -90,7 +83,7 @@
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>FireDACIBDriver;VCLTMSFNCMapsPkg;vclwinx;DataSnapServer;FMXTMSFNCUIPackPkg;fmx;DbxCommonDriver;vclie;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;aurelius;appanalytics;IndyProtocols;vclx;uniGUI28;dbxcds;vcledge;VCLTMSFNCDashboardPackPkg;FMXTMSFNCAppToolsPkg;TRCGooglePlaces_r;FmxTeeUI;FlexCel_Pdf;VisualStyles;DBXFirebirdDriver;TMSVCLUIPackPkgEx;vclgtxDocumentStudioControls;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;dbexpress;gtDocEng;pckAlcinoe;TMSVCLUIPackPkg;inet;AsyncProDR;vcltouch;ipstudiowin;FMX_FlexCel_Core;FireDACDBXDriver;QRWRunDXE11_w64;fmxdae;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;SVGIconPackage;uniGUI28m;VCLTMSFNCCloudPackPkg;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;TMSVCLIWPkg;VCLTMSFNCChartPkg;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;bindcompdbx;rtl;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;DBXSqliteDriver;gtxDocumentEngines;FMXTMSFNCChartPkg;DBXSybaseASEDriver;FMXTMSFNCBloxToolBarsPkg;vclimg;DataSnapFireDAC;eInvoice4D;inetdbxpress;FireDAC;xmlrtl;VCLTMSFNCUIPackPkg;JanuaUnidacComponentsD;ibxpress;dsnap;xdata;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXTMSFNCMapsPkg;UnifalconXE15;DatasnapConnectorsFreePascal;SVGIconImageList;Ean;FMXTMSFNCCorePkg;FlexCel_Report;emshosting;sparkle;FireDACCommonDriver;uniGUI28Chart;TMSWebGMapsPkg;uniGUI28Core;IndyIPClient;TMSCloudPkg;FMXTMSFNCCloudPackPkg;bindcompvclwinx;emsedge;bindcompfmx;FIBPlus;DCLgtQRExp;inetdb;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;fmxFireDAC;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;Barcomp;AWSSDK;uIndy28;fmxase;JanuaTmsControls;DBXOdbcDriver;dbrtl;FireDACOracleDriver;JanuaThirdParty;VCLTMSFNCAppToolsPkg;FlexCel_XlsAdapter;TeeDB;FireDACMSAccDriver;gtxDocumentStudioCore;DataSnapIndy10ServerTransport;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;VCLThemeSelector;CData.PayPal.D28;TMSVCLUIPackPkgXls;FireDACTDataDriver;JanuaVCLControls;vcldb;uSynEdit_R2024;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;JanuaMVVM;JanuaVCLComponents;FireDACADSDriver;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;uniGUI28VCL;DBXDb2Driver;FMXTMSFNCBloxPkg;CoolTrayIconWin;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;JanuaCore;bindcompvcl;vclgtxDocumentStudioCore;JanuaThirdPartyVCL;CloudService;DBXSybaseASADriver;VCLTMSFNCCorePkg;CData.MailChimp.D28;FMXTee;soaprtl;soapserver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;ipstudiowinwordxp;uniGUI29;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;FireDACDb2Driver;DBXOracleDriver;vclib;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;PlanAddons;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;vcldsnap;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;JanuaRestWeb;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;vcl;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;bindcompvcl;sbridge;JanuaCore;CloudService;JanuaFMXControls;unidac290;odbcprovider290;FireDACIBDriver;soapserver;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;FmxTeeUI;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;ipstudiowin;fmxdae;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;fmxFireDAC;ibprovider290;oraprovider290;DBXOdbcDriver;dbrtl;JanuaThirdParty;FireDACOracleDriver;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;VCLTMSFNCDashboardPackPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;AWSSDKFMX;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;FMXTMSFNCDashboardPackPkgDXE15;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -126,49 +119,31 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Sports.PgModel.pas">
-            <Form>dmJanuaPgSportsModel</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Sports.PgMatches.pas">
-            <Form>dmJanuaPgSportsMatches</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormMatches.pas">
-            <Form>frmUniGUISportMatches</Form>
-            <DesignClass>TUniForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIframePadelMatch.pas">
-            <Form>frameUniGUPadelMatch</Form>
-            <DesignClass>TUniFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatch.pas">
-            <Form>frmUniGUIPadelMatch</Form>
-            <DesignClass>TUniForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatches.pas">
-            <Form>frmUniGUIPadelMatches</Form>
-            <DesignClass>TUniForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.Padel.UniGUI.LoginForm.pas">
-            <Form>frmCarServiceUniGUILogin</Form>
-            <DesignClass>TUniLoginForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\Sports\Janua.Sports.PadelWordpressService.pas">
-            <Form>UniGuiPadelBackEndServiceModule</Form>
+        <DCCReference Include="ufrmPhoenixTestGoogleSync.pas">
+            <Form>frmVCLPhoenixTestGoogleSync</Form>
             <FormType>dfm</FormType>
-            <DesignClass>TUniGUIService</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas">
+            <Form>dmPhoenixVCLGCalendarController</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.dlgGoogleConnect.pas">
+            <Form>dlgVclCloudGoogleConnect</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundApplication.pas"/>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.frameGoogleColor.pas">
+            <Form>frameVCLJanuaGoogleColor</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\JanuaUNIGUIXE15.optset</DependentOn>
+            <DependentOn>..\..\prj\DXE15\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -185,24 +160,13 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">PadelUniGuiBackEndService.dpr</Source>
+                    <Source Name="MainSource">PhoenixTestGoogleSync.pas.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DUnitXIDEExpert280.bpl">Embarcadero Unit Testing IDE Package</Excluded_Packages>
-                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Win32\Debug\PadelUniGuiBackEndService.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\PhoenixTestGoogleSync.pas.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>PadelUniGuiBackEndService.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\PadelUniGuiBackEndService.exe" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>PadelUniGuiBackEndService.exe</RemoteName>
+                        <RemoteName>PhoenixTestGoogleSync_pas.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -235,12 +199,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -1160,7 +1118,6 @@
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Linux64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>

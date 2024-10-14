@@ -170,8 +170,10 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Width = 20
         Height = 20
         Align = alLeft
-        DataField = 'ESTINTORI_ORDINARIO'
+        DataField = 'ESTINTORI_STRAORDINARIO'
         DataSource = dsReportsPlanner
+        ExplicitLeft = 219
+        ExplicitTop = 2
       end
       object DBText2: TDBText
         AlignWithMargins = True

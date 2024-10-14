@@ -1,4 +1,4 @@
-library PhoenixLib32_r5;
+library PhoenixLib32_r6;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select

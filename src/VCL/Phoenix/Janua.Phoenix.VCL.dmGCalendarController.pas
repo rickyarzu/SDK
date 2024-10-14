@@ -209,14 +209,81 @@ type
     qryRicercaStatinoGCAL: TStringField;
     tabGoogleEventsSYNC: TStringField;
     spGoogleSync: TUniStoredProc;
+    tabGoogleEventsTemp: TUniTable;
+    tabGoogleEventsTempID: TStringField;
+    tabGoogleEventsTempETAG: TStringField;
+    tabGoogleEventsTempSUMMARY: TStringField;
+    tabGoogleEventsTempDESCRIPTION: TStringField;
+    tabGoogleEventsTempSTARTTIME: TDateTimeField;
+    tabGoogleEventsTempENDTIME: TDateTimeField;
+    tabGoogleEventsTempCREATED: TDateTimeField;
+    tabGoogleEventsTempUPDATED: TDateTimeField;
+    tabGoogleEventsTempLOCATION: TStringField;
+    tabGoogleEventsTempSTATUS: TSmallintField;
+    tabGoogleEventsTempVISIBILITY: TIntegerField;
+    tabGoogleEventsTempRECURRENCE: TStringField;
+    tabGoogleEventsTempRECURRINGID: TStringField;
+    tabGoogleEventsTempSEQUENCE: TIntegerField;
+    tabGoogleEventsTempCOLOR: TSmallintField;
+    tabGoogleEventsTempCALENDARID: TStringField;
+    tabGoogleEventsTempUSEDEFAULTREMINDERS: TStringField;
+    tabGoogleEventsTempSENDNOTIFICATIONS: TStringField;
+    tabGoogleEventsTempISALLDAY: TStringField;
+    tabGoogleEventsTempATTENDEES: TWideMemoField;
+    tabGoogleEventsTempREMINDERS: TWideMemoField;
+    tabGoogleEventsTempJGUID: TGuidField;
+    tabGoogleEventsTempBACKGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsTempFOREGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsTempSYNC: TStringField;
+    tabGoogleColors: TUniTable;
+    tabGoogleColorsID: TSmallintField;
+    tabGoogleColorsBACK_COLOR: TIntegerField;
+    tabGoogleColorsFORE_COLOR: TIntegerField;
+    tabEventColors: TUniTable;
+    tabEventColorsID: TSmallintField;
+    tabEventColorsBACK_COLOR: TIntegerField;
+    tabEventColorsFORE_COLOR: TIntegerField;
+    tabEventColorsDESCRIPTION: TStringField;
+    qryGoogleEventsTemp: TUniQuery;
+    qryGoogleEventsTempSUMMARY: TStringField;
+    qryGoogleEventsTempALIAS: TStringField;
+    qryGoogleEventsTempBACK_COLOR: TIntegerField;
+    qryGoogleEventsTempCOLOR: TSmallintField;
+    qryGoogleEventsTempBACKGROUND_COLOR: TIntegerField;
+    qryGoogleEventsTempID: TStringField;
+    qryGoogleEventsTempETAG: TStringField;
+    qryGoogleEventsTempDESCRIPTION: TStringField;
+    qryGoogleEventsTempSTARTTIME: TDateTimeField;
+    qryGoogleEventsTempENDTIME: TDateTimeField;
+    qryGoogleEventsTempCREATED: TDateTimeField;
+    qryGoogleEventsTempUPDATED: TDateTimeField;
+    qryGoogleEventsTempLOCATION: TStringField;
+    qryGoogleEventsTempSTATUS: TSmallintField;
+    qryGoogleEventsTempVISIBILITY: TIntegerField;
+    qryGoogleEventsTempRECURRENCE: TStringField;
+    qryGoogleEventsTempRECURRINGID: TStringField;
+    qryGoogleEventsTempSEQUENCE: TIntegerField;
+    qryGoogleEventsTempCALENDARID: TStringField;
+    qryGoogleEventsTempUSEDEFAULTREMINDERS: TStringField;
+    qryGoogleEventsTempSENDNOTIFICATIONS: TStringField;
+    qryGoogleEventsTempISALLDAY: TStringField;
+    qryGoogleEventsTempATTENDEES: TBlobField;
+    qryGoogleEventsTempREMINDERS: TBlobField;
+    qryGoogleEventsTempJGUID: TBytesField;
+    qryGoogleEventsTempBACKGROUNDCOLOR: TIntegerField;
+    qryGoogleEventsTempFOREGROUNDCOLOR: TIntegerField;
+    qryGoogleEventsTempSYNC: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
     procedure tabGoogleEventsBeforePost(DataSet: TDataSet);
+    procedure tabGoogleEventsTempBeforePost(DataSet: TDataSet);
   private
     bg: TColor;
     fg: TColor;
     Item: TGCalendarItem;
+    FLog: TStringList;
     procedure PhoenixUpdateGoogleCalendars;
+    procedure SetLog(const Value: TStringList);
   protected
     JMonitor: TObject;
     procedure FillGoogleCalendarItems; override;
@@ -229,11 +296,15 @@ type
     function AddNewGoogleItem(const aID: string): string;
     function DeleteGoogleItem(const aID: string): string;
     function UpdateGoogleItem(const aID: string): string;
+    function ChangeCalendar(const aJson: string; aCalendar: string): string;
+    procedure SetUpCalendarColors;
+
     procedure FillGoogleCalendars; override;
     procedure PlannerGoogleSync;
     procedure AddNewGoogleItems;
     procedure UpdateGoogleCalendarItem(Const I: Integer); override;
     function ConfirmMessage(const aID: string): string;
+    property Log: TStringList read FLog write SetLog;
   end;
 
 var
@@ -431,6 +502,49 @@ begin
   end;
 end;
 
+function TdmPhoenixVCLGCalendarController.ChangeCalendar(const aJson: string; aCalendar: string): string;
+var
+  lItem: TGCalendarItem;
+  lCalendar: TGCalendar;
+  lRecEvent: TJanuaRecEvent;
+begin
+  lRecEvent.SetAsJson(aJson);
+  { ShowMessage('ARecEvent Set'); }
+
+  var
+  lCalendarID := lRecEvent.CalendarID;
+
+  if AdvGCalendar1.Calendars.Count = 0 then
+    AdvGCalendar1.GetCalendars();
+
+  for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  begin
+    if AdvGCalendar1.Calendars[J].ID = lCalendarID then
+      lCalendar := AdvGCalendar1.Calendars[J];
+  end;
+
+  { ShowMessage('Calendar: ' + aCalendarID); }
+
+  Assert(Assigned(lCalendar), 'ACalendar Not Found');
+
+  AdvGCalendar1.GetCalendar(lCalendar.ID, Min(lRecEvent.StartTime, lRecEvent.OldEndTime) - 1,
+    Max(lRecEvent.EndTime, lRecEvent.OldEndTime) + 1);
+  lItem := AdvGCalendar1.Items.Find(lRecEvent.ID);
+
+  Assert(Assigned(lItem), 'Item Not Found');
+
+  if Assigned(lItem) then
+  begin
+    lItem.CalendarID := aCalendar;
+    AdvGCalendar1.Update(lItem);
+    lRecEvent.ETag := lItem.ETag;
+    lRecEvent.Updated := lItem.Updated;
+  end;
+
+  Result := lRecEvent.GetAsJson;
+
+end;
+
 function TdmPhoenixVCLGCalendarController.ConfirmMessage(const aID: string): string;
 var
   aItem: TGCalendarItem;
@@ -485,6 +599,8 @@ begin
   dslkpGCalendar.Enabled := False;
 
   JMonitor := TObject.Create;
+
+  FLog := TStringList.Create;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.DataModuleDestroy(Sender: TObject);
@@ -492,6 +608,8 @@ begin
   inherited;
   JMonitor.Free;
   JMonitor := nil;
+  FLog.Free;
+  FLog := nil;
 end;
 
 function TdmPhoenixVCLGCalendarController.DeleteGoogleItem(const aID: string): string;
@@ -504,6 +622,23 @@ var
   procedure DeleteRecords;
   begin
 
+    if vStatino > 0 then
+    begin
+      qryRicercaStatino.Close;
+      qryRicercaStatino.Params[0].AsInteger := vStatino;
+      qryRicercaStatino.Open;
+      if qryRicercaStatino.RecordCount = 1 then
+      begin
+        qryRicercaStatino.Edit;
+        if qryRicercaStatinoSTATO.AsInteger in [1, 6] then
+          qryRicercaStatinoSTATO.AsInteger := qryRicercaStatinoSTATO.AsInteger - 1;
+        qryRicercaStatinoAPPUNTAMENTO_DATA.Clear;
+        qryRicercaStatinoAPPUNTAMENTO_ORA.Clear;
+        qryRicercaStatinoGCAL.Clear;
+        qryRicercaStatino.Post;
+      end;
+    end;
+
     { Stopwatch := TStopwatch.StartNew; }
     var
     sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
@@ -513,97 +648,120 @@ var
     qryGoogleEvent.Params[0].AsString := sGUID;
     qryGoogleEvent.Open;
 
-    if qryGoogleEvent.RecordCount > 0 then
-    begin
-      (*
-        qryUpdatePlannerEvents.Close;
-        qryUpdatePlannerEvents.Params[0].AsString := sGUID;
-        qryUpdatePlannerEvents.Open;
-        if qryUpdatePlannerEvents.RecordCount > 0 then
-        begin
-      *)
-      { qryUpdatePlannerEvents.Delete; }
-      if vStatino > 0 then
-      begin
-        qryRicercaStatino.Close;
-        qryRicercaStatino.Params[0].AsInteger := vStatino;
-        qryRicercaStatino.Open;
-        if qryRicercaStatino.RecordCount = 1 then
-        begin
-          qryRicercaStatino.Edit;
-          if qryRicercaStatinoSTATO.AsInteger in [1, 6] then
-            qryRicercaStatinoSTATO.AsInteger := qryRicercaStatinoSTATO.AsInteger - 1;
-          qryRicercaStatinoAPPUNTAMENTO_DATA.Clear;
-          qryRicercaStatinoAPPUNTAMENTO_ORA.Clear;
-          qryRicercaStatinoGCAL.Clear;
-          qryRicercaStatino.Post;
-        end;
-      end;
+    if qryGoogleEvent.RecordCount = 1 then
       qryGoogleEvent.Delete;
-    end;
   end;
 
 begin
   aRecEvent.SetAsJson(aID);
+
   { ShowMessage('ARecEvent Set'); }
   vStatino := aRecEvent.RefID; { qryUpdatePlannerEventsSTATINO.AsInteger };
 
-  var
-  aCalendarID := aRecEvent.CalendarID;
-
-  if AdvGCalendar1.Calendars.Count = 0 then
-    AdvGCalendar1.GetCalendars();
-
-  for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+  if (aRecEvent.CalendarID <> '') and (aRecEvent.ID <> '') then
   begin
-    if AdvGCalendar1.Calendars[J].ID = aCalendarID then
-      aCalendar := AdvGCalendar1.Calendars[J];
-  end;
 
-  { ShowMessage('Calendar: ' + aCalendarID); }
+    var
+    aCalendarID := aRecEvent.CalendarID;
 
-  Assert(Assigned(aCalendar), 'ACalendar Not Found');
+    if AdvGCalendar1.Calendars.Count = 0 then
+      AdvGCalendar1.GetCalendars();
 
-  AdvGCalendar1.GetCalendar(aCalendar.ID, Min(aRecEvent.StartTime, aRecEvent.OldStartTime) - 1,
-    Max(aRecEvent.EndTime, aRecEvent.OldEndTime) + 1);
-  aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
+    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    begin
+      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+        aCalendar := AdvGCalendar1.Calendars[J];
+    end;
 
-  Assert(Assigned(aItem), 'Item Not Found');
+    FLog.Add('Search Calendar: ' + aCalendarID);
+    FLog.Add('Found Calendar: ' + aCalendar.ID + ' ' + aCalendar.Summary + ' - ' + aCalendar.Description);
 
-  if Assigned(aItem) then
-  begin
-    AdvGCalendar1.Delete(aItem);
+    ShowMessage('Calendar: ' + aCalendarID);
+
+    Assert(Assigned(aCalendar), 'ACalendar Not Found');
+
+    ShowMessage('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime) + sLineBreak + //
+      'Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime) + sLineBreak + //
+      'Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime) + sLineBreak + //
+      'Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
+
+    FLog.Add('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime));
+    FLog.Add('Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime));
+    FLog.Add('Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime));
+    FLog.Add('Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
+
+    var
+    aStartTime := Int(aRecEvent.StartTime);
+    if (aRecEvent.OldStartTime > 0) and (aRecEvent.OldStartTime < aStartTime) then
+      aStartTime := Int(aRecEvent.OldStartTime);
+
+    aStartTime := aStartTime - 1;
+
+    var
+    aEndTime := aRecEvent.EndTime;
+
+    if (aRecEvent.OldEndTime > 0) and (aRecEvent.OldEndTime > aEndTime) then
+      aEndTime := Int(aRecEvent.OldEndTime);
+
+    aEndTime := aEndTime + 1;
+
+    ShowMessage('From: ' + DateTimeToStr(aStartTime));
+    FLog.Add('From: ' + DateTimeToStr(aStartTime));
+    ShowMessage('To: ' + DateTimeToStr(aEndTime));
+    FLog.Add('To: ' + DateTimeToStr(aEndTime));
+
+    AdvGCalendar1.GetCalendar(aCalendar.ID, aStartTime, aEndTime + 1, 1000);
+
+    ShowMessage('Item : ' + aRecEvent.ID);
+    FLog.Add('Item : ' + aRecEvent.ID);
+    ShowMessage('Items: ' + AdvGCalendar1.Items.Count.ToString);
+    FLog.Add('Items: ' + AdvGCalendar1.Items.Count.ToString);
+
+    for var I := 0 to AdvGCalendar1.Items.Count - 1 do
+    begin
+      FLog.Add('Item: ' + AdvGCalendar1.Items[I].ID);
+      FLog.Add('--Summary: ' + AdvGCalendar1.Items[I].Summary);
+      FLog.Add('--StartTime: ' + AdvGCalendar1.Items[I].StartTime.ToString);
+    end;
+
+    aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
+
+    Assert(Assigned(aItem), 'Item Not Found');
+
+    if Assigned(aItem) then
+      AdvGCalendar1.Delete(aItem);
   end;
 
   DeleteRecords;
 
   Result := aID;
-
-  Async.Run<Boolean>(
+  (*
+    Async.Run<Boolean>(
     function: Boolean
     begin
-      // This is the "background" anonymous method. Runs in the
-      // background thread, and its result is passed
-      // to the "success" callback.
-      // In this case the result is a String.
-      Result := True;
-      if Assigned(JMonitor) then
-        System.TMonitor.Enter(JMonitor);
-      try
+    // This is the "background" anonymous method. Runs in the
+    // background thread, and its result is passed
+    // to the "success" callback.
+    // In this case the result is a String.
+    Result := True;
+    if Assigned(JMonitor) then
+    System.TMonitor.Enter(JMonitor);
+    try
 
-      finally
-        if Assigned(JMonitor) then
-          System.TMonitor.Exit(JMonitor);
-      end;
+    finally
+    if Assigned(JMonitor) then
+    System.TMonitor.Exit(JMonitor);
+    end;
     end,
     procedure(const aValue: Boolean)
     begin
-      // This is the "success" callback. Runs in the UI thread and
-      // gets the result of the "background" anonymous method.
+    // This is the "success" callback. Runs in the UI thread and
+    // gets the result of the "background" anonymous method.
 
     end,
-  // nil to run default behaviour
-  nil);
+    // nil to run default behaviour
+    nil);
+  *)
 end;
 
 procedure TdmPhoenixVCLGCalendarController.FillGoogleCalendarItems;
@@ -615,12 +773,44 @@ begin
 
   if Assigned(Fgcal) then
   begin
-    AdvGCalendar1.GetCalendar(Fgcal.ID, GCalStartDate, GCalEndDate);
+    var
+    vTestDate1 := DateTimeToStr(GCalStartDate);
+    var
+    vTestDate2 := DateTimeToStr(GCalEndDate);
+
+    ShowMessage(vTestDate1 + ' - ' + vTestDate2);
+
+    AdvGCalendar1.GetCalendar(Fgcal.ID, GCalStartDate, GCalEndDate, 1000);
 
     for I := 0 to AdvGCalendar1.Items.Count - 1 do
     begin
-      if not tabGoogleEvents.Locate('ID', AdvGCalendar1.Items[I].ID, []) then
-      begin
+      tabGoogleEventsTemp.Append;
+      tabGoogleEventsTempID.AsString := AdvGCalendar1.Items[I].ID;
+      tabGoogleEventsTempETAG.AsString := AdvGCalendar1.Items[I].ETag;
+      tabGoogleEventsTempCOLOR.Value := Ord(AdvGCalendar1.Items[I].Color { CurrentGCalendar.Color } );
+      // Verificare come sono effettivamente calcolati bg ed fg?
+      tabGoogleEventsTempBACKGROUNDCOLOR.AsInteger := bg;
+      tabGoogleEventsTempFOREGROUNDCOLOR.AsInteger := fg;
+      tabGoogleEventsTempCALENDARID.AsString := AdvGCalendar1.Items[I].CalendarID;
+      tabGoogleEventsTempSTARTTIME.AsDateTime := AdvGCalendar1.Items[I].StartTime;
+      tabGoogleEventsTempENDTIME.AsDateTime := AdvGCalendar1.Items[I].EndTime;
+      tabGoogleEventsTempSUMMARY.AsString := AdvGCalendar1.Items[I].Summary;
+      tabGoogleEventsTempDESCRIPTION.AsString := AdvGCalendar1.Items[I].Description;
+      tabGoogleEventsTempCREATED.AsDateTime := AdvGCalendar1.Items[I].Created;
+      tabGoogleEventsTempUPDATED.AsDateTime := AdvGCalendar1.Items[I].Updated;
+      tabGoogleEventsTempISALLDAY.AsBoolean := AdvGCalendar1.Items[I].IsAllDay;
+      tabGoogleEventsTempLOCATION.AsString := AdvGCalendar1.Items[I].Location;
+      tabGoogleEventsTempSTATUS.AsInteger := Ord(AdvGCalendar1.Items[I].Status);
+      tabGoogleEventsTempVISIBILITY.AsInteger := Ord(AdvGCalendar1.Items[I].Visibility);
+      tabGoogleEventsTempRECURRENCE.AsString := AdvGCalendar1.Items[I].Recurrence;
+      { TODO : Gestire gli Attendees in base all'Item Selezionato AdvGCalendar1.Items[i].Attendees; }
+      tabGoogleEventsTempATTENDEES.AsString := '';
+      { TODO : Gestire i Reminders in base all'Item Selezionato AdvGCalendar1.Items[i].Reminders; }
+      tabGoogleEventsTempREMINDERS.AsString := '';
+      tabGoogleEventsTemp.Post;
+      (*
+        if not tabGoogleEvents.Locate('ID', AdvGCalendar1.Items[I].ID, []) then
+        begin
         tabGoogleEvents.Append;
         // edID.Text := gcal.ID;    edEtag.Text := gcal.
         tabGoogleEventsID.AsString := AdvGCalendar1.Items[I].ID;
@@ -630,29 +820,22 @@ begin
         tabGoogleEventsJGUID.AsGUID := lGUID;
         UpdateGoogleCalendarItem(I);
         tabGoogleEvents.Post;
-{$IFDEF DEBUG}
+        {$IFDEF DEBUG}
         var
         vTest := tabGoogleEventsCOLOR.AsInteger;
-{$ENDIF}
-      end
-      else
-      begin
+        {$ENDIF}
+        end
+        else
+        begin
         var
         bTest := tabGoogleEventsETAG.AsString <> AdvGCalendar1.Items[I].ETag;
-        {
-          bTest := (tabGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
-          (tabGoogleEventsENDTIME.AsDateTime <> AdvGCalendar1.Items[I].EndTime) or
-          (tabGoogleEventsSUMMARY.AsString <> AdvGCalendar1.Items[I].Summary) or
-          (tabGoogleEventsLOCATION.AsString <> AdvGCalendar1.Items[I].Location) or
-          (tabGoogleEventsCALENDARID.AsString <> AdvGCalendar1.Items[I].CalendarID);
-        }
         if bTest then
         begin
-          tabGoogleEvents.Edit;
-          UpdateGoogleCalendarItem(I);
-          tabGoogleEvents.Post;
+        tabGoogleEvents.Edit;
+        UpdateGoogleCalendarItem(I);
+        tabGoogleEvents.Post;
         end;
-      end;
+        end; *)
     end;
   end;
   Screen.Cursor := crDefault;
@@ -744,7 +927,8 @@ begin
       end;
     end;
   end;
-  spGoogleSync.ExecProc;
+  (* ************************ *)
+  // spGoogleSync.ExecProc;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.InsertGoogleEventsQueue;
@@ -826,6 +1010,11 @@ begin
   tabGoogleEvents.Last;
   tabGoogleEvents.First;
 
+  tabGoogleEventsTemp.Close;
+  tabGoogleEventsTemp.Open;
+  tabGoogleEventsTemp.Last;
+  tabGoogleEventsTemp.First;
+
 end;
 
 procedure TdmPhoenixVCLGCalendarController.ReadGoogleEventsValues;
@@ -833,10 +1022,52 @@ begin
 
 end;
 
+procedure TdmPhoenixVCLGCalendarController.SetLog(const Value: TStringList);
+begin
+  FLog := Value;
+end;
+
+procedure TdmPhoenixVCLGCalendarController.SetUpCalendarColors;
+var
+  TGC: TGColor;
+  bg, fg: TColor;
+begin
+  if AdvGCalendar1.CalendarColors.Count = 0 then
+    AdvGCalendar1.GetColors;
+
+  if not tabEventColors.Active then
+    tabEventColors.Open;
+
+  for var I in AdvGCalendar1.ItemColors do
+  begin
+    TGC := TGColor(I);
+    if not tabEventColors.Locate('ID', TGC.ID, []) then
+    begin
+      bg := TGC.BackgroundColor;
+      fg := TGC.ForegroundColor;
+
+      tabEventColors.Append;
+      tabEventColorsID.AsInteger := TGC.ID;
+      tabEventColorsBACK_COLOR.AsInteger := bg;
+      tabEventColorsFORE_COLOR.AsInteger := fg;
+      tabEventColorsDESCRIPTION.AsString := TGC.DisplayName;
+      tabEventColors.Post;
+    end;
+  end;
+
+end;
+
 procedure TdmPhoenixVCLGCalendarController.tabGoogleEventsBeforePost(DataSet: TDataSet);
 begin
   inherited;
   tabGoogleEventsSYNC.AsString := 'T';
+end;
+
+procedure TdmPhoenixVCLGCalendarController.tabGoogleEventsTempBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if tabGoogleEventsTempJGUID.IsNull then
+    tabGoogleEventsTempJGUID.AsGuid := TGUID.NewGuid;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.UpdateGoogleCalendarItem(const I: Integer);

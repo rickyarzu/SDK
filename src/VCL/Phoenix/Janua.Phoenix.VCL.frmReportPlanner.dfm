@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 845
-    ActivePage = tabCalendariTecnici
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -345,6 +345,13 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Title.Caption = 'G.'
               Width = 15
               Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'RITARDO'
+              Title.Caption = 'Rit.'
+              Width = 30
+              Visible = True
             end>
         end
         inherited Panel1: TPanel
@@ -448,7 +455,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Height = 815
         Align = alLeft
         TabOrder = 1
-        ExplicitLeft = -6
         ExplicitWidth = 841
         ExplicitHeight = 815
         inherited lbCap: TLabel
@@ -665,8 +671,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitLeft = 760
           ExplicitTop = 75
         end
-        inherited Button2: TButton
+        inherited btnWhatsApp: TButton
+          Left = 664
           Top = 75
+          ExplicitLeft = 664
           ExplicitTop = 75
         end
       end
@@ -702,11 +710,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
-        end
-        inherited Panel2: TPanel
-          inherited ckbCalendarList: TCheckListBox
-            ItemHeight = 16
-          end
         end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
@@ -773,7 +776,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end
