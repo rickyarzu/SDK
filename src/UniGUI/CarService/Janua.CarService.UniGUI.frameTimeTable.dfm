@@ -1,20 +1,15 @@
 object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
   Left = 0
   Top = 0
-  ClientHeight = 186
-  ClientWidth = 502
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cntTimeTable: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 502
-    Height = 186
+    Width = 640
+    Height = 480
     Hint = ''
     ParentColor = False
     Align = alClient
@@ -22,7 +17,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
     object pnlTop: TUniContainerPanel
       Left = 0
       Top = 0
-      Width = 502
+      Width = 640
       Height = 33
       Hint = ''
       ParentColor = False
@@ -72,7 +67,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
     object UniContainerPanel2: TUniContainerPanel
       Left = 0
       Top = 33
-      Width = 502
+      Width = 640
       Height = 60
       Hint = ''
       ParentColor = False
@@ -82,7 +77,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         AlignWithMargins = True
         Left = 10
         Top = 22
-        Width = 482
+        Width = 620
         Height = 35
         Hint = ''
         Margins.Left = 10
@@ -93,8 +88,6 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         Font.Height = -13
         TabOrder = 1
         IconItems = <>
-        OnCloseUp = cboPickupCloseUp
-        ExplicitHeight = 34
       end
       object lbDeparture: TUniLabel
         AlignWithMargins = True
@@ -115,18 +108,17 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
     object UniContainerPanel3: TUniContainerPanel
       Left = 0
       Top = 93
-      Width = 502
+      Width = 640
       Height = 60
       Hint = ''
       ParentColor = False
       Align = alTop
       TabOrder = 3
-      ExplicitTop = 92
       object cboReturn: TUniComboBox
         AlignWithMargins = True
         Left = 10
         Top = 22
-        Width = 482
+        Width = 620
         Height = 35
         Hint = ''
         Margins.Left = 10
@@ -137,15 +129,12 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         Font.Height = -13
         TabOrder = 1
         IconItems = <>
-        OnCloseUp = cboReturnCloseUp
-        ExplicitTop = 31
-        ExplicitHeight = 34
       end
       object lbVehiclePickupPlace: TUniLabel
         AlignWithMargins = True
         Left = 10
         Top = 3
-        Width = 482
+        Width = 620
         Height = 13
         Hint = ''
         Margins.Left = 10

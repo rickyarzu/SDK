@@ -1,20 +1,15 @@
 object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
   Left = 0
   Top = 0
-  ClientHeight = 449
-  ClientWidth = 486
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cntCarBookingClient: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 486
-    Height = 449
+    Width = 640
+    Height = 480
     Hint = ''
     ParentColor = False
     Align = alClient
@@ -23,7 +18,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 10
       Top = 51
-      Width = 466
+      Width = 620
       Height = 23
       Hint = ''
       Margins.Left = 10
@@ -40,7 +35,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 10
       Top = 288
-      Width = 466
+      Width = 620
       Hint = ''
       Margins.Left = 10
       Margins.Top = 30
@@ -55,7 +50,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 10
       Top = 30
-      Width = 466
+      Width = 620
       Height = 13
       Hint = ''
       Margins.Left = 10
@@ -72,7 +67,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 7
       Top = 80
-      Width = 472
+      Width = 626
       Height = 57
       Hint = ''
       Margins.Left = 7
@@ -104,7 +99,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       object UniContainerPanel7: TUniContainerPanel
         Left = 209
         Top = 0
-        Width = 263
+        Width = 417
         Height = 57
         Hint = ''
         ParentColor = False
@@ -114,7 +109,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           AlignWithMargins = True
           Left = 3
           Top = 32
-          Width = 257
+          Width = 411
           Hint = ''
           Text = ''
           Align = alBottom
@@ -127,7 +122,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 7
       Top = 143
-      Width = 472
+      Width = 626
       Height = 50
       Hint = ''
       Margins.Left = 7
@@ -136,7 +131,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Align = alTop
       TabOrder = 5
       object UniContainerPanel8: TUniContainerPanel
-        Left = 384
+        Left = 538
         Top = 0
         Width = 88
         Height = 50
@@ -172,7 +167,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       object UniContainerPanel9: TUniContainerPanel
         Left = 0
         Top = 0
-        Width = 384
+        Width = 538
         Height = 50
         Hint = ''
         ParentColor = False
@@ -182,7 +177,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           AlignWithMargins = True
           Left = 3
           Top = 25
-          Width = 378
+          Width = 532
           Hint = ''
           Text = ''
           Align = alBottom
@@ -197,7 +192,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 7
       Top = 199
-      Width = 472
+      Width = 626
       Height = 56
       Hint = ''
       Margins.Left = 7
@@ -229,7 +224,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       object UniContainerPanel11: TUniContainerPanel
         Left = 129
         Top = 0
-        Width = 343
+        Width = 497
         Height = 56
         Hint = ''
         ParentColor = False
@@ -239,7 +234,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           AlignWithMargins = True
           Left = 3
           Top = 31
-          Width = 337
+          Width = 491
           Hint = ''
           Text = ''
           Align = alBottom
@@ -252,7 +247,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 7
       Top = 316
-      Width = 472
+      Width = 626
       Height = 57
       Hint = ''
       Margins.Left = 7
@@ -284,7 +279,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       object UniContainerPanel13: TUniContainerPanel
         Left = 185
         Top = 0
-        Width = 287
+        Width = 441
         Height = 57
         Hint = ''
         ParentColor = False
@@ -294,7 +289,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           AlignWithMargins = True
           Left = 3
           Top = 32
-          Width = 281
+          Width = 435
           Hint = ''
           Text = ''
           Align = alBottom
@@ -307,7 +302,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       AlignWithMargins = True
       Left = 7
       Top = 379
-      Width = 472
+      Width = 626
       Height = 60
       Hint = ''
       Margins.Left = 7
@@ -318,7 +313,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       object UniContainerPanel14: TUniContainerPanel
         Left = 0
         Top = 0
-        Width = 384
+        Width = 538
         Height = 60
         Hint = ''
         ParentColor = False
@@ -328,7 +323,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           AlignWithMargins = True
           Left = 3
           Top = 35
-          Width = 378
+          Width = 532
           Hint = ''
           Text = ''
           Align = alBottom
@@ -339,7 +334,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
         end
       end
       object UniContainerPanel15: TUniContainerPanel
-        Left = 384
+        Left = 538
         Top = 0
         Width = 88
         Height = 60

@@ -1,19 +1,15 @@
 object frameCarServiceUniGUIUserMenu: TframeCarServiceUniGUIUserMenu
   Left = 0
   Top = 0
+  Width = 640
+  Height = 480
   Align = alClient
-  ClientHeight = 447
-  ClientWidth = 629
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Anchors = [akLeft, akTop, akRight, akBottom]
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
+  TabOrder = 0
   DesignSize = (
-    629
-    447)
-  TextHeight = 15
+    640
+    480)
   object cntrMenu: TUniContainerPanel
     Left = 96
     Top = 64

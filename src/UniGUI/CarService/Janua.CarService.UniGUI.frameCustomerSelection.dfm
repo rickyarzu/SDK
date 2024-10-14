@@ -1,20 +1,15 @@
 object frameUniGUICarServiceCustomerSelection: TframeUniGUICarServiceCustomerSelection
   Left = 0
   Top = 0
-  ClientHeight = 400
-  ClientWidth = 377
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cboAnagraphCustomers: TUniDBLookupComboBox
     AlignWithMargins = True
     Left = 4
     Top = 45
-    Width = 369
+    Width = 632
     Height = 23
     Hint = ''
     Margins.Left = 4
@@ -36,7 +31,7 @@ object frameUniGUICarServiceCustomerSelection: TframeUniGUICarServiceCustomerSel
     AlignWithMargins = True
     Left = 4
     Top = 96
-    Width = 369
+    Width = 632
     Hint = ''
     Margins.Left = 4
     Margins.Top = 24
@@ -52,7 +47,7 @@ object frameUniGUICarServiceCustomerSelection: TframeUniGUICarServiceCustomerSel
     AlignWithMargins = True
     Left = 4
     Top = 146
-    Width = 369
+    Width = 632
     Hint = ''
     Margins.Left = 4
     Margins.Top = 24
@@ -68,7 +63,7 @@ object frameUniGUICarServiceCustomerSelection: TframeUniGUICarServiceCustomerSel
     AlignWithMargins = True
     Left = 4
     Top = 196
-    Width = 369
+    Width = 632
     Height = 68
     Hint = ''
     Margins.Left = 4
@@ -83,7 +78,7 @@ object frameUniGUICarServiceCustomerSelection: TframeUniGUICarServiceCustomerSel
   object lbCustomerHeading: TUniLabel
     Left = 0
     Top = 0
-    Width = 377
+    Width = 640
     Height = 15
     Hint = ''
     AutoSize = False
