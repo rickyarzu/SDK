@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.infopowr.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_InfopowrHPP
-#define Vcl_InfopowrHPP
+#ifndef vcl_infopowrHPP
+#define vcl_infopowrHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -96,4 +96,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_InfopowrHPP
+#endif	// vcl_infopowrHPP

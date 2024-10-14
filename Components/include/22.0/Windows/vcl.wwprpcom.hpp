@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwprpcom.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwprpcomHPP
-#define Vcl_WwprpcomHPP
+#ifndef vcl_wwprpcomHPP
+#define vcl_wwprpcomHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -100,4 +100,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwprpcomHPP
+#endif	// vcl_wwprpcomHPP

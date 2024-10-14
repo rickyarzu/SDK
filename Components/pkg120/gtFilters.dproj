@@ -3,7 +3,7 @@
         <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
         <MainSource>gtFilters.dpk</MainSource>
         <FrameworkType>None</FrameworkType>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
