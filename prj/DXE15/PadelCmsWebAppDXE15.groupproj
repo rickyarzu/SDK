@@ -165,9 +165,6 @@
         <Projects Include="JanuaAllDemos.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj">
             <Dependencies/>
         </Projects>
@@ -665,15 +662,6 @@
     <Target Name="JanuaAllDemos:Make">
         <MSBuild Projects="JanuaAllDemos.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ServerSideViewsCustomEngine">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj"/>
-    </Target>
-    <Target Name="ServerSideViewsCustomEngine:Clean">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ServerSideViewsCustomEngine:Make">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Make"/>
-    </Target>
     <Target Name="EditorDemo">
         <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj"/>
     </Target>
@@ -684,13 +672,13 @@
         <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Neon;unidac280;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;TestUniComponents;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaUniGUI;SportsManager;PadelWordpressBackEnd;PadelUniGuiBackEndService;mod_padelbackend;PadelMobileFrontEnd;PadelMobileFrontEndService;PadelWordpressFrontEnd;PadelWordpressFrontEndService;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;mod_apachepadeltest;TTMSFNCCloudSendGridVCLDemo;FSTheme;UniGuiFramework;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;ServerSideViewsCustomEngine;EditorDemo"/>
+        <CallTarget Targets="Neon;unidac280;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;TestUniComponents;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaUniGUI;SportsManager;PadelWordpressBackEnd;PadelUniGuiBackEndService;mod_padelbackend;PadelMobileFrontEnd;PadelMobileFrontEndService;PadelWordpressFrontEnd;PadelWordpressFrontEndService;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;mod_apachepadeltest;TTMSFNCCloudSendGridVCLDemo;FSTheme;UniGuiFramework;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;EditorDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Neon:Clean;unidac280:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;TestUniComponents:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;SportsManager:Clean;PadelWordpressBackEnd:Clean;PadelUniGuiBackEndService:Clean;mod_padelbackend:Clean;PadelMobileFrontEnd:Clean;PadelMobileFrontEndService:Clean;PadelWordpressFrontEnd:Clean;PadelWordpressFrontEndService:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;mod_apachepadeltest:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;FSTheme:Clean;UniGuiFramework:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EditorDemo:Clean"/>
+        <CallTarget Targets="Neon:Clean;unidac280:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;TestUniComponents:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;SportsManager:Clean;PadelWordpressBackEnd:Clean;PadelUniGuiBackEndService:Clean;mod_padelbackend:Clean;PadelMobileFrontEnd:Clean;PadelMobileFrontEndService:Clean;PadelWordpressFrontEnd:Clean;PadelWordpressFrontEndService:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;mod_apachepadeltest:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;FSTheme:Clean;UniGuiFramework:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;EditorDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Neon:Make;unidac280:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;TestUniComponents:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;SportsManager:Make;PadelWordpressBackEnd:Make;PadelUniGuiBackEndService:Make;mod_padelbackend:Make;PadelMobileFrontEnd:Make;PadelMobileFrontEndService:Make;PadelWordpressFrontEnd:Make;PadelWordpressFrontEndService:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;mod_apachepadeltest:Make;TTMSFNCCloudSendGridVCLDemo:Make;FSTheme:Make;UniGuiFramework:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EditorDemo:Make"/>
+        <CallTarget Targets="Neon:Make;unidac280:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;TestUniComponents:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;SportsManager:Make;PadelWordpressBackEnd:Make;PadelUniGuiBackEndService:Make;mod_padelbackend:Make;PadelMobileFrontEnd:Make;PadelMobileFrontEndService:Make;PadelWordpressFrontEnd:Make;PadelWordpressFrontEndService:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;mod_apachepadeltest:Make;TTMSFNCCloudSendGridVCLDemo:Make;FSTheme:Make;UniGuiFramework:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;EditorDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua Libs'">
@@ -934,14 +922,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\PadelWordpressFrontEnd.dproj">
-            <ProjectGuid>{6EDE3B3C-0C80-47AC-98F8-AA44324419F9}</ProjectGuid>
+        <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUIService.dproj">
+            <ProjectGuid>{F8693131-D419-4E78-9D0B-BBD2C7A6F566}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUIService.dproj">
-            <ProjectGuid>{F8693131-D419-4E78-9D0B-BBD2C7A6F566}</ProjectGuid>
+        <BuildGroupProject Include="UniGUI\PadelWordpressFrontEnd.dproj">
+            <ProjectGuid>{6EDE3B3C-0C80-47AC-98F8-AA44324419F9}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -973,12 +961,6 @@
         <BuildGroupProject Include="VCL\LndCms.dproj">
             <ProjectGuid>{A11F76B7-3D4C-49BA-89A9-0B9AA1CB1D66}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
