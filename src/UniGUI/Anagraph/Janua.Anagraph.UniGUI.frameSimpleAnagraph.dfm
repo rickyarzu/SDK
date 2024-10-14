@@ -1,20 +1,15 @@
 object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
   Left = 0
   Top = 0
-  ClientHeight = 509
-  ClientWidth = 550
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cntSimpleAnagraph: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 550
-    Height = 509
+    Width = 640
+    Height = 480
     Hint = ''
     ParentColor = False
     Align = alClient
@@ -22,7 +17,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
     object cntTop: TUniContainerPanel
       Left = 0
       Top = 0
-      Width = 550
+      Width = 640
       Height = 203
       Hint = ''
       ParentColor = False
@@ -32,7 +27,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 544
+        Width = 634
         Height = 51
         Hint = ''
         ParentColor = False
@@ -42,7 +37,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 538
+          Width = 628
           Height = 13
           Hint = ''
           AutoSize = False
@@ -56,7 +51,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 22
-          Width = 538
+          Width = 628
           Height = 29
           Hint = ''
           Text = ''
@@ -68,7 +63,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 60
-        Width = 544
+        Width = 634
         Height = 56
         Hint = ''
         ParentColor = False
@@ -92,7 +87,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         object UniContainerPanel3: TUniContainerPanel
           Left = 0
           Top = 19
-          Width = 544
+          Width = 634
           Height = 30
           Hint = ''
           ParentColor = False
@@ -102,7 +97,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 457
+            Width = 547
             Height = 24
             Hint = ''
             Text = ''
@@ -111,7 +106,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           end
           object btnSearch: TUniFSButton
             AlignWithMargins = True
-            Left = 466
+            Left = 556
             Top = 3
             Width = 75
             Height = 24
@@ -140,7 +135,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
       object UniContainerPanel03: TUniContainerPanel
         Left = 0
         Top = 119
-        Width = 550
+        Width = 640
         Height = 25
         Hint = ''
         Margins.Left = 6
@@ -215,7 +210,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 147
-        Width = 544
+        Width = 634
         Height = 55
         Hint = ''
         ParentColor = False
@@ -224,7 +219,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         object UniContainerPanel11: TUniContainerPanel
           Left = 0
           Top = 25
-          Width = 544
+          Width = 634
           Height = 30
           Hint = ''
           ParentColor = False
@@ -232,7 +227,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           TabOrder = 1
           object edtAddressNumber: TUniEdit
             AlignWithMargins = True
-            Left = 466
+            Left = 556
             Top = 3
             Width = 75
             Height = 24
@@ -245,7 +240,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 457
+            Width = 547
             Height = 24
             Hint = ''
             Text = ''
@@ -256,7 +251,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         object UniContainerPanel12: TUniContainerPanel
           Left = 0
           Top = 0
-          Width = 544
+          Width = 634
           Height = 25
           Hint = ''
           ParentColor = False
@@ -264,7 +259,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           TabOrder = 2
           object lbAddressNumber: TUniLabel
             AlignWithMargins = True
-            Left = 466
+            Left = 556
             Top = 3
             Width = 75
             Height = 19
@@ -280,7 +275,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 457
+            Width = 547
             Height = 19
             Hint = ''
             AutoSize = False
@@ -296,7 +291,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
     object cntBottom: TUniContainerPanel
       Left = 0
       Top = 203
-      Width = 550
+      Width = 640
       Height = 246
       Hint = ''
       ParentColor = False
@@ -306,7 +301,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 66
-        Width = 544
+        Width = 634
         Height = 57
         Hint = ''
         ParentColor = False
@@ -316,7 +311,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 538
+          Width = 628
           Height = 13
           Hint = ''
           AutoSize = False
@@ -330,7 +325,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 22
-          Width = 538
+          Width = 628
           Height = 29
           Hint = ''
           Text = ''
@@ -342,7 +337,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 187
-        Width = 544
+        Width = 634
         Height = 52
         Hint = ''
         ParentColor = False
@@ -352,7 +347,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 538
+          Width = 628
           Height = 13
           Hint = ''
           AutoSize = False
@@ -364,7 +359,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 22
-          Width = 538
+          Width = 628
           Height = 29
           Hint = ''
           Text = ''
@@ -376,7 +371,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 129
-        Width = 544
+        Width = 634
         Height = 52
         Hint = ''
         ParentColor = False
@@ -386,7 +381,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 538
+          Width = 628
           Height = 13
           Hint = ''
           AutoSize = False
@@ -398,7 +393,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           AlignWithMargins = True
           Left = 3
           Top = 22
-          Width = 538
+          Width = 628
           Height = 29
           Hint = ''
           Text = ''
@@ -410,7 +405,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 544
+        Width = 634
         Height = 57
         Hint = ''
         ParentColor = False
@@ -419,7 +414,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         object UniContainerPanel5: TUniContainerPanel
           Left = 0
           Top = 0
-          Width = 544
+          Width = 634
           Height = 25
           Hint = ''
           ParentColor = False
@@ -439,7 +434,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           end
           object lbProvince: TUniLabel
             AlignWithMargins = True
-            Left = 491
+            Left = 581
             Top = 3
             Width = 50
             Height = 19
@@ -455,7 +450,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
             AlignWithMargins = True
             Left = 77
             Top = 3
-            Width = 408
+            Width = 498
             Height = 19
             Hint = ''
             AutoSize = False
@@ -467,7 +462,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
         object UniContainerPanel6: TUniContainerPanel
           Left = 0
           Top = 25
-          Width = 544
+          Width = 634
           Height = 30
           Hint = ''
           ParentColor = False
@@ -486,7 +481,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
           end
           object edtStateProvinceCode: TUniEdit
             AlignWithMargins = True
-            Left = 491
+            Left = 581
             Top = 3
             Width = 50
             Height = 24
@@ -499,7 +494,7 @@ object frameUniGUISimpleAnagraph: TframeUniGUISimpleAnagraph
             AlignWithMargins = True
             Left = 77
             Top = 3
-            Width = 408
+            Width = 498
             Height = 24
             Hint = ''
             Text = ''

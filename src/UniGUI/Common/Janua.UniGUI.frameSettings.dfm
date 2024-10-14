@@ -1,32 +1,26 @@
 object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
   Left = 0
   Top = 0
-  ClientHeight = 581
-  ClientWidth = 577
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object pgcSettings: TUniPageControl
     Left = 0
     Top = 0
-    Width = 577
-    Height = 581
+    Width = 640
+    Height = 480
     Hint = ''
     ActivePage = pgAnagraphSettings
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1126
     object pgAnagraphSettings: TUniTabSheet
       Hint = ''
       Caption = 'Dati Anagrafici'
       object cntAnagraphSettings: TUniContainerPanel
         Left = 0
         Top = 0
-        Width = 569
+        Width = 632
         Height = 540
         Hint = ''
         ParentColor = False
@@ -36,7 +30,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
           AlignWithMargins = True
           Left = 6
           Top = 6
-          Width = 557
+          Width = 620
           Height = 524
           Hint = ''
           Margins.Left = 6
@@ -50,17 +44,17 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 5
             Top = 468
-            Width = 547
+            Width = 610
             Height = 51
             Hint = ''
             ParentColor = False
             Align = alBottom
             TabOrder = 1
             DesignSize = (
-              547
+              610
               51)
             object btnSaveAnagraph: TUniFSButton
-              Left = 416
+              Left = 479
               Top = 12
               Width = 115
               Height = 33
@@ -78,9 +72,9 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
           end
           object cntSimpleAnagraph: TUniContainerPanel
             Left = 2
-            Top = 17
-            Width = 553
-            Height = 448
+            Top = 15
+            Width = 616
+            Height = 450
             Hint = ''
             ParentColor = False
             Align = alClient
@@ -88,7 +82,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object cntTop: TUniContainerPanel
               Left = 0
               Top = 0
-              Width = 553
+              Width = 616
               Height = 203
               Hint = ''
               ParentColor = False
@@ -98,7 +92,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 547
+                Width = 610
                 Height = 51
                 Hint = ''
                 ParentColor = False
@@ -108,7 +102,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 3
-                  Width = 541
+                  Width = 604
                   Height = 13
                   Hint = ''
                   AutoSize = False
@@ -122,7 +116,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 22
-                  Width = 541
+                  Width = 604
                   Height = 29
                   Hint = ''
                   Text = ''
@@ -134,7 +128,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 60
-                Width = 547
+                Width = 610
                 Height = 56
                 Hint = ''
                 ParentColor = False
@@ -154,12 +148,11 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   ParentColor = False
                   Color = clBtnFace
                   TabOrder = 1
-                  ExplicitWidth = 541
                 end
                 object UniContainerPanel5: TUniContainerPanel
                   Left = 0
                   Top = 19
-                  Width = 547
+                  Width = 610
                   Height = 30
                   Hint = ''
                   ParentColor = False
@@ -169,7 +162,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
-                    Width = 460
+                    Width = 523
                     Height = 24
                     Hint = ''
                     Text = ''
@@ -178,7 +171,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   end
                   object btnSearch: TUniFSButton
                     AlignWithMargins = True
-                    Left = 469
+                    Left = 532
                     Top = 3
                     Width = 75
                     Height = 24
@@ -206,7 +199,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               object UniContainerPanel03: TUniContainerPanel
                 Left = 0
                 Top = 119
-                Width = 553
+                Width = 616
                 Height = 25
                 Hint = ''
                 Margins.Left = 6
@@ -281,7 +274,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 147
-                Width = 547
+                Width = 610
                 Height = 55
                 Hint = ''
                 ParentColor = False
@@ -290,7 +283,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 object UniContainerPanel11: TUniContainerPanel
                   Left = 0
                   Top = 25
-                  Width = 547
+                  Width = 610
                   Height = 30
                   Hint = ''
                   ParentColor = False
@@ -298,7 +291,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   TabOrder = 1
                   object edtAddressNumber: TUniEdit
                     AlignWithMargins = True
-                    Left = 469
+                    Left = 532
                     Top = 3
                     Width = 75
                     Height = 24
@@ -311,7 +304,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
-                    Width = 460
+                    Width = 523
                     Height = 24
                     Hint = ''
                     Text = ''
@@ -322,7 +315,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 object UniContainerPanel12: TUniContainerPanel
                   Left = 0
                   Top = 0
-                  Width = 547
+                  Width = 610
                   Height = 25
                   Hint = ''
                   ParentColor = False
@@ -330,7 +323,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   TabOrder = 2
                   object lbAddressNumber: TUniLabel
                     AlignWithMargins = True
-                    Left = 469
+                    Left = 532
                     Top = 3
                     Width = 75
                     Height = 19
@@ -346,7 +339,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
-                    Width = 460
+                    Width = 523
                     Height = 19
                     Hint = ''
                     AutoSize = False
@@ -362,7 +355,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object cntBottom: TUniContainerPanel
               Left = 0
               Top = 203
-              Width = 553
+              Width = 616
               Height = 246
               Hint = ''
               ParentColor = False
@@ -372,7 +365,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 66
-                Width = 547
+                Width = 610
                 Height = 57
                 Hint = ''
                 ParentColor = False
@@ -382,7 +375,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 3
-                  Width = 541
+                  Width = 604
                   Height = 13
                   Hint = ''
                   AutoSize = False
@@ -396,7 +389,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 22
-                  Width = 541
+                  Width = 604
                   Height = 29
                   Hint = ''
                   Text = ''
@@ -408,7 +401,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 187
-                Width = 547
+                Width = 610
                 Height = 52
                 Hint = ''
                 ParentColor = False
@@ -418,7 +411,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 3
-                  Width = 541
+                  Width = 604
                   Height = 13
                   Hint = ''
                   AutoSize = False
@@ -430,7 +423,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 22
-                  Width = 541
+                  Width = 604
                   Height = 29
                   Hint = ''
                   Text = ''
@@ -442,7 +435,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 129
-                Width = 547
+                Width = 610
                 Height = 52
                 Hint = ''
                 ParentColor = False
@@ -452,7 +445,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 3
-                  Width = 541
+                  Width = 604
                   Height = 13
                   Hint = ''
                   AutoSize = False
@@ -464,7 +457,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   AlignWithMargins = True
                   Left = 3
                   Top = 22
-                  Width = 541
+                  Width = 604
                   Height = 29
                   Hint = ''
                   Text = ''
@@ -476,7 +469,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 547
+                Width = 610
                 Height = 57
                 Hint = ''
                 ParentColor = False
@@ -485,7 +478,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 object UniContainerPanel6: TUniContainerPanel
                   Left = 0
                   Top = 0
-                  Width = 547
+                  Width = 610
                   Height = 25
                   Hint = ''
                   ParentColor = False
@@ -505,7 +498,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   end
                   object lbProvince: TUniLabel
                     AlignWithMargins = True
-                    Left = 494
+                    Left = 557
                     Top = 3
                     Width = 50
                     Height = 19
@@ -521,7 +514,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                     AlignWithMargins = True
                     Left = 77
                     Top = 3
-                    Width = 411
+                    Width = 474
                     Height = 19
                     Hint = ''
                     AutoSize = False
@@ -533,7 +526,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 object UniContainerPanel7: TUniContainerPanel
                   Left = 0
                   Top = 25
-                  Width = 547
+                  Width = 610
                   Height = 30
                   Hint = ''
                   ParentColor = False
@@ -552,7 +545,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                   end
                   object edtStateProvinceCode: TUniEdit
                     AlignWithMargins = True
-                    Left = 494
+                    Left = 557
                     Top = 3
                     Width = 50
                     Height = 24
@@ -565,7 +558,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                     AlignWithMargins = True
                     Left = 77
                     Top = 3
-                    Width = 411
+                    Width = 474
                     Height = 24
                     Hint = ''
                     Text = ''
@@ -582,14 +575,12 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
     object pgUserNamePassword: TUniTabSheet
       Hint = ''
       Caption = 'Dati Login/Account'
-      ExplicitTop = 26
-      ExplicitHeight = 551
       object grpDBUser: TUniGroupBox
         AlignWithMargins = True
         Left = 6
         Top = 6
         Width = 426
-        Height = 537
+        Height = 436
         Hint = ''
         Margins.Left = 6
         Margins.Top = 6
@@ -598,17 +589,15 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
         Caption = 'Dati Profilo Utente e Password'
         Align = alLeft
         TabOrder = 0
-        ExplicitHeight = 535
         object UniContainerPanel4: TUniContainerPanel
           Left = 2
-          Top = 483
+          Top = 382
           Width = 422
           Height = 52
           Hint = ''
           ParentColor = False
           Align = alBottom
           TabOrder = 1
-          ExplicitTop = 481
           DesignSize = (
             422
             52)
@@ -726,20 +715,16 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
     object tbAddresses: TUniTabSheet
       Hint = ''
       Caption = 'Indirizzi e Sedi'
-      ExplicitTop = 26
-      ExplicitHeight = 551
     end
     object tabAccountingInfo: TUniTabSheet
       Hint = ''
       Caption = 'Dati Contabili'
-      ExplicitTop = 26
-      ExplicitHeight = 551
       object grpAccoutingInformations: TUniGroupBox
         AlignWithMargins = True
         Left = 6
         Top = 6
-        Width = 557
-        Height = 537
+        Width = 620
+        Height = 436
         Hint = ''
         Margins.Left = 6
         Margins.Top = 6
@@ -748,23 +733,21 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
         Caption = 'Dati Contabili'
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 535
         object UniContainerPanel3: TUniContainerPanel
           AlignWithMargins = True
           Left = 5
-          Top = 480
-          Width = 547
+          Top = 379
+          Width = 610
           Height = 52
           Hint = ''
           ParentColor = False
           Align = alBottom
           TabOrder = 1
-          ExplicitTop = 478
           DesignSize = (
-            547
+            610
             52)
           object UniFSButton1: TUniFSButton
-            Left = 405
+            Left = 468
             Top = 13
             Width = 115
             Height = 33
@@ -782,15 +765,13 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
         end
         object cntAccountSimpleAnagraph: TUniContainerPanel
           Left = 2
-          Top = 15
-          Width = 553
-          Height = 462
+          Top = 17
+          Width = 616
+          Height = 359
           Hint = ''
           ParentColor = False
           Align = alClient
           TabOrder = 2
-          ExplicitTop = 17
-          ExplicitHeight = 458
           object lbVATCode: TUniLabel
             Left = 13
             Top = 377
@@ -804,7 +785,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 547
+            Width = 610
             Height = 51
             Hint = ''
             ParentColor = False
@@ -814,7 +795,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               AlignWithMargins = True
               Left = 3
               Top = 3
-              Width = 541
+              Width = 604
               Height = 13
               Hint = ''
               AutoSize = False
@@ -827,7 +808,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel8: TUniContainerPanel
               Left = 0
               Top = 19
-              Width = 547
+              Width = 610
               Height = 32
               Hint = ''
               ParentColor = False
@@ -837,7 +818,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 460
+                Width = 523
                 Height = 26
                 Hint = ''
                 Text = ''
@@ -846,7 +827,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               end
               object btnCopyAddress: TUniFSButton
                 AlignWithMargins = True
-                Left = 469
+                Left = 532
                 Top = 3
                 Width = 75
                 Height = 26
@@ -874,7 +855,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 60
-            Width = 547
+            Width = 610
             Height = 56
             Hint = ''
             ParentColor = False
@@ -894,12 +875,11 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               ParentColor = False
               Color = clBtnFace
               TabOrder = 1
-              ExplicitWidth = 541
             end
             object UniContainerPanel10: TUniContainerPanel
               Left = 0
               Top = 19
-              Width = 547
+              Width = 610
               Height = 30
               Hint = ''
               ParentColor = False
@@ -909,7 +889,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 460
+                Width = 523
                 Height = 24
                 Hint = ''
                 Text = ''
@@ -918,7 +898,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               end
               object UniFSButton2: TUniFSButton
                 AlignWithMargins = True
-                Left = 469
+                Left = 532
                 Top = 3
                 Width = 75
                 Height = 24
@@ -946,7 +926,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 147
-            Width = 547
+            Width = 610
             Height = 57
             Hint = ''
             ParentColor = False
@@ -955,7 +935,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel13: TUniContainerPanel
               Left = 0
               Top = 0
-              Width = 547
+              Width = 610
               Height = 25
               Hint = ''
               ParentColor = False
@@ -975,7 +955,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               end
               object UniLabel4: TUniLabel
                 AlignWithMargins = True
-                Left = 494
+                Left = 557
                 Top = 3
                 Width = 50
                 Height = 19
@@ -991,7 +971,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 77
                 Top = 3
-                Width = 411
+                Width = 474
                 Height = 19
                 Hint = ''
                 AutoSize = False
@@ -1003,7 +983,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel14: TUniContainerPanel
               Left = 0
               Top = 25
-              Width = 547
+              Width = 610
               Height = 30
               Hint = ''
               ParentColor = False
@@ -1022,7 +1002,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               end
               object UniEdit4: TUniEdit
                 AlignWithMargins = True
-                Left = 494
+                Left = 557
                 Top = 3
                 Width = 50
                 Height = 24
@@ -1035,7 +1015,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 77
                 Top = 3
-                Width = 411
+                Width = 474
                 Height = 24
                 Hint = ''
                 Text = ''
@@ -1048,7 +1028,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 271
-            Width = 547
+            Width = 610
             Height = 57
             Hint = ''
             ParentColor = False
@@ -1058,7 +1038,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               AlignWithMargins = True
               Left = 3
               Top = 3
-              Width = 541
+              Width = 604
               Height = 13
               Hint = ''
               AutoSize = False
@@ -1072,7 +1052,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               AlignWithMargins = True
               Left = 3
               Top = 22
-              Width = 541
+              Width = 604
               Height = 29
               Hint = ''
               Text = ''
@@ -1084,7 +1064,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 210
-            Width = 547
+            Width = 610
             Height = 55
             Hint = ''
             ParentColor = False
@@ -1093,7 +1073,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel17: TUniContainerPanel
               Left = 0
               Top = 25
-              Width = 547
+              Width = 610
               Height = 30
               Hint = ''
               ParentColor = False
@@ -1101,7 +1081,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               TabOrder = 1
               object UniEdit7: TUniEdit
                 AlignWithMargins = True
-                Left = 469
+                Left = 532
                 Top = 3
                 Width = 75
                 Height = 24
@@ -1114,7 +1094,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 460
+                Width = 523
                 Height = 24
                 Hint = ''
                 Text = ''
@@ -1125,7 +1105,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel18: TUniContainerPanel
               Left = 0
               Top = 0
-              Width = 547
+              Width = 610
               Height = 25
               Hint = ''
               ParentColor = False
@@ -1133,7 +1113,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               TabOrder = 2
               object UniLabel7: TUniLabel
                 AlignWithMargins = True
-                Left = 469
+                Left = 532
                 Top = 3
                 Width = 75
                 Height = 19
@@ -1149,7 +1129,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 460
+                Width = 523
                 Height = 19
                 Hint = ''
                 AutoSize = False
@@ -1164,7 +1144,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
           object UniContainerPanel19: TUniContainerPanel
             Left = 0
             Top = 119
-            Width = 553
+            Width = 616
             Height = 25
             Hint = ''
             Margins.Left = 6
@@ -1239,7 +1219,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 334
-            Width = 547
+            Width = 610
             Height = 55
             Hint = ''
             ParentColor = False
@@ -1248,7 +1228,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel21: TUniContainerPanel
               Left = 0
               Top = 25
-              Width = 547
+              Width = 610
               Height = 30
               Hint = ''
               ParentColor = False
@@ -1256,7 +1236,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               TabOrder = 1
               object edSDINumber: TUniEdit
                 AlignWithMargins = True
-                Left = 416
+                Left = 479
                 Top = 3
                 Width = 128
                 Height = 24
@@ -1269,7 +1249,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 407
+                Width = 470
                 Height = 24
                 Hint = ''
                 Text = ''
@@ -1280,7 +1260,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             object UniContainerPanel22: TUniContainerPanel
               Left = 0
               Top = 0
-              Width = 547
+              Width = 610
               Height = 25
               Hint = ''
               ParentColor = False
@@ -1288,7 +1268,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               TabOrder = 2
               object lbIDNumber: TUniLabel
                 AlignWithMargins = True
-                Left = 416
+                Left = 479
                 Top = 3
                 Width = 128
                 Height = 19
@@ -1304,7 +1284,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 407
+                Width = 470
                 Height = 19
                 Hint = ''
                 AutoSize = False
@@ -1320,7 +1300,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
             AlignWithMargins = True
             Left = 3
             Top = 395
-            Width = 547
+            Width = 610
             Height = 57
             Hint = ''
             ParentColor = False
@@ -1330,7 +1310,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               AlignWithMargins = True
               Left = 3
               Top = 3
-              Width = 541
+              Width = 604
               Height = 13
               Hint = ''
               AutoSize = False
@@ -1344,7 +1324,7 @@ object frameUniGUIAccountSettings: TframeUniGUIAccountSettings
               AlignWithMargins = True
               Left = 3
               Top = 22
-              Width = 541
+              Width = 604
               Height = 29
               Hint = ''
               Text = ''

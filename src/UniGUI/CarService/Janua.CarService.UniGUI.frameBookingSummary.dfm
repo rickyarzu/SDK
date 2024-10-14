@@ -1,27 +1,22 @@
 object frameUniGUIBookingSummary: TframeUniGUIBookingSummary
   Left = 0
   Top = 0
-  ClientHeight = 320
-  ClientWidth = 585
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cntBookingSummary: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 585
-    Height = 320
+    Width = 640
+    Height = 480
     Hint = ''
     ParentColor = False
     Align = alClient
     TabOrder = 0
     DesignSize = (
-      585
-      320)
+      640
+      480)
     object btnNewBranch: TUniFSButton
       Left = 487
       Top = 11
@@ -36,7 +31,6 @@ object frameUniGUIBookingSummary: TframeUniGUIBookingSummary
       BadgeText.BackgroundColor = '#D50000'
       Caption = 'Nuova Sede'
       TabOrder = 1
-      OnClick = btnNewBranchClick
     end
     object btnShowContract: TUniFSButton
       Left = 432
@@ -53,7 +47,6 @@ object frameUniGUIBookingSummary: TframeUniGUIBookingSummary
       Caption = 'Vedi Condizioni'
       Anchors = [akLeft, akRight]
       TabOrder = 2
-      OnClick = btnShowContractClick
     end
     object cboBranchSelection: TUniFSComboBox
       Left = 8

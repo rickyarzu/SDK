@@ -1,22 +1,18 @@
 object frameUniGUIDBUser: TframeUniGUIDBUser
   Left = 0
   Top = 0
+  Width = 640
+  Height = 480
   Align = alClient
-  ClientHeight = 414
-  ClientWidth = 411
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Anchors = [akLeft, akTop, akRight, akBottom]
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object cntUserSettings: TUniContainerPanel
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 405
-    Height = 408
+    Width = 634
+    Height = 474
     Hint = ''
     ParentColor = False
     Align = alClient
@@ -25,7 +21,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 399
+      Width = 628
       Height = 58
       Hint = ''
       ParentColor = False
@@ -35,7 +31,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 5
-        Width = 393
+        Width = 622
         Height = 18
         Hint = ''
         Margins.Top = 5
@@ -51,7 +47,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 27
-        Width = 393
+        Width = 622
         Height = 28
         Hint = ''
         Text = ''
@@ -63,7 +59,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       AlignWithMargins = True
       Left = 3
       Top = 67
-      Width = 399
+      Width = 628
       Height = 60
       Hint = ''
       ParentColor = False
@@ -72,7 +68,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       object cntLabelPassword: TUniContainerPanel
         Left = 0
         Top = 0
-        Width = 399
+        Width = 628
         Height = 24
         Hint = ''
         ParentColor = False
@@ -80,7 +76,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         TabOrder = 1
         object ckbShowPwdRegister: TUniCheckBox
           AlignWithMargins = True
-          Left = 286
+          Left = 515
           Top = 3
           Width = 110
           Height = 18
@@ -93,7 +89,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
           AlignWithMargins = True
           Left = 3
           Top = 5
-          Width = 277
+          Width = 506
           Height = 16
           Hint = ''
           Margins.Top = 5
@@ -107,7 +103,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 27
-        Width = 393
+        Width = 622
         Height = 30
         Hint = ''
         PasswordChar = '*'
@@ -120,7 +116,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       AlignWithMargins = True
       Left = 3
       Top = 133
-      Width = 399
+      Width = 628
       Height = 57
       Hint = ''
       ParentColor = False
@@ -130,7 +126,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 5
-        Width = 393
+        Width = 622
         Height = 13
         Hint = ''
         Margins.Top = 5
@@ -144,7 +140,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 22
-        Width = 393
+        Width = 622
         Height = 32
         Hint = ''
         PasswordChar = '*'
@@ -157,7 +153,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       AlignWithMargins = True
       Left = 3
       Top = 196
-      Width = 399
+      Width = 628
       Height = 57
       Hint = ''
       ParentColor = False
@@ -167,7 +163,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 5
-        Width = 393
+        Width = 622
         Height = 13
         Hint = ''
         Margins.Top = 5
@@ -181,7 +177,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 22
-        Width = 393
+        Width = 622
         Height = 32
         Hint = ''
         Text = ''
@@ -193,7 +189,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
       AlignWithMargins = True
       Left = 3
       Top = 259
-      Width = 399
+      Width = 628
       Height = 57
       Hint = ''
       ParentColor = False
@@ -203,7 +199,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 5
-        Width = 393
+        Width = 622
         Height = 13
         Hint = ''
         Margins.Top = 5
@@ -217,7 +213,7 @@ object frameUniGUIDBUser: TframeUniGUIDBUser
         AlignWithMargins = True
         Left = 3
         Top = 22
-        Width = 393
+        Width = 622
         Height = 32
         Hint = ''
         Text = ''
