@@ -134,7 +134,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="New1.dcr"/>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="FlexCel_Core.dcp"/>
         <DCCReference Include="VCL_FlexCel_Core.dcp"/>
@@ -238,6 +237,10 @@
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txaPackage"/>
+        <RcItem Include="..\..\src\TMS\TJanuaVCLWebView.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>TJanuaVCLWebView</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -261,7 +264,8 @@
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

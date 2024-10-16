@@ -14,8 +14,17 @@ type
     { Public declarations }
   end;
 
+procedure Register;
+
 implementation
 
 {$R *.dfm}
+
+procedure Register;
+begin
+  RegisterComponents('Januaproject VCL Controls', [TJanuaVCLWebView]);
+end;
+
+
 
 end.

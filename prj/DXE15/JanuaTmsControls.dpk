@@ -1,7 +1,7 @@
 ﻿package JanuaTmsControls;
 
 {$R *.res}
-{$R 'New1.dcr'}
+{$R *.dres}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
