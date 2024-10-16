@@ -237,7 +237,7 @@
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txaPackage"/>
-        <RcItem Include="..\..\src\TMS\TJanuaVCLWebView.bmp">
+        <RcItem Include="..\..\src\landing-page.bmp">
             <ResourceType>BITMAP</ResourceType>
             <ResourceId>TJanuaVCLWebView</ResourceId>
         </RcItem>
