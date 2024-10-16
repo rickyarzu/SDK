@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'sgcWebSocket_APIs_Reg.pas' rev: 36.00 (Windows)
 
-#ifndef Sgcwebsocket_apis_regHPP
-#define Sgcwebsocket_apis_regHPP
+#ifndef sgcWebSocket_APIs_RegHPP
+#define sgcWebSocket_APIs_RegHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -41,4 +41,4 @@ using namespace Sgcwebsocket_apis_reg;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Sgcwebsocket_apis_regHPP
+#endif	// sgcWebSocket_APIs_RegHPP

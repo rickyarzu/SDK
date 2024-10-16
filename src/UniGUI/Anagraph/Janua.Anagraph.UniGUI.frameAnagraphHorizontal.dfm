@@ -1,16 +1,11 @@
 inherited frameUniGUIAnagraphHorizontal: TframeUniGUIAnagraphHorizontal
-  ClientHeight = 255
-  StyleElements = [seFont, seClient, seBorder]
-  ExplicitHeight = 294
-  TextHeight = 15
   inherited cntSimpleAnagraph: TUniContainerPanel
-    Height = 255
     inherited cntTop: TUniContainerPanel
       Width = 511
-      Height = 255
+      Height = 480
       Align = alLeft
       ExplicitWidth = 511
-      ExplicitHeight = 255
+      ExplicitHeight = 480
       inherited UniContainerPanel01: TUniContainerPanel
         Width = 505
         Height = 57
@@ -172,58 +167,58 @@ inherited frameUniGUIAnagraphHorizontal: TframeUniGUIAnagraphHorizontal
     inherited cntBottom: TUniContainerPanel
       Left = 511
       Top = 0
-      Width = 39
-      Height = 255
+      Width = 129
+      Height = 480
       Align = alClient
       ExplicitLeft = 511
       ExplicitTop = 0
-      ExplicitWidth = 39
-      ExplicitHeight = 255
+      ExplicitWidth = 129
+      ExplicitHeight = 480
       inherited UniContainerPanel09: TUniContainerPanel
-        Width = 33
-        ExplicitWidth = 33
+        Width = 123
+        ExplicitWidth = 123
         inherited lbEmail: TUniLabel
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
         inherited edtEMail: TUniEdit
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
       end
       inherited UniContainerPanel08: TUniContainerPanel
-        Width = 33
-        ExplicitWidth = 33
+        Width = 123
+        ExplicitWidth = 123
         inherited lbCellularPhone: TUniLabel
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
         inherited edtCellularPhone: TUniEdit
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
       end
       inherited UniContainerPanel07: TUniContainerPanel
-        Width = 33
-        ExplicitWidth = 33
+        Width = 123
+        ExplicitWidth = 123
         inherited lbPhone: TUniLabel
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
         inherited edtPhone: TUniEdit
-          Width = 27
-          ExplicitWidth = 27
+          Width = 117
+          ExplicitWidth = 117
         end
       end
       inherited UniContainerPanel06: TUniContainerPanel
-        Width = 33
-        ExplicitWidth = 33
+        Width = 123
+        ExplicitWidth = 123
         inherited UniContainerPanel5: TUniContainerPanel
-          Width = 33
-          ExplicitWidth = 33
+          Width = 123
+          ExplicitWidth = 123
           inherited lbProvince: TUniLabel
-            Left = -20
-            ExplicitLeft = -20
+            Left = 70
+            ExplicitLeft = 70
           end
           inherited lbTown: TUniLabel
             Width = 384
@@ -231,11 +226,11 @@ inherited frameUniGUIAnagraphHorizontal: TframeUniGUIAnagraphHorizontal
           end
         end
         inherited UniContainerPanel6: TUniContainerPanel
-          Width = 33
-          ExplicitWidth = 33
+          Width = 123
+          ExplicitWidth = 123
           inherited edtStateProvinceCode: TUniEdit
-            Left = -20
-            ExplicitLeft = -20
+            Left = 70
+            ExplicitLeft = 70
           end
           inherited edtTown: TUniEdit
             Width = 384

@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'ipstudiowinwordxp.dpk' rev: 36.00 (Windows)
 
-#ifndef IpstudiowinwordxpHPP
-#define IpstudiowinwordxpHPP
+#ifndef ipstudiowinwordxpHPP
+#define ipstudiowinwordxpHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -123,4 +123,4 @@ using namespace Ipstudiowinwordxp;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// IpstudiowinwordxpHPP
+#endif	// ipstudiowinwordxpHPP

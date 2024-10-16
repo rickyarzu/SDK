@@ -6,9 +6,9 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>1</TargetedPlatforms>
+        <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Library</AppType>
-        <MainSource>PhoenixLib32_r2.dpr</MainSource>
+        <MainSource>PhoenixLib32_r6.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -69,9 +69,21 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
     <Import Project="..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaeExeDXE15.optset')"/>
@@ -83,7 +95,7 @@
         <DCC_K>false</DCC_K>
         <GenDll>true</GenDll>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <SanitizedProjectName>PhoenixLib32_r2</SanitizedProjectName>
+        <SanitizedProjectName>PhoenixLib32_r6</SanitizedProjectName>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <DCC_ExeOutput>c:\Phoenix\</DCC_ExeOutput>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -125,11 +137,20 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;ipstudiowinwordxp;uniGUI29;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;FireDACDb2Driver;DBXOracleDriver;vclib;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;PlanAddons;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;vcldsnap;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;JanuaRestWeb;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;vcl;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;bindcompvcl;sbridge;JanuaCore;CloudService;JanuaFMXControls;unidac290;odbcprovider290;FireDACIBDriver;soapserver;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;FmxTeeUI;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;ipstudiowin;fmxdae;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;fmxFireDAC;ibprovider290;oraprovider290;DBXOdbcDriver;dbrtl;JanuaThirdParty;FireDACOracleDriver;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;VCLTMSFNCDashboardPackPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;AWSSDKFMX;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;FMXTMSFNCDashboardPackPkgDXE15;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <OutputExt>64.exe</OutputExt>
+        <Debugger_HostApplication>C:\Phoenix\Phoenix2XE15.64.exe</Debugger_HostApplication>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -145,14 +166,22 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <Debugger_HostApplication>C:\Phoenix\PhoenixTestDLL.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Debugger_HostApplication>C:\Phoenix\PhoenixTestDLL.exe</Debugger_HostApplication>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Debugger_HostApplication>C:\Phoenix\Phoenix2XE15.exe</Debugger_HostApplication>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -190,7 +219,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">PhoenixLib32_r2.dpr</Source>
+                    <Source Name="MainSource">PhoenixLib32_r6.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -214,15 +243,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\Phoenix\PhoenixLib32_r2.dll" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="c:\Phoenix\PhoenixLib32_r6.dll" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>PhoenixLib32_r2.dll</RemoteName>
+                        <RemoteName>PhoenixLib32_r6.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\Phoenix\PhoenixLib32_r2.dll" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="c:\Phoenix\PhoenixLib32_r6.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>PhoenixLib32_r2.dll</RemoteName>
+                        <RemoteName>PhoenixLib32_r6.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1182,7 +1211,7 @@
                 <Platform value="OSX64">False</Platform>
                 <Platform value="OSXARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
+                <Platform value="Win64">True</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

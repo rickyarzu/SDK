@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwdbnavedt.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwdbnavedtHPP
-#define Vcl_WwdbnavedtHPP
+#ifndef vcl_wwdbnavedtHPP
+#define vcl_wwdbnavedtHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -126,4 +126,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwdbnavedtHPP
+#endif	// vcl_wwdbnavedtHPP

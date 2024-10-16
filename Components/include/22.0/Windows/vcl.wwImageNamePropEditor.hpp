@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwImageNamePropEditor.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwimagenamepropeditorHPP
-#define Vcl_WwimagenamepropeditorHPP
+#ifndef vcl_wwImageNamePropEditorHPP
+#define vcl_wwImageNamePropEditorHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -130,4 +130,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwimagenamepropeditorHPP
+#endif	// vcl_wwImageNamePropEditorHPP

@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.ipabout.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_IpaboutHPP
-#define Vcl_IpaboutHPP
+#ifndef vcl_ipaboutHPP
+#define vcl_ipaboutHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -80,4 +80,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_IpaboutHPP
+#endif	// vcl_ipaboutHPP

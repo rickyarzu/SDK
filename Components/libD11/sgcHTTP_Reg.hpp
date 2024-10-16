@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'sgcHTTP_Reg.pas' rev: 36.00 (Windows)
 
-#ifndef Sgchttp_regHPP
-#define Sgchttp_regHPP
+#ifndef sgcHTTP_RegHPP
+#define sgcHTTP_RegHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -38,4 +38,4 @@ using namespace Sgchttp_reg;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Sgchttp_regHPP
+#endif	// sgcHTTP_RegHPP

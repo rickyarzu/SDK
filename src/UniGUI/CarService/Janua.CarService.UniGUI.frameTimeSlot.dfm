@@ -1,15 +1,10 @@
 object frameTimeSelect: TframeTimeSelect
   Left = 0
   Top = 0
-  ClientHeight = 28
-  ClientWidth = 294
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object tgSelected: TUniFSToggle
     Left = 256
     Top = 3

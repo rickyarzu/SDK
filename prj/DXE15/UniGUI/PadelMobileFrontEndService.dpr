@@ -26,11 +26,11 @@ begin
   TJanuaSportsUniGUIApplication.ApplicationSetup('mobile.padelccnect.com');
   TJanuacoreOS.WriteParam('UniGUI', 'Port', 8083);
   // TUniServerModule.Create(Application);
-  AApplication.CreateForm(TUniGuiPadelBackEndServiceModule, UniGuiPadelBackEndServiceModule);
-  / Unigui Padel Wordpress Service
-  UniGuiPadelServiceModule.DisplayName := TJanuaApplication.GetServiceDescription
-    ('Padel Wordpress Mobile Service Module');
-  UniGuiPadelServiceModule.Name := TJanuaApplication.GetServiceName('PadelWordpressMobileServiceModule');
+  Application.CreateForm(TUniGuiPadelBackEndServiceModule, UniGuiPadelBackEndServiceModule);
+  /// Unigui Padel Wordpress Service
+  UniGuiPadelBackEndServiceModule.DisplayName := TJanuaApplication.GetServiceDescription
+    ('Padel UniGuiPadelBackEndServiceModule Mobile Service Module');
+  UniGuiPadelBackEndServiceModule.Name := TJanuaApplication.GetServiceName('PadelWordpressMobileServiceModule');
   // UniGuiPadelServiceModule.ServiceStartName := 'Administrator';
   Application.Run;
 

@@ -1,23 +1,18 @@
 object frameUniGUITimeSlotPickup: TframeUniGUITimeSlotPickup
   Left = 0
   Top = 0
-  ClientHeight = 268
-  ClientWidth = 296
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
+  Width = 640
+  Height = 480
   OnCreate = FormCreate
+  Font.Height = -12
+  TabOrder = 0
   DesignSize = (
-    296
-    268)
-  TextHeight = 15
+    640
+    480)
   object ulbPickupDate: TUniLabel
     Left = 0
     Top = 0
-    Width = 296
+    Width = 640
     Height = 25
     Hint = ''
     Alignment = taCenter

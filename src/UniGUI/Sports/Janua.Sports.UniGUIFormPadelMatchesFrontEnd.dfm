@@ -206,22 +206,7 @@ inherited frmUniGUIPadelMatchesFrontEnd: TfrmUniGUIPadelMatchesFrontEnd
         Width = 0
       end>
   end
-  object btnExcel: TUniFSButton [10]
-    Left = 713
-    Top = 9
-    Width = 89
-    Height = 37
-    Hint = ''
-    StyleButton = GoogleOrange
-    BadgeText.Text = '0'
-    BadgeText.TextColor = '#FFFFFF'
-    BadgeText.TextSize = 10
-    BadgeText.TextStyle = 'bold'
-    BadgeText.BackgroundColor = '#D50000'
-    Caption = 'Excel'
-    TabOrder = 10
-  end
-  object lbChampionship: TUniLabel [11]
+  object lbChampionship: TUniLabel [10]
     Left = 32
     Top = 10
     Width = 577
@@ -236,6 +221,21 @@ inherited frmUniGUIPadelMatchesFrontEnd: TfrmUniGUIPadelMatchesFrontEnd
     Font.Style = [fsBold]
     ParentColor = False
     Color = clBtnFace
+    TabOrder = 10
+  end
+  object btnExcel: TUniFSButton [11]
+    Left = 710
+    Top = 8
+    Width = 89
+    Height = 37
+    Hint = ''
+    StyleButton = GoogleGreen
+    BadgeText.Text = '0'
+    BadgeText.TextColor = '#FFFFFF'
+    BadgeText.TextSize = 10
+    BadgeText.TextStyle = 'bold'
+    BadgeText.BackgroundColor = '#D50000'
+    Caption = 'Excel'
     TabOrder = 11
   end
   object ugexMatches: TUniGridExcelExporter

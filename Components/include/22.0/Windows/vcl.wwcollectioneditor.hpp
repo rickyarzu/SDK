@@ -4,8 +4,8 @@
 
 // (DO NOT EDIT: machine generated header) 'vcl.wwcollectioneditor.pas' rev: 36.00 (Windows)
 
-#ifndef Vcl_WwcollectioneditorHPP
-#define Vcl_WwcollectioneditorHPP
+#ifndef vcl_wwcollectioneditorHPP
+#define vcl_wwcollectioneditorHPP
 
 #pragma delphiheader begin
 #pragma option push
@@ -126,4 +126,4 @@ using namespace Vcl;
 
 #pragma delphiheader end.
 //-- end unit ----------------------------------------------------------------
-#endif	// Vcl_WwcollectioneditorHPP
+#endif	// vcl_wwcollectioneditorHPP

@@ -2,6 +2,15 @@ inherited dmJanuaPgSportsMatches: TdmJanuaPgSportsMatches
   Height = 545
   Width = 580
   inherited PgErgoConnection: TJanuaUniConnection
+    DataTypeMap = <
+      item
+        DBType = 521
+        FieldType = ftDateTime
+      end
+      item
+        DBType = 520
+        FieldType = ftDateTime
+      end>
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
   inherited spSetSchemaID: TUniStoredProc

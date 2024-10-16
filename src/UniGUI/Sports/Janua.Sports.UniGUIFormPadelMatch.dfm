@@ -18,16 +18,20 @@ object frmUniGUIPadelMatch: TfrmUniGUIPadelMatch
     TabOrder = 1
     Background.Picture.Data = {00}
     ExplicitWidth = 735
-    inherited UniLabel1: TUniLabel
-      Font.Color = 30716
+    inherited lbSetTeamA: TUniLabel
+      Left = 3
+      Top = 261
+      Font.Color = clLightseagreen
+      ExplicitLeft = 3
+      ExplicitTop = 261
     end
-    inherited UniLabel2: TUniLabel
-      Font.Color = 30716
+    inherited lbSetTeambB: TUniLabel
+      Font.Color = clLightseagreen
     end
     inherited dbtMatchDate: TUniDBText
       Width = 735
-      Font.Color = 30716
-      ExplicitWidth = 731
+      Font.Color = clLightseagreen
+      ExplicitWidth = 735
     end
   end
   object btnManageMatch: TUniFSButton
