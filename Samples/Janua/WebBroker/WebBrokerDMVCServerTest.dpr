@@ -23,7 +23,7 @@ uses
   uBindVCLInterposers in '..\..\Angelo\uBindVCLInterposers.pas',
   uBindingEngineRTL in '..\..\Angelo\uBindingEngineRTL.pas',
   uVCLBindingInterposers in '..\..\Angelo\uVCLBindingInterposers.pas',
-  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas';
+  Janua.System.Session.DMVC.Controller in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas';
 
 {$R *.res}
 

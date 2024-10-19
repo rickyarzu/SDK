@@ -17,7 +17,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
     Top = 3
     Width = 828
     Height = 607
-    ActivePage = tabDMVCWebBrokder
+    ActivePage = tabWebBrokder
     Align = alClient
     TabOrder = 0
     object tabWebBrokder: TTabSheet
@@ -38,6 +38,8 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           TabOrder = 0
           OnAfterStartServer = frameTestWebBrokerAfterStartServer
           OnBeforeStartServer = frameTestWebBrokerBeforeStartServer
+          ExplicitLeft = 0
+          ExplicitTop = -4
         end
       end
       object awbTestWebServer: TAdvWebBrowser
@@ -66,7 +68,6 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
         Height = 49
         Align = alTop
         TabOrder = 0
-        ExplicitTop = -6
         object frameDMVCWebBroker: TJanuaframeWebServerManager
           Left = 1
           Top = 1
@@ -76,6 +77,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           TabOrder = 0
           OnAfterStartServer = frameDMVCWebBrokerAfterStartServer
           OnBeforeStartServer = frameDMVCWebBrokerBeforeStartServer
+          ExplicitTop = -4
         end
         object edPassword: TLabeledEdit
           Left = 688
@@ -305,7 +307,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.1'
+                Version = '3.9.1.2'
                 WordWrap = wwNone
               end
             end
