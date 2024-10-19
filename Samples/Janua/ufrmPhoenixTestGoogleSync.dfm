@@ -326,26 +326,27 @@ object frmVCLPhoenixTestGoogleSync: TfrmVCLPhoenixTestGoogleSync
     TabOrder = 5
   end
   object Panel1: TPanel
-    Left = 820
+    Left = 826
     Top = 463
-    Width = 400
+    Width = 394
     Height = 364
     Anchors = [akLeft, akTop, akBottom]
     TabOrder = 6
     object ScrollBox1: TScrollBox
       Left = 1
       Top = 1
-      Width = 398
+      Width = 392
       Height = 362
       VertScrollBar.Range = 1200
       VertScrollBar.Size = 1200
       Align = alClient
       AutoScroll = False
       TabOrder = 0
+      ExplicitWidth = 398
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 377
+        Width = 371
         Height = 1200
         Align = alClient
         TabOrder = 0
@@ -357,14 +358,14 @@ object frmVCLPhoenixTestGoogleSync: TfrmVCLPhoenixTestGoogleSync
   object Panel2: TPanel
     Left = 1226
     Top = 463
-    Width = 400
+    Width = 350
     Height = 364
-    Anchors = [akLeft, akTop, akBottom]
+    Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 7
     object ScrollBox2: TScrollBox
       Left = 1
       Top = 1
-      Width = 398
+      Width = 348
       Height = 362
       HorzScrollBar.Size = 1200
       VertScrollBar.Range = 1200
@@ -372,16 +373,17 @@ object frmVCLPhoenixTestGoogleSync: TfrmVCLPhoenixTestGoogleSync
       Align = alClient
       AutoScroll = False
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
+      ExplicitWidth = 398
       object Panel4: TPanel
         Left = 0
         Top = 0
-        Width = 377
+        Width = 327
         Height = 1200
         Align = alClient
         TabOrder = 0
-        ExplicitTop = -842
+        ExplicitLeft = -3
+        ExplicitTop = -3
+        ExplicitWidth = 377
       end
     end
   end

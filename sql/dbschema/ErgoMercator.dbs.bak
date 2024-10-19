@@ -11086,27 +11086,27 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 	</layout>
 	<layout name="jpublic" id="Layout_37b20fd" confirmed="y" show_schema_name="y" show_relation="columns" >
 		<comment><![CDATA[PostgreSQL]]></comment>
-		<entity schema="ergomercator.jpublic" name="buildings" color="BEBEF4" x="544" y="800" />
-		<entity schema="ergomercator.jpublic" name="contiguous_regions" color="F4DDBE" x="64" y="128" />
-		<entity schema="ergomercator.jpublic" name="countries" color="D1BEF4" x="1136" y="80" />
-		<entity schema="ergomercator.jpublic" name="countries_trans" color="D1BEF4" x="928" y="128" />
-		<entity schema="ergomercator.jpublic" name="country_currencies" color="D1BEF4" x="1344" y="144" />
-		<entity schema="ergomercator.jpublic" name="cultures" color="FF6666" x="896" y="384" />
-		<entity schema="ergomercator.jpublic" name="currencies" color="FF6666" x="1280" y="416" />
-		<entity schema="ergomercator.jpublic" name="currencies_trans" color="FF6666" x="1120" y="608" />
-		<entity schema="ergomercator.jpublic" name="district_trans" color="F4DDBE" x="320" y="448" />
-		<entity schema="ergomercator.jpublic" name="districts" color="F4DDBE" x="64" y="528" />
-		<entity schema="ergomercator.jpublic" name="lang_translations" color="E6B3E6" x="624" y="576" />
-		<entity schema="ergomercator.jpublic" name="languages" color="CC99CC" x="624" y="320" />
-		<entity schema="ergomercator.jpublic" name="location_types" color="C7F4BE" x="1008" y="848" />
-		<entity schema="ergomercator.jpublic" name="locations" color="C7F4BE" x="768" y="800" />
-		<entity schema="ergomercator.jpublic" name="regions" color="F4DDBE" x="64" y="304" />
-		<entity schema="ergomercator.jpublic" name="regions_trans" color="F4DDBE" x="336" y="304" />
-		<entity schema="ergomercator.jpublic" name="routes" color="BED3F4" x="576" y="1168" />
-		<entity schema="ergomercator.jpublic" name="sub_town_areas" color="BED3F4" x="288" y="1216" />
-		<entity schema="ergomercator.jpublic" name="town_areas" color="BEBEF4" x="48" y="1056" />
-		<entity schema="ergomercator.jpublic" name="town_areas_routes" color="C1D8EE" x="368" y="1072" />
-		<entity schema="ergomercator.jpublic" name="towns" color="BEBEF4" x="48" y="816" />
+		<entity schema="ergomercator.jpublic" name="buildings" color="BEBEF4" x="544" y="720" />
+		<entity schema="ergomercator.jpublic" name="contiguous_regions" color="F4DDBE" x="48" y="80" />
+		<entity schema="ergomercator.jpublic" name="countries" color="D1BEF4" x="1360" y="80" />
+		<entity schema="ergomercator.jpublic" name="countries_trans" color="D1BEF4" x="1104" y="208" />
+		<entity schema="ergomercator.jpublic" name="country_currencies" color="D1BEF4" x="1344" y="400" />
+		<entity schema="ergomercator.jpublic" name="cultures" color="D1BEF4" x="1616" y="400" />
+		<entity schema="ergomercator.jpublic" name="currencies" color="D1BEF4" x="1616" y="80" />
+		<entity schema="ergomercator.jpublic" name="currencies_trans" color="D1BEF4" x="1904" y="80" />
+		<entity schema="ergomercator.jpublic" name="district_trans" color="F4DDBE" x="832" y="272" />
+		<entity schema="ergomercator.jpublic" name="districts" color="F4DDBE" x="576" y="272" />
+		<entity schema="ergomercator.jpublic" name="lang_translations" color="F4DDBE" x="64" y="480" />
+		<entity schema="ergomercator.jpublic" name="languages" color="F4DDBE" x="64" y="272" />
+		<entity schema="ergomercator.jpublic" name="location_types" color="C7F4BE" x="1008" y="768" />
+		<entity schema="ergomercator.jpublic" name="locations" color="C7F4BE" x="768" y="720" />
+		<entity schema="ergomercator.jpublic" name="regions" color="F4DDBE" x="320" y="272" />
+		<entity schema="ergomercator.jpublic" name="regions_trans" color="F4DDBE" x="320" y="496" />
+		<entity schema="ergomercator.jpublic" name="routes" color="BED3F4" x="576" y="1088" />
+		<entity schema="ergomercator.jpublic" name="sub_town_areas" color="BED3F4" x="288" y="1136" />
+		<entity schema="ergomercator.jpublic" name="town_areas" color="BEBEF4" x="48" y="976" />
+		<entity schema="ergomercator.jpublic" name="town_areas_routes" color="C1D8EE" x="368" y="992" />
+		<entity schema="ergomercator.jpublic" name="towns" color="BEBEF4" x="48" y="736" />
 		<group name="Group_Towns" color="C4E0F9" >
 			<entity schema="ergomercator.jpublic" name="sub_town_areas" />
 			<entity schema="ergomercator.jpublic" name="towns" />
@@ -11117,27 +11117,6 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 		<group name="Group_Locations" color="CCFFCC" >
 			<entity schema="ergomercator.jpublic" name="locations" />
 			<entity schema="ergomercator.jpublic" name="location_types" />
-		</group>
-		<group name="Group_Regions" color="FFCC99" >
-			<entity schema="ergomercator.jpublic" name="contiguous_regions" />
-			<entity schema="ergomercator.jpublic" name="regions" />
-			<entity schema="ergomercator.jpublic" name="districts" />
-			<entity schema="ergomercator.jpublic" name="regions_trans" />
-			<entity schema="ergomercator.jpublic" name="district_trans" />
-		</group>
-		<group name="Group_Languages" color="E6B3E6" >
-			<entity schema="ergomercator.jpublic" name="languages" />
-			<entity schema="ergomercator.jpublic" name="lang_translations" />
-		</group>
-		<group name="Group_Countries" color="8099FF" >
-			<entity schema="ergomercator.jpublic" name="countries" />
-			<entity schema="ergomercator.jpublic" name="countries_trans" />
-			<entity schema="ergomercator.jpublic" name="country_currencies" />
-		</group>
-		<group name="Group_cultures" color="FF9999" >
-			<entity schema="ergomercator.jpublic" name="cultures" />
-			<entity schema="ergomercator.jpublic" name="currencies" />
-			<entity schema="ergomercator.jpublic" name="currencies_trans" />
 		</group>
 	</layout>
 	<layout name="system" id="Layout_31680f" confirmed="y" show_relation="columns" />

@@ -1,6 +1,7 @@
 ﻿package JanuaTmsControls;
 
 {$R *.res}
+{$R *.dres}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -83,6 +84,7 @@ contains
   Janua.TMS.dmComponents in '..\..\src\TMS\Janua.TMS.dmComponents.pas' {dmTmsComponents: TDataModule},
   Janua.TMS.Cloud.Mail.VCL in '..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas',
   Janua.TMS.MyMonthPlanner in '..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas',
-  Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas';
+  Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas',
+  Janua.TMS.WebView in '..\..\src\TMS\Janua.TMS.WebView.pas' {JanuaVCLWebView: TFrame};
 
 end.
