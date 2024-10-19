@@ -126,9 +126,6 @@
         <Projects Include="JanuaAllDemos.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="FMX\EuroFloraApp.dproj">
             <Dependencies/>
         </Projects>
@@ -184,9 +181,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\JanuaVCLTestCloudFlare.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\FMX\CustomSVGBlox.dproj">
@@ -584,15 +578,6 @@
     <Target Name="JanuaAllDemos:Make">
         <MSBuild Projects="JanuaAllDemos.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ServerSideViewsCustomEngine">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj"/>
-    </Target>
-    <Target Name="ServerSideViewsCustomEngine:Clean">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ServerSideViewsCustomEngine:Make">
-        <MSBuild Projects="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj" Targets="Make"/>
-    </Target>
     <Target Name="EuroFloraApp">
         <MSBuild Projects="FMX\EuroFloraApp.dproj"/>
     </Target>
@@ -764,15 +749,6 @@
     <Target Name="JanuaVCLTestCloudFlare:Make">
         <MSBuild Projects="..\..\Samples\Janua\JanuaVCLTestCloudFlare.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CustomPathBlox">
-        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj"/>
-    </Target>
-    <Target Name="CustomPathBlox:Clean">
-        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CustomPathBlox:Make">
-        <MSBuild Projects="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CustomSVGBlox">
         <MSBuild Projects="..\..\Samples\Janua\FMX\CustomSVGBlox.dproj"/>
     </Target>
@@ -828,13 +804,13 @@
         <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;ServerSideViewsCustomEngine;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomPathBlox;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;StyleControls;StyleControlsD"/>
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;StyleControls;StyleControlsD"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;ServerSideViewsCustomEngine:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomPathBlox:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;StyleControls:Clean;StyleControlsD:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;StyleControls:Clean;StyleControlsD:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;ServerSideViewsCustomEngine:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomPathBlox:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;StyleControls:Make;StyleControlsD:Make"/>
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;StyleControls:Make;StyleControlsD:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -952,12 +928,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -980,12 +950,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -1362,12 +1326,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1390,12 +1348,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -1772,12 +1724,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1800,12 +1746,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -2182,12 +2122,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2210,12 +2144,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -2592,12 +2520,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2620,12 +2542,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -3002,12 +2918,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3030,12 +2940,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -3412,12 +3316,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="D:\DelphiLib\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
-            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3440,12 +3338,6 @@
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\lib\delphimvcframework\samples\serversideviewcustom\ServerSideViewsCustomEngine.dproj">
-            <ProjectGuid>{26F03627-A96B-4F16-8E35-D0D1890F6748}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
