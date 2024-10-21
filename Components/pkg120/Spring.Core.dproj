@@ -64,6 +64,12 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
@@ -161,6 +167,9 @@
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Debugger_HostApplication>C:\Phoenix\Phoenix2XE15.exe</Debugger_HostApplication>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -297,7 +306,7 @@
                 <Platform value="Win64">True</Platform>
                 <Platform value="Win64x">False</Platform>
             </Platforms>
-            <Deployment Version="5">
+            <Deployment Version="4">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -320,6 +329,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">

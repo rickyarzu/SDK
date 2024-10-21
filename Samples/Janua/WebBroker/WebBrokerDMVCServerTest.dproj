@@ -5,10 +5,11 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>WebBrokerDMVCServerTest.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">WebBrokerDMVCServerTest</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -57,6 +58,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\..\..\prj\DXE15\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\..\prj\DXE15\JanuaDemoDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -70,6 +72,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>WebBrokerDMVCServerTest</SanitizedProjectName>
+        <CfgDependentOn>..\..\..\prj\DXE15\JanuaDemoDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;TMSFMXPackPkg;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;VCLTMSFNCWXPackPkgDXE15;DBXSqliteDriver;DBXSybaseASEDriver;JvRuntimeDesign;FMXTMSFNCBloxPkgDXE15;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;JvCmp;FireDACDb2Driver;DBXOracleDriver;vclib;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;JvBands;DCLgtQRExp;VCLTMSFNCBloxPkgDXE15;Intraweb_15_D12;PlanAddons;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;vcldsnap;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;JanuaUnidacComponents;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;JvDotNetCtrls;vcl;JvHMI;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;JvPrintPreview;TMSWebOSMapsPkgDE;tethering;JvStdCtrls;uniTools29;TRCGooglePlaces_d;JanuaThirdPartyVCL;bindcompvcl;sbridge;JanuaCore;CloudService;JanuaFMXControls;unidac290;odbcprovider290;FireDACIBDriver;soapserver;TMSWebGMapsPkgDE;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;IWBootstrap4D12;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;FmxTeeUI;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;IWBootstrapD12;ipstudiowin;JvDB;eMiniInvoice4D;fmxdae;JvCustom;dclUniFalcon;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;OpenAIPackage;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;JvDlgs;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;FlexCel_Report;emshosting;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;fmxFireDAC;ibprovider290;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;JanuaThirdParty;FireDACOracleDriver;Skia.Package.FMX;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;VCLTMSFNCDashboardPackPkgDXE15;VCLTMSFNCWebSocketPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;AWSSDKFMX;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;FMXTMSFNCDashboardPackPkgDXE15;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
@@ -155,9 +158,10 @@
         <DCCReference Include="..\..\Angelo\uBindVCLInterposers.pas"/>
         <DCCReference Include="..\..\Angelo\uBindingEngineRTL.pas"/>
         <DCCReference Include="..\..\Angelo\uVCLBindingInterposers.pas"/>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -838,6 +842,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1130,6 +1137,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

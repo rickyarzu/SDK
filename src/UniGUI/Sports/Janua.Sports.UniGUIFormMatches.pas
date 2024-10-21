@@ -13,7 +13,7 @@ uses
   uniDBComboBox, uniDBLookupComboBox, unimComboBox, uniLabel, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, uniBasicGrid, uniDBGrid, uniDBNavigator, UniFSButton,
-  uniMenuButton, UniSFMenuButton, UniSFButton, Vcl.Menus, uniMainMenu, uniGridExporters, UniFSMenuButton;
+  uniMenuButton, Vcl.Menus, uniMainMenu, uniGridExporters, UniFSMenuButton;
 
 type
   TfrmUniGUISportMatches = class(TUniForm)
@@ -53,6 +53,7 @@ type
   private
     { Private declarations }
     FCount: Integer;
+    FMainFontColor: TColor;
     FdmJanuaPgSportsMatches: TdmJanuaPgSportsMatches;
     procedure SetdmJanuaPgSportsMatches(const Value: TdmJanuaPgSportsMatches);
   public
@@ -69,7 +70,7 @@ implementation
 {$R *.dfm}
 
 uses
-  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication;
+  uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Sports.Conf;
 
 function frmUniGUISportMatches: TfrmUniGUISportMatches;
 begin
@@ -114,6 +115,14 @@ begin
 
   dsMatchDays.DataSet := FdmJanuaPgSportsMatches.qryMatchDays;
   dsMatchdayRanking.DataSet := FdmJanuaPgSportsMatches.qryMatchdayRanking;
+
+  FMainFontColor := Janua.Sports.Conf.TJanuaSportsConf.MainFontColor;
+
+  cboMatchDay.Font.Color := FMainFontColor;
+  grdMatches.TitleFont.Color := FMainFontColor;
+  grdRanking.TitleFont.Color := FMainFontColor;
+  cboChampionship.Font.Color := FMainFontColor;
+
 
 end;
 

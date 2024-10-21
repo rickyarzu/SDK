@@ -34,12 +34,13 @@ BEGIN
    );
    
    
-  insert into sports.calendar_teams (league_id, season_id, match_day, team_id)
+  insert into sports.calendar_teams (league_id, season_id, match_day, team_id)	
   select league_id, season_id, match_day_number, team_id from sports.matchday_scores_view v  where not exists
   (select 1 from sports.calendar_teams t
    	where 
-   	match_day = v.match_day_number and t.league_id = v.league_id and t.team_id = v.team_id 
-   );
+   	match_day = V.match_day_number and t.league_id = V.LEAGUE_ID and t.team_id = v.team_id 
+   )
+   AND TEAM_ID > 0;
 	
 
 	DELETE FROM sports.matchday_ranking 

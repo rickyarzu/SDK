@@ -8,8 +8,12 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     Left = 3
     Top = 48
     Anchors = [akLeft, akTop, akRight]
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitLeft = 3
     ExplicitTop = 48
+  end
+  inherited lbCalendarList: TLabel
+    StyleElements = [seFont, seClient, seBorder]
   end
   object Area: TLabel [2]
     Left = 50
@@ -21,11 +25,13 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
   inherited edDays: TSpinEdit
     Left = 3
     Top = 64
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitLeft = 3
     ExplicitTop = 64
   end
   inherited Panel1: TPanel
     Width = 903
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 903
     inherited btnAddMeeting: TButton
       Action = dmVCLPhoenixPlannerController.ActionAddMeeting
@@ -43,6 +49,27 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
   inherited grpMeeting: TGroupBox
     Top = 865
     ExplicitTop = 865
+  end
+  inherited Panel2: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited ckbCalendarList: TCheckListBox
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
+  inherited Panel3: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited lbSearch: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited lbDateSelector: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited edMeeting: TEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited Panel4: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
   end
   inherited PageControl1: TPageControl
     inherited tabCalendar: TTabSheet
@@ -125,7 +152,7 @@ inherited frameTMSPhoenixPlannerCalendar: TframeTMSPhoenixPlannerCalendar
     Left = 439
     Top = 370
     object mnuGoogleSync1: TMenuItem
-      Action = dmVCLPhoenixPlannerController.actGoogleSync
+      Action = dmVCLPhoenixPlannerController.actEventGoogleSync
     end
   end
   object dsCAP: TUniDataSource

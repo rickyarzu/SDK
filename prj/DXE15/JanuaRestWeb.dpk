@@ -68,7 +68,7 @@ contains
   Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
   Janua.DMVC.WebBroker.Server in '..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas',
   Janua.CarService.Driver.DMVCController in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
-  Janua.System.Session.DMVCController in '..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas';
+  Janua.System.Session.DMVC.Controller in '..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas';
 
 // IdHTTPWebBrokerBridge,
 

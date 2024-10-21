@@ -1,4 +1,4 @@
-unit Janua.System.Session.DMVCController;
+unit Janua.System.Session.DMVC.Controller;
 
 interface
 

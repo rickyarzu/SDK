@@ -248,7 +248,7 @@ begin
   { TdmVCLPhoenixPlannerController }
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
-  {frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner;}
+  { frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner; }
   PageControl1.ActivePage := tabCalendariTecnici;
 
   var
@@ -345,12 +345,20 @@ begin
       FontStyles := [fsBold];
     end;
     if (FieldByName('STATO').AsInteger = 4) then
-      FontColor := clWebTomato;
+    begin
+      if FieldByName('APPUNTAMENTO_DATA').IsNull then
+        FontColor := clWebTomato
+      else
+      begin
+        FontColor := clBlue;
+        FontStyles := [fsBold];
+      end;
+    end;
     if (FieldByName('STATO').AsInteger in [5, 6]) then
       FontColor := clGreen;
 
-    if not FieldByName('APPUNTAMENTO_DATA').IsNull and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)
-    then
+    if (FieldByName('RITARDO').AsInteger < 0) and
+      (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)) then
       FontColor := clRed;
 
     // if (FieldByName('AN_INVOICE').AsInteger  = 2)  then backgroundColor := clYellow;

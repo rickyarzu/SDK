@@ -326,12 +326,15 @@ type
   end;
 
   TJanuaRecEvent = record
+  public
     ID: string;
     ETag: string;
     Summary: string;
     Description: string;
     StartTime: TDateTime;
     EndTime: TDateTime;
+    OldStartTime: TDateTime;
+    OldEndTime: TDateTime;
     Created: TDateTime;
     Updated: TDateTime;
     Location: string;
@@ -347,12 +350,15 @@ type
     IsAllDAy: Boolean;
     Attendees: string;
     Reminders: string;
-    JGUID: TGUID;
+    JGUID: string;
     BackgroundColor: integer;
     ForegroundColor: integer;
     Sync: Boolean;
+    RefID: Int64;
+    RefID2: Int64;
   public
     function GetAsJson: String;
+    function GetGUID: TGUID;
     procedure Clear;
     procedure SetAsJson(const Value: String);
     function LoadFromDataset(const aDataset: TDataSet): Boolean;
@@ -1049,7 +1055,7 @@ begin
   IsAllDAy := False;
   Attendees := '';
   Reminders := '';
-  JGUID := GUID_NULL;
+  JGUID := GUID_NULL.ToString;
   BackgroundColor := 0;
   ForegroundColor := 0;
   Sync := False;
@@ -1058,6 +1064,11 @@ end;
 function TJanuaRecEvent.GetAsJson: String;
 begin
   Result := TJanuaJson.SerializeSimple<TJanuaRecEvent>(Self);
+end;
+
+function TJanuaRecEvent.GetGUID: TGUID;
+begin
+  Result := StringToGUID(Self.JGUID)
 end;
 
 function TJanuaRecEvent.LoadFromDataset(const aDataset: TDataSet): Boolean;
@@ -1084,7 +1095,7 @@ begin
   IsAllDAy := aDataset.FieldByName('ISALLDAY').AsString = 'T'; // BOOL_CHAR
   Attendees := aDataset.FieldByName('ATTENDEES').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
   Reminders := aDataset.FieldByName('REMINDERS').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
-  JGUID := aDataset.FieldByName('JGUID').AsGUID; // UUID /* UUID = CHAR(16) */,
+  JGUID := aDataset.FieldByName('JGUID').AsString; // UUID /* UUID = CHAR(16) */,
   BackgroundColor := aDataset.FieldByName('BACKGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
   ForegroundColor := aDataset.FieldByName('FOREGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
   Sync := aDataset.FieldByName('SYNC').AsString = 'T'; // BOOL_CHAR /*
@@ -1100,8 +1111,12 @@ begin
   aDataset.FieldByName('CREATED').AsDateTime := Created;
   aDataset.FieldByName('UPDATED').AsDateTime := Updated;
   aDataset.FieldByName('LOCATION').AsString := Location;
+  aDataset.FieldByName('SUMMARY').AsString := Summary;
+  aDataset.FieldByName('DESCRIPTION').AsString := Description;
   aDataset.FieldByName('STATUS').AsInteger := Status; // SMALLINT,
   aDataset.FieldByName('VISIBILITY').AsInteger := Visibility; // INTEGER,
+  if Recurrence = '' then
+    Recurrence := 'F';
   aDataset.FieldByName('RECURRENCE').AsString := Recurrence; // VARCHAR(60),
   aDataset.FieldByName('RECURRINGID').AsString := RecurringID; // VARCHAR(60),
   aDataset.FieldByName('SEQUENCE').AsInteger := Sequence; // ""           INTEGER,
@@ -1110,12 +1125,15 @@ begin
   aDataset.FieldByName('USEDEFAULTREMINDERS').AsString := IfThen(UseDefaultReminders, 'T', 'F'); // BOOL_CHAR
   aDataset.FieldByName('SENDNOTIFICATIONS').AsString := IfThen(SendNotifications, 'T', 'F'); // BOOL_CHAR
   aDataset.FieldByName('ISALLDAY').AsString := IfThen(IsAllDAy, 'T', 'F'); // BOOL_CHAR
-  Attendees := aDataset.FieldByName('ATTENDEES').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
-  Reminders := aDataset.FieldByName('REMINDERS').AsString; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
-  JGUID := aDataset.FieldByName('JGUID').AsGUID; // UUID /* UUID = CHAR(16) */,
-  BackgroundColor := aDataset.FieldByName('BACKGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
-  ForegroundColor := aDataset.FieldByName('FOREGROUNDCOLOR').AsInteger; // INTERO /* INTERO = INTEGER */,
-  Sync := aDataset.FieldByName('SYNC').AsString = 'T'; // BOOL_CHAR /*
+  aDataset.FieldByName('ATTENDEES').AsString := Attendees; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  aDataset.FieldByName('REMINDERS').AsString := Reminders; // BLOB SUB_TYPE TEXT SEGMENT SIZE 4096,
+  if JGUID <> '' then
+    aDataset.FieldByName('JGUID').AsString := JGUID
+  else
+    aDataset.FieldByName('JGUID').Clear; // UUID /* UUID = CHAR(16) */,
+  aDataset.FieldByName('BACKGROUNDCOLOR').AsInteger := BackgroundColor; // INTERO /* INTERO = INTEGER */,
+  aDataset.FieldByName('FOREGROUNDCOLOR').AsInteger := ForegroundColor; // INTERO /* INTERO = INTEGER */,
+  aDataset.FieldByName('SYNC').AsString := IfThen(Sync, 'T', 'F'); // BOOL_CHAR /*
 end;
 
 procedure TJanuaRecEvent.SetAsJson(const Value: String);

@@ -4,18 +4,14 @@ object frameCarServiceUniGUIBooking: TframeCarServiceUniGUIBooking
   Width = 1332
   Height = 540
   Align = alClient
-  AutoScroll = True
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Anchors = [akLeft, akTop, akRight, akBottom]
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
+  AutoScroll = True
   object pnlAddressLocation: TUniSimplePanel
     Left = 0
     Top = 0
-    Width = 1316
+    Width = 1332
     Height = 225
     Hint = ''
     ParentColor = False
@@ -27,7 +23,7 @@ object frameCarServiceUniGUIBooking: TframeCarServiceUniGUIBooking
     Layout = 'fit'
     LayoutConfig.Region = 'north'
     ScrollHeight = 225
-    ScrollWidth = 1316
+    ScrollWidth = 1332
     object UniScrollBox1: TUniScrollBox
       Left = 3
       Top = -10

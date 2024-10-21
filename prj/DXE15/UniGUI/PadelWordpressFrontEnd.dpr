@@ -7,18 +7,13 @@ uses
   Janua.Sports.UniGUIApplication,
   Janua.UniGUI.ServerModule,
   Janua.UniGUI.MainModule,
-  Janua.Sports.PgModel
-    in '..\..\..\src\januaunidac\datamodules\Janua.Sports.PgModel.pas' {dmJanuaPgSportsModel: TDataModule} ,
-  Janua.Sports.PgMatches
-    in '..\..\..\src\januaunidac\datamodules\Janua.Sports.PgMatches.pas' {dmJanuaPgSportsMatches: TDataModule} ,
-  Janua.Sports.UniGUIFormMatches
-    in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormMatches.pas' {frmUniGUISportMatches: TUniForm} ,
-  Janua.Sports.UniGUIframePadelMatch
-    in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIframePadelMatch.pas' {frameUniGUPadelMatch: TUniFrame} ,
-  Janua.Sports.UniGUIFormPadelMatch
-    in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatch.pas' {frmUniGUIPadelMatch: TUniForm} ,
-  Janua.Sports.UniGUIFormPadelMatchesFrontEnd
-    in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatchesFrontEnd.pas' {frmUniGUIPadelMatchesFrontEnd: TUniForm};
+  Janua.Sports.PgModel in '..\..\..\src\januaunidac\datamodules\Janua.Sports.PgModel.pas' {dmJanuaPgSportsModel: TDataModule},
+  Janua.Sports.PgMatches in '..\..\..\src\januaunidac\datamodules\Janua.Sports.PgMatches.pas' {dmJanuaPgSportsMatches: TDataModule},
+  Janua.Sports.UniGUIFormMatches in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormMatches.pas' {frmUniGUISportMatches: TUniForm},
+  Janua.Sports.UniGUIframePadelMatch in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIframePadelMatch.pas' {frameUniGUPadelMatch: TUniFrame},
+  Janua.Sports.UniGUIFormPadelMatch in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatch.pas' {frmUniGUIPadelMatch: TUniForm},
+  Janua.Sports.UniGUIFormPadelMatchesFrontEnd in '..\..\..\src\UniGUI\Sports\Janua.Sports.UniGUIFormPadelMatchesFrontEnd.pas' {frmUniGUIPadelMatchesFrontEnd: TUniForm},
+  Janua.Sports.Conf in '..\..\..\src\januacore\Janua.Sports.Conf.pas';
 
 {$R *.res}
 

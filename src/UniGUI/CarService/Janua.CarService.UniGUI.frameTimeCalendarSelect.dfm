@@ -1,20 +1,15 @@
 object frameTimeCalendarSelect: TframeTimeCalendarSelect
   Left = 0
   Top = 0
-  ClientHeight = 28
-  ClientWidth = 294
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object UniContainerPanel1: TUniContainerPanel
     Left = 0
     Top = 0
-    Width = 294
-    Height = 28
+    Width = 640
+    Height = 480
     Hint = ''
     ParentColor = False
     Align = alClient

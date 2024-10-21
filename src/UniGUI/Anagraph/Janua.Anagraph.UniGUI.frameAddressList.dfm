@@ -1,27 +1,21 @@
 object frameUniGUIAddressList: TframeUniGUIAddressList
   Left = 0
   Top = 0
-  ClientHeight = 728
-  ClientWidth = 921
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Width = 640
+  Height = 480
   Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
+  TabOrder = 0
   object pnbButtons: TUniPanel
     Left = 0
     Top = 0
-    Width = 921
+    Width = 640
     Height = 49
     Hint = ''
     Align = alTop
     TabOrder = 0
     Caption = ''
-    ExplicitWidth = 929
     DesignSize = (
-      921
+      640
       49)
     object btnNewAddress: TUniFSButton
       AlignWithMargins = True
@@ -43,18 +37,17 @@ object frameUniGUIAddressList: TframeUniGUIAddressList
     object UniContainerPanel1: TUniContainerPanel
       Left = 127
       Top = 1
-      Width = 664
+      Width = 383
       Height = 47
       Hint = ''
       ParentColor = False
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 2
-      ExplicitWidth = 672
       object lbSearch: TUniLabel
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 658
+        Width = 377
         Height = 13
         Hint = ''
         Margins.Bottom = 0
@@ -64,25 +57,23 @@ object frameUniGUIAddressList: TframeUniGUIAddressList
         ParentColor = False
         Color = clBtnFace
         TabOrder = 1
-        ExplicitWidth = 684
       end
       object edSearch: TUniEdit
         AlignWithMargins = True
         Left = 3
         Top = 19
-        Width = 658
+        Width = 377
         Height = 25
         Hint = ''
         Text = ''
         Align = alClient
         TabOrder = 2
         EmptyText = 'Inserire qui testo ricerca indirizzi'
-        ExplicitWidth = 684
       end
     end
     object btnSearch: TUniFSButton
       AlignWithMargins = True
-      Left = 797
+      Left = 516
       Top = 4
       Width = 120
       Height = 41
@@ -96,7 +87,6 @@ object frameUniGUIAddressList: TframeUniGUIAddressList
       Caption = 'Ricerca'
       Align = alRight
       TabOrder = 3
-      ExplicitLeft = 805
     end
   end
 end

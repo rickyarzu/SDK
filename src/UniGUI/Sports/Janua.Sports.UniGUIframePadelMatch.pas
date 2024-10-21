@@ -48,8 +48,8 @@ type
     lbPlayerB: TUniLabel;
     lbTeamA: TUniLabel;
     lbTeamB: TUniLabel;
-    UniLabel1: TUniLabel;
-    UniLabel2: TUniLabel;
+    lbSetTeamA: TUniLabel;
+    lbSetTeambB: TUniLabel;
     UniGroupBox1: TUniGroupBox;
     SetA1: TUniSpinEdit;
     SetB1: TUniSpinEdit;
@@ -84,10 +84,14 @@ type
     FSCores: TSetArray;
     FDM: TdmJanuaPgSportsMatches;
     FInsert: Boolean;
+    FMainFontColor: TColor;
+  protected
+    procedure SetMainFontColor(const aValue: TColor);
   public
     { Public declarations }
     procedure Setup(const vFDM: TdmJanuaPgSportsMatches; aInsert: Boolean);
     procedure Post;
+    property MainFontColor: TColor read FMainFontColor write SetMainFontColor;
   end;
 
 implementation
@@ -96,6 +100,17 @@ uses Spring;
 
 {$R *.dfm}
 { TframeUniGUISportMatch }
+
+procedure TframeUniGUPadelMatch.SetMainFontColor(const aValue: TColor);
+begin
+  if FMainFontColor <> aValue  then
+  begin
+    FMainFontColor := aValue;
+    dbtMatchDate.Font.Color := FMainFontColor;
+    lbSetTeamA.Font.Color := FMainFontColor;
+    lbSetTeambB.Font.Color := FMainFontColor;
+  end;
+end;
 
 procedure TframeUniGUPadelMatch.btnConfClick(Sender: TObject);
 var

@@ -1,4 +1,4 @@
-library PhoenixLib32_r2;
+library PhoenixLib32_r6;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -16,6 +16,7 @@ library PhoenixLib32_r2;
   included into your library's USES clause. }
 
 uses
+  ShareMem,
   System.SysUtils,
   System.Classes,
   Janua.Phoenix.VCL.BackgroundApplication
@@ -37,11 +38,14 @@ function Initialize: string; stdcall;
 begin
   if not aSetted then
   begin
-    aSetted := True;
     TPhoenixVCLBackgroundApplication.ApplicationSetup('desktop.phoenix_asso.com');
-    aTest1 := 'Setted';
+    aDlg := TdlgVclCloudGoogleConnect.Create(nil);
+    aSetted := True;
+    if aSetted then
+      Result := 'Setted'
+    else
+      Result := 'Not Setted';
   end;
-  Result := 'Test1: ' + aTest1;
 end;
 
 function CreateGoogleEvent(aEvent: string): string; stdcall;
@@ -77,20 +81,35 @@ begin
   end;
 end;
 
+// ConfirmMessage
+function ConfirmMessage(aJson: string): string; stdcall;
+begin
+  Result := '';
+  try
+    if Assigned(aDlg) then
+      Result := aDlg.ConfirmMessage(aJson)
+  except
+    on e: exception do
+      Result := e.Message;
+  end;
+end;
+
+function GoogleSync: string; stdcall;
+begin
+    if Assigned(aDlg) then
+    aDlg.UpdateGoogle;
+  Result := 'test';
+end;
+
 exports
   Initialize index 1,
   CreateGoogleEvent index 2,
   UpdateGoogleEvent index 3,
-  DeleteGoogleEvent index 4;
+  DeleteGoogleEvent index 4,
+  ConfirmMessage index 5,
+  GoogleSync index 6;
 
 begin
   aSetted := False;
-  TPhoenixVCLBackgroundApplication.ApplicationSetup('desktop.phoenix_asso.com');
-  aDlg := TdlgVclCloudGoogleConnect.Create(nil);
-  aSetted := True;
-  if aSetted then
-    aTest1 := 'Setted'
-  else
-    aTest1 := 'Not Setted';
 
 end.

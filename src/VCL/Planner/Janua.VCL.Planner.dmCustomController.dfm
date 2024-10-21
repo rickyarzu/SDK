@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45539.000000000000000000
+    DateFrom = 45559.000000000000000000
     Left = 416
     Top = 40
   end
@@ -6324,11 +6324,11 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       ImageName = 'font-size'
       OnExecute = actFontExecute
     end
-    object actGoogleSync: TAction
+    object actEventGoogleSync: TAction
       Caption = 'Google Sync'
       ImageIndex = 16
       ImageName = '017-clock'
-      OnExecute = actGoogleSyncExecute
+      OnExecute = actEventGoogleSyncExecute
     end
   end
   object GCalendarButtons: TActionList

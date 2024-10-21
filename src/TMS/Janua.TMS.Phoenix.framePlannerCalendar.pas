@@ -63,7 +63,7 @@ begin
   FPlannerController := Value;
   CustomController := FPlannerController;
   GridPopup.Images := FPlannerController.SVGIconImageList16;
-  mnuGoogleSync1.Action := FPlannerController.actGoogleSync;
+  mnuGoogleSync1.Action := FPlannerController.actEventGoogleSync;
   if FPlannerController.qryPlannerEvents.RecordCount > 0 then
   begin
     FPlannerController.SelectedCalendarTec := FPlannerController.qryPlannerEventsTECNICO.AsInteger;
