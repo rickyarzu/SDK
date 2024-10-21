@@ -1,4 +1,4 @@
-unit ufrmJanuaVCLTestRestDMVCIDE;
+unit JanuaVCLTestRestDMVCIDE;
 
 interface
 
