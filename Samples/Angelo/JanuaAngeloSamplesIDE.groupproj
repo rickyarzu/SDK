@@ -1,0 +1,3656 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\DECCipher.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\JOSE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\Neon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\sslserver\SSLSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DMVC\renders\renders.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\StyleControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AWSSDK">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj"/>
+    </Target>
+    <Target Name="AWSSDK:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDK:Make">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AWSSDKVCL">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj"/>
+    </Target>
+    <Target Name="AWSSDKVCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDKVCL:Make">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AWSSDKFMX">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj"/>
+    </Target>
+    <Target Name="AWSSDKFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDKFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OpenAIPackage">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
+    </Target>
+    <Target Name="OpenAIPackage:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenAIPackage:Make">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TUniFalcon">
+        <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj"/>
+    </Target>
+    <Target Name="TUniFalcon:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TUniFalcon:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOpenAIQuickChat">
+        <MSBuild Projects="..\Janua\JanuaOpenAIQuickChat.dproj"/>
+    </Target>
+    <Target Name="JanuaOpenAIQuickChat:Clean">
+        <MSBuild Projects="..\Janua\JanuaOpenAIQuickChat.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOpenAIQuickChat:Make">
+        <MSBuild Projects="..\Janua\JanuaOpenAIQuickChat.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SwagDoc">
+        <MSBuild Projects="..\..\Components\pkg110\SwagDoc.dproj"/>
+    </Target>
+    <Target Name="SwagDoc:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\SwagDoc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SwagDoc:Make">
+        <MSBuild Projects="..\..\Components\pkg110\SwagDoc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sgcWebSockets">
+        <MSBuild Projects="..\..\Components\pkg110\sgcWebSockets.dproj"/>
+    </Target>
+    <Target Name="sgcWebSockets:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\sgcWebSockets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sgcWebSockets:Make">
+        <MSBuild Projects="..\..\Components\pkg110\sgcWebSockets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DECCipher">
+        <MSBuild Projects="..\..\Components\pkg110\DECCipher.dproj"/>
+    </Target>
+    <Target Name="DECCipher:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\DECCipher.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DECCipher:Make">
+        <MSBuild Projects="..\..\Components\pkg110\DECCipher.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="loggerproRT">
+        <MSBuild Projects="..\..\Components\pkg110\loggerproRT.dproj"/>
+    </Target>
+    <Target Name="loggerproRT:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\loggerproRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="loggerproRT:Make">
+        <MSBuild Projects="..\..\Components\pkg110\loggerproRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JOSE">
+        <MSBuild Projects="..\..\Components\pkg110\JOSE.dproj"/>
+    </Target>
+    <Target Name="JOSE:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\JOSE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JOSE:Make">
+        <MSBuild Projects="..\..\Components\pkg110\JOSE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Neon">
+        <MSBuild Projects="..\..\Components\pkg110\Neon.dproj"/>
+    </Target>
+    <Target Name="Neon:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\Neon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Neon:Make">
+        <MSBuild Projects="..\..\Components\pkg110\Neon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Base">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Base.dproj"/>
+    </Target>
+    <Target Name="Spring_Base:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Base.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Base:Make">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Base.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Core">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Core.dproj"/>
+    </Target>
+    <Target Name="Spring_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg110\Spring.Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcframeworkRT">
+        <MSBuild Projects="..\..\Components\pkg110\dmvcframeworkRT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\dmvcframeworkRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Make">
+        <MSBuild Projects="..\..\Components\pkg110\dmvcframeworkRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreThirdParty.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreThirdParty.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestRequestLib">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj"/>
+    </Target>
+    <Target Name="RestRequestLib:Clean">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestRequestLib:Make">
+        <MSBuild Projects="..\..\Components\pkg110\RestRequestLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting:Make">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestWeb">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaRestWeb.dproj"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaRestWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaRestWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDMVCUnitTesting">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaDMVCUnitTesting:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDMVCUnitTesting:Make">
+        <MSBuild Projects="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Make">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDevIDEUniGUI">
+        <MSBuild Projects="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaDevIDEUniGUI:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDevIDEUniGUI:Make">
+        <MSBuild Projects="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLForms">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLForms.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaVCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DMVCVCLTestClientServer">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj"/>
+    </Target>
+    <Target Name="DMVCVCLTestClientServer:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DMVCVCLTestClientServer:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaAllDemos">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaAllDemos.dproj"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaAllDemos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Make">
+        <MSBuild Projects="..\..\prj\DXE15\JanuaAllDemos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EuroFloraApp">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\EuroFloraApp.dproj"/>
+    </Target>
+    <Target Name="EuroFloraApp:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\EuroFloraApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EuroFloraApp:Make">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\EuroFloraApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PhoenixAssoApp">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj"/>
+    </Target>
+    <Target Name="PhoenixAssoApp:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixAssoApp:Make">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SSLSample">
+        <MSBuild Projects="..\DMVC\sslserver\SSLSample.dproj"/>
+    </Target>
+    <Target Name="SSLSample:Clean">
+        <MSBuild Projects="..\DMVC\sslserver\SSLSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SSLSample:Make">
+        <MSBuild Projects="..\DMVC\sslserver\SSLSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLTestRESTImportExport">
+        <MSBuild Projects="..\FireDAC\JanuaVCLTestRESTImportExport.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLTestRESTImportExport:Clean">
+        <MSBuild Projects="..\FireDAC\JanuaVCLTestRESTImportExport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLTestRESTImportExport:Make">
+        <MSBuild Projects="..\FireDAC\JanuaVCLTestRESTImportExport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestRequestSamplesXE14">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj"/>
+    </Target>
+    <Target Name="RestRequestSamplesXE14:Clean">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestRequestSamplesXE14:Make">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestLibDemo">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj"/>
+    </Target>
+    <Target Name="RestLibDemo:Clean">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestLibDemo:Make">
+        <MSBuild Projects="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AuthenticateAuthorize">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj"/>
+    </Target>
+    <Target Name="AuthenticateAuthorize:Clean">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AuthenticateAuthorize:Make">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AuthenticationAuthorizationClient">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj"/>
+    </Target>
+    <Target Name="AuthenticationAuthorizationClient:Clean">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AuthenticationAuthorizationClient:Make">
+        <MSBuild Projects="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WinsoftPDFDemo">
+        <MSBuild Projects="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj"/>
+    </Target>
+    <Target Name="WinsoftPDFDemo:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WinsoftPDFDemo:Make">
+        <MSBuild Projects="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DMVCServiceDemoXE14">
+        <MSBuild Projects="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj"/>
+    </Target>
+    <Target Name="DMVCServiceDemoXE14:Clean">
+        <MSBuild Projects="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DMVCServiceDemoXE14:Make">
+        <MSBuild Projects="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcwindowsservice">
+        <MSBuild Projects="..\DMVC\windowsservice\dmvcwindowsservice.dproj"/>
+    </Target>
+    <Target Name="dmvcwindowsservice:Clean">
+        <MSBuild Projects="..\DMVC\windowsservice\dmvcwindowsservice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcwindowsservice:Make">
+        <MSBuild Projects="..\DMVC\windowsservice\dmvcwindowsservice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RESTDebuggerClient">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj"/>
+    </Target>
+    <Target Name="RESTDebuggerClient:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTDebuggerClient:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaOpenAISimpleChat">
+        <MSBuild Projects="..\Janua\JanuaOpenAISimpleChat.dproj"/>
+    </Target>
+    <Target Name="JanuaOpenAISimpleChat:Clean">
+        <MSBuild Projects="..\Janua\JanuaOpenAISimpleChat.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOpenAISimpleChat:Make">
+        <MSBuild Projects="..\Janua\JanuaOpenAISimpleChat.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FilesUploadDemo">
+        <MSBuild Projects="..\DMVC\fileupload\FilesUploadDemo.dproj"/>
+    </Target>
+    <Target Name="FilesUploadDemo:Clean">
+        <MSBuild Projects="..\DMVC\fileupload\FilesUploadDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FilesUploadDemo:Make">
+        <MSBuild Projects="..\DMVC\fileupload\FilesUploadDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceDMVCRestApplication">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj"/>
+    </Target>
+    <Target Name="CarServiceDMVCRestApplication:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceDMVCRestApplication:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceDMVCService">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj"/>
+    </Target>
+    <Target Name="CarServiceDMVCService:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceDMVCService:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceDMVCustomerConfirmation">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj"/>
+    </Target>
+    <Target Name="CarServiceDMVCustomerConfirmation:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceDMVCustomerConfirmation:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="renders">
+        <MSBuild Projects="..\DMVC\renders\renders.dproj"/>
+    </Target>
+    <Target Name="renders:Clean">
+        <MSBuild Projects="..\DMVC\renders\renders.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="renders:Make">
+        <MSBuild Projects="..\DMVC\renders\renders.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLTestCloudFlare">
+        <MSBuild Projects="..\Janua\JanuaVCLTestCloudFlare.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLTestCloudFlare:Clean">
+        <MSBuild Projects="..\Janua\JanuaVCLTestCloudFlare.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLTestCloudFlare:Make">
+        <MSBuild Projects="..\Janua\JanuaVCLTestCloudFlare.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomSVGBlox">
+        <MSBuild Projects="..\Janua\FMX\CustomSVGBlox.dproj"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Clean">
+        <MSBuild Projects="..\Janua\FMX\CustomSVGBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Make">
+        <MSBuild Projects="..\Janua\FMX\CustomSVGBlox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PickAPP">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj"/>
+    </Target>
+    <Target Name="PickAPP:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PickAPP:Make">
+        <MSBuild Projects="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
+        <MSBuild Projects="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebBrokerDMVCServerTest">
+        <MSBuild Projects="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj"/>
+    </Target>
+    <Target Name="WebBrokerDMVCServerTest:Clean">
+        <MSBuild Projects="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebBrokerDMVCServerTest:Make">
+        <MSBuild Projects="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControls">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj"/>
+    </Target>
+    <Target Name="StyleControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControls:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControlsD">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj"/>
+    </Target>
+    <Target Name="StyleControlsD:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControlsD:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15:Clean">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15:Make">
+        <MSBuild Projects="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;StyleControls;StyleControlsD;JanuaRestDMVCTestIDEXE15"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;StyleControls:Clean;StyleControlsD:Clean;JanuaRestDMVCTestIDEXE15:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;StyleControls:Make;StyleControlsD:Make;JanuaRestDMVCTestIDEXE15:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Android64'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='MacOS'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='iOS'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libs 64bit'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Apps'">
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCService.dproj">
+            <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
+            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
+            <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\fileupload\FilesUploadDemo.dproj">
+            <ProjectGuid>{28115991-DA41-4172-924A-7FCD5AC95F77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\EuroFloraApp.dproj">
+            <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaVCLTestCloudFlare.dproj">
+            <ProjectGuid>{AED1CC0B-3805-46BD-906F-6F632340A897}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestLibDemo.dproj">
+            <ProjectGuid>{2DB2737C-0B25-4B0B-81BB-7FC5C9657726}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\FireDAC\JanuaVCLTestRESTImportExport.dproj">
+            <ProjectGuid>{96E8EF27-AEF3-4EB7-B094-4E8449B62657}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\authenticationauthorization\vclclient\AuthenticationAuthorizationClient.dproj">
+            <ProjectGuid>{E7317702-64D3-4A65-8734-030F3AE3DBBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\DECCipher.dproj">
+            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Neon.dproj">
+            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>TestDebug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCustomerConfirmation.dproj">
+            <ProjectGuid>{587B0541-E186-499A-A0A2-B420AD73CE74}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\SwagDoc.dproj">
+            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\Testing\JanuaDMVCUnitTesting.dproj">
+            <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\RESTCloudAPI\RestRequest4Delphi\client\delphi\RestRequestSamplesXE14.dproj">
+            <ProjectGuid>{AF516E4D-8021-47C1-A37E-47081D723828}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaAllDemos.dproj">
+            <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\RestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PikApp\PickAPP.dproj">
+            <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
+            <ProjectGuid>{206CAF56-3B99-4F7C-9E82-5B2D82021896}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
+            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
+            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceDMVCRestApplication.dproj">
+            <ProjectGuid>{5CDD902D-9A7C-48B9-9CC1-2930E7384E94}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\renders\renders.dproj">
+            <ProjectGuid>{8CCDACDA-3FA5-486E-AD8E-63E4113177EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\sslserver\SSLSample.dproj">
+            <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
+            <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\FMX\PhoenixAssoApp.dproj">
+            <ProjectGuid>{E7638AC0-82BF-46ED-B5B0-B2A2C2CD4531}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <ProjectGuid>{B2099D99-288C-479D-9F53-5D0CB54C0252}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\RESTDebuggerClient.dproj">
+            <ProjectGuid>{E7117B40-288B-435E-B213-AB53FED8EB47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\DMVCServiceDemoXE14.dproj">
+            <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\DMVCVCLTestClientServer.dproj">
+            <ProjectGuid>{016E2AB4-EEA1-4A8B-B440-C441BA316FFF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Janua\FMX\CustomSVGBlox.dproj">
+            <ProjectGuid>{01F2BE72-BC29-4365-9020-3B0356CF2269}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
+            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\DMVC\windowsservice\dmvcwindowsservice.dproj">
+            <ProjectGuid>{45323E7F-B291-46C5-9D32-F467DD8D8E5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\UniGUI\JanuaDevIDEUniGUI.dproj">
+            <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
+            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
+            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\loggerproRT.dproj">
+            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <ProjectGuid>{EE36EACA-3ACA-4E3E-BCD8-0E6F704148EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\prj\DXE15\VCL\JanuaDevIDEXE15.dproj">
+            <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg110\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>
