@@ -33,7 +33,7 @@ uses
   Janua.REST.Client in '..\..\..\src\januacore\dmvc\Janua.REST.Client.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
-  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas',
+  Janua.System.Session.DMVC.Controller in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas',
   Janua.DMVC.UnitTest.DMVCFramework in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.UnitTest.DMVCFramework.pas',
   Janua.Rest.TestClasses in '..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas',
   Janua.REST.Test.LoginClient in '..\..\..\src\januacore\dmvc\Test\Janua.REST.Test.LoginClient.pas',

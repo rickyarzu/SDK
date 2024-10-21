@@ -27,7 +27,7 @@ uses
   Janua.System.DMVC.AuthCriteria in '..\..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.DMVC.Srv.Framework in '..\..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
   Janua.DMVC.Controller.Template in '..\..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
-  Janua.System.Session.DMVCController in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVCController.pas',
+  Janua.System.Session.DMVC.Controller in '..\..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas',
   Janua.UniDAC.Test.dmPgParams in '..\..\..\src\januaunidac\Test\Janua.UniDAC.Test.dmPgParams.pas' {dmPgTestParams: TDataModule},
   Janua.Rest.Fdac.dmMemUrlSettings in '..\..\..\src\januacore\datamodule\Janua.Rest.Fdac.dmMemUrlSettings.pas' {dmRestUrlSettings: TDataModule},
   Janua.VCL.Rest.dlgConnections in '..\..\..\src\VCL\Cloud\Janua.VCL.Rest.dlgConnections.pas' {dlgVCLRestConnections},
