@@ -19036,6 +19036,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         'WHERE S.STATO > -1 AND S.STATO < 9 AND GENERAZIONE_AUTOMATICA IS' +
         ' NOT NULL'
       '--AND S.CHIAVE = 2100103'
+      '-- AND C. = '#39'COMMISSARIATI'#39
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
     FetchRows = 100
@@ -29906,7 +29907,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'AND'
       '(CE.TECNICO = :TECNICO OR :TECNICO = 0)'
       'AND'
-      'S.wa IS NULL or (S.wa = '#39'F'#39')')
+      'S.wa IS NULL '
+      '-- or (S.wa = '#39'F'#39')')
     FetchRows = 100
     Filtered = True
     IndexFieldNames = 'DALLE_ORE'

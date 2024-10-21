@@ -1,4 +1,4 @@
-library PhoenixLib32_r6;
+library PhoenixLib32_r7;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -94,6 +94,18 @@ begin
   end;
 end;
 
+function WhatsAppSentMessage(aID: string): string;  stdcall;
+begin
+  Result := '';
+  try
+    if Assigned(aDlg) then
+      Result := aDlg.WhatsAppSentMessage(aID)
+  except
+    on e: exception do
+      Result := e.Message;
+  end;
+end;
+
 function GoogleSync: string; stdcall;
 begin
     if Assigned(aDlg) then
@@ -107,7 +119,8 @@ exports
   UpdateGoogleEvent index 3,
   DeleteGoogleEvent index 4,
   ConfirmMessage index 5,
-  GoogleSync index 6;
+  GoogleSync index 6,
+  WhatsAppSentMessage index 7;
 
 begin
   aSetted := False;

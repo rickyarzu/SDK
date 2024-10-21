@@ -607,6 +607,7 @@ type
     class function GetLocalComputerName: string; static;
     class function GetAppDownloadsPath: string; static;
     class function GetConfigFileName: string; static;
+    class function GetCookiesFileName: string; static;
     class function getCurrentPath: string; static;
     class function ReadWebFile(const aFileName: string): string; static;
   public
@@ -648,7 +649,8 @@ type
       : Integer; overload;
     class function ReadRegistry(Machine: Boolean; stringa: string; chiave: string; Default: Word)
       : Word; overload;
-
+    class function LoadCookies: string;
+    class procedure SaveCookies(const aCookies: string);
     class function WriteRegistry(Machine: Boolean; aName, aKey, aValue: string): Boolean;
     class procedure WriteBoolRegistry(Machine: Boolean; aName, aKey: string; aValue: Boolean);
     class procedure WriteRegistryCrypt(Machine: Boolean; stringa, chiave, valore: string);
@@ -2271,6 +2273,26 @@ begin
 {$ENDIF MACOS}
 end;
 
+class function TJanuaCoreOS.GetCookiesFileName: string;
+begin
+{$IFDEF android}
+  Result := IncludeTrailingPathDelimiter(GetAppConfPath) + GetAppName + '.cookies.json';
+{$ENDIF}
+{$IFDEF LINUX}
+  Result := IncludeTrailingPathDelimiter(GetAppConfPath) + GetAppName + '.cookies.json';
+{$ENDIF}
+{$IFDEF MACOS}
+{$IFDEF ios}
+  Result := IncludeTrailingPathDelimiter(GetAppConfPath) + GetAppName + '.cookies.json';
+{$ELSE}
+  Result := IncludeTrailingPathDelimiter(GetAppConfPath) + GetAppName + '.cookies.json';
+{$ENDIF}
+{$ENDIF}
+{$IFDEF MSWINDOWS}
+  Result := IncludeTrailingPathDelimiter(GetAppConfPath) + GetAppName + '.cookies.json';
+{$ENDIF}
+end;
+
 class function TJanuaCoreOS.GetLocalComputerName: string;
 begin
 {$IFDEF MSWINDOWS}
@@ -2955,6 +2977,25 @@ begin
   end;
 end;
 
+class function TJanuaCoreOS.LoadCookies: string;
+begin
+  var
+  lJsonFile := GetCookiesFileName;
+
+  if FileExists(lJsonFile) then
+  begin
+    var
+    aLines := TStringList.Create;
+    try
+      aLines.LoadFromFile(lJsonFile);
+      Result := aLines.Text;
+    finally
+      aLines.Free;
+      aLines := nil;
+    end;
+  end;
+end;
+
 class function TJanuaCoreOS.LogString: string;
 begin
   Result := TJanuaApplication.LogString;
@@ -3442,6 +3483,24 @@ begin
     LoadConfiguration
   else
     GetJanuaConfiguration.SaveConfiguration;
+end;
+
+class procedure TJanuaCoreOS.SaveCookies(const aCookies: string);
+begin
+  if aCookies <> '' then
+  begin
+    var
+    lJsonFile := GetCookiesFileName;
+    var
+    aLines := TStringList.Create;
+    try
+      aLines.Text := aCookies;
+      aLines.SaveToFile(lJsonFile);
+    finally
+      aLines.Free;
+      aLines := nil;
+    end;
+  end;
 end;
 
 class function TJanuaCoreOS.SelectFolder(var aFolder: string; const aTitle, aButtonCaption: string): Boolean;

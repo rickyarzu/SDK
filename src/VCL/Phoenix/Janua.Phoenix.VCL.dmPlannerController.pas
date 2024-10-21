@@ -522,6 +522,9 @@ type
     // Filtro TEcnico vFilter :=  (FStateFilter > 0);
     procedure FilterTech;
 
+    procedure WAFilter(aWADateFrom: TDateTime; aWADateTo: TDateTime; aWATecnico: Integer;
+      aWAFiltraTecnico: Boolean);
+
     procedure RefreshCalendarTech;
     // Filtro Google
     function FilterGoogle(const aSearch: string): Integer;
@@ -566,6 +569,8 @@ type
     property SelectedDate: TDate read FSelectedDate write SetSelectedDate;
     property PlannerDlg: TDBPlanner read FPlannerDlg write SetPlannerDlg;
     property PlannerEvent: TJanuaRecEvent read FPlannerEvent write SetPlannerEvent;
+
+    // WhatsApp Parameters
   end;
 
 var
@@ -578,20 +583,22 @@ uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.
   udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, uPhoenixWAMessageList;
 
 {$IFDEF WIN32}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r6.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r6.dll' index 6;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r7.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r7.dll' index 6;
+function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 7;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r6.64.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r6.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r6.64.dll' index 6;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r7.64.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r7.64.dll' index 6;
+function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 7;
 {$ENDIF}
 
 var
@@ -602,6 +609,9 @@ const
     'La contatto per comunicarLe che nella giornata del $$date$$ il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in $$address$$. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
     + sl + 'Cordiali Saluti' + sl + sl +
     'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
+
+  cRedColor: TColor = 2564572;
+  cOrangeColor: TColor = 7911679;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -708,33 +718,39 @@ end;
 procedure TdmVCLPhoenixPlannerController.actSelectAllExecute(Sender: TObject);
 begin
   inherited;
-  qryElencoEventiWhatsApp.First;
-  While not qryElencoEventiWhatsApp.Eof do
-  begin
+  {
+    qryElencoEventiWhatsApp.First;
+    While not qryElencoEventiWhatsApp.Eof do
+    begin
     if qryElencoEventiWhatsAppWANUMBER.AsString <> '' then
     begin
-      qryElencoEventiWhatsApp.Edit;
-      qryElencoEventiWhatsAppWA.AsString := 'F';
-      qryElencoEventiWhatsApp.Post;
+    qryElencoEventiWhatsApp.Edit;
+    qryElencoEventiWhatsAppWA.AsString := 'F';
+    qryElencoEventiWhatsApp.Post;
     end;
     qryElencoEventiWhatsApp.Next;
-  end;
+    end;
+  }
 end;
 
 procedure TdmVCLPhoenixPlannerController.actSelectExecute(Sender: TObject);
 begin
   inherited;
-  qryElencoEventiWhatsApp.Edit;
-  qryElencoEventiWhatsAppWA.AsString := 'F';
-  qryElencoEventiWhatsApp.Post;
+  {
+    qryElencoEventiWhatsApp.Edit;
+    qryElencoEventiWhatsAppWA.AsString := 'F';
+    qryElencoEventiWhatsApp.Post;
+  }
 end;
 
 procedure TdmVCLPhoenixPlannerController.actWaSetExecute(Sender: TObject);
 begin
   inherited;
-  qryElencoEventiWhatsApp.Edit;
-  qryElencoEventiWhatsAppWA.AsString := 'T';
-  qryElencoEventiWhatsApp.Post;
+  {
+    qryElencoEventiWhatsApp.Edit;
+    qryElencoEventiWhatsAppWA.AsString := 'T';
+    qryElencoEventiWhatsApp.Post;
+  }
 end;
 
 procedure TdmVCLPhoenixPlannerController.actWhatsAppExecute(Sender: TObject);
@@ -761,6 +777,16 @@ begin
     frmVCLPhoenixWAMessageList := nil;
   end;
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.WAFilter(aWADateFrom: TDateTime; aWADateTo: TDateTime;
+  aWATecnico: Integer; aWAFiltraTecnico: Boolean);
+begin
+  qryElencoEventiWhatsApp.Close;
+  qryElencoEventiWhatsApp.ParamByName('DATE_FROM').AsDate := aWADateFrom;
+  qryElencoEventiWhatsApp.ParamByName('DATE_TO').AsDate := aWADateTo;
+  qryElencoEventiWhatsApp.ParamByName('TECNICO').AsInteger := IfThen(aWAFiltraTecnico, aWATecnico, 0);
+  qryElencoEventiWhatsApp.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.AddEvent;
@@ -1000,7 +1026,15 @@ begin
     begin
       vtReportPlanner.Append;
       vtReportPlannerCHIAVE.Value := qryReportPlannerCHIAVE.Value;
-      vtReportPlannerDESCRIZIONE_SCHEDA.Value := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
+
+      var
+      vFiliale := qryReportPlannerNOME.Value;
+      // qryReportPlannerFILIALE.AsString;                                            ))))
+      var
+      vSede := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
+
+      vtReportPlannerDESCRIZIONE_SCHEDA.Value := vSede + IfThen((vFiliale = 'SEDE') or (vFiliale = vSede), '',
+        ' ' + vFiliale);
       vtReportPlannerCLIENTE.Value := qryReportPlannerCLIENTE.Value;
       vtReportPlannerNOME.Value := qryReportPlannerNOME.Value;
       vtReportPlannerPROVINCIA.Value := qryReportPlannerPROVINCIA.Value;
@@ -1125,6 +1159,7 @@ begin
     end);
 
   LoadCalendarItemsFromDB := (
+
     procedure
     begin
       Async.Run<Boolean>(
@@ -1200,6 +1235,7 @@ begin
     end);
 
   AfterLoadCalendars := (
+
     procedure
     begin
       qryTecniciCalendar.Open;
@@ -1558,7 +1594,8 @@ begin
       qryPersonalPlannerEventsSUBJECT.AsString := aSubject;
       qryPersonalPlannerEventsDALLE_ORE.AsDateTime := aStartDate;
       qryPersonalPlannerEventsALLE_ORE.AsDateTime := aEndDate;
-      qryPersonalPlannerEventsCOLORE.AsInteger := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
+      qryPersonalPlannerEventsCOLORE.AsInteger := cRedColor;
+      // qryTecniciCalendarDEFAULTCOLOR.AsInteger è stato sostituito dal colore Rosso
       qryPersonalPlannerEvents.Post;
       // Il record Google nasce 'non identificato' in quanto non è ancora stato salvato su Google
       Result.ID := '';
@@ -2326,8 +2363,7 @@ begin
       lPhone := '+39' + StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
       SendMSSWhatsAppMessage(lMessage, lPhone);
-
-      ConfirmGoogleEventDLL(sGUID);
+      WhatsAppSentMessage(sGUID);
     end;
 
   finally

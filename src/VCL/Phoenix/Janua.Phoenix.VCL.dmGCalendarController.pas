@@ -304,6 +304,7 @@ type
     procedure AddNewGoogleItems;
     procedure UpdateGoogleCalendarItem(Const I: Integer); override;
     function ConfirmMessage(const aID: string): string;
+    function WhatsAppSentMessage(const aID: string): string;
     property Log: TStringList read FLog write SetLog;
   end;
 
@@ -545,6 +546,46 @@ begin
 
 end;
 
+// WhatsAppSentMessage
+function TdmPhoenixVCLGCalendarController.WhatsAppSentMessage(const aID: string): string;
+var
+  aItem: TGCalendarItem;
+  aCalendar: TGCalendar;
+begin
+  qryGoogleEvent.Close;
+  qryGoogleEvent.Params[0].AsString := aID;
+  qryGoogleEvent.Open;
+
+  Result := '';
+
+  if qryGoogleEvent.RecordCount > 0 then
+  begin
+    var
+    aCalendarID := qryGoogleEventCALENDARID.AsString;
+
+    if AdvGCalendar1.Calendars.Count = 0 then
+      AdvGCalendar1.GetCalendars();
+
+    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    begin
+      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+        aCalendar := AdvGCalendar1.Calendars[J];
+    end;
+
+    if Assigned(aCalendar) then
+      AdvGCalendar1.GetCalendar(aCalendar.ID, qryGoogleEventSTARTTIME.AsDateTime - 1,
+        qryGoogleEventENDTIME.AsDateTime + 1);
+
+    aItem := AdvGCalendar1.Items.Find(qryGoogleEventID.AsString);
+    if Assigned(aItem) then
+    begin
+      aItem.Color := TGItemColor.icOrange;
+      AdvGCalendar1.Update(aItem);
+    end;
+  end;
+end;
+
+
 function TdmPhoenixVCLGCalendarController.ConfirmMessage(const aID: string): string;
 var
   aItem: TGCalendarItem;
@@ -561,7 +602,8 @@ begin
     var
     aCalendarID := qryGoogleEventCALENDARID.AsString;
 
-    AdvGCalendar1.GetCalendars();
+    if AdvGCalendar1.Calendars.Count = 0 then
+      AdvGCalendar1.GetCalendars();
 
     for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
     begin
@@ -653,88 +695,98 @@ var
   end;
 
 begin
-  aRecEvent.SetAsJson(aID);
+  try
+    aRecEvent.SetAsJson(aID);
 
-  { ShowMessage('ARecEvent Set'); }
-  vStatino := aRecEvent.RefID; { qryUpdatePlannerEventsSTATINO.AsInteger };
+    { ShowMessage('ARecEvent Set'); }
+    vStatino := aRecEvent.RefID; { qryUpdatePlannerEventsSTATINO.AsInteger };
 
-  if (aRecEvent.CalendarID <> '') and (aRecEvent.ID <> '') then
-  begin
-
-    var
-    aCalendarID := aRecEvent.CalendarID;
-
-    if AdvGCalendar1.Calendars.Count = 0 then
-      AdvGCalendar1.GetCalendars();
-
-    for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+    if (aRecEvent.CalendarID <> '') and (aRecEvent.ID <> '') then
     begin
-      if AdvGCalendar1.Calendars[J].ID = aCalendarID then
-        aCalendar := AdvGCalendar1.Calendars[J];
+
+      var
+      aCalendarID := aRecEvent.CalendarID;
+
+      if AdvGCalendar1.Calendars.Count = 0 then
+        AdvGCalendar1.GetCalendars();
+
+      for var J := 0 to AdvGCalendar1.Calendars.Count - 1 do
+      begin
+        if AdvGCalendar1.Calendars[J].ID = aCalendarID then
+          aCalendar := AdvGCalendar1.Calendars[J];
+      end;
+
+      FLog.Add('Search Calendar: ' + aCalendarID);
+      FLog.Add('Found Calendar: ' + aCalendar.ID + ' ' + aCalendar.Summary + ' - ' + aCalendar.Description);
+
+      { ShowMessage('Calendar: ' + aCalendarID); }
+
+      Assert(Assigned(aCalendar), 'ACalendar Not Found');
+
+      {
+        ShowMessage('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime) + sLineBreak + //
+        'Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime) + sLineBreak + //
+        'Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime) + sLineBreak + //
+        'Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
+      }
+
+      FLog.Add('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime));
+      FLog.Add('Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime));
+      FLog.Add('Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime));
+      FLog.Add('Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
+
+      var
+      aStartTime := Int(aRecEvent.StartTime);
+      if (aRecEvent.OldStartTime > 0) and (aRecEvent.OldStartTime < aStartTime) then
+        aStartTime := Int(aRecEvent.OldStartTime);
+
+      aStartTime := aStartTime - 1;
+
+      var
+      aEndTime := aRecEvent.EndTime;
+
+      if (aRecEvent.OldEndTime > 0) and (aRecEvent.OldEndTime > aEndTime) then
+        aEndTime := Int(aRecEvent.OldEndTime);
+
+      aEndTime := aEndTime + 1;
+
+      {
+        ShowMessage('From: ' + DateTimeToStr(aStartTime));
+        ShowMessage('To: ' + DateTimeToStr(aEndTime));
+      }
+      FLog.Add('From: ' + DateTimeToStr(aStartTime));
+      FLog.Add('To: ' + DateTimeToStr(aEndTime));
+
+      AdvGCalendar1.GetCalendar(aCalendar.ID, aStartTime, aEndTime + 1, 1000);
+      {
+        ShowMessage('Item : ' + aRecEvent.ID);
+        ShowMessage('Items: ' + AdvGCalendar1.Items.Count.ToString);
+      }
+      FLog.Add('Item : ' + aRecEvent.ID);
+      FLog.Add('Items: ' + AdvGCalendar1.Items.Count.ToString);
+
+      for var I := 0 to AdvGCalendar1.Items.Count - 1 do
+      begin
+        FLog.Add('Item: ' + AdvGCalendar1.Items[I].ID);
+        FLog.Add('--Summary: ' + AdvGCalendar1.Items[I].Summary);
+        FLog.Add('--StartTime: ' + AdvGCalendar1.Items[I].StartTime.ToString);
+      end;
+
+      aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
+
+      Assert(Assigned(aItem), 'Item Not Found Log: ' + sLineBreak + FLog.Text);
+
+      if Assigned(aItem) then
+        AdvGCalendar1.Delete(aItem);
     end;
 
-    FLog.Add('Search Calendar: ' + aCalendarID);
-    FLog.Add('Found Calendar: ' + aCalendar.ID + ' ' + aCalendar.Summary + ' - ' + aCalendar.Description);
+    DeleteRecords;
 
-    ShowMessage('Calendar: ' + aCalendarID);
-
-    Assert(Assigned(aCalendar), 'ACalendar Not Found');
-
-    ShowMessage('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime) + sLineBreak + //
-      'Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime) + sLineBreak + //
-      'Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime) + sLineBreak + //
-      'Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
-
-    FLog.Add('Arec.StartTime = ' + DateTimeToStr(aRecEvent.StartTime));
-    FLog.Add('Arec.OldStartTime = ' + DateTimeToStr(aRecEvent.OldStartTime));
-    FLog.Add('Arec.EndTime = ' + DateTimeToStr(aRecEvent.EndTime));
-    FLog.Add('Arec.OldEndTime = ' + DateTimeToStr(aRecEvent.OldEndTime));
-
-    var
-    aStartTime := Int(aRecEvent.StartTime);
-    if (aRecEvent.OldStartTime > 0) and (aRecEvent.OldStartTime < aStartTime) then
-      aStartTime := Int(aRecEvent.OldStartTime);
-
-    aStartTime := aStartTime - 1;
-
-    var
-    aEndTime := aRecEvent.EndTime;
-
-    if (aRecEvent.OldEndTime > 0) and (aRecEvent.OldEndTime > aEndTime) then
-      aEndTime := Int(aRecEvent.OldEndTime);
-
-    aEndTime := aEndTime + 1;
-
-    ShowMessage('From: ' + DateTimeToStr(aStartTime));
-    FLog.Add('From: ' + DateTimeToStr(aStartTime));
-    ShowMessage('To: ' + DateTimeToStr(aEndTime));
-    FLog.Add('To: ' + DateTimeToStr(aEndTime));
-
-    AdvGCalendar1.GetCalendar(aCalendar.ID, aStartTime, aEndTime + 1, 1000);
-
-    ShowMessage('Item : ' + aRecEvent.ID);
-    FLog.Add('Item : ' + aRecEvent.ID);
-    ShowMessage('Items: ' + AdvGCalendar1.Items.Count.ToString);
-    FLog.Add('Items: ' + AdvGCalendar1.Items.Count.ToString);
-
-    for var I := 0 to AdvGCalendar1.Items.Count - 1 do
-    begin
-      FLog.Add('Item: ' + AdvGCalendar1.Items[I].ID);
-      FLog.Add('--Summary: ' + AdvGCalendar1.Items[I].Summary);
-      FLog.Add('--StartTime: ' + AdvGCalendar1.Items[I].StartTime.ToString);
-    end;
-
-    aItem := AdvGCalendar1.Items.Find(aRecEvent.ID);
-
-    Assert(Assigned(aItem), 'Item Not Found');
-
-    if Assigned(aItem) then
-      AdvGCalendar1.Delete(aItem);
+    Result := aID;
+  finally
+    FLog.Clear;
   end;
 
-  DeleteRecords;
-
-  Result := aID;
   (*
     Async.Run<Boolean>(
     function: Boolean
@@ -778,7 +830,7 @@ begin
     var
     vTestDate2 := DateTimeToStr(GCalEndDate);
 
-    ShowMessage(vTestDate1 + ' - ' + vTestDate2);
+    { ShowMessage(vTestDate1 + ' - ' + vTestDate2); }
 
     AdvGCalendar1.GetCalendar(Fgcal.ID, GCalStartDate, GCalEndDate, 1000);
 
@@ -928,7 +980,7 @@ begin
     end;
   end;
   (* ************************ *)
-  // spGoogleSync.ExecProc;
+  spGoogleSync.ExecProc;
 end;
 
 procedure TdmPhoenixVCLGCalendarController.InsertGoogleEventsQueue;
