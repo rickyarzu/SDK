@@ -1021,5 +1021,8 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     object InviaMsgWhatsApp1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actDlgMessage
     end
+    object ConfermaAppuntmento1: TMenuItem
+      Action = dmVCLPhoenixPlannerController.actGridConfirmEvent
+    end
   end
 end

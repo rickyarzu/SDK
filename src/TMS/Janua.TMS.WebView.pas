@@ -31,6 +31,7 @@ type
     function InternalActivate: Boolean; override;
   public
     constructor Create(AOwner: TComponent); override;
+    procedure Refresh;
     property Url: string read FUrl write SetUrl;
   end;
 
@@ -49,6 +50,11 @@ uses Janua.Application.Framework;
 }
 
 { TJanuaVCLWebView }
+
+procedure TJanuaVCLWebView.Refresh;
+begin
+  AdvWebBrowser.Navigate
+end;
 
 procedure TJanuaVCLWebView.AdvWebBrowserGetCookies(Sender: TObject; ACookies: array of TAdvWebBrowserCookie);
   function UpdateCookie(aCookie: TAdvWebBrowserCookie): Boolean;

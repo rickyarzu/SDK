@@ -2,10 +2,10 @@ unit Janua.Cloud.Conf;
 
 interface
 
-uses Data.DB, System.StrUtils, System.UITypes,
+uses Data.DB, System.StrUtils, System.UITypes, System.JSON,
   // Janua
   Janua.Core.Types, Janua.Core.Classes, Janua.Cloud.Types, Janua.Orm.Intf, Janua.Core.Http.Intf,
-  Janua.REST.Types, Janua.Core.System.Types, Janua.Http.Types, Janua.Core.DB.Types;
+  Janua.REST.Types, Janua.Core.System.Types, Janua.Http.Types, Janua.Core.DB.Types, Janua.Core.Commons;
 
 type
   TMessageType = (mtSMS, mtMail, mtLanding);
@@ -88,6 +88,33 @@ type
   end;
 
 type
+  TJanuaWhatsAppConf = class(TJanuaBindableClass)
+  private
+    FKey: string;
+    FSecret: string;
+    FDefaultMessage: string;
+    FAppName: string;
+    procedure SetAppName(const Value: string);
+    procedure SetDefaultMessage(const Value: string);
+    procedure SetKey(const Value: string);
+    procedure SetSecret(const Value: string);
+  public
+    /// <summary> Body of the page should be a part of the text or just a full html page </summary>
+    property DefaultMessage: string read FDefaultMessage write SetDefaultMessage;
+    property Key: string read FKey write SetKey;
+    property Secret: string read FSecret write SetSecret;
+    property AppName: string read FAppName write SetAppName;
+  public
+    procedure Assign(const Value: TJanuaWhatsAppConf);
+    procedure Clear;
+    function GetAsJson: String;
+    procedure SetAsJson(const aJson: string);
+    function GetAsJsonObject: TJsonObject;
+    procedure SetAsJsonObject(const aObject: TJsonObject);
+    function GetGenerateCustomMessage: string;
+  end;
+
+type
   TSMSMessageConf = class(TJanuaBindableConfObject)
   private
     FProc: TMessageLogProc;
@@ -136,10 +163,10 @@ type
       write SetSMSSendingEngine;
   end;
 
-  TJanuaGCalendarColor = (jccBoldBrown, jccBrown, jccBoldRed, jccBoldOrange, jccBoldYellow,
-    jccMediumGreen, jccDarkGreen, jccBoldGreen, jccLimeGreen, jccLightGreen, jccYellow,
-    jccOrange, jccGreen, jccTurquoise, jccBlue, jccBoldBlue, jccBoldPurple, jccPurple,
-    jccGray, jccLightGray, jccBoldGray, jccPink, jccBoldPing, jccDarkPurple);
+  TJanuaGCalendarColor = (jccBoldBrown, jccBrown, jccBoldRed, jccBoldOrange, jccBoldYellow, jccMediumGreen,
+    jccDarkGreen, jccBoldGreen, jccLimeGreen, jccLightGreen, jccYellow, jccOrange, jccGreen, jccTurquoise,
+    jccBlue, jccBoldBlue, jccBoldPurple, jccPurple, jccGray, jccLightGray, jccBoldGray, jccPink, jccBoldPing,
+    jccDarkPurple);
 
   TJanuaCalendarRecord = record
   public
@@ -183,14 +210,13 @@ type
     property TimeZone: string read FCalRecord.TimeZone write SetTimeZone;
     property Color: TJanuaGCalendarColor read FCalRecord.Color write FCalRecord.Color default jccGray;
     property BackgroundColor: TColor read FCalRecord.BackgroundColor write FCalRecord.BackgroundColor;
-    property ForeGroundColor: TColor read FCalRecord.ForegroundColor write FCalRecord.ForegroundColor;
+    property ForeGroundColor: TColor read FCalRecord.ForeGroundColor write FCalRecord.ForeGroundColor;
   end;
 
 implementation
 
 uses System.SysUtils, Janua.Core.Functions, Janua.Application.Framework,
-  Janua.Orm.Impl, Janua.Core.DB, Janua.Core.Commons, Janua.Core.Json,
-  Janua.Core.Http, Janua.Orm.Functions;
+  Janua.Orm.Impl, Janua.Core.DB, Janua.Core.JSON, Janua.Core.Http, Janua.Orm.Functions;
 
 { TLandingMessageConf }
 
@@ -535,6 +561,69 @@ end;
 procedure TJanuaGCalendar.SetTimeZone(const Value: string);
 begin
   FCalRecord.TimeZone := Value;
+end;
+
+{ TJanuaWhatsAppConf }
+
+procedure TJanuaWhatsAppConf.Assign(const Value: TJanuaWhatsAppConf);
+begin
+  FKey := Value.Key;
+  FSecret := Value.Secret;
+  FDefaultMessage := Value.DefaultMessage;
+  FAppName := Value.AppName;
+end;
+
+procedure TJanuaWhatsAppConf.Clear;
+begin
+  FKey := '';
+  FSecret := '';
+  FDefaultMessage := '';
+  FAppName := '';
+end;
+
+function TJanuaWhatsAppConf.GetAsJson: String;
+begin
+  Result := TJanuaJson.SerializeSimple<TJanuaWhatsAppConf>(Self);
+end;
+
+function TJanuaWhatsAppConf.GetAsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject(TJanuaJson.SerializeJsonObject<TJanuaWhatsAppConf>(Self));
+end;
+
+function TJanuaWhatsAppConf.GetGenerateCustomMessage: string;
+begin
+
+end;
+
+procedure TJanuaWhatsAppConf.SetAppName(const Value: string);
+begin
+  FAppName := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetAsJson(const aJson: string);
+begin
+  Self := TJanuaJson.DeserializeSimple<TJanuaWhatsAppConf>(aJson);
+end;
+
+procedure TJanuaWhatsAppConf.SetAsJsonObject(const aObject: TJsonObject);
+begin
+ Self := TJanuaJson.DeserializeSimple<TJanuaWhatsAppConf>(TJsonValue(aObject))
+end;
+
+procedure TJanuaWhatsAppConf.SetDefaultMessage(const Value: string);
+begin
+  FDefaultMessage := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetKey(const Value: string);
+begin
+  FKey := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetSecret(const Value: string);
+begin
+  FSecret := Value;
 end;
 
 end.

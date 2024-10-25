@@ -3,7 +3,7 @@ unit Janua.Core.Commons;
 interface
 
 uses
-  System.SysUtils, System.Classes, System.TypInfo,
+  System.SysUtils, System.Classes, System.TypInfo, Spring, Spring.Collections,
   // Janua
   Janua.Core.Types, Janua.Bindings.Intf;
 
@@ -19,12 +19,48 @@ type
     function Activate: Boolean;
   end;
 
-  TJanuaCoreBindableObject = class(TObject)
+type
+  TJanuaBindManager = class(TInterfacedObject, IJanuaBindManager)
+  private
+    FBindCount: Integer;
+    FOwner: TObject;
+    FBindedProperties: IList<string>;
+  protected
+    function GetHasBindings: Boolean;
+    function GetBindCount: Integer;
+  public
+    constructor Create(AOwner: TObject); overload;
+    destructor Destroy; override;
+    /// <summary>
+    /// Janua Binding Framework. This procedure binds a Field from the record to a property of 'any' Object.
+    /// </summary>
+    procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
+      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]);
+    /// <summary> Clears all Bindings to all properties of the object </summary>
+    procedure ClearBindings;
+    procedure Notify(const AProperty: string);
+    procedure UnBind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string);
+    procedure IncBindCount;
+    procedure DecBindCount;
+    procedure NotifyAll;
+  public
+    property HasBindings: Boolean read GetHasBindings;
+    property BindCount: Integer read GetBindCount;
+  end;
+
+  TJanuaBindableClass = class(TObject)
   strict protected
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   public
     property BindManager: IJanuaBindManager read GetBindManager;
+  public
+    procedure NotifiyAllProperties;
+    procedure Notify(const AProperty: string);
+    procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
+      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]);
   end;
 
 type
@@ -66,6 +102,121 @@ type
   TJanuaCustomComponentClass = class of TJanuaCustomComponent;
 
 implementation
+
+uses Janua.Application.Framework, Janua.Core.Json;
+
+{ TJanuaBindManager }
+
+procedure TJanuaBindManager.Bind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
+  function GetDescription: string;
+  begin
+    if Assigned(FOwner) then
+    begin
+      Result := FOwner.ClassName;
+      if (FOwner is TComponent) and ((FOwner as TComponent).Name <> '') then
+        Result := Result + '.' + (FOwner as TComponent).Name;
+      Result := Result + '.' + AProperty + '->';
+    end;
+    if Assigned(ABindToObject) then
+    begin
+      Result := Result + ABindToObject.ClassName;
+      if (ABindToObject is TComponent) and ((ABindToObject as TComponent).Name <> '') then
+        Result := Result + '.' + (ABindToObject as TComponent).Name;
+      Result := Result + '.' + ABindToProperty;
+    end;
+  end;
+
+begin
+  try
+    Assert(AProperty <> '', 'Unable to Bind AProperty is nil');
+    Assert(ABindToProperty <> '', 'Unable to Bind AProperty is nil');
+    if FBindedProperties.IndexOf(AProperty) = -1 then
+      FBindedProperties.Add(AProperty);
+
+    if Assigned(FOwner) and Assigned(ABindToObject) then
+      TJanuaApplication.BindEngine.Bind(FOwner, AProperty, ABindToObject, ABindToProperty, AReadOnly,
+        ACreateOptions);
+  Except
+    on E: Exception do
+    begin
+      LogException('Bind ' + GetDescription, E, self);
+      raise;
+    end;
+  end;
+end;
+
+procedure TJanuaBindManager.ClearBindings;
+begin
+  if Assigned(TJanuaApplication.BindEngine) then
+    TJanuaApplication.BindEngine.ClearBindings(FOwner);
+  FBindedProperties.Clear;
+  FBindCount := 0;
+end;
+
+constructor TJanuaBindManager.Create(AOwner: TObject);
+begin
+  inherited Create;
+  FBindCount := 0;
+  FOwner := AOwner;
+  FBindedProperties := TCollections.CreateList<string>;
+end;
+
+procedure TJanuaBindManager.DecBindCount;
+begin
+  if FBindCount > 0 then
+    Dec(FBindCount);
+end;
+
+destructor TJanuaBindManager.Destroy;
+begin
+  try
+    ClearBindings;
+    FBindedProperties := nil;
+    FOwner := nil;
+  except
+    on E: Exception do
+    begin
+      LogException('Destroy ', E, self);
+    end;
+  end;
+  inherited;
+end;
+
+function TJanuaBindManager.GetBindCount: Integer;
+begin
+  Result := FBindCount
+end;
+
+function TJanuaBindManager.GetHasBindings: Boolean;
+begin
+  Result := FBindCount > 0
+end;
+
+procedure TJanuaBindManager.IncBindCount;
+begin
+  Inc(FBindCount);
+end;
+
+procedure TJanuaBindManager.Notify(const AProperty: string);
+begin
+  if Assigned(FOwner) then
+    TJanuaApplication.BindEngine.Notify(FOwner, AProperty);
+end;
+
+procedure TJanuaBindManager.NotifyAll;
+var
+  lProperty: string;
+begin
+  for lProperty in FBindedProperties do
+    Notify(lProperty);
+end;
+
+procedure TJanuaBindManager.UnBind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string);
+begin
+  TJanuaApplication.BindEngine.UnBind(FOwner, AProperty, ABindToObject, ABindToProperty);
+end;
 
 { TJanuaCustomComponent }
 
@@ -191,11 +342,33 @@ begin
   _Release;
 end;
 
-{ TJanuaCoreBindableObject }
+{ Spring, Spring.Collections, }
 
-function TJanuaCoreBindableObject.GetBindManager: IJanuaBindManager;
+procedure TJanuaBindableClass.Bind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
+begin
+  try
+    if Assigned(FBindManager) then
+      FBindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
+  except
+    on E: Exception do
+      Raise Exception.Create(ClassName + '.Bind Error:' + E.Message);
+  end;
+end;
+
+function TJanuaBindableClass.GetBindManager: IJanuaBindManager;
 begin
   Result := FBindManager
+end;
+
+procedure TJanuaBindableClass.NotifiyAllProperties;
+begin
+  FBindManager.NotifyAll
+end;
+
+procedure TJanuaBindableClass.Notify(const AProperty: string);
+begin
+  FBindManager.Notify(AProperty);
 end;
 
 end.

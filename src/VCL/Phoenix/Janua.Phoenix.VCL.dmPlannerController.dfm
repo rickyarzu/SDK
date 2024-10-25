@@ -20542,8 +20542,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object lkpTecnici: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT T.*'
-      'FROM  TECNICI T'
+      'SELECT T.* , calendario.gbackcolor'
+      'FROM  TECNICI T JOIN calendario on calendario.tecnico = t.chiave'
       'where T.EMAIL IS NOT NULL '
       'AND T.ATTIVO = '#39'T'#39)
     Left = 576
@@ -20582,6 +20582,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'SIGLA'
       Size = 12
     end
+    object lkpTecniciGBACKCOLOR: TIntegerField
+      FieldName = 'GBACKCOLOR'
+      ReadOnly = True
+    end
   end
   object dsLkpTecnici: TUniDataSource
     DataSet = lkpTecnici
@@ -20608,6 +20612,36 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       Caption = 'Google Sync'
       ImageIndex = 50
       ImageName = '023-share'
+    end
+    object actWASendMessage: TAction
+      Caption = 'Invia Messaggio'
+      ImageIndex = 66
+      ImageName = 'whatsapp'
+      OnExecute = actWASendMessageExecute
+    end
+    object actWASendMsgTest: TAction
+      Caption = 'Invia Messaggio di Prova'
+      ImageIndex = 43
+      ImageName = '044-social network'
+      OnExecute = actWASendMsgTestExecute
+    end
+    object actWASetAsMsgSent: TAction
+      Caption = 'Segna Come Avvisato'
+      ImageIndex = 63
+      ImageName = 'goal'
+      OnExecute = actWASetAsMsgSentExecute
+    end
+    object actWASetAsConfirmed: TAction
+      Caption = 'Segna Come Confermato'
+      ImageIndex = 65
+      ImageName = 'calendar'
+      OnExecute = actWASetAsConfirmedExecute
+    end
+    object actGridConfirmEvent: TAction
+      Caption = 'Conferma Appuntmento'
+      ImageIndex = 65
+      ImageName = 'calendar'
+      OnExecute = actGridConfirmEventExecute
     end
   end
   object DBSingleCalendar: TDBDaySource
@@ -29840,30 +29874,30 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     KeyFields = 'JGUID'
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
-      '  (TELEFONO, CELLULARE, WANUMBER, WA)'
+      '  (CHIAVE, TELEFONO, CELLULARE, WANUMBER, WA)'
       'VALUES'
-      '  (:STELEFONO, :SCELLULARE, :WANUMBER, :WA)')
+      '  (:CHIAVE, :STELEFONO, :SCELLULARE, :WANUMBER, :WA)')
     SQLDelete.Strings = (
       'DELETE FROM STATINI'
       'WHERE'
-      '  JGUID = :Old_JGUID')
+      '  CHIAVE = :Old_CHIAVE')
     SQLUpdate.Strings = (
       'UPDATE STATINI'
       'SET'
       
-        '  TELEFONO = :STELEFONO, CELLULARE = :SCELLULARE, WANUMBER = :WA' +
-        'NUMBER, WA = :WA'
+        '  CHIAVE = :CHIAVE, TELEFONO = :STELEFONO, CELLULARE = :SCELLULA' +
+        'RE, WANUMBER = :WANUMBER, WA = :WA'
       'WHERE'
-      '  JGUID = :Old_JGUID')
+      '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
       'SELECT NULL FROM STATINI'
       'WHERE'
-      'JGUID = :Old_JGUID'
+      'CHIAVE = :Old_CHIAVE AND CHIAVE = :Old_CHIAVE'
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
-      'SELECT TELEFONO, CELLULARE, WANUMBER, WA FROM STATINI'
+      'SELECT CHIAVE, TELEFONO, CELLULARE, WANUMBER, WA FROM STATINI'
       'WHERE'
-      '  JGUID = :JGUID')
+      '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
       'SELECT COUNT(*) FROM ('
       'SELECT 1 AS C  FROM STATINI'
@@ -29881,13 +29915,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
+      'select E.*, CE.DALLE_ORE, CE.ALLE_ORE,'
+      '       CE.JGUID as ceJGUID, e.jguid as GJGUID, '
       
-        'select E.ID, E.ETAG, E.SUMMARY,  CE.DALLE_ORE, CE.ALLE_ORE, CREA' +
-        'TED, UPDATED, LOCATION, STATUS, VISIBILITY, RECURRENCE,'
-      '       CE.JGUID, e.jguid as GJGUID, '
-      
-        '       s.telefono as stelefono, s.cellulare as scellulare, c.tel' +
-        'efono1 as ctel1, c.cellulare as ccell , c.telefono2 as ctel2,'
+        '       s.chiave,  s.telefono as stelefono, s.cellulare as scellu' +
+        'lare, c.telefono1 as ctel1, c.cellulare as ccell , c.telefono2 a' +
+        's ctel2,'
       
         '       F.cellulare AS FCEL, F.telefono AS FTEL , S.WANUMBER, S.W' +
         'A, T.SIGLA AS TECNICO'
@@ -29947,16 +29980,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'SUMMARY'
       Size = 256
     end
-    object qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField
-      FieldName = 'DALLE_ORE'
-      ReadOnly = True
-      Required = True
-    end
-    object qryElencoEventiWhatsAppALLE_ORE: TDateTimeField
-      FieldName = 'ALLE_ORE'
-      ReadOnly = True
-      Required = True
-    end
     object qryElencoEventiWhatsAppCREATED: TDateTimeField
       FieldName = 'CREATED'
     end
@@ -29988,46 +30011,37 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryElencoEventiWhatsAppSTELEFONO: TStringField
       FieldName = 'STELEFONO'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppSCELLULARE: TStringField
       FieldName = 'SCELLULARE'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppCTEL1: TStringField
       FieldName = 'CTEL1'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppCCELL: TStringField
       FieldName = 'CCELL'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppCTEL2: TStringField
       FieldName = 'CTEL2'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppFCEL: TStringField
       FieldName = 'FCEL'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppFTEL: TStringField
       FieldName = 'FTEL'
-      ReadOnly = True
       Size = 255
     end
     object qryElencoEventiWhatsAppWANUMBER: TStringField
       FieldName = 'WANUMBER'
-      ReadOnly = True
     end
     object qryElencoEventiWhatsAppWA: TStringField
       FieldName = 'WA'
-      ReadOnly = True
       FixedChar = True
       Size = 1
     end
@@ -30041,6 +30055,82 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'TECNICO'
       ReadOnly = True
       Size = 12
+    end
+    object qryElencoEventiWhatsAppDESCRIPTION: TBlobField
+      FieldName = 'DESCRIPTION'
+    end
+    object qryElencoEventiWhatsAppSTARTTIME: TDateTimeField
+      FieldName = 'STARTTIME'
+    end
+    object qryElencoEventiWhatsAppENDTIME: TDateTimeField
+      FieldName = 'ENDTIME'
+    end
+    object qryElencoEventiWhatsAppRECURRINGID: TStringField
+      FieldName = 'RECURRINGID'
+      Size = 60
+    end
+    object qryElencoEventiWhatsAppSEQUENCE: TIntegerField
+      FieldName = 'SEQUENCE'
+    end
+    object qryElencoEventiWhatsAppCOLOR: TSmallintField
+      FieldName = 'COLOR'
+    end
+    object qryElencoEventiWhatsAppCALENDARID: TStringField
+      FieldName = 'CALENDARID'
+      Required = True
+      Size = 128
+    end
+    object qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object qryElencoEventiWhatsAppSENDNOTIFICATIONS: TStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
+    end
+    object qryElencoEventiWhatsAppISALLDAY: TStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
+    end
+    object qryElencoEventiWhatsAppATTENDEES: TBlobField
+      FieldName = 'ATTENDEES'
+    end
+    object qryElencoEventiWhatsAppREMINDERS: TBlobField
+      FieldName = 'REMINDERS'
+    end
+    object qryElencoEventiWhatsAppBACKGROUNDCOLOR: TIntegerField
+      FieldName = 'BACKGROUNDCOLOR'
+    end
+    object qryElencoEventiWhatsAppFOREGROUNDCOLOR: TIntegerField
+      FieldName = 'FOREGROUNDCOLOR'
+    end
+    object qryElencoEventiWhatsAppSYNC: TStringField
+      FieldName = 'SYNC'
+      FixedChar = True
+      Size = 1
+    end
+    object qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField
+      FieldName = 'DALLE_ORE'
+      ReadOnly = True
+      Required = True
+    end
+    object qryElencoEventiWhatsAppALLE_ORE: TDateTimeField
+      FieldName = 'ALLE_ORE'
+      ReadOnly = True
+      Required = True
+    end
+    object qryElencoEventiWhatsAppCEJGUID: TBytesField
+      FieldName = 'CEJGUID'
+      ReadOnly = True
+      Required = True
+    end
+    object qryElencoEventiWhatsAppCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      ReadOnly = True
+      Required = True
     end
   end
   object UniQuery1: TUniQuery

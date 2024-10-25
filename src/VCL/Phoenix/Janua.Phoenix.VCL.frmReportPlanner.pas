@@ -94,6 +94,7 @@ type
     FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
   public
     { Public declarations }
+    procedure AfterUpdateCalendar(Sender: TObject);
   end;
 
 var
@@ -109,6 +110,11 @@ uses
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   // Phoenix
   DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync;
+
+procedure TfrmPhoenixVCLReportPlanner.AfterUpdateCalendar(Sender: TObject);
+begin
+
+end;
 
 procedure TfrmPhoenixVCLReportPlanner.AnnullaAppuntamento1Click(Sender: TObject);
 begin
