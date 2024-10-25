@@ -114,15 +114,14 @@ type
 procedure OpenDBThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil; aDoRaise: boolean = true;
   aCallBackProc: TProc = nil);
 
-{
-  var
-  DBConnection: TJanuaCustomDBConnection;
-}
+procedure DeserializeDatasetToClass(aDataset: TDataset; AClassInstance: TObject);
+procedure SerializeClassToDataset(AClassInstance: TObject; aDataset: TDataset);
+
 implementation
 
-uses System.Rtti, System.TypInfo, Janua.Application.Framework, Spring, System.StrUtils;
+uses Janua.Mocks.Helpers, System.Rtti, System.TypInfo, Janua.Application.Framework, Spring, System.StrUtils;
 
-procedure DeserializeDatasetToClass(ADataSet: TDataSet; AClassInstance: TObject);
+procedure DeserializeDatasetToClass(aDataset: TDataset; AClassInstance: TObject);
 var
   Context: TRttiContext;
   RttiType: TRttiType;
@@ -137,7 +136,7 @@ begin
       // Check if the property is writable and public
       if Prop.IsWritable and (Prop.Visibility = mvPublic) then
       begin
-        Field := ADataSet.FindField(Prop.Name);
+        Field := aDataset.FindField(Prop.Name);
         if Assigned(Field) then
         begin
           // Set the property value based on the field value
@@ -174,7 +173,13 @@ begin
         if Assigned(Field) then
         begin
           // Set the field value based on the property value
-          Field.Value := Prop.GetValue(AClassInstance).AsVariant;
+          case Field.DataType of
+            TFieldType.ftMemo:
+              Field.Text := Prop.GetValue(AClassInstance).AsString
+          else
+            Field.Value := Prop.GetValue(AClassInstance).AsVariant;
+          end;
+
         end;
       end;
     end;
