@@ -695,7 +695,7 @@ type
 implementation
 
 uses
-  Spring, VCL.Styles, VCL.Themes, Janua.VCL.Styles.ControlColor, Janua.Core.Functions, Janua.Core.Classes,
+  Spring, VCL.Styles, VCL.Themes, Janua.VCL.Styles.ControlColor, Janua.Core.Functions, Janua.Core.Commons,
   Janua.Application.Framework;
 
 { TEdit }
