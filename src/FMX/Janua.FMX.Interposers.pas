@@ -60,7 +60,7 @@ type
 
 implementation
 
-uses Janua.Application.Framework, Janua.Core.Classes;
+uses Janua.Application.Framework, Janua.Core.Commons;
 
 { TEdit }
 

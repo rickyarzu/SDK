@@ -22,50 +22,6 @@ type
     function GetTime: TDAteTime; virtual;
   end;
 
-  TJanuaCustomDatasetFunctions = class(TJanuaInterfacedObject, IJanuaDatasetFunctions)
-  private
-    FOwner: TComponent;
-  protected
-    HasErrors: boolean;
-    FActive: boolean;
-    function GetOwner: TComponent;
-    procedure SetOwner(const Value: TComponent); virtual;
-    procedure WriteLog(const aLog: string);
-    procedure WriteError(const aError: string; e: Exception);
-  public
-    procedure StoreRecordToProcedure(const aRecord: IJanuaRecord; const aProcObject: TDataset;
-      const aRefreshRecord: boolean); virtual; abstract;
-    procedure PostDataset(const aDataset: TDataset); virtual; abstract;
-    function DatasetToXml(const aDataset: TDataset): string; virtual; abstract;
-    procedure OpenDataset(const aDataset: TDataset; DoRaise: boolean = true); virtual; abstract;
-    procedure ReOpenDataset(const aDataset: TDataset); virtual; abstract;
-    procedure TestDatasets; overload; virtual; abstract;
-    procedure TestDatasets(aParent: TComponent); overload; virtual; abstract;
-    procedure PrepareDataset(const aDataset: TDataset); virtual; abstract;
-    procedure ExecuteProcedure(aProcedure: TDataset); virtual; abstract;
-    procedure OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil;
-      aDoRaise: boolean = true; aCallBackProc: TProc = nil); virtual; abstract;
-    procedure CloseAllDatasets(aParent: TComponent); overload;
-    procedure CloseAllDatasets; overload;
-    function Activate(const aOwner: TComponent): boolean; overload;
-  public
-    constructor Create; override;
-  end;
-  (*
-    TJanuaDBCustomServerFunctions = class(TJanuaCustomDatasetFunctions, IJanuaServerFunctions)
-    public
-    procedure SetUserProfile(aQuery: TDataset; var aUser: TJanuaRecordUserProfile); virtual; abstract;
-    function CheckUser(var Count: Integer; p_username, p_email: string; spUserTest: TDataset = nil): boolean;
-    virtual; abstract;
-    function CheckUserSocial(p_social_id, p_social_kind: string; spUserTest: TDataset = nil): boolean;
-    virtual; abstract;
-    function GetCountryByName(cName: string; qryCountries: TDataset): Integer; virtual; abstract;
-    function GetCountryByCode(cCode: string; qryCountries: TDataset): Integer; virtual; abstract;
-    function GetCountryByID(cID: Integer; qryCountries: TDataset): boolean; virtual; abstract;
-    procedure ClearCountriesParams(qryCountries: TDataset); virtual; abstract;
-    end;
-  *)
-
   TJanuaServerFunctions = class(TJanuaCoreComponent)
   private
     FServerFunction: IJanuaServerFunctions;
@@ -74,19 +30,6 @@ type
   public
     constructor Create(aOwner: TComponent); override;
     property ServerFunctions: IJanuaServerFunctions read GetServerFunction;
-  end;
-
-type
-  TJanuaCustomDBConnection = class(TInterfacedObject, IJanuaDBConnection)
-  private
-    FLastErrorMessage: string;
-    function GetServerConf: TJanuaServerRecordConf;
-    procedure SetServerConf(const Value: TJanuaServerRecordConf);
-    function GetLastErrorMessage: string;
-  public
-    // the Test Connection Function needs to be implemented in the inherited class regarding the DB Type Connection....
-    function TestConnection: boolean;
-    property ServerConf: TJanuaServerRecordConf read GetServerConf write SetServerConf;
   end;
 
 type
@@ -142,24 +85,6 @@ type
   end;
 
 type
-  TJanuaSearchParam = class(TInterfacedObject, IJanuaSearchParam)
-  private
-    FParamType: TJanuaFieldType;
-    FName: string;
-    FTitle: string;
-    function GetParamType: TJanuaFieldType;
-    function GetName: string;
-    function GetTitle: string;
-    procedure SetName(const Value: string);
-    procedure SetParamType(const Value: TJanuaFieldType);
-    procedure SetTitle(const Value: string);
-  public
-    property Name: string read GetName write SetName;
-    property Title: string read GetTitle write SetTitle;
-    property ParamType: TJanuaFieldType read GetParamType write SetParamType;
-  end;
-
-type
   TRecDatasetExport = record
   private
     FDataset: TDataset;
@@ -189,12 +114,81 @@ type
 procedure OpenDBThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil; aDoRaise: boolean = true;
   aCallBackProc: TProc = nil);
 
-var
-  DBConnection: TJanuaCustomDBConnection;
+procedure DeserializeDatasetToClass(aDataset: TDataset; AClassInstance: TObject);
+procedure SerializeClassToDataset(AClassInstance: TObject; aDataset: TDataset);
 
 implementation
 
-uses Janua.Application.Framework, Spring, System.StrUtils;
+uses Janua.Mocks.Helpers, System.Rtti, System.TypInfo, Janua.Application.Framework, Spring, System.StrUtils;
+
+procedure DeserializeDatasetToClass(aDataset: TDataset; AClassInstance: TObject);
+var
+  Context: TRttiContext;
+  RttiType: TRttiType;
+  Prop: TRttiProperty;
+  Field: TField;
+begin
+  Context := TRttiContext.Create;
+  try
+    RttiType := Context.GetType(AClassInstance.ClassType);
+    for Prop in RttiType.GetProperties do
+    begin
+      // Check if the property is writable and public
+      if Prop.IsWritable and (Prop.Visibility = mvPublic) then
+      begin
+        Field := aDataset.FindField(Prop.Name);
+        if Assigned(Field) then
+        begin
+          // Set the property value based on the field value
+          Prop.SetValue(AClassInstance, TValue.FromVariant(Field.Value));
+        end;
+      end;
+    end;
+  finally
+    Context.Free;
+  end;
+end;
+
+procedure SerializeClassToDataset(AClassInstance: TObject; aDataset: TDataset);
+var
+  Context: TRttiContext;
+  RttiType: TRttiType;
+  Prop: TRttiProperty;
+  Field: TField;
+begin
+  // Ensure the dataset is in edit or insert mode
+  if not(aDataset.State in dsEditModes) then
+    aDataset.Append;
+
+  Context := TRttiContext.Create;
+  try
+    RttiType := Context.GetType(AClassInstance.ClassType);
+    for Prop in RttiType.GetProperties do
+    begin
+      // Check if the property is readable and public
+      // Consider if using in TMemberVisibilities
+      if Prop.IsReadable and (Prop.Visibility = TMemberVisibility.mvPublic) then
+      begin
+        Field := aDataset.FindField(Prop.Name);
+        if Assigned(Field) then
+        begin
+          // Set the field value based on the property value
+          case Field.DataType of
+            TFieldType.ftMemo:
+              Field.Text := Prop.GetValue(AClassInstance).AsString
+          else
+            Field.Value := Prop.GetValue(AClassInstance).AsVariant;
+          end;
+
+        end;
+      end;
+    end;
+    // Post the changes to the dataset
+    aDataset.Post;
+  finally
+    Context.Free;
+  end;
+end;
 
 procedure OpenDBThreadedDataset(aDataset: TDataset; aDatasource: TDataSource; aDoRaise: boolean;
   aCallBackProc: TProc);
@@ -286,41 +280,6 @@ end;
 procedure TJanuaDBNavController.SetMasterDataset(const Value: TDataset);
 begin
   FMasterDataset := Value;
-end;
-
-{ TJanuaCustomDBConnection }
-
-function TJanuaCustomDBConnection.GetLastErrorMessage: string;
-begin
-  Result := self.FLastErrorMessage;
-end;
-
-function TJanuaCustomDBConnection.GetServerConf: TJanuaServerRecordConf;
-begin
-  Result := TJanuaApplication.JanuaServerConf;
-end;
-
-procedure TJanuaCustomDBConnection.SetServerConf(const Value: TJanuaServerRecordConf);
-begin
-  TJanuaApplication.JanuaServerConf := Value;
-end;
-
-function TJanuaCustomDBConnection.TestConnection: boolean;
-var
-  LDataModule: IDmJanuaCoreDBConnections;
-begin
-  Result := False;
-  if TJanuaApplicationFactory.TryGetDataModule(IDmJanuaCoreDBConnections, nil, LDataModule) then
-    try
-      Result := LDataModule.TestConnection;
-      FLastErrorMessage := LDataModule.LastErrorMessage;
-      if not Result then
-        CreateException('TestConnection', LDataModule.LastErrorMessage, self);
-    finally
-      LDataModule.Component.Free;
-    end
-  else
-    FLastErrorMessage := 'IDmJanuaCoreDBConnections not found';
 end;
 
 { TJanuaCustomSessionSource }
@@ -469,91 +428,6 @@ end;
 function TJanuaServerFunctions.GetServerFunction: IJanuaServerFunctions;
 begin
   Result := FServerFunction;
-end;
-
-{ TJanuaCustomDatasetFunctions }
-
-function TJanuaCustomDatasetFunctions.Activate(const aOwner: TComponent): boolean;
-begin
-  SetOwner(aOwner);
-  Result := Activate;
-end;
-
-procedure TJanuaCustomDatasetFunctions.CloseAllDatasets;
-var
-  i: Integer;
-begin
-  if Assigned(FOwner) then
-  begin
-    for i := 0 to FOwner.ComponentCount - 1 do
-      if FOwner.Components[i] is TDataset then
-        (FOwner.Components[i] as TDataset).Close;
-  end;
-
-end;
-
-constructor TJanuaCustomDatasetFunctions.Create;
-begin
-  inherited;
-  FActive := False;
-end;
-
-procedure TJanuaCustomDatasetFunctions.CloseAllDatasets(aParent: TComponent);
-begin
-  self.FOwner := aParent;
-  CloseAllDatasets;
-end;
-
-function TJanuaCustomDatasetFunctions.GetOwner: TComponent;
-begin
-  Result := self.FOwner
-end;
-
-procedure TJanuaCustomDatasetFunctions.SetOwner(const Value: TComponent);
-begin
-  FOwner := Value;
-end;
-
-procedure TJanuaCustomDatasetFunctions.WriteError(const aError: string; e: Exception);
-begin
-  TJanuaLogger.LogError('Log', aError, self, e);
-end;
-
-procedure TJanuaCustomDatasetFunctions.WriteLog(const aLog: string);
-begin
-  TJanuaLogger.LogRecord('Log', aLog, self);
-end;
-
-{ TJanuaSearchParam }
-
-function TJanuaSearchParam.GetName: string;
-begin
-  Result := FName
-end;
-
-function TJanuaSearchParam.GetParamType: TJanuaFieldType;
-begin
-  Result := self.FParamType
-end;
-
-function TJanuaSearchParam.GetTitle: string;
-begin
-  Result := self.FTitle
-end;
-
-procedure TJanuaSearchParam.SetName(const Value: string);
-begin
-  FName := Value;
-end;
-
-procedure TJanuaSearchParam.SetParamType(const Value: TJanuaFieldType);
-begin
-  FParamType := Value;
-end;
-
-procedure TJanuaSearchParam.SetTitle(const Value: string);
-begin
-  FTitle := Value;
 end;
 
 { TDatasetStringWriter }

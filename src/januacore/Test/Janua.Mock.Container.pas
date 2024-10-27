@@ -101,7 +101,9 @@ type
 
 implementation
 
-uses {Janua.Bindings.Impl,} Janua.Application.Framework;
+uses Janua.Application.Framework, Janua.Core.Commons;
+
+
 { TJanuaMockContainer }
 
 

@@ -85,6 +85,7 @@ type
     InviaMsgWhatsApp1: TMenuItem;
     Button1: TButton;
     btnWhatsApp: TButton;
+    ConfermaAppuntmento1: TMenuItem;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -331,8 +332,7 @@ begin
     var
     vReport := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
 
-    FRecordItem := dmVCLPhoenixPlannerController.InsertEvent(vTest, vTest2,
-      dbp.CaptionText, vReport);
+    FRecordItem := dmVCLPhoenixPlannerController.InsertEvent(vTest, vTest2, dbp.CaptionText, vReport);
 
     Screen.Cursor := crHourGlass;
     try
@@ -463,9 +463,17 @@ begin
   inherited;
   if JMessageDlg('Elimino l''appuntamento?', FSelectedItem.ItemText) then
   begin
-    Self.DBDaySource1.DeleteDBItem(DBPlanner1);
-    DBDaySource1.DataSource.DataSet.Close;
-    DBDaySource1.DataSource.DataSet.Open;
+    try
+      DBDaySource1.DeleteDBItem(DBPlanner1);
+      DBDaySource1.DataSource.DataSet.Close;
+      DBDaySource1.DataSource.DataSet.Open;
+    except
+      on e: exception do
+      begin
+        DBDaySource1.DataSource.DataSet.Close;
+        DBDaySource1.DataSource.DataSet.Open;
+      end;
+    end;
   end;
 end;
 

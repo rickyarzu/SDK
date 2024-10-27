@@ -3,7 +3,7 @@ unit Janua.Cloud.Types;
 interface
 
 uses Spring.Collections, System.SysUtils, System.StrUtils, System.Types, System.NetEncoding,
-  Janua.Core.Types, Data.DB, Janua.Core.Http.Intf;
+  Janua.Core.Types, Data.DB, System.JSON, Janua.Core.Http.Intf;
 
 type
   TSendMessageEvent = procedure(const aMessage, aJson: string) of object;
@@ -202,6 +202,8 @@ type
     procedure Clear;
     function GetAsJson: String;
     procedure SetAsJson(const aJson: string);
+    function GetAsJsonObject: TJsonObject;
+    procedure SetAsJsonObject(const aObject: TJsonObject);
   end;
 
   TJanuaSendingEngine = (jseSMS, jseWhatsapp);
@@ -323,6 +325,13 @@ type
     procedure Clear;
     function GetAsJson: String;
     procedure SetAsJson(const aJson: string);
+  end;
+
+  TJanuaRecWhatsAppSettings = record
+  public
+    DefaultTemplate: string;
+    TestPhone: string;
+
   end;
 
   TJanuaRecEvent = record
@@ -913,12 +922,22 @@ begin
   Result := TJanuaJson.SerializeSimple<TSMSSenderRecordConf>(Self);
 end;
 
+function TSMSSenderRecordConf.GetAsJsonObject: TJsonObject;
+begin
+
+end;
+
 procedure TSMSSenderRecordConf.SetAsJson(const aJson: string);
 begin
   if (aJson = '') or (aJson = '{}') then
     Self.Clear
   else
     Self := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(aJson);
+end;
+
+procedure TSMSSenderRecordConf.SetAsJsonObject(const aObject: TJsonObject);
+begin
+
 end;
 
 { TJanuaFacebook }

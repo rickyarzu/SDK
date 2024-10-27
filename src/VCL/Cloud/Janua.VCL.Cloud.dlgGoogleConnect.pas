@@ -32,6 +32,7 @@ type
     function UpdateGoogleItem(aItem: string): string;
     function DeleteGoogleItem(aItem: string): string;
     function ConfirmMessage(const aID: string): string;
+    function WhatsAppSentMessage(const aID: string): string;
   end;
 
 var
@@ -92,27 +93,16 @@ begin
     end;
 end;
 
-function TdlgVclCloudGoogleConnect.ConfirmMessage(const aID: string): string;
-var
-  cnt: TdmPhoenixVCLGCalendarController;
+function TdlgVclCloudGoogleConnect.WhatsAppSentMessage(const aID: string): string;
 begin
-  Result := '';
+  cnt.AdvGCalendar1 := AdvGCalendar1;
+  Result := cnt.WhatsAppSentMessage(aID);
+end;
 
-  if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.RefreshAccess;
-
-  if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.DoAuth;
-
-  if AdvGCalendar1.TestTokens then
-    try
-      cnt := TdmPhoenixVCLGCalendarController.Create(nil);
-      cnt.AdvGCalendar1 := AdvGCalendar1;
-      Result := cnt.ConfirmMessage(aID);
-    finally
-      cnt.Free;
-    end;
-
+function TdlgVclCloudGoogleConnect.ConfirmMessage(const aID: string): string;
+begin
+  cnt.AdvGCalendar1 := AdvGCalendar1;
+  Result := cnt.ConfirmMessage(aID);
 end;
 
 function TdlgVclCloudGoogleConnect.DeleteGoogleItem(aItem: string): string;

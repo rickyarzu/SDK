@@ -51,7 +51,7 @@ begin
       if Result then
       begin
         Result := False;
-        self.SetOwner;
+        SetOwner;
         Result := True
       end;
     except

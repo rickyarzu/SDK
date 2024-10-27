@@ -37,7 +37,7 @@ uses
   Janua.CarService.Driver.DMVCController,
   // System
   // --- Session
-  Janua.System.Session.DMVCController,
+  Janua.System.Session.DMVC.Controller,
 
   System.IOUtils,
   MVCFramework.Commons,
