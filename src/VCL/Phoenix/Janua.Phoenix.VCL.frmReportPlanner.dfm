@@ -692,6 +692,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Width = 599
           Height = 783
           DoubleBuffered = True
+          ExplicitTop = 34
           ExplicitWidth = 599
           ExplicitHeight = 783
         end

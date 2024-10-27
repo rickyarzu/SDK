@@ -390,8 +390,6 @@ type
     qryElencoEventiWhatsAppID: TStringField;
     qryElencoEventiWhatsAppETAG: TStringField;
     qryElencoEventiWhatsAppSUMMARY: TStringField;
-    qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField;
-    qryElencoEventiWhatsAppALLE_ORE: TDateTimeField;
     qryElencoEventiWhatsAppCREATED: TDateTimeField;
     qryElencoEventiWhatsAppUPDATED: TDateTimeField;
     qryElencoEventiWhatsAppLOCATION: TStringField;
@@ -419,6 +417,31 @@ type
     qryReportPlannerANNO_CALCOLATO: TIntegerField;
     qryReportPlannerDATA_FINE_MESE_CALCOLATO: TDateField;
     qryReportPlannerRITARDO: TLargeintField;
+    qryElencoEventiWhatsAppDESCRIPTION: TBlobField;
+    qryElencoEventiWhatsAppSTARTTIME: TDateTimeField;
+    qryElencoEventiWhatsAppENDTIME: TDateTimeField;
+    qryElencoEventiWhatsAppRECURRINGID: TStringField;
+    qryElencoEventiWhatsAppSEQUENCE: TIntegerField;
+    qryElencoEventiWhatsAppCOLOR: TSmallintField;
+    qryElencoEventiWhatsAppCALENDARID: TStringField;
+    qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TStringField;
+    qryElencoEventiWhatsAppSENDNOTIFICATIONS: TStringField;
+    qryElencoEventiWhatsAppISALLDAY: TStringField;
+    qryElencoEventiWhatsAppATTENDEES: TBlobField;
+    qryElencoEventiWhatsAppREMINDERS: TBlobField;
+    qryElencoEventiWhatsAppBACKGROUNDCOLOR: TIntegerField;
+    qryElencoEventiWhatsAppFOREGROUNDCOLOR: TIntegerField;
+    qryElencoEventiWhatsAppSYNC: TStringField;
+    qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppCEJGUID: TBytesField;
+    qryElencoEventiWhatsAppCHIAVE: TIntegerField;
+    actWASendMessage: TAction;
+    actWASendMsgTest: TAction;
+    actWASetAsMsgSent: TAction;
+    actWASetAsConfirmed: TAction;
+    actGridConfirmEvent: TAction;
+    lkpTecniciGBACKCOLOR: TIntegerField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -443,6 +466,11 @@ type
     procedure actWaSetExecute(Sender: TObject);
     procedure actSelectExecute(Sender: TObject);
     procedure actSelectAllExecute(Sender: TObject);
+    procedure actWASendMessageExecute(Sender: TObject);
+    procedure actWASendMsgTestExecute(Sender: TObject);
+    procedure actWASetAsMsgSentExecute(Sender: TObject);
+    procedure actWASetAsConfirmedExecute(Sender: TObject);
+    procedure actGridConfirmEventExecute(Sender: TObject);
   private
     Stopwatch: TStopwatch;
     FInsertingEvent: Boolean;
@@ -468,6 +496,9 @@ type
     FPlannerEvent: TJanuaRecEvent;
     /// <summary>  Every Dict that is created is stored in this List </summary>
     FGCalEventsDict: TDictionary<TGUID, TJanuaRecEvent>;
+    FAfterUpdateCal: TNotifyEvent;
+    FWATest: Boolean;
+    FWATestPhone: string;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -487,6 +518,9 @@ type
     procedure SetSelectedDate(const Value: TDate);
     procedure SetPlannerDlg(const Value: TDBPlanner);
     procedure SetPlannerEvent(const Value: TJanuaRecEvent);
+    procedure SetAfterUpdateCal(const Value: TNotifyEvent);
+    procedure SetWATest(const Value: Boolean);
+    procedure SetWATestPhone(const Value: string);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -569,8 +603,10 @@ type
     property SelectedDate: TDate read FSelectedDate write SetSelectedDate;
     property PlannerDlg: TDBPlanner read FPlannerDlg write SetPlannerDlg;
     property PlannerEvent: TJanuaRecEvent read FPlannerEvent write SetPlannerEvent;
-
+    property AfterUpdateCalendar: TNotifyEvent read FAfterUpdateCal write SetAfterUpdateCal;
     // WhatsApp Parameters
+    property WATest: Boolean read FWATest write SetWATest;
+    property WATestPhone: string read FWATestPhone write SetWATestPhone;
   end;
 
 var
@@ -580,7 +616,7 @@ implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, Janua.Application.Framework,
-  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, uPhoenixWAMessageList;
+  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList;
 
 {$IFDEF WIN32}
 function InitializeDLL: string; stdcall; external 'PhoenixLib32_r7.dll' index 1;
@@ -606,7 +642,7 @@ var
 
 const
   cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
-    'La contatto per comunicarLe che nella giornata del $$date$$ il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in $$address$$. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
+    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
     + sl + 'Cordiali Saluti' + sl + sl +
     'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
 
@@ -695,6 +731,23 @@ begin
   dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
 end;
 
+procedure TdmVCLPhoenixPlannerController.actGridConfirmEventExecute(Sender: TObject);
+begin
+  inherited;
+  var
+  sGUID := StringReplace(PlannerEvent.JGUID, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+  ConfirmGoogleEventDLL(sGUID);
+  if qryPersonalPlannerEvents.Locate('JGUID', PlannerEvent.JGUID, []) then
+  begin
+    qryPersonalPlannerEvents.Edit;
+    qryPersonalPlannerEventsCOLORE.AsInteger := lkpTecniciGBACKCOLOR.AsInteger;
+    qryPersonalPlannerEvents.Post;
+  end;
+  qryPersonalPlannerEvents.Close;
+  qryPersonalPlannerEvents.Open;
+end;
+
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
 begin
   inherited;
@@ -743,6 +796,84 @@ begin
   }
 end;
 
+procedure TdmVCLPhoenixPlannerController.actWASendMessageExecute(Sender: TObject);
+begin
+  var
+  sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+  var
+  lMessage := qryElencoEventiWhatsAppcalcMessage.AsString;
+  var
+  lPhone := IfThen(FWATest, FWATestPhone, Trim(qryElencoEventiWhatsAppWANUMBER.AsString));
+
+  if lPhone = '' then
+    JShowError('Non è presente un numero WhatsApp Valido')
+  else
+  begin
+    lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+
+    SendMSSWhatsAppMessage(lMessage, lPhone);
+    WhatsAppSentMessage(sGUID);
+  end;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWASendMsgTestExecute(Sender: TObject);
+begin
+  var
+  sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+
+  // By Default it uses Twilio Sender (note whene more senders will be supported this should be a case choice)
+  var
+  lMessage := StringReplace(cMessage, '{{1}}', DateToStr(qryElencoEventiWhatsAppSTARTTIME.AsDateTime),
+    [rfIgnoreCase, rfReplaceAll]);
+  lMessage := StringReplace(lMessage, '{{2}}', qryElencoEventiWhatsAppLOCATION.AsString,
+    [rfIgnoreCase, rfReplaceAll]);
+
+  var
+  lPhone := JanuaInputText('Inserire cellulare test', 'Numero di Cellulare', '3474065336');
+  if lPhone = '' then
+    JShowError('Non è presente un numero WhatsApp Valido')
+  else
+  begin
+    lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+
+    SendMSSWhatsAppMessage(lMessage, lPhone);
+    WhatsAppSentMessage(sGUID);
+  end;
+
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWASetAsConfirmedExecute(Sender: TObject);
+begin
+  var
+  sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+
+  If JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString) then
+    ConfirmGoogleEventDLL(sGUID);
+
+  qryElencoEventiWhatsApp.Edit;
+  qryElencoEventiWhatsAppWA.AsString := 'T';
+  qryElencoEventiWhatsApp.Post;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWASetAsMsgSentExecute(Sender: TObject);
+begin
+  var
+  sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
+
+  If JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString) then
+  begin
+    WhatsAppSentMessage(sGUID);
+
+    qryElencoEventiWhatsApp.Edit;
+    qryElencoEventiWhatsAppWA.AsString := 'F';
+    qryElencoEventiWhatsApp.Post;
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.actWaSetExecute(Sender: TObject);
 begin
   inherited;
@@ -755,26 +886,22 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.actWhatsAppExecute(Sender: TObject);
 begin
-  {
-    WHERE
-    CE.DALLE_ORE >= :DATE_FROM
-    AND
-    CE.ALLE_ORE < :DATE_TO
-    AND
-    (CE.TECNICO = :TECNICO OR :TECNICO = 0)
-  }
+  UpdateGoogleDLL;
   qryElencoEventiWhatsApp.Close;
   qryElencoEventiWhatsApp.ParamByName('DATE_FROM').AsDate := Date() + 1;
   qryElencoEventiWhatsApp.ParamByName('DATE_TO').AsDate := Date() + 2;
   qryElencoEventiWhatsApp.ParamByName('TECNICO').AsInteger := 0;
   qryElencoEventiWhatsApp.Open;
 
-  Application.CreateForm(TfrmVCLPhoenixWAMessageList, frmVCLPhoenixWAMessageList);
+  Application.CreateForm(TdlgVCLPhoenixWAMessageList, dlgVCLPhoenixWAMessageList);
   try
-    frmVCLPhoenixWAMessageList.ShowModal;
+    dlgVCLPhoenixWAMessageList.ShowModal;
+    UpdateGoogleDLL;
+    qryPersonalPlannerEvents.Close;
+    qryPersonalPlannerEvents.Open;
   finally
-    frmVCLPhoenixWAMessageList.Free;
-    frmVCLPhoenixWAMessageList := nil;
+    dlgVCLPhoenixWAMessageList.Free;
+    dlgVCLPhoenixWAMessageList := nil;
   end;
 
 end;
@@ -1075,6 +1202,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FWATest := False;
   FInsertingEvent := False;
   FGCalEventsDict := TDictionary<TGUID, TJanuaRecEvent>.Create;
   FCalendarsFilter2 := True;
@@ -2374,6 +2502,11 @@ begin
 
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetAfterUpdateCal(const Value: TNotifyEvent);
+begin
+  FAfterUpdateCal := Value;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetCalendarsFilter2(const Value: Boolean);
 begin
   if FCalendarsFilter2 <> Value then
@@ -2492,6 +2625,16 @@ begin
   qryCustomers.Open;
   qryTech.Open;
   qryCAP.Open;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetWATest(const Value: Boolean);
+begin
+  FWATest := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetWATestPhone(const Value: string);
+begin
+  FWATestPhone := Value;
 end;
 
 procedure TdmVCLPhoenixPlannerController.FilterTech;

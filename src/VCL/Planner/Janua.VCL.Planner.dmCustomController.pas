@@ -508,9 +508,14 @@ uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
 { udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
 
 const
+(******** Janua ********************************************************
   cKey = 'AC221a150df22723daef8d097a7f76cfcf';
   cSecret = 'f3c90112efdccd931b81dea46f74f1da';
   cAppName = '+393513535778' { '+15302036772' };
+ ***********************************************************************)
+  cKey = 'AC78d40d3938a560d9b6340ff1570c12b9';
+  cSecret = 'd2e66d3ac1b51b722675019edc086a19';
+  cAppName = '+393440682001' { '+15302036772' };
   cMessageType = jmtWhatsApp;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}

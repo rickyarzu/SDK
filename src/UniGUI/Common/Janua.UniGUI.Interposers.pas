@@ -495,7 +495,7 @@ type
 implementation
 
 uses
-  Janua.Core.Classes, Janua.Application.Framework;
+  Janua.Core.Commons, Janua.Application.Framework;
 
 { TUniEdit }
 

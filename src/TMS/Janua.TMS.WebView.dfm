@@ -20,8 +20,6 @@ inherited JanuaVCLWebView: TJanuaVCLWebView
     Settings.AllowExternalDrop = True
     Settings.UsePopupMenuAsContextMenu = False
     OnGetCookies = AdvWebBrowserGetCookies
-    ExplicitWidth = 523
-    ExplicitHeight = 457
   end
   object WebControlsPanel: TPanel
     Left = 0
@@ -30,7 +28,6 @@ inherited JanuaVCLWebView: TJanuaVCLWebView
     Height = 32
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 523
     object edUrl: TButtonedEdit
       AlignWithMargins = True
       Left = 13
@@ -47,7 +44,6 @@ inherited JanuaVCLWebView: TJanuaVCLWebView
       RightButton.Visible = True
       TabOrder = 0
       OnRightButtonClick = edUrlRightButtonClick
-      ExplicitWidth = 497
       ExplicitHeight = 23
     end
   end

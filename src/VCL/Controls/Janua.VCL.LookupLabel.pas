@@ -77,7 +77,7 @@ type
 
 implementation
 
-uses Janua.Core.Classes, Janua.Application.Framework;
+uses Janua.Core.Classes, Janua.Application.Framework, Janua.Core.Commons;
 
 { TJanuaLookupLabel }
 
