@@ -904,49 +904,6 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="carservice_book" id="Function_23c9" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.carservice_book(p_day date, p_slot_id smallint, p_booking_id bigint)
- RETURNS integer
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-  Result integer default -1; 
-  v_Free boolean; 
-BEGIN
-   IF EXISTS (SELECT 1 FROM carservice.timetable_places t
-   		WHERE  workingday = p_day AND slot_id = p_slot_id ) 
-   THEN
-		--SELECT * FROM carservice.timetable_places t
-	   	--	WHERE  workingday = p_day AND slot_id = p_slot_id FOR UPDATE NOWAIT;  
-		
-		PERFORM system.setlog('found carservice.timetable_places'); 
-	 
-	   	SELECT t.free INTO v_Free FROM carservice.timetable_places t
-	   		WHERE  workingday = p_day AND slot_id = p_slot_id; 
-			
-		PERFORM system.setlog('is free carservice.timetable_places: ' || v_Free::character varying); 
-			
-	   	IF v_Free THEN
-	     select min(driver_anagraph_id) INTO Result FROM
-		 	carservice.timetable 
-			 WHERE workingday = p_day AND slot_id = p_slot_id 
-			 	AND booking_id IS NULL;  
-				
-		  UPDATE carservice.timetable SET booking_id = p_booking_id
-		    WHERE  workingday = p_day AND slot_id = p_slot_id 
-			   AND driver_anagraph_id = Result; 
-	   	END IF; 
-   END IF; 
-   
-   RETURN Result; 
-END;
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="4" type="int4" />
-			<input_param name="p_day" jt="91" type="date" />
-			<input_param name="p_slot_id" jt="5" type="int2" />
-			<input_param name="p_booking_id" jt="-5" type="int8" />
-		</function>
 		<function name="carservice_book" id="Function_20fd" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.carservice_book(p_day date, p_slot_id smallint, p_pickup boolean, p_booking_id bigint)
  RETURNS integer
@@ -1012,6 +969,49 @@ $function$
 			<input_param name="p_day" jt="91" type="date" />
 			<input_param name="p_slot_id" jt="5" type="int2" />
 			<input_param name="p_pickup" jt="-7" type="bool" />
+			<input_param name="p_booking_id" jt="-5" type="int8" />
+		</function>
+		<function name="carservice_book" id="Function_23c9" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.carservice_book(p_day date, p_slot_id smallint, p_booking_id bigint)
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$
+DECLARE
+  Result integer default -1; 
+  v_Free boolean; 
+BEGIN
+   IF EXISTS (SELECT 1 FROM carservice.timetable_places t
+   		WHERE  workingday = p_day AND slot_id = p_slot_id ) 
+   THEN
+		--SELECT * FROM carservice.timetable_places t
+	   	--	WHERE  workingday = p_day AND slot_id = p_slot_id FOR UPDATE NOWAIT;  
+		
+		PERFORM system.setlog('found carservice.timetable_places'); 
+	 
+	   	SELECT t.free INTO v_Free FROM carservice.timetable_places t
+	   		WHERE  workingday = p_day AND slot_id = p_slot_id; 
+			
+		PERFORM system.setlog('is free carservice.timetable_places: ' || v_Free::character varying); 
+			
+	   	IF v_Free THEN
+	     select min(driver_anagraph_id) INTO Result FROM
+		 	carservice.timetable 
+			 WHERE workingday = p_day AND slot_id = p_slot_id 
+			 	AND booking_id IS NULL;  
+				
+		  UPDATE carservice.timetable SET booking_id = p_booking_id
+		    WHERE  workingday = p_day AND slot_id = p_slot_id 
+			   AND driver_anagraph_id = Result; 
+	   	END IF; 
+   END IF; 
+   
+   RETURN Result; 
+END;
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="4" type="int4" />
+			<input_param name="p_day" jt="91" type="date" />
+			<input_param name="p_slot_id" jt="5" type="int2" />
 			<input_param name="p_booking_id" jt="-5" type="int8" />
 		</function>
 		<function name="carservice_book_jguid" id="Function_120f" isSystem="false" params_known="y" >
@@ -1376,16 +1376,6 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="generate_timetable" id="Function_18ab" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.generate_timetable()
- RETURNS void
- LANGUAGE plpgsql
-AS $function$  begin
-     null;
-  end; $function$
-;]]></string>
-			<input_param name="returnValue" jt="1111" type="void" />
-		</function>
 		<function name="generate_timetable" id="Function_11ea" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.generate_timetable(p_days integer)
  RETURNS void
@@ -1408,6 +1398,16 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="void" />
 			<input_param name="p_days" jt="4" type="int4" />
+		</function>
+		<function name="generate_timetable" id="Function_18ab" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.generate_timetable()
+ RETURNS void
+ LANGUAGE plpgsql
+AS $function$  begin
+     null;
+  end; $function$
+;]]></string>
+			<input_param name="returnValue" jt="1111" type="void" />
 		</function>
 		<function name="generate_timetable_driver" id="Function_104" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION carservice.generate_timetable_driver(p_days integer, p_driver_id integer, p_hiring_date date)
@@ -4218,333 +4218,6 @@ $function$
 			<input_param name="returnValue" jt="4" type="int4" />
 			<input_param name="p_anagraph_id" jt="4" type="int4" />
 		</function>
-		<function name="sp_ins_anagraphs" id="Function_12a5" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION anagraph.sp_ins_anagraphs(p_db_schema_id integer, p_anagraph_id integer, p_an_title character varying, p_an_name character varying, p_an_second_name character varying, p_an_last_name character varying, p_an_notes character varying, p_an_address character varying, p_an_town character varying, p_an_postal_code character varying, p_an_iso_country_code character varying, p_an_state_province character varying, p_an_phone character varying, p_an_phone2 character varying, p_an_fax character varying, p_an_cellular character varying, p_an_code character varying, p_an_vat_numeric character varying, p_an_email character varying, p_an_web character varying, p_an_contact_id integer, p_an_bank_account character varying, p_an_payment_des character varying, p_an_discount numeric, p_an_distance integer, p_an_distance_mesunit smallint, p_an_sex character varying, p_an_cod_comune character varying, p_an_cod_provincia character varying, p_an_credit_line numeric, p_an_currency_id smallint, p_an_cat_id smallint, p_an_notes2 character varying, p_an_notes3 text, p_an_edi boolean, p_an_privacy boolean, p_an_office_id smallint, p_an_cod_prov_rif character varying, p_an_data_fido date, p_an_user_insert character varying, p_an_user_update character varying, p_an_area_id smallint, p_an_agent_id smallint, p_an_area_code character varying, p_an_zone_id character varying, p_an_ins_id bigint, p_an_upd_id bigint, p_an_documents smallint, p_an_last_date date, p_an_birthdate date, p_an_office_type_id smallint, p_an_searchname character varying, p_an_extra_ue_flag boolean, p_an_external_code character varying, p_an_vat_id smallint, p_an_personal_fiscal_code character varying, p_an_privacy_print smallint, p_an_sms boolean, p_an_encrypted_fiscal_code character varying, p_an_vat_purcentage smallint, p_an_status smallint, p_an_ownsite boolean, p_an_insurance_id bigint, p_an_anagraphs_anagraph_id integer, p_an_main_language_code character varying, p_an_main_culture_code character varying, p_an_fiscal_code character varying, p_an_main_group_id integer, p_an_image_id bigint, p_latitude double precision, p_longitude double precision, p_test double precision, p_search_index character varying, p_an_birthplace character varying, p_an_birthplace_code character varying, p_anagraph64 character varying, p_main_category_id smallint, p_osm_id bigint, p_an_description character varying, p_an_address_number character varying, p_anag_jguid character varying, p_anag_deleted boolean, p_insert_date timestamp without time zone, p_update_date timestamp without time zone, p_user_insert integer, p_jguid uuid, p_custom_field_1 character varying, p_custom_field_2 character varying, p_custom_field_3 character varying, p_custom_float_1 real, p_custom_float_2 real, p_custom_int_1 integer, p_custom_int_2 integer, p_supplier_id integer, p_vessel_id smallint, p_an_country_id integer, p_an_iso_country_code2 character)
- RETURNS integer
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-  v_count integer; v_id integer; v_jguid uuid; v_vessel_id integer; 
-BEGIN
-  v_count := 0; 
-  v_id := p_anagraph_id;
-  
-  if v_id is null or v_id = 0 then
-    v_id:=nextval('anagraph.an_anagraph_seq');
-  end if; 
-  
-  v_jguid := p_jguid; 
-  
-  if v_jguid is null then
-     v_jguid := '{' || public.uuid_generate_v1mc() || '}';
-  end if; 
-  
-  if p_vessel_id = 0 then v_vessel_id := null; else v_vessel_id := p_vessel_id; end if; 
-  
-  
-  INSERT INTO anagraph.anagraphs (
-    db_schema_id,	
-    anagraph_id,
-    an_title,
-    an_name,
-    an_second_name,
-    an_last_name,
-    an_notes,
-    an_address,
-    an_town,
-    an_postal_code,
-    an_iso_country_code,
-    an_state_province,
-    an_phone,
-    an_phone2,
-    an_fax,
-    an_cellular,
-    an_code,
-    an_vat_numeric,
-    an_email,
-    an_web,
-    an_contact_id,
-    an_bank_account,
-    an_payment_des,
-    an_discount,
-    an_distance,
-    an_distance_mesunit,
-    an_sex,
-    an_cod_comune,
-    an_cod_provincia,
-    an_credit_line,
-    an_currency_id,
-    an_cat_id,
-    an_notes2,
-    an_notes3,
-    an_edi,
-    an_privacy,
-    an_office_id,
-    an_cod_prov_rif,
-    an_data_fido,
-    an_user_insert,
-    an_user_update,
-    an_area_id,
-    an_agent_id,
-    an_area_code,
-    an_zone_id,
-    an_ins_id,
-    an_upd_id,
-    an_documents,
-    an_last_date,
-    an_birthdate,
-    an_office_type_id,
-    an_searchname,
-    an_extra_ue_flag,
-    an_external_code,
-    an_vat_id,
-    an_personal_fiscal_code,
-    an_privacy_print,
-    an_sms,
-    an_encrypted_fiscal_code,
-    an_vat_purcentage,
-    an_status,
-    an_ownsite,
-    an_insurance_id,
-    an_anagraphs_anagraph_id,
-    an_main_language_code,
-    an_main_culture_code,
-    an_fiscal_code,
-    an_main_group_id,
-    an_image_id,
-    latitude,
-    longitude,
-    test,
-    search_index,
-    an_birthplace,
-    an_birthplace_code,
-    anagraph64,
-    main_category_id,
-    osm_id,
-    an_description,
-    an_address_number,
-    anag_jguid,
-    anag_deleted,
-    insert_date,
-    update_date,
-    user_insert,
-    jguid,
-    custom_field_1,
-    custom_field_2,
-    custom_field_3,
-    custom_float_1,
-    custom_float_2,
-    custom_int_1,
-    custom_int_2,
-    supplier_id,
-    vessel_id,
-    an_country_id,
-    an_iso_country_code2
-  )
-  values( 
-    p_db_schema_id,
-    case when v_id = 0 then NULL else v_id end,
-    p_an_title,
-    p_an_name,
-    p_an_second_name,
-    p_an_last_name,
-    p_an_notes,
-    p_an_address,
-    p_an_town,
-    p_an_postal_code,
-    p_an_iso_country_code,
-    p_an_state_province,
-    p_an_phone,
-    p_an_phone2,
-    p_an_fax,
-    p_an_cellular,
-    p_an_code,
-    p_an_vat_numeric,
-    p_an_email,
-    p_an_web,
-    case when p_an_contact_id = 0 then NULL else p_an_contact_id end,
-    p_an_bank_account,
-    p_an_payment_des,
-    p_an_discount,
-    p_an_distance,
-    p_an_distance_mesunit,
-    p_an_sex,
-    p_an_cod_comune,
-    p_an_cod_provincia,
-    p_an_credit_line,
-    case when p_an_currency_id = 0 then NULL else p_an_currency_id end,
-    case when p_an_cat_id = 0 then NULL else p_an_cat_id end,
-    p_an_notes2,
-    p_an_notes3,
-    p_an_edi,
-    p_an_privacy,
-    case when p_an_office_id = 0 then NULL else p_an_office_id end,
-    p_an_cod_prov_rif,
-    p_an_data_fido,
-    p_an_user_insert,
-    p_an_user_update,
-    case when p_an_area_id = 0 then NULL else p_an_area_id end,
-    case when p_an_agent_id = 0 then NULL else p_an_agent_id end,
-    p_an_area_code,
-    case when p_an_zone_id = '' then NULL else p_an_zone_id end,
-    case when p_an_ins_id = 0 then NULL else p_an_ins_id end,
-    case when p_an_upd_id = 0 then NULL else p_an_upd_id end,
-    p_an_documents,
-    p_an_last_date,
-    p_an_birthdate,
-    case when p_an_office_type_id = 0 then NULL else p_an_office_type_id end,
-    p_an_searchname,
-    p_an_extra_ue_flag,
-    p_an_external_code,
-    case when p_an_vat_id = 0 then NULL else p_an_vat_id end,
-    p_an_personal_fiscal_code,
-    p_an_privacy_print,
-    p_an_sms,
-    p_an_encrypted_fiscal_code,
-    p_an_vat_purcentage,
-    p_an_status,
-    p_an_ownsite,
-    case when p_an_insurance_id = 0 then NULL else p_an_insurance_id end,
-    case when p_an_anagraphs_anagraph_id = 0 then NULL else p_an_anagraphs_anagraph_id end,
-    p_an_main_language_code,
-    p_an_main_culture_code,
-    p_an_fiscal_code,
-    p_an_main_group_id,
-    case when p_an_image_id = 0 then NULL else p_an_image_id end,
-    p_latitude,
-    p_longitude,
-    p_test,
-    p_search_index,
-    p_an_birthplace,
-    p_an_birthplace_code,
-    p_anagraph64,
-    case when p_main_category_id = 0 then NULL else p_main_category_id end,
-    case when p_osm_id = 0 then NULL else p_osm_id end,
-    p_an_description,
-    p_an_address_number,
-    p_anag_jguid,
-    p_anag_deleted,
-    p_insert_date,
-    p_update_date,
-    p_user_insert,
-    v_jguid,
-    p_custom_field_1,
-    p_custom_field_2,
-    p_custom_field_3,
-    p_custom_float_1,
-    p_custom_float_2,
-    p_custom_int_1,
-    p_custom_int_2,
-    case when p_supplier_id = 0 then NULL else p_supplier_id end,
-    case when v_vessel_id = 0 then NULL else v_vessel_id end,
-    case when p_an_country_id = 0 then NULL else p_an_country_id end,
-    p_an_iso_country_code2
-	)
-  ;
-  
-  return v_id; 
-END;
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="4" type="int4" />
-			<input_param name="p_db_schema_id" jt="4" type="int4" />
-			<input_param name="p_anagraph_id" jt="4" type="int4" />
-			<input_param name="p_an_title" jt="12" type="varchar" />
-			<input_param name="p_an_name" jt="12" type="varchar" />
-			<input_param name="p_an_second_name" jt="12" type="varchar" />
-			<input_param name="p_an_last_name" jt="12" type="varchar" />
-			<input_param name="p_an_notes" jt="12" type="varchar" />
-			<input_param name="p_an_address" jt="12" type="varchar" />
-			<input_param name="p_an_town" jt="12" type="varchar" />
-			<input_param name="p_an_postal_code" jt="12" type="varchar" />
-			<input_param name="p_an_iso_country_code" jt="12" type="varchar" />
-			<input_param name="p_an_state_province" jt="12" type="varchar" />
-			<input_param name="p_an_phone" jt="12" type="varchar" />
-			<input_param name="p_an_phone2" jt="12" type="varchar" />
-			<input_param name="p_an_fax" jt="12" type="varchar" />
-			<input_param name="p_an_cellular" jt="12" type="varchar" />
-			<input_param name="p_an_code" jt="12" type="varchar" />
-			<input_param name="p_an_vat_numeric" jt="12" type="varchar" />
-			<input_param name="p_an_email" jt="12" type="varchar" />
-			<input_param name="p_an_web" jt="12" type="varchar" />
-			<input_param name="p_an_contact_id" jt="4" type="int4" />
-			<input_param name="p_an_bank_account" jt="12" type="varchar" />
-			<input_param name="p_an_payment_des" jt="12" type="varchar" />
-			<input_param name="p_an_discount" jt="2" type="numeric" />
-			<input_param name="p_an_distance" jt="4" type="int4" />
-			<input_param name="p_an_distance_mesunit" jt="5" type="int2" />
-			<input_param name="p_an_sex" jt="12" type="varchar" />
-			<input_param name="p_an_cod_comune" jt="12" type="varchar" />
-			<input_param name="p_an_cod_provincia" jt="12" type="varchar" />
-			<input_param name="p_an_credit_line" jt="2" type="numeric" />
-			<input_param name="p_an_currency_id" jt="5" type="int2" />
-			<input_param name="p_an_cat_id" jt="5" type="int2" />
-			<input_param name="p_an_notes2" jt="12" type="varchar" />
-			<input_param name="p_an_notes3" jt="12" type="text" />
-			<input_param name="p_an_edi" jt="-7" type="bool" />
-			<input_param name="p_an_privacy" jt="-7" type="bool" />
-			<input_param name="p_an_office_id" jt="5" type="int2" />
-			<input_param name="p_an_cod_prov_rif" jt="12" type="varchar" />
-			<input_param name="p_an_data_fido" jt="91" type="date" />
-			<input_param name="p_an_user_insert" jt="12" type="varchar" />
-			<input_param name="p_an_user_update" jt="12" type="varchar" />
-			<input_param name="p_an_area_id" jt="5" type="int2" />
-			<input_param name="p_an_agent_id" jt="5" type="int2" />
-			<input_param name="p_an_area_code" jt="12" type="varchar" />
-			<input_param name="p_an_zone_id" jt="12" type="varchar" />
-			<input_param name="p_an_ins_id" jt="-5" type="int8" />
-			<input_param name="p_an_upd_id" jt="-5" type="int8" />
-			<input_param name="p_an_documents" jt="5" type="int2" />
-			<input_param name="p_an_last_date" jt="91" type="date" />
-			<input_param name="p_an_birthdate" jt="91" type="date" />
-			<input_param name="p_an_office_type_id" jt="5" type="int2" />
-			<input_param name="p_an_searchname" jt="12" type="varchar" />
-			<input_param name="p_an_extra_ue_flag" jt="-7" type="bool" />
-			<input_param name="p_an_external_code" jt="12" type="varchar" />
-			<input_param name="p_an_vat_id" jt="5" type="int2" />
-			<input_param name="p_an_personal_fiscal_code" jt="12" type="varchar" />
-			<input_param name="p_an_privacy_print" jt="5" type="int2" />
-			<input_param name="p_an_sms" jt="-7" type="bool" />
-			<input_param name="p_an_encrypted_fiscal_code" jt="12" type="varchar" />
-			<input_param name="p_an_vat_purcentage" jt="5" type="int2" />
-			<input_param name="p_an_status" jt="5" type="int2" />
-			<input_param name="p_an_ownsite" jt="-7" type="bool" />
-			<input_param name="p_an_insurance_id" jt="-5" type="int8" />
-			<input_param name="p_an_anagraphs_anagraph_id" jt="4" type="int4" />
-			<input_param name="p_an_main_language_code" jt="12" type="varchar" />
-			<input_param name="p_an_main_culture_code" jt="12" type="varchar" />
-			<input_param name="p_an_fiscal_code" jt="12" type="varchar" />
-			<input_param name="p_an_main_group_id" jt="4" type="int4" />
-			<input_param name="p_an_image_id" jt="-5" type="int8" />
-			<input_param name="p_latitude" jt="8" type="float8" />
-			<input_param name="p_longitude" jt="8" type="float8" />
-			<input_param name="p_test" jt="8" type="float8" />
-			<input_param name="p_search_index" jt="12" type="varchar" />
-			<input_param name="p_an_birthplace" jt="12" type="varchar" />
-			<input_param name="p_an_birthplace_code" jt="12" type="varchar" />
-			<input_param name="p_anagraph64" jt="12" type="varchar" />
-			<input_param name="p_main_category_id" jt="5" type="int2" />
-			<input_param name="p_osm_id" jt="-5" type="int8" />
-			<input_param name="p_an_description" jt="12" type="varchar" />
-			<input_param name="p_an_address_number" jt="12" type="varchar" />
-			<input_param name="p_anag_jguid" jt="12" type="varchar" />
-			<input_param name="p_anag_deleted" jt="-7" type="bool" />
-			<input_param name="p_insert_date" jt="93" type="timestamp" />
-			<input_param name="p_update_date" jt="93" type="timestamp" />
-			<input_param name="p_user_insert" jt="4" type="int4" />
-			<input_param name="p_jguid" jt="1111" type="uuid" />
-			<input_param name="p_custom_field_1" jt="12" type="varchar" />
-			<input_param name="p_custom_field_2" jt="12" type="varchar" />
-			<input_param name="p_custom_field_3" jt="12" type="varchar" />
-			<input_param name="p_custom_float_1" jt="7" type="float4" />
-			<input_param name="p_custom_float_2" jt="7" type="float4" />
-			<input_param name="p_custom_int_1" jt="4" type="int4" />
-			<input_param name="p_custom_int_2" jt="4" type="int4" />
-			<input_param name="p_supplier_id" jt="4" type="int4" />
-			<input_param name="p_vessel_id" jt="5" type="int2" />
-			<input_param name="p_an_country_id" jt="4" type="int4" />
-			<input_param name="p_an_iso_country_code2" jt="1" type="bpchar" />
-		</function>
 		<function name="sp_ins_anagraphs" id="Function_2445" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION anagraph.sp_ins_anagraphs(p_db_schema_id integer, p_anagraph_id integer, p_an_title character varying, p_an_name character varying, p_an_second_name character varying, p_an_last_name character varying, p_an_notes character varying, p_an_address character varying, p_an_town character varying, p_an_postal_code character varying, p_an_iso_country_code character varying, p_an_state_province character varying, p_an_phone character varying, p_an_phone2 character varying, p_an_fax character varying, p_an_cellular character varying, p_an_code character varying, p_an_vat_numeric character varying, p_an_email character varying, p_an_web character varying, p_an_contact_id integer, p_an_bank_account character varying, p_an_payment_des character varying, p_an_discount numeric, p_an_distance integer, p_an_distance_mesunit smallint, p_an_sex character varying, p_an_cod_comune character varying, p_an_cod_provincia character varying, p_an_credit_line numeric, p_an_currency_id smallint, p_an_cat_id smallint, p_an_notes2 character varying, p_an_notes3 text, p_an_edi boolean, p_an_privacy boolean, p_an_office_id smallint, p_an_cod_prov_rif character varying, p_an_data_fido date, p_an_user_insert character varying, p_an_user_update character varying, p_an_area_id smallint, p_an_agent_id smallint, p_an_area_code character varying, p_an_zone_id character varying, p_an_ins_id bigint, p_an_upd_id bigint, p_an_documents smallint, p_an_last_date date, p_an_birthdate date, p_an_office_type_id smallint, p_an_searchname character varying, p_an_extra_ue_flag boolean, p_an_external_code character varying, p_an_vat_id smallint, p_an_personal_fiscal_code character varying, p_an_privacy_print smallint, p_an_sms boolean, p_an_encrypted_fiscal_code character varying, p_an_vat_purcentage smallint, p_an_status smallint, p_an_ownsite boolean, p_an_insurance_id bigint, p_an_anagraphs_anagraph_id integer, p_an_main_language_code character varying, p_an_main_culture_code character varying, p_an_fiscal_code character varying, p_an_main_group_id integer, p_an_image_id bigint, p_latitude double precision, p_longitude double precision, p_test double precision, p_search_index character varying, p_an_birthplace character varying, p_an_birthplace_code character varying, p_anagraph64 character varying, p_main_category_id smallint, p_osm_id bigint, p_an_description character varying, p_an_address_number character varying, p_anag_jguid character varying, p_anag_deleted boolean, p_insert_date timestamp without time zone, p_update_date timestamp without time zone, p_user_insert integer, p_jguid uuid, p_custom_field_1 character varying, p_custom_field_2 character varying, p_custom_field_3 character varying, p_custom_float_1 real, p_custom_float_2 real, p_custom_int_1 integer, p_custom_int_2 integer, p_supplier_id integer, p_vessel_id smallint, p_an_country_id integer, p_an_iso_country_code2 character, p_an_full_address character varying)
  RETURNS integer
@@ -4874,6 +4547,333 @@ $function$
 			<input_param name="p_an_country_id" jt="4" type="int4" />
 			<input_param name="p_an_iso_country_code2" jt="1" type="bpchar" />
 			<input_param name="p_an_full_address" jt="12" type="varchar" />
+		</function>
+		<function name="sp_ins_anagraphs" id="Function_12a5" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION anagraph.sp_ins_anagraphs(p_db_schema_id integer, p_anagraph_id integer, p_an_title character varying, p_an_name character varying, p_an_second_name character varying, p_an_last_name character varying, p_an_notes character varying, p_an_address character varying, p_an_town character varying, p_an_postal_code character varying, p_an_iso_country_code character varying, p_an_state_province character varying, p_an_phone character varying, p_an_phone2 character varying, p_an_fax character varying, p_an_cellular character varying, p_an_code character varying, p_an_vat_numeric character varying, p_an_email character varying, p_an_web character varying, p_an_contact_id integer, p_an_bank_account character varying, p_an_payment_des character varying, p_an_discount numeric, p_an_distance integer, p_an_distance_mesunit smallint, p_an_sex character varying, p_an_cod_comune character varying, p_an_cod_provincia character varying, p_an_credit_line numeric, p_an_currency_id smallint, p_an_cat_id smallint, p_an_notes2 character varying, p_an_notes3 text, p_an_edi boolean, p_an_privacy boolean, p_an_office_id smallint, p_an_cod_prov_rif character varying, p_an_data_fido date, p_an_user_insert character varying, p_an_user_update character varying, p_an_area_id smallint, p_an_agent_id smallint, p_an_area_code character varying, p_an_zone_id character varying, p_an_ins_id bigint, p_an_upd_id bigint, p_an_documents smallint, p_an_last_date date, p_an_birthdate date, p_an_office_type_id smallint, p_an_searchname character varying, p_an_extra_ue_flag boolean, p_an_external_code character varying, p_an_vat_id smallint, p_an_personal_fiscal_code character varying, p_an_privacy_print smallint, p_an_sms boolean, p_an_encrypted_fiscal_code character varying, p_an_vat_purcentage smallint, p_an_status smallint, p_an_ownsite boolean, p_an_insurance_id bigint, p_an_anagraphs_anagraph_id integer, p_an_main_language_code character varying, p_an_main_culture_code character varying, p_an_fiscal_code character varying, p_an_main_group_id integer, p_an_image_id bigint, p_latitude double precision, p_longitude double precision, p_test double precision, p_search_index character varying, p_an_birthplace character varying, p_an_birthplace_code character varying, p_anagraph64 character varying, p_main_category_id smallint, p_osm_id bigint, p_an_description character varying, p_an_address_number character varying, p_anag_jguid character varying, p_anag_deleted boolean, p_insert_date timestamp without time zone, p_update_date timestamp without time zone, p_user_insert integer, p_jguid uuid, p_custom_field_1 character varying, p_custom_field_2 character varying, p_custom_field_3 character varying, p_custom_float_1 real, p_custom_float_2 real, p_custom_int_1 integer, p_custom_int_2 integer, p_supplier_id integer, p_vessel_id smallint, p_an_country_id integer, p_an_iso_country_code2 character)
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$
+DECLARE
+  v_count integer; v_id integer; v_jguid uuid; v_vessel_id integer; 
+BEGIN
+  v_count := 0; 
+  v_id := p_anagraph_id;
+  
+  if v_id is null or v_id = 0 then
+    v_id:=nextval('anagraph.an_anagraph_seq');
+  end if; 
+  
+  v_jguid := p_jguid; 
+  
+  if v_jguid is null then
+     v_jguid := '{' || public.uuid_generate_v1mc() || '}';
+  end if; 
+  
+  if p_vessel_id = 0 then v_vessel_id := null; else v_vessel_id := p_vessel_id; end if; 
+  
+  
+  INSERT INTO anagraph.anagraphs (
+    db_schema_id,	
+    anagraph_id,
+    an_title,
+    an_name,
+    an_second_name,
+    an_last_name,
+    an_notes,
+    an_address,
+    an_town,
+    an_postal_code,
+    an_iso_country_code,
+    an_state_province,
+    an_phone,
+    an_phone2,
+    an_fax,
+    an_cellular,
+    an_code,
+    an_vat_numeric,
+    an_email,
+    an_web,
+    an_contact_id,
+    an_bank_account,
+    an_payment_des,
+    an_discount,
+    an_distance,
+    an_distance_mesunit,
+    an_sex,
+    an_cod_comune,
+    an_cod_provincia,
+    an_credit_line,
+    an_currency_id,
+    an_cat_id,
+    an_notes2,
+    an_notes3,
+    an_edi,
+    an_privacy,
+    an_office_id,
+    an_cod_prov_rif,
+    an_data_fido,
+    an_user_insert,
+    an_user_update,
+    an_area_id,
+    an_agent_id,
+    an_area_code,
+    an_zone_id,
+    an_ins_id,
+    an_upd_id,
+    an_documents,
+    an_last_date,
+    an_birthdate,
+    an_office_type_id,
+    an_searchname,
+    an_extra_ue_flag,
+    an_external_code,
+    an_vat_id,
+    an_personal_fiscal_code,
+    an_privacy_print,
+    an_sms,
+    an_encrypted_fiscal_code,
+    an_vat_purcentage,
+    an_status,
+    an_ownsite,
+    an_insurance_id,
+    an_anagraphs_anagraph_id,
+    an_main_language_code,
+    an_main_culture_code,
+    an_fiscal_code,
+    an_main_group_id,
+    an_image_id,
+    latitude,
+    longitude,
+    test,
+    search_index,
+    an_birthplace,
+    an_birthplace_code,
+    anagraph64,
+    main_category_id,
+    osm_id,
+    an_description,
+    an_address_number,
+    anag_jguid,
+    anag_deleted,
+    insert_date,
+    update_date,
+    user_insert,
+    jguid,
+    custom_field_1,
+    custom_field_2,
+    custom_field_3,
+    custom_float_1,
+    custom_float_2,
+    custom_int_1,
+    custom_int_2,
+    supplier_id,
+    vessel_id,
+    an_country_id,
+    an_iso_country_code2
+  )
+  values( 
+    p_db_schema_id,
+    case when v_id = 0 then NULL else v_id end,
+    p_an_title,
+    p_an_name,
+    p_an_second_name,
+    p_an_last_name,
+    p_an_notes,
+    p_an_address,
+    p_an_town,
+    p_an_postal_code,
+    p_an_iso_country_code,
+    p_an_state_province,
+    p_an_phone,
+    p_an_phone2,
+    p_an_fax,
+    p_an_cellular,
+    p_an_code,
+    p_an_vat_numeric,
+    p_an_email,
+    p_an_web,
+    case when p_an_contact_id = 0 then NULL else p_an_contact_id end,
+    p_an_bank_account,
+    p_an_payment_des,
+    p_an_discount,
+    p_an_distance,
+    p_an_distance_mesunit,
+    p_an_sex,
+    p_an_cod_comune,
+    p_an_cod_provincia,
+    p_an_credit_line,
+    case when p_an_currency_id = 0 then NULL else p_an_currency_id end,
+    case when p_an_cat_id = 0 then NULL else p_an_cat_id end,
+    p_an_notes2,
+    p_an_notes3,
+    p_an_edi,
+    p_an_privacy,
+    case when p_an_office_id = 0 then NULL else p_an_office_id end,
+    p_an_cod_prov_rif,
+    p_an_data_fido,
+    p_an_user_insert,
+    p_an_user_update,
+    case when p_an_area_id = 0 then NULL else p_an_area_id end,
+    case when p_an_agent_id = 0 then NULL else p_an_agent_id end,
+    p_an_area_code,
+    case when p_an_zone_id = '' then NULL else p_an_zone_id end,
+    case when p_an_ins_id = 0 then NULL else p_an_ins_id end,
+    case when p_an_upd_id = 0 then NULL else p_an_upd_id end,
+    p_an_documents,
+    p_an_last_date,
+    p_an_birthdate,
+    case when p_an_office_type_id = 0 then NULL else p_an_office_type_id end,
+    p_an_searchname,
+    p_an_extra_ue_flag,
+    p_an_external_code,
+    case when p_an_vat_id = 0 then NULL else p_an_vat_id end,
+    p_an_personal_fiscal_code,
+    p_an_privacy_print,
+    p_an_sms,
+    p_an_encrypted_fiscal_code,
+    p_an_vat_purcentage,
+    p_an_status,
+    p_an_ownsite,
+    case when p_an_insurance_id = 0 then NULL else p_an_insurance_id end,
+    case when p_an_anagraphs_anagraph_id = 0 then NULL else p_an_anagraphs_anagraph_id end,
+    p_an_main_language_code,
+    p_an_main_culture_code,
+    p_an_fiscal_code,
+    p_an_main_group_id,
+    case when p_an_image_id = 0 then NULL else p_an_image_id end,
+    p_latitude,
+    p_longitude,
+    p_test,
+    p_search_index,
+    p_an_birthplace,
+    p_an_birthplace_code,
+    p_anagraph64,
+    case when p_main_category_id = 0 then NULL else p_main_category_id end,
+    case when p_osm_id = 0 then NULL else p_osm_id end,
+    p_an_description,
+    p_an_address_number,
+    p_anag_jguid,
+    p_anag_deleted,
+    p_insert_date,
+    p_update_date,
+    p_user_insert,
+    v_jguid,
+    p_custom_field_1,
+    p_custom_field_2,
+    p_custom_field_3,
+    p_custom_float_1,
+    p_custom_float_2,
+    p_custom_int_1,
+    p_custom_int_2,
+    case when p_supplier_id = 0 then NULL else p_supplier_id end,
+    case when v_vessel_id = 0 then NULL else v_vessel_id end,
+    case when p_an_country_id = 0 then NULL else p_an_country_id end,
+    p_an_iso_country_code2
+	)
+  ;
+  
+  return v_id; 
+END;
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="4" type="int4" />
+			<input_param name="p_db_schema_id" jt="4" type="int4" />
+			<input_param name="p_anagraph_id" jt="4" type="int4" />
+			<input_param name="p_an_title" jt="12" type="varchar" />
+			<input_param name="p_an_name" jt="12" type="varchar" />
+			<input_param name="p_an_second_name" jt="12" type="varchar" />
+			<input_param name="p_an_last_name" jt="12" type="varchar" />
+			<input_param name="p_an_notes" jt="12" type="varchar" />
+			<input_param name="p_an_address" jt="12" type="varchar" />
+			<input_param name="p_an_town" jt="12" type="varchar" />
+			<input_param name="p_an_postal_code" jt="12" type="varchar" />
+			<input_param name="p_an_iso_country_code" jt="12" type="varchar" />
+			<input_param name="p_an_state_province" jt="12" type="varchar" />
+			<input_param name="p_an_phone" jt="12" type="varchar" />
+			<input_param name="p_an_phone2" jt="12" type="varchar" />
+			<input_param name="p_an_fax" jt="12" type="varchar" />
+			<input_param name="p_an_cellular" jt="12" type="varchar" />
+			<input_param name="p_an_code" jt="12" type="varchar" />
+			<input_param name="p_an_vat_numeric" jt="12" type="varchar" />
+			<input_param name="p_an_email" jt="12" type="varchar" />
+			<input_param name="p_an_web" jt="12" type="varchar" />
+			<input_param name="p_an_contact_id" jt="4" type="int4" />
+			<input_param name="p_an_bank_account" jt="12" type="varchar" />
+			<input_param name="p_an_payment_des" jt="12" type="varchar" />
+			<input_param name="p_an_discount" jt="2" type="numeric" />
+			<input_param name="p_an_distance" jt="4" type="int4" />
+			<input_param name="p_an_distance_mesunit" jt="5" type="int2" />
+			<input_param name="p_an_sex" jt="12" type="varchar" />
+			<input_param name="p_an_cod_comune" jt="12" type="varchar" />
+			<input_param name="p_an_cod_provincia" jt="12" type="varchar" />
+			<input_param name="p_an_credit_line" jt="2" type="numeric" />
+			<input_param name="p_an_currency_id" jt="5" type="int2" />
+			<input_param name="p_an_cat_id" jt="5" type="int2" />
+			<input_param name="p_an_notes2" jt="12" type="varchar" />
+			<input_param name="p_an_notes3" jt="12" type="text" />
+			<input_param name="p_an_edi" jt="-7" type="bool" />
+			<input_param name="p_an_privacy" jt="-7" type="bool" />
+			<input_param name="p_an_office_id" jt="5" type="int2" />
+			<input_param name="p_an_cod_prov_rif" jt="12" type="varchar" />
+			<input_param name="p_an_data_fido" jt="91" type="date" />
+			<input_param name="p_an_user_insert" jt="12" type="varchar" />
+			<input_param name="p_an_user_update" jt="12" type="varchar" />
+			<input_param name="p_an_area_id" jt="5" type="int2" />
+			<input_param name="p_an_agent_id" jt="5" type="int2" />
+			<input_param name="p_an_area_code" jt="12" type="varchar" />
+			<input_param name="p_an_zone_id" jt="12" type="varchar" />
+			<input_param name="p_an_ins_id" jt="-5" type="int8" />
+			<input_param name="p_an_upd_id" jt="-5" type="int8" />
+			<input_param name="p_an_documents" jt="5" type="int2" />
+			<input_param name="p_an_last_date" jt="91" type="date" />
+			<input_param name="p_an_birthdate" jt="91" type="date" />
+			<input_param name="p_an_office_type_id" jt="5" type="int2" />
+			<input_param name="p_an_searchname" jt="12" type="varchar" />
+			<input_param name="p_an_extra_ue_flag" jt="-7" type="bool" />
+			<input_param name="p_an_external_code" jt="12" type="varchar" />
+			<input_param name="p_an_vat_id" jt="5" type="int2" />
+			<input_param name="p_an_personal_fiscal_code" jt="12" type="varchar" />
+			<input_param name="p_an_privacy_print" jt="5" type="int2" />
+			<input_param name="p_an_sms" jt="-7" type="bool" />
+			<input_param name="p_an_encrypted_fiscal_code" jt="12" type="varchar" />
+			<input_param name="p_an_vat_purcentage" jt="5" type="int2" />
+			<input_param name="p_an_status" jt="5" type="int2" />
+			<input_param name="p_an_ownsite" jt="-7" type="bool" />
+			<input_param name="p_an_insurance_id" jt="-5" type="int8" />
+			<input_param name="p_an_anagraphs_anagraph_id" jt="4" type="int4" />
+			<input_param name="p_an_main_language_code" jt="12" type="varchar" />
+			<input_param name="p_an_main_culture_code" jt="12" type="varchar" />
+			<input_param name="p_an_fiscal_code" jt="12" type="varchar" />
+			<input_param name="p_an_main_group_id" jt="4" type="int4" />
+			<input_param name="p_an_image_id" jt="-5" type="int8" />
+			<input_param name="p_latitude" jt="8" type="float8" />
+			<input_param name="p_longitude" jt="8" type="float8" />
+			<input_param name="p_test" jt="8" type="float8" />
+			<input_param name="p_search_index" jt="12" type="varchar" />
+			<input_param name="p_an_birthplace" jt="12" type="varchar" />
+			<input_param name="p_an_birthplace_code" jt="12" type="varchar" />
+			<input_param name="p_anagraph64" jt="12" type="varchar" />
+			<input_param name="p_main_category_id" jt="5" type="int2" />
+			<input_param name="p_osm_id" jt="-5" type="int8" />
+			<input_param name="p_an_description" jt="12" type="varchar" />
+			<input_param name="p_an_address_number" jt="12" type="varchar" />
+			<input_param name="p_anag_jguid" jt="12" type="varchar" />
+			<input_param name="p_anag_deleted" jt="-7" type="bool" />
+			<input_param name="p_insert_date" jt="93" type="timestamp" />
+			<input_param name="p_update_date" jt="93" type="timestamp" />
+			<input_param name="p_user_insert" jt="4" type="int4" />
+			<input_param name="p_jguid" jt="1111" type="uuid" />
+			<input_param name="p_custom_field_1" jt="12" type="varchar" />
+			<input_param name="p_custom_field_2" jt="12" type="varchar" />
+			<input_param name="p_custom_field_3" jt="12" type="varchar" />
+			<input_param name="p_custom_float_1" jt="7" type="float4" />
+			<input_param name="p_custom_float_2" jt="7" type="float4" />
+			<input_param name="p_custom_int_1" jt="4" type="int4" />
+			<input_param name="p_custom_int_2" jt="4" type="int4" />
+			<input_param name="p_supplier_id" jt="4" type="int4" />
+			<input_param name="p_vessel_id" jt="5" type="int2" />
+			<input_param name="p_an_country_id" jt="4" type="int4" />
+			<input_param name="p_an_iso_country_code2" jt="1" type="bpchar" />
 		</function>
 		<function name="sp_insert_address_from_anagraph" id="Function_1c2e" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION anagraph.sp_insert_address_from_anagraph(p_id integer)
@@ -7743,6 +7743,67 @@ end; $function$
 			<input_param name="returnValue" jt="12" type="varchar" />
 			<input_param name="p_session_key" jt="12" type="varchar" />
 		</function>
+		<function name="createpublicschema" id="Function_1e3e" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.createpublicschema(p_user_key character varying, p_session_key character varying, p_schema_name character varying, p_schema_des character varying, p_isportal boolean, p_package_key character varying, p_country_id integer, p_default_language_id integer)
+ RETURNS character varying
+ LANGUAGE plpgsql
+AS $function$declare
+  i_schema_id integer; 
+  n_record integer; 
+  s_token character varying; 
+  a_record record; 
+  u_record record; 
+ --- variabili di diagnostica errori .....
+  text_var1 text;
+  text_var2 text;
+  text_var3 text;
+  
+begin
+   i_schema_id := -1; 
+   PERFORM system.setlog('createpublicschema ricerca utente: ' || p_user_key );
+   select count(*) into n_record from system.db_users where verify_token = p_user_key; 
+   PERFORM system.setlog('createpublicschema ricerca utente: ' || p_user_key || ' trovato record: ' || n_record);
+   if n_record = 0 then s_token := 'Error'; end if; 
+   if n_record = 1 then 
+	select count(*) into n_record from system.db_users where verify_token = p_user_key; 
+   end if; 
+   if n_record = 1 then
+        select * into a_record from system.db_user_sessions where db_session_key = p_session_key; 
+        -- selezionata la sessione di amministraori ... 
+        select * into u_record from system.db_users where verify_token = p_user_key; 
+ 
+   	select nextval('system.db_schema_seq') into i_schema_id; 
+        select system.get_key(i_schema_id, 12) into s_token; 
+       INSERT INTO system.db_schemas(db_schema_id, db_schema_name, schema_des, personal, db_schema_key)
+                  values (i_schema_id, p_schema_name, p_schema_name, false,  s_token); 
+
+       update system.db_users_schemas set isdefault = false where db_user_id = u_record.db_user_id;
+       INSERT INTO system.db_users_schemas(
+            db_schema_id, db_user_id, isadmin, isdefault, isowner, readwrite)
+       VALUES (i_schema_id, u_record.db_user_id, false, true, false, false);
+     end if; 
+     return s_token; 
+  exception when others then PERFORM system.setlog('system.createpublicschema  Errore di sessione'); 
+	GET STACKED DIAGNOSTICS text_var1 = MESSAGE_TEXT,
+                          text_var2 = PG_EXCEPTION_DETAIL,
+                          text_var3 = PG_EXCEPTION_HINT;
+	PERFORM system.setlog('system.createpublicschema   MESSAGE_TEXT: ' || text_var1); 
+	PERFORM system.setlog('system.createpublicschema   PG_EXCEPTION_DETAIL: ' || text_var2); 
+	PERFORM system.setlog('system.createpublicschema   PG_EXCEPTION_HINT: ' || text_var3); 
+  
+	Return 'Errore'; 
+end; $function$
+;]]></string>
+			<input_param name="returnValue" jt="12" type="varchar" />
+			<input_param name="p_user_key" jt="12" type="varchar" />
+			<input_param name="p_session_key" jt="12" type="varchar" />
+			<input_param name="p_schema_name" jt="12" type="varchar" />
+			<input_param name="p_schema_des" jt="12" type="varchar" />
+			<input_param name="p_isportal" jt="-7" type="bool" />
+			<input_param name="p_package_key" jt="12" type="varchar" />
+			<input_param name="p_country_id" jt="4" type="int4" />
+			<input_param name="p_default_language_id" jt="4" type="int4" />
+		</function>
 		<function name="createpublicschema" id="Function_18fb" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.createpublicschema(p_user_key character varying, p_session_key character varying, p_schema_name character varying, p_schema_des character varying, p_isportal boolean, p_package_key character varying, p_country_id smallint, p_default_language_id smallint)
  RETURNS character varying
@@ -7805,67 +7866,6 @@ end; $function$
 			<input_param name="p_package_key" jt="12" type="varchar" />
 			<input_param name="p_country_id" jt="5" type="int2" />
 			<input_param name="p_default_language_id" jt="5" type="int2" />
-		</function>
-		<function name="createpublicschema" id="Function_1e3e" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.createpublicschema(p_user_key character varying, p_session_key character varying, p_schema_name character varying, p_schema_des character varying, p_isportal boolean, p_package_key character varying, p_country_id integer, p_default_language_id integer)
- RETURNS character varying
- LANGUAGE plpgsql
-AS $function$declare
-  i_schema_id integer; 
-  n_record integer; 
-  s_token character varying; 
-  a_record record; 
-  u_record record; 
- --- variabili di diagnostica errori .....
-  text_var1 text;
-  text_var2 text;
-  text_var3 text;
-  
-begin
-   i_schema_id := -1; 
-   PERFORM system.setlog('createpublicschema ricerca utente: ' || p_user_key );
-   select count(*) into n_record from system.db_users where verify_token = p_user_key; 
-   PERFORM system.setlog('createpublicschema ricerca utente: ' || p_user_key || ' trovato record: ' || n_record);
-   if n_record = 0 then s_token := 'Error'; end if; 
-   if n_record = 1 then 
-	select count(*) into n_record from system.db_users where verify_token = p_user_key; 
-   end if; 
-   if n_record = 1 then
-        select * into a_record from system.db_user_sessions where db_session_key = p_session_key; 
-        -- selezionata la sessione di amministraori ... 
-        select * into u_record from system.db_users where verify_token = p_user_key; 
- 
-   	select nextval('system.db_schema_seq') into i_schema_id; 
-        select system.get_key(i_schema_id, 12) into s_token; 
-       INSERT INTO system.db_schemas(db_schema_id, db_schema_name, schema_des, personal, db_schema_key)
-                  values (i_schema_id, p_schema_name, p_schema_name, false,  s_token); 
-
-       update system.db_users_schemas set isdefault = false where db_user_id = u_record.db_user_id;
-       INSERT INTO system.db_users_schemas(
-            db_schema_id, db_user_id, isadmin, isdefault, isowner, readwrite)
-       VALUES (i_schema_id, u_record.db_user_id, false, true, false, false);
-     end if; 
-     return s_token; 
-  exception when others then PERFORM system.setlog('system.createpublicschema  Errore di sessione'); 
-	GET STACKED DIAGNOSTICS text_var1 = MESSAGE_TEXT,
-                          text_var2 = PG_EXCEPTION_DETAIL,
-                          text_var3 = PG_EXCEPTION_HINT;
-	PERFORM system.setlog('system.createpublicschema   MESSAGE_TEXT: ' || text_var1); 
-	PERFORM system.setlog('system.createpublicschema   PG_EXCEPTION_DETAIL: ' || text_var2); 
-	PERFORM system.setlog('system.createpublicschema   PG_EXCEPTION_HINT: ' || text_var3); 
-  
-	Return 'Errore'; 
-end; $function$
-;]]></string>
-			<input_param name="returnValue" jt="12" type="varchar" />
-			<input_param name="p_user_key" jt="12" type="varchar" />
-			<input_param name="p_session_key" jt="12" type="varchar" />
-			<input_param name="p_schema_name" jt="12" type="varchar" />
-			<input_param name="p_schema_des" jt="12" type="varchar" />
-			<input_param name="p_isportal" jt="-7" type="bool" />
-			<input_param name="p_package_key" jt="12" type="varchar" />
-			<input_param name="p_country_id" jt="4" type="int4" />
-			<input_param name="p_default_language_id" jt="4" type="int4" />
 		</function>
 		<function name="createuserschema" id="Function_17bb" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.createuserschema(p_user_id integer)
@@ -8042,19 +8042,20 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="get_key" id="Function_20b9" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.get_key(p_id integer, p_digits integer)
+		<function name="get_key" id="Function_1f1c" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.get_key(p_id bigint, p_digits integer)
  RETURNS character varying
  LANGUAGE plpgsql
 AS $function$declare
    s_token character varying; 
 begin
+---select md5(lpad( Cast(p_id as character)  || to_char(now(), 'YYYYMMDDHH24MISSMS'), p_digits, '0')) into s_token; 
 select system.get_key ( cast(p_id as bigint), cast(p_digits as smallint)) into s_token; 
 return s_token; 
 end; $function$
 ;]]></string>
 			<input_param name="returnValue" jt="12" type="varchar" />
-			<input_param name="p_id" jt="4" type="int4" />
+			<input_param name="p_id" jt="-5" type="int8" />
 			<input_param name="p_digits" jt="4" type="int4" />
 		</function>
 		<function name="get_key" id="Function_18cc" isSystem="false" params_known="y" >
@@ -8078,20 +8079,19 @@ end; $function$
 			<input_param name="p_id" jt="-5" type="int8" />
 			<input_param name="p_digits" jt="5" type="int2" />
 		</function>
-		<function name="get_key" id="Function_1f1c" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.get_key(p_id bigint, p_digits integer)
+		<function name="get_key" id="Function_20b9" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.get_key(p_id integer, p_digits integer)
  RETURNS character varying
  LANGUAGE plpgsql
 AS $function$declare
    s_token character varying; 
 begin
----select md5(lpad( Cast(p_id as character)  || to_char(now(), 'YYYYMMDDHH24MISSMS'), p_digits, '0')) into s_token; 
 select system.get_key ( cast(p_id as bigint), cast(p_digits as smallint)) into s_token; 
 return s_token; 
 end; $function$
 ;]]></string>
 			<input_param name="returnValue" jt="12" type="varchar" />
-			<input_param name="p_id" jt="-5" type="int8" />
+			<input_param name="p_id" jt="4" type="int4" />
 			<input_param name="p_digits" jt="4" type="int4" />
 		</function>
 		<function name="get_new_package" id="Function_609" isSystem="false" params_known="y" >
@@ -8288,22 +8288,6 @@ end; $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="nvl" id="Function_1947" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.nvl(value integer, replace integer)
- RETURNS integer
- LANGUAGE plpgsql
-AS $function$begin
-   if value is null then 
-	return (replace);
-    else
-	return(value);
-    end if; 
-end; $function$
-;]]></string>
-			<input_param name="returnValue" jt="4" type="int4" />
-			<input_param name="value" jt="4" type="int4" />
-			<input_param name="replace" jt="4" type="int4" />
-		</function>
 		<function name="nvl" id="Function_1b99" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.nvl(p_string character varying, p_null character varying)
  RETURNS character varying
@@ -8322,6 +8306,22 @@ $function$
 			<input_param name="returnValue" jt="12" type="varchar" />
 			<input_param name="p_string" jt="12" type="varchar" />
 			<input_param name="p_null" jt="12" type="varchar" />
+		</function>
+		<function name="nvl" id="Function_1947" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.nvl(value integer, replace integer)
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$begin
+   if value is null then 
+	return (replace);
+    else
+	return(value);
+    end if; 
+end; $function$
+;]]></string>
+			<input_param name="returnValue" jt="4" type="int4" />
+			<input_param name="value" jt="4" type="int4" />
+			<input_param name="replace" jt="4" type="int4" />
 		</function>
 		<function name="record_date_biu" id="Function_1f3a" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.record_date_biu()
@@ -8388,6 +8388,22 @@ $function$
 			<input_param name="returnValue" jt="4" type="int4" />
 			<input_param name="v_id" jt="4" type="int4" />
 		</function>
+		<function name="setlog" id="Function_1f2a" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text, p_session_id bigint)
+ RETURNS date
+ LANGUAGE plpgsql
+AS $function$
+begin
+   insert into system.syslog (logtime, log, session_id) values (now(), log, session_id);
+   RAISE NOTICE 'log is --%', log;
+   return now(); 
+end; 
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="91" type="date" />
+			<input_param name="log" jt="12" type="text" />
+			<input_param name="p_session_id" jt="-5" type="int8" />
+		</function>
 		<function name="setlog" id="Function_1aff" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text)
  RETURNS date
@@ -8404,22 +8420,6 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="91" type="date" />
 			<input_param name="log" jt="12" type="text" />
-		</function>
-		<function name="setlog" id="Function_1f2a" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text, p_session_id bigint)
- RETURNS date
- LANGUAGE plpgsql
-AS $function$
-begin
-   insert into system.syslog (logtime, log, session_id) values (now(), log, session_id);
-   RAISE NOTICE 'log is --%', log;
-   return now(); 
-end; 
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="91" type="date" />
-			<input_param name="log" jt="12" type="text" />
-			<input_param name="p_session_id" jt="-5" type="int8" />
 		</function>
 		<function name="setuserdefaultschema" id="Function_1619" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setuserdefaultschema(p_session_key character varying, p_user_id integer)
@@ -9593,67 +9593,6 @@ $function$
 			<input_param name="p_country_id" jt="4" type="int4" />
 			<input_param name="p_ispublic" jt="-7" type="bool" />
 		</function>
-		<function name="useraddsocial" id="Function_3ce" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.useraddsocial(p_email character varying, p_socialid character varying, p_social_kind character varying, p_country_code character varying, p_ispublic boolean)
- RETURNS character varying
- LANGUAGE plpgsql
-AS $function$
-declare
-  i_user_id integer; 
-  n_record integer; 
-  s_token character varying;
-  p_username character varying;
-  p_password character varying;
-  r_country record; 
- --- variabili di diagnostica errori .....
-  text_var1 text;
-  text_var2 text;
-  text_var3 text; 
-begin
-   i_user_id := -1; 
-   PERFORM system.setlog('system.usertest(p_socialid)'); 
-   p_username := lower(p_social_kind || '-' || p_socialid ); 
-   p_password := lower(p_social_kind || '-' || p_socialid ); 
-   if p_email is null then p_email := 'p_username' || '@ergomercator.com'; end if;
-   select system.usertest(p_username, p_email) into n_record; 
-   PERFORM system.setlog('Terminato system.usertest(p_username, p_email) trovati = ' || n_record); 
-   s_token := 'Error';
-   if n_record = 0 then
-   
-	select nextval('system.db_users_seq') into i_user_id; 
-	PERFORM system.setlog('system.useradd system.db_users_seq ' || i_user_id); 
-        select system.get_key(i_user_id, 32) into s_token; 
-        --select * into r_country from jpublic.countries where country_id = p_country_id; 
-        --PERFORM system.setlog('system.useradd system.r_country ' || r_country; 
-	insert into system.db_users
-	(active, email, db_user_id, password, username, isactive, default_schema_id, verified, ispublic, verify_token)
-	values (false, p_email, i_user_id, p_password, p_username, false,  0, false, p_ispublic, s_token );
-       INSERT INTO system.db_users_schemas(
-            db_schema_id, db_user_id, isadmin, isdefault, isowner, readwrite)
-       VALUES (0, i_user_id, false, true, false, false);
-     end if; 
-     return s_token; 
-     
-  exception when others then 
-	PERFORM system.setlog('system.useradd  Errore di sessione'); 
-	GET STACKED DIAGNOSTICS text_var1 = MESSAGE_TEXT,
-                          text_var2 = PG_EXCEPTION_DETAIL,
-                          text_var3 = PG_EXCEPTION_HINT;
-	PERFORM system.setlog('system.useradd   MESSAGE_TEXT: ' || text_var1); 
-	PERFORM system.setlog('system.useradd   PG_EXCEPTION_DETAIL: ' || text_var2); 
-	PERFORM system.setlog('system.useradd   PG_EXCEPTION_HINT: ' || text_var3); 
-  
-	Return 'Error'; 
-end; 
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="12" type="varchar" />
-			<input_param name="p_email" jt="12" type="varchar" />
-			<input_param name="p_socialid" jt="12" type="varchar" />
-			<input_param name="p_social_kind" jt="12" type="varchar" />
-			<input_param name="p_country_code" jt="12" type="varchar" />
-			<input_param name="p_ispublic" jt="-7" type="bool" />
-		</function>
 		<function name="useraddsocial" id="Function_1e51" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.useraddsocial(p_email character varying, p_socialid character varying, p_social_kind character varying, p_country_code character varying, p_ispublic boolean, p_firstname character varying, p_lastname character varying, p_address_town character varying, p_address_street character varying, p_address_number character varying, p_address_postal_code character varying, p_address_full character varying, p_public_email character varying, p_latitude double precision, p_longitude double precision, p_birth_date date, p_fiscal_code character varying, p_gender_code character, p_cellular_phone character varying, p_phone character varying, p_image_url character varying, p_facebook_json json)
  RETURNS character varying
@@ -9761,6 +9700,67 @@ $function$
 			<input_param name="p_image_url" jt="12" type="varchar" />
 			<input_param name="p_facebook_json" jt="1111" type="json" />
 		</function>
+		<function name="useraddsocial" id="Function_3ce" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.useraddsocial(p_email character varying, p_socialid character varying, p_social_kind character varying, p_country_code character varying, p_ispublic boolean)
+ RETURNS character varying
+ LANGUAGE plpgsql
+AS $function$
+declare
+  i_user_id integer; 
+  n_record integer; 
+  s_token character varying;
+  p_username character varying;
+  p_password character varying;
+  r_country record; 
+ --- variabili di diagnostica errori .....
+  text_var1 text;
+  text_var2 text;
+  text_var3 text; 
+begin
+   i_user_id := -1; 
+   PERFORM system.setlog('system.usertest(p_socialid)'); 
+   p_username := lower(p_social_kind || '-' || p_socialid ); 
+   p_password := lower(p_social_kind || '-' || p_socialid ); 
+   if p_email is null then p_email := 'p_username' || '@ergomercator.com'; end if;
+   select system.usertest(p_username, p_email) into n_record; 
+   PERFORM system.setlog('Terminato system.usertest(p_username, p_email) trovati = ' || n_record); 
+   s_token := 'Error';
+   if n_record = 0 then
+   
+	select nextval('system.db_users_seq') into i_user_id; 
+	PERFORM system.setlog('system.useradd system.db_users_seq ' || i_user_id); 
+        select system.get_key(i_user_id, 32) into s_token; 
+        --select * into r_country from jpublic.countries where country_id = p_country_id; 
+        --PERFORM system.setlog('system.useradd system.r_country ' || r_country; 
+	insert into system.db_users
+	(active, email, db_user_id, password, username, isactive, default_schema_id, verified, ispublic, verify_token)
+	values (false, p_email, i_user_id, p_password, p_username, false,  0, false, p_ispublic, s_token );
+       INSERT INTO system.db_users_schemas(
+            db_schema_id, db_user_id, isadmin, isdefault, isowner, readwrite)
+       VALUES (0, i_user_id, false, true, false, false);
+     end if; 
+     return s_token; 
+     
+  exception when others then 
+	PERFORM system.setlog('system.useradd  Errore di sessione'); 
+	GET STACKED DIAGNOSTICS text_var1 = MESSAGE_TEXT,
+                          text_var2 = PG_EXCEPTION_DETAIL,
+                          text_var3 = PG_EXCEPTION_HINT;
+	PERFORM system.setlog('system.useradd   MESSAGE_TEXT: ' || text_var1); 
+	PERFORM system.setlog('system.useradd   PG_EXCEPTION_DETAIL: ' || text_var2); 
+	PERFORM system.setlog('system.useradd   PG_EXCEPTION_HINT: ' || text_var3); 
+  
+	Return 'Error'; 
+end; 
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="12" type="varchar" />
+			<input_param name="p_email" jt="12" type="varchar" />
+			<input_param name="p_socialid" jt="12" type="varchar" />
+			<input_param name="p_social_kind" jt="12" type="varchar" />
+			<input_param name="p_country_code" jt="12" type="varchar" />
+			<input_param name="p_ispublic" jt="-7" type="bool" />
+		</function>
 		<function name="userbykey" id="Function_307" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userbykey(p_user_key character varying)
  RETURNS integer
@@ -9782,53 +9782,6 @@ end; $function$
 ;]]></string>
 			<input_param name="returnValue" jt="4" type="int4" />
 			<input_param name="p_user_key" jt="12" type="varchar" />
-		</function>
-		<function name="userdel" id="Function_22f1" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userdel(uuid)
- RETURNS boolean
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-l_user_id integer; 
-BEGIN
-  SELECT db_user_id INTO l_user_id 
-     FROM system.db_users WHERE jguid = p_guid; 
-	 
-  RETURN system.userdel(l_user_id); 
-  
-  EXCEPTION WHEN OTHERS THEN
-     RETURN false; 
-END; 
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="-7" type="bool" />
-			<input_param name="$1" jt="1111" type="uuid" />
-		</function>
-		<function name="userdel" id="Function_1fd1" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userdel(p_user_email character varying)
- RETURNS boolean
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-  V_ID integer;
-BEGIN
-   -- 
-   IF EXISTS (SELECT 1 from system.db_users where email = lower(p_user_email) ) THEN
-   	BEGIN
-	  SELECT db_user_id INTO V_ID from system.db_users where email = lower(p_user_email);
-      return system.userdel(V_ID); 
-   	END;
-   ELSE
-   	BEGIN
-      PERFORM system.setlog('db_user NOT FOUND: ' || p_user_email);
-	  return False;    
-   	END; 
-   END IF; 
-END; 
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="-7" type="bool" />
-			<input_param name="p_user_email" jt="12" type="varchar" />
 		</function>
 		<function name="userdel" id="Function_1c9e" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userdel(p_user_id integer)
@@ -9860,6 +9813,53 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="-7" type="bool" />
 			<input_param name="p_user_id" jt="4" type="int4" />
+		</function>
+		<function name="userdel" id="Function_1fd1" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userdel(p_user_email character varying)
+ RETURNS boolean
+ LANGUAGE plpgsql
+AS $function$
+DECLARE
+  V_ID integer;
+BEGIN
+   -- 
+   IF EXISTS (SELECT 1 from system.db_users where email = lower(p_user_email) ) THEN
+   	BEGIN
+	  SELECT db_user_id INTO V_ID from system.db_users where email = lower(p_user_email);
+      return system.userdel(V_ID); 
+   	END;
+   ELSE
+   	BEGIN
+      PERFORM system.setlog('db_user NOT FOUND: ' || p_user_email);
+	  return False;    
+   	END; 
+   END IF; 
+END; 
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="-7" type="bool" />
+			<input_param name="p_user_email" jt="12" type="varchar" />
+		</function>
+		<function name="userdel" id="Function_22f1" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.userdel(uuid)
+ RETURNS boolean
+ LANGUAGE plpgsql
+AS $function$
+DECLARE
+l_user_id integer; 
+BEGIN
+  SELECT db_user_id INTO l_user_id 
+     FROM system.db_users WHERE jguid = p_guid; 
+	 
+  RETURN system.userdel(l_user_id); 
+  
+  EXCEPTION WHEN OTHERS THEN
+     RETURN false; 
+END; 
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="-7" type="bool" />
+			<input_param name="$1" jt="1111" type="uuid" />
 		</function>
 		<function name="usergrantschema" id="Function_1bae" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.usergrantschema(p_user_key character varying, p_schema_key character varying, p_isadmin boolean, p_isdefault boolean, p_isowner boolean, p_readwrite boolean)
@@ -10709,9 +10709,9 @@ $function$
 	<layout name="Anagraph" id="Layout_1b2b53c" confirmed="y" show_column_type="y" show_schema_name="y" show_page_borders="y" show_relation="columns" >
 		<entity schema="ergomercator.anagraph" name="addresses" color="BED3F4" x="48" y="1168" />
 		<entity schema="ergomercator.anagraph" name="an_addresses_view" color="BED3F4" x="880" y="64" />
-		<entity schema="ergomercator.anagraph" name="an_locations" color="F4DDBE" x="464" y="1920" />
-		<entity schema="ergomercator.anagraph" name="anag_categories" color="F4DDBE" x="640" y="1568" />
-		<entity schema="ergomercator.anagraph" name="anagraphs" color="F4DDBE" x="400" y="1488" >
+		<entity schema="ergomercator.anagraph" name="an_locations" color="F4DDBE" x="688" y="1232" />
+		<entity schema="ergomercator.anagraph" name="anag_categories" color="F4DDBE" x="672" y="1344" />
+		<entity schema="ergomercator.anagraph" name="anagraphs" color="F4DDBE" x="352" y="1232" >
 			<column name="anagraph_id" />
 			<column name="db_schema_id" />
 			<column name="an_title" />
@@ -10740,13 +10740,13 @@ $function$
 			<column name="an_iso_country_code" />
 		</entity>
 		<entity schema="ergomercator.anagraph" name="branches" color="F4DDBE" x="64" y="1792" />
-		<entity schema="ergomercator.anagraph" name="categories" color="F4DDBE" x="864" y="1488" />
-		<entity schema="ergomercator.anagraph" name="categories_translations" color="F4DDBE" x="1152" y="1488" />
-		<entity schema="ergomercator.anagraph" name="groups" color="BED3F4" x="1120" y="1632" />
+		<entity schema="ergomercator.anagraph" name="categories" color="F4DDBE" x="928" y="1392" />
+		<entity schema="ergomercator.anagraph" name="categories_translations" color="F4DDBE" x="880" y="1168" />
+		<entity schema="ergomercator.anagraph" name="groups" color="BED3F4" x="736" y="1600" />
 		<entity schema="ergomercator.anagraph" name="groups_view" color="BED3F4" x="800" y="2128" />
-		<entity schema="ergomercator.anagraph" name="identities" color="BED3F4" x="768" y="1712" />
+		<entity schema="ergomercator.anagraph" name="identities" color="BED3F4" x="400" y="1744" />
 		<entity schema="ergomercator.anagraph" name="osm_anagraphs" color="BED3F4" x="1200" y="48" />
-		<entity schema="ergomercator.anagraph" name="schema_groups" color="BED3F4" x="1360" y="1744" />
+		<entity schema="ergomercator.anagraph" name="schema_groups" color="BED3F4" x="1088" y="1648" />
 		<script name="groups" id="Editor_977" language="SQL" >
 			<string><![CDATA[SELECT an_group_id, db_schema_id, group_des, contact_group, sub_group, sub_group_des, settings, "position", accounting, cod_account, 
 	"local", group_cod, ledger_cod, subledger_cod, "grouping", description, angr_jguid, angr_deleted, icon_id, jguid
@@ -11086,27 +11086,27 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 	</layout>
 	<layout name="jpublic" id="Layout_37b20fd" confirmed="y" show_schema_name="y" show_relation="columns" >
 		<comment><![CDATA[PostgreSQL]]></comment>
-		<entity schema="ergomercator.jpublic" name="buildings" color="BEBEF4" x="544" y="720" />
-		<entity schema="ergomercator.jpublic" name="contiguous_regions" color="F4DDBE" x="48" y="80" />
-		<entity schema="ergomercator.jpublic" name="countries" color="D1BEF4" x="1360" y="80" />
-		<entity schema="ergomercator.jpublic" name="countries_trans" color="D1BEF4" x="1104" y="208" />
-		<entity schema="ergomercator.jpublic" name="country_currencies" color="D1BEF4" x="1344" y="400" />
-		<entity schema="ergomercator.jpublic" name="cultures" color="D1BEF4" x="1616" y="400" />
-		<entity schema="ergomercator.jpublic" name="currencies" color="D1BEF4" x="1616" y="80" />
-		<entity schema="ergomercator.jpublic" name="currencies_trans" color="D1BEF4" x="1904" y="80" />
-		<entity schema="ergomercator.jpublic" name="district_trans" color="F4DDBE" x="832" y="272" />
-		<entity schema="ergomercator.jpublic" name="districts" color="F4DDBE" x="576" y="272" />
-		<entity schema="ergomercator.jpublic" name="lang_translations" color="F4DDBE" x="64" y="480" />
-		<entity schema="ergomercator.jpublic" name="languages" color="F4DDBE" x="64" y="272" />
-		<entity schema="ergomercator.jpublic" name="location_types" color="C7F4BE" x="1008" y="768" />
-		<entity schema="ergomercator.jpublic" name="locations" color="C7F4BE" x="768" y="720" />
-		<entity schema="ergomercator.jpublic" name="regions" color="F4DDBE" x="320" y="272" />
-		<entity schema="ergomercator.jpublic" name="regions_trans" color="F4DDBE" x="320" y="496" />
-		<entity schema="ergomercator.jpublic" name="routes" color="BED3F4" x="576" y="1088" />
-		<entity schema="ergomercator.jpublic" name="sub_town_areas" color="BED3F4" x="288" y="1136" />
-		<entity schema="ergomercator.jpublic" name="town_areas" color="BEBEF4" x="48" y="976" />
-		<entity schema="ergomercator.jpublic" name="town_areas_routes" color="C1D8EE" x="368" y="992" />
-		<entity schema="ergomercator.jpublic" name="towns" color="BEBEF4" x="48" y="736" />
+		<entity schema="ergomercator.jpublic" name="buildings" color="BEBEF4" x="544" y="800" />
+		<entity schema="ergomercator.jpublic" name="contiguous_regions" color="F4DDBE" x="64" y="128" />
+		<entity schema="ergomercator.jpublic" name="countries" color="D1BEF4" x="1136" y="80" />
+		<entity schema="ergomercator.jpublic" name="countries_trans" color="D1BEF4" x="928" y="128" />
+		<entity schema="ergomercator.jpublic" name="country_currencies" color="D1BEF4" x="1344" y="144" />
+		<entity schema="ergomercator.jpublic" name="cultures" color="FF6666" x="896" y="384" />
+		<entity schema="ergomercator.jpublic" name="currencies" color="FF6666" x="1280" y="416" />
+		<entity schema="ergomercator.jpublic" name="currencies_trans" color="FF6666" x="1120" y="608" />
+		<entity schema="ergomercator.jpublic" name="district_trans" color="F4DDBE" x="320" y="448" />
+		<entity schema="ergomercator.jpublic" name="districts" color="F4DDBE" x="64" y="528" />
+		<entity schema="ergomercator.jpublic" name="lang_translations" color="E6B3E6" x="624" y="576" />
+		<entity schema="ergomercator.jpublic" name="languages" color="CC99CC" x="624" y="320" />
+		<entity schema="ergomercator.jpublic" name="location_types" color="C7F4BE" x="1008" y="848" />
+		<entity schema="ergomercator.jpublic" name="locations" color="C7F4BE" x="768" y="800" />
+		<entity schema="ergomercator.jpublic" name="regions" color="F4DDBE" x="64" y="304" />
+		<entity schema="ergomercator.jpublic" name="regions_trans" color="F4DDBE" x="336" y="304" />
+		<entity schema="ergomercator.jpublic" name="routes" color="BED3F4" x="576" y="1168" />
+		<entity schema="ergomercator.jpublic" name="sub_town_areas" color="BED3F4" x="288" y="1216" />
+		<entity schema="ergomercator.jpublic" name="town_areas" color="BEBEF4" x="48" y="1056" />
+		<entity schema="ergomercator.jpublic" name="town_areas_routes" color="C1D8EE" x="368" y="1072" />
+		<entity schema="ergomercator.jpublic" name="towns" color="BEBEF4" x="48" y="816" />
 		<group name="Group_Towns" color="C4E0F9" >
 			<entity schema="ergomercator.jpublic" name="sub_town_areas" />
 			<entity schema="ergomercator.jpublic" name="towns" />
@@ -11117,6 +11117,27 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 		<group name="Group_Locations" color="CCFFCC" >
 			<entity schema="ergomercator.jpublic" name="locations" />
 			<entity schema="ergomercator.jpublic" name="location_types" />
+		</group>
+		<group name="Group_Regions" color="FFCC99" >
+			<entity schema="ergomercator.jpublic" name="contiguous_regions" />
+			<entity schema="ergomercator.jpublic" name="regions" />
+			<entity schema="ergomercator.jpublic" name="districts" />
+			<entity schema="ergomercator.jpublic" name="regions_trans" />
+			<entity schema="ergomercator.jpublic" name="district_trans" />
+		</group>
+		<group name="Group_Languages" color="E6B3E6" >
+			<entity schema="ergomercator.jpublic" name="languages" />
+			<entity schema="ergomercator.jpublic" name="lang_translations" />
+		</group>
+		<group name="Group_Countries" color="8099FF" >
+			<entity schema="ergomercator.jpublic" name="countries" />
+			<entity schema="ergomercator.jpublic" name="countries_trans" />
+			<entity schema="ergomercator.jpublic" name="country_currencies" />
+		</group>
+		<group name="Group_cultures" color="FF9999" >
+			<entity schema="ergomercator.jpublic" name="cultures" />
+			<entity schema="ergomercator.jpublic" name="currencies" />
+			<entity schema="ergomercator.jpublic" name="currencies_trans" />
 		</group>
 	</layout>
 	<layout name="system" id="Layout_31680f" confirmed="y" show_relation="columns" />

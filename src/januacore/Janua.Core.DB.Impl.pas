@@ -2,8 +2,8 @@ unit Janua.Core.DB.Impl;
 
 interface
 
-uses System.Classes, Janua.Core.DB.Intf, Janua.Core.Types, Spring.Collections, System.SysUtils,
-  Janua.Orm.Intf, Janua.Core.Classes, Janua.Application.Framework;
+uses System.Classes, Data.DB, Spring.Collections, System.SysUtils,
+  Janua.Core.DB.Intf, Janua.Core.Types, Janua.Orm.Intf, Janua.Core.Classes, Janua.Application.Framework;
 
 type
   TJanuaSearchParam = class(TInterfacedObject, IJanuaSearchParam)
@@ -50,8 +50,8 @@ type
     /// </summary>
     property LookUpIDList: IList<TJanuaLookupID> read GetLookUpList write SetLookUpList;
   protected
-    function GetLookUpObject(const aID: TJanuaLookupID; const aClone: boolean = true; const aThreaded: boolean = False;
-      aCallBackProc: TProc<IJanuaLookUp> = nil): IJanuaLookUp; overload;
+    function GetLookUpObject(const aID: TJanuaLookupID; const aClone: boolean = true;
+      const aThreaded: boolean = False; aCallBackProc: TProc<IJanuaLookUp> = nil): IJanuaLookUp; overload;
     /// <summary>  Finds an Object and assigns it to a Field </summary>
     /// <param name="aID">   LookupID Enumerator </param>
     /// <param name="aField">  Destination Field </param>
@@ -157,38 +157,137 @@ type
     property LocalTest: boolean read FLocalTest write SetLocalTest;
   end;
 
+  TJanuaCustomDatasetFunctions = class(TJanuaInterfacedObject, IJanuaDatasetFunctions)
+  private
+    FOwner: TComponent;
+  protected
+    HasErrors: boolean;
+    FActive: boolean;
+    function GetOwner: TComponent;
+    procedure SetOwner(const Value: TComponent); virtual;
+    procedure WriteLog(const aLog: string);
+    procedure WriteError(const aError: string; e: Exception);
+  public
+    procedure StoreRecordToProcedure(const aRecord: IJanuaRecord; const aProcObject: TDataset;
+      const aRefreshRecord: boolean); virtual; abstract;
+    procedure PostDataset(const aDataset: TDataset); virtual; abstract;
+    function DatasetToXml(const aDataset: TDataset): string; virtual; abstract;
+    procedure OpenDataset(const aDataset: TDataset; DoRaise: boolean = true); virtual; abstract;
+    procedure ReOpenDataset(const aDataset: TDataset); virtual; abstract;
+    procedure TestDatasets; overload; virtual; abstract;
+    procedure TestDatasets(aParent: TComponent); overload; virtual; abstract;
+    procedure PrepareDataset(const aDataset: TDataset); virtual; abstract;
+    procedure ExecuteProcedure(aProcedure: TDataset); virtual; abstract;
+    procedure OpenThreadedDataset(aDataset: TDataset; aDatasource: TDataSource = nil;
+      aDoRaise: boolean = true; aCallBackProc: TProc = nil); virtual; abstract;
+    procedure CloseAllDatasets(aParent: TComponent); overload;
+    procedure CloseAllDatasets; overload;
+    function Activate(const aOwner: TComponent): boolean; overload;
+  public
+    constructor Create; override;
+  end;
+
+type
+  TJanuaCustomDBConnection = class(TInterfacedObject, IJanuaDBConnection)
+  private
+    FLastErrorMessage: string;
+    function GetServerConf: TJanuaServerRecordConf;
+    procedure SetServerConf(const Value: TJanuaServerRecordConf);
+    function GetLastErrorMessage: string;
+  public
+    // the Test Connection Function needs to be implemented in the inherited class regarding the DB Type Connection....
+    function TestConnection: boolean;
+    property ServerConf: TJanuaServerRecordConf read GetServerConf write SetServerConf;
+  end;
+
 implementation
 
-{ TJanuaSearchParam }
+{ TJanuaCustomDBConnection }
 
-function TJanuaSearchParam.GetName: string;
+function TJanuaCustomDBConnection.GetLastErrorMessage: string;
 begin
+  Result := self.FLastErrorMessage;
+end;
+
+function TJanuaCustomDBConnection.GetServerConf: TJanuaServerRecordConf;
+begin
+  Result := TJanuaApplication.JanuaServerConf;
+end;
+
+procedure TJanuaCustomDBConnection.SetServerConf(const Value: TJanuaServerRecordConf);
+begin
+  TJanuaApplication.JanuaServerConf := Value;
+end;
+
+function TJanuaCustomDBConnection.TestConnection: boolean;
+var
+  LDataModule: IDmJanuaCoreDBConnections;
+begin
+  Result := False;
+  if TJanuaApplicationFactory.TryGetDataModule(IDmJanuaCoreDBConnections, nil, LDataModule) then
+    try
+      Result := LDataModule.TestConnection;
+      FLastErrorMessage := LDataModule.LastErrorMessage;
+      if not Result then
+        CreateException('TestConnection', LDataModule.LastErrorMessage, self);
+    finally
+      LDataModule.Component.Free;
+    end
+  else
+    FLastErrorMessage := 'IDmJanuaCoreDBConnections not found';
+end;
+
+{ TJanuaCustomDatasetFunctions }
+
+function TJanuaCustomDatasetFunctions.Activate(const aOwner: TComponent): boolean;
+begin
+  SetOwner(aOwner);
+  Result := Activate;
+end;
+
+procedure TJanuaCustomDatasetFunctions.CloseAllDatasets;
+var
+  i: Integer;
+begin
+  if Assigned(FOwner) then
+  begin
+    for i := 0 to FOwner.ComponentCount - 1 do
+      if FOwner.Components[i] is TDataset then
+        (FOwner.Components[i] as TDataset).Close;
+  end;
 
 end;
 
-function TJanuaSearchParam.GetParamType: TJanuaFieldType;
+constructor TJanuaCustomDatasetFunctions.Create;
 begin
-  Result := Self.FParamType
+  inherited;
+  FActive := False;
 end;
 
-function TJanuaSearchParam.GetTitle: string;
+procedure TJanuaCustomDatasetFunctions.CloseAllDatasets(aParent: TComponent);
 begin
-
+  self.FOwner := aParent;
+  CloseAllDatasets;
 end;
 
-procedure TJanuaSearchParam.SetName(const Value: string);
+function TJanuaCustomDatasetFunctions.GetOwner: TComponent;
 begin
-
+  Result := self.FOwner
 end;
 
-procedure TJanuaSearchParam.SetParamType(const Value: TJanuaFieldType);
+procedure TJanuaCustomDatasetFunctions.SetOwner(const Value: TComponent);
 begin
-
+  FOwner := Value;
 end;
 
-procedure TJanuaSearchParam.SetTitle(const Value: string);
+procedure TJanuaCustomDatasetFunctions.WriteError(const aError: string; e: Exception);
 begin
+  TJanuaLogger.LogError('Log', aError, self, e);
+end;
 
+procedure TJanuaCustomDatasetFunctions.WriteLog(const aLog: string);
+begin
+  TJanuaLogger.LogRecord('Log', aLog, self);
 end;
 
 { TJanuaDatasetSearchParams }
@@ -227,7 +326,7 @@ end;
 
 function TJanuaCustomLookUp.GetDataset: IJanuaDBCustomDataset;
 begin
-  Result := Self.FJanuaDataset
+  Result := self.FJanuaDataset
 end;
 
 function TJanuaCustomLookUp.GetItemIndex: Integer;
@@ -237,7 +336,7 @@ end;
 
 function TJanuaCustomLookUp.GetKeyField: string;
 begin
-  Result := Self.FKeyField
+  Result := self.FKeyField
 end;
 
 function TJanuaCustomLookUp.GetLookupField: string;
@@ -319,7 +418,8 @@ begin
 
 end;
 
-function TJanuaLookupModuleFactory.TryGetLookUpObject(const aID: TJanuaLookupID; const aField: IJanuaField): boolean;
+function TJanuaLookupModuleFactory.TryGetLookUpObject(const aID: TJanuaLookupID;
+  const aField: IJanuaField): boolean;
 begin
   Result := False;
   { TODO : Implementing Janua Lookup Module try Get LookUp Object }
@@ -355,8 +455,8 @@ begin
             try
               FInternalCreateDBDataSets;
             except
-              on e: exception do
-                RaiseException('InternalCreateDataset', e, Self);
+              on e: Exception do
+                RaiseException('InternalCreateDataset', e, self);
             end;
         finally
           FInternalCreateDBDataSets := nil;
@@ -368,8 +468,8 @@ begin
             FAfterCreateDataset;
             FAfterCreateDataset := nil;
           except
-            on e: exception do
-              RaiseException('FAfterCreateDataset', e, Self, Self.LogString);
+            on e: Exception do
+              RaiseException('FAfterCreateDataset', e, self, self.LogString);
           end;
 
         // If there si any Dataset to be Assigned then the procedure should be set so must be executed
@@ -381,12 +481,12 @@ begin
           FInternalAssignDatasets := nil;
         end;
       except
-        on e: exception do
-          RaiseException('CreateDataset', e, Self, Self.LogString);
+        on e: Exception do
+          RaiseException('CreateDataset', e, self, self.LogString);
       end;
     end
     else
-      raise exception.Create(Self.ClassName + '.Create FInternalCreateDataset is nil');
+      raise Exception.Create(self.ClassName + '.Create FInternalCreateDataset is nil');
   finally
     FInternalCreateDataset := nil;
   end;
@@ -424,21 +524,21 @@ end;
 
 function TJanuaStorage.GetDBFunctions: IJanuaDatasetFunctions;
 begin
-  if not Assigned(FDBFunctions) and not TJanuaApplicationFactory.TryGetInterface(IJanuaDatasetFunctions, FDBFunctions)
-  then
-    CreateException('GetDBFunctions', 'IDatasetFunctions not set', Self);
+  if not Assigned(FDBFunctions) and not TJanuaApplicationFactory.TryGetInterface(IJanuaDatasetFunctions,
+    FDBFunctions) then
+    CreateException('GetDBFunctions', 'IDatasetFunctions not set', self);
 
   Result := FDBFunctions;
 end;
 
 function TJanuaStorage.GetKeepAlive: boolean;
 begin
-  Result := Self.FKeepAlive
+  Result := self.FKeepAlive
 end;
 
 function TJanuaStorage.GetLastCount: Integer;
 begin
-  Result := Self.FLastCount;
+  Result := self.FLastCount;
 end;
 
 function TJanuaStorage.GetLastErrorMessage: string;
@@ -473,7 +573,7 @@ end;
 
 procedure TJanuaStorage.SetAfterDestroyDataset;
 begin
-  Self.FAfterDestroyDataset := nil
+  self.FAfterDestroyDataset := nil
 end;
 
 procedure TJanuaStorage.SetDBFunctions(const Value: IJanuaDatasetFunctions);
@@ -488,17 +588,17 @@ end;
 
 procedure TJanuaStorage.SetInternalCreateDataset;
 begin
-  Self.FInternalCreateDataset := nil
+  self.FInternalCreateDataset := nil
 end;
 
 procedure TJanuaStorage.SetInternalCreateDBDataSets;
 begin
-  Self.FInternalCreateDBDataSets := nil
+  self.FInternalCreateDBDataSets := nil
 end;
 
 procedure TJanuaStorage.SetInternalDestroyDataset;
 begin
-  Self.FInternalDestroyDataset := nil
+  self.FInternalDestroyDataset := nil
 end;
 
 procedure TJanuaStorage.SetKeepAlive(const aValue: boolean);
@@ -523,7 +623,7 @@ end;
 
 procedure TJanuaStorage.SetLastErrorMessage(const aValue: string);
 begin
-  Self.FLastErrorMessage := aValue
+  self.FLastErrorMessage := aValue
 end;
 
 procedure TJanuaStorage.setLimit(const aValue: Word);
@@ -538,7 +638,7 @@ end;
 
 procedure TJanuaStorage.SetOffset(const aValue: Word);
 begin
-  Self.FOffset := aValue
+  self.FOffset := aValue
 end;
 
 procedure TJanuaStorage.SetSelectedSchema(const Value: Integer);
@@ -546,5 +646,36 @@ begin
   FSelectedSchema := Value
 end;
 
-end.
+{ TJanuaSearchParam }
 
+function TJanuaSearchParam.GetName: string;
+begin
+  Result := FName
+end;
+
+function TJanuaSearchParam.GetParamType: TJanuaFieldType;
+begin
+  Result := FParamType
+end;
+
+function TJanuaSearchParam.GetTitle: string;
+begin
+  Result := FTitle
+end;
+
+procedure TJanuaSearchParam.SetName(const Value: string);
+begin
+  FName := Value;
+end;
+
+procedure TJanuaSearchParam.SetParamType(const Value: TJanuaFieldType);
+begin
+  FParamType := Value;
+end;
+
+procedure TJanuaSearchParam.SetTitle(const Value: string);
+begin
+  FTitle := Value;
+end;
+
+end.

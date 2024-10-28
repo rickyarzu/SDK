@@ -171,8 +171,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
     Align = alClient
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitWidth = 425
-    ExplicitHeight = 571
     DesignSize = (
       473
       637)
@@ -193,8 +191,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
       Settings.AllowExternalDrop = True
       Settings.UsePopupMenuAsContextMenu = False
       OnGetCookies = AdvWebBrowser1GetCookies
-      ExplicitWidth = 387
-      ExplicitHeight = 522
     end
     object NavigateBtn: TButton
       Left = 376
@@ -205,17 +201,15 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
       Caption = 'Navigate'
       TabOrder = 1
       OnClick = NavigateBtnClick
-      ExplicitLeft = 328
     end
     object URLEdit: TEdit
-      Left = 16
-      Top = 16
+      Left = 17
+      Top = 15
       Width = 353
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
       Text = 'https://calendar.google.com/calendar/u/1/r'
-      ExplicitWidth = 305
     end
   end
   object pnlCookies: TPanel
@@ -225,8 +219,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
     Height = 637
     Align = alRight
     TabOrder = 1
-    ExplicitLeft = 438
-    ExplicitHeight = 571
     object PageControl1: TPageControl
       Left = 1
       Top = 1
@@ -235,7 +227,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
       ActivePage = tabSerialization
       Align = alClient
       TabOrder = 0
-      ExplicitHeight = 569
       object tabCookiesDashboard: TTabSheet
         Caption = 'Cookies'
         DesignSize = (
@@ -310,7 +301,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goFixedRowDefAlign]
           TabOrder = 1
           OnSelectCell = CookieGridSelectCell
-          ExplicitHeight = 234
           ColWidths = (
             125
             125
@@ -325,7 +315,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Height = 23
           Anchors = [akLeft, akRight, akBottom]
           TabOrder = 2
-          ExplicitTop = 295
         end
         object DomainEdit: TEdit
           Left = 116
@@ -334,7 +323,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Height = 23
           Anchors = [akLeft, akRight, akBottom]
           TabOrder = 3
-          ExplicitTop = 324
         end
         object PathEdit: TEdit
           Left = 116
@@ -343,7 +331,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Height = 23
           Anchors = [akLeft, akRight, akBottom]
           TabOrder = 4
-          ExplicitTop = 353
         end
         object ValueEdit: TEdit
           Left = 116
@@ -352,7 +339,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Height = 23
           Anchors = [akLeft, akRight, akBottom]
           TabOrder = 5
-          ExplicitTop = 381
         end
         object ExpiresDate: TDateTimePicker
           Left = 116
@@ -364,7 +350,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Time = 0.452469861113058900
           Kind = dtkDateTime
           TabOrder = 6
-          ExplicitTop = 410
         end
         object AddCookieBtn: TButton
           Left = 19
@@ -375,7 +360,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Caption = 'Add or Update Cookie'
           TabOrder = 7
           OnClick = AddCookieBtnClick
-          ExplicitTop = 444
         end
         object DeleteCookieBtn: TButton
           Left = 19
@@ -386,7 +370,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Caption = 'Delete Cookie'
           TabOrder = 8
           OnClick = DeleteCookieBtnClick
-          ExplicitTop = 476
         end
         object DeleteAllCookiesBtn: TButton
           Left = 19
@@ -397,7 +380,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Caption = 'Delete All Cookies'
           TabOrder = 9
           OnClick = DeleteAllCookiesBtnClick
-          ExplicitTop = 508
         end
       end
       object tabSerialization: TTabSheet
@@ -419,7 +401,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
             Caption = 'Serialize'
             TabOrder = 0
             OnClick = btnSerizalizeClick
-            ExplicitTop = -4
           end
           object btnDeserizalize: TButton
             Left = 129
@@ -430,8 +411,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
             Caption = 'Deserialize'
             TabOrder = 1
             OnClick = btnDeserizalizeClick
-            ExplicitLeft = 135
-            ExplicitTop = -4
           end
         end
         object AdvMemo1: TAdvMemo
@@ -451,6 +430,7 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           AutoCompletion.StartToken = '(.'
           AutoCorrect.Active = True
           AutoHintParameterPosition = hpBelowCode
+          BkColor = clWindow
           BookmarkGlyph.Data = {
             36050000424D3605000000000000360400002800000010000000100000000100
             0800000000000001000000000000000000000001000000000000000000000000
@@ -494,7 +474,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
             BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
             25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-          BorderColor = 10724259
           BorderStyle = bsSingle
           ClipboardFormats = [cfText]
           CodeFolding.Enabled = False
@@ -507,9 +486,8 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           Gutter.Font.Height = -13
           Gutter.Font.Name = 'Courier New'
           Gutter.Font.Style = []
-          Gutter.BorderColor = 10724259
-          Gutter.GutterColor = clWhite
-          Gutter.LineNumberTextColor = 3881787
+          Gutter.GutterColorTo = clBtnFace
+          Gutter.LineNumberTextColor = clWindowText
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
@@ -520,7 +498,7 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
             '')
           MarkerList.UseDefaultMarkerImageIndex = False
           MarkerList.DefaultMarkerImageIndex = -1
-          MarkerList.ImageTransparentColor = -1
+          MarkerList.ImageTransparentColor = -16776961
           OleDropTarget = []
           PrintOptions.MarginLeft = 0
           PrintOptions.MarginRight = 0
@@ -530,8 +508,8 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           PrintOptions.PrintLineNumbers = False
           RightMarginColor = 14869218
           ScrollHint = False
-          SelColor = clWhite
-          SelBkColor = clNavy
+          SelColor = clHighlightText
+          SelBkColor = clHighlight
           ShowRightMargin = True
           SmartTabs = False
           SyntaxStyles = AdvJSONMemoStyler1
@@ -552,10 +530,6 @@ object frmTmsWebBrowserCookies: TfrmTmsWebBrowserCookies
           UseStyler = True
           Version = '3.9.1.1'
           WordWrap = wwNone
-          ExplicitLeft = 248
-          ExplicitTop = 136
-          ExplicitWidth = 350
-          ExplicitHeight = 250
         end
       end
     end

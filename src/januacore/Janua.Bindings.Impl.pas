@@ -166,7 +166,7 @@ begin
   begin
     if not Supports(FOwner, IJanuaBindableControl, lBindControl) then
       if not Supports(FOwner, IJanuaBindable, lBindObject) then
-        if not(FOwner is TJanuaCoreBindableObject) then
+        if not(FOwner is TJanuaBindableClass) then
           Raise Exception.Create('Bind engine IBindable not Supported: ' + FOwner.ClassName);
 
     for i in FBindings do
@@ -176,9 +176,9 @@ begin
           lBindObject.BindManager.DecBindCount
         else if Assigned(lBindControl) and Assigned(lBindControl.BindManager) then
           lBindControl.BindManager.DecBindCount
-        else if (FOwner is TJanuaCoreBindableObject) and
-          Assigned((FOwner as TJanuaCoreBindableObject).BindManager) then
-          (FOwner as TJanuaCoreBindableObject).BindManager.DecBindCount;
+        else if (FOwner is TJanuaBindableClass) and
+          Assigned((FOwner as TJanuaBindableClass).BindManager) then
+          (FOwner as TJanuaBindableClass).BindManager.DecBindCount;
       except
         on e: Exception do
           Raise Exception.Create('Bind engine ClearBindings' + e.Message);
@@ -200,8 +200,8 @@ begin
     FBindManager := lBindableControl.BindManager
   else if Supports(FOwner, IJanuaBindable, lBindable) then
     FBindManager := lBindable.BindManager
-  else if (FOwner is TJanuaCoreBindableObject) then
-    FBindManager := (FOwner as TJanuaCoreBindableObject).BindManager
+  else if (FOwner is TJanuaBindableClass) then
+    FBindManager := (FOwner as TJanuaBindableClass).BindManager
   else
     raise Exception.Create('Bind Engine IBindable not Supported: ' + lOwnerName(FOwner));
   Guard.CheckNotNull(FBindManager, FOwner.ClassName + '.BindManager');
@@ -239,8 +239,8 @@ begin
       lBindControl.BindManager.DecBindCount
     else if Supports(FOwner, IJanuaBindable, lBindObject) then
       lBindObject.BindManager.DecBindCount
-    else if (FOwner is TJanuaCoreBindableObject) then
-      (FOwner as TJanuaCoreBindableObject).BindManager.DecBindCount;
+    else if (FOwner is TJanuaBindableClass) then
+      (FOwner as TJanuaBindableClass).BindManager.DecBindCount;
   end;
 
 end;

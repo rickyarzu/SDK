@@ -242,7 +242,7 @@ type
 
 implementation
 
-uses Janua.Application.Framework, Janua.Core.Classes, System.StrUtils;
+uses Janua.Application.Framework, Janua.Core.Commons, System.StrUtils;
 
 { TLUEdit }
 
