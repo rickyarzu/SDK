@@ -8,7 +8,7 @@ uses
   MemDS, Uni, Janua.Unidac.Connection,
   // Janua
   Janua.Core.DB.Intf, Janua.Uni.Intf, Janua.Cms.Types, Janua.Orm.Types, Janua.Orm.Intf, Janua.Orm.Impl,
-  Janua.Core.Types, Janua.Core.DB, Data.DB, Janua.Core.Entities;
+  Janua.Core.Types, Janua.Core.DB, Janua.Core.DB.Impl, Data.DB, Janua.Core.Entities;
 
 type
   TJanuaUniOrderByFields = class(TJanuaCustomOrderByFields, IJanuaOrderByFields)

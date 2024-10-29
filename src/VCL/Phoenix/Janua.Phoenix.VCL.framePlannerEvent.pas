@@ -86,6 +86,7 @@ type
     Button1: TButton;
     btnWhatsApp: TButton;
     ConfermaAppuntmento1: TMenuItem;
+    btnSincro: TButton;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -113,6 +114,7 @@ type
       var Accept: Boolean);
     procedure DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
     procedure ModificaAppuntamento2Click(Sender: TObject);
+    procedure btnSincroClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -203,6 +205,12 @@ end;
 procedure TframeVCLPhoenixPlannerEvent.btnSearchClick(Sender: TObject);
 begin
   Filter
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.btnSincroClick(Sender: TObject);
+begin
+  inherited;
+  dmVCLPhoenixPlannerController.UpdateReportPlanner;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnNextDayClick(Sender: TObject);

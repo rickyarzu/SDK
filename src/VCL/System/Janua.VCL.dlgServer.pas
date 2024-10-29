@@ -99,7 +99,7 @@ end;
 
 procedure TdlgVCLSelectServer.FormCreate(Sender: TObject);
 begin
-  FJanuaDBConnection := Janua.Core.DB.DBConnection; // TJanuaCustomDBConnection.Create(self);
+  FJanuaDBConnection := Janua.Core.DB.Intf.DBConnection;
 end;
 
 procedure TdlgVCLSelectServer.SetJanuaDBConnection(const Value: IJanuaDBConnection);

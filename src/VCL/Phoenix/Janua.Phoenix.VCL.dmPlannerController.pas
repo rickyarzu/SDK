@@ -607,6 +607,7 @@ type
     // WhatsApp Parameters
     property WATest: Boolean read FWATest write SetWATest;
     property WATestPhone: string read FWATestPhone write SetWATestPhone;
+    procedure UpdateReportPlanner;
   end;
 
 var
@@ -1142,6 +1143,78 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.UpdateReportPlanner;
+begin
+  vtReportPlanner.Filtered := False;
+  qryReportPlanner.First;
+  While not qryReportPlanner.Eof do
+  begin
+    var
+    vTest := False;
+    if not vtReportPlanner.Locate('CHIAVE', qryReportPlannerCHIAVE.Value, []) then
+    begin
+      vtReportPlanner.Append;
+      vtReportPlannerCHIAVE.Value := qryReportPlannerCHIAVE.Value;
+      vTest := True;
+    end
+    else
+    begin
+      vTest := (vtReportPlannerDATA_INTERVENTO.Value <> qryReportPlannerDATA_INTERVENTO.Value) or
+        (vtReportPlannerAPPUNTAMENTO_DATA.Value <> qryReportPlannerAPPUNTAMENTO_DATA.Value) or
+        (vtReportPlannerAPPUNTAMENTO_ORA.Value <> qryReportPlannerAPPUNTAMENTO_ORA.Value) or
+        (vtReportPlannerSTATO.Value <> qryReportPlannerSTATO.Value);
+      if vTest then
+        vtReportPlanner.Edit;
+    end;
+
+    if vTest then
+    begin
+      var
+      vFiliale := qryReportPlannerNOME.Value;
+      // qryReportPlannerFILIALE.AsString;                                            ))))
+      var
+      vSede := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
+
+      vtReportPlannerDESCRIZIONE_SCHEDA.Value := vSede + IfThen((vFiliale = 'SEDE') or (vFiliale = vSede), '',
+        ' ' + vFiliale);
+      vtReportPlannerCLIENTE.Value := qryReportPlannerCLIENTE.Value;
+      vtReportPlannerNOME.Value := qryReportPlannerNOME.Value;
+      vtReportPlannerPROVINCIA.Value := qryReportPlannerPROVINCIA.Value;
+      vtReportPlannerCAP.Value := qryReportPlannerCAP.Value;
+      vtReportPlannerINDIRIZZO.Value := qryReportPlannerINDIRIZZO.Value;
+      vtReportPlannerDATA_INTERVENTO.Value := qryReportPlannerDATA_INTERVENTO.Value;
+      vtReportPlannerTECNICO_INTERVENTO.Value := qryReportPlannerTECNICO_INTERVENTO.Value;
+      vtReportPlannerNOTE_PER_IL_TECNICO.Value := qryReportPlannerNOTE_PER_IL_TECNICO.Value;
+      vtReportPlannerRESPONSABILE.Value := qryReportPlannerRESPONSABILE.Value;
+      vtReportPlannerSTATO_LAVORAZIONE.Value := qryReportPlannerSTATO_LAVORAZIONE.Value;
+      vtReportPlannerPRESA_IN_CARICO.Value := qryReportPlannerPRESA_IN_CARICO.Value;
+      vtReportPlannerFORNITURA.Value := qryReportPlannerFORNITURA.Value;
+      vtReportPlannerORDINARI.Value := qryReportPlannerORDINARI.Value;
+      vtReportPlannerSTRAORDINARI.Value := qryReportPlannerSTRAORDINARI.Value;
+      vtReportPlannerINTERVENTI.Value := qryReportPlannerINTERVENTI.Value;
+      vtReportPlannerNOME_TECNICO.Value := qryReportPlannerNOME_TECNICO.Value;
+      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+        vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value;
+      if not vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+        vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value;
+      vtReportPlannerSTATO.Value := qryReportPlannerSTATO.Value;
+      vtReportPlannerSTATINO.Value := qryReportPlannerSTATINO.Value;
+      vtReportPlannerESTINTORI_ORDINARIO.Value := qryReportPlannerESTINTORI_ORDINARIO.Value;
+      vtReportPlannerESTINTORI_STRAORDINARIO.Value := qryReportPlannerESTINTORI_STRAORDINARIO.Value;
+      vtReportPlannerGRUPPI_ELETTR.Value := qryReportPlannerGRUPPI_ELETTR.Value;
+      vtReportPlannerFUMI.Value := qryReportPlannerFUMI.Value;
+      vtReportPlannerLUCI.Value := qryReportPlannerLUCI.Value;
+      vtReportPlannerIDRANTI.Value := qryReportPlannerIDRANTI.Value;
+      vtReportPlannerSPRINKLER.Value := qryReportPlannerSPRINKLER.Value;
+      vtReportPlannerIMPIANTI_EL.Value := qryReportPlannerIMPIANTI_EL.Value;
+      vtReportPlannerAMMINISTRATORE.Value := qryReportPlannerAMMINISTRATORE.Value;
+      vtReportPlanner.Post;
+    end;
+    qryReportPlanner.Next;
+  end;
+  vtReportPlanner.Filtered := True;
+end;
+
 procedure TdmVCLPhoenixPlannerController.CloneReportPlanner;
 begin
   var
@@ -1640,6 +1713,7 @@ begin
           begin
             CheckFilter;
             vtReportPlanner.Filter := vtReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+            vtReportPlanner.Filter := vtReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
           end;
       end;
 
