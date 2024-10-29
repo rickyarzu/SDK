@@ -19,7 +19,6 @@ type
     class procedure LoadMenu; override;
     class procedure Terminate; override;
     class procedure AfterLogin; override;
-  public
   end;
 
 implementation

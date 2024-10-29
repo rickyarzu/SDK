@@ -17,7 +17,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
     Top = 3
     Width = 828
     Height = 607
-    ActivePage = tabWebBrokder
+    ActivePage = tabDMVCWebBrokder
     Align = alClient
     TabOrder = 0
     object tabWebBrokder: TTabSheet
@@ -38,8 +38,6 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           TabOrder = 0
           OnAfterStartServer = frameTestWebBrokerAfterStartServer
           OnBeforeStartServer = frameTestWebBrokerBeforeStartServer
-          ExplicitLeft = 0
-          ExplicitTop = -4
         end
       end
       object awbTestWebServer: TAdvWebBrowser
@@ -77,7 +75,6 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
           TabOrder = 0
           OnAfterStartServer = frameDMVCWebBrokerAfterStartServer
           OnBeforeStartServer = frameDMVCWebBrokerBeforeStartServer
-          ExplicitTop = -4
         end
         object edPassword: TLabeledEdit
           Left = 688
