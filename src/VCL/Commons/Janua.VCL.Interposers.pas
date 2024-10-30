@@ -1692,7 +1692,6 @@ begin
   Result := Self
 end;
 
-
 { TMemo }
 
 function TMemo.AsComponent: TComponent;
@@ -1779,12 +1778,12 @@ end;
 
 function TMemo.GetJanuaOnEnter: TNotifyEvent;
 begin
-
+  Result := OnEnter
 end;
 
 function TMemo.GetJanuaOnExit: TNotifyEvent;
 begin
-
+  Result := OnExit
 end;
 
 function TMemo.GetJanuaText: string;
@@ -1809,7 +1808,11 @@ end;
 
 procedure TMemo.SetJanuaText(const Value: string);
 begin
-  Self.Lines.Text := Value
+  if Lines.Text <> Value then
+  begin
+    Lines.Text := Value;
+    BindManager.Notify('Text');
+  end;
 end;
 
 { TComboBox }

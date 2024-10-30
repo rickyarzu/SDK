@@ -633,6 +633,7 @@ type
     class function ReadParam(Key, Name: string; Default: Boolean): Boolean; overload;
     class function WriteParam(Key, Name: string; Default: Boolean): Boolean; overload;
     class function WriteParam(Key, Name: string; Default: Double): Double; overload;
+    class function WriteParam(Key, Name: string; Default: TJsonObject): TJsonObject; overload;
     class function ReadParam(Key, Name: string; Default: Double): Double; overload;
     class function WriteDateTimeParam(Key, Name: string; Default: TDateTime): TDateTime; overload;
     class function ReadDateTimeParam(Key, Name: string; Default: TDateTime): TDateTime; overload;
@@ -3740,6 +3741,14 @@ begin
   // WriteLog('WriteParam Key = ' + QuotedStr(Key) + ' and Name = ' + QuotedStr(Name) + ', Value = ' + Default);
 
 end;
+
+class function TJanuaCoreOS.WriteParam(Key, Name: string; Default: TJsonObject): TJsonObject;
+begin
+  if not GetJanuaConfiguration.isLoaded then
+    LoadConfiguration;
+  Result := GetJanuaConfiguration.setValue(Key, Name, Default);
+end;
+
 {$ENDIF MSWINDOWS}
 
 class procedure TJanuaCoreOS.SetupAppConfiguration;

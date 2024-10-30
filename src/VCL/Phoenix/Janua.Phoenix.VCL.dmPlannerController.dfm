@@ -6246,6 +6246,11 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       OnExecute = actSelectAllExecute
     end
   end
+  inherited GCalendarButtons: TActionList
+    inherited actWhatsAppSettings: TAction
+      Caption = 'Imposta'
+    end
+  end
   inherited SVGIconImageList16: TSVGIconImageList
     SVGIconItems = <
       item

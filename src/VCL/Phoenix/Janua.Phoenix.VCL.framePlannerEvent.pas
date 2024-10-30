@@ -87,6 +87,7 @@ type
     btnWhatsApp: TButton;
     ConfermaAppuntmento1: TMenuItem;
     btnSincro: TButton;
+    Button2: TButton;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);

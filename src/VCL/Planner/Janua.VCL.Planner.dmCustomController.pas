@@ -6,6 +6,7 @@ uses
   // RTL
   System.SysUtils, System.Classes, System.Actions, System.Bindings.Helper, System.ImageList, System.UITypes,
   System.DateUtils, System.TypInfo, System.StrUtils, Windows, Winapi.ShellAPI, Spring, System.Math,
+  System.Json,
   // DB
   Data.DB, PostgreSQLUniProvider, UniProvider, InterBaseUniProvider, DBAccess, Uni, MemDS, VirtualTable,
   // VCL
@@ -141,6 +142,7 @@ type
     vtGoogleEventsFOREGROUNDCOLOR: TIntegerField;
     vtGoogleEventsSYNC: TStringField;
     AdvTwilio: TAdvTwilio;
+    actWhatsAppSettings: TAction;
     procedure DataModuleCreate(Sender: TObject);
     procedure ActionAddUserExecute(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -176,6 +178,7 @@ type
     procedure vtGoogleEventsBeforePost(DataSet: TDataSet);
     procedure actEventGoogleSyncExecute(Sender: TObject);
     procedure actCalendarColorExecute(Sender: TObject);
+    procedure actWhatsAppSettingsExecute(Sender: TObject);
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
@@ -352,6 +355,7 @@ type
     FOnAfterConnect: TNotifyEvent;
     FPlannerPDFIO2: TAdvPlannerPDFIO;
     FSelectedItem: TPlannerItem;
+    FWhatsAppSettings: TJanuaWhatsAppConf;
     procedure SetDeleteItemFunc(const Value: TItemFunc);
     procedure SetItemModifyFunc(const Value: TItemFunc);
     procedure SetItemUpdateProc(const Value: TItemProc);
@@ -376,6 +380,7 @@ type
     procedure SetOnAfterConnect(const Value: TNotifyEvent);
     procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
     procedure SetSelectedItem(const Value: TPlannerItem);
+    procedure SetWhatsAppSettings(const Value: TJanuaWhatsAppConf);
   protected
     FGConnected: Boolean;
     Fgcal: TGCalendar;
@@ -492,6 +497,9 @@ type
     /// <summary> Prevents updating Calendar Color while inserting/updating data from DB </summary>
     property UpdatingFromDB: Boolean read FUpdatingFromDB write SetUpdatingFromDB;
     property OnAfterConnect: TNotifyEvent read FOnAfterConnect write SetOnAfterConnect;
+  public
+    procedure SendTestMessage(const aRecipients, aMessage: string);
+    property WhatsAppSettings: TJanuaWhatsAppConf read FWhatsAppSettings write SetWhatsAppSettings;
   end;
 
 var
@@ -500,23 +508,27 @@ var
 implementation
 
 uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
-  Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl,
+  Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl, Janua.Cloud.VCL.dlgWhatsAppTestSetting,
   // Orm to Manage Google Calendars (not Internal Planner so).
-  JOrm.Cloud.GoogleCalendars.Impl, JOrm.Cloud.GoogleCalendarEvents.Impl,
+  JOrm.Cloud.GoogleCalendars.Impl, JOrm.Cloud.GoogleCalendarEvents.Impl, Janua.Core.Json,
   udlgVCLPlannerEvent, Janua.Orm.Types, Janua.Core.Functions;
 
 { udmPgPlannerStorage, udlgVCLPlannerAnagraph, udlgVCLPlannerActivities, }
 
 const
-(******** Janua ********************************************************
-  cKey = 'AC221a150df22723daef8d097a7f76cfcf';
-  cSecret = 'f3c90112efdccd931b81dea46f74f1da';
-  cAppName = '+393513535778' { '+15302036772' };
- ***********************************************************************)
+  (* ******* Janua ********************************************************
+    cKey = 'AC221a150df22723daef8d097a7f76cfcf';
+    cSecret = 'f3c90112efdccd931b81dea46f74f1da';
+    cAppName = '+393513535778' { '+15302036772' };
+    ********************************************************************** *)
   cKey = 'AC78d40d3938a560d9b6340ff1570c12b9';
   cSecret = 'd2e66d3ac1b51b722675019edc086a19';
   cAppName = '+393440682001' { '+15302036772' };
   cMessageType = jmtWhatsApp;
+  cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
+    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
+    + sl + 'Cordiali Saluti' + sl + sl +
+    'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -524,8 +536,30 @@ const
 procedure TdmVCLPlannerCustomController.DataModuleCreate(Sender: TObject);
 var
   I: Integer;
+  lObject: TJsonObject;
 begin
   FUpdatingFromDB := False;
+
+  FWhatsAppSettings := TJanuaWhatsAppConf.Create(cKey, cSecret, cAppName, cMessage);
+
+  var
+  vTest := FWhatsAppSettings.GetAsJson;
+
+  // lObject := TJsonObject(TJanuaJson.SerializeJsonObject<TJanuaWhatsAppConf>(FWhatsAppSettings));
+
+  vTest := TJanuaCoreOS.ReadParam('whatsapp', 'settings', vTest);
+
+  FWhatsAppSettings.SetAsJson(vTest);
+
+  if FWhatsAppSettings.Key = '' then
+  begin
+    FWhatsAppSettings.Free;
+    FWhatsAppSettings := TJanuaWhatsAppConf.Create(cKey, cSecret, cAppName, cMessage);
+    // vTest := TJanuaJson.SerializeSimple<TJanuaWhatsAppConf>(FWhatsAppSettings);
+    vTest := FWhatsAppSettings.GetAsJson;
+    // TJanuaCoreOS.WriteParam('whatsapp', 'message', vTest);
+    TJanuaCoreOS.WriteParam('whatsapp', 'settings', vTest);
+  end;
 
   DBDaySourceCalendar.Active := False;
   DBDaySourceCalendar.Day := Date;
@@ -597,6 +631,8 @@ end;
 
 procedure TdmVCLPlannerCustomController.DataModuleDestroy(Sender: TObject);
 begin
+  FWhatsAppSettings.Free;
+  FWhatsAppSettings := nil;
   FGoogleCalendarList.Free;
   FGoogleCalendarList := nil;
   FCalendarsSelList.Free;
@@ -846,6 +882,22 @@ begin
   FillGoogleCalendarItems;
 end;
 
+procedure TdmVCLPlannerCustomController.actWhatsAppSettingsExecute(Sender: TObject);
+var
+  dlg: TdlgVCLCloudWhatsAppTestSetting;
+begin
+  dlg := TdlgVCLCloudWhatsAppTestSetting.Create(self);
+  try
+    dlg.ONSendMsgClick := SendTestMessage;
+    dlg.WhatsAppSettings := FWhatsAppSettings;
+    dlg.ShowModal;
+    if dlg.ModalResult = mrOK then
+      TJanuaCoreOS.WriteParam('whatsapp', 'message', FWhatsAppSettings.GetAsJson);
+  finally
+    dlg.Free;
+  end;
+end;
+
 procedure TdmVCLPlannerCustomController.ActionAddActivityExecute(Sender: TObject);
 begin
   AddActivity;
@@ -1003,7 +1055,7 @@ begin
   LdlgPlannerEvent := TdlgVCLPlannerEvent.Create(nil);
   try
     LdlgPlannerEvent.Event := PlannerEvent;
-    Result := LdlgPlannerEvent.ShowModal = mrOk;
+    Result := LdlgPlannerEvent.ShowModal = mrOK;
   finally
     LdlgPlannerEvent.Free;
     LdlgPlannerEvent := nil;
@@ -1477,11 +1529,12 @@ end;
 function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string;
 aRecipient: string): Boolean;
 begin
-  AdvTwilio.App.Key := cKey;
+  AdvTwilio.App.Key := FWhatsAppSettings.Key;
   // 'AC221a150df22723daef8d097a7f76cfcf';
-  AdvTwilio.App.Secret := cSecret;
+  AdvTwilio.App.Secret := FWhatsAppSettings.Secret;
   // 'f3c90112efdccd931b81dea46f74f1da';
-  AdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + cAppName; // +39 351 353 5778
+  AdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + FWhatsAppSettings.AppName;
+  // +39 351 353 5778
   // '+15302036772';
   var
   lSMS := aMessage;
@@ -1497,6 +1550,11 @@ begin
     ShowMessage('Messaggio inviato correttamente')
   else
     raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
+end;
+
+procedure TdmVCLPlannerCustomController.SendTestMessage(const aRecipients, aMessage: string);
+begin
+  SendMSSWhatsAppMessage(aMessage, aRecipients);
 end;
 
 procedure TdmVCLPlannerCustomController.SetAdvGCalendar1(const Value: TAdvGCalendar);
@@ -1976,6 +2034,11 @@ begin
     end;
   }
   ToggleReminders;
+end;
+
+procedure TdmVCLPlannerCustomController.SetWhatsAppSettings(const Value: TJanuaWhatsAppConf);
+begin
+  FWhatsAppSettings := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.ToggleControls;

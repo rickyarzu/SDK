@@ -608,6 +608,7 @@ type
     property WATest: Boolean read FWATest write SetWATest;
     property WATestPhone: string read FWATestPhone write SetWATestPhone;
     procedure UpdateReportPlanner;
+
   end;
 
 var

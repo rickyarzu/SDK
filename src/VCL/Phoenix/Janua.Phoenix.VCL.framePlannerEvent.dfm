@@ -963,6 +963,16 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     TabOrder = 17
     OnClick = btnSincroClick
   end
+  object Button2: TButton
+    Left = 768
+    Top = 3
+    Width = 75
+    Height = 25
+    Action = dmVCLPhoenixPlannerController.actWhatsAppSettings
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 18
+  end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
     Left = 88

@@ -2,14 +2,17 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
   Left = 0
   Top = 0
   Caption = 'Impostazioni e Test WhatsApp Message'
-  ClientHeight = 269
-  ClientWidth = 770
+  ClientHeight = 344
+  ClientWidth = 932
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  DesignSize = (
+    932
+    344)
   TextHeight = 15
   object lbKey: TLabel
     Left = 32
@@ -39,37 +42,122 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Height = 15
     Caption = 'Messaggio approvato di Default'
   end
-  object Edit1: TEdit
+  object edKey: TEdit
     Left = 192
     Top = 29
     Width = 241
     Height = 23
     TabOrder = 0
-    Text = 'Edit1'
   end
-  object Edit2: TEdit
+  object edToken: TEdit
     Left = 192
     Top = 69
     Width = 241
     Height = 23
     TabOrder = 1
-    Text = 'Edit1'
   end
-  object Edit3: TEdit
+  object edPhone: TEdit
     Left = 192
     Top = 112
     Width = 241
     Height = 23
     TabOrder = 2
-    Text = 'Edit1'
   end
   object edWAMesage: TMemo
     Left = 439
     Top = 29
-    Width = 323
-    Height = 106
+    Width = 476
+    Height = 178
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Lines.Strings = (
       'edWAMesage')
     TabOrder = 3
+    ExplicitWidth = 323
+    ExplicitHeight = 106
+  end
+  object btnOK: TButton
+    Left = 818
+    Top = 311
+    Width = 97
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Salva'
+    ModalResult = 1
+    TabOrder = 4
+    ExplicitLeft = 665
+    ExplicitTop = 239
+  end
+  object btnUndo: TButton
+    Left = 706
+    Top = 311
+    Width = 97
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Annulla'
+    ModalResult = 2
+    TabOrder = 5
+    ExplicitLeft = 553
+    ExplicitTop = 239
+  end
+  object btnSendTest: TButton
+    Left = 592
+    Top = 311
+    Width = 97
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Invia Test'
+    TabOrder = 6
+    OnClick = btnSendTestClick
+    ExplicitLeft = 439
+    ExplicitTop = 239
+  end
+  object grpTestMessage: TGroupBox
+    Left = 32
+    Top = 213
+    Width = 883
+    Height = 84
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Test Messaggio'
+    TabOrder = 7
+    ExplicitTop = 141
+    ExplicitWidth = 730
+    object Label2: TLabel
+      Left = 176
+      Top = 31
+      Width = 144
+      Height = 15
+      Caption = 'Twilio WhatsApp Key (User)'
+    end
+    object edRecipient: TLabeledEdit
+      Left = 32
+      Top = 48
+      Width = 121
+      Height = 23
+      EditLabel.Width = 105
+      EditLabel.Height = 15
+      EditLabel.Caption = 'Telefono Test (Dest.)'
+      TabOrder = 0
+      Text = '+393409111351'
+    end
+    object edDate: TDateTimePicker
+      Left = 176
+      Top = 48
+      Width = 144
+      Height = 23
+      Date = 45595.000000000000000000
+      Time = 0.728173495372175200
+      TabOrder = 1
+    end
+    object edAddress: TLabeledEdit
+      Left = 336
+      Top = 48
+      Width = 377
+      Height = 23
+      EditLabel.Width = 67
+      EditLabel.Height = 15
+      EditLabel.Caption = 'Indirizzo Test'
+      TabOrder = 2
+      Text = 'Via Ernesto Cabruna 43, 16166, Genova'
+    end
   end
 end
