@@ -11,10 +11,8 @@ object dlgVCLSelectServer: TdlgVCLSelectServer
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Shader1: TPanel
     Left = 0
@@ -224,7 +222,7 @@ object dlgVCLSelectServer: TdlgVCLSelectServer
       ReturnIsTab = False
       ShadowColor = clSilver
       URLColor = clBlack
-      Version = '1.6.1.0'
+      Version = '1.8.4.0'
     end
   end
 end

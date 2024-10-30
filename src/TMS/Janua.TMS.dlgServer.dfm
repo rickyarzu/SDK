@@ -4,28 +4,32 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
   ClientHeight = 339
   ClientWidth = 582
   Color = clWhite
-  ParentFont = False
   Position = poScreenCenter
-  ExplicitWidth = 588
-  ExplicitHeight = 368
-  PixelsPerInch = 96
-  TextHeight = 13
+  ExplicitWidth = 598
+  ExplicitHeight = 378
+  TextHeight = 17
+  inherited StatusBar: TStatusBar
+    Top = 320
+    Width = 582
+    ExplicitTop = 320
+    ExplicitWidth = 582
+  end
   object Shader1: TPanel
     Left = 0
     Top = 0
     Width = 582
-    Height = 339
+    Height = 320
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
     DesignSize = (
       582
-      339)
+      320)
     object Label1: TLabel
       Left = 24
       Top = 28
-      Width = 140
-      Height = 13
+      Width = 172
+      Height = 17
       Caption = 'Server Address (DNS or TNS)'
     end
     object lbIP: TLabel
@@ -73,43 +77,43 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
     object Label2: TLabel
       Left = 24
       Top = 84
-      Width = 134
-      Height = 13
+      Width = 162
+      Height = 17
       Caption = 'Database or Instance Name'
     end
     object Label4: TLabel
       Left = 424
       Top = 84
-      Width = 59
-      Height = 13
+      Width = 68
+      Height = 17
       Caption = 'Server Port:'
     end
     object Label5: TLabel
       Left = 24
       Top = 164
-      Width = 48
-      Height = 13
+      Width = 59
+      Height = 17
       Caption = 'Username'
     end
     object Label6: TLabel
       Left = 24
       Top = 204
-      Width = 46
-      Height = 13
+      Width = 56
+      Height = 17
       Caption = 'Password'
     end
     object Label7: TLabel
       Left = 24
       Top = 124
-      Width = 122
-      Height = 13
+      Width = 150
+      Height = 17
       Caption = 'Schema Name for Testing'
     end
     object Label8: TLabel
       Left = 26
       Top = 243
-      Width = 84
-      Height = 13
+      Width = 102
+      Height = 17
       Caption = 'Database Engine '
     end
     object edServerAddress: TEdit
@@ -119,7 +123,6 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       Height = 21
       TabOrder = 0
       TextHint = 'Type Here the server Name'
-      OnChange = edServerAddressChange
       OnExit = edServerAddressExit
     end
     object edDatabase: TEdit
@@ -166,6 +169,7 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       NotesFont.Name = 'Tahoma'
       NotesFont.Style = []
       ParentFont = False
+      Rounded = True
       TabOrder = 4
       OnClick = AdvGlowButton1Click
       Appearance.BorderColor = 13815240
@@ -173,6 +177,7 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       Appearance.BorderColorDown = 3181250
       Appearance.BorderColorChecked = 3181250
       Appearance.BorderColorDisabled = 11316396
+      Appearance.Color = clWhite
       Appearance.ColorTo = 15590880
       Appearance.ColorChecked = 14285309
       Appearance.ColorCheckedTo = 7131391
@@ -217,12 +222,14 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       NotesFont.Name = 'Tahoma'
       NotesFont.Style = []
       ParentFont = False
+      Rounded = True
       TabOrder = 5
       Appearance.BorderColor = 13815240
       Appearance.BorderColorHot = 5819121
       Appearance.BorderColorDown = 3181250
       Appearance.BorderColorChecked = 3181250
       Appearance.BorderColorDisabled = 11316396
+      Appearance.Color = clWhite
       Appearance.ColorTo = 15590880
       Appearance.ColorChecked = 14285309
       Appearance.ColorCheckedTo = 7131391
@@ -267,12 +274,14 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       NotesFont.Name = 'Tahoma'
       NotesFont.Style = []
       ParentFont = False
+      Rounded = True
       TabOrder = 6
       Appearance.BorderColor = 13815240
       Appearance.BorderColorHot = 5819121
       Appearance.BorderColorDown = 3181250
       Appearance.BorderColorChecked = 3181250
       Appearance.BorderColorDisabled = 11316396
+      Appearance.Color = clWhite
       Appearance.ColorTo = 15590880
       Appearance.ColorChecked = 14285309
       Appearance.ColorCheckedTo = 7131391
@@ -317,13 +326,13 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       Alignment = taLeftJustify
       Caption = 'Direct DB Mode'
       ReturnIsTab = False
-      Version = '1.6.1.0'
+      Version = '1.8.4.0'
     end
     object cboDBEngine: TComboBox
       Left = 184
       Top = 240
       Width = 262
-      Height = 21
+      Height = 25
       TabOrder = 9
       Text = 'cboDBEngine'
     end
@@ -331,7 +340,8 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       Left = 497
       Top = 81
       Width = 64
-      Height = 21
+      Height = 25
+      Color = clWindow
       Value = 0
       DateValue = 44027.588534930550000000
       HexDigits = 0
@@ -345,7 +355,7 @@ inherited dlgTMSSelectServer: TdlgTMSSelectServer
       LabelFont.Style = []
       TabOrder = 10
       Visible = True
-      Version = '1.9.0.1'
+      Version = '2.0.2.6'
     end
   end
 end

@@ -177,6 +177,9 @@ type
     property DBFunctions: IJanuaDatasetFunctions read GetDBFunctions write SetDBFunctions;
   end;
 
+var
+  DBConnection: IJanuaDBConnection;
+
 implementation
 
 initialization
