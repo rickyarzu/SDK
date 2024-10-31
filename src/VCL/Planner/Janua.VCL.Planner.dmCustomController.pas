@@ -436,6 +436,7 @@ type
     procedure PlannerItemCreated(Sender: TObject; Item: TPlannerItem);
     /// <summary> Creates a Googgle Event from a Calendar Items and stores it to  </summary>
     function CreateGoogleEvent(const aCalendarItem: ITimetable): IGoogleCalendar;
+    procedure SendCustomTwilioMessage(aTo: string; aMessageID: string; aParams: TJanuaArray<string>);
   public
     property SelectedItem: TPlannerItem read FSelectedItem write SetSelectedItem;
     property PlannerPDFIO: TAdvPlannerPDFIO read FPlannerPDFIO write SetPlannerPDFIO;
@@ -507,7 +508,7 @@ var
 
 implementation
 
-uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList,
+uses Janua.Application.Framework, Janua.ViewModels.Application, udmSVGImageList, Janua.Cloud.TwilioClient,
   Janua.VCL.Functions, Janua.Core.AsyncTask, Janua.Orm.Impl, Janua.Cloud.VCL.dlgWhatsAppTestSetting,
   // Orm to Manage Google Calendars (not Internal Planner so).
   JOrm.Cloud.GoogleCalendars.Impl, JOrm.Cloud.GoogleCalendarEvents.Impl, Janua.Core.Json,
@@ -1048,6 +1049,59 @@ begin
 
 end;
 
+procedure TdmVCLPlannerCustomController.SendCustomTwilioMessage(aTo: string; aMessageID: string;
+  aParams: TJanuaArray<string>);
+var
+  lTClient: TTwilioClient;
+  allParams: TStringList;
+  response: TTwilioClientResponse;
+  Json: TJSONValue;
+begin
+  // Create environment variables (named below) with your Twilio credentials
+  lTClient := TTwilioClient.Create(FWhatsAppSettings.Key, FWhatsAppSettings.Secret);
+  try
+
+    // Your Twilio phone number
+    var
+    fromPhoneNumber := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + FWhatsAppSettings.AppName;
+
+    // Your destination number (for trials, this needs to be your mobile #)
+    var
+    toPhoneNumber := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + aTo;
+
+    var
+    contentSID := IfThen(aMessageID <> '', aMessageID, FWhatsAppSettings.Key);
+
+    // Send a text message
+    // Writeln('----- SMS -----');
+
+    allParams := TStringList.Create;
+    allParams.Add('From=' + fromPhoneNumber);
+    allParams.Add('To=' + toPhoneNumber);
+    // allParams.Add('Body=Never gonna give you up, Delphi');
+    // --data-urlencode "ContentSid=HXXXXXXXXXXXXXXX" \
+    allParams.Add('ContentSid=' + toPhoneNumber);
+    // --data-urlencode "ContentVariables=$CONTENT_VARIABLES_OBJ" \
+    allParams.Add('ContentVariables=' + toPhoneNumber);
+
+    // POST to the Messages resource
+    response := lTClient.Post('Messages', allParams);
+
+    if response.Success then
+      Writeln('Message SID: ' + response.ResponseData.GetValue<string>('sid'))
+    else if response.ResponseData <> nil then
+      Writeln(response.ResponseData.ToString)
+    else
+      Writeln('HTTP status: ' + response.HTTPResponse.StatusCode.ToString);
+  finally
+    lTClient.Free;
+  end;
+
+  // Writeln('Press ENTER to exit.');
+  // Readln;
+
+end;
+
 function TdmVCLPlannerCustomController.DialogEvent: Boolean;
 var
   LdlgPlannerEvent: TdlgVCLPlannerEvent;
@@ -1526,8 +1580,8 @@ begin
 
 end;
 
-function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string;
-aRecipient: string): Boolean;
+function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string)
+  : Boolean;
 begin
   AdvTwilio.App.Key := FWhatsAppSettings.Key;
   // 'AC221a150df22723daef8d097a7f76cfcf';

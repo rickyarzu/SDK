@@ -7,7 +7,8 @@ uses
   System.SysUtils, System.Classes, System.ImageList, System.Actions, System.StrUtils, System.UITypes,
   System.DateUtils, System.Math, System.Diagnostics, System.TimeSpan, System.Generics.Collections,
   // UniDac - DB
-  Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider, MemDS, VirtualTable,
+  PostgreSQLUniProvider, Data.DB, DBAccess, Uni, Janua.Unidac.Connection, UniProvider, InterBaseUniProvider,
+  MemDS, VirtualTable,
   // VCL / TMS
   SVGIconImageListBase, SVGIconImageList, VCL.Dialogs, VCL.ActnList, VCL.ImgList, VCL.Controls,
   PictureContainer, VCL.Graphics, JvImageList, VCL.Forms,
@@ -18,9 +19,9 @@ uses
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
-  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, PostgreSQLUniProvider,
+  Janua.VCL.Planner.dmCustomController, Janua.Phoenix.dmIBModel, Janua.Core.Types, Janua.Cloud.Types,
   Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.Commons, Janua.Core.Classes,
-  Janua.Cloud.Types, CloudSMS;
+  CloudSMS;
 
 type
   TRecordFilter = record
@@ -737,17 +738,23 @@ procedure TdmVCLPhoenixPlannerController.actGridConfirmEventExecute(Sender: TObj
 begin
   inherited;
   var
-  sGUID := StringReplace(PlannerEvent.JGUID, '{', '', []);
-  sGUID := StringReplace(sGUID, '}', '', []);
-  ConfirmGoogleEventDLL(sGUID);
-  if qryPersonalPlannerEvents.Locate('JGUID', PlannerEvent.JGUID, []) then
+  vID := PlannerDlg.PopupPlannerItem.ID;
+  if not qryPersonalPlannerEvents.Locate('CHIAVE', vID, []) then
+    JShowError('Nessun Evento Selezionato')
+  else
   begin
+    var
+    vColor := qryTecniciCalendarDEFAULTCOLOR.AsInteger;
+    var
+    sGUID := StringReplace(qryPersonalPlannerEventsJGUID.AsString, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
+    ConfirmGoogleEventDLL(sGUID);
     qryPersonalPlannerEvents.Edit;
-    qryPersonalPlannerEventsCOLORE.AsInteger := lkpTecniciGBACKCOLOR.AsInteger;
+    qryPersonalPlannerEventsCOLORE.AsInteger := vColor; // lkpTecniciGBACKCOLOR.AsInteger;
     qryPersonalPlannerEvents.Post;
+    qryPersonalPlannerEvents.Close;
+    qryPersonalPlannerEvents.Open;
   end;
-  qryPersonalPlannerEvents.Close;
-  qryPersonalPlannerEvents.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
@@ -799,12 +806,16 @@ begin
 end;
 
 procedure TdmVCLPhoenixPlannerController.actWASendMessageExecute(Sender: TObject);
+var
+  lParams: TJanuaArray<string>;
 begin
   var
   sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
   sGUID := StringReplace(sGUID, '}', '', []);
+
   var
-  lMessage := qryElencoEventiWhatsAppcalcMessage.AsString;
+  lMessage := '';
+  // qryElencoEventiWhatsAppcalcMessage.AsString;
   var
   lPhone := IfThen(FWATest, FWATestPhone, Trim(qryElencoEventiWhatsAppWANUMBER.AsString));
 
@@ -1147,9 +1158,14 @@ end;
 procedure TdmVCLPhoenixPlannerController.UpdateReportPlanner;
 begin
   vtReportPlanner.Filtered := False;
+  qryReportPlanner.Close;
+  qryReportPlanner.Open;
+  qryReportPlanner.Last;
   qryReportPlanner.First;
+
   While not qryReportPlanner.Eof do
   begin
+
     var
     vTest := False;
     if not vtReportPlanner.Locate('CHIAVE', qryReportPlannerCHIAVE.Value, []) then
@@ -1163,7 +1179,9 @@ begin
       vTest := (vtReportPlannerDATA_INTERVENTO.Value <> qryReportPlannerDATA_INTERVENTO.Value) or
         (vtReportPlannerAPPUNTAMENTO_DATA.Value <> qryReportPlannerAPPUNTAMENTO_DATA.Value) or
         (vtReportPlannerAPPUNTAMENTO_ORA.Value <> qryReportPlannerAPPUNTAMENTO_ORA.Value) or
-        (vtReportPlannerSTATO.Value <> qryReportPlannerSTATO.Value);
+        (vtReportPlannerSTATO.Value <> qryReportPlannerSTATO.Value) or
+        (vtReportPlannerAPPUNTAMENTO_DATA.IsNull <> qryReportPlannerAPPUNTAMENTO_DATA.IsNull) or
+        (vtReportPlannerAPPUNTAMENTO_ORA.IsNull <> qryReportPlannerAPPUNTAMENTO_ORA.IsNull);
       if vTest then
         vtReportPlanner.Edit;
     end;
@@ -1194,10 +1212,17 @@ begin
       vtReportPlannerSTRAORDINARI.Value := qryReportPlannerSTRAORDINARI.Value;
       vtReportPlannerINTERVENTI.Value := qryReportPlannerINTERVENTI.Value;
       vtReportPlannerNOME_TECNICO.Value := qryReportPlannerNOME_TECNICO.Value;
+
       if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-        vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value;
+        vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value
+      else
+        vtReportPlannerAPPUNTAMENTO_DATA.Clear;
+
       if not vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
-        vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value;
+        vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value
+      else
+        vtReportPlannerAPPUNTAMENTO_ORA.Clear;
+
       vtReportPlannerSTATO.Value := qryReportPlannerSTATO.Value;
       vtReportPlannerSTATINO.Value := qryReportPlannerSTATINO.Value;
       vtReportPlannerESTINTORI_ORDINARIO.Value := qryReportPlannerESTINTORI_ORDINARIO.Value;
@@ -2289,14 +2314,16 @@ begin
     try
       vtReportPlanner.Filtered := False;
 
-      if vtReportPlanner.Locate('CHIAVE', qryPersonalPlannerEventsSTATINO.AsInteger, []) and
-        (vtReportPlannerSTATO.AsInteger in [1, 6]) then
+      if vtReportPlanner.Locate('CHIAVE', qryPersonalPlannerEventsSTATINO.AsInteger, []) then
       begin
         vtReportPlanner.Edit;
-        vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
+        if (vtReportPlannerSTATO.AsInteger in [1, 6]) then
+        begin
+          vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
+          vtReportPlanner.FieldByName('calcReportID').Clear;
+        end;
         vtReportPlannerAPPUNTAMENTO_DATA.Clear;
         vtReportPlannerAPPUNTAMENTO_ORA.Clear;
-        vtReportPlanner.FieldByName('calcReportID').Clear;
         vtReportPlanner.Post;
       end;
     finally
@@ -2815,73 +2842,85 @@ const
   blue = 3;
   white = 4;
 begin
-  if vtReportPlanner.FieldByName('calcReportID').IsNull or
-    (vtReportPlanner.FieldByName('calcReportID').AsInteger <> vtReportPlanner.FieldByName('CHIAVE').AsInteger)
-  then
-    with DataSet do
-      try
-        var
-        Image := white;
+  try
+    if vtReportPlanner.FieldByName('calcReportID').IsNull or
+      (vtReportPlanner.FieldByName('calcReportID').AsInteger <> vtReportPlanner.FieldByName('CHIAVE')
+      .AsInteger) then
+      with DataSet do
+        try
+          var
+          Image := white;
 
-        var
-        sStato := 'Generato';
+          var
+          sStato := 'Generato';
 
-        var
-        aStato := FieldByName('STATO').AsInteger;
+          var
+          aStato := FieldByName('STATO').AsInteger;
 
-        case aStato of
-          - 1:
-            begin
-              Image := red;
-              sStato := 'Ritardo';
-            end;
-          0:
-            begin
-              Image := white;
-              sStato := 'Generato';
-            end;
-          1:
-            begin
-              Image := blue;
-              sStato := 'Programmato';
-            end;
-          4:
-            begin
-              Image := orange;
-              sStato := 'In Lavorazione';
-            end;
-          5:
-            begin
-              Image := green;
-              sStato := 'Pronti';
-            end;
-          6:
-            begin
-              Image := blue;
-              sStato := 'Rest. Program.';
-            end;
+          case aStato of
+            - 1:
+              begin
+                Image := red;
+                sStato := 'Ritardo';
+              end;
+            0:
+              begin
+                Image := white;
+                sStato := 'Generato';
+              end;
+            1:
+              begin
+                Image := blue;
+                sStato := 'Programmato';
+              end;
+            4:
+              begin
+                Image := orange;
+                sStato := 'In Lavorazione';
+              end;
+            5:
+              begin
+                Image := green;
+                sStato := 'Pronti';
+              end;
+            6:
+              begin
+                Image := blue;
+                sStato := 'Rest. Program.';
+              end;
+          end;
+
+          FieldByName('calcStato').AsString := sStato;
+
+          if not(FieldByName('APPUNTAMENTO_DATA').IsNull or
+            (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0)) and
+            (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
+          begin
+            Image := red;
+            sStato := 'Ritardo';
+          end;
+
+          LoadImageFromImageList(Image);
+        finally
+          FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
         end;
 
-        FieldByName('calcStato').AsString := sStato;
+    if vtReportPlannerAPPUNTAMENTO_DATA.IsNull or vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+    begin
+      vtReportPlannercalcAppuntamentoDataOra.Clear;
+    end
+    else
+      vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+        SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime, vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
 
-        if not(FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0))
-          and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
-        begin
-          Image := red;
-          sStato := 'Ritardo';
-        end;
-
-        LoadImageFromImageList(Image);
-      finally
-        FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
-      end;
-
-  if not vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
-    vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
-      SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime, vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
-
-  vtReportPlannercalcIndirizzo.AsString := vtReportPlannerINDIRIZZO.AsString + ', ' +
-    vtReportPlannerCAP.AsString + vtReportPlannerCOMUNE.AsString;
+    vtReportPlannercalcIndirizzo.AsString := vtReportPlannerINDIRIZZO.AsString + ', ' +
+      vtReportPlannerCAP.AsString + vtReportPlannerCOMUNE.AsString;
+  except
+    on e: exception do
+    begin
+      Raise exception.Create('vtReportPlanner.Post: ' + e.Message);
+    end;
+  end;
 end;
 
 end.

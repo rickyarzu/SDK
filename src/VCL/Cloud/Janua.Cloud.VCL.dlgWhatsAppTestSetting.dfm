@@ -2,8 +2,8 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
   Left = 0
   Top = 0
   Caption = 'Impostazioni e Test WhatsApp Message'
-  ClientHeight = 344
-  ClientWidth = 932
+  ClientHeight = 359
+  ClientWidth = 1037
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,8 +11,8 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
   Font.Name = 'Segoe UI'
   Font.Style = []
   DesignSize = (
-    932
-    344)
+    1037
+    359)
   TextHeight = 15
   object lbKey: TLabel
     Left = 32
@@ -42,6 +42,20 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Height = 15
     Caption = 'Messaggio approvato di Default'
   end
+  object lbTestMessageID: TLabel
+    Left = 32
+    Top = 152
+    Width = 134
+    Height = 15
+    Caption = 'Test Message Template ID'
+  end
+  object lbMessageTemplateID: TLabel
+    Left = 32
+    Top = 192
+    Width = 152
+    Height = 15
+    Caption = 'Default Message Template ID'
+  end
   object edKey: TEdit
     Left = 192
     Top = 29
@@ -66,61 +80,61 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
   object edWAMesage: TMemo
     Left = 439
     Top = 29
-    Width = 476
-    Height = 178
+    Width = 581
+    Height = 193
     Anchors = [akLeft, akTop, akRight, akBottom]
     Lines.Strings = (
       'edWAMesage')
     TabOrder = 3
-    ExplicitWidth = 323
-    ExplicitHeight = 106
+    ExplicitWidth = 476
+    ExplicitHeight = 178
   end
   object btnOK: TButton
-    Left = 818
-    Top = 311
+    Left = 923
+    Top = 326
     Width = 97
     Height = 25
     Anchors = [akRight, akBottom]
     Caption = 'Salva'
     ModalResult = 1
     TabOrder = 4
-    ExplicitLeft = 665
-    ExplicitTop = 239
+    ExplicitLeft = 818
+    ExplicitTop = 311
   end
   object btnUndo: TButton
-    Left = 706
-    Top = 311
+    Left = 811
+    Top = 326
     Width = 97
     Height = 25
     Anchors = [akRight, akBottom]
     Caption = 'Annulla'
     ModalResult = 2
     TabOrder = 5
-    ExplicitLeft = 553
-    ExplicitTop = 239
+    ExplicitLeft = 706
+    ExplicitTop = 311
   end
   object btnSendTest: TButton
-    Left = 592
-    Top = 311
+    Left = 697
+    Top = 326
     Width = 97
     Height = 25
     Anchors = [akRight, akBottom]
-    Caption = 'Invia Test'
+    Caption = 'Invia Test TMS'
     TabOrder = 6
     OnClick = btnSendTestClick
-    ExplicitLeft = 439
-    ExplicitTop = 239
+    ExplicitLeft = 592
+    ExplicitTop = 311
   end
   object grpTestMessage: TGroupBox
     Left = 32
-    Top = 213
-    Width = 883
+    Top = 228
+    Width = 988
     Height = 84
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Test Messaggio'
     TabOrder = 7
-    ExplicitTop = 141
-    ExplicitWidth = 730
+    ExplicitTop = 213
+    ExplicitWidth = 883
     object Label2: TLabel
       Left = 176
       Top = 31
@@ -159,5 +173,39 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
       TabOrder = 2
       Text = 'Via Ernesto Cabruna 43, 16166, Genova'
     end
+  end
+  object edTestMessageID: TEdit
+    Left = 192
+    Top = 152
+    Width = 241
+    Height = 23
+    TabOrder = 8
+  end
+  object Edit2: TEdit
+    Left = 192
+    Top = 192
+    Width = 241
+    Height = 23
+    TabOrder = 9
+  end
+  object btnTestCustom: TButton
+    Left = 585
+    Top = 326
+    Width = 97
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Invia Test Custom'
+    TabOrder = 10
+    OnClick = btnSendTestClick
+  end
+  object btnTestDefault: TButton
+    Left = 464
+    Top = 326
+    Width = 106
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Invia Test Default'
+    TabOrder = 11
+    OnClick = btnSendTestClick
   end
 end

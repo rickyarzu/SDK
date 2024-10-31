@@ -91,16 +91,22 @@ type
   TJanuaWhatsAppConf = class(TJanuaBindableClass)
   private
     FConf: TSMSSenderRecordConf;
+    FDefaultMessageID: string;
+    FTestMessageID: string;
     procedure SetAppName(const Value: string);
     procedure SetDefaultMessage(const Value: string);
     procedure SetKey(const Value: string);
     procedure SetSecret(const Value: string);
+    procedure SetDefaultMessageID(const Value: string);
+    procedure SetTestMessageID(const Value: string);
   public
     /// <summary> Body of the page should be a part of the text or just a full html page </summary>
     property DefaultMessage: string read FConf.DefaultMessage write SetDefaultMessage;
     property Key: string read FConf.Key write SetKey;
     property Secret: string read FConf.Secret write SetSecret;
     property AppName: string read FConf.AppName write SetAppName;
+    property    DefaultMessageID: string read FDefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string read FTestMessageID write SetTestMessageID;
   public
     procedure Assign(const Value: TJanuaWhatsAppConf);
     procedure Clear;
@@ -623,6 +629,11 @@ begin
   FConf.DefaultMessage := Value;
 end;
 
+procedure TJanuaWhatsAppConf.SetDefaultMessageID(const Value: string);
+begin
+  FConf.DefaultMessageID := Value;
+end;
+
 procedure TJanuaWhatsAppConf.SetKey(const Value: string);
 begin
   FConf.Key := Value;
@@ -631,6 +642,11 @@ end;
 procedure TJanuaWhatsAppConf.SetSecret(const Value: string);
 begin
   FConf.Secret := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetTestMessageID(const Value: string);
+begin
+  FConf.TestMessageID := Value;
 end;
 
 end.

@@ -200,6 +200,8 @@ type
     Secret: string;
     AppName: string;
     DefaultMessage: string;
+    DefaultMessageID: string;
+    TestMessageID: string;
   public
     procedure Clear;
     function GetAsJson: String;

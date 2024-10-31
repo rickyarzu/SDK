@@ -45,7 +45,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     TabOrder = 0
     OnCloseUp = ChangeFilter
   end
-  object DBCtrlGrid1: TDBCtrlGrid
+  object grdReportList: TDBCtrlGrid
     Left = 8
     Top = 107
     Width = 441
@@ -311,7 +311,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 84
+            Width = 135
             Height = 16
             Align = alLeft
             DataField = 'calcAppuntamentoDataOra'
@@ -320,9 +320,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           end
           object DBText9: TDBText
             AlignWithMargins = True
-            Left = 93
+            Left = 144
             Top = 3
-            Width = 249
+            Width = 198
             Height = 16
             Align = alClient
             DataField = 'NOME_TECNICO'
@@ -951,7 +951,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     TabOrder = 16
   end
   object btnSincro: TButton
-    Left = 768
+    Left = 759
     Top = 27
     Width = 75
     Height = 25
@@ -964,7 +964,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = btnSincroClick
   end
   object Button2: TButton
-    Left = 768
+    Left = 759
     Top = 3
     Width = 75
     Height = 25

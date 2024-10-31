@@ -28,6 +28,12 @@ type
     edDate: TDateTimePicker;
     Label2: TLabel;
     edAddress: TLabeledEdit;
+    lbTestMessageID: TLabel;
+    edTestMessageID: TEdit;
+    lbMessageTemplateID: TLabel;
+    Edit2: TEdit;
+    btnTestCustom: TButton;
+    btnTestDefault: TButton;
     procedure btnSendTestClick(Sender: TObject);
   private
     FONSendMsgClick: TSendMessageTestEvent;
@@ -79,6 +85,8 @@ begin
     FWhatsAppSettings.Bind('AppName', edPhone, 'Text', False);
     edWAMesage.Text := FWhatsAppSettings.DefaultMessage;
     FWhatsAppSettings.Bind('DefaultMessage', edWAMesage, 'Text', False);
+    edTestMessageID.Text := FWhatsAppSettings.TestMessageID;
+    FWhatsAppSettings.Bind('TestMessageID', edTestMessageID, 'Text', False);
   end;
 
 end;
