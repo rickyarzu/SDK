@@ -45,7 +45,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     TabOrder = 0
     OnCloseUp = ChangeFilter
   end
-  object DBCtrlGrid1: TDBCtrlGrid
+  object grdReportList: TDBCtrlGrid
     Left = 8
     Top = 107
     Width = 441
@@ -311,7 +311,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 84
+            Width = 135
             Height = 16
             Align = alLeft
             DataField = 'calcAppuntamentoDataOra'
@@ -320,9 +320,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           end
           object DBText9: TDBText
             AlignWithMargins = True
-            Left = 93
+            Left = 144
             Top = 3
-            Width = 249
+            Width = 198
             Height = 16
             Align = alClient
             DataField = 'NOME_TECNICO'
@@ -606,9 +606,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Visible = False
   end
   object grpStato: TRadioGroup
-    Left = 383
-    Top = 4
-    Width = 412
+    Left = 335
+    Top = 3
+    Width = 418
     Height = 51
     Columns = 6
     ItemIndex = 5
@@ -922,9 +922,9 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   object cbkFilterReport: TCheckBox
     Left = 239
     Top = 32
-    Width = 121
+    Width = 90
     Height = 16
-    Caption = 'Filtra Rapp. Tecnico'
+    Caption = 'Filtra Tecnico'
     Checked = True
     State = cbChecked
     TabOrder = 14
@@ -949,6 +949,29 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList16
     TabOrder = 16
+  end
+  object btnSincro: TButton
+    Left = 759
+    Top = 27
+    Width = 75
+    Height = 25
+    Caption = 'Sincro'
+    ImageIndex = 18
+    ImageName = '019-document'
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 17
+    OnClick = btnSincroClick
+  end
+  object Button2: TButton
+    Left = 759
+    Top = 3
+    Width = 75
+    Height = 25
+    Action = dmVCLPhoenixPlannerController.actWhatsAppSettings
+    ImageMargins.Left = 6
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 18
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers

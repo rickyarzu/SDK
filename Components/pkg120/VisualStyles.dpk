@@ -33,8 +33,7 @@ requires
   vcl,
   vclimg,
   vclwinx,
-  uniTools29,
-  uniGUI29Core;
+  uniTools29;
 
 contains
   Vcl.Styles.Ext in '..\..\..\lib\vcl-styles-utils\Common\Vcl.Styles.Ext.pas',

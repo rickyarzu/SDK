@@ -481,7 +481,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 75
           ExplicitWidth = 72
         end
-        inherited DBCtrlGrid1: TDBCtrlGrid
+        inherited grdReportList: TDBCtrlGrid
           Width = 433
           Height = 694
           PanelBorder = gbNone
@@ -584,11 +584,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                 Width = 337
                 ExplicitTop = 55
                 ExplicitWidth = 337
-                inherited DBText8: TDBText
-                  ExplicitTop = 44
-                end
                 inherited DBText9: TDBText
-                  Width = 241
+                  Width = 190
                   ExplicitWidth = 241
                 end
               end
@@ -621,8 +618,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 710
         end
         inherited grpStato: TRadioGroup
-          Width = 452
-          ExplicitWidth = 452
+          Left = 341
+          Width = 404
+          ExplicitLeft = 341
+          ExplicitWidth = 404
         end
         inherited CalendarDate: TDateTimePicker
           Top = 75
@@ -665,6 +664,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 75
           ExplicitWidth = 34
         end
+        inherited cbkFilterReport: TCheckBox
+          Width = 98
+          ExplicitWidth = 98
+        end
         inherited Button1: TButton
           Left = 760
           Top = 75
@@ -676,6 +679,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Top = 75
           ExplicitLeft = 664
           ExplicitTop = 75
+        end
+        inherited dsCAP: TUniDataSource
+          Left = 184
+          Top = 344
         end
       end
       inline JanuaVCLWebView1: TJanuaVCLWebView
@@ -692,7 +699,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Width = 599
           Height = 783
           DoubleBuffered = True
-          ExplicitTop = 34
+          Settings.AllowExternalDrop = False
           ExplicitWidth = 599
           ExplicitHeight = 783
         end
@@ -850,18 +857,18 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsTechnicians: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryTech
-    Left = 168
-    Top = 280
+    Left = 192
+    Top = 440
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
     Left = 88
-    Top = 248
+    Top = 472
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 288
-    Top = 280
+    Left = 192
+    Top = 520
   end
   object PopupMenu1: TPopupMenu
     Left = 584
@@ -1212,5 +1219,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object Colore1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actCalendarColor
     end
+  end
+  object Timer2: TTimer
+    Interval = 600000
+    OnTimer = Timer2Timer
+    Left = 380
+    Top = 450
   end
 end

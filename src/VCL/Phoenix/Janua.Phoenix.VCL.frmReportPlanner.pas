@@ -74,6 +74,7 @@ type
     Timer1: TTimer;
     tabCalendariTecnici: TTabSheet;
     JanuaVCLWebView1: TJanuaVCLWebView;
+    Timer2: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -88,6 +89,7 @@ type
     procedure GoogleSync1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
   private
     { Private declarations }
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
@@ -95,6 +97,7 @@ type
   public
     { Public declarations }
     procedure AfterUpdateCalendar(Sender: TObject);
+    procedure UpdateLab;
   end;
 
 var
@@ -157,6 +160,13 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.btnUpdateClick(Sender: TObject);
 begin
+  UpdateLab;
+
+  { FdmVCLPhoenixIBPlanner.Setup; }
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.UpdateLab;
+begin
   Async.Run<Boolean>(
     function: Boolean
     begin
@@ -167,7 +177,7 @@ begin
     end,
     procedure(const aResult: Boolean)
     begin
-      ShowMessage('Terminato Aggiornamento');
+      { ShowMessage('Terminato Aggiornamento'); }
       FdmVCLPhoenixIBPlanner.Setup;
     end,
     procedure(const Ex: Exception)
@@ -175,8 +185,6 @@ begin
       ShowMessage(Ex.Message);
       FdmVCLPhoenixIBPlanner.Setup;
     end);
-
-  FdmVCLPhoenixIBPlanner.Setup;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
@@ -213,17 +221,11 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
   FdmVCLPhoenixIBPlanner := dmVCLPhoenixPlannerController { .Create(self) };
-  { if not Assigned( FdmVCLPhoenixIBPlanner) then
-    Application.CreateForm(T FdmVCLPhoenixIBPlanner,  FdmVCLPhoenixIBPlanner => FdmVCLPhoenixIBPlanner); }
   FdmVCLPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
-  // function StartOfTheMonth(const AValue: TDateTime): TDateTime;
-  // function EndOfTheMonth(const AValue: TDateTime): TDateTime;
-  { TdmVCLPhoenixPlannerController }
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
-  { FdmVCLPhoenixIBPlanner.DBPlanner := frameTMSPhoenixPlannerCalendar.DBPlanner1; }
-  { frameVCLPhoenixPlannerCalendari.PlannerController := FdmVCLPhoenixIBPlanner; }
   PageControl1.ActivePage := tabCalendariTecnici;
+  UpdateLab;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
@@ -347,6 +349,11 @@ begin
   JanuaVCLWebView1.Active := True;
   JanuaVCLWebView1.WebControlsPanel.Visible := False;
   JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);
+begin
+  UpdateLab;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);

@@ -56,6 +56,7 @@ type
   public
     property BindManager: IJanuaBindManager read GetBindManager;
   public
+    constructor Create; overload;
     procedure NotifiyAllProperties;
     procedure Notify(const AProperty: string);
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
@@ -354,6 +355,11 @@ begin
     on E: Exception do
       Raise Exception.Create(ClassName + '.Bind Error:' + E.Message);
   end;
+end;
+
+constructor TJanuaBindableClass.Create;
+begin
+  FBindManager := TJanuaBindManager.Create(self);
 end;
 
 function TJanuaBindableClass.GetBindManager: IJanuaBindManager;

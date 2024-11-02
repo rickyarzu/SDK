@@ -805,7 +805,12 @@ end;
 
 function JMessageDlg(smessage: string; sExtra: string = ''; sHelp: string = ''): boolean;
 begin
-  Result := TJanuaApplication.Dialogs.JMessageDlg(smessage) // , sExtra, sHelp)
+  try
+    Result := TJanuaApplication.Dialogs.JMessageDlg(smessage) // , sExtra, sHelp)
+  except
+    on e: exception do
+      raise exception.Create('JMessageDlg Error: ' + e.Message);
+  end;
 end;
 
 function JanuainputText(const sTitle, sCaption: string; const sDefault: string): string;
@@ -873,8 +878,8 @@ begin
   try
     aFunc;
   except
-    on e: Exception do
-      raise Exception.Create(ErrorMessage(aFuncName, e, aClass));
+    on e: exception do
+      raise exception.Create(ErrorMessage(aFuncName, e, aClass));
   end;
 end;
 
@@ -883,9 +888,9 @@ begin
   try
     aFunc;
   except
-    on e: Exception do
+    on e: exception do
     begin
-      raise Exception.Create(ErrorMessage(aFuncName, e, aClass));
+      raise exception.Create(ErrorMessage(aFuncName, e, aClass));
     end;
   end;
 end;
@@ -899,8 +904,8 @@ begin
       aProc := nil;
     end;
   except
-    on e: Exception do
-      raise Exception.Create(ErrorMessage(aProcName, e, aClass));
+    on e: exception do
+      raise exception.Create(ErrorMessage(aProcName, e, aClass));
   end;
 end;
 {$ENDIF}
@@ -946,12 +951,12 @@ begin
       // word.ActiveWindow.Close(SaveChanges, EmptyParam);
       Result := tmp;
 {$ELSE}
-      raise Exception.Create('Sistema non supportato');
+      raise exception.Create('Sistema non supportato');
 {$ENDIF}
     except
-      on e: Exception do
+      on e: exception do
       begin
-        raise Exception.Create('Impossibile convertire il File');
+        raise exception.Create('Impossibile convertire il File');
         // self.JanuaDialog1.JShowError('Attenzione non è possibile convertire il file', '', '');
         Result := aFile;
       end;
@@ -1165,7 +1170,7 @@ end;
 function BytesToInt64(const Bytes: TBytes): Int64;
 begin
   if Length(Bytes) <> SizeOf(Int64) then
-    raise Exception.Create('Invalid byte array size');
+    raise exception.Create('Invalid byte array size');
   Move(Bytes[0], Result, SizeOf(Int64));
 end;
 
@@ -1456,7 +1461,7 @@ function GenerateGUID: TGUID;
 // FGUID: TGUID;
 begin
   if CreateGUID(Result) <> 0 then
-    raise Exception.Create('GenerateGUID GUID Failed');
+    raise exception.Create('GenerateGUID GUID Failed');
 end;
 
 function GenerateGUIDString: string;
@@ -1631,7 +1636,7 @@ begin
     try
       Result := JsonDecodeDate(S);
     except
-      on e: Exception do
+      on e: exception do
         Result := 0.0;
     end;
 end;
@@ -1938,7 +1943,7 @@ begin
     aBlob.SaveToStream(aStream);
 {$IFNDEF fpc}
   except
-    on e: Exception do
+    on e: exception do
     begin
       Result := False;
     end;
@@ -1997,7 +2002,7 @@ begin
       end;
 {$IFNDEF fpc}
     except
-      on e: Exception do
+      on e: exception do
         Result := False;
     end
 {$ENDIF}
@@ -2050,7 +2055,7 @@ begin
     aBlob.LoadFromStream(aStream);
   except
 {$IFNDEF fpc}
-    on e: Exception do
+    on e: exception do
     begin
       Result := False;
     end;
@@ -2683,7 +2688,7 @@ begin
   // Specifiche 2017-0013
   Result := DataSet.FindField(fieldName);
   if CheckFields and (Result = nil) then
-    raise Exception.Create('Error Dataset ' + DataSet.Name + ', Parent: ' + ifThen(DataSet.Owner <> nil,
+    raise exception.Create('Error Dataset ' + DataSet.Name + ', Parent: ' + ifThen(DataSet.Owner <> nil,
       DataSet.Owner.Name, 'nil') + ', Field not found: ' + fieldName);
 
 end;
@@ -2754,8 +2759,8 @@ begin
       aDataset.Post;
   except
 {$IFNDEF fpc}
-    on e: Exception do
-      raise Exception.Create('PostDataset ' + aDataset.Name + sLineBreak + e.Message);
+    on e: exception do
+      raise exception.Create('PostDataset ' + aDataset.Name + sLineBreak + e.Message);
 {$ENDIF fpc}
   end;
 
@@ -2961,7 +2966,7 @@ begin
         tmp.Free;
       end;
     except
-      on e: Exception do
+      on e: exception do
         Result := False;
     end;
 end;
@@ -3065,7 +3070,7 @@ begin
       end;
     except
 {$IFNDEF fpc}
-      on e: Exception do
+      on e: exception do
         Result := False;
 {$ENDIF fpc}
     end;
@@ -3110,7 +3115,7 @@ begin
     Result := true;
   except
 {$IFNDEF FPC}
-    on e: Exception do
+    on e: exception do
 {$ENDIF FPC}
       Result := False;
 
@@ -3154,7 +3159,7 @@ begin
     Result := true;
   except
 {$IFNDEF fpc}
-    on e: Exception do
+    on e: exception do
 {$ENDIF fpc}
       Result := False;
   end;
@@ -3211,7 +3216,7 @@ begin
     Value := StrToFloat(S);
   except
 {$IFNDEF fpc}
-    on e: Exception do
+    on e: exception do
     begin
       Result := False;
       Value := 0;
@@ -3386,7 +3391,7 @@ function JSupports(aIntfName: string; aIntf: IInterface; aGUID: TGUID; out oIntf
 begin
   Result := Supports(aIntf, aGUID, oIntf);
   if not Result and aRaise then
-    raise Exception.Create(aIntfName + ' Interface not supported');
+    raise exception.Create(aIntfName + ' Interface not supported');
 end;
 
 function FRound(number: Double; digits: integer): Double;
@@ -4526,7 +4531,7 @@ begin
     Result := Lpad(' ', Length * level, ' ');
   except
 {$IFNDEF fpc}
-    on e: Exception do
+    on e: exception do
     begin
       Result := '';
     end;

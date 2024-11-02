@@ -13,7 +13,7 @@ uses
   // VCL
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, AdvEdit, DBAdvEd, AdvGlowButton,
   AdvAppStyler,
-  VCL.ExtCtrls, AdvOfficeButtons, Vcl.Mask, AdvSpin;
+  VCL.ExtCtrls, AdvOfficeButtons, Vcl.Mask, AdvSpin, Vcl.ComCtrls;
 
 type
   TdlgTMSSelectServer = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer)
@@ -94,7 +94,7 @@ procedure TdlgTMSSelectServer.FormCreate(Sender: TObject);
 var
   aEngine: TJanuaDBEngine;
 begin
-  // FLocalDBConnection := Janua.Core.DB.DBConnection; // TJanuaCustomDBConnection.Create(self);
+  FLocalDBConnection := Janua.Core.DB.Intf.DBConnection; // TJanuaCustomDBConnection.Create(self);
   { type
     TJanuaDBEngine = (jdbOracle, jdbPostgres, jdbMySql, jdbMongoDB, jdbODBC, jdbInterbase, jdbFirebird,
     jdbTmsRemoteDB, jdbMSAccess);

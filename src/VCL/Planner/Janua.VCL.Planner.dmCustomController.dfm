@@ -1,8 +1,8 @@
 inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 679
-  Width = 1085
+  Height = 579
+  Width = 902
   object SVGIconImageList48: TSVGIconImageList
     Size = 48
     SVGIconItems = <
@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45559.000000000000000000
+    DateFrom = 45595.000000000000000000
     Left = 416
     Top = 40
   end
@@ -6392,6 +6392,12 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
       Caption = 'Elimina'
       ImageIndex = 49
       ImageName = '050-stopwatch'
+    end
+    object actWhatsAppSettings: TAction
+      Caption = 'Imposta WhatsApp'
+      ImageIndex = 60
+      ImageName = 'settings'
+      OnExecute = actWhatsAppSettingsExecute
     end
   end
   object SVGIconImageList16: TSVGIconImageList

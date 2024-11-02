@@ -90,20 +90,23 @@ type
 type
   TJanuaWhatsAppConf = class(TJanuaBindableClass)
   private
-    FKey: string;
-    FSecret: string;
-    FDefaultMessage: string;
-    FAppName: string;
+    FConf: TSMSSenderRecordConf;
+    FDefaultMessageID: string;
+    FTestMessageID: string;
     procedure SetAppName(const Value: string);
     procedure SetDefaultMessage(const Value: string);
     procedure SetKey(const Value: string);
     procedure SetSecret(const Value: string);
+    procedure SetDefaultMessageID(const Value: string);
+    procedure SetTestMessageID(const Value: string);
   public
     /// <summary> Body of the page should be a part of the text or just a full html page </summary>
-    property DefaultMessage: string read FDefaultMessage write SetDefaultMessage;
-    property Key: string read FKey write SetKey;
-    property Secret: string read FSecret write SetSecret;
-    property AppName: string read FAppName write SetAppName;
+    property DefaultMessage: string read FConf.DefaultMessage write SetDefaultMessage;
+    property Key: string read FConf.Key write SetKey;
+    property Secret: string read FConf.Secret write SetSecret;
+    property AppName: string read FConf.AppName write SetAppName;
+    property    DefaultMessageID: string read FDefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string read FTestMessageID write SetTestMessageID;
   public
     procedure Assign(const Value: TJanuaWhatsAppConf);
     procedure Clear;
@@ -112,6 +115,7 @@ type
     function GetAsJsonObject: TJsonObject;
     procedure SetAsJsonObject(const aObject: TJsonObject);
     function GetGenerateCustomMessage: string;
+    constructor Create(const aKey, aSecret, aAppName: string; const aDefaultMessage: string = ''); overload;
   end;
 
 type
@@ -567,28 +571,37 @@ end;
 
 procedure TJanuaWhatsAppConf.Assign(const Value: TJanuaWhatsAppConf);
 begin
-  FKey := Value.Key;
-  FSecret := Value.Secret;
-  FDefaultMessage := Value.DefaultMessage;
-  FAppName := Value.AppName;
+  FConf.Key := Value.Key;
+  FConf.Secret := Value.Secret;
+  FConf.DefaultMessage := Value.DefaultMessage;
+  FConf.AppName := Value.AppName;
 end;
 
 procedure TJanuaWhatsAppConf.Clear;
 begin
-  FKey := '';
-  FSecret := '';
-  FDefaultMessage := '';
-  FAppName := '';
+  FConf.Key := '';
+  FConf.Secret := '';
+  FConf.DefaultMessage := '';
+  FConf.AppName := '';
+end;
+
+constructor TJanuaWhatsAppConf.Create(const aKey, aSecret, aAppName, aDefaultMessage: string);
+begin
+  inherited Create;
+  FConf.Key := aKey;
+  FConf.Secret := aSecret;
+  FConf.DefaultMessage := aDefaultMessage;
+  FConf.AppName := aAppName;
 end;
 
 function TJanuaWhatsAppConf.GetAsJson: String;
 begin
-  Result := TJanuaJson.SerializeSimple<TJanuaWhatsAppConf>(Self);
+  Result := TJanuaJson.SerializeSimple<TSMSSenderRecordConf>(FConf);
 end;
 
 function TJanuaWhatsAppConf.GetAsJsonObject: TJsonObject;
 begin
-  Result := TJsonObject(TJanuaJson.SerializeJsonObject<TJanuaWhatsAppConf>(Self));
+  Result := TJsonObject(TJanuaJson.SerializeJsonObject<TSMSSenderRecordConf>(FConf));
 end;
 
 function TJanuaWhatsAppConf.GetGenerateCustomMessage: string;
@@ -598,32 +611,42 @@ end;
 
 procedure TJanuaWhatsAppConf.SetAppName(const Value: string);
 begin
-  FAppName := Value;
+  FConf.AppName := Value;
 end;
 
 procedure TJanuaWhatsAppConf.SetAsJson(const aJson: string);
 begin
-  Self := TJanuaJson.DeserializeSimple<TJanuaWhatsAppConf>(aJson);
+  FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(aJson);
 end;
 
 procedure TJanuaWhatsAppConf.SetAsJsonObject(const aObject: TJsonObject);
 begin
- Self := TJanuaJson.DeserializeSimple<TJanuaWhatsAppConf>(TJsonValue(aObject))
+ FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(TJsonValue(aObject))
 end;
 
 procedure TJanuaWhatsAppConf.SetDefaultMessage(const Value: string);
 begin
-  FDefaultMessage := Value;
+  FConf.DefaultMessage := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetDefaultMessageID(const Value: string);
+begin
+  FConf.DefaultMessageID := Value;
 end;
 
 procedure TJanuaWhatsAppConf.SetKey(const Value: string);
 begin
-  FKey := Value;
+  FConf.Key := Value;
 end;
 
 procedure TJanuaWhatsAppConf.SetSecret(const Value: string);
 begin
-  FSecret := Value;
+  FConf.Secret := Value;
+end;
+
+procedure TJanuaWhatsAppConf.SetTestMessageID(const Value: string);
+begin
+  FConf.TestMessageID := Value;
 end;
 
 end.

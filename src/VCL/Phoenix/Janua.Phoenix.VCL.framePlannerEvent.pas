@@ -21,7 +21,7 @@ type
     lkpCAP: TJvDBLookupCombo;
     lbCap: TLabel;
     lbData: TLabel;
-    DBCtrlGrid1: TDBCtrlGrid;
+    grdReportList: TDBCtrlGrid;
     DBPlanner1: TDBPlanner;
     btnEditMeeting: TButton;
     btnDeleteMeeting: TButton;
@@ -86,6 +86,8 @@ type
     Button1: TButton;
     btnWhatsApp: TButton;
     ConfermaAppuntmento1: TMenuItem;
+    btnSincro: TButton;
+    Button2: TButton;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -113,6 +115,7 @@ type
       var Accept: Boolean);
     procedure DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
     procedure ModificaAppuntamento2Click(Sender: TObject);
+    procedure btnSincroClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -203,6 +206,19 @@ end;
 procedure TframeVCLPhoenixPlannerEvent.btnSearchClick(Sender: TObject);
 begin
   Filter
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.btnSincroClick(Sender: TObject);
+begin
+  inherited;
+  grdReportList.DataSource.Enabled := False;
+  Screen.Cursor := crHourGlass;
+  try
+    dmVCLPhoenixPlannerController.UpdateReportPlanner;
+  finally
+    grdReportList.DataSource.Enabled := True;
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnNextDayClick(Sender: TObject);
@@ -460,8 +476,8 @@ end;
 
 procedure TframeVCLPhoenixPlannerEvent.ModificaAppuntamento2Click(Sender: TObject);
 begin
-  inherited;
-  if JMessageDlg('Elimino l''appuntamento?', FSelectedItem.ItemText) then
+  //inherited;
+  if JMessageDlg('Elimino l''appuntamento ?') then
   begin
     try
       DBDaySource1.DeleteDBItem(DBPlanner1);

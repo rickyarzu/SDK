@@ -6246,6 +6246,11 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       OnExecute = actSelectAllExecute
     end
   end
+  inherited GCalendarButtons: TActionList
+    inherited actWhatsAppSettings: TAction
+      Caption = 'Imposta'
+    end
+  end
   inherited SVGIconImageList16: TSVGIconImageList
     SVGIconItems = <
       item
@@ -19032,10 +19037,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       
         'LEFT OUTER JOIN INTERVENTI_STATINI_SINTESI_VIEW I ON S.chiave = ' +
         'I.statino'
-      
-        'WHERE S.STATO > -1 AND S.STATO < 9 AND GENERAZIONE_AUTOMATICA IS' +
-        ' NOT NULL'
-      '--AND S.CHIAVE = 2100103'
+      'WHERE S.STATO > -1 AND S.STATO < 9 '
+      '-- AND GENERAZIONE_AUTOMATICA IS NOT NULL'
+      '-- AND S.CHIAVE = 2100103'
       '-- AND C. = '#39'COMMISSARIATI'#39
       'ORDER BY F.CAP,C.DESCRIZIONE_SCHEDA,F.SEDE DESC'
       ';')
