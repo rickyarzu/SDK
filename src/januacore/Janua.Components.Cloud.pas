@@ -5,9 +5,7 @@ interface
 uses
   System.Classes,
   // Janua.Core.DB, Janua.Core.Classes, Janua.Core.CustomControls, Janua.Legacy.Classes,
-  Janua.Core.Types,
-  Janua.Core.Classes.Social,
-  Janua.Core.Sockets, Janua.Core.Entities, Janua.Core.Cloud;
+  Janua.Core.Types, Janua.Core.Classes.Social, Janua.Core.Sockets, Janua.Core.Entities, Janua.Core.Cloud;
 
 Type
   TJanuaCloudOAuth = class(TJanuaCustomCloudOAuth)
