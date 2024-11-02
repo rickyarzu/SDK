@@ -7,6 +7,7 @@ uses Spring.Collections, System.SysUtils, System.StrUtils, System.Types, System.
 
 type
   TSendMessageEvent = procedure(const aMessage, aJson: string) of object;
+  TSendMessageTestEvent = procedure(const aRecipients, aMessage: string) of object;
 
 type
   TCloudPath = (tcpDocuments, tcpWorflows);
@@ -198,6 +199,9 @@ type
     Key: string;
     Secret: string;
     AppName: string;
+    DefaultMessage: string;
+    DefaultMessageID: string;
+    TestMessageID: string;
   public
     procedure Clear;
     function GetAsJson: String;

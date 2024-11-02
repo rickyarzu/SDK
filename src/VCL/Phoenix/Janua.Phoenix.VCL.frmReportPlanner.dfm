@@ -481,7 +481,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 75
           ExplicitWidth = 72
         end
-        inherited DBCtrlGrid1: TDBCtrlGrid
+        inherited grdReportList: TDBCtrlGrid
           Width = 433
           Height = 694
           PanelBorder = gbNone
@@ -496,7 +496,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 416
             inherited Label3: TLabel
               Width = 13
-              Height = 20
               Caption = 'Lc'
               ExplicitWidth = 13
             end
@@ -507,7 +506,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited lbIdranti: TLabel
               Left = 42
               Width = 22
-              Height = 20
               Caption = 'Idr:'
               ExplicitLeft = 42
               ExplicitWidth = 22
@@ -519,7 +517,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label4: TLabel
               Left = 90
               Width = 38
-              Height = 20
               Caption = 'E.Ord:'
               ExplicitLeft = 90
               ExplicitWidth = 38
@@ -531,7 +528,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label5: TLabel
               Left = 154
               Width = 39
-              Height = 20
               Caption = 'E.Stra:'
               ExplicitLeft = 154
               ExplicitWidth = 39
@@ -550,7 +546,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label6: TLabel
               Left = 219
-              Height = 20
               ExplicitLeft = 219
             end
             inherited DBText10: TDBText
@@ -559,7 +554,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label7: TLabel
               Left = 280
-              Height = 20
               ExplicitLeft = 280
             end
             inherited DBText11: TDBText
@@ -590,11 +584,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                 Width = 337
                 ExplicitTop = 55
                 ExplicitWidth = 337
-                inherited DBText8: TDBText
-                  ExplicitTop = 44
-                end
                 inherited DBText9: TDBText
-                  Width = 241
+                  Width = 190
                   ExplicitWidth = 241
                 end
               end
@@ -675,7 +666,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited cbkFilterReport: TCheckBox
           Width = 98
-          Caption = 'Filtra Tecnico'
           ExplicitWidth = 98
         end
         inherited Button1: TButton
@@ -689,6 +679,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Top = 75
           ExplicitLeft = 664
           ExplicitTop = 75
+        end
+        inherited dsCAP: TUniDataSource
+          Left = 184
+          Top = 344
         end
       end
       inline JanuaVCLWebView1: TJanuaVCLWebView
@@ -863,18 +857,18 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsTechnicians: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryTech
-    Left = 168
-    Top = 280
+    Left = 192
+    Top = 440
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
     Left = 88
-    Top = 248
+    Top = 472
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 288
-    Top = 280
+    Left = 192
+    Top = 520
   end
   object PopupMenu1: TPopupMenu
     Left = 584

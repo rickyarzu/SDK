@@ -215,8 +215,8 @@ var
   risultato: integer;
 begin
   TaskDialog1 := nil;
+  TaskDialog1 := TAdvTaskDialog.Create(Application);
   try
-    TaskDialog1 := TAdvTaskDialog.Create(Application);
     TaskDialog1.Title := 'Domanda:';
     TaskDialog1.Instruction := Self.Text;
     TaskDialog1.Icon := tiQuestion;
@@ -234,7 +234,7 @@ end;
 function TJanuaTMSDialog.JMessageDlg(smessage: string; const sExtra: string = ''): boolean;
 begin
   Text := smessage;
-  Result := Self.Execute;
+  Result := Execute;
 end;
 
 function TJanuaTMSDialog.JMessageDlgExt(smessage, button1, button2: string): boolean;
