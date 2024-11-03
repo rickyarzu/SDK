@@ -146,6 +146,7 @@ begin
   end;
   FUrl := Format('http://localhost:%d', [sedPort.ValueAsInt]);
   FWebServer := TJanuaWebServerFactory.CreateWebServer as TJanuaWebBrokerServer;
+  Assert(Assigned(FWebServer), 'WebServer Not Assigned');
   FWebServer.StartServer;
   if Assigned(OnAfterStartServer) then
     OnAfterStartServer(Self);

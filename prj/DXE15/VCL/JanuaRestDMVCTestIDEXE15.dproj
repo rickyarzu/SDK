@@ -131,6 +131,12 @@
             <Form>frmAllDemosContainer</Form>
         </DCCReference>
         <DCCReference Include="uJanuaRestDMVCApplication.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.CoreWebModule.pas">
+            <Form>JanuaDMVCTestWebModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaDemoDXE15.optset</DependentOn>
