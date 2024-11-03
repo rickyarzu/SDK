@@ -639,7 +639,7 @@ begin
     for I := 0 to lSpecifiche.Count - 1 do
       // Invio l'Oggetto in Elaborazione
       ElaborateList(lSpecifiche.Items[I] as TJsonObject, lError);
-    JsonResponse := JsonPretty(lJsonObject);
+    // JsonResponse := JsonPretty(lJsonObject);
   finally
     lJsonObject.Free;
   end;

@@ -86,8 +86,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Lines.Strings = (
       'edWAMesage')
     TabOrder = 3
-    ExplicitWidth = 476
-    ExplicitHeight = 178
   end
   object btnOK: TButton
     Left = 923
@@ -98,8 +96,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Caption = 'Salva'
     ModalResult = 1
     TabOrder = 4
-    ExplicitLeft = 818
-    ExplicitTop = 311
   end
   object btnUndo: TButton
     Left = 811
@@ -110,8 +106,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Caption = 'Annulla'
     ModalResult = 2
     TabOrder = 5
-    ExplicitLeft = 706
-    ExplicitTop = 311
   end
   object btnSendTest: TButton
     Left = 697
@@ -122,8 +116,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Caption = 'Invia Test TMS'
     TabOrder = 6
     OnClick = btnSendTestClick
-    ExplicitLeft = 592
-    ExplicitTop = 311
   end
   object grpTestMessage: TGroupBox
     Left = 32
@@ -133,8 +125,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Test Messaggio'
     TabOrder = 7
-    ExplicitTop = 213
-    ExplicitWidth = 883
     object Label2: TLabel
       Left = 176
       Top = 31
@@ -181,7 +171,7 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Height = 23
     TabOrder = 8
   end
-  object Edit2: TEdit
+  object edDefaultMessageID: TEdit
     Left = 192
     Top = 192
     Width = 241

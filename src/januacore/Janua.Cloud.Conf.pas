@@ -91,8 +91,6 @@ type
   TJanuaWhatsAppConf = class(TJanuaBindableClass)
   private
     FConf: TSMSSenderRecordConf;
-    FDefaultMessageID: string;
-    FTestMessageID: string;
     procedure SetAppName(const Value: string);
     procedure SetDefaultMessage(const Value: string);
     procedure SetKey(const Value: string);
@@ -105,8 +103,8 @@ type
     property Key: string read FConf.Key write SetKey;
     property Secret: string read FConf.Secret write SetSecret;
     property AppName: string read FConf.AppName write SetAppName;
-    property    DefaultMessageID: string read FDefaultMessageID write SetDefaultMessageID;
-    property TestMessageID: string read FTestMessageID write SetTestMessageID;
+    property DefaultMessageID: string read FConf.DefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string read FConf.TestMessageID write SetTestMessageID;
   public
     procedure Assign(const Value: TJanuaWhatsAppConf);
     procedure Clear;
@@ -621,7 +619,7 @@ end;
 
 procedure TJanuaWhatsAppConf.SetAsJsonObject(const aObject: TJsonObject);
 begin
- FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(TJsonValue(aObject))
+  FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(TJsonValue(aObject))
 end;
 
 procedure TJanuaWhatsAppConf.SetDefaultMessage(const Value: string);
@@ -631,22 +629,38 @@ end;
 
 procedure TJanuaWhatsAppConf.SetDefaultMessageID(const Value: string);
 begin
-  FConf.DefaultMessageID := Value;
+  if FConf.DefaultMessageID <> Value then
+  begin
+    FConf.DefaultMessageID := Value;
+    Notify('DefaultMessageID');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetKey(const Value: string);
 begin
-  FConf.Key := Value;
+  if FConf.Key <> Value then
+  begin
+    FConf.Key := Value;
+    Notify('Key');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetSecret(const Value: string);
 begin
-  FConf.Secret := Value;
+  if FConf.Secret <> Value then
+  begin
+    FConf.Secret := Value;
+    Notify('Secret');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetTestMessageID(const Value: string);
 begin
-  FConf.TestMessageID := Value;
+  if FConf.TestMessageID <> Value then
+  begin
+    FConf.TestMessageID := Value;
+    Notify('TestMessageID');
+  end;
 end;
 
 end.

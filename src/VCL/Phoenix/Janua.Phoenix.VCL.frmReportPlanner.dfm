@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 845
-    ActivePage = tabCalendariTecnici
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -699,7 +699,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Width = 599
           Height = 783
           DoubleBuffered = True
-          Settings.AllowExternalDrop = False
           ExplicitWidth = 599
           ExplicitHeight = 783
         end

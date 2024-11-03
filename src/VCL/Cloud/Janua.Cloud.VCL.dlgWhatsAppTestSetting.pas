@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, VCL.Graphics,
-  VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls,
+  VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.Mask, VCL.ExtCtrls, VCL.ComCtrls,
   // Janua
   Janua.Cloud.Types, Janua.Cloud.Conf,
   // Interposers
-  Janua.VCL.Interposers, Janua.TMS.Interposers, VCL.Mask, VCL.ExtCtrls, VCL.ComCtrls;
+  Janua.VCL.Interposers, Janua.TMS.Interposers ;
 
 type
   TdlgVCLCloudWhatsAppTestSetting = class(TForm)
@@ -31,7 +31,7 @@ type
     lbTestMessageID: TLabel;
     edTestMessageID: TEdit;
     lbMessageTemplateID: TLabel;
-    Edit2: TEdit;
+    edDefaultMessageID: TEdit;
     btnTestCustom: TButton;
     btnTestDefault: TButton;
     procedure btnSendTestClick(Sender: TObject);
@@ -87,6 +87,8 @@ begin
     FWhatsAppSettings.Bind('DefaultMessage', edWAMesage, 'Text', False);
     edTestMessageID.Text := FWhatsAppSettings.TestMessageID;
     FWhatsAppSettings.Bind('TestMessageID', edTestMessageID, 'Text', False);
+    edDefaultMessageID.Text := FWhatsAppSettings.DefaultMessageID;
+    FWhatsAppSettings.Bind('DefaultMessageID', edDefaultMessageID, 'Text', False);
   end;
 
 end;
