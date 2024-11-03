@@ -222,7 +222,7 @@ object dlgVCLSelectServer: TdlgVCLSelectServer
       ReturnIsTab = False
       ShadowColor = clSilver
       URLColor = clBlack
-      Version = '1.8.4.0'
+      Version = '1.8.4.1'
     end
   end
 end

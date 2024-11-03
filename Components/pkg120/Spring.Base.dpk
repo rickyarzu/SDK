@@ -30,10 +30,10 @@ package Spring.Base;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl;
 
-contains
+ocontains
   Spring.Patches.GetInvokeInfo in '..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.GetInvokeInfo.pas',
   Spring.Patches.RSP13589 in '..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.RSP13589.pas',
   Spring.Patches.RSP13163 in '..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.RSP13163.pas',
@@ -81,4 +81,4 @@ contains
   Spring.Patterns.Specification in '..\..\..\Lib\spring4d\Source\Base\Patterns\Spring.Patterns.Specification.pas',
   Spring.Logging.Appenders in '..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.pas';
 
-end.
+d.

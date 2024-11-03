@@ -9,7 +9,8 @@ uses
   Janua.ViewModels.Framework,
   Janua.Orm.Register,
   Janua.Vcl.MVVM.Framework,
-  ufrmJanuaAllDemosContainer in '..\..\..\Samples\Janua\VCL\ufrmJanuaAllDemosContainer.pas' {frmAllDemosContainer};
+  ufrmJanuaAllDemosContainer in '..\..\..\Samples\Janua\VCL\ufrmJanuaAllDemosContainer.pas' {frmAllDemosContainer},
+  uJanuaRestDMVCApplication in 'uJanuaRestDMVCApplication.pas';
 
 {$R *.res}
 
@@ -21,7 +22,8 @@ begin
   Application.Initialize;
   errorManager := TJanuaTmsExceptionHandler.Create(Application);
   errorManager.Activate;
-
+  // **** Here goes the custom configuration for the Application **********************
+  TJanuaRestDMVCApplication.ApplicationSetup('desktop.januaproject.it');
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmAllDemosContainer, frmAllDemosContainer);
   Application.Run;
