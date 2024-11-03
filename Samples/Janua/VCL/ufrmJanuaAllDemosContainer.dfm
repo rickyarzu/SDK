@@ -2,23 +2,24 @@ object frmAllDemosContainer: TfrmAllDemosContainer
   Left = 0
   Top = 0
   Caption = 'Januaproject All Demos'
-  ClientHeight = 580
-  ClientWidth = 899
+  ClientHeight = 637
+  ClientWidth = 1101
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 899
+    Width = 1101
     Height = 49
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 820
+    ExplicitWidth = 899
     object frameDMVCWebBroker: TJanuaframeWebServerManager
       Left = 1
       Top = 1
@@ -26,6 +27,9 @@ object frmAllDemosContainer: TfrmAllDemosContainer
       Height = 47
       Align = alLeft
       TabOrder = 0
+      OnAfterStartServer = frameDMVCWebBrokerAfterStartServer
+      OnBeforeStartServer = frameDMVCWebBrokerBeforeStartServer
+      ExplicitTop = 0
     end
     object edPassword: TLabeledEdit
       Left = 688
@@ -64,6 +68,26 @@ object frmAllDemosContainer: TfrmAllDemosContainer
       Height = 25
       Caption = 'Login'
       TabOrder = 3
+    end
+  end
+  object pgTests: TPageControl
+    Left = 0
+    Top = 49
+    Width = 1101
+    Height = 588
+    ActivePage = tabTestSer
+    Align = alClient
+    TabOrder = 1
+    object tabTestSer: TTabSheet
+      Caption = 'Test Server'
+    end
+    object tabTestConnection: TTabSheet
+      Caption = 'Test Connection'
+      ImageIndex = 1
+    end
+    object tabTestVCLApplication: TTabSheet
+      Caption = 'Test VCL Application'
+      ImageIndex = 2
     end
   end
 end

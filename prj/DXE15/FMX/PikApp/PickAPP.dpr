@@ -51,6 +51,8 @@ begin
   TJanuaApplication.ServerPassword := '3rg0m3rc4t0r';
   TJanuaApplication.ServerPort := 5432;
   TJanuaApplication.AppName := ('drivers.carservice.com');
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
+
   Application.Initialize;
   TJanuaCarServiceFMXMobileApplication.ApplicationSetup('drivers.carservice.com');
   TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
