@@ -8,11 +8,11 @@ uses
   // VCL
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   // Janua
-  Janua.Vcl.frameWebServerManager, Vcl.ComCtrls;
+  Janua.Vcl.frameWebServerManager, Vcl.ComCtrls, Janua.TMS.FrameAdvBrowser;
 
 type
   TfrmAllDemosContainer = class(TForm)
-    Panel1: TPanel;
+    pntlTop: TPanel;
     frameDMVCWebBroker: TJanuaframeWebServerManager;
     edPassword: TLabeledEdit;
     LabeledEdit1: TLabeledEdit;
@@ -21,6 +21,7 @@ type
     tabTestSer: TTabSheet;
     tabTestConnection: TTabSheet;
     tabTestVCLApplication: TTabSheet;
+    TframeTmsAdvBrowser1: TframeTmsAdvBrowser;
     procedure frameDMVCWebBrokerBeforeStartServer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure frameDMVCWebBrokerAfterStartServer(Sender: TObject);
@@ -72,10 +73,8 @@ begin
   var
   guid := '&GUID=' + TURI.URLEncode('{282BCD26-510D-4CEE-8A0A-72607E401F31}');
 
-  {
-    edDMVCUrlTest.Text := frameDMVCWebBroker.Url + '?' + int + stringa + guid;
-    awbDMVCIndexPage.Navigate(edDMVCUrlTest.Text)
-  }
+  TframeTmsAdvBrowser1.edtUrl.Text := frameDMVCWebBroker.Url + '?' + int + stringa + guid;
+  TframeTmsAdvBrowser1.AdvWebBrowser1.Navigate(TframeTmsAdvBrowser1.edtUrl.Text)
 end;
 
 procedure TfrmAllDemosContainer.frameDMVCWebBrokerBeforeStartServer(Sender: TObject);

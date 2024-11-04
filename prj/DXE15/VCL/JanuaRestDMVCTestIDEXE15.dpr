@@ -12,7 +12,8 @@ uses
   ufrmJanuaAllDemosContainer in '..\..\..\Samples\Janua\VCL\ufrmJanuaAllDemosContainer.pas' {frmAllDemosContainer},
   uJanuaRestDMVCApplication in 'uJanuaRestDMVCApplication.pas',
   Janua.DMVC.Test.CoreWebModule in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.CoreWebModule.pas' {JanuaDMVCTestWebModule: TWebModule},
-  Janua.Test.DMVC.www in '..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas';
+  Janua.Test.DMVC.www in '..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas',
+  Janua.TMS.FrameAdvBrowser in '..\..\..\src\TMS\Janua.TMS.FrameAdvBrowser.pas' {frameTmsAdvBrowser: TFrame};
 
 {$R *.res}
 

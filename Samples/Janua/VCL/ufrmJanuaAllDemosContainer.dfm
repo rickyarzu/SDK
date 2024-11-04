@@ -12,7 +12,7 @@ object frmAllDemosContainer: TfrmAllDemosContainer
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 15
-  object Panel1: TPanel
+  object pntlTop: TPanel
     Left = 0
     Top = 0
     Width = 1101
@@ -80,6 +80,33 @@ object frmAllDemosContainer: TfrmAllDemosContainer
     TabOrder = 1
     object tabTestSer: TTabSheet
       Caption = 'Test Server'
+      inline TframeTmsAdvBrowser1: TframeTmsAdvBrowser
+        Left = 0
+        Top = 0
+        Width = 1093
+        Height = 558
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 168
+        ExplicitTop = 56
+        inherited pnlUrl: TPanel
+          Width = 1093
+          StyleElements = [seFont, seClient, seBorder]
+          inherited edtUrl: TEdit
+            Width = 1016
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited btnUrl: TButton
+            Left = 1017
+          end
+        end
+        inherited AdvWebBrowser1: TAdvWebBrowser
+          Width = 1093
+          Height = 533
+          DoubleBuffered = True
+          Settings.AllowExternalDrop = False
+        end
+      end
     end
     object tabTestConnection: TTabSheet
       Caption = 'Test Connection'
