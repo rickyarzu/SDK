@@ -28,22 +28,6 @@ object dlgVCLLoginDialog: TdlgVCLLoginDialog
     DesignSize = (
       575
       294)
-    object AdvSmoothLabel1: TLabel
-      Left = 0
-      Top = 0
-      Width = 575
-      Height = 21
-      Align = alTop
-      Alignment = taCenter
-      Caption = 'Januaproject Login'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clCaptionText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      ExplicitWidth = 146
-    end
     object lbUsername: TLabel
       Left = 331
       Top = 77

@@ -31,28 +31,6 @@
 
 requires
   rtl,
-  VCL,
-  vclactnband,
-  vclx,
-  vclie,
-  vcldb,
-  vclwinx,
-  dsnap,
-  VclSmp,
-  crcontrols290,
-  QRWRunDXE12_W64,
-  gtDocEng,
-  officeXPrt,
-  JvStdCtrls,
-  JvDB,
-  JvSystem,
-  JvCore,
-  jcl,
-  FlexCel_Core,
-  VCL_FlexCel_Core,
-  FlexCel_XlsAdapter,
-  SVGIconImageList,
-  VCLThemeSelector,
   JanuaCore,
   JanuaUniDAC,
   JanuaMVVM,
@@ -62,8 +40,8 @@ requires
   JanuaRestWeb,
   dacvcl290,
   unidacvcl290,
-  IndyIPServer,
-  StyleControls;
+  StyleControls,
+  crcontrols290;
 
 contains
   ufrmAttesa in '..\..\src\JanuaLegacy\ufrmAttesa.pas' {frmAttesa},
@@ -100,4 +78,30 @@ contains
   Janua.VCL.frameCRDBGrid in '..\..\src\VCL\Commons\Janua.VCL.frameCRDBGrid.pas' {frameVCLCRDBGrid: TFrame},
   Janua.VCL.frameWebServerManager in '..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame};
 
+{
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  vclwinx,
+  dsnap,
+  VclSmp,
+  crcontrols290,
+,
+  dacvcl290,
+  unidacvcl290,
+  IndyIPServer,
+  StyleControls,
+  QRWRunDXE12_W64,
+  gtDocEng,
+  officeXPrt,
+  JvStdCtrls,
+  JvDB,
+  JvSystem,
+  JvCore,
+  jcl,
+  SVGIconImageList,
+  VCLThemeSelector,
+}
 end.

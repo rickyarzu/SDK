@@ -208,13 +208,6 @@ begin
     bmp.Free;
   end;
 end;
-(*
-  function AdvRichEditorAsHtml(aEditor: TAdvRichEditor; aUseSelection: boolean; aImgPath: string = '';
-  aPlainHtml: boolean = false): string;
-  begin
-  Result := TAdvRichEditorExport(aEditor).GetContentAsHTML(aUseSelection, aImgPath, aPlainHtml);
-  end;
-*)
 
 procedure SaveBitmapAs(aBitmap: TBitmap; AGraphicType: TGraphicTypeEnum; AFileName: String);
 var

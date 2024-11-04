@@ -148,20 +148,11 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="FlexCel_Core.dcp"/>
-        <DCCReference Include="VCL_FlexCel_Core.dcp"/>
-        <DCCReference Include="FlexCel_XlsAdapter.dcp"/>
-        <DCCReference Include="JanuaVCLControls.dcp"/>
-        <DCCReference Include="SVGIconImageList.dcp"/>
-        <DCCReference Include="JanuaCore.dcp"/>
-        <DCCReference Include="JanuaUnidac.dcp"/>
-        <DCCReference Include="JanuaMVVM.dcp"/>
-        <DCCReference Include="TMSWebGMapsPkg.dcp"/>
-        <DCCReference Include="TMSVCLUIPackPkgDXE15.dcp"/>
-        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
         <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
         <DCCReference Include="JanuaVCLComponents.dcp"/>
         <DCCReference Include="VCLTMSFNCCloudPackPkgDXE15.dcp"/>
+        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
+        <DCCReference Include="TMSWebGMapsPkg.dcp"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas"/>
         <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas"/>
@@ -286,6 +277,12 @@
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaTmsControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
