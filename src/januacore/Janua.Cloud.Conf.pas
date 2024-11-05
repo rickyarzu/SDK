@@ -75,6 +75,8 @@ type
     procedure SetAppName(const Value: string);
     procedure SetKey(const Value: string);
     procedure SetSecret(const Value: string);
+    procedure SetDefaultMessageID(const Value: string);
+    procedure SetTestMessageID(const Value: string);
   protected
     function GetAsJson: String; override;
     procedure SetAsJson(const Value: String); override;
@@ -85,6 +87,8 @@ type
     property RestKey: string read FRecordConf.Key write SetKey;
     property RestSecret: string read FRecordConf.Secret write SetSecret;
     property RestAppName: string read FRecordConf.AppName write SetAppName;
+    property DefaultMessageID: string read FRecordConf.DefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string  read FRecordConf.TestMessageID write SetTestMessageID;
   end;
 
 type
@@ -503,6 +507,11 @@ begin
   FRecordConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(Value);
 end;
 
+procedure TSMSSenderConf.SetDefaultMessageID(const Value: string);
+begin
+  FRecordConf.DefaultMessageID := Value;
+end;
+
 procedure TSMSSenderConf.SetKey(const Value: string);
 begin
   FRecordConf.Key := Value;
@@ -511,6 +520,11 @@ end;
 procedure TSMSSenderConf.SetSecret(const Value: string);
 begin
   FRecordConf.Secret := Value;
+end;
+
+procedure TSMSSenderConf.SetTestMessageID(const Value: string);
+begin
+  FRecordConf.TestMessageID := Value;
 end;
 
 { TJanuaGCalendar }

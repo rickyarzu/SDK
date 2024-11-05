@@ -254,6 +254,10 @@ type
     TinyUrl: string;
     // <summary> a message could be sent using an engine such as whatsapp </summary>
     SMSSendingEngine: TJanuaSendingEngine;
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
+    ContentVariables: TStringArray;
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
+    ContentSid: string;
   public
     class operator Initialize(out Dest: TSMSMessage);
     procedure Assign(const Value: TSMSMessage);
