@@ -142,6 +142,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaDemoDXE15.optset</DependentOn>
