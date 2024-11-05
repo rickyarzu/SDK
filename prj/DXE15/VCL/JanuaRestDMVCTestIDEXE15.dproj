@@ -137,6 +137,13 @@
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.Test.DMVC.www.pas"/>
+        <DCCReference Include="..\..\..\src\TMS\Janua.TMS.FrameAdvBrowser.pas">
+            <Form>frameTmsAdvBrowser</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaDemoDXE15.optset</DependentOn>

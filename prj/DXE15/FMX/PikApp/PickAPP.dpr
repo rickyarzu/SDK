@@ -1,4 +1,4 @@
-program PickAPP;
+﻿program PickAPP;
 
 uses
   System.StartUpCopy,
@@ -69,6 +69,8 @@ begin
 
   if FSessionKey = '' then
   begin
+    // associa la funzione di CallBack ShowForm (principale) a GetForm dichiarata qui sopra
+    // La CallBack viene chiamata dalla Dialog se viene chiusa positivamente e viene fatto il login
     TJanuaFMXApplication.MainFormFunc := GetForm;
     Application.CreateForm(TdlgFMXCarserviceLoginDialogMobile, dlgFMXCarserviceLoginDialogMobile);
     Application.Run;
