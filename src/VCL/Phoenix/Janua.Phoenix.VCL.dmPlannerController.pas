@@ -2905,13 +2905,19 @@ begin
           FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
         end;
 
-    if vtReportPlannerAPPUNTAMENTO_DATA.IsNull or vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+    if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
     begin
       vtReportPlannercalcAppuntamentoDataOra.Clear;
     end
     else
-      vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
-        SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime, vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+    begin
+      if vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+        vtReportPlannercalcAppuntamentoDataOra.AsDateTime := vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime
+      else
+        vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+          SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime,
+          vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+    end;
 
     vtReportPlannercalcIndirizzo.AsString := vtReportPlannerINDIRIZZO.AsString + ', ' +
       vtReportPlannerCAP.AsString + vtReportPlannerCOMUNE.AsString;

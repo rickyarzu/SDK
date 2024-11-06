@@ -190,12 +190,12 @@ end;
 
 function TCustomSMSSender.GetContentSid: string;
 begin
-  Result := FSenderConf.ContentSid
+  Result := FSenderConf.DefaultMessageID
 end;
 
 function TCustomSMSSender.GetContentVariables: TStrings;
 begin
-
+  Result := FContentVariables;
 end;
 
 function TCustomSMSSender.GetKey: string;
@@ -242,6 +242,11 @@ procedure TCustomSMSSender.SendSMS(aMesage: TSMSMessage; aUpdateProc: TUpdatePro
   aFinishProc: TProc);
 begin
   FSMSMessage := aMesage.Text;
+  FContentVariables.Clear;
+  if Length(aMesage.ContentVariables) > 0 then
+    for var I := 0 to Length(aMesage.ContentVariables) - 1 do
+       FContentVariables.Add(aMesage.ContentVariables[I]);
+
   AddRecipient(aMesage.MsgTo);
   SendSMS(aUpdateProc, aErrorProc, aFinishProc);
 end;
