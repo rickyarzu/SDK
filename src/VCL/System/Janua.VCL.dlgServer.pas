@@ -9,8 +9,7 @@ uses
   Janua.Core.Classes, Janua.Core.Servers, Janua.Core.Sockets, Janua.Core.DB, Janua.Core.DB.Intf,
   Janua.Core.CustomControls, Janua.Core.Types, Janua.Controls.Dialogs.Impl, Janua.Controls.Dialogs.Intf,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, AdvEdit, DBAdvEd, AdvGlowButton,
-  AdvAppStyler,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls,
   VCL.ExtCtrls, Shader, AdvOfficeButtons, AdvStyleIF, VCL.Mask, VCL.DBCtrls;
 
 type

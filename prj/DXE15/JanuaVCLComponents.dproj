@@ -150,28 +150,6 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="VCL.dcp"/>
-        <DCCReference Include="vclactnband.dcp"/>
-        <DCCReference Include="vclx.dcp"/>
-        <DCCReference Include="vclie.dcp"/>
-        <DCCReference Include="vcldb.dcp"/>
-        <DCCReference Include="vclwinx.dcp"/>
-        <DCCReference Include="dsnap.dcp"/>
-        <DCCReference Include="VclSmp.dcp"/>
-        <DCCReference Include="crcontrols290.dcp"/>
-        <DCCReference Include="QRWRunDXE12_W64.dcp"/>
-        <DCCReference Include="gtDocEng.dcp"/>
-        <DCCReference Include="officeXPrt.dcp"/>
-        <DCCReference Include="JvStdCtrls.dcp"/>
-        <DCCReference Include="JvDB.dcp"/>
-        <DCCReference Include="JvSystem.dcp"/>
-        <DCCReference Include="JvCore.dcp"/>
-        <DCCReference Include="jcl.dcp"/>
-        <DCCReference Include="FlexCel_Core.dcp"/>
-        <DCCReference Include="VCL_FlexCel_Core.dcp"/>
-        <DCCReference Include="FlexCel_XlsAdapter.dcp"/>
-        <DCCReference Include="SVGIconImageList.dcp"/>
-        <DCCReference Include="VCLThemeSelector.dcp"/>
         <DCCReference Include="JanuaCore.dcp"/>
         <DCCReference Include="JanuaUniDAC.dcp"/>
         <DCCReference Include="JanuaMVVM.dcp"/>
@@ -181,8 +159,8 @@
         <DCCReference Include="JanuaRestWeb.dcp"/>
         <DCCReference Include="dacvcl290.dcp"/>
         <DCCReference Include="unidacvcl290.dcp"/>
-        <DCCReference Include="IndyIPServer.dcp"/>
         <DCCReference Include="StyleControls.dcp"/>
+        <DCCReference Include="crcontrols290.dcp"/>
         <DCCReference Include="..\..\src\JanuaLegacy\ufrmAttesa.pas">
             <Form>frmAttesa</Form>
         </DCCReference>
@@ -263,6 +241,12 @@
             </Platforms>
             <Deployment Version="4">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLComponents290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLComponents290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLComponents.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>

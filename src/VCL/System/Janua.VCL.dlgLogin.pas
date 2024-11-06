@@ -20,7 +20,6 @@ type
     btnServer: TButton;
     edUserName: TEdit;
     edPassword: TEdit;
-    AdvSmoothLabel1: TLabel;
     ckbShowPasswordChar: TCheckBox;
     lbUsername: TLabel;
     HTMLabel1: TLabel;

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   // Januaproject
-  Janua.Controls.Forms.Intf, uJanuaVCLForm, Janua.Controls.Dialogs.Intf;
+  Janua.Controls.Forms.Intf, uJanuaVCLForm, Janua.Controls.Dialogs.Intf, Vcl.ComCtrls;
 
 type
   TdlgVCLCustomLoginDialog = class(TJanuaVCLFormModel, IJanuaContainer, IJanuaForm, IJanuaLoginDialogForm)
