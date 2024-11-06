@@ -159,6 +159,11 @@
         <DCCReference Include="..\..\Angelo\uBindingEngineRTL.pas"/>
         <DCCReference Include="..\..\Angelo\uVCLBindingInterposers.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas"/>
+        <DCCReference Include="..\..\..\src\TMS\Janua.TMS.FrameAdvBrowser.pas">
+            <Form>frameTmsAdvBrowser</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
@@ -185,6 +190,18 @@
                 <DeployFile LocalName="Win32\Debug\WebBrokerDMVCServerTest.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>WebBrokerDMVCServerTest.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\WebBrokerDMVCServerTest.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>WebBrokerDMVCServerTest.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\WebBrokerDMVCServerTest.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>WebBrokerDMVCServerTest.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

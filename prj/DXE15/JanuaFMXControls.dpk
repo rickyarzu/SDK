@@ -1,4 +1,4 @@
-package JanuaFMXControls;
+﻿package JanuaFMXControls;
 
 
 {$R *.res}

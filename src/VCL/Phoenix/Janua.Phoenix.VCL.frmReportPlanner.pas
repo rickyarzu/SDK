@@ -225,7 +225,7 @@ begin
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   PageControl1.ActivePage := tabCalendariTecnici;
-  UpdateLab;
+  // UpdateLab;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
@@ -353,7 +353,7 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);
 begin
-  UpdateLab;
+ // UpdateLab;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);

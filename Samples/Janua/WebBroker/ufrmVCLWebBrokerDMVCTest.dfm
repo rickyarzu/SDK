@@ -120,7 +120,7 @@ object frmVCLWebBrokerDMVCTest: TfrmVCLWebBrokerDMVCTest
         Top = 49
         Width = 820
         Height = 528
-        ActivePage = tabBrowser
+        ActivePage = tabDMVCTest
         Align = alClient
         TabOrder = 1
         object tabBrowser: TTabSheet

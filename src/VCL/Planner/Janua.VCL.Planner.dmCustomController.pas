@@ -893,7 +893,7 @@ begin
     dlg.WhatsAppSettings := FWhatsAppSettings;
     dlg.ShowModal;
     if dlg.ModalResult = mrOK then
-      TJanuaCoreOS.WriteParam('whatsapp', 'message', FWhatsAppSettings.GetAsJson);
+      TJanuaCoreOS.WriteParam('whatsapp', 'settings', FWhatsAppSettings.GetAsJson);
   finally
     dlg.Free;
   end;
@@ -1052,13 +1052,13 @@ end;
 procedure TdmVCLPlannerCustomController.SendCustomTwilioMessage(aTo: string; aMessageID: string;
   aParams: TJanuaArray<string>);
 var
-  lTClient: TTwilioClient;
+  lTClient: TJanuaTwilioClient;
   allParams: TStringList;
-  response: TTwilioClientResponse;
+  response: TJanuaTwilioClientResponse;
   Json: TJSONValue;
 begin
   // Create environment variables (named below) with your Twilio credentials
-  lTClient := TTwilioClient.Create(FWhatsAppSettings.Key, FWhatsAppSettings.Secret);
+  lTClient := TJanuaTwilioClient.Create(FWhatsAppSettings.Key, FWhatsAppSettings.Secret);
   try
 
     // Your Twilio phone number

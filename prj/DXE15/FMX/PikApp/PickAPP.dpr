@@ -1,4 +1,4 @@
-program PickAPP;
+﻿program PickAPP;
 
 uses
   System.StartUpCopy,
@@ -51,6 +51,8 @@ begin
   TJanuaApplication.ServerPassword := '3rg0m3rc4t0r';
   TJanuaApplication.ServerPort := 5432;
   TJanuaApplication.AppName := ('drivers.carservice.com');
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
+
   Application.Initialize;
   TJanuaCarServiceFMXMobileApplication.ApplicationSetup('drivers.carservice.com');
   TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
@@ -67,6 +69,8 @@ begin
 
   if FSessionKey = '' then
   begin
+    // associa la funzione di CallBack ShowForm (principale) a GetForm dichiarata qui sopra
+    // La CallBack viene chiamata dalla Dialog se viene chiusa positivamente e viene fatto il login
     TJanuaFMXApplication.MainFormFunc := GetForm;
     Application.CreateForm(TdlgFMXCarserviceLoginDialogMobile, dlgFMXCarserviceLoginDialogMobile);
     Application.Run;

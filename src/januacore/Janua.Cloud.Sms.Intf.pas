@@ -47,6 +47,12 @@ type
     function GetMessageType: TJanuaMessageType;
     procedure SetMessageType(const Value: TJanuaMessageType);
     property MessageType: TJanuaMessageType read GetMessageType write SetMessageType;
+    function GetContentSid: string;
+    function GetContentVariables: TStrings;
+    procedure SetContentSid(const Value: string);
+    procedure SetContentVariables(const Value: TStrings);
+    property ContentSid: string read GetContentSid write SetContentSid;
+    property ContentVariables: TStrings read GetContentVariables write SetContentVariables;
   end;
 
   IJanuaWASender = interface

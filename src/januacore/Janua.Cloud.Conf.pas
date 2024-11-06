@@ -75,6 +75,8 @@ type
     procedure SetAppName(const Value: string);
     procedure SetKey(const Value: string);
     procedure SetSecret(const Value: string);
+    procedure SetDefaultMessageID(const Value: string);
+    procedure SetTestMessageID(const Value: string);
   protected
     function GetAsJson: String; override;
     procedure SetAsJson(const Value: String); override;
@@ -85,14 +87,14 @@ type
     property RestKey: string read FRecordConf.Key write SetKey;
     property RestSecret: string read FRecordConf.Secret write SetSecret;
     property RestAppName: string read FRecordConf.AppName write SetAppName;
+    property DefaultMessageID: string read FRecordConf.DefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string  read FRecordConf.TestMessageID write SetTestMessageID;
   end;
 
 type
   TJanuaWhatsAppConf = class(TJanuaBindableClass)
   private
     FConf: TSMSSenderRecordConf;
-    FDefaultMessageID: string;
-    FTestMessageID: string;
     procedure SetAppName(const Value: string);
     procedure SetDefaultMessage(const Value: string);
     procedure SetKey(const Value: string);
@@ -105,8 +107,8 @@ type
     property Key: string read FConf.Key write SetKey;
     property Secret: string read FConf.Secret write SetSecret;
     property AppName: string read FConf.AppName write SetAppName;
-    property    DefaultMessageID: string read FDefaultMessageID write SetDefaultMessageID;
-    property TestMessageID: string read FTestMessageID write SetTestMessageID;
+    property DefaultMessageID: string read FConf.DefaultMessageID write SetDefaultMessageID;
+    property TestMessageID: string read FConf.TestMessageID write SetTestMessageID;
   public
     procedure Assign(const Value: TJanuaWhatsAppConf);
     procedure Clear;
@@ -505,6 +507,11 @@ begin
   FRecordConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(Value);
 end;
 
+procedure TSMSSenderConf.SetDefaultMessageID(const Value: string);
+begin
+  FRecordConf.DefaultMessageID := Value;
+end;
+
 procedure TSMSSenderConf.SetKey(const Value: string);
 begin
   FRecordConf.Key := Value;
@@ -513,6 +520,11 @@ end;
 procedure TSMSSenderConf.SetSecret(const Value: string);
 begin
   FRecordConf.Secret := Value;
+end;
+
+procedure TSMSSenderConf.SetTestMessageID(const Value: string);
+begin
+  FRecordConf.TestMessageID := Value;
 end;
 
 { TJanuaGCalendar }
@@ -621,7 +633,7 @@ end;
 
 procedure TJanuaWhatsAppConf.SetAsJsonObject(const aObject: TJsonObject);
 begin
- FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(TJsonValue(aObject))
+  FConf := TJanuaJson.DeserializeSimple<TSMSSenderRecordConf>(TJsonValue(aObject))
 end;
 
 procedure TJanuaWhatsAppConf.SetDefaultMessage(const Value: string);
@@ -631,22 +643,38 @@ end;
 
 procedure TJanuaWhatsAppConf.SetDefaultMessageID(const Value: string);
 begin
-  FConf.DefaultMessageID := Value;
+  if FConf.DefaultMessageID <> Value then
+  begin
+    FConf.DefaultMessageID := Value;
+    Notify('DefaultMessageID');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetKey(const Value: string);
 begin
-  FConf.Key := Value;
+  if FConf.Key <> Value then
+  begin
+    FConf.Key := Value;
+    Notify('Key');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetSecret(const Value: string);
 begin
-  FConf.Secret := Value;
+  if FConf.Secret <> Value then
+  begin
+    FConf.Secret := Value;
+    Notify('Secret');
+  end;
 end;
 
 procedure TJanuaWhatsAppConf.SetTestMessageID(const Value: string);
 begin
-  FConf.TestMessageID := Value;
+  if FConf.TestMessageID <> Value then
+  begin
+    FConf.TestMessageID := Value;
+    Notify('TestMessageID');
+  end;
 end;
 
 end.
