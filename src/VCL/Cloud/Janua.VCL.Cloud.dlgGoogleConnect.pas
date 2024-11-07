@@ -33,6 +33,7 @@ type
     function DeleteGoogleItem(aItem: string): string;
     function ConfirmMessage(const aID: string): string;
     function WhatsAppSentMessage(const aID: string): string;
+    procedure RestoreGoogle;
   end;
 
 var
@@ -138,6 +139,14 @@ begin
   Timer1.Enabled := true;
 end;
 
+procedure TdlgVclCloudGoogleConnect.RestoreGoogle;
+begin
+  cnt.Free;
+  cnt := nil;
+  cnt := TdmPhoenixVCLGCalendarController.Create(nil);
+  cnt.AdvGCalendar1 := AdvGCalendar1;
+end;
+
 procedure TdlgVclCloudGoogleConnect.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
@@ -161,17 +170,14 @@ begin
 
     if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.DoAuth;
-
-    try
+  }
+  try
     cnt := TdmPhoenixVCLGCalendarController.Create(nil);
     cnt.AdvGCalendar1 := self.AdvGCalendar1;
-  }
-  cnt.FillGoogleCalendars;
-  {
-    finally
+    cnt.FillGoogleCalendars;
+  finally
     cnt.Free;
-    end;
-  }
+  end;
 end;
 
 procedure TdlgVclCloudGoogleConnect.UpdateGoogle;

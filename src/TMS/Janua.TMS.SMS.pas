@@ -1,8 +1,29 @@
-unit Janua.TMS.SMS;
+﻿unit Janua.TMS.SMS;
 
 interface
 
-uses System.Classes, System.SysUtils, Janua.Cloud.SMS.Intf, Janua.Cloud.SMS.Impl, Janua.Cloud.Types;
+uses System.Classes, System.SysUtils, System.JSON, CloudBase, CloudSMS, Janua.Cloud.SMS.Intf,
+  Janua.Cloud.SMS.Impl, Janua.Cloud.Types, Janua.Core.JSON;
+
+type
+
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64)]
+  TJanuaAdvTwilio = class(TCloudBaseSMS)
+  private
+    FContentSid: string;
+    FContentVariables: TStrings;
+    procedure SetContentSid(const Value: string);
+    procedure SetContentVariables(const Value: TStrings);
+    // function ReceiveSMS: boolean;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+  public
+    property ContentSid: string read FContentSid write SetContentSid;
+    property ContentVariables: TStrings read FContentVariables write SetContentVariables;
+  public
+    function SendSMS(PhoneNr, Body: string): boolean; override;
+  end;
 
 type
   TSMSTwilioSender = class(TCustomSMSSender, IJanuaSMSSender, IJanuaSMSTwilio)
@@ -15,7 +36,7 @@ type
 
 implementation
 
-uses {Janua.Core.Types,} CloudBase, CloudSMS, Janua.Application.Framework;
+uses {Janua.Core.Types,} Janua.Application.Framework;
 
 { TSMSTwilioSender }
 
@@ -101,6 +122,80 @@ begin
   finally
     AdvTwilio.Free;
   end;
+end;
+
+{ TJanuaAdvTwilio }
+
+constructor TJanuaAdvTwilio.Create(AOwner: TComponent);
+begin
+  inherited;
+  FContentVariables := TStringList.Create;
+end;
+
+destructor TJanuaAdvTwilio.Destroy;
+begin
+  FContentVariables.Free;
+  inherited;
+end;
+
+function TJanuaAdvTwilio.SendSMS(PhoneNr, Body: string): boolean;
+var
+  url: string;
+  postdata, res: ansistring;
+  headers: TCoreCloudHeaders;
+  I: integer;
+begin
+  (*
+    curl -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
+    --data-urlencode "ContentSid=HXXXXXXXXX" \
+    --data-urlencode "To=whatsapp:+18551234567" \
+    --data-urlencode "From=whatsapp:+15005550006" \
+    --data-urlencode "ContentVariables=$CONTENT_VARIABLES_OBJ" \
+    --data-urlencode "MessagingServiceSid=MGXXXXXXXX" \
+    -u $TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN
+  *)
+
+  url := 'https://api.twilio.com/2010-04-01/Accounts/' + App.Key + '/Messages.json';
+
+  AddHeader(headers, 'Content-Type', 'application/x-www-form-urlencoded');
+
+  RequestParams.Clear;
+  RequestParams.Values['To'] := PhoneNr;
+  RequestParams.Values['From'] := App.Name;
+  if Body <> '' then
+    RequestParams.Values['Body'] := string(TMSUTF8Encode(Body));
+  if FContentSid <> '' then
+    RequestParams.Values['ContentSid'] := FContentSid;
+  if FContentVariables.Count > 0 then
+  begin
+    var
+    aObject := TJSONObject.Create;
+
+    for var J := 0 to FContentVariables.Count - 1 do
+      Janua.Core.JSON.JsonPair(aObject, J.ToString, FContentVariables[J]);
+
+    var
+    lContentVariables := aObject.ToJSON;
+
+    RequestParams.Values['ContentVariables'] := lContentVariables;
+  end;
+
+  postdata := ansistring(EncodeParams(RequestParams, '&', false));
+
+  I := HttpsPost(Extractserver(url), Removeserver(url), App.Key, App.Secret, headers, postdata, res);
+
+  FLastError := 'HTTP result ' + inttostr(I) + ':' + string(res);
+  Result := I in [200, 201];
+end;
+
+procedure TJanuaAdvTwilio.SetContentSid(const Value: string);
+begin
+  FContentSid := Value;
+end;
+
+procedure TJanuaAdvTwilio.SetContentVariables(const Value: TStrings);
+begin
+  FContentVariables := Value;
 end;
 
 initialization

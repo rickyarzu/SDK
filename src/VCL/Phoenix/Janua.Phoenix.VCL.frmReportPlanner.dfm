@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 845
-    ActivePage = tabTicketsList
+    ActivePage = tabCalendariTecnici
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -496,6 +496,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 416
             inherited Label3: TLabel
               Width = 13
+              Height = 20
               Caption = 'Lc'
               ExplicitWidth = 13
             end
@@ -506,6 +507,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited lbIdranti: TLabel
               Left = 42
               Width = 22
+              Height = 20
               Caption = 'Idr:'
               ExplicitLeft = 42
               ExplicitWidth = 22
@@ -517,6 +519,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label4: TLabel
               Left = 90
               Width = 38
+              Height = 20
               Caption = 'E.Ord:'
               ExplicitLeft = 90
               ExplicitWidth = 38
@@ -528,6 +531,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label5: TLabel
               Left = 154
               Width = 39
+              Height = 20
               Caption = 'E.Stra:'
               ExplicitLeft = 154
               ExplicitWidth = 39
@@ -546,6 +550,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label6: TLabel
               Left = 219
+              Height = 20
               ExplicitLeft = 219
             end
             inherited DBText10: TDBText
@@ -554,6 +559,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label7: TLabel
               Left = 280
+              Height = 20
               ExplicitLeft = 280
             end
             inherited DBText11: TDBText
@@ -680,35 +686,51 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitLeft = 664
           ExplicitTop = 75
         end
+        inherited Button2: TButton
+          Left = 760
+          Top = -4
+          ExplicitLeft = 760
+          ExplicitTop = -4
+        end
         inherited dsCAP: TUniDataSource
           Left = 184
           Top = 344
         end
       end
-      inline JanuaVCLWebView1: TJanuaVCLWebView
+      object pnlWebBrowser: TPanel
         Left = 841
         Top = 0
         Width = 599
         Height = 815
         Align = alClient
+        BevelOuter = bvNone
+        Caption = 'Panel1'
         TabOrder = 1
-        ExplicitLeft = 841
-        ExplicitWidth = 599
-        ExplicitHeight = 815
-        inherited AdvWebBrowser: TAdvWebBrowser
+        inline JanuaVCLWebView1: TJanuaVCLWebView
+          Left = 0
+          Top = 0
           Width = 599
-          Height = 783
-          DoubleBuffered = True
+          Height = 815
+          Align = alClient
+          TabOrder = 0
           ExplicitWidth = 599
-          ExplicitHeight = 783
-        end
-        inherited WebControlsPanel: TPanel
-          Width = 599
-          Visible = False
-          ExplicitWidth = 599
-          inherited edUrl: TButtonedEdit
-            Width = 573
-            ExplicitWidth = 573
+          ExplicitHeight = 815
+          inherited AdvWebBrowser: TAdvWebBrowser
+            Width = 599
+            Height = 783
+            DoubleBuffered = True
+            Settings.AllowExternalDrop = False
+            ExplicitWidth = 599
+            ExplicitHeight = 783
+          end
+          inherited WebControlsPanel: TPanel
+            Width = 599
+            ExplicitTop = 0
+            ExplicitWidth = 599
+            inherited edUrl: TButtonedEdit
+              Width = 573
+              ExplicitWidth = 573
+            end
           end
         end
       end
@@ -727,11 +749,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
-        end
-        inherited Panel2: TPanel
-          inherited ckbCalendarList: TCheckListBox
-            ItemHeight = 16
-          end
         end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
@@ -798,7 +815,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end
@@ -1206,7 +1222,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object Timer1: TTimer
     Enabled = False
-    Interval = 100
+    Interval = 2000
     OnTimer = Timer1Timer
     Left = 908
     Top = 154

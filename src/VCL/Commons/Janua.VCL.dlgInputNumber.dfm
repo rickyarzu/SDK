@@ -5,16 +5,14 @@ inherited dlgVCLInputNumber: TdlgVCLInputNumber
   ClientHeight = 121
   ClientWidth = 418
   Color = clWhite
-  ParentFont = False
   Font.Color = clBlack
   Font.Height = -16
-  Font.Name = 'Segoe UI'
   Position = poScreenCenter
-  ExplicitWidth = 424
-  ExplicitHeight = 150
-  PixelsPerInch = 96
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 434
+  ExplicitHeight = 160
   TextHeight = 21
-  object Label1: TLabel
+  object Label1: TLabel [0]
     Left = 71
     Top = 34
     Width = 139
@@ -27,13 +25,17 @@ inherited dlgVCLInputNumber: TdlgVCLInputNumber
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object SVGIconImage1: TSVGIconImage
+  object SVGIconImage1: TSVGIconImage [1]
     Left = 8
     Top = 18
     Width = 57
     Height = 55
     AutoSize = False
     ImageIndex = 32
+  end
+  inherited StatusBar: TStatusBar
+    Top = 102
+    Width = 418
   end
   object AdvSpinEdit1: TSpinEdit
     Left = 304

@@ -8,7 +8,7 @@ uses
   // ImageList
   System.ImageList, VCL.ImgList, SVGIconImageList,
   // Janua
-  Janua.Controls.Dialogs.Intf, uJanuaVCLForm;
+  Janua.Controls.Dialogs.Intf, uJanuaVCLForm, Vcl.ComCtrls;
 
 type
   TdlgVCLInputNumber = class(TJanuaVCLFormModel, IJanuaDlgIntegerForm)

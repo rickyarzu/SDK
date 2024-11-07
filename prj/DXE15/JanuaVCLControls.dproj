@@ -14,6 +14,11 @@
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
+        <Base_Linux64>true</Base_Linux64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
         <CfgParent>Base</CfgParent>
@@ -69,12 +74,14 @@
         <GenPackage>true</GenPackage>
         <SanitizedProjectName>JanuaVCLControls</SanitizedProjectName>
         <DllSuffix>$(Auto)</DllSuffix>
-        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;DUnitX.StackTrace;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
+        <DCC_UsePackage>rtl;SVGIconImageList;JanuaCore;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -82,6 +89,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -89,6 +97,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64x)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -97,6 +106,7 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
+        <DCC_UsePackage>rtl;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
@@ -106,6 +116,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -127,58 +139,27 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="dbrtl.dcp"/>
-        <DCCReference Include="IndySystem.dcp"/>
-        <DCCReference Include="IndyProtocols.dcp"/>
-        <DCCReference Include="IndyCore.dcp"/>
-        <DCCReference Include="bindengine.dcp"/>
-        <DCCReference Include="inet.dcp"/>
-        <DCCReference Include="soaprtl.dcp"/>
-        <DCCReference Include="xmlrtl.dcp"/>
-        <DCCReference Include="bindcomp.dcp"/>
-        <DCCReference Include="VCL.dcp"/>
-        <DCCReference Include="vclactnband.dcp"/>
-        <DCCReference Include="vclx.dcp"/>
-        <DCCReference Include="vclie.dcp"/>
-        <DCCReference Include="vcldb.dcp"/>
-        <DCCReference Include="vclwinx.dcp"/>
-        <DCCReference Include="VclSmp.dcp"/>
-        <DCCReference Include="dsnap.dcp"/>
-        <DCCReference Include="officeXPrt.dcp"/>
-        <DCCReference Include="IndyIPClient.dcp"/>
-        <DCCReference Include="CustomIPTransport.dcp"/>
-        <DCCReference Include="FireDACCommon.dcp"/>
-        <DCCReference Include="FireDACCommonDriver.dcp"/>
-        <DCCReference Include="FireDAC.dcp"/>
-        <DCCReference Include="FireDACSqliteDriver.dcp"/>
-        <DCCReference Include="IndyIPCommon.dcp"/>
-        <DCCReference Include="RESTComponents.dcp"/>
-        <DCCReference Include="DbxCommonDriver.dcp"/>
-        <DCCReference Include="dac290.dcp"/>
-        <DCCReference Include="unidac290.dcp"/>
-        <DCCReference Include="crcontrols290.dcp"/>
-        <DCCReference Include="msprovider290.dcp"/>
         <DCCReference Include="jcl.dcp"/>
         <DCCReference Include="JvStdCtrls.dcp"/>
         <DCCReference Include="JvDB.dcp"/>
         <DCCReference Include="JvSystem.dcp"/>
         <DCCReference Include="JvCore.dcp"/>
-        <DCCReference Include="FlexCel_Core.dcp"/>
-        <DCCReference Include="VCL_FlexCel_Core.dcp"/>
-        <DCCReference Include="VCLTMSFNCCorePkgDXE15.dcp"/>
-        <DCCReference Include="FlexCel_XlsAdapter.dcp"/>
-        <DCCReference Include="TMSVCLUIPackPkgDXE15.dcp"/>
-        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
-        <DCCReference Include="VCLThemeSelector.dcp"/>
-        <DCCReference Include="SVGIconImageList.dcp"/>
-        <DCCReference Include="gtDocEng.dcp"/>
         <DCCReference Include="QRWRunDXE12_W64.dcp"/>
         <DCCReference Include="JanuaCore.dcp"/>
         <DCCReference Include="JanuaMVVM.dcp"/>
         <DCCReference Include="JanuaUniDAC.dcp"/>
         <DCCReference Include="JanuaUniDACComponents.dcp"/>
         <DCCReference Include="JanuaCoreComponents.dcp"/>
-        <DCCReference Include="Spring.Base.dcp"/>
+        <DCCReference Include="SVGIconImageList.dcp"/>
+        <DCCReference Include="SVGImage32Package.dcp"/>
+        <DCCReference Include="VCLThemeSelector.dcp"/>
+        <DCCReference Include="gtDocEng.dcp"/>
+        <DCCReference Include="gtRtl.dcp"/>
+        <DCCReference Include="gtFont.dcp"/>
+        <DCCReference Include="gtFilters.dcp"/>
+        <DCCReference Include="gtCrypt.dcp"/>
+        <DCCReference Include="officeXPrt.dcp"/>
+        <DCCReference Include="VCLTMSFNCCorePkgDXE15.dcp"/>
         <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLForm.pas">
             <Form>JanuaVCLFormModel</Form>
         </DCCReference>
@@ -195,7 +176,6 @@
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Printers.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Functions.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Controllers.pas"/>
-        <DCCReference Include="..\..\src\Win\Janua.Win.Export.pas"/>
         <DCCReference Include="..\..\src\VCL\Forms\uVCLGnosticeReportEngine.pas">
             <Form>dmVCLGnosticeReportEngine</Form>
             <DesignClass>TDataModule</DesignClass>
@@ -245,7 +225,6 @@
             <Form>frmVCLOverlayAnimation</Form>
         </DCCReference>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.StackTrace.pas"/>
-        <None Include="ModelSupport_JanuaVCLControls\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -267,7 +246,11 @@
                 <Source>
                     <Source Name="MainSource">JanuaVCLControls.dpk</Source>
                 </Source>
-                <Excluded_Packages/>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Linux64">True</Platform>
@@ -277,6 +260,12 @@
             </Platforms>
             <Deployment Version="4">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLControls290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>

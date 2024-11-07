@@ -73,8 +73,9 @@ type
     tabPlannerEvents: TTabSheet;
     Timer1: TTimer;
     tabCalendariTecnici: TTabSheet;
-    JanuaVCLWebView1: TJanuaVCLWebView;
     Timer2: TTimer;
+    pnlWebBrowser: TPanel;
+    JanuaVCLWebView1: TJanuaVCLWebView;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -90,8 +91,10 @@ type
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
+    procedure AdvWebBrowser1GetCookies(Sender: TObject; ACookies: array of TAdvWebBrowserCookie);
   private
     { Private declarations }
+    FCookies: TJanuaTmsCookies;
     FdmFDACPhoenixLab: TdmFDACPhoenixLab;
     FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
   public
@@ -112,7 +115,40 @@ uses
   udmSVGImageList, Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   // Phoenix
-  DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync;
+  DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync, Janua.Application.Framework;
+
+procedure TfrmPhoenixVCLReportPlanner.AdvWebBrowser1GetCookies(Sender: TObject;
+  ACookies: array of TAdvWebBrowserCookie);
+  function UpdateCookie(aCookie: TAdvWebBrowserCookie): Boolean;
+  begin
+    Result := False;
+    var
+    J := 0;
+    While not Result and (J < FCookies.Count) do
+    begin
+      if (FCookies[J].Name = aCookie.Name) and (FCookies[J].Domain = aCookie.Domain) and
+        (FCookies[J].Path = aCookie.Path) then
+      begin
+        FCookies.Items[J] := aCookie;
+        Result := True;
+      end
+      else
+        Inc(J);
+    end;
+  end;
+
+begin
+  for var I := 0 to length(ACookies) - 1 do
+    if not UpdateCookie(ACookies[I]) then
+      FCookies.AddItem(ACookies[I]);
+
+  if FCookies.Count > 0 then
+  begin
+    var
+    lJson := FCookies.JsonSerialize;
+    TJanuaCoreOS.SaveCookies(lJson);
+  end;
+end;
 
 procedure TfrmPhoenixVCLReportPlanner.AfterUpdateCalendar(Sender: TObject);
 begin
@@ -232,7 +268,7 @@ procedure TfrmPhoenixVCLReportPlanner.FormShow(Sender: TObject);
 begin
   frameTMSPhoenixPlannerTecnici.DBPlanner1.Refresh;
   // frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
-  Timer1.Enabled := not JanuaVCLWebView1.Active;
+  Timer1.Enabled := True; // not JanuaVCLWebView1.Active;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
@@ -346,14 +382,29 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
-  JanuaVCLWebView1.Active := True;
-  JanuaVCLWebView1.WebControlsPanel.Visible := False;
-  JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
+  (*
+  var
+  lCookies := TJanuaCoreOS.LoadCookies;
+  if lCookies <> '' then
+    FCookies.JsonDeserialize(lCookies);
+
+  if FCookies.Count > 0 then
+    for var I := 0 to FCookies.Count - 1 do
+      AdvWebBrowser1.AddCookie(FCookies[I]);
+
+  AdvWebBrowser1.Navigate('https://calendar.google.com/calendar');
+  *)
+
+    JanuaVCLWebView1.Active := True;
+    JanuaVCLWebView1.WebControlsPanel.Visible := False;
+    JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
+
+
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);
 begin
- // UpdateLab;
+  // UpdateLab;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);

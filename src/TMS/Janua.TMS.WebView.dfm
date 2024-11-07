@@ -28,6 +28,7 @@ inherited JanuaVCLWebView: TJanuaVCLWebView
     Height = 32
     Align = alTop
     TabOrder = 1
+    ExplicitTop = -6
     object edUrl: TButtonedEdit
       AlignWithMargins = True
       Left = 13

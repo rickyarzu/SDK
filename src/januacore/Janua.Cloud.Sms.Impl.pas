@@ -77,6 +77,7 @@ type
     FRecipients: TStrings;
     FSenderConf: TSMSSenderConf;
     FSMSMessage: string;
+    FContentVariables: TStrings;
     function GetLogProc: TMessageLogProc;
   protected
     FConfName: string;
@@ -97,6 +98,10 @@ type
     procedure SetLogProc(const Value: TMessageLogProc); override;
     function GetMessageType: TJanuaMessageType;
     procedure SetMessageType(const Value: TJanuaMessageType);
+    function GetContentSid: string;
+    function GetContentVariables: TStrings;
+    procedure SetContentSid(const Value: string);
+    procedure SetContentVariables(const Value: TStrings);
   public
     property SMSMessage: string read GetSMSMessage write SetSMSMessage;
     property Recipients: TStrings read GetRecipients write SetRecipients;
@@ -104,6 +109,8 @@ type
     property Key: string read GetKey write SetKey;
     property Secret: string read GetSecret write SetSecret;
     property AsJsonConf: string read GetAsJsonConf write SetAsJsonConf;
+    property ContentSid: string read GetContentSid write SetContentSid;
+    property ContentVariables: TStrings read GetContentVariables write SetContentVariables;
   public
     constructor Create; override;
     destructor Destroy; override;
@@ -142,6 +149,7 @@ end;
 constructor TCustomSMSSender.Create;
 begin
   inherited;
+  FContentVariables := TStringList.Create;
   FRecipients := TStringList.Create;
   FSenderConf := TSMSSenderConf.Create;
   // By Default Messages are Snt using WhatsApp Channel
@@ -151,6 +159,9 @@ end;
 destructor TCustomSMSSender.Destroy;
 begin
   FRecipients.Free;
+  FRecipients := nil;
+  FContentVariables.Free;
+  FContentVariables := nil;
   inherited;
 end;
 
@@ -175,6 +186,16 @@ end;
 function TCustomSMSSender.GetAsJsonConf: string;
 begin
   Result := FSenderConf.AsJson;
+end;
+
+function TCustomSMSSender.GetContentSid: string;
+begin
+  Result := FSenderConf.DefaultMessageID
+end;
+
+function TCustomSMSSender.GetContentVariables: TStrings;
+begin
+  Result := FContentVariables;
 end;
 
 function TCustomSMSSender.GetKey: string;
@@ -221,6 +242,11 @@ procedure TCustomSMSSender.SendSMS(aMesage: TSMSMessage; aUpdateProc: TUpdatePro
   aFinishProc: TProc);
 begin
   FSMSMessage := aMesage.Text;
+  FContentVariables.Clear;
+  if Length(aMesage.ContentVariables) > 0 then
+    for var I := 0 to Length(aMesage.ContentVariables) - 1 do
+       FContentVariables.Add(aMesage.ContentVariables[I]);
+
   AddRecipient(aMesage.MsgTo);
   SendSMS(aUpdateProc, aErrorProc, aFinishProc);
 end;
@@ -244,6 +270,16 @@ end;
 procedure TCustomSMSSender.SetAsJsonConf(const Value: string);
 begin
   FSenderConf.AsJson := Value;
+end;
+
+procedure TCustomSMSSender.SetContentSid(const Value: string);
+begin
+
+end;
+
+procedure TCustomSMSSender.SetContentVariables(const Value: TStrings);
+begin
+
 end;
 
 procedure TCustomSMSSender.SetKey(const Value: string);

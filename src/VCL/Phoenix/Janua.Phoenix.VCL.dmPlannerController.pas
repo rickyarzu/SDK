@@ -622,22 +622,24 @@ uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.
   udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList;
 
 {$IFDEF WIN32}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r7.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r7.dll' index 6;
-function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r7.dll' index 7;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r8.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r8.dll' index 6;
+function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 7;
+procedure GoogleRestore;stdcall; external 'PhoenixLib32_r8.dll' index 8;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r7.64.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r7.64.dll' index 6;
-function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r7.64.dll' index 7;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r8.64.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r8.64.dll' index 6;
+function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 7;
+procedure GoogleRestore;stdcall; external 'PhoenixLib32_r8.64.dll' index 8;
 {$ENDIF}
 
 var
@@ -729,9 +731,12 @@ end;
 procedure TdmVCLPhoenixPlannerController.actGlobalGoogleSyncExecute(Sender: TObject);
 begin
   inherited;
-  UpdateGoogleDLL;
-  dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
-  dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
+  try
+    UpdateGoogleDLL;
+  finally
+    dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
+    dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
+  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.actGridConfirmEventExecute(Sender: TObject);
@@ -2905,13 +2910,19 @@ begin
           FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
         end;
 
-    if vtReportPlannerAPPUNTAMENTO_DATA.IsNull or vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+    if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
     begin
       vtReportPlannercalcAppuntamentoDataOra.Clear;
     end
     else
-      vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
-        SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime, vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+    begin
+      if vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+        vtReportPlannercalcAppuntamentoDataOra.AsDateTime := vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime
+      else
+        vtReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+          SumDateTime(vtReportPlannerAPPUNTAMENTO_DATA.AsDateTime,
+          vtReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+    end;
 
     vtReportPlannercalcIndirizzo.AsString := vtReportPlannerINDIRIZZO.AsString + ', ' +
       vtReportPlannerCAP.AsString + vtReportPlannerCOMUNE.AsString;

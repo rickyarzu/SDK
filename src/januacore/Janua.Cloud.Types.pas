@@ -254,6 +254,10 @@ type
     TinyUrl: string;
     // <summary> a message could be sent using an engine such as whatsapp </summary>
     SMSSendingEngine: TJanuaSendingEngine;
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
+    ContentVariables: TStringArray;
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
+    ContentSid: string;
   public
     class operator Initialize(out Dest: TSMSMessage);
     procedure Assign(const Value: TSMSMessage);
@@ -261,6 +265,8 @@ type
     function GetAsJson: String;
     procedure SetAsJson(const aJson: string);
     procedure setText(const Value: string);
+    procedure ClearContentVariables;
+    procedure AddContentVariable(const aVariable: string);
     function Text: string;
   end;
 
@@ -388,7 +394,7 @@ type
 implementation
 
 uses
-  Janua.Core.Functions, Janua.Application.Framework, Janua.Core.Json, Janua.Core.Commons, Janua.Core.DB;
+  Janua.Core.Functions, Janua.Application.Framework, Janua.Core.JSON, Janua.Core.Commons, Janua.Core.DB;
 
 const
   JanuaAttendeeStatuses: array [TJanuaAttendeeStatus] of string = ('Necessita Attenzione', 'Rifiutato',
@@ -704,6 +710,14 @@ begin
 end;
 
 { TSMSMessage }
+procedure TSMSMessage.AddContentVariable(const aVariable: string);
+begin
+  var
+  I := Length(ContentVariables);
+  SetLength(ContentVariables, I + 1);
+  ContentVariables[I] := aVariable;
+end;
+
 procedure TSMSMessage.Assign(const Value: TSMSMessage);
 begin
   Title := Value.Title;
@@ -716,6 +730,11 @@ procedure TSMSMessage.Clear;
 begin
   Title := '';
   Body := '';
+end;
+
+procedure TSMSMessage.ClearContentVariables;
+begin
+
 end;
 
 function TSMSMessage.GetAsJson: String;
@@ -800,12 +819,12 @@ begin
   if Params.HasValues then
   begin
     var
-    i := -1;
-    while (i < Pred(Params.Count)) and (lFound = -1) do
+    I := -1;
+    while (I < Pred(Params.Count)) and (lFound = -1) do
     begin
-      Inc(i);
-      if Params[i].Key = aField.ToLower then
-        lFound := i;
+      Inc(I);
+      if Params[I].Key = aField.ToLower then
+        lFound := I;
     end;
   end;
   if lFound = -1 then
@@ -881,10 +900,10 @@ end;
 
 procedure TRecParams.RemoveCustomField(const aField: string);
 begin
-  for var i := 0 to Pred(Params.Count) do
-    if Params[i].Key.ToLower = aField.ToLower then
+  for var I := 0 to Pred(Params.Count) do
+    if Params[I].Key.ToLower = aField.ToLower then
     begin
-      Params.Remove(i);
+      Params.Remove(I);
       Exit
     end;
 end;
@@ -893,11 +912,11 @@ procedure TRecParams.SaveToDataset(aDataset: TDataSet);
 begin
   if aDataset.Active and (aDataset.RecordCount = 0) and (Params.Count > 0) then
   begin
-    for var i := 0 to Pred(Params.Count) do
+    for var I := 0 to Pred(Params.Count) do
     begin
       aDataset.Append;
-      aDataset.FieldByName('key').AsString := Params[i].Key;
-      aDataset.FieldByName('value').AsString := Params[i].Value;
+      aDataset.FieldByName('key').AsString := Params[I].Key;
+      aDataset.FieldByName('value').AsString := Params[I].Value;
       aDataset.Post;
     end;
   end;
@@ -969,11 +988,11 @@ end;
 procedure TJanuaRecCalEventAttendees.AddAttendee(aMail, aName: string; aStatus: TJanuaAttendeeStatus);
 begin
   var
-  i := Length(Attendees);
-  SetLength(Attendees, i + 1);
-  Attendees[i].Status := aStatus;
-  Attendees[i].Name := aName;
-  Attendees[i].EMail := aMail;
+  I := Length(Attendees);
+  SetLength(Attendees, I + 1);
+  Attendees[I].Status := aStatus;
+  Attendees[I].Name := aName;
+  Attendees[I].EMail := aMail;
 end;
 
 procedure TJanuaRecCalEventAttendees.Clear;
@@ -994,13 +1013,13 @@ end;
 procedure TJanuaRecCalEventAttendees.RemoveAttendee(aMail: string);
 begin
   var
-  i := 0;
+  I := 0;
   var
   lMail := LowerCase(aMail);
-  for i := 0 to Length(Attendees) do
-    if LowerCase(Attendees[i].EMail) = lMail then
+  for I := 0 to Length(Attendees) do
+    if LowerCase(Attendees[I].EMail) = lMail then
     begin
-      Delete(Attendees, i, 1);
+      Delete(Attendees, I, 1);
       Exit
     end;
 end;
@@ -1015,11 +1034,11 @@ end;
 procedure TJanuaRecReminders.AddReminder(aMinutes: integer; aMethod: TJanuaReminderMethod);
 begin
   var
-  i := Length(Reminders);
-  SetLength(Reminders, i + 1);
-  Reminders[i].ID := TGUID.NewGuid;
-  Reminders[i].Method := aMethod;
-  Reminders[i].Minutes := aMinutes;
+  I := Length(Reminders);
+  SetLength(Reminders, I + 1);
+  Reminders[I].ID := TGUID.NewGuid;
+  Reminders[I].Method := aMethod;
+  Reminders[I].Minutes := aMinutes;
 end;
 
 procedure TJanuaRecReminders.Clear;

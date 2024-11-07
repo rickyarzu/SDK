@@ -31,20 +31,11 @@
 
 requires
   rtl,
-  FlexCel_Core,
-  VCL_FlexCel_Core,
-  FlexCel_XlsAdapter,
-  JanuaVCLControls,
-  SVGIconImageList,
-  JanuaCore,
-  JanuaUnidac,
-  JanuaMVVM,
-  TMSWebGMapsPkg,
-  TMSVCLUIPackPkgDXE15,
-  TMSVCLUIPackPkgExDXE15,
   TMSCloudPkgDXE15,
   JanuaVCLComponents,
-  VCLTMSFNCCloudPackPkgDXE15;
+  VCLTMSFNCCloudPackPkgDXE15,
+  TMSVCLUIPackPkgExDXE15,
+  TMSWebGMapsPkg;
 
 contains
   Janua.Legacy.SelectPrinter in '..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas',
