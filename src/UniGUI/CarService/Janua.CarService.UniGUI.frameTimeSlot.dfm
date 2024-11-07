@@ -2,7 +2,7 @@ object frameTimeSelect: TframeTimeSelect
   Left = 0
   Top = 0
   Width = 640
-  Height = 480
+  Height = 28
   Font.Height = -12
   TabOrder = 0
   object tgSelected: TUniFSToggle

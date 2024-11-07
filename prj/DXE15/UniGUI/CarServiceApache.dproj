@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Library</AppType>
         <MainSource>CarServiceApache.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">CarServiceApache</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -139,8 +140,8 @@
             <Form>frameCarServiceUniGUIBooking</Form>
             <DesignClass>TUniFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas">
-            <Form>dlgUniGUIBookingWizard</Form>
+        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas">
+            <Form>dlgUniGUIBookingFrameWizard</Form>
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas">

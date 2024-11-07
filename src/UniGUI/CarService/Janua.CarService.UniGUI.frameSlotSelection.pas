@@ -13,63 +13,43 @@ uses
 
 type
   TframeCarServiceSlotSelection = class(TUniFrame)
-    imglSlotBooking: TUniNativeImageList;
-    pnlTimeSelect1: TUniSimplePanel;
-    pnlTimeSelect2: TUniSimplePanel;
-    imgBooked1: TUniImage;
-    tgSelected1: TUniFSToggle;
-    ulbDate1: TUniLabel;
-    ulbDeliveryTime1: TUniLabel;
-    ulbTime1: TUniLabel;
-    ulbDate2: TUniLabel;
-    ulbTime2: TUniLabel;
-    ulbDeliveryTime2: TUniLabel;
-    tgSelected2: TUniFSToggle;
-    imgBooked2: TUniImage;
-    ulbDate3: TUniLabel;
-    ulbTime3: TUniLabel;
-    ulbDeliveryTime3: TUniLabel;
-    tgSelected3: TUniFSToggle;
-    imgBooked3: TUniImage;
-    ulbDate4: TUniLabel;
-    ulbTime4: TUniLabel;
-    ulbDeliveryTime4: TUniLabel;
-    tgSelected4: TUniFSToggle;
-    imgBooked4: TUniImage;
-    ulbDate5: TUniLabel;
-    ulbTime5: TUniLabel;
-    ulbDeliveryTime5: TUniLabel;
-    tgSelected5: TUniFSToggle;
-    imgBooked5: TUniImage;
-    ulbDate: TUniLabel;
-    ulbTime: TUniLabel;
-    ulbDeliveryTime: TUniLabel;
-    tgSelected: TUniFSToggle;
-    imgBooked: TUniImage;
-    procedure UniFrameCreate(Sender: TObject);
-  public
-    frameTimeSelect1: TframeTimeSelect;
+  // Frames
+      frameTimeSelect1: TframeTimeSelect;
     frameTimeSelect2: TframeTimeSelect;
     frameTimeSelect3: TframeTimeSelect;
     frameTimeSelect5: TframeTimeSelect;
     frameTimeSelect6: TframeTimeSelect;
     frameTimeSelect4: TframeTimeSelect;
+
+    imglSlotBooking: TUniNativeImageList;
+    pnlTimeSelect1: TUniSimplePanel;
+    pnlTimeSelect2: TUniSimplePanel;
+    procedure UniFrameCreate(Sender: TObject);
   private
     FTimeTableSlots: IList<ItimetableSlot>;
     FFRames: IList<TframeTimeSelect>;
     FUpdating: Boolean;
+    FSlotID: Smallint;
     procedure SetTimeTableSlots(const Value: IList<ItimetableSlot>);
+    function GetSlotID: Integer;
+    procedure SetmemoLog(const Value: TUniMemo);
   private
     FIsTest: Boolean;
+    FmemoLog: TUniMemo;
+    procedure SetIsTest(const Value: Boolean); { Private declarations }
+  public
     constructor Create(AOwner: TComponent); override;
     procedure SetupFrames;
     procedure OnToggleChange(Sender: TObject);
     procedure AfterConstruction; override;
-    procedure SetIsTest(const Value: Boolean); { Private declarations }
+    procedure ClearAllFrames;
+    procedure ClearAllSlots;
   public
     { Public declarations }
     property TimeTableSlots: IList<ItimetableSlot> read FTimeTableSlots write SetTimeTableSlots;
     property IsTest: Boolean read FIsTest write SetIsTest;
+    property SlotID: Integer read GetSlotID;
+    property memoLog: TUniMemo read FmemoLog write SetmemoLog;
   end;
 
 implementation
@@ -83,13 +63,74 @@ begin
   SetupFrames;
 end;
 
+procedure TframeCarServiceSlotSelection.ClearAllFrames;
+var
+  I: Integer;
+begin
+  if not FUpdating then
+    try
+      FUpdating := True;
+      ClearAllSlots;
+      for I := 0 to Pred(FFRames.Count) do
+      begin
+        if FFRames[I].tgSelected.Toggled then
+          FFRames[I].tgSelected.Toggled := False;
+        if FTimeTableSlots[I].Booked.AsBoolean then
+          FTimeTableSlots[I].Booked.AsBoolean := False;
+      end;
+    finally
+      FUpdating := False;
+    end;
+end;
+
+procedure TframeCarServiceSlotSelection.ClearAllSlots;
+var
+  lSlot: ItimetableSlot;
+begin
+  for lSlot in FTimeTableSlots do
+    lSlot.Booked.AsBoolean := False;
+end;
+
 constructor TframeCarServiceSlotSelection.Create(AOwner: TComponent);
 begin
   inherited;
-  FUpdating := False;
+
+end;
+
+function TframeCarServiceSlotSelection.GetSlotID: Integer;
+begin
+  Result := FSlotID
 end;
 
 procedure TframeCarServiceSlotSelection.OnToggleChange(Sender: TObject);
+var
+  I, J: Integer;
+begin
+  if not FUpdating then
+    try
+      FUpdating := True;
+      J := -1;
+      for I := 0 to Pred(FFRames.Count) do
+      begin
+        if FFRames[I].tgSelected.Toggled <> FTimeTableSlots[I].Booked.AsBoolean then
+          FFRames[I].tgSelected.Toggled := FTimeTableSlots[I].Booked.AsBoolean;
+        if FTimeTableSlots[I].Booked.AsBoolean then
+        begin
+          FSlotID := FTimeTableSlots[I].SlotID.AsInteger;
+          J := I;
+        end;
+      end;
+      if Assigned(FmemoLog) and (J > -1) then
+      begin
+        var
+        sLog := FTimeTableSlots[J].SlotDes.AsString + ' - ' + FTimeTableSlots[J].Workingday.AsString;
+        FmemoLog.Text := sLog;
+      end;
+
+    finally
+      FUpdating := False;
+    end;
+(*
 var
   I: Integer;
 begin
@@ -101,6 +142,7 @@ begin
     finally
       FUpdating := False;
     end;
+  *)
 end;
 
 procedure TframeCarServiceSlotSelection.SetIsTest(const Value: Boolean);
@@ -111,16 +153,37 @@ begin
       FFRames[I].IsTest := FIsTest;
 end;
 
+procedure TframeCarServiceSlotSelection.SetmemoLog(const Value: TUniMemo);
+begin
+
+end;
+
 procedure TframeCarServiceSlotSelection.SetTimeTableSlots(const Value: IList<ItimetableSlot>);
 var
   I: Integer;
 begin
   FTimeTableSlots := Value;
+  SetupFrames;
+
+  for I := 0 to FFRames.Count - 1 do
+  begin
+    FFRames[I].TimeTableSlot := nil;
+    FFRames[I].tgSelected.Toggled := False;
+    FFRames[I].imgBooked.Visible := False;
+  end;
+
   if Assigned(FTimeTableSlots) then
     for I := 0 to FTimeTableSlots.Count - 1 do
     begin
       FFRames[I].TimeTableSlot := FTimeTableSlots[I];
       FFRames[I].OnToggledChange := OnToggleChange;
+      FFRames[I].ClearAllSlots := ClearAllSlots;
+{$IFDEF DEBUG}
+      var
+      iSlotID := FFRames[I].TimeTableSlot.SlotID.AsInteger;
+      var
+      sName := FFRames[I].Name;
+{$ENDIF}
     end;
 end;
 
@@ -139,6 +202,8 @@ end;
 
 procedure TframeCarServiceSlotSelection.UniFrameCreate(Sender: TObject);
 begin
+  FUpdating := False;
+  FSlotID := -1;
   FFRames := Spring.Collections.TCollections.CreateList<TframeTimeSelect>;
 end;
 

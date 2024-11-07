@@ -43,7 +43,9 @@ uses
   Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm},
   Janua.Carservice.dmPgService in '..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgService.pas' {dmPgCarServiceMain: TDataModule},
   Janua.UniGUI.AccountSettings in '..\..\..\src\UniGUI\CarService\Janua.UniGUI.AccountSettings.pas' {UniForm4: TUniForm},
-  Janua.CarService.UniGUI.SlotSelectionController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.SlotSelectionController.pas';
+  Janua.CarService.UniGUI.SlotSelectionController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.SlotSelectionController.pas',
+  Janua.Postgres.Anagraph in '..\..\..\src\januaunidac\Janua.Postgres.Anagraph.pas',
+  Janua.Anagraph.Postgres.Storage in '..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmJanuaPgAnagraphStorage: TDataModule};
 
 {$R *.res}
 
@@ -70,6 +72,7 @@ begin
   Application.Initialize;
   TUniServerModule.Create(Application);
   Application.CreateForm(TdmPgCarServiceMain, dmPgCarServiceMain);
+  Application.CreateForm(TdmJanuaPgAnagraphStorage, dmJanuaPgAnagraphStorage);
   Application.Run;
 
 end.

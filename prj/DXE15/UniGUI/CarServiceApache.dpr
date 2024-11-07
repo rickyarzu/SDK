@@ -15,7 +15,7 @@ uses
   Janua.CarService.UniGUI.dlgLoginRegister in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgLoginRegister.pas' {frmCarServiceUniGUILoginRegister: TUniLoginForm},
   Janua.Carservice.UniGUIApplication in '..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUIApplication.pas',
   Janua.CarService.UniGUI.frameCarBooking in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBooking.pas' {frameCarServiceUniGUIBooking: TUniFrame},
-  Janua.CarService.UniGUI.dlgBookingWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas' {dlgUniGUIBookingWizard: TUniForm},
+  Janua.CarService.UniGUI.dlgBookingFrameWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas' {dlgUniGUIBookingFrameWizard: TUniForm},
   Janua.CarService.UniGUI.frameCarBookingClient in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas' {frameUniGuiCarBookingClient: TUniFrame},
   Janua.CarService.UniGUI.frameCalendarSelect in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCalendarSelect.pas' {frameUNICalendarSelect: TUniFrame};
 

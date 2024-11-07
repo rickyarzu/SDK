@@ -1,404 +1,135 @@
 object frameCarServiceSlotSelection: TframeCarServiceSlotSelection
   Left = 0
   Top = 0
-  ClientHeight = 203
-  ClientWidth = 289
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
+  Width = 606
+  Height = 427
   OnCreate = UniFrameCreate
-  TextHeight = 15
+  Font.Height = -12
+  TabOrder = 0
   object pnlTimeSelect1: TUniSimplePanel
     Left = 0
     Top = 0
-    Width = 289
+    Width = 606
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 0
-    object imgBooked1: TUniImage
-      Left = 238
-      Top = 1
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
-    end
-    object tgSelected1: TUniFSToggle
-      Left = 238
-      Top = 4
-      Width = 51
-      Height = 25
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object ulbDate1: TUniLabel
-      Left = 3
-      Top = 8
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object ulbDeliveryTime1: TUniLabel
-      Left = 184
-      Top = 8
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 4
-    end
-    object ulbTime1: TUniLabel
-      Left = 128
-      Top = 8
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 5
+    inline frameTimeSelect1: TframeTimeSelect
+      Left = 0
+      Top = 0
+      Width = 606
+      Height = 32
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object pnlTimeSelect5: TUniSimplePanel
     Left = 0
     Top = 128
-    Width = 289
-    Height = 32
+    Width = 606
+    Height = 25
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 1
-    object ulbDate5: TUniLabel
-      Left = 3
-      Top = 11
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 1
-    end
-    object ulbTime5: TUniLabel
-      Left = 128
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 2
-    end
-    object ulbDeliveryTime5: TUniLabel
-      Left = 184
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object tgSelected5: TUniFSToggle
-      Left = 235
-      Top = 2
-      Width = 51
-      Height = 24
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object imgBooked5: TUniImage
-      Left = 235
-      Top = 3
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
+    ExplicitTop = 120
+    inline frameTimeSelect5: TframeTimeSelect
+      Left = 0
+      Top = 0
+      Width = 640
+      Height = 28
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object pnlTimeSelect4: TUniSimplePanel
     Left = 0
     Top = 96
-    Width = 289
+    Width = 606
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 2
-    object ulbDate4: TUniLabel
-      Left = 3
-      Top = 11
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 1
-    end
-    object ulbTime4: TUniLabel
-      Left = 128
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 2
-    end
-    object ulbDeliveryTime4: TUniLabel
-      Left = 184
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object tgSelected4: TUniFSToggle
-      Left = 235
+    inline frameTimeSelect4: TframeTimeSelect
+      Left = 0
       Top = 0
-      Width = 51
-      Height = 24
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object imgBooked4: TUniImage
-      Left = 235
-      Top = 3
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
+      Width = 606
+      Height = 32
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object pnlTimeSelect3: TUniSimplePanel
     Left = 0
     Top = 64
-    Width = 289
+    Width = 606
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 3
-    object ulbDate3: TUniLabel
-      Left = 3
-      Top = 11
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 1
-    end
-    object ulbTime3: TUniLabel
-      Left = 128
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 2
-    end
-    object ulbDeliveryTime3: TUniLabel
-      Left = 184
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object tgSelected3: TUniFSToggle
-      Left = 235
-      Top = 2
-      Width = 51
-      Height = 24
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object imgBooked3: TUniImage
-      Left = 235
-      Top = 3
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
+    inline frameTimeSelect3: TframeTimeSelect
+      Left = 0
+      Top = 0
+      Width = 606
+      Height = 32
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object pnlTimeSelect2: TUniSimplePanel
     Left = 0
     Top = 32
-    Width = 289
+    Width = 606
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 4
-    object ulbDate2: TUniLabel
-      Left = 3
-      Top = 11
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 1
-    end
-    object ulbTime2: TUniLabel
-      Left = 128
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 2
-    end
-    object ulbDeliveryTime2: TUniLabel
-      Left = 184
-      Top = 11
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object tgSelected2: TUniFSToggle
-      Left = 235
-      Top = 5
-      Width = 51
-      Height = 24
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object imgBooked2: TUniImage
-      Left = 235
-      Top = 4
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
+    inline frameTimeSelect2: TframeTimeSelect
+      Left = 0
+      Top = 0
+      Width = 606
+      Height = 32
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object pnlTimeSelect6: TUniSimplePanel
     Left = 0
-    Top = 160
-    Width = 289
+    Top = 153
+    Width = 606
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 5
-    object ulbDate: TUniLabel
-      Left = 3
-      Top = 8
-      Width = 86
-      Height = 15
-      Hint = ''
-      AutoSize = False
-      Caption = '18/11/2023'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 1
-    end
-    object ulbTime: TUniLabel
-      Left = 128
-      Top = 9
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '10:30'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 2
-    end
-    object ulbDeliveryTime: TUniLabel
-      Left = 184
-      Top = 9
-      Width = 27
-      Height = 13
-      Hint = ''
-      Caption = '11:00'
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
-    object tgSelected: TUniFSToggle
-      Left = 235
-      Top = 3
-      Width = 51
-      Height = 24
-      Hint = ''
-      ThemeOn = Success
-      ThemeOff = Gray
-      TitleOn = 'ON'
-      TitleOff = 'OFF'
-    end
-    object imgBooked: TUniImage
-      Left = 235
-      Top = 4
-      Width = 51
-      Height = 25
-      Hint = ''
-      Visible = False
-      Stretch = True
-      ImageIndex = 0
+    ExplicitTop = 200
+    inline frameTimeSelect6: TframeTimeSelect
+      Left = 0
+      Top = 0
+      Width = 606
+      Height = 32
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Font.Height = -12
+      TabOrder = 0
+      Background.Picture.Data = {00}
     end
   end
   object imglSlotBooking: TUniNativeImageList

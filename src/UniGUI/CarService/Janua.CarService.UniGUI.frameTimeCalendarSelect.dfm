@@ -2,18 +2,19 @@ object frameTimeCalendarSelect: TframeTimeCalendarSelect
   Left = 0
   Top = 0
   Width = 640
-  Height = 480
+  Height = 29
   Font.Height = -12
   TabOrder = 0
   object UniContainerPanel1: TUniContainerPanel
     Left = 0
     Top = 0
     Width = 640
-    Height = 480
+    Height = 29
     Hint = ''
     ParentColor = False
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 25
     object ulbDate: TUniLabel
       Left = 56
       Top = 4

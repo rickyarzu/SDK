@@ -1,4 +1,4 @@
-ï»¿unit Janua.CarService.UniGUI.dlgBookingWizard;
+unit Janua.CarService.UniGUI.dlgBookingFrameWizard;
 
 interface
 
@@ -18,13 +18,22 @@ uses
   {Janua.CarService.UniGUI.frameAddressesSelect  ->} Janua.CarService.UniGUI.AddressSelectController,
   {Janua.CarService.UniGUI.frameBookingSummary   ->} Janua.CarService.UniGUI.BookingSummaryController,
   {Janua.CarService.UniGUI.frameTimeTable        ->} Janua.CarService.UniGUI.TimeTableSelectController,
-  {frameSlotSelection ->}  Janua.CarService.UniGUI.SlotSelectionController,
-  Janua.CarService.PgBooking, Janua.UniGUI.Interposers, uniMemo;
+  Janua.CarService.UniGUI.SlotSelectionController,
+  Janua.CarService.PgBooking, Janua.UniGUI.Interposers, uniMemo,
+  Janua.CarService.UniGUI.frameCalendarSelect, Janua.CarService.UniGUI.frameTimeSlotPickup,
+  Janua.CarService.UniGUI.frameCarBookingClient, Janua.CarService.UniGUI.frameAddressesSelect;
 
 type
   TBookingPageEnum = (pgSelectDate, pgSelectSlot, pgCustomer, pgLocations, pgSummary, pgPayment);
 
-  TdlgUniGUIBookingWizard = class(TUniForm)
+  TdlgUniGUIBookingFrameWizard = class(TUniForm)
+    framePickup: TframeUNICalendarSelect;
+    frameDelivery: TframeUNICalendarSelect; // -> CalendarSelectPickup
+    framePickupTimeSelect: TframeUniGUITimeSlotPickup; // -> PickupSlotTimeSelect
+    frameDeliveryTimeSelect: TframeUniGUITimeSlotPickup; // -> DeliveryTimeSelect
+    frameUniGuiCarBookingClient1: TframeUniGuiCarBookingClient; // -> CarBookingClientController1
+    frameUniGUICarServiceAddressSelect: TframeUniGUICarServiceAddressSelect;
+    // -> AddressSelectUniGUICController1
     btnNext: TUniFSButton;
     btnBack: TUniFSButton;
     PgCBookingSteps: TUniPageControl;
@@ -45,184 +54,19 @@ type
     lbPaymentAmountEuro: TUniLabel;
     btnPayment: TUniFSButton;
     UniPanel1: TUniPanel;
-    pnlDateSelection: TUniContainerPanel;
     tgHasReturn: TUniFSToggle;
     lbHasReturn: TUniLabel;
     pgTimetableLocations: TUniTabSheet;
-    pnlPickup: TUniContainerPanel;
-    pnlDelivery: TUniContainerPanel;
     UniContainerPanel1: TUniContainerPanel;
     pnlPickupTimeSelect: TUniContainerPanel;
     pnlDeliveryTimeSelect: TUniContainerPanel;
     pnlBookingClient: TUniContainerPanel;
     pnlTimetableLocations: TUniContainerPanel;
     pnlBookingSummary: TUniContainerPanel;
-    cldPickup1: TUniCalendar;
-    lbPickupDate: TUniLabel;
-    lbPickupDateSelect: TUniLabel;
-    btnCheckPickupDate: TUniButton;
-    btnCheckReturnDate: TUniButton;
-    cldReturn1: TUniCalendar;
-    UniLabel1: TUniLabel;
-    lbReturnDate: TUniLabel;
-    ulbPickupDate: TUniLabel;
-    PickupDate: TUniDateTimePicker;
-    ulbDate: TUniLabel;
-    lbPickup: TUniLabel;
-    lbDelivery: TUniLabel;
-    pnlCarServiceSlotSelection: TUniSimplePanel;
-    ulbReturnDate: TUniLabel;
-    PickupDelivery: TUniDateTimePicker;
-    ulbDateR: TUniLabel;
-    lbPickupR: TUniLabel;
-    lbDeliveryR: TUniLabel;
-    UniSimplePanel1: TUniSimplePanel;
-    PickupSlotTimeSelect: TCarServiceSlotSelectionController;
     imglSlotBooking: TUniNativeImageList;
-    pnlSlotSelection: TUniSimplePanel;
-    pnlPickup1: TUniSimplePanel;
-    imgBooked1: TUniImage;
-    tgSelected1: TUniFSToggle;
-    ulbDate1: TUniLabel;
-    ulbDeliveryTime1: TUniLabel;
-    ulbTime1: TUniLabel;
-    pnlPickup5: TUniSimplePanel;
-    ulbDate5: TUniLabel;
-    ulbTime5: TUniLabel;
-    ulbDeliveryTime5: TUniLabel;
-    tgSelected5: TUniFSToggle;
-    imgBooked5: TUniImage;
-    pnlPickup4: TUniSimplePanel;
-    ulbDate4: TUniLabel;
-    ulbTime4: TUniLabel;
-    ulbDeliveryTime4: TUniLabel;
-    tgSelected4: TUniFSToggle;
-    imgBooked4: TUniImage;
-    pnlPickup3: TUniSimplePanel;
-    ulbDate3: TUniLabel;
-    ulbTime3: TUniLabel;
-    ulbDeliveryTime3: TUniLabel;
-    tgSelected3: TUniFSToggle;
-    imgBooked3: TUniImage;
-    pnlPickup2: TUniSimplePanel;
-    ulbDate2: TUniLabel;
-    ulbTime2: TUniLabel;
-    ulbDeliveryTime2: TUniLabel;
-    tgSelected2: TUniFSToggle;
-    imgBooked2: TUniImage;
-    pnlPickup6: TUniSimplePanel;
-    ulbDate6: TUniLabel;
-    ulbTime6: TUniLabel;
-    ulbDeliveryTime6: TUniLabel;
-    tgSelected6: TUniFSToggle;
-    imgBooked6: TUniImage;
-    TimeSelectUniGUIController1: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController2: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController3: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController4: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController5: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController6: TTimeSelectUniGUIController;
-    DeliveryTimeSelect: TCarServiceSlotSelectionController;
     UniNativeImageList1: TUniNativeImageList;
-    UniSimplePanel2: TUniSimplePanel;
-    pnlReturn1: TUniSimplePanel;
-    UniImage1: TUniImage;
-    UniFSToggle1: TUniFSToggle;
-    lbDateReturn01: TUniLabel;
-    UniLabel7: TUniLabel;
-    UniLabel8: TUniLabel;
-    pnlReturn3: TUniSimplePanel;
-    lbDateReturn05: TUniLabel;
-    UniLabel10: TUniLabel;
-    UniLabel11: TUniLabel;
-    UniFSToggle2: TUniFSToggle;
-    UniImage2: TUniImage;
-    pnlReturn5: TUniSimplePanel;
-    lbDateReturn04: TUniLabel;
-    UniLabel13: TUniLabel;
-    UniLabel14: TUniLabel;
-    UniFSToggle3: TUniFSToggle;
-    UniImage3: TUniImage;
-    pnlReturn4: TUniSimplePanel;
-    lbDateReturn03: TUniLabel;
-    UniLabel16: TUniLabel;
-    UniLabel17: TUniLabel;
-    UniFSToggle4: TUniFSToggle;
-    UniImage4: TUniImage;
-    pnlReturn2: TUniSimplePanel;
-    lbDateReturn02: TUniLabel;
-    UniLabel19: TUniLabel;
-    UniLabel20: TUniLabel;
-    UniFSToggle5: TUniFSToggle;
-    UniImage5: TUniImage;
-    pnlReturn6: TUniSimplePanel;
-    lbDateReturn06: TUniLabel;
-    UniLabel22: TUniLabel;
-    UniLabel23: TUniLabel;
-    UniFSToggle6: TUniFSToggle;
-    UniImage6: TUniImage;
     memoLog: TUniMemo;
-    CalendarSelectPickup: TUNIControllerCalendarSelect;
-    CalendarSelectDelivery: TUNIControllerCalendarSelect;
     cntAddressSelect: TUniContainerPanel;
-    UniContainerPanel2: TUniContainerPanel;
-    cboAddressSelection: TUniFSComboBox;
-    btnNewBranch: TUniFSButton;
-    lbServiceAddress: TUniLabel;
-    lbIndirizzoPickup: TUniLabel;
-    lbIndirizzoReturn: TUniLabel;
-    pnlTimeTablePickup: TUniSimplePanel;
-    cntTimeTable: TUniContainerPanel;
-    pnlTop: TUniContainerPanel;
-    lbTimeTableType: TUniLabel;
-    lbTimetableDAte: TUniLabel;
-    lbDeliveryTime: TUniLabel;
-    UniContainerPanel3: TUniContainerPanel;
-    cboPickup: TUniComboBox;
-    lbDeparture: TUniLabel;
-    UniContainerPanel4: TUniContainerPanel;
-    cboReturn: TUniComboBox;
-    lbVehiclePickupPlace: TUniLabel;
-    pnlTimeTableDelivery: TUniSimplePanel;
-    UniContainerPanel5: TUniContainerPanel;
-    pnlTopD: TUniContainerPanel;
-    lbTimeTableTypeD: TUniLabel;
-    lbTimetableDAteD: TUniLabel;
-    lbDeliveryTimeD: TUniLabel;
-    UniContainerPanel6: TUniContainerPanel;
-    cboPickupD: TUniComboBox;
-    lbDepartureD: TUniLabel;
-    UniContainerPanel7: TUniContainerPanel;
-    cboReturnD: TUniComboBox;
-    lbVehiclePickupPlaceD: TUniLabel;
-    cntCarBookingClient: TUniContainerPanel;
-    dblcbAnagraphCustomers: TUniFSComboBox;
-    lbSelectCustomer: TUniLabel;
-    cnt02CustomerName: TUniContainerPanel;
-    UniContainerPanel9: TUniContainerPanel;
-    edFirstName: TUniEdit;
-    UniContainerPanel10: TUniContainerPanel;
-    EdLastName: TUniEdit;
-    cnt03CustomerFullAddress: TUniContainerPanel;
-    UniContainerPanel12: TUniContainerPanel;
-    btnSearch: TUniFSButton;
-    UniContainerPanel13: TUniContainerPanel;
-    EdFullAddress: TUniEdit;
-    cnt04CellularMail: TUniContainerPanel;
-    UniContainerPanel15: TUniContainerPanel;
-    EdCustomerPhone: TUniEdit;
-    UniContainerPanel16: TUniContainerPanel;
-    edCustomerEmail: TUniEdit;
-    cnt06CarNumberPlate: TUniContainerPanel;
-    UniContainerPanel18: TUniContainerPanel;
-    edCarNumberPlate: TUniEdit;
-    UniContainerPanel19: TUniContainerPanel;
-    edCarColor: TUniEdit;
-    cnt07ReturnAddress: TUniContainerPanel;
-    UniContainerPanel21: TUniContainerPanel;
-    edReturnAddress: TUniEdit;
-    UniContainerPanel22: TUniContainerPanel;
-    btnReturnAddress: TUniFSButton;
     cntBookingSummary: TUniContainerPanel;
     UniFSButton1: TUniFSButton;
     cboBranchSelection: TUniFSComboBox;
@@ -235,23 +79,6 @@ type
     UniLabel3: TUniLabel;
     ulbPickupTime: TUniLabel;
     htmlBookingSummary: TUniHTMLFrame;
-
-    // Controllers ***********************************************************************************
-    TimeTableDeliveryController: TTimeTableUniGUIController;
-    TimeTablePickupController: TTimeTableUniGUIController;
-    CarBookingClientController1: TCarBookingClientController;
-    AddressSelectUniGUICController1: TAddressSelectUniGUICController;
-    BookingSummaryUniGUIController1: TBookingSummaryUniGUIController;
-
-    // TimeTable - Selection
-    TimeSelectUniGUIController7: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController8: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController9: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController10: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController11: TTimeSelectUniGUIController;
-    TimeSelectUniGUIController12: TTimeSelectUniGUIController;
-    cnt05CarModel: TUniContainerPanel;
-    cnt01SelectCustomer: TUniContainerPanel;
     lbCurrentAccountBalanceDes: TUniLabel;
     lbCurrentAccountBalance: TUniLabel;
     lbAccountBalanceAfterDes: TUniLabel;
@@ -265,6 +92,9 @@ type
     UniImage8: TUniImage;
     UniContainerPanel27: TUniContainerPanel;
     UniImage9: TUniImage;
+    cntframePickup: TUniContainerPanel;
+    cntframeDelivery: TUniContainerPanel;
+    BookingSummaryUniGUIController1: TBookingSummaryUniGUIController;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);
@@ -322,7 +152,7 @@ uses
 {$R *.dfm}
 { TdlgUniGUIBookingWizard }
 
-procedure TdlgUniGUIBookingWizard.ActivateBooking;
+procedure TdlgUniGUIBookingFrameWizard.ActivateBooking;
 var
   lDate: TNullableDate;
 begin
@@ -330,18 +160,18 @@ begin
   begin
     lDate := FdmPgCarServiceBooking.DeliveryDate;
     if lDate.HasValue then
-      CalendarSelectDelivery.cldPickup1.Date := FdmPgCarServiceBooking.DeliveryDate
+      frameDelivery.cldPickup1.Date := FdmPgCarServiceBooking.DeliveryDate
     else
-      FdmPgCarServiceBooking.DeliveryDate := CalendarSelectDelivery.cldPickup1.Date;
+      FdmPgCarServiceBooking.DeliveryDate := frameDelivery.cldPickup1.Date;
     lDate := FdmPgCarServiceBooking.PickupDate;
     if lDate.HasValue then
-      CalendarSelectPickup.cldPickup1.Date := FdmPgCarServiceBooking.PickupDate
+      framePickup.cldPickup1.Date := FdmPgCarServiceBooking.PickupDate
     else
-      FdmPgCarServiceBooking.PickupDate := CalendarSelectPickup.cldPickup1.Date;
+      FdmPgCarServiceBooking.PickupDate := framePickup.cldPickup1.Date;
   end;
 end;
 
-procedure TdlgUniGUIBookingWizard.btnBackClick(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.btnBackClick(Sender: TObject);
 begin
   // pgSelectDate, pgSelectSlot, pgCustomer, pgSummary
   case PgCBookingSteps.TabIndex of
@@ -372,7 +202,7 @@ begin
   end;
 end;
 
-procedure TdlgUniGUIBookingWizard.btnNextClick(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.btnNextClick(Sender: TObject);
 var
   lMessageDlg: TfrmUniGUIHtmlMessage;
   PickupDate, DeliveryDate: TDate;
@@ -382,25 +212,25 @@ begin
     Ord(pgSelectDate):
       begin
         if not FdmPgCarServiceBooking.HasReturn or
-          (CalendarSelectDelivery.cldPickup1.Date >= CalendarSelectPickup.cldPickup1.Date) then
+          (frameDelivery.cldPickup1.Date >= framePickup.cldPickup1.Date) then
         begin
-          FdmPgCarServiceBooking.PickupDate := CalendarSelectPickup.cldPickup1.Date;
+          FdmPgCarServiceBooking.PickupDate := framePickup.cldPickup1.Date;
           FdmPgCarServiceBooking.UpdatePickupSlots;
-          PickupSlotTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
+          framePickupTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
 
           if FdmPgCarServiceBooking.HasReturn then
           begin
-            FdmPgCarServiceBooking.DeliveryDate := CalendarSelectDelivery.cldPickup1.Date;
+            FdmPgCarServiceBooking.DeliveryDate := frameDelivery.cldPickup1.Date;
             FdmPgCarServiceBooking.UpdateDeliverySlots;
-            DeliveryTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.DeliverySlots;
+            frameDeliveryTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.DeliverySlots;
           end;
 
-          if CalendarSelectPickup.CheckBookingDate and
-            (not FdmPgCarServiceBooking.HasReturn or CalendarSelectDelivery.CheckBookingDate) then
+          if framePickup.CheckBookingDate and
+            (not FdmPgCarServiceBooking.HasReturn or frameDelivery.CheckBookingDate) then
           begin
-            PickupSlotTimeSelect.BookingDate := FdmPgCarServiceBooking.PickupDate;
+            framePickupTimeSelect.BookingDate := FdmPgCarServiceBooking.PickupDate;
             if FdmPgCarServiceBooking.HasReturn then
-              DeliveryTimeSelect.BookingDate := FdmPgCarServiceBooking.DeliveryDate;
+              frameDeliveryTimeSelect.BookingDate := FdmPgCarServiceBooking.DeliveryDate;
             PgCBookingSteps.ActivePageIndex := Ord(pgSelectSlot);
           end;
         end
@@ -411,9 +241,9 @@ begin
           lMessageDlg.Lines.Add('<p></p>');
           lMessageDlg.Lines.Add('<h1 style="text-align: center;"><span style="color: #ff0000;">');
           lMessageDlg.Lines.Add('Attenzione la data di ritorno </span><span style="color: #0000ff;">' +
-            DateTimeToStr(CalendarSelectDelivery.cldPickup1.Date) + '</span><span style="color: #ff0000;">' +
-            '<br /> Ã¨ anteriore alla data di Pickup  </span><span style="color: #0000ff;">' +
-            DateTimeToStr(CalendarSelectPickup.cldPickup1.Date) + '</span><span style="color: #ff0000;">');
+            DateTimeToStr(frameDelivery.cldPickup1.Date) + '</span><span style="color: #ff0000;">' +
+            '<br /> è anteriore alla data di Pickup  </span><span style="color: #0000ff;">' +
+            DateTimeToStr(framePickup.cldPickup1.Date) + '</span><span style="color: #ff0000;">');
           lMessageDlg.Lines.Add('</span></h1>');
           lMessageDlg.ShowModal();
         end;
@@ -430,23 +260,23 @@ begin
         else if FdmPgCarServiceBooking.HasReturn and (PickupDate > DeliveryDate) then
           ShowMessage('Data di riconsegna  anteriore alla data di Ritiro Veicolo')
         else if FdmPgCarServiceBooking.HasReturn and (PickupDate = DeliveryDate) and
-          (DeliveryTimeSelect.SlotID <= PickupSlotTimeSelect.SlotID) then
+          (frameDeliveryTimeSelect.SlotID <= framePickupTimeSelect.SlotID) then
           ShowMessage('Ora di riconsegna  anteriore all''Ora di Ritiro Veicolo')
         else
         begin
-          CarBookingClientController1.CarBooking := FdmPgCarServiceBooking.BookingRecord;
-          CarBookingClientController1.UsersList := FdmPgCarServiceBooking.UsersList;
-          CarBookingClientController1.CustomerVehicleDataset := FdmPgCarServiceBooking.qryCustomerVehicles;
+          frameUniGuiCarBookingClient1.CarBooking := FdmPgCarServiceBooking.BookingRecord;
+          frameUniGuiCarBookingClient1.UsersList := FdmPgCarServiceBooking.UsersList;
+          frameUniGuiCarBookingClient1.CustomerVehicleDataset := FdmPgCarServiceBooking.qryCustomerVehicles;
           var
           hr := FdmPgCarServiceBooking.HasReturn;
-          CarBookingClientController1.edReturnAddress.Visible := hr;
-          CarBookingClientController1.btnReturnAddress.Visible := hr;
+          frameUniGuiCarBookingClient1.edReturnAddress.Visible := hr;
+          frameUniGuiCarBookingClient1.btnReturnAddress.Visible := hr;
           PgCBookingSteps.ActivePageIndex := Ord(pgCustomer);
         end;
       end;
     Ord(pgCustomer):
       begin
-        CarBookingClientController1.PostRecord;
+        frameUniGuiCarBookingClient1.PostRecord;
 
         if FdmPgCarServiceBooking.BookingRecord.checkBooking then
         begin
@@ -480,7 +310,7 @@ begin
           end;
 
 {$ENDIF}
-          AddressSelectUniGUICController1.BookingHead := FdmPgCarServiceBooking.BookingRecord;
+          frameUniGUICarServiceAddressSelect.BookingHead := FdmPgCarServiceBooking.BookingRecord;
           PgCBookingSteps.ActivePageIndex := Ord(pgLocations);
         end
         else
@@ -488,9 +318,9 @@ begin
       end;
     Ord(pgLocations):
       begin
-        if AddressSelectUniGUICController1.TimeTablePickupController.Modified then
+        if frameUniGUICarServiceAddressSelect.frameTimeTablePickup.Modified then
           FdmPgCarServiceBooking.UpdatePickup;
-        if AddressSelectUniGUICController1.TimeTableDeliveryController.Modified then
+        if frameUniGUICarServiceAddressSelect.frameTimeTableDelivery.Modified then
           FdmPgCarServiceBooking.UpdateReturn;
         BookingSummaryUniGUIController1.dsBookingAmount := FdmPgCarServiceBooking.qryBookingAmount;
         BookingSummaryUniGUIController1.BookingHead := FdmPgCarServiceBooking.BookingRecord;
@@ -521,7 +351,7 @@ begin
           lMessageDlg.Lines.Add
             ('Attenzione occorre selezionare la spunta di accettazione delle regole contrattuali' +
             ' </span><span style="color: #0000ff;">' +
-            'la spunta Ã¨ in basso a sinistra, potete anche prendere visione del contratto con il bottone a destra'
+            'la spunta è in basso a sinistra, potete anche prendere visione del contratto con il bottone a destra'
             + '</span><span style="color: #ff0000;">' + '<br /> Grazie ');
           lMessageDlg.Lines.Add('</span></h1>');
           lMessageDlg.ShowModal();
@@ -537,7 +367,7 @@ begin
   btnBack.Visible := not(PgCBookingSteps.ActivePageIndex <= 0);
 end;
 
-procedure TdlgUniGUIBookingWizard.btnPaymentClick(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.btnPaymentClick(Sender: TObject);
 begin
   FdmPgCarServiceBooking.doBookingPayment;
   lbAccountBalanceAfter.Text := FdmPgCarServiceBooking.CurrentAccountBalance;
@@ -549,65 +379,76 @@ begin
   }
 end;
 
-procedure TdlgUniGUIBookingWizard.cboPickupReturnClick(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.cboPickupReturnClick(Sender: TObject);
 begin
   // FdmPgCarServiceBooking.PickupDate :=
 end;
 
-procedure TdlgUniGUIBookingWizard.PickupDateChange(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.PickupDateChange(Sender: TObject);
 begin
-  if PickupDate.DateTime <> FdmPgCarServiceBooking.PickupDate then
-  begin
-    PickupSlotTimeSelect.ClearAllFrames;
+  (*
+    if PickupDate.DateTime <> FdmPgCarServiceBooking.PickupDate then
+    begin
+    framePickupTimeSelect.ClearAllFrames;
     FdmPgCarServiceBooking.PickupDate := PickupDate.DateTime;
-    CalendarSelectPickup.cldPickup1.Date := PickupDate.DateTime;
+    framePickup.cldPickup1.Date := PickupDate.DateTime;
     FdmPgCarServiceBooking.UpdatePickupSlots;
-    PickupSlotTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
-  end;
+    framePickupTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.PickupSlots;
+    end;
+  *)
+  framePickup.cldPickup1.Date := framePickupTimeSelect.PickupDate.DateTime;
 end;
 
-procedure TdlgUniGUIBookingWizard.PickupDeliveryChange(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.PickupDeliveryChange(Sender: TObject);
 begin
-  if PickupDelivery.DateTime <> FdmPgCarServiceBooking.DeliveryDate then
-  begin
-    DeliveryTimeSelect.ClearAllFrames;
+  (*
+    if PickupDelivery.DateTime <> FdmPgCarServiceBooking.DeliveryDate then
+    begin
+    frameDeliveryTimeSelect.ClearAllFrames;
     FdmPgCarServiceBooking.DeliveryDate := PickupDelivery.DateTime;
-    CalendarSelectDelivery.cldPickup1.Date := PickupDelivery.DateTime;
+    frameDelivery.cldPickup1.Date := PickupDelivery.DateTime;
     FdmPgCarServiceBooking.UpdateDeliverySlots;
-    DeliveryTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.DeliverySlots;
-  end;
+    frameDeliveryTimeSelect.TimeTableSlots := FdmPgCarServiceBooking.DeliverySlots;
+    end;
+  *)
+  framePickup.cldPickup1.Date := frameDeliveryTimeSelect.PickupDate.DateTime;
 end;
 
-procedure TdlgUniGUIBookingWizard.SetdmPgCarServiceBooking(const Value: TdmPgCarServiceBookingStorage);
+procedure TdlgUniGUIBookingFrameWizard.SetdmPgCarServiceBooking(const Value: TdmPgCarServiceBookingStorage);
 begin
   FdmPgCarServiceBooking := Value;
-  CalendarSelectPickup.DM := Value;
-  CalendarSelectDelivery.DM := Value;
+  framePickup.DM := Value;
+  frameDelivery.DM := Value;
   tgHasReturn.Toggled := FdmPgCarServiceBooking.HasReturn;
   ActivateBooking;
+  framePickupTimeSelect.dmPgCarServiceBooking := FdmPgCarServiceBooking;
+  frameDeliveryTimeSelect.dmPgCarServiceBooking := FdmPgCarServiceBooking;
 end;
 
-procedure TdlgUniGUIBookingWizard.tgHasReturnToggled(const Value: Boolean);
+procedure TdlgUniGUIBookingFrameWizard.tgHasReturnToggled(const Value: Boolean);
 begin
   FdmPgCarServiceBooking.HasReturn := tgHasReturn.Toggled;
-  pnlDelivery.Visible := tgHasReturn.Toggled;
+  cntframeDelivery.Visible := tgHasReturn.Toggled;
   pnlDeliveryTimeSelect.Visible := tgHasReturn.Toggled;
 end;
 
-procedure TdlgUniGUIBookingWizard.UniFormClose(Sender: TObject; var Action: TCloseAction);
+procedure TdlgUniGUIBookingFrameWizard.UniFormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FdmPgCarServiceBooking.CloseLogBooking;
   BookingSummaryUniGUIController1.BookingHead := nil;
   FdmPgCarServiceBooking := nil;
-  CalendarSelectPickup.DM := nil;
-  CalendarSelectDelivery.DM := nil;
+  framePickup.DM := nil;
+  frameDelivery.DM := nil;
 end;
 
-procedure TdlgUniGUIBookingWizard.UniFormCreate(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.UniFormCreate(Sender: TObject);
 begin
-  CalendarSelectPickup.IsPickup := True;
-  CalendarSelectDelivery.IsPickup := False;
-
+  framePickup.IsPickup := True;
+  frameDelivery.IsPickup := False;
+  framePickupTimeSelect.IsPickup := True;
+  framePickupTimeSelect.OnDateChange := self.PickupDateChange;
+  frameDeliveryTimeSelect.IsPickup := False;
+  frameDeliveryTimeSelect.OnDateChange := self.PickupDateChange;
   (*
     // Time Select
     framePickupTimeSelect := TframeUniGUITimeSlotPickup.Create(self);
@@ -619,14 +460,14 @@ begin
     frameDeliveryTimeSelect.Align := TAlign.alClient;
 
     // Booking Client
-    CarBookingClientController1 := TframeUniGuiCarBookingClient.Create(self);
-    CarBookingClientController1.Parent := pnlBookingClient;
-    CarBookingClientController1.Align := TAlign.alClient;
+    frameUniGuiCarBookingClient1 := TframeUniGuiCarBookingClient.Create(self);
+    frameUniGuiCarBookingClient1.Parent := pnlBookingClient;
+    frameUniGuiCarBookingClient1.Align := TAlign.alClient;
 
     // Address Select  pnlTimetableLocations
-    AddressSelectUniGUICController1 := TframeUniGUICarServiceAddressSelect.Create(self);
-    AddressSelectUniGUICController1.Parent := pnlTimetableLocations;
-    AddressSelectUniGUICController1.Align := TAlign.alClient;
+    frameUniGUICarServiceAddressSelect := TframeUniGUICarServiceAddressSelect.Create(self);
+    frameUniGUICarServiceAddressSelect.Parent := pnlTimetableLocations;
+    frameUniGUICarServiceAddressSelect.Align := TAlign.alClient;
 
     // Booking Summary  pnlBookingSummary
     BookingSummaryUniGUIController1 := TBookingSummaryUniGUIController1.Create(self);
@@ -636,7 +477,7 @@ begin
 
 end;
 
-procedure TdlgUniGUIBookingWizard.UniFormShow(Sender: TObject);
+procedure TdlgUniGUIBookingFrameWizard.UniFormShow(Sender: TObject);
 begin
   PgCBookingSteps.TabIndex := 0;
 end;

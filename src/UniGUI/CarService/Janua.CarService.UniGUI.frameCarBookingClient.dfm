@@ -29,6 +29,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       TabOrder = 1
       AnyMatch = True
       IconItems = <>
+      OnChange = dblcbAnagraphCustomersChange
       Value = '-1'
     end
     object edCarModel: TUniEdit
@@ -162,6 +163,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           ScreenMask.WaitData = True
           ScreenMask.Message = 'Autenticando...'
           ImageIndex = 0
+          OnClick = btnSearchClick
         end
       end
       object UniContainerPanel9: TUniContainerPanel
@@ -185,6 +187,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           EmptyText = 
             'Indirizzo Cliente (Digita l'#39'indirizzo cercheremo l'#39'indirizzo tra' +
             'mite Google)'
+          OnExit = EdFullAddressExit
+          OnEnter = EdFullAddressEnter
         end
       end
     end
@@ -331,6 +335,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           EmptyText = 
             'Indirizzo di Ritorno, da indicare se si richiede la restituzione' +
             ' in un luogo differente'
+          OnExit = edReturnAddressExit
+          OnEnter = edReturnAddressEnter
         end
       end
       object UniContainerPanel15: TUniContainerPanel
@@ -365,26 +371,9 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           ScreenMask.WaitData = True
           ScreenMask.Message = 'Autenticando...'
           ImageIndex = 0
+          OnClick = btnReturnAddressClick
         end
       end
     end
-  end
-  object CarBookingClientController1: TCarBookingClientController
-    Enabled = False
-    edCarModel = edCarModel
-    dblcbAnagraphCustomers = dblcbAnagraphCustomers
-    edFirstName = edFirstName
-    EdLastName = EdLastName
-    btnSearch = btnSearch
-    EdFullAddress = EdFullAddress
-    EdCustomerPhone = EdCustomerPhone
-    edCustomerEmail = edCustomerEmail
-    edCarNumberPlate = edCarNumberPlate
-    edCarColor = edCarColor
-    edReturnAddress = edReturnAddress
-    btnReturnAddress = btnReturnAddress
-    lbSelectCustomer = lbSelectCustomer
-    Left = 264
-    Top = 192
   end
 end

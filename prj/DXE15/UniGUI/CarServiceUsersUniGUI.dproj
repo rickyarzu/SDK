@@ -138,8 +138,8 @@
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
         <VerInfo_MinorVer>9</VerInfo_MinorVer>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.104;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Build>104</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.9.1.107;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>107</VerInfo_Build>
         <Icon_MainIcon>..\..\..\res\CarService\pikapp_logo_mono_1024.ico</Icon_MainIcon>
         <VerInfo_Release>1</VerInfo_Release>
     </PropertyGroup>
@@ -316,6 +316,12 @@
             <DesignClass>TUniForm</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.SlotSelectionController.pas"/>
+        <DCCReference Include="..\..\..\src\januaunidac\Janua.Postgres.Anagraph.pas"/>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas">
+            <Form>dmJanuaPgAnagraphStorage</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <None Include="..\..\..\History\CarServiceUsersUniGUI.txt"/>
         <None Include="..\..\..\Components\include\Dac.inc"/>
         <None Include="..\..\..\Components\include\IdeVer.inc"/>

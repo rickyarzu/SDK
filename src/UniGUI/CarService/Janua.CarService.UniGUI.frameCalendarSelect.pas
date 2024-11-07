@@ -12,10 +12,10 @@ uses
   Janua.CarService.PgBooking;
 
 type
-  TframeUNICalendarSelect = class(TUniForm)
-    cldPickup1: TUniCalendar;
+  TframeUNICalendarSelect = class(TUniFrame)
     lbPickupDate: TUniLabel;
     lbPickupDateSelect: TUniLabel;
+    cldPickup1: TUniCalendar;
     btnCheckPickupDate: TUniButton;
     procedure btnCheckPickupDateClick(Sender: TObject);
     procedure cldPickup1Click(Sender: TObject);

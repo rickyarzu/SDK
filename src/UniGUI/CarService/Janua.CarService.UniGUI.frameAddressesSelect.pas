@@ -10,10 +10,13 @@ uses
   // Janua
   JOrm.CarService.Booking.Intf, Janua.UniGUI.Interposers, JOrm.Anagraph.Intf,
   Janua.Core.Commons, Janua.UniGUI.Controller, Janua.CarService.UniGUI.TimeTableSelectController,
-  Janua.CarService.UniGUI.AddressSelectController;
+  Janua.CarService.UniGUI.AddressSelectController, System.RegularExpressionsCore,
+  Janua.CarService.UniGUI.frameTimeTable;
 
 type
-  TframeUniGUICarServiceAddressSelect = class(TUniFrame {TAddressSelectUniGUICController})
+  TframeUniGUICarServiceAddressSelect = class(TUniFrame { TAddressSelectUniGUICController } )
+    frameTimeTablePickup: TframeCarServiceUniGUITimeTable;
+    frameTimeTableDelivery: TframeCarServiceUniGUITimeTable;
     cntAddressSelect: TUniContainerPanel;
     UniContainerPanel1: TUniContainerPanel;
     cboAddressSelection: TUniFSComboBox;
@@ -23,32 +26,14 @@ type
     lbIndirizzoReturn: TUniLabel;
     pnlTimeTablePickup: TUniSimplePanel;
     pnlTimeTableDelivery: TUniSimplePanel;
-    cntTimeTable: TUniContainerPanel;
-    pnlTop: TUniContainerPanel;
-    lbTimeTableType: TUniLabel;
-    lbTimetableDAte: TUniLabel;
-    lbDeliveryTime: TUniLabel;
-    UniContainerPanel2: TUniContainerPanel;
-    cboPickup: TUniComboBox;
-    lbDeparture: TUniLabel;
-    UniContainerPanel3: TUniContainerPanel;
-    cboReturn: TUniComboBox;
-    lbVehiclePickupPlace: TUniLabel;
-    UniContainerPanel4: TUniContainerPanel;
-    pnlTopD: TUniContainerPanel;
-    lbTimeTableTypeD: TUniLabel;
-    lbTimetableDAteD: TUniLabel;
-    lbDeliveryTimeD: TUniLabel;
-    UniContainerPanel6: TUniContainerPanel;
-    cboPickupD: TUniComboBox;
-    lbDepartureD: TUniLabel;
-    UniContainerPanel7: TUniContainerPanel;
-    cboReturnD: TUniComboBox;
-    lbVehiclePickupPlaceD: TUniLabel;
+    cntframeTimeTablePickup: TUniContainerPanel;
+    cntTimeTableDelivery: TUniContainerPanel;
     // Controllers
-    TimeTablePickupController: TTimeTableUniGUIController;  {frameTimeTablePickup}
-    TimeTableDeliveryController: TTimeTableUniGUIController;
-    AddressSelectUniGUICController1: TAddressSelectUniGUICController; {frameTimeTableDelivery}
+    (*
+      TimeTablePickupController: TTimeTableUniGUIController;  {frameTimeTablePickup}
+      TimeTableDeliveryController: TTimeTableUniGUIController;
+      AddressSelectUniGUICController1: TAddressSelectUniGUICController; {frameTimeTableDelivery}
+    *)
     procedure cboAddressSelectionCloseUp(Sender: TObject);
   private
     FServiceAddresses: IAnAddresses;
@@ -127,8 +112,8 @@ begin
       FBookingHead.ServiceAddress.Assign(FBookingHead.ServiceAnagraph.MainAddress);
 
     FServiceAddresses := FBookingHead.ServiceAnagraph.Addresses;
-    TimeTablePickupController.TimeTableView := FBookingHead.PickupDateTime;
-    TimeTableDeliveryController.TimeTableView := FBookingHead.DeliveryDateTime;
+    frameTimeTablePickup.TimeTableView := FBookingHead.PickupDateTime;
+    frameTimeTableDelivery.TimeTableView := FBookingHead.DeliveryDateTime;
 
     // Addresses Addresses
     FBookingHead.Addresses.Append;
@@ -168,16 +153,16 @@ begin
     var
     lCount := FBookingHead.Addresses.RecordCount - 1;
 
-    TimeTablePickupController.Addresses := FBookingHead.Addresses;
-    TimeTablePickupController.FromIndex := 0;
-    TimeTablePickupController.ToIndex := lCount;
+    frameTimeTablePickup.Addresses := FBookingHead.Addresses;
+    frameTimeTablePickup.FromIndex := 0;
+    frameTimeTablePickup.ToIndex := lCount;
 
-    TimeTableDeliveryController.Addresses := FBookingHead.Addresses;
-    TimeTableDeliveryController.FromIndex := lCount;
-    TimeTableDeliveryController.ToIndex := IfThen(lCount = 1, 0, 1);
+    frameTimeTableDelivery.Addresses := FBookingHead.Addresses;
+    frameTimeTableDelivery.FromIndex := lCount;
+    frameTimeTableDelivery.ToIndex := IfThen(lCount = 1, 0, 1);
 
-    TimeTablePickupController.Modified := False;
-    TimeTableDeliveryController.Modified := False;
+    frameTimeTablePickup.Modified := False;
+    frameTimeTableDelivery.Modified := False;
 
   end;
 end;

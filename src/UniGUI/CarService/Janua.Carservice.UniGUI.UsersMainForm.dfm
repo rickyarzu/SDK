@@ -109,7 +109,7 @@ object frmUNIMainForm: TfrmUNIMainForm
         Width = 805
         Height = 719
         Hint = ''
-        ActivePage = tabCustomersList
+        ActivePage = pgMainMenu
         Align = alClient
         LayoutConfig.Height = '100%'
         LayoutConfig.Width = '100%'
@@ -122,7 +122,7 @@ object frmUNIMainForm: TfrmUNIMainForm
             691)
           object cntMain: TUniContainerPanel
             Left = 64
-            Top = 23
+            Top = 25
             Width = 600
             Height = 465
             Hint = ''

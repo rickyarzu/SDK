@@ -956,6 +956,12 @@ begin
     qryAddresses.Params[0].AsInteger := qrySingleAnagraphanagraph_id.AsInteger;
     ServerFunctions.OpenDataset(qrySAMainAdress);
     ServerFunctions.OpenDataset(qryAddresses);
+{$IFDEF DEBUG}
+    var
+    vTest := qrySAMainAdress.RecordCount;
+    vTest := qryAddresses.RecordCount;
+    vTest := qrySingleAnagraph.RecordCount;
+{$ENDIF}
   end;
 end;
 

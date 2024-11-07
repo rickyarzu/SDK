@@ -98,7 +98,8 @@ implementation
 
 uses
   uniGUIVars, Janua.UniGUI.MainModule, uniGUIApplication, Janua.Carservice.UniGUI.dlgBookingWizard,
-  Janua.Carservice.UniGUI.frameUserMenu, Janua.Anagraph.UniGUI.dlgSimpleAnagraph;
+  Janua.Carservice.UniGUI.frameUserMenu, Janua.Anagraph.UniGUI.dlgSimpleAnagraph,
+  Janua.Carservice.UniGUI.dlgBookingFrameWizard;
 
 function frmUNIMainForm: TfrmUNIMainForm;
 begin
@@ -255,7 +256,7 @@ end;
 
 procedure TfrmUNIMainForm.spbNewBookingClick(Sender: TObject);
 var
-  lDlgBooking: TdlgUniGUIBookingWizard;
+  lDlgBooking: TdlgUniGUIBookingWizard; { TdlgUniGUIBookingFrameWizard }
 begin
   FCarServiceBookingDM := TdmPgCarServiceBookingStorage.Create(self);
   FCarServiceBookingDM.UserProfile := UniMainModule.UserSessionVM.CurrentRecord.UserProfile;

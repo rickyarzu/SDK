@@ -1,4 +1,4 @@
-object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
+object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
   Left = 0
   Top = 0
   ClientHeight = 647
@@ -66,7 +66,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Width = 748
     Height = 578
     Hint = ''
-    ActivePage = pgDateSelectionPage
+    ActivePage = pgTimeSelection
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -107,148 +107,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           TabOrder = 2
         end
       end
-      object pnlDateSelection: TUniContainerPanel
-        Left = 0
-        Top = 174
-        Width = 740
-        Height = 376
-        Hint = ''
-        ParentColor = False
-        Align = alClient
-        TabOrder = 1
-        object pnlPickup: TUniContainerPanel
-          Left = 0
-          Top = 0
-          Width = 369
-          Height = 376
-          Hint = ''
-          ParentColor = False
-          Align = alLeft
-          TabOrder = 1
-          object cldPickup1: TUniCalendar
-            Left = 0
-            Top = 53
-            Width = 369
-            Height = 312
-            Hint = ''
-            Date = 44590.000000000000000000
-            FirstDayOfWeek = dowMonday
-            TabStop = False
-            TabOrder = 1
-            Align = alTop
-          end
-          object lbPickupDate: TUniLabel
-            AlignWithMargins = True
-            Left = 3
-            Top = 3
-            Width = 363
-            Height = 25
-            Hint = ''
-            Margins.Bottom = 0
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Data Ritiro'
-            Align = alTop
-            ParentFont = False
-            Font.Height = -19
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 2
-          end
-          object lbPickupDateSelect: TUniLabel
-            AlignWithMargins = True
-            Left = 3
-            Top = 33
-            Width = 363
-            Height = 15
-            Hint = ''
-            Margins.Top = 5
-            Margins.Bottom = 5
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Seleziona la data Ritiro Veicolo'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
-          object btnCheckPickupDate: TUniButton
-            Left = 72
-            Top = 330
-            Width = 217
-            Height = 25
-            Hint = ''
-            Caption = 'Verifica Disponibilit'#224
-            TabOrder = 4
-          end
-        end
-        object pnlDelivery: TUniContainerPanel
-          Left = 369
-          Top = 0
-          Width = 371
-          Height = 376
-          Hint = ''
-          ParentColor = False
-          Align = alClient
-          TabOrder = 2
-          object cldReturn1: TUniCalendar
-            Left = 0
-            Top = 53
-            Width = 371
-            Height = 312
-            Hint = ''
-            Date = 44590.000000000000000000
-            FirstDayOfWeek = dowMonday
-            TabStop = False
-            TabOrder = 2
-            Align = alTop
-          end
-          object UniLabel1: TUniLabel
-            AlignWithMargins = True
-            Left = 3
-            Top = 33
-            Width = 365
-            Height = 15
-            Hint = ''
-            Margins.Top = 5
-            Margins.Bottom = 5
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Seleziona la data Riconsegna Veicolo'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
-          object lbReturnDate: TUniLabel
-            AlignWithMargins = True
-            Left = 3
-            Top = 3
-            Width = 365
-            Height = 25
-            Hint = ''
-            Margins.Bottom = 0
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Data Restituzione'
-            Align = alTop
-            ParentFont = False
-            Font.Height = -19
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 4
-          end
-          object btnCheckReturnDate: TUniButton
-            Left = 72
-            Top = 330
-            Width = 217
-            Height = 25
-            Hint = ''
-            Caption = 'Verifica Disponibilit'#224
-            TabOrder = 1
-          end
-        end
-      end
       object UniContainerPanel26: TUniContainerPanel
         AlignWithMargins = True
         Left = 20
@@ -261,7 +119,7 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         Margins.Bottom = 0
         ParentColor = False
         Align = alTop
-        TabOrder = 2
+        TabOrder = 1
         object UniImage8: TUniImage
           AlignWithMargins = True
           Left = 40
@@ -1381,6 +1239,107 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           Align = alClient
         end
       end
+      object cntframePickup: TUniContainerPanel
+        Left = 0
+        Top = 174
+        Width = 363
+        Height = 376
+        Hint = ''
+        ParentColor = False
+        Align = alLeft
+        TabOrder = 2
+        inline framePickup: TframeUNICalendarSelect
+          Left = 0
+          Top = 0
+          Width = 363
+          Height = 376
+          Align = alClient
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          TabOrder = 0
+          Background.Picture.Data = {00}
+          ExplicitWidth = 363
+          ExplicitHeight = 376
+          inherited lbPickupDate: TUniLabel
+            Width = 357
+            ExplicitLeft = 3
+            ExplicitTop = 3
+            ExplicitWidth = 357
+          end
+          inherited lbPickupDateSelect: TUniLabel
+            Width = 357
+            ExplicitLeft = 3
+            ExplicitTop = 33
+            ExplicitWidth = 357
+          end
+          inherited cldPickup1: TUniCalendar
+            Width = 357
+            Height = 312
+            ExplicitLeft = 3
+            ExplicitTop = 56
+            ExplicitWidth = 357
+            ExplicitHeight = 312
+          end
+          inherited btnCheckPickupDate: TUniButton
+            Left = 60
+            Top = 328
+            ExplicitLeft = 60
+            ExplicitTop = 328
+          end
+        end
+      end
+      object cntframeDelivery: TUniContainerPanel
+        Left = 363
+        Top = 174
+        Width = 377
+        Height = 376
+        Hint = ''
+        ParentColor = False
+        Align = alClient
+        TabOrder = 3
+        inline frameDelivery: TframeUNICalendarSelect
+          Left = 0
+          Top = 0
+          Width = 377
+          Height = 376
+          Align = alClient
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          TabOrder = 0
+          Background.Picture.Data = {00}
+          ExplicitWidth = 377
+          ExplicitHeight = 376
+          inherited lbPickupDate: TUniLabel
+            Width = 371
+            Caption = 'Data Restituzione'
+            ExplicitLeft = 3
+            ExplicitTop = 3
+            ExplicitWidth = 371
+          end
+          inherited lbPickupDateSelect: TUniLabel
+            Width = 371
+            Height = 14
+            Caption = 'Seleziona la data Riconsegna Veicolo'
+            ExplicitLeft = 3
+            ExplicitTop = 33
+            ExplicitWidth = 371
+            ExplicitHeight = 14
+          end
+          inherited cldPickup1: TUniCalendar
+            Top = 55
+            Width = 371
+            Height = 312
+            ExplicitLeft = 3
+            ExplicitTop = 55
+            ExplicitWidth = 371
+            ExplicitHeight = 312
+          end
+          inherited btnCheckPickupDate: TUniButton
+            Left = 88
+            Top = 328
+            ExplicitLeft = 88
+            ExplicitTop = 328
+          end
+        end
+      end
     end
     object pgTimeSelection: TUniTabSheet
       Hint = ''
@@ -1407,480 +1366,26 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alLeft
           TabOrder = 1
-          DesignSize = (
-            340
-            404)
-          object ulbPickupDate: TUniLabel
+          inline framePickupTimeSelect: TframeUniGUITimeSlotPickup
             Left = 0
             Top = 0
             Width = 340
-            Height = 25
-            Hint = ''
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Seleziona Ora Ritiro'
-            Align = alTop
-            ParentFont = False
-            Font.Height = -19
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 1
-            ExplicitTop = -1
-          end
-          object PickupDate: TUniDateTimePicker
-            Left = 101
-            Top = 47
-            Width = 120
-            Hint = ''
-            DateTime = 44679.000000000000000000
-            DateFormat = 'dd/MM/yyyy'
-            TimeFormat = 'HH:mm:ss'
-            TabOrder = 2
-            OnChange = PickupDateChange
-          end
-          object ulbDate: TUniLabel
-            Left = 6
-            Top = 83
-            Width = 86
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Data'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
-          object lbPickup: TUniLabel
-            Left = 131
-            Top = 83
-            Width = 27
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Ritiro'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 4
-          end
-          object lbDelivery: TUniLabel
-            Left = 180
-            Top = 83
-            Width = 62
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Consegna'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 5
-          end
-          object pnlCarServiceSlotSelection: TUniSimplePanel
-            Left = 3
-            Top = 104
-            Width = 331
-            Height = 271
-            Hint = ''
-            ParentColor = False
+            Height = 404
+            Align = alClient
             Anchors = [akLeft, akTop, akRight, akBottom]
-            TabOrder = 6
-            object pnlSlotSelection: TUniSimplePanel
-              Left = 0
-              Top = 0
-              Width = 331
-              Height = 206
-              Hint = ''
-              ParentColor = False
-              Align = alTop
-              TabOrder = 1
-              object pnlPickup1: TUniSimplePanel
-                Left = 0
-                Top = 0
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 1
-                object imgBooked1: TUniImage
-                  Left = 238
-                  Top = 1
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-                object tgSelected1: TUniFSToggle
-                  Left = 235
-                  Top = 1
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object ulbDate1: TUniLabel
-                  Left = 3
-                  Top = 8
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object ulbDeliveryTime1: TUniLabel
-                  Left = 184
-                  Top = 8
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 4
-                end
-                object ulbTime1: TUniLabel
-                  Left = 128
-                  Top = 8
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 5
-                end
-              end
-              object pnlPickup5: TUniSimplePanel
-                Left = 0
-                Top = 128
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 2
-                object ulbDate5: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object ulbTime5: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object ulbDeliveryTime5: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object tgSelected5: TUniFSToggle
-                  Left = 235
-                  Top = 2
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object imgBooked5: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlPickup4: TUniSimplePanel
-                Left = 0
-                Top = 96
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 3
-                object ulbDate4: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object ulbTime4: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object ulbDeliveryTime4: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object tgSelected4: TUniFSToggle
-                  Left = 235
-                  Top = 0
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object imgBooked4: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlPickup3: TUniSimplePanel
-                Left = 0
-                Top = 64
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 4
-                object ulbDate3: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object ulbTime3: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object ulbDeliveryTime3: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object tgSelected3: TUniFSToggle
-                  Left = 235
-                  Top = 2
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object imgBooked3: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlPickup2: TUniSimplePanel
-                Left = 0
-                Top = 32
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 5
-                object ulbDate2: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object ulbTime2: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object ulbDeliveryTime2: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object tgSelected2: TUniFSToggle
-                  Left = 235
-                  Top = 5
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object imgBooked2: TUniImage
-                  Left = 235
-                  Top = 4
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlPickup6: TUniSimplePanel
-                Left = 0
-                Top = 160
-                Width = 331
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 6
-                object ulbDate6: TUniLabel
-                  Left = 3
-                  Top = 8
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object ulbTime6: TUniLabel
-                  Left = 128
-                  Top = 9
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object ulbDeliveryTime6: TUniLabel
-                  Left = 184
-                  Top = 9
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object tgSelected6: TUniFSToggle
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object imgBooked6: TUniImage
-                  Left = 235
-                  Top = 4
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
+            TabOrder = 0
+            Background.Picture.Data = {00}
+            ExplicitWidth = 340
+            ExplicitHeight = 404
+            inherited ulbPickupDate: TUniLabel
+              Width = 340
+              ExplicitWidth = 340
+            end
+            inherited pnlCarServiceSlotSelection: TUniSimplePanel
+              Height = 217
+              ExplicitHeight = 217
+              inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
+                Height = 217
               end
             end
           end
@@ -1898,477 +1403,33 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 2
-          DesignSize = (
-            327
-            404)
-          object ulbReturnDate: TUniLabel
+          inline frameDeliveryTimeSelect: TframeUniGUITimeSlotPickup
             Left = 0
             Top = 0
             Width = 327
-            Height = 25
-            Hint = ''
-            Alignment = taCenter
-            AutoSize = False
-            Caption = 'Seleziona Ora Riconsegna'
-            Align = alTop
-            ParentFont = False
-            Font.Height = -19
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 1
-          end
-          object PickupDelivery: TUniDateTimePicker
-            Left = 107
-            Top = 46
-            Width = 120
-            Hint = ''
-            DateTime = 44679.000000000000000000
-            DateFormat = 'dd/MM/yyyy'
-            TimeFormat = 'HH:mm:ss'
-            TabOrder = 2
-          end
-          object ulbDateR: TUniLabel
-            Left = 14
-            Top = 83
-            Width = 86
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Data'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
-          object lbPickupR: TUniLabel
-            Left = 139
-            Top = 83
-            Width = 27
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Ritiro'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 4
-          end
-          object lbDeliveryR: TUniLabel
-            Left = 188
-            Top = 83
-            Width = 62
-            Height = 15
-            Hint = ''
-            AutoSize = False
-            Caption = 'Consegna'
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 5
-          end
-          object UniSimplePanel1: TUniSimplePanel
-            Left = 6
-            Top = 107
-            Width = 316
-            Height = 271
-            Hint = ''
-            ParentColor = False
+            Height = 404
+            Align = alClient
             Anchors = [akLeft, akTop, akRight, akBottom]
-            TabOrder = 6
-            object UniSimplePanel2: TUniSimplePanel
-              Left = 0
-              Top = 0
-              Width = 316
-              Height = 206
-              Hint = ''
-              ParentColor = False
-              Align = alTop
-              TabOrder = 1
-              object pnlReturn1: TUniSimplePanel
-                Left = 0
-                Top = 0
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 1
-                object UniImage1: TUniImage
-                  Left = 238
-                  Top = 1
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-                object UniFSToggle1: TUniFSToggle
-                  Left = 235
-                  Top = 1
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object lbDateReturn01: TUniLabel
-                  Left = 3
-                  Top = 8
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniLabel7: TUniLabel
-                  Left = 184
-                  Top = 8
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 4
-                end
-                object UniLabel8: TUniLabel
-                  Left = 128
-                  Top = 8
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 5
-                end
-              end
-              object pnlReturn3: TUniSimplePanel
-                Left = 0
-                Top = 128
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 2
-                object lbDateReturn05: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object UniLabel10: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object UniLabel11: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniFSToggle2: TUniFSToggle
-                  Left = 235
-                  Top = 2
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object UniImage2: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlReturn5: TUniSimplePanel
-                Left = 0
-                Top = 96
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 3
-                object lbDateReturn04: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object UniLabel13: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object UniLabel14: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniFSToggle3: TUniFSToggle
-                  Left = 235
-                  Top = 0
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object UniImage3: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlReturn4: TUniSimplePanel
-                Left = 0
-                Top = 64
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 4
-                object lbDateReturn03: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object UniLabel16: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object UniLabel17: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniFSToggle4: TUniFSToggle
-                  Left = 235
-                  Top = 2
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object UniImage4: TUniImage
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlReturn2: TUniSimplePanel
-                Left = 0
-                Top = 32
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 5
-                object lbDateReturn02: TUniLabel
-                  Left = 3
-                  Top = 11
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object UniLabel19: TUniLabel
-                  Left = 128
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object UniLabel20: TUniLabel
-                  Left = 184
-                  Top = 11
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniFSToggle5: TUniFSToggle
-                  Left = 235
-                  Top = 5
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object UniImage5: TUniImage
-                  Left = 235
-                  Top = 4
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
-                end
-              end
-              object pnlReturn6: TUniSimplePanel
-                Left = 0
-                Top = 160
-                Width = 316
-                Height = 32
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 6
-                object lbDateReturn06: TUniLabel
-                  Left = 3
-                  Top = 8
-                  Width = 86
-                  Height = 15
-                  Hint = ''
-                  AutoSize = False
-                  Caption = '18/11/2023'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object UniLabel22: TUniLabel
-                  Left = 128
-                  Top = 9
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '10:30'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object UniLabel23: TUniLabel
-                  Left = 184
-                  Top = 9
-                  Width = 27
-                  Height = 13
-                  Hint = ''
-                  Caption = '11:00'
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-                object UniFSToggle6: TUniFSToggle
-                  Left = 235
-                  Top = 3
-                  Width = 51
-                  Height = 24
-                  Hint = ''
-                  ThemeOn = Success
-                  ThemeOff = Gray
-                  TitleOn = 'ON'
-                  TitleOff = 'OFF'
-                end
-                object UniImage6: TUniImage
-                  Left = 235
-                  Top = 4
-                  Width = 51
-                  Height = 25
-                  Hint = ''
-                  Visible = False
-                  Stretch = True
-                  ImageIndex = 0
+            TabOrder = 0
+            Background.Picture.Data = {00}
+            ExplicitWidth = 327
+            ExplicitHeight = 404
+            inherited ulbPickupDate: TUniLabel
+              Width = 327
+              ExplicitWidth = 327
+            end
+            inherited pnlCarServiceSlotSelection: TUniSimplePanel
+              Height = 217
+              ExplicitHeight = 217
+              inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
+                Height = 217
+                inherited pnlTimeSelect1: TUniSimplePanel
+                  inherited frameTimeSelect1: TframeTimeSelect
+                    inherited ulbDeliveryTime: TUniLabel
+                      Top = 13
+                      ExplicitTop = 13
+                    end
+                  end
                 end
               end
             end
@@ -3520,390 +2581,101 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
         ParentColor = False
         Align = alClient
         TabOrder = 0
-        object cntCarBookingClient: TUniContainerPanel
+        inline frameUniGuiCarBookingClient1: TframeUniGuiCarBookingClient
           Left = 0
           Top = 0
           Width = 734
           Height = 544
-          Hint = ''
-          ParentColor = False
           Align = alClient
-          TabOrder = 1
-          object cnt02CustomerName: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 5
-            Top = 73
-            Width = 724
-            Height = 60
-            Hint = ''
-            Margins.Left = 5
-            Margins.Right = 5
-            ParentColor = False
-            Align = alTop
-            TabOrder = 1
-            object UniContainerPanel9: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 209
-              Height = 60
-              Hint = ''
-              ParentColor = False
-              Align = alLeft
-              TabOrder = 0
-              object edFirstName: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 35
-                Width = 203
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 0
-                EmptyText = 'Nome'
-              end
-            end
-            object UniContainerPanel10: TUniContainerPanel
-              Left = 209
-              Top = 0
-              Width = 515
-              Height = 60
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 2
-              object EdLastName: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 35
-                Width = 509
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 'Cognome Cliente'
-              end
-            end
-          end
-          object cnt03CustomerFullAddress: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 139
-            Width = 720
-            Height = 50
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 2
-            object UniContainerPanel12: TUniContainerPanel
-              Left = 632
-              Top = 0
-              Width = 88
-              Height = 50
-              Hint = ''
-              ParentColor = False
-              Align = alRight
-              TabOrder = 2
-              object btnSearch: TUniFSButton
-                AlignWithMargins = True
-                Left = 3
-                Top = 17
-                Width = 82
-                Height = 30
-                Hint = ''
-                StyleButton = GoogleGreen
-                BadgeText.Text = '0'
-                BadgeText.TextColor = '#FFFFFF'
-                BadgeText.TextSize = 10
-                BadgeText.TextStyle = 'bold'
-                BadgeText.BackgroundColor = '#D50000'
-                Caption = 'Cerca'
-                Align = alBottom
-                ParentFont = False
-                Font.Color = clWhite
-                Font.Height = -15
-                TabOrder = 1
-                ScreenMask.Enabled = True
-                ScreenMask.WaitData = True
-                ScreenMask.Message = 'Autenticando...'
-                ImageIndex = 0
-              end
-            end
-            object UniContainerPanel13: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 632
-              Height = 50
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 1
-              object EdFullAddress: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 25
-                Width = 626
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 
-                  'Indirizzo Cliente (Digita l'#39'indirizzo cercheremo l'#39'indirizzo tra' +
-                  'mite Google)'
-              end
-            end
-          end
-          object cnt04CellularMail: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 195
-            Width = 720
-            Height = 56
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 3
-            object UniContainerPanel15: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 129
-              Height = 56
-              Hint = ''
-              ParentColor = False
-              Align = alLeft
-              TabOrder = 1
-              object EdCustomerPhone: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 31
-                Width = 123
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 'Telefono Cliente'
-              end
-            end
-            object UniContainerPanel16: TUniContainerPanel
-              Left = 129
-              Top = 0
-              Width = 591
-              Height = 56
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 2
-              object edCustomerEmail: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 31
-                Width = 585
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 'Mail cliente'
-              end
-            end
-          end
-          object cnt06CarNumberPlate: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 323
-            Width = 720
-            Height = 57
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 5
-            object UniContainerPanel18: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 185
-              Height = 57
-              Hint = ''
-              ParentColor = False
-              Align = alLeft
-              TabOrder = 1
-              object edCarNumberPlate: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 32
-                Width = 179
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 'Targa Veicolo'
-              end
-            end
-            object UniContainerPanel19: TUniContainerPanel
-              Left = 185
-              Top = 0
-              Width = 535
-              Height = 57
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 2
-              object edCarColor: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 32
-                Width = 529
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 'Colore Veicolo '
-              end
-            end
-          end
-          object cnt07ReturnAddress: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 386
-            Width = 720
-            Height = 60
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 6
-            object UniContainerPanel21: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 632
-              Height = 60
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 1
-              object edReturnAddress: TUniEdit
-                AlignWithMargins = True
-                Left = 3
-                Top = 35
-                Width = 626
-                Hint = ''
-                Text = ''
-                Align = alBottom
-                TabOrder = 1
-                EmptyText = 
-                  'Indirizzo di Ritorno, da indicare se si richiede la restituzione' +
-                  ' in un luogo differente'
-              end
-            end
-            object UniContainerPanel22: TUniContainerPanel
-              Left = 632
-              Top = 0
-              Width = 88
-              Height = 60
-              Hint = ''
-              ParentColor = False
-              Align = alRight
-              TabOrder = 2
-              object btnReturnAddress: TUniFSButton
-                AlignWithMargins = True
-                Left = 3
-                Top = 27
-                Width = 82
-                Height = 30
-                Hint = ''
-                StyleButton = GoogleGreen
-                BadgeText.Text = '0'
-                BadgeText.TextColor = '#FFFFFF'
-                BadgeText.TextSize = 10
-                BadgeText.TextStyle = 'bold'
-                BadgeText.BackgroundColor = '#D50000'
-                Caption = 'Cerca'
-                Align = alBottom
-                ParentFont = False
-                Font.Color = clWhite
-                Font.Height = -15
-                TabOrder = 1
-                ScreenMask.Enabled = True
-                ScreenMask.WaitData = True
-                ScreenMask.Message = 'Autenticando...'
-                ImageIndex = 0
-              end
-            end
-          end
-          object cnt05CarModel: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 257
-            Width = 720
-            Height = 60
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 4
-            object edCarModel: TUniEdit
-              AlignWithMargins = True
-              Left = 3
-              Top = 35
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          TabOrder = 0
+          Background.Picture.Data = {00}
+          ExplicitWidth = 734
+          ExplicitHeight = 544
+          inherited cntCarBookingClient: TUniContainerPanel
+            Width = 734
+            Height = 544
+            ExplicitWidth = 734
+            ExplicitHeight = 544
+            inherited dblcbAnagraphCustomers: TUniFSComboBox
               Width = 714
-              Hint = ''
-              Text = ''
-              Align = alBottom
-              TabOrder = 1
-              EmptyText = 'Modello Veicolo'
-              FieldLabelAlign = laTop
+              ExplicitWidth = 714
             end
-          end
-          object cnt01SelectCustomer: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 7
-            Top = 3
-            Width = 720
-            Height = 64
-            Hint = ''
-            Margins.Left = 7
-            Margins.Right = 7
-            ParentColor = False
-            Align = alTop
-            TabOrder = 0
-            object lbSelectCustomer: TUniLabel
-              AlignWithMargins = True
-              Left = 10
-              Top = 5
-              Width = 700
-              Height = 25
-              Hint = ''
-              Margins.Left = 10
-              Margins.Top = 5
-              Margins.Right = 10
-              AutoSize = False
-              Caption = 'Seleziona Scheda Cliente precedente'
-              Align = alTop
-              ParentColor = False
-              Color = clBtnFace
-              TabOrder = 2
+            inherited edCarModel: TUniEdit
+              Width = 714
+              ExplicitWidth = 714
             end
-            object dblcbAnagraphCustomers: TUniFSComboBox
-              AlignWithMargins = True
-              Left = 10
-              Top = 33
-              Width = 700
-              Height = 23
-              Hint = ''
-              Margins.Left = 10
-              Margins.Top = 0
-              Margins.Right = 10
-              Text = 'Seleziona Cliente'
-              Align = alTop
-              TabOrder = 0
-              AnyMatch = True
-              IconItems = <>
-              Value = '-1'
+            inherited lbSelectCustomer: TUniLabel
+              Width = 714
+              ExplicitWidth = 714
+            end
+            inherited UniContainerPanel1: TUniContainerPanel
+              Width = 720
+              ExplicitWidth = 720
+              inherited UniContainerPanel7: TUniContainerPanel
+                Width = 511
+                ExplicitWidth = 511
+                inherited EdLastName: TUniEdit
+                  Width = 505
+                  ExplicitWidth = 505
+                end
+              end
+            end
+            inherited UniContainerPanel2: TUniContainerPanel
+              Width = 720
+              ExplicitWidth = 720
+              inherited UniContainerPanel8: TUniContainerPanel
+                Left = 632
+                ExplicitLeft = 632
+              end
+              inherited UniContainerPanel9: TUniContainerPanel
+                Width = 632
+                ExplicitWidth = 632
+                inherited EdFullAddress: TUniEdit
+                  Width = 626
+                  ExplicitWidth = 626
+                end
+              end
+            end
+            inherited UniContainerPanel3: TUniContainerPanel
+              Width = 720
+              ExplicitWidth = 720
+              inherited UniContainerPanel11: TUniContainerPanel
+                Width = 591
+                ExplicitWidth = 591
+                inherited edCustomerEmail: TUniEdit
+                  Width = 585
+                  ExplicitWidth = 585
+                end
+              end
+            end
+            inherited UniContainerPanel4: TUniContainerPanel
+              Width = 720
+              ExplicitWidth = 720
+              inherited UniContainerPanel13: TUniContainerPanel
+                Width = 535
+                ExplicitWidth = 535
+                inherited edCarColor: TUniEdit
+                  Width = 529
+                  ExplicitWidth = 529
+                end
+              end
+            end
+            inherited UniContainerPanel5: TUniContainerPanel
+              Width = 720
+              ExplicitWidth = 720
+              inherited UniContainerPanel14: TUniContainerPanel
+                Width = 632
+                ExplicitWidth = 632
+                inherited edReturnAddress: TUniEdit
+                  Width = 626
+                  ExplicitWidth = 626
+                end
+              end
+              inherited UniContainerPanel15: TUniContainerPanel
+                Left = 632
+                ExplicitLeft = 632
+              end
             end
           end
         end
@@ -3931,404 +2703,145 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
           ParentColor = False
           Align = alClient
           TabOrder = 1
-          object UniContainerPanel2: TUniContainerPanel
-            AlignWithMargins = True
-            Left = 3
-            Top = 22
-            Width = 728
-            Height = 33
-            Hint = ''
-            ParentColor = False
-            Align = alTop
-            TabOrder = 1
-            object cboAddressSelection: TUniFSComboBox
-              AlignWithMargins = True
-              Left = 3
-              Top = 3
-              Width = 637
-              Height = 27
-              Hint = ''
-              Text = 'Ricerca Indirizzi Service'
-              Align = alClient
-              ParentFont = False
-              Font.Height = -13
-              TabOrder = 1
-              AnyMatch = True
-              IconItems = <>
-              Value = '-1'
-            end
-            object btnNewBranch: TUniFSButton
-              Left = 643
-              Top = 0
-              Width = 85
-              Height = 33
-              Hint = ''
-              StyleButton = Success
-              BadgeText.Text = '0'
-              BadgeText.TextColor = '#FFFFFF'
-              BadgeText.TextSize = 10
-              BadgeText.TextStyle = 'bold'
-              BadgeText.BackgroundColor = '#D50000'
-              Caption = 'Nuova Sede'
-              Align = alRight
-              TabOrder = 2
-            end
-          end
-          object lbServiceAddress: TUniLabel
-            AlignWithMargins = True
-            Left = 6
-            Top = 3
-            Width = 725
-            Height = 13
-            Hint = ''
-            Margins.Left = 6
-            AutoSize = False
-            Caption = 'Seleziona Sede o Indirizzo del Service'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 2
-          end
-          object lbIndirizzoPickup: TUniLabel
-            AlignWithMargins = True
-            Left = 6
-            Top = 61
-            Width = 725
-            Height = 13
-            Hint = ''
-            Margins.Left = 6
-            Margins.Bottom = 10
-            AutoSize = False
-            Caption = 'Selezione Pickup-Delivery viaggio ritiro veicolo'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 3
-          end
-          object lbIndirizzoReturn: TUniLabel
-            AlignWithMargins = True
-            Left = 6
-            Top = 87
-            Width = 725
-            Height = 13
-            Hint = ''
-            Margins.Left = 6
-            Margins.Bottom = 10
-            AutoSize = False
-            Caption = 'Selezione Pickup-Delivery viaggio restituzione veicolo'
-            Align = alTop
-            ParentColor = False
-            Color = clBtnFace
-            TabOrder = 4
-            ExplicitTop = 86
-          end
-          object pnlTimeTablePickup: TUniSimplePanel
-            AlignWithMargins = True
-            Left = 3
-            Top = 113
-            Width = 728
-            Height = 148
-            Hint = ''
-            ParentColor = False
-            Align = alTop
-            TabOrder = 5
-            object cntTimeTable: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 728
-              Height = 148
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 1
-              object pnlTop: TUniContainerPanel
-                Left = 0
-                Top = 0
+          inline frameUniGUICarServiceAddressSelect: TframeUniGUICarServiceAddressSelect
+            Left = 0
+            Top = 0
+            Width = 734
+            Height = 416
+            Align = alClient
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            TabOrder = 0
+            Background.Picture.Data = {00}
+            ExplicitWidth = 734
+            ExplicitHeight = 416
+            inherited cntAddressSelect: TUniContainerPanel
+              Width = 734
+              Height = 416
+              ExplicitWidth = 734
+              ExplicitHeight = 416
+              inherited UniContainerPanel1: TUniContainerPanel
                 Width = 728
-                Height = 30
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 1
-                object lbTimeTableType: TUniLabel
-                  Left = 16
-                  Top = 8
-                  Width = 34
-                  Height = 17
-                  Hint = ''
-                  Caption = 'Ritiro'
-                  ParentFont = False
-                  Font.Height = -13
-                  Font.Style = [fsBold]
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
+                ExplicitWidth = 728
+                inherited cboAddressSelection: TUniFSComboBox
+                  Width = 637
+                  ExplicitWidth = 637
                 end
-                object lbTimetableDAte: TUniLabel
-                  Left = 96
-                  Top = 8
-                  Width = 66
-                  Height = 17
-                  Hint = ''
-                  Caption = '23/06/2023'
-                  ParentFont = False
-                  Font.Height = -13
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object lbDeliveryTime: TUniLabel
-                  Left = 184
-                  Top = 8
-                  Width = 31
-                  Height = 17
-                  Hint = ''
-                  Caption = '10:00'
-                  ParentFont = False
-                  Font.Height = -13
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
+                inherited btnNewBranch: TUniFSButton
+                  Left = 643
+                  ExplicitLeft = 643
                 end
               end
-              object UniContainerPanel3: TUniContainerPanel
-                Left = 0
-                Top = 30
+              inherited lbServiceAddress: TUniLabel
+                Width = 725
+                ExplicitWidth = 725
+              end
+              inherited lbIndirizzoPickup: TUniLabel
+                Width = 725
+                Margins.Bottom = 4
+                ExplicitWidth = 725
+              end
+              inherited lbIndirizzoReturn: TUniLabel
+                Top = 80
+                Width = 725
+                Margins.Top = 2
+                Margins.Bottom = 4
+                ExplicitTop = 80
+                ExplicitWidth = 725
+              end
+              inherited pnlTimeTablePickup: TUniSimplePanel
+                Top = 100
                 Width = 728
-                Height = 53
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 2
-                object cboPickup: TUniComboBox
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 22
-                  Width = 708
-                  Height = 28
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Text = ''
-                  Align = alClient
-                  ParentFont = False
-                  Font.Height = -13
-                  TabOrder = 1
-                  IconItems = <>
-                end
-                object lbDeparture: TUniLabel
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 3
-                  Width = 129
-                  Height = 13
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Caption = 'Luogo di Prelievo Veicolo'
-                  Align = alTop
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
+                ExplicitTop = 100
+                ExplicitWidth = 728
+                inherited cntframeTimeTablePickup: TUniContainerPanel
+                  Width = 728
+                  ExplicitWidth = 728
+                  inherited frameTimeTableDelivery: TframeCarServiceUniGUITimeTable
+                    Width = 728
+                    ExplicitWidth = 728
+                    inherited cntTimeTable: TUniContainerPanel
+                      Width = 728
+                      ExplicitWidth = 728
+                      inherited pnlTop: TUniContainerPanel
+                        Width = 728
+                        Height = 30
+                        ExplicitWidth = 728
+                        ExplicitHeight = 30
+                      end
+                      inherited UniContainerPanel2: TUniContainerPanel
+                        Top = 30
+                        Width = 728
+                        ExplicitTop = 30
+                        ExplicitWidth = 728
+                        inherited cboPickup: TUniComboBox
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                      end
+                      inherited UniContainerPanel3: TUniContainerPanel
+                        Top = 90
+                        Width = 728
+                        ExplicitTop = 90
+                        ExplicitWidth = 728
+                        inherited cboReturn: TUniComboBox
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                        inherited lbVehiclePickupPlace: TUniLabel
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                      end
+                    end
+                  end
                 end
               end
-              object UniContainerPanel4: TUniContainerPanel
-                Left = 0
-                Top = 83
+              inherited pnlTimeTableDelivery: TUniSimplePanel
+                Top = 266
                 Width = 728
-                Height = 61
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 3
-                object cboReturn: TUniComboBox
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 26
-                  Width = 708
-                  Height = 32
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Text = ''
-                  Align = alClient
-                  ParentFont = False
-                  Font.Height = -13
-                  TabOrder = 1
-                  IconItems = <>
-                end
-                object lbVehiclePickupPlace: TUniLabel
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 0
-                  Width = 708
-                  Height = 20
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Top = 0
-                  Margins.Right = 10
-                  AutoSize = False
-                  Caption = 'Luogo di Consegna Veicolo'
-                  Align = alTop
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-              end
-            end
-          end
-          object pnlTimeTableDelivery: TUniSimplePanel
-            AlignWithMargins = True
-            Left = 3
-            Top = 264
-            Width = 728
-            Height = 151
-            Hint = ''
-            Margins.Top = 0
-            Margins.Bottom = 0
-            ParentColor = False
-            Align = alTop
-            TabOrder = 6
-            object UniContainerPanel5: TUniContainerPanel
-              Left = 0
-              Top = 0
-              Width = 728
-              Height = 151
-              Hint = ''
-              ParentColor = False
-              Align = alClient
-              TabOrder = 1
-              object pnlTopD: TUniContainerPanel
-                Left = 0
-                Top = 0
-                Width = 728
-                Height = 33
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 1
-                object lbTimeTableTypeD: TUniLabel
-                  Left = 16
-                  Top = 8
-                  Width = 70
-                  Height = 17
-                  Hint = ''
-                  Caption = 'Riconsegna'
-                  ParentFont = False
-                  Font.Height = -13
-                  Font.Style = [fsBold]
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 1
-                end
-                object lbTimetableDAteD: TUniLabel
-                  Left = 96
-                  Top = 8
-                  Width = 66
-                  Height = 17
-                  Hint = ''
-                  Caption = '23/06/2023'
-                  ParentFont = False
-                  Font.Height = -13
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-                object lbDeliveryTimeD: TUniLabel
-                  Left = 184
-                  Top = 8
-                  Width = 31
-                  Height = 17
-                  Hint = ''
-                  Caption = '10:00'
-                  ParentFont = False
-                  Font.Height = -13
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 3
-                end
-              end
-              object UniContainerPanel6: TUniContainerPanel
-                Left = 0
-                Top = 33
-                Width = 728
-                Height = 56
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 2
-                object cboPickupD: TUniComboBox
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 22
-                  Width = 708
-                  Height = 31
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Text = ''
-                  Align = alClient
-                  ParentFont = False
-                  Font.Height = -13
-                  TabOrder = 1
-                  IconItems = <>
-                end
-                object lbDepartureD: TUniLabel
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 3
-                  Width = 129
-                  Height = 13
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Caption = 'Luogo di Prelievo Veicolo'
-                  Align = alTop
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
-                end
-              end
-              object UniContainerPanel7: TUniContainerPanel
-                Left = 0
-                Top = 89
-                Width = 728
-                Height = 56
-                Hint = ''
-                ParentColor = False
-                Align = alTop
-                TabOrder = 3
-                object cboReturnD: TUniComboBox
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 22
-                  Width = 708
-                  Height = 31
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  Text = ''
-                  Align = alClient
-                  ParentFont = False
-                  Font.Height = -13
-                  TabOrder = 1
-                  IconItems = <>
-                end
-                object lbVehiclePickupPlaceD: TUniLabel
-                  AlignWithMargins = True
-                  Left = 10
-                  Top = 3
-                  Width = 708
-                  Height = 13
-                  Hint = ''
-                  Margins.Left = 10
-                  Margins.Right = 10
-                  AutoSize = False
-                  Caption = 'Luogo di Consegna Veicolo'
-                  Align = alTop
-                  ParentColor = False
-                  Color = clBtnFace
-                  TabOrder = 2
+                ExplicitTop = 266
+                ExplicitWidth = 728
+                inherited cntTimeTableDelivery: TUniContainerPanel
+                  Width = 728
+                  ExplicitWidth = 728
+                  inherited frameTimeTablePickup: TframeCarServiceUniGUITimeTable
+                    Width = 728
+                    ExplicitWidth = 728
+                    inherited cntTimeTable: TUniContainerPanel
+                      Width = 728
+                      ExplicitWidth = 728
+                      inherited pnlTop: TUniContainerPanel
+                        Width = 728
+                        Height = 30
+                        ExplicitWidth = 728
+                        ExplicitHeight = 30
+                      end
+                      inherited UniContainerPanel2: TUniContainerPanel
+                        Top = 30
+                        Width = 728
+                        ExplicitTop = 30
+                        ExplicitWidth = 728
+                        inherited cboPickup: TUniComboBox
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                      end
+                      inherited UniContainerPanel3: TUniContainerPanel
+                        Top = 90
+                        Width = 728
+                        ExplicitTop = 90
+                        ExplicitWidth = 728
+                        inherited cboReturn: TUniComboBox
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                        inherited lbVehiclePickupPlace: TUniLabel
+                          Width = 708
+                          ExplicitWidth = 708
+                        end
+                      end
+                    end
+                  end
                 end
               end
             end
@@ -9387,40 +7900,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
     Align = alBottom
     TabOrder = 2
   end
-  object CalendarSelectPickup: TUNIControllerCalendarSelect
-    Enabled = False
-    IsPickup = True
-    cldPickup1 = cldPickup1
-    btnCheckPickupDate = btnCheckPickupDate
-    Left = 140
-    Top = 425
-  end
-  object CalendarSelectDelivery: TUNIControllerCalendarSelect
-    Enabled = False
-    IsPickup = False
-    cldPickup1 = cldReturn1
-    btnCheckPickupDate = btnCheckReturnDate
-    Left = 564
-    Top = 433
-  end
-  object PickupSlotTimeSelect: TCarServiceSlotSelectionController
-    Enabled = False
-    ulbPickupDate = ulbPickupDate
-    UniDateTimePicker1 = PickupDate
-    ulbDate = ulbDate
-    lbPickup = lbPickup
-    lbDelivery = lbDelivery
-    IsTest = False
-    memoLog = memoLog
-    frameTimeSelect1 = TimeSelectUniGUIController1
-    frameTimeSelect2 = TimeSelectUniGUIController2
-    frameTimeSelect3 = TimeSelectUniGUIController3
-    frameTimeSelect5 = TimeSelectUniGUIController5
-    frameTimeSelect6 = TimeSelectUniGUIController6
-    frameTimeSelect4 = TimeSelectUniGUIController4
-    Left = 144
-    Top = 360
-  end
   object imglSlotBooking: TUniNativeImageList
     Width = 512
     Height = 512
@@ -9497,95 +7976,11 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       09F94A1D8EDDA5D9D91F6B4B4B5BEC8AE2414A33619A3326F4DC88C7833CE1DB
       F23F1F4D5D69CB1A0EB50000000049454E44AE426082}
   end
-  object TimeSelectUniGUIController1: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected1
-    imgBooked = imgBooked1
-    ulbTime = ulbTime1
-    ulbDate = ulbDate1
-    ulbDeliveryTime = ulbDeliveryTime1
-    Left = 280
-    Top = 128
-  end
-  object TimeSelectUniGUIController2: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected2
-    imgBooked = imgBooked2
-    ulbTime = ulbTime2
-    ulbDate = ulbDate2
-    ulbDeliveryTime = ulbDeliveryTime2
-    Left = 280
-    Top = 168
-  end
-  object TimeSelectUniGUIController3: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected3
-    imgBooked = imgBooked3
-    ulbTime = ulbTime3
-    ulbDate = ulbDate3
-    ulbDeliveryTime = ulbDeliveryTime3
-    Left = 280
-    Top = 200
-  end
-  object TimeSelectUniGUIController4: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected4
-    imgBooked = imgBooked4
-    ulbTime = ulbTime4
-    ulbDate = ulbDate4
-    ulbDeliveryTime = ulbDeliveryTime4
-    Left = 280
-    Top = 232
-  end
-  object TimeSelectUniGUIController5: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected5
-    imgBooked = imgBooked5
-    ulbTime = ulbTime5
-    ulbDate = ulbDate5
-    ulbDeliveryTime = ulbDeliveryTime5
-    Left = 280
-    Top = 264
-  end
-  object TimeSelectUniGUIController6: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = tgSelected6
-    imgBooked = imgBooked6
-    ulbTime = ulbTime6
-    ulbDate = ulbDate6
-    ulbDeliveryTime = ulbDeliveryTime6
-    Left = 280
-    Top = 296
-  end
-  object DeliveryTimeSelect: TCarServiceSlotSelectionController
-    Enabled = False
-    ulbPickupDate = ulbReturnDate
-    UniDateTimePicker1 = PickupDelivery
-    ulbDate = ulbDateR
-    lbPickup = lbPickupR
-    lbDelivery = lbDeliveryR
-    IsTest = False
-    memoLog = memoLog
-    frameTimeSelect1 = TimeSelectUniGUIController7
-    frameTimeSelect2 = TimeSelectUniGUIController8
-    frameTimeSelect3 = TimeSelectUniGUIController9
-    frameTimeSelect5 = TimeSelectUniGUIController11
-    frameTimeSelect6 = TimeSelectUniGUIController12
-    frameTimeSelect4 = TimeSelectUniGUIController10
-    Left = 576
-    Top = 360
-  end
   object UniNativeImageList1: TUniNativeImageList
     Width = 512
     Height = 512
-    Left = 488
-    Top = 208
+    Left = 200
+    Top = 280
     Images = {
       02000000FFFFFF1F043603000089504E470D0A1A0A0000000D49484452000000
       18000000180806000000E0773DF80000000473424954080808087C0864880000
@@ -9656,127 +8051,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       AB55950AA7F37EE9A7A56458D709E9BAEC9E9F4F4DA5D3E76FC6E38D4F55FA0F
       09F94A1D8EDDA5D9D91F6B4B4B5BEC8AE2414A33619A3326F4DC88C7833CE1DB
       F23F1F4D5D69CB1A0EB50000000049454E44AE426082}
-  end
-  object TimeSelectUniGUIController7: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle1
-    imgBooked = UniImage1
-    ulbTime = UniLabel8
-    ulbDate = lbDateReturn01
-    ulbDeliveryTime = UniLabel7
-    Left = 624
-    Top = 136
-  end
-  object TimeSelectUniGUIController8: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle5
-    imgBooked = UniImage5
-    ulbTime = UniLabel19
-    ulbDate = lbDateReturn02
-    ulbDeliveryTime = UniLabel20
-    Left = 624
-    Top = 168
-  end
-  object TimeSelectUniGUIController9: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle4
-    imgBooked = UniImage4
-    ulbTime = UniLabel16
-    ulbDate = lbDateReturn03
-    ulbDeliveryTime = UniLabel17
-    Left = 624
-    Top = 200
-  end
-  object TimeSelectUniGUIController10: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle3
-    imgBooked = UniImage3
-    ulbTime = UniLabel13
-    ulbDate = lbDateReturn04
-    ulbDeliveryTime = UniLabel14
-    Left = 624
-    Top = 232
-  end
-  object TimeSelectUniGUIController11: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle2
-    imgBooked = UniImage2
-    ulbTime = UniLabel10
-    ulbDate = lbDateReturn05
-    ulbDeliveryTime = UniLabel11
-    Left = 624
-    Top = 264
-  end
-  object TimeSelectUniGUIController12: TTimeSelectUniGUIController
-    Enabled = False
-    IsTest = False
-    tgSelected = UniFSToggle6
-    imgBooked = UniImage6
-    ulbTime = UniLabel22
-    ulbDate = lbDateReturn06
-    ulbDeliveryTime = UniLabel23
-    Left = 624
-    Top = 304
-  end
-  object AddressSelectUniGUICController1: TAddressSelectUniGUICController
-    Enabled = False
-    cntAddressSelect = cntAddressSelect
-    cboAddressSelection = cboAddressSelection
-    btnNewBranch = btnNewBranch
-    lbServiceAddress = lbServiceAddress
-    lbIndirizzoPickup = lbIndirizzoPickup
-    lbIndirizzoReturn = lbIndirizzoReturn
-    TimeTablePickupController = TimeTablePickupController
-    TimeTableDeliveryController = TimeTableDeliveryController
-    Left = 291
-    Top = 55
-  end
-  object TimeTableDeliveryController: TTimeTableUniGUIController
-    Enabled = False
-    lbTimeTableType = lbTimeTableTypeD
-    lbTimetableDAte = lbTimetableDAteD
-    lbDeliveryTime = lbDeliveryTimeD
-    cboPickup = cboPickupD
-    lbDeparture = lbDepartureD
-    cboReturn = cboReturnD
-    lbVehiclePickupPlace = lbVehiclePickupPlaceD
-    Left = 392
-    Top = 409
-  end
-  object TimeTablePickupController: TTimeTableUniGUIController
-    Enabled = False
-    lbTimeTableType = lbTimeTableType
-    lbTimetableDAte = lbTimetableDAte
-    lbDeliveryTime = lbDeliveryTime
-    cboPickup = cboPickup
-    lbDeparture = lbDeparture
-    cboReturn = cboReturn
-    lbVehiclePickupPlace = lbVehiclePickupPlace
-    Left = 392
-    Top = 337
-  end
-  object CarBookingClientController1: TCarBookingClientController
-    Enabled = False
-    edCarModel = edCarModel
-    dblcbAnagraphCustomers = dblcbAnagraphCustomers
-    edFirstName = edFirstName
-    EdLastName = EdLastName
-    btnSearch = btnSearch
-    EdFullAddress = EdFullAddress
-    EdCustomerPhone = EdCustomerPhone
-    edCustomerEmail = edCustomerEmail
-    edCarNumberPlate = edCarNumberPlate
-    edCarColor = edCarColor
-    edReturnAddress = edReturnAddress
-    btnReturnAddress = btnReturnAddress
-    lbSelectCustomer = lbSelectCustomer
-    Left = 496
-    Top = 64
   end
   object BookingSummaryUniGUIController1: TBookingSummaryUniGUIController
     Enabled = False

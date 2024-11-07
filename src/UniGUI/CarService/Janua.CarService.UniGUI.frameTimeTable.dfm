@@ -2,14 +2,14 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
   Left = 0
   Top = 0
   Width = 640
-  Height = 480
+  Height = 154
   Font.Height = -12
   TabOrder = 0
   object cntTimeTable: TUniContainerPanel
     Left = 0
     Top = 0
     Width = 640
-    Height = 480
+    Height = 154
     Hint = ''
     ParentColor = False
     Align = alClient
@@ -88,6 +88,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         Font.Height = -13
         TabOrder = 1
         IconItems = <>
+        OnCloseUp = cboPickupCloseUp
       end
       object lbDeparture: TUniLabel
         AlignWithMargins = True
@@ -129,6 +130,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         Font.Height = -13
         TabOrder = 1
         IconItems = <>
+        OnCloseUp = cboReturnCloseUp
       end
       object lbVehiclePickupPlace: TUniLabel
         AlignWithMargins = True
@@ -147,17 +149,5 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
         TabOrder = 2
       end
     end
-  end
-  object TimeTableUniGUIController1: TTimeTableUniGUIController
-    Enabled = False
-    lbTimeTableType = lbTimeTableType
-    lbTimetableDAte = lbTimetableDAte
-    lbDeliveryTime = lbDeliveryTime
-    cboPickup = cboPickup
-    lbDeparture = lbDeparture
-    cboReturn = cboReturn
-    lbVehiclePickupPlace = lbVehiclePickupPlace
-    Left = 256
-    Top = 73
   end
 end

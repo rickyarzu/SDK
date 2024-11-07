@@ -19,8 +19,8 @@ uses
   uniGUITypes, uniGUIAbstractClasses, uniGUIClasses, uniGUIFrame, uniGUIBaseClasses, uniLabel, uniPanel,
   uniMultiItem, uniComboBox,
   // Januaproject
-  JOrm.CarService.Booking.Intf, Janua.CarService.UniGUI.TimeTableSelectController, Janua.Core.Commons,
-  Janua.UniGUI.Controller;
+  {Janua.CarService.UniGUI.TimeTableSelectController,}
+  JOrm.CarService.Booking.Intf, Janua.Core.Commons, Janua.UniGUI.Controller;
 
 type
   TframeCarServiceUniGUITimeTable = class(TUniFrame)
@@ -35,7 +35,6 @@ type
     UniContainerPanel3: TUniContainerPanel;
     cboReturn: TUniComboBox;
     lbVehiclePickupPlace: TUniLabel;
-    TimeTableUniGUIController1: TTimeTableUniGUIController;
     procedure cboPickupCloseUp(Sender: TObject);
     procedure cboReturnCloseUp(Sender: TObject);
   private
