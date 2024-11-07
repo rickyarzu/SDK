@@ -206,10 +206,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         Lines.Strings = (
           'edWAMesage')
         TabOrder = 0
-        ExplicitLeft = -8
-        ExplicitTop = -30
-        ExplicitWidth = 581
-        ExplicitHeight = 193
       end
     end
     object tabLog: TTabSheet
@@ -232,6 +228,7 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         AutoCompletion.StartToken = '(.'
         AutoCorrect.Active = True
         AutoHintParameterPosition = hpBelowCode
+        BkColor = clWindow
         BookmarkGlyph.Data = {
           36050000424D3605000000000000360400002800000010000000100000000100
           0800000000000001000000000000000000000001000000000000000000000000
@@ -275,7 +272,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -288,9 +284,8 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
-        Gutter.LineNumberTextColor = 3881787
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -301,7 +296,7 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -311,8 +306,8 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         PrintOptions.PrintLineNumbers = False
         RightMarginColor = 14869218
         ScrollHint = False
-        SelColor = clWhite
-        SelBkColor = clNavy
+        SelColor = clHighlightText
+        SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
         SyntaxStyles = AdvJSONMemoStyler1
@@ -333,10 +328,6 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 144
-        ExplicitTop = 24
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
   end

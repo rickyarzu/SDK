@@ -1,4 +1,4 @@
-library PhoenixLib32_r7;
+﻿library PhoenixLib32_r8;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -51,10 +51,21 @@ end;
 function CreateGoogleEvent(aEvent: string): string; stdcall;
 begin
   Result := '';
-  if Assigned(aDlg) then
-    Result := aDlg.AddGoogleItem(aEvent)
-  else
-    Result := Result + ' Error aDlg not set';
+  try
+    if Assigned(aDlg) then
+      Result := aDlg.AddGoogleItem(aEvent)
+  except
+    on e: exception do
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (CreateGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
+  end;
 end;
 
 function UpdateGoogleEvent(aJson: string): string; stdcall;
@@ -65,7 +76,15 @@ begin
       Result := aDlg.UpdateGoogleItem(aJson)
   except
     on e: exception do
-      Result := e.Message;
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (UpdateGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
   end;
 end;
 
@@ -77,7 +96,15 @@ begin
       Result := aDlg.DeleteGoogleItem(aJson)
   except
     on e: exception do
-      Result := e.Message;
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
   end;
 end;
 
@@ -90,11 +117,19 @@ begin
       Result := aDlg.ConfirmMessage(aJson)
   except
     on e: exception do
-      Result := e.Message;
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
   end;
 end;
 
-function WhatsAppSentMessage(aID: string): string;  stdcall;
+function WhatsAppSentMessage(aID: string): string; stdcall;
 begin
   Result := '';
   try
@@ -102,15 +137,48 @@ begin
       Result := aDlg.WhatsAppSentMessage(aID)
   except
     on e: exception do
-      Result := e.Message;
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
   end;
 end;
 
 function GoogleSync: string; stdcall;
 begin
+  try
     if Assigned(aDlg) then
-    aDlg.UpdateGoogle;
+      aDlg.UpdateGoogle;
+  except
+    on e: exception do
+    begin
+      try
+        if Assigned(aDlg) then
+          aDlg.RestoreGoogle;
+      finally
+        raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
+          e.Message);
+      end;
+    end;
+  end;
+
   Result := 'test';
+end;
+
+procedure GoogleRestore; stdcall;
+begin
+  if Assigned(aDlg) then
+    aDlg.RestoreGoogle;;
+end;
+
+procedure Dummy; stdcall;
+begin
+  // Silence is golden
 end;
 
 exports
@@ -120,7 +188,9 @@ exports
   DeleteGoogleEvent index 4,
   ConfirmMessage index 5,
   GoogleSync index 6,
-  WhatsAppSentMessage index 7;
+  WhatsAppSentMessage index 7,
+  GoogleRestore index 8,
+  Dummy index 9;
 
 begin
   aSetted := False;
