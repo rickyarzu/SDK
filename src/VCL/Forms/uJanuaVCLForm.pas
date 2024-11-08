@@ -9,7 +9,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Spring.Collections, System.Json, System.Types, System.UITypes,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, Vcl.ComCtrls,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.ComCtrls,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
   Janua.Controls.Intf, Janua.Controls.Forms.Intf;
@@ -39,7 +39,8 @@ type
   public
     procedure ClearBindings;
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput, jbcEvaluate]);
+      const AReadOnly: boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]);
     property BindManager: IJanuaBindManager read GetBindManager;
     // ************************************* Bindings Procedures ***********************************
     // *********************************** Logging Procedures ***************************************************
@@ -65,7 +66,8 @@ type
     procedure WriteLog(LogMessage: string; isError: boolean = false); overload; virtual;
     procedure WriteLog(ProcedureName, LogMessage: string; isError: boolean = false); overload; virtual;
     procedure WriteError(LogMessage: string; E: Exception; doraise: boolean = true); overload; virtual;
-    procedure WriteError(ProcedureName, LogMessage: string; E: Exception; doraise: boolean = true); overload; virtual;
+    procedure WriteError(ProcedureName, LogMessage: string; E: Exception; doraise: boolean = true);
+      overload; virtual;
     property LocalLog: string read GetLocalLog;
     property LogText: string read GetLogText;
     // *********************************** end Logging Procedures ********************************************
@@ -224,7 +226,8 @@ type
 
 implementation
 
-uses Janua.Core.Classes, Janua.Core.Commons, Janua.Controls.Forms.Impl, System.TypInfo, Janua.Application.Framework;
+uses Janua.Core.Classes, Janua.Core.Commons, Janua.Controls.Forms.Impl, System.TypInfo,
+  Janua.Application.Framework;
 
 {$R *.dfm}
 { TJanuaVCLFormModel }
@@ -252,8 +255,8 @@ begin
 
 end;
 
-procedure TJanuaVCLFormModel.Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
-  const AReadOnly: boolean; const ACreateOptions: TJanuaBindCreateOptions);
+procedure TJanuaVCLFormModel.Bind(const AProperty: string; const ABindToObject: TObject;
+  const ABindToProperty: string; const AReadOnly: boolean; const ACreateOptions: TJanuaBindCreateOptions);
 begin
   try
     BindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
@@ -288,10 +291,14 @@ end;
 
 constructor TJanuaVCLFormModel.Create(AOwner: TComponent);
 begin
+{$IFDEF DEBUG}
+  var
+  vName := Self.ClassName;
+{$ENDIF}
   inherited Create(AOwner);
   FBindControlsList := TJanuaApplication.BindEngine.NewBindControlsList;
   FIsSetup := false;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaBindManager.Create(Self);
   Self.Font.Name := 'Segoe UI';
   Self.Font.Size := 10;
 end;
@@ -848,7 +855,7 @@ end;
 
 procedure TJanuaVCLFormModel.SetOnCreate(const Value: TNotifyEvent);
 begin
-  self.OnCreate := Value;
+  Self.OnCreate := Value;
 end;
 
 procedure TJanuaVCLFormModel.SetOnDeactivate(const Value: TNotifyEvent);
@@ -1017,5 +1024,3 @@ initialization
 finalization
 
 end.
-
-

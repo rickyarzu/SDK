@@ -1,14 +1,13 @@
 inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
   Caption = 'Customer SMS Builder'
-  OnCreate = FormCreate
   OnDestroy = FormDestroy
-  ExplicitWidth = 1214
-  ExplicitHeight = 828
   TextHeight = 15
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
-    ExplicitWidth = 1212
     inherited Panel2: TPanel
       inherited grpURL: TGroupBox
+        inherited lblMobileCustomerUrl: TLabel
+          Height = 15
+        end
         inherited edtMobileUrl: TEdit
           Width = 371
           ExplicitWidth = 357
@@ -32,27 +31,17 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
       end
       inherited advmSMSTemplate: TAdvMemo
         Width = 967
-        ExplicitWidth = 953
+        ExplicitWidth = 967
       end
       inherited edPhoneCustomerTo: TEdit
         Width = 14
+        ExplicitWidth = 14
       end
-      inherited Panel3: TPanel
-        Width = 967
-        ExplicitWidth = 953
-        ExplicitHeight = 447
-        inherited edTestSMSTo: TEdit
-          Width = 519
-          ExplicitWidth = 505
-        end
-        inherited advmSMSTest: TAdvMemo
-          Width = 519
-          ExplicitWidth = 505
-        end
-        inherited advmJson: TAdvMemo
-          Width = 519
-          ExplicitWidth = 505
-          ExplicitHeight = 158
+      inherited pnlSmsTestConfig: TPanel
+        inherited lbEdtTemplateSID: TLabeledEdit
+          EditLabel.ExplicitLeft = 0
+          EditLabel.ExplicitTop = -18
+          EditLabel.ExplicitWidth = 92
         end
       end
     end

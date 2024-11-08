@@ -51,7 +51,9 @@ type
     function GetContentVariables: TStrings;
     procedure SetContentSid(const Value: string);
     procedure SetContentVariables(const Value: TStrings);
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
     property ContentSid: string read GetContentSid write SetContentSid;
+    // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
     property ContentVariables: TStrings read GetContentVariables write SetContentVariables;
   end;
 

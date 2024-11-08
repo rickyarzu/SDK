@@ -17,7 +17,7 @@ uses
   Janua.VCL.Cloud.frmSMSMessageConfig;
 
 type
-  TfrmVCLCSCustomerNRSMSBuilder = class(TfrmVCLSMSMessageConfig)
+  TfrmVCLCSCustomerNRSMSBuilder = class(  TfrmVCLSMSMessageConfig)
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private

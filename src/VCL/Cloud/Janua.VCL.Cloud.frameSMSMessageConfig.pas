@@ -13,7 +13,8 @@ uses
   // Janua  Intf/Types
   Janua.Cloud.Types, Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.System.Types,
   // Januaproject  Classes
-  Janua.VCL.Interposers, Janua.TMS.Interposers, Janua.Cloud.Conf, Janua.Core.Classes, Janua.Cloud.Impl;
+  Janua.VCL.Interposers, Janua.TMS.Interposers, Janua.Cloud.Conf, Janua.Core.Classes, Janua.Cloud.Impl,
+  Vcl.Mask;
 
 type
   TframeVCLSMSMessageConfig = class(TFrame, IJanuaSMSBuilderForm)
@@ -44,13 +45,17 @@ type
     lst2: TListBox;
     edLabelTag: TEdit;
     lbKey: TLabel;
-    Panel3: TPanel;
+    pnlSmsTestConfig: TPanel;
     dbgrdParams: TDBGrid;
     DBGrid1: TDBGrid;
     dsMaster: TDataSource;
     edTestSMSTo: TEdit;
     advmSMSTest: TAdvMemo;
     advmjson: TAdvMemo;
+    lbEdtTemplateSID: TLabeledEdit;
+    btnSendSmsTemplate: TButton;
+    Memo1: TMemo;
+    lbContentVariables: TLabel;
     procedure btnLoadSMSConfigClick(Sender: TObject);
     procedure btnSaveConfigClick(Sender: TObject);
     procedure btnGenerateSMSClick(Sender: TObject);
@@ -59,6 +64,7 @@ type
     procedure rgEngineClick(Sender: TObject);
     procedure lst2Click(Sender: TObject);
     procedure lst1Click(Sender: TObject);
+    procedure btnSendSmsTemplateClick(Sender: TObject);
   private
     FSMSMessageBuilder: IJanuaSMSBuilder;
     FTemplateDataset: TDataSet;
@@ -115,13 +121,35 @@ begin
   FSMSConf.Url := edtMobileUrl.Text;
   { FSMSConf.Bind('Url', advmSMSTemplate, 'Text'); }
   advmjson.Text := FSMSConf.AsJson;
-  { FSMSConf.Bind('AsJson', advmSMSTemplate, 'Text'); }
+  { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
+  lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
   FSMSConf.SaveConfig;
   UpdatedFrame;
 
 end;
 
 procedure TframeVCLSMSMessageConfig.btnSendMailToClick(Sender: TObject);
+var
+  lMessage: TSMSMessage;
+  lError: string;
+begin
+  Guard.CheckNotNull(FSMSMessageBuilder, 'FSMSMessageBuilder');
+  Guard.CheckNotNull(FSMSMessageBuilder.SMSSender, 'FMailSender');
+
+  FSMSMessageBuilder.LoadSettings;
+  FSMSMessageBuilder.SendSMS(FTemplateDataset, nil,
+    procedure(Ex: Exception; aOrigin: string)
+    begin
+      JShowError(aOrigin + slineBreak + Ex.Message);
+    end,
+    procedure
+    begin
+      JShowMessage('Messaggio Inviato');
+    end);
+
+end;
+
+procedure TframeVCLSMSMessageConfig.btnSendSmsTemplateClick(Sender: TObject);
 var
   lMessage: TSMSMessage;
   lError: string;

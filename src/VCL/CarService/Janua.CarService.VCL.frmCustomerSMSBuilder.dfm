@@ -2,18 +2,18 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
   Align = alClient
   Caption = 'Customer SMS Builder'
   ClientWidth = 1230
-  OnCreate = FormCreate
   OnDestroy = FormDestroy
-  ExplicitLeft = -149
-  ExplicitWidth = 1232
-  ExplicitHeight = 828
+  ExplicitWidth = 1246
   TextHeight = 15
+  inherited StatusBar: TStatusBar
+    Width = 1230
+  end
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     Width = 1230
     ExplicitWidth = 1230
     inherited Panel2: TPanel
       Width = 1013
-      ExplicitWidth = 999
+      ExplicitWidth = 1013
       inherited lblMsgTo: TLabel
         Left = 863
         ExplicitLeft = 863
@@ -21,6 +21,9 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
       inherited grpURL: TGroupBox
         Width = 1005
         ExplicitWidth = 991
+        inherited lblMobileCustomerUrl: TLabel
+          Height = 15
+        end
         inherited edtMobileUrl: TEdit
           Width = 408
           ExplicitWidth = 408
@@ -48,7 +51,7 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
       end
       inherited advmSMSTemplate: TAdvMemo
         Width = 985
-        ExplicitWidth = 971
+        ExplicitWidth = 985
       end
       inherited edPhoneCustomerTo: TEdit
         Left = 919
@@ -60,20 +63,11 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
         Width = 183
         ExplicitWidth = 183
       end
-      inherited Panel3: TPanel
-        Width = 985
-        ExplicitWidth = 971
-        inherited edTestSMSTo: TEdit
-          Width = 525
-          ExplicitWidth = 511
-        end
-        inherited advmSMSTest: TAdvMemo
-          Width = 525
-          ExplicitWidth = 511
-        end
-        inherited advmJson: TAdvMemo
-          Width = 525
-          ExplicitWidth = 525
+      inherited pnlSmsTestConfig: TPanel
+        inherited lbEdtTemplateSID: TLabeledEdit
+          EditLabel.ExplicitLeft = 0
+          EditLabel.ExplicitTop = -18
+          EditLabel.ExplicitWidth = 92
         end
       end
       inherited DBGrid1: TDBGrid

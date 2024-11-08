@@ -134,6 +134,7 @@ type
     procedure SetUrl(const Value: string);
     procedure SetUrlGenEngine(const Value: TUrlGeneratorEngine);
     procedure SetSMSSendingEngine(const Value: TJanuaSendingEngine);
+    procedure SetTemplateMessageID(const Value: string);
   protected
     function GetAsJson: String; override;
     procedure SetAsJson(const Value: String); override;
@@ -157,8 +158,10 @@ type
     property Title: string read FSMSMessageConf.Title write SetTitle;
     /// <summary> Body of the page should be a part of the text or just a FLandingMessageConf.ull html page </summary>
     property Body: string read FSMSMessageConf.Body write SetBody;
-    /// <summary> Page or text should hold a logo Image FLandingMessageConf.or personalization </summary>
+    /// <summary> Message To can contain a default value or be set for every message sending </summary>
     property msgTo: string read FSMSMessageConf.msgTo write SetmsgTo;
+   /// <summary> Template message Id should be used for some serices that user templates and params </summary>
+    property TemplateMessageID: string read FSMSMessageConf.TemplateID write SetTemplateMessageID;
     property AsJson: String read GetAsJson write SetAsJson;
     property Text: string read GetText write SetText;
     property SMSMessageConf: TJanuaSMSMessageConf read FSMSMessageConf write SetSMSMessageConf;
@@ -455,6 +458,11 @@ end;
 procedure TSMSMessageConf.SetSMSSendingEngine(const Value: TJanuaSendingEngine);
 begin
   FSMSMessageConf.SMSSendingEngine := Value;
+end;
+
+procedure TSMSMessageConf.SetTemplateMessageID(const Value: string);
+begin
+  FSMSMessageConf.TemplateID := Value;
 end;
 
 procedure TSMSMessageConf.SetText(const Value: string);

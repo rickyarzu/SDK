@@ -67,6 +67,8 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     Height = 651
     Align = alClient
     TabOrder = 1
+    ExplicitLeft = 273
+    ExplicitTop = 3
     DesignSize = (
       1036
       651)
@@ -78,11 +80,18 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       Caption = 'Msg To:'
     end
     object lbKey: TLabel
-      Left = 476
-      Top = 66
+      Left = 9
+      Top = 93
       Width = 19
       Height = 15
       Caption = 'Key'
+    end
+    object lbContentVariables: TLabel
+      Left = 759
+      Top = 123
+      Width = 92
+      Height = 15
+      Caption = 'Content Variables'
     end
     object grpURL: TGroupBox
       AlignWithMargins = True
@@ -160,7 +169,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     object advmSMSTemplate: TAdvMemo
       Left = 4
       Top = 112
-      Width = 1016
+      Width = 749
       Height = 137
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
@@ -340,13 +349,12 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       TabOrder = 7
       OnClick = rgEngineClick
     end
-    object Panel3: TPanel
+    object pnlSmsTestConfig: TPanel
       Left = 4
       Top = 255
       Width = 1027
       Height = 309
       Anchors = [akLeft, akTop, akRight, akBottom]
-      Caption = 'Panel3'
       TabOrder = 8
       DesignSize = (
         1027
@@ -382,7 +390,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       object edTestSMSTo: TEdit
         AlignWithMargins = True
         Left = 439
-        Top = 12
+        Top = 51
         Width = 578
         Height = 23
         Anchors = [akLeft, akTop, akRight]
@@ -391,9 +399,9 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       end
       object advmSMSTest: TAdvMemo
         Left = 439
-        Top = 41
+        Top = 80
         Width = 578
-        Height = 88
+        Height = 90
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
         ActiveLineSettings.ShowActiveLineIndicator = False
@@ -511,9 +519,9 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       object advmJson: TAdvMemo
         AlignWithMargins = True
         Left = 439
-        Top = 135
+        Top = 176
         Width = 584
-        Height = 170
+        Height = 129
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
         ActiveLineSettings.ShowActiveLineIndicator = False
@@ -630,6 +638,17 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
         Version = '3.9.1.1'
         WordWrap = wwClientWidth
       end
+      object lbEdtTemplateSID: TLabeledEdit
+        Left = 439
+        Top = 22
+        Width = 578
+        Height = 23
+        EditLabel.Width = 68
+        EditLabel.Height = 15
+        EditLabel.Caption = 'Template SID'
+        TabOrder = 4
+        Text = ''
+      end
     end
     object DBGrid1: TDBGrid
       Left = 1
@@ -644,6 +663,25 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+    end
+    object btnSendSmsTemplate: TButton
+      Left = 464
+      Top = 62
+      Width = 185
+      Height = 25
+      Caption = 'Send SMS Template To:'
+      TabOrder = 10
+      OnClick = btnSendSmsTemplateClick
+    end
+    object Memo1: TMemo
+      Left = 759
+      Top = 144
+      Width = 274
+      Height = 105
+      Anchors = [akTop, akRight]
+      Lines.Strings = (
+        'Memo1')
+      TabOrder = 11
     end
   end
   object fdmParams: TFDMemTable

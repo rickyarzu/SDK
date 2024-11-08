@@ -2,11 +2,6 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
   Caption = 'Pickup SMS Builder'
   OnDestroy = FormDestroy
   TextHeight = 15
-  inherited StatusBar: TStatusBar
-    ExplicitLeft = 0
-    ExplicitTop = 776
-    ExplicitWidth = 1212
-  end
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     inherited Panel2: TPanel
       inherited lblMsgTo: TLabel
@@ -15,7 +10,7 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
       end
       inherited grpURL: TGroupBox
         inherited lblMobileCustomerUrl: TLabel
-          Height = 27
+          Height = 15
         end
         inherited edtMobileUrl: TEdit
           Width = 406
@@ -29,6 +24,7 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
           Left = 484
           Width = 164
           ExplicitLeft = 484
+          ExplicitWidth = 164
         end
         inherited edtTestTinyUrl: TEdit
           Left = 741
@@ -53,26 +49,11 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
         ExplicitLeft = 677
         ExplicitWidth = 196
       end
-      inherited Panel3: TPanel
-        Width = 967
-        ExplicitWidth = 967
-        inherited edTestSMSTo: TEdit
-          Left = 431
-          Width = 529
-          ExplicitLeft = 431
-          ExplicitWidth = 529
-        end
-        inherited advmSMSTest: TAdvMemo
-          Left = 431
-          Width = 529
-          ExplicitLeft = 431
-          ExplicitWidth = 529
-        end
-        inherited advmJson: TAdvMemo
-          Left = 431
-          Width = 529
-          ExplicitLeft = 431
-          ExplicitWidth = 529
+      inherited pnlSmsTestConfig: TPanel
+        inherited lbEdtTemplateSID: TLabeledEdit
+          EditLabel.ExplicitLeft = 0
+          EditLabel.ExplicitTop = -18
+          EditLabel.ExplicitWidth = 92
         end
       end
     end

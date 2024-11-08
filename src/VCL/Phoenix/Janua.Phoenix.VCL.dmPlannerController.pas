@@ -500,6 +500,7 @@ type
     FAfterUpdateCal: TNotifyEvent;
     FWATest: Boolean;
     FWATestPhone: string;
+    FAfterCalendarAction: TNotifyEvent;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -522,6 +523,7 @@ type
     procedure SetAfterUpdateCal(const Value: TNotifyEvent);
     procedure SetWATest(const Value: Boolean);
     procedure SetWATestPhone(const Value: string);
+    procedure SetAfterCalendarAction(const Value: TNotifyEvent);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -577,6 +579,9 @@ type
   public
     function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
     function GoogleSync: string;
+    procedure UpdateReportPlanner;
+
+
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
@@ -608,7 +613,7 @@ type
     // WhatsApp Parameters
     property WATest: Boolean read FWATest write SetWATest;
     property WATestPhone: string read FWATestPhone write SetWATestPhone;
-    procedure UpdateReportPlanner;
+    property AfterCalendarAction: TNotifyEvent read FAfterCalendarAction write SetAfterCalendarAction;
 
   end;
 
@@ -2607,6 +2612,11 @@ begin
 
   // SendMSSWhatsAppMessage(lMessage, '+393474065336'); // +393474065336  //3409111352
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.SetAfterCalendarAction(const Value: TNotifyEvent);
+begin
+  FAfterCalendarAction := Value;
 end;
 
 procedure TdmVCLPhoenixPlannerController.SetAfterUpdateCal(const Value: TNotifyEvent);

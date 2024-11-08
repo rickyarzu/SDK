@@ -2,7 +2,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
   Left = 0
   Top = 0
   Caption = 'Car Service Booking List'
-  ClientHeight = 732
+  ClientHeight = 838
   ClientWidth = 1212
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
     Left = 0
     Top = 0
     Width = 6
-    Height = 732
+    Height = 838
     ExplicitLeft = 169
     ExplicitHeight = 738
   end
@@ -26,15 +26,16 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
     Left = 6
     Top = 0
     Width = 1206
-    Height = 732
-    ActivePage = tabBooking
+    Height = 838
+    ActivePage = tabSMSMessages
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 732
     object tabBooking: TTabSheet
       Caption = 'Booking List'
       DesignSize = (
         1198
-        702)
+        808)
       object lblCellPhone: TLabel
         Left = 768
         Top = 120
@@ -61,7 +62,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Left = 8
         Top = 16
         Width = 745
-        Height = 493
+        Height = 599
         Anchors = [akLeft, akTop, akRight, akBottom]
         DataSource = dsBooking
         TabOrder = 0
@@ -167,7 +168,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Left = 759
         Top = 566
         Width = 215
-        Height = 136
+        Height = 242
         Cursor = crIBeam
         HorzScrollBar.Tracking = True
         VertScrollBar.Range = 6
@@ -184,11 +185,12 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         SelectionTextColor = clHighlightText
         Color = clWindow
         ParentFont = False
-        Version = '1.8.9.11'
+        Version = '1.8.9.12'
+        ExplicitHeight = 136
       end
       object AdvMemo1: TAdvMemo
         Left = 3
-        Top = 526
+        Top = 632
         Width = 385
         Height = 176
         Cursor = crIBeam
@@ -306,10 +308,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwClientWidth
+        ExplicitTop = 526
       end
       object AdvMemo2: TAdvMemo
         Left = 408
-        Top = 526
+        Top = 632
         Width = 345
         Height = 176
         Cursor = crIBeam
@@ -435,6 +438,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwClientWidth
+        ExplicitTop = 526
       end
     end
     object tabMailMessage: TTabSheet
@@ -452,29 +456,30 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Left = 3
         Top = 71
         Width = 1192
-        Height = 628
+        Height = 734
         ActivePage = tabMailUser
         Align = alClient
         TabOrder = 1
+        ExplicitHeight = 628
         object tabMailUser: TTabSheet
           Caption = 'Customer Mail'
           inline frameCustomerMailMessageConfig: TframeVCLMailMessageConfig
             Left = 0
             Top = 0
             Width = 1184
-            Height = 598
+            Height = 704
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
             inherited Label1: TLabel
-              Top = 520
+              Top = 626
               Width = 1184
               ExplicitTop = 520
             end
             inherited pnlCustomerMail: TPanel
               Width = 1184
-              ExplicitWidth = 1170
+              ExplicitWidth = 1184
               inherited lblMaillMailCustomerBCC: TLabel
                 Left = 894
                 ExplicitLeft = 922
@@ -496,53 +501,53 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtCustomerFromMail: TEdit
                 Width = 327
-                ExplicitWidth = 313
+                ExplicitWidth = 327
               end
               inherited edtCustomerTestRecipients: TEdit
                 Left = 716
-                ExplicitLeft = 702
+                ExplicitLeft = 716
               end
               inherited edtlMailCC: TEdit
                 Left = 926
                 Width = 318
-                ExplicitLeft = 912
+                ExplicitLeft = 926
                 ExplicitWidth = 318
               end
               inherited edtlMailBCC: TEdit
                 Left = 926
                 Width = 318
-                ExplicitLeft = 912
+                ExplicitLeft = 926
                 ExplicitWidth = 318
               end
               inherited edtMailCustomerTo: TEdit
                 Width = 371
-                ExplicitWidth = 357
+                ExplicitWidth = 371
               end
               inherited edtMailSubject: TEdit
                 Width = 592
-                ExplicitWidth = 578
+                ExplicitWidth = 592
               end
               inherited edtReplyTo: TEdit
                 Left = 716
-                ExplicitLeft = 702
+                ExplicitLeft = 716
               end
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 363
+              Height = 469
               ExplicitWidth = 999
               ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 333
+                ExplicitHeight = 439
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 333
+                  Height = 439
                   ExplicitWidth = 991
                   ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -625,31 +630,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 199
-                    ExplicitTop = 254
+                    Height = 305
+                    ExplicitTop = 112
                     ExplicitWidth = 713
-                    ExplicitHeight = 57
+                    ExplicitHeight = 199
                   end
                   inherited pnlFooter: TPanel
-                    Top = 311
+                    Top = 417
                     Width = 991
                     ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
                       OnChange = nil
-                      ExplicitLeft = 613
+                      ExplicitLeft = 627
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 171
+                      ExplicitHeight = 277
                       inherited pnlLists: TPanel
-                        Height = 171
+                        Height = 277
                         ExplicitHeight = 171
                       end
                     end
@@ -659,17 +664,16 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
                   DoubleBuffered = True
+                  ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
-                inherited pnlMailTest: TPanel
-                  ExplicitWidth = 1147
-                end
                 inherited pgcTestPreview: TPageControl
                   ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
                       DoubleBuffered = True
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
@@ -716,7 +720,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited grpURL: TGroupBox
               Width = 1178
-              ExplicitWidth = 1164
+              ExplicitWidth = 1178
               inherited edtCustomerMobileUrl: TEdit
                 Top = 20
                 Width = 216
@@ -735,7 +739,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Width = 277
                 ExplicitLeft = 411
                 ExplicitTop = 20
-                ExplicitWidth = 263
+                ExplicitWidth = 277
               end
               inherited edtTestTinyUrl: TEdit
                 Left = 619
@@ -744,15 +748,15 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Anchors = [akLeft, akTop, akRight]
                 ExplicitLeft = 619
                 ExplicitTop = 20
-                ExplicitWidth = 335
+                ExplicitWidth = 349
               end
             end
             inherited pnlLists: TPanel
-              Height = 363
+              Height = 469
               ExplicitHeight = 363
             end
             inherited grdMaster: TDBGrid
-              Top = 535
+              Top = 641
               Width = 1184
             end
           end
@@ -764,23 +768,24 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1184
-            Height = 598
+            Height = 704
             ActivePage = tabDriver1Mail
             Align = alClient
             TabOrder = 0
+            ExplicitHeight = 598
             object tabDriver1Mail: TTabSheet
               Caption = 'Driver 1'
               inline frameDriver1MailMessageConfig: TframeVCLMailMessageConfig
                 Left = 0
                 Top = 0
                 Width = 1176
-                Height = 568
+                Height = 674
                 Align = alClient
                 TabOrder = 0
                 ExplicitWidth = 1176
                 ExplicitHeight = 568
                 inherited Label1: TLabel
-                  Top = 490
+                  Top = 596
                   Width = 1176
                   ExplicitTop = 490
                 end
@@ -838,20 +843,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
                 inherited pgcCustomerMail: TPageControl
                   Width = 991
-                  Height = 333
+                  Height = 439
                   ExplicitWidth = 991
                   ExplicitHeight = 333
                   inherited tabEditor: TTabSheet
                     ExplicitWidth = 983
-                    ExplicitHeight = 303
+                    ExplicitHeight = 409
                     inherited frameHTMLEditor1: TframeHTMLEditor
                       Width = 983
-                      Height = 303
+                      Height = 409
                       ExplicitWidth = 983
                       ExplicitHeight = 303
                       inherited Splitter1: TSplitter
                         Top = 112
-                        Height = 169
+                        Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 247
                       end
@@ -934,31 +939,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited E: THtmlEditor
                         Top = 112
                         Width = 705
-                        Height = 169
-                        ExplicitTop = 254
+                        Height = 275
+                        ExplicitTop = 112
                         ExplicitWidth = 705
-                        ExplicitHeight = 27
+                        ExplicitHeight = 169
                       end
                       inherited pnlFooter: TPanel
-                        Top = 281
+                        Top = 387
                         Width = 983
                         ExplicitTop = 281
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
                           Left = 619
                           OnChange = nil
-                          ExplicitLeft = 804
+                          ExplicitLeft = 619
                         end
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
-                        Height = 169
+                        Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 169
                         inherited tabTag: TTabSheet
-                          ExplicitHeight = 141
+                          ExplicitHeight = 247
                           inherited pnlLists: TPanel
-                            Height = 141
+                            Height = 247
                             ExplicitHeight = 141
                           end
                         end
@@ -968,6 +973,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
                       DoubleBuffered = True
+                      ExplicitHeight = 502
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
@@ -982,6 +988,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
                           DoubleBuffered = True
+                          ExplicitHeight = 402
                         end
                       end
                       inherited tabHtmlPreview: TTabSheet
@@ -1045,11 +1052,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pnlLists: TPanel
-                  Height = 333
+                  Height = 439
                   ExplicitHeight = 333
                 end
                 inherited grdMaster: TDBGrid
-                  Top = 505
+                  Top = 611
                   Width = 1176
                 end
               end
@@ -1061,13 +1068,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Left = 0
                 Top = 0
                 Width = 1176
-                Height = 568
+                Height = 674
                 Align = alClient
                 TabOrder = 0
                 ExplicitWidth = 1176
                 ExplicitHeight = 568
                 inherited Label1: TLabel
-                  Top = 490
+                  Top = 596
                   Width = 1176
                   ExplicitTop = 490
                 end
@@ -1125,20 +1132,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
                 inherited pgcCustomerMail: TPageControl
                   Width = 991
-                  Height = 333
+                  Height = 439
                   ExplicitWidth = 991
                   ExplicitHeight = 333
                   inherited tabEditor: TTabSheet
                     ExplicitWidth = 983
-                    ExplicitHeight = 303
+                    ExplicitHeight = 409
                     inherited frameHTMLEditor1: TframeHTMLEditor
                       Width = 983
-                      Height = 303
+                      Height = 409
                       ExplicitWidth = 983
                       ExplicitHeight = 303
                       inherited Splitter1: TSplitter
                         Top = 112
-                        Height = 169
+                        Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 247
                       end
@@ -1221,31 +1228,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited E: THtmlEditor
                         Top = 112
                         Width = 705
-                        Height = 169
-                        ExplicitTop = 254
+                        Height = 275
+                        ExplicitTop = 112
                         ExplicitWidth = 705
-                        ExplicitHeight = 27
+                        ExplicitHeight = 169
                       end
                       inherited pnlFooter: TPanel
-                        Top = 281
+                        Top = 387
                         Width = 983
                         ExplicitTop = 281
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
                           Left = 619
                           OnChange = nil
-                          ExplicitLeft = 804
+                          ExplicitLeft = 619
                         end
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
-                        Height = 169
+                        Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 169
                         inherited tabTag: TTabSheet
-                          ExplicitHeight = 141
+                          ExplicitHeight = 247
                           inherited pnlLists: TPanel
-                            Height = 141
+                            Height = 247
                             ExplicitHeight = 141
                           end
                         end
@@ -1255,6 +1262,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
                       DoubleBuffered = True
+                      ExplicitHeight = 502
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
@@ -1269,6 +1277,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
                           DoubleBuffered = True
+                          ExplicitHeight = 402
                         end
                       end
                       inherited tabHtmlPreview: TTabSheet
@@ -1336,11 +1345,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                 end
                 inherited pnlLists: TPanel
-                  Height = 333
+                  Height = 439
                   ExplicitHeight = 333
                 end
                 inherited grdMaster: TDBGrid
-                  Top = 505
+                  Top = 611
                   Width = 1176
                 end
               end
@@ -1354,13 +1363,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1184
-            Height = 598
+            Height = 704
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
             inherited Label1: TLabel
-              Top = 520
+              Top = 626
               Width = 1184
               ExplicitTop = 520
             end
@@ -1418,20 +1427,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 363
+              Height = 469
               ExplicitWidth = 999
               ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 333
+                ExplicitHeight = 439
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 333
+                  Height = 439
                   ExplicitWidth = 991
                   ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -1514,31 +1523,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 199
-                    ExplicitTop = 254
+                    Height = 305
+                    ExplicitTop = 112
                     ExplicitWidth = 713
-                    ExplicitHeight = 57
+                    ExplicitHeight = 199
                   end
                   inherited pnlFooter: TPanel
-                    Top = 311
+                    Top = 417
                     Width = 991
                     ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
                       OnChange = nil
-                      ExplicitLeft = 812
+                      ExplicitLeft = 627
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 171
+                      ExplicitHeight = 277
                       inherited pnlLists: TPanel
-                        Height = 171
+                        Height = 277
                         ExplicitHeight = 171
                       end
                     end
@@ -1548,6 +1557,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
                   DoubleBuffered = True
+                  ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
@@ -1562,6 +1572,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
                       DoubleBuffered = True
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
@@ -1625,11 +1636,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 363
+              Height = 469
               ExplicitHeight = 363
             end
             inherited grdMaster: TDBGrid
-              Top = 535
+              Top = 641
               Width = 1184
             end
           end
@@ -1641,13 +1652,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1184
-            Height = 598
+            Height = 704
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1184
             ExplicitHeight = 598
             inherited Label1: TLabel
-              Top = 520
+              Top = 626
               Width = 1184
               ExplicitTop = 520
             end
@@ -1705,20 +1716,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 999
-              Height = 363
+              Height = 469
               ExplicitWidth = 999
               ExplicitHeight = 363
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 991
-                ExplicitHeight = 333
+                ExplicitHeight = 439
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 991
-                  Height = 333
+                  Height = 439
                   ExplicitWidth = 991
                   ExplicitHeight = 333
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 277
                   end
@@ -1801,31 +1812,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 713
-                    Height = 199
-                    ExplicitTop = 254
+                    Height = 305
+                    ExplicitTop = 112
                     ExplicitWidth = 713
-                    ExplicitHeight = 57
+                    ExplicitHeight = 199
                   end
                   inherited pnlFooter: TPanel
-                    Top = 311
+                    Top = 417
                     Width = 991
                     ExplicitTop = 311
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
                       Left = 627
                       OnChange = nil
-                      ExplicitLeft = 812
+                      ExplicitLeft = 627
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 199
+                    Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 199
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 171
+                      ExplicitHeight = 277
                       inherited pnlLists: TPanel
-                        Height = 171
+                        Height = 277
                         ExplicitHeight = 171
                       end
                     end
@@ -1835,6 +1846,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
                   DoubleBuffered = True
+                  ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
@@ -1849,6 +1861,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
                       DoubleBuffered = True
+                      ExplicitHeight = 402
                     end
                   end
                   inherited tabHtmlPreview: TTabSheet
@@ -1912,11 +1925,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 363
+              Height = 469
               ExplicitHeight = 363
             end
             inherited grdMaster: TDBGrid
-              Top = 535
+              Top = 641
               Width = 1184
             end
           end
@@ -1951,7 +1964,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 193
             Width = 1184
-            Height = 405
+            Height = 511
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -2067,6 +2080,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
+            ExplicitHeight = 405
           end
           object CRDBGrid2: TCRDBGrid
             Left = 0
@@ -2115,7 +2129,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1184
-            Height = 598
+            Height = 704
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -2227,6 +2241,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitHeight = 598
           end
         end
       end
@@ -2239,7 +2254,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Align = alTop
         Caption = 'Send Grid'
         TabOrder = 2
-        ExplicitWidth = 1178
         DesignSize = (
           1192
           62)
@@ -2254,7 +2268,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             'SG.PTSsUPYoQwGH6Lc56g7i4A.pcMP1F5svCMdH2iDzMDDPikR6def4gaTNnNuuk' +
             'X5ih8'
           TextHint = 'APIKey'
-          ExplicitWidth = 610
         end
         object btnSendgridAPIKeySave: TButton
           Left = 16
@@ -2283,10 +2296,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Left = 0
         Top = 0
         Width = 1198
-        Height = 702
+        Height = 808
         ActivePage = tbConfigParams
         Align = alClient
         TabOrder = 0
+        ExplicitHeight = 702
         object tabSerizlizer: TTabSheet
           Caption = 'Serializer'
           object btnDeserialize1: TButton
@@ -2661,7 +2675,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
           ImageIndex = 2
           DesignSize = (
             1190
-            672)
+            778)
           object Button1: TButton
             Left = 24
             Top = 3
@@ -2780,7 +2794,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             CaptionGlowEffect.Offset = 0
             CaptionGlowEffect.Intensive = True
             CaptionGlowEffect.StyleColors = True
-            Color = clBtnFace
             StorePaintBuffer = False
             WordWrap = False
             DataSource = dsConfiguration
@@ -2839,7 +2852,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 352
             Width = 1190
-            Height = 320
+            Height = 426
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -2954,6 +2967,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
+            ExplicitHeight = 320
           end
         end
       end
@@ -2965,226 +2979,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         Left = 0
         Top = 0
         Width = 1198
-        Height = 702
+        Height = 808
         ActivePage = tabLandingCustomer
         Align = alClient
         TabOrder = 0
+        ExplicitHeight = 702
         object tabLandingCustomer: TTabSheet
           Caption = 'Customer '
           inline frameLandingCustomer: TFrameVCLLandingMessageConfig
             Left = 0
             Top = 0
             Width = 1190
-            Height = 672
-            Align = alClient
-            TabOrder = 0
-            ExplicitWidth = 1190
-            ExplicitHeight = 672
-            inherited pnlButtons: TPanel
-              Width = 1190
-              ExplicitWidth = 1176
-              inherited edtLandingUrl: TEdit
-                Left = 151
-                Width = 727
-                ExplicitLeft = 151
-                ExplicitWidth = 713
-              end
-              inherited btnGenerateTinyUrl: TButton
-                Left = 891
-                ExplicitLeft = 877
-              end
-              inherited edtTinyUrl: TEdit
-                Left = 891
-                ExplicitLeft = 877
-              end
-            end
-            inherited pgcCustomerMail: TPageControl
-              Width = 1005
-              Height = 519
-              ExplicitWidth = 1005
-              ExplicitHeight = 519
-              inherited tabEditor: TTabSheet
-                ExplicitWidth = 997
-                ExplicitHeight = 489
-                inherited frameHTMLEditor1: TframeHTMLEditor
-                  Width = 997
-                  Height = 489
-                  ExplicitWidth = 997
-                  ExplicitHeight = 489
-                  inherited Splitter1: TSplitter
-                    Top = 112
-                    Height = 355
-                    ExplicitTop = 112
-                    ExplicitHeight = 427
-                  end
-                  inherited ToolBar1: TToolBar
-                    Width = 997
-                    ExplicitWidth = 997
-                  end
-                  inherited ToolBar2: TToolBar
-                    Width = 997
-                    Height = 56
-                    ExplicitWidth = 997
-                    ExplicitHeight = 56
-                    inherited ToolButton9: TToolButton
-                      Left = 0
-                      Wrap = True
-                      ExplicitLeft = 0
-                      ExplicitHeight = 30
-                    end
-                    inherited HeaderBtn: TToolButton
-                      Left = 0
-                      Top = 30
-                      ExplicitLeft = 0
-                      ExplicitTop = 30
-                    end
-                    inherited HtTextColorCombo1: THtTextColorCombo
-                      Left = 51
-                      Top = 30
-                      ExplicitLeft = 51
-                      ExplicitTop = 30
-                    end
-                    inherited HtBgColorCombo1: THtBgColorCombo
-                      Left = 117
-                      Top = 30
-                      ExplicitLeft = 117
-                      ExplicitTop = 30
-                    end
-                    inherited HtBorderCombo1: THtBorderCombo
-                      Left = 180
-                      Top = 30
-                      ExplicitLeft = 180
-                      ExplicitTop = 30
-                    end
-                    inherited NewTagBtn: TToolButton
-                      Left = 240
-                      Top = 30
-                      ExplicitLeft = 240
-                      ExplicitTop = 30
-                    end
-                    inherited HighlightBtn: TToolButton
-                      Left = 293
-                      Top = 30
-                      ExplicitLeft = 293
-                      ExplicitTop = 30
-                    end
-                    inherited ToolButton10: TToolButton
-                      Left = 374
-                      Top = 30
-                      ExplicitLeft = 374
-                      ExplicitTop = 30
-                    end
-                    inherited LoadSampleBtn: TToolButton
-                      Left = 382
-                      Top = 30
-                      ExplicitLeft = 382
-                      ExplicitTop = 30
-                    end
-                    inherited CanvasCombo: TComboBox
-                      Left = 607
-                      Top = 30
-                      ExplicitLeft = 607
-                      ExplicitTop = 30
-                    end
-                    inherited TemplateCombo: TComboBox
-                      Left = 721
-                      Top = 30
-                      ExplicitLeft = 721
-                      ExplicitTop = 30
-                    end
-                  end
-                  inherited E: THtmlEditor
-                    Top = 112
-                    Width = 719
-                    Height = 355
-                    ExplicitTop = 254
-                    ExplicitWidth = 719
-                    ExplicitHeight = 213
-                  end
-                  inherited pnlFooter: TPanel
-                    Top = 467
-                    Width = 997
-                    ExplicitTop = 467
-                    ExplicitWidth = 997
-                    inherited TrackBar1: TTrackBar
-                      Left = 633
-                      OnChange = nil
-                      ExplicitLeft = 804
-                    end
-                  end
-                  inherited LeftPages: TPageControl
-                    Top = 112
-                    Height = 355
-                    ExplicitTop = 112
-                    ExplicitHeight = 355
-                    inherited tabTag: TTabSheet
-                      ExplicitHeight = 327
-                      inherited pnlLists: TPanel
-                        Height = 327
-                        ExplicitHeight = 327
-                      end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
-                    end
-                  end
-                end
-              end
-              inherited tabAdvanced: TTabSheet
-                inherited pgAdvanced: TPageControl
-                  inherited tabAdvancedHtml: TTabSheet
-                    inherited advmMailHtml: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                  inherited tabAdvancedJson: TTabSheet
-                    inherited advmMailJson: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                  inherited tabAdvancedLog: TTabSheet
-                    inherited advmLogMessage: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                end
-              end
-            end
-            inherited pnlLists: TPanel
-              Height = 519
-              ExplicitHeight = 519
-            end
-            inherited grdMaster: TDBGrid
-              Top = 600
-              Width = 1190
-            end
-          end
-        end
-        object tabLandingDriver1: TTabSheet
-          Caption = 'Driver '
-          ImageIndex = 1
-          inline frameLandingDriver: TFrameVCLLandingMessageConfig
-            Left = 0
-            Top = 0
-            Width = 1190
-            Height = 672
+            Height = 778
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1190
@@ -3209,20 +3015,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 1005
-              Height = 519
+              Height = 625
               ExplicitWidth = 1005
               ExplicitHeight = 519
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 997
-                ExplicitHeight = 489
+                ExplicitHeight = 595
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 997
-                  Height = 489
+                  Height = 595
                   ExplicitWidth = 997
                   ExplicitHeight = 489
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 427
                   end
@@ -3305,31 +3111,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 719
-                    Height = 355
-                    ExplicitTop = 254
+                    Height = 461
+                    ExplicitTop = 112
                     ExplicitWidth = 719
-                    ExplicitHeight = 213
+                    ExplicitHeight = 355
                   end
                   inherited pnlFooter: TPanel
-                    Top = 467
+                    Top = 573
                     Width = 997
                     ExplicitTop = 467
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
                       Left = 633
                       OnChange = nil
-                      ExplicitLeft = 818
+                      ExplicitLeft = 633
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 355
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 327
+                      ExplicitHeight = 433
                       inherited pnlLists: TPanel
-                        Height = 327
+                        Height = 433
                         ExplicitHeight = 327
                       end
                     end
@@ -3377,11 +3183,226 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 519
+              Height = 625
               ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
             end
             inherited grdMaster: TDBGrid
-              Top = 600
+              Top = 706
+              Width = 1190
+            end
+          end
+        end
+        object tabLandingDriver1: TTabSheet
+          Caption = 'Driver '
+          ImageIndex = 1
+          inline frameLandingDriver: TFrameVCLLandingMessageConfig
+            Left = 0
+            Top = 0
+            Width = 1190
+            Height = 778
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 1190
+            ExplicitHeight = 672
+            inherited pnlButtons: TPanel
+              Width = 1190
+              ExplicitWidth = 1190
+              inherited edtLandingUrl: TEdit
+                Left = 151
+                Width = 727
+                ExplicitLeft = 151
+                ExplicitWidth = 727
+              end
+              inherited btnGenerateTinyUrl: TButton
+                Left = 891
+                ExplicitLeft = 891
+              end
+              inherited edtTinyUrl: TEdit
+                Left = 891
+                ExplicitLeft = 891
+              end
+            end
+            inherited pgcCustomerMail: TPageControl
+              Width = 1005
+              Height = 625
+              ExplicitWidth = 1005
+              ExplicitHeight = 519
+              inherited tabEditor: TTabSheet
+                ExplicitWidth = 997
+                ExplicitHeight = 595
+                inherited frameHTMLEditor1: TframeHTMLEditor
+                  Width = 997
+                  Height = 595
+                  ExplicitWidth = 997
+                  ExplicitHeight = 489
+                  inherited Splitter1: TSplitter
+                    Top = 112
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitHeight = 427
+                  end
+                  inherited ToolBar1: TToolBar
+                    Width = 997
+                    ExplicitWidth = 997
+                  end
+                  inherited ToolBar2: TToolBar
+                    Width = 997
+                    Height = 56
+                    ExplicitWidth = 997
+                    ExplicitHeight = 56
+                    inherited ToolButton9: TToolButton
+                      Left = 0
+                      Wrap = True
+                      ExplicitLeft = 0
+                      ExplicitHeight = 30
+                    end
+                    inherited HeaderBtn: TToolButton
+                      Left = 0
+                      Top = 30
+                      ExplicitLeft = 0
+                      ExplicitTop = 30
+                    end
+                    inherited HtTextColorCombo1: THtTextColorCombo
+                      Left = 51
+                      Top = 30
+                      ExplicitLeft = 51
+                      ExplicitTop = 30
+                    end
+                    inherited HtBgColorCombo1: THtBgColorCombo
+                      Left = 117
+                      Top = 30
+                      ExplicitLeft = 117
+                      ExplicitTop = 30
+                    end
+                    inherited HtBorderCombo1: THtBorderCombo
+                      Left = 180
+                      Top = 30
+                      ExplicitLeft = 180
+                      ExplicitTop = 30
+                    end
+                    inherited NewTagBtn: TToolButton
+                      Left = 240
+                      Top = 30
+                      ExplicitLeft = 240
+                      ExplicitTop = 30
+                    end
+                    inherited HighlightBtn: TToolButton
+                      Left = 293
+                      Top = 30
+                      ExplicitLeft = 293
+                      ExplicitTop = 30
+                    end
+                    inherited ToolButton10: TToolButton
+                      Left = 374
+                      Top = 30
+                      ExplicitLeft = 374
+                      ExplicitTop = 30
+                    end
+                    inherited LoadSampleBtn: TToolButton
+                      Left = 382
+                      Top = 30
+                      ExplicitLeft = 382
+                      ExplicitTop = 30
+                    end
+                    inherited CanvasCombo: TComboBox
+                      Left = 607
+                      Top = 30
+                      ExplicitLeft = 607
+                      ExplicitTop = 30
+                    end
+                    inherited TemplateCombo: TComboBox
+                      Left = 721
+                      Top = 30
+                      ExplicitLeft = 721
+                      ExplicitTop = 30
+                    end
+                  end
+                  inherited E: THtmlEditor
+                    Top = 112
+                    Width = 719
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitWidth = 719
+                    ExplicitHeight = 355
+                  end
+                  inherited pnlFooter: TPanel
+                    Top = 573
+                    Width = 997
+                    ExplicitTop = 467
+                    ExplicitWidth = 997
+                    inherited TrackBar1: TTrackBar
+                      Left = 633
+                      OnChange = nil
+                      ExplicitLeft = 633
+                    end
+                  end
+                  inherited LeftPages: TPageControl
+                    Top = 112
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitHeight = 355
+                    inherited tabTag: TTabSheet
+                      ExplicitHeight = 433
+                      inherited pnlLists: TPanel
+                        Height = 433
+                        ExplicitHeight = 327
+                      end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
+                inherited pgcTestPreview: TPageControl
+                  inherited tabPagePreview: TTabSheet
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      DoubleBuffered = True
+                    end
+                  end
+                end
+              end
+              inherited tabAdvanced: TTabSheet
+                inherited pgAdvanced: TPageControl
+                  inherited tabAdvancedHtml: TTabSheet
+                    inherited advmMailHtml: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                  inherited tabAdvancedJson: TTabSheet
+                    inherited advmMailJson: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                  inherited tabAdvancedLog: TTabSheet
+                    inherited advmLogMessage: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                end
+              end
+            end
+            inherited pnlLists: TPanel
+              Height = 625
+              ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
+            end
+            inherited grdMaster: TDBGrid
+              Top = 706
               Width = 1190
             end
           end
@@ -3393,7 +3414,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1190
-            Height = 672
+            Height = 778
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1190
@@ -3416,611 +3437,8 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 1005
-              Height = 519
+              Height = 625
               ActivePage = frameLandingBooking.tabCustomerTestMail
-              ExplicitWidth = 1005
-              ExplicitHeight = 519
-              inherited tabEditor: TTabSheet
-                ExplicitWidth = 997
-                ExplicitHeight = 489
-                inherited frameHTMLEditor1: TframeHTMLEditor
-                  Width = 997
-                  Height = 489
-                  ExplicitWidth = 997
-                  ExplicitHeight = 489
-                  inherited Splitter1: TSplitter
-                    Top = 112
-                    Height = 355
-                    ExplicitTop = 112
-                    ExplicitHeight = 427
-                  end
-                  inherited ToolBar1: TToolBar
-                    Width = 997
-                    ExplicitWidth = 997
-                  end
-                  inherited ToolBar2: TToolBar
-                    Width = 997
-                    Height = 56
-                    ExplicitWidth = 997
-                    ExplicitHeight = 56
-                    inherited ToolButton9: TToolButton
-                      Left = 0
-                      Wrap = True
-                      ExplicitLeft = 0
-                      ExplicitHeight = 30
-                    end
-                    inherited HeaderBtn: TToolButton
-                      Left = 0
-                      Top = 30
-                      ExplicitLeft = 0
-                      ExplicitTop = 30
-                    end
-                    inherited HtTextColorCombo1: THtTextColorCombo
-                      Left = 51
-                      Top = 30
-                      ExplicitLeft = 51
-                      ExplicitTop = 30
-                    end
-                    inherited HtBgColorCombo1: THtBgColorCombo
-                      Left = 117
-                      Top = 30
-                      ExplicitLeft = 117
-                      ExplicitTop = 30
-                    end
-                    inherited HtBorderCombo1: THtBorderCombo
-                      Left = 180
-                      Top = 30
-                      ExplicitLeft = 180
-                      ExplicitTop = 30
-                    end
-                    inherited NewTagBtn: TToolButton
-                      Left = 240
-                      Top = 30
-                      ExplicitLeft = 240
-                      ExplicitTop = 30
-                    end
-                    inherited HighlightBtn: TToolButton
-                      Left = 293
-                      Top = 30
-                      ExplicitLeft = 293
-                      ExplicitTop = 30
-                    end
-                    inherited ToolButton10: TToolButton
-                      Left = 374
-                      Top = 30
-                      ExplicitLeft = 374
-                      ExplicitTop = 30
-                    end
-                    inherited LoadSampleBtn: TToolButton
-                      Left = 382
-                      Top = 30
-                      ExplicitLeft = 382
-                      ExplicitTop = 30
-                    end
-                    inherited CanvasCombo: TComboBox
-                      Left = 607
-                      Top = 30
-                      ExplicitLeft = 607
-                      ExplicitTop = 30
-                    end
-                    inherited TemplateCombo: TComboBox
-                      Left = 721
-                      Top = 30
-                      ExplicitLeft = 721
-                      ExplicitTop = 30
-                    end
-                  end
-                  inherited E: THtmlEditor
-                    Top = 112
-                    Width = 719
-                    Height = 355
-                    ExplicitTop = 254
-                    ExplicitWidth = 719
-                    ExplicitHeight = 213
-                  end
-                  inherited pnlFooter: TPanel
-                    Top = 467
-                    Width = 997
-                    ExplicitTop = 467
-                    ExplicitWidth = 997
-                    inherited TrackBar1: TTrackBar
-                      Left = 633
-                      OnChange = nil
-                      ExplicitLeft = 818
-                    end
-                  end
-                  inherited LeftPages: TPageControl
-                    Top = 112
-                    Height = 355
-                    ExplicitTop = 112
-                    ExplicitHeight = 355
-                    inherited tabTag: TTabSheet
-                      ExplicitHeight = 327
-                      inherited pnlLists: TPanel
-                        Height = 327
-                        ExplicitHeight = 327
-                      end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                ExplicitWidth = 997
-                ExplicitHeight = 489
-                inherited edtMailTestSubject: TEdit
-                  Width = 991
-                  ExplicitWidth = 1176
-                end
-                inherited pnlMailTest: TPanel
-                  Width = 997
-                  ExplicitWidth = 1182
-                end
-                inherited pgcTestPreview: TPageControl
-                  Width = 997
-                  Height = 419
-                  ActivePage = frameLandingBooking.tabJsonPreview
-                  ExplicitWidth = 997
-                  ExplicitHeight = 419
-                  inherited tabPagePreview: TTabSheet
-                    ExplicitWidth = 989
-                    ExplicitHeight = 389
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      Width = 989
-                      Height = 389
-                      DoubleBuffered = True
-                      ExplicitWidth = 1174
-                      ExplicitHeight = 461
-                    end
-                  end
-                  inherited tabHtmlPreview: TTabSheet
-                    inherited advmMailHtmlPreview: TAdvMemo
-                      SyntaxStyles = frameLandingBooking.astHtml
-                      UseStyler = True
-                    end
-                  end
-                  inherited tabJsonPreview: TTabSheet
-                    ExplicitWidth = 989
-                    ExplicitHeight = 389
-                    inherited advmMailJsonPreview: TAdvMemo
-                      Width = 989
-                      Height = 389
-                      SyntaxStyles = frameLandingBooking.astJson
-                      UseStyler = True
-                      ExplicitWidth = 989
-                      ExplicitHeight = 389
-                    end
-                  end
-                end
-              end
-              inherited tabAdvanced: TTabSheet
-                inherited pgAdvanced: TPageControl
-                  inherited tabAdvancedHtml: TTabSheet
-                    inherited advmMailHtml: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                  inherited tabAdvancedJson: TTabSheet
-                    inherited advmMailJson: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                  inherited tabAdvancedLog: TTabSheet
-                    inherited advmLogMessage: TAdvMemo
-                      BorderColor = clGray
-                      Gutter.BorderColor = clGray
-                      Gutter.GutterColor = clBtnFace
-                    end
-                  end
-                end
-              end
-            end
-            inherited pnlLists: TPanel
-              Height = 519
-              ExplicitHeight = 519
-            end
-            inherited grdMaster: TDBGrid
-              Top = 600
-              Width = 1190
-            end
-          end
-        end
-      end
-    end
-    object tabSMSMessages: TTabSheet
-      Caption = 'SMS Messages'
-      ImageIndex = 4
-      object pgcSmsMessage: TPageControl
-        Left = 0
-        Top = 201
-        Width = 1198
-        Height = 501
-        ActivePage = tabSmsDriver2
-        Align = alClient
-        TabOrder = 0
-        object tabSmsCustomer: TTabSheet
-          Caption = 'Sms Customer'
-          inline frameSMSCustomer: TframeVCLSMSMessageConfig
-            Left = 0
-            Top = 0
-            Width = 1190
-            Height = 471
-            Align = alClient
-            TabOrder = 0
-            ExplicitWidth = 1190
-            ExplicitHeight = 471
-            inherited Panel1: TPanel
-              Height = 471
-              ExplicitHeight = 471
-              inherited pnlLists: TPanel
-                Height = 469
-                ExplicitHeight = 469
-              end
-            end
-            inherited Panel2: TPanel
-              Width = 973
-              Height = 471
-              ExplicitWidth = 973
-              ExplicitHeight = 471
-              inherited lblMsgTo: TLabel
-                Left = 800
-                ExplicitLeft = 800
-              end
-              inherited grpURL: TGroupBox
-                Width = 965
-                ExplicitWidth = 1184
-                inherited btnTestUrl: TButton
-                  OnClick = frameSMSCustomerbtnTestUrlClick
-                end
-                inherited edtCustomerMobileUrl1: TEdit
-                  Width = 378
-                  ExplicitWidth = 378
-                end
-                inherited edtTestTinyUrl: TEdit
-                  Left = 920
-                  Width = 274
-                  ExplicitLeft = 920
-                  ExplicitWidth = 274
-                end
-              end
-              inherited advmSMSTemplate: TAdvMemo
-                Width = 1002
-                BorderColor = clGray
-                Gutter.BorderColor = clGray
-                Gutter.GutterColor = clBtnFace
-                ExplicitWidth = 1002
-              end
-              inherited btnSendMailTo: TButton
-                OnClick = frameSMSCustomerbtnSendMailToClick
-              end
-              inherited edPhoneCustomerTo: TEdit
-                Left = 848
-                Top = 73
-                Width = 170
-                ExplicitLeft = 848
-                ExplicitTop = 73
-                ExplicitWidth = 184
-              end
-              inherited rgEngine: TRadioGroup
-                Left = 632
-                Width = 162
-                ExplicitLeft = 632
-                ExplicitWidth = 162
-              end
-              inherited Panel3: TPanel
-                Width = 1013
-                ExplicitWidth = 1013
-                inherited dbgrdParams: TDBGrid
-                  Width = 544
-                end
-                inherited edTestSMSTo: TEdit
-                  Width = 564
-                  ExplicitWidth = 564
-                end
-                inherited advmSMSTest: TAdvMemo
-                  Width = 564
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  Gutter.GutterColorTo = clBtnFace
-                  ExplicitWidth = 564
-                end
-                inherited advmJson: TAdvMemo
-                  Top = 301
-                  Width = 530
-                  Height = 161
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  ExplicitTop = 301
-                  ExplicitWidth = 530
-                  ExplicitHeight = 161
-                end
-              end
-              inherited DBGrid1: TDBGrid
-                Top = 390
-                Width = 971
-              end
-            end
-          end
-        end
-        object tabSmsDriver1: TTabSheet
-          Caption = 'Driver 1 Sms'
-          ImageIndex = 1
-          inline frameSmsDriver1: TframeVCLSMSMessageConfig
-            Left = 0
-            Top = 0
-            Width = 1190
-            Height = 471
-            Align = alClient
-            TabOrder = 0
-            ExplicitWidth = 1190
-            ExplicitHeight = 471
-            inherited Panel1: TPanel
-              Height = 471
-              ExplicitHeight = 471
-              inherited pnlLists: TPanel
-                Height = 469
-                ExplicitHeight = 469
-              end
-            end
-            inherited Panel2: TPanel
-              Width = 973
-              Height = 471
-              ExplicitWidth = 973
-              ExplicitHeight = 471
-              inherited lblMsgTo: TLabel
-                Left = 850
-                ExplicitLeft = 850
-              end
-              inherited grpURL: TGroupBox
-                Width = 965
-                ExplicitWidth = 1184
-                inherited edtCustomerMobileUrl1: TEdit
-                  Width = 427
-                  ExplicitWidth = 427
-                end
-                inherited edtTestTinyUrl: TEdit
-                  Left = 969
-                  Width = 225
-                  ExplicitLeft = 969
-                  ExplicitWidth = 225
-                end
-              end
-              inherited advmSMSTemplate: TAdvMemo
-                Width = 1002
-                BorderColor = clGray
-                Gutter.BorderColor = clGray
-                Gutter.GutterColor = clBtnFace
-                ExplicitWidth = 1002
-              end
-              inherited edPhoneCustomerTo: TEdit
-                Left = 900
-                Width = 145
-                ExplicitLeft = 900
-                ExplicitWidth = 159
-              end
-              inherited rgEngine: TRadioGroup
-                Width = 167
-                ExplicitWidth = 167
-              end
-              inherited Panel3: TPanel
-                Width = 1013
-                ExplicitWidth = 1013
-                inherited dbgrdParams: TDBGrid
-                  Width = 476
-                end
-                inherited edTestSMSTo: TEdit
-                  Width = 564
-                  ExplicitWidth = 564
-                end
-                inherited advmSMSTest: TAdvMemo
-                  Width = 564
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  Gutter.GutterColorTo = clBtnFace
-                  ExplicitWidth = 564
-                end
-                inherited advmJson: TAdvMemo
-                  Width = 716
-                  Height = 169
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  ExplicitWidth = 716
-                  ExplicitHeight = 169
-                end
-              end
-              inherited DBGrid1: TDBGrid
-                Top = 390
-                Width = 971
-              end
-            end
-          end
-        end
-        object tabSmsDriver2: TTabSheet
-          Caption = 'Driver 2 Sms'
-          ImageIndex = 2
-          inline frameSMSDriver2: TframeVCLSMSMessageConfig
-            Left = 0
-            Top = 0
-            Width = 1190
-            Height = 471
-            Align = alClient
-            TabOrder = 0
-            ExplicitWidth = 1190
-            ExplicitHeight = 471
-            inherited Panel1: TPanel
-              Height = 471
-              ExplicitHeight = 471
-              inherited pnlLists: TPanel
-                Height = 469
-                ExplicitHeight = 469
-              end
-            end
-            inherited Panel2: TPanel
-              Width = 973
-              Height = 471
-              ExplicitWidth = 973
-              ExplicitHeight = 471
-              inherited lblMsgTo: TLabel
-                Left = 856
-                Top = 80
-                ExplicitLeft = 856
-                ExplicitTop = 80
-              end
-              inherited grpURL: TGroupBox
-                Width = 965
-                ExplicitWidth = 965
-                inherited btnTestUrl: TButton
-                  Left = 678
-                  ExplicitLeft = 678
-                end
-                inherited edtCustomerMobileUrl1: TEdit
-                  Width = 245
-                  ExplicitWidth = 245
-                end
-                inherited edtTestTinyUrl: TEdit
-                  Left = 750
-                  Width = 210
-                  ExplicitLeft = 750
-                  ExplicitWidth = 210
-                end
-              end
-              inherited advmSMSTemplate: TAdvMemo
-                Width = 1002
-                BorderColor = clGray
-                Gutter.BorderColor = clGray
-                Gutter.GutterColor = clBtnFace
-                ExplicitWidth = 1002
-              end
-              inherited edPhoneCustomerTo: TEdit
-                Left = 900
-                Top = 78
-                Width = 145
-                ExplicitLeft = 900
-                ExplicitTop = 78
-                ExplicitWidth = 145
-              end
-              inherited rgEngine: TRadioGroup
-                Width = 180
-                ExplicitWidth = 180
-              end
-              inherited Panel3: TPanel
-                Width = 1013
-                ExplicitWidth = 1013
-                inherited dbgrdParams: TDBGrid
-                  Width = 558
-                end
-                inherited edTestSMSTo: TEdit
-                  Width = 564
-                  ExplicitWidth = 564
-                end
-                inherited advmSMSTest: TAdvMemo
-                  Width = 564
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  Gutter.GutterColorTo = clBtnFace
-                  ExplicitWidth = 564
-                end
-                inherited advmJson: TAdvMemo
-                  Width = 716
-                  Height = 169
-                  BorderColor = clGray
-                  Gutter.BorderColor = clGray
-                  Gutter.GutterColor = clBtnFace
-                  ExplicitWidth = 716
-                  ExplicitHeight = 169
-                end
-              end
-              inherited DBGrid1: TDBGrid
-                Top = 390
-                Width = 971
-              end
-            end
-            inherited fdmParams: TFDMemTable
-              Left = 556
-              Top = 171
-            end
-            inherited dsParams: TDataSource
-              Left = 620
-              Top = 203
-            end
-          end
-        end
-      end
-      inline frameVCLMailSmsSenderConfig1: TframeVCLMailSmsSenderConfig
-        Left = 0
-        Top = 0
-        Width = 1198
-        Height = 201
-        Align = alTop
-        TabOrder = 1
-        ExplicitWidth = 1198
-        ExplicitHeight = 201
-        inherited advmJson: TAdvMemo
-          Width = 740
-          Height = 195
-          ExplicitWidth = 740
-          ExplicitHeight = 195
-        end
-        inherited grpSettings: TGroupBox
-          Height = 195
-          ExplicitHeight = 195
-        end
-      end
-    end
-    object tabContracts: TTabSheet
-      Caption = 'Contracts'
-      ImageIndex = 5
-      object PageControl1: TPageControl
-        Left = 0
-        Top = 0
-        Width = 1198
-        Height = 702
-        ActivePage = tabCustomerContract
-        Align = alClient
-        TabOrder = 0
-        object tabCustomerContract: TTabSheet
-          Caption = 'Customer Contract'
-          inline frameCustomerContract: TFrameVCLLandingMessageConfig
-            Left = 0
-            Top = 0
-            Width = 1190
-            Height = 672
-            Align = alClient
-            TabOrder = 0
-            ExplicitWidth = 1190
-            ExplicitHeight = 672
-            inherited pnlButtons: TPanel
-              Width = 1190
-              ExplicitWidth = 1190
-              inherited edtLandingUrl: TEdit
-                Width = 764
-                ExplicitWidth = 764
-              end
-              inherited btnGenerateTinyUrl: TButton
-                Left = 877
-                ExplicitLeft = 877
-              end
-              inherited edtTinyUrl: TEdit
-                Left = 877
-                ExplicitLeft = 877
-              end
-            end
-            inherited pgcCustomerMail: TPageControl
-              Width = 1005
-              Height = 519
               ExplicitWidth = 1005
               ExplicitHeight = 519
               inherited tabEditor: TTabSheet
@@ -4153,6 +3571,615 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
+                ExplicitWidth = 997
+                ExplicitHeight = 595
+                inherited edtMailTestSubject: TEdit
+                  Width = 991
+                  ExplicitWidth = 991
+                end
+                inherited pnlMailTest: TPanel
+                  Width = 997
+                  ExplicitWidth = 997
+                end
+                inherited pgcTestPreview: TPageControl
+                  Width = 997
+                  Height = 525
+                  ActivePage = frameLandingBooking.tabJsonPreview
+                  ExplicitWidth = 997
+                  ExplicitHeight = 419
+                  inherited tabPagePreview: TTabSheet
+                    ExplicitWidth = 989
+                    ExplicitHeight = 389
+                    inherited brwTestMessage: TTMSFNCWebBrowser
+                      Width = 989
+                      Height = 389
+                      DoubleBuffered = True
+                      ExplicitWidth = 989
+                      ExplicitHeight = 389
+                    end
+                  end
+                  inherited tabHtmlPreview: TTabSheet
+                    inherited advmMailHtmlPreview: TAdvMemo
+                      SyntaxStyles = frameLandingBooking.astHtml
+                      UseStyler = True
+                    end
+                  end
+                  inherited tabJsonPreview: TTabSheet
+                    ExplicitWidth = 989
+                    ExplicitHeight = 495
+                    inherited advmMailJsonPreview: TAdvMemo
+                      Width = 989
+                      Height = 495
+                      SyntaxStyles = frameLandingBooking.astJson
+                      UseStyler = True
+                      ExplicitWidth = 989
+                      ExplicitHeight = 389
+                    end
+                  end
+                end
+              end
+              inherited tabAdvanced: TTabSheet
+                inherited pgAdvanced: TPageControl
+                  inherited tabAdvancedHtml: TTabSheet
+                    inherited advmMailHtml: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                  inherited tabAdvancedJson: TTabSheet
+                    inherited advmMailJson: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                  inherited tabAdvancedLog: TTabSheet
+                    inherited advmLogMessage: TAdvMemo
+                      BorderColor = clGray
+                      Gutter.BorderColor = clGray
+                      Gutter.GutterColor = clBtnFace
+                    end
+                  end
+                end
+              end
+            end
+            inherited pnlLists: TPanel
+              Height = 625
+              ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
+            end
+            inherited grdMaster: TDBGrid
+              Top = 706
+              Width = 1190
+            end
+          end
+        end
+      end
+    end
+    object tabSMSMessages: TTabSheet
+      Caption = 'SMS Messages'
+      ImageIndex = 4
+      object pgcSmsMessage: TPageControl
+        Left = 0
+        Top = 201
+        Width = 1198
+        Height = 607
+        ActivePage = tabSmsCustomer
+        Align = alClient
+        TabOrder = 0
+        ExplicitHeight = 501
+        object tabSmsCustomer: TTabSheet
+          Caption = 'Sms Customer'
+          inline frameSMSCustomer: TframeVCLSMSMessageConfig
+            Left = 0
+            Top = 0
+            Width = 1190
+            Height = 577
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 1190
+            ExplicitHeight = 471
+            inherited Panel1: TPanel
+              Height = 577
+              ExplicitHeight = 471
+              inherited pnlLists: TPanel
+                Height = 575
+                ExplicitHeight = 469
+                inherited lst2: TListBox
+                  Height = 55
+                end
+              end
+            end
+            inherited Panel2: TPanel
+              Width = 973
+              Height = 577
+              ExplicitLeft = 217
+              ExplicitTop = 0
+              ExplicitWidth = 973
+              ExplicitHeight = 471
+              inherited lblMsgTo: TLabel
+                Left = 832
+                Width = 42
+                ExplicitLeft = 832
+                ExplicitWidth = 42
+              end
+              inherited grpURL: TGroupBox
+                Width = 965
+                ExplicitWidth = 965
+                inherited btnTestUrl: TButton
+                  Left = 614
+                  OnClick = frameSMSCustomerbtnTestUrlClick
+                  ExplicitLeft = 614
+                end
+                inherited edtCustomerMobileUrl1: TEdit
+                  Width = 181
+                  ExplicitWidth = 181
+                end
+                inherited edtTestTinyUrl: TEdit
+                  Left = 686
+                  Width = 274
+                  ExplicitLeft = 686
+                  ExplicitWidth = 274
+                end
+              end
+              inherited advmSMSTemplate: TAdvMemo
+                BorderColor = clGray
+                Gutter.BorderColor = clGray
+                Gutter.GutterColor = clBtnFace
+              end
+              inherited btnSendMailTo: TButton
+                OnClick = frameSMSCustomerbtnSendMailToClick
+              end
+              inherited edPhoneCustomerTo: TEdit
+                Left = 880
+                Top = 73
+                Width = 81
+                ExplicitLeft = 880
+                ExplicitTop = 73
+                ExplicitWidth = 81
+              end
+              inherited rgEngine: TRadioGroup
+                Left = 655
+                Width = 171
+                ExplicitLeft = 655
+                ExplicitWidth = 171
+              end
+              inherited pnlSmsTestConfig: TPanel
+                Height = 415
+                inherited dbgrdParams: TDBGrid
+                  Height = 407
+                end
+                inherited advmSMSTest: TAdvMemo
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                  Gutter.GutterColorTo = clBtnFace
+                end
+                inherited advmJson: TAdvMemo
+                  Height = 235
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                end
+                inherited lbEdtTemplateSID: TLabeledEdit
+                  EditLabel.ExplicitLeft = 0
+                  EditLabel.ExplicitTop = -18
+                  EditLabel.ExplicitWidth = 92
+                end
+              end
+              inherited DBGrid1: TDBGrid
+                Top = 496
+                Width = 971
+              end
+            end
+          end
+        end
+        object tabSmsDriver1: TTabSheet
+          Caption = 'Driver 1 Sms'
+          ImageIndex = 1
+          inline frameSmsDriver1: TframeVCLSMSMessageConfig
+            Left = 0
+            Top = 0
+            Width = 1190
+            Height = 577
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 1190
+            ExplicitHeight = 471
+            inherited Panel1: TPanel
+              Height = 577
+              ExplicitHeight = 471
+              inherited pnlLists: TPanel
+                Height = 575
+                ExplicitHeight = 469
+                inherited lst2: TListBox
+                  Height = 55
+                end
+              end
+            end
+            inherited Panel2: TPanel
+              Width = 973
+              Height = 577
+              ExplicitLeft = 217
+              ExplicitTop = 0
+              ExplicitWidth = 973
+              ExplicitHeight = 471
+              inherited lblMsgTo: TLabel
+                Left = 850
+                ExplicitLeft = 850
+              end
+              inherited grpURL: TGroupBox
+                Width = 965
+                ExplicitWidth = 965
+                inherited btnTestUrl: TButton
+                  Left = 663
+                  ExplicitLeft = 663
+                end
+                inherited edtCustomerMobileUrl1: TEdit
+                  Width = 230
+                  ExplicitWidth = 230
+                end
+                inherited edtTestTinyUrl: TEdit
+                  Left = 735
+                  Width = 225
+                  ExplicitLeft = 735
+                  ExplicitWidth = 225
+                end
+              end
+              inherited advmSMSTemplate: TAdvMemo
+                Width = 741
+                BorderColor = clGray
+                Gutter.BorderColor = clGray
+                Gutter.GutterColor = clBtnFace
+                ExplicitWidth = 741
+              end
+              inherited edPhoneCustomerTo: TEdit
+                Left = 897
+                Width = 60
+                ExplicitLeft = 897
+                ExplicitWidth = 60
+              end
+              inherited rgEngine: TRadioGroup
+                Width = 167
+                ExplicitWidth = 167
+              end
+              inherited pnlSmsTestConfig: TPanel
+                Height = 415
+                inherited dbgrdParams: TDBGrid
+                  Height = 407
+                end
+                inherited advmSMSTest: TAdvMemo
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                  Gutter.GutterColorTo = clBtnFace
+                end
+                inherited advmJson: TAdvMemo
+                  Height = 235
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                end
+                inherited lbEdtTemplateSID: TLabeledEdit
+                  EditLabel.ExplicitLeft = 0
+                  EditLabel.ExplicitTop = -18
+                  EditLabel.ExplicitWidth = 92
+                end
+              end
+              inherited DBGrid1: TDBGrid
+                Top = 496
+                Width = 971
+              end
+            end
+          end
+        end
+        object tabSmsDriver2: TTabSheet
+          Caption = 'Driver 2 Sms'
+          ImageIndex = 2
+          inline frameSMSDriver2: TframeVCLSMSMessageConfig
+            Left = 0
+            Top = 0
+            Width = 1190
+            Height = 577
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 1190
+            ExplicitHeight = 471
+            inherited Panel1: TPanel
+              Height = 577
+              ExplicitHeight = 471
+              inherited pnlLists: TPanel
+                Height = 575
+                ExplicitHeight = 469
+                inherited lst2: TListBox
+                  Height = 55
+                end
+              end
+            end
+            inherited Panel2: TPanel
+              Width = 973
+              Height = 577
+              ExplicitLeft = 217
+              ExplicitTop = 0
+              ExplicitWidth = 973
+              ExplicitHeight = 471
+              inherited lblMsgTo: TLabel
+                Left = 856
+                Top = 80
+                ExplicitLeft = 856
+                ExplicitTop = 80
+              end
+              inherited grpURL: TGroupBox
+                Width = 965
+                ExplicitWidth = 965
+                inherited btnTestUrl: TButton
+                  Left = 678
+                  ExplicitLeft = 678
+                end
+                inherited edtCustomerMobileUrl1: TEdit
+                  Width = 245
+                  ExplicitWidth = 245
+                end
+                inherited edtTestTinyUrl: TEdit
+                  Left = 750
+                  Width = 210
+                  ExplicitLeft = 750
+                  ExplicitWidth = 210
+                end
+              end
+              inherited advmSMSTemplate: TAdvMemo
+                BorderColor = clGray
+                Gutter.BorderColor = clGray
+                Gutter.GutterColor = clBtnFace
+              end
+              inherited edPhoneCustomerTo: TEdit
+                Left = 903
+                Top = 77
+                Width = 50
+                ExplicitLeft = 903
+                ExplicitTop = 77
+                ExplicitWidth = 50
+              end
+              inherited rgEngine: TRadioGroup
+                Width = 180
+                ExplicitWidth = 180
+              end
+              inherited pnlSmsTestConfig: TPanel
+                inherited advmSMSTest: TAdvMemo
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                  Gutter.GutterColorTo = clBtnFace
+                end
+                inherited advmJson: TAdvMemo
+                  BorderColor = clGray
+                  Gutter.BorderColor = clGray
+                  Gutter.GutterColor = clBtnFace
+                end
+                inherited lbEdtTemplateSID: TLabeledEdit
+                  EditLabel.ExplicitLeft = 0
+                  EditLabel.ExplicitTop = -18
+                  EditLabel.ExplicitWidth = 92
+                end
+              end
+              inherited DBGrid1: TDBGrid
+                Top = 496
+                Width = 971
+              end
+              inherited Memo1: TMemo
+                Width = 200
+                ExplicitWidth = 200
+              end
+            end
+            inherited fdmParams: TFDMemTable
+              Left = 556
+              Top = 171
+            end
+            inherited dsParams: TDataSource
+              Left = 620
+              Top = 203
+            end
+          end
+        end
+      end
+      inline frameVCLMailSmsSenderConfig1: TframeVCLMailSmsSenderConfig
+        Left = 0
+        Top = 0
+        Width = 1198
+        Height = 201
+        Align = alTop
+        TabOrder = 1
+        ExplicitWidth = 1198
+        ExplicitHeight = 201
+        inherited advmJson: TAdvMemo
+          Width = 740
+          Height = 195
+          ExplicitWidth = 740
+          ExplicitHeight = 195
+        end
+        inherited grpSettings: TGroupBox
+          Height = 195
+          ExplicitHeight = 195
+        end
+      end
+    end
+    object tabContracts: TTabSheet
+      Caption = 'Contracts'
+      ImageIndex = 5
+      object PageControl1: TPageControl
+        Left = 0
+        Top = 0
+        Width = 1198
+        Height = 808
+        ActivePage = tabCustomerContract
+        Align = alClient
+        TabOrder = 0
+        ExplicitHeight = 702
+        object tabCustomerContract: TTabSheet
+          Caption = 'Customer Contract'
+          inline frameCustomerContract: TFrameVCLLandingMessageConfig
+            Left = 0
+            Top = 0
+            Width = 1190
+            Height = 778
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 1190
+            ExplicitHeight = 672
+            inherited pnlButtons: TPanel
+              Width = 1190
+              ExplicitWidth = 1190
+              inherited edtLandingUrl: TEdit
+                Width = 764
+                ExplicitWidth = 764
+              end
+              inherited btnGenerateTinyUrl: TButton
+                Left = 877
+                ExplicitLeft = 877
+              end
+              inherited edtTinyUrl: TEdit
+                Left = 877
+                ExplicitLeft = 877
+              end
+            end
+            inherited pgcCustomerMail: TPageControl
+              Width = 1005
+              Height = 625
+              ExplicitWidth = 1005
+              ExplicitHeight = 519
+              inherited tabEditor: TTabSheet
+                ExplicitWidth = 997
+                ExplicitHeight = 595
+                inherited frameHTMLEditor1: TframeHTMLEditor
+                  Width = 997
+                  Height = 595
+                  ExplicitWidth = 997
+                  ExplicitHeight = 489
+                  inherited Splitter1: TSplitter
+                    Top = 112
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitHeight = 427
+                  end
+                  inherited ToolBar1: TToolBar
+                    Width = 997
+                    ExplicitWidth = 997
+                  end
+                  inherited ToolBar2: TToolBar
+                    Width = 997
+                    Height = 56
+                    ExplicitWidth = 997
+                    ExplicitHeight = 56
+                    inherited ToolButton9: TToolButton
+                      Left = 0
+                      Wrap = True
+                      ExplicitLeft = 0
+                      ExplicitHeight = 30
+                    end
+                    inherited HeaderBtn: TToolButton
+                      Left = 0
+                      Top = 30
+                      ExplicitLeft = 0
+                      ExplicitTop = 30
+                    end
+                    inherited HtTextColorCombo1: THtTextColorCombo
+                      Left = 51
+                      Top = 30
+                      ExplicitLeft = 51
+                      ExplicitTop = 30
+                    end
+                    inherited HtBgColorCombo1: THtBgColorCombo
+                      Left = 117
+                      Top = 30
+                      ExplicitLeft = 117
+                      ExplicitTop = 30
+                    end
+                    inherited HtBorderCombo1: THtBorderCombo
+                      Left = 180
+                      Top = 30
+                      ExplicitLeft = 180
+                      ExplicitTop = 30
+                    end
+                    inherited NewTagBtn: TToolButton
+                      Left = 240
+                      Top = 30
+                      ExplicitLeft = 240
+                      ExplicitTop = 30
+                    end
+                    inherited HighlightBtn: TToolButton
+                      Left = 293
+                      Top = 30
+                      ExplicitLeft = 293
+                      ExplicitTop = 30
+                    end
+                    inherited ToolButton10: TToolButton
+                      Left = 374
+                      Top = 30
+                      ExplicitLeft = 374
+                      ExplicitTop = 30
+                    end
+                    inherited LoadSampleBtn: TToolButton
+                      Left = 382
+                      Top = 30
+                      ExplicitLeft = 382
+                      ExplicitTop = 30
+                    end
+                    inherited CanvasCombo: TComboBox
+                      Left = 607
+                      Top = 30
+                      ExplicitLeft = 607
+                      ExplicitTop = 30
+                    end
+                    inherited TemplateCombo: TComboBox
+                      Left = 721
+                      Top = 30
+                      ExplicitLeft = 721
+                      ExplicitTop = 30
+                    end
+                  end
+                  inherited E: THtmlEditor
+                    Top = 112
+                    Width = 719
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitWidth = 719
+                    ExplicitHeight = 355
+                  end
+                  inherited pnlFooter: TPanel
+                    Top = 573
+                    Width = 997
+                    ExplicitTop = 467
+                    ExplicitWidth = 997
+                    inherited TrackBar1: TTrackBar
+                      Left = 633
+                      OnChange = nil
+                      ExplicitLeft = 633
+                    end
+                  end
+                  inherited LeftPages: TPageControl
+                    Top = 112
+                    Height = 461
+                    ExplicitTop = 112
+                    ExplicitHeight = 355
+                    inherited tabTag: TTabSheet
+                      ExplicitHeight = 433
+                      inherited pnlLists: TPanel
+                        Height = 433
+                        ExplicitHeight = 327
+                      end
+                    end
+                  end
+                end
+              end
+              inherited tabCustomerMailPreview: TTabSheet
+                inherited brwModelMessage: TTMSFNCWebBrowser
+                  DoubleBuffered = True
+                end
+              end
+              inherited tabCustomerTestMail: TTabSheet
                 inherited pgcTestPreview: TPageControl
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
@@ -4188,11 +4215,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 519
+              Height = 625
               ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
             end
             inherited grdMaster: TDBGrid
-              Top = 600
+              Top = 706
               Width = 1190
             end
           end
@@ -4205,7 +4235,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1190
-            Height = 672
+            Height = 778
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1190
@@ -4228,20 +4258,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 1005
-              Height = 519
+              Height = 625
               ExplicitWidth = 1005
               ExplicitHeight = 519
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 997
-                ExplicitHeight = 489
+                ExplicitHeight = 595
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 997
-                  Height = 489
+                  Height = 595
                   ExplicitWidth = 997
                   ExplicitHeight = 489
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 427
                   end
@@ -4324,31 +4354,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 719
-                    Height = 355
-                    ExplicitTop = 254
+                    Height = 461
+                    ExplicitTop = 112
                     ExplicitWidth = 719
-                    ExplicitHeight = 213
+                    ExplicitHeight = 355
                   end
                   inherited pnlFooter: TPanel
-                    Top = 467
+                    Top = 573
                     Width = 997
                     ExplicitTop = 467
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
                       Left = 633
                       OnChange = nil
-                      ExplicitLeft = 818
+                      ExplicitLeft = 633
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 355
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 327
+                      ExplicitHeight = 433
                       inherited pnlLists: TPanel
-                        Height = 327
+                        Height = 433
                         ExplicitHeight = 327
                       end
                     end
@@ -4396,11 +4426,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 519
+              Height = 625
               ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
             end
             inherited grdMaster: TDBGrid
-              Top = 600
+              Top = 706
               Width = 1190
             end
           end
@@ -4412,7 +4445,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             Left = 0
             Top = 0
             Width = 1190
-            Height = 672
+            Height = 778
             Align = alClient
             TabOrder = 0
             ExplicitWidth = 1190
@@ -4435,20 +4468,20 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pgcCustomerMail: TPageControl
               Width = 1005
-              Height = 519
+              Height = 625
               ExplicitWidth = 1005
               ExplicitHeight = 519
               inherited tabEditor: TTabSheet
                 ExplicitWidth = 997
-                ExplicitHeight = 489
+                ExplicitHeight = 595
                 inherited frameHTMLEditor1: TframeHTMLEditor
                   Width = 997
-                  Height = 489
+                  Height = 595
                   ExplicitWidth = 997
                   ExplicitHeight = 489
                   inherited Splitter1: TSplitter
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 427
                   end
@@ -4531,31 +4564,31 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited E: THtmlEditor
                     Top = 112
                     Width = 719
-                    Height = 355
-                    ExplicitTop = 254
+                    Height = 461
+                    ExplicitTop = 112
                     ExplicitWidth = 719
-                    ExplicitHeight = 213
+                    ExplicitHeight = 355
                   end
                   inherited pnlFooter: TPanel
-                    Top = 467
+                    Top = 573
                     Width = 997
                     ExplicitTop = 467
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
                       Left = 633
                       OnChange = nil
-                      ExplicitLeft = 818
+                      ExplicitLeft = 633
                     end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
-                    Height = 355
+                    Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 355
                     inherited tabTag: TTabSheet
-                      ExplicitHeight = 327
+                      ExplicitHeight = 433
                       inherited pnlLists: TPanel
-                        Height = 327
+                        Height = 433
                         ExplicitHeight = 327
                       end
                     end
@@ -4603,11 +4636,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
             end
             inherited pnlLists: TPanel
-              Height = 519
+              Height = 625
               ExplicitHeight = 519
+              inherited lst2: TListBox
+                Height = 103
+              end
             end
             inherited grdMaster: TDBGrid
-              Top = 600
+              Top = 706
               Width = 1190
             end
           end

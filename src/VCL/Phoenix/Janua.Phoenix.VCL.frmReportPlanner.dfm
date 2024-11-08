@@ -706,32 +706,20 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         BevelOuter = bvNone
         Caption = 'Panel1'
         TabOrder = 1
-        inline JanuaVCLWebView1: TJanuaVCLWebView
+        object EdgeBrowser1: TEdgeBrowser
           Left = 0
           Top = 0
           Width = 599
           Height = 815
           Align = alClient
           TabOrder = 0
-          ExplicitWidth = 599
-          ExplicitHeight = 815
-          inherited AdvWebBrowser: TAdvWebBrowser
-            Width = 599
-            Height = 783
-            DoubleBuffered = True
-            Settings.AllowExternalDrop = False
-            ExplicitWidth = 599
-            ExplicitHeight = 783
-          end
-          inherited WebControlsPanel: TPanel
-            Width = 599
-            ExplicitTop = 0
-            ExplicitWidth = 599
-            inherited edUrl: TButtonedEdit
-              Width = 573
-              ExplicitWidth = 573
-            end
-          end
+          AllowSingleSignOnUsingOSPrimaryAccount = False
+          TargetCompatibleBrowserVersion = '117.0.2045.28'
+          UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
+          ExplicitLeft = 144
+          ExplicitTop = 72
+          ExplicitWidth = 100
+          ExplicitHeight = 41
         end
       end
     end

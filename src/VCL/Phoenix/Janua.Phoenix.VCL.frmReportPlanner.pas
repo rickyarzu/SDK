@@ -23,7 +23,8 @@ uses
   Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
-  Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView;
+  Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
+  Vcl.Edge;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -75,7 +76,7 @@ type
     tabCalendariTecnici: TTabSheet;
     Timer2: TTimer;
     pnlWebBrowser: TPanel;
-    JanuaVCLWebView1: TJanuaVCLWebView;
+    EdgeBrowser1: TEdgeBrowser;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -393,13 +394,13 @@ begin
       AdvWebBrowser1.AddCookie(FCookies[I]);
 
   AdvWebBrowser1.Navigate('https://calendar.google.com/calendar');
-  *)
+
 
     JanuaVCLWebView1.Active := True;
     JanuaVCLWebView1.WebControlsPanel.Visible := False;
     JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
-
-
+  *)
+    EdgeBrowser1.Navigate('https://calendar.google.com/calendar/u/0/r');
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);

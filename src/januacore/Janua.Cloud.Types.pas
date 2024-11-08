@@ -221,7 +221,10 @@ type
     MsgTo: string;
     MsgFrom: string;
     MsgFromName: string;
+    /// <summary> used in Junction with a parametrized body or on some platforms a template id  </summary>
     CustomFields: TRecParams;
+    /// <summary> used on some platforms like twilio refers to a parametrized body remotely store </summary>
+    TemplateID: string;
     /// <summary> URL model for sending Message with tinyUrl </summary>
     Url: string;
     /// <summary> Default Engine Generator  tinyUrl </summary>
