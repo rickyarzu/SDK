@@ -1,4 +1,4 @@
-program PhoenixTestDLL;
+﻿program PhoenixTestDLL;
 
 uses
   Vcl.Forms,

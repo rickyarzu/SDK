@@ -81,7 +81,7 @@ object frmTestDelphiDLL: TfrmTestDelphiDLL
   end
   object btnLocalUp: TButton
     Left = 40
-    Top = 123
+    Top = 132
     Width = 89
     Height = 25
     Caption = 'LocalUpdate'
@@ -394,6 +394,15 @@ object frmTestDelphiDLL: TfrmTestDelphiDLL
     Caption = 'Sync DLL'
     TabOrder = 13
     OnClick = btnSyncDLLClick
+  end
+  object btnTestError: TButton
+    Left = 416
+    Top = 32
+    Width = 89
+    Height = 25
+    Caption = 'Test Error'
+    TabOrder = 14
+    OnClick = btnTestErrorClick
   end
   object AdvJSONMemoStyler1: TAdvJSONMemoStyler
     CommentStyle.TextColor = clNavy

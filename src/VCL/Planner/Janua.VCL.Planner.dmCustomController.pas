@@ -23,7 +23,7 @@ uses
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
   Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types,
-  CloudSMS;
+  CloudSMS, Janua.TMS.SMS;
 
 type
   TCloudCalendar = (ccWinLive, ccGoogle);
@@ -182,6 +182,7 @@ type
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
+    FJanuaAdvTwilio: Janua.TMS.SMS.TJanuaAdvTwilio;
   protected
     procedure SetDBPlanner(const Value: TDBPlanner);
     procedure SetPlanner(const Value: TPlanner);
@@ -409,7 +410,8 @@ type
     { Public declarations }
     // Google CAlendar
     { procedure GetGCalendarList; }
-    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string): Boolean;
+    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string;
+      const aTest: Boolean = false; aVariables: string = ''): Boolean;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
@@ -539,7 +541,7 @@ var
   I: Integer;
   lObject: TJsonObject;
 begin
-  FUpdatingFromDB := False;
+  FUpdatingFromDB := false;
 
   FWhatsAppSettings := TJanuaWhatsAppConf.Create(cKey, cSecret, cAppName, cMessage);
 
@@ -556,13 +558,18 @@ begin
   begin
     FWhatsAppSettings.Free;
     FWhatsAppSettings := TJanuaWhatsAppConf.Create(cKey, cSecret, cAppName, cMessage);
-    // vTest := TJanuaJson.SerializeSimple<TJanuaWhatsAppConf>(FWhatsAppSettings);
     vTest := FWhatsAppSettings.GetAsJson;
-    // TJanuaCoreOS.WriteParam('whatsapp', 'message', vTest);
+    TJanuaCoreOS.WriteParam('whatsapp', 'settings', vTest);
+  end
+  else if FWhatsAppSettings.DefaultMessageID = '' then
+  begin
+    FWhatsAppSettings.DefaultMessageID := 'HX068c6037658346e1d8502fe6688b3986';
+    FWhatsAppSettings.TestMessageID := 'HX762fb1fba06dc65a09e3e626bb204da4';
+    vTest := FWhatsAppSettings.GetAsJson;
     TJanuaCoreOS.WriteParam('whatsapp', 'settings', vTest);
   end;
 
-  DBDaySourceCalendar.Active := False;
+  DBDaySourceCalendar.Active := false;
   DBDaySourceCalendar.Day := Date;
 
   FCurrentGoogleItem := TGoogleCalendarEventFactory.CreateRecord('GCalItem');
@@ -950,7 +957,7 @@ end;
 procedure TdmVCLPlannerCustomController.actRemoveAccessExecute(Sender: TObject);
 begin
   AdvGCalendar1.ClearTokens;
-  Connected := False;
+  Connected := false;
   ToggleControls;
 end;
 
@@ -1184,7 +1191,7 @@ begin
       else
       begin
         var
-        bTest := False;
+        bTest := false;
         {
           bTest := (vtGoogleEventsSTARTTIME.AsDateTime <> AdvGCalendar1.Items[I].StartTime) or
           (vtGoogleEventsENDTIME.AsDateTime <> AdvGCalendar1.Items[I].EndTime) or
@@ -1221,7 +1228,7 @@ begin
     // Asks GCalendar to update Calendar List
     AdvGCalendar1.GetCalendars();
     // During Update DBDaySourceGCalendar must be Inactive
-    DBDaySourceGCalendar.Active := False;
+    DBDaySourceGCalendar.Active := false;
     // Day Source is 'today'
     DBDaySourceGCalendar.Day := Date;
 
@@ -1492,7 +1499,7 @@ begin
     its entry from the database
   }
   var
-  lDelBool := False;
+  lDelBool := false;
 
   if Assigned(DeleteItemFunc) then
     lDelBool := DeleteItemFunc(Item)
@@ -1580,14 +1587,14 @@ begin
 
 end;
 
-function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string)
-  : Boolean;
+function TdmVCLPlannerCustomController.SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string;
+const aTest: Boolean; aVariables: string): Boolean;
 begin
-  AdvTwilio.App.Key := FWhatsAppSettings.Key;
+  FJanuaAdvTwilio.App.Key := FWhatsAppSettings.Key;
   // 'AC221a150df22723daef8d097a7f76cfcf';
-  AdvTwilio.App.Secret := FWhatsAppSettings.Secret;
+  FJanuaAdvTwilio.App.Secret := FWhatsAppSettings.Secret;
   // 'f3c90112efdccd931b81dea46f74f1da';
-  AdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + FWhatsAppSettings.AppName;
+  FJanuaAdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + FWhatsAppSettings.AppName;
   // +39 351 353 5778
   // '+15302036772';
   var
@@ -1599,7 +1606,14 @@ begin
   if cMessageType = jmtWhatsApp then
     lRecipient := 'whatsapp:' + lRecipient;
 
-  Result := AdvTwilio.SendSMS(lRecipient, lSMS);
+  if aTest then
+    FJanuaAdvTwilio.contentSID := FWhatsAppSettings.TestMessageID
+  else
+    FJanuaAdvTwilio.contentSID := FWhatsAppSettings.DefaultMessageID;
+
+  FJanuaAdvTwilio.ContentVariables.Text := aVariables;
+
+  Result := FJanuaAdvTwilio.SendSMS(lRecipient, lSMS);
   if Result then
     ShowMessage('Messaggio inviato correttamente')
   else

@@ -496,7 +496,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 416
             inherited Label3: TLabel
               Width = 13
-              Height = 20
               Caption = 'Lc'
               ExplicitWidth = 13
             end
@@ -507,7 +506,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited lbIdranti: TLabel
               Left = 42
               Width = 22
-              Height = 20
               Caption = 'Idr:'
               ExplicitLeft = 42
               ExplicitWidth = 22
@@ -519,7 +517,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label4: TLabel
               Left = 90
               Width = 38
-              Height = 20
               Caption = 'E.Ord:'
               ExplicitLeft = 90
               ExplicitWidth = 38
@@ -531,7 +528,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label5: TLabel
               Left = 154
               Width = 39
-              Height = 20
               Caption = 'E.Stra:'
               ExplicitLeft = 154
               ExplicitWidth = 39
@@ -550,7 +546,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label6: TLabel
               Left = 219
-              Height = 20
               ExplicitLeft = 219
             end
             inherited DBText10: TDBText
@@ -559,7 +554,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label7: TLabel
               Left = 280
-              Height = 20
               ExplicitLeft = 280
             end
             inherited DBText11: TDBText
@@ -716,10 +710,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           AllowSingleSignOnUsingOSPrimaryAccount = False
           TargetCompatibleBrowserVersion = '117.0.2045.28'
           UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
-          ExplicitLeft = 144
-          ExplicitTop = 72
-          ExplicitWidth = 100
-          ExplicitHeight = 41
         end
       end
     end
@@ -737,14 +727,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
-        end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
-          end
         end
         inherited PageControl1: TPageControl
           Left = 0
@@ -804,14 +786,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
             ExplicitWidth = 1381
-          end
-        end
-        inherited Panel3: TPanel
-          inherited lbSearch: TLabel
-            Width = 250
-          end
-          inherited lbDateSelector: TLabel
-            Width = 256
           end
         end
         inherited PageControl1: TPageControl

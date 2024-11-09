@@ -443,6 +443,7 @@ type
     actWASetAsConfirmed: TAction;
     actGridConfirmEvent: TAction;
     lkpTecniciGBACKCOLOR: TIntegerField;
+    spUpdateStatini: TUniStoredProc;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -501,6 +502,7 @@ type
     FWATest: Boolean;
     FWATestPhone: string;
     FAfterCalendarAction: TNotifyEvent;
+    FvtReportPlannerDS: TDataSource;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -524,6 +526,7 @@ type
     procedure SetWATest(const Value: Boolean);
     procedure SetWATestPhone(const Value: string);
     procedure SetAfterCalendarAction(const Value: TNotifyEvent);
+    procedure SetvtReportPlannerDS(const Value: TDataSource);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -581,7 +584,6 @@ type
     function GoogleSync: string;
     procedure UpdateReportPlanner;
 
-
     property ItemColorField2: TField read FItemColorField2 write SetItemColorField2;
     property ItemImageField2: TField read FItemImageField2 write SetItemImageField2;
     property ItemCaptionField2: TField read FItemCaptionField2 write SetItemCaptionField2;
@@ -614,7 +616,7 @@ type
     property WATest: Boolean read FWATest write SetWATest;
     property WATestPhone: string read FWATestPhone write SetWATestPhone;
     property AfterCalendarAction: TNotifyEvent read FAfterCalendarAction write SetAfterCalendarAction;
-
+    property vtReportPlannerDS: TDataSource read FvtReportPlannerDS write SetvtReportPlannerDS;
   end;
 
 var
@@ -627,24 +629,26 @@ uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.
   udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList;
 
 {$IFDEF WIN32}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r8.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r8.dll' index 6;
-function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r8.dll' index 7;
-procedure GoogleRestore;stdcall; external 'PhoenixLib32_r8.dll' index 8;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r9.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.dll' index 6;
+function WhatsAppSentDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 7;
+procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.dll' index 8;
+procedure TestDLL; stdcall; external 'PhoenixLib32_r9.dll' index 9;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r8.64.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r8.64.dll' index 6;
-function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r8.64.dll' index 7;
-procedure GoogleRestore;stdcall; external 'PhoenixLib32_r8.64.dll' index 8;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 6;
+function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 7;
+procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.64.dll' index 8;
+procedure TestDLL; stdcall; external 'PhoenixLib32_r9.dll' index 9;
 {$ENDIF}
 
 var
@@ -741,6 +745,16 @@ begin
   finally
     dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
     dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
+
+    vtReportPlannerDS.Enabled := False;
+    Screen.Cursor := crHourGlass;
+    try
+      UpdateReportPlanner;
+    finally
+      vtReportPlannerDS.Enabled := True;
+      Screen.Cursor := crDefault;
+    end;
+
   end;
 end;
 
@@ -836,7 +850,7 @@ begin
     lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
     SendMSSWhatsAppMessage(lMessage, lPhone);
-    WhatsAppSentMessage(sGUID);
+    WhatsAppSentDLL(sGUID);
   end;
 end;
 
@@ -861,8 +875,16 @@ begin
   begin
     lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
-    SendMSSWhatsAppMessage(lMessage, lPhone);
-    WhatsAppSentMessage(sGUID);
+    var
+    aStrings := TStringList.Create;
+    try
+      aStrings.Add(DateToStr(qryElencoEventiWhatsAppSTARTTIME.AsDateTime));
+      aStrings.Add(qryElencoEventiWhatsAppLOCATION.AsString);
+      SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
+      WhatsAppSentDLL(sGUID);
+    finally
+      aStrings.Free;
+    end;
   end;
 
 end;
@@ -889,7 +911,7 @@ begin
 
   If JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString) then
   begin
-    WhatsAppSentMessage(sGUID);
+    WhatsAppSentDLL(sGUID);
 
     qryElencoEventiWhatsApp.Edit;
     qryElencoEventiWhatsAppWA.AsString := 'F';
@@ -1169,13 +1191,13 @@ procedure TdmVCLPhoenixPlannerController.UpdateReportPlanner;
 begin
   vtReportPlanner.Filtered := False;
   qryReportPlanner.Close;
+  spUpdateStatini.ExecProc;
   qryReportPlanner.Open;
   qryReportPlanner.Last;
   qryReportPlanner.First;
 
   While not qryReportPlanner.Eof do
   begin
-
     var
     vTest := False;
     if not vtReportPlanner.Locate('CHIAVE', qryReportPlannerCHIAVE.Value, []) then
@@ -1228,7 +1250,7 @@ begin
       else
         vtReportPlannerAPPUNTAMENTO_DATA.Clear;
 
-      if not vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+      if not qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
         vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value
       else
         vtReportPlannerAPPUNTAMENTO_ORA.Clear;
@@ -1526,7 +1548,7 @@ begin
           JShowError(Ex.Message);
         end);
     end);
-
+  TestDLL;
 end;
 
 procedure TdmVCLPhoenixPlannerController.DataModuleDestroy(Sender: TObject);
@@ -2603,7 +2625,13 @@ begin
       lPhone := '+39' + StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
       SendMSSWhatsAppMessage(lMessage, lPhone);
-      WhatsAppSentMessage(sGUID);
+      try
+        WhatsAppSentDLL(sGUID);
+      except
+        on e: exception do
+          raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: '
+          + sLineBreak + e.Message);
+      end;
     end;
 
   finally
@@ -2744,6 +2772,11 @@ begin
   qryCAP.Open;
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetvtReportPlannerDS(const Value: TDataSource);
+begin
+  FvtReportPlannerDS := Value;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetWATest(const Value: Boolean);
 begin
   FWATest := Value;
@@ -2858,67 +2891,71 @@ const
   white = 4;
 begin
   try
-    if vtReportPlanner.FieldByName('calcReportID').IsNull or
+    {
+      if vtReportPlanner.FieldByName('calcReportID').IsNull or
       (vtReportPlanner.FieldByName('calcReportID').AsInteger <> vtReportPlanner.FieldByName('CHIAVE')
       .AsInteger) then
-      with DataSet do
-        try
-          var
-          Image := white;
+    }
+    with DataSet do
+      try
+        var
+        Image := white;
 
-          var
-          sStato := 'Generato';
+        var
+        sStato := 'Generato';
 
-          var
-          aStato := FieldByName('STATO').AsInteger;
+        var
+        aStato := FieldByName('STATO').AsInteger;
 
-          case aStato of
-            - 1:
-              begin
-                Image := red;
-                sStato := 'Ritardo';
-              end;
-            0:
-              begin
-                Image := white;
-                sStato := 'Generato';
-              end;
-            1:
-              begin
-                Image := blue;
-                sStato := 'Programmato';
-              end;
-            4:
-              begin
-                Image := orange;
-                sStato := 'In Lavorazione';
-              end;
-            5:
-              begin
-                Image := green;
-                sStato := 'Pronti';
-              end;
-            6:
-              begin
-                Image := blue;
-                sStato := 'Rest. Program.';
-              end;
-          end;
-
-          FieldByName('calcStato').AsString := sStato;
-
-          if not(FieldByName('APPUNTAMENTO_DATA').IsNull or
-            (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0)) and
-            (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
-          begin
-            Image := red;
-            sStato := 'Ritardo';
-          end;
-
-          LoadImageFromImageList(Image);
-        finally
-          FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
+        case aStato of
+          - 1:
+            begin
+              Image := red;
+              sStato := 'Ritardo';
+            end;
+          0:
+            begin
+              Image := white;
+              sStato := 'Generato';
+            end;
+          1:
+            begin
+              Image := blue;
+              sStato := 'Programmato';
+            end;
+          4:
+            begin
+              Image := orange;
+              if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
+                sStato := 'In Lavorazione'
+              else
+                sStato := 'Lavor. Progr.';
+            end;
+          5:
+            begin
+              Image := green;
+              sStato := 'Pronti da Rest.';
+            end;
+          6:
+            begin
+              Image := blue;
+              sStato := 'Rest. Program.';
+            end;
         end;
+
+        FieldByName('calcStato').AsString := sStato;
+
+        if not(FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime = 0.0))
+          and (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date) then
+        begin
+          Image := red;
+          sStato := 'Ritardo';
+        end;
+
+        LoadImageFromImageList(Image);
+      finally
+        FieldByName('calcReportID').AsInteger := FieldByName('CHIAVE').AsInteger;
+      end;
 
     if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
     begin

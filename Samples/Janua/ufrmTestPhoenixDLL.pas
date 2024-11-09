@@ -25,6 +25,7 @@ type
     AdvJSONMemoStyler1: TAdvJSONMemoStyler;
     btnSync: TButton;
     btnSyncDLL: TButton;
+    btnTestError: TButton;
     procedure btnTestSetupClick(Sender: TObject);
     procedure btnLocalTestClick(Sender: TObject);
     procedure btnDLLTestClick(Sender: TObject);
@@ -37,6 +38,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnSyncClick(Sender: TObject);
     procedure btnSyncDLLClick(Sender: TObject);
+    procedure btnTestErrorClick(Sender: TObject);
   private
     { Private declarations }
     aDlg: TdlgVclCloudGoogleConnect;
@@ -52,21 +54,33 @@ implementation
 
 uses System.Diagnostics;
 
+{ Initialize index 1,
+  CreateGoogleEvent index 2,
+  UpdateGoogleEvent index 3,
+  DeleteGoogleEvent index 4,
+  ConfirmMessage index 5,
+  GoogleSync index 6,
+  WhatsAppSentMessage index 7,
+  GoogleRestore index 8,
+  TestError index 9, }
+
 {$IFDEF WIN32}
-function Initialize: string; stdcall; external 'PhoenixLib32_r5.dll' index 1;
-function CreateGoogleEvent(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.dll' index 6;
+function Initialize: string; stdcall; external 'PhoenixLib32_r9.dll' index 1;
+function CreateGoogleEvent(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.dll' index 6;
+procedure TestError; stdcall; external 'PhoenixLib32_r9.dll' index 9;
 {$ELSE}
 // https://gestionevdi.inps.it/Citrix/gestionevdiWeb/
-function Initialize: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 1;
-function CreateGoogleEvent(aEvent: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r5.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r5.64.dll' index 6;
+function Initialize: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 1;
+function CreateGoogleEvent(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 6;
+procedure TestError; stdcall; external 'PhoenixLib32_r9.dll' index 9;
 {$ENDIF}
 {$R *.dfm}
 
@@ -139,6 +153,11 @@ begin
   Seconds := Elapsed.TotalSeconds;
 
   memResult.Lines.Text := ('Seconds: ' + Seconds.ToString);
+end;
+
+procedure TfrmTestDelphiDLL.btnTestErrorClick(Sender: TObject);
+begin
+  TestError
 end;
 
 procedure TfrmTestDelphiDLL.btnTestSetupClick(Sender: TObject);

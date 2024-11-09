@@ -13,6 +13,7 @@ object dlgVclCloudGoogleConnect: TdlgVclCloudGoogleConnect
   Font.Style = []
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   TextHeight = 15
   object SVGIconImage1: TSVGIconImage

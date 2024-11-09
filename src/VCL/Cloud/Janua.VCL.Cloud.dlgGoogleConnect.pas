@@ -1,4 +1,4 @@
-unit Janua.VCL.Cloud.dlgGoogleConnect;
+﻿unit Janua.VCL.Cloud.dlgGoogleConnect;
 
 interface
 
@@ -22,8 +22,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure AdvGCalendar1ReceivedAccessToken(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
-    cnt: TdmPhoenixVCLGCalendarController;
+    lcnt: TdmPhoenixVCLGCalendarController;
   public
     { Public declarations }
     procedure UpdateGoogle;
@@ -47,25 +48,7 @@ uses Janua.Application.Framework;
 
 function TdlgVclCloudGoogleConnect.AddGoogleItem(aItem: string): string;
 begin
-  Result := '';
-
-  {
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.RefreshAccess;
-
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.DoAuth;
-
-    if AdvGCalendar1.TestTokens then
-  }
-  var
-  lcnt := TdmPhoenixVCLGCalendarController.Create(nil);
-  try
-    lcnt.AdvGCalendar1 := AdvGCalendar1;
-    Result := lcnt.AddNewGoogleItem(aItem);
-  finally
-    lcnt.Free;
-  end;
+  Result := lcnt.AddNewGoogleItem(aItem);
 end;
 
 procedure TdlgVclCloudGoogleConnect.AdvGCalendar1ReceivedAccessToken(Sender: TObject);
@@ -75,8 +58,6 @@ begin
 end;
 
 procedure TdlgVclCloudGoogleConnect.CheckCalendarColors;
-var
-  cnt: TdmPhoenixVCLGCalendarController;
 begin
   if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.RefreshAccess;
@@ -84,32 +65,23 @@ begin
   if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.DoAuth;
 
-  if AdvGCalendar1.TestTokens then
-    try
-      cnt := TdmPhoenixVCLGCalendarController.Create(nil);
-      cnt.AdvGCalendar1 := AdvGCalendar1;
-      cnt.CheckCalendarColors;
-    finally
-      cnt.Free;
-    end;
+  lcnt.CheckCalendarColors;
+
 end;
 
 function TdlgVclCloudGoogleConnect.WhatsAppSentMessage(const aID: string): string;
 begin
-  cnt.AdvGCalendar1 := AdvGCalendar1;
-  Result := cnt.WhatsAppSentMessage(aID);
+  Result := lcnt.WhatsAppSentMessage(aID);
 end;
 
 function TdlgVclCloudGoogleConnect.ConfirmMessage(const aID: string): string;
 begin
-  cnt.AdvGCalendar1 := AdvGCalendar1;
-  Result := cnt.ConfirmMessage(aID);
+  Result := lcnt.ConfirmMessage(aID);
 end;
 
 function TdlgVclCloudGoogleConnect.DeleteGoogleItem(aItem: string): string;
 begin
-  cnt.AdvGCalendar1 := AdvGCalendar1;
-  Result := cnt.DeleteGoogleItem(aItem)
+  Result := lcnt.DeleteGoogleItem(aItem)
 end;
 
 procedure TdlgVclCloudGoogleConnect.FormCreate(Sender: TObject);
@@ -129,9 +101,13 @@ begin
   if not AdvGCalendar1.TestTokens then
     AdvGCalendar1.DoAuth;
 
-  cnt := TdmPhoenixVCLGCalendarController.Create(nil);
-  cnt.AdvGCalendar1 := AdvGCalendar1;
+  lcnt := TdmPhoenixVCLGCalendarController.Create(nil);
+  lcnt.AdvGCalendar1 := AdvGCalendar1;
+end;
 
+procedure TdlgVclCloudGoogleConnect.FormDestroy(Sender: TObject);
+begin
+  lcnt.Free;
 end;
 
 procedure TdlgVclCloudGoogleConnect.FormShow(Sender: TObject);
@@ -141,10 +117,15 @@ end;
 
 procedure TdlgVclCloudGoogleConnect.RestoreGoogle;
 begin
-  cnt.Free;
-  cnt := nil;
-  cnt := TdmPhoenixVCLGCalendarController.Create(nil);
-  cnt.AdvGCalendar1 := AdvGCalendar1;
+  (*
+    if Assigned(cnt) then
+    begin
+    cnt.Free;
+    cnt := nil;
+    end;
+    cnt := TdmPhoenixVCLGCalendarController.Create(nil);
+    cnt.AdvGCalendar1 := AdvGCalendar1;
+  *)
 end;
 
 procedure TdlgVclCloudGoogleConnect.Timer1Timer(Sender: TObject);
@@ -160,43 +141,29 @@ begin
 end;
 
 procedure TdlgVclCloudGoogleConnect.Timer2Timer(Sender: TObject);
-var
-  cnt: TdmPhoenixVCLGCalendarController;
 begin
   Timer2.Enabled := False;
-  {
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.RefreshAccess;
-
-    if not AdvGCalendar1.TestTokens then
-    AdvGCalendar1.DoAuth;
-  }
-  try
+  (*
     cnt := TdmPhoenixVCLGCalendarController.Create(nil);
+    try
     cnt.AdvGCalendar1 := self.AdvGCalendar1;
     cnt.FillGoogleCalendars;
-  finally
+    finally
     cnt.Free;
-  end;
+    end;
+  *)
 end;
 
 procedure TdlgVclCloudGoogleConnect.UpdateGoogle;
 begin
-  // ShowMessage('Create Controller');
-  var
-  lcnt := TdmPhoenixVCLGCalendarController.Create(nil);
-  try
-    lcnt.AdvGCalendar1 := AdvGCalendar1;
-    lcnt.FillGoogleCalendars;
-    lcnt.AddNewGoogleItems;
-  finally
-    lcnt.Free;
-  end;
+  lcnt.AdvGCalendar1 := AdvGCalendar1;
+  lcnt.FillGoogleCalendars;
+  lcnt.AddNewGoogleItems;
 end;
 
 function TdlgVclCloudGoogleConnect.UpdateGoogleItem(aItem: string): string;
 begin
-  Result := cnt.UpdateGoogleItem(aItem);
+  Result := lcnt.UpdateGoogleItem(aItem);
 end;
 
 end.

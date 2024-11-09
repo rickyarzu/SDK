@@ -30148,4 +30148,13 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Left = 944
     Top = 440
   end
+  object spUpdateStatini: TUniStoredProc
+    StoredProcName = 'UPDATE_STATINI_PRC'
+    SQL.Strings = (
+      'EXECUTE PROCEDURE UPDATE_STATINI_PRC')
+    Connection = JanuaUniConnection1
+    Left = 944
+    Top = 512
+    CommandStoredProcName = 'UPDATE_STATINI_PRC'
+  end
 end

@@ -262,6 +262,8 @@ begin
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   PageControl1.ActivePage := tabCalendariTecnici;
+
+  FdmVCLPhoenixIBPlanner.vtReportPlannerDS := frameVCLPhoenixPlannerEvent.dsReportsPlanner;
   // UpdateLab;
 end;
 
