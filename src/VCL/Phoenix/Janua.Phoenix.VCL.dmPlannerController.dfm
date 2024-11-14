@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 664
+  Height = 669
   Width = 1047
   inherited SVGIconImageList48: TSVGIconImageList
     SVGIconItems = <
@@ -21109,8 +21109,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     FetchRows = 100
     Filtered = True
     IndexFieldNames = 'DALLE_ORE'
+    BeforeInsert = qryPersonalPlannerEventsBeforeInsert
     AfterInsert = qryPersonalPlannerEventsAfterInsert
     BeforePost = qryPersonalPlannerEventsBeforePost
+    AfterPost = qryPersonalPlannerEventsAfterPost
     BeforeDelete = qryPersonalPlannerEventsBeforeDelete
     Left = 688
     Top = 528
@@ -29771,12 +29773,45 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       000000000000}
   end
   object qryCellulariStatino: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO STATINI'
+      '  (CHIAVE, TELEFONO, CELLULARE, WANUMBER)'
+      'VALUES'
+      '  (:CHIAVE, :STELEFONO, :SCELLULARE, :WANUMBER)')
+    SQLDelete.Strings = (
+      'DELETE FROM STATINI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE STATINI'
+      'SET'
+      
+        '  CHIAVE = :CHIAVE, TELEFONO = :STELEFONO, CELLULARE = :SCELLULA' +
+        'RE, WANUMBER = :WANUMBER'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM STATINI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      'SELECT CHIAVE, TELEFONO, CELLULARE, WANUMBER FROM STATINI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM STATINI'
+      ''
+      ') q')
     Connection = JanuaUniConnection1
     SQL.Strings = (
+      'select   '
+      's.chiave, '
       
-        'select   REPLACE( REPLACE(coalesce(trim(S.cellulare), S.telefono' +
-        '), '#39'/'#39', '#39#39'), '#39'-'#39', '#39#39')  as telefono  ,  coalesce(coalesce(S.cellu' +
-        'lare, s.telefono), c.cellulare) as cellulare,'
+        'REPLACE( REPLACE(coalesce(trim(S.cellulare), S.telefono), '#39'/'#39', '#39 +
+        #39'), '#39'-'#39', '#39#39')  as telefono  ,  coalesce(coalesce(S.cellulare, s.t' +
+        'elefono), c.cellulare) as cellulare,'
       
         's.telefono as stelefono, s.cellulare as scellulare, c.telefono1 ' +
         'as ctel1, c.cellulare as ccell , c.telefono2 as ctel2,'
@@ -29811,7 +29846,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '        ELSE NULL'
       '    END'
       ')'
-      '    AS risultato'
+      'AS risultato, '
+      's.wanumber'
       
         'from statini S INNER JOIN CLIENTI C ON S.cliente = C.chiave  INN' +
         'ER JOIN  filiali_clienti F ON S.filiale = F.chiave'
@@ -29823,7 +29859,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         DataType = ftLargeint
         Name = 'STATINO'
         ParamType = ptInput
-        Value = nil
+        Value = 2183750
       end>
     object qryCellulariStatinoTELEFONO: TStringField
       FieldName = 'TELEFONO'
@@ -29940,7 +29976,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'WHERE'
       'CE.DALLE_ORE >= :DATE_FROM'
       'AND'
-      'CE.ALLE_ORE < :DATE_TO'
+      'CE.ALLE_ORE < DATEADD(1 DAY TO :DATE_TO) '
       'AND'
       '(CE.TECNICO = :TECNICO OR :TECNICO = 0)'
       'AND'
@@ -30156,5 +30192,14 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Left = 944
     Top = 512
     CommandStoredProcName = 'UPDATE_STATINI_PRC'
+  end
+  object spUpdateWhatsApp: TUniStoredProc
+    StoredProcName = 'UPDATE_WHATSAPP'
+    SQL.Strings = (
+      'EXECUTE PROCEDURE UPDATE_WHATSAPP')
+    Connection = JanuaUniConnection1
+    Left = 944
+    Top = 584
+    CommandStoredProcName = 'UPDATE_WHATSAPP'
   end
 end

@@ -1048,4 +1048,10 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
       Action = dmVCLPhoenixPlannerController.actGridConfirmEvent
     end
   end
+  object TimerEventUpdate: TTimer
+    Interval = 300
+    OnTimer = TimerEventUpdateTimer
+    Left = 416
+    Top = 312
+  end
 end

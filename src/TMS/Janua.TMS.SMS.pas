@@ -155,6 +155,9 @@ begin
     -u $TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN
   *)
 
+
+  Result := False;
+
   url := 'https://api.twilio.com/2010-04-01/Accounts/' + App.Key + '/Messages.json';
 
   AddHeader(headers, 'Content-Type', 'application/x-www-form-urlencoded');
@@ -171,8 +174,8 @@ begin
     var
     aObject := TJSONObject.Create;
 
-    for var J := 0 to FContentVariables.Count - 1 do
-      Janua.Core.JSON.JsonPair(aObject, J.ToString, FContentVariables[J]);
+    for var J := 1 to FContentVariables.Count do
+      Janua.Core.JSON.JsonPair(aObject, J.ToString, FContentVariables[J - 1]);
 
     var
     lContentVariables := aObject.ToJSON;
