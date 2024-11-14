@@ -387,6 +387,39 @@ type
     function SaveToDataset(const aDataset: TDataSet): Boolean;
   end;
 
+  TTWilioStatus = record
+    ChannelPrefix: string; // whatsapp
+    ApiVersion: string; // 2010-04-01
+    MessageStatus: string; // sent
+    SmsSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
+    SmsStatus: string; // sent
+    ChannelInstallSid: string; // XE59539e1d21b0c112b13009b146d827f7
+    MsgTo: string; // whatsapp:+393409111351
+    MsgFrom: string; // whatsapp:+393513535778
+    MessageSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
+    StructuredMessage: string; // false
+    AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
+    ChannelToAddress: string; // +39340911XXXX
+  end;
+
+  TTwilioWebHook = record
+    SmsMessageSid: string; // SM4c582d479f42a2777b25d2c603a2b805
+    NumMedia: string; // 0
+    ProfileName: string; // Januaproject
+    MessageType: string; // text
+    SmsSid: string; // SM4c582d479f42a2777b25d2c603a2b805
+    WaId: string; // 393409111351
+    SmsStatus: string; // received
+    Body: string; // Buongiorno
+    MsgTo: string; // whatsapp:+393513535778
+    NumSegments: string; // 1
+    ReferralNumMedia: string; // 0
+    MessageSid: string; // SM4c582d479f42a2777b25d2c603a2b805
+    AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
+    From: string; // whatsapp:+393409111351
+    ApiVersion: string; // 2010-04-01
+  end;
+
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
     aMessage: TJanuaMailMessage) of object;
   TJanuaCloudMailMessageEvent = procedure(Sender: TObject; AErrorMessage: String; aMessage: TJanuaMailMessage)

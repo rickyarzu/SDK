@@ -3,43 +3,15 @@ unit Janua.WhatsApp.WebbrokerModule;
 interface
 
 uses
-  System.SysUtils, System.Classes, Web.HTTPApp, UniProvider, PostgreSQLUniProvider, Data.DB, DBAccess, Uni,
-  Janua.Unidac.Connection, MemDS;
+  System.SysUtils, System.Classes,
+  // Http
+  Web.HTTPApp,
+  // DB
+  MemDS, UniProvider, PostgreSQLUniProvider, Data.DB, DBAccess, Uni,
+  // Janua
+  Janua.Unidac.Connection, Janua.Cloud.Types;
 
 type
-  TTWilioStatus = record
-    ChannelPrefix: string; // whatsapp
-    ApiVersion: string; // 2010-04-01
-    MessageStatus: string; // sent
-    SmsSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
-    SmsStatus: string; // sent
-    ChannelInstallSid: string; // XE59539e1d21b0c112b13009b146d827f7
-    MsgTo: string; // whatsapp:+393409111351
-    MsgFrom: string; // whatsapp:+393513535778
-    MessageSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
-    StructuredMessage: string; // false
-    AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
-    ChannelToAddress: string; // +39340911XXXX
-  end;
-
-  TTwilioWebHook = record
-    SmsMessageSid: string; // SM4c582d479f42a2777b25d2c603a2b805
-    NumMedia: string; // 0
-    ProfileName: string; // Januaproject
-    MessageType: string; // text
-    SmsSid: string; // SM4c582d479f42a2777b25d2c603a2b805
-    WaId: string; // 393409111351
-    SmsStatus: string; // received
-    Body: string; // Buongiorno
-    MsgTo: string; // whatsapp:+393513535778
-    NumSegments: string; // 1
-    ReferralNumMedia: string; // 0
-    MessageSid: string; // SM4c582d479f42a2777b25d2c603a2b805
-    AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
-    From: string; // whatsapp:+393409111351
-    ApiVersion: string; // 2010-04-01
-  end;
-
   TWebModule1 = class(TWebModule)
     PostgreSQLUniProvider1: TPostgreSQLUniProvider;
     JanuaUniConnection1: TJanuaUniConnection;
@@ -150,7 +122,7 @@ begin
     lHook.NumMedia := lLines.Values['NumMedia'];
     lHook.ProfileName := lLines.Values['ProfileName'];
     lHook.MessageType := lLines.Values['MessageType'];
-     lHook.SmsSid := lLines.Values['SmsSid'];
+    lHook.SmsSid := lLines.Values['SmsSid'];
     lHook.WaId := lLines.Values['WaId'];
     lHook.SmsStatus := lLines.Values['SmsStatus'];
     lHook.Body := lLines.Values['Body'];
