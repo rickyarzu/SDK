@@ -88,6 +88,7 @@ type
     ConfermaAppuntmento1: TMenuItem;
     btnSincro: TButton;
     Button2: TButton;
+    TimerEventUpdate: TTimer;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -116,6 +117,7 @@ type
     procedure DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
     procedure ModificaAppuntamento2Click(Sender: TObject);
     procedure btnSincroClick(Sender: TObject);
+    procedure TimerEventUpdateTimer(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -131,9 +133,11 @@ type
     ItemIDField: TField;
     FreportID: Integer;
     FSelectedItem: TPlannerItem;
+    FAfterPlannerEvent: TNotifyEvent;
     function GetTecnicoID: Integer;
     procedure SetTecnicoID(const Value: Integer);
     procedure SetSelectedItem(const Value: TPlannerItem);
+    procedure SetAfterPlannerEvent(const Value: TNotifyEvent);
 
     { Private declarations }
   protected
@@ -144,6 +148,7 @@ type
     procedure AfterConstruction; override;
     procedure Filter;
     property TecnicoID: Integer read GetTecnicoID write SetTecnicoID;
+    property AfterPlannerEvent: TNotifyEvent read FAfterPlannerEvent write SetAfterPlannerEvent;
   end;
 
 var
@@ -189,7 +194,8 @@ end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
 begin
-  Self.FRecordItem := dmVCLPhoenixPlannerController.AddTechEvent(False);
+  FRecordItem := dmVCLPhoenixPlannerController.AddTechEvent(False);
+  TimerEventUpdate.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
@@ -349,13 +355,7 @@ begin
     vReport := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
 
     FRecordItem := dmVCLPhoenixPlannerController.InsertEvent(vTest, vTest2, dbp.CaptionText, vReport);
-
-    Screen.Cursor := crHourGlass;
-    try
-      Sleep(3000);
-    finally
-      Screen.Cursor := crDefault;
-    end;
+    TimerEventUpdate.Enabled := True;
   end;
 end;
 
@@ -381,6 +381,7 @@ begin
   FRecordItem.EndTime := Item.ItemEndTime;
   FRecordItem.Description := Item.ItemText;
   dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+  TimerEventUpdate.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemEndEdit(Sender: TObject; Item: TPlannerItem);
@@ -390,6 +391,7 @@ begin
   FRecordItem.EndTime := Item.ItemEndTime;
   FRecordItem.Description := Item.ItemText;
   dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+  TimerEventUpdate.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemEnter(Sender: TObject; Item: TPlannerItem);
@@ -412,6 +414,7 @@ begin
   FRecordItem.EndTime := Item.ItemEndTime;
   FRecordItem.Description := Item.ItemText;
   dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+  TimerEventUpdate.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.DBPlanner1ItemSize(Sender: TObject; Item: TPlannerItem;
@@ -421,7 +424,8 @@ begin
   FRecordItem.StartTime := Item.ItemStartTime;
   FRecordItem.EndTime := Item.ItemEndTime;
   FRecordItem.Description := Item.ItemText;
-  dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+  // dmVCLPhoenixPlannerController.UpdateGoogleMeeting(FRecordItem);
+  TimerEventUpdate.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.DBText1DblClick(Sender: TObject);
@@ -445,7 +449,6 @@ procedure TframeVCLPhoenixPlannerEvent.Filter;
 var
   lFilter: TRecordFilter;
 begin
-
   // il Tecnico può essere impostato o non impostato (difficile) ma in ogni caso deve essere possibile riaassegnare
   if not cboTecnici.Value.IsEmpty then
     lFilter.TecnicoDB := cboTecnici.Value.ToInteger
@@ -476,13 +479,15 @@ end;
 
 procedure TframeVCLPhoenixPlannerEvent.ModificaAppuntamento2Click(Sender: TObject);
 begin
-  //inherited;
+  // inherited;
   if JMessageDlg('Elimino l''appuntamento ?') then
   begin
     try
       DBDaySource1.DeleteDBItem(DBPlanner1);
       DBDaySource1.DataSource.DataSet.Close;
       DBDaySource1.DataSource.DataSet.Open;
+      if Assigned(FAfterPlannerEvent) then
+        FAfterPlannerEvent(Self);
     except
       on e: exception do
       begin
@@ -491,6 +496,11 @@ begin
       end;
     end;
   end;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.SetAfterPlannerEvent(const Value: TNotifyEvent);
+begin
+  FAfterPlannerEvent := Value;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.SetSelectedItem(const Value: TPlannerItem);
@@ -509,6 +519,14 @@ begin
   Timer1.Enabled := False;
   btnPrevDayClick(Self);
   btnNextDayClick(Self);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.TimerEventUpdateTimer(Sender: TObject);
+begin
+  inherited;
+  TimerEventUpdate.Enabled := False;
+  if Assigned(FAfterPlannerEvent) then
+    FAfterPlannerEvent(Self);
 end;
 
 end.

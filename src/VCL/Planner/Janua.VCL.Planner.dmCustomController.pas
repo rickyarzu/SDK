@@ -19,7 +19,7 @@ uses
   CloudCustomLive, CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar, CloudCustomOutlook,
   CloudOutlookWin, CloudCustomOutlookCalendar, CloudOutlookCalendar, CloudWebDav, CloudvCal,
   // Januaproject
-  Janua.Core.DataModule, JOrm.Cloud.GoogleCalendarEvents.Intf, JOrm.Cloud.GoogleCalendars.Intf,
+  Janua.Core.DataModule,
   Janua.Bindings.Intf, Janua.Core.Types, JOrm.Planner.Timetable.Intf, Janua.Controls.Forms.Intf,
   Janua.VCL.Interposers, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Controls.Intf, Janua.Core.Classes,
   Janua.Components.Planner, Janua.Core.Commons, Janua.Cloud.Conf, Janua.Unidac.Connection, Janua.Cloud.Types,
@@ -296,7 +296,6 @@ type
     FOnSetColor: TNotifyEvent;
     FItemVisibilityList: TStrings;
     FItemVisibilityIndex: Integer;
-    FCurrentGoogleItem: IGoogleCalendarEvent;
     FPlannerPDFIO: TAdvPlannerPDFIO;
     FGooglePlannerPDFIO: TAdvPlannerPDFIO;
     FItemImageField: TField;
@@ -329,7 +328,6 @@ type
     procedure SetOnSetColor(const Value: TNotifyEvent);
     procedure SetItemVisibilityIndex(const Value: Integer);
     procedure SetItemVisibilityList(const Value: TStrings);
-    procedure SetCurrentGoogleItem(const Value: IGoogleCalendarEvent);
     procedure SetGooglePlannerPDFIO(const Value: TAdvPlannerPDFIO);
     procedure SetPlannerPDFIO(const Value: TAdvPlannerPDFIO);
     procedure SetItemCaptionField(const Value: TField);
@@ -410,8 +408,8 @@ type
     { Public declarations }
     // Google CAlendar
     { procedure GetGCalendarList; }
-    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string;
-      const aTest: Boolean = false; aVariables: string = ''): Boolean;
+    function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string; const aTest: Boolean = false;
+      aVariables: string = ''): Boolean;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
@@ -437,7 +435,6 @@ type
     procedure PlannerItemDelete(Sender: TObject; Item: TPlannerItem);
     procedure PlannerItemCreated(Sender: TObject; Item: TPlannerItem);
     /// <summary> Creates a Googgle Event from a Calendar Items and stores it to  </summary>
-    function CreateGoogleEvent(const aCalendarItem: ITimetable): IGoogleCalendar;
     procedure SendCustomTwilioMessage(aTo: string; aMessageID: string; aParams: TJanuaArray<string>);
   public
     property SelectedItem: TPlannerItem read FSelectedItem write SetSelectedItem;
@@ -494,7 +491,6 @@ type
     // Calendar Item
     property ItemVisibilityList: TStrings read FItemVisibilityList write SetItemVisibilityList;
     property ItemVisibilityIndex: Integer read FItemVisibilityIndex write SetItemVisibilityIndex;
-    property CurrentGoogleItem: IGoogleCalendarEvent read FCurrentGoogleItem write SetCurrentGoogleItem;
     // Resources / Google Calendars
     property CurrentGCalendar: TGCalendar read Fgcal;
     /// <summary> Prevents updating Calendar Color while inserting/updating data from DB </summary>
@@ -544,6 +540,7 @@ begin
   FUpdatingFromDB := false;
 
   FWhatsAppSettings := TJanuaWhatsAppConf.Create(cKey, cSecret, cAppName, cMessage);
+  FJanuaAdvTwilio := Janua.TMS.SMS.TJanuaAdvTwilio.Create(self);
 
   var
   vTest := FWhatsAppSettings.GetAsJson;
@@ -569,10 +566,14 @@ begin
     TJanuaCoreOS.WriteParam('whatsapp', 'settings', vTest);
   end;
 
+{$IFDEF DEBUG}
+  var
+  vTestM := FWhatsAppSettings.DefaultMessageID;
+  vTestM := FWhatsAppSettings.TestMessageID;
+{$ENDIF}
   DBDaySourceCalendar.Active := false;
   DBDaySourceCalendar.Day := Date;
 
-  FCurrentGoogleItem := TGoogleCalendarEventFactory.CreateRecord('GCalItem');
   vtGoogleCalendars.Open;
   vtGoogleEvents.Open;
 
@@ -1051,10 +1052,6 @@ begin
     GetLiveCalendarList;
 end;
 
-function TdmVCLPlannerCustomController.CreateGoogleEvent(const aCalendarItem: ITimetable): IGoogleCalendar;
-begin
-
-end;
 
 procedure TdmVCLPlannerCustomController.SendCustomTwilioMessage(aTo: string; aMessageID: string;
   aParams: TJanuaArray<string>);
@@ -1153,7 +1150,7 @@ end;
 
 procedure TdmVCLPlannerCustomController.LoaGoogleCalendarItemRecord;
 begin
-  FCurrentGoogleItem.DirectLoadFromDataset(vtGoogleEvents);
+
 end;
 
 procedure TdmVCLPlannerCustomController.FillGoogleCalendarItems;
@@ -1614,10 +1611,12 @@ begin
   FJanuaAdvTwilio.ContentVariables.Text := aVariables;
 
   Result := FJanuaAdvTwilio.SendSMS(lRecipient, lSMS);
-  if Result then
+  (*
+    if Result then
     ShowMessage('Messaggio inviato correttamente')
-  else
+    else
     raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
+  *)
 end;
 
 procedure TdmVCLPlannerCustomController.SendTestMessage(const aRecipients, aMessage: string);
@@ -1875,11 +1874,6 @@ end;
 procedure TdmVCLPlannerCustomController.SetConnected(const Value: Boolean);
 begin
   FConnected := Value;
-end;
-
-procedure TdmVCLPlannerCustomController.SetCurrentGoogleItem(const Value: IGoogleCalendarEvent);
-begin
-  FCurrentGoogleItem := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetDateFrom(const Value: TDateTime);

@@ -67,6 +67,7 @@ begin
   except
     on e: exception do
     begin
+      aTest := False;
       aDlg.Free;
       aDlg := TdlgVclCloudGoogleConnect.Create(nil);
       raise exception.Create('Errore di Comunicazione con Google (CreateGoogleEvent)' + sLineBreak +
@@ -87,6 +88,7 @@ begin
   except
     on e: exception do
     begin
+      aTest := False;
       aDlg.Free;
       aDlg := TdlgVclCloudGoogleConnect.Create(nil);
       raise exception.Create('Errore di Comunicazione con Google (UpdateGoogleEvent)' + sLineBreak +
@@ -99,6 +101,7 @@ function DeleteGoogleEvent(aJson: string): string; stdcall;
 begin
   Result := '';
   try
+    aTest := False;
     if aTest then
       raise exception.Create('Errore di Test con Google');
 
@@ -128,6 +131,7 @@ begin
   except
     on e: exception do
     begin
+      aTest := False;
       aDlg.Free;
       aDlg := TdlgVclCloudGoogleConnect.Create(nil);
       raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
@@ -148,6 +152,7 @@ begin
   except
     on e: exception do
     begin
+      aTest := False;
       aDlg.Free;
       aDlg := TdlgVclCloudGoogleConnect.Create(nil);
       raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
@@ -166,8 +171,13 @@ begin
       aDlg.UpdateGoogle;
   except
     on e: exception do
+    begin
+      aTest := False;
+      aDlg.Free;
+      aDlg := TdlgVclCloudGoogleConnect.Create(nil);
       raise exception.Create('Errore di Comunicazione con Google (DeleteGoogleEvent)' + sLineBreak +
         e.Message);
+    end;
   end;
 
   Result := 'test';

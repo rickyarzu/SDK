@@ -585,7 +585,6 @@ begin
   end;
 end;
 
-
 function TdmPhoenixVCLGCalendarController.ConfirmMessage(const aID: string): string;
 var
   aItem: TGCalendarItem;
@@ -1195,77 +1194,120 @@ begin
 
   Result := aRecEvent.GetAsJson;
 
-  { ShowMessage(Result); }
+  var
+  sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
+  sGUID := StringReplace(sGUID, '}', '', []);
 
-  Async.Run<Boolean>(
+  qryGoogleEvent.Close;
+  qryGoogleEvent.Params[0].AsString := sGUID;
+  qryGoogleEvent.Open;
+
+  if qryGoogleEvent.RecordCount = 0 then
+  begin
+    qryGoogleEvent.Edit;
+    aRecEvent.SaveToDataset(qryGoogleEvent);
+    qryGoogleEvent.Post;
+  end;
+
+  if not(qryUpdatePlannerEvents.RecordCount > 0) and
+    not(qryUpdatePlannerEventsJGUID.AsString = aRecEvent.JGUID) then
+  begin
+    qryUpdatePlannerEvents.Close;
+    qryUpdatePlannerEvents.Params[0].AsString := sGUID;
+    qryUpdatePlannerEvents.Open;
+  end;
+  if qryUpdatePlannerEvents.RecordCount > 0 then
+  begin
+    var
+    vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+
+    if vStatino > 0 then
+    begin
+      qryRicercaStatino.Close;
+      qryRicercaStatino.Params[0].AsInteger := vStatino;
+      qryRicercaStatino.Open;
+      if qryRicercaStatino.RecordCount = 1 then
+      begin
+        qryRicercaStatino.Edit;
+        qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := Int(aRecEvent.StartTime);
+        qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := aRecEvent.StartTime - Int(aRecEvent.StartTime);
+        qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := aRecEvent.Description;
+        qryRicercaStatino.Post;
+      end;
+    end;
+    { qryGoogleEvent.Delete; }
+  end;
+
+  (*
+    Async.Run<Boolean>(
     function: Boolean
     begin
-      // This is the "background" anonymous method. Runs in the
-      // background thread, and its result is passed
-      // to the "success" callback.
-      // In this case the result is a String.
-      Result := True;
-      if Assigned(JMonitor) then
-        System.TMonitor.Enter(JMonitor);
-      try
-        { Stopwatch := TStopwatch.StartNew; }
-        var
-        sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
-        sGUID := StringReplace(sGUID, '}', '', []);
+    // This is the "background" anonymous method. Runs in the
+    // background thread, and its result is passed
+    // to the "success" callback.
+    // In this case the result is a String.
+    Result := True;
+    if Assigned(JMonitor) then
+    System.TMonitor.Enter(JMonitor);
+    try
+    { Stopwatch := TStopwatch.StartNew; }
+    var
+    sGUID := StringReplace(aRecEvent.JGUID, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
 
-        qryGoogleEvent.Close;
-        qryGoogleEvent.Params[0].AsString := sGUID;
-        qryGoogleEvent.Open;
+    qryGoogleEvent.Close;
+    qryGoogleEvent.Params[0].AsString := sGUID;
+    qryGoogleEvent.Open;
 
-        if qryGoogleEvent.RecordCount = 0 then
-        begin
-          qryGoogleEvent.Edit;
-          aRecEvent.SaveToDataset(qryGoogleEvent);
-          qryGoogleEvent.Post;
-        end;
+    if qryGoogleEvent.RecordCount = 0 then
+    begin
+    qryGoogleEvent.Edit;
+    aRecEvent.SaveToDataset(qryGoogleEvent);
+    qryGoogleEvent.Post;
+    end;
 
-        if not(qryUpdatePlannerEvents.RecordCount > 0) and
-          not(qryUpdatePlannerEventsJGUID.AsString = aRecEvent.JGUID) then
-        begin
-          qryUpdatePlannerEvents.Close;
-          qryUpdatePlannerEvents.Params[0].AsString := sGUID;
-          qryUpdatePlannerEvents.Open;
-        end;
-        if qryUpdatePlannerEvents.RecordCount > 0 then
-        begin
-          var
-          vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
+    if not(qryUpdatePlannerEvents.RecordCount > 0) and
+    not(qryUpdatePlannerEventsJGUID.AsString = aRecEvent.JGUID) then
+    begin
+    qryUpdatePlannerEvents.Close;
+    qryUpdatePlannerEvents.Params[0].AsString := sGUID;
+    qryUpdatePlannerEvents.Open;
+    end;
+    if qryUpdatePlannerEvents.RecordCount > 0 then
+    begin
+    var
+    vStatino := qryUpdatePlannerEventsSTATINO.AsInteger;
 
-          if vStatino > 0 then
-          begin
-            qryRicercaStatino.Close;
-            qryRicercaStatino.Params[0].AsInteger := vStatino;
-            qryRicercaStatino.Open;
-            if qryRicercaStatino.RecordCount = 1 then
-            begin
-              qryRicercaStatino.Edit;
-              qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := Int(aRecEvent.StartTime);
-              qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := aRecEvent.StartTime - Int(aRecEvent.StartTime);
-              qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := aRecEvent.Description;
-              qryRicercaStatino.Post;
-            end;
-          end;
-          { qryGoogleEvent.Delete; }
-        end;
-      finally
-        if Assigned(JMonitor) then
-          System.TMonitor.Exit(JMonitor);
-      end;
+    if vStatino > 0 then
+    begin
+    qryRicercaStatino.Close;
+    qryRicercaStatino.Params[0].AsInteger := vStatino;
+    qryRicercaStatino.Open;
+    if qryRicercaStatino.RecordCount = 1 then
+    begin
+    qryRicercaStatino.Edit;
+    qryRicercaStatinoAPPUNTAMENTO_DATA.AsDateTime := Int(aRecEvent.StartTime);
+    qryRicercaStatinoAPPUNTAMENTO_ORA.AsDateTime := aRecEvent.StartTime - Int(aRecEvent.StartTime);
+    qryRicercaStatinoNOTE_PER_IL_TECNICO.AsString := aRecEvent.Description;
+    qryRicercaStatino.Post;
+    end;
+    end;
+    { qryGoogleEvent.Delete; }
+    end;
+    finally
+    if Assigned(JMonitor) then
+    System.TMonitor.Exit(JMonitor);
+    end;
     end,
     procedure(const aValue: Boolean)
     begin
-      // This is the "success" callback. Runs in the UI thread and
-      // gets the result of the "background" anonymous method.
+    // This is the "success" callback. Runs in the UI thread and
+    // gets the result of the "background" anonymous method.
 
     end,
-  // nil to run default behaviour
-  nil);
-
+    // nil to run default behaviour
+    nil);
+  *)
 end;
 
 procedure TdmPhoenixVCLGCalendarController.WriteGoogleEventsValues;

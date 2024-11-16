@@ -24,7 +24,7 @@ uses
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  Vcl.Edge;
+  VCL.Edge;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -93,6 +93,7 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure AdvWebBrowser1GetCookies(Sender: TObject; ACookies: array of TAdvWebBrowserCookie);
+    procedure frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
@@ -102,6 +103,7 @@ type
     { Public declarations }
     procedure AfterUpdateCalendar(Sender: TObject);
     procedure UpdateLab;
+    procedure AfterPlannerEvent(Sender: TObject);
   end;
 
 var
@@ -149,6 +151,13 @@ begin
     lJson := FCookies.JsonSerialize;
     TJanuaCoreOS.SaveCookies(lJson);
   end;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.AfterPlannerEvent(Sender: TObject);
+begin
+  var
+  lUrl :=  EdgeBrowser1.LocationURL;
+  EdgeBrowser1.Navigate(lUrl);
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.AfterUpdateCalendar(Sender: TObject);
@@ -360,6 +369,12 @@ begin
 
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
+begin
+  frameVCLPhoenixPlannerEvent.btnSincroClick(Sender);
+
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.GoogleSync1Click(Sender: TObject);
 begin
   dmVCLPhoenixPlannerController.ReportGoogleSync;
@@ -386,23 +401,24 @@ procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
   (*
-  var
-  lCookies := TJanuaCoreOS.LoadCookies;
-  if lCookies <> '' then
+    var
+    lCookies := TJanuaCoreOS.LoadCookies;
+    if lCookies <> '' then
     FCookies.JsonDeserialize(lCookies);
 
-  if FCookies.Count > 0 then
+    if FCookies.Count > 0 then
     for var I := 0 to FCookies.Count - 1 do
-      AdvWebBrowser1.AddCookie(FCookies[I]);
+    AdvWebBrowser1.AddCookie(FCookies[I]);
 
-  AdvWebBrowser1.Navigate('https://calendar.google.com/calendar');
+    AdvWebBrowser1.Navigate('https://calendar.google.com/calendar');
 
 
     JanuaVCLWebView1.Active := True;
     JanuaVCLWebView1.WebControlsPanel.Visible := False;
     JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
   *)
-    EdgeBrowser1.Navigate('https://calendar.google.com/calendar/u/0/r');
+  EdgeBrowser1.Navigate('https://calendar.google.com/calendar/u/0/r');
+  frameVCLPhoenixPlannerEvent.AfterPlannerEvent := AfterPlannerEvent;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);

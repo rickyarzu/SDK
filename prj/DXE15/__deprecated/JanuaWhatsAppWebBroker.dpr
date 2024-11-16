@@ -1,4 +1,4 @@
-program JanuaWhatsAppWebBroker;
+﻿program JanuaWhatsAppWebBroker;
 {$APPTYPE GUI}
 
 uses

@@ -680,6 +680,9 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitLeft = 664
           ExplicitTop = 75
         end
+        inherited btnSincro: TButton
+          OnClick = frameVCLPhoenixPlannerEventbtnSincroClick
+        end
         inherited Button2: TButton
           Left = 760
           Top = -4
@@ -727,6 +730,14 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
+        end
+        inherited Panel3: TPanel
+          inherited lbSearch: TLabel
+            Width = 250
+          end
+          inherited lbDateSelector: TLabel
+            Width = 256
+          end
         end
         inherited PageControl1: TPageControl
           Left = 0
@@ -786,6 +797,14 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
             ExplicitWidth = 1381
+          end
+        end
+        inherited Panel3: TPanel
+          inherited lbSearch: TLabel
+            Width = 250
+          end
+          inherited lbDateSelector: TLabel
+            Width = 256
           end
         end
         inherited PageControl1: TPageControl
