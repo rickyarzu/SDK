@@ -1,15 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
-        <MainSource>JanuaCore.dpk</MainSource>
-        <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <TargetedPlatforms>131</TargetedPlatforms>
-        <AppType>Package</AppType>
-        <FrameworkType>None</FrameworkType>
+        <ProjectGuid>{08680B3E-5AE4-4070-8865-E95540B15795}</ProjectGuid>
         <ProjectVersion>20.2</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">JanuaCore</ProjectName>
+        <FrameworkType>FMX</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <ProjectName Condition="'$(ProjectName)'==''">WebStencilsShowcase</ProjectName>
+        <TargetedPlatforms>693267</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <MainSource>WebStencilsShowcase.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -34,11 +34,6 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
-        <Base_Linux64>true</Base_Linux64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
         <Base_OSX64>true</Base_OSX64>
         <CfgParent>Base</CfgParent>
@@ -59,12 +54,7 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
-        <Base_Win64x>true</Base_Win64x>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
@@ -81,33 +71,9 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
-        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSSimARM64)'!=''">
-        <Cfg_2_iOSSimARM64>true</Cfg_2_iOSSimARM64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
-        <Cfg_2_OSX64>true</Cfg_2_OSX64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
-        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
@@ -116,655 +82,261 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
-        <DCC_F>false</DCC_F>
-        <DCC_K>false</DCC_K>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
-        <DCC_ImageBase>00400000</DCC_ImageBase>
-        <GenDll>true</GenDll>
-        <GenPackage>true</GenPackage>
-        <SanitizedProjectName>JanuaCore</SanitizedProjectName>
-        <DCC_Description>Janua Core Library Runtime</DCC_Description>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <VerInfo_Locale>1040</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;System.Win;Winapi;System.JSON;$(DCC_Namespace)</DCC_Namespace>
-        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
-        <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <AUP_ACCESS_COARSE_LOCATION>true</AUP_ACCESS_COARSE_LOCATION>
+        <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
+        <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
+        <AUP_CAMERA>true</AUP_CAMERA>
+        <AUP_INTERNET>true</AUP_INTERNET>
+        <AUP_READ_EXTERNAL_STORAGE>true</AUP_READ_EXTERNAL_STORAGE>
+        <AUP_WRITE_EXTERNAL_STORAGE>true</AUP_WRITE_EXTERNAL_STORAGE>
+        <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <SanitizedProjectName>WebStencilsShowcase</SanitizedProjectName>
+        <CfgDependentOn>..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <DCC_UsePackage>fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;FrameStandPackage_11_1;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;CustomIPTransport;DBXInterBaseDriver;IndySystem;bindcomp;FireDACCommon;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;dsnap;CloudService;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
+        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
+        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
+        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
+        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
+        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
+        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
         <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <DCC_UsePackage>fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;FrameStandPackage_11_1;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;dbrtl;FireDACDBXDriver;CustomIPTransport;DBXInterBaseDriver;IndySystem;bindcomp;FireDACCommon;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;dsnap;CloudService;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
+        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
+        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
+        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
+        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
+        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
+        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
         <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;Neon;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <DCC_UsePackage>fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;CustomIPTransport;DBXInterBaseDriver;IndySystem;bindcomp;FireDACCommon;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;dsnap;CloudService;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;Neon;$(DCC_UsePackage)</DCC_UsePackage>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+        <iPhone_AppIcon120>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_180x180.png</iPhone_AppIcon180>
+        <iPhone_Launch2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_2x.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_3x.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_3x.png</iPhone_LaunchDark3x>
+        <iPhone_Spotlight80>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_60x60.png</iPhone_Notification60>
+        <iPad_AppIcon152>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_167x167.png</iPad_AppIcon167>
+        <iPad_Launch2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImage_2x.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageDark_2x.png</iPad_LaunchDark2x>
+        <iPad_SpotLight80>$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png</iPad_Setting58>
+        <iPad_Notification40>$(BDS)\bin\Artwork\iOS\iPad\FM_NotificationIcon_40x40.png</iPad_Notification40>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSSimARM64)'!=''">
+        <DCC_UsePackage>fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;CustomIPTransport;DBXInterBaseDriver;IndySystem;bindcomp;FireDACCommon;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;dsnap;CloudService;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;Neon;$(DCC_UsePackage)</DCC_UsePackage>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndySystem;IndyProtocols;IndyCore;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;RestRequestLib;Neon;$(DCC_UsePackage)</DCC_UsePackage>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+        <iPhone_AppIcon120>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_180x180.png</iPhone_AppIcon180>
+        <iPhone_Launch2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_2x.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_3x.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_3x.png</iPhone_LaunchDark3x>
+        <iPhone_Spotlight80>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_60x60.png</iPhone_Notification60>
+        <iPad_AppIcon152>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_167x167.png</iPad_AppIcon167>
+        <iPad_Launch2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImage_2x.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageDark_2x.png</iPad_LaunchDark2x>
+        <iPad_SpotLight80>$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png</iPad_Setting58>
+        <iPad_Notification40>$(BDS)\bin\Artwork\iOS\iPad\FM_NotificationIcon_40x40.png</iPad_Notification40>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <DCC_UsePackage>DataSnapServer;fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;emsclient;FireDACCommonDriver;FrameStandPackage_11_1;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;fmxFireDAC;dbexpress;DBXMySQLDriver;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;DBXInformixDriver;fmxobj;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;Neon;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
+        <DCC_UsePackage>DataSnapServer;fmx;emshosting;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;fmxFireDAC;dbexpress;DBXMySQLDriver;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;AWSSDKFMX;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;DBXInformixDriver;fmxobj;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;JanuaCoreThirdParty;Neon;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;FrameStandPackage_11_1;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;ApperceptAPIClient;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;Skia.Package.FMX;FireDACOracleDriver;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;AWSSDKFMX;FireDACADSDriver;AWSSDKVCL;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;FMXTee;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;OpenAIPackage;JanuaCoreThirdParty;RestRequestLib;Spring.Base;Neon;DECCipher;$(DCC_UsePackage)</DCC_UsePackage>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;FrameStandPackage_11_1;appanalytics;IndyProtocols;vclx;ApperceptAPIClient;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;AWSSDKFMX;FireDACADSDriver;AWSSDKVCL;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;FMXTee;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;OpenAIPackage;JanuaCoreThirdParty;RestRequestLib;Spring.Base;Neon;DECCipher;$(DCC_UsePackage)</DCC_UsePackage>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
-        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-        <DCC_DebugInformation>0</DCC_DebugInformation>
-        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
-        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
-        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
-        <DCC_Optimize>false</DCC_Optimize>
-        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
-        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="xmlrtl.dcp"/>
-        <DCCReference Include="dbrtl.dcp"/>
-        <DCCReference Include="soaprtl.dcp"/>
-        <DCCReference Include="inet.dcp"/>
-        <DCCReference Include="IndyIPClient.dcp"/>
-        <DCCReference Include="IndyIPCommon.dcp"/>
-        <DCCReference Include="IndySystem.dcp"/>
-        <DCCReference Include="IndyProtocols.dcp"/>
-        <DCCReference Include="IndyCore.dcp"/>
-        <DCCReference Include="DecCipher.dcp"/>
-        <DCCReference Include="bindengine.dcp"/>
-        <DCCReference Include="CustomIPTransport.dcp"/>
-        <DCCReference Include="DbxCommonDriver.dcp"/>
-        <DCCReference Include="RESTComponents.dcp"/>
-        <DCCReference Include="FireDAC.dcp"/>
-        <DCCReference Include="FireDACCommonDriver.dcp"/>
-        <DCCReference Include="FireDACCommon.dcp"/>
-        <DCCReference Include="Neon.dcp"/>
-        <DCCReference Include="OpenAIPackage.dcp"/>
-        <DCCReference Include="Spring.Base.dcp"/>
-        <DCCReference Include="JanuaCoreThirdParty.dcp"/>
-        <DCCReference Include="RestRequestLib.dcp"/>
-        <DCCReference Include="..\..\src\januacore\ViewModels\Janua.ViewModels.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\ViewModels\Janua.Anagraph.ViewModel.Intf.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\JanuaRigaDettaglio.pas"/>
-        <DCCReference Include="..\..\src\januacore\ViewModels\Janua.System.ViewModel.Intf.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\uJanuaSimulationRow.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\JanuaServiceTrattative.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\udmJanuaLegacySystem.pas">
-            <Form>dmJanuaLegacySystem</Form>
-            <DesignClass>TDataModule</DesignClass>
+        <DCCReference Include="MainForm.pas">
+            <Form>WebStencilsLabs</Form>
+            <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.System.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.UnderInstall.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Fakes.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.IBan.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Core.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Anagraph.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Forms.Intf.pas"/>
-        <DCCReference Include="..\..\src\thirdparty\Delphi.Mocks.Helpers.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.AsyncTask.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.System.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.University.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Users.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.WebServices.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Ads.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Backup.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Books.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.BooksForms.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Classes.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Cloud.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Cms.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Collections.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.CRM.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Crypt.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Customcontrols.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Customsession.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Customsystem.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Docs.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Exceptions.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Feeds.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Football.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Forms.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Functions.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Http.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Items.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.JPublic.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Ords.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Params.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Pharmacies.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Pos.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.RealEstate.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Social.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Sockets.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Hash.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Swap.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Roundings.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Printers.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.FTP.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Mobyt.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Excel.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Servers.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Health.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Cms.GraphicMenu.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Cloud.Server.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Locale.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Metronics.pas"/>
-        <DCCReference Include="..\..\src\januacore\Writers.pas"/>
-        <DCCReference Include="..\..\src\januacore\udmJanuaCoreRSS.pas">
-            <Form>dmJanuaCoreRSS</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.DB.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Json.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Statistics.pas"/>
-        <DCCReference Include="..\..\src\januacore\udmJanuaCoreDBConnection.pas">
-            <Form>dmJanuaCoreDBConnections</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Conf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Math.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.RESTCloudDatamodule.pas">
-            <Form>JanuaRestCloudDataModule</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Classes.Social.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Maps.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Maps.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Maps.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.Core.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Anagraph.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Metro5.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Metro5.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Generator.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Bootstrap4.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Bootstrap4.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.UserProfile.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.MainArguments.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.MainArguments.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.Arguments.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.Arguments.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.SubArguments.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.SubArguments.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Builder.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Metro5.Builder.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Metro5.Builder.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Metro5.Pages.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Bootstrap4.Builder.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.lnd.impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.lnd.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.Articles.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.Articles.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Metro5.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Bootstrap4.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Images.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Images.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Files.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Files.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Dataset.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Dataset.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Functions.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.ServerClasses.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Session.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Session.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.System.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.System.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Branches.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Branches.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Users.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Users.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Builder.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Matches.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Matches.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.Dilettantissimo.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.Dilettantissimo.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.RankingTable.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.RankingTable.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.GoalRanking.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.GoalRanking.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Championship.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Championship.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchDay.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchDay.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchPlayer.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchPlayer.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchEvent.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchEvent.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchEventDetail.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchEventDetail.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchDetails.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.MatchDetails.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Season.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Season.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Http.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Http.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Web.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Football.Web.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Images.Cache.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Files.Cache.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Images.WebBroker.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Files.WebBroker.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.LeagueGroups.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.LeagueGroups.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Leagues.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.Leagues.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.ArticlesAttachment.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cms.ArticlesAttachment.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.PlayerCareer.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.PlayerCareer.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cms.INtf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Wordpress.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\datamodule\udmWpJson.pas">
-            <Form>dmWpJson</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Wordpress.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Wordpress.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Export.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Export.Text.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Legacy.Classes.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Anagraph.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Anagraph.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Group.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Group.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.AppController.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.html.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.UnitTesting.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Entities.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Apps.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Forms.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\ViewModels\udmMainApplication.pas">
-            <Form>dmMainApplication</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Dialogs.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.DB.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Forms.TextEditor.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Forms.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Application.Framework.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Application.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Application.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Classes.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Maps.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Dialogs.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.DB.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Bindings.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Bindings.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Mock\Janua.Mock.Dialogs.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Register.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Reporting.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Reporting.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Orm.Test.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Orm.Test.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Test.Server.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Test.Server.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Application.Localize.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.DB.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Heads.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Heads.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Types.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Rows.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Types.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Group.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Types.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Items.Definitions.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Items.Definitions.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Items.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Shipments.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Shipments.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBs.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBs.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBRows.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBRows.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Shipments.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBs.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.AWBs.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Locations.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Locations.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Locations.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Planner.Timetable.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Planner.Timetable.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Planner.Timetable.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Planner.Timetable.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Mock.Container.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Rows.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Components.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Legacy.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Anagraphs.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.DBSchemaParams.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.DBSchemaParams.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Local.Params.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.FtChampionships.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Football.FtChampionships.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Settings.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.Settings.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.System.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Logistic.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Documents.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Mock\Janua.Mocks.Helpers.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Grids.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Repository.Entities.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Repository.Entities.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Controls.Select.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.ShipmentsView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.ShipmentsView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Shipments.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.Locations.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\Jorm.Shipping.Vessels.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Shipping.Vessel.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Shipping.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Shipping.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.ShipmentRows.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Logistic.ShipmentsRows.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\Jorm.Logistic.ShipmentRows.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.AnagraphView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.AnagraphView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.RowViews.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.RowViews.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.AttachmentView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Documents.AttachmentView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\Jorm.WorkFlow.AttachmentsView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Workflow.AttachmentsView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.BookingHeadView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.BookingHeadView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.Booking.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.Booking.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Test\Janua.Test.Functions.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Lookups.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Lookups.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Items.Hazmat.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Items.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.TimetableView.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.TimetableView.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.REST.Mobyt.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Client.RTLNetClient.pas">
-            <Form>dmNetHTTPClient</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Client.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.Client.Template.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.SMS.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Sms.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Sms.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.Core.TMLogistic.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\custom\Janua.TMLogistic.Migration.pas"/>
-        <DCCReference Include="..\..\src\januacore\datamodule\Janua.Core.DataModule.pas">
-            <Form>JanuaCoreDataModule</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Carservice.Commons.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Conf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Carservice.impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Indy.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.Conf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Html.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Carservice.intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Http.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Cloud.GoogleAPIs.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Anagraphs.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Address.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Address.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.AnAddress.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Branch.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Branch.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Firedac.Commons.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.System.UserProfile.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Mock\Janua.Mock.SMS.pas"/>
-        <DCCReference Include="..\..\src\januacore\Mock\Janua.Mock.MailSender.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Cars.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Anagraph.Cars.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Client.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.Commons.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Types.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.BookingHead.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Carservice.BookingHead.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.Firedac.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Core.StackTrace.pas"/>
-        <DCCReference Include="..\..\src\januacore\dmvc\Janua.REST.Components.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Http.WebServer.pas"/>
-        <DCCReference Include="..\..\src\januacore\Janua.Orm.CodeGen.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendarEvents.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas"/>
-        <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas"/>
-        <DCCReference Include="..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas"/>
-        <None Include="ModelSupport_JanuaCore\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\WebBroker\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\WebBroker\ServerConst\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Core\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Core\WebServer\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Http\WebServer\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Core\WebServer\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Http\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Http\WebServer\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Wordpress\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Namespace1\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaCore\Namespace1\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Jorm\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\udmJanuaLegacySystem\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JanuaRigaDettaglio\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\udmWpJson\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\uJanuaSimulationRow\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\udmJanuaCoreRSS\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\udmJanuaCoreDBConnection\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\udmMainApplication\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Delphi\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Delphi\Mocks\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Repository\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Carservice\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Workflow\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Cms\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Cloud\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Items\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\System\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Planner\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Anagraph\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Football\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Local\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Documents\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Logistic\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JOrm\Shipping\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Writers\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\football\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\REST\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Orm\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Test\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\lnd\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\TMLogistic\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Mock\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Controls\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Anagraph\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Server\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Metro5\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Reporting\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Html\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Lookups\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Documents\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Bindings\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Dilettantissimo\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\ViewModels\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Firedac\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Mocks\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Cms\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Legacy\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\System\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Cloud\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Carservice\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Logistic\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Application\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Forms\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Apps\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Maps\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\JanuaServiceTrattative\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\ModelViewViewModel.txvcls"/>
-        <None Include="ModelSupport_JanuaCore\Janua\ViewModels\Intf\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\SystemViewModel.txvcls"/>
-        <None Include="ModelSupport_JanuaCore\Janua\System\Server\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\System\ViewModel\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\System\ViewModel\Intf\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\CloudSMS.txvcls"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Cloud\SMS\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Cloud\Sms\Impl\default.txvpck"/>
-        <None Include="ModelSupport_JanuaCore\Janua\Cloud\Sms\Intf\default.txvpck"/>
+        <DCCReference Include="PersonClass.pas"/>
+        <DCCReference Include="MyTemplates.pas"/>
+        <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
         </BuildConfiguration>
-        <BuildConfiguration Include="Release">
+        <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
             <CfgParent>Base</CfgParent>
         </BuildConfiguration>
-        <BuildConfiguration Include="Debug">
+        <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
         </BuildConfiguration>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>Package</Borland.ProjectType>
+        <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">JanuaCore.dpk</Source>
+                    <Source Name="MainSource">WebStencilsShowcase.dpr</Source>
                 </Source>
+                <WelcomePageFile Path="README.md"/>
+                <WelcomePageFolder/>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Platforms>
-                <Platform value="Android">False</Platform>
-                <Platform value="Android64">False</Platform>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimARM64">False</Platform>
-                <Platform value="Linux64">True</Platform>
-                <Platform value="OSX64">False</Platform>
-                <Platform value="OSXARM64">False</Platform>
-                <Platform value="Win32">True</Platform>
-                <Platform value="Win64">True</Platform>
-                <Platform value="Win64x">False</Platform>
-            </Platforms>
-            <ModelSupport>True</ModelSupport>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -780,26 +352,40 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCore280.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\Win64\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Debug\WebStencilsShowcase.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>WebStencilsShowcase.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\WebStencilsShowcase.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>WebStencilsShowcase.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\WebStencilsShowcase.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>WebStencilsShowcase.rsm</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -1199,6 +785,7 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -1207,14 +794,17 @@
                 </DeployClass>
                 <DeployClass Name="DependencyFramework">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
@@ -1223,15 +813,30 @@
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -1254,14 +859,17 @@
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -1287,12 +895,15 @@
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -1307,9 +918,44 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectOSXDebug"/>
-                <DeployClass Name="ProjectOSXEntitlements"/>
-                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -1346,12 +992,15 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -1371,6 +1020,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1386,9 +1038,41 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSEntitlements"/>
-                <DeployClass Name="ProjectiOSInfoPList"/>
-                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectiOSResource">
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
@@ -1625,15 +1309,24 @@
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
+            <Platforms>
+                <Platform value="Android">True</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
