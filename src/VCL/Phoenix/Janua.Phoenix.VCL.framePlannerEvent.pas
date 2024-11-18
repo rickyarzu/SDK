@@ -14,7 +14,7 @@ uses
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, AdvBadge;
 
 type
   TframeVCLPhoenixPlannerEvent = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
@@ -89,6 +89,8 @@ type
     btnSincro: TButton;
     Button2: TButton;
     TimerEventUpdate: TTimer;
+    btnWhatsAppMessages: TAdvBadgeButton;
+    WATimer: TTimer;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure CalendarDateChange(Sender: TObject);
@@ -118,6 +120,8 @@ type
     procedure ModificaAppuntamento2Click(Sender: TObject);
     procedure btnSincroClick(Sender: TObject);
     procedure TimerEventUpdateTimer(Sender: TObject);
+    procedure btnWhatsAppMessagesClick(Sender: TObject);
+    procedure WATimerTimer(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -145,6 +149,7 @@ type
 
   public
     { Public declarations }
+    procedure UpdateMessagesBadge;
     procedure AfterConstruction; override;
     procedure Filter;
     property TecnicoID: Integer read GetTecnicoID write SetTecnicoID;
@@ -158,7 +163,7 @@ implementation
 
 uses System.Math, System.StrUtils, DlgNuovoStatino,
   // Janua
-  Janua.Core.Functions, Janua.Phoenix.VCL.dmPlannerController, udmSVGImageList;
+  Janua.Core.Functions, Janua.Phoenix.VCL.dmPlannerController, udmSVGImageList, udlgWhatsAppMessage;
 
 {$R *.dfm}
 
@@ -177,7 +182,6 @@ end;
 procedure TframeVCLPhoenixPlannerEvent.AfterConstruction;
 begin
   inherited;
-  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
   FreportID := -1;
   // Fields.FieldByName('COLOR')
   ItemColorField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('COLORE');
@@ -185,11 +189,12 @@ begin
   ItemImageField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('ICONA');
   // Fields.FieldByName('CAPTION')
   ItemCaptionField := nil;
-
   ItemIDField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
 
+  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
   CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
   Timer1.Enabled := True;
+  WATimer.Enabled := True;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnAddClick(Sender: TObject);
@@ -225,6 +230,26 @@ begin
     grdReportList.DataSource.Enabled := True;
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.btnWhatsAppMessagesClick(Sender: TObject);
+begin
+  WATimer.Enabled := False;
+  if not Assigned(dlgWhatsApp) then
+    Application.CreateForm(TdlgWhatsApp, dlgWhatsApp);
+  try
+    dlgWhatsApp.ShowModal;
+  finally
+    dlgWhatsApp.Free;
+    dlgWhatsApp := nil;
+    UpdateMessagesBadge;
+  end;
+
+  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
+  CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
+  Timer1.Enabled := True;
+  WATimer.Enabled := True;
+
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.btnNextDayClick(Sender: TObject);
@@ -519,6 +544,7 @@ begin
   Timer1.Enabled := False;
   btnPrevDayClick(Self);
   btnNextDayClick(Self);
+  UpdateMessagesBadge;
 end;
 
 procedure TframeVCLPhoenixPlannerEvent.TimerEventUpdateTimer(Sender: TObject);
@@ -527,6 +553,22 @@ begin
   TimerEventUpdate.Enabled := False;
   if Assigned(FAfterPlannerEvent) then
     FAfterPlannerEvent(Self);
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.UpdateMessagesBadge;
+begin
+  var
+  dm := dmVCLPhoenixPlannerController;
+  dm.qryMessageCount.Open;
+  btnWhatsAppMessages.Badge := IfThen(dm.qryMessageCountMESSAGES.AsInteger = 0, '',
+    dm.qryMessageCountMESSAGES.AsString);
+  dm.qryMessageCount.Close;
+end;
+
+procedure TframeVCLPhoenixPlannerEvent.WATimerTimer(Sender: TObject);
+begin
+  inherited;
+  UpdateMessagesBadge
 end;
 
 end.

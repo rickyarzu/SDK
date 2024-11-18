@@ -47,7 +47,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   end
   object grdReportList: TDBCtrlGrid
     Left = 8
-    Top = 107
+    Top = 103
     Width = 441
     Height = 812
     Anchors = [akLeft, akTop, akBottom]
@@ -634,7 +634,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
   end
   object cboTecnici: TJvDBLookupCombo
     Left = 8
-    Top = 24
+    Top = 28
     Width = 225
     Height = 24
     EmptyValue = '-1'
@@ -964,7 +964,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnClick = btnSincroClick
   end
   object Button2: TButton
-    Left = 759
+    Left = 158
     Top = 3
     Width = 75
     Height = 25
@@ -972,6 +972,18 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     ImageMargins.Left = 6
     Images = dmVCLPhoenixPlannerController.SVGIconImageList16
     TabOrder = 18
+  end
+  object btnWhatsAppMessages: TAdvBadgeButton
+    Left = 759
+    Top = 3
+    Width = 75
+    Height = 25
+    Caption = 'Messaggi'
+    ImageIndex = 12
+    ImageName = '013-alarm'
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    TabOrder = 19
+    OnClick = btnWhatsAppMessagesClick
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
@@ -1053,5 +1065,11 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     OnTimer = TimerEventUpdateTimer
     Left = 416
     Top = 312
+  end
+  object WATimer: TTimer
+    Interval = 300000
+    OnTimer = WATimerTimer
+    Left = 416
+    Top = 448
   end
 end

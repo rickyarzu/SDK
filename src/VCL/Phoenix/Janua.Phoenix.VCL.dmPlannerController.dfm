@@ -19523,7 +19523,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Filtered = True
     IndexFieldNames = 'DALLE_ORE DESC'
     Left = 808
-    Top = 280
+    Top = 288
     ParamData = <
       item
         DataType = ftDate
@@ -19832,12 +19832,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object dsTecniciCalendar: TUniDataSource
     DataSet = qryTecniciCalendar
     Left = 808
-    Top = 144
+    Top = 152
   end
   object dsTecniciPlanned: TUniDataSource
     DataSet = qryTechPlanned
     Left = 808
-    Top = 344
+    Top = 360
   end
   object qryPlannerCalendars: TUniQuery
     DataTypeMap = <
@@ -19851,7 +19851,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'order by TECNICO_SIGLA'
       ';')
     Left = 808
-    Top = 216
+    Top = 224
     object qryPlannerCalendarsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
@@ -20428,7 +20428,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     BeforePost = vtGoogleEventsSearchBeforePost
     Left = 808
-    Top = 416
+    Top = 424
     Data = {
       04001A0002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
@@ -20541,7 +20541,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object dsGoogleEventsSearch: TUniDataSource
     DataSet = vtGoogleEventsSearch
     Left = 808
-    Top = 488
+    Top = 496
   end
   object lkpTecnici: TUniQuery
     Connection = JanuaUniConnection1
@@ -21211,7 +21211,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'ORDER BY T.descrizione'
       ';')
     Left = 808
-    Top = 72
+    Top = 80
     object qryTecniciCalendarRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
@@ -30201,5 +30201,19 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Left = 944
     Top = 584
     CommandStoredProcName = 'UPDATE_WHATSAPP'
+  end
+  object qryMessageCount: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT'
+      'COUNT(1) AS MESSAGES'
+      'FROM'
+      'whatsapp_messages M WHERE M.state = 0 and in_out = 1')
+    Left = 808
+    Top = 8
+    object qryMessageCountMESSAGES: TLargeintField
+      FieldName = 'MESSAGES'
+      ReadOnly = True
+    end
   end
 end

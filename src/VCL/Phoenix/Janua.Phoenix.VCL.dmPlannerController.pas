@@ -445,6 +445,8 @@ type
     lkpTecniciGBACKCOLOR: TIntegerField;
     spUpdateStatini: TUniStoredProc;
     spUpdateWhatsApp: TUniStoredProc;
+    qryMessageCount: TUniQuery;
+    qryMessageCountMESSAGES: TLargeintField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);

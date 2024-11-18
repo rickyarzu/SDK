@@ -158,9 +158,10 @@ begin
       FMessageSID := Response.ResponseData.GetValue<string>('sid')
     else if Response.ResponseData <> nil then
       FResponseString := FResponseString + 'HTTP status: ' + Response.HTTPResponse.StatusCode.ToString +
-        sLineBreak + (Response.ResponseData.ToString)
+        sLineBreak + (Response.ResponseData.ToString) + sLineBreak + lParams.Text + sLineBreak
     else
-      FResponseString := 'HTTP status: ' + Response.HTTPResponse.StatusCode.ToString;
+      FResponseString := 'HTTP status: ' + Response.HTTPResponse.StatusCode.ToString + sLineBreak +
+        lParams.Text;
   finally
     lParams.Free;
     lParams := nil;

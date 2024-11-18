@@ -25,20 +25,20 @@ var
 
 implementation
 
-uses Globale;
-
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
 procedure TdmFDACPhoenixModel.FDConnectionPhoenixBeforeConnect(Sender: TObject);
 begin
-  if SystemInformation.DBServer = '' then
+  {
+    if SystemInformation.DBServer = '' then
     FDConnectionPhoenix.Params.Values['Server'] := 'localhost'
-  else
+    else
     FDConnectionPhoenix.Params.Values['Server']  := SystemInformation.DBServer;
-  FDConnectionPhoenix.Params.Database  := SystemInformation.DBDatabase;
-  FDConnectionPhoenix.Params.Password := SystemInformation.DBPassword;
-  FDConnectionPhoenix.Params.UserName := SystemInformation.DBAccount;
+    FDConnectionPhoenix.Params.Database  := SystemInformation.DBDatabase;
+    FDConnectionPhoenix.Params.Password := SystemInformation.DBPassword;
+    FDConnectionPhoenix.Params.UserName := SystemInformation.DBAccount;
+  }
 end;
 
 end.

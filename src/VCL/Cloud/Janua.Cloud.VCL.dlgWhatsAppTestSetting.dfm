@@ -110,17 +110,17 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
   object grpTestMessage: TGroupBox
     Left = 32
     Top = 228
-    Width = 988
+    Width = 593
     Height = 84
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Test Messaggio'
     TabOrder = 6
-    object Label2: TLabel
+    object lbDate: TLabel
       Left = 176
       Top = 31
-      Width = 144
+      Width = 81
       Height = 15
-      Caption = 'Twilio WhatsApp Key (User)'
+      Caption = 'Data Intervento'
     end
     object edRecipient: TLabeledEdit
       Left = 32
@@ -145,7 +145,7 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     object edAddress: TLabeledEdit
       Left = 336
       Top = 48
-      Width = 377
+      Width = 239
       Height = 23
       EditLabel.Width = 67
       EditLabel.Height = 15
@@ -194,6 +194,7 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
     Width = 581
     Height = 193
     ActivePage = tabMessage
+    Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 11
     object tabMessage: TTabSheet
       Caption = 'Message'
@@ -329,6 +330,26 @@ object dlgVCLCloudWhatsAppTestSetting: TdlgVCLCloudWhatsAppTestSetting
         Version = '3.9.1.1'
         WordWrap = wwNone
       end
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 631
+    Top = 228
+    Width = 378
+    Height = 84
+    Anchors = [akRight, akBottom]
+    Caption = 'Test Messaggio'
+    TabOrder = 12
+    object edMessageID: TLabeledEdit
+      Left = 32
+      Top = 48
+      Width = 329
+      Height = 23
+      EditLabel.Width = 105
+      EditLabel.Height = 15
+      EditLabel.Caption = 'Telefono Test (Dest.)'
+      TabOrder = 0
+      Text = ''
     end
   end
   object AdvJSONMemoStyler1: TAdvJSONMemoStyler

@@ -7,7 +7,7 @@ interface
 uses
 {$IFDEF FPC}
 {$IFDEF LINUX} unixtype, linux, {$ENDIF LINUX}
-  Classes, Types, TypInfo, SysUtils, DB, fpjson, SyncObjs, Generics.Collections,
+  Classes, Types, TypInfo, SysUtils, DB, fpjson, SyncObjs, Sytem.Generics.Collections,
 {$ELSE}
   System.Classes, System.Types, System.TypInfo, System.SysUtils, System.IOUtils, System.Json,
   System.Bindings.Expression, System.Bindings.Helper, System.Rtti, System.Generics.Collections,
@@ -974,15 +974,12 @@ type
 type
   TJanuaServerRecordConf = record
   private
-    FUsername: string;
-    FSchema: string;
-    FPassword: string;
     function GetEngineName: string;
     procedure SetEngineName(const Value: string);
-    procedure SetSchema(const Value: string);
-    procedure SetUsername(const Value: string);
-    procedure SetPassword(const Value: string);
   public
+    Username: string;
+    Schema: string;
+    Password: string;
     Port: Word;
     DatabaseName: string;
     Direct: Boolean;
@@ -1005,16 +1002,13 @@ type
     procedure Assign(aConf: TJanuaServerRecordConf);
     constructor Create(aConf: TJanuaServerRecordConf); overload;
     constructor Create(aDBEngine: TJanuaDBEngine); overload;
-    property Username: string read FUsername write SetUsername;
-    property Schema: string read FSchema write SetSchema;
-    property Password: string read FPassword write SetPassword;
   public
     property EngineName: string read GetEngineName write SetEngineName;
   end;
 
 type
   TJanuaServerRecordConfs = record
-    Items: array of TJanuaServerRecordConf;
+    Items: TDictionary<string, TJanuaServerRecordConf>;
   private
     FasJsonObject: TJsonObject;
     function GetAsJson: string;
@@ -1023,13 +1017,16 @@ type
     procedure SetasJsonObject(const Value: TJsonObject);
     procedure setasJsonPretty(const Value: string);
   public
+    class operator Initialize(out Dest: TJanuaServerRecordConfs);
+    class operator Finalize(var Dest: TJanuaServerRecordConfs);
     constructor Create(aItem: TJanuaServerRecordConf); overload;
-    constructor Create(aItems: Integer); overload;
     function Count: Integer;
-    procedure Add(aItem: TJanuaServerRecordConf);
-    function find(aItem: TJanuaServerRecordConf): Boolean;
+    procedure Add(aItem: TJanuaServerRecordConf); overload;
+    procedure Add(aName: string; aItem: TJanuaServerRecordConf); overload;
+    function find(aItem: TJanuaServerRecordConf): Boolean; overload;
+    function find(aName: string): Boolean; overload;
     procedure delete(aItem: TJanuaServerRecordConf); overload;
-    procedure delete(aIndex: Integer); overload;
+    procedure delete(aName: string); overload;
     property AsJsonObject: TJsonObject read FasJsonObject write SetasJsonObject;
     property AsJson: string read GetAsJson write SetasJson;
     property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
@@ -3339,8 +3336,8 @@ begin
     LStrings.LoadFromFile(aFileName);
     LObject := Janua.Core.Json.JsonParse(LStrings.Text);
     try
-      Janua.Core.Json.JsonValue(LObject, 'username', FUsername);
-      Janua.Core.Json.JsonValue(LObject, 'password', FPassword);
+      Janua.Core.Json.JsonValue(LObject, 'username', Username);
+      Janua.Core.Json.JsonValue(LObject, 'password', Password);
     finally
       LObject.Free
     end;
@@ -3380,21 +3377,6 @@ begin
     DBEngine := aEngine
 end;
 
-procedure TJanuaServerRecordConf.SetPassword(const Value: string);
-begin
-  FPassword := Value;
-end;
-
-procedure TJanuaServerRecordConf.SetSchema(const Value: string);
-begin
-  FSchema := Value;
-end;
-
-procedure TJanuaServerRecordConf.SetUsername(const Value: string);
-begin
-  FUsername := Value;
-end;
-
 function TJanuaServerRecordConf.TestAddress: Boolean;
 begin
   Result := false;
@@ -3416,63 +3398,66 @@ end;
 
 procedure TJanuaServerRecordConfs.Add(aItem: TJanuaServerRecordConf);
 begin
-  SetLength(Items, Count + 1);
-  Items[Count - 1] := aItem;
+  Items.Add(aItem.GetEngineName, aItem)
+end;
+
+procedure TJanuaServerRecordConfs.Add(aName: string; aItem: TJanuaServerRecordConf);
+begin
+  Items.Add(aName, aItem)
 end;
 
 function TJanuaServerRecordConfs.AsText: string;
 var
   aItem: TJanuaServerRecordConf;
 begin
-  for aItem in Items do
-    Result := Result + aItem.DatabaseName + sLineBreak;
-
+  // Iterazione sui valori
+  for aItem in Items.Values do
+    Result := Result + aItem.GetEngineName + ', ' + aItem.Address + ', ' + aItem.DatabaseName
 end;
 
 function TJanuaServerRecordConfs.Count: Integer;
 begin
-  Result := Length(Items);
-end;
-
-constructor TJanuaServerRecordConfs.Create(aItems: Integer);
-begin
-  SetLength(Items, 0);
+  Result := Items.Count;
 end;
 
 constructor TJanuaServerRecordConfs.Create(aItem: TJanuaServerRecordConf);
 begin
-  SetLength(Items, 0);
-  Add(aItem);
+  // Do Something
+  Items.Add(aItem.EngineName, aItem)
+end;
+
+procedure TJanuaServerRecordConfs.delete(aName: string);
+begin
+  if Items.ContainsKey(aName) then
+    Items.Remove(aName)
 end;
 
 procedure TJanuaServerRecordConfs.delete(aItem: TJanuaServerRecordConf);
 begin
-
-end;
-
-procedure TJanuaServerRecordConfs.delete(aIndex: Integer);
-var
-  i: Cardinal;
-begin
-  if Count > aIndex then
-  begin
-    for i := aIndex + 1 to Count - 1 do
-      Items[i - 1] := Items[i];
-    SetLength(Items, Count - 1);
-  end;
+  if Items.ContainsKey(aItem.GetEngineName) then
+    Items.Remove(aItem.GetEngineName)
 end;
 
 function TJanuaServerRecordConfs.Equals(aConf: TJanuaServerRecordConfs): Boolean;
 var
-  i: Integer;
+  aPair: TPair<string, TJanuaServerRecordConf>;
 begin
   Result := Count = aConf.Count;
   if Result and (Count > 0) then
   begin
-    for i := Low(Items) to High(Items) do
-      if not Items[i].Equals(aConf.Items[i]) then
-        Exit(false);
+    for var aKey in Items.Keys do
+      Result := Result and aConf.find(aKey)
   end;
+
+end;
+
+class operator TJanuaServerRecordConfs.Finalize(var Dest: TJanuaServerRecordConfs);
+begin
+
+end;
+
+function TJanuaServerRecordConfs.find(aName: string): Boolean;
+begin
 
 end;
 
@@ -3480,11 +3465,7 @@ function TJanuaServerRecordConfs.find(aItem: TJanuaServerRecordConf): Boolean;
 var
   lItem: TJanuaServerRecordConf;
 begin
-  Result := false;
-  for lItem in Items do
-    if (lItem.DatabaseName = aItem.DatabaseName) and (lItem.Address = aItem.Address) then
-      Exit(True)
-
+  Result := Items.ContainsKey(aItem.GetEngineName)
 end;
 
 function TJanuaServerRecordConfs.GetAsJson: string;
@@ -3493,6 +3474,11 @@ begin
 end;
 
 function TJanuaServerRecordConfs.GetasJsonPretty: string;
+begin
+
+end;
+
+class operator TJanuaServerRecordConfs.Initialize(out Dest: TJanuaServerRecordConfs);
 begin
 
 end;
