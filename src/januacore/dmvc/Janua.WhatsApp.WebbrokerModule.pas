@@ -108,7 +108,7 @@ begin
   try
     Request.ExtractContentFields(lLines);
     lText := lLines.Text;
-
+    lHook.SetFromStrings(lLines);
   finally
     lLines.Free;
   end;
