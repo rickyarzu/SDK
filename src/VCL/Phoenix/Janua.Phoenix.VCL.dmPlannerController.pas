@@ -448,6 +448,7 @@ type
     qryMessageCount: TUniQuery;
     qryMessageCountMESSAGES: TLargeintField;
     spInsertWhatsAppMsg: TUniStoredProc;
+    qryElencoEventiWhatsAppSTATINO: TIntegerField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -878,12 +879,15 @@ begin
   // qryElencoEventiWhatsAppcalcMessage.AsString;
   var
   lPhone := IfThen(FWATest, FWATestPhone, Trim(qryElencoEventiWhatsAppWANUMBER.AsString));
+  lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
   if lPhone = '' then
     JShowError('Non è presente un numero WhatsApp Valido')
   else
   begin
-    lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+    var
+    lWaNumber := lPhone;
+    lPhone := '+39' + lWaNumber;
     var
     vTest := True;
     try
@@ -892,11 +896,12 @@ begin
       try
         aStrings.Add(DateToStr(qryElencoEventiWhatsAppDALLE_ORE.AsDateTime));
         aStrings.Add(qryElencoEventiWhatsAppLOCATION.AsString);
-        SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
+        vTest := SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
       finally
         aStrings.Free;
       end;
-      WhatsAppSentDLL(sGUID);
+      if vTest then
+        WhatsAppSentDLL(sGUID);
     except
       on e: exception do
       begin
@@ -909,6 +914,14 @@ begin
       qryElencoEventiWhatsApp.Edit;
       qryElencoEventiWhatsAppWA.AsString := 'F';
       qryElencoEventiWhatsApp.Post;
+
+      spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+      spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+      spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+      spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+      if qryElencoEventiWhatsAppSTATINO.AsInteger <> 0 then
+        spInsertWhatsAppMsg.ParamByName('report_id').Value := qryElencoEventiWhatsAppSTATINO.AsInteger;
+      spInsertWhatsAppMsg.ExecProc;
     end;
 
   end;
@@ -934,6 +947,8 @@ begin
   else
   begin
     lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+    var
+    lWaNumber := lPhone;
     if Pos('+39', lPhone) = 0 then
       lPhone := '+39' + lPhone;
 
@@ -944,12 +959,21 @@ begin
       aStrings.Add(qryElencoEventiWhatsAppLOCATION.AsString);
       var
       lSent := SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
+
       if lSent then
       begin
         WhatsAppSentDLL(sGUID);
         qryElencoEventiWhatsApp.Edit;
         qryElencoEventiWhatsAppWA.AsString := 'F';
         qryElencoEventiWhatsApp.Post;
+
+        spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+        spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+        spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+        spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+        if qryElencoEventiWhatsAppSTATINO.AsInteger <> 0 then
+          spInsertWhatsAppMsg.ParamByName('report_id').Value := qryElencoEventiWhatsAppSTATINO.AsInteger;
+        spInsertWhatsAppMsg.ExecProc;
       end;
     finally
       aStrings.Free;
@@ -2720,7 +2744,7 @@ begin
         lPhone := StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
       var
       lWaNumber := lPhone;
-      Result := Length(lPhone) = 10;
+      Result := (Length(lPhone) > 7) and (Length(lPhone) <= 13);
 
       if not Result then
         JShowError('Non è presente un numero WhatsApp Valido')

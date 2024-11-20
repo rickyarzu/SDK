@@ -13,6 +13,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Menu = mmuPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
@@ -455,7 +456,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Height = 815
         Align = alLeft
         TabOrder = 0
-        ExplicitLeft = -6
         ExplicitWidth = 841
         ExplicitHeight = 815
         inherited lbCap: TLabel
@@ -705,6 +705,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited dsCAP: TUniDataSource
           Left = 184
           Top = 344
+        end
+        inherited WATimer: TTimer
+          Interval = 60000
+          OnTimer = frameVCLPhoenixPlannerEventWATimerTimer
+          Left = 648
         end
       end
       object pnlWebBrowser: TPanel

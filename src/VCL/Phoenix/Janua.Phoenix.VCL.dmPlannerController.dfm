@@ -29957,7 +29957,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'select E.*, CE.DALLE_ORE, CE.ALLE_ORE,'
+      'select E.*, CE.DALLE_ORE, CE.ALLE_ORE, CE.STATINO, '
       '       CE.JGUID as ceJGUID, e.jguid as GJGUID, '
       
         '       s.chiave,  s.telefono as stelefono, s.cellulare as scellu' +
@@ -30173,6 +30173,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'CHIAVE'
       ReadOnly = True
       Required = True
+    end
+    object qryElencoEventiWhatsAppSTATINO: TIntegerField
+      FieldName = 'STATINO'
+      ReadOnly = True
     end
   end
   object UniQuery1: TUniQuery
