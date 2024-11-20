@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 669
+  Height = 757
   Width = 1047
   inherited SVGIconImageList48: TSVGIconImageList
     SVGIconItems = <
@@ -12577,6 +12577,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
+    Options.DisconnectedMode = True
+    Pooling = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   inherited dsCalendars: TUniDataSource
@@ -30215,5 +30217,88 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'MESSAGES'
       ReadOnly = True
     end
+  end
+  object spInsertWhatsAppMsg: TUniStoredProc
+    StoredProcName = 'INSERT_WHATSAPP_MESSAGES'
+    SQL.Strings = (
+      
+        'EXECUTE PROCEDURE INSERT_WHATSAPP_MESSAGES(:WANUMBER, :WAMESSAGE' +
+        ', :ID, :WAREAD, :IN_OUT, :STATE, :INSERT_DATE, :READ_DATE, :WA_S' +
+        'TATE, :WA_ID, :REPORT_ID)')
+    Connection = JanuaUniConnection1
+    Left = 944
+    Top = 656
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'WANUMBER'
+        ParamType = ptInput
+        Size = 20
+        Value = nil
+      end
+      item
+        DataType = ftString
+        Name = 'WAMESSAGE'
+        ParamType = ptInput
+        Size = 512
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftFixedChar
+        Name = 'WAREAD'
+        ParamType = ptInput
+        Size = 1
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'IN_OUT'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'STATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftDateTime
+        Name = 'INSERT_DATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftDateTime
+        Name = 'READ_DATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'WA_STATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftString
+        Name = 'WA_ID'
+        ParamType = ptInput
+        Size = 128
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'REPORT_ID'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
   end
 end

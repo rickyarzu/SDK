@@ -447,6 +447,7 @@ type
     spUpdateWhatsApp: TUniStoredProc;
     qryMessageCount: TUniQuery;
     qryMessageCountMESSAGES: TLargeintField;
+    spInsertWhatsAppMsg: TUniStoredProc;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -2686,12 +2687,16 @@ begin
   sGUID := StringReplace(aMeeting.JGUID, '{', '', []);
   sGUID := StringReplace(sGUID, '}', '', []);
 
+  var
+  vStatino := 0;
+
   if qryPersonalPlannerEvents.Locate('JGUID', aMeeting.JGUID, []) or qryPersonalPlannerEvents.Locate('JGUID',
     sGUID, []) then
   begin
     qryCellulariStatino.Close;
     qryCellulariStatino.Params[0].AsInteger := qryPersonalPlannerEventsSTATINO.AsInteger;
     qryCellulariStatino.Open;
+    vStatino := qryPersonalPlannerEventsSTATINO.AsInteger;
 {$IFDEF DEBUG}
     var
     lTest := qryCellulariStatino.RecordCount;
@@ -2712,25 +2717,37 @@ begin
       if WATest then
         lPhone := JanuaInputText('Inserire cellulare test', 'Numero di Cellulare', WATestPhone)
       else
-        lPhone :=  StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+        lPhone := StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+      var
+      lWaNumber := lPhone;
+      Result := Length(lPhone) = 10;
 
-      if lPhone = '' then
+      if not Result then
         JShowError('Non è presente un numero WhatsApp Valido')
       else
       begin
         lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
         if Pos('+39', lPhone) = 0 then
           lPhone := '+39' + lPhone;
+
+        Result := SendMSSWhatsAppMessage('', lPhone, WATest, aVariables);
       end;
 
-      Result := SendMSSWhatsAppMessage('', lPhone, WATest, aVariables);
-
+      { wa_id type of column whatsapp_messages.wa_id,
+        report_id type of column whatsapp_messages.report_id }
       if Result then
         try
           WhatsAppSentDLL(sGUID);
           qryPersonalPlannerEvents.Edit;
           qryPersonalPlannerEventsCOLORE.AsInteger := 7911679;
           qryPersonalPlannerEvents.Post;
+          spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+          spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+          spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+          spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+          if vStatino <> 0 then
+            spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
+          spInsertWhatsAppMsg.ExecProc;
         except
           on e: exception do
             raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +

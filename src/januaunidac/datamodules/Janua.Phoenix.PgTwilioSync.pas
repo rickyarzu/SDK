@@ -4,12 +4,24 @@ interface
 
 uses
   System.SysUtils, System.Classes, udmPgStorage, UniProvider, PostgreSQLUniProvider, Data.DB, DBAccess, Uni,
-  Janua.Unidac.Connection, InterBaseUniProvider;
+  Janua.Unidac.Connection, InterBaseUniProvider, MemDS;
 
 type
   TdmPgStorage1 = class(TdmPgStorage)
     FbPhoenixConnection: TUniConnection;
     InterBaseUniProvider1: TInterBaseUniProvider;
+    qryTwilioLog: TUniQuery;
+    qryTwilioLogid: TIntegerField;
+    qryTwilioLogdb_schema_id: TIntegerField;
+    qryTwilioLogjguid: TGuidField;
+    qryTwilioLogdeleted: TBooleanField;
+    qryTwilioLoginsert_date: TDateTimeField;
+    qryTwilioLogupdate_date: TDateTimeField;
+    qryTwilioLoguser_insert: TStringField;
+    qryTwilioLoguser_update: TStringField;
+    qryTwilioLogjson_content: TMemoField;
+    qryTwilioLogbody_received: TMemoField;
+    qryTwilioLogaction: TStringField;
     procedure PgErgoConnectionBeforeConnect(Sender: TObject);
   private
     { Private declarations }
