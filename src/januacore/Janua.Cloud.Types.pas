@@ -1245,6 +1245,7 @@ begin
   var
   aList := TStringList.Create;
   try
+    aList.Text := aString;
     SetFromStrings(aList);
   finally
     aList.Free;
@@ -1285,20 +1286,20 @@ end;
 
 procedure TTwilioWebHook.SetFromStrings(const aList: TStringList);
 begin
-  Self.SmsMessageSid := aList.Values['SmsMessageSid'];
-  Self.NumMedia := aList.Values['NumMedia'];
-  Self.ProfileName := aList.Values['ProfileName'];
-  Self.MessageType := aList.Values['MessageType'];
-  Self.SmsSid := aList.Values['SmsSid'];
-  Self.WaId := aList.Values['WaId'];
-  Self.SmsStatus := aList.Values['SmsStatus'];
-  Self.Body := aList.Values['Body'];
-  Self.MsgTo := aList.Values['MsgTo'];
-  Self.NumSegments := aList.Values['NumSegments'];
-  Self.ReferralNumMedia := aList.Values['ReferralNumMedia'];
-  Self.MessageSid := aList.Values['MessageSid'];
-  Self.AccountSid := aList.Values['AccountSid'];
-  Self.ApiVersion := aList.Values['ApiVersion'];
+  SmsMessageSid := aList.Values['SmsMessageSid'];
+  NumMedia := aList.Values['NumMedia'];
+  ProfileName := aList.Values['ProfileName'];
+  MessageType := aList.Values['MessageType'];
+  SmsSid := aList.Values['SmsSid'];
+  WaId := aList.Values['WaId'];
+  SmsStatus := aList.Values['SmsStatus'];
+  Body := aList.Values['Body'];
+  MsgTo := aList.Values['MsgTo'];
+  NumSegments := aList.Values['NumSegments'];
+  ReferralNumMedia := aList.Values['ReferralNumMedia'];
+  MessageSid := aList.Values['MessageSid'];
+  AccountSid := aList.Values['AccountSid'];
+  ApiVersion := aList.Values['ApiVersion'];
 end;
 
 initialization
