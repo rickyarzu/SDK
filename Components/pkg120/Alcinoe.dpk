@@ -13,8 +13,8 @@ package Alcinoe;
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
 {$OPTIMIZATION ON}
-{$OVERFLOWCHECKS OFF}
-{$RANGECHECKS OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
 {$REFERENCEINFO OFF}
 {$SAFEDIVIDE OFF}
 {$STACKFRAMES OFF}
@@ -27,34 +27,44 @@ package Alcinoe;
 {$DEFINE ALDPK}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Alcinoe'}
+{$LIBSUFFIX AUTO}
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
   rtl,
   fmx,
-  DesignIDE;
+  DesignIDE,
+  Skia.Package.RTL,
+  Skia.Package.FMX;
 
 contains
-  Alcinoe.FMX.Layouts in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Layouts.pas',
-  Alcinoe.FMX.Objects in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Objects.pas',
-  Alcinoe.FMX.StdCtrls in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.StdCtrls.pas',
-  Alcinoe.FMX.Common in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Common.pas',
-  Alcinoe.FMX.TabControl in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.TabControl.pas',
-  Alcinoe.FMX.DesignEditors in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.DesignEditors.pas',
-  Alcinoe.FMX.InertialMovement in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.InertialMovement.pas',
-  Alcinoe.FMX.Edit in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Edit.pas',
-  Alcinoe.Common in '..\..\..\lib\Alcinoe\Source\Alcinoe.Common.pas',
-  Alcinoe.StringList in '..\..\..\lib\Alcinoe\Source\Alcinoe.StringList.pas',
-  Alcinoe.StringUtils in '..\..\..\lib\Alcinoe\Source\Alcinoe.StringUtils.pas',
-  Alcinoe.QuickSortList in '..\..\..\lib\Alcinoe\Source\Alcinoe.QuickSortList.pas',
-  Alcinoe.AVLBinaryTree in '..\..\..\lib\Alcinoe\Source\Alcinoe.AVLBinaryTree.pas',
-  Alcinoe.FMX.VideoPlayer in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.VideoPlayer.pas',
-  Alcinoe.FMX.Memo in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Memo.pas',
-  Alcinoe.FMX.Graphics in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Graphics.pas',
-  Alcinoe.FMX.FilterEffects in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.FilterEffects.pas',
-  Alcinoe.FMX.Ani in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Ani.pas',
-  Alcinoe.FMX.Confetti in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.Confetti.pas',
-  Alcinoe.FMX.BreakText in '..\..\..\lib\Alcinoe\Source\Alcinoe.FMX.BreakText.pas';
+  Alcinoe.FMX.Materials.Canvas in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Materials.Canvas.pas',
+  Alcinoe.FMX.Layouts in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Layouts.pas',
+  Alcinoe.FMX.Objects in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Objects.pas',
+  Alcinoe.FMX.StdCtrls in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.StdCtrls.pas',
+  Alcinoe.FMX.Common in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Common.pas',
+  Alcinoe.FMX.TabControl in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.TabControl.pas',
+  Alcinoe.FMX.DesignEditors in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.DesignEditors.pas',
+  Alcinoe.FMX.ScrollEngine in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.ScrollEngine.pas',
+  Alcinoe.FMX.Edit in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Edit.pas',
+  Alcinoe.Common in '..\..\..\Lib\Alcinoe\Source\Alcinoe.Common.pas',
+  Alcinoe.StringList in '..\..\..\Lib\Alcinoe\Source\Alcinoe.StringList.pas',
+  Alcinoe.StringUtils in '..\..\..\Lib\Alcinoe\Source\Alcinoe.StringUtils.pas',
+  Alcinoe.QuickSortList in '..\..\..\Lib\Alcinoe\Source\Alcinoe.QuickSortList.pas',
+  Alcinoe.AVLBinaryTree in '..\..\..\Lib\Alcinoe\Source\Alcinoe.AVLBinaryTree.pas',
+  Alcinoe.FMX.VideoPlayer in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.VideoPlayer.pas',
+  Alcinoe.FMX.Memo in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Memo.pas',
+  Alcinoe.FMX.Graphics in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Graphics.pas',
+  Alcinoe.FMX.FilterEffects in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.FilterEffects.pas',
+  Alcinoe.FMX.Ani in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Ani.pas',
+  Alcinoe.FMX.Confetti in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Confetti.pas',
+  Alcinoe.FMX.BreakText in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.BreakText.pas',
+  Alcinoe.FMX.Types3D in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Types3D.pas',
+  Alcinoe.FMX.NativeView.Win in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.NativeView.Win.pas',
+  Alcinoe.FMX.Controls in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Controls.pas',
+  Alcinoe.Files in '..\..\..\Lib\Alcinoe\Source\Alcinoe.Files.pas',
+  Alcinoe.FMX.CustomThemes in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.CustomThemes.pas',
+  Alcinoe.FMX.Themes in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FMX.Themes.pas';
 
 end.
