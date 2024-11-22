@@ -8,7 +8,7 @@ uses
   Janua.FDAC.Phoenix.Model in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Model.pas' {dmFDACPhoenixModel: TDataModule},
   uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas',
   udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
-  Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgStorage1: TDataModule};
+  Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule};
 
 {$R *.RES}
 
@@ -32,6 +32,6 @@ begin
   TPhoenixBackgroundServiceApp.ApplicationSetup('service.assoantincendio.com');
   Application.CreateForm(TsrvPhoenixVCLBackgroundService, srvPhoenixVCLBackgroundService);
   Application.CreateForm(TdmPgStorage, dmPgStorage);
-  Application.CreateForm(TdmPgStorage1, dmPgStorage1);
+  Application.CreateForm(TdmPgTWilioSync, dmPgTWilioSync);
   Application.Run;
 end.

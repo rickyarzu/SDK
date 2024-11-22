@@ -38,8 +38,6 @@ requires
   IndyProtocols,
   uniGUI29m;
 
-
-
 contains
   FS.Pix in '..\..\..\libraries\UniFalcon\Sources\FS.Pix.pas',
   FS.QrCode in '..\..\..\libraries\UniFalcon\Sources\FS.QrCode.pas',

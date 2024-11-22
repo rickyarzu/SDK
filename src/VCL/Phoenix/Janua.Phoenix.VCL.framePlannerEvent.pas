@@ -4,6 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.ImageList,
+  System.DateUtils,
   // DB - TMS
   Data.DB, DBAccess, Uni, Planner, DBPlanner, AdvEdit, AdvEdBtn, PlannerDatePicker,
   // VCL
@@ -353,7 +354,7 @@ begin
     var
     dbp := DBPlanner1.CreateItem;
     dbp.ItemBegin := Y;
-    dbp.ItemEnd := Y + 2;
+    dbp.ItemEnd := Y + 1;
     dbp.itemPos := X;
     if dbp.DBKey = '' then
       dbp.DBKey := TGUID.NewGuid.ToString;
@@ -375,7 +376,7 @@ begin
     var
     vTest := dbp.ItemStartTime;
     var
-    vTest2 := dbp.ItemEndTime;
+    vTest2 := IncMinute(vTest, 30);
     var
     vReport := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
 

@@ -1294,7 +1294,12 @@ begin
   WaId := aList.Values['WaId'];
   SmsStatus := aList.Values['SmsStatus'];
   Body := aList.Values['Body'];
-  MsgTo := aList.Values['MsgTo'];
+  MsgTo := aList.Values['To'];
+  MsgTo := StringReplace(MsgTo, 'whatsapp:', '', []);
+  MsgTo := StringReplace(MsgTo, '+39', '', []);
+  From :=  aList.Values['From'];
+  From := StringReplace(From, 'whatsapp:', '', []);
+  From := StringReplace(From, '+39', '', []);
   NumSegments := aList.Values['NumSegments'];
   ReferralNumMedia := aList.Values['ReferralNumMedia'];
   MessageSid := aList.Values['MessageSid'];
