@@ -1,0 +1,59 @@
+﻿{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1998 Master-Bank                }
+{                                                       }
+{ Added by Polaris Software                             }
+{*******************************************************}
+
+package RtmRxDB;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'RX Library Component and Tools Package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcldb,
+  vclx,
+  vclimg,
+  RtmRxCtl;
+
+contains
+  RxDBCtrl in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxDBCtrl.pas',
+  RxLookup in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxLookup.pas',
+  RxLogin in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxLogin.pas',
+  RxDBUtils in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxDBUtils.pas',
+  RxDBComb in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxDBComb.pas',
+  RxDBRichEd in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxDBRichEd.pas',
+  RxMemDS in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxMemDS.pas',
+  RxDBCurrEdit in '..\..\..\Libraries\unrxlib_275_u_1_0_20\units\RxDBCurrEdit.pas';
+
+end.

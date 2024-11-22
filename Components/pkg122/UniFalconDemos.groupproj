@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{15C3C25E-CD9A-4EC8-AF9E-294CCEC14746}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\JanuaUniFalconFontAwesome5.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\UniGUI\UniFalcon\FSThemeCrystal\ThemeCrystal.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TUniFalcon">
+        <MSBuild Projects="TUniFalcon.dproj"/>
+    </Target>
+    <Target Name="TUniFalcon:Clean">
+        <MSBuild Projects="TUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TUniFalcon:Make">
+        <MSBuild Projects="TUniFalcon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniFalconFontAwesome5">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaUniFalconFontAwesome5.dproj"/>
+    </Target>
+    <Target Name="JanuaUniFalconFontAwesome5:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaUniFalconFontAwesome5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniFalconFontAwesome5:Make">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaUniFalconFontAwesome5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ThemeCrystal">
+        <MSBuild Projects="..\..\Samples\UniGUI\UniFalcon\FSThemeCrystal\ThemeCrystal.dproj"/>
+    </Target>
+    <Target Name="ThemeCrystal:Clean">
+        <MSBuild Projects="..\..\Samples\UniGUI\UniFalcon\FSThemeCrystal\ThemeCrystal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ThemeCrystal:Make">
+        <MSBuild Projects="..\..\Samples\UniGUI\UniFalcon\FSThemeCrystal\ThemeCrystal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TUniFalcon;JanuaUniFalconFontAwesome5;ThemeCrystal"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TUniFalcon:Clean;JanuaUniFalconFontAwesome5:Clean;ThemeCrystal:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TUniFalcon:Make;JanuaUniFalconFontAwesome5:Make;ThemeCrystal:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

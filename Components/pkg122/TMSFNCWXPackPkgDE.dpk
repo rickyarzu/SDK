@@ -1,0 +1,54 @@
+package TMSFNCWXPackPkgDE;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC WX Pack for FMX/VCL Designtime'}
+{$LIBSUFFIX AUTO}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  FMXTMSFNCWXPackPkg,
+  VCLTMSFNCWXPackPkg,
+  TMSFNCCorePkgDE;
+
+contains
+  FMX.TMSFNCWXPackDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXPackDE.pas',
+  FMX.TMSFNCWXPackRegDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXPackRegDE.pas',
+  FMX.TMSFNCWXSpeechSynthesisDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXSpeechSynthesisDE.pas',
+  FMX.TMSFNCWXSpeechSynthesisRegDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXSpeechSynthesisRegDE.pas',
+  FMX.TMSFNCWXContainerDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXContainerDE.pas',
+  FMX.TMSFNCWXContainerRegDE in '..\..\..\tmssoftware\TMS FNC WX Pack\FMX.TMSFNCWXContainerRegDE.pas',
+  VCL.TMSFNCWXPackDE in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPackDE.pas',
+  VCL.TMSFNCWXPackRegDE in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPackRegDE.pas',
+  VCL.TMSFNCWXSpeechSynthesisDe in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesisDe.pas',
+  VCL.TMSFNCWXSpeechSynthesisRegDe in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesisRegDe.pas',
+  VCL.TMSFNCWXContainerDE in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXContainerDE.pas',
+  VCL.TMSFNCWXContainerRegDE in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXContainerRegDE.pas';
+
+end.

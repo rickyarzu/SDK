@@ -1,0 +1,106 @@
+package QRWRunDXE12_W64;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'QuickReport 6 Runtime Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  Vcldb,
+  vclx,
+  vclimg;
+
+contains
+  qrextra in '..\..\..\Libraries\QR6-RAD-11\src\qrextra.pas',
+  qrcomped in '..\..\..\Libraries\QR6-RAD-11\src\qrcomped.pas',
+  qrabout in '..\..\..\Libraries\QR6-RAD-11\src\qrabout.pas',
+  QuickRpt in '..\..\..\Libraries\QR6-RAD-11\src\QuickRpt.pas',
+  qrctrls in '..\..\..\Libraries\QR6-RAD-11\src\qrctrls.pas',
+  qrprgres in '..\..\..\Libraries\QR6-RAD-11\src\qrprgres.pas',
+  qrexpbld in '..\..\..\Libraries\QR6-RAD-11\src\qrexpbld.pas',
+  qrprntr in '..\..\..\Libraries\QR6-RAD-11\src\qrprntr.pas',
+  qrprev in '..\..\..\Libraries\QR6-RAD-11\src\qrprev.pas',
+  qrexpred in '..\..\..\Libraries\QR6-RAD-11\src\qrexpred.pas' {QRExprEditorForm},
+  qrexpr in '..\..\..\Libraries\QR6-RAD-11\src\qrexpr.pas',
+  qrenved in '..\..\..\Libraries\QR6-RAD-11\src\qrenved.pas',
+  qrexport in '..\..\..\Libraries\QR6-RAD-11\src\qrexport.pas',
+  Qrlabled in '..\..\..\Libraries\QR6-RAD-11\src\Qrlabled.pas' {QRLabelEditorForm},
+  QRSearchDlg in '..\..\..\Libraries\QR6-RAD-11\src\QRSearchDlg.pas' {SearchDlg},
+  qrpdffilt in '..\..\..\Libraries\QR6-RAD-11\src\qrpdffilt.pas',
+  pdfconst in '..\..\..\Libraries\QR6-RAD-11\src\pdfconst.pas',
+  pdfobjs in '..\..\..\Libraries\QR6-RAD-11\src\pdfobjs.pas',
+  grimgctrl in '..\..\..\Libraries\QR6-RAD-11\src\grimgctrl.pas',
+  QRXMLSFilt in '..\..\..\Libraries\QR6-RAD-11\src\QRXMLSFilt.pas',
+  QRWebFilt in '..\..\..\Libraries\QR6-RAD-11\src\QRWebFilt.pas',
+  qrabsdatas in '..\..\..\Libraries\QR6-RAD-11\src\qrabsdatas.pas',
+  qrFramelines in '..\..\..\Libraries\QR6-RAD-11\src\qrFramelines.pas',
+  QRXDocument in '..\..\..\Libraries\QR6-RAD-11\src\QRXDocument.pas',
+  QRXSearchFrm in '..\..\..\Libraries\QR6-RAD-11\src\QRXSearchFrm.pas' {QRXSearchDlg},
+  QRXBrowser in '..\..\..\Libraries\QR6-RAD-11\src\QRXBrowser.pas' {QRXStandardViewer},
+  qrpctrls in '..\..\..\Libraries\QR6-RAD-11\src\qrpctrls.pas',
+  qrpBaseCtrls in '..\..\..\Libraries\QR6-RAD-11\src\qrpBaseCtrls.pas',
+  csProp in '..\..\..\Libraries\QR6-RAD-11\src\csProp.pas',
+  qrpexpr in '..\..\..\Libraries\QR6-RAD-11\src\qrpexpr.pas',
+  SupComps in '..\..\..\Libraries\QR6-RAD-11\src\SupComps.pas',
+  MSXML_TLB in '..\..\..\Libraries\QR6-RAD-11\src\MSXML_TLB.pas',
+  lzw in '..\..\..\Libraries\QR6-RAD-11\src\lzw.pas',
+  qrprnsu in '..\..\..\Libraries\QR6-RAD-11\src\qrprnsu.pas',
+  QRXLSXFilt in '..\..\..\Libraries\QR6-RAD-11\src\QRXLSXFilt.pas',
+  ECC200Consts in '..\..\..\Libraries\QR6-RAD-11\src\ECC200Consts.pas',
+  ECC200procs in '..\..\..\Libraries\QR6-RAD-11\src\ECC200procs.pas',
+  ECC200ReedSolomon in '..\..\..\Libraries\QR6-RAD-11\src\ECC200ReedSolomon.pas',
+  QRDMBarcode in '..\..\..\Libraries\QR6-RAD-11\src\QRDMBarcode.pas',
+  QRMetricLab in '..\..\..\Libraries\QR6-RAD-11\src\QRMetricLab.pas',
+  QRGraphcon in '..\..\..\Libraries\QR6-RAD-11\src\QRGraphcon.pas',
+  qr6const in '..\..\..\Libraries\QR6-RAD-11\src\qr6const.pas',
+  QRJpegImage in '..\..\..\Libraries\QR6-RAD-11\src\QRJpegImage.pas',
+  QRNewXLSXFilt in '..\..\..\Libraries\QR6-RAD-11\src\QRNewXLSXFilt.pas',
+  QRNewXLSXFiltProcs in '..\..\..\Libraries\QR6-RAD-11\src\QRNewXLSXFiltProcs.pas',
+  QRQRBarcode in '..\..\..\Libraries\QR6-RAD-11\src\QRQRBarcode.pas',
+  QRXMLDom in '..\..\..\Libraries\QR6-RAD-11\src\QRXMLDom.pas',
+  QRWebControls in '..\..\..\Libraries\QR6-RAD-11\src\QRWebControls.pas',
+  QRWebScript in '..\..\..\Libraries\QR6-RAD-11\src\QRWebScript.pas',
+  QRWebScript2 in '..\..\..\Libraries\QR6-RAD-11\src\QRWebScript2.pas',
+  QRColorBox in '..\..\..\Libraries\QR6-RAD-11\src\QRColorBox.pas',
+  qrDelphiZXIngQRCode in '..\..\..\Libraries\QR6-RAD-11\src\qrDelphiZXIngQRCode.pas',
+  QRPageInfo in '..\..\..\Libraries\QR6-RAD-11\src\QRPageInfo.pas',
+  SGArrayProperties in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGArrayProperties.pas',
+  SGConsts in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGConsts.pas',
+  SGExpBarChart in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGExpBarChart.pas',
+  SGUtils in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGUtils.pas',
+  SGLineGraph in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGLineGraph.pas',
+  SGGraphProps in '..\..\..\Libraries\QR6-RAD-11\src\SGChart\SGGraphProps.pas',
+  QRSidePanel in '..\..\..\Libraries\QR6-RAD-11\src\QRSidePanel.pas';
+
+end.
+
+
+
+
+
+

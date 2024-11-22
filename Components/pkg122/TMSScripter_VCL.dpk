@@ -1,0 +1,45 @@
+package TMSScripter_VCL;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - VCL Package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  TMSScripter,
+  vcl;
+
+contains
+  Vcl.ScripterInit in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\vcl\Vcl.ScripterInit.pas',
+  Vcl.ScripterMachine in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\vcl\Vcl.ScripterMachine.pas',
+  Vcl.ScriptForm in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\vcl\Vcl.ScriptForm.pas',
+  fSimplifiedCode in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\vcl\fSimplifiedCode.pas' {fmSimplifiedCode},
+  fSyntaxTree in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\vcl\fSyntaxTree.pas' {fmSyntaxTree};
+
+end.

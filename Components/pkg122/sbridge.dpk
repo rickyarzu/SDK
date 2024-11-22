@@ -1,0 +1,125 @@
+package sbridge;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE sbridge}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Devart SecureBridge Components'}
+{$LIBSUFFIX '280'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl;
+
+contains
+  ScTypes in '..\..\..\Libraries\Devart SecureBridge\Source\ScTypes.pas',
+  ScFunctions in '..\..\..\Libraries\Devart SecureBridge\Source\ScFunctions.pas',
+  ScAlgorithmSupport in '..\..\..\Libraries\Devart SecureBridge\Source\ScAlgorithmSupport.pas',
+  ScASN1 in '..\..\..\Libraries\Devart SecureBridge\Source\ScASN1.pas',
+  ScBase64 in '..\..\..\Libraries\Devart SecureBridge\Source\ScBase64.pas',
+  ScBigInteger in '..\..\..\Libraries\Devart SecureBridge\Source\ScBigInteger.pas',
+  ScBridge in '..\..\..\Libraries\Devart SecureBridge\Source\ScBridge.pas',
+  ScEC25519 in '..\..\..\Libraries\Devart SecureBridge\Source\ScEC25519.pas',
+  ScCMS in '..\..\..\Libraries\Devart SecureBridge\Source\ScCMS.pas',
+  ScCertificateConsts in '..\..\..\Libraries\Devart SecureBridge\Source\ScCertificateConsts.pas',
+  ScCertificateExts in '..\..\..\Libraries\Devart SecureBridge\Source\ScCertificateExts.pas',
+  ScCipher in '..\..\..\Libraries\Devart SecureBridge\Source\ScCipher.pas',
+  ScCipherSuites in '..\..\..\Libraries\Devart SecureBridge\Source\ScCipherSuites.pas',
+  ScClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScClient.pas',
+  ScClientHandshakeLayer in '..\..\..\Libraries\Devart SecureBridge\Source\ScClientHandshakeLayer.pas',
+  ScServerHandshakeLayer in '..\..\..\Libraries\Devart SecureBridge\Source\ScServerHandshakeLayer.pas',
+  ScCLRClasses in '..\..\..\Libraries\Devart SecureBridge\Source\ScCLRClasses.pas',
+  ScConsts in '..\..\..\Libraries\Devart SecureBridge\Source\ScConsts.pas',
+  ScCryptoAPIIntf in '..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoAPIIntf.pas',
+  ScCryptoAPIStorage in '..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoAPIStorage.pas',
+  ScCryptoTransformIntf in '..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoTransformIntf.pas',
+  ScDECUtil in '..\..\..\Libraries\Devart SecureBridge\Source\ScDECUtil.pas',
+  ScHash in '..\..\..\Libraries\Devart SecureBridge\Source\ScHash.pas',
+  ScHashAlgorithm in '..\..\..\Libraries\Devart SecureBridge\Source\ScHashAlgorithm.pas',
+  ScHMAC in '..\..\..\Libraries\Devart SecureBridge\Source\ScHMAC.pas',
+  ScLayers in '..\..\..\Libraries\Devart SecureBridge\Source\ScLayers.pas',
+  ScMD5SHA1CSP in '..\..\..\Libraries\Devart SecureBridge\Source\ScMD5SHA1CSP.pas',
+  ScOids in '..\..\..\Libraries\Devart SecureBridge\Source\ScOids.pas',
+  ScReaderWriter in '..\..\..\Libraries\Devart SecureBridge\Source\ScReaderWriter.pas',
+  ScReceiveBuffer in '..\..\..\Libraries\Devart SecureBridge\Source\ScReceiveBuffer.pas',
+  ScRNG in '..\..\..\Libraries\Devart SecureBridge\Source\ScRNG.pas',
+  ScSecureSocket in '..\..\..\Libraries\Devart SecureBridge\Source\ScSecureSocket.pas',
+  ScSocketController in '..\..\..\Libraries\Devart SecureBridge\Source\ScSocketController.pas',
+  ScSSH2Channel in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2Channel.pas',
+  ScSSH2Connection in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2Connection.pas',
+  ScSSH2DataHandler in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2DataHandler.pas',
+  ScDataHandler in '..\..\..\Libraries\Devart SecureBridge\Source\ScDataHandler.pas',
+  ScSSH2ServerConnection in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2ServerConnection.pas',
+  ScSSHChannel in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHChannel.pas',
+  ScSSHClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHClient.pas',
+  ScSSHConnectionParameter in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHConnectionParameter.pas',
+  ScSSHServer in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHServer.pas',
+  ScSSHSocket in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHSocket.pas',
+  ScSSHUtils in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHUtils.pas',
+  ScSSHConsts in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSHConsts.pas',
+  ScSSL3HandshakeLayer in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSL3HandshakeLayer.pas',
+  ScSSLClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSLClient.pas',
+  ScSSLServer in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSLServer.pas',
+  ScTCPServer in '..\..\..\Libraries\Devart SecureBridge\Source\ScTCPServer.pas',
+  ScSSLMessages in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSLMessages.pas',
+  ScSSLExtensions in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSLExtensions.pas',
+  ScSSLTypes in '..\..\..\Libraries\Devart SecureBridge\Source\ScSSLTypes.pas',
+  ScSymmetricAlgorithm in '..\..\..\Libraries\Devart SecureBridge\Source\ScSymmetricAlgorithm.pas',
+  ScThread in '..\..\..\Libraries\Devart SecureBridge\Source\ScThread.pas',
+  ScTLS1HandshakeLayer in '..\..\..\Libraries\Devart SecureBridge\Source\ScTLS1HandshakeLayer.pas',
+  ScTLS13HandshakeLayer in '..\..\..\Libraries\Devart SecureBridge\Source\ScTLS13HandshakeLayer.pas',
+  ScUtils in '..\..\..\Libraries\Devart SecureBridge\Source\ScUtils.pas',
+  ScVio in '..\..\..\Libraries\Devart SecureBridge\Source\ScVio.pas',
+  ScVioSocket in '..\..\..\Libraries\Devart SecureBridge\Source\ScVioSocket.pas',
+  ScVioTcp in '..\..\..\Libraries\Devart SecureBridge\Source\ScVioTcp.pas',
+  ScSecureConnection in '..\..\..\Libraries\Devart SecureBridge\Source\ScSecureConnection.pas',
+  ScHttp in '..\..\..\Libraries\Devart SecureBridge\Source\ScHttp.pas',
+  ScVioHttp in '..\..\..\Libraries\Devart SecureBridge\Source\ScVioHttp.pas',
+  ScFTPUtils in '..\..\..\Libraries\Devart SecureBridge\Source\ScFTPUtils.pas',
+  ScFTPListParser in '..\..\..\Libraries\Devart SecureBridge\Source\ScFTPListParser.pas',
+  ScFTPClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScFTPClient.pas',
+  ScWebSocketClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScWebSocketClient.pas',
+  ScSFTPConsts in '..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPConsts.pas',
+  ScSFTPPacket in '..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPPacket.pas',
+  ScSFTPUtils in '..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPUtils.pas',
+  ScSFTPClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPClient.pas',
+  ScSFTPServer in '..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPServer.pas',
+  ScParser in '..\..\..\Libraries\Devart SecureBridge\Source\ScParser.pas',
+  ScJson in '..\..\..\Libraries\Devart SecureBridge\Source\ScJson.pas',
+  ScJsonSerializator in '..\..\..\Libraries\Devart SecureBridge\Source\ScJsonSerializator.pas',
+  ScPipe in '..\..\..\Libraries\Devart SecureBridge\Source\ScPipe.pas',
+  ScSignalRConsts in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRConsts.pas',
+  ScSignalRMessages in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRMessages.pas',
+  ScSignalRProtocol in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRProtocol.pas',
+  ScSignalRHttpConnection in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHttpConnection.pas',
+  ScSignalRHttpTransports in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHttpTransports.pas',
+  ScSignalRHubConnection in '..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHubConnection.pas',
+  ScCoders in '..\..\..\Libraries\Devart SecureBridge\Source\ScCoders.pas',
+  ScSMTPUtils in '..\..\..\Libraries\Devart SecureBridge\Source\ScSMTPUtils.pas',
+  ScMailMessage in '..\..\..\Libraries\Devart SecureBridge\Source\ScMailMessage.pas',
+  ScSMTPClient in '..\..\..\Libraries\Devart SecureBridge\Source\ScSMTPClient.pas';
+
+end.

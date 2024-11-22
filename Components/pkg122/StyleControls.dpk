@@ -1,0 +1,84 @@
+package StyleControls;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  vclactnband,
+  xmlrtl,
+  vclie,
+  dbrtl,
+  vcldb;
+
+contains
+  scControls in '..\..\..\Libraries\Almediadev\StyleControls\scControls.pas',
+  scDrawUtils in '..\..\..\Libraries\Almediadev\StyleControls\scDrawUtils.pas',
+  scImageCollection in '..\..\..\Libraries\Almediadev\StyleControls\scImageCollection.pas',
+  scShellControls in '..\..\..\Libraries\Almediadev\StyleControls\scShellControls.pas',
+  scAdvancedControls in '..\..\..\Libraries\Almediadev\StyleControls\scAdvancedControls.pas',
+  scExtControls in '..\..\..\Libraries\Almediadev\StyleControls\scExtControls.pas',
+  scCalendar in '..\..\..\Libraries\Almediadev\StyleControls\scCalendar.pas',
+  scBitmapEditor in '..\..\..\Libraries\Almediadev\StyleControls\scBitmapEditor.pas' {scBitmapEditorForm},
+  scAppPager in '..\..\..\Libraries\Almediadev\StyleControls\scAppPager.pas',
+  scToolPager in '..\..\..\Libraries\Almediadev\StyleControls\scToolPager.pas',
+  scStyledForm in '..\..\..\Libraries\Almediadev\StyleControls\scStyledForm.pas',
+  scStyleManager in '..\..\..\Libraries\Almediadev\StyleControls\scStyleManager.pas',
+  scHint in '..\..\..\Libraries\Almediadev\StyleControls\scHint.pas',
+  scModernControls in '..\..\..\Libraries\Almediadev\StyleControls\scModernControls.pas',
+  scWebBrowser in '..\..\..\Libraries\Almediadev\StyleControls\scWebBrowser.pas',
+  scAdvancedPager in '..\..\..\Libraries\Almediadev\StyleControls\scAdvancedPager.pas',
+  scDBControls in '..\..\..\Libraries\Almediadev\StyleControls\scDBControls.pas',
+  scDBGrids in '..\..\..\Libraries\Almediadev\StyleControls\scDBGrids.pas',
+  scGrids in '..\..\..\Libraries\Almediadev\StyleControls\scGrids.pas',
+  scHtmlControls in '..\..\..\Libraries\Almediadev\StyleControls\scHtmlControls.pas',
+  scOpenFileDialog in '..\..\..\Libraries\Almediadev\StyleControls\scOpenFileDialog.pas' {scOpenFileDlgForm},
+  scOpenPictureDialog in '..\..\..\Libraries\Almediadev\StyleControls\scOpenPictureDialog.pas',
+  scSelectPathDialog in '..\..\..\Libraries\Almediadev\StyleControls\scSelectPathDialog.pas' {scSelPathDlgForm},
+  scColorDialog in '..\..\..\Libraries\Almediadev\StyleControls\scColorDialog.pas' {scColorDlgFrm},
+  scFontDialog in '..\..\..\Libraries\Almediadev\StyleControls\scFontDialog.pas' {scFontDlgFrm},
+  scPrinterDialog in '..\..\..\Libraries\Almediadev\StyleControls\scPrinterDialog.pas' {scPrintDlgFrm},
+  scColorControls in '..\..\..\Libraries\Almediadev\StyleControls\scColorControls.pas',
+  scDialogs in '..\..\..\Libraries\Almediadev\StyleControls\scDialogs.pas',
+  scGPControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPControls.pas',
+  scGPUtils in '..\..\..\Libraries\Almediadev\StyleControls\scGPUtils.pas',
+  scGPMeters in '..\..\..\Libraries\Almediadev\StyleControls\scGPMeters.pas',
+  scGPImages in '..\..\..\Libraries\Almediadev\StyleControls\scGPImages.pas',
+  scDlgStrs in '..\..\..\Libraries\Almediadev\StyleControls\scDlgStrs.pas',
+  scGPDBControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPDBControls.pas',
+  scGPExtControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPExtControls.pas',
+  scGPPagers in '..\..\..\Libraries\Almediadev\StyleControls\scGPPagers.pas',
+  scGPVertPagers in '..\..\..\Libraries\Almediadev\StyleControls\scGPVertPagers.pas',
+  scFontViewer in '..\..\..\Libraries\Almediadev\StyleControls\scFontViewer.pas' {FontViewerForm},
+  scGPFontControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPFontControls.pas',
+  scMsgDialog in '..\..\..\Libraries\Almediadev\StyleControls\scMsgDialog.pas' {scMsgDlgForm};
+
+end.

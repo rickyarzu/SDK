@@ -1,0 +1,52 @@
+package vclgtxDocumentStudioCore;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  gtxDocumentStudioCore,
+  vcl,
+  vclimg;
+
+contains
+  vclgtxWinCrypt in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxWinCrypt.pas',
+  vclgtxUtils in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxUtils.pas',
+  vclgtxJwaWinType in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaWinType.pas',
+  vclgtxJwaWinNT in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaWinNT.pas',
+  vclgtxJwaWinDLLNames in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaWinDLLNames.pas',
+  vclgtxJwaWinCrypt in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaWinCrypt.pas',
+  vclgtxJwaWinBase in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaWinBase.pas',
+  vclgtxJwaNtStatus in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxJwaNtStatus.pas',
+  vclgtxEnvelope in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxEnvelope.pas',
+  vclgtxDocumentFramework in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxDocumentFramework.pas',
+  vclgtxDigitalSignature in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxDigitalSignature.pas',
+  vclgtXDE in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtXDE.pas',
+  vclgtxClasses in '..\..\..\Libraries\Gnostice Document Studio\source\Core\vclgtxClasses.pas';
+
+end.
