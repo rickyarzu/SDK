@@ -1,0 +1,72 @@
+﻿package JanuaFMXControls;
+
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua FMX Controls Sidney'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  fmx,
+  bindcomp,
+  JanuaCore,
+  JanuaMVVM,
+  TMSFMXPackPkg,
+  JanuaCoreComponents,
+  dac290,
+  unidac290,
+  pgprovider290,
+  JanuaUnidacComponentsD,
+  JanuaUnidac;
+
+contains
+  Janua.FMX.Forms in '..\..\src\FMX\Janua.FMX.Forms.pas',
+  Janua.FMX.FormControls in '..\..\src\FMX\Janua.FMX.FormControls.pas',
+  Janua.FMX.MapStandardControls in '..\..\src\FMX\Cloud\Janua.FMX.MapStandardControls.pas',
+  Janua.FMX.Geocoding in '..\..\src\FMX\Cloud\Janua.FMX.Geocoding.pas',
+  Janua.FMX.Dialogs in '..\..\src\FMX\Janua.FMX.Dialogs.pas',
+  Janua.FMX.ListViewMenu in '..\..\src\FMX\Janua.FMX.ListViewMenu.pas',
+  Janua.FMX.StandardMaps in '..\..\src\FMX\Janua.FMX.StandardMaps.pas',
+  Janua.FMX.Functions in '..\..\src\FMX\Janua.FMX.Functions.pas',
+  Janua.FMX.Services in '..\..\src\FMX\Janua.FMX.Services.pas',
+  Janua.FMX.Cms in '..\..\src\FMX\Janua.FMX.Cms.pas',
+  Janua.FMX.Cloud in '..\..\src\FMX\Janua.FMX.Cloud.pas',
+  Janua.FMX.Application in '..\..\src\FMX\Janua.FMX.Application.pas',
+  Janua.FMX.Interposers in '..\..\src\FMX\Janua.FMX.Interposers.pas',
+  Janua.FMX.Register in '..\..\src\FMX\Janua.FMX.Register.pas',
+  Janua.FMX.CanvasPainter in '..\..\src\FMX\Janua.FMX.CanvasPainter.pas';
+
+end.

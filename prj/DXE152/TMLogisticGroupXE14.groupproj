@@ -1,0 +1,1378 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AD98D90C-FDE2-4AF5-84B5-7A2DCB20AED8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVirtual.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Core.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.UNI.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.VCL.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\TMLogisticsXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\TMLogisticDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVirtual">
+        <MSBuild Projects="JanuaVirtual.dproj"/>
+    </Target>
+    <Target Name="JanuaVirtual:Clean">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVirtual:Make">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting">
+        <MSBuild Projects="..\..\Testing\prj\JanuaUniMVVMTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaUniMVVMTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniMVVMTesting:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaUniMVVMTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLForms">
+        <MSBuild Projects="JanuaVCLForms.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Clean">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLForms:Make">
+        <MSBuild Projects="JanuaVCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsForms">
+        <MSBuild Projects="JanuaTmsForms.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Clean">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Make">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Core_TMLogistic">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_Core_TMLogistic:Clean">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Core_TMLogistic:Make">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Clean">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Make">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic:Clean">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic:Make">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMLogisticsXE14">
+        <MSBuild Projects="VCL\TMLogisticsXE14.dproj"/>
+    </Target>
+    <Target Name="TMLogisticsXE14:Clean">
+        <MSBuild Projects="VCL\TMLogisticsXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMLogisticsXE14:Make">
+        <MSBuild Projects="VCL\TMLogisticsXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE14">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE14:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMainWinVCLUnitTestingDXE14:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTestVCLWinErrors">
+        <MSBuild Projects="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj"/>
+    </Target>
+    <Target Name="JanuaTestVCLWinErrors:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTestVCLWinErrors:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE14">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE14:Clean">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUITestDXE14:Make">
+        <MSBuild Projects="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaGridsTestingProject">
+        <MSBuild Projects="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj"/>
+    </Target>
+    <Target Name="JanuaGridsTestingProject:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaGridsTestingProject:Make">
+        <MSBuild Projects="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher:Clean">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelectorLauncher:Make">
+        <MSBuild Projects="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelector">
+        <MSBuild Projects="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Make">
+        <MSBuild Projects="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CloudStorageDemo">
+        <MSBuild Projects="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj"/>
+    </Target>
+    <Target Name="CloudStorageDemo:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CloudStorageDemo:Make">
+        <MSBuild Projects="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SFTPClient">
+        <MSBuild Projects="..\..\Samples\VCL\SFTP\SFTPClient.dproj"/>
+    </Target>
+    <Target Name="SFTPClient:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\SFTP\SFTPClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SFTPClient:Make">
+        <MSBuild Projects="..\..\Samples\VCL\SFTP\SFTPClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="hcdemo">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj"/>
+    </Target>
+    <Target Name="hcdemo:Clean">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="hcdemo:Make">
+        <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowin">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj"/>
+    </Target>
+    <Target Name="ipstudiowin:Clean">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowin:Make">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowinclient">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj"/>
+    </Target>
+    <Target Name="ipstudiowinclient:Clean">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowinclient:Make">
+        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dipstudiowin">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj"/>
+    </Target>
+    <Target Name="dipstudiowin:Clean">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dipstudiowin:Make">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMLogisticDesktop">
+        <MSBuild Projects="FMX\TMLogisticDesktop.dproj"/>
+    </Target>
+    <Target Name="TMLogisticDesktop:Clean">
+        <MSBuild Projects="FMX\TMLogisticDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMLogisticDesktop:Make">
+        <MSBuild Projects="FMX\TMLogisticDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;Janua_Core_TMLogistic;Janua_UNI_TMLogistic;Janua_VCL_TMLogistic;TMLogisticsXE14;JanuaMainWinVCLUnitTestingDXE14;JanuaTestVCLWinErrors;JanuaVCLUITestDXE14;JanuaGridsTestingProject;VCLThemeSelectorLauncher;VCLThemeSelector;CloudStorageDemo;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;TMLogisticDesktop"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;Janua_Core_TMLogistic:Clean;Janua_UNI_TMLogistic:Clean;Janua_VCL_TMLogistic:Clean;TMLogisticsXE14:Clean;JanuaMainWinVCLUnitTestingDXE14:Clean;JanuaTestVCLWinErrors:Clean;JanuaVCLUITestDXE14:Clean;JanuaGridsTestingProject:Clean;VCLThemeSelectorLauncher:Clean;VCLThemeSelector:Clean;CloudStorageDemo:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;TMLogisticDesktop:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;Janua_Core_TMLogistic:Make;Janua_UNI_TMLogistic:Make;Janua_VCL_TMLogistic:Make;TMLogisticsXE14:Make;JanuaMainWinVCLUnitTestingDXE14:Make;JanuaTestVCLWinErrors:Make;JanuaVCLUITestDXE14:Make;JanuaGridsTestingProject:Make;VCLThemeSelectorLauncher:Make;VCLThemeSelector:Make;CloudStorageDemo:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;TMLogisticDesktop:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
+        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <ProjectGuid>{3A641B72-3BED-4F5E-9822-B594FF4EBCDC}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\TMLogisticsXE14.dproj">
+            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <ProjectGuid>{ACB2E676-06A0-45F6-877C-4EC927A2A06A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <ProjectGuid>{7FBBC027-1B78-4E6D-BFE0-E9F13B1A01ED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.VCL.TMLogistic.dproj">
+            <ProjectGuid>{4A183893-CC85-4E79-A4DE-040A79DC1784}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.Core.TMLogistic.dproj">
+            <ProjectGuid>{8E0602A2-04FC-4707-B74A-FBB69E6FFCBA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX\TMLogisticDesktop.dproj">
+            <ProjectGuid>{2D8A4132-841E-4476-9C59-7937364D9F07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <ProjectGuid>{AFBFB2A8-7812-41AE-8F41-2755540178DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='TM Libs'">
+        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <ProjectGuid>{3A641B72-3BED-4F5E-9822-B594FF4EBCDC}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\TMLogisticsXE14.dproj">
+            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <ProjectGuid>{ACB2E676-06A0-45F6-877C-4EC927A2A06A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <ProjectGuid>{7FBBC027-1B78-4E6D-BFE0-E9F13B1A01ED}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.VCL.TMLogistic.dproj">
+            <ProjectGuid>{4A183893-CC85-4E79-A4DE-040A79DC1784}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.Core.TMLogistic.dproj">
+            <ProjectGuid>{8E0602A2-04FC-4707-B74A-FBB69E6FFCBA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX\TMLogisticDesktop.dproj">
+            <ProjectGuid>{2D8A4132-841E-4476-9C59-7937364D9F07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <ProjectGuid>{AFBFB2A8-7812-41AE-8F41-2755540178DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='TM Libs FMX'">
+        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <ProjectGuid>{3A641B72-3BED-4F5E-9822-B594FF4EBCDC}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\TMLogisticsXE14.dproj">
+            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <ProjectGuid>{ACB2E676-06A0-45F6-877C-4EC927A2A06A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <ProjectGuid>{7FBBC027-1B78-4E6D-BFE0-E9F13B1A01ED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.VCL.TMLogistic.dproj">
+            <ProjectGuid>{4A183893-CC85-4E79-A4DE-040A79DC1784}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.Core.TMLogistic.dproj">
+            <ProjectGuid>{8E0602A2-04FC-4707-B74A-FBB69E6FFCBA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX\TMLogisticDesktop.dproj">
+            <ProjectGuid>{2D8A4132-841E-4476-9C59-7937364D9F07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <ProjectGuid>{AFBFB2A8-7812-41AE-8F41-2755540178DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Janua Lib W32'">
+        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <ProjectGuid>{3A641B72-3BED-4F5E-9822-B594FF4EBCDC}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\TMLogisticsXE14.dproj">
+            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <ProjectGuid>{ACB2E676-06A0-45F6-877C-4EC927A2A06A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <ProjectGuid>{7FBBC027-1B78-4E6D-BFE0-E9F13B1A01ED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.VCL.TMLogistic.dproj">
+            <ProjectGuid>{4A183893-CC85-4E79-A4DE-040A79DC1784}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.Core.TMLogistic.dproj">
+            <ProjectGuid>{8E0602A2-04FC-4707-B74A-FBB69E6FFCBA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX\TMLogisticDesktop.dproj">
+            <ProjectGuid>{2D8A4132-841E-4476-9C59-7937364D9F07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <ProjectGuid>{AFBFB2A8-7812-41AE-8F41-2755540178DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='TM Apps'">
+        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+            <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\VCL Styles\VCLThemeSelector.dproj">
+            <ProjectGuid>{3A641B72-3BED-4F5E-9822-B594FF4EBCDC}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaUniMVVMTesting.dproj">
+            <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\TMLogisticsXE14.dproj">
+            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaVCLUITestDXE14.dproj">
+            <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLForms.dproj">
+            <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+            <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\GridsTesting\JanuaGridsTestingProject.dproj">
+            <ProjectGuid>{ACB2E676-06A0-45F6-877C-4EC927A2A06A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
+            <ProjectGuid>{1184034B-9F2E-40B3-BB5A-962BBDC2EE8F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+            <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\CloudDrive\CloudStorageDemo.dproj">
+            <ProjectGuid>{7FBBC027-1B78-4E6D-BFE0-E9F13B1A01ED}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.VCL.TMLogistic.dproj">
+            <ProjectGuid>{4A183893-CC85-4E79-A4DE-040A79DC1784}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.Core.TMLogistic.dproj">
+            <ProjectGuid>{8E0602A2-04FC-4707-B74A-FBB69E6FFCBA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="FMX\TMLogisticDesktop.dproj">
+            <ProjectGuid>{2D8A4132-841E-4476-9C59-7937364D9F07}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaMainWinVCLUnitTestingDXE14.dproj">
+            <ProjectGuid>{909303FC-72F5-4135-9B8E-B4092359E831}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVirtual.dproj">
+            <ProjectGuid>{6D005BF8-FD11-43DC-AF6A-129AB2747156}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Testing\prj\JanuaTestVCLWinErrors.dproj">
+            <ProjectGuid>{AFBFB2A8-7812-41AE-8F41-2755540178DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\VCL\SFTP\SFTPClient.dproj">
+            <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsForms.dproj">
+            <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\components\pkg104\VCLThemeSelectorLauncher.dproj">
+            <ProjectGuid>{3708C5EA-ECCC-47E3-981F-F876FB513815}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FBA15554-3723-4052-A983-65D37047C065}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\DUnitX\SimpleTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DUnitX_IDE_Expert_D11Alexandria">
+        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj"/>
+    </Target>
+    <Target Name="DUnitX_IDE_Expert_D11Alexandria:Clean">
+        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DUnitX_IDE_Expert_D11Alexandria:Make">
+        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleTest">
+        <MSBuild Projects="..\..\Samples\DUnitX\SimpleTest.dproj"/>
+    </Target>
+    <Target Name="SimpleTest:Clean">
+        <MSBuild Projects="..\..\Samples\DUnitX\SimpleTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleTest:Make">
+        <MSBuild Projects="..\..\Samples\DUnitX\SimpleTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DUnitX_IDE_Expert_D11Alexandria;SimpleTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DUnitX_IDE_Expert_D11Alexandria:Clean;SimpleTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DUnitX_IDE_Expert_D11Alexandria:Make;SimpleTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,96 @@
+﻿package JanuaMVVM;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Model View View Model'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  SwagDoc,
+  JanuaCore,
+  rtl;
+
+contains
+  Janua.Logistic.AWB.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Logistic.AWB.ViewModel.Intf.pas',
+  Janua.ViewModels.Application in '..\..\src\januacore\ViewModels\Janua.ViewModels.Application.pas',
+  Janua.Anagraph.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Anagraph.Model.Impl.pas',
+  Janua.Anagraph.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Anagraph.ViewModel.Impl.pas',
+  Janua.ViewModels.Templates in '..\..\src\januacore\ViewModels\Janua.ViewModels.Templates.pas',
+  Janua.Test.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Test.ViewModel.Intf.pas',
+  Janua.Test.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Test.ViewModel.Impl.pas',
+  Janua.Test.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Test.Model.Impl.pas',
+  Janua.Documents.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Documents.ViewModel.Intf.pas',
+  Janua.Documents.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Documents.Model.Impl.pas',
+  Janua.Documents.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Documents.ViewModel.Impl.pas',
+  Janua.ViewModels.Settings.Intf in '..\..\src\januacore\ViewModels\Janua.ViewModels.Settings.Intf.pas',
+  Janua.ViewModels.Settings.Impl in '..\..\src\januacore\ViewModels\Janua.ViewModels.Settings.Impl.pas',
+  Janua.Documents.WarehouseReceipts.ViewModel.impl in '..\..\src\januacore\ViewModels\Janua.Documents.WarehouseReceipts.ViewModel.impl.pas',
+  Janua.Search.ViewModels.Intf in '..\..\src\januacore\ViewModels\Janua.Search.ViewModels.Intf.pas',
+  Janua.Search.ViewModels.Impl in '..\..\src\januacore\ViewModels\Janua.Search.ViewModels.Impl.pas',
+  Janua.Documents.WarehouseReceipts.ViewModel.intf in '..\..\src\januacore\ViewModels\Janua.Documents.WarehouseReceipts.ViewModel.intf.pas',
+  Janua.Search.ViewModels.Engines.Intf in '..\..\src\januacore\viewmodels\Janua.Search.ViewModels.Engines.Intf.pas',
+  Janua.Search.ViewModels.Engines.Impl in '..\..\src\januacore\ViewModels\Janua.Search.ViewModels.Engines.Impl.pas',
+  Janua.ViewModels.Framework in '..\..\src\januacore\ViewModels\Janua.ViewModels.Framework.pas',
+  Janua.Items.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Items.ViewModel.Intf.pas',
+  Janua.Items.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Items.Model.Impl.pas',
+  Janua.Logistic.Shipments.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Logistic.Shipments.ViewModel.Intf.pas',
+  Janua.Logistic.AWB.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Logistic.AWB.Model.Impl.pas',
+  Janua.Cms.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Cms.ViewModel.Intf.pas',
+  Janua.Models.Templates in '..\..\src\januacore\ViewModels\Janua.Models.Templates.pas',
+  Janua.System.Model.Impl in '..\..\src\januacore\ViewModels\Janua.System.Model.Impl.pas',
+  Janua.System.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.System.ViewModel.Impl.pas',
+  Janua.Planner.ViewModels.Intf in '..\..\src\januacore\ViewModels\Janua.Planner.ViewModels.Intf.pas',
+  Janua.Cloud.ViewModels.intf in '..\..\src\januacore\ViewModels\Janua.Cloud.ViewModels.intf.pas',
+  Janua.Documents.WarehouseReceipts.Model.impl in '..\..\src\januacore\ViewModels\Janua.Documents.WarehouseReceipts.Model.impl.pas',
+  Janua.Logistic.AWB.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Logistic.AWB.ViewModel.Impl.pas',
+  Janua.Logistic.Shipments.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Logistic.Shipments.Model.Impl.pas',
+  Janua.Workflows.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Workflows.ViewModel.Intf.pas',
+  Janua.Workflows.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Workflows.Model.Impl.pas',
+  Janua.Logistic.Shipments.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Logistic.Shipments.ViewModel.Impl.pas',
+  Janua.Items.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Items.ViewModel.Impl.pas',
+  Janua.Documents.Invoices.ViewModel.intf in '..\..\src\januacore\ViewModels\Janua.Documents.Invoices.ViewModel.intf.pas',
+  Janua.Documents.Invoices.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Documents.Invoices.ViewModel.Impl.pas',
+  Janua.Documents.Invoices.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Documents.Invoices.Model.Impl.pas',
+  Janua.Logistic.Documents.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Logistic.Documents.ViewModel.Impl.pas',
+  Janua.Mock.Reports in '..\..\src\januacore\Mock\Janua.Mock.Reports.pas',
+  Janua.ViewModels.Dynamic.Intf in '..\..\src\januacore\ViewModels\Janua.ViewModels.Dynamic.Intf.pas',
+  Janua.Analytics.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Analytics.ViewModel.Intf.pas',
+  Janua.ViewModels.Dynamic.Impl in '..\..\src\januacore\ViewModels\Janua.ViewModels.Dynamic.Impl.pas',
+  Janua.Analytics.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Analytics.ViewModel.Impl.pas',
+  Janua.Core.Anagraph.Cache in '..\..\src\januacore\Janua.Core.Anagraph.Cache.pas',
+  Janua.Core.CustomApplication in '..\..\src\januacore\Janua.Core.CustomApplication.pas',
+  Janua.Mock.Framework in '..\..\src\januacore\Mock\Janua.Mock.Framework.pas',
+  Janua.Framework.OrmGenerator.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Framework.OrmGenerator.ViewModel.Intf.pas',
+  Janua.CarService.Anagraph.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Intf.pas',
+  Janua.CarService.Anagraph.Model.Impl in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.Model.Impl.pas',
+  Janua.CarService.Anagraph.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.CarService.Anagraph.ViewModel.Impl.pas',
+  Janua.CarService.Booking.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.CarService.Booking.ViewModel.Intf.pas',
+  Janua.Carservice.Driver.ViewModel.Intf in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Intf.pas',
+  Janua.Carservice.Driver.ViewModel.Impl in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.ViewModel.Impl.pas',
+  Janua.Carservice.Driver.Model.Impl in '..\..\src\januacore\ViewModels\Janua.Carservice.Driver.Model.Impl.pas';
+
+end.
