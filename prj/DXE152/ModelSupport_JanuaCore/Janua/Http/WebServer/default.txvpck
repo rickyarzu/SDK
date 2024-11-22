@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="d7h7rw4tf3p_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="ro3qi8diizn_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer" role="Client" />
+    <participant referencedUin="design:view:::kez2crmok0p_v" role="Supplier" />
+  </link>
+</nodeSet>

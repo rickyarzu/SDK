@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="oy0esfu962j_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Application">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Application.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Application.TJanuaViewModelApplication" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Framework">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Framework.TJanuaCoreViewModelFramework" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Framework.@unitclass" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Templates">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelDetailTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelBaseTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TRecordSetViewModelTemplateClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelDBTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TViewModelClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaRecordSetViewModelTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelSettingsTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaViewModelSettingTemplate" />
+      <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.ViewModels.Templates.TJanuaRecordViewModelTemplate" />
+    </reference>
+    <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Settings">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Settings.Intf" />
+      <reference referencedUin="uml:package:JanuaMVVM:src:Janua.ViewModels.Settings.Impl" />
+    </reference>
+  </view>
+</nodeSet>

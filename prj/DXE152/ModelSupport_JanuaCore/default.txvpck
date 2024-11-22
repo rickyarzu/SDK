@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="e1knd4j6vzj_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::rcx12lk93sl_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.TdmJanuaLegacySystem" />
+    </reference>
+    <reference referencedUin="design:view:::1e2f34ianbt_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.TJanuaRigaDettaglio" />
+    </reference>
+    <reference referencedUin="design:view:::nyc6aidnyeq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.TdmWpJson" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0i8kyscv1pm_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.TJanuaSimulationRow" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0n5bfsqf60q_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::ppl35u0ucfo_v" />
+      <reference referencedUin="design:view:::3lhuind5kwj_v" />
+      <reference referencedUin="design:view:::pg0mf9bb19r_v" />
+      <reference referencedUin="design:view:::4uyml4pk9vm_v" />
+      <reference referencedUin="design:view:::09f103si9gp_v" />
+      <reference referencedUin="design:view:::yllz4g7wccg_v" />
+      <reference referencedUin="design:view:::jr0ma4b9z8q_v" />
+      <reference referencedUin="design:view:::yrg9goqdeuq_v" />
+      <reference referencedUin="design:view:::68glwipx7th_v" />
+      <reference referencedUin="design:view:::1hfaxl9x9f_v" />
+      <reference referencedUin="design:view:::3tt4b8as0iq_v" />
+      <reference referencedUin="design:view:::hlv8ymw2g5q_v" />
+      <reference referencedUin="design:view:::ow8h7ivfbmi_v" />
+    </reference>
+    <reference referencedUin="design:view:::dq5m54e810g_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.TdmJanuaCoreRSS" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::p8xytkwkxim_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.TdmJanuaCoreDBConnections" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::4865far5i6t_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.TdmMainApplication" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::dq1z859wggs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::7ccm77nf14g_v" />
+    </reference>
+    <reference referencedUin="design:view:::hmkdc0z4s1mkaiq5h_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="uml:package:JanuaCore:src:JOrm.WorkFlow" />
+      <reference referencedUin="design:view:::6l8et9wr2cg_v" />
+      <reference referencedUin="design:view:::ohosuvwvds_v" />
+      <reference referencedUin="design:view:::68glwipx7th_v" />
+      <reference referencedUin="design:view:::ppl35u0ucfo_v" />
+      <reference referencedUin="design:view:::x2ax8ulzzwk_v" />
+      <reference referencedUin="design:view:::pg0mf9bb19r_v" />
+      <reference referencedUin="design:view:::2x5scif4q4mh4zwtm_v" />
+      <reference referencedUin="design:view:::09f103si9gp_v" />
+      <reference referencedUin="design:view:::hlv8ymw2g5q_v" />
+      <reference referencedUin="design:view:::3tt4b8as0iq_v" />
+      <reference referencedUin="design:view:::jr0ma4b9z8q_v" />
+      <reference referencedUin="design:view:::3lhuind5kwj_v" />
+      <reference referencedUin="design:view:::yllz4g7wccg_v" />
+      <reference referencedUin="design:view:::yrg9goqdeuq_v" />
+    </reference>
+    <reference referencedUin="design:view:::ux7j04w2pcf_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonStringWriter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonCodeWriter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonWriterGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonBuilderGenerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonStringReader" />
+    </reference>
+    <reference referencedUin="design:view:::n2ul2y2fuaj_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::j4phn70drjj_v" />
+      <reference referencedUin="design:view:::ihnx7p00dje_v" />
+      <reference referencedUin="design:view:::7332rop7fep_v" />
+      <reference referencedUin="design:view:::d46x7sn5g7l_v" />
+      <reference referencedUin="design:view:::2qwygqt2i8f_v" />
+      <reference referencedUin="design:view:::45b0mrwb90j_v" />
+      <reference referencedUin="design:view:::63t7aq4ce6f_v" />
+      <reference referencedUin="design:view:::rsru26hf2ls_v" />
+      <reference referencedUin="design:view:::5gbc2u48owm5ai5mh_v" />
+      <reference referencedUin="design:view:::0ucpkikg2en_v" />
+      <reference referencedUin="design:view:::03g9mggjx2q_v" />
+      <reference referencedUin="design:view:::192nmxucdhl_v" />
+      <reference referencedUin="design:view:::zlitbhalbpi_v" />
+      <reference referencedUin="design:view:::86qe7kjlunh_v" />
+      <reference referencedUin="design:view:::o9u7yj9pe4s_v" />
+      <reference referencedUin="design:view:::yleniea7x1q_v" />
+      <reference referencedUin="design:view:::70ydh2l0rak_v" />
+      <reference referencedUin="design:view:::ziy4ghg3tfo_v" />
+      <reference referencedUin="design:view:::vv5nsi1hhig_v" />
+      <reference referencedUin="design:view:::mrlo7jrzvrl_v" />
+      <reference referencedUin="design:view:::qjl9er0mg2l_v" />
+      <reference referencedUin="design:view:::v1cbyxpiz5p_v" />
+      <reference referencedUin="design:view:::fwim9o28wol_v" />
+      <reference referencedUin="design:view:::e12caqkm57j_v" />
+      <reference referencedUin="design:view:::wsolq407z4s_v" />
+      <reference referencedUin="design:view:::fful9145szf_v" />
+      <reference referencedUin="design:view:::47j7ed7ldxt_v" />
+      <reference referencedUin="design:view:::nr7af7f9cyq0acm5s_v" />
+      <reference referencedUin="design:view:::ix6s3rjdggs_v" />
+      <reference referencedUin="design:view:::n2puv93o60t_v" />
+      <reference referencedUin="design:view:::h7gcto5i3an_v" />
+      <reference referencedUin="design:view:::xmlilrankk_v" />
+      <reference referencedUin="design:view:::hq3quvs44cn0zt45q_v" />
+      <reference referencedUin="design:view:::0lvcamsakk_v" />
+      <reference referencedUin="design:view:::1xseawz85ms_v" />
+      <reference referencedUin="design:view:::z04947t56wh_v" />
+      <reference referencedUin="design:view:::ztrrk02ydls_v" />
+      <reference referencedUin="design:view:::x1dosb8t7uh_v" />
+    </reference>
+    <reference referencedUin="design:view:::a647inv98sm_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.TJanuaServiceTrattativa" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0u2coqwdebh2c77wo_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::z3gdlksojsq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::niy2urqihpocxa14h_v" />
+      <reference referencedUin="design:view:::ut82c9huhqoc16l6p_v" />
+      <reference referencedUin="design:view:::wxr1ddiwsqotsmmqs_v" />
+    </reference>
+    <reference referencedUin="design:view:::rpros1my85j_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::14dl1anslfc9eunxi_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::davmjc867g4guex8g_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>
