@@ -55,7 +55,9 @@ uses
   udlgVCLPlannerAnagraph in '..\..\..\src\VCL\Planner\udlgVCLPlannerAnagraph.pas' {dlgVCLPlannerAnagraph},
   Janua.VCL.Planner.dlgCustomEvent in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dlgCustomEvent.pas' {dlgVCLCustomPlannerEvent},
   udmWinMainApplication in '..\..\..\src\Win\udmWinMainApplication.pas' {dmWinMainApplication: TDataModule},
-  Janua.VCL.Planner.frameCustomGoogleCalendar in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frameCustomGoogleCalendar.pas' {frameVCLCustomGoogleCalendar: TFrame};
+  Janua.VCL.Planner.frameCustomGoogleCalendar in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.frameCustomGoogleCalendar.pas' {frameVCLCustomGoogleCalendar: TFrame},
+  udmPgPlannerStorage in '..\..\..\src\januaunidac\datamodules\udmPgPlannerStorage.pas' {dmPgPlannerStorage: TDataModule},
+  Janua.VCL.Planner.dmController in '..\..\..\src\VCL\Planner\Janua.VCL.Planner.dmController.pas' {dmVCLPlannerController: TDataModule};
 
 {$R *.res}
 {$IFNDEF EurekaLog}
@@ -113,6 +115,8 @@ begin
   begin
     Application.CreateForm(TfrmAnagraphPlannerMain, frmAnagraphPlannerMain);
   Application.CreateForm(TdmWinMainApplication, dmWinMainApplication);
+  Application.CreateForm(TdmPgPlannerStorage, dmPgPlannerStorage);
+  Application.CreateForm(TdmVCLPlannerController, dmVCLPlannerController);
   Application.Run;
   end
   else

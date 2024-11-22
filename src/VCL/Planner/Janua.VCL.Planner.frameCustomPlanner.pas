@@ -55,7 +55,7 @@ type
     gridPopup: TPopupMenu;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
-    procedure DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
+    DBDaySource1: TDBDaySource;
     procedure DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu; Item: TPlannerItem);
     procedure DBPlanner1PlannerNext(Sender: TObject);
     procedure DBPlanner1PlannerPrev(Sender: TObject);
@@ -81,17 +81,8 @@ implementation
 
 {$R *.dfm}
 
-uses Spring, Janua.Application.Framework, Janua.ViewModels.Application;
-
-procedure TframeVCLAnagraphPlanner.DBPlanner1ItemDelete(Sender: TObject; Item: TPlannerItem);
-begin
-  {
-    the Planner.FreeItem call removes the item from the planner and deletes
-    its entry from the database
-  }
-  if Assigned(Controller) and Controller.DeleteItem(Item) then
-    DBPlanner1.FreeItem(Item);
-end;
+uses Spring, Janua.Application.Framework, Janua.ViewModels.Application, udmPgPlannerStorage,
+  Janua.VCL.Planner.dmController;
 
 procedure TframeVCLAnagraphPlanner.DBPlanner1ItemPopupPrepare(Sender: TObject; PopupMenu: TPopupMenu;
   Item: TPlannerItem);
@@ -156,7 +147,7 @@ begin
   if Assigned(FController) then
   begin
     DBPlanner1.OnItemImageClick := FController.PlannerItemImageClick;
-    DBPlanner1.OnItemInsert := FController.PlannerPlannerItemInsert;
+    { DBPlanner1.OnItemInsert := FController.PlannerPlannerItemInsert; }
     DBPlanner1.OnItemDblClick := FController.PlannerItemDblClick;
   end;
 end;
