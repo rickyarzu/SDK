@@ -2,8 +2,11 @@ unit Janua.Cloud.Types;
 
 interface
 
-uses Spring.Collections, System.SysUtils, System.StrUtils, System.Types, System.NetEncoding,
-  Janua.Core.Types, Data.DB, System.JSON, Janua.Core.Http.Intf;
+uses System.SysUtils, System.StrUtils, System.Types, System.NetEncoding, System.Classes, System.JSON,
+  // Extras
+  Spring.Collections, Data.DB,
+  // Januaproject
+  Janua.Core.Types, Janua.Core.Http.Intf;
 
 type
   TSendMessageEvent = procedure(const aMessage, aJson: string) of object;
@@ -387,8 +390,10 @@ type
     function SaveToDataset(const aDataset: TDataSet): Boolean;
   end;
 
+  /// <summary> When Twilio Sends a Status Post Record it's coverted into a Record and stored here </summary>
   TTWilioStatus = record
-    ChannelPrefix: string; // whatsapp
+    /// <summary> can be either whatsapp or sms message channel but even email with sendgrid </summary>
+    ChannelPrefix: string; //
     ApiVersion: string; // 2010-04-01
     MessageStatus: string; // sent
     SmsSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
@@ -396,10 +401,19 @@ type
     ChannelInstallSid: string; // XE59539e1d21b0c112b13009b146d827f7
     MsgTo: string; // whatsapp:+393409111351
     MsgFrom: string; // whatsapp:+393513535778
+    /// <summary> Message Unique identifier </summary>
     MessageSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
     StructuredMessage: string; // false
-    AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
+    // <summary> Twilio Account unique id can be used to address received messages </summary>
+    AccountSid: string; //
     ChannelToAddress: string; // +39340911XXXX
+    // Twilio Error: [This message send failed because it violates Channel provider's policy. Please see Channel specific error message for more information.] -
+    ChannelStatusMessage: string;
+    // Whatsapp Error: [msg=Parameter of type text is missing text value, code=131008]
+    ChannelStatusCode: string; // 131008
+    ErrorCode: string; // 63013
+    procedure SetFromString(const aString: string);
+    procedure SetFromStrings(const aList: TStringList);
   end;
 
   TTwilioWebHook = record
@@ -418,6 +432,8 @@ type
     AccountSid: string; // AC221a150df22723daef8d097a7f76cfcf
     From: string; // whatsapp:+393409111351
     ApiVersion: string; // 2010-04-01
+    procedure SetFromString(const aString: string);
+    procedure SetFromStrings(const aList: TStringList);
   end;
 
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
@@ -1220,6 +1236,70 @@ begin
     Clear
   else
     Self := TJanuaJson.DeserializeSimple<TJanuaRecEvent>(Value);
+end;
+
+{ TTWilioStatus }
+
+procedure TTWilioStatus.SetFromString(const aString: string);
+begin
+  var
+  aList := TStringList.Create;
+  try
+    aList.Text := aString;
+    SetFromStrings(aList);
+  finally
+    aList.Free;
+  end;
+end;
+
+procedure TTWilioStatus.SetFromStrings(const aList: TStringList);
+begin
+  ChannelStatusMessage := aList.Values['ChannelStatusMessage'];
+  ChannelStatusCode := aList.Values['ChannelStatusCode'];
+  ErrorCode := aList.Values['ErrorCode'];
+  ChannelPrefix := aList.Values['ChannelPrefix'];
+  ApiVersion := aList.Values['ApiVersion'];
+  MessageStatus := aList.Values['MessageStatus'];
+  SmsSid := aList.Values['SmsSid'];
+  ChannelInstallSid := aList.Values['ChannelInstallSid'];
+  MsgTo := aList.Values['To'];
+  MsgFrom := aList.Values['From'];
+  MessageSid := aList.Values['MessageSid'];
+  StructuredMessage := aList.Values['StructuredMessage'];
+  AccountSid := aList.Values['AccountSid'];
+  ChannelToAddress := aList.Values['ChannelToAddress'];
+end;
+
+{ TTwilioWebHook }
+
+procedure TTwilioWebHook.SetFromString(const aString: string);
+begin
+  var
+  aList := TStringList.Create;
+  try
+    aList.Text := aString;
+    SetFromStrings(aList);
+  finally
+    aList.Free;
+  end;
+end;
+
+procedure TTwilioWebHook.SetFromStrings(const aList: TStringList);
+begin
+  SmsMessageSid := aList.Values['SmsMessageSid'];
+  NumMedia := aList.Values['NumMedia'];
+  ProfileName := aList.Values['ProfileName'];
+  MessageType := aList.Values['MessageType'];
+  SmsSid := aList.Values['SmsSid'];
+  WaId := aList.Values['WaId'];
+  SmsStatus := aList.Values['SmsStatus'];
+  Body := aList.Values['Body'];
+  MsgTo := aList.Values['MsgTo'];
+  NumSegments := aList.Values['NumSegments'];
+  ReferralNumMedia := aList.Values['ReferralNumMedia'];
+  MessageSid := aList.Values['MessageSid'];
+  AccountSid := aList.Values['AccountSid'];
+  ApiVersion := aList.Values['ApiVersion'];
 end;
 
 initialization

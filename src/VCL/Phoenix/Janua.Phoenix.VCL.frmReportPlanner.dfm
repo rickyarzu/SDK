@@ -13,6 +13,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Menu = mmuPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
@@ -458,9 +459,9 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         ExplicitWidth = 841
         ExplicitHeight = 815
         inherited lbCap: TLabel
-          Left = 592
+          Left = 582
           Top = 60
-          ExplicitLeft = 592
+          ExplicitLeft = 582
           ExplicitTop = 60
         end
         inherited lbData: TLabel
@@ -474,10 +475,10 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 60
         end
         inherited lkpCAP: TJvDBLookupCombo
-          Left = 592
+          Left = 580
           Top = 75
           Width = 72
-          ExplicitLeft = 592
+          ExplicitLeft = 580
           ExplicitTop = 75
           ExplicitWidth = 72
         end
@@ -651,47 +652,64 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitTop = 770
         end
         inherited btnPrevDay: TButton
-          Left = 531
+          Left = 530
           Top = 75
-          ExplicitLeft = 531
+          Width = 23
+          ExplicitLeft = 530
           ExplicitTop = 75
+          ExplicitWidth = 23
         end
         inherited btnNextDay: TButton
-          Left = 555
+          Left = 552
           Top = 75
-          Width = 34
-          ExplicitLeft = 555
+          Width = 25
+          ExplicitLeft = 552
           ExplicitTop = 75
-          ExplicitWidth = 34
+          ExplicitWidth = 25
         end
         inherited cbkFilterReport: TCheckBox
           Width = 98
           ExplicitWidth = 98
         end
         inherited Button1: TButton
-          Left = 760
+          Left = 750
           Top = 75
-          ExplicitLeft = 760
+          ExplicitLeft = 750
           ExplicitTop = 75
         end
         inherited btnWhatsApp: TButton
-          Left = 664
+          Left = 652
           Top = 75
-          ExplicitLeft = 664
+          ExplicitLeft = 652
           ExplicitTop = 75
         end
         inherited btnSincro: TButton
+          Left = 750
+          Top = 44
           OnClick = frameVCLPhoenixPlannerEventbtnSincroClick
+          ExplicitLeft = 750
+          ExplicitTop = 44
         end
         inherited Button2: TButton
-          Left = 760
-          Top = -4
-          ExplicitLeft = 760
-          ExplicitTop = -4
+          Left = 239
+          Width = 96
+          ExplicitLeft = 239
+          ExplicitWidth = 96
+        end
+        inherited btnWhatsAppMessages: TAdvBadgeButton
+          Left = 750
+          Top = 13
+          ExplicitLeft = 750
+          ExplicitTop = 13
         end
         inherited dsCAP: TUniDataSource
           Left = 184
           Top = 344
+        end
+        inherited WATimer: TTimer
+          Interval = 60000
+          OnTimer = frameVCLPhoenixPlannerEventWATimerTimer
+          Left = 648
         end
       end
       object pnlWebBrowser: TPanel
@@ -730,6 +748,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited grpMeeting: TGroupBox
           Top = 704
           ExplicitTop = 704
+        end
+        inherited Panel2: TPanel
+          inherited ckbCalendarList: TCheckListBox
+            ItemHeight = 16
+          end
         end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
@@ -796,6 +819,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
+            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end

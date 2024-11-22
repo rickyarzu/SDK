@@ -1,56 +1,24 @@
-object WebModule1: TWebModule1
-  OnCreate = WebModuleCreate
-  Actions = <
-    item
-      Default = True
-      MethodType = mtGet
-      Name = 'DefaultHandler'
-      PathInfo = '/'
-      OnAction = WebModule1DefaultHandlerAction
-    end
-    item
-      MethodType = mtPost
-      Name = 'WactWebhook'
-      PathInfo = '/webhook'
-      OnAction = WebModule1WactWebhookAction
-    end
-    item
-      MethodType = mtPost
-      Name = 'WactFallback'
-      PathInfo = '/fallback'
-      OnAction = WebModule1WactFallbackAction
-    end
-    item
-      MethodType = mtPost
-      Name = 'WactStatusCallback'
-      PathInfo = '/status_callback'
-      OnAction = WebModule1WactStatusCallbackAction
-    end>
-  Height = 337
-  Width = 444
-  object PostgreSQLUniProvider1: TPostgreSQLUniProvider
-    Left = 264
-    Top = 80
-  end
-  object JanuaUniConnection1: TJanuaUniConnection
-    ProviderName = 'PostgreSQL'
+inherited dmPgStorage1: TdmPgStorage1
+  Height = 281
+  Width = 429
+  inherited PgErgoConnection: TJanuaUniConnection
     Port = 5432
-    Database = 'ergomercator'
-    SpecificOptions.Strings = (
-      'PostgreSQL.UseUnicode=True')
-    Options.DisconnectedMode = True
-    Options.LocalFailover = True
-    Pooling = True
-    Username = 'ergo'
     Server = 'pg.januaservers.com'
-    LoginPrompt = False
-    SchemaID = 36
-    SchemaParamKey = 'system.db_schema_id'
-    SchemaSQL = 'SET SESSION "%s" = %s; '
-    SchemaParams = <>
-    Left = 104
-    Top = 48
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
+  end
+  object FbPhoenixConnection: TUniConnection
+    ProviderName = 'interBase'
+    Database = 'C:\PhoenixDB\PHOENIX.FDB'
+    Username = 'SYSDBA'
+    Server = '192.168.1.200'
+    LoginPrompt = False
+    Left = 176
+    Top = 48
+    EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
+  end
+  object InterBaseUniProvider1: TInterBaseUniProvider
+    Left = 168
+    Top = 112
   end
   object qryTwilioLog: TUniQuery
     SQLInsert.Strings = (
@@ -95,12 +63,12 @@ object WebModule1: TWebModule1
       'SELECT * FROM cloud.twilio_log'
       ''
       ') t')
-    Connection = JanuaUniConnection1
+    Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT * FROM cloud.twilio_log'
       'ORDER BY id ASC ')
-    Left = 136
-    Top = 144
+    Left = 72
+    Top = 160
     object qryTwilioLogid: TIntegerField
       FieldName = 'id'
     end

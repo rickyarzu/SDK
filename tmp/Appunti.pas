@@ -1,11 +1,28 @@
-Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl
-La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. 
-Cordiali Saluti
+      Async.Run<Boolean>(
+        function: Boolean
+        begin
+          // This is the "background" anonymous method. Runs in the
+          // background thread, and its result is passed
+          // to the "success" callback.
+          // In this case the result is a String.
+          Result := True;
+          System.TMonitor.Enter(JMonitor);
+          try
 
-Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336
+          finally
+            System.TMonitor.Exit(JMonitor);
+          end;
+        end,
+        procedure(const aValue: Boolean)
+        begin
+          // This is the "success" callback. Runs in the UI thread and
+          // gets the result of the "background" anonymous method.
 
-Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl
-La contatto per comunicarLe che nella giornata del 22/10/2024 il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in . Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. 
-Cordiali Saluti
-
-Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336
+        end,
+        procedure(const Ex: exception)
+        begin
+          // This is the "error" callback.
+          // Runs in the UI thread and is called only if the
+          // "background" anonymous method raises an exception.
+          JShowError(Ex.Message);
+        end);

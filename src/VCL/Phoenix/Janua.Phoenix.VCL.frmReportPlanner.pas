@@ -94,6 +94,8 @@ type
     procedure Timer2Timer(Sender: TObject);
     procedure AdvWebBrowser1GetCookies(Sender: TObject; ACookies: array of TAdvWebBrowserCookie);
     procedure frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
+    procedure frameVCLPhoenixPlannerEventWATimerTimer(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
@@ -156,7 +158,7 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.AfterPlannerEvent(Sender: TObject);
 begin
   var
-  lUrl :=  EdgeBrowser1.LocationURL;
+  lUrl := EdgeBrowser1.LocationURL;
   EdgeBrowser1.Navigate(lUrl);
 end;
 
@@ -264,6 +266,11 @@ begin
   Fields.FieldByName('IMAGE').AsInteger := Item.ImageID;
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  frameVCLPhoenixPlannerEvent.WATimer.Enabled := False;
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
   FdmVCLPhoenixIBPlanner := dmVCLPhoenixPlannerController { .Create(self) };
@@ -281,6 +288,7 @@ begin
   frameTMSPhoenixPlannerTecnici.DBPlanner1.Refresh;
   // frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
   Timer1.Enabled := True; // not JanuaVCLWebView1.Active;
+  frameVCLPhoenixPlannerEvent.WATimer.Enabled := True;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
@@ -372,6 +380,12 @@ end;
 procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
 begin
   frameVCLPhoenixPlannerEvent.btnSincroClick(Sender);
+
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventWATimerTimer(Sender: TObject);
+begin
+  frameVCLPhoenixPlannerEvent.WATimerTimer(Sender);
 
 end;
 

@@ -146,6 +146,7 @@ type
     sqlUpdatePronti: TFDCommand;
     sqlUpdateRitirati: TFDCommand;
     spSetStatoStatini: TFDStoredProc;
+    sqlDataStatini: TFDCommand;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -418,10 +419,10 @@ end;
 
 procedure TdmFDACPhoenixLab.Refresh;
 begin
-  self.qryMasterStatini.Close;
-  self.qryMasterStatini.Open;
-  self.qryDetailLabEstintori.Close;
-  self.qryDetailLabEstintori.Open;
+  qryMasterStatini.Close;
+  qryMasterStatini.Open;
+  qryDetailLabEstintori.Close;
+  qryDetailLabEstintori.Open;
 
 end;
 
@@ -488,9 +489,9 @@ var
   // TRESTClient = class( IRESTClient)
   lClient: IJanuaRESTClient;
 begin
-  TJanuaApplication.RestClientConf.Username := self.FLabUserName;
-  TJanuaApplication.RestClientConf.Password := self.FLabPassword;
-  TJanuaApplication.RestClientConf.Server := self.FLabUrl;
+  TJanuaApplication.RestClientConf.Username := FLabUserName;
+  TJanuaApplication.RestClientConf.Password := FLabPassword;
+  TJanuaApplication.RestClientConf.Server := FLabUrl;
   lClient := TJanuaRESTClient.Create;
   // https://www.assoantincendio.com/PhoenixMobile/PhxStatoLavorazioni.php?PhxAccount=***!Admin&PhxPassword=***!PhoenixFly
   lClient.PasswordParam := 'PhxPassword';
@@ -651,6 +652,8 @@ begin
   // FDTransaction1.StartTransaction;
   sqlUpdatePronti.Execute;
   sqlUpdateRitirati.Execute;
+  sqlDataStatini.Execute;
+  spSetStatoStatini.ExecProc;
   // self.FDTransaction1.Commit;
 end;
 

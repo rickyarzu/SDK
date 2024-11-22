@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 669
+  Height = 757
   Width = 1047
   inherited SVGIconImageList48: TSVGIconImageList
     SVGIconItems = <
@@ -12577,6 +12577,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
+    Options.DisconnectedMode = True
+    Pooling = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   inherited dsCalendars: TUniDataSource
@@ -19523,7 +19525,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Filtered = True
     IndexFieldNames = 'DALLE_ORE DESC'
     Left = 808
-    Top = 280
+    Top = 288
     ParamData = <
       item
         DataType = ftDate
@@ -19832,12 +19834,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object dsTecniciCalendar: TUniDataSource
     DataSet = qryTecniciCalendar
     Left = 808
-    Top = 144
+    Top = 152
   end
   object dsTecniciPlanned: TUniDataSource
     DataSet = qryTechPlanned
     Left = 808
-    Top = 344
+    Top = 360
   end
   object qryPlannerCalendars: TUniQuery
     DataTypeMap = <
@@ -19851,7 +19853,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'order by TECNICO_SIGLA'
       ';')
     Left = 808
-    Top = 216
+    Top = 224
     object qryPlannerCalendarsCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
@@ -20428,7 +20430,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     BeforePost = vtGoogleEventsSearchBeforePost
     Left = 808
-    Top = 416
+    Top = 424
     Data = {
       04001A0002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
@@ -20541,7 +20543,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   object dsGoogleEventsSearch: TUniDataSource
     DataSet = vtGoogleEventsSearch
     Left = 808
-    Top = 488
+    Top = 496
   end
   object lkpTecnici: TUniQuery
     Connection = JanuaUniConnection1
@@ -21211,7 +21213,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'ORDER BY T.descrizione'
       ';')
     Left = 808
-    Top = 72
+    Top = 80
     object qryTecniciCalendarRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
@@ -29955,7 +29957,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'select E.*, CE.DALLE_ORE, CE.ALLE_ORE,'
+      'select E.*, CE.DALLE_ORE, CE.ALLE_ORE, CE.STATINO, '
       '       CE.JGUID as ceJGUID, e.jguid as GJGUID, '
       
         '       s.chiave,  s.telefono as stelefono, s.cellulare as scellu' +
@@ -30172,6 +30174,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ReadOnly = True
       Required = True
     end
+    object qryElencoEventiWhatsAppSTATINO: TIntegerField
+      FieldName = 'STATINO'
+      ReadOnly = True
+    end
   end
   object UniQuery1: TUniQuery
     Connection = JanuaUniConnection1
@@ -30201,5 +30207,102 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Left = 944
     Top = 584
     CommandStoredProcName = 'UPDATE_WHATSAPP'
+  end
+  object qryMessageCount: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'SELECT'
+      'COUNT(1) AS MESSAGES'
+      'FROM'
+      'whatsapp_messages M WHERE M.state = 0 and in_out = 1')
+    Left = 808
+    Top = 8
+    object qryMessageCountMESSAGES: TLargeintField
+      FieldName = 'MESSAGES'
+      ReadOnly = True
+    end
+  end
+  object spInsertWhatsAppMsg: TUniStoredProc
+    StoredProcName = 'INSERT_WHATSAPP_MESSAGES'
+    SQL.Strings = (
+      
+        'EXECUTE PROCEDURE INSERT_WHATSAPP_MESSAGES(:WANUMBER, :WAMESSAGE' +
+        ', :ID, :WAREAD, :IN_OUT, :STATE, :INSERT_DATE, :READ_DATE, :WA_S' +
+        'TATE, :WA_ID, :REPORT_ID)')
+    Connection = JanuaUniConnection1
+    Left = 944
+    Top = 656
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'WANUMBER'
+        ParamType = ptInput
+        Size = 20
+        Value = nil
+      end
+      item
+        DataType = ftString
+        Name = 'WAMESSAGE'
+        ParamType = ptInput
+        Size = 512
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftFixedChar
+        Name = 'WAREAD'
+        ParamType = ptInput
+        Size = 1
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'IN_OUT'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'STATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftDateTime
+        Name = 'INSERT_DATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftDateTime
+        Name = 'READ_DATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'WA_STATE'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftString
+        Name = 'WA_ID'
+        ParamType = ptInput
+        Size = 128
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'REPORT_ID'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
   end
 end
