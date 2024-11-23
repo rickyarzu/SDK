@@ -1,6 +1,7 @@
 package eInvoice4D;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -28,7 +29,7 @@ package eInvoice4D;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   rtl,
   xmlrtl,
   soaprtl,
@@ -44,7 +45,7 @@ requires
   bindcomp,
   RESTComponents;
 
-contains
+ocontains
   DForce.ei.Response.Factory in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.Factory.pas',
   DForce.ei.Response.Interfaces in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.Interfaces.pas',
   DForce.ei.Response in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.pas',
@@ -71,4 +72,4 @@ contains
   DForce.ei.Validation.Validator.Values in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Validation.Validator.Values.pas',
   DForce.ei.Validation.Validator.Custom in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Validation.Validator.Custom.pas';
 
-end.
+d.

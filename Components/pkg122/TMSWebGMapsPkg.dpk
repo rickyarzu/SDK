@@ -1,6 +1,7 @@
 ﻿package TMSWebGMapsPkg;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,7 +30,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vclimg,
   vcl,
@@ -44,7 +45,7 @@ requires
   dbrtl,
   DbxCommonDriver;
 
-contains
+ocontains
   UWebGMaps in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMaps.pas',
   UWebGMapsAutomation in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsAutomation.pas',
   UWebGMapsBrowser in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsBrowser.pas',
@@ -67,5 +68,5 @@ contains
   UWebGMapsDialogForm in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsDialogForm.pas' {WebGMapsDialogForm},
   UWebGMapsExif in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsExif.pas';
 
-end.
+d.
 

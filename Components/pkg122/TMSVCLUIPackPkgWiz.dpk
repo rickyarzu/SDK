@@ -1,6 +1,7 @@
 package TMSVCLUIPackPkgWiz;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -12,23 +13,24 @@ package TMSVCLUIPackPkgWiz;
 {$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
 {$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS VCL UI Pack Wizards'}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   designide,
@@ -38,7 +40,7 @@ requires
   TMSVCLUIPackPkgEx,
   vclx;
 
-contains
+ocontains
   atbwizardreg in '..\..\..\tmssoftware\TMS VCL UI Pack\atbwizardreg.pas',
   ATBWizard in '..\..\..\tmssoftware\TMS VCL UI Pack\ATBWizard.pas',
   ATBWizard2010Reg in '..\..\..\tmssoftware\TMS VCL UI Pack\ATBWizard2010Reg.pas',
@@ -50,4 +52,4 @@ contains
   ATBWizard2019 in '..\..\..\tmssoftware\TMS VCL UI Pack\ATBWizard2019.pas',
   ATBWizard2019Reg in '..\..\..\tmssoftware\TMS VCL UI Pack\ATBWizard2019Reg.pas';
 
-end.
+d.

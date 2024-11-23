@@ -2,6 +2,7 @@ package TMSCloudPkg;
 
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,7 +31,7 @@ package TMSCloudPkg;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   vclie,
@@ -46,7 +47,7 @@ requires
   dsnap,
   vcldb;
 
-contains
+ocontains
   CloudBoxNetReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudBoxNetReg.pas',
   CloudDropBoxReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudDropBoxReg.pas',
   CloudFlickrReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudFlickrReg.pas',
@@ -237,4 +238,4 @@ contains
   CloudGooglePhotos in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudGooglePhotos.pas',
   CloudGooglePhotosReg in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudGooglePhotosReg.pas';
 
-end.
+d.

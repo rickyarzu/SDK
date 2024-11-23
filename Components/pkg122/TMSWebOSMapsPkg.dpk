@@ -24,19 +24,44 @@
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
 {$DEFINE RELEASE}
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS VCL WebOSMaps'}
 {$LIBSUFFIX '270'}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vclx,
   vcl,
   vclie,
   vclimg;
 
-contains
+ocontains
   UWebOSMaps in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMaps.pas',
   UWebOSMapsBrowser in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsBrowser.pas',
   UWebOSMapsCommon in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsCommon.pas',
@@ -50,4 +75,4 @@ contains
   UWebOSMapsCommonFunctions in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsCommonFunctions.pas',
   UWebOSMapsIdoc in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsIdoc.pas';
 
-end.
+d.

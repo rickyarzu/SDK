@@ -1,6 +1,7 @@
 package hclcore;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,11 +30,11 @@ package hclcore;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   soaprtl;
 
-contains
+ocontains
   htmlani in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\htmlani.pas',
   htmlcss in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\htmlcss.pas',
   htmlpars in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\htmlpars.pas',
@@ -49,4 +50,4 @@ contains
   htgif in '..\..\..\Libraries\HTML Component Library 4.2\XE11\Source\htgif.pas',
   httemplates in '..\..\..\Libraries\HTML Component Library 4.2\XE11\Source\httemplates.pas';
 
-end.
+d.

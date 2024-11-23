@@ -1,6 +1,7 @@
 package TMSVCLIWPkgDE;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,14 +30,14 @@ package TMSVCLIWPkgDE;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   rtl,
   designide,
   TMSVCLIWPkg;
 
-contains
+ocontains
   VrPropEdit in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrPropEdit.pas',
   VrPropEditReg in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrPropEditReg.pas',
   VrSplash in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrSplash.pas';
 
-end.
+d.

@@ -1,6 +1,7 @@
 ﻿package gtDocEng;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -9,27 +10,27 @@
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   vcl,
   vclx,
   vclimg,
@@ -49,7 +50,7 @@ requires
   gtFont,
   gtRtl;
 
-contains
+ocontains
   gtCstDocEng in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtCstDocEng.pas',
   gtDocConsts in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocConsts.pas',
   gtDocUtils in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocUtils.pas',
@@ -155,7 +156,6 @@ contains
   gtGDIPUTIL.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPUTIL.old.pas',
   gtAdvGridXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridXportIntf.pas';
 
-{
   gtFRXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\FR\gtFRXportIntf.pas',
 }
 end.

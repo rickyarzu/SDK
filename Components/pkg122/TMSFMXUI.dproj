@@ -1,0 +1,377 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8394EF6A-D783-4FCB-9EDD-E84634C2BA71}</ProjectGuid>
+        <MainSource>TMSFMXUI.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <ProjectName Condition="'$(ProjectName)'==''">TMSFMXUI</ProjectName>
+        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>None</FrameworkType>
+        <ProjectVersion>20.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <SanitizedProjectName>TMSFMXUI</SanitizedProjectName>
+        <DCC_Description>TMS FMX UI Pack</DCC_Description>
+        <DllSuffix>270</DllSuffix>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Neon.Core.Serializers;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="bindcompfmx.dcp"/>
+        <DCCReference Include="fmx.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="dsnap.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCheckGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRadioGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSIPEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphicCheckLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLabelEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMS7segled.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBarButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBaseControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGauge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHTMLText.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLed.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLedmeter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMatrixlabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRating.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScope.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSearchEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpinner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBadge.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSDirectoryTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCheckedTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScrollMenu.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTouchKeyboard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHotSpotImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannervCalAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSvCal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileListBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpeedButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomComponent.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSStyles.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphicsHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPopupEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTabSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHotSpotImageEditor.pas">
+            <Form>TMSFMX.HotSpotImageEditorForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridDataUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridCell.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSNavBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSReplaceDialog.pas">
+            <Form>TMSFMX.ReplaceDialogForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFindDialog.pas">
+            <Form>TMSFMX.FindDialogForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.GridExcelIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UBreakList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UEscherGraphToBSE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UEscherOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UEscherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UExcelAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UExcelRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxNumberFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxRowComments.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UFlxUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UOle2Impl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.USheetNameList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UTextDelim.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsBaseClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsBaseList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsBaseRecordLists.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsBaseRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsCellRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsChart.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsColInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsCondFmt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsEncodeFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsEscher.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsFormulaParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsHyperLink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsMD5.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsNotes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsPageBreaks.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsPalette.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsPictures.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsProtect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsRangeRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsReferences.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsRowColEntries.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsSections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsSheet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsSST.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsStrings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsTokenArray.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsWorkbookGlobals.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.UXlsXF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.XLSAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.XlsBaseTemplateStore.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.XlsFormulaMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.XlsMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSProgressBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRTFEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridRtf.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPrintPreview.pas">
+            <Form>FMX.TMSPrintPreviewForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCalendar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemoDialogs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemoStyles.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSColorPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSColorselector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCustomPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.Linux.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowser.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSignatureCapture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTrackBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSListEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBaseGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCheckGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRadioGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTaskDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFontNamePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFontSizePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScrollControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPassLock.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRatingGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlanner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerModeEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLiveGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSDateTimeEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLiveGridDataBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridFilterPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerItemEditorRecurrency.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRecurrencyHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorSpellCheck.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellcheckCorrectLinesForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckConfForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckLang.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckCorrectForm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellSoundEx.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorMiniHTMLIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellInfos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellparser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorEmoticons.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSListView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemoPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFCoreLibBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFGraphicsLibHTMLEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.Default.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.General.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFRichTextLib.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFRichTextLib.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFRichTextLib.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFRichTextLib.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFRichTextLib.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGDIPlusApi.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGDIPlusClasses.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.Android.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.General.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.iOS.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.Mac.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphics.Win.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPDFImageBook.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphicsTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSUndo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSJSONReader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSJSONWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPersistence.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">TMSFMXUI.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+                <Platform value="Win64x">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

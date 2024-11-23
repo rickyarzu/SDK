@@ -1,6 +1,7 @@
 package TRCGooglePlacesRuntime;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,16 +31,16 @@ package TRCGooglePlacesRuntime;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   RESTComponents,
   vclimg,
   vclwinx;
 
-contains
+ocontains
   uGooglePlacesAutocomplete in '..\..\..\lib\TRCGPlaceAutoCompleteCombo\uGooglePlacesAutocomplete.pas',
   uRCGPlaceAutocompleteCombo in '..\..\..\lib\TRCGPlaceAutoCompleteCombo\uRCGPlaceAutocompleteCombo.pas',
   uGooglePlacesDetails in '..\..\..\lib\TRCGPlaceAutoCompleteCombo\uGooglePlacesDetails.pas';
 
-end.
+d.

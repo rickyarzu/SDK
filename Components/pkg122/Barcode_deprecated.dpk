@@ -2,6 +2,7 @@
 
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,12 +31,12 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   vcl,
   rtl,
   QRWRunDXE11_W64;
 
-contains
+ocontains
   DBBarcode in '..\..\..\Libraries\Barcode.duck\DBBarcode.pas';
 
-end.
+d.

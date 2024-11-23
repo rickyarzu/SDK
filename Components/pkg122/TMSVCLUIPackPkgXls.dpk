@@ -1,6 +1,7 @@
 package TMSVCLUIPackPkgXls;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -9,33 +10,33 @@ package TMSVCLUIPackPkgXls;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
-{$WRITEABLECONST ON}
+{$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS TAdvStringGrid Excel support'}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   vcl,
   vclimg,
   TMSVCLUIPackPkg,
   rtl;
 
-contains
+ocontains
   tmsXlsMessages in '..\..\..\tmssoftware\TMS VCL UI Pack\xlsadapter\tmsXlsMessages.pas',
   tmsAdvExcelIOReg in '..\..\..\tmssoftware\TMS VCL UI Pack\xlsadapter\tmsAdvExcelIOReg.pas',
   tmsAdvGridExcel in '..\..\..\tmssoftware\TMS VCL UI Pack\xlsadapter\tmsAdvGridExcel.pas',
@@ -88,4 +89,4 @@ contains
   tmsXlsBaseTemplateStore in '..\..\..\tmssoftware\TMS VCL UI Pack\xlsadapter\tmsXlsBaseTemplateStore.pas',
   tmsXlsFormulaMessages in '..\..\..\tmssoftware\TMS VCL UI Pack\xlsadapter\tmsXlsFormulaMessages.pas';
 
-end.
+d.

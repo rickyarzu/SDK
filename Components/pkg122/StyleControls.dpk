@@ -1,6 +1,7 @@
 package StyleControls;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,7 +30,7 @@ package StyleControls;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   vclimg,
@@ -39,7 +40,7 @@ requires
   dbrtl,
   vcldb;
 
-contains
+ocontains
   scControls in '..\..\..\Libraries\Almediadev\StyleControls\scControls.pas',
   scDrawUtils in '..\..\..\Libraries\Almediadev\StyleControls\scDrawUtils.pas',
   scImageCollection in '..\..\..\Libraries\Almediadev\StyleControls\scImageCollection.pas',
@@ -81,4 +82,4 @@ contains
   scGPFontControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPFontControls.pas',
   scMsgDialog in '..\..\..\Libraries\Almediadev\StyleControls\scMsgDialog.pas' {scMsgDlgForm};
 
-end.
+d.

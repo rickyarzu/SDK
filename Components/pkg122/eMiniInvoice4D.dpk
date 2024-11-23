@@ -1,6 +1,7 @@
 package eMiniInvoice4D;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -28,16 +29,16 @@ package eMiniInvoice4D;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   rtl,
   xmlrtl,
   eInvoice4D;
 
-contains
+ocontains
   DForce.Mini.ei in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.pas',
   DForce.Mini.ei.Invoice in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.pas',
   DForce.Mini.ei.Invoice.Interfaces in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Interfaces.pas',
   DForce.Mini.ei.Invoice.Factory in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Factory.pas';
 
-end.
+d.
 

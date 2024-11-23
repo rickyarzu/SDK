@@ -1,7 +1,7 @@
 package dmvcframeworkDT;
 
 {$R *.res}
-{$R *.dres}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -10,27 +10,27 @@ package dmvcframeworkDT;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'DelphiMVCFramework 3.x - Design Time Support'}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   rtl,
   designide,
   ExpertsCreators,
@@ -40,7 +40,7 @@ requires
   dbrtl,
   dmvcframeworkRT;
 
-contains
+ocontains
   DMVC.Expert.CodeGen.NewControllerUnit in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewControllerUnit.pas',
   DMVC.Expert.CodeGen.NewDMVCProject in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewDMVCProject.pas',
   DMVC.Expert.CodeGen.NewProject in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewProject.pas',
@@ -58,4 +58,4 @@ contains
   DMVC.Expert.Commands.Templates in '..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.Commands.Templates.pas',
   DMVC.Expert.CodeGen.Commands in '..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.Commands.pas';
 
-end.
+d.

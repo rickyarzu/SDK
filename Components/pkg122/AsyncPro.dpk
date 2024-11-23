@@ -24,17 +24,40 @@
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
 {$DEFINE RELEASE}
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TurboPower AsyncPro 5 run-time package'}
-{$LIBSUFFIX '270'}
-{$RUNONLY}
+{$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl;
 
-contains
+ocontains
   OoMisc in '..\..\..\Libraries\tpapro_5.00\run\OoMisc.pas',
   AdExcept in '..\..\..\Libraries\tpapro_5.00\run\AdExcept.pas',
   AdStrMap in '..\..\..\Libraries\tpapro_5.00\run\AdStrMap.pas',
@@ -49,4 +72,4 @@ contains
   AdTStat in '..\..\..\Libraries\tpapro_5.00\run\AdTStat.pas' {ApdStandardTapiDisplay},
   AdStatLt in '..\..\..\Libraries\tpapro_5.00\run\AdStatLt.pas';
 
-end.
+d.

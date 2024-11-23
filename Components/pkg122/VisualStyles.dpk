@@ -1,6 +1,7 @@
 ﻿package VisualStyles;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -9,33 +10,33 @@
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   vclimg,
   vclwinx,
   uniTools29;
 
-contains
+ocontains
   Vcl.Styles.Ext in '..\..\..\lib\vcl-styles-utils\Common\Vcl.Styles.Ext.pas',
   Vcl.Styles.Utils.ComCtrls in '..\..\..\lib\vcl-styles-utils\Common\Vcl.Styles.Utils.ComCtrls.pas',
   Vcl.Styles.Utils.Forms in '..\..\..\lib\vcl-styles-utils\Common\Vcl.Styles.Utils.Forms.pas',
@@ -53,6 +54,6 @@ contains
   Vcl.Styles.UxTheme in '..\src\Vcl.Styles.UxTheme.pas',
   Vcl.Styles.Hooks in '..\src\Vcl.Styles.Hooks.pas';
 
-end.
+d.
 
 

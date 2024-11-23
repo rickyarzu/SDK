@@ -2,6 +2,7 @@
 
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,7 +31,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vclimg,
   vcl,
@@ -47,8 +48,8 @@ requires
   designide,
   TMSWebGMapsPkg;
 
-contains
+ocontains
   UWebGMapsRegDE in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsRegDE.pas',
   UWebGMapsSplash in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsSplash.pas';
 
-end.
+d.

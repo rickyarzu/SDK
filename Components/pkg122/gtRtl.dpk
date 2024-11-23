@@ -1,6 +1,7 @@
 ﻿package gtRtl;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,13 +30,13 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl;
 
-contains
+ocontains
   gtUtils3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Rtl\gtUtils3.pas',
   gtClasses3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Rtl\gtClasses3.pas',
   gtConsts3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Rtl\gtConsts3.pas';
 
-end.
+d.

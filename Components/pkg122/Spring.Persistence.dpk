@@ -1,6 +1,7 @@
 package Spring.Persistence;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,13 +31,13 @@ package Spring.Persistence;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   dbrtl,
   vcl,
   vclimg,
   Spring.Base;
 
-contains
+ocontains
   Spring.Persistence.Adapters.FieldCache in '..\..\..\lib\spring4d\Source\Persistence\Adapters\Spring.Persistence.Adapters.FieldCache.pas',
   Spring.Persistence.Core.AbstractSession in '..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.AbstractSession.pas',
   Spring.Persistence.Core.Base in '..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Base.pas',
@@ -98,4 +99,4 @@ contains
   Spring.Persistence.SQL.Register in '..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Register.pas',
   Spring.Persistence.SQL.Types in '..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Types.pas';
 
-end.
+d.

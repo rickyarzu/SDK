@@ -1,0 +1,2964 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{19915DFD-2FC0-413E-A457-BE502620357C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Components\pkg120\AWSSDK.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Alcinoe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\AsyncPro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\AsyncProDR.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\AsyncProDD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\aurelius.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\AWSSDKFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\AWSSDKVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Barcode_deprecated.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\clinetsuite.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\CoolTrayIconWin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Curl4Delphi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DclFIBPlus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclfrx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclfs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclfsDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DCLgtAdvGridExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DCLgtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DCLgtDocProd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DCLgtFRExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DCLgtQRExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclIconFontsImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclJanuaIconFontsImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclJVEsoft.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclPython.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclPythonFmx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclPythonVcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclremotedb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DclRxCtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DclRxDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclsbridge.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclsparkle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclSVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dcltmsbcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclTMSDiagram.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclTMSQueryStudio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclTMSScripter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclTMSWorkflow.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dclxdata.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DECCipher.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\DelphiDetours.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dipstudiowin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dipstudiowindataset.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dmvcBaseRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dmvcframeworkDT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\dxCoreRS27.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Ean.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\EanEditors.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\EanXE13Sidney.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\echo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\eInvoice4D.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\eMiniInvoice4D.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FIBPlus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FIBPlusEditors.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FlexCel_Pdf.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FlexCel_Render.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FlexCel_Report.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FlexCel_XlsAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMX_FlexCel_Components.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMX_FlexCel_Components_DESIGN.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMX_FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fmxdclgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fmxgtxDocumentEngines.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fmxgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fmxgtxDocumentStudioCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCAppToolsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCBloxPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCBloxToolBarsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCChartPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCCorePkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCDashboardPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\FMXTMSFNCWXPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\frx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\frxDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\frxHTML28.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fsDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\fsFD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtCompression.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtCrypt.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtFont.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\gtxDocumentEngines.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\hclcore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\hclcore_xe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\htmleditcore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\htmlfastreport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\htmlfastreportfm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\IconFontsImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ipstudiowin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ipstudiowindataset.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ipstudiowinwordxp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\JOSE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\JVEsoft.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\loggerproRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Neon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\NeonCrossPlatform.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\OmniThreadLibraryDesigntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\OmniThreadLibraryRuntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\OpenAIPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\pckAlcinoe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Python.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\PythonFmx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\PythonVcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\QRDBASE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\QRDesigner.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\QRWDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\QRWRun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\remotedb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\RestRequestLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\RtmRxCtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\RtmRxDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\sbridge.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\sgcWebSockets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Skia.Package.FMX.Designtime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Skia.Package.FMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Skia.Package.RTL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Skia.Package.VCL.Designtime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Skia.Package.VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SKIA_FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\sparkle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Base.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Data.Designtime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Data.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Extensions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Spring.Persistence.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\StyleControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\StyleControlsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SVGImage32Package.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\SwagDoc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\Test.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TestMac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\tmsbcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSCloudPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSCryptoPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSCryptoPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSDiagram.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXChartPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXChartPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXCloudPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXUIDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXWebGMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFMXWebGMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCAppToolsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCBloxPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCChartPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCCloudPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCCloudPackWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCCorePkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCCoreWEB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCDashBoardPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCUIPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSFNCWXPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSQueryStudio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_FMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_IDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Imports_ADODB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Imports_DB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Imports_RTL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Imports_VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Legacy.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_Memo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSScripter_VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLIWPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLIWPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLSecuritySystemPkgCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUIDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLUIPackPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLUIPackPkgEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLUIPackPkgWiz.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSVCLUIPackPkgXls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWebGMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWebLibCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWebOSMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TMSWorkflow.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TRCGooglePlaces_d.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TRCGooglePlaces_r.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TRCGooglePlacesDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TRCGooglePlacesRuntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\TUniFalcon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\uniTools28.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCL_FlexCel_Components.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCL_FlexCel_Components_DESIGN.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCL_FlexCel_Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\vcldclgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\vclgtxDocumentEngines.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\vclgtxDocumentStudioControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\vclgtxDocumentStudioCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCAppToolsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCBloxPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCBloxToolBarsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCChartPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCCorePkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCDashboardPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCUIPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCWXPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\vcwd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\VisualStyles.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\WinsoftVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xdata.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhChartDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhChartRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhCntrlsDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhExportDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhExportRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhHierCubeDsgn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\xhHierCubeRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZComponentsVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZCoreLibs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZDocumentContainer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZipMasterD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZipMasterR.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg122\ZLibrariesWin.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AWSSDK">
+        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj"/>
+    </Target>
+    <Target Name="AWSSDK:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDK:Make">
+        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Alcinoe">
+        <MSBuild Projects="..\..\Components\pkg122\Alcinoe.dproj"/>
+    </Target>
+    <Target Name="Alcinoe:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Alcinoe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Alcinoe:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Alcinoe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AsyncPro">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncPro.dproj"/>
+    </Target>
+    <Target Name="AsyncPro:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncPro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AsyncPro:Make">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncPro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AsyncProDR">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDR.dproj"/>
+    </Target>
+    <Target Name="AsyncProDR:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AsyncProDR:Make">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AsyncProDD">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDD.dproj"/>
+    </Target>
+    <Target Name="AsyncProDD:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AsyncProDD:Make">
+        <MSBuild Projects="..\..\Components\pkg122\AsyncProDD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="aurelius">
+        <MSBuild Projects="..\..\Components\pkg122\aurelius.dproj"/>
+    </Target>
+    <Target Name="aurelius:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\aurelius.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="aurelius:Make">
+        <MSBuild Projects="..\..\Components\pkg122\aurelius.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AWSSDKFMX">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKFMX.dproj"/>
+    </Target>
+    <Target Name="AWSSDKFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDKFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AWSSDKVCL">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKVCL.dproj"/>
+    </Target>
+    <Target Name="AWSSDKVCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSSDKVCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDKVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Barcode_deprecated">
+        <MSBuild Projects="..\..\Components\pkg122\Barcode_deprecated.dproj"/>
+    </Target>
+    <Target Name="Barcode_deprecated:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Barcode_deprecated.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Barcode_deprecated:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Barcode_deprecated.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="clinetsuite">
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj"/>
+    </Target>
+    <Target Name="clinetsuite:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="clinetsuite:Make">
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CoolTrayIconWin">
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj"/>
+    </Target>
+    <Target Name="CoolTrayIconWin:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CoolTrayIconWin:Make">
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Curl4Delphi">
+        <MSBuild Projects="..\..\Components\pkg122\Curl4Delphi.dproj"/>
+    </Target>
+    <Target Name="Curl4Delphi:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Curl4Delphi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Curl4Delphi:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Curl4Delphi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dcl_clinetsuite">
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj"/>
+    </Target>
+    <Target Name="dcl_clinetsuite:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dcl_clinetsuite:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclFIBPlus">
+        <MSBuild Projects="..\..\Components\pkg122\DclFIBPlus.dproj"/>
+    </Target>
+    <Target Name="DclFIBPlus:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DclFIBPlus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclFIBPlus:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DclFIBPlus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclfrx">
+        <MSBuild Projects="..\..\Components\pkg122\dclfrx.dproj"/>
+    </Target>
+    <Target Name="dclfrx:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclfrx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclfrx:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclfrx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclfs">
+        <MSBuild Projects="..\..\Components\pkg122\dclfs.dproj"/>
+    </Target>
+    <Target Name="dclfs:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclfs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclfs:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclfs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclfsDB">
+        <MSBuild Projects="..\..\Components\pkg122\dclfsDB.dproj"/>
+    </Target>
+    <Target Name="dclfsDB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclfsDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclfsDB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclfsDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtAdvGridExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtAdvGridExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtAdvGridExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocEng">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocEng.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocProd">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocProd.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocProd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtDocProd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtFRExp">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtFRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtFRExp:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtFRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtFRExp:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtFRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExp">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtQRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtQRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DCLgtQRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclIconFontsImageListFMX">
+        <MSBuild Projects="..\..\Components\pkg122\dclIconFontsImageListFMX.dproj"/>
+    </Target>
+    <Target Name="dclIconFontsImageListFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclIconFontsImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclIconFontsImageListFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclIconFontsImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList">
+        <MSBuild Projects="..\..\Components\pkg122\dclJanuaIconFontsImageList.dproj"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclJanuaIconFontsImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclJanuaIconFontsImageList:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclJanuaIconFontsImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclJVEsoft">
+        <MSBuild Projects="..\..\Components\pkg122\dclJVEsoft.dproj"/>
+    </Target>
+    <Target Name="dclJVEsoft:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclJVEsoft.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclJVEsoft:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclJVEsoft.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclPython">
+        <MSBuild Projects="..\..\Components\pkg122\dclPython.dproj"/>
+    </Target>
+    <Target Name="dclPython:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclPython.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclPython:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclPython.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclPythonFmx">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonFmx.dproj"/>
+    </Target>
+    <Target Name="dclPythonFmx:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonFmx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclPythonFmx:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonFmx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclPythonVcl">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonVcl.dproj"/>
+    </Target>
+    <Target Name="dclPythonVcl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonVcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclPythonVcl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclPythonVcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclremotedb">
+        <MSBuild Projects="..\..\Components\pkg122\dclremotedb.dproj"/>
+    </Target>
+    <Target Name="dclremotedb:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclremotedb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclremotedb:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclremotedb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclRxCtl">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxCtl.dproj"/>
+    </Target>
+    <Target Name="DclRxCtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxCtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclRxCtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxCtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclRxDB">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxDB.dproj"/>
+    </Target>
+    <Target Name="DclRxDB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclRxDB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DclRxDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclsbridge">
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj"/>
+    </Target>
+    <Target Name="dclsbridge:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclsbridge:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclsgcWebSockets">
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj"/>
+    </Target>
+    <Target Name="dclsgcWebSockets:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclsgcWebSockets:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclsparkle">
+        <MSBuild Projects="..\..\Components\pkg122\dclsparkle.dproj"/>
+    </Target>
+    <Target Name="dclsparkle:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclsparkle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclsparkle:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclsparkle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageList">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageList:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclSVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dcltmsbcl">
+        <MSBuild Projects="..\..\Components\pkg122\dcltmsbcl.dproj"/>
+    </Target>
+    <Target Name="dcltmsbcl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dcltmsbcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dcltmsbcl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dcltmsbcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclTMSDiagram">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSDiagram.dproj"/>
+    </Target>
+    <Target Name="dclTMSDiagram:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSDiagram.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclTMSDiagram:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSDiagram.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclTMSQueryStudio">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSQueryStudio.dproj"/>
+    </Target>
+    <Target Name="dclTMSQueryStudio:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSQueryStudio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclTMSQueryStudio:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSQueryStudio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclTMSScripter">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSScripter.dproj"/>
+    </Target>
+    <Target Name="dclTMSScripter:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSScripter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclTMSScripter:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSScripter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclTMSWorkflow">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSWorkflow.dproj"/>
+    </Target>
+    <Target Name="dclTMSWorkflow:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSWorkflow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclTMSWorkflow:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclTMSWorkflow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclUniFalcon">
+        <MSBuild Projects="..\..\Components\pkg122\dclUniFalcon.dproj"/>
+    </Target>
+    <Target Name="dclUniFalcon:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclUniFalcon:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclUniFalcon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclxdata">
+        <MSBuild Projects="..\..\Components\pkg122\dclxdata.dproj"/>
+    </Target>
+    <Target Name="dclxdata:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dclxdata.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclxdata:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dclxdata.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DECCipher">
+        <MSBuild Projects="..\..\Components\pkg122\DECCipher.dproj"/>
+    </Target>
+    <Target Name="DECCipher:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DECCipher.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DECCipher:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DECCipher.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiDetours">
+        <MSBuild Projects="..\..\Components\pkg122\DelphiDetours.dproj"/>
+    </Target>
+    <Target Name="DelphiDetours:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\DelphiDetours.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiDetours:Make">
+        <MSBuild Projects="..\..\Components\pkg122\DelphiDetours.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dipstudiowin">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj"/>
+    </Target>
+    <Target Name="dipstudiowin:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dipstudiowin:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dipstudiowindataset">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowindataset.dproj"/>
+    </Target>
+    <Target Name="dipstudiowindataset:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowindataset.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dipstudiowindataset:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowindataset.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcBaseRT">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcBaseRT.dproj"/>
+    </Target>
+    <Target Name="dmvcBaseRT:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcBaseRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcBaseRT:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcBaseRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcframeworkDT">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkDT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkDT:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkDT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkDT:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkDT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dmvcframeworkRT">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dmvcframeworkRT:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dxCoreRS27">
+        <MSBuild Projects="..\..\Components\pkg122\dxCoreRS27.dproj"/>
+    </Target>
+    <Target Name="dxCoreRS27:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\dxCoreRS27.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dxCoreRS27:Make">
+        <MSBuild Projects="..\..\Components\pkg122\dxCoreRS27.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Ean">
+        <MSBuild Projects="..\..\Components\pkg122\Ean.dproj"/>
+    </Target>
+    <Target Name="Ean:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Ean.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Ean:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Ean.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EanEditors">
+        <MSBuild Projects="..\..\Components\pkg122\EanEditors.dproj"/>
+    </Target>
+    <Target Name="EanEditors:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\EanEditors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanEditors:Make">
+        <MSBuild Projects="..\..\Components\pkg122\EanEditors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EanXE13Sidney">
+        <MSBuild Projects="..\..\Components\pkg122\EanXE13Sidney.dproj"/>
+    </Target>
+    <Target Name="EanXE13Sidney:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\EanXE13Sidney.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EanXE13Sidney:Make">
+        <MSBuild Projects="..\..\Components\pkg122\EanXE13Sidney.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="echo">
+        <MSBuild Projects="..\..\Components\pkg122\echo.dproj"/>
+    </Target>
+    <Target Name="echo:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\echo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="echo:Make">
+        <MSBuild Projects="..\..\Components\pkg122\echo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="eInvoice4D">
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj"/>
+    </Target>
+    <Target Name="eInvoice4D:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="eInvoice4D:Make">
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="eMiniInvoice4D">
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj"/>
+    </Target>
+    <Target Name="eMiniInvoice4D:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="eMiniInvoice4D:Make">
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FIBPlus">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlus.dproj"/>
+    </Target>
+    <Target Name="FIBPlus:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FIBPlus:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FIBPlusEditors">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlusEditors.dproj"/>
+    </Target>
+    <Target Name="FIBPlusEditors:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlusEditors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FIBPlusEditors:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FIBPlusEditors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Core">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Pdf">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Pdf.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Pdf:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Pdf.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Pdf:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Pdf.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Render">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Render.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Render:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Render.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Render:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Render.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_Report">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Report.dproj"/>
+    </Target>
+    <Target Name="FlexCel_Report:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Report.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_Report:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_Report.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_XlsAdapter.dproj"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_XlsAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlexCel_XlsAdapter:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FlexCel_XlsAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components_DESIGN.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components_DESIGN.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Components_DESIGN:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Components_DESIGN.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_FlexCel_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMX_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fmxdclgtxDocumentStudioControls">
+        <MSBuild Projects="..\..\Components\pkg122\fmxdclgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="fmxdclgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fmxdclgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fmxdclgtxDocumentStudioControls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fmxdclgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fmxgtxDocumentEngines">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentEngines.dproj"/>
+    </Target>
+    <Target Name="fmxgtxDocumentEngines:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentEngines.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fmxgtxDocumentEngines:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentEngines.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioControls">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioControls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioCore">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioCore.dproj"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioCore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fmxgtxDocumentStudioCore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fmxgtxDocumentStudioCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCAppToolsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCAppToolsPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCAppToolsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCAppToolsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCAppToolsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCAppToolsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxToolBarsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxToolBarsPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxToolBarsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxToolBarsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCBloxToolBarsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCBloxToolBarsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCChartPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCChartPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCChartPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCChartPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCCloudPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCCorePkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCorePkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCCorePkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCorePkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCCorePkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCCorePkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCDashboardPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCDashboardPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCDashboardPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCDashboardPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCMapsPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCUIPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCWXPackPkg.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCWXPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCWXPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\FMXTMSFNCWXPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="frx">
+        <MSBuild Projects="..\..\Components\pkg122\frx.dproj"/>
+    </Target>
+    <Target Name="frx:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\frx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="frx:Make">
+        <MSBuild Projects="..\..\Components\pkg122\frx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="frxDB">
+        <MSBuild Projects="..\..\Components\pkg122\frxDB.dproj"/>
+    </Target>
+    <Target Name="frxDB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\frxDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="frxDB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\frxDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="frxHTML28">
+        <MSBuild Projects="..\..\Components\pkg122\frxHTML28.dproj"/>
+    </Target>
+    <Target Name="frxHTML28:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\frxHTML28.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="frxHTML28:Make">
+        <MSBuild Projects="..\..\Components\pkg122\frxHTML28.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fs">
+        <MSBuild Projects="..\..\Components\pkg122\fs.dproj"/>
+    </Target>
+    <Target Name="fs:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fs:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fsDB">
+        <MSBuild Projects="..\..\Components\pkg122\fsDB.dproj"/>
+    </Target>
+    <Target Name="fsDB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fsDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fsDB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fsDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fsFD">
+        <MSBuild Projects="..\..\Components\pkg122\fsFD.dproj"/>
+    </Target>
+    <Target Name="fsFD:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\fsFD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fsFD:Make">
+        <MSBuild Projects="..\..\Components\pkg122\fsFD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCompression">
+        <MSBuild Projects="..\..\Components\pkg122\gtCompression.dproj"/>
+    </Target>
+    <Target Name="gtCompression:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtCompression.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCompression:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtCompression.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCrypt">
+        <MSBuild Projects="..\..\Components\pkg122\gtCrypt.dproj"/>
+    </Target>
+    <Target Name="gtCrypt:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtCrypt.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCrypt:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtCrypt.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEng">
+        <MSBuild Projects="..\..\Components\pkg122\gtDocEng.dproj"/>
+    </Target>
+    <Target Name="gtDocEng:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEng:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFilters">
+        <MSBuild Projects="..\..\Components\pkg122\gtFilters.dproj"/>
+    </Target>
+    <Target Name="gtFilters:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFilters:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFont">
+        <MSBuild Projects="..\..\Components\pkg122\gtFont.dproj"/>
+    </Target>
+    <Target Name="gtFont:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtFont.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFont:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtFont.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtRtl">
+        <MSBuild Projects="..\..\Components\pkg122\gtRtl.dproj"/>
+    </Target>
+    <Target Name="gtRtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtRtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtxDocumentEngines">
+        <MSBuild Projects="..\..\Components\pkg122\gtxDocumentEngines.dproj"/>
+    </Target>
+    <Target Name="gtxDocumentEngines:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\gtxDocumentEngines.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtxDocumentEngines:Make">
+        <MSBuild Projects="..\..\Components\pkg122\gtxDocumentEngines.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="hclcore">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore.dproj"/>
+    </Target>
+    <Target Name="hclcore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="hclcore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="hclcore_xe">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore_xe.dproj"/>
+    </Target>
+    <Target Name="hclcore_xe:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore_xe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="hclcore_xe:Make">
+        <MSBuild Projects="..\..\Components\pkg122\hclcore_xe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="htmleditcore">
+        <MSBuild Projects="..\..\Components\pkg122\htmleditcore.dproj"/>
+    </Target>
+    <Target Name="htmleditcore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\htmleditcore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="htmleditcore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\htmleditcore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="htmlfastreport">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreport.dproj"/>
+    </Target>
+    <Target Name="htmlfastreport:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="htmlfastreport:Make">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="htmlfastreportfm">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreportfm.dproj"/>
+    </Target>
+    <Target Name="htmlfastreportfm:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreportfm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="htmlfastreportfm:Make">
+        <MSBuild Projects="..\..\Components\pkg122\htmlfastreportfm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IconFontsImageListFMX">
+        <MSBuild Projects="..\..\Components\pkg122\IconFontsImageListFMX.dproj"/>
+    </Target>
+    <Target Name="IconFontsImageListFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\IconFontsImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IconFontsImageListFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\IconFontsImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowin">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj"/>
+    </Target>
+    <Target Name="ipstudiowin:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowin:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowinclient">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj"/>
+    </Target>
+    <Target Name="ipstudiowinclient:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowinclient:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowindataset">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowindataset.dproj"/>
+    </Target>
+    <Target Name="ipstudiowindataset:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowindataset.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowindataset:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowindataset.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ipstudiowinwordxp">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinwordxp.dproj"/>
+    </Target>
+    <Target Name="ipstudiowinwordxp:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinwordxp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipstudiowinwordxp:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinwordxp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JOSE">
+        <MSBuild Projects="..\..\Components\pkg122\JOSE.dproj"/>
+    </Target>
+    <Target Name="JOSE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\JOSE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JOSE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\JOSE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JVEsoft">
+        <MSBuild Projects="..\..\Components\pkg122\JVEsoft.dproj"/>
+    </Target>
+    <Target Name="JVEsoft:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\JVEsoft.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JVEsoft:Make">
+        <MSBuild Projects="..\..\Components\pkg122\JVEsoft.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="loggerproRT">
+        <MSBuild Projects="..\..\Components\pkg122\loggerproRT.dproj"/>
+    </Target>
+    <Target Name="loggerproRT:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\loggerproRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="loggerproRT:Make">
+        <MSBuild Projects="..\..\Components\pkg122\loggerproRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Neon">
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj"/>
+    </Target>
+    <Target Name="Neon:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Neon:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeonCrossPlatform">
+        <MSBuild Projects="..\..\Components\pkg122\NeonCrossPlatform.dproj"/>
+    </Target>
+    <Target Name="NeonCrossPlatform:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\NeonCrossPlatform.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeonCrossPlatform:Make">
+        <MSBuild Projects="..\..\Components\pkg122\NeonCrossPlatform.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryDesigntime.dproj"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryDesigntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryDesigntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryRuntime.dproj"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryRuntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\OmniThreadLibraryRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OpenAIPackage">
+        <MSBuild Projects="..\..\Components\pkg122\OpenAIPackage.dproj"/>
+    </Target>
+    <Target Name="OpenAIPackage:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\OpenAIPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenAIPackage:Make">
+        <MSBuild Projects="..\..\Components\pkg122\OpenAIPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckAlcinoe">
+        <MSBuild Projects="..\..\Components\pkg122\pckAlcinoe.dproj"/>
+    </Target>
+    <Target Name="pckAlcinoe:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\pckAlcinoe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckAlcinoe:Make">
+        <MSBuild Projects="..\..\Components\pkg122\pckAlcinoe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Python">
+        <MSBuild Projects="..\..\Components\pkg122\Python.dproj"/>
+    </Target>
+    <Target Name="Python:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Python.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Python:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Python.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PythonFmx">
+        <MSBuild Projects="..\..\Components\pkg122\PythonFmx.dproj"/>
+    </Target>
+    <Target Name="PythonFmx:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\PythonFmx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PythonFmx:Make">
+        <MSBuild Projects="..\..\Components\pkg122\PythonFmx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PythonVcl">
+        <MSBuild Projects="..\..\Components\pkg122\PythonVcl.dproj"/>
+    </Target>
+    <Target Name="PythonVcl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\PythonVcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PythonVcl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\PythonVcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRDBASE">
+        <MSBuild Projects="..\..\Components\pkg122\QRDBASE.dproj"/>
+    </Target>
+    <Target Name="QRDBASE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\QRDBASE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRDBASE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\QRDBASE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRDesigner">
+        <MSBuild Projects="..\..\Components\pkg122\QRDesigner.dproj"/>
+    </Target>
+    <Target Name="QRDesigner:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\QRDesigner.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRDesigner:Make">
+        <MSBuild Projects="..\..\Components\pkg122\QRDesigner.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRWDesign">
+        <MSBuild Projects="..\..\Components\pkg122\QRWDesign.dproj"/>
+    </Target>
+    <Target Name="QRWDesign:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\QRWDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWDesign:Make">
+        <MSBuild Projects="..\..\Components\pkg122\QRWDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QRWRun">
+        <MSBuild Projects="..\..\Components\pkg122\QRWRun.dproj"/>
+    </Target>
+    <Target Name="QRWRun:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\QRWRun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QRWRun:Make">
+        <MSBuild Projects="..\..\Components\pkg122\QRWRun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="remotedb">
+        <MSBuild Projects="..\..\Components\pkg122\remotedb.dproj"/>
+    </Target>
+    <Target Name="remotedb:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\remotedb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="remotedb:Make">
+        <MSBuild Projects="..\..\Components\pkg122\remotedb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestRequestLib">
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj"/>
+    </Target>
+    <Target Name="RestRequestLib:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestRequestLib:Make">
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtmRxCtl">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxCtl.dproj"/>
+    </Target>
+    <Target Name="RtmRxCtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxCtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtmRxCtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxCtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtmRxDB">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxDB.dproj"/>
+    </Target>
+    <Target Name="RtmRxDB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtmRxDB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\RtmRxDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sbridge">
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj"/>
+    </Target>
+    <Target Name="sbridge:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sbridge:Make">
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sgcWebSockets">
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj"/>
+    </Target>
+    <Target Name="sgcWebSockets:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sgcWebSockets:Make">
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia_Package_FMX_Designtime">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.Designtime.dproj"/>
+    </Target>
+    <Target Name="Skia_Package_FMX_Designtime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.Designtime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia_Package_FMX_Designtime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.Designtime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia_Package_FMX">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.dproj"/>
+    </Target>
+    <Target Name="Skia_Package_FMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia_Package_FMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.FMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia_Package_RTL">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.RTL.dproj"/>
+    </Target>
+    <Target Name="Skia_Package_RTL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.RTL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia_Package_RTL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.RTL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia_Package_VCL_Designtime">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.Designtime.dproj"/>
+    </Target>
+    <Target Name="Skia_Package_VCL_Designtime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.Designtime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia_Package_VCL_Designtime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.Designtime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia_Package_VCL">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.dproj"/>
+    </Target>
+    <Target Name="Skia_Package_VCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia_Package_VCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Skia.Package.VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core">
+        <MSBuild Projects="..\..\Components\pkg122\SKIA_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SKIA_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SKIA_FlexCel_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SKIA_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sparkle">
+        <MSBuild Projects="..\..\Components\pkg122\sparkle.dproj"/>
+    </Target>
+    <Target Name="sparkle:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\sparkle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sparkle:Make">
+        <MSBuild Projects="..\..\Components\pkg122\sparkle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Base">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj"/>
+    </Target>
+    <Target Name="Spring_Base:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Base:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Core">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj"/>
+    </Target>
+    <Target Name="Spring_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Data_Designtime">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.Designtime.dproj"/>
+    </Target>
+    <Target Name="Spring_Data_Designtime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.Designtime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Data_Designtime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.Designtime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Data">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.dproj"/>
+    </Target>
+    <Target Name="Spring_Data:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Data:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Data.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Extensions">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Extensions.dproj"/>
+    </Target>
+    <Target Name="Spring_Extensions:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Extensions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Extensions:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Extensions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_Persistence">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Persistence.dproj"/>
+    </Target>
+    <Target Name="Spring_Persistence:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Persistence.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_Persistence:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Persistence.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControls">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControls.dproj"/>
+    </Target>
+    <Target Name="StyleControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControlsD">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControlsD.dproj"/>
+    </Target>
+    <Target Name="StyleControlsD:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControlsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControlsD:Make">
+        <MSBuild Projects="..\..\Components\pkg122\StyleControlsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageList">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageList:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageList:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconImageListFMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGIconPackage">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="SVGIconPackage:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGIconPackage:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SVGImage32Package">
+        <MSBuild Projects="..\..\Components\pkg122\SVGImage32Package.dproj"/>
+    </Target>
+    <Target Name="SVGImage32Package:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SVGImage32Package.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SVGImage32Package:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SVGImage32Package.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SwagDoc">
+        <MSBuild Projects="..\..\Components\pkg122\SwagDoc.dproj"/>
+    </Target>
+    <Target Name="SwagDoc:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\SwagDoc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SwagDoc:Make">
+        <MSBuild Projects="..\..\Components\pkg122\SwagDoc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Test">
+        <MSBuild Projects="..\..\Components\pkg122\Test.dproj"/>
+    </Target>
+    <Target Name="Test:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\Test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Test:Make">
+        <MSBuild Projects="..\..\Components\pkg122\Test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestMac">
+        <MSBuild Projects="..\..\Components\pkg122\TestMac.dproj"/>
+    </Target>
+    <Target Name="TestMac:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TestMac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestMac:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TestMac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="tmsbcl">
+        <MSBuild Projects="..\..\Components\pkg122\tmsbcl.dproj"/>
+    </Target>
+    <Target Name="tmsbcl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\tmsbcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tmsbcl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\tmsbcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCloudPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCryptoPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkg.dproj"/>
+    </Target>
+    <Target Name="TMSCryptoPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCryptoPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCryptoPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSCryptoPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCryptoPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSCryptoPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSDiagram">
+        <MSBuild Projects="..\..\Components\pkg122\TMSDiagram.dproj"/>
+    </Target>
+    <Target Name="TMSDiagram:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSDiagram.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSDiagram:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSDiagram.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXChartPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXChartPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXChartPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXChartPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFMXChartPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXChartPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXChartPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXCloudPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXCloudPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFMXPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXUI">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUI.dproj"/>
+    </Target>
+    <Target Name="TMSFMXUI:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXUI:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXUIDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUIDE.dproj"/>
+    </Target>
+    <Target Name="TMSFMXUIDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUIDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXUIDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXUIDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFMXWebGMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCAppToolsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCAppToolsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCAppToolsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCAppToolsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCAppToolsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCAppToolsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCBloxPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCBloxPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCBloxPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCBloxPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCBloxPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCBloxPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCChartPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCChartPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCChartPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCChartPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCloudPackWEB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCloudPackWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCorePkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCorePkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCorePkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCorePkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCoreWEB.dproj"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCoreWEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCCoreWEB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCCoreWEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCDashBoardPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCDashBoardPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCDashBoardPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCDashBoardPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCUIPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCUIPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCUIPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCUIPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCWXPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCWXPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFNCWXPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSFNCWXPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSQueryStudio">
+        <MSBuild Projects="..\..\Components\pkg122\TMSQueryStudio.dproj"/>
+    </Target>
+    <Target Name="TMSQueryStudio:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSQueryStudio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSQueryStudio:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSQueryStudio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter.dproj"/>
+    </Target>
+    <Target Name="TMSScripter:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_FMX">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_FMX.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_FMX:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_FMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_FMX:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_FMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_IDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_IDE.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_IDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_IDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_IDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_IDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_ADODB">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_ADODB.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_ADODB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_ADODB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_ADODB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_ADODB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_DB">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_DB.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_DB:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_DB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_DB:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_DB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_RTL">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_RTL.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_RTL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_RTL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_RTL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_RTL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_VCL">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_VCL.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_VCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Imports_VCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Imports_VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Legacy">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Legacy.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Legacy:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Legacy.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Legacy:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Legacy.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_Memo">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Memo.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_Memo:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Memo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_Memo:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_Memo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSScripter_VCL">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_VCL.dproj"/>
+    </Target>
+    <Target Name="TMSScripter_VCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSScripter_VCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSScripter_VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLIWPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkg.dproj"/>
+    </Target>
+    <Target Name="TMSVCLIWPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLIWPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLIWPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSVCLIWPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLIWPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLIWPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgCore">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgCore.dproj"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgCore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgCore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUI">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUI.dproj"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUI:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUI:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUIDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUIDE.dproj"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUIDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUIDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLSecuritySystemPkgUIDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLSecuritySystemPkgUIDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgEx.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgEx:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgWiz.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgWiz.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWiz:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgWiz.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgXls.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgXls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSVCLUIPackPkgXls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebLibCore">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebLibCore.dproj"/>
+    </Target>
+    <Target Name="TMSWebLibCore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebLibCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebLibCore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebLibCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWorkflow">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWorkflow.dproj"/>
+    </Target>
+    <Target Name="TMSWorkflow:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWorkflow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWorkflow:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TMSWorkflow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_d.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_d.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_d.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_r.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_r.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlaces_r.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlacesDesign">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesDesign.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlacesDesign:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlacesDesign:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlacesRuntime">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesRuntime.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlacesRuntime:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesRuntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlacesRuntime:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TRCGooglePlacesRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TUniFalcon">
+        <MSBuild Projects="..\..\Components\pkg122\TUniFalcon.dproj"/>
+    </Target>
+    <Target Name="TUniFalcon:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\TUniFalcon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TUniFalcon:Make">
+        <MSBuild Projects="..\..\Components\pkg122\TUniFalcon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniTools28">
+        <MSBuild Projects="..\..\Components\pkg122\uniTools28.dproj"/>
+    </Target>
+    <Target Name="uniTools28:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\uniTools28.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniTools28:Make">
+        <MSBuild Projects="..\..\Components\pkg122\uniTools28.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components_DESIGN.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components_DESIGN.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Components_DESIGN:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Components_DESIGN.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Core.dproj"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_FlexCel_Core:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCL_FlexCel_Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls">
+        <MSBuild Projects="..\..\Components\pkg122\vcldclgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\vcldclgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vcldclgtxDocumentStudioControls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\vcldclgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentEngines.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentEngines.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentEngines:Make">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentEngines.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioControls.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioControls:Make">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioCore.dproj"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclgtxDocumentStudioCore:Make">
+        <MSBuild Projects="..\..\Components\pkg122\vclgtxDocumentStudioCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelector">
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCAppToolsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCAppToolsPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCAppToolsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCAppToolsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCAppToolsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCAppToolsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxToolBarsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxToolBarsPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxToolBarsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxToolBarsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCBloxToolBarsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCBloxToolBarsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCChartPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCChartPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCChartPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCChartPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCCloudPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCorePkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCorePkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCCorePkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCorePkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCDashboardPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCDashboardPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCDashboardPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCDashboardPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCMapsPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCUIPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCUIPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCUIPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCUIPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLTMSFNCWXPackPkg">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCWXPackPkg.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCWXPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCWXPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCWXPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCWXPackPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vcwd">
+        <MSBuild Projects="..\..\Components\pkg122\vcwd.dproj"/>
+    </Target>
+    <Target Name="vcwd:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\vcwd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vcwd:Make">
+        <MSBuild Projects="..\..\Components\pkg122\vcwd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VisualStyles">
+        <MSBuild Projects="..\..\Components\pkg122\VisualStyles.dproj"/>
+    </Target>
+    <Target Name="VisualStyles:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\VisualStyles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VisualStyles:Make">
+        <MSBuild Projects="..\..\Components\pkg122\VisualStyles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WinsoftVCL">
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj"/>
+    </Target>
+    <Target Name="WinsoftVCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WinsoftVCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xdata">
+        <MSBuild Projects="..\..\Components\pkg122\xdata.dproj"/>
+    </Target>
+    <Target Name="xdata:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xdata.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xdata:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xdata.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhChartDsgn">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartDsgn.dproj"/>
+    </Target>
+    <Target Name="xhChartDsgn:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhChartDsgn:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhChartRtl">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartRtl.dproj"/>
+    </Target>
+    <Target Name="xhChartRtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhChartRtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhChartRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn">
+        <MSBuild Projects="..\..\Components\pkg122\xhCntrlsDsgn.dproj"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhCntrlsDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhCntrlsDsgn:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhCntrlsDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhExportDsgn">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportDsgn.dproj"/>
+    </Target>
+    <Target Name="xhExportDsgn:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhExportDsgn:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhExportRtl">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportRtl.dproj"/>
+    </Target>
+    <Target Name="xhExportRtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhExportRtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhExportRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeDsgn.dproj"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeDsgn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhHierCubeDsgn:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeDsgn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="xhHierCubeRtl">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeRtl.dproj"/>
+    </Target>
+    <Target Name="xhHierCubeRtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="xhHierCubeRtl:Make">
+        <MSBuild Projects="..\..\Components\pkg122\xhHierCubeRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZComponentsD">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsD.dproj"/>
+    </Target>
+    <Target Name="ZComponentsD:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZComponentsD:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZComponentsVCL">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsVCL.dproj"/>
+    </Target>
+    <Target Name="ZComponentsVCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZComponentsVCL:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZComponentsVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZCoreLibs">
+        <MSBuild Projects="..\..\Components\pkg122\ZCoreLibs.dproj"/>
+    </Target>
+    <Target Name="ZCoreLibs:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZCoreLibs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZCoreLibs:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZCoreLibs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZDocumentContainer">
+        <MSBuild Projects="..\..\Components\pkg122\ZDocumentContainer.dproj"/>
+    </Target>
+    <Target Name="ZDocumentContainer:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZDocumentContainer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZDocumentContainer:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZDocumentContainer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZipMasterD">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterD.dproj"/>
+    </Target>
+    <Target Name="ZipMasterD:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZipMasterD:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZipMasterR">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterR.dproj"/>
+    </Target>
+    <Target Name="ZipMasterR:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZipMasterR:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZipMasterR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZLibrariesWin">
+        <MSBuild Projects="..\..\Components\pkg122\ZLibrariesWin.dproj"/>
+    </Target>
+    <Target Name="ZLibrariesWin:Clean">
+        <MSBuild Projects="..\..\Components\pkg122\ZLibrariesWin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZLibrariesWin:Make">
+        <MSBuild Projects="..\..\Components\pkg122\ZLibrariesWin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AWSSDK;Alcinoe;AsyncPro;AsyncProDR;AsyncProDD;aurelius;AWSSDKFMX;AWSSDKVCL;Barcode_deprecated;clinetsuite;CoolTrayIconWin;Curl4Delphi;dcl_clinetsuite;DclFIBPlus;dclfrx;dclfs;dclfsDB;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtFRExp;DCLgtQRExp;dclIconFontsImageListFMX;dclJanuaIconFontsImageList;dclJVEsoft;dclPython;dclPythonFmx;dclPythonVcl;dclremotedb;DclRxCtl;DclRxDB;dclsbridge;dclsgcWebSockets;dclsparkle;dclSVGIconImageList;dclSVGIconImageListFMX;dcltmsbcl;dclTMSDiagram;dclTMSQueryStudio;dclTMSScripter;dclTMSWorkflow;dclUniFalcon;dclxdata;DECCipher;DelphiDetours;dipstudiowin;dipstudiowindataset;dmvcBaseRT;dmvcframeworkDT;dmvcframeworkRT;dxCoreRS27;Ean;EanEditors;EanXE13Sidney;echo;eInvoice4D;eMiniInvoice4D;FIBPlus;FIBPlusEditors;FlexCel_Core;FlexCel_Pdf;FlexCel_Render;FlexCel_Report;FlexCel_XlsAdapter;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;FMX_FlexCel_Core;fmxdclgtxDocumentStudioControls;fmxgtxDocumentEngines;fmxgtxDocumentStudioControls;fmxgtxDocumentStudioCore;FMXTMSFNCAppToolsPkg;FMXTMSFNCBloxPkg;FMXTMSFNCBloxToolBarsPkg;FMXTMSFNCChartPkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCCorePkg;FMXTMSFNCDashboardPackPkg;FMXTMSFNCMapsPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;frx;frxDB;frxHTML28;fs;fsDB;fsFD;gtCompression;gtCrypt;gtDocEng;gtFilters;gtFont;gtRtl;gtxDocumentEngines;hclcore;hclcore_xe;htmleditcore;htmlfastreport;htmlfastreportfm;IconFontsImageListFMX;ipstudiowin;ipstudiowinclient;ipstudiowindataset;ipstudiowinwordxp;JOSE;JVEsoft;loggerproRT;Neon;NeonCrossPlatform;OmniThreadLibraryDesigntime;OmniThreadLibraryRuntime;OpenAIPackage;pckAlcinoe;PlanAddons;Python;PythonFmx;PythonVcl;QRDBASE;QRDesigner;QRWDesign;QRWRun;remotedb;RestRequestLib;RtmRxCtl;RtmRxDB;sbridge;sgcWebSockets;Skia_Package_FMX_Designtime;Skia_Package_FMX;Skia_Package_RTL;Skia_Package_VCL_Designtime;Skia_Package_VCL;SKIA_FlexCel_Core;sparkle;Spring_Base;Spring_Core;Spring_Data_Designtime;Spring_Data;Spring_Extensions;Spring_Persistence;StyleControls;StyleControlsD;SVGIconImageList;SVGIconImageListFMX;SVGIconPackage;SVGImage32Package;SwagDoc;Test;TestMac;tmsbcl;TMSCloudPkg;TMSCloudPkgDE;TMSCryptoPkg;TMSCryptoPkgDE;TMSDiagram;TMSFMXChartPkg;TMSFMXChartPkgDE;TMSFMXCloudPackPkg;TMSFMXCloudPackPkgDE;TMSFMXPackPkg;TMSFMXPackPkgDE;TMSFMXUI;TMSFMXUIDE;TMSFMXWebGMapsPkg;TMSFMXWebGMapsPkgDE;TMSFNCAppToolsPkgDE;TMSFNCBloxPkgDE;TMSFNCChartPkgDE;TMSFNCCloudPackPkgDE;TMSFNCCloudPackWEB;TMSFNCCorePkgDE;TMSFNCCoreWEB;TMSFNCDashBoardPackPkgDE;TMSFNCMapsPkgDE;TMSFNCUIPackPkgDE;TMSFNCWXPackPkgDE;TMSQueryStudio;TMSScripter;TMSScripter_FMX;TMSScripter_IDE;TMSScripter_Imports_ADODB;TMSScripter_Imports_DB;TMSScripter_Imports_RTL;TMSScripter_Imports_VCL;TMSScripter_Legacy;TMSScripter_Memo;TMSScripter_VCL;TMSVCLIWPkg;TMSVCLIWPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;TMSVCLUIPackPkg;TMSVCLUIPackPkgDE;TMSVCLUIPackPkgEx;TMSVCLUIPackPkgWiz;TMSVCLUIPackPkgXls;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebLibCore;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;TMSWorkflow;TRCGooglePlaces_d;TRCGooglePlaces_r;TRCGooglePlacesDesign;TRCGooglePlacesRuntime;TUniFalcon;uniTools28;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;VCL_FlexCel_Core;vcldclgtxDocumentStudioControls;vclgtxDocumentEngines;vclgtxDocumentStudioControls;vclgtxDocumentStudioCore;VCLThemeSelector;VCLTMSFNCAppToolsPkg;VCLTMSFNCBloxPkg;VCLTMSFNCBloxToolBarsPkg;VCLTMSFNCChartPkg;VCLTMSFNCCloudPackPkg;VCLTMSFNCCorePkg;VCLTMSFNCDashboardPackPkg;VCLTMSFNCMapsPkg;VCLTMSFNCUIPackPkg;VCLTMSFNCWXPackPkg;vcwd;VisualStyles;WinsoftVCL;xdata;xhChartDsgn;xhChartRtl;xhCntrlsDsgn;xhExportDsgn;xhExportRtl;xhHierCubeDsgn;xhHierCubeRtl;ZComponentsD;ZComponentsVCL;ZCoreLibs;ZDocumentContainer;ZipMasterD;ZipMasterR;ZLibrariesWin"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AWSSDK:Clean;Alcinoe:Clean;AsyncPro:Clean;AsyncProDR:Clean;AsyncProDD:Clean;aurelius:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Barcode_deprecated:Clean;clinetsuite:Clean;CoolTrayIconWin:Clean;Curl4Delphi:Clean;dcl_clinetsuite:Clean;DclFIBPlus:Clean;dclfrx:Clean;dclfs:Clean;dclfsDB:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtFRExp:Clean;DCLgtQRExp:Clean;dclIconFontsImageListFMX:Clean;dclJanuaIconFontsImageList:Clean;dclJVEsoft:Clean;dclPython:Clean;dclPythonFmx:Clean;dclPythonVcl:Clean;dclremotedb:Clean;DclRxCtl:Clean;DclRxDB:Clean;dclsbridge:Clean;dclsgcWebSockets:Clean;dclsparkle:Clean;dclSVGIconImageList:Clean;dclSVGIconImageListFMX:Clean;dcltmsbcl:Clean;dclTMSDiagram:Clean;dclTMSQueryStudio:Clean;dclTMSScripter:Clean;dclTMSWorkflow:Clean;dclUniFalcon:Clean;dclxdata:Clean;DECCipher:Clean;DelphiDetours:Clean;dipstudiowin:Clean;dipstudiowindataset:Clean;dmvcBaseRT:Clean;dmvcframeworkDT:Clean;dmvcframeworkRT:Clean;dxCoreRS27:Clean;Ean:Clean;EanEditors:Clean;EanXE13Sidney:Clean;echo:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FlexCel_XlsAdapter:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;FMX_FlexCel_Core:Clean;fmxdclgtxDocumentStudioControls:Clean;fmxgtxDocumentEngines:Clean;fmxgtxDocumentStudioControls:Clean;fmxgtxDocumentStudioCore:Clean;FMXTMSFNCAppToolsPkg:Clean;FMXTMSFNCBloxPkg:Clean;FMXTMSFNCBloxToolBarsPkg:Clean;FMXTMSFNCChartPkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCCorePkg:Clean;FMXTMSFNCDashboardPackPkg:Clean;FMXTMSFNCMapsPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;frx:Clean;frxDB:Clean;frxHTML28:Clean;fs:Clean;fsDB:Clean;fsFD:Clean;gtCompression:Clean;gtCrypt:Clean;gtDocEng:Clean;gtFilters:Clean;gtFont:Clean;gtRtl:Clean;gtxDocumentEngines:Clean;hclcore:Clean;hclcore_xe:Clean;htmleditcore:Clean;htmlfastreport:Clean;htmlfastreportfm:Clean;IconFontsImageListFMX:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowindataset:Clean;ipstudiowinwordxp:Clean;JOSE:Clean;JVEsoft:Clean;loggerproRT:Clean;Neon:Clean;NeonCrossPlatform:Clean;OmniThreadLibraryDesigntime:Clean;OmniThreadLibraryRuntime:Clean;OpenAIPackage:Clean;pckAlcinoe:Clean;PlanAddons:Clean;Python:Clean;PythonFmx:Clean;PythonVcl:Clean;QRDBASE:Clean;QRDesigner:Clean;QRWDesign:Clean;QRWRun:Clean;remotedb:Clean;RestRequestLib:Clean;RtmRxCtl:Clean;RtmRxDB:Clean;sbridge:Clean;sgcWebSockets:Clean;Skia_Package_FMX_Designtime:Clean;Skia_Package_FMX:Clean;Skia_Package_RTL:Clean;Skia_Package_VCL_Designtime:Clean;Skia_Package_VCL:Clean;SKIA_FlexCel_Core:Clean;sparkle:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Data_Designtime:Clean;Spring_Data:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;StyleControls:Clean;StyleControlsD:Clean;SVGIconImageList:Clean;SVGIconImageListFMX:Clean;SVGIconPackage:Clean;SVGImage32Package:Clean;SwagDoc:Clean;Test:Clean;TestMac:Clean;tmsbcl:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSCryptoPkg:Clean;TMSCryptoPkgDE:Clean;TMSDiagram:Clean;TMSFMXChartPkg:Clean;TMSFMXChartPkgDE:Clean;TMSFMXCloudPackPkg:Clean;TMSFMXCloudPackPkgDE:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;TMSFMXUI:Clean;TMSFMXUIDE:Clean;TMSFMXWebGMapsPkg:Clean;TMSFMXWebGMapsPkgDE:Clean;TMSFNCAppToolsPkgDE:Clean;TMSFNCBloxPkgDE:Clean;TMSFNCChartPkgDE:Clean;TMSFNCCloudPackPkgDE:Clean;TMSFNCCloudPackWEB:Clean;TMSFNCCorePkgDE:Clean;TMSFNCCoreWEB:Clean;TMSFNCDashBoardPackPkgDE:Clean;TMSFNCMapsPkgDE:Clean;TMSFNCUIPackPkgDE:Clean;TMSFNCWXPackPkgDE:Clean;TMSQueryStudio:Clean;TMSScripter:Clean;TMSScripter_FMX:Clean;TMSScripter_IDE:Clean;TMSScripter_Imports_ADODB:Clean;TMSScripter_Imports_DB:Clean;TMSScripter_Imports_RTL:Clean;TMSScripter_Imports_VCL:Clean;TMSScripter_Legacy:Clean;TMSScripter_Memo:Clean;TMSScripter_VCL:Clean;TMSVCLIWPkg:Clean;TMSVCLIWPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;TMSVCLUIPackPkg:Clean;TMSVCLUIPackPkgDE:Clean;TMSVCLUIPackPkgEx:Clean;TMSVCLUIPackPkgWiz:Clean;TMSVCLUIPackPkgXls:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebLibCore:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;TMSWorkflow:Clean;TRCGooglePlaces_d:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlacesDesign:Clean;TRCGooglePlacesRuntime:Clean;TUniFalcon:Clean;uniTools28:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;vcldclgtxDocumentStudioControls:Clean;vclgtxDocumentEngines:Clean;vclgtxDocumentStudioControls:Clean;vclgtxDocumentStudioCore:Clean;VCLThemeSelector:Clean;VCLTMSFNCAppToolsPkg:Clean;VCLTMSFNCBloxPkg:Clean;VCLTMSFNCBloxToolBarsPkg:Clean;VCLTMSFNCChartPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;VCLTMSFNCCorePkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;VCLTMSFNCMapsPkg:Clean;VCLTMSFNCUIPackPkg:Clean;VCLTMSFNCWXPackPkg:Clean;vcwd:Clean;VisualStyles:Clean;WinsoftVCL:Clean;xdata:Clean;xhChartDsgn:Clean;xhChartRtl:Clean;xhCntrlsDsgn:Clean;xhExportDsgn:Clean;xhExportRtl:Clean;xhHierCubeDsgn:Clean;xhHierCubeRtl:Clean;ZComponentsD:Clean;ZComponentsVCL:Clean;ZCoreLibs:Clean;ZDocumentContainer:Clean;ZipMasterD:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AWSSDK:Make;Alcinoe:Make;AsyncPro:Make;AsyncProDR:Make;AsyncProDD:Make;aurelius:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Barcode_deprecated:Make;clinetsuite:Make;CoolTrayIconWin:Make;Curl4Delphi:Make;dcl_clinetsuite:Make;DclFIBPlus:Make;dclfrx:Make;dclfs:Make;dclfsDB:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtFRExp:Make;DCLgtQRExp:Make;dclIconFontsImageListFMX:Make;dclJanuaIconFontsImageList:Make;dclJVEsoft:Make;dclPython:Make;dclPythonFmx:Make;dclPythonVcl:Make;dclremotedb:Make;DclRxCtl:Make;DclRxDB:Make;dclsbridge:Make;dclsgcWebSockets:Make;dclsparkle:Make;dclSVGIconImageList:Make;dclSVGIconImageListFMX:Make;dcltmsbcl:Make;dclTMSDiagram:Make;dclTMSQueryStudio:Make;dclTMSScripter:Make;dclTMSWorkflow:Make;dclUniFalcon:Make;dclxdata:Make;DECCipher:Make;DelphiDetours:Make;dipstudiowin:Make;dipstudiowindataset:Make;dmvcBaseRT:Make;dmvcframeworkDT:Make;dmvcframeworkRT:Make;dxCoreRS27:Make;Ean:Make;EanEditors:Make;EanXE13Sidney:Make;echo:Make;eInvoice4D:Make;eMiniInvoice4D:Make;FIBPlus:Make;FIBPlusEditors:Make;FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_Render:Make;FlexCel_Report:Make;FlexCel_XlsAdapter:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;FMX_FlexCel_Core:Make;fmxdclgtxDocumentStudioControls:Make;fmxgtxDocumentEngines:Make;fmxgtxDocumentStudioControls:Make;fmxgtxDocumentStudioCore:Make;FMXTMSFNCAppToolsPkg:Make;FMXTMSFNCBloxPkg:Make;FMXTMSFNCBloxToolBarsPkg:Make;FMXTMSFNCChartPkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCCorePkg:Make;FMXTMSFNCDashboardPackPkg:Make;FMXTMSFNCMapsPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;frx:Make;frxDB:Make;frxHTML28:Make;fs:Make;fsDB:Make;fsFD:Make;gtCompression:Make;gtCrypt:Make;gtDocEng:Make;gtFilters:Make;gtFont:Make;gtRtl:Make;gtxDocumentEngines:Make;hclcore:Make;hclcore_xe:Make;htmleditcore:Make;htmlfastreport:Make;htmlfastreportfm:Make;IconFontsImageListFMX:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowindataset:Make;ipstudiowinwordxp:Make;JOSE:Make;JVEsoft:Make;loggerproRT:Make;Neon:Make;NeonCrossPlatform:Make;OmniThreadLibraryDesigntime:Make;OmniThreadLibraryRuntime:Make;OpenAIPackage:Make;pckAlcinoe:Make;PlanAddons:Make;Python:Make;PythonFmx:Make;PythonVcl:Make;QRDBASE:Make;QRDesigner:Make;QRWDesign:Make;QRWRun:Make;remotedb:Make;RestRequestLib:Make;RtmRxCtl:Make;RtmRxDB:Make;sbridge:Make;sgcWebSockets:Make;Skia_Package_FMX_Designtime:Make;Skia_Package_FMX:Make;Skia_Package_RTL:Make;Skia_Package_VCL_Designtime:Make;Skia_Package_VCL:Make;SKIA_FlexCel_Core:Make;sparkle:Make;Spring_Base:Make;Spring_Core:Make;Spring_Data_Designtime:Make;Spring_Data:Make;Spring_Extensions:Make;Spring_Persistence:Make;StyleControls:Make;StyleControlsD:Make;SVGIconImageList:Make;SVGIconImageListFMX:Make;SVGIconPackage:Make;SVGImage32Package:Make;SwagDoc:Make;Test:Make;TestMac:Make;tmsbcl:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSCryptoPkg:Make;TMSCryptoPkgDE:Make;TMSDiagram:Make;TMSFMXChartPkg:Make;TMSFMXChartPkgDE:Make;TMSFMXCloudPackPkg:Make;TMSFMXCloudPackPkgDE:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;TMSFMXUI:Make;TMSFMXUIDE:Make;TMSFMXWebGMapsPkg:Make;TMSFMXWebGMapsPkgDE:Make;TMSFNCAppToolsPkgDE:Make;TMSFNCBloxPkgDE:Make;TMSFNCChartPkgDE:Make;TMSFNCCloudPackPkgDE:Make;TMSFNCCloudPackWEB:Make;TMSFNCCorePkgDE:Make;TMSFNCCoreWEB:Make;TMSFNCDashBoardPackPkgDE:Make;TMSFNCMapsPkgDE:Make;TMSFNCUIPackPkgDE:Make;TMSFNCWXPackPkgDE:Make;TMSQueryStudio:Make;TMSScripter:Make;TMSScripter_FMX:Make;TMSScripter_IDE:Make;TMSScripter_Imports_ADODB:Make;TMSScripter_Imports_DB:Make;TMSScripter_Imports_RTL:Make;TMSScripter_Imports_VCL:Make;TMSScripter_Legacy:Make;TMSScripter_Memo:Make;TMSScripter_VCL:Make;TMSVCLIWPkg:Make;TMSVCLIWPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;TMSVCLUIPackPkg:Make;TMSVCLUIPackPkgDE:Make;TMSVCLUIPackPkgEx:Make;TMSVCLUIPackPkgWiz:Make;TMSVCLUIPackPkgXls:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebLibCore:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;TMSWorkflow:Make;TRCGooglePlaces_d:Make;TRCGooglePlaces_r:Make;TRCGooglePlacesDesign:Make;TRCGooglePlacesRuntime:Make;TUniFalcon:Make;uniTools28:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;vcldclgtxDocumentStudioControls:Make;vclgtxDocumentEngines:Make;vclgtxDocumentStudioControls:Make;vclgtxDocumentStudioCore:Make;VCLThemeSelector:Make;VCLTMSFNCAppToolsPkg:Make;VCLTMSFNCBloxPkg:Make;VCLTMSFNCBloxToolBarsPkg:Make;VCLTMSFNCChartPkg:Make;VCLTMSFNCCloudPackPkg:Make;VCLTMSFNCCorePkg:Make;VCLTMSFNCDashboardPackPkg:Make;VCLTMSFNCMapsPkg:Make;VCLTMSFNCUIPackPkg:Make;VCLTMSFNCWXPackPkg:Make;vcwd:Make;VisualStyles:Make;WinsoftVCL:Make;xdata:Make;xhChartDsgn:Make;xhChartRtl:Make;xhCntrlsDsgn:Make;xhExportDsgn:Make;xhExportRtl:Make;xhHierCubeDsgn:Make;xhHierCubeRtl:Make;ZComponentsD:Make;ZComponentsVCL:Make;ZCoreLibs:Make;ZDocumentContainer:Make;ZipMasterD:Make;ZipMasterR:Make;ZLibrariesWin:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,6 +1,7 @@
 ﻿package gtFilters;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,11 +30,11 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   gtRtl;
 
-contains
+ocontains
   gtFilters3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Filters\gtFilters3.pas';
 
-end.
+d.
