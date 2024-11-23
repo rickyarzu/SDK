@@ -738,6 +738,183 @@
         <Projects Include="..\..\Components\pkg122\ZLibrariesWin.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Janua.Core.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.dclSVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Ethea.VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Spring.Base.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Spring.Extensions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.SVGIconImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.SVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.SVGIconPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.UNI.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Unidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.Unidac.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.VCL.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreRuntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuadclSVGIconImageListFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControlsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaIconFontsImageList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaRestWeb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaThirdPartyVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.old.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents_old.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.old.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CarServiceCustomerConfirmation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaAllDemos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVirtual.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PhoenixVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\AnagraphPlannerXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\AppAndCityBackOffice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceAdminXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceBackOffice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceXE14.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\CarServiceXE14x86.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\DilettantissimoCms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\DilettantissimoManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\GeneraliVisualCall.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\JanuaDevIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\JanuaVCLTestRestDMVCIDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\JanuaVCLUITestIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\OpenshiftPodRedisXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\OracleSwissKnifeXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\PhoenixBackgroundService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\PhoenixGoogleCalendarRegister.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\PhoenixGoogleCalendarSync.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -2951,14 +3128,545 @@
     <Target Name="ZLibrariesWin:Make">
         <MSBuild Projects="..\..\Components\pkg122\ZLibrariesWin.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Janua_Core_TMLogistic">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_Core_TMLogistic:Clean">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Core_TMLogistic:Make">
+        <MSBuild Projects="Janua.Core.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Clean">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_dclSVGIconImageList:Make">
+        <MSBuild Projects="Janua.dclSVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Ethea_VCLThemeSelector">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="Janua_Ethea_VCLThemeSelector:Clean">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Ethea_VCLThemeSelector:Make">
+        <MSBuild Projects="Janua.Ethea.VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Spring_Base">
+        <MSBuild Projects="Janua.Spring.Base.dproj"/>
+    </Target>
+    <Target Name="Janua_Spring_Base:Clean">
+        <MSBuild Projects="Janua.Spring.Base.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Spring_Base:Make">
+        <MSBuild Projects="Janua.Spring.Base.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Spring_Extensions">
+        <MSBuild Projects="Janua.Spring.Extensions.dproj"/>
+    </Target>
+    <Target Name="Janua_Spring_Extensions:Clean">
+        <MSBuild Projects="Janua.Spring.Extensions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Spring_Extensions:Make">
+        <MSBuild Projects="Janua.Spring.Extensions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Clean">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageList:Make">
+        <MSBuild Projects="Janua.SVGIconImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Clean">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconImageListFMX:Make">
+        <MSBuild Projects="Janua.SVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Clean">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_SVGIconPackage:Make">
+        <MSBuild Projects="Janua.SVGIconPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Clean">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Make">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Unidac">
+        <MSBuild Projects="Janua.Unidac.dproj"/>
+    </Target>
+    <Target Name="Janua_Unidac:Clean">
+        <MSBuild Projects="Janua.Unidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Unidac:Make">
+        <MSBuild Projects="Janua.Unidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_Unidac_TMLogistic">
+        <MSBuild Projects="Janua.Unidac.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_Unidac_TMLogistic:Clean">
+        <MSBuild Projects="Janua.Unidac.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_Unidac_TMLogistic:Make">
+        <MSBuild Projects="Janua.Unidac.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic:Clean">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_VCL_TMLogistic:Make">
+        <MSBuild Projects="Janua.VCL.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreRuntime">
+        <MSBuild Projects="JanuaCoreRuntime.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreRuntime:Clean">
+        <MSBuild Projects="JanuaCoreRuntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreRuntime:Make">
+        <MSBuild Projects="JanuaCoreRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Clean">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Make">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuadclSVGIconImageListFMX">
+        <MSBuild Projects="JanuadclSVGIconImageListFMX.dproj"/>
+    </Target>
+    <Target Name="JanuadclSVGIconImageListFMX:Clean">
+        <MSBuild Projects="JanuadclSVGIconImageListFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuadclSVGIconImageListFMX:Make">
+        <MSBuild Projects="JanuadclSVGIconImageListFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControlsD">
+        <MSBuild Projects="JanuaFMXControlsD.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControlsD:Clean">
+        <MSBuild Projects="JanuaFMXControlsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControlsD:Make">
+        <MSBuild Projects="JanuaFMXControlsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList:Clean">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaIconFontsImageList:Make">
+        <MSBuild Projects="JanuaIconFontsImageList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestWeb">
+        <MSBuild Projects="JanuaRestWeb.dproj"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Clean">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Make">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaThirdParty">
+        <MSBuild Projects="JanuaThirdParty.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdParty:Clean">
+        <MSBuild Projects="JanuaThirdParty.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdParty:Make">
+        <MSBuild Projects="JanuaThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Clean">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Make">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsCore">
+        <MSBuild Projects="JanuaTmsCore.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsCore:Clean">
+        <MSBuild Projects="JanuaTmsCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsCore:Make">
+        <MSBuild Projects="JanuaTmsCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsForms">
+        <MSBuild Projects="JanuaTmsForms.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Clean">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsForms:Make">
+        <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac_old">
+        <MSBuild Projects="JanuaUnidac.old.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac_old:Clean">
+        <MSBuild Projects="JanuaUnidac.old.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac_old:Make">
+        <MSBuild Projects="JanuaUnidac.old.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Clean">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Make">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents_old">
+        <MSBuild Projects="JanuaVCLComponents_old.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents_old:Clean">
+        <MSBuild Projects="JanuaVCLComponents_old.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents_old:Make">
+        <MSBuild Projects="JanuaVCLComponents_old.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls_old">
+        <MSBuild Projects="JanuaVCLControls.old.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls_old:Clean">
+        <MSBuild Projects="JanuaVCLControls.old.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls_old:Make">
+        <MSBuild Projects="JanuaVCLControls.old.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation:Clean">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceCustomerConfirmation:Make">
+        <MSBuild Projects="CarServiceCustomerConfirmation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaAllDemos">
+        <MSBuild Projects="JanuaAllDemos.dproj"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Clean">
+        <MSBuild Projects="JanuaAllDemos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaAllDemos:Make">
+        <MSBuild Projects="JanuaAllDemos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVirtual">
+        <MSBuild Projects="JanuaVirtual.dproj"/>
+    </Target>
+    <Target Name="JanuaVirtual:Clean">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVirtual:Make">
+        <MSBuild Projects="JanuaVirtual.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PhoenixVCL">
+        <MSBuild Projects="PhoenixVCL.dproj"/>
+    </Target>
+    <Target Name="PhoenixVCL:Clean">
+        <MSBuild Projects="PhoenixVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixVCL:Make">
+        <MSBuild Projects="PhoenixVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AnagraphPlannerXE15">
+        <MSBuild Projects="VCL\AnagraphPlannerXE15.dproj"/>
+    </Target>
+    <Target Name="AnagraphPlannerXE15:Clean">
+        <MSBuild Projects="VCL\AnagraphPlannerXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AnagraphPlannerXE15:Make">
+        <MSBuild Projects="VCL\AnagraphPlannerXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AppAndCityBackOffice">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj"/>
+    </Target>
+    <Target Name="AppAndCityBackOffice:Clean">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppAndCityBackOffice:Make">
+        <MSBuild Projects="VCL\AppAndCityBackOffice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15:Clean">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15:Make">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceBackOffice">
+        <MSBuild Projects="VCL\CarServiceBackOffice.dproj"/>
+    </Target>
+    <Target Name="CarServiceBackOffice:Clean">
+        <MSBuild Projects="VCL\CarServiceBackOffice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceBackOffice:Make">
+        <MSBuild Projects="VCL\CarServiceBackOffice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceXE14">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj"/>
+    </Target>
+    <Target Name="CarServiceXE14:Clean">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceXE14:Make">
+        <MSBuild Projects="VCL\CarServiceXE14.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceXE14x86">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj"/>
+    </Target>
+    <Target Name="CarServiceXE14x86:Clean">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceXE14x86:Make">
+        <MSBuild Projects="VCL\CarServiceXE14x86.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilettantissimoCms">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Clean">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilettantissimoCms:Make">
+        <MSBuild Projects="VCL\DilettantissimoCms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DilettantissimoManager">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj"/>
+    </Target>
+    <Target Name="DilettantissimoManager:Clean">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DilettantissimoManager:Make">
+        <MSBuild Projects="VCL\DilettantissimoManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GeneraliVisualCall">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj"/>
+    </Target>
+    <Target Name="GeneraliVisualCall:Clean">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GeneraliVisualCall:Make">
+        <MSBuild Projects="VCL\GeneraliVisualCall.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Clean">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaDevIDEXE15:Make">
+        <MSBuild Projects="VCL\JanuaDevIDEXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15">
+        <MSBuild Projects="VCL\JanuaRestDMVCTestIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15:Clean">
+        <MSBuild Projects="VCL\JanuaRestDMVCTestIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestDMVCTestIDEXE15:Make">
+        <MSBuild Projects="VCL\JanuaRestDMVCTestIDEXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLTestRestDMVCIDE">
+        <MSBuild Projects="VCL\JanuaVCLTestRestDMVCIDE.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLTestRestDMVCIDE:Clean">
+        <MSBuild Projects="VCL\JanuaVCLTestRestDMVCIDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLTestRestDMVCIDE:Make">
+        <MSBuild Projects="VCL\JanuaVCLTestRestDMVCIDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLUITestIDEXE15">
+        <MSBuild Projects="VCL\JanuaVCLUITestIDEXE15.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLUITestIDEXE15:Clean">
+        <MSBuild Projects="VCL\JanuaVCLUITestIDEXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLUITestIDEXE15:Make">
+        <MSBuild Projects="VCL\JanuaVCLUITestIDEXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OpenshiftPodRedisXE15">
+        <MSBuild Projects="VCL\OpenshiftPodRedisXE15.dproj"/>
+    </Target>
+    <Target Name="OpenshiftPodRedisXE15:Clean">
+        <MSBuild Projects="VCL\OpenshiftPodRedisXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenshiftPodRedisXE15:Make">
+        <MSBuild Projects="VCL\OpenshiftPodRedisXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OracleSwissKnifeXE15">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE15.dproj"/>
+    </Target>
+    <Target Name="OracleSwissKnifeXE15:Clean">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OracleSwissKnifeXE15:Make">
+        <MSBuild Projects="VCL\OracleSwissKnifeXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PhoenixBackgroundService">
+        <MSBuild Projects="VCL\PhoenixBackgroundService.dproj"/>
+    </Target>
+    <Target Name="PhoenixBackgroundService:Clean">
+        <MSBuild Projects="VCL\PhoenixBackgroundService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixBackgroundService:Make">
+        <MSBuild Projects="VCL\PhoenixBackgroundService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarRegister">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarRegister.dproj"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarRegister:Clean">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarRegister.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarRegister:Make">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarRegister.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarSync">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarSync.dproj"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarSync:Clean">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarSync.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixGoogleCalendarSync:Make">
+        <MSBuild Projects="VCL\PhoenixGoogleCalendarSync.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;Alcinoe;AsyncPro;AsyncProDR;AsyncProDD;aurelius;AWSSDKFMX;AWSSDKVCL;Barcode_deprecated;clinetsuite;CoolTrayIconWin;Curl4Delphi;dcl_clinetsuite;DclFIBPlus;dclfrx;dclfs;dclfsDB;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtFRExp;DCLgtQRExp;dclIconFontsImageListFMX;dclJanuaIconFontsImageList;dclJVEsoft;dclPython;dclPythonFmx;dclPythonVcl;dclremotedb;DclRxCtl;DclRxDB;dclsbridge;dclsgcWebSockets;dclsparkle;dclSVGIconImageList;dclSVGIconImageListFMX;dcltmsbcl;dclTMSDiagram;dclTMSQueryStudio;dclTMSScripter;dclTMSWorkflow;dclUniFalcon;dclxdata;DECCipher;DelphiDetours;dipstudiowin;dipstudiowindataset;dmvcBaseRT;dmvcframeworkDT;dmvcframeworkRT;dxCoreRS27;Ean;EanEditors;EanXE13Sidney;echo;eInvoice4D;eMiniInvoice4D;FIBPlus;FIBPlusEditors;FlexCel_Core;FlexCel_Pdf;FlexCel_Render;FlexCel_Report;FlexCel_XlsAdapter;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;FMX_FlexCel_Core;fmxdclgtxDocumentStudioControls;fmxgtxDocumentEngines;fmxgtxDocumentStudioControls;fmxgtxDocumentStudioCore;FMXTMSFNCAppToolsPkg;FMXTMSFNCBloxPkg;FMXTMSFNCBloxToolBarsPkg;FMXTMSFNCChartPkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCCorePkg;FMXTMSFNCDashboardPackPkg;FMXTMSFNCMapsPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;frx;frxDB;frxHTML28;fs;fsDB;fsFD;gtCompression;gtCrypt;gtDocEng;gtFilters;gtFont;gtRtl;gtxDocumentEngines;hclcore;hclcore_xe;htmleditcore;htmlfastreport;htmlfastreportfm;IconFontsImageListFMX;ipstudiowin;ipstudiowinclient;ipstudiowindataset;ipstudiowinwordxp;JOSE;JVEsoft;loggerproRT;Neon;NeonCrossPlatform;OmniThreadLibraryDesigntime;OmniThreadLibraryRuntime;OpenAIPackage;pckAlcinoe;PlanAddons;Python;PythonFmx;PythonVcl;QRDBASE;QRDesigner;QRWDesign;QRWRun;remotedb;RestRequestLib;RtmRxCtl;RtmRxDB;sbridge;sgcWebSockets;Skia_Package_FMX_Designtime;Skia_Package_FMX;Skia_Package_RTL;Skia_Package_VCL_Designtime;Skia_Package_VCL;SKIA_FlexCel_Core;sparkle;Spring_Base;Spring_Core;Spring_Data_Designtime;Spring_Data;Spring_Extensions;Spring_Persistence;StyleControls;StyleControlsD;SVGIconImageList;SVGIconImageListFMX;SVGIconPackage;SVGImage32Package;SwagDoc;Test;TestMac;tmsbcl;TMSCloudPkg;TMSCloudPkgDE;TMSCryptoPkg;TMSCryptoPkgDE;TMSDiagram;TMSFMXChartPkg;TMSFMXChartPkgDE;TMSFMXCloudPackPkg;TMSFMXCloudPackPkgDE;TMSFMXPackPkg;TMSFMXPackPkgDE;TMSFMXUI;TMSFMXUIDE;TMSFMXWebGMapsPkg;TMSFMXWebGMapsPkgDE;TMSFNCAppToolsPkgDE;TMSFNCBloxPkgDE;TMSFNCChartPkgDE;TMSFNCCloudPackPkgDE;TMSFNCCloudPackWEB;TMSFNCCorePkgDE;TMSFNCCoreWEB;TMSFNCDashBoardPackPkgDE;TMSFNCMapsPkgDE;TMSFNCUIPackPkgDE;TMSFNCWXPackPkgDE;TMSQueryStudio;TMSScripter;TMSScripter_FMX;TMSScripter_IDE;TMSScripter_Imports_ADODB;TMSScripter_Imports_DB;TMSScripter_Imports_RTL;TMSScripter_Imports_VCL;TMSScripter_Legacy;TMSScripter_Memo;TMSScripter_VCL;TMSVCLIWPkg;TMSVCLIWPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;TMSVCLUIPackPkg;TMSVCLUIPackPkgDE;TMSVCLUIPackPkgEx;TMSVCLUIPackPkgWiz;TMSVCLUIPackPkgXls;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebLibCore;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;TMSWorkflow;TRCGooglePlaces_d;TRCGooglePlaces_r;TRCGooglePlacesDesign;TRCGooglePlacesRuntime;TUniFalcon;uniTools28;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;VCL_FlexCel_Core;vcldclgtxDocumentStudioControls;vclgtxDocumentEngines;vclgtxDocumentStudioControls;vclgtxDocumentStudioCore;VCLThemeSelector;VCLTMSFNCAppToolsPkg;VCLTMSFNCBloxPkg;VCLTMSFNCBloxToolBarsPkg;VCLTMSFNCChartPkg;VCLTMSFNCCloudPackPkg;VCLTMSFNCCorePkg;VCLTMSFNCDashboardPackPkg;VCLTMSFNCMapsPkg;VCLTMSFNCUIPackPkg;VCLTMSFNCWXPackPkg;vcwd;VisualStyles;WinsoftVCL;xdata;xhChartDsgn;xhChartRtl;xhCntrlsDsgn;xhExportDsgn;xhExportRtl;xhHierCubeDsgn;xhHierCubeRtl;ZComponentsD;ZComponentsVCL;ZCoreLibs;ZDocumentContainer;ZipMasterD;ZipMasterR;ZLibrariesWin"/>
+        <CallTarget Targets="AWSSDK;Alcinoe;AsyncPro;AsyncProDR;AsyncProDD;aurelius;AWSSDKFMX;AWSSDKVCL;Barcode_deprecated;clinetsuite;CoolTrayIconWin;Curl4Delphi;dcl_clinetsuite;DclFIBPlus;dclfrx;dclfs;dclfsDB;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtFRExp;DCLgtQRExp;dclIconFontsImageListFMX;dclJanuaIconFontsImageList;dclJVEsoft;dclPython;dclPythonFmx;dclPythonVcl;dclremotedb;DclRxCtl;DclRxDB;dclsbridge;dclsgcWebSockets;dclsparkle;dclSVGIconImageList;dclSVGIconImageListFMX;dcltmsbcl;dclTMSDiagram;dclTMSQueryStudio;dclTMSScripter;dclTMSWorkflow;dclUniFalcon;dclxdata;DECCipher;DelphiDetours;dipstudiowin;dipstudiowindataset;dmvcBaseRT;dmvcframeworkDT;dmvcframeworkRT;dxCoreRS27;Ean;EanEditors;EanXE13Sidney;echo;eInvoice4D;eMiniInvoice4D;FIBPlus;FIBPlusEditors;FlexCel_Core;FlexCel_Pdf;FlexCel_Render;FlexCel_Report;FlexCel_XlsAdapter;FMX_FlexCel_Components;FMX_FlexCel_Components_DESIGN;FMX_FlexCel_Core;fmxdclgtxDocumentStudioControls;fmxgtxDocumentEngines;fmxgtxDocumentStudioControls;fmxgtxDocumentStudioCore;FMXTMSFNCAppToolsPkg;FMXTMSFNCBloxPkg;FMXTMSFNCBloxToolBarsPkg;FMXTMSFNCChartPkg;FMXTMSFNCCloudPackPkg;FMXTMSFNCCorePkg;FMXTMSFNCDashboardPackPkg;FMXTMSFNCMapsPkg;FMXTMSFNCUIPackPkg;FMXTMSFNCWXPackPkg;frx;frxDB;frxHTML28;fs;fsDB;fsFD;gtCompression;gtCrypt;gtDocEng;gtFilters;gtFont;gtRtl;gtxDocumentEngines;hclcore;hclcore_xe;htmleditcore;htmlfastreport;htmlfastreportfm;IconFontsImageListFMX;ipstudiowin;ipstudiowinclient;ipstudiowindataset;ipstudiowinwordxp;JOSE;JVEsoft;loggerproRT;Neon;NeonCrossPlatform;OmniThreadLibraryDesigntime;OmniThreadLibraryRuntime;OpenAIPackage;pckAlcinoe;PlanAddons;Python;PythonFmx;PythonVcl;QRDBASE;QRDesigner;QRWDesign;QRWRun;remotedb;RestRequestLib;RtmRxCtl;RtmRxDB;sbridge;sgcWebSockets;Skia_Package_FMX_Designtime;Skia_Package_FMX;Skia_Package_RTL;Skia_Package_VCL_Designtime;Skia_Package_VCL;SKIA_FlexCel_Core;sparkle;Spring_Base;Spring_Core;Spring_Data_Designtime;Spring_Data;Spring_Extensions;Spring_Persistence;StyleControls;StyleControlsD;SVGIconImageList;SVGIconImageListFMX;SVGIconPackage;SVGImage32Package;SwagDoc;Test;TestMac;tmsbcl;TMSCloudPkg;TMSCloudPkgDE;TMSCryptoPkg;TMSCryptoPkgDE;TMSDiagram;TMSFMXChartPkg;TMSFMXChartPkgDE;TMSFMXCloudPackPkg;TMSFMXCloudPackPkgDE;TMSFMXPackPkg;TMSFMXPackPkgDE;TMSFMXUI;TMSFMXUIDE;TMSFMXWebGMapsPkg;TMSFMXWebGMapsPkgDE;TMSFNCAppToolsPkgDE;TMSFNCBloxPkgDE;TMSFNCChartPkgDE;TMSFNCCloudPackPkgDE;TMSFNCCloudPackWEB;TMSFNCCorePkgDE;TMSFNCCoreWEB;TMSFNCDashBoardPackPkgDE;TMSFNCMapsPkgDE;TMSFNCUIPackPkgDE;TMSFNCWXPackPkgDE;TMSQueryStudio;TMSScripter;TMSScripter_FMX;TMSScripter_IDE;TMSScripter_Imports_ADODB;TMSScripter_Imports_DB;TMSScripter_Imports_RTL;TMSScripter_Imports_VCL;TMSScripter_Legacy;TMSScripter_Memo;TMSScripter_VCL;TMSVCLIWPkg;TMSVCLIWPkgDE;TMSVCLSecuritySystemPkgCore;TMSVCLSecuritySystemPkgUI;TMSVCLSecuritySystemPkgUIDE;TMSVCLUIPackPkg;TMSVCLUIPackPkgDE;TMSVCLUIPackPkgEx;TMSVCLUIPackPkgWiz;TMSVCLUIPackPkgXls;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebLibCore;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;TMSWorkflow;TRCGooglePlaces_d;TRCGooglePlaces_r;TRCGooglePlacesDesign;TRCGooglePlacesRuntime;TUniFalcon;uniTools28;VCL_FlexCel_Components;VCL_FlexCel_Components_DESIGN;VCL_FlexCel_Core;vcldclgtxDocumentStudioControls;vclgtxDocumentEngines;vclgtxDocumentStudioControls;vclgtxDocumentStudioCore;VCLThemeSelector;VCLTMSFNCAppToolsPkg;VCLTMSFNCBloxPkg;VCLTMSFNCBloxToolBarsPkg;VCLTMSFNCChartPkg;VCLTMSFNCCloudPackPkg;VCLTMSFNCCorePkg;VCLTMSFNCDashboardPackPkg;VCLTMSFNCMapsPkg;VCLTMSFNCUIPackPkg;VCLTMSFNCWXPackPkg;vcwd;VisualStyles;WinsoftVCL;xdata;xhChartDsgn;xhChartRtl;xhCntrlsDsgn;xhExportDsgn;xhExportRtl;xhHierCubeDsgn;xhHierCubeRtl;ZComponentsD;ZComponentsVCL;ZCoreLibs;ZDocumentContainer;ZipMasterD;ZipMasterR;ZLibrariesWin;Janua_Core_TMLogistic;Janua_dclSVGIconImageList;Janua_Ethea_VCLThemeSelector;Janua_Spring_Base;Janua_Spring_Extensions;Janua_SVGIconImageList;Janua_SVGIconImageListFMX;Janua_SVGIconPackage;Janua_UNI_TMLogistic;Janua_Unidac;Janua_Unidac_TMLogistic;Janua_VCL_TMLogistic;JanuaCore;JanuaCoreComponents;JanuaCoreRuntime;JanuaCoreThirdParty;JanuadclSVGIconImageListFMX;JanuaFMXControls;JanuaFMXControlsD;JanuaIconFontsImageList;JanuaMVVM;JanuaRestWeb;JanuaThirdParty;JanuaThirdPartyVCL;JanuaTmsControls;JanuaTmsCore;JanuaTmsForms;JanuaUnidac;JanuaUnidac_old;JanuaUnidacComponents;JanuaUnidacComponentsD;JanuaUniGUI;JanuaVCLComponents;JanuaVCLComponents_old;JanuaVCLControls;JanuaVCLControls_old;CarServiceCustomerConfirmation;JanuaAllDemos;JanuaVCLMVVM;JanuaVirtual;PhoenixVCL;AnagraphPlannerXE15;AppAndCityBackOffice;CarServiceAdminXE15;CarServiceBackOffice;CarServiceXE14;CarServiceXE14x86;DilettantissimoCms;DilettantissimoManager;GeneraliVisualCall;JanuaDevIDEXE15;JanuaRestDMVCTestIDEXE15;JanuaVCLTestRestDMVCIDE;JanuaVCLUITestIDEXE15;OpenshiftPodRedisXE15;OracleSwissKnifeXE15;PhoenixBackgroundService;PhoenixGoogleCalendarRegister;PhoenixGoogleCalendarSync"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;Alcinoe:Clean;AsyncPro:Clean;AsyncProDR:Clean;AsyncProDD:Clean;aurelius:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Barcode_deprecated:Clean;clinetsuite:Clean;CoolTrayIconWin:Clean;Curl4Delphi:Clean;dcl_clinetsuite:Clean;DclFIBPlus:Clean;dclfrx:Clean;dclfs:Clean;dclfsDB:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtFRExp:Clean;DCLgtQRExp:Clean;dclIconFontsImageListFMX:Clean;dclJanuaIconFontsImageList:Clean;dclJVEsoft:Clean;dclPython:Clean;dclPythonFmx:Clean;dclPythonVcl:Clean;dclremotedb:Clean;DclRxCtl:Clean;DclRxDB:Clean;dclsbridge:Clean;dclsgcWebSockets:Clean;dclsparkle:Clean;dclSVGIconImageList:Clean;dclSVGIconImageListFMX:Clean;dcltmsbcl:Clean;dclTMSDiagram:Clean;dclTMSQueryStudio:Clean;dclTMSScripter:Clean;dclTMSWorkflow:Clean;dclUniFalcon:Clean;dclxdata:Clean;DECCipher:Clean;DelphiDetours:Clean;dipstudiowin:Clean;dipstudiowindataset:Clean;dmvcBaseRT:Clean;dmvcframeworkDT:Clean;dmvcframeworkRT:Clean;dxCoreRS27:Clean;Ean:Clean;EanEditors:Clean;EanXE13Sidney:Clean;echo:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FlexCel_XlsAdapter:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;FMX_FlexCel_Core:Clean;fmxdclgtxDocumentStudioControls:Clean;fmxgtxDocumentEngines:Clean;fmxgtxDocumentStudioControls:Clean;fmxgtxDocumentStudioCore:Clean;FMXTMSFNCAppToolsPkg:Clean;FMXTMSFNCBloxPkg:Clean;FMXTMSFNCBloxToolBarsPkg:Clean;FMXTMSFNCChartPkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCCorePkg:Clean;FMXTMSFNCDashboardPackPkg:Clean;FMXTMSFNCMapsPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;frx:Clean;frxDB:Clean;frxHTML28:Clean;fs:Clean;fsDB:Clean;fsFD:Clean;gtCompression:Clean;gtCrypt:Clean;gtDocEng:Clean;gtFilters:Clean;gtFont:Clean;gtRtl:Clean;gtxDocumentEngines:Clean;hclcore:Clean;hclcore_xe:Clean;htmleditcore:Clean;htmlfastreport:Clean;htmlfastreportfm:Clean;IconFontsImageListFMX:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowindataset:Clean;ipstudiowinwordxp:Clean;JOSE:Clean;JVEsoft:Clean;loggerproRT:Clean;Neon:Clean;NeonCrossPlatform:Clean;OmniThreadLibraryDesigntime:Clean;OmniThreadLibraryRuntime:Clean;OpenAIPackage:Clean;pckAlcinoe:Clean;PlanAddons:Clean;Python:Clean;PythonFmx:Clean;PythonVcl:Clean;QRDBASE:Clean;QRDesigner:Clean;QRWDesign:Clean;QRWRun:Clean;remotedb:Clean;RestRequestLib:Clean;RtmRxCtl:Clean;RtmRxDB:Clean;sbridge:Clean;sgcWebSockets:Clean;Skia_Package_FMX_Designtime:Clean;Skia_Package_FMX:Clean;Skia_Package_RTL:Clean;Skia_Package_VCL_Designtime:Clean;Skia_Package_VCL:Clean;SKIA_FlexCel_Core:Clean;sparkle:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Data_Designtime:Clean;Spring_Data:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;StyleControls:Clean;StyleControlsD:Clean;SVGIconImageList:Clean;SVGIconImageListFMX:Clean;SVGIconPackage:Clean;SVGImage32Package:Clean;SwagDoc:Clean;Test:Clean;TestMac:Clean;tmsbcl:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSCryptoPkg:Clean;TMSCryptoPkgDE:Clean;TMSDiagram:Clean;TMSFMXChartPkg:Clean;TMSFMXChartPkgDE:Clean;TMSFMXCloudPackPkg:Clean;TMSFMXCloudPackPkgDE:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;TMSFMXUI:Clean;TMSFMXUIDE:Clean;TMSFMXWebGMapsPkg:Clean;TMSFMXWebGMapsPkgDE:Clean;TMSFNCAppToolsPkgDE:Clean;TMSFNCBloxPkgDE:Clean;TMSFNCChartPkgDE:Clean;TMSFNCCloudPackPkgDE:Clean;TMSFNCCloudPackWEB:Clean;TMSFNCCorePkgDE:Clean;TMSFNCCoreWEB:Clean;TMSFNCDashBoardPackPkgDE:Clean;TMSFNCMapsPkgDE:Clean;TMSFNCUIPackPkgDE:Clean;TMSFNCWXPackPkgDE:Clean;TMSQueryStudio:Clean;TMSScripter:Clean;TMSScripter_FMX:Clean;TMSScripter_IDE:Clean;TMSScripter_Imports_ADODB:Clean;TMSScripter_Imports_DB:Clean;TMSScripter_Imports_RTL:Clean;TMSScripter_Imports_VCL:Clean;TMSScripter_Legacy:Clean;TMSScripter_Memo:Clean;TMSScripter_VCL:Clean;TMSVCLIWPkg:Clean;TMSVCLIWPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;TMSVCLUIPackPkg:Clean;TMSVCLUIPackPkgDE:Clean;TMSVCLUIPackPkgEx:Clean;TMSVCLUIPackPkgWiz:Clean;TMSVCLUIPackPkgXls:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebLibCore:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;TMSWorkflow:Clean;TRCGooglePlaces_d:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlacesDesign:Clean;TRCGooglePlacesRuntime:Clean;TUniFalcon:Clean;uniTools28:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;vcldclgtxDocumentStudioControls:Clean;vclgtxDocumentEngines:Clean;vclgtxDocumentStudioControls:Clean;vclgtxDocumentStudioCore:Clean;VCLThemeSelector:Clean;VCLTMSFNCAppToolsPkg:Clean;VCLTMSFNCBloxPkg:Clean;VCLTMSFNCBloxToolBarsPkg:Clean;VCLTMSFNCChartPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;VCLTMSFNCCorePkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;VCLTMSFNCMapsPkg:Clean;VCLTMSFNCUIPackPkg:Clean;VCLTMSFNCWXPackPkg:Clean;vcwd:Clean;VisualStyles:Clean;WinsoftVCL:Clean;xdata:Clean;xhChartDsgn:Clean;xhChartRtl:Clean;xhCntrlsDsgn:Clean;xhExportDsgn:Clean;xhExportRtl:Clean;xhHierCubeDsgn:Clean;xhHierCubeRtl:Clean;ZComponentsD:Clean;ZComponentsVCL:Clean;ZCoreLibs:Clean;ZDocumentContainer:Clean;ZipMasterD:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean"/>
+        <CallTarget Targets="AWSSDK:Clean;Alcinoe:Clean;AsyncPro:Clean;AsyncProDR:Clean;AsyncProDD:Clean;aurelius:Clean;AWSSDKFMX:Clean;AWSSDKVCL:Clean;Barcode_deprecated:Clean;clinetsuite:Clean;CoolTrayIconWin:Clean;Curl4Delphi:Clean;dcl_clinetsuite:Clean;DclFIBPlus:Clean;dclfrx:Clean;dclfs:Clean;dclfsDB:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtFRExp:Clean;DCLgtQRExp:Clean;dclIconFontsImageListFMX:Clean;dclJanuaIconFontsImageList:Clean;dclJVEsoft:Clean;dclPython:Clean;dclPythonFmx:Clean;dclPythonVcl:Clean;dclremotedb:Clean;DclRxCtl:Clean;DclRxDB:Clean;dclsbridge:Clean;dclsgcWebSockets:Clean;dclsparkle:Clean;dclSVGIconImageList:Clean;dclSVGIconImageListFMX:Clean;dcltmsbcl:Clean;dclTMSDiagram:Clean;dclTMSQueryStudio:Clean;dclTMSScripter:Clean;dclTMSWorkflow:Clean;dclUniFalcon:Clean;dclxdata:Clean;DECCipher:Clean;DelphiDetours:Clean;dipstudiowin:Clean;dipstudiowindataset:Clean;dmvcBaseRT:Clean;dmvcframeworkDT:Clean;dmvcframeworkRT:Clean;dxCoreRS27:Clean;Ean:Clean;EanEditors:Clean;EanXE13Sidney:Clean;echo:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;FlexCel_Core:Clean;FlexCel_Pdf:Clean;FlexCel_Render:Clean;FlexCel_Report:Clean;FlexCel_XlsAdapter:Clean;FMX_FlexCel_Components:Clean;FMX_FlexCel_Components_DESIGN:Clean;FMX_FlexCel_Core:Clean;fmxdclgtxDocumentStudioControls:Clean;fmxgtxDocumentEngines:Clean;fmxgtxDocumentStudioControls:Clean;fmxgtxDocumentStudioCore:Clean;FMXTMSFNCAppToolsPkg:Clean;FMXTMSFNCBloxPkg:Clean;FMXTMSFNCBloxToolBarsPkg:Clean;FMXTMSFNCChartPkg:Clean;FMXTMSFNCCloudPackPkg:Clean;FMXTMSFNCCorePkg:Clean;FMXTMSFNCDashboardPackPkg:Clean;FMXTMSFNCMapsPkg:Clean;FMXTMSFNCUIPackPkg:Clean;FMXTMSFNCWXPackPkg:Clean;frx:Clean;frxDB:Clean;frxHTML28:Clean;fs:Clean;fsDB:Clean;fsFD:Clean;gtCompression:Clean;gtCrypt:Clean;gtDocEng:Clean;gtFilters:Clean;gtFont:Clean;gtRtl:Clean;gtxDocumentEngines:Clean;hclcore:Clean;hclcore_xe:Clean;htmleditcore:Clean;htmlfastreport:Clean;htmlfastreportfm:Clean;IconFontsImageListFMX:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;ipstudiowindataset:Clean;ipstudiowinwordxp:Clean;JOSE:Clean;JVEsoft:Clean;loggerproRT:Clean;Neon:Clean;NeonCrossPlatform:Clean;OmniThreadLibraryDesigntime:Clean;OmniThreadLibraryRuntime:Clean;OpenAIPackage:Clean;pckAlcinoe:Clean;PlanAddons:Clean;Python:Clean;PythonFmx:Clean;PythonVcl:Clean;QRDBASE:Clean;QRDesigner:Clean;QRWDesign:Clean;QRWRun:Clean;remotedb:Clean;RestRequestLib:Clean;RtmRxCtl:Clean;RtmRxDB:Clean;sbridge:Clean;sgcWebSockets:Clean;Skia_Package_FMX_Designtime:Clean;Skia_Package_FMX:Clean;Skia_Package_RTL:Clean;Skia_Package_VCL_Designtime:Clean;Skia_Package_VCL:Clean;SKIA_FlexCel_Core:Clean;sparkle:Clean;Spring_Base:Clean;Spring_Core:Clean;Spring_Data_Designtime:Clean;Spring_Data:Clean;Spring_Extensions:Clean;Spring_Persistence:Clean;StyleControls:Clean;StyleControlsD:Clean;SVGIconImageList:Clean;SVGIconImageListFMX:Clean;SVGIconPackage:Clean;SVGImage32Package:Clean;SwagDoc:Clean;Test:Clean;TestMac:Clean;tmsbcl:Clean;TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;TMSCryptoPkg:Clean;TMSCryptoPkgDE:Clean;TMSDiagram:Clean;TMSFMXChartPkg:Clean;TMSFMXChartPkgDE:Clean;TMSFMXCloudPackPkg:Clean;TMSFMXCloudPackPkgDE:Clean;TMSFMXPackPkg:Clean;TMSFMXPackPkgDE:Clean;TMSFMXUI:Clean;TMSFMXUIDE:Clean;TMSFMXWebGMapsPkg:Clean;TMSFMXWebGMapsPkgDE:Clean;TMSFNCAppToolsPkgDE:Clean;TMSFNCBloxPkgDE:Clean;TMSFNCChartPkgDE:Clean;TMSFNCCloudPackPkgDE:Clean;TMSFNCCloudPackWEB:Clean;TMSFNCCorePkgDE:Clean;TMSFNCCoreWEB:Clean;TMSFNCDashBoardPackPkgDE:Clean;TMSFNCMapsPkgDE:Clean;TMSFNCUIPackPkgDE:Clean;TMSFNCWXPackPkgDE:Clean;TMSQueryStudio:Clean;TMSScripter:Clean;TMSScripter_FMX:Clean;TMSScripter_IDE:Clean;TMSScripter_Imports_ADODB:Clean;TMSScripter_Imports_DB:Clean;TMSScripter_Imports_RTL:Clean;TMSScripter_Imports_VCL:Clean;TMSScripter_Legacy:Clean;TMSScripter_Memo:Clean;TMSScripter_VCL:Clean;TMSVCLIWPkg:Clean;TMSVCLIWPkgDE:Clean;TMSVCLSecuritySystemPkgCore:Clean;TMSVCLSecuritySystemPkgUI:Clean;TMSVCLSecuritySystemPkgUIDE:Clean;TMSVCLUIPackPkg:Clean;TMSVCLUIPackPkgDE:Clean;TMSVCLUIPackPkgEx:Clean;TMSVCLUIPackPkgWiz:Clean;TMSVCLUIPackPkgXls:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebLibCore:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;TMSWorkflow:Clean;TRCGooglePlaces_d:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlacesDesign:Clean;TRCGooglePlacesRuntime:Clean;TUniFalcon:Clean;uniTools28:Clean;VCL_FlexCel_Components:Clean;VCL_FlexCel_Components_DESIGN:Clean;VCL_FlexCel_Core:Clean;vcldclgtxDocumentStudioControls:Clean;vclgtxDocumentEngines:Clean;vclgtxDocumentStudioControls:Clean;vclgtxDocumentStudioCore:Clean;VCLThemeSelector:Clean;VCLTMSFNCAppToolsPkg:Clean;VCLTMSFNCBloxPkg:Clean;VCLTMSFNCBloxToolBarsPkg:Clean;VCLTMSFNCChartPkg:Clean;VCLTMSFNCCloudPackPkg:Clean;VCLTMSFNCCorePkg:Clean;VCLTMSFNCDashboardPackPkg:Clean;VCLTMSFNCMapsPkg:Clean;VCLTMSFNCUIPackPkg:Clean;VCLTMSFNCWXPackPkg:Clean;vcwd:Clean;VisualStyles:Clean;WinsoftVCL:Clean;xdata:Clean;xhChartDsgn:Clean;xhChartRtl:Clean;xhCntrlsDsgn:Clean;xhExportDsgn:Clean;xhExportRtl:Clean;xhHierCubeDsgn:Clean;xhHierCubeRtl:Clean;ZComponentsD:Clean;ZComponentsVCL:Clean;ZCoreLibs:Clean;ZDocumentContainer:Clean;ZipMasterD:Clean;ZipMasterR:Clean;ZLibrariesWin:Clean;Janua_Core_TMLogistic:Clean;Janua_dclSVGIconImageList:Clean;Janua_Ethea_VCLThemeSelector:Clean;Janua_Spring_Base:Clean;Janua_Spring_Extensions:Clean;Janua_SVGIconImageList:Clean;Janua_SVGIconImageListFMX:Clean;Janua_SVGIconPackage:Clean;Janua_UNI_TMLogistic:Clean;Janua_Unidac:Clean;Janua_Unidac_TMLogistic:Clean;Janua_VCL_TMLogistic:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaCoreRuntime:Clean;JanuaCoreThirdParty:Clean;JanuadclSVGIconImageListFMX:Clean;JanuaFMXControls:Clean;JanuaFMXControlsD:Clean;JanuaIconFontsImageList:Clean;JanuaMVVM:Clean;JanuaRestWeb:Clean;JanuaThirdParty:Clean;JanuaThirdPartyVCL:Clean;JanuaTmsControls:Clean;JanuaTmsCore:Clean;JanuaTmsForms:Clean;JanuaUnidac:Clean;JanuaUnidac_old:Clean;JanuaUnidacComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUniGUI:Clean;JanuaVCLComponents:Clean;JanuaVCLComponents_old:Clean;JanuaVCLControls:Clean;JanuaVCLControls_old:Clean;CarServiceCustomerConfirmation:Clean;JanuaAllDemos:Clean;JanuaVCLMVVM:Clean;JanuaVirtual:Clean;PhoenixVCL:Clean;AnagraphPlannerXE15:Clean;AppAndCityBackOffice:Clean;CarServiceAdminXE15:Clean;CarServiceBackOffice:Clean;CarServiceXE14:Clean;CarServiceXE14x86:Clean;DilettantissimoCms:Clean;DilettantissimoManager:Clean;GeneraliVisualCall:Clean;JanuaDevIDEXE15:Clean;JanuaRestDMVCTestIDEXE15:Clean;JanuaVCLTestRestDMVCIDE:Clean;JanuaVCLUITestIDEXE15:Clean;OpenshiftPodRedisXE15:Clean;OracleSwissKnifeXE15:Clean;PhoenixBackgroundService:Clean;PhoenixGoogleCalendarRegister:Clean;PhoenixGoogleCalendarSync:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;Alcinoe:Make;AsyncPro:Make;AsyncProDR:Make;AsyncProDD:Make;aurelius:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Barcode_deprecated:Make;clinetsuite:Make;CoolTrayIconWin:Make;Curl4Delphi:Make;dcl_clinetsuite:Make;DclFIBPlus:Make;dclfrx:Make;dclfs:Make;dclfsDB:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtFRExp:Make;DCLgtQRExp:Make;dclIconFontsImageListFMX:Make;dclJanuaIconFontsImageList:Make;dclJVEsoft:Make;dclPython:Make;dclPythonFmx:Make;dclPythonVcl:Make;dclremotedb:Make;DclRxCtl:Make;DclRxDB:Make;dclsbridge:Make;dclsgcWebSockets:Make;dclsparkle:Make;dclSVGIconImageList:Make;dclSVGIconImageListFMX:Make;dcltmsbcl:Make;dclTMSDiagram:Make;dclTMSQueryStudio:Make;dclTMSScripter:Make;dclTMSWorkflow:Make;dclUniFalcon:Make;dclxdata:Make;DECCipher:Make;DelphiDetours:Make;dipstudiowin:Make;dipstudiowindataset:Make;dmvcBaseRT:Make;dmvcframeworkDT:Make;dmvcframeworkRT:Make;dxCoreRS27:Make;Ean:Make;EanEditors:Make;EanXE13Sidney:Make;echo:Make;eInvoice4D:Make;eMiniInvoice4D:Make;FIBPlus:Make;FIBPlusEditors:Make;FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_Render:Make;FlexCel_Report:Make;FlexCel_XlsAdapter:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;FMX_FlexCel_Core:Make;fmxdclgtxDocumentStudioControls:Make;fmxgtxDocumentEngines:Make;fmxgtxDocumentStudioControls:Make;fmxgtxDocumentStudioCore:Make;FMXTMSFNCAppToolsPkg:Make;FMXTMSFNCBloxPkg:Make;FMXTMSFNCBloxToolBarsPkg:Make;FMXTMSFNCChartPkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCCorePkg:Make;FMXTMSFNCDashboardPackPkg:Make;FMXTMSFNCMapsPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;frx:Make;frxDB:Make;frxHTML28:Make;fs:Make;fsDB:Make;fsFD:Make;gtCompression:Make;gtCrypt:Make;gtDocEng:Make;gtFilters:Make;gtFont:Make;gtRtl:Make;gtxDocumentEngines:Make;hclcore:Make;hclcore_xe:Make;htmleditcore:Make;htmlfastreport:Make;htmlfastreportfm:Make;IconFontsImageListFMX:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowindataset:Make;ipstudiowinwordxp:Make;JOSE:Make;JVEsoft:Make;loggerproRT:Make;Neon:Make;NeonCrossPlatform:Make;OmniThreadLibraryDesigntime:Make;OmniThreadLibraryRuntime:Make;OpenAIPackage:Make;pckAlcinoe:Make;PlanAddons:Make;Python:Make;PythonFmx:Make;PythonVcl:Make;QRDBASE:Make;QRDesigner:Make;QRWDesign:Make;QRWRun:Make;remotedb:Make;RestRequestLib:Make;RtmRxCtl:Make;RtmRxDB:Make;sbridge:Make;sgcWebSockets:Make;Skia_Package_FMX_Designtime:Make;Skia_Package_FMX:Make;Skia_Package_RTL:Make;Skia_Package_VCL_Designtime:Make;Skia_Package_VCL:Make;SKIA_FlexCel_Core:Make;sparkle:Make;Spring_Base:Make;Spring_Core:Make;Spring_Data_Designtime:Make;Spring_Data:Make;Spring_Extensions:Make;Spring_Persistence:Make;StyleControls:Make;StyleControlsD:Make;SVGIconImageList:Make;SVGIconImageListFMX:Make;SVGIconPackage:Make;SVGImage32Package:Make;SwagDoc:Make;Test:Make;TestMac:Make;tmsbcl:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSCryptoPkg:Make;TMSCryptoPkgDE:Make;TMSDiagram:Make;TMSFMXChartPkg:Make;TMSFMXChartPkgDE:Make;TMSFMXCloudPackPkg:Make;TMSFMXCloudPackPkgDE:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;TMSFMXUI:Make;TMSFMXUIDE:Make;TMSFMXWebGMapsPkg:Make;TMSFMXWebGMapsPkgDE:Make;TMSFNCAppToolsPkgDE:Make;TMSFNCBloxPkgDE:Make;TMSFNCChartPkgDE:Make;TMSFNCCloudPackPkgDE:Make;TMSFNCCloudPackWEB:Make;TMSFNCCorePkgDE:Make;TMSFNCCoreWEB:Make;TMSFNCDashBoardPackPkgDE:Make;TMSFNCMapsPkgDE:Make;TMSFNCUIPackPkgDE:Make;TMSFNCWXPackPkgDE:Make;TMSQueryStudio:Make;TMSScripter:Make;TMSScripter_FMX:Make;TMSScripter_IDE:Make;TMSScripter_Imports_ADODB:Make;TMSScripter_Imports_DB:Make;TMSScripter_Imports_RTL:Make;TMSScripter_Imports_VCL:Make;TMSScripter_Legacy:Make;TMSScripter_Memo:Make;TMSScripter_VCL:Make;TMSVCLIWPkg:Make;TMSVCLIWPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;TMSVCLUIPackPkg:Make;TMSVCLUIPackPkgDE:Make;TMSVCLUIPackPkgEx:Make;TMSVCLUIPackPkgWiz:Make;TMSVCLUIPackPkgXls:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebLibCore:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;TMSWorkflow:Make;TRCGooglePlaces_d:Make;TRCGooglePlaces_r:Make;TRCGooglePlacesDesign:Make;TRCGooglePlacesRuntime:Make;TUniFalcon:Make;uniTools28:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;vcldclgtxDocumentStudioControls:Make;vclgtxDocumentEngines:Make;vclgtxDocumentStudioControls:Make;vclgtxDocumentStudioCore:Make;VCLThemeSelector:Make;VCLTMSFNCAppToolsPkg:Make;VCLTMSFNCBloxPkg:Make;VCLTMSFNCBloxToolBarsPkg:Make;VCLTMSFNCChartPkg:Make;VCLTMSFNCCloudPackPkg:Make;VCLTMSFNCCorePkg:Make;VCLTMSFNCDashboardPackPkg:Make;VCLTMSFNCMapsPkg:Make;VCLTMSFNCUIPackPkg:Make;VCLTMSFNCWXPackPkg:Make;vcwd:Make;VisualStyles:Make;WinsoftVCL:Make;xdata:Make;xhChartDsgn:Make;xhChartRtl:Make;xhCntrlsDsgn:Make;xhExportDsgn:Make;xhExportRtl:Make;xhHierCubeDsgn:Make;xhHierCubeRtl:Make;ZComponentsD:Make;ZComponentsVCL:Make;ZCoreLibs:Make;ZDocumentContainer:Make;ZipMasterD:Make;ZipMasterR:Make;ZLibrariesWin:Make"/>
+        <CallTarget Targets="AWSSDK:Make;Alcinoe:Make;AsyncPro:Make;AsyncProDR:Make;AsyncProDD:Make;aurelius:Make;AWSSDKFMX:Make;AWSSDKVCL:Make;Barcode_deprecated:Make;clinetsuite:Make;CoolTrayIconWin:Make;Curl4Delphi:Make;dcl_clinetsuite:Make;DclFIBPlus:Make;dclfrx:Make;dclfs:Make;dclfsDB:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtFRExp:Make;DCLgtQRExp:Make;dclIconFontsImageListFMX:Make;dclJanuaIconFontsImageList:Make;dclJVEsoft:Make;dclPython:Make;dclPythonFmx:Make;dclPythonVcl:Make;dclremotedb:Make;DclRxCtl:Make;DclRxDB:Make;dclsbridge:Make;dclsgcWebSockets:Make;dclsparkle:Make;dclSVGIconImageList:Make;dclSVGIconImageListFMX:Make;dcltmsbcl:Make;dclTMSDiagram:Make;dclTMSQueryStudio:Make;dclTMSScripter:Make;dclTMSWorkflow:Make;dclUniFalcon:Make;dclxdata:Make;DECCipher:Make;DelphiDetours:Make;dipstudiowin:Make;dipstudiowindataset:Make;dmvcBaseRT:Make;dmvcframeworkDT:Make;dmvcframeworkRT:Make;dxCoreRS27:Make;Ean:Make;EanEditors:Make;EanXE13Sidney:Make;echo:Make;eInvoice4D:Make;eMiniInvoice4D:Make;FIBPlus:Make;FIBPlusEditors:Make;FlexCel_Core:Make;FlexCel_Pdf:Make;FlexCel_Render:Make;FlexCel_Report:Make;FlexCel_XlsAdapter:Make;FMX_FlexCel_Components:Make;FMX_FlexCel_Components_DESIGN:Make;FMX_FlexCel_Core:Make;fmxdclgtxDocumentStudioControls:Make;fmxgtxDocumentEngines:Make;fmxgtxDocumentStudioControls:Make;fmxgtxDocumentStudioCore:Make;FMXTMSFNCAppToolsPkg:Make;FMXTMSFNCBloxPkg:Make;FMXTMSFNCBloxToolBarsPkg:Make;FMXTMSFNCChartPkg:Make;FMXTMSFNCCloudPackPkg:Make;FMXTMSFNCCorePkg:Make;FMXTMSFNCDashboardPackPkg:Make;FMXTMSFNCMapsPkg:Make;FMXTMSFNCUIPackPkg:Make;FMXTMSFNCWXPackPkg:Make;frx:Make;frxDB:Make;frxHTML28:Make;fs:Make;fsDB:Make;fsFD:Make;gtCompression:Make;gtCrypt:Make;gtDocEng:Make;gtFilters:Make;gtFont:Make;gtRtl:Make;gtxDocumentEngines:Make;hclcore:Make;hclcore_xe:Make;htmleditcore:Make;htmlfastreport:Make;htmlfastreportfm:Make;IconFontsImageListFMX:Make;ipstudiowin:Make;ipstudiowinclient:Make;ipstudiowindataset:Make;ipstudiowinwordxp:Make;JOSE:Make;JVEsoft:Make;loggerproRT:Make;Neon:Make;NeonCrossPlatform:Make;OmniThreadLibraryDesigntime:Make;OmniThreadLibraryRuntime:Make;OpenAIPackage:Make;pckAlcinoe:Make;PlanAddons:Make;Python:Make;PythonFmx:Make;PythonVcl:Make;QRDBASE:Make;QRDesigner:Make;QRWDesign:Make;QRWRun:Make;remotedb:Make;RestRequestLib:Make;RtmRxCtl:Make;RtmRxDB:Make;sbridge:Make;sgcWebSockets:Make;Skia_Package_FMX_Designtime:Make;Skia_Package_FMX:Make;Skia_Package_RTL:Make;Skia_Package_VCL_Designtime:Make;Skia_Package_VCL:Make;SKIA_FlexCel_Core:Make;sparkle:Make;Spring_Base:Make;Spring_Core:Make;Spring_Data_Designtime:Make;Spring_Data:Make;Spring_Extensions:Make;Spring_Persistence:Make;StyleControls:Make;StyleControlsD:Make;SVGIconImageList:Make;SVGIconImageListFMX:Make;SVGIconPackage:Make;SVGImage32Package:Make;SwagDoc:Make;Test:Make;TestMac:Make;tmsbcl:Make;TMSCloudPkg:Make;TMSCloudPkgDE:Make;TMSCryptoPkg:Make;TMSCryptoPkgDE:Make;TMSDiagram:Make;TMSFMXChartPkg:Make;TMSFMXChartPkgDE:Make;TMSFMXCloudPackPkg:Make;TMSFMXCloudPackPkgDE:Make;TMSFMXPackPkg:Make;TMSFMXPackPkgDE:Make;TMSFMXUI:Make;TMSFMXUIDE:Make;TMSFMXWebGMapsPkg:Make;TMSFMXWebGMapsPkgDE:Make;TMSFNCAppToolsPkgDE:Make;TMSFNCBloxPkgDE:Make;TMSFNCChartPkgDE:Make;TMSFNCCloudPackPkgDE:Make;TMSFNCCloudPackWEB:Make;TMSFNCCorePkgDE:Make;TMSFNCCoreWEB:Make;TMSFNCDashBoardPackPkgDE:Make;TMSFNCMapsPkgDE:Make;TMSFNCUIPackPkgDE:Make;TMSFNCWXPackPkgDE:Make;TMSQueryStudio:Make;TMSScripter:Make;TMSScripter_FMX:Make;TMSScripter_IDE:Make;TMSScripter_Imports_ADODB:Make;TMSScripter_Imports_DB:Make;TMSScripter_Imports_RTL:Make;TMSScripter_Imports_VCL:Make;TMSScripter_Legacy:Make;TMSScripter_Memo:Make;TMSScripter_VCL:Make;TMSVCLIWPkg:Make;TMSVCLIWPkgDE:Make;TMSVCLSecuritySystemPkgCore:Make;TMSVCLSecuritySystemPkgUI:Make;TMSVCLSecuritySystemPkgUIDE:Make;TMSVCLUIPackPkg:Make;TMSVCLUIPackPkgDE:Make;TMSVCLUIPackPkgEx:Make;TMSVCLUIPackPkgWiz:Make;TMSVCLUIPackPkgXls:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebLibCore:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;TMSWorkflow:Make;TRCGooglePlaces_d:Make;TRCGooglePlaces_r:Make;TRCGooglePlacesDesign:Make;TRCGooglePlacesRuntime:Make;TUniFalcon:Make;uniTools28:Make;VCL_FlexCel_Components:Make;VCL_FlexCel_Components_DESIGN:Make;VCL_FlexCel_Core:Make;vcldclgtxDocumentStudioControls:Make;vclgtxDocumentEngines:Make;vclgtxDocumentStudioControls:Make;vclgtxDocumentStudioCore:Make;VCLThemeSelector:Make;VCLTMSFNCAppToolsPkg:Make;VCLTMSFNCBloxPkg:Make;VCLTMSFNCBloxToolBarsPkg:Make;VCLTMSFNCChartPkg:Make;VCLTMSFNCCloudPackPkg:Make;VCLTMSFNCCorePkg:Make;VCLTMSFNCDashboardPackPkg:Make;VCLTMSFNCMapsPkg:Make;VCLTMSFNCUIPackPkg:Make;VCLTMSFNCWXPackPkg:Make;vcwd:Make;VisualStyles:Make;WinsoftVCL:Make;xdata:Make;xhChartDsgn:Make;xhChartRtl:Make;xhCntrlsDsgn:Make;xhExportDsgn:Make;xhExportRtl:Make;xhHierCubeDsgn:Make;xhHierCubeRtl:Make;ZComponentsD:Make;ZComponentsVCL:Make;ZCoreLibs:Make;ZDocumentContainer:Make;ZipMasterD:Make;ZipMasterR:Make;ZLibrariesWin:Make;Janua_Core_TMLogistic:Make;Janua_dclSVGIconImageList:Make;Janua_Ethea_VCLThemeSelector:Make;Janua_Spring_Base:Make;Janua_Spring_Extensions:Make;Janua_SVGIconImageList:Make;Janua_SVGIconImageListFMX:Make;Janua_SVGIconPackage:Make;Janua_UNI_TMLogistic:Make;Janua_Unidac:Make;Janua_Unidac_TMLogistic:Make;Janua_VCL_TMLogistic:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaCoreRuntime:Make;JanuaCoreThirdParty:Make;JanuadclSVGIconImageListFMX:Make;JanuaFMXControls:Make;JanuaFMXControlsD:Make;JanuaIconFontsImageList:Make;JanuaMVVM:Make;JanuaRestWeb:Make;JanuaThirdParty:Make;JanuaThirdPartyVCL:Make;JanuaTmsControls:Make;JanuaTmsCore:Make;JanuaTmsForms:Make;JanuaUnidac:Make;JanuaUnidac_old:Make;JanuaUnidacComponents:Make;JanuaUnidacComponentsD:Make;JanuaUniGUI:Make;JanuaVCLComponents:Make;JanuaVCLComponents_old:Make;JanuaVCLControls:Make;JanuaVCLControls_old:Make;CarServiceCustomerConfirmation:Make;JanuaAllDemos:Make;JanuaVCLMVVM:Make;JanuaVirtual:Make;PhoenixVCL:Make;AnagraphPlannerXE15:Make;AppAndCityBackOffice:Make;CarServiceAdminXE15:Make;CarServiceBackOffice:Make;CarServiceXE14:Make;CarServiceXE14x86:Make;DilettantissimoCms:Make;DilettantissimoManager:Make;GeneraliVisualCall:Make;JanuaDevIDEXE15:Make;JanuaRestDMVCTestIDEXE15:Make;JanuaVCLTestRestDMVCIDE:Make;JanuaVCLUITestIDEXE15:Make;OpenshiftPodRedisXE15:Make;OracleSwissKnifeXE15:Make;PhoenixBackgroundService:Make;PhoenixGoogleCalendarRegister:Make;PhoenixGoogleCalendarSync:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

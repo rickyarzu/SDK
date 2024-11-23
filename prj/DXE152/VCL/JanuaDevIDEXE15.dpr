@@ -71,7 +71,6 @@ begin
   // Viene impostato l'albero delle finestre ed il menu principale
   TJanuaDevIDEVCLApplication.ApplicationSetup('desktop.januaproject.it');
   TJanuaApplication.Title := 'Janua Dev IDE';
-  TStyleManager.TrySetStyle('Win10IDE_Light');
   Application.Title := TJanuaApplication.Title;
   Application.MainFormOnTaskbar := True;
 {$IFDEF DEBUG}
